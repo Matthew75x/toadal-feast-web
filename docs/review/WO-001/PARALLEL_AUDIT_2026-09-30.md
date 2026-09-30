@@ -71,3 +71,19 @@ The CP9 reference remains useful because it proves a more complete desktop utili
 WO-001 should not be accepted until the two static contract gaps above are resolved and the final Studio 1.4.2 viewport evidence passes.
 
 This QA branch intentionally does not modify the Home implementation. It provides donor preservation, source-level regression guards, and explicit closure criteria without colliding with Codex's implementation branch.
+## Navigation truth audit
+
+A separate navigation-source guard was added:
+
+`node scripts/verify-navigation-truth.mjs .`
+
+Current result:
+- implemented Studio routes: 2 (`/`, `/404.html`)
+- navigation targets checked: 14
+- unresolved clickable targets: **13**
+
+The current `navigation.json` points at future routes such as Play, World, Stories, Media, Feast Pass, App, Community, Store, About, News, Support, Contact and Legal even though those Studio pages do not exist yet.
+
+This is not permission to remove the approved navigation labels. It is a closure requirement to make unavailable destinations truthful in WO-001—for example, current-page anchors, disabled/planned states, or another Studio-supported non-broken treatment—until each real route lands in its own work order.
+
+Final Studio export must not ship a polished Home whose global navigation simply sends visitors to thirteen missing pages.
