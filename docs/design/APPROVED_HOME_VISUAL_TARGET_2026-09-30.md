@@ -8,6 +8,18 @@ https://www.figma.com/design/T2CosIgfKTy32yNRqNThmS
 
 This file translates the owner-approved Home look into an editable reference. It is **visual/compositional guidance only**. Product truth, route order, feature state, content, asset authority, and implementation tokens on `work/WO-001-global-shell-home` override any placeholder copy or placeholder card content inside the Figma working reference.
 
+## Owner-approved mockup anchors
+
+Prior approved-target references:
+- `MOCKUP_HOME_DESKTOP.png`
+- `MOCKUP_HOME_MOBILE.png`
+- the approved Home variant with the search bar as the base visual target
+
+These mockups remain the visual north star when locally available. The editable Figma file is a bridge toward that target, not a claim that the original mockup has been superseded.
+
+Latest accepted composition direction:
+dark chocolate navigation -> huge living Feast World -> canonical Toadal -> strong pink Play CTA -> browser games -> Feast Pass -> characters/world/stories -> app conversion -> truthful future content -> contextual Toadal.
+
 Read the WO-001 authority first:
 - `docs/design/DESIGN_SYSTEM_SPEC.md`
 - `docs/design/design-tokens.json`
