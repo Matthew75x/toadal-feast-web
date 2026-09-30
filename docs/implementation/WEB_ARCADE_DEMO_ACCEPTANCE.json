@@ -1,0 +1,121 @@
+{
+  "schema": "toadal-feast.web-arcade-demo-acceptance.v1",
+  "productProfile": "docs/implementation/WEB_ARCADE_PREVIEW_PROFILE.json",
+  "authority": "docs/implementation/WEB_ARCADE_DEMO_PRODUCT_AUTHORITY_2026-09-30.md",
+  "stages": [
+    {
+      "id": "A",
+      "name": "Technical qualification",
+      "requiredBeforeStageB": true,
+      "checks": [
+        "standard Arcade starts with Toadal",
+        "real gameplay loop operates",
+        "opaque-origin isolation holds",
+        "host pause/resume/visibility works",
+        "host fullscreen/exit works",
+        "no unexpected network egress",
+        "no fatal console/page errors",
+        "package provenance and hashes recorded"
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Three-character demo",
+      "requiredBeforePublicPreviewComplete": true,
+      "checks": [
+        "website chooser exposes only toadal/classic/pelican",
+        "Toadal starts unlocked",
+        "Classic unlocks after first completed run",
+        "Gully unlocks at bestScore>=600 OR completedRuns>=3",
+        "Gully display name is used while runtime id remains pelican",
+        "all three characters can start and finish Standard Arcade runs",
+        "preview unlocks do not mutate canonical mobile coinCost",
+        "preview unlocks do not write to froggyFeast mobile save",
+        "best score and unlock state persist via host-owned isolated namespace",
+        "result screen shows score/best/unlock before app conversion",
+        "no interruptive app CTA appears during gameplay"
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Optimization and polish",
+      "checks": [
+        "natural run duration is measured before deciding on a hard timer",
+        "runtime request/reachability ledger captured",
+        "only proven-unreachable files are removed",
+        "package requalified after every bounded trim set",
+        "phone/tablet/desktop layouts pass",
+        "final screenshots show Toadal, Classic and Gully states",
+        "full-game CTA is strongest after web-roster completion or repeat engagement"
+      ]
+    }
+  ],
+  "storage": {
+    "namespace": "toadal:game:toadal-feast-arcade-preview:v1:",
+    "expectedFields": [
+      "bestScoreOverall",
+      "bestScoreByCharacter",
+      "completedRuns",
+      "unlockedCharacterIds",
+      "selectedCharacterId",
+      "settings"
+    ],
+    "forbiddenKeys": [
+      "froggyFeast"
+    ],
+    "accountSync": false
+  },
+  "unlocks": {
+    "toadal": {
+      "runtimeId": "toadal",
+      "startUnlocked": true
+    },
+    "classic": {
+      "runtimeId": "classic",
+      "condition": {
+        "completedRuns": 1
+      }
+    },
+    "gully": {
+      "runtimeId": "pelican",
+      "conditionAny": [
+        {
+          "bestScore": 600
+        },
+        {
+          "completedRuns": 3
+        }
+      ]
+    }
+  },
+  "timerPolicy": {
+    "initialHardLimitSeconds": null,
+    "targetSessionMinutes": [
+      2,
+      4
+    ],
+    "addHardLimitOnlyAfterMeasuredNeed": true
+  },
+  "finalProductBoundary": {
+    "include": [
+      "Standard Arcade",
+      "Toadal",
+      "Classic Frog",
+      "Gully",
+      "high-score loop",
+      "local web-preview unlocks"
+    ],
+    "exclude": [
+      "Puzzle",
+      "Feastfall",
+      "Infinite",
+      "Arcade variants",
+      "shop",
+      "cosmetics",
+      "daily goals",
+      "mobile economy",
+      "account requirement",
+      "global leaderboard"
+    ]
+  }
+}
