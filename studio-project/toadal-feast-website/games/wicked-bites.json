@@ -5,15 +5,15 @@
   "name": "Wicked Bites",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Qualified browser-preview evidence exists, but this Home page withholds launch until WO-002 player integration.",
-  "description": "Wicked Bites has a qualified staging browser cartridge from the CP9/V13 donor. WO-001 intentionally does not expose a launch route until the current player shell is integrated and regression-tested in WO-002. The current Home card remains a preview surface.",
+  "summary": "A source-qualified browser preview exists for Wicked Bites, but this site keeps launch disabled until the player experience is ready.",
+  "description": "Wicked Bites has a source-qualified browser preview. This site keeps the launch route disabled until the browser player is integrated and tested. The current card remains a preview.",
   "route": "/",
-  "artAsset": "asset.home.world.desktop",
+  "artAsset": "asset.home.game.wicked-bites-preview",
   "platforms": [],
   "studioGenerated": false,
   "web": {
     "enabled": false,
-    "shortDescription": "Qualified staging cartridge exists; Home launch remains withheld until WO-002 player integration."
+    "shortDescription": "Source-qualified browser preview exists; launch remains disabled until the browser player is ready."
   },
   "evidence": {
     "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
@@ -23,5 +23,6 @@
     "entrySha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
     "reverifiedAt": "2026-09-30",
     "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
-  }
+  },
+  "artTruth": "Source-qualified gameplay screenshot derivative from the exact qualified donor; artwork does not imply current Home launch availability."
 }

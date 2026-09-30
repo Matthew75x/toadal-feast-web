@@ -1,0 +1,37 @@
+{
+  "schema": "toadal-feast.wo001-postpass-polish-candidate.v1",
+  "generatedAt": "2026-09-30",
+  "baseCommit": "3e82fcd6990b92166769475aed3beffbec5b71f1",
+  "baseDisposition": "WO-001 PASS",
+  "note": "Post-pass polish candidate only. Structural previews are not final TOADAL Studio 1.4.2 certification evidence.",
+  "screenshots": [
+    {
+      "file": "home-1600x900-structural-preview.webp",
+      "viewport": "1600x900",
+      "bytes": 172430,
+      "sha256": "1da16de5b9b4b3d41655d306d7f8b7282b864f95ba7cac73dc1ce74c4e8bfab4"
+    },
+    {
+      "file": "home-390x844-structural-preview.webp",
+      "viewport": "390x844",
+      "bytes": 69566,
+      "sha256": "e56f1121723a918fddf9f147f22b6411b535a321290d53c03be83c7b23a4a9e2"
+    },
+    {
+      "file": "home-1600x2600-structural-preview.webp",
+      "viewport": "1600x2600",
+      "bytes": 335376,
+      "sha256": "c6f3a4836a16e1e9731478de30a800d364776830bc3357dd724d737f5291cd99"
+    }
+  ],
+  "repositoryChecks": {
+    "homeVisualContract": "34/34 PASS",
+    "publicCopyAudit": "9/9 PASS",
+    "postpassPolishVerifier": "14/14 PASS",
+    "navigationTruth": "PASS",
+    "pagesBasePath": "8/8 PASS",
+    "canonicalAssetAudit": "10/10 PASS",
+    "cp9FreshExtraction": "17/17 PASS",
+    "diffCheck": "PASS"
+  }
+}

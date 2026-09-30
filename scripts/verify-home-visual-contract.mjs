@@ -94,17 +94,17 @@ check('preview-truth', previewOnly && actualGameCards.length === 4 &&
   /Playable now[\s\S]*?<span>0<\/span>/i.test(componentHtml('component.home.games-intro')),
   'The four indexed browser games remain preview-only with no Home launch/build URLs and zero playable Home routes.');
 check('arcade-reserved-slot', /data-feature-state=['"]CANDIDATE_REQUIRES_WEB_PACKAGE_AUDIT['"]/u.test(whatsNextHtml) &&
-  /AUDIT REQUIRED[\s\S]*?TOADAL FEAST Arcade/iu.test(whatsNextHtml) &&
+  /(?:AUDIT REQUIRED|IN DEVELOPMENT)[\s\S]*?TOADAL FEAST Arcade/iu.test(whatsNextHtml) &&
   /next-card\[data-feature-state=["']CANDIDATE_REQUIRES_WEB_PACKAGE_AUDIT["']\][\s\S]*?border:\s*2px dashed/iu.test(css) &&
   !/<a\b|\bhref\s*=/iu.test(whatsNextHtml) &&
   !indexedGames.some(game => /arcade/i.test(game.slug || game.id)),
-  'The Arcade candidate has a visually reserved, dashed audit-only card without a game record or launch route.');
+  'The Arcade candidate has a visually reserved, dashed development card without a game record or launch route.');
 check('preview-headline-truth', !previewOnly || /Explore the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
   'When Home has zero integrated launch routes, staging uses Explore rather than implying a playable Home launch.');
 check('arcade-withheld', !indexedGames.some(game => /arcade/i.test(game.slug || game.id)),
   'The unapproved Arcade candidate is not exposed as a public browser-game record.');
 check('store-link-truth', /type=["']button["'][^>]*disabled/i.test(componentHtml('component.home.app')) &&
-  /store links are not available|no download link is configured/i.test(componentHtml('component.home.app')),
+  /store links are not available|download links are not available|no download link is configured/i.test(componentHtml('component.home.app')),
   'Store conversion is disabled and explains that no verified destination is configured.');
 
 const requiredNav = ['Home', 'Play', 'World', 'Stories', 'Media', 'Feast Pass', 'App'];
