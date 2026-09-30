@@ -1,7 +1,6 @@
 # WO-000 — D-generator Environment Baseline
 **Status:** READY
 **Authoritative setup branch:** `plan/design-system-work-orders-20260929`
-**Exact starting commit:** `8cbf923440159e6e946082569ce2b4d81694e2e2`
 **Execution branch:** `work/WO-000-environment-baseline`
 
 ## Goal
@@ -12,7 +11,7 @@ This is bounded environment setup, configuration verification and repeatable com
 
 ## In scope
 1. Work only in `Matthew75x/toadal-feast-web` on `work/WO-000-environment-baseline`.
-2. Confirm the branch starts from commit `8cbf923440159e6e946082569ce2b4d81694e2e2`.
+2. Confirm you are on the pre-created execution branch and that this work order is present before making changes.
 3. Install/reference the owner-supplied resealed TOADAL Studio 1.4.1 outside the public website repository.
 4. Verify Studio version and run `npm run validate`, `npm test`, and `npm run ai:doctor` when supported.
 5. Create/validate a fresh independent TOADAL FEAST website Studio project.
