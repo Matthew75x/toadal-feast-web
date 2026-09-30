@@ -50,6 +50,7 @@ Implement reusable:
 - StatusChip
 - CategoryTabs
 - responsive navigation
+- approved desktop search-field treatment from the Home mockup (do not regress to icon-only as the final desktop shell; if search is not public yet, present a truthful non-deceptive state)
 - ToadalCompanion state/plumbing
 
 ### Home
