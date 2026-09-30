@@ -72,7 +72,7 @@ check('preview-truth', previewOnly && component('component.home.games')?.props?.
 check('arcade-withheld', !indexedGames.some(game => /arcade/i.test(game.slug || game.id)),
   'The unapproved Arcade candidate is not exposed as a public browser-game record.');
 check('store-link-truth', /type=["']button["'][^>]*disabled/i.test(componentHtml('component.home.app')) &&
-  /store links are not available|no download link is configured/i.test(componentHtml('component.home.app')),
+  /store links are not available|download links are not available|no download link is configured/i.test(componentHtml('component.home.app')),
   'Store conversion is disabled and explains that no verified destination is configured.');
 
 const requiredNav = ['Home', 'Play', 'World', 'Stories', 'Media', 'Feast Pass', 'App'];

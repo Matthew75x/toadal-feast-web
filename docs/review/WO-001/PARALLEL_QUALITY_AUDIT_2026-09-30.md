@@ -107,3 +107,49 @@ For WO-001 closure:
 - do not start a broad redesign after the final closure pass.
 
 This branch is a QA/polish candidate only. Final Studio 1.4.2 validation and the official acceptance receipt still control release of WO-001.
+
+## Public-copy polish
+
+A second pass found internal/operator wording leaking into the player-facing Home:
+
+- “work order”
+- “AUDIT REQUIRED”
+- “Candidate only”
+- “Package audit”
+- “website QA”
+- “app-store URLs”
+- “approved product screenshots”
+
+Those phrases are useful in engineering evidence but make the public page feel unfinished.
+
+The quality candidate replaces them with player-facing truth such as:
+- “later update”
+- “IN DEVELOPMENT”
+- “A limited browser preview is still being prepared”
+- “download links and app screenshots are not published on this site yet”
+
+Internal feature-state attributes remain unchanged, so product-truth machinery still knows the real engineering state.
+
+`node scripts/audit-public-copy.mjs .` -> **PASS**
+- hard operator jargon: 0
+- softer implementation jargon: 0
+
+## Structural / asset audits
+
+`node scripts/audit-home-assets.mjs .` -> **PASS**
+- 12 image references inspected
+- 8 unique local image files
+- 386,664 unique image bytes (~0.37 MiB)
+- 0 missing files
+- hero/world and hero Toadal remain eager/high-priority
+- below-fold imagery remains lazy-loaded
+
+`node scripts/audit-home-integrity.mjs .` -> **PASS**
+- 22 unique structural/anchor IDs after accounting for Studio-generated anchors
+- 13 internal anchor references
+- exactly 1 H1
+- 12 images with alt attributes
+- 6 buttons with names
+- 2 live regions
+- 0 failures
+- 0 warnings
