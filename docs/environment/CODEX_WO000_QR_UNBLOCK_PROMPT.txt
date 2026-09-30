@@ -1,0 +1,63 @@
+Continue WO-000 from the pushed BLOCKED result. Do not begin WO-001.
+
+I independently reproduced the remaining Tier 3 QR failure against the exact Studio archive and found the root cause.
+
+IMPORTANT CORRECTION:
+The exact Studio 1.4.1 archive DOES contain the POST /api/qr handler in apps/studio/server.ts.
+That handler shells to the Python interpreter from process.env.PYTHON || "python3" and runs:
+import qrcode
+
+The exact failing assertion:
+assert.ok(qr.asset?.id)
+is reproducible when that Python environment lacks the qrcode module.
+
+A direct POST /api/qr under a Python environment without qrcode returns:
+QR_GENERATOR_UNAVAILABLE ... ModuleNotFoundError: No module named 'qrcode'
+
+The same Tier 3 HTTP test passes when qrcode is available.
+
+Goal:
+Correct ONLY this environment prerequisite, rerun certification, and produce the final WO-000 PASS/BLOCKED result.
+
+Steps:
+1. Stay on work/WO-000-environment-baseline.
+2. Do not edit Studio source, tests, assertions, product code, or website design.
+3. Determine the exact Python interpreter used by apps/studio/server.ts during npm test.
+4. Supply task-local Python QR support for that interpreter:
+   - qrcode
+   - Pillow support required for PNG generation
+   Keep it task-local; do not require a global machine mutation if avoidable.
+5. Explicitly set PYTHON to the chosen interpreter if needed.
+6. Prove:
+   <python> -c "import qrcode; print('QR_IMPORT_PASS')"
+7. Rerun:
+   node --no-warnings --experimental-strip-types --test --test-concurrency=1 tests/tier3-closure.test.ts
+8. Then rerun full:
+   npm test
+9. Expected result if this diagnosis is correct:
+   81 tests, 81 passed, 0 failed, 0 skipped.
+10. Rerun the existing WO-000 postcheck.
+11. Update docs/environment/DGENERATOR_BASELINE.md with:
+    - the corrected root cause;
+    - exact Python interpreter/path;
+    - exact task-local qrcode/Pillow installation path/version;
+    - Tier 3 rerun result;
+    - complete npm test result;
+    - final PASS or BLOCKED status.
+12. Commit and push the updated WO-000 result.
+13. STOP. Do not begin WO-001.
+
+If qrcode import passes but the QR test still fails, capture the actual POST /api/qr JSON/error and investigate only that bounded failure.
+
+Return:
+- final WO-000 status PASS/BLOCKED
+- final commit SHA
+- exact Python path
+- qrcode/Pillow availability/version
+- Tier 3 result
+- full npm test result
+- postcheck result
+- git status
+- any remaining blocker
+
+Do not broaden scope.
