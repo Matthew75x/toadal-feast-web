@@ -1,0 +1,131 @@
+{
+  "schema": "toadal-feast.web.cp9-player-compatibility.v1",
+  "status": "PLANNING_AUTHORITY_ONLY_UNTIL_WO002_START",
+  "currentContract": {
+    "name": "toadal.game",
+    "version": 1,
+    "wireLabel": "toadal.game.v1"
+  },
+  "legacyContract": {
+    "contract": "toadal-web-player-v2",
+    "schemaVersion": 2,
+    "source": "CP9/V13"
+  },
+  "legacyGameToHost": [
+    {
+      "legacy": "game.ready",
+      "current": "game:ready",
+      "mode": "direct"
+    },
+    {
+      "legacy": "game.gameplayStart",
+      "current": "game:started",
+      "mode": "direct",
+      "note": "Counts as gameplay-start/time-to-playable signal."
+    },
+    {
+      "legacy": "game.complete",
+      "current": "game:complete",
+      "mode": "direct"
+    },
+    {
+      "legacy": "game.exit",
+      "current": "game:request-exit",
+      "mode": "direct"
+    },
+    {
+      "legacy": "game.error",
+      "current": "game:error",
+      "mode": "direct"
+    },
+    {
+      "legacy": "game.requestFullscreen",
+      "current": "game:request-fullscreen",
+      "mode": "direct"
+    },
+    {
+      "legacy": "game.saveStatus",
+      "current": null,
+      "mode": "advisory-host-internal",
+      "note": "Do not fabricate save continuity; surface only as internal status/telemetry if needed."
+    }
+  ],
+  "currentHostToLegacy": [
+    {
+      "current": "host:pause",
+      "legacy": "host.pause",
+      "mode": "direct"
+    },
+    {
+      "current": "host:resume",
+      "legacy": "host.resume",
+      "mode": "direct"
+    },
+    {
+      "current": "host:mute",
+      "legacy": "host.mute",
+      "mode": "direct"
+    },
+    {
+      "current": "host:unmute",
+      "legacy": "host.unmute",
+      "mode": "direct"
+    },
+    {
+      "current": "host:init",
+      "legacy": null,
+      "mode": "unsupported-optional"
+    },
+    {
+      "current": "host:visibility",
+      "legacy": null,
+      "mode": "translate-to-pause-resume"
+    },
+    {
+      "current": "host:exit-confirmed",
+      "legacy": null,
+      "mode": "unsupported-optional"
+    }
+  ],
+  "security": [
+    "Validate event.origin against the cartridge origin.",
+    "Validate event.source against the mounted iframe contentWindow.",
+    "Validate legacy contract exactly before mapping.",
+    "Allowlist message types; ignore unknown messages.",
+    "Validate payload shape before any privileged host action.",
+    "Never allow a cartridge to navigate the parent page directly."
+  ],
+  "lifecycle": [
+    "Host owns navigation, fullscreen, mute, how-to-play, and access checks.",
+    "Game owns simulation, rendering, game input, and browser-local save.",
+    "Visibility/page lifecycle maps to pause/resume.",
+    "Unmount must release host listeners and stop cartridge activity.",
+    "Each game keeps a distinct local storage namespace."
+  ],
+  "delivery": {
+    "preferred": "versioned-origin",
+    "allowed": [
+      "site-bundled",
+      "versioned-origin",
+      "gated-origin"
+    ],
+    "rule": "Large cartridge size alone is advisory; time-to-playable and deployment constraints decide shipment."
+  },
+  "qualifiedStagingCandidates": [
+    {
+      "id": "wicked-bites",
+      "version": "5.5",
+      "sourceRepository": "Matthew75x/feast-crossing-wicked-bites",
+      "sourceCommit": "6fff3c89605092ba5c5e122565cb98415c8ab5e5",
+      "entrySha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5"
+    },
+    {
+      "id": "claw-feed-gulper",
+      "version": "2.5.1",
+      "sourceRepository": "Matthew75x/claw-feed-gulper",
+      "sourceCommit": "7c49d1bf70ebf6503fde3b533a1acd356d12c77c",
+      "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701"
+    }
+  ],
+  "publicExposureRule": "Do not mark a Home/Play route PUBLIC or expose a Play CTA until the current player shell has mounted the candidate and the WO-002 integration tests pass."
+}
