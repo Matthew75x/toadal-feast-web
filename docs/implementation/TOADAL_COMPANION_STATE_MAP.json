@@ -1,0 +1,59 @@
+{
+  "schema": "toadal-feast.web.toadal-companion.v1",
+  "homeZones": [
+    {
+      "zone": "hero",
+      "reaction": "welcome",
+      "intent": "invite_to_play"
+    },
+    {
+      "zone": "browser-games",
+      "reaction": "excited",
+      "intent": "suggest_game"
+    },
+    {
+      "zone": "feast-pass",
+      "reaction": "proud",
+      "intent": "explain_progress"
+    },
+    {
+      "zone": "characters",
+      "reaction": "friendly",
+      "intent": "meet_friends"
+    },
+    {
+      "zone": "world",
+      "reaction": "curious",
+      "intent": "explore"
+    },
+    {
+      "zone": "stories-media",
+      "reaction": "thinking",
+      "intent": "discover_story"
+    },
+    {
+      "zone": "app",
+      "reaction": "present",
+      "intent": "full_adventure"
+    },
+    {
+      "zone": "whats-next",
+      "reaction": "construction",
+      "intent": "future_truth"
+    }
+  ],
+  "priority": [
+    "minimized",
+    "action",
+    "focus_hover_touch",
+    "section",
+    "route_default",
+    "idle"
+  ],
+  "actionDurationMs": [
+    2000,
+    3000
+  ],
+  "persistMinimized": true,
+  "reducedMotion": "remove movement, preserve semantic state"
+}
