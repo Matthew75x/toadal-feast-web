@@ -21,9 +21,17 @@ Against this candidate:
 - canonical asset audit: **10 required assets PASS**
 - `git diff --check`: **PASS**
 
-Pre-Studio browser captures:
-- `home-1600x900.png`
+Pre-Studio browser captures now cover the full required viewport matrix:
 - `home-390x844.png`
+- `home-430x932.png`
+- `home-768x1024.png`
+- `home-1366x768.png`
+- `home-1600x900.png`
+- `home-1920x1080.png`
+
+`viewport-probes.json` records the exact emulated viewport and document-width witness. All six currently report **no document-level horizontal overflow**. The small/tablet cases also confirm the responsive menu button remains visible.
+
+The first viewport sweep exposed a real grid min-content overflow on 390/430/768 widths; this branch adds the narrow `min-width:0` containment fix and the repeated sweep is clean.
 
 The captures are visual witnesses only. They do not replace the required final Studio 1.4.2 render/export/viewport matrix.
 

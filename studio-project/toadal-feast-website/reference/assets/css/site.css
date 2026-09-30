@@ -81,8 +81,9 @@ a:focus-visible,button:focus-visible{outline:3px solid #67d8ff;outline-offset:3p
 .tf-hero-note em{color:var(--pink-700);font-style:normal;font-weight:950}
 
 /* Panels */
-.tf-panel{background:linear-gradient(180deg,rgba(255,253,246,.98),rgba(255,244,214,.96));border:2px solid rgba(161,100,25,.38);border-radius:var(--radius-panel);box-shadow:var(--shadow);padding:13px}
+.tf-panel{min-width:0;background:linear-gradient(180deg,rgba(255,253,246,.98),rgba(255,244,214,.96));border:2px solid rgba(161,100,25,.38);border-radius:var(--radius-panel);box-shadow:var(--shadow);padding:13px}
 .tf-top-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(320px,1.08fr);gap:10px;align-items:stretch}
+.tf-top-grid>*{min-width:0}
 .tf-section-heading{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-bottom:9px;padding:0 2px}
 .tf-section-heading>div:first-child{display:flex;align-items:center;gap:10px}
 .tf-section-heading h2{margin:0;font-size:clamp(1.35rem,2vw,2rem);letter-spacing:-.035em}
