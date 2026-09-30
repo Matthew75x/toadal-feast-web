@@ -67,7 +67,7 @@ Retired Princess Lily assets remain excluded.
 Current candidate results:
 
 - `verify-home-visual-contract.mjs`: **22/22 PASS**
-- `verify-wo001-composition-candidate.mjs`: **13/13 PASS**
+- `verify-wo001-composition-candidate.mjs`: **17/17 PASS**
 - navigation truth: **PASS**
 - Pages/base-path tests: **8/8 PASS**
 - canonical asset audit: **10/10 PASS**
