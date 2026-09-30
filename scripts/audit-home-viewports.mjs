@@ -104,12 +104,17 @@ for (const [width,height] of viewports) {
     'today:rect(today),visualWidth:visualViewport&&visualViewport.width};})()';
   const evaluated = await send('Runtime.evaluate',{expression,returnByValue:true});
   const value = evaluated.result.value;
+  const toggleVisible = Boolean(value.toggle?.rect?.w && value.toggle?.rect?.h) && value.toggle?.display !== 'none';
+  const searchVisible = Boolean(value.search?.rect?.w && value.search?.rect?.h) && value.search?.display !== 'none';
+  const shellMode = width <= 430
+    ? toggleVisible && !searchVisible
+    : width <= 768
+      ? toggleVisible
+      : !toggleVisible && searchVisible;
   const checks = {
     noHorizontalOverflow: !value.horizontalOverflow,
     todayPresent: Boolean(value.today),
-    shellMode: mobile
-      ? value.toggle?.display !== 'none' && value.search?.display === 'none'
-      : value.toggle?.display === 'none' && value.search?.display !== 'none'
+    shellMode
   };
   const pass = Object.values(checks).every(Boolean);
   if (keepShots) {
