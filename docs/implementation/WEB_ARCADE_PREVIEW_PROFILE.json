@@ -1,0 +1,92 @@
+{
+  "schema": "toadal-feast.web.arcade-preview-profile.v1",
+  "id": "toadal-feast-arcade-preview",
+  "displayName": "TOADAL FEAST Arcade Preview",
+  "publicState": "CANDIDATE",
+  "donor": {
+    "source": "TOADAL FEAST 1.2.9 Arcade standalone",
+    "entry": "arcade-standalone.html",
+    "sourceAuthority": "current owner-approved game/release source",
+    "note": "Web preview must be a derivative sealed cartridge; do not publish the entire standalone/player release package."
+  },
+  "gameplay": {
+    "arcadeMode": "standard",
+    "character": "toadal",
+    "characterLocked": true,
+    "variantsEnabled": false,
+    "characterSelector": false,
+    "shop": false,
+    "cosmetics": false,
+    "dailyGoals": false,
+    "unlockMenus": false,
+    "localBestScore": true,
+    "localRunHistory": false,
+    "mobileControls": true,
+    "keyboard": true,
+    "touch": true,
+    "fullscreen": true,
+    "pause": true,
+    "restart": true,
+    "help": true
+  },
+  "identity": {
+    "headline": "Limited browser preview",
+    "conversionMessage": "Play a taste of TOADAL FEAST here, then continue with the full mobile adventure.",
+    "doNotClaim": [
+      "full mobile game",
+      "all Arcade variants",
+      "cross-device progression",
+      "app reward transfer",
+      "global leaderboard"
+    ]
+  },
+  "toadalMechanics": [
+    "contact catch / Golden Charge",
+    "Royal Hop",
+    "short Tongue",
+    "Golden Throw",
+    "Golden Block"
+  ],
+  "storage": {
+    "requiredIsolation": true,
+    "namespace": "toadal:game:toadal-feast-arcade-preview:v1:",
+    "legacyMobileKeysAllowed": false,
+    "accountSync": "none"
+  },
+  "host": {
+    "protocol": "toadal.game.v1",
+    "exitOwner": "website",
+    "fullscreenOwner": "website",
+    "routeOwner": "website"
+  },
+  "assetPolicy": {
+    "includeOnlyRuntimeRequired": true,
+    "mandatoryFamilies": [
+      "Toadal Arcade frozen core",
+      "Arcade runtime food actually reachable by selected profile",
+      "hazard/pickup assets actually reachable by selected profile",
+      "power-up assets actually reachable by selected profile",
+      "selected background/theme UI",
+      "shared Arcade runtime/scripts/styles required by standard mode"
+    ],
+    "excludeFamilies": [
+      "other playable character animation families unless runtime proves unavoidable",
+      "Arcade variants tc/fmf/zen presentation assets",
+      "Puzzle/Feastfall/Infinite-only masters",
+      "authoring/QA/dev tools",
+      "raw source/master art not needed at runtime"
+    ]
+  },
+  "acceptance": [
+    "real run starts and completes with Toadal",
+    "Toadal mechanics verifier PASS",
+    "Toadal browser witness PASS",
+    "mobile control contract/browser witness PASS",
+    "storage isolated from legacy froggyFeast keys",
+    "no unexpected network egress",
+    "no missing runtime assets",
+    "pause/restart/exit/fullscreen work through host",
+    "package provenance/hash recorded",
+    "real cartridge screenshot captured"
+  ]
+}

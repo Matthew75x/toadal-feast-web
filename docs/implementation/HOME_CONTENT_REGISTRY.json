@@ -1,0 +1,97 @@
+{
+  "schema": "toadal-feast.web.home-content-prep.v1",
+  "status": "PREP_ONLY_NOT_RUNTIME_AUTHORITY",
+  "hero": {
+    "headline": "Play the Feast World for Free.",
+    "primary": {
+      "label": "Play Now",
+      "target": "/play"
+    },
+    "secondary": {
+      "label": "Get the App",
+      "target": "/app"
+    }
+  },
+  "browserGames": [
+    {
+      "id": "wicked-bites",
+      "displayName": "Wicked Bites",
+      "state": "PREVIEW"
+    },
+    {
+      "id": "toadal-tower-defense",
+      "displayName": "TOADAL Tower Defense",
+      "aliases": [
+        "Feast Defense"
+      ],
+      "state": "PREVIEW"
+    },
+    {
+      "id": "froggy-fruity-bash",
+      "displayName": "Froggy Fruity Bash",
+      "state": "PREVIEW"
+    },
+    {
+      "id": "claw-feed-gulper",
+      "displayName": "CLAW: Feed Gulper",
+      "state": "PREVIEW"
+    },
+    {
+      "id": "toadal-feast-arcade-preview",
+      "displayName": "TOADAL FEAST Arcade",
+      "state": "PREVIEW"
+    }
+  ],
+  "feastPass": {
+    "storage": "guest-local-first",
+    "fields": [
+      "level",
+      "xp",
+      "sparks",
+      "treats",
+      "streak",
+      "currentQuest"
+    ],
+    "mockupValuesAuthoritative": false,
+    "accountSync": "PLANNED"
+  },
+  "characters": {
+    "toadal": {
+      "displayName": "Toadal",
+      "identity": "golden-yellow crown red scarf explorer/King of Feasts"
+    },
+    "princessLily": {
+      "displayName": "Princess Lily",
+      "assetRule": "September lilly_*_2026-09-08 only"
+    },
+    "genieSweet": {
+      "assetId": "sweet",
+      "displayName": "TBC"
+    },
+    "genieSavoury": {
+      "assetId": "savoury",
+      "displayName": "TBC"
+    },
+    "genieFruity": {
+      "assetId": "fruity",
+      "displayName": "TBC"
+    },
+    "gulper": {
+      "displayName": "Gulper"
+    }
+  },
+  "world": {
+    "mockupLocationNamesAuthoritative": false
+  },
+  "app": {
+    "realScreenshotsOnly": true,
+    "realStoreLinksOnly": true
+  },
+  "allowedStates": [
+    "PUBLIC",
+    "PREVIEW",
+    "PLANNED",
+    "COMING_SOON",
+    "DISABLED"
+  ]
+}

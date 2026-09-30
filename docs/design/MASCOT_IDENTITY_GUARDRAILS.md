@@ -1,10 +1,30 @@
 # TOADAL FEAST — Mascot Identity Guardrails
-Mockup Toadal art is composition reference unless separately approved.
+**Production rule:** mockup Toadal art is composition reference unless separately approved.
 
-Canonical constants: golden-yellow Toadal; small royal crown; red scarf; established face/eye/mouth proportions; consistent scale; explorer / King-of-Feasts identity; adventurous, warm, mischievous confidence.
+## Canonical constants
+- golden-yellow Toadal
+- small royal crown
+- red scarf
+- established face/eye/mouth proportions
+- consistent body scale
+- explorer / King-of-Feasts identity
+- adventurous, warm, mischievous confidence
 
-Never substitute a generic frog, merge Princess Lily/another frog into Toadal, treat AI accessories as canon, or let generated anatomy redefine the mascot.
+## Never
+- substitute a green/generic frog
+- merge Princess Lily or another frog into Toadal
+- treat random AI accessories as canon
+- allow generated art to redefine facial/body anatomy
+- resurrect retired logo/frog treatments
 
-Preferred technique: environment without Toadal baked in + canonical transparent Toadal overlay + route/context pose. Generate new pose only if no canonical pose fits.
+## Preferred production technique
+1. use/generate environment without Toadal baked in;
+2. overlay canonical transparent Toadal in code;
+3. select route/context reaction asset;
+4. create a new pose only when canonical assets cannot serve the need, then review it before approval.
 
-Companion priority: minimized → action → semantic hover/focus/touch → current section → route default → idle. Reduced motion preserves semantic state changes.
+## Companion behavior
+Priority:
+minimized → action event → semantic hover/focus/touch → current section → route default → idle.
+Action reaction lasts roughly 2–3 seconds then returns to context.
+Reduced motion removes movement, not semantic state changes.

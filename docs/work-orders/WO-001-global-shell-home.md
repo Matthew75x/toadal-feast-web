@@ -1,61 +1,159 @@
 # WO-001 — Global Shell + Home
 **Status:** HOLD until WO-000 PASS
+**Execution branch:** `work/WO-001-global-shell-home`
 
 ## Goal
-Implement the reusable global shell and Home page from the approved TOADAL FEAST visual authority without inventing a new visual direction.
+Implement the reusable TOADAL FEAST global shell and Home page from the locked Home visual authority without inventing a new visual direction.
 
-## Branch
-work/WO-001-global-shell-home
+## Start condition
+Do not begin until:
+1. WO-000 is reviewed and marked PASS;
+2. the accepted WO-000 commit SHA is supplied;
+3. the approved Home visual package is available locally;
+4. the canonical game-asset source repo is available locally or its exact approved assets are supplied.
+
+Create `work/WO-001-global-shell-home` from the accepted WO-000 commit. Do not branch from an older planning commit.
 
 ## Read first
-- docs/design/DESIGN_SYSTEM_SPEC.md
-- docs/implementation/PUBLIC_TRUTH_RULES.md
-- owner-supplied approved Home visual and canonical brand/Toadal assets
+- `docs/design/DESIGN_SYSTEM_SPEC.md`
+- `docs/design/COMPONENT_CATALOG.md`
+- `docs/design/TEMPLATE_FAMILY_MAP.md`
+- `docs/design/MASCOT_IDENTITY_GUARDRAILS.md`
+- `docs/implementation/PUBLIC_TRUTH_RULES.md`
+- `docs/implementation/ASSET_INTEGRATION_POLICY.md`
+- `docs/implementation/HOME_IMPLEMENTATION_SPEC.md`
+- `docs/implementation/HOME_PRODUCT_TRUTH_GATE.md`
+- `docs/implementation/HOME_CONTENT_REGISTRY.json`
+- `docs/implementation/CANONICAL_ASSET_SOURCE_MANIFEST.json`
+- `docs/implementation/TOADAL_COMPANION_STATE_MAP.json`
+- `docs/implementation/WO001_VISUAL_ACCEPTANCE_CHECKLIST.md`
 
 ## In scope
-Global shell:
-- SiteHeader / SiteFooter
-- route shell and layout tokens
+
+### Global shell
+Implement reusable:
+- SiteHeader
+- SiteFooter
+- RouteShell
+- tokens / CSS variables
 - base typography plumbing
-- buttons, CreamPanel, DarkFeaturePanel, SectionHeading, StatusChip, CategoryTabs
+- PrimaryButton / SecondaryButton
+- CreamPanel
+- DarkFeaturePanel
+- SectionHeading
+- StatusChip
+- CategoryTabs
 - responsive navigation
-- ToadalCompanion frame/state plumbing
+- ToadalCompanion state/plumbing
 
-Home hierarchy:
-1. Play the Feast World for Free hero
+### Home
+Implement, in order:
+1. hero — **Play the Feast World for Free**
 2. immediate browser-game discovery
-3. guest Feast Pass summary
-4. today's adventure / daily reward surface
-5. character/world/story/media discovery
-6. app conversion
-7. truthful future/Coming Soon surface
-8. contextual companion
+3. guest-local Feast Pass summary
+4. Today / current-adventure surface
+5. Characters / World / Stories & Media discovery
+6. App conversion
+7. truthful What's Next / future-state section
+8. contextual Toadal companion
+9. subordinate TOADAL GAMES footer
 
-Use structured data/config instead of duplicated card markup.
+Use structured data/config rather than duplicated card markup.
+
+## Visual identity
+Preserve:
+- dark chocolate navigation;
+- warm cream/parchment panels;
+- vivid pink primary actions;
+- deep navy/royal headings;
+- gold reward accents;
+- lush food-fantasy scenery visible around UI;
+- dense but legible game-like composition;
+- TOADAL FEAST as dominant identity.
+
+Do not turn the page into sparse corporate/SaaS UI.
+
+## Mascot
+Use canonical Toadal only:
+- golden-yellow;
+- crown;
+- red scarf;
+- established face/body identity;
+- explorer / King-of-Feasts personality.
+
+Prefer clean environment + canonical transparent Toadal overlay.
+Do not bake a generated substitute mascot into the hero.
+
+## Product truth
+No card/system becomes live because a mockup shows it.
+
+Use explicit state:
+`PUBLIC | PREVIEW | PLANNED | COMING_SOON | DISABLED`.
+
+Never fabricate:
+- app/game screenshots;
+- account sync;
+- global rankings;
+- Community posting;
+- Store checkout;
+- release dates;
+- final Feast Pass economy.
 
 ## Assets
-Use supplied canonical TOADAL FEAST logo/Toadal assets and supplied Home environment.
-If a final asset is unavailable, use an explicit neutral placeholder; do not invent a fake product screenshot.
-Do not generate art.
+Run the asset audit before implementation:
+`powershell -ExecutionPolicy Bypass -File scripts/wo001-asset-audit.ps1 -GameRepo "<ABSOLUTE_PATH_TO_CANONICAL_GAME_REPO>"`
 
-## Responsive checks
-390x844, 430x932, 768x1024, 1366x768, 1600x900, 1920x1080.
+If required canonical assets fail the audit, STOP and report the mismatch rather than substituting generated character art.
+
+The approved Home mockup is composition authority only.
+Do not use the app icon source as the website wordmark.
+
+## Responsive acceptance
+Capture:
+- 390×844
+- 430×932
+- 768×1024
+- 1366×768
+- 1600×900
+- 1920×1080
 
 ## Accessibility
-Keyboard, visible focus, semantic landmarks, clear labels, reduced motion, no color-only meaning.
+- keyboard navigation;
+- visible focus;
+- semantic landmarks;
+- meaningful labels;
+- reduced motion;
+- no color-only meaning;
+- companion never blocks controls/content.
 
-## Visual targets
-Chocolate nav, cream/gold game-like panels, vivid pink CTA, navy headings,
-world art visible around content, dense but organized first viewport, premium playful—not SaaS.
+## Required evidence
+- Studio validation
+- tests relevant to changed code
+- static export
+- Home required-link check
+- console-error check
+- accessibility smoke check
+- viewport screenshots in `docs/review/WO-001/`
+- exact diff/stat
+- final branch commit
+- clean git status
 
 ## Out of scope
-Other routes, account/leaderboard/community/store backends, production deployment,
-design rethinking, new character art, final Feast Pass economy.
+- Play page implementation
+- World/Stories/other route implementation
+- backend/provider selection
+- final account system
+- persistent/global leaderboard
+- Community backend
+- Store checkout
+- new mascot/character generation
+- production deployment
+- DNS
+- broad architecture redesign
 
-## Evidence
-Studio validation, static export, Home link check, accessibility smoke check, console check,
-required viewport screenshots in docs/review/WO-001/, exact diff/stat, final branch commit.
+## Stop condition
+STOP after Global Shell + Home are implemented, tested, evidenced and committed on the work branch.
 
-## Stop
-STOP after Global Shell + Home are implemented/tested/committed.
-Do not merge main, deploy Pages, or start Play.
+Do not merge to `main`.
+Do not deploy Pages.
+Do not start WO-002.

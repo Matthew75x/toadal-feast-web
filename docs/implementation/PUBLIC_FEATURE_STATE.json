@@ -1,0 +1,31 @@
+{
+  "schema": "toadal-feast.web.public-feature-state.v1",
+  "rules": {
+    "missingCapability": "COMING_SOON_OR_PREVIEW",
+    "noFakeSuccessPaths": true
+  },
+  "features": {
+    "home": "PUBLIC_AFTER_WO001_ACCEPTANCE",
+    "playHub": "PUBLIC_AFTER_WO002_ACCEPTANCE",
+    "wickedBites": "PREVIEW_UNTIL_REAL_WEB_BUILD",
+    "toadalTowerDefense": "PREVIEW_UNTIL_REAL_WEB_BUILD",
+    "froggyFruityBash": "PREVIEW_UNTIL_REAL_WEB_BUILD",
+    "clawFeedGulper": "PREVIEW_UNTIL_REAL_WEB_BUILD",
+    "toadalFeastArcadePreview": "CANDIDATE_REQUIRES_WEB_PACKAGE_AUDIT",
+    "feastPassGuestLocal": "PUBLIC_AFTER_WO005",
+    "accountAuthentication": "PLANNED",
+    "accountSync": "PLANNED",
+    "registeredProfile": "PLANNED",
+    "localProfile": "PUBLIC_AFTER_WO005",
+    "localLeaderboards": "PUBLIC_AFTER_WO005_IF_IMPLEMENTED",
+    "globalLeaderboards": "PLANNED",
+    "communityBrowse": "COMING_SOON_OR_CURATED_PUBLIC_CONTENT_ONLY",
+    "communityPosting": "PLANNED",
+    "storeCatalog": "COMING_SOON_OR_CONCEPT_ONLY",
+    "storeCheckout": "PLANNED",
+    "appInformationPage": "PUBLIC_AFTER_WO006",
+    "appStoreButtons": "DISABLED_UNTIL_REAL_URL",
+    "notifications": "PLANNED",
+    "localSearch": "PUBLIC_AFTER_WO006"
+  }
+}

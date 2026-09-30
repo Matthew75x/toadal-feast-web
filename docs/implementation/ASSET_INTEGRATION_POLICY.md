@@ -1,6 +1,35 @@
 # TOADAL FEAST — Asset Integration Policy
-Authority: owner-approved current asset/decision → canonical current game/release asset → approved website derivative → approved generated environment/key art → conceptual mockup art → donor/legacy art.
 
-Prefer canonical transparent mascot/characters over generated substitutes.
-Real product evidence only for app/game screenshots, trailers/media, store badges/URLs.
-Never commit secrets, Studio proprietary source, private business docs, unreleased game source not required by browser delivery, or raw comic/video masters.
+## Authority order
+1. current owner-approved asset/decision
+2. canonical current game/release asset
+3. approved website derivative
+4. approved newly generated environment/key art
+5. conceptual mockup art
+6. donor/legacy art
+
+## Mascot/characters
+Prefer canonical transparent character assets over generated character art.
+Do not generate substitutes before auditing current assets.
+
+## Product evidence
+Must be real:
+- app screenshots
+- browser-game screenshots
+- trailers/media frames
+- store badges/URLs
+
+Never present generated product screens as real evidence.
+
+## Public repository safeguard
+Never commit:
+- passwords/API keys/signing material
+- internal credentials
+- Studio proprietary source
+- private business documents
+- unreleased game source not required by browser delivery
+- raw comic/video masters
+
+## Large media
+Use optimized derivatives + manifests in the site.
+Use object storage/CDN for large libraries when required.
