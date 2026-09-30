@@ -156,3 +156,27 @@ Before this candidate replaces it, the authoritative closure lane should run one
 If those remain green, this candidate can supersede the existing WO-001 visual source.
 
 No deployment, `main` merge, production DNS change, or WO-002 implementation is authorized by this branch.
+
+
+## Synthetic six-viewport layout matrix
+
+A pre-certification Chrome layout matrix was also run against the structural preview at the six required target sizes:
+
+- 390×844
+- 430×932
+- 768×1024
+- 1366×768
+- 1600×900
+- 1920×1080
+
+Result:
+- **6/6 with zero horizontal overflow**
+- **6/6 with visible Toadal**
+- game grid: 1 column at 390/430, 2 columns at 768, 4 columns on desktop
+- mobile Menu behavior visible below 800px
+- desktop hero height remained approximately 465–490px in this synthetic witness
+
+Machine-readable evidence:
+`synthetic-layout-matrix.json`
+
+This matrix is an early CSS/layout guard only. It does not replace the certified Studio/browser viewport suite required before adopting the candidate.
