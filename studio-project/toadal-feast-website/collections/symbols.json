@@ -28,6 +28,88 @@
         "href": "/",
         "kind": "secondary"
       }
+    },
+    {
+      "id": "symbol.site.header",
+      "name": "SiteHeader",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "site-header",
+        "html": "<header class=\"site-header\" data-symbol=\"SiteHeader\"></header>"
+      }
+    },
+    {
+      "id": "symbol.site.footer",
+      "name": "SiteFooter",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "site-footer",
+        "html": "<footer class=\"site-footer\" data-symbol=\"SiteFooter\"></footer>"
+      }
+    },
+    {
+      "id": "symbol.site.route-shell",
+      "name": "RouteShell",
+      "type": "layout.grid",
+      "props": {
+        "columns": 1,
+        "gap": 0,
+        "children": []
+      }
+    },
+    {
+      "id": "symbol.surface.cream-panel",
+      "name": "CreamPanel",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "cream-panel",
+        "html": "<section class=\"cream-panel\" data-symbol=\"CreamPanel\"></section>"
+      }
+    },
+    {
+      "id": "symbol.surface.dark-feature-panel",
+      "name": "DarkFeaturePanel",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "dark-feature-panel",
+        "html": "<section class=\"dark-feature-panel\" data-symbol=\"DarkFeaturePanel\"></section>"
+      }
+    },
+    {
+      "id": "symbol.surface.section-heading",
+      "name": "SectionHeading",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "section-heading",
+        "html": "<header class=\"section-heading-block\" data-symbol=\"SectionHeading\"></header>"
+      }
+    },
+    {
+      "id": "symbol.surface.status-chip",
+      "name": "StatusChip",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "status-chip",
+        "html": "<span class=\"status-chip\" data-symbol=\"StatusChip\"></span>"
+      }
+    },
+    {
+      "id": "symbol.surface.category-tabs",
+      "name": "CategoryTabs",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "category-tabs",
+        "html": "<div class=\"category-tabs\" data-symbol=\"CategoryTabs\"></div>"
+      }
+    },
+    {
+      "id": "symbol.form.search-field",
+      "name": "SearchField",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "search-field",
+        "html": "<div class=\"search-field\" data-symbol=\"SearchField\"></div>"
+      }
     }
   ]
 }

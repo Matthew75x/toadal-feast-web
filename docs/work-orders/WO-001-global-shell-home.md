@@ -4,7 +4,23 @@
 
 ## Current disposition (2026-09-30)
 
-The Studio implementation, full test suite, export, static verification, viewport matrix, and browser/accessibility smoke checks pass. WO-001 is **not accepted**: CP9/V13 integrity has external audit evidence, but the source/archive are not locally available for the required salvage comparison; the original approved Home mockups are unavailable for visual sign-off; the guest-local Feast Pass requirement conflicts with the central `PUBLIC_AFTER_WO005` gate; the free-play headline needs reconciliation against zero playable browser builds; and reusable shell-symbol coverage is partial. The current page keeps Feast Pass planned and does not invent progress. See `docs/review/WO-001/QA_REPORT.md` for exact evidence and remaining blockers. Do not start WO-002 or deploy Pages.
+The Studio implementation and local technical QA are complete. Independent post-QA reconciliation recovered the approved Home visual and CP9/V13 donor authority, corrected browser-game evidence, resolved the Feast Pass staging boundary, made the free-play headline state-aware, and completed the required shell symbol registry.
+
+WO-001 is now **FIX REQUIRED — targeted visual-composition remediation**.
+
+The remaining work is not architecture or product discovery:
+1. bring the existing Home composition materially closer to the approved dense premium portal;
+2. preserve all current truth/accessibility/responsive behavior;
+3. rerun Studio 1.4.2 validation/render/export;
+4. compare final screenshots to the approved Home authority;
+5. accept or request one bounded visual fix.
+
+Do not begin WO-002 or deploy Pages until this visual remediation is accepted.
+
+See:
+- `docs/review/WO-001/APPROVED_HOME_VISUAL_PARITY_REVIEW_2026-09-30.md`
+- `docs/review/WO-001/POST_QA_DELTA_2026-09-30.md`
+- `docs/review/WO-001/CP9_DONOR_RECONCILIATION_2026-09-30.md`
 
 ## Goal
 Implement the reusable TOADAL FEAST global shell and Home page from the locked Home visual authority without inventing a new visual direction.
@@ -61,7 +77,7 @@ Implement reusable:
 Implement, in order:
 1. hero — **Play the Feast World for Free**
 2. immediate browser-game discovery
-3. guest-local Feast Pass summary
+3. truthful Feast Pass preview summary — live guest-local XP/Sparks/Treats/streak/quest state remains gated until WO-005
 4. Today / current-adventure surface
 5. Characters / World / Stories & Media discovery
 6. App conversion

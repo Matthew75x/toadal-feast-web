@@ -24,8 +24,8 @@ const check = (id, ok, detail, severity = 'gate') =>
 const has = (text, pattern) => pattern instanceof RegExp ? pattern.test(text) : text.includes(pattern);
 const variants = (home.components || []).map(item => item?.props?.variant).filter(Boolean);
 
-check('hero-headline', /Play the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
-  'The authoritative Home headline is present in the structured Studio hero.');
+check('hero-headline', /(?:Play|Explore) the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
+  'The Home hero preserves the approved Feast World/free headline family while allowing the staging truth state.');
 check('browser-games', component('component.home.games')?.props?.anchorId === 'browser-games' &&
   component('component.home.games-intro')?.props?.variant === 'games-intro',
   'Browser-game discovery has an immediate, addressable structured section.');
@@ -67,6 +67,8 @@ const previewOnly = indexedGames.length === 4 && gameRecords.every(game =>
 check('preview-truth', previewOnly && component('component.home.games')?.props?.children?.length === 4 &&
   /Playable now[\s\S]*?<span>0<\/span>/i.test(componentHtml('component.home.games-intro')),
   'The four indexed browser games remain preview-only with no launch/build URLs or playable count.');
+check('preview-headline-truth', !previewOnly || /Explore the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
+  'When Home has zero integrated launch routes, staging uses Explore rather than implying a playable Home launch.');
 check('arcade-withheld', !indexedGames.some(game => /arcade/i.test(game.slug || game.id)),
   'The unapproved Arcade candidate is not exposed as a public browser-game record.');
 check('store-link-truth', /type=["']button["'][^>]*disabled/i.test(componentHtml('component.home.app')) &&
@@ -80,8 +82,9 @@ check('core-navigation', requiredNav.every(label => navLabels.has(label)),
 const requiredSymbols = ['SiteHeader', 'SiteFooter', 'RouteShell', 'PrimaryButton', 'SecondaryButton',
   'CreamPanel', 'DarkFeaturePanel', 'SectionHeading', 'StatusChip', 'CategoryTabs', 'SearchField'];
 const symbolNames = new Set((symbols.items || []).map(item => String(item.name || '').toLowerCase().replace(/[^a-z0-9]/g, '')));
-check('reusable-shell-components', requiredSymbols.every(name => symbolNames.has(name)),
-  `Studio symbol-registry coverage: ${requiredSymbols.filter(name => symbolNames.has(name.toLowerCase())).length}/${requiredSymbols.length}; required named shell components are ${requiredSymbols.join(', ')}.`);
+const normalizedRequiredSymbols = requiredSymbols.map(name => name.toLowerCase().replace(/[^a-z0-9]/g, ''));
+check('reusable-shell-components', normalizedRequiredSymbols.every(name => symbolNames.has(name)),
+  `Studio symbol-registry coverage: ${normalizedRequiredSymbols.filter(name => symbolNames.has(name)).length}/${requiredSymbols.length}; required named shell components are ${requiredSymbols.join(', ')}.`);
 
 const failures = checks.filter(item => !item.ok && item.severity === 'gate');
 const warnings = checks.filter(item => !item.ok && item.severity === 'WARN');

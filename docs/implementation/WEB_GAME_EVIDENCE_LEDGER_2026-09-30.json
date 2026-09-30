@@ -1,0 +1,65 @@
+{
+  "schema": "toadal-feast.web-game-evidence.v1",
+  "auditedAt": "2026-09-30",
+  "cp9ArchiveSha256": "ebbd2b7631268e39522a2f63eb7377ce2cd6571b86cb88947c597b0b1376e7a4",
+  "games": [
+    {
+      "id": "wicked-bites",
+      "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
+      "source": {
+        "repository": "Matthew75x/feast-crossing-wicked-bites",
+        "commit": "6fff3c89605092ba5c5e122565cb98415c8ab5e5"
+      },
+      "cartridge": {
+        "version": "5.5",
+        "manifestEntrySha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
+        "bytes": 1462042,
+        "files": 1
+      },
+      "currentEndpoint": {
+        "httpStatus": 200,
+        "downloadedBytes": 1462042,
+        "sha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
+        "robots": "noindex"
+      },
+      "homeLaunchState": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+    },
+    {
+      "id": "claw-feed-gulper",
+      "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
+      "source": {
+        "repository": "Matthew75x/claw-feed-gulper",
+        "commit": "7c49d1bf70ebf6503fde3b533a1acd356d12c77c"
+      },
+      "cartridge": {
+        "version": "2.5.1",
+        "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
+        "totalBytes": 16618931,
+        "files": 87
+      },
+      "currentEndpoint": {
+        "httpStatus": 200,
+        "indexBytes": 16127,
+        "indexSha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
+        "robots": "noindex"
+      },
+      "homeLaunchState": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+    },
+    {
+      "id": "lily-pad-leap",
+      "state": "CONTRACT_READY_PLANNED_INTEGRATION"
+    },
+    {
+      "id": "froggy-fruity-bash",
+      "state": "CONTRACT_READY_PLANNED_INTEGRATION"
+    },
+    {
+      "id": "feast-defense",
+      "state": "CONTRACT_READY_PLANNED_ADAPTATION"
+    },
+    {
+      "id": "toadal-feast-arcade",
+      "state": "CANDIDATE_REQUIRES_CURRENT_CARTRIDGE_AUDIT"
+    }
+  ]
+}

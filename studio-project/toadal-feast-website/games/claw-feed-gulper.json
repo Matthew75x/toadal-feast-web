@@ -5,14 +5,23 @@
   "name": "CLAW: Feed Gulper",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Preview concept shown with canonical Gulper character art, not gameplay footage.",
-  "description": "CLAW: Feed Gulper is presented as a preview only. This website does not contain a runnable browser build or a game launch route. The card uses canonical Gulper character art, not a game screenshot or confirmed title artwork.",
+  "summary": "Qualified browser-preview evidence exists, but this Home page withholds launch until WO-002 player integration.",
+  "description": "CLAW: Feed Gulper has a qualified staging browser cartridge from the CP9/V13 donor. WO-001 intentionally does not expose a launch route until the current player shell is integrated and regression-tested in WO-002. The current Home card remains a preview surface.",
   "route": "/",
   "artAsset": "asset.home.character.gulper",
   "platforms": [],
   "studioGenerated": false,
   "web": {
     "enabled": false,
-    "shortDescription": "Preview only — shown with canonical Gulper character art, not gameplay footage; no public playable build is available."
+    "shortDescription": "Qualified staging cartridge exists; Home launch remains withheld until WO-002 player integration."
+  },
+  "evidence": {
+    "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
+    "repository": "Matthew75x/claw-feed-gulper",
+    "commit": "7c49d1bf70ebf6503fde3b533a1acd356d12c77c",
+    "version": "2.5.1",
+    "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
+    "reverifiedAt": "2026-09-30",
+    "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
   }
 }

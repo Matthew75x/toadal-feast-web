@@ -5,14 +5,23 @@
   "name": "Wicked Bites",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Preview concept shown with shared Candy Kingdom world art; no public playable web build is available.",
-  "description": "Wicked Bites is presented as a preview only. This website does not contain a runnable browser build or a game launch route. The card uses shared Candy Kingdom environment art, not a game screenshot.",
+  "summary": "Qualified browser-preview evidence exists, but this Home page withholds launch until WO-002 player integration.",
+  "description": "Wicked Bites has a qualified staging browser cartridge from the CP9/V13 donor. WO-001 intentionally does not expose a launch route until the current player shell is integrated and regression-tested in WO-002. The current Home card remains a preview surface.",
   "route": "/",
   "artAsset": "asset.home.world.desktop",
   "platforms": [],
   "studioGenerated": false,
   "web": {
     "enabled": false,
-    "shortDescription": "Preview only — shared Candy Kingdom world art, not gameplay footage. No public playable web build is available."
+    "shortDescription": "Qualified staging cartridge exists; Home launch remains withheld until WO-002 player integration."
+  },
+  "evidence": {
+    "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
+    "repository": "Matthew75x/feast-crossing-wicked-bites",
+    "commit": "6fff3c89605092ba5c5e122565cb98415c8ab5e5",
+    "version": "5.5",
+    "entrySha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
+    "reverifiedAt": "2026-09-30",
+    "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
   }
 }
