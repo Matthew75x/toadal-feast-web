@@ -25,7 +25,7 @@ check('future-state', has(html, 'id="whats-next"'), 'Truthful future-state surfa
 check('canonical-toadal', /toadal-(?:victory|portrait)\.png/i.test(html), 'Canonical Toadal image is referenced.');
 check('retired-lily-absent', !/(walk_12f|idle_blink_16f_256|catch_open_10f|curated-highres\/princess\/idle\.png)/i.test(html+css), 'Retired Princess Lily assets are absent.');
 check('desktop-search-field',
-  /type=["']search["']/i.test(template+html) || /class=["'][^"']*(?:search-box|search-field)[^"']*["']/i.test(template+html),
+  /type=["']search["']/i.test(template+html) || /class=["'][^"']*(?:search-box|search-field|site-search)[^"']*["']/i.test(template+html) && /Search the Feast/i.test(template+html),
   'Approved desktop search-field treatment exists; icon-only search is not sufficient.');
 check('today-surface',
   /id=["'][^"']*(?:today|current-adventure)[^"']*["']/i.test(html) || /class=["'][^"']*(?:today|current-adventure)[^"']*["']/i.test(html),
