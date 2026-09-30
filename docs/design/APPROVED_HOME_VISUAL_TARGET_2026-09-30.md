@@ -1,129 +1,146 @@
-# TOADAL FEAST website — approved visual-target contract
+# TOADAL FEAST website — Home visual-target bridge
 
 Date: 2026-09-30
-Status: implementation target for WO-001+; no production deployment implied
+Status: design-reference bridge for WO-001; no production deployment implied
 
-Figma working target:
+Figma working reference:
 https://www.figma.com/design/T2CosIgfKTy32yNRqNThmS
 
-This file translates the owner-approved homepage direction into an editable implementation reference. It does not replace the source mockup or authorize unrelated visual redesign.
+This file translates the owner-approved Home look into an editable reference. It is **visual/compositional guidance only**. Product truth, route order, feature state, content, asset authority, and implementation tokens on `work/WO-001-global-shell-home` override any placeholder copy or placeholder card content inside the Figma working reference.
 
-## Non-negotiable visual direction
+Read the WO-001 authority first:
+- `docs/design/DESIGN_SYSTEM_SPEC.md`
+- `docs/design/design-tokens.json`
+- `docs/design/VISUAL_AUTHORITY_LEDGER.md`
+- `docs/implementation/HOME_IMPLEMENTATION_SPEC.md`
+- `docs/implementation/HOME_PRODUCT_TRUTH_GATE.md`
+- `docs/implementation/HOME_CONTENT_REGISTRY.json`
+- `docs/implementation/CANONICAL_ASSET_SOURCE_MANIFEST.json`
+- `docs/implementation/WO001_VISUAL_ACCEPTANCE_CHECKLIST.md`
 
-The site should feel like the TOADAL FEAST world, not a generic SaaS landing page.
+## Locked visual direction
 
-Primary language:
-- warm cream page surfaces
-- dark chocolate navigation/footer
-- pink primary CTAs
-- gold highlights and chips
-- rounded, soft premium cards
-- lush game-world imagery
-- clear TOADAL FEAST character presence
-- playful display typography with readable body copy
-- generous spacing and low visual clutter
-- app conversion is prominent but does not consume the whole page
+The Home page is a LOCK_VISUAL route. It should feel like the TOADAL FEAST world, not a generic SaaS landing page.
+
+Preserve:
+- dark chocolate global navigation and footer
+- warm cream/parchment page surfaces
+- vivid pink primary actions
+- gold/crown reward accents
+- deep navy/royal headings where the implementation system calls for them
+- lush food-fantasy scenery visible around UI
+- canonical golden Toadal presence
+- premium rounded cards/panels
+- playful readable display type + highly legible UI/body type
+- dense-but-organized game-like composition
+- clear app conversion without turning the whole page into an app-store advertisement
 
 Avoid:
 - cold corporate blue/gray shells
 - generic AI gradients
-- glassmorphism-heavy UI
-- neon cyber styling
-- dense dashboards
+- heavy glassmorphism
+- neon/cyber styling
+- sparse SaaS hero + generic feature boxes
 - random icon packs
-- replacing approved game art with unrelated stock imagery
+- generic green-frog substitutes
+- rasterizing the mockup as production UI
 - regressions to earlier rough website versions
 
-## Homepage hierarchy
+## Correct Home content hierarchy
 
-1. slim announcement strip
-2. chocolate global navigation
-3. world-art hero with TOADAL FEAST conversion panel
-4. compact benefit/positioning strip
-5. four-mode card row: Arcade / Puzzle / Feastfall / Infinite
-6. world / story feature block
-7. Feast Pass progression strip
-8. flagship app conversion block
-9. compact footer
+WO-001 product/content authority controls the final section order:
 
-The page should communicate in this order:
-play -> understand the world -> understand progression -> get the full app.
+1. Hero — Play the Feast World for Free
+2. Immediate browser-game discovery
+3. Feast Pass / progression summary using the currently approved truthful state
+4. Today / current-adventure surface
+5. Characters / World / Stories & Media discovery
+6. App conversion
+7. Truthful What's Next / future-state surface
+8. Contextual Toadal companion
+9. Subordinate TOADAL GAMES footer
 
-## Design tokens
+The Figma working reference currently contains a four-card Arcade / Puzzle / Feastfall / Infinite row because those approved game images were immediately available as composition material. **That row is not product-content authority for the website Home.** WO-001 should populate the discovery area from the approved website game/content registries instead.
 
-Reference values from the working target:
+Likewise, placeholder Figma copy must not create account sync, rewards, dates, scores, commerce, community, or other backend behavior.
 
-- page cream: #F7F0DF
-- card cream: #FFF9EB
-- chocolate: #3B241C
-- deep footer chocolate: #2B1914
-- primary pink: #EB5E88
-- gold: #F3C65B
-- body brown: #6B5146
-- lavender progression surface: #F0E7FA
+## Implementation tokens
 
-Typography direction:
-- display: rounded/playful, similar to Fredoka Bold
-- body/UI: highly readable rounded sans, similar to Nunito
-- do not introduce novelty fonts for ordinary UI text
+Do not create a competing token set from the Figma file.
 
-Treat these as implementation reference values, not permission to duplicate arbitrary colors throughout the codebase. Centralize them as site tokens.
+Use the implementation authority in `docs/design/design-tokens.json`, currently centered on:
+- chocolate: `#1e100d / #2c1710 / #422416`
+- cream: `#fffdf6 / #fff9e9 / #fff0cf`
+- navy: `#10165b / #292d7e`
+- pink: `#d90055 / #f50961 / #ff267a`
+- gold: `#a86606 / #de8d09 / #ffb823 / #ffd45b`
 
-## Canonical game-art references
+The Figma file is useful for spacing, composition, art/copy balance, CTA hierarchy, rounded surface treatment, and general visual weight. Exact color implementation should converge on the repository design system.
 
-The current visual target deliberately uses real TOADAL FEAST assets rather than placeholder stock art.
+## Canonical asset authority
 
-Candidate source references:
-- Toadal portrait:
-  `assets/images/characters/toadal-arcade/portrait.png`
-- hero/world:
-  `assets/themes/froggy-feast/ui-v2/backgrounds/candyland-scenic-calm.webp`
-- world feature:
-  `assets/themes/froggy-feast/ui-v2/backgrounds/candy-forest-owner-v1.webp`
-- Arcade:
-  `assets/themes/froggy-feast/ui-v2/modes/arcade.webp`
-- Puzzle:
-  `assets/themes/froggy-feast/ui-v2/modes/puzzle.webp`
-- Feastfall:
-  `assets/themes/froggy-feast/ui-v2/modes/feastfall.webp`
-- Infinite:
-  `assets/themes/froggy-feast/ui-v2/modes/infinite-feast.webp`
+Use only assets accepted by the WO-001 canonical asset audit.
 
-Do not copy from the frozen Android release worktree into production blindly. Website asset ingestion must have its own provenance and optimization step.
+The verified manifest includes canonical Toadal, Princess Lily, Gulper, Gully and Genie sources. The asset audit has been independently executed against the frozen game source and currently passes all 10 required assets.
 
-## Interaction expectations
+Do not use retired Princess Lily assets.
 
-- Primary CTA hierarchy is obvious without shouting.
-- Cards should feel clickable but not like a dashboard grid.
-- Hover/focus treatment must be consistent and restrained.
-- Keyboard focus must remain clearly visible.
-- Mobile layout should preserve hierarchy rather than merely stack every desktop block at full size.
-- The bottom-right contextual helper, where present in the platform build, must react to the hovered/focused object rather than displaying static generic copy.
-- App/store routing and acquisition attribution remain separate from the visual layer.
+Do not treat `C:\AMD\EASY BRANDING.png` as website wordmark authority; it remains app/icon source authority only.
 
-## Responsive expectations
+The Figma file also uses real TOADAL FEAST environment/mode art as **visual reference material**. Those environment/mode images are not automatically promoted into the final website bundle merely because they appear in Figma. Website ingestion needs explicit provenance, optimization, and WO-001 product relevance.
 
-Desktop target: 1440px reference canvas.
+## Interaction quality
 
-At tablet/mobile:
-- collapse global nav cleanly
-- preserve hero art but keep copy readable
-- one/two-column mode cards depending on width
-- avoid text over detailed art without a contrast surface
-- keep CTA tap targets >= 44px
-- maintain meaningful art crops
+Required feel:
+- obvious primary/secondary CTA hierarchy without shouting
+- consistent hover/focus language
+- visible keyboard focus
+- cards that feel interactive without becoming dashboard widgets
+- meaningful environmental art crops
+- contextual Toadal that never blocks controls/content
+- bottom-right/context helper behavior, when present, responds to the hovered/focused object rather than static generic copy
+- acquisition routing remains separate from presentation logic
+
+## Responsive quality
+
+Required evidence already defined by WO-001:
+- 390x844
+- 430x932
+- 768x1024
+- 1366x768
+- 1600x900
+- 1920x1080
+
+At smaller widths:
+- collapse navigation intentionally
+- preserve hero identity and readable contrast
+- avoid text directly over detailed art without a contrast surface
+- keep touch targets at least 44px
 - avoid horizontal overflow
-- do not shrink body copy below reasonable reading size
-- preserve clear spacing between site content and embedded/fullscreen game surfaces
+- retain meaningful hierarchy rather than stacking desktop sections mechanically
+- keep game/player surfaces and safe areas distinct from ordinary site chrome
 
-## Implementation boundary
+## Figma status
 
-WO-001 should build the global shell and Home against this visual contract after the certified Studio 1.4.2 baseline.
+The current desktop Home target has been assembled with:
+- cream/chocolate/pink/gold visual language
+- canonical Toadal portrait
+- real TOADAL FEAST world art
+- real game art as composition placeholders
+- world/story feature treatment
+- Feast Pass treatment
+- app conversion block
+- compact footer
 
-Do not:
-- deploy production from the design branch
-- merge this branch as a substitute for implementation
-- modify Android release source
-- treat placeholder destination URLs as final store URLs
+It is an implementation/reference canvas, not a replacement for the owner's original approved mockup.
 
-The goal is convergence on the approved mockup direction, not a new design exploration cycle.
+## Branch/deployment boundary
+
+This design branch:
+- does not change production site source
+- does not touch tracked `dist/`
+- does not deploy GitHub Pages or Netlify
+- does not modify Android release source
+- must not be merged as a substitute for WO-001 implementation
+
+Goal: make WO-001 converge on the approved visual identity while preserving current product truth and implementation authority.
