@@ -1,0 +1,22 @@
+[data-feast-genie-card]{position:fixed;z-index:10000;left:50%;bottom:calc(18px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);display:flex;align-items:center;gap:8px;width:min(370px,calc(100vw - 28px));box-sizing:border-box;padding:10px 14px 10px 6px;border:1px solid rgba(255,224,137,.62);border-radius:18px;background:rgba(18,35,34,.58);color:#fff8df;box-shadow:0 8px 28px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.13);backdrop-filter:blur(8px) saturate(1.1);-webkit-backdrop-filter:blur(8px) saturate(1.1);font-family:inherit;pointer-events:auto;max-height:min(38vh,230px);overflow:auto;overscroll-behavior:contain}
+[data-feast-genie-card][hidden]{display:none!important}
+.feast-genie-portrait{width:80px;height:80px;flex:0 0 80px;background-repeat:no-repeat;background-size:400% 400%;background-position:0 0;filter:drop-shadow(0 3px 3px #765b3022)}
+.feast-genie-copy{min-width:0;flex:1}.feast-genie-speaker{display:block;color:#ffe29a;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.feast-genie-message{margin:5px 0 4px;color:#fff8df;font-size:16px;font-weight:700;line-height:1.3}.feast-genie-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.feast-genie-actions button{min-height:34px;padding:4px 2px;border:0;background:transparent;color:#d9e8df;font:inherit;font-size:12px;font-weight:700;cursor:pointer}.feast-genie-actions .feast-genie-primary{padding:6px 10px;border:1px solid rgba(255,226,154,.7);border-radius:10px;background:rgba(255,226,154,.13);color:#fff0b3}.feast-genie-actions button:hover,.feast-genie-actions button:focus-visible{color:#ffe49b;text-decoration:underline}.feast-genie-actions button:focus-visible{outline:3px solid #ffe49b;outline-offset:2px}
+.feast-genie-cue-target{z-index:9997!important;outline:3px solid rgba(255,225,122,.9)!important;outline-offset:4px!important;box-shadow:0 0 0 7px rgba(255,217,88,.16),0 0 22px rgba(255,220,100,.7)!important;animation:feastGenieCuePulse 1s ease-in-out infinite alternate}
+
+/* Toadal's default minimal joystick may intentionally hide its ring. A Genie
+   cue is an explicit temporary affordance, so reveal only that visual ring
+   while the cue is active; the full-screen joystick hit surface remains hidden. */
+#mobileControls .mob-joystick-ring.feast-genie-cue-target{opacity:.82!important}
+@keyframes feastGenieCuePulse{from{filter:brightness(1)}to{filter:brightness(1.16)}}
+.feast-genie-spotlight__ring{border:2px solid rgba(255,238,175,.96);border-radius:14px;box-shadow:0 0 0 3px rgba(255,213,88,.18),0 0 22px rgba(255,226,132,.72)}
+.mode-help-genie-action{display:block;width:100%;margin-top:10px;padding:10px 14px;border:1px solid #d9b85d;border-radius:12px;background:#fff6d9;color:#514126;font:inherit;font-weight:700;cursor:pointer}.mode-help-genie-action:hover,.mode-help-genie-action:focus-visible{background:#ffedb1}.mode-help-genie-action:focus-visible{outline:3px solid #245c4f;outline-offset:2px}
+@media(max-width:600px),(max-height:480px){[data-feast-genie-card]{width:min(320px,calc(100vw - 20px));padding:7px 9px 7px 3px;border-radius:15px;max-height:min(34vh,190px)}.feast-genie-portrait{width:56px;height:56px;flex-basis:56px}.feast-genie-message{font-size:14px}.feast-genie-actions{gap:7px}.feast-genie-actions button{font-size:11px;min-height:34px}}
+@media(prefers-reduced-motion:reduce){.feast-genie-cue-target{animation:none!important}.feast-genie-spotlight__ring{transition:none!important}}
+
+/* Owner visual QA closure: in short landscape phone layouts the game canvas keeps
+   its canonical portrait aspect ratio. Narrow the guidance card enough to use a
+   real side gutter when one exists instead of covering the center of the playfield. */
+@media (orientation:landscape) and (max-height:500px){
+  [data-feast-genie-card]{width:min(276px,calc(100vw - 20px));max-height:min(70vh,220px)}
+}

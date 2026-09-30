@@ -1,1 +1,5 @@
 studio-project/toadal-feast-website/reference/assets/brand/*.svg text eol=lf
+
+# Preserve exact donor bytes/hashes for the unpublished WO-003 audit copy.
+studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/** -text
+docs/review/WO-003/arcade-package/*.json -text

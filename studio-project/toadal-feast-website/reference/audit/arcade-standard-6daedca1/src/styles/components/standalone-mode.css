@@ -1,0 +1,1977 @@
+:root {
+  color-scheme: dark;
+  --standalone-bg: #06140d;
+  --standalone-panel: rgba(12, 42, 25, 0.92);
+  --standalone-border: rgba(205, 252, 183, 0.24);
+  --standalone-text: #f1ffe9;
+  --standalone-muted: #b7d8bc;
+  --standalone-accent: #c9ef69;
+}
+
+* { box-sizing: border-box; }
+html, body { width: 100%; min-height: 100%; margin: 0; }
+body.standalone-mode {
+  min-height: 100vh;
+  min-height: 100dvh;
+  color: var(--standalone-text);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(103, 174, 93, 0.20), transparent 42%),
+    var(--standalone-bg);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas:
+    "topbar"
+    "stage";
+  overflow: hidden;
+}
+
+.standalone-topbar {
+  grid-area: topbar;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ff-space-3);
+  min-width: 0;
+  padding: 10px clamp(12px, 3vw, 28px);
+  border-bottom: 1px solid var(--standalone-border);
+  background: rgba(5, 23, 13, 0.94);
+}
+.standalone-brand { display: grid; min-width: 0; gap: 1px; }
+.standalone-brand strong { letter-spacing: 0.08em; font-size: 0.88rem; }
+.standalone-brand span { overflow: hidden; color: var(--standalone-muted); font-size: 0.76rem; text-overflow: ellipsis; white-space: nowrap; }
+.standalone-actions { display: flex; flex: 0 0 auto; gap: var(--ff-space-2); align-items: center; }
+.standalone-actions label { color: var(--standalone-muted); font-size: 0.78rem; }
+.standalone-actions select,
+.standalone-actions button {
+  min-height: 34px;
+  max-width: min(48vw, 260px);
+  color: var(--standalone-text);
+  border: 1px solid var(--standalone-border);
+  background: rgba(29, 75, 41, 0.92);
+  border-radius: 8px;
+  font: inherit;
+  padding: 6px 10px;
+}
+.standalone-actions button { cursor: pointer; font-weight: 800; }
+.standalone-actions button:hover { border-color: var(--standalone-accent); }
+
+/* Owned SVG UI icon adapter: standalone shells do not load root style.css. */
+.ff-ui-icon {
+  display: inline-flex;
+  width: 1.06em;
+  height: 1.06em;
+  flex: 0 0 auto;
+  vertical-align: -0.15em;
+  align-items: center;
+  justify-content: center;
+}
+.ff-ui-icon > img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.ff-ui-icon--missing { visibility:hidden; opacity:0; }
+.btn-icon .ff-ui-icon { vertical-align: -0.12em; }
+
+.standalone-stage {
+  grid-area: stage;
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  padding: clamp(8px, 1.5vh, 16px) clamp(8px, 1.8vw, 20px);
+  overflow: hidden;
+}
+
+/*
+ * The exact frame dimensions are calculated by StandaloneViewport from this
+ * stage's usable content box. These initial values avoid a zero-sized first
+ * paint and the max constraints prevent CSS from ever expanding beyond stage.
+ */
+#canvasWrapper.standalone-canvas-wrapper {
+  position: relative;
+  width: 480px;
+  height: 800px;
+  max-width: 100%;
+  max-height: 100%;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--standalone-border);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #06110a;
+  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.42);
+}
+#gameCanvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  touch-action: none;
+}
+
+/* Non-modal first-board teaching for Feastfall. This is deliberately
+ * presentation-only so the live canvas keeps every pointer interaction. */
+/* Non-modal first-route Puzzle coaching. The card is deliberately a visual
+ * status only: it cannot take focus or swallow a movement/touch action. */
+.puzzle-first-route-coach {
+  position: absolute;
+  top: auto;
+  bottom: clamp(16px, 6%, 92px);
+  left: 50%;
+  z-index: 6;
+  width: min(390px, calc(100% - 24px));
+  display: grid;
+  gap: var(--ff-space-1);
+  padding: 10px 12px;
+  color: #efffe7;
+  background: rgba(7, 31, 16, 0.94);
+  border: 1px solid rgba(255, 207, 79, 0.58);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.36);
+  font-family: system-ui, sans-serif;
+  line-height: 1.35;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.puzzle-first-route-coach.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.puzzle-first-route-coach__title { color: #ffe48a; font-size: 0.88rem; font-weight: 900; letter-spacing: 0.04em; text-transform: uppercase; }
+.puzzle-first-route-coach__line { font-size: clamp(0.76rem, 1.8vw, 0.9rem); }
+.puzzle-first-route-coach__progress { color: #ffeca8; font-size: 0.74rem; font-weight: 800; }
+.puzzle-first-route-coach__dismiss { color: #b8d9ca; font-size: 0.72rem; }
+@media (max-width: 560px) {
+  .puzzle-first-route-coach { width: min(350px, calc(100% - 20px)); padding: 9px 11px; }
+  .puzzle-first-route-coach__dismiss { font-size: 0.68rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .puzzle-first-route-coach { transition: none; }
+}
+
+/* Non-modal first-colony teaching for Infinite Feasts. The canvas remains the
+ * only pointer target, so selecting and placing the starter frog stays live. */
+.infinite-first-run-coach {
+  position: absolute;
+  top: clamp(54px, 12%, 112px);
+  left: 50%;
+  z-index: 6;
+  width: min(400px, calc(100% - 24px));
+  display: grid;
+  gap: var(--ff-space-1);
+  padding: 10px 12px;
+  color: #efffe7;
+  background: rgba(7, 31, 16, 0.94);
+  border: 1px solid rgba(126, 221, 164, 0.62);
+  border-radius: 14px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.36);
+  font-family: system-ui, sans-serif;
+  line-height: 1.35;
+  text-align: center;
+  pointer-events: none;
+  opacity: 0;
+  transform: translate(-50%, -8px);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+.infinite-first-run-coach.is-visible { opacity: 1; transform: translate(-50%, 0); }
+.infinite-first-run-coach__title {
+  color: #9ff0bd;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.infinite-first-run-coach__line { font-size: clamp(0.72rem, 1.8vw, 0.86rem); }
+.infinite-first-run-coach__line--tip { color: #ffe66d; }
+.infinite-first-run-coach__dismiss { color: #b8d9ca; font-size: 0.68rem; }
+body.standalone-menu-open .infinite-first-run-coach { opacity: 0; }
+
+.puzzle-standalone-controls {
+  grid-area: controls;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: repeat(3, 42px);
+  grid-template-areas:
+    ". up ."
+    "left undo right"
+    ". down ."
+    "vomit vomit vomit";
+  gap: 6px;
+  align-self: end;
+  justify-self: start;
+  margin: 0 12px 12px 0;
+  padding: 8px;
+  border: 1px solid var(--standalone-border);
+  border-radius: 14px;
+  background: var(--standalone-panel);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.36);
+}
+body.puzzle-standalone {
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto minmax(0, 1fr);
+  grid-template-areas:
+    "topbar topbar"
+    "stage controls";
+}
+body.puzzle-standalone .standalone-topbar { grid-area: topbar; }
+body.puzzle-standalone .standalone-stage {
+  grid-area: stage;
+  padding-right: clamp(8px, 1.8vw, 20px);
+}
+.puzzle-control-up { grid-area: up; }
+.puzzle-control-left { grid-area: left; }
+.puzzle-control-undo { grid-area: undo; }
+.puzzle-control-right { grid-area: right; }
+.puzzle-control-down { grid-area: down; }
+.puzzle-control-vomit { grid-area: vomit; }
+.puzzle-standalone-controls button {
+  min-width: 42px;
+  min-height: 38px;
+  color: var(--standalone-text);
+  border: 1px solid rgba(222, 252, 203, 0.2);
+  border-radius: 8px;
+  background: rgba(53, 105, 56, 0.86);
+  cursor: pointer;
+  font: 800 1rem/1 system-ui, sans-serif;
+}
+.puzzle-standalone-controls button:hover { border-color: var(--standalone-accent); }
+.puzzle-standalone-controls .wide { font-size: 0.75rem; }
+
+.standalone-status {
+  position: fixed;
+  left: 12px;
+  bottom: 12px;
+  z-index: 3;
+  max-width: min(360px, calc(100vw - 172px));
+  padding: 9px 12px;
+  border: 1px solid var(--standalone-border);
+  border-radius: 10px;
+  color: var(--standalone-muted);
+  background: var(--standalone-panel);
+  font-size: 0.76rem;
+  line-height: 1.35;
+}
+
+@media (max-width: 560px) {
+  .standalone-topbar { gap: var(--ff-space-2); padding: 8px 10px; }
+  .standalone-brand span { display: none; }
+  .standalone-actions label { display: none; }
+  .standalone-actions select { max-width: 112px; }
+  .standalone-stage { padding: 5px; }
+  #canvasWrapper.standalone-canvas-wrapper { border-radius: 10px; }
+  .standalone-status { display: none; }
+}
+
+/* Puzzle standalone shell ------------------------------------------------------
+ * The D-pad is a real grid area, not a fixed overlay. This gives it an
+ * explicit footprint beside the board on wide screens and below it on compact
+ * or short windows, so it can never be clipped or cover game cells. */
+.puzzle-standalone-controls button:disabled {
+  cursor: not-allowed;
+  opacity: 0.52;
+  filter: saturate(0.6);
+}
+.puzzle-standalone-controls button.is-vomit-direction {
+  border-color: rgba(255, 223, 116, 0.88);
+  background: rgba(144, 95, 24, 0.96);
+  box-shadow: 0 0 0 2px rgba(255, 218, 104, 0.16);
+}
+.puzzle-standalone-controls .wide.is-armed,
+.puzzle-standalone-controls .wide.is-critical {
+  animation: standalone-spitup-ready 1.05s ease-in-out infinite;
+}
+@keyframes standalone-spitup-ready {
+  0%, 100% { box-shadow: 0 0 0 rgba(255, 219, 110, 0); }
+  50% { box-shadow: 0 0 0 4px rgba(255, 219, 110, 0.18), 0 0 18px rgba(255, 206, 84, 0.32); }
+}
+
+@media (max-width: 800px), (max-height: 720px) {
+  body.puzzle-standalone {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr) auto;
+    grid-template-areas:
+      "topbar"
+      "stage"
+      "controls";
+  }
+  body.puzzle-standalone .standalone-stage {
+    padding: 5px;
+  }
+  body.puzzle-standalone .puzzle-standalone-controls {
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto max(6px, env(safe-area-inset-bottom, 0px));
+  }
+  body.puzzle-standalone .standalone-status { display: none; }
+}
+
+/* A browser can expose a very short CSS viewport at high page zoom. Do not
+ * hide controls or crop the board in that case: allow a compact, scrollable
+ * single-column shell rather than forcing every element into the viewport. */
+@media (max-height: 420px) {
+  body.puzzle-standalone {
+    height: auto;
+    min-height: 560px;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+  body.puzzle-standalone .standalone-stage { min-height: 300px; }
+}
+
+/* A min-height-only grid can grow taller than the browser viewport when the
+ * fixed-ratio canvas is first measured. Give the standalone shell an explicit
+ * viewport height so the stage is a true clipping/fitting boundary. */
+html { height: 100%; }
+body.standalone-mode {
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+}
+
+/* The stage is a real, bounded grid cell.  Without an explicit block size,
+ * a 480×800 canvas can contribute its intrinsic height during a short-window
+ * relayout and push the stage outside the viewport before the viewport fitter
+ * gets a chance to reduce it. */
+body.standalone-mode > .standalone-stage {
+  block-size: 100%;
+  max-block-size: 100%;
+  min-block-size: 0;
+  min-inline-size: 0;
+  align-self: stretch;
+  justify-self: stretch;
+}
+body.standalone-mode > .standalone-stage > #canvasWrapper.standalone-canvas-wrapper {
+  min-block-size: 0;
+  min-inline-size: 0;
+}
+
+/* Shared standalone menus ----------------------------------------------------
+ * Each split game keeps its own playable runtime but uses this shell-level
+ * menu contract. The menu is a fixed overlay, never a layout row, so opening
+ * it cannot resize, crop, or cover the canvas in the stage below. */
+.standalone-menu[hidden] { display: none !important; }
+.standalone-menu {
+  position: fixed;
+  z-index: 24;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: max(14px, env(safe-area-inset-top, 0px)) max(14px, env(safe-area-inset-right, 0px)) max(14px, env(safe-area-inset-bottom, 0px)) max(14px, env(safe-area-inset-left, 0px));
+  overflow: auto;
+  background:
+    radial-gradient(circle at 50% 10%, rgba(128, 227, 115, 0.26), transparent 38%),
+    rgba(1, 12, 7, 0.84);
+  backdrop-filter: blur(8px);
+}
+.standalone-menu-card {
+  width: min(560px, 94vw);
+  max-height: min(840px, calc(100dvh - 28px));
+  overflow: auto;
+  padding: clamp(20px, 4vw, 32px);
+  border: 1px solid rgba(206, 252, 185, 0.34);
+  border-radius: 22px;
+  color: var(--standalone-text);
+  background:
+    linear-gradient(145deg, rgba(22, 65, 37, 0.98), rgba(5, 30, 17, 0.98));
+  box-shadow: 0 26px 80px rgba(0, 0, 0, 0.54), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.connect3-standalone .standalone-menu-card {
+  border-color: rgba(0, 212, 255, 0.34);
+  background:
+    radial-gradient(circle at 15% 10%, rgba(255, 140, 66, 0.16), transparent 38%),
+    radial-gradient(circle at 85% 0%, rgba(0, 212, 255, 0.16), transparent 35%),
+    linear-gradient(145deg, rgba(17, 52, 48, 0.98), rgba(4, 26, 22, 0.98));
+}
+.standalone-menu-kicker {
+  margin-bottom: 6px;
+  color: var(--standalone-accent);
+  font-size: 0.70rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.connect3-standalone .standalone-menu-kicker { color: #74e8ff; }
+.standalone-menu-title {
+  margin: 0;
+  font-size: clamp(1.8rem, 6vw, 2.8rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.connect3-standalone .standalone-menu-title {
+  background: linear-gradient(90deg, #ff8c42 0%, #ffd700 50%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.standalone-menu-copy {
+  margin: 12px 0 0;
+  color: var(--standalone-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.standalone-menu-metrics {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+  margin: 20px 0;
+}
+.standalone-menu-metric {
+  min-width: 0;
+  padding: 12px 14px;
+  border: 1px solid rgba(206, 252, 185, 0.20);
+  border-radius: 14px;
+  background: rgba(2, 20, 10, 0.34);
+}
+.standalone-menu-metric span {
+  display: block;
+  overflow: hidden;
+  color: var(--standalone-muted);
+  font-size: 0.69rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.standalone-menu-metric strong {
+  display: block;
+  margin-top: 3px;
+  overflow: hidden;
+  color: var(--standalone-text);
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.standalone-menu-primary,
+.standalone-menu-button,
+.standalone-menu-mode {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(222, 252, 203, 0.32);
+  border-radius: 13px;
+  color: var(--standalone-text);
+  background: rgba(38, 96, 53, 0.92);
+  cursor: pointer;
+  font: 800 0.90rem/1.15 system-ui, sans-serif;
+  transition: transform 160ms ease, border-color 160ms ease, filter 160ms ease, background 160ms ease;
+}
+.standalone-menu-primary {
+  color: #092212;
+  border-color: rgba(239, 255, 218, 0.66);
+  background: linear-gradient(135deg, #d6f77b, #81dc55);
+  box-shadow: 0 9px 23px rgba(126, 224, 85, 0.25);
+}
+.connect3-standalone .standalone-menu-primary {
+  color: #08221c;
+  background: linear-gradient(135deg, #ff8c42 0%, #ffd700 52%, #00d4ff 100%);
+  box-shadow: 0 9px 23px rgba(0, 212, 255, 0.19);
+}
+.standalone-menu-primary:hover,
+.standalone-menu-button:hover,
+.standalone-menu-mode:hover { transform: translateY(-2px); border-color: var(--standalone-accent); filter: brightness(1.08); }
+.standalone-menu-primary:focus-visible,
+.standalone-menu-button:focus-visible,
+.standalone-menu-mode:focus-visible,
+.standalone-menu-select:focus-visible,
+.standalone-menu-toggle:focus-visible { outline: 3px solid rgba(201, 239, 105, 0.56); outline-offset: 3px; }
+.standalone-menu-primary:disabled,
+.standalone-menu-button:disabled,
+.standalone-menu-mode:disabled { cursor: not-allowed; opacity: 0.52; filter: grayscale(0.66); transform: none; }
+.standalone-menu-mode-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.standalone-menu-mode { min-height: 92px; padding: 12px 9px; text-align: left; background: rgba(9, 44, 24, 0.86); }
+.standalone-menu-mode strong,
+.standalone-menu-mode small { display: block; }
+.standalone-menu-mode strong { font-size: 0.84rem; }
+.standalone-menu-mode small { margin-top: 6px; color: var(--standalone-muted); font-size: 0.67rem; font-weight: 650; line-height: 1.25; }
+.standalone-menu-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-top: 12px; }
+.standalone-menu-select-wrap { display: grid; gap: 7px; margin-top: 16px; }
+.standalone-menu-select-wrap label { color: var(--standalone-muted); font-size: 0.73rem; font-weight: 800; letter-spacing: 0.05em; text-transform: uppercase; }
+.standalone-menu-select {
+  min-height: var(--ff-touch-minimum);
+  width: 100%;
+  color: var(--standalone-text);
+  border: 1px solid rgba(222, 252, 203, 0.30);
+  border-radius: 11px;
+  background: rgba(4, 27, 15, 0.82);
+  padding: 8px 10px;
+  font: 700 0.88rem/1.2 system-ui, sans-serif;
+}
+.standalone-menu-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 13px;
+  padding: 12px 14px;
+  border: 1px solid rgba(222, 252, 203, 0.20);
+  border-radius: var(--ff-radius-md);
+  color: var(--standalone-text);
+  background: rgba(2, 20, 10, 0.30);
+  cursor: pointer;
+  font-size: 0.84rem;
+  font-weight: 750;
+}
+.standalone-menu-toggle input { width: 18px; height: 18px; accent-color: var(--standalone-accent); }
+.standalone-menu-help {
+  margin-top: 14px;
+  padding: 14px;
+  border: 1px solid rgba(222, 252, 203, 0.16);
+  border-radius: 13px;
+  color: var(--standalone-muted);
+  background: rgba(2, 20, 10, 0.34);
+  font-size: 0.82rem;
+  line-height: 1.52;
+}
+.standalone-menu-help strong { color: var(--standalone-text); }
+.standalone-menu-message {
+  min-height: 1.2em;
+  margin: 14px 0 0;
+  color: #ffdf8a;
+  font-size: 0.80rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+body.standalone-menu-open .standalone-stage { pointer-events: none; filter: saturate(0.74) brightness(0.56); }
+body.standalone-menu-open .puzzle-standalone-controls,
+body.standalone-menu-open .standalone-status { visibility: hidden; pointer-events: none; }
+
+@media (max-width: 560px) {
+  .standalone-menu { place-items: start center; padding: 12px; }
+  .standalone-menu-card { width: min(100%, 520px); max-height: none; min-height: calc(100dvh - 24px); border-radius: var(--ff-radius-lg); }
+  .standalone-menu-mode-grid { grid-template-columns: 1fr; }
+  .standalone-menu-mode { min-height: 62px; }
+  .standalone-menu-mode small { margin-top: 3px; }
+}
+
+/* Familiar standalone home menus ------------------------------------------------
+ * The split games use the same menu language as Froggy Feast's main hub.
+ * Mode-only content is removed, while each standalone retains its own relevant
+ * navigation panels. */
+.standalone-menu.familiar-menu {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: block;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  color: #e8f5e8;
+  background: radial-gradient(ellipse at 50% 30%, #0d2e0d 0%, #060f06 100%);
+}
+.standalone-menu.familiar-menu::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle, rgba(126,221,84,0.07) 1px, transparent 1px),
+    radial-gradient(circle, rgba(126,221,84,0.04) 1px, transparent 1px);
+  background-size: 40px 40px, 20px 20px;
+  background-position: 0 0, 10px 10px;
+  animation: standalone-menu-bg-scroll 20s linear infinite;
+}
+@keyframes standalone-menu-bg-scroll { to { background-position: 0 40px, 10px 50px; } }
+.standalone-menu.familiar-menu [data-standalone-view] { position: relative; z-index: 1; }
+.standalone-menu.familiar-menu [data-standalone-view][hidden] { display: none !important; }
+
+.familiar-menu-home {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px));
+}
+.familiar-menu .menu-hero {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 24px 30px;
+  background: linear-gradient(180deg, rgba(126,221,84,0.06) 0%, transparent 100%);
+  border-bottom: 1px solid rgba(126,221,84,0.12);
+}
+.familiar-menu .menu-logo {
+  font-size: 74px;
+  line-height: 1;
+  animation: standalone-frog-bounce 1.1s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 24px rgba(126,221,84,0.60));
+}
+@keyframes standalone-frog-bounce { from { transform: translateY(0) rotate(-6deg) scale(1); } to { transform: translateY(-15px) rotate(6deg) scale(1.05); } }
+.familiar-menu .menu-title {
+  margin-top: 8px;
+  color: #7edd54;
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  text-shadow: 0 0 40px rgba(126,221,84,0.48), 0 4px 0 #1a5010;
+}
+.connect3-standalone .familiar-menu .menu-title {
+  background: linear-gradient(90deg, #ff8c42 0%, #ffd700 50%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 4px 0 rgba(4, 48, 41, 0.78);
+}
+.familiar-menu .menu-tagline {
+  margin-top: 12px;
+  color: #90b890;
+  font-size: 0.80rem;
+  letter-spacing: 0.11em;
+  text-align: center;
+  text-transform: uppercase;
+}
+.familiar-menu .menu-pills {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+.familiar-menu .menu-best-pill,
+.familiar-menu .menu-coin-pill {
+  min-width: 112px;
+  padding: 8px 15px;
+  border: 1px solid rgba(255,215,0,0.38);
+  border-radius: var(--ff-radius-pill);
+  color: #ffd700;
+  background: rgba(255,215,0,0.08);
+  font-size: 0.88rem;
+  font-weight: 850;
+  text-align: center;
+}
+.connect3-standalone .familiar-menu .menu-best-pill,
+.connect3-standalone .familiar-menu .menu-coin-pill {
+  border-color: rgba(0,212,255,0.34);
+  color: #91efff;
+  background: rgba(0,212,255,0.09);
+}
+.familiar-menu .menu-play-section {
+  width: min(540px, calc(100% - 32px));
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 30px 0 12px;
+}
+.familiar-menu .menu-btn-play,
+.familiar-menu .menu-btn-mode,
+.familiar-menu .menu-btn-nav {
+  border: 1.5px solid rgba(255,255,255,0.14);
+  color: #e8f5e8;
+  cursor: pointer;
+  font: 800 0.95rem/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease, filter 150ms ease;
+}
+.familiar-menu .menu-btn-play:hover,
+.familiar-menu .menu-btn-mode:hover,
+.familiar-menu .menu-btn-nav:hover { transform: translateY(-2px); filter: brightness(1.09); }
+.familiar-menu .menu-btn-play:focus-visible,
+.familiar-menu .menu-btn-mode:focus-visible,
+.familiar-menu .menu-btn-nav:focus-visible,
+.familiar-menu .familiar-back:focus-visible,
+.familiar-menu .familiar-card:focus-visible { outline: 3px solid rgba(201,239,105,0.62); outline-offset: 3px; }
+.familiar-menu .menu-btn-play {
+  min-height: 88px;
+  border: 0;
+  border-radius: 24px;
+  color: #06160b;
+  background: #7edd54;
+  box-shadow: 0 9px 0 #3f9b2b, 0 14px 26px rgba(74,190,49,0.26);
+  font-size: clamp(1.1rem, 4vw, 1.55rem);
+}
+.connect3-standalone .familiar-menu .menu-btn-play {
+  color: #08221c;
+  background: linear-gradient(135deg, #ff8c42 0%, #ffd700 52%, #00d4ff 100%);
+  box-shadow: 0 9px 0 #2b7f8b, 0 14px 26px rgba(0,212,255,0.20);
+}
+.familiar-menu .menu-modes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.familiar-menu .menu-btn-mode { min-height: 88px; padding: 14px 10px; border-radius: 17px; background: rgba(18,51,23,0.86); }
+.familiar-menu .menu-btn-mode .btn-icon,
+.familiar-menu .menu-btn-nav .btn-icon { display: block; font-size: 1.65rem; margin-bottom: 6px; }
+.familiar-menu .menu-btn-tc { border-color: rgba(255,122,158,0.42); color: #ff8eaf; }
+.familiar-menu .menu-btn-fmf { border-color: rgba(172,100,255,0.46); color: #ba84ff; }
+.familiar-menu .menu-btn-zen { border-color: rgba(204,136,255,0.44); color: #d29dff; background: linear-gradient(135deg,#2a1a40 0%,#1a0f2e 100%); }
+.familiar-menu .menu-btn-puzzle { border-color: rgba(255,202,72,0.45); color: #ffe08d; background: linear-gradient(135deg,#234b2d 0%,#13351f 100%); }
+.familiar-menu .menu-btn-connect3 { border-color: rgba(0,212,255,0.48); color: #8deeff; background: linear-gradient(135deg,#13455a 0%,#25235b 100%); }
+
+/* Arcade standalone mirrors the full-game choice language: every run says
+   what it asks of the player before the button starts it. */
+.familiar-menu .menu-mode-section { display: grid; gap: 9px; }
+.familiar-menu .menu-section-heading { display: grid; gap: 3px; padding: 0 2px; }
+.familiar-menu .menu-section-kicker { color: #ffd700; font-size: 0.66rem; font-weight: 900; letter-spacing: 0.12em; text-transform: uppercase; }
+.familiar-menu .menu-section-title { color: #efffe8; font-size: 1.08rem; font-weight: 900; letter-spacing: -0.02em; }
+.familiar-menu .menu-section-copy { color: #a9cfa6; font-size: 0.8rem; line-height: 1.35; }
+.familiar-menu .menu-btn-play--featured {
+  min-height: 126px; display: grid; grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center; justify-content: stretch; gap: 13px; padding: 16px 18px; text-align: left;
+}
+.familiar-menu .menu-mode-icon { font-size: 2.15rem; line-height: 1; }
+.familiar-menu .menu-mode-content { min-width: 0; display: grid; gap: 3px; }
+.familiar-menu .menu-mode-eyebrow { color: #25570e; font-size: 0.64rem; font-weight: 900; letter-spacing: 0.1em; text-transform: uppercase; }
+.familiar-menu .menu-mode-title { color: currentColor; font-size: 0.98rem; font-weight: 900; line-height: 1.08; }
+.familiar-menu .menu-btn-play--featured .menu-mode-title { color: #133a0e; font-size: 1.25rem; }
+.familiar-menu .menu-mode-description { color: currentColor; font-size: 0.76rem; font-weight: 650; line-height: 1.3; opacity: 0.85; }
+.familiar-menu .menu-mode-control { color: currentColor; font-size: 0.68rem; font-weight: 850; line-height: 1.2; opacity: 0.7; }
+.familiar-menu .menu-mode-action { background: rgba(5,26,11,0.16); border: 1px solid rgba(5,26,11,0.18); border-radius: var(--ff-radius-pill); color: #12320c; font-size: 0.69rem; font-weight: 900; padding: 7px 9px; white-space: nowrap; }
+.familiar-menu .menu-modes--detailed { grid-template-columns: 1fr; gap: 9px; }
+.familiar-menu .menu-btn-mode--detailed { min-height: 120px; align-items: flex-start; justify-content: flex-start; gap: 5px; padding: 14px 15px; text-align: left; }
+.familiar-menu .menu-btn-mode--detailed .btn-icon { font-size: 1.35rem; margin-bottom: 0; }
+.familiar-menu .menu-btn-mode--detailed .menu-mode-control { margin-top: auto; }
+.familiar-menu .menu-btn-mode--detailed .menu-mode-action--detailed { align-self: flex-start; background: rgba(255,255,255,0.10); border-color: rgba(255,255,255,0.20); color: currentColor; font-size: 0.65rem; padding: 5px 8px; }
+@media (max-width: 410px) {
+  .familiar-menu .menu-btn-play--featured { grid-template-columns: auto minmax(0, 1fr); }
+  .familiar-menu .menu-mode-action { grid-column: 2; justify-self: start; }
+}
+.familiar-menu .menu-nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 3px; }
+.familiar-menu .menu-btn-nav { min-height: 76px; padding: 10px 6px; border-radius: 14px; color: #90b890; background: rgba(255,255,255,0.045); font-size: 0.76rem; }
+.familiar-menu .menu-btn-nav .btn-icon { font-size: 1.35rem; margin-bottom: 5px; }
+.familiar-menu .menu-btn-nav.accent { border-color: rgba(255,215,0,0.42); color: #ffd700; }
+.familiar-menu .familiar-menu-note { min-height: 1.2em; margin: 6px 2px 0; color: #ffdf8a; font-size: 0.80rem; font-weight: 750; text-align: center; }
+
+.familiar-menu-panel {
+  width: min(760px, 100%);
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding: 28px 18px calc(30px + env(safe-area-inset-bottom, 0px));
+}
+.familiar-menu-panel-header { display: flex; align-items: center; gap: var(--ff-space-3); margin: 0 auto 22px; max-width: 680px; }
+.familiar-menu-panel-title { flex: 1; color: #7edd54; font-size: clamp(1.65rem, 5vw, 2.35rem); font-weight: 900; letter-spacing: -0.035em; }
+.connect3-standalone .familiar-menu-panel-title { color: #8deeff; }
+.familiar-menu .familiar-back { min-height: var(--ff-touch-minimum); border: 1.5px solid rgba(255,255,255,0.14); border-radius: 10px; padding: 9px 14px; color: #b7d8bc; background: rgba(255,255,255,0.06); cursor: pointer; font: 800 0.80rem/1 system-ui, sans-serif; }
+.familiar-menu-panel-body { width: min(680px, 100%); margin: 0 auto; }
+.familiar-menu .familiar-section { margin-bottom: 14px; padding: 15px; border: 1px solid rgba(255,255,255,0.12); border-radius: 14px; background: rgba(255,255,255,0.045); }
+.familiar-menu .familiar-section-title { margin: 0 0 10px; color: #90b890; font-size: 0.72rem; font-weight: 850; letter-spacing: 0.1em; text-transform: uppercase; }
+.familiar-menu .familiar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 10px; }
+.familiar-menu .familiar-card { min-height: 112px; border: 1px solid rgba(255,255,255,0.13); border-radius: 13px; padding: 12px; color: #e8f5e8; background: rgba(3,20,9,0.34); cursor: pointer; text-align: center; font: inherit; }
+.familiar-menu .familiar-card:hover { border-color: rgba(126,221,84,0.60); background: rgba(126,221,84,0.10); }
+.familiar-menu .familiar-card.selected { border-color: #7edd54; background: rgba(126,221,84,0.18); box-shadow: 0 0 16px rgba(126,221,84,0.22); }
+.familiar-menu .familiar-card.locked { opacity: 0.56; cursor: default; }
+.familiar-menu .familiar-card .familiar-icon { display: flex; align-items: center; justify-content: center; min-height: 64px; line-height: 1.05; }
+.familiar-menu .familiar-icon-img { width: 68px; height: 68px; object-fit: contain; display: block; filter: drop-shadow(0 6px 8px rgba(0,0,0,0.38)); }
+.familiar-menu .familiar-row-character-icon { display:flex; align-items:center; justify-content:center; }
+.familiar-menu .familiar-row-icon-img { width: 34px; height: 34px; object-fit: contain; display:block; filter: drop-shadow(0 4px 5px rgba(0,0,0,0.32)); }
+.familiar-menu .familiar-card strong { display: block; margin-top: 8px; font-size: 0.82rem; }
+.familiar-menu .familiar-card small { display: block; margin-top: 4px; color: #90b890; font-size: 0.67rem; line-height: 1.25; }
+.familiar-menu .familiar-list { display: grid; gap: 9px; }
+.familiar-menu .familiar-row { display: flex; align-items: center; gap: var(--ff-space-3); padding: 12px; border: 1px solid rgba(255,255,255,0.11); border-radius: var(--ff-radius-md); background: rgba(3,20,9,0.30); }
+.familiar-menu .familiar-row-icon { flex: 0 0 34px; font-size: 1.65rem; text-align: center; }
+.familiar-menu .familiar-row-icon.infinite-upgrade-badge {
+  display: grid;
+  place-items: center;
+  block-size: 28px;
+  border: 1px solid rgba(255, 216, 74, 0.65);
+  border-radius: 8px;
+  background: rgba(255, 216, 74, 0.1);
+  color: #ffd84a;
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  line-height: 1;
+}
+
+.familiar-menu .familiar-row-copy { min-width: 0; flex: 1; }
+.familiar-menu .familiar-row-copy strong { display: block; font-size: 0.88rem; }
+.familiar-menu .familiar-row-copy span { display: block; margin-top: 2px; color: #90b890; font-size: 0.72rem; line-height: 1.35; }
+.familiar-menu .familiar-action { flex: 0 0 auto; min-height: 36px; border: 1px solid rgba(126,221,84,0.35); border-radius: 9px; padding: 7px 10px; color: #dfffcf; background: rgba(126,221,84,0.13); cursor: pointer; font: 800 0.73rem/1 system-ui, sans-serif; }
+.familiar-menu .familiar-action:disabled { cursor: not-allowed; opacity: 0.48; }
+.familiar-menu .familiar-stat-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.familiar-menu .familiar-stat { padding: 13px; border: 1px solid rgba(255,255,255,0.12); border-radius: var(--ff-radius-md); background: rgba(3,20,9,0.30); }
+.familiar-menu .familiar-stat span { display: block; color: #90b890; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.familiar-menu .familiar-stat strong { display: block; margin-top: 4px; font-size: 1.15rem; }
+.familiar-menu .familiar-toggle { display:flex; align-items:center; justify-content:space-between; gap: var(--ff-space-3); padding:13px; border:1px solid rgba(255,255,255,0.11); border-radius: var(--ff-radius-md); background:rgba(3,20,9,0.30); color:#e8f5e8; font-size:0.82rem; font-weight:750; }
+.familiar-menu .familiar-toggle input { width: 20px; height: 20px; accent-color: #7edd54; }
+.familiar-menu .familiar-toggle select { min-height: 36px; border: 1px solid rgba(126,221,84,0.42); border-radius: 9px; padding: 6px 28px 6px 9px; color: #e8f5e8; background: rgba(3,20,9,0.55); font: 800 0.78rem/1 system-ui, sans-serif; }
+.arcade-settings-group + .arcade-settings-group { margin-top: 14px; }
+.arcade-settings-group .familiar-section-title { margin-bottom: 8px; }
+.arcade-settings-group .familiar-toggle + .familiar-toggle { margin-top: 8px; }
+.infinite-context-setting { display: grid; gap: 8px; margin-top: 14px; padding-top: 13px; border-top: 1px solid rgba(255,255,255,0.10); color: #e8f5e8; font-size: 0.82rem; }
+.infinite-context-setting > .familiar-help { margin: 0; }
+.infinite-context-controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; width: min(560px, 100%); margin: 4px auto 0; }
+.infinite-context-controls button { min-height: 40px; border: 1px solid rgba(126,221,84,0.35); border-radius: 9px; padding: 8px 11px; color: #dfffcf; background: rgba(126,221,84,0.10); cursor: pointer; font: 800 0.72rem/1 system-ui, sans-serif; }
+.infinite-context-controls button:hover { background: rgba(126,221,84,0.20); }
+.infinite-context-help { max-width: 560px; margin: 0 auto; padding: 10px 12px; border: 1px solid rgba(126,221,84,0.20); border-radius: 9px; color: #d9f0d9; background: rgba(3,20,9,0.32); font-size: 0.78rem; line-height: 1.45; text-align: left; }
+.familiar-menu .familiar-help { color: #d9f0d9; font-size: 0.86rem; line-height: 1.52; }
+.familiar-menu .familiar-help p + p { margin-top: 11px; }
+
+/* Volume sliders (Settings panel) */
+.familiar-menu .familiar-slider-row { display: grid; gap: var(--ff-space-2); padding: 13px; border: 1px solid rgba(255,255,255,0.11); border-radius: var(--ff-radius-md); background: rgba(3,20,9,0.30); }
+.familiar-menu .familiar-slider-row + .familiar-slider-row { margin-top: 10px; }
+.familiar-menu .familiar-slider-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; color: #e8f5e8; font-size: 0.82rem; font-weight: 750; }
+.familiar-menu .familiar-slider-head small { color: #90b890; font-weight: 800; font-variant-numeric: tabular-nums; }
+.familiar-menu input[type="range"].familiar-slider { width: 100%; height: 22px; accent-color: #7edd54; cursor: pointer; }
+
+/* Simulation speed selector (Settings panel) */
+.infinite-speed-options { display: flex; gap: var(--ff-space-2); margin-top: 10px; }
+.infinite-speed-options button { flex: 1; min-height: var(--ff-touch-minimum); border: 1px solid rgba(255,255,255,0.14); border-radius: 10px; background: rgba(255,255,255,0.05); color: #e8f5e8; font: 800 0.86rem/1 system-ui, sans-serif; cursor: pointer; }
+.infinite-speed-options button.active { border-color: #7edd54; background: rgba(126,221,84,0.18); color: #dfffcf; }
+html.arcade-less-flashy .launch-world,
+html.arcade-less-flashy .launch-fireflies,
+html.arcade-less-flashy .launch-feature-spark { animation: none !important; opacity: 0.45; }
+html.infinite-reduced-animation .infinite-zoom-controls { opacity: 0.86; }
+
+/* Top-bar income-rate pill (Infinite Feasts) */
+.infinite-rate-pill { color: #ffdf8a; font-weight: 800; font-size: 0.76rem; white-space: nowrap; }
+.infinite-objective-pill { color: #dfffcf; font-weight: 750; font-size: 0.74rem; line-height: 1.25; max-width: 24rem; }
+#infiniteStandaloneSpeedButton { min-width: var(--ff-touch-minimum); min-height: var(--ff-touch-minimum); font-variant-numeric: tabular-nums; }
+#infiniteStandaloneSpeedButton.active { border-color: var(--standalone-accent); color: #ffdf8a; }
+
+/* Welcome-back offline summary card (reuses .standalone-pause-card chrome) */
+.infinite-welcome-stats { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 14px 0; text-align: left; }
+.infinite-welcome-stats > div { padding: 12px; border: 1px solid rgba(255,255,255,0.12); border-radius: var(--ff-radius-md); background: rgba(3,20,9,0.30); }
+.infinite-welcome-stats > div span { display: block; color: #90b890; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+.infinite-welcome-stats > div strong { display: block; margin-top: 4px; font-size: 1.1rem; color: #e8f5e8; }
+.infinite-welcome-breakdown { display: grid; gap: 6px; margin-bottom: 6px; text-align: left; }
+.infinite-welcome-row { display: flex; justify-content: space-between; gap: 10px; padding: 8px 12px; border-radius: 9px; background: rgba(255,255,255,0.045); color: #d9f0d9; font-size: 0.8rem; font-weight: 700; }
+.infinite-welcome-row strong { color: #ffdf8a; }
+
+@media (max-width: 560px) {
+  .familiar-menu .menu-hero { padding: 34px 18px 26px; }
+  .familiar-menu .menu-logo { font-size: 62px; }
+  .familiar-menu .menu-title { font-size: clamp(2.3rem, 13vw, 3.4rem); }
+  .familiar-menu .menu-play-section { width: min(100% - 24px, 520px); padding-top: 25px; }
+  .familiar-menu .menu-btn-play { min-height: 82px; }
+  .familiar-menu .menu-btn-mode { min-height: 86px; }
+  .familiar-menu .menu-nav { gap: var(--ff-space-2); }
+  .familiar-menu .menu-btn-nav { min-height: 72px; }
+  .familiar-menu-panel { padding: 20px 12px calc(24px + env(safe-area-inset-bottom, 0px)); }
+  .familiar-menu .familiar-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Standalone pause overlay ----------------------------------------------------
+ * Mirrors the base game's full-screen pause surface without importing its
+ * shared main-menu DOM. Each standalone exposes only actions that exist for
+ * that mode. */
+.standalone-pause[hidden] { display: none !important; }
+.standalone-pause {
+  position: fixed;
+  inset: 0;
+  z-index: 95;
+  display: grid;
+  place-items: center;
+  padding: max(24px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px));
+  background: rgba(0, 0, 0, 0.74);
+  backdrop-filter: blur(8px) saturate(0.72);
+  -webkit-backdrop-filter: blur(8px) saturate(0.72);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+.standalone-pause-card {
+  width: min(720px, 100%);
+  display: grid;
+  justify-items: center;
+  gap: 15px;
+  padding: clamp(20px, 4vw, 42px);
+  border: 1px solid rgba(145, 220, 128, 0.20);
+  border-radius: var(--ff-radius-xl);
+  background: linear-gradient(145deg, rgba(9, 28, 14, 0.90), rgba(8, 16, 10, 0.92));
+  box-shadow: 0 22px 72px rgba(0, 0, 0, 0.62), 0 0 46px rgba(126, 221, 84, 0.12);
+}
+.connect3-standalone .standalone-pause-card {
+  border-color: rgba(0, 212, 255, 0.24);
+  box-shadow: 0 22px 72px rgba(0, 0, 0, 0.62), 0 0 46px rgba(0, 212, 255, 0.11);
+}
+.standalone-pause-title {
+  margin: 0;
+  color: #7edd54;
+  font-size: clamp(2.1rem, 6vw, 3.15rem);
+  font-weight: 900;
+  letter-spacing: -0.045em;
+  text-align: center;
+  text-shadow: 0 0 30px rgba(126, 221, 84, 0.42);
+}
+.connect3-standalone .standalone-pause-title {
+  background: linear-gradient(90deg, #ff8c42 0%, #ffd700 52%, #00d4ff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+.standalone-pause-sub {
+  margin: 0;
+  color: #9fc6a3;
+  font-size: 0.93rem;
+  line-height: 1.45;
+  text-align: center;
+}
+.standalone-pause-sub kbd {
+  display: inline-block;
+  padding: 1px 7px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 5px;
+  color: #effbe9;
+  background: rgba(255,255,255,0.10);
+  font: 700 0.76rem/1.25 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+.standalone-pause-actions {
+  width: min(880px, 100%);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 11px;
+}
+.standalone-pause-actions button {
+  min-height: 52px;
+  min-width: min(218px, 100%);
+  padding: 12px 22px;
+  border: 1.5px solid rgba(255,255,255,0.15);
+  border-radius: var(--ff-radius-pill);
+  color: #b7d8bc;
+  background: rgba(255,255,255,0.065);
+  cursor: pointer;
+  font: 800 clamp(0.88rem, 2vw, 1rem)/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+  transition: transform 150ms ease, background 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+.standalone-pause-actions button:hover {
+  transform: translateY(-2px);
+  color: #eefbe8;
+  border-color: rgba(126,221,84,0.56);
+  background: rgba(126,221,84,0.14);
+}
+.standalone-pause-actions button:focus-visible {
+  outline: 3px solid rgba(201,239,105,0.70);
+  outline-offset: 3px;
+}
+.standalone-pause-actions .standalone-pause-primary {
+  color: #07180a;
+  border-color: transparent;
+  background: #7edd54;
+  box-shadow: 0 6px 18px rgba(126,221,84,0.30);
+}
+.standalone-pause-actions .standalone-pause-primary:hover {
+  border-color: transparent;
+  background: #98f478;
+}
+.connect3-standalone .standalone-pause-actions .standalone-pause-primary {
+  color: #08221c;
+  background: linear-gradient(135deg, #ff8c42 0%, #ffd700 52%, #00d4ff 100%);
+  box-shadow: 0 6px 18px rgba(0,212,255,0.22);
+}
+body.standalone-pause-open .standalone-stage,
+body.standalone-pause-open .puzzle-standalone-controls,
+body.standalone-pause-open .standalone-status,
+body.standalone-pause-open .standalone-topbar {
+  pointer-events: none;
+}
+body.standalone-pause-open .standalone-stage {
+  filter: saturate(0.72) brightness(0.58);
+}
+@media (max-width: 580px) {
+  .standalone-pause { padding: 14px; }
+  .standalone-pause-card { min-height: min(620px, calc(100dvh - 28px)); margin:auto; padding: 25px 16px; border-radius: 21px; }
+  .standalone-pause-actions { display: grid; grid-template-columns: 1fr; }
+  .standalone-pause-actions button { width: 100%; min-width: 0; min-height: 48px; }
+}
+@media (max-height: 620px) {
+  .standalone-pause { place-items:start center; padding:12px; }
+  .standalone-pause-card { min-height:0; margin:auto; gap:10px; padding:18px 14px; }
+}
+
+/* Accessibility and safe-area support --------------------------------------- */
+:root {
+  --safe-top: env(safe-area-inset-top, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+  --safe-bottom: env(safe-area-inset-bottom, 0px);
+  --safe-left: env(safe-area-inset-left, 0px);
+}
+/* The root owns the visual viewport. Safe-area protection belongs to the
+ * actual content surfaces below; insetting body here would expose the root
+ * background as a perimeter and charge the same inset a second time. */
+body.standalone-mode {
+  padding: 0;
+}
+.standalone-topbar {
+  padding-top: max(10px, var(--safe-top));
+  padding-right: max(clamp(12px, 3vw, 28px), var(--safe-right));
+  padding-left: max(clamp(12px, 3vw, 28px), var(--safe-left));
+}
+.standalone-stage {
+  padding-right: max(clamp(8px, 1.8vw, 20px), var(--safe-right));
+  padding-bottom: max(clamp(8px, 1.5vh, 16px), var(--safe-bottom));
+  padding-left: max(clamp(8px, 1.8vw, 20px), var(--safe-left));
+}
+/* StandaloneViewport measures the stage content box after stage padding has
+ * already removed the safe-area edges. Keep the frame capped to that box;
+ * subtracting env() again here shrinks the game and reveals a false gutter. */
+#canvasWrapper.standalone-canvas-wrapper {
+  max-width: 100%;
+  max-height: 100%;
+}
+.standalone-status {
+  left: calc(12px + var(--safe-left));
+  bottom: calc(12px + var(--safe-bottom));
+}
+body.standalone-mode button:focus-visible,
+body.standalone-mode select:focus-visible,
+body.standalone-mode input:focus-visible,
+body.standalone-mode [role="button"]:focus-visible {
+  outline: 3px solid #ffe66d;
+  outline-offset: 3px;
+}
+.perf-monitor {
+  position: fixed;
+  top: calc(10px + var(--safe-top));
+  right: calc(10px + var(--safe-right));
+  z-index: 10000;
+  padding: 8px 10px;
+  color: #a8ff8a;
+  background: rgba(0, 0, 0, 0.84);
+  border: 1px solid rgba(168, 255, 138, 0.8);
+  border-radius: 8px;
+  font: 12px/1.35 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  white-space: pre;
+  pointer-events: none;
+}
+
+/* Frog inspector (shared src/runtime/modes/infinite/infinite-ui.js overlay, standalone palette) */
+.infinite-frog-inspector {
+  position: fixed;
+  inset: 0;
+  z-index: 96;
+  display: grid;
+  place-items: center;
+  padding: max(24px, env(safe-area-inset-top, 0px)) max(18px, env(safe-area-inset-right, 0px)) max(24px, env(safe-area-inset-bottom, 0px)) max(18px, env(safe-area-inset-left, 0px));
+  background: rgba(0, 0, 0, 0.74);
+  backdrop-filter: blur(8px) saturate(0.72);
+  -webkit-backdrop-filter: blur(8px) saturate(0.72);
+}
+.infinite-frog-inspector.hidden { display: none; }
+.infinite-frog-inspector-card {
+  position: relative;
+  width: min(340px, calc(100vw - 34px));
+  padding: clamp(18px, 4vw, 26px);
+  border: 1px solid rgba(145, 220, 128, 0.20);
+  border-radius: 20px;
+  color: #eafff0;
+  background: linear-gradient(145deg, rgba(9, 28, 14, 0.94), rgba(8, 16, 10, 0.95));
+  box-shadow: 0 22px 72px rgba(0, 0, 0, 0.62), 0 0 46px rgba(126, 221, 84, 0.12);
+}
+.infinite-frog-inspector-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(145, 220, 128, 0.35);
+  border-radius: 8px;
+  color: #eafff0;
+  background: rgba(18,53,28,.96);
+  font: 800 20px/1 system-ui,sans-serif;
+  cursor: pointer;
+}
+.infinite-frog-inspector-header { display: flex; align-items: center; gap: 10px; margin: 0 32px 12px 0; }
+.infinite-frog-inspector-icon {
+  width: 42px; height: 42px; border-radius: 10px;
+  display: grid; place-items: center;
+  border: 1px solid rgba(255,255,255,.2);
+  flex: 0 0 auto;
+}
+.infinite-frog-inspector-icon img { width: 36px; height: 36px; }
+.infinite-friend-portrait--inspector { width: 42px; height: 42px; border: 0; background: transparent; }
+.infinite-frog-inspector-header h2 { margin: 0; color: #7edd54; font-size: 18px; }
+.infinite-frog-inspector-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 7px; margin: 0; }
+.infinite-frog-inspector-stats div { padding: 8px; border: 1px solid rgba(255,255,255,.13); border-radius: 8px; background: rgba(0,0,0,.22); }
+.infinite-frog-inspector-stats dt { color: #a8d8a0; font-size: var(--ff-font-3xs); font-weight: 800; text-transform: uppercase; letter-spacing: .04em; }
+.infinite-frog-inspector-stats dd { margin: 3px 0 0; font: 800 16px system-ui,sans-serif; }
+
+/* Input accessibility polish --------------------------------------------------
+ * Controls that overlay a playable canvas need a reliable finger-sized target
+ * at every viewport width, not only under a phone media query. */
+.standalone-actions select,
+.standalone-actions button {
+  min-height: var(--ff-touch-minimum);
+  touch-action: manipulation;
+}
+.puzzle-standalone-controls {
+  grid-template-columns: repeat(3, 44px);
+}
+.puzzle-standalone-controls button {
+  min-width: var(--ff-touch-minimum);
+  min-height: var(--ff-touch-minimum);
+  touch-action: manipulation;
+}
+.infinite-frog-inspector-close {
+  width: 44px;
+  height: 44px;
+  touch-action: manipulation;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+.standalone-actions button { min-width: var(--ff-touch-minimum); }
+
+/* v1.0.34 — player-facing Arcade character guides */
+.familiar-menu .familiar-guide { display: flex; flex-wrap: wrap; justify-content: center; gap: var(--ff-space-1); margin-top: 7px; }
+.familiar-menu .familiar-guide > span { display: inline-flex; align-items: center; min-height: 23px; padding: 4px 7px; border-radius: var(--ff-radius-pill); border: 1px solid rgba(255,255,255,0.12); background: rgba(255,255,255,0.06); color: #d9eed5; font-size: 0.59rem; font-weight: 700; line-height: 1.1; }
+.familiar-menu .familiar-guide > span:nth-child(2) { border-color: rgba(126,221,84,0.34); background: rgba(126,221,84,0.10); }
+.familiar-menu .familiar-guide > span:nth-child(3) { border-color: rgba(255,215,0,0.28); background: rgba(255,215,0,0.08); }
+.familiar-menu .familiar-selected-badge { display: inline-flex; margin-top: 5px; padding: 3px 7px; border-radius: var(--ff-radius-pill); color: #102607; background: #7edd54; font-size: 0.58rem; font-weight: 900; letter-spacing: 0.06em; text-transform: uppercase; }
+.familiar-menu .familiar-selected-guide { display: flex; flex-direction: column; gap: var(--ff-space-1); margin-bottom: 12px; padding: 12px 14px; border-radius: 11px; border: 1px solid rgba(126,221,84,0.30); background: rgba(126,221,84,0.09); }
+.familiar-menu .familiar-selected-guide strong { color: #c9ef69; }
+.familiar-menu .familiar-selected-guide span { color: #a8c5a8; font-size: 0.76rem; line-height: 1.4; }
+.infinite-assignment-panel { margin-top: 12px; padding-top: 10px; border-top: 1px solid rgba(255,255,255,.14); }
+.infinite-assignment-panel p { margin: 0 0 8px; color: #a8d8a0; font-size: 11px; line-height: 1.35; }
+.infinite-assignment-actions { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px; }
+.infinite-assignment-button { min-height: 40px; border: 1px solid rgba(145,220,128,.28); border-radius: 8px; color: #eafff0; background: rgba(18,53,28,.96); font: 800 11px system-ui,sans-serif; cursor: pointer; }
+.infinite-assignment-button:hover, .infinite-assignment-button.active { border-color: #e8b563; background: rgba(80,73,35,.96); }
+
+
+/* Infinite Feasts v1.0.40 colony command UI */
+.infinite-dock-heading { display:flex; align-items:center; justify-content:space-between; gap: var(--ff-space-2); margin-bottom:7px; }
+.infinite-dock-heading .infinite-dock-title, .infinite-dock-heading h2 { margin:0; }
+.infinite-dock-toggle { min-height: var(--ff-touch-minimum); padding:7px 11px; border:1px solid rgba(185,216,179,.4); border-radius:8px; color:#efffe6; background:rgba(18,53,28,.96); font-weight:800; cursor:pointer; touch-action:manipulation; }
+.infinite-recruit-dock.collapsed > :not(.infinite-dock-heading), .infinite-standalone-dock.collapsed > :not(.infinite-dock-heading) { display:none !important; }
+.infinite-recruit-dock.collapsed, .infinite-standalone-dock.collapsed { width:auto; min-width:150px; }
+.infinite-picker--tabbed { display:block; max-height:none; overflow:visible; }
+.infinite-picker-nav { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:6px; align-items:center; margin-bottom:7px; }
+.infinite-picker-tabs { display:grid; grid-template-columns:repeat(2,1fr); gap:5px; margin-bottom:0; }
+.infinite-picker-tab { min-height: var(--ff-touch-minimum); border:1px solid rgba(255,255,255,.16); border-radius:8px; background:rgba(6,20,13,.72); color:#dff6dc; font-weight:850; cursor:pointer; touch-action:manipulation; }
+.infinite-picker-tab[aria-selected="true"] { border-color:#7edd54; background:rgba(38,84,42,.9); }
+.infinite-picker-pane { display:none; max-height:180px; overflow:auto; gap:6px; padding-right:3px; }
+.infinite-picker-pane.active { display:flex; flex-wrap:wrap; }
+.infinite-picker-pane[data-pane="buildings"] .infinite-buildbtn { flex:1 1 145px; min-height:52px; }
+.infinite-picker-actions .infinite-frogbtn, .infinite-picker-actions .infinite-skipbtn { min-height: var(--ff-touch-minimum); touch-action:manipulation; }
+.infinite-achievement-list.active { display:grid; grid-template-columns:1fr; align-content:start; }
+.infinite-achievement { display:grid; grid-template-columns:1fr auto; gap:3px 8px; padding:7px 8px; border:1px solid rgba(255,255,255,.14); border-radius:8px; background:rgba(6,20,13,.72); }
+.infinite-achievement strong { font-size:11px; }
+.infinite-achievement small { grid-column:1 / -1; color:#b9d8b3; font-size: var(--ff-font-3xs); }
+.infinite-achievement span { font-size: var(--ff-font-3xs); color:#e8b563; }
+.infinite-achievement.done { border-color:rgba(126,221,84,.55); opacity:.82; }
+.infinite-inspector-wide { grid-column:1 / -1; }
+@media (max-width:620px) { .infinite-picker-pane { max-height:150px; } .infinite-recruit-dock, .infinite-standalone-dock { width:calc(100vw - 12px); } }
+
+
+/* RC22: physical-mobile Arcade controls and heat-conscious rendering surface. */
+body.arcade-standalone #mobileControls.standalone-mobile-controls {
+  display:none;
+  position:fixed;
+  inset:auto 0 0;
+  height:calc(116px + env(safe-area-inset-bottom, 0px));
+  padding-bottom:env(safe-area-inset-bottom, 0px);
+  z-index:1200;
+  pointer-events:none;
+  background:linear-gradient(to top, rgba(2,10,6,.82), rgba(2,10,6,.28) 72%, transparent);
+}
+body.arcade-standalone #mobileControls.standalone-mobile-controls.visible { display:block; pointer-events:auto; }
+body.arcade-standalone #mobileControls .mob-btn {
+  min-width:56px; min-height:56px; color:#f5fff0;
+  background:rgba(8,34,18,.86); border:2px solid rgba(184,238,132,.5);
+  box-shadow:0 5px 14px rgba(0,0,0,.34); backdrop-filter:none;
+}
+body.arcade-standalone #mobileControls #mobShoot {
+  color:#07130b; background:#b8ee84; border-color:#e7ffc9;
+  font:900 14px/1 system-ui,sans-serif; letter-spacing:.04em;
+}
+body.arcade-standalone #mobileControls button[hidden] { display:none !important; }
+body.arcade-standalone.arcade-mobile-controls-visible .standalone-stage {
+  padding-bottom:max(120px, calc(112px + env(safe-area-inset-bottom, 0px)));
+}
+@media (max-height:520px) and (orientation:landscape) {
+  body.arcade-standalone #mobileControls.standalone-mobile-controls { height:calc(74px + env(safe-area-inset-bottom, 0px)); }
+  body.arcade-standalone #mobileControls .mob-btn { height:58px !important; min-height:58px; bottom:8px !important; }
+  body.arcade-standalone.arcade-mobile-controls-visible .standalone-stage { padding-bottom:max(76px, calc(70px + env(safe-area-inset-bottom, 0px))); }
+}
+@media (pointer:coarse) {
+  body.arcade-standalone #canvasWrapper.standalone-canvas-wrapper,
+  body.arcade-standalone #gameCanvas { box-shadow:none !important; }
+  body.arcade-standalone .launch-fireflies,
+  body.arcade-standalone .launch-feature-spark { animation:none !important; }
+}
+
+/* RC23 standalone shell parity: compact top bar and the same touch dock used by
+   the full game. */
+body.arcade-standalone #mobileControls.standalone-mobile-controls {
+  height: calc(var(--ff-mobile-control-dock) + env(safe-area-inset-bottom, 0px));
+  min-height: calc(var(--ff-mobile-control-dock) + env(safe-area-inset-bottom, 0px));
+  background: linear-gradient(to top, rgba(1,10,5,.82), rgba(1,10,5,.30) 72%, transparent);
+}
+body.arcade-standalone.arcade-mobile-controls-visible .standalone-stage {
+  padding-bottom: calc(var(--ff-mobile-control-dock) + env(safe-area-inset-bottom, 0px));
+}
+@media (pointer: coarse), (max-width: 720px) {
+  body.arcade-standalone { grid-template-rows: 52px minmax(0,1fr); }
+  body.arcade-standalone .standalone-topbar {
+    min-height: 52px;
+    max-height: 52px;
+    gap: var(--ff-space-2);
+    padding: max(5px, env(safe-area-inset-top,0px)) 10px 5px;
+    background: rgba(4, 21, 12, .96);
+  }
+  body.arcade-standalone .standalone-brand { display: block; }
+  body.arcade-standalone .standalone-brand strong { font-size: .82rem; letter-spacing: .035em; }
+  body.arcade-standalone .standalone-brand > span { display: none; }
+  body.arcade-standalone .standalone-actions { gap: 5px; }
+  body.arcade-standalone .standalone-actions button {
+    min-height: 42px;
+    max-height: 42px;
+    padding: 5px 10px;
+    border-radius: var(--ff-radius-md);
+    font-size: .78rem;
+  }
+  body.arcade-standalone #arcadeStandaloneRestart { display: none; }
+  body.arcade-standalone #arcadeStandaloneMenuButton .ff-ui-icon { display: none; }
+  body.arcade-standalone .standalone-stage { padding: 6px 6px; }
+  body.arcade-standalone #canvasWrapper.standalone-canvas-wrapper { border-radius: var(--ff-radius-md); }
+
+  /* The standalone menu keeps Arcade-specific content but follows the same
+     green card hierarchy and icon treatment as the full-game hub. */
+  body.arcade-standalone .standalone-menu { background: radial-gradient(circle at 50% 18%, #123b1a, #061309 68%); }
+  body.arcade-standalone .launch-world,
+  body.arcade-standalone .launch-food-rail,
+  body.arcade-standalone .launch-fireflies,
+  body.arcade-standalone .launch-feature-spark { display: none !important; }
+  body.arcade-standalone .launch-cabinet { width: min(100%, 620px); min-height: 0; margin: 0 auto; }
+  body.arcade-standalone .launch-cabinet-glass { padding: 12px; }
+  body.arcade-standalone .launch-home { padding: max(8px, env(safe-area-inset-top,0px)) 8px max(12px, env(safe-area-inset-bottom,0px)); overflow-y: auto; }
+  body.arcade-standalone .launch-hero { padding: 12px; min-height: 88px; }
+  body.arcade-standalone .launch-title { font-size: clamp(1.6rem, 9vw, 2.2rem); }
+  body.arcade-standalone .launch-tagline { font-size: .64rem; }
+  body.arcade-standalone .launch-mode-card { min-height: 92px; padding: 10px; border-radius: 14px; }
+  body.arcade-standalone .launch-mode-card .menu-mode-description { display: none; }
+  body.arcade-standalone .launch-mode-card .menu-mode-control { font-size: .65rem; }
+}
+
+/* RC23 mobile Puzzle polish: compact chrome, one-row controls, and a small
+   non-blocking route tip. Gameplay actions remain at the 44px touch floor. */
+@media (pointer: coarse), (max-width: 720px) {
+  body.puzzle-standalone {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 52px minmax(0, 1fr) auto;
+    grid-template-areas:
+      "topbar"
+      "stage"
+      "controls";
+  }
+  body.puzzle-standalone .standalone-topbar {
+    min-height: 52px;
+    max-height: 52px;
+    padding: max(4px, env(safe-area-inset-top, 0px)) 8px 4px;
+  }
+  body.puzzle-standalone .standalone-brand { display: none; }
+  body.puzzle-standalone .standalone-actions {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr) 44px;
+    gap: 6px;
+  }
+  body.puzzle-standalone .standalone-actions button,
+  body.puzzle-standalone .standalone-actions select {
+    width: 100%;
+    min-width: var(--ff-touch-minimum);
+    max-width: none;
+    min-height: var(--ff-touch-minimum);
+    height: 44px;
+    padding: 5px 7px;
+    border-radius: 11px;
+  }
+  body.puzzle-standalone .standalone-actions button .standalone-action-label { display: none; }
+  body.puzzle-standalone .standalone-actions select { text-align: center; font-size: .82rem; }
+  body.puzzle-standalone .standalone-stage { padding: 4px 5px; }
+  body.puzzle-standalone .puzzle-standalone-controls {
+    width: min(100%, 390px);
+    grid-template-columns: repeat(5, 44px) minmax(92px, 1fr);
+    grid-template-areas: "left up down right undo vomit";
+    gap: 5px;
+    align-self: center;
+    justify-self: center;
+    margin: 0 auto max(4px, env(safe-area-inset-bottom, 0px));
+    padding: 5px;
+    border-radius: var(--ff-radius-md);
+    box-shadow: 0 8px 22px rgba(0,0,0,.28);
+  }
+  body.puzzle-standalone .puzzle-standalone-controls button {
+    width: 44px;
+    min-width: var(--ff-touch-minimum);
+    height: 44px;
+    min-height: var(--ff-touch-minimum);
+    border-radius: 10px;
+    font-size: .9rem;
+  }
+  body.puzzle-standalone .puzzle-standalone-controls .wide {
+    width: 100%;
+    min-width: 92px;
+    padding: 4px 7px;
+    font-size: .68rem;
+    line-height: 1.1;
+  }
+  body.puzzle-standalone .puzzle-first-route-coach {
+    position: fixed;
+    top: auto;
+    bottom: calc(61px + env(safe-area-inset-bottom, 0px));
+    left: 50%;
+    width: min(340px, calc(100vw - 20px));
+    display: block;
+    padding: 7px 10px;
+    border-radius: 11px;
+    text-align: left;
+    line-height: 1.25;
+    background: rgba(7,31,16,.91);
+  }
+  body.puzzle-standalone .puzzle-first-route-coach__title,
+  body.puzzle-standalone .puzzle-first-route-coach__progress,
+  body.puzzle-standalone .puzzle-first-route-coach__dismiss { display: none; }
+  body.puzzle-standalone .puzzle-first-route-coach__line {
+    display: block;
+    font-size: .7rem;
+  }
+}
+
+/* RC23 Infinite mobile coherence: the command panel is a real layout row,
+   header actions cannot collide, onboarding does not cover the map, and the
+   zoom stack is reduced to the three controls a phone actually needs. */
+@media (pointer: coarse), (max-width: 720px) {
+  body.infinite-standalone {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 52px minmax(0, 1fr) auto;
+    grid-template-areas:
+      "topbar"
+      "stage"
+      "dock";
+  }
+  body.infinite-standalone .standalone-topbar {
+    grid-area: topbar;
+    min-height: 52px;
+    max-height: 52px;
+    padding: max(4px, env(safe-area-inset-top, 0px)) 8px 4px;
+    gap: 6px;
+  }
+  body.infinite-standalone .standalone-brand {
+    display: block;
+    min-width: 0;
+    flex: 1 1 auto;
+  }
+  body.infinite-standalone .standalone-brand strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .78rem;
+    letter-spacing: .035em;
+  }
+  body.infinite-standalone .standalone-brand > span,
+  body.infinite-standalone #infiniteStandaloneStats,
+  body.infinite-standalone #infiniteStandaloneObjective,
+  body.infinite-standalone #infiniteStandaloneRate,
+  body.infinite-standalone #infiniteStandaloneSpeedButton,
+  body.infinite-standalone #infiniteStandaloneBankButton { display: none !important; }
+  body.infinite-standalone .standalone-actions { flex: 0 0 auto; }
+  body.infinite-standalone #infiniteStandalonePauseButton {
+    width: 44px;
+    min-width: var(--ff-touch-minimum);
+    max-width: 44px;
+    height: 44px;
+    min-height: var(--ff-touch-minimum);
+    padding: 6px;
+    border-radius: 11px;
+  }
+  body.infinite-standalone #infiniteStandalonePauseButton .standalone-action-label { display: none; }
+  body.infinite-standalone .standalone-stage {
+    grid-area: stage;
+    padding: 4px 5px;
+  }
+  body.infinite-standalone .infinite-standalone-dock {
+    position: relative;
+    grid-area: dock;
+    z-index: 8;
+    left: auto;
+    bottom: auto;
+    width: calc(100% - 10px);
+    max-width: none;
+    max-height: 194px;
+    margin: 0 5px max(4px, env(safe-area-inset-bottom, 0px));
+    padding: 6px 7px;
+    overflow: hidden;
+    border-radius: var(--ff-radius-md);
+    box-shadow: 0 7px 20px rgba(0,0,0,.26);
+  }
+  body.infinite-standalone .infinite-dock-heading { margin-bottom: 4px; }
+  body.infinite-standalone .infinite-dock-heading h2 { font-size: .68rem; }
+  body.infinite-standalone .infinite-dock-toggle { min-height: var(--ff-touch-minimum); }
+  body.infinite-standalone .infinite-picker-pane { max-height: 84px; }
+  body.infinite-standalone .infinite-picker-tabs { margin-bottom: 4px; }
+  body.infinite-standalone .infinite-picker-tab { min-height: var(--ff-touch-minimum); font-size: .68rem; }
+  body.infinite-standalone .infinite-map-panel { display: none; }
+  body.infinite-standalone .infinite-first-run-coach { display: none !important; }
+  body.infinite-standalone .infinite-zoom-controls { right: 6px; bottom: 6px; gap: var(--ff-space-1); }
+  body.infinite-standalone .infinite-zoom-controls button { width: 44px; height: 44px; min-width: var(--ff-touch-minimum); min-height: var(--ff-touch-minimum); }
+  body.infinite-standalone .infinite-zoom-controls button:nth-child(n+4) { display: none !important; }
+}
+
+/* Infinite compact-landscape fit: the map owns a legitimate 120px minimum.
+ * Cap only the standalone command row and keep every command scroll-reachable
+ * instead of allowing the dock to overlap the colony map. */
+@media (max-height: 520px) and (orientation: landscape) {
+  body.infinite-standalone .infinite-standalone-dock {
+    max-height: min(194px, calc(100dvh - 184px));
+    overflow-x: hidden;
+    overflow-y: auto;
+    overscroll-behavior-y: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* RC23 Feastfall standalone parity: the phone header is a compact action strip
+   rather than a second oversized UI layer above the already complete canvas. */
+@media (pointer: coarse), (max-width: 720px) {
+  body.connect3-standalone {
+    grid-template-rows: 52px minmax(0, 1fr);
+  }
+  body.connect3-standalone .standalone-topbar {
+    min-height: 52px;
+    max-height: 52px;
+    padding: max(4px, env(safe-area-inset-top, 0px)) 8px 4px;
+  }
+  body.connect3-standalone .standalone-brand {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  body.connect3-standalone .standalone-brand strong {
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: .76rem;
+    letter-spacing: .03em;
+  }
+  body.connect3-standalone .standalone-brand > span { display: none; }
+  body.connect3-standalone .standalone-actions { gap: 6px; }
+  body.connect3-standalone .standalone-actions button {
+    width: 44px;
+    min-width: var(--ff-touch-minimum);
+    max-width: 44px;
+    height: 44px;
+    min-height: var(--ff-touch-minimum);
+    padding: 6px;
+    border-radius: 11px;
+  }
+  body.connect3-standalone .standalone-actions .standalone-action-label { display: none; }
+  body.connect3-standalone .standalone-stage { padding: 4px 5px; }
+}
+
+/* RC23 final phone refinements for split-mode presentation. */
+@media (pointer: coarse), (max-width: 720px) {
+  body.connect3-standalone .standalone-stage {
+    align-items: start;
+    justify-items: center;
+  }
+  body.infinite-standalone .infinite-picker-pane.active {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    padding-bottom: 2px;
+  }
+  body.infinite-standalone .infinite-picker-entry {
+    flex: 0 0 min(286px, calc(100vw - 32px));
+    min-width: 0;
+    min-height: 76px;
+    grid-template-columns: 48px minmax(0, 1fr);
+    padding: 4px;
+    scroll-snap-align: start;
+  }
+  body.infinite-standalone .infinite-picker-detail { display: none; }
+  body.infinite-standalone .infinite-picker-copy { gap: 2px; }
+  body.infinite-standalone .infinite-picker-actions { min-height: var(--ff-touch-minimum); }
+  body.infinite-standalone .infinite-picker-actions .infinite-frogbtn,
+  body.infinite-standalone .infinite-picker-actions .infinite-skipbtn {
+    min-height: var(--ff-touch-minimum);
+    padding: 5px 8px;
+  }
+}
+
+/* Feastfall already owns a complete Menu/Pause HUD inside its canvas. On
+   phones the generic standalone header duplicated those controls and wasted
+   vertical space, so the canvas becomes the sole player-facing control bar. */
+@media (pointer: coarse), (max-width: 720px) {
+  body.connect3-standalone { grid-template-rows: minmax(0, 1fr); grid-template-areas: "stage"; }
+  body.connect3-standalone > .standalone-topbar { display: none !important; }
+}
+
+
+/* RC24 consolidated Puzzle completion recap */
+.puzzle-completion-recap{position:fixed;inset:0;z-index:1350;display:grid;place-items:center;padding:max(18px,env(safe-area-inset-top)) max(18px,env(safe-area-inset-right)) max(18px,env(safe-area-inset-bottom)) max(18px,env(safe-area-inset-left));background:rgba(4,19,10,.70);backdrop-filter:blur(7px)}
+.puzzle-completion-recap[hidden]{display:none!important}
+.puzzle-completion-card{width:min(560px,100%);max-height:min(84vh,760px);overflow:auto;border:2px solid rgba(255,224,112,.70);border-radius:24px;padding:24px;background:linear-gradient(165deg,rgba(25,73,42,.98),rgba(8,34,19,.98));box-shadow:0 22px 70px rgba(0,0,0,.52),0 0 34px rgba(255,213,84,.12);color:#f5fff1}
+.puzzle-completion-kicker{margin:0 0 4px;color:#ffe47f;font-weight:950;letter-spacing:.16em;font-size:.76rem}
+.puzzle-completion-card h2{margin:0;font-size:clamp(1.6rem,5vw,2.35rem)}
+.puzzle-completion-subtitle{margin:.5rem 0 1rem;color:rgba(239,255,239,.80)}
+.puzzle-completion-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:16px 0}
+.puzzle-completion-stat{min-width:0;padding:12px 8px;border-radius:14px;background:rgba(220,255,225,.09);border:1px solid rgba(220,255,225,.16);text-align:center}
+.puzzle-completion-stat strong{display:block;color:#ffe27a;font-size:1.25rem;line-height:1.1}.puzzle-completion-stat span{display:block;margin-top:4px;font-size:.75rem;color:rgba(240,255,240,.72)}
+.puzzle-completion-route{padding:12px;border-radius:14px;background:rgba(0,0,0,.18);font:800 .78rem/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;color:#dfffe3;overflow-wrap:anywhere}
+.puzzle-completion-actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}.puzzle-completion-actions .menu-btn-play{grid-column:1/-1}.puzzle-completion-actions button{min-height:48px;border-radius:14px;font-weight:900}
+@media(max-width:520px){.puzzle-completion-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.puzzle-completion-card{padding:18px}.puzzle-completion-actions{grid-template-columns:1fr}.puzzle-completion-actions .menu-btn-play{grid-column:auto}}
+@media(prefers-reduced-motion:reduce){.puzzle-completion-recap{backdrop-filter:none}}
+
+
+/* RC24.1 standalone parity: the analog controls float over the canvas instead
+   of reserving a permanent opaque bottom dock. */
+body.arcade-standalone #mobileControls.standalone-mobile-controls {
+  height: calc(170px + env(safe-area-inset-bottom,0px)) !important;
+  min-height: 0 !important;
+  background: none !important;
+  pointer-events: none !important;
+}
+body.arcade-standalone #mobileControls.standalone-mobile-controls.visible { pointer-events: none !important; }
+body.arcade-standalone #mobileControls.standalone-mobile-controls > * { pointer-events: auto; }
+body.arcade-standalone.arcade-mobile-controls-visible .standalone-stage {
+  padding-bottom: 6px !important;
+}
+@media (max-height:520px) and (orientation:landscape) {
+  body.arcade-standalone #mobileControls.standalone-mobile-controls { height:calc(104px + env(safe-area-inset-bottom,0px)) !important; }
+  body.arcade-standalone.arcade-mobile-controls-visible .standalone-stage { padding-bottom:4px !important; }
+}
+
+
+/* RC24.1 final mobile overlap and onboarding guard ----------------------------
+ * Short viewports can report an unreliable orientation media feature during
+ * browser rotation. Position Pause beside the contextual action based on
+ * available height alone so the two controls can never occupy the same hitbox. */
+@media (max-height: 520px) {
+  #mobPause.mob-btn--pause {
+    right: calc(max(10px, env(safe-area-inset-right, 0px)) + 96px) !important;
+    bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+    width: 44px !important;
+    min-width: var(--ff-touch-minimum) !important;
+    height: 44px !important;
+    min-height: var(--ff-touch-minimum) !important;
+    z-index: 8 !important;
+  }
+  #mobShoot.mob-btn--action {
+    right: max(10px, env(safe-area-inset-right, 0px)) !important;
+    bottom: calc(10px + env(safe-area-inset-bottom, 0px)) !important;
+    z-index: 7 !important;
+  }
+}
+
+@media (pointer: coarse), (max-width: 720px) {
+  .arcade-first-run-coach {
+    top: 4px !important;
+    left: 4px !important;
+    width: min(230px, calc(100% - 8px)) !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    gap: 5px !important;
+    padding: 5px 6px !important;
+    border-radius: 10px !important;
+  }
+  .arcade-first-run-coach__title,
+  .arcade-first-run-coach__line--tip { display: none !important; }
+  .arcade-first-run-coach__line {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    font-size: .61rem !important;
+    line-height: 1.15 !important;
+  }
+  .arcade-first-run-coach__skip {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    min-width: 48px !important;
+    min-height: 32px !important;
+    padding: 3px 6px !important;
+    font-size: .61rem !important;
+  }
+}
+
+
+/* PHASE23 FLOATING INVISIBLE ANALOG -----------------------------------------
+ * The analog surface is the whole unused gameplay viewport. The first touch
+ * creates a temporary origin at the thumb, which may drift as the thumb moves.
+ * The ring/knob are diagnostics only; production defaults to invisible. */
+#mobileControls.mobile-controls--joystick {
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  overflow: visible !important;
+}
+#mobileControls.mobile-controls--joystick .mob-joystick {
+  display: block;
+  position: fixed;
+  inset: 0 !important;
+  left: 0 !important;
+  bottom: auto !important;
+  width: 100vw !important;
+  height: 100dvh !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+  touch-action: none;
+  z-index: 0;
+}
+#mobileControls.mobile-controls--joystick .mob-joystick::before,
+#mobileControls.mobile-controls--joystick .mob-joystick::after { display:none !important; }
+#mobileControls.mobile-controls--joystick .mob-joystick-ring {
+  position: absolute;
+  inset: auto !important;
+  left: var(--stick-origin-x, 50vw);
+  top: var(--stick-origin-y, 70vh);
+  width: 92px;
+  height: 92px;
+  margin: -46px 0 0 -46px;
+  border: 1.5px solid rgba(226,255,206,.56);
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(18,78,38,.12), rgba(5,28,14,.04) 64%, transparent 66%);
+  box-shadow: 0 0 18px rgba(151,238,105,.12), inset 0 0 0 8px rgba(151,238,105,.035);
+  pointer-events:none;
+  transition:opacity 120ms ease;
+}
+#mobileControls.mobile-controls--joystick .mob-joystick-knob {
+  position:absolute;
+  left: var(--stick-origin-x, 50vw);
+  top: var(--stick-origin-y, 70vh);
+  width:36px;
+  height:36px;
+  margin:-18px 0 0 -18px;
+  transform:translate(var(--stick-x),var(--stick-y));
+  pointer-events:none;
+  transition:opacity 120ms ease;
+}
+#mobileControls.mobile-controls--joystick .mob-joystick[data-visual-mode="invisible"] .mob-joystick-ring,
+#mobileControls.mobile-controls--joystick .mob-joystick[data-visual-mode="invisible"] .mob-joystick-knob { opacity:0 !important; }
+#mobileControls.mobile-controls--joystick .mob-joystick[data-visual-mode="faint"] .mob-joystick-ring { opacity:.16 !important; }
+#mobileControls.mobile-controls--joystick .mob-joystick[data-visual-mode="faint"] .mob-joystick-knob { opacity:.20 !important; }
+#mobileControls.mobile-controls--joystick .mob-joystick[data-visual-mode="visible"] .mob-joystick-ring { opacity:.62 !important; }
+#mobileControls.mobile-controls--joystick .mob-joystick[data-visual-mode="visible"] .mob-joystick-knob { opacity:.78 !important; }
+#mobileControls.mobile-controls--joystick .mob-btn,
+#mobileControls.mobile-controls--joystick .mob-control-mode,
+#mobileControls.mobile-controls--joystick .mob-ability-hint { z-index:2; }
+#mobileControls.mobile-controls--joystick.mobile-controls--resting .mob-joystick { opacity:1 !important; }
+@media (max-height:520px) and (orientation:landscape) {
+  #mobileControls.mobile-controls--joystick .mob-joystick { width:100vw !important; height:100dvh !important; }
+  #mobileControls.mobile-controls--joystick .mob-joystick-ring { width:82px; height:82px; margin:-41px 0 0 -41px; }
+}
+
+/* Optional bottom-right precision assist for standalone Arcade. The full
+ * gameplay surface remains gesture-active outside this visual anchor. Keep
+ * this synchronized with style.css because this sheet loads later. */
+#mobileControls.mobile-controls--joystick.mobile-controls--visibility-fixed .mob-joystick-ring {
+  left: auto !important;
+  right: calc(max(8px, env(safe-area-inset-right, 0px)) + 56px) !important;
+  top: auto !important;
+  bottom: calc(max(8px, env(safe-area-inset-bottom, 0px)) + 56px) !important;
+  width: 112px;
+  height: 112px;
+  margin: 0 -56px -56px 0;
+  border-width: 2px;
+  background: radial-gradient(circle, rgba(25,96,48,.30), rgba(5,28,14,.18) 64%, rgba(5,28,14,.04) 66%);
+  box-shadow: 0 0 22px rgba(151,238,105,.20), inset 0 0 0 9px rgba(151,238,105,.07);
+}
+#mobileControls.mobile-controls--joystick.mobile-controls--visibility-fixed .mob-joystick-knob {
+  left: auto !important;
+  right: calc(max(8px, env(safe-area-inset-right, 0px)) + 56px) !important;
+  top: auto !important;
+  bottom: calc(max(8px, env(safe-area-inset-bottom, 0px)) + 56px) !important;
+  margin: 0 -18px -18px 0;
+}
+@media (max-height:520px) and (orientation:landscape) {
+  #mobileControls.mobile-controls--joystick.mobile-controls--visibility-fixed .mob-joystick-ring {
+    left: auto !important;
+    right: calc(max(7px, env(safe-area-inset-right, 0px)) + 48px) !important;
+    bottom: calc(max(7px, env(safe-area-inset-bottom, 0px)) + 48px) !important;
+    width: 96px;
+    height: 96px;
+    margin: 0 -48px -48px 0;
+  }
+  #mobileControls.mobile-controls--joystick.mobile-controls--visibility-fixed .mob-joystick-knob {
+    left: auto !important;
+    right: calc(max(7px, env(safe-area-inset-right, 0px)) + 48px) !important;
+    bottom: calc(max(7px, env(safe-area-inset-bottom, 0px)) + 48px) !important;
+  }
+}
+
+/* PHASE24 ONE-HAND + PAUSE-ONLY MOBILE CONTROLS -----------------------------
+ * Default presentation is Minimal: Pause is the only visible gameplay chrome.
+ * The full-screen floating analog remains live underneath the thumb. Players
+ * can opt back into faint/analog/buttons/full presentation without changing
+ * gameplay semantics. */
+#mobileControls #mobPause.mob-btn--pause {
+  position: fixed !important;
+  top: calc(10px + env(safe-area-inset-top, 0px)) !important;
+  right: max(10px, env(safe-area-inset-right, 0px)) !important;
+  bottom: auto !important;
+  width: 48px !important;
+  min-width: 48px !important;
+  height: 48px !important;
+  min-height: 48px !important;
+  z-index: 5 !important;
+  opacity: .58;
+}
+#mobileControls.mobile-controls--visibility-minimal #mobPause { opacity: .56; }
+#mobileControls.mobile-controls--visibility-faint #mobShoot,
+#mobileControls.mobile-controls--visibility-faint #mobControlMode,
+#mobileControls.mobile-controls--visibility-faint #mobLeft,
+#mobileControls.mobile-controls--visibility-faint #mobRight,
+#mobileControls.mobile-controls--visibility-faint #mobUp,
+#mobileControls.mobile-controls--visibility-faint #mobDown { opacity: .20 !important; }
+#mobileControls.mobile-controls--visibility-faint #mobShoot:active,
+#mobileControls.mobile-controls--visibility-faint .mob-btn:active { opacity: .82 !important; }
+#mobileControls.mobile-controls--visibility-full #mobShoot,
+#mobileControls.mobile-controls--visibility-buttons #mobShoot { opacity: .72; }
+#mobileControls[data-control-style="one-hand"] #mobShoot::after {
+  content: 'optional';
+  display: block;
+  margin-top: 2px;
+  font: 700 7px/1 system-ui,sans-serif;
+  opacity: .58;
+}
+@media (max-height: 520px) and (orientation: landscape) {
+  #mobileControls #mobPause.mob-btn--pause {
+    top: calc(7px + env(safe-area-inset-top, 0px)) !important;
+    right: max(8px, env(safe-area-inset-right, 0px)) !important;
+    bottom: auto !important;
+  }
+}
+
+
+/* Froggy UI v2.1 — Infinite map-first command hierarchy */
+.infinite-milestones-link { min-height:34px; padding:5px 9px; border:1px solid rgba(232,181,99,.45); border-radius:8px; background:rgba(45,35,19,.78); color:#f4dfaa; font:800 10px var(--font-body,system-ui),system-ui,sans-serif; cursor:pointer; }
+.infinite-milestones-link:hover,.infinite-milestones-link.active { border-color:#e8b563; background:rgba(80,73,35,.96); }
+.infinite-currency-chip { min-width:72px; justify-content:center; font-variant-numeric:tabular-nums; }
+#infiniteHudStats:empty { display:none; }
+@media (max-width:620px) {
+  .infinite-picker-nav { gap: var(--ff-space-1); margin-bottom:5px; }
+  .infinite-milestones-link { min-height:32px; padding:4px 7px; font-size: var(--ff-font-3xs); }
+}
+
+/* Puzzle standalone visual cleanup: preserve 44px hit targets while removing
+   the rectangular chrome from top actions and directional controls. */
+body.puzzle-standalone .standalone-actions button {
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  min-height: 48px;
+  padding: 6px;
+  display: inline-grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0;
+  line-height: 0;
+}
+body.puzzle-standalone .standalone-actions button .ff-ui-icon {
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  vertical-align: middle;
+}
+body.puzzle-standalone .standalone-actions button:hover,
+body.puzzle-standalone .standalone-actions button:focus-visible {
+  border: 0;
+  background: rgba(201,239,105,.14);
+  box-shadow: 0 0 0 2px rgba(201,239,105,.34), 0 3px 12px rgba(0,0,0,.24);
+}
+body.puzzle-standalone .puzzle-standalone-controls {
+  padding: 6px;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+body.puzzle-standalone .puzzle-standalone-controls button:not(.wide) {
+  width: 46px;
+  min-width: var(--ff-touch-minimum);
+  height: 46px;
+  min-height: var(--ff-touch-minimum);
+  padding: 5px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: none;
+  font-size: 0;
+  line-height: 0;
+}
+body.puzzle-standalone .puzzle-standalone-controls button:not(.wide) .ff-ui-icon {
+  width: 32px;
+  height: 32px;
+  margin: 0;
+}
+body.puzzle-standalone .puzzle-standalone-controls button:not(.wide):hover,
+body.puzzle-standalone .puzzle-standalone-controls button:not(.wide):focus-visible {
+  border: 0;
+  background: rgba(126,221,84,.16);
+  box-shadow: 0 0 0 2px rgba(168,244,146,.34);
+}
+body.puzzle-standalone .puzzle-standalone-controls button:not(.wide).is-vomit-direction {
+  background: rgba(230,164,37,.16);
+  box-shadow: 0 0 0 2px rgba(255,216,109,.42), 0 0 14px rgba(231,157,38,.24);
+}
+body.puzzle-standalone .puzzle-standalone-controls .wide {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+
+/* TOADAL / FUTURE MULTI-ACTION ARCADE SURFACE -------------------------------
+ * Generic slots: one movement-adjacent primary action plus two resource actions.
+ * The runtime supplies descriptors; this CSS is not coupled to Toadal IDs. */
+#mobileControls .mob-btn--secondary,
+#mobileControls .mob-btn--tertiary,
+#mobileControls .mob-action-resource { position: fixed; z-index: 7; }
+#mobileControls.mobile-controls--multi-action #mobShoot {
+  left: calc(max(12px, env(safe-area-inset-left, 0px)) + 120px) !important;
+  right: auto !important;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+  width: 72px !important; min-width: 72px !important;
+  height: 72px !important; min-height: 72px !important;
+  border-radius: 50% !important;
+  color: #251a04 !important;
+  background: linear-gradient(#ffe87a,#d8a91d) !important;
+  border-color: #fff4b7 !important;
+}
+#mobileControls.mobile-controls--multi-action #mobActionSecondary {
+  right: calc(max(12px, env(safe-area-inset-right, 0px)) + 80px) !important;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+  width: 72px !important; min-width: 72px !important;
+  height: 72px !important; min-height: 72px !important;
+  border-radius: 18px !important;
+  color: #fff4c5 !important;
+  background: rgba(38,31,10,.94) !important;
+  border-color: rgba(255,216,72,.72) !important;
+}
+#mobileControls.mobile-controls--multi-action #mobActionTertiary {
+  right: max(12px, env(safe-area-inset-right, 0px)) !important;
+  bottom: calc(18px + env(safe-area-inset-bottom, 0px)) !important;
+  width: 72px !important; min-width: 72px !important;
+  height: 72px !important; min-height: 72px !important;
+  border-radius: 18px !important;
+  color: #fff4c5 !important;
+  background: rgba(38,31,10,.94) !important;
+  border-color: rgba(255,216,72,.72) !important;
+}
+#mobileControls.mobile-controls--multi-action .mob-action--unavailable {
+  opacity: .42 !important;
+  filter: saturate(.55);
+}
+#mobileControls.mobile-controls--multi-action .mob-action--denied {
+  animation: arcade-mobile-action-denied .18s ease-out;
+}
+@keyframes arcade-mobile-action-denied {
+  0%,100% { transform:translateX(0); }
+  30% { transform:translateX(-3px); }
+  65% { transform:translateX(3px); }
+}
+#mobileControls.mobile-controls--multi-action .mob-action-label {
+  display:block; font:900 11px/1 system-ui,sans-serif; letter-spacing:.035em;
+}
+#mobileControls.mobile-controls--multi-action .mob-action-hint {
+  display:block; margin-top:4px; font:800 7px/1 system-ui,sans-serif; opacity:.76;
+}
+#mobileControls.mobile-controls--multi-action #mobShoot::after { content:none !important; display:none !important; }
+#mobileControls .mob-action-resource {
+  right: max(12px, env(safe-area-inset-right, 0px));
+  bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+  width: 152px;
+  min-height: 37px;
+  padding: 6px 8px;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 'label value' 'track track';
+  gap: 3px 7px;
+  border: 1px solid rgba(255,220,88,.58);
+  border-radius: 11px;
+  background: rgba(9,15,12,.82);
+  box-shadow: 0 5px 14px rgba(0,0,0,.32);
+  color:#ffea91;
+  pointer-events:none !important;
+}
+#mobileControls .mob-action-resource__label { grid-area:label; font:900 8px/1 system-ui,sans-serif; letter-spacing:.06em; }
+#mobileControls .mob-action-resource__value { grid-area:value; font:900 9px/1 system-ui,sans-serif; }
+#mobileControls .mob-action-resource__track { grid-area:track; position:relative; display:block; height:7px; overflow:visible; border-radius:5px; background:rgba(255,255,255,.12); }
+#mobileControls .mob-action-resource__fill { position:absolute; inset:0 auto 0 0; width:0; border-radius:5px; background:linear-gradient(90deg,#c99617,#ffe86b); }
+#mobileControls .mob-action-resource__threshold { position:absolute; top:-2px; bottom:-2px; width:1px; background:rgba(255,255,255,.82); transform:translateX(-.5px); }
+#mobileControls .mob-action-resource--full { box-shadow:0 0 0 1px rgba(255,242,155,.7),0 0 18px rgba(255,215,65,.24); }
+@media (max-height:520px) and (orientation:landscape) {
+  #mobileControls.mobile-controls--multi-action #mobShoot {
+    left: calc(max(9px, env(safe-area-inset-left, 0px)) + 104px) !important;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    width:56px !important; min-width:56px !important; height:56px !important; min-height:56px !important;
+  }
+  #mobileControls.mobile-controls--multi-action #mobActionSecondary {
+    right: calc(max(9px, env(safe-area-inset-right, 0px)) + 62px) !important;
+    bottom: calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    width:56px !important; min-width:56px !important; height:56px !important; min-height:56px !important;
+  }
+  #mobileControls.mobile-controls--multi-action #mobActionTertiary {
+    right:max(9px, env(safe-area-inset-right, 0px)) !important;
+    bottom:calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    width:56px !important; min-width:56px !important; height:56px !important; min-height:56px !important;
+  }
+  #mobileControls .mob-action-resource { right:max(9px, env(safe-area-inset-right,0px)); bottom:calc(69px + env(safe-area-inset-bottom,0px)); width:118px; min-height:32px; padding:5px 7px; }
+}
+
+
+/* ARCADE MOBILE CONTROL AUTHORITY — owner correction 2026-09-21 */
+body.arcade-standalone.arcade-mobile-controls-visible .standalone-stage {
+  /* Mobile controls are overlays. Never shrink the 480x800 Arcade canvas to
+     reserve a permanent dock. */
+  padding-bottom: 0 !important;
+}
+@media (pointer:coarse) and (orientation:portrait), (max-width:720px) and (orientation:portrait) {
+  body.arcade-standalone > .standalone-stage {
+    align-items: flex-start !important;
+    padding-top: 0 !important;
+  }
+}
+body.arcade-standalone #mobileControls .mob-btn--hop {
+  position: fixed;
+  left: max(8px, env(safe-area-inset-left, 0px));
+  right: auto;
+  bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  width:58px; min-width:58px; height:58px; min-height:58px;
+  border-radius:16px;
+  color:#fff5c7;
+  background:rgba(37,30,9,.92);
+  border:2px solid rgba(255,218,76,.72);
+  z-index:7;
+}
+body.arcade-standalone #mobileControls.mobile-controls--has-action:not(.mobile-controls--multi-action) #mobShoot {
+  left:max(8px, env(safe-area-inset-left,0px)) !important;
+  right:auto !important;
+  bottom:calc(8px + env(safe-area-inset-bottom,0px)) !important;
+}
+body.arcade-standalone #mobileControls.mobile-controls--multi-action #mobHop {
+  left:max(8px, env(safe-area-inset-left,0px)) !important;
+  right:auto !important;
+  bottom:calc(8px + env(safe-area-inset-bottom,0px)) !important;
+}
+body.arcade-standalone #mobileControls.mobile-controls--multi-action #mobShoot {
+  left:calc(max(8px, env(safe-area-inset-left,0px)) + 64px) !important;
+  right:auto !important;
+  bottom:calc(8px + env(safe-area-inset-bottom,0px)) !important;
+  width:58px !important; min-width:58px !important; height:58px !important; min-height:58px !important;
+  border-radius:16px !important;
+}
+body.arcade-standalone #mobileControls.mobile-controls--multi-action #mobActionSecondary {
+  left:max(8px, env(safe-area-inset-left,0px)) !important;
+  right:auto !important;
+  bottom:calc(72px + env(safe-area-inset-bottom,0px)) !important;
+  width:58px !important; min-width:58px !important; height:58px !important; min-height:58px !important;
+  border-radius:16px !important;
+}
+body.arcade-standalone #mobileControls.mobile-controls--multi-action #mobActionTertiary {
+  left:calc(max(8px, env(safe-area-inset-left,0px)) + 64px) !important;
+  right:auto !important;
+  bottom:calc(72px + env(safe-area-inset-bottom,0px)) !important;
+  width:58px !important; min-width:58px !important; height:58px !important; min-height:58px !important;
+  border-radius:16px !important;
+}
+body.arcade-standalone #mobileControls[data-control-hints="off"] .mob-action-hint,
+body.arcade-standalone #mobileControls[data-control-hints="off"] .mob-ability-hint { display:none !important; }
+body.arcade-standalone #mobileControls.mobile-controls--visibility-faint #mobHop,
+body.arcade-standalone #mobileControls.mobile-controls--visibility-faint #mobActionSecondary,
+body.arcade-standalone #mobileControls.mobile-controls--visibility-faint #mobActionTertiary { opacity:.24 !important; }
+body.arcade-standalone #mobileControls.mobile-controls--visibility-faint #mobHop:active,
+body.arcade-standalone #mobileControls.mobile-controls--visibility-faint #mobActionSecondary:active,
+body.arcade-standalone #mobileControls.mobile-controls--visibility-faint #mobActionTertiary:active { opacity:.42 !important; }

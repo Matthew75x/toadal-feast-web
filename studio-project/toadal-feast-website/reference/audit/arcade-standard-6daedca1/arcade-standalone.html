@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="application-name" content="TOADAL FEAST!" data-theme-meta="product.title">
+<meta name="description" content="Eat everything. Drop nothing." data-theme-meta="metadata.description">
+<meta name="keywords" content="froggy-feast, game" data-theme-meta="metadata.keywords">
+<meta property="og:title" content="TOADAL FEAST!" data-theme-meta="product.title">
+<meta property="og:description" content="Eat everything. Drop nothing." data-theme-meta="metadata.description">
+<meta charset="UTF-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-lh1LqrYlj2j4JSPUz8yfyEORWbBl0w2KzKWt5X0z+bc='; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; media-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'">
+<script src="packages/shared/served-origin-guard.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5.0, user-scalable=yes">
+<meta name="theme-color" content="#06140d">
+<title>TOADAL FEAST! · Arcade</title>
+<link rel="icon" href="assets/themes/froggy-feast/ui-v2/game/heart.png" type="image/png">
+<link rel="stylesheet" href="src/styles/foundation/presentation-tokens.css">
+<link rel="stylesheet" href="src/styles/style.css">
+<link rel="stylesheet" href="src/styles/components/feast-genie-guide.css">
+<link rel="stylesheet" href="src/styles/components/standalone-mode.css">
+<link rel="stylesheet" href="src/styles/components/player-help.css">
+<link rel="stylesheet" href="src/styles/modes/arcade/arcade-shell-overrides.css">
+<link rel="stylesheet" href="src/styles/modes/arcade/arcade-standalone.css">
+<link rel="stylesheet" href="src/styles/modes/arcade/arcade-launch-shell.css">
+<link rel="stylesheet" href="src/styles/components/ff-transition-overlay.css">
+<link rel="stylesheet" href="src/styles/components/froggy-ui-v2-qa-shell.css">
+<link rel="stylesheet" href="wo003-arcade-preview.css">
+</head>
+<body data-theme-rewrite data-ui-authority="froggy-ui-v2-qa" data-surface-class="qa" data-route-id="arcade-standalone" class="standalone-mode arcade-standalone wo003-arcade-preview" data-runtime-profile="player" data-standalone-audio-key="froggyFeastArcadeStandalone.audio.v1">
+<script src="src/runtime/shared/ff-transition-overlay.js"></script>
+<header class="standalone-topbar" role="region" aria-label="Standalone game controls" data-theme-attr="aria-label=aria.standaloneControls">
+ <div class="standalone-brand"><strong><span data-theme-text="brand.title">TOADAL FEAST!</span> · <span data-theme-text="mode.arcade">ARCADE</span></strong><span data-theme-text="arcade.goal">Catch food, avoid hazards, and build a high score.</span></div>
+ <div class="standalone-actions">
+  <button id="arcadeStandaloneMenuButton" type="button" aria-label="Pause game"><span class="ff-ui-icon" data-ui-icon="pause"></span> <span>Pause</span></button>
+  <button id="arcadeStandaloneRestart" type="button"><span data-theme-text="menu.restart">Restart</span> Run</button>
+ </div>
+</header>
+<main class="standalone-stage" role="main" aria-label="Game area" data-theme-attr="aria-label=aria.gameArea">
+ <div id="canvasWrapper" class="standalone-canvas-wrapper active"><canvas id="gameCanvas" aria-label="TOADAL FEAST! Arcade game" data-theme-attr="aria-label=aria.arcadeGame"></canvas><div id="feastOrderTracker" class="feast-order-tracker hidden" aria-live="polite"></div><div id="feastOrderToast" class="feast-order-toast hidden" aria-live="polite"></div></div>
+</main>
+<div id="mobileControls" class="standalone-mobile-controls" aria-label="Arcade touch controls" aria-hidden="true">
+ <div id="mobAbilityHint" class="mob-ability-hint" role="status" aria-live="polite" hidden><span id="mobAbilityHintText"></span></div>
+ <div id="mobJoystick" class="mob-joystick" role="application" aria-label="Analog movement joystick" hidden><span class="mob-joystick-ring" aria-hidden="true"></span><span id="mobJoystickKnob" class="mob-joystick-knob" aria-hidden="true"></span></div>
+ <button class="mob-btn" id="mobLeft" type="button" aria-label="Move left"><span class="ff-ui-icon" data-ui-icon="left"></span></button>
+ <button class="mob-btn" id="mobRight" type="button" aria-label="Move right"><span class="ff-ui-icon" data-ui-icon="right"></span></button>
+ <button class="mob-control-mode" id="mobControlMode" type="button" aria-label="Touch controls: joystick. Tap to switch layout.">STICK</button>
+ <button class="mob-btn mob-btn--pause" id="mobPause" type="button" aria-label="Pause"><span class="ff-ui-icon" data-ui-icon="pause"></span></button>
+ <button class="mob-btn mob-btn--action" id="mobShoot" type="button" aria-label="Tongue action" data-theme-attr="aria-label=aria.mobileShoot"><span id="mobActionLabel" class="mob-action-label">TONGUE</span><span id="mobActionHint" class="mob-action-hint">Tap to catch</span></button>
+ <div id="mobActionResource" class="mob-action-resource" role="status" aria-live="polite" hidden>
+  <span id="mobActionResourceLabel" class="mob-action-resource__label">RESOURCE</span>
+  <span class="mob-action-resource__track" aria-hidden="true"><span id="mobActionResourceFill" class="mob-action-resource__fill"></span><i id="mobActionResourceThreshold" class="mob-action-resource__threshold"></i></span>
+  <strong id="mobActionResourceValue" class="mob-action-resource__value">0/100</strong>
+ </div>
+ <button class="mob-btn mob-btn--action mob-btn--secondary" id="mobActionSecondary" type="button" aria-label="Secondary action" hidden><span id="mobActionSecondaryLabel" class="mob-action-label">ACTION</span><span id="mobActionSecondaryHint" class="mob-action-hint"></span></button>
+ <button class="mob-btn mob-btn--action mob-btn--tertiary" id="mobActionTertiary" type="button" aria-label="Tertiary action" hidden><span id="mobActionTertiaryLabel" class="mob-action-label">ACTION</span><span id="mobActionTertiaryHint" class="mob-action-hint"></span></button>
+ <button class="mob-btn mob-btn--action mob-btn--hop" id="mobHop" type="button" aria-label="Charge and release Toadal Hop" hidden><span class="mob-action-label">HOP</span><span class="mob-action-hint">Hold · release</span></button>
+ <button class="mob-btn" id="mobUp" type="button" aria-label="Fly up" hidden><span class="ff-ui-icon" data-ui-icon="up"></span></button>
+ <button class="mob-btn" id="mobDown" type="button" aria-label="Fly down" hidden><span class="ff-ui-icon" data-ui-icon="down"></span></button>
+</div>
+<section id="arcadeStandalonePause" class="standalone-pause" role="dialog" aria-modal="true" aria-label="Arcade pause menu" data-theme-attr="aria-label=aria.arcadePauseMenu" hidden>
+ <div class="standalone-pause-card">
+  <h2 class="standalone-pause-title" data-standalone-pause-title><span class="ff-ui-icon" data-ui-icon="pause"></span> <span data-theme-text="menu.pause">Paused</span></h2>
+  <p class="standalone-pause-sub" data-standalone-pause-subtitle>Press <kbd>Esc</kbd> or tap Resume to continue</p>
+  <div id="arcadePauseAffinity" class="standalone-pause-affinity" aria-live="polite"></div>
+  <div class="standalone-pause-actions" aria-label="Arcade pause actions" data-theme-attr="aria-label=aria.arcadePauseActions">
+   <button class="standalone-pause-primary" type="button" data-standalone-pause-action="resume" data-standalone-pause-primary><span class="ff-ui-icon" data-ui-icon="resume"></span> <span data-theme-text="menu.resume">Resume</span></button>
+   <button type="button" data-standalone-pause-action="restart"><span class="ff-ui-icon" data-ui-icon="restart"></span> <span data-theme-text="menu.restart">Restart</span> Run</button>
+   <button type="button" data-standalone-pause-action="audio" data-standalone-audio-button aria-pressed="false"><span class="ff-ui-icon" data-ui-icon="audio" aria-hidden="true"></span> <span data-standalone-audio-label data-theme-text="menu.audio">Audio</span></button>
+   <button type="button" data-standalone-pause-action="settings"><span class="ff-ui-icon" data-ui-icon="settings"></span> <span data-theme-text="menu.settings">Settings</span></button>
+   <button type="button" data-standalone-pause-action="change-character"><span class="ff-ui-icon" data-ui-icon="characters" aria-hidden="true"></span> <span data-theme-text="menu.changeCharacter">Change Character</span></button>
+   <button type="button" data-standalone-pause-action="quit"><span class="ff-ui-icon" data-ui-icon="quit"></span> <span data-arcade-quit-label>Quit to Arcade Menu</span></button>
+  </div>
+ </div>
+</section>
+<section id="arcadeStandaloneMenu" class="standalone-menu familiar-menu" role="dialog" aria-modal="true" aria-label="TOADAL FEAST! Arcade menu" data-theme-attr="aria-label=aria.arcadeMenu" hidden aria-hidden="true">
+ <div class="familiar-menu-home launch-home" data-standalone-view="home">
+  <div class="ff-qa-shell-hero ff-qa-shell-hero--compact" data-ui-authority="froggy-ui-v2-qa" role="banner" aria-label="Arcade direct test menu">
+   <span class="ff-qa-badge">DIRECT MODE</span>
+   <strong class="ff-qa-shell-title" aria-hidden="true">TOADAL FEAST! <span>ARCADE</span></strong>
+   <a class="ff-qa-return" href="index.html" aria-label="Return to the full TOADAL FEAST! game">Full Game</a>
+  </div>
+  <div class="launch-world" aria-hidden="true">
+   <div class="launch-canopy launch-canopy--left"></div>
+   <div class="launch-canopy launch-canopy--right"></div>
+   <div class="launch-fireflies"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+   <div class="launch-food-rail launch-food-rail--left">
+    <img class="launch-food launch-food--burger" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_burger.png" alt="">
+    <img class="launch-food launch-food--donut" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_donut.png" alt="">
+    <img class="launch-food launch-food--sushi" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_maki_roll.png" alt="">
+    <img class="launch-food launch-food--banana" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_banana.png" alt="">
+    <img class="launch-food launch-food--cake" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cupcake.png" alt="">
+    <img class="launch-food launch-food--broccoli" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_broccoli.png" alt="">
+   </div>
+   <div class="launch-food-rail launch-food-rail--right">
+    <img class="launch-food launch-food--pizza" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pizza.png" alt="">
+    <img class="launch-food launch-food--fries" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fries.png" alt="">
+    <img class="launch-food launch-food--icecream" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_icecream.png" alt="">
+    <img class="launch-food launch-food--strawberry" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_strawberry.png" alt="">
+    <img class="launch-food launch-food--chicken" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_chicken.png" alt="">
+    <img class="launch-food launch-food--cotton" src="assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cotton_candy.png" alt="">
+   </div>
+  </div>
+
+  <div class="launch-cabinet" role="presentation">
+   <div class="launch-cabinet-glass">
+    <div class="menu-hero launch-hero">
+     <div class="launch-title-plaque">
+      <img class="launch-title-frog" src="assets/images/characters/runtime-select/classic.png" alt="" aria-hidden="true">
+      <h1 class="menu-title launch-title"><span>TOADAL FEAST!</span></h1>
+      <p class="menu-tagline" data-theme-text="brand.tagline">Eat Everything. Drop Nothing.</p>
+     </div>
+     <div class="launch-score-console" aria-label="Arcade profile summary">
+      <div class="launch-score-window launch-score-window--best">
+       <span class="launch-score-label">Best score</span>
+       <strong id="arcadeStandaloneBest" class="launch-score-value">0</strong>
+      </div>
+      <img class="launch-console-frog" src="assets/images/characters/runtime-select/classic.png" alt="" aria-hidden="true">
+      <div class="launch-score-window launch-score-window--coins">
+       <span class="launch-score-label">Coins</span>
+       <strong id="arcadeStandaloneCoins" class="launch-score-value">0</strong>
+      </div>
+     </div>
+    </div>
+
+    <div class="menu-play-section launch-menu-content">
+     <section class="menu-mode-section menu-mode-section--featured" aria-labelledby="arcadeStandaloneStartTitle">
+      <button class="menu-btn-play menu-btn-play--featured launch-feature-card ff-qa-art-card" type="button" data-standalone-action="play-standard" data-standalone-primary data-mode-card="arcade-standard" aria-label="Play Classic Arcade">
+       <span class="ff-qa-card-fallback" aria-hidden="true">Classic Arcade</span>
+       <img class="ff-qa-card-art" src="assets/themes/froggy-feast/ui-v2/modes/arcade.webp" alt="" aria-hidden="true" decoding="async">
+       <span class="launch-feature-portrait-wrap" aria-hidden="true">
+        <img id="menuSelectedCharacterPortrait" class="launch-feature-portrait" src="assets/images/characters/runtime-select/classic.png" alt="">
+        <span class="launch-feature-spark"></span>
+       </span>
+       <span class="menu-mode-content launch-feature-copy">
+        <span class="menu-mode-eyebrow" data-theme-text="menu.modeStartHere">Start here</span>
+        <span id="arcadeStandaloneStartTitle" class="menu-mode-title" data-theme-text="mode.arcade.classic">Classic Arcade</span>
+        <span class="menu-mode-description" data-theme-text="mode.arcade.classicDescription">Catch falling food, dodge hazards, and build a score.</span>
+        <span class="launch-selected-character"><span id="menuSelectedCharacterName">Classic Frog</span> · <span class="menu-mode-control" data-theme-text="mode.arcade.controls">Move &amp; catch · keys or touch</span></span>
+       </span>
+       <span class="launch-play-console" aria-hidden="true">
+        <span class="launch-play-console-label">Play now</span>
+        <span class="launch-play-screen">PLAY!</span>
+        <span class="launch-play-controls"><i></i><i></i><i></i></span>
+       </span>
+      </button>
+     </section>
+
+     <section class="menu-mode-section launch-variants" aria-labelledby="arcadeStandaloneVariantsTitle">
+      <div class="menu-section-heading launch-section-heading">
+       <h2 id="arcadeStandaloneVariantsTitle" class="menu-section-title" data-theme-text="menu.modeArcadeVariantsTitle">Arcade variations</h2>
+       <p class="menu-section-copy" data-theme-text="menu.modeArcadeVariantsSubtitle">The same quick controls with a different kind of pressure.</p>
+      </div>
+      <div class="menu-modes menu-modes--detailed launch-mode-grid" aria-label="Arcade modes" data-theme-attr="aria-label=aria.arcadeModes">
+       <button class="menu-btn-mode menu-btn-mode--detailed menu-btn-tc launch-mode-card ff-qa-art-card" type="button" data-arcade-mode="tc" data-standalone-action="play-mode" data-mode-card="arcade-toadal" aria-label="Play FEAST FRENZY">
+       <span class="ff-qa-card-fallback" aria-hidden="true">FEAST FRENZY</span>
+       <img class="ff-qa-card-art" src="assets/themes/froggy-feast/ui-raster-authority/runtime-256/mode-feast-frenzy.png" alt="" aria-hidden="true" decoding="async">
+        <span class="launch-mode-art" aria-hidden="true"><img src="assets/images/characters/runtime-select/gulper.png" alt=""></span>
+        <span class="launch-mode-copy"><span class="menu-mode-title" data-theme-text="mode.arcade.toadal">FEAST FRENZY</span><span class="menu-mode-description" data-theme-text="mode.arcade.toadalDescription">Misses are safe while Gulper grows with every meal.</span><span class="menu-mode-control" data-theme-text="mode.arcade.controls">Move &amp; catch · keys or touch</span></span>
+        <span class="menu-mode-action menu-mode-action--detailed" data-theme-text="menu.play">Play</span>
+        <span class="launch-mode-lock" aria-hidden="true"><span class="launch-chain launch-chain--a"></span><span class="launch-chain launch-chain--b"></span><span class="launch-padlock">Locked</span><span class="launch-lock-copy">Reach 1,500 pts</span></span>
+       </button>
+       <button class="menu-btn-mode menu-btn-mode--detailed menu-btn-fmf launch-mode-card ff-qa-art-card" type="button" data-arcade-mode="fmf" data-standalone-action="play-mode" data-mode-card="arcade-five-minute" aria-label="Play 5 Minute Feast">
+       <span class="ff-qa-card-fallback" aria-hidden="true">5 Minute Feast</span>
+       <img class="ff-qa-card-art" src="assets/themes/froggy-feast/ui-v2/arcade-variants/five-minute-feast.webp" alt="" aria-hidden="true" decoding="async">
+        <span class="launch-mode-art launch-mode-art--timer" aria-hidden="true"><img src="assets/images/characters/runtime-select/royal.png" alt=""><span>05:00</span></span>
+        <span class="launch-mode-copy"><span class="menu-mode-title" data-theme-text="mode.arcade.fiveMinute">5 Minute Feast</span><span class="menu-mode-description" data-theme-text="mode.arcade.fiveMinuteDescription">A five-minute high-score sprint against the clock.</span><span class="menu-mode-control" data-theme-text="mode.arcade.controls">Move &amp; catch · keys or touch</span></span>
+        <span class="menu-mode-action menu-mode-action--detailed" data-theme-text="menu.play">Play</span>
+        <span class="launch-mode-lock" aria-hidden="true"><span class="launch-chain launch-chain--a"></span><span class="launch-chain launch-chain--b"></span><span class="launch-padlock">Locked</span><span class="launch-lock-copy">Reach 600 pts</span></span>
+       </button>
+       <button class="menu-btn-mode menu-btn-mode--detailed menu-btn-zen launch-mode-card launch-mode-card--zen ff-qa-art-card" type="button" data-arcade-mode="zen" data-standalone-action="play-mode" data-mode-card="arcade-zen" aria-label="Play Zen Garden">
+       <span class="ff-qa-card-fallback" aria-hidden="true">Zen Garden</span>
+       <img class="ff-qa-card-art" src="assets/themes/froggy-feast/ui-v2/arcade-variants/zen-garden.webp" alt="" aria-hidden="true" decoding="async">
+        <span class="launch-mode-art launch-mode-art--zen" aria-hidden="true"><img src="assets/images/characters/curated-highres/princess/lilly_idle_1f_512_2026-09-08.png" alt=""><span class="launch-lotus launch-lotus--one"></span><span class="launch-lotus launch-lotus--two"></span></span>
+        <span class="launch-mode-copy"><span class="menu-mode-title" data-theme-text="mode.arcade.zen">Zen Garden</span><span class="menu-mode-description" data-theme-text="mode.arcade.zenDescription">A relaxed castle-clear run with no miss damage.</span><span class="menu-mode-control" data-theme-text="mode.arcade.controls">Move &amp; catch · keys or touch</span></span>
+        <span class="menu-mode-action menu-mode-action--detailed" data-theme-text="menu.play">Play</span>
+        <span class="launch-mode-lock" aria-hidden="true"><span class="launch-chain launch-chain--a"></span><span class="launch-chain launch-chain--b"></span><span class="launch-padlock">Locked</span><span class="launch-lock-copy">Reach 0 pts</span></span>
+       </button>
+      </div>
+     </section>
+
+     <nav class="menu-nav launch-primary-nav" aria-label="Primary Arcade menu options">
+      <button class="menu-btn-nav" type="button" data-standalone-action="open-characters"><span class="btn-icon"><span class="ff-ui-icon" data-ui-icon="characters"></span></span><span data-theme-text="menu.characters">Characters</span></button>
+      <button class="menu-btn-nav accent launch-daily-button" type="button" data-standalone-action="open-feast-orders"><span class="btn-icon"><span class="ff-ui-icon" data-ui-icon="plate"></span></span><span>Daily Feast</span><small>Fresh rewards</small></button>
+      <button class="menu-btn-nav" type="button" data-standalone-action="open-scores"><span class="btn-icon"><span class="ff-ui-icon" data-ui-icon="trophy"></span></span><span data-theme-text="menu.scores">Scores</span></button>
+     </nav>
+
+     <nav class="launch-utility-nav" aria-label="More Arcade options">
+      <button type="button" data-standalone-action="open-unlocks"><span class="ff-ui-icon" data-ui-icon="unlock"></span><span data-theme-text="menu.unlocks">Unlocks</span></button>
+      <button type="button" data-standalone-action="open-cosmetics"><span class="ff-ui-icon" data-ui-icon="cosmetics"></span><span data-theme-text="menu.cosmetics">Cosmetics</span></button>
+      <button type="button" data-standalone-action="open-shop"><span class="ff-ui-icon" data-ui-icon="shop"></span><span data-theme-text="menu.shop">Shop</span></button>
+      <button type="button" data-standalone-action="open-settings"><span class="ff-ui-icon" data-ui-icon="settings"></span><span data-theme-text="menu.settings">Settings</span></button>
+      <button type="button" data-standalone-action="open-help"><span class="ff-ui-icon" data-ui-icon="help"></span><span data-theme-text="menu.instructions">How to Play</span></button>
+     </nav>
+     <p class="familiar-menu-note launch-menu-message" data-standalone-menu-message hidden aria-live="polite"></p>
+    </div>
+   </div>
+   <div class="launch-cabinet-controls" aria-hidden="true"><span class="launch-joystick"></span><span class="launch-button launch-button--green"></span><span class="launch-button launch-button--blue"></span><span class="launch-button launch-button--red"></span></div>
+  </div>
+ </div>
+
+ <div class="familiar-menu-panel" role="region" data-standalone-view="feast-orders" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="plate"></span> Daily Feast</h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body"><div id="feastOrdersBoard" class="feast-orders-board" aria-live="polite"></div></div>
+ </div>
+ <div class="familiar-menu-panel" role="region" data-standalone-view="characters" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="characters"></span> <span data-theme-text="menu.characters">Characters</span></h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body"><p class="familiar-menu-note" id="arcadeCharactersNote"></p><div class="familiar-grid" id="arcadeCharacterGrid"></div></div>
+ </div>
+ <div class="familiar-menu-panel" role="region" data-standalone-view="scores" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="trophy"></span> <span data-theme-text="menu.scores">Scores</span></h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body"><div class="familiar-stat-grid" id="arcadeScoreStats"></div><div class="familiar-section"><h3 class="familiar-section-title">Recent high scores</h3><div class="familiar-list" id="arcadeScoreList"></div></div></div>
+ </div>
+ <div class="familiar-menu-panel" role="region" data-standalone-view="unlocks" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="unlock"></span> <span data-theme-text="menu.unlocks">Unlocks</span></h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body"><div class="familiar-stat-grid" id="arcadeUnlockStats"></div><div class="familiar-section"><h3 class="familiar-section-title">Arcade mode milestones</h3><div class="familiar-list" id="arcadeUnlockList"></div></div></div>
+ </div>
+ <div class="familiar-menu-panel" role="region" data-standalone-view="cosmetics" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="cosmetics"></span> <span data-theme-text="menu.cosmetics">Cosmetics</span></h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body"><p class="familiar-menu-note" id="arcadeCosmeticsNote"></p><div class="familiar-list" id="arcadeCosmeticList"></div></div>
+ </div>
+ <div class="familiar-menu-panel" role="region" data-standalone-view="shop" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="shop"></span> <span data-theme-text="menu.shop">Shop</span></h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body"><div class="familiar-section"><h3 class="familiar-section-title" data-theme-text="menu.powerUpGuide">Power-up field guide</h3><div class="familiar-list" id="arcadeShopList"></div></div><p class="familiar-menu-note">Characters and cosmetics can be purchased from their own tabs with coins earned during Arcade runs.</p></div>
+ </div>
+ <div class="familiar-menu-panel" role="region" data-standalone-view="settings" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="settings"></span> <span data-theme-text="menu.settings">Settings</span></h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body"><div class="familiar-section"><h3 class="familiar-section-title">Gameplay and accessibility</h3><div class="familiar-list" id="arcadeSettingsList"></div></div></div>
+ </div>
+ <div class="familiar-menu-panel" role="region" data-standalone-view="help" hidden>
+  <header class="familiar-menu-panel-header"><h2 class="familiar-menu-panel-title"><span class="ff-ui-icon" data-ui-icon="help"></span> How to Play Arcade</h2><button class="familiar-back" type="button" data-standalone-action="back-home"><span class="ff-ui-icon" data-ui-icon="left"></span> <span data-theme-text="menu.back">Back</span></button></header>
+  <div class="familiar-menu-panel-body familiar-help" data-player-help-mount data-player-help-mode="arcade"></div>
+ </div>
+</section>
+
+<section id="arcadeResultOverlay" class="arcade-result-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="arcadeResultTitle" hidden>
+ <div class="arcade-result-card">
+  <div class="arcade-result-celebration" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="arcade-result-portrait-wrap"><img id="arcadeResultCharacter" class="arcade-result-character" src="assets/images/characters/runtime-select/classic.png" alt="Classic Frog result reaction"></div>
+  <p id="arcadeResultEyebrow" class="arcade-result-eyebrow">Classic Frog</p>
+  <span id="arcadeResultRuleset" class="arcade-result-ruleset">Classic rules</span>
+  <h2 id="arcadeResultTitle" class="arcade-result-title">RUN COMPLETE</h2>
+  <p id="arcadeResultSubtitle" class="arcade-result-subtitle">Your feast is complete.</p>
+  <div class="arcade-result-stats" aria-label="Run results">
+   <div><span>Score</span><strong id="arcadeResultScore">0</strong><small id="arcadeResultBest">Best 0</small></div>
+   <div><span>Progress</span><strong id="arcadeResultWave">Wave 1</strong><small id="arcadeResultProgressNote">Arcade run</small></div>
+   <div class="arcade-result-payout"><span id="arcadeResultPayoutLabel">Froggy Gold</span><strong id="arcadeResultPayout">+0</strong><small id="arcadeResultPayoutNote">Banked when the run ends</small></div>
+  </div>
+  <ul id="arcadeResultAchievements" class="arcade-result-achievements hidden" aria-live="polite"></ul>
+  <dl id="arcadeResultInsights" class="arcade-result-insights" aria-label="Run recap">
+   <div><dt>Best moment</dt><dd id="arcadeResultInsightBest">—</dd></div>
+   <div><dt>Feast mastery</dt><dd id="arcadeResultInsightMastery">—</dd></div>
+   <div><dt>Next opportunity</dt><dd id="arcadeResultInsightNext">—</dd></div>
+  </dl>
+  <div id="arcadeResultRevenge" class="arcade-result-revenge hidden">
+   <div><strong>Revenge Challenge Ready</strong><span>Return stronger on the next run.</span></div>
+   <div class="arcade-result-revenge-actions">
+    <button id="arcadeResultRevengeButton" type="button" data-arcade-result-action="revenge">Get Revenge</button>
+    <button id="arcadeResultRevengeDismiss" class="arcade-result-revenge-dismiss" type="button" data-arcade-result-action="dismiss-revenge">Not now</button>
+   </div>
+  </div>
+  <div class="arcade-result-actions">
+   <button id="arcadeResultPrimaryButton" class="arcade-result-primary" type="button" data-arcade-result-action="replay">Play Again</button>
+   <button id="arcadeResultSecondaryButton" type="button" data-arcade-result-action="menu">Arcade Menu</button>
+  </div>
+ </div>
+</section>
+<!-- GENERATED ENTRYPOINT SCRIPTS: arcade START -->
+<script src="src/runtime/app/release-meta.js"></script>
+<script src="src/runtime/modes/arcade/arcade-host-integration.js"></script>
+<script src="prod/sprite-sheet-manager.js"></script>
+<script src="prod/asset-pack-loader.js"></script>
+<script src="prod/asset-layout-config.js"></script>
+<script src="prod/ASSET_REGISTRY.js"></script>
+<script src="prod/sprite-renderer.js"></script>
+<script src="src/runtime/platform/error-handler.js"></script>
+<script src="src/runtime/platform/a11y-manager.js"></script>
+<script src="themes/generated/theme-registry.js"></script>
+<script src="themes/generated/theme-coverage-registry.js"></script>
+<script src="themes/generated/theme-save-policy-registry.js"></script>
+<script src="src/runtime/shared/theme-system.js"></script>
+<script src="src/runtime/shared/theme-save-resolver.js"></script>
+<script src="src/runtime/platform/visual-background-contract.js"></script>
+<script src="src/runtime/platform/visual-background-host.js"></script>
+<script src="src/runtime/shared/balance.js"></script>
+<script src="src/runtime/modes/arcade/arcade-visuals.js"></script>
+<script src="content/generated/content-registry.js"></script>
+<script src="content/generated/asset-source-registry.js"></script>
+<script src="content/generated/legacy-cosmetic-save-id-map.js"></script>
+<script src="src/runtime/shared/content-rollout-config.js"></script>
+<script src="src/runtime/shared/content-unlock-resolver.js"></script>
+<script src="src/runtime/shared/content-asset-resolver.js"></script>
+<script src="src/runtime/shared/theme-composition-resolver.js"></script>
+<script src="content/generated/asset-provenance-registry.js"></script>
+<script src="content/generated/food-presentation-registry.js"></script>
+<script src="src/runtime/shared/food-presentation-contract.js"></script>
+<script src="src/runtime/modes/arcade/arcade-asset-bindings.js"></script>
+<script src="src/runtime/modes/arcade/arcade-nonfood-asset-bindings.js"></script>
+<script src="src/runtime/modes/arcade/arcade-powerup-candy-bindings.js"></script>
+<script src="src/runtime/ui/ui-icon-library.js"></script>
+<script src="src/runtime/platform/asset-manager.js"></script>
+<script src="src/runtime/shared/content-renderer-adapters.js"></script>
+<script>window.__FROGGY_STANDALONE_PROCEDURAL_AUDIO__ = true;</script>
+<script src="src/runtime/platform/audio-manager.js"></script>
+<script src="src/runtime/shared/characters.js"></script>
+<script src="src/runtime/shared/cosmetic-character-profiles.js"></script>
+<script src="src/runtime/modes/arcade/arcade-character-behavior-profiles.js"></script>
+<script src="src/runtime/shared/cosmetics.js"></script>
+<script src="src/runtime/shared/shop.js"></script>
+<script src="src/runtime/shared/modes.js"></script>
+<script src="src/runtime/modes/arcade/arcade-damage-source.js"></script>
+<script src="src/runtime/shared/systems.js"></script>
+<script src="src/runtime/shared/mode-access.js"></script>
+<script src="src/runtime/shared/progression.js"></script>
+<script src="src/runtime/modes/arcade/feast-orders.js"></script>
+<script src="src/runtime/modes/arcade/arcade-revenge-challenges.js"></script>
+<script src="src/runtime/modes/arcade/arcade-reaction-art.js"></script>
+<script src="src/runtime/rendering/reward-coin-celebration.js"></script>
+<script src="src/runtime/modes/arcade/arcade-run-outcomes.js"></script>
+<script src="src/runtime/modes/arcade/arcade-feast-victory.js"></script>
+<script src="src/runtime/shared/settings.js"></script>
+<script src="src/runtime/shared/feast-genie-registry.js"></script>
+<script src="src/runtime/shared/feast-genie-guidance.js"></script>
+<script src="src/runtime/shared/feast-genie-target.js"></script>
+<script src="src/runtime/shared/feast-genie-guide.js"></script>
+<script src="src/runtime/modes/arcade/arcade-run-polish.js"></script>
+<script src="src/runtime/app/game-core.js"></script>
+<script src="src/runtime/platform/visual-background-integration.js"></script>
+<script src="src/runtime/modes/arcade/arcade-feast-director.js"></script>
+<script src="src/runtime/modes/arcade/arcade-wave-formations.js"></script>
+<script src="src/runtime/app/game-systems.js"></script>
+<script src="src/runtime/platform/gamepad-controller.js"></script>
+<script src="src/runtime/app/game-runtime.js"></script>
+<script src="src/runtime/modes/arcade/arcade-affinity-presentation.js"></script>
+<script src="src/runtime/modes/arcade/arcade-animation-registry.js"></script>
+<script src="src/runtime/modes/arcade/arcade-toadal-mechanics.js"></script>
+<script src="src/runtime/modes/arcade/arcade-standalone-leaderboard.js"></script>
+<script src="src/runtime/app/game-flow.js"></script>
+<script src="src/runtime/app/game-loop.js"></script>
+<script src="src/runtime/modes/arcade/arcade-sprite-runtime.js"></script>
+<script src="packages/shared/standalone-viewport.js"></script>
+<script src="packages/shared/standalone-menu.js"></script>
+<script src="src/runtime/shared/player-help-content.js"></script>
+<script src="src/runtime/ui/ui-authority-runtime.js"></script>
+<script src="packages/shared/standalone-audio.js"></script>
+<script src="packages/shared/standalone-pause.js"></script>
+<script src="src/runtime/rendering/draw-background.js"></script>
+<script src="src/runtime/rendering/draw-characters-1.js"></script>
+<script src="src/runtime/rendering/draw-characters-2.js"></script>
+<script src="src/runtime/rendering/draw-characters-3.js"></script>
+<script src="src/runtime/rendering/draw-world-entities.js"></script>
+<script src="src/runtime/rendering/draw-hud.js"></script>
+<script src="src/runtime/rendering/draw-render.js"></script>
+<script src="src/runtime/modes/arcade/feast-orders-ui.js"></script>
+<script src="src/runtime/modes/arcade/arcade-result-ui.js"></script>
+<script src="src/runtime/modes/arcade/launch-shell.js"></script>
+<script src="src/runtime/platform/mobile-control-runtime.js"></script>
+<script src="src/runtime/shared/feast-genie-mode-adapters.js"></script>
+<script src="src/runtime/modes/arcade/arcade-standalone-boot.js"></script>
+<!-- GENERATED ENTRYPOINT SCRIPTS: arcade END -->
+<script src="wo003-arcade-preview-bridge.js"></script>
+</body>
+</html>

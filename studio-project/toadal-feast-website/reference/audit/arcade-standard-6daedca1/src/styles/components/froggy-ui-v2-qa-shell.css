@@ -1,0 +1,145 @@
+/* Froggy UI v2 direct-mode shell — direct-mode hosts only. Presentation-only. */
+body[data-surface-class="qa"] {
+  --ffqa-gold:#f6d35f;
+  --ffqa-ink:#071d16;
+  --ffqa-panel:rgba(8,38,30,.92);
+  background: radial-gradient(circle at 50% 6%, rgba(102,190,101,.18), transparent 34%), linear-gradient(180deg,#081d16,#050b09 72%);
+}
+body[data-surface-class="qa"] .familiar-menu-home {
+  width:min(760px,calc(100vw - 20px));
+  min-height:100dvh;
+  margin:0 auto;
+  padding:max(10px,env(safe-area-inset-top,0px)) 0 max(24px,env(safe-area-inset-bottom,0px));
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  overflow:visible;
+}
+body[data-surface-class="qa"] .familiar-menu-home > .menu-hero { display:none !important; }
+.ff-qa-shell-hero {
+  position:relative;
+  width:100%;
+  aspect-ratio:7/4;
+  border-radius:18px;
+  overflow:hidden;
+  background:linear-gradient(180deg,#165a45,#342044);
+  border:2px solid rgba(255,218,92,.55);
+  box-shadow:0 12px 34px rgba(0,0,0,.36);
+}
+.ff-qa-hero-art,.ff-qa-card-art { width:100%;height:100%;display:block;object-fit:contain;pointer-events:none;user-select:none; }
+.ff-qa-badge {
+  position:absolute;z-index:3;left:10px;top:10px;
+  padding:4px 8px;border-radius:999px;border:1px solid rgba(255,231,143,.54);
+  background:rgba(5,25,20,.86);color:#e8f7eb;font:800 9px/1 system-ui,sans-serif;letter-spacing:.08em;
+}
+.ff-qa-return {
+  position:absolute;z-index:3;right:10px;top:10px;
+  min-height:36px;padding:0 10px;display:inline-flex;align-items:center;justify-content:center;
+  border-radius:11px;border:1px solid rgba(255,225,109,.62);background:rgba(64,19,81,.90);color:#fff1b4;
+  font:800 10px/1 system-ui,sans-serif;text-decoration:none;
+}
+body[data-surface-class="qa"] .familiar-menu-home > .menu-play-section,
+body[data-surface-class="qa"] .familiar-menu-home > .launch-cabinet,
+body[data-surface-class="qa"] .familiar-menu-home .launch-menu-content {
+  width:100%;max-width:none;margin:0 auto;
+}
+body[data-surface-class="qa"] .familiar-menu-home .menu-nav {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;width:100%;
+}
+body[data-surface-class="qa"] .familiar-menu-home .menu-btn-play,
+body[data-surface-class="qa"] .familiar-menu-home .menu-btn-nav,
+body[data-surface-class="qa"] .familiar-menu-home .menu-btn-mode {
+  min-height:52px;border-radius:13px;
+}
+body[data-surface-class="qa"] .ff-qa-art-card {
+  position:relative !important;display:block !important;width:100% !important;aspect-ratio:7/4 !important;
+  min-height:0 !important;padding:0 !important;overflow:hidden !important;touch-action:pan-y;
+  border:0 !important;background:transparent !important;box-shadow:none !important;
+}
+body[data-surface-class="qa"] .ff-qa-art-card > :not(.ff-qa-card-art):not(.ff-qa-card-fallback):not(.launch-mode-lock) { display:none !important; }
+body[data-surface-class="qa"] .ff-qa-card-fallback {
+  position:absolute;inset:0;z-index:0;display:flex !important;align-items:center;justify-content:center;padding:14px;
+  background:linear-gradient(145deg,#163f31,#351b48);color:#fff0ad;text-align:center;
+  font:900 clamp(18px,4vw,34px)/1.05 system-ui,sans-serif;letter-spacing:.01em;text-transform:uppercase;
+}
+body[data-surface-class="qa"] .ff-qa-card-art { position:relative;z-index:1; }
+body[data-surface-class="qa"] .ff-qa-art-card .launch-mode-lock { z-index:4; }
+body[data-surface-class="qa"] .ff-qa-art-card:focus-visible { outline:4px solid #fff1a1 !important;outline-offset:2px !important; }
+
+/* Arcade's historical cabinet remains an action adapter, not presentation authority. */
+body.arcade-standalone[data-surface-class="qa"] .launch-world,
+body.arcade-standalone[data-surface-class="qa"] .launch-cabinet-controls,
+body.arcade-standalone[data-surface-class="qa"] .launch-cabinet-glass > .menu-hero { display:none !important; }
+body.arcade-standalone[data-surface-class="qa"] .launch-home { isolation:auto !important;padding:max(10px,env(safe-area-inset-top,0px)) 0 max(24px,env(safe-area-inset-bottom,0px)) !important; }
+body.arcade-standalone[data-surface-class="qa"] .launch-cabinet,
+body.arcade-standalone[data-surface-class="qa"] .launch-cabinet-glass {
+  width:100% !important;max-width:none !important;margin:0 !important;padding:0 !important;
+  border:0 !important;background:transparent !important;box-shadow:none !important;
+}
+body.arcade-standalone[data-surface-class="qa"] .launch-menu-content { display:flex !important;flex-direction:column;gap:10px !important; }
+body.arcade-standalone[data-surface-class="qa"] .launch-variants { padding:8px;border:1px solid rgba(255,218,92,.24);border-radius:15px;background:rgba(18,6,29,.38); }
+body.arcade-standalone[data-surface-class="qa"] .launch-section-heading { margin:0 0 6px !important; }
+body.arcade-standalone[data-surface-class="qa"] .launch-mode-grid { display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr)) !important;gap:7px !important; }
+body.arcade-standalone[data-surface-class="qa"] .launch-primary-nav { grid-template-columns:repeat(2,minmax(0,1fr)) !important; }
+
+@media(max-width:520px){
+  body[data-surface-class="qa"] .familiar-menu-home{width:calc(100vw - 14px);gap:7px}
+  .ff-qa-shell-hero{border-radius:12px}
+  .ff-qa-badge{left:6px;top:6px;font-size:7px;padding:3px 6px}
+  .ff-qa-return{right:6px;top:6px;min-height:32px;font-size:8px;padding:0 7px}
+  body[data-surface-class="qa"] .familiar-menu-home .menu-nav{gap:5px}
+  body.arcade-standalone[data-surface-class="qa"] .launch-mode-grid{gap:4px !important}
+}
+@media(max-width:359px){
+  body.arcade-standalone[data-surface-class="qa"] .launch-mode-grid{
+    grid-template-columns:none !important;grid-auto-flow:column;grid-auto-columns:minmax(208px,78vw);
+    overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;padding-bottom:6px;touch-action:pan-x;
+  }
+  body.arcade-standalone[data-surface-class="qa"] .launch-mode-grid > *{scroll-snap-align:start}
+}
+
+/* RC24.13 visual closure: Arcade direct mode owns one key-art poster only.
+   The shell header is a compact locator/action bar; the playable Classic card
+   remains the single authoritative Arcade poster below it. */
+body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact {
+  aspect-ratio:auto;
+  min-height:52px;
+  display:grid;
+  grid-template-columns:max-content minmax(0,1fr) max-content;
+  align-items:center;
+  gap:7px;
+  padding:7px 10px;
+  overflow:visible;
+  background:linear-gradient(180deg,rgba(11,62,47,.98),rgba(7,43,34,.98));
+}
+body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact .ff-qa-badge,
+body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact .ff-qa-return {
+  position:static;
+  justify-self:start;
+  width:max-content;
+}
+body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact .ff-qa-return { justify-self:end; }
+body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-title {
+  min-width:0;
+  text-align:center;
+  color:#fff1bf;
+  font:1000 clamp(10px,2.7vw,15px)/1 ui-rounded,system-ui,sans-serif;
+  letter-spacing:.035em;
+  white-space:nowrap;
+}
+body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-title span {
+  color:#82ee62;
+  margin-left:.34em;
+}
+@media(max-width:520px){
+  body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact{min-height:48px;gap:5px;padding-inline:7px}
+  body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact .ff-qa-badge{font-size:7px;padding:3px 6px}
+  body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact .ff-qa-return{min-height:32px;font-size:8px;padding-inline:7px}
+  body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-title{font-size:10px}
+}
+@media(max-width:359px){
+  body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-hero--compact{gap:4px;padding-inline:5px}
+  body.arcade-standalone[data-surface-class="qa"] .ff-qa-shell-title{font-size:9px}
+}
+
+@media(prefers-reduced-motion:reduce){.ff-qa-art-card{transition:none !important}}

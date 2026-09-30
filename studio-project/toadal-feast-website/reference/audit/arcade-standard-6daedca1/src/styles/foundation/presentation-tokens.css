@@ -1,0 +1,65 @@
+/* GENERATED FROM config/presentation-contracts.json — do not hand-edit. */
+:root {
+  --ff-font-3xs: 9px;
+  --ff-font-2xs: 10px;
+  --ff-font-xs: 12px;
+  --ff-font-sm: 14px;
+  --ff-font-md: 16px;
+  --ff-font-lg: 20px;
+  --ff-font-xl: 26px;
+  --ff-font-2xl: 34px;
+  --ff-font-hero: clamp(28px, 6vw, 44px);
+  --ff-line-tight: 1.15;
+  --ff-line-normal: 1.4;
+  --ff-line-loose: 1.6;
+  --ff-weight-regular: 500;
+  --ff-weight-medium: 700;
+  --ff-weight-bold: 800;
+  --ff-weight-heavy: 900;
+  --ff-family-display: var(--font-display, system-ui, -apple-system, 'Segoe UI', sans-serif);
+  --ff-family-body: var(--font-body, system-ui, -apple-system, 'Segoe UI', sans-serif);
+  --ff-space-0: 0px;
+  --ff-space-1: 4px;
+  --ff-space-2: 8px;
+  --ff-space-3: 12px;
+  --ff-space-4: 16px;
+  --ff-space-5: 20px;
+  --ff-space-6: 24px;
+  --ff-space-8: 32px;
+  --ff-space-10: 40px;
+  --ff-space-12: 48px;
+  --ff-icon-inline: 24px;
+  --ff-icon-status: 28px;
+  --ff-icon-action: 28px;
+  --ff-icon-navigation: 30px;
+  --ff-icon-primary-action: 40px;
+  --ff-icon-list: 48px;
+  --ff-icon-hero: 40px;
+  --ff-icon-reward: 64px;
+  --ff-touch-minimum: 44px;
+  --ff-touch-comfortable: 52px;
+  --ff-radius-sm: 6px;
+  --ff-radius-md: 12px;
+  --ff-radius-lg: 18px;
+  --ff-radius-xl: 26px;
+  --ff-radius-pill: 999px;
+  --ff-z-board: 10;
+  --ff-z-hud: 20;
+  --ff-z-controls: 30;
+  --ff-z-overlay: 100;
+  --ff-z-modal: 1000;
+  --ff-z-toast: 2000;
+  --ff-panel-pad: var(--ff-space-4);
+  --ff-panel-gap: var(--ff-space-3);
+  --ff-panel-radius: var(--ff-radius-lg);
+  --ff-panel-border: 1px solid var(--color-border, rgba(255,255,255,0.12));
+  --ff-safe-top: env(safe-area-inset-top, 0px);
+  --ff-safe-right: env(safe-area-inset-right, 0px);
+  --ff-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --ff-safe-left: env(safe-area-inset-left, 0px);
+  --ff-motion-scale: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --ff-motion-scale: 0; }
+}

@@ -1,0 +1,112 @@
+{
+  "schema": "toadal-feast.arcade-toadal-assets.final-v1",
+  "characterId": "toadal",
+  "scope": "Arcade only",
+  "runtimeCell": [
+    256,
+    256
+  ],
+  "sheetLayout": [
+    8,
+    1
+  ],
+  "anchorPolicy": "bottom-center; visible feet baseline approx y=241-243",
+  "actions": {
+    "idle": {
+      "file": "strips_256/idle_8f_256.png",
+      "frames": 8,
+      "loop": true,
+      "fps": 5,
+      "intent": "idle"
+    },
+    "run": {
+      "file": "strips_256/run_8f_256.png",
+      "frames": 8,
+      "loop": true,
+      "fps": 12,
+      "intent": "move"
+    },
+    "tongue_catch": {
+      "file": "strips_256/tongue_catch_8f_256.png",
+      "frames": 8,
+      "loop": false,
+      "durationMs": 340,
+      "intent": "catch",
+      "activeFrameStart": 2,
+      "activeFrameEnd": 4,
+      "frameIndexBase": 0,
+      "notes": "Short upward tongue only. No Classic long tongue rig. Player-facing wording should be Catch/Tongue Catch, not Gulper-style Gulp."
+    },
+    "jump": {
+      "file": "strips_256/jump_8f_256.png",
+      "frames": 8,
+      "loop": false,
+      "intent": "royal-hop",
+      "playback": "physics/phase sampled preferred",
+      "phaseMap": [
+        "crouch",
+        "takeoff",
+        "ascent",
+        "apex",
+        "descent",
+        "prepare_land",
+        "land",
+        "recover"
+      ]
+    },
+    "hurt": {
+      "file": "strips_256/hurt_8f_256.png",
+      "frames": 8,
+      "loop": false,
+      "durationMs": 560,
+      "intent": "hurt"
+    },
+    "swallow": {
+      "file": "strips_256/swallow_8f_256.png",
+      "frames": 8,
+      "loop": false,
+      "durationMs": 300,
+      "intent": "swallow",
+      "notes": "Use only after accepted normal-food tongue catch."
+    },
+    "golden_throw": {
+      "file": "strips_256/golden_throw_8f_256.png",
+      "frames": 8,
+      "loop": false,
+      "durationMs": 340,
+      "intent": "golden-throw",
+      "releaseFrame": 5,
+      "frameIndexBase": 0,
+      "projectileAsset": "effects/golden_projectile_cube.png",
+      "notes": "Bomb prop removed. Animation is a Golden Alchemy charge-and-launch built entirely from existing Toadal assets; projectile is a separate world entity."
+    },
+    "golden_block": {
+      "file": "strips_256/golden_block_8f_256.png",
+      "frames": 8,
+      "loop": false,
+      "durationMs": 460,
+      "intent": "golden-block",
+      "commitFrame": 4,
+      "frameIndexBase": 0,
+      "worldAsset": "effects/golden_block_world.png"
+    },
+    "victory": {
+      "file": "strips_256/victory_8f_256.png",
+      "frames": 8,
+      "loop": false,
+      "durationMs": 1150,
+      "intent": "victory"
+    }
+  },
+  "legacyAliases": {
+    "gulp": "tongue_catch",
+    "build": "golden_block",
+    "throw": "golden_throw"
+  },
+  "sourcePolicy": "No additional character generation required for this final Arcade core set. Final tongue catch uses the supplied vertical-tongue source; Golden Block uses the clean supplied 2x4 source; Golden Throw is assembled from existing approved Toadal assets and an existing golden cube effect.",
+  "qc": {
+    "spriteSequencer": "v15.6.2 package supplied by user",
+    "reports": "qc/",
+    "geometryAudit": "qc/GEOMETRY_AUDIT.json"
+  }
+}

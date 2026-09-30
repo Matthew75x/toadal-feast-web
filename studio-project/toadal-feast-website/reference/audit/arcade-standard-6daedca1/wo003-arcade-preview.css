@@ -1,0 +1,41 @@
+/* Website integration profile: one standard Arcade mode and canonical Toadal. */
+.wo003-arcade-preview .ff-qa-shell-hero,
+.wo003-arcade-preview .launch-variants,
+.wo003-arcade-preview .launch-utility-nav,
+.wo003-arcade-preview .launch-score-window--coins,
+.wo003-arcade-preview #arcadeStandaloneMenu [data-standalone-action="open-characters"],
+.wo003-arcade-preview #arcadeStandaloneMenu [data-standalone-action="open-feast-orders"],
+.wo003-arcade-preview #arcadeStandaloneMenu [data-standalone-action="open-scores"],
+.wo003-arcade-preview #arcadeStandaloneMenu [data-standalone-action="open-unlocks"],
+.wo003-arcade-preview #arcadeStandaloneMenu [data-standalone-action="open-cosmetics"],
+.wo003-arcade-preview #arcadeStandaloneMenu [data-standalone-action="open-shop"],
+.wo003-arcade-preview #arcadeStandaloneMenu [data-standalone-action="open-settings"],
+.wo003-arcade-preview #arcadeStandalonePause [data-standalone-pause-action="change-character"],
+.wo003-arcade-preview #arcadeStandalonePause [data-standalone-pause-action="settings"],
+.wo003-arcade-preview #arcadeResultRevenge,
+.wo003-arcade-preview [data-standalone-view="feast-orders"],
+.wo003-arcade-preview [data-standalone-view="characters"],
+.wo003-arcade-preview [data-standalone-view="scores"],
+.wo003-arcade-preview [data-standalone-view="unlocks"],
+.wo003-arcade-preview [data-standalone-view="cosmetics"],
+.wo003-arcade-preview [data-standalone-view="shop"],
+.wo003-arcade-preview [data-standalone-view="settings"] {
+  display: none !important;
+}
+
+.wo003-arcade-preview #arcadeStandaloneMenu .launch-utility-nav {
+  display: flex !important;
+  justify-content: center;
+}
+
+.wo003-arcade-preview #arcadeStandaloneMenu .launch-utility-nav [data-standalone-action="open-help"] {
+  display: flex !important;
+}
+
+.wo003-arcade-preview #arcadeStandaloneMenu .launch-utility-nav [data-standalone-action]:not([data-standalone-action="open-help"]) {
+  display: none !important;
+}
+
+.wo003-arcade-preview #arcadeStandaloneMenu .launch-primary-nav [data-standalone-action]:not([data-standalone-action="open-help"]) {
+  display: none !important;
+}

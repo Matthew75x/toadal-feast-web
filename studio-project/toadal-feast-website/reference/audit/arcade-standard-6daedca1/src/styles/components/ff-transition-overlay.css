@@ -1,0 +1,375 @@
+/* Froggy Feast immersive food-overrun transition overlay. */
+:root {
+  --ff-transition-accent:#8be85f;
+  --ff-transition-accent-2:#ffd75b;
+  --ff-transition-ink:#f8fff0;
+  --ff-transition-muted:#d7e9ca;
+  --ff-transition-panel:#103c22;
+  --ff-transition-border:rgba(185,255,133,.48);
+}
+.ff-transition-overlay {
+  position:fixed; inset:0; z-index:2147483000; display:grid; place-items:center;
+  min-width:100vw; min-height:100dvh; box-sizing:border-box;
+  padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));
+  overflow:hidden; color:var(--ff-transition-ink);
+  background:
+    radial-gradient(circle at 50% 42%,color-mix(in srgb,var(--ff-transition-accent) 22%,transparent) 0 18%,transparent 48%),
+    radial-gradient(circle at 16% 18%,rgba(138,230,92,.16),transparent 30%),
+    radial-gradient(circle at 86% 82%,rgba(255,216,91,.12),transparent 28%),
+    linear-gradient(155deg,#021108 0%,#082d17 48%,#020b06 100%);
+  isolation:isolate; opacity:1; visibility:visible;
+  transition:none;
+  touch-action:none; overscroll-behavior:none; -webkit-tap-highlight-color:transparent;
+}
+.ff-transition-overlay::before,.ff-transition-overlay::after { content:""; position:absolute; pointer-events:none; z-index:-2; }
+.ff-transition-overlay::before {
+  inset:-18%; opacity:.3;
+  background-image:radial-gradient(circle,rgba(206,255,161,.7) 0 1.5px,transparent 2px),radial-gradient(circle,rgba(255,226,112,.5) 0 1px,transparent 1.5px);
+  background-position:14px 28px,88px 72px; background-size:112px 108px,156px 142px;
+  animation:ff-transition-fireflies 8s linear infinite;
+}
+.ff-transition-overlay::after {
+  inset:auto 4% -22vh; height:52vh; border-radius:50%; border:1px solid rgba(129,226,100,.16);
+  box-shadow:0 0 0 5vh rgba(86,180,79,.035),0 0 0 12vh rgba(86,180,79,.024),0 0 0 20vh rgba(86,180,79,.016);
+  transform:perspective(520px) rotateX(67deg);
+}
+.ff-transition-overlay[data-state="leaving"] { opacity:0; visibility:hidden; transition:opacity 180ms ease,visibility 180ms ease; }
+.ff-transition-overlay[data-state="hidden"] { opacity:0; visibility:hidden; transition:none; }
+/* Decode-gated visual reveal: the stable card/copy appears immediately, while
+   character, emblem and food art reveal as one composed scene. This prevents
+   individual images flashing in on slower mobile decoders. */
+.ff-transition-feast,.ff-transition-scene,.ff-transition-emblem,.ff-transition-poster-image {
+  opacity:1; transition:opacity 110ms ease;
+}
+.ff-transition-overlay[data-visuals="loading"] .ff-transition-feast,
+.ff-transition-overlay[data-visuals="loading"] .ff-transition-scene,
+.ff-transition-overlay[data-visuals="loading"] .ff-transition-emblem,
+.ff-transition-overlay[data-visuals="loading"] .ff-transition-poster-image { opacity:0; }
+.ff-transition-overlay[data-visuals="fallback"] .ff-transition-feast,
+.ff-transition-overlay[data-visuals="fallback"] .ff-transition-scene,
+.ff-transition-overlay[data-visuals="fallback"] .ff-transition-emblem,
+.ff-transition-overlay[data-visuals="fallback"] .ff-transition-poster-image { opacity:1; }
+.ff-transition-overlay[data-effects="lite"] .ff-transition-food { animation:none; filter:drop-shadow(0 5px 4px rgba(0,0,0,.34)); }
+
+.ff-transition-overlay[data-mode="tc"] { --ff-transition-accent:#ff7d9d;--ff-transition-accent-2:#ffba59;--ff-transition-border:rgba(255,173,193,.56); }
+.ff-transition-overlay[data-mode="fmf"] { --ff-transition-accent:#ffd45a;--ff-transition-accent-2:#ff8f4e;--ff-transition-border:rgba(255,225,124,.58); }
+.ff-transition-overlay[data-mode="zen"] { --ff-transition-accent:#c6a6ff;--ff-transition-accent-2:#72dfb2;--ff-transition-border:rgba(213,193,255,.52); }
+.ff-transition-overlay[data-mode="puzzle"] { --ff-transition-accent:#72d7ff;--ff-transition-accent-2:#a9ed6f;--ff-transition-border:rgba(150,226,255,.54); }
+.ff-transition-overlay[data-mode="feastfall"] { --ff-transition-accent:#ff9f68;--ff-transition-accent-2:#ffd96c;--ff-transition-border:rgba(255,181,139,.56); }
+.ff-transition-overlay[data-mode="infinite"] { --ff-transition-accent:#6ee7a1;--ff-transition-accent-2:#7dc7ff;--ff-transition-border:rgba(139,244,183,.52); }
+.ff-transition-overlay[data-direction="return"] { --ff-transition-accent:#7edda1;--ff-transition-accent-2:#8bcfff;--ff-transition-border:rgba(153,235,181,.5); }
+.ff-transition-card {
+  position:relative; width:min(960px,calc(100vw - 32px)); min-height:min(520px,calc(100dvh - 32px)); max-height:calc(100dvh - 32px);
+  box-sizing:border-box; display:grid; grid-template-columns:minmax(250px,.9fr) minmax(300px,1.12fr);
+  grid-template-areas:"kicker kicker" "scene copy" "scene progress" "scene actions";
+  align-content:center; align-items:center; gap:14px clamp(24px,5vw,58px);
+  padding:clamp(30px,5vw,58px); overflow:hidden; text-align:left;
+  border:3px solid var(--ff-transition-border); border-radius:34px;
+  background:
+    radial-gradient(circle at 22% 52%,color-mix(in srgb,var(--ff-transition-accent) 23%,transparent),transparent 38%),
+    linear-gradient(130deg,rgba(255,255,255,.09),transparent 35%),
+    linear-gradient(145deg,#164b2a 0%,#0b351d 52%,#062313 100%);
+  box-shadow:0 34px 90px rgba(0,0,0,.62),0 0 0 2px rgba(255,255,255,.06) inset,0 0 70px color-mix(in srgb,var(--ff-transition-accent) 18%,transparent);
+}
+.ff-transition-card::before { content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 70% 46%,rgba(3,24,12,.72) 0 21%,rgba(3,24,12,.22) 48%,transparent 72%); }
+.ff-transition-feast { position:absolute;inset:0;overflow:hidden;z-index:0;pointer-events:none; }
+.ff-transition-feast::before { content:"";position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,transparent 0 48%,rgba(1,18,8,.04) 76%,rgba(1,12,6,.2) 100%);z-index:2; }
+.ff-transition-food { position:absolute;left:var(--food-x);top:var(--food-y);width:var(--food-size);height:var(--food-size);object-fit:contain;transform:translate(-50%,-50%) rotate(var(--food-rotate));filter:drop-shadow(0 10px 8px rgba(0,0,0,.48)) saturate(1.14) brightness(1.08);animation:ff-transition-food-float 2.9s ease-in-out var(--food-delay) infinite;user-select:none; }
+.ff-transition-food:nth-child(3n){animation-duration:3.4s}.ff-transition-food:nth-child(4n){animation-direction:alternate-reverse}.ff-transition-food:nth-child(5n){filter:drop-shadow(0 12px 9px rgba(0,0,0,.5)) saturate(1.2) brightness(1.1)}
+.ff-transition-kicker,.ff-transition-scene,.ff-transition-copy,.ff-transition-progress,.ff-transition-actions { position:relative;z-index:3; }
+.ff-transition-kicker { grid-area:kicker;margin:0;align-self:end;color:color-mix(in srgb,var(--ff-transition-accent) 82%,white);font:900 clamp(.72rem,1.6vw,.9rem)/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.19em;text-transform:uppercase;text-shadow:0 3px 12px rgba(0,0,0,.55); }
+.ff-transition-scene { grid-area:scene;position:relative;width:100%;height:310px;display:grid;place-items:end center;align-self:end; }
+.ff-transition-character-glow { position:absolute;left:50%;bottom:14px;width:250px;height:170px;transform:translateX(-50%);border-radius:50%;background:radial-gradient(ellipse,color-mix(in srgb,var(--ff-transition-accent) 24%,transparent),transparent 68%);filter:blur(5px); }
+.ff-transition-character { position:relative;z-index:2;width:min(300px,88%);height:300px;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 20px 17px rgba(0,0,0,.52));animation:ff-transition-hop 1.45s cubic-bezier(.4,0,.2,1) infinite;user-select:none;pointer-events:none; }
+.ff-transition-scene[data-character-error="true"] .ff-transition-character { display:none; }
+.ff-transition-copy { grid-area:copy;display:grid;gap:11px;max-width:35rem;padding:20px 22px;border:1px solid rgba(219,255,193,.18);border-radius:22px;background:linear-gradient(150deg,rgba(4,30,15,.77),rgba(4,24,12,.52));box-shadow:0 18px 38px rgba(0,0,0,.24),0 0 0 1px rgba(255,255,255,.025) inset;backdrop-filter:blur(7px);-webkit-backdrop-filter:blur(7px); }
+.ff-transition-title { margin:0;font:950 clamp(2rem,4.7vw,3.45rem)/.98 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:-.045em;text-wrap:balance;text-shadow:0 5px 19px rgba(0,0,0,.5); }
+.ff-transition-subtitle { margin:0;color:var(--ff-transition-muted);font:720 clamp(.96rem,1.8vw,1.16rem)/1.42 system-ui,-apple-system,"Segoe UI",sans-serif;text-wrap:balance;text-shadow:0 2px 8px rgba(0,0,0,.5); }
+.ff-transition-progress { grid-area:progress;width:100%;display:grid;gap:10px;padding-inline:4px; }
+.ff-transition-track { position:relative;height:14px;overflow:hidden;border:2px solid rgba(187,235,153,.52);border-radius:999px;background:rgba(0,15,7,.68);box-shadow:0 0 0 2px rgba(0,0,0,.25) inset,0 0 18px color-mix(in srgb,var(--ff-transition-accent) 18%,transparent); }
+.ff-transition-track::before { content:"";position:absolute;top:1px;bottom:1px;left:-45%;width:45%;border-radius:inherit;background:linear-gradient(90deg,transparent,var(--ff-transition-accent),var(--ff-transition-accent-2),transparent);box-shadow:0 0 20px color-mix(in srgb,var(--ff-transition-accent) 58%,transparent);animation:ff-transition-progress 1.3s cubic-bezier(.4,0,.2,1) infinite; }
+.ff-transition-status { min-height:1.3em;margin:0;color:color-mix(in srgb,var(--ff-transition-muted) 94%,white);font:800 .82rem/1.35 system-ui,-apple-system,"Segoe UI",sans-serif;letter-spacing:.045em;text-align:center;text-shadow:0 2px 8px rgba(0,0,0,.55); }
+.ff-transition-actions { grid-area:actions;display:none;width:100%;grid-template-columns:1fr 1fr;gap:10px; }
+.ff-transition-overlay[data-state="slow"] .ff-transition-actions,.ff-transition-overlay[data-state="error"] .ff-transition-actions { display:grid; }
+.ff-transition-overlay[data-state="error"] .ff-transition-track::before { animation:none;left:0;width:100%;background:linear-gradient(90deg,#ff6d6d,#ffb35a); }
+.ff-transition-action { min-height:48px;padding:11px 14px;color:var(--ff-transition-ink);border:1px solid var(--ff-transition-border);border-radius:15px;background:rgba(4,24,12,.78);font:850 .86rem/1.2 system-ui,-apple-system,"Segoe UI",sans-serif;cursor:pointer;touch-action:manipulation; }
+.ff-transition-action--primary { color:#061109;background:linear-gradient(145deg,var(--ff-transition-accent),var(--ff-transition-accent-2));border-color:rgba(255,255,255,.4); }
+.ff-transition-action:focus-visible { outline:3px solid white;outline-offset:3px; }
+@keyframes ff-transition-hop { 0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-7px) rotate(1deg)} }
+@keyframes ff-transition-food-float { 0%,100%{translate:0 0}50%{translate:0 -8px} }
+@keyframes ff-transition-progress { 0%{transform:translateX(0)}100%{transform:translateX(330%)} }
+@keyframes ff-transition-fireflies { from{transform:translate3d(0,0,0) rotate(0)}to{transform:translate3d(30px,-18px,0) rotate(2deg)} }
+@media(max-width:700px){
+  .ff-transition-overlay{padding:max(10px,env(safe-area-inset-top)) max(10px,env(safe-area-inset-right)) max(10px,env(safe-area-inset-bottom)) max(10px,env(safe-area-inset-left))}
+  .ff-transition-card{width:100%;min-height:min(720px,calc(100dvh - 20px));max-height:calc(100dvh - 20px);grid-template-columns:1fr;grid-template-areas:"kicker" "copy" "scene" "progress" "actions";align-content:center;gap:10px;padding:22px 18px 18px;text-align:center;border-radius:25px;border-width:2px}
+  .ff-transition-card::before{background:linear-gradient(180deg,rgba(3,24,12,.58) 0 28%,transparent 47%,rgba(3,24,12,.28) 74%,rgba(3,24,12,.54) 100%)}
+  .ff-transition-kicker{text-align:center}.ff-transition-copy{justify-self:center;padding:15px 16px;gap:7px;max-width:32rem}.ff-transition-title{font-size:clamp(1.7rem,8vw,2.55rem)}.ff-transition-subtitle{font-size:clamp(.85rem,3.7vw,1rem)}
+  .ff-transition-scene{height:220px;align-self:center}.ff-transition-character{width:min(225px,68vw);height:220px}.ff-transition-character-glow{width:220px;height:135px}
+  .ff-transition-progress{width:min(390px,92%);justify-self:center}.ff-transition-food{--food-size:clamp(54px,17vw,88px)!important}.ff-transition-actions{grid-template-columns:1fr}
+}
+@media(max-height:560px) and (orientation:landscape){
+  .ff-transition-overlay{padding-block:max(7px,env(safe-area-inset-top)) max(7px,env(safe-area-inset-bottom))}
+  .ff-transition-card{width:min(900px,calc(100vw - 18px));min-height:calc(100dvh - 14px);max-height:calc(100dvh - 14px);grid-template-columns:minmax(190px,.75fr) minmax(330px,1.25fr);grid-template-areas:"scene kicker" "scene copy" "scene progress" "scene actions";gap:6px 22px;padding:12px 22px;border-radius:21px}
+  .ff-transition-card::before{background:radial-gradient(ellipse at 72% 37%,rgba(3,24,12,.62) 0 25%,rgba(3,24,12,.12) 52%,transparent 76%)}
+  .ff-transition-scene{height:calc(100dvh - 42px)}.ff-transition-character{height:min(300px,calc(100dvh - 54px));width:min(290px,34vw)}.ff-transition-character-glow{width:220px;height:130px}
+  .ff-transition-copy{padding:10px 14px;gap:4px;border-radius:16px}.ff-transition-title{font-size:clamp(1.45rem,4.2vw,2.2rem)}.ff-transition-subtitle{font-size:.82rem}.ff-transition-kicker{font-size:.66rem}.ff-transition-track{height:11px}.ff-transition-status{font-size:.7rem}.ff-transition-action{min-height:40px;padding:7px 10px}.ff-transition-food{--food-size:clamp(52px,9vw,92px)!important}
+}
+@media(prefers-reduced-motion:reduce){.ff-transition-overlay,.ff-transition-overlay::before,.ff-transition-character,.ff-transition-food,.ff-transition-track::before{animation:none!important;transition-duration:80ms!important}.ff-transition-track::before{left:0;width:62%;background:linear-gradient(90deg,var(--ff-transition-accent),var(--ff-transition-accent-2))}}
+.ff-transition-overlay[data-effects="lite"]::before{display:none}.ff-transition-overlay[data-effects="lite"] .ff-transition-copy{backdrop-filter:none;-webkit-backdrop-filter:none}.ff-transition-overlay[data-effects="lite"] .ff-transition-character,.ff-transition-overlay[data-effects="lite"] .ff-transition-food{animation:none}
+.ff-transition-overlay[data-effects="lite"] .ff-transition-feast,.ff-transition-overlay[data-effects="lite"] .ff-transition-scene,.ff-transition-overlay[data-effects="lite"] .ff-transition-emblem,.ff-transition-overlay[data-effects="lite"] .ff-transition-poster-image{transition:none}.ff-transition-overlay[data-effects="lite"] .ff-transition-food:nth-child(n+11){display:none}
+
+
+/* Mode-specific illustrated feast identities. All imagery remains inside the green card. */
+.ff-transition-copy { position:relative; overflow:visible; }
+.ff-transition-emblem {
+  position:absolute; z-index:4; top:-32px; right:18px; width:clamp(58px,8vw,84px); aspect-ratio:1;
+  object-fit:contain; pointer-events:none; user-select:none;
+  filter:drop-shadow(0 12px 9px rgba(0,0,0,.5)) saturate(1.16) brightness(1.06);
+  transform:rotate(7deg);
+}
+.ff-transition-overlay[data-layout="supper-rush"] .ff-transition-card {
+  background:
+    radial-gradient(circle at 18% 70%,rgba(255,115,95,.28),transparent 36%),
+    radial-gradient(circle at 86% 18%,rgba(255,190,76,.19),transparent 31%),
+    linear-gradient(145deg,#472015 0%,#2a160f 49%,#10140b 100%);
+}
+.ff-transition-overlay[data-layout="supper-rush"] .ff-transition-card::before { background:radial-gradient(ellipse at 72% 45%,rgba(24,5,3,.79) 0 24%,rgba(24,5,3,.32) 48%,transparent 75%); }
+.ff-transition-overlay[data-layout="supper-rush"] .ff-transition-character { width:min(330px,96%);height:320px;animation-duration:1.05s; }
+.ff-transition-overlay[data-layout="supper-rush"] .ff-transition-food { filter:drop-shadow(0 12px 9px rgba(0,0,0,.52)) saturate(1.22) brightness(1.07); }
+.ff-transition-overlay[data-layout="supper-rush"] .ff-transition-food:nth-child(odd) { scale:1.08; }
+.ff-transition-overlay[data-layout="sugar-sprint"] .ff-transition-card {
+  background:
+    radial-gradient(circle at 23% 43%,rgba(255,229,76,.25),transparent 35%),
+    radial-gradient(circle at 80% 18%,rgba(255,86,176,.2),transparent 34%),
+    linear-gradient(145deg,#40260b 0%,#291443 50%,#07172b 100%);
+}
+.ff-transition-overlay[data-layout="sugar-sprint"] .ff-transition-card::before { background:radial-gradient(ellipse at 70% 46%,rgba(14,7,30,.72) 0 22%,rgba(14,7,30,.23) 48%,transparent 72%); }
+.ff-transition-overlay[data-layout="sugar-sprint"] .ff-transition-character { animation-duration:.82s;filter:drop-shadow(0 20px 17px rgba(0,0,0,.52)) drop-shadow(0 0 22px rgba(255,223,83,.35)); }
+.ff-transition-overlay[data-layout="sugar-sprint"] .ff-transition-food { animation-duration:2.1s;filter:drop-shadow(0 10px 8px rgba(0,0,0,.48)) saturate(1.3) brightness(1.12); }
+.ff-transition-overlay[data-layout="sugar-sprint"] .ff-transition-food:nth-child(3n) { scale:1.11; }
+.ff-transition-overlay[data-layout="garden-bounty"] .ff-transition-card {
+  background:
+    radial-gradient(circle at 18% 70%,rgba(104,226,176,.22),transparent 38%),
+    radial-gradient(circle at 82% 22%,rgba(194,164,255,.22),transparent 35%),
+    linear-gradient(145deg,#173b32 0%,#142b25 48%,#151b26 100%);
+}
+.ff-transition-overlay[data-layout="garden-bounty"] .ff-transition-card::before { background:radial-gradient(ellipse at 71% 44%,rgba(5,20,16,.75) 0 25%,rgba(5,20,16,.24) 50%,transparent 74%); }
+.ff-transition-overlay[data-layout="garden-bounty"] .ff-transition-character { animation:ff-transition-garden-breathe 3.4s ease-in-out infinite; }
+.ff-transition-overlay[data-layout="garden-bounty"] .ff-transition-food { animation-duration:4.4s;filter:drop-shadow(0 9px 8px rgba(0,0,0,.43)) saturate(1.08) brightness(1.08); }
+.ff-transition-overlay[data-layout="garden-bounty"] .ff-transition-food:nth-child(4n) { scale:.9; }
+.ff-transition-overlay[data-layout="puzzle-pantry"] .ff-transition-card {
+  background:
+    linear-gradient(rgba(112,213,255,.055) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(112,213,255,.055) 1px,transparent 1px),
+    radial-gradient(circle at 18% 72%,rgba(169,237,111,.2),transparent 34%),
+    linear-gradient(145deg,#0c3240 0%,#10292e 50%,#071b24 100%);
+  background-size:54px 54px,54px 54px,auto,auto;
+}
+.ff-transition-overlay[data-layout="puzzle-pantry"] .ff-transition-copy { border-color:rgba(125,222,255,.28);box-shadow:0 18px 38px rgba(0,0,0,.28),0 0 0 1px rgba(125,222,255,.08) inset; }
+.ff-transition-overlay[data-layout="puzzle-pantry"] .ff-transition-food:nth-child(3n+1) { transform:translate(-50%,-50%) rotate(calc(var(--food-rotate) - 12deg)); }
+.ff-transition-overlay[data-layout="puzzle-pantry"] .ff-transition-food:nth-child(3n+2) { transform:translate(-50%,-50%) rotate(calc(var(--food-rotate) + 12deg)); }
+.ff-transition-overlay[data-layout="candy-cascade"] .ff-transition-card {
+  background:
+    repeating-linear-gradient(112deg,transparent 0 70px,rgba(255,174,101,.045) 72px 74px),
+    radial-gradient(circle at 20% 18%,rgba(255,95,176,.2),transparent 33%),
+    radial-gradient(circle at 82% 78%,rgba(255,216,98,.2),transparent 35%),
+    linear-gradient(145deg,#422039 0%,#24214a 49%,#122934 100%);
+}
+.ff-transition-overlay[data-layout="candy-cascade"] .ff-transition-food { animation-name:ff-transition-cascade;animation-duration:2.8s; }
+.ff-transition-overlay[data-layout="candy-cascade"] .ff-transition-food:nth-child(even) { animation-direction:reverse; }
+.ff-transition-overlay[data-layout="overrun-horizon"] .ff-transition-card {
+  background:
+    linear-gradient(180deg,rgba(84,197,255,.13),transparent 42%),
+    radial-gradient(ellipse at 50% 112%,rgba(109,231,161,.31),transparent 55%),
+    linear-gradient(145deg,#123b36 0%,#102f31 48%,#0c202b 100%);
+}
+.ff-transition-overlay[data-layout="overrun-horizon"] .ff-transition-card::after {
+  content:"";position:absolute;z-index:1;left:-8%;right:-8%;bottom:-13%;height:42%;border-radius:50% 50% 0 0;
+  background:radial-gradient(ellipse at center,rgba(98,225,151,.17),transparent 68%);pointer-events:none;
+}
+.ff-transition-overlay[data-layout="overrun-horizon"] .ff-transition-food:nth-child(n+17) { scale:1.13; }
+.ff-transition-overlay[data-layout="homecoming-feast"] .ff-transition-card {
+  background:
+    radial-gradient(circle at 50% 50%,rgba(116,217,162,.2),transparent 42%),
+    linear-gradient(145deg,#153b2a 0%,#102b24 52%,#0b2026 100%);
+}
+.ff-transition-overlay[data-layout="homecoming-feast"] .ff-transition-character { animation-duration:1.8s; }
+@keyframes ff-transition-garden-breathe { 0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-4px) scale(1.015)} }
+@keyframes ff-transition-cascade { 0%,100%{translate:0 -6px;rotate:-1deg}50%{translate:0 9px;rotate:1deg} }
+@media(max-width:700px){
+  .ff-transition-emblem{top:-24px;right:10px;width:clamp(48px,15vw,68px)}
+  .ff-transition-copy{padding-right:clamp(54px,18vw,82px)}
+  .ff-transition-overlay[data-layout="supper-rush"] .ff-transition-character{width:min(250px,75vw);height:230px}
+}
+@media(max-height:560px) and (orientation:landscape){
+  .ff-transition-emblem{top:-16px;right:9px;width:52px}
+  .ff-transition-copy{padding-right:66px}
+  .ff-transition-overlay[data-layout="supper-rush"] .ff-transition-character{height:min(310px,calc(100dvh - 46px))}
+}
+@media(prefers-reduced-motion:reduce){
+  .ff-transition-overlay[data-layout="garden-bounty"] .ff-transition-character,
+  .ff-transition-overlay[data-layout="candy-cascade"] .ff-transition-food{animation:none!important}
+}
+
+/* Classic Arcade poster presentation — supplied TOADAL FEAST 4:3 artwork with a live progress layer. */
+.ff-transition-poster { display:none; }
+.ff-transition-overlay[data-presentation="poster"] {
+  background:
+    linear-gradient(rgba(1,10,5,.68),rgba(1,10,5,.78)),
+    url("../../../assets/themes/froggy-feast/loading/classic-arcade-poster.jpg") center/cover no-repeat,
+    #020b06;
+}
+.ff-transition-overlay[data-presentation="poster"]::before {
+  inset:-7%; opacity:.28; filter:blur(24px) saturate(1.15);
+  background:url("../../../assets/themes/froggy-feast/loading/classic-arcade-poster.jpg") center/cover no-repeat;
+  animation:none;
+}
+.ff-transition-overlay[data-presentation="poster"]::after { display:none; }
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-card {
+  width:min(1448px,calc(100vw - 24px),calc((100dvh - 24px) * 4 / 3));
+  min-height:0; max-height:none; aspect-ratio:4 / 3; display:block; padding:0;
+  border:0; border-radius:clamp(12px,2vw,28px);
+  background:url("../../../assets/themes/froggy-feast/loading/classic-arcade-poster.jpg") center/contain no-repeat,#020b06;
+  box-shadow:0 28px 90px rgba(0,0,0,.72),0 0 0 2px rgba(170,255,106,.18),0 0 54px rgba(74,255,83,.2);
+}
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-card::before { display:none; }
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-poster {
+  position:absolute; inset:0; z-index:2; display:block; overflow:hidden; border-radius:inherit;
+}
+.ff-transition-poster-image { width:100%; height:100%; display:block; object-fit:contain; user-select:none; -webkit-user-drag:none; }
+.ff-transition-poster-bar-mask {
+  position:absolute; left:31.1%; top:56.2%; width:39.7%; height:7.1%; border-radius:999px;
+  background:linear-gradient(180deg,rgba(2,15,6,.99),rgba(1,7,3,.99));
+  box-shadow:0 0 12px rgba(0,0,0,.62); pointer-events:none;
+}
+.ff-transition-poster-track {
+  position:absolute; left:32.4%; top:58.0%; width:37.2%; height:3.6%; overflow:hidden; border-radius:999px;
+  border:max(1px,.14vw) solid rgba(126,255,140,.68);
+  background:linear-gradient(180deg,rgba(9,30,11,.96),rgba(2,9,3,.98));
+  box-shadow:0 0 2vw .2vw rgba(90,255,110,.38),inset 0 2px 5px rgba(0,0,0,.65),inset 0 -1px 2px rgba(255,255,255,.1);
+  animation:ff-transition-poster-track-pulse 2.6s ease-in-out infinite;
+}
+.ff-transition-poster-fill {
+  position:absolute; left:2px; top:2px; bottom:2px; width:var(--ff-transition-progress,8%); overflow:hidden; border-radius:999px;
+  background:linear-gradient(90deg,#0bb81e 0%,#4fe213 42%,#a8f22a 75%,#fbf93b 100%);
+  box-shadow:0 0 12px 2px rgba(160,255,120,.8); transition:width 180ms ease-out;
+}
+.ff-transition-poster-fill::after {
+  content:""; position:absolute; top:0; bottom:0; left:-50%; width:36%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.68),transparent);
+  transform:skewX(-18deg); animation:ff-transition-poster-sweep 2.3s ease-in-out infinite;
+}
+.ff-transition-poster-spark {
+  position:absolute; top:56.45%; left:var(--ff-transition-progress,8%); width:clamp(6px,1vw,14px); aspect-ratio:1;
+  border-radius:50%; background:#fbffe8; opacity:1; transform:translate(-50%,-50%);
+  box-shadow:0 0 10px 4px rgba(200,255,150,.95),0 0 22px 8px rgba(160,255,110,.5); transition:left 180ms ease-out,opacity 120ms ease;
+}
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-feast,
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-scene { display:none; }
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-kicker,
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-copy,
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-progress {
+  position:absolute!important; width:1px!important; height:1px!important; padding:0!important; margin:-1px!important;
+  overflow:hidden!important; clip:rect(0,0,0,0)!important; white-space:nowrap!important; border:0!important;
+}
+.ff-transition-overlay[data-presentation="poster"] .ff-transition-actions {
+  position:absolute; z-index:5; left:50%; bottom:3.5%; width:min(520px,72%); transform:translateX(-50%);
+  padding:10px; border:1px solid rgba(185,255,133,.42); border-radius:18px; background:rgba(2,15,7,.9); box-shadow:0 14px 34px rgba(0,0,0,.58);
+}
+@keyframes ff-transition-poster-track-pulse {
+  0%,100%{box-shadow:0 0 2vw .2vw rgba(90,255,110,.35),inset 0 2px 5px rgba(0,0,0,.65),inset 0 -1px 2px rgba(255,255,255,.1)}
+  50%{box-shadow:0 0 2.7vw .35vw rgba(120,255,140,.58),inset 0 2px 5px rgba(0,0,0,.65),inset 0 -1px 2px rgba(255,255,255,.14)}
+}
+@keyframes ff-transition-poster-sweep { from{left:-55%} to{left:130%} }
+@media(max-width:700px) and (orientation:portrait){
+  .ff-transition-overlay[data-presentation="poster"]{padding:max(8px,env(safe-area-inset-top)) max(8px,env(safe-area-inset-right)) max(8px,env(safe-area-inset-bottom)) max(8px,env(safe-area-inset-left))}
+  .ff-transition-overlay[data-presentation="poster"] .ff-transition-card{width:min(calc(100vw - 16px),calc((100dvh - 16px) * 4 / 3));min-height:0;max-height:none;aspect-ratio:4 / 3;padding:0;border-radius:15px}
+  .ff-transition-overlay[data-presentation="poster"] .ff-transition-actions{width:82%;bottom:4%;padding:6px;gap:6px;border-radius:13px}
+  .ff-transition-overlay[data-presentation="poster"] .ff-transition-action{min-height:38px;padding:7px 8px;font-size:.72rem}
+}
+@media(max-height:560px) and (orientation:landscape){
+  .ff-transition-overlay[data-presentation="poster"] .ff-transition-card{width:min(calc(100vw - 14px),calc((100dvh - 14px) * 4 / 3));min-height:0;max-height:none;aspect-ratio:4 / 3;padding:0;border-radius:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  .ff-transition-poster-track,.ff-transition-poster-fill::after{animation:none!important}
+  .ff-transition-poster-fill,.ff-transition-poster-spark{transition:none!important}
+}
+
+
+@media (pointer:coarse), (max-width:700px) {
+  .ff-transition-feast,.ff-transition-scene,.ff-transition-emblem,.ff-transition-poster-image { transition:none!important; }
+  .ff-transition-overlay[data-effects="lite"]::before { animation:none; }
+}
+
+/* Readiness-driven in-shell handoff.  Fast mode switches never show this
+   surface; when real preparation exceeds the threshold it appears as a small,
+   non-decorative pond wipe instead of a simulated loading poster. */
+.ff-transition-overlay[data-presentation="compact"] {
+  background:rgba(2,18,9,.72);
+  backdrop-filter:blur(8px);
+  -webkit-backdrop-filter:blur(8px);
+}
+.ff-transition-overlay[data-presentation="compact"]::before,
+.ff-transition-overlay[data-presentation="compact"]::after,
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-poster,
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-feast,
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-scene,
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-emblem,
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-kicker { display:none!important; }
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-card {
+  width:min(430px,calc(100vw - 34px));
+  min-height:0;
+  max-height:none;
+  display:grid;
+  grid-template-columns:1fr;
+  grid-template-areas:"copy" "progress" "actions";
+  gap:14px;
+  padding:22px;
+  border-width:2px;
+  border-radius:22px;
+  background:linear-gradient(150deg,rgba(20,72,39,.97),rgba(5,35,18,.98));
+  box-shadow:0 22px 54px rgba(0,0,0,.5),0 0 0 1px rgba(255,255,255,.04) inset;
+}
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-card::before { display:none; }
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-copy {
+  grid-area:copy;
+  gap:7px;
+  padding:0;
+  border:0;
+  background:none;
+  box-shadow:none;
+  backdrop-filter:none;
+  -webkit-backdrop-filter:none;
+}
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-title {
+  font-size:clamp(1.25rem,5vw,1.75rem);
+  line-height:1.08;
+}
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-subtitle {
+  font-size:.92rem;
+  line-height:1.35;
+}
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-track { height:10px; }
+.ff-transition-overlay[data-presentation="compact"][data-progress-mode="real"] .ff-transition-track::before {
+  left:0;
+  width:var(--ff-transition-progress,6%);
+  animation:none;
+  transition:width 140ms ease-out;
+  background:linear-gradient(90deg,var(--ff-transition-accent),var(--ff-transition-accent-2));
+}
+.ff-transition-overlay[data-presentation="compact"] .ff-transition-status { text-align:left; }
+
+/* Immersive handoffs can use the calm owner-supplied scenery while the
+   established Classic Arcade poster remains the exact poster authority. */
+.ff-transition-overlay[data-presentation="immersive"] {
+  background:
+    linear-gradient(rgba(1,10,5,.58),rgba(1,10,5,.78)),
+    url("../../../assets/themes/froggy-feast/ui-v2/backgrounds/candy-forest-owner-v1.webp") center/cover no-repeat,
+    #020b06;
+}
+.ff-transition-overlay[data-presentation="immersive"]::before {
+  inset:-7%;
+  opacity:.24;
+  filter:blur(24px) saturate(1.12);
+  background:url("../../../assets/themes/froggy-feast/ui-v2/backgrounds/candy-forest-owner-v1.webp") center/cover no-repeat;
+}
