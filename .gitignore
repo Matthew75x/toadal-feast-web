@@ -13,3 +13,9 @@ studio-data/
 *.bak
 
 # Keep dist tracked intentionally: GitHub Pages deploys it.
+
+# TOADAL Studio generated local state
+studio-project/**/build/
+studio-project/**/.studio-history/
+studio-project/**/.studio-recovery/
+studio-project/**/*.zip
