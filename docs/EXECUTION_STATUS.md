@@ -1,70 +1,31 @@
-[Reading 65 lines from start (total: 65 lines, 0 remaining)]
-
 # TOADAL FEAST Website — Execution Status
 **Updated:** 2026-09-30
 
-## Environment gate
-**WO-000: PASS**
+## Accepted environment gate
+**WO-000: PASS** — accepted evidence commit `e639cd8ee68c6650aede6a2f04e524bef20a1c08`; TOADAL Studio 1.4.2; validation, 81/81 tests, AI doctor, inspect/render/static export/verify checkpoint all passed. Tracked `dist/` and `main` were unchanged; Pages was not deployed.
 
-Accepted baseline:
-- branch: `work/WO-000-environment-baseline`
-- commit: `e639cd8ee68c6650aede6a2f04e524bef20a1c08`
-- Studio: **1.4.2**
-- Studio validation: PASS — 0 errors / 0 warnings
-- Studio tests: PASS — **81/81**
-- ai:doctor: PASS
-- inspect/render/static export/verify checkpoint: PASS
-- tracked `dist/`: unchanged
-- Pages/production: untouched
-
-## Current executable task
+## Current work order
 **WO-001 — Global Shell + Home**
+Branch: `work/WO-001-global-shell-home`
+Implementation: complete and locally verified.
+Acceptance: **BLOCKED — do not accept WO-001 or begin WO-002.**
 
-Active branch:
-`work/WO-001-global-shell-home`
+## Final implementation checks
+- Node `v22.23.2`; npm `10.9.8`; Studio/package/plugin `1.4.2`.
+- Exact `TOADAL_PROJECT`: `studio-project/toadal-feast-website/project.json`.
+- Studio validation: PASS, zero errors / warnings; complete Studio suite: PASS, 81/81, zero skipped; `ai:doctor`: PASS.
+- `toadal.inspect`, render (17 files / 800,024 bytes), static export (744,570 bytes), and verify checkpoint: PASS.
+- Canonical asset audit: PASS, 10/10 using documented official-source fallback.
+- Static Home verifier: PASS, 41 checks; Pages base-path tests: PASS, 8/8; navigation routes/fragments: PASS, 14/14.
+- Browser QA: PASS, 87/87 on all six required viewport sizes; no overflow, console, page, or HTTP errors. Keyboard navigation, reduced motion, filters, companion reactions/persistence, and 404 recovery passed.
+- Studio quick accessibility QA: nine checks true, zero issues/errors/warnings. Screenshot and machine-readable evidence are in `docs/review/WO-001/`.
+- Tracked `dist/` unchanged; no GitHub Pages/production deployment or `main` change. Generated Studio `build/`, `.history/`, `.studio-history/` are ignored.
 
-Current implementation head:
-`9f706e8b02e7046e973c0f2a6ec6b8c2f5304eee`
+## Acceptance blockers
+1. The approved Home mockup PNGs are unavailable locally. The design-branch Figma bridge confirms composition guidance but cannot substitute for original visual authority; screenshots therefore cannot certify mockup parity.
+2. CP9/V13 has separate-machine external integrity evidence (17 witnesses, zero failures), but the configured archive, donor source, screenshots, and `dist/` are absent locally. Local verifier result is 0/17, so donor behavior/salvage cannot be inspected here.
+3. The requested guest-local Feast Pass summary conflicts with the authoritative `PUBLIC_AFTER_WO005` gate. The page stays planned and shows no fake progression or sync.
+4. “Play the Feast World for Free” conflicts with current truth that zero browser games have playable builds. Product authority must reconcile this before acceptance.
+5. Reusable Studio shell symbols are incomplete: three symbols exist (two buttons and game card); source gate finds 2/11 named shell components.
 
-Completed in the branch:
-- cumulative design/runtime/content/release authority promoted from the planning lane;
-- canonical Home asset audit script present and independently PASS on ASSIGNATOR;
-- TOADAL FEAST theme tokens;
-- global Home shell/navigation/footer;
-- rich Home composition aligned to the approved visual authority;
-- canonical Toadal, Princess Lily, Gulper and Gully assets;
-- browser-games Preview/Candidate truth states;
-- guest-local Feast Pass summary initialization;
-- Characters / World / Stories & Media discovery;
-- truthful App conversion;
-- What's Next future-state panel;
-- contextual/minimizable Toadal companion;
-- pre-Studio desktop visual evidence.
-
-Pre-Studio checks:
-- Home visual contract: PASS — 18/18
-- navigation truth: PASS — 0 unresolved clickable targets
-- CP9 donor verification: PASS — 17 authorities
-- canonical asset audit: PASS — 10 required assets
-- required viewport witness matrix captured at 390×844, 430×932, 768×1024, 1366×768, 1600×900, 1920×1080
-- responsive overflow probes: PASS — no document-level horizontal overflow
-- interaction probes: PASS on small-phone and desktop witnesses
-- reduced-motion witness: PASS
-- `git diff --check`: PASS
-- `dist/`: unchanged
-
-## Remaining WO-001 gate
-Before WO-001 can be marked PASS:
-1. run the accepted Studio 1.4.2 validate/render/export path against this integrated branch;
-2. final link/base-path/console checks on the actual Studio export;
-3. compare Studio-generated final screenshots against the approved Home authority and the clean pre-Studio witness matrix;
-4. commit the final Studio 1.4.2 acceptance evidence.
-
-## Later work
-WO-002 and later remain HOLD until WO-001 is accepted.
-
-## Production
-No production DNS or live-site replacement is authorized.
-GitHub Pages remains a staging gate only after an accepted batch.
-
-[executed on device: ASSIGNATOR (df89eadc-2f4c-40da-b60e-eb480cd977a2)]
+No workaround changes to product truth, donor code, or deployment state were made. Keep WO-002 on hold. See `docs/review/WO-001/QA_REPORT.md` for exact evidence and all donor verifier failures.

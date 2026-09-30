@@ -1,0 +1,51 @@
+{
+  "capturedAt": "2026-09-30T08:50:16.734Z",
+  "studio": "1.4.2",
+  "export": {
+    "kind": "static",
+    "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-wo001\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
+    "bytes": 744570,
+    "sha256": "47D8F0DAA3DE4FA5E00937C149A4D1FBA51861ED0D8E6F581C0FBDFB49541696",
+    "deploymentPerformed": false
+  },
+  "extractedStaticSite": {
+    "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\wo001-validation-tools\\public-final-polished-20260930\\toadal-feast-web",
+    "files": 17,
+    "hasIndexHtml": true,
+    "has404Html": true,
+    "pagesBasePath": "/toadal-feast-web/",
+    "indexHtmlSha256AfterBasePathRewrite": "E10A502283189B1C1A8CABA8B03D78E2143DC209832EE1365E6D8D62D55C4DEA",
+    "404HtmlSha256AfterBasePathRewrite": "EA93B1E6C5B3456255E24B305255BA017D179452EF313BD1AF27A224F69CE04C"
+  },
+  "basePathRewrite": {
+    "firstPass": {
+      "filesScanned": 3,
+      "filesRewritten": 2,
+      "urlsRewritten": 18
+    },
+    "secondPassIdempotence": {
+      "filesScanned": 3,
+      "filesRewritten": 0,
+      "urlsRewritten": 0
+    },
+    "homeVerifier": "PASS (41 checks)",
+    "basePathTests": "PASS (8/8)",
+    "navigationRouteAndFragmentGuard": "PASS (14/14 targets; zero unresolved routes/fragments)"
+  },
+  "browserQa": {
+    "baseUrl": "http://127.0.0.1:8770/toadal-feast-web/",
+    "browser": "Chrome 154.0.8037.57",
+    "checks": "PASS (87/87)",
+    "viewports": [
+      "390x844",
+      "430x932",
+      "768x1024",
+      "1366x768",
+      "1600x900",
+      "1920x1080"
+    ],
+    "consoleErrors": 0,
+    "httpErrors": 0,
+    "screenshots": "docs/review/WO-001/screenshots/"
+  }
+}

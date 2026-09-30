@@ -1,0 +1,54 @@
+{
+  "capturedAt": "2026-09-30T08:50:16.209Z",
+  "studio": {
+    "name": "toadal-studio",
+    "version": "1.4.2"
+  },
+  "project": {
+    "id": "toadal-feast-website",
+    "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-wo001\\studio-project\\toadal-feast-website\\project.json"
+  },
+  "inspect": {
+    "counts": {
+      "pages": 2,
+      "games": 4,
+      "assets": 9,
+      "components": 12
+    },
+    "validation": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0
+    },
+    "graph": {
+      "nodes": 40,
+      "edges": 30,
+      "dangling": 4,
+      "falsePositiveEdges": {
+        "from": "component.home.games",
+        "to": "game.card",
+        "kind": "uses-game",
+        "count": 4,
+        "reason": "The analyzer treats the component type marker game.card as a game entity; each actual game.<id> edge is also present."
+      }
+    }
+  },
+  "render": {
+    "previewDir": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-wo001\\studio-project\\toadal-feast-website\\build\\ai-preview",
+    "files": 17,
+    "totalBytes": 800024,
+    "htmlBytes": 50372,
+    "largeFileWarnings": 0,
+    "pages": {
+      "index.html": "8e4788ea12c586cb788cc170b6dd02ebf355685e90032d6fc95e9fb7fc457fa9",
+      "404.html": "ec5d6e08e394f500a933184c32faa92f968d11d94e028500b5b91766ee325502"
+    }
+  },
+  "checkpoint": {
+    "mode": "verify",
+    "status": "PASS",
+    "validation": "PASS (0 errors, 0 warnings)",
+    "generatedHandoff": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\studio-1.4.2\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\AI\\HANDOFFS\\2026-09-30T08-50-16-725Z-WO-001-final-visual-polish-verification.md",
+    "generatedStateTracked": false
+  }
+}

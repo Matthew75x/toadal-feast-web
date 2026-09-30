@@ -1,6 +1,10 @@
 # WO-001 — Global Shell + Home
-**Status:** ACTIVE — WO-000 PASS accepted
+**Status:** BLOCKED — implementation complete; acceptance gates remain open
 **Execution branch:** `work/WO-001-global-shell-home`
+
+## Current disposition (2026-09-30)
+
+The Studio implementation, full test suite, export, static verification, viewport matrix, and browser/accessibility smoke checks pass. WO-001 is **not accepted**: CP9/V13 integrity has external audit evidence, but the source/archive are not locally available for the required salvage comparison; the original approved Home mockups are unavailable for visual sign-off; the guest-local Feast Pass requirement conflicts with the central `PUBLIC_AFTER_WO005` gate; the free-play headline needs reconciliation against zero playable browser builds; and reusable shell-symbol coverage is partial. The current page keeps Feast Pass planned and does not invent progress. See `docs/review/WO-001/QA_REPORT.md` for exact evidence and remaining blockers. Do not start WO-002 or deploy Pages.
 
 ## Goal
 Implement the reusable TOADAL FEAST global shell and Home page from the locked Home visual authority without inventing a new visual direction.

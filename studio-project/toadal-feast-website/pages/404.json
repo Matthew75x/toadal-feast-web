@@ -2,29 +2,85 @@
   "schemaVersion": 1,
   "id": "page.404",
   "route": "/404.html",
-  "title": "Page not found",
-  "description": "The requested page could not be found.",
+  "title": "Lost in the Feast · TOADAL FEAST",
+  "description": "Find your way back to the TOADAL FEAST Home, browser previews, world, or stories.",
   "publicationState": "published",
   "components": [
     {
       "id": "component.404.main",
       "type": "core.content-section",
       "props": {
-        "heading": "Page not found",
+        "heading": "That path wandered off.",
         "headingLevel": 1,
-        "body": "The page you were looking for is not here."
+        "body": "This page is not part of the current website preview. You can head Home, browse the game previews, explore the World, or visit Stories & Media. Search is coming soon."
       }
     },
     {
-      "id": "component.404.back",
-      "type": "core.button",
+      "id": "component.404.recovery",
+      "type": "layout.grid",
       "props": {
-        "label": "Go home",
-        "href": "/",
-        "kind": "primary"
+        "anchorId": "404-recovery",
+        "columns": 2,
+        "gap": 12,
+        "children": [
+          {
+            "id": "component.404.home",
+            "type": "core.button",
+            "props": {
+              "symbolId": "symbol.site.primary-button",
+              "label": "Go Home",
+              "href": "/",
+              "kind": "primary"
+            }
+          },
+          {
+            "id": "component.404.play",
+            "type": "core.button",
+            "props": {
+              "symbolId": "symbol.site.secondary-button",
+              "label": "Browse previews",
+              "href": "/#browser-games",
+              "kind": "secondary"
+            }
+          },
+          {
+            "id": "component.404.world",
+            "type": "core.button",
+            "props": {
+              "symbolId": "symbol.site.secondary-button",
+              "label": "Explore the World",
+              "href": "/#world",
+              "kind": "secondary"
+            }
+          },
+          {
+            "id": "component.404.stories",
+            "type": "core.button",
+            "props": {
+              "symbolId": "symbol.site.secondary-button",
+              "label": "Stories & Media",
+              "href": "/#stories-media",
+              "kind": "secondary"
+            }
+          },
+          {
+            "id": "component.404.search",
+            "type": "core.button",
+            "props": {
+              "symbolId": "symbol.site.secondary-button",
+              "label": "Search (coming soon)",
+              "href": "/#home-search",
+              "kind": "secondary"
+            }
+          }
+        ]
       }
     }
   ],
   "referenceFile": "404.html",
-  "studioGenerated": true
+  "studioGenerated": true,
+  "seo": {
+    "title": "Lost in the Feast · TOADAL FEAST",
+    "description": "Find your way back to the TOADAL FEAST Home, browser previews, world, or stories."
+  }
 }

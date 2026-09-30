@@ -1,4 +1,33 @@
 {
   "schemaVersion": 1,
-  "items": []
+  "items": [
+    {
+      "id": "symbol.home.game-card",
+      "name": "Browser game preview card",
+      "type": "game.card",
+      "props": {
+        "gameId": "game.wicked-bites"
+      }
+    },
+    {
+      "id": "symbol.site.primary-button",
+      "name": "Primary button",
+      "type": "core.button",
+      "props": {
+        "label": "Explore the Feast",
+        "href": "/#browser-games",
+        "kind": "primary"
+      }
+    },
+    {
+      "id": "symbol.site.secondary-button",
+      "name": "Secondary button",
+      "type": "core.button",
+      "props": {
+        "label": "Learn more",
+        "href": "/",
+        "kind": "secondary"
+      }
+    }
+  ]
 }

@@ -2,6 +2,8 @@
 
 This audit was performed independently on ASSIGNATOR against the current WO-001 source lineage while Codex remains responsible for the bounded Studio implementation/certification lane.
 
+**Evidence note:** this is a point-in-time audit snapshot from before the final local Home and navigation corrections. Its search, Today, and 13-target navigation failures are historical, not current. Current local results are in `QA_REPORT.md`; the CP9 integrity result remains external and is not a local donor-salvage review.
+
 ## Donor integrity
 
 The recovered CP9/V13 donor is intact.
@@ -15,7 +17,7 @@ The recovered CP9/V13 donor is intact.
 
 Four original CP9 QA screenshots are preserved under `docs/review/CP9-donor/` on this QA branch.
 
-## Current Home contract scan
+## Historical Home contract scan (before final corrections)
 
 A new non-browser source guard was run:
 
@@ -43,7 +45,7 @@ PASS coverage already includes:
 - pending-store-link truth
 - core navigation labels
 
-## Current gaps
+## Snapshot gaps (search and Today were later implemented)
 
 ### 1. Desktop search treatment — FAIL
 The current pre-Studio shell uses an icon-only disabled utility. The approved Home direction/CP9 donor uses a real desktop search-field treatment.
@@ -68,22 +70,22 @@ The CP9 reference remains useful because it proves a more complete desktop utili
 
 ## Recommendation
 
-WO-001 should not be accepted until the two static contract gaps above are resolved and the final Studio 1.4.2 viewport evidence passes.
+At the time of this snapshot, WO-001 should not be accepted until its two static contract gaps were resolved and the final Studio 1.4.2 viewport evidence passed. Search and Today are now implemented and have current passing evidence in `QA_REPORT.md`.
 
 This QA branch intentionally does not modify the Home implementation. It provides donor preservation, source-level regression guards, and explicit closure criteria without colliding with Codex's implementation branch.
-## Navigation truth audit
+## Historical navigation truth audit (before anchor correction)
 
 A separate navigation-source guard was added:
 
 `node scripts/verify-navigation-truth.mjs .`
 
-Current result:
+Snapshot result at that time:
 - implemented Studio routes: 2 (`/`, `/404.html`)
 - navigation targets checked: 14
 - unresolved clickable targets: **13**
 
 The current `navigation.json` points at future routes such as Play, World, Stories, Media, Feast Pass, App, Community, Store, About, News, Support, Contact and Legal even though those Studio pages do not exist yet.
 
-This is not permission to remove the approved navigation labels. It is a closure requirement to make unavailable destinations truthful in WO-001—for example, current-page anchors, disabled/planned states, or another Studio-supported non-broken treatment—until each real route lands in its own work order.
+This was not permission to remove approved navigation labels. The later local implementation keeps the labels and targets Home anchors; the current navigation guard verifies all 14 route/fragment targets with zero unresolved links. See `QA_REPORT.md`.
 
 Final Studio export must not ship a polished Home whose global navigation simply sends visitors to thirteen missing pages.
