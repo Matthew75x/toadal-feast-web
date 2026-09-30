@@ -697,6 +697,42 @@ main {
   margin: auto var(--space-5) var(--space-5);
 }
 
+/* Shared feature-state chip language for Preview / Coming Soon / Planned surfaces. */
+.status-chip {
+  width: fit-content;
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: 3px var(--space-3);
+  border: 1px solid var(--chocolate-800);
+  border-radius: var(--radius-pill);
+  color: var(--chocolate-950);
+  background: var(--cream-200);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.status-chip--preview {
+  border-color: var(--gold-700);
+  background: var(--gold-400);
+}
+
+.status-chip--coming {
+  border-color: var(--pink-700);
+  color: var(--pink-700);
+  background: var(--cream-50);
+}
+
+.status-chip--planned {
+  border-color: var(--navy-700);
+  color: var(--navy-900);
+  background: var(--cream-100);
+}
+
 /* Pass and daily-feature states are explicit, warm panels—not fake controls. */
 .feast-pass-panel,
 .today-panel,

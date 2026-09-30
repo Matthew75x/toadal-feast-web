@@ -8,6 +8,8 @@ const read = (rel) => fs.readFileSync(path.join(project, rel), 'utf8');
 const home = JSON.parse(read(path.join('pages', 'home.json')));
 const nav = JSON.parse(read(path.join('collections', 'navigation.json')));
 const advanced = JSON.parse(read(path.join('collections', 'advanced-code.json')));
+const site = JSON.parse(read(path.join('collections', 'site.json')));
+const pagesIndex = JSON.parse(read(path.join('pages', 'index.json')));
 const symbols = JSON.parse(read(path.join('collections', 'symbols.json')));
 const assets = JSON.parse(read(path.join('assets', 'index.json')));
 const gameIndex = JSON.parse(read(path.join('games', 'index.json')));
@@ -77,11 +79,38 @@ const requiredNav = ['Home', 'Play', 'World', 'Stories', 'Media', 'Feast Pass', 
 const navLabels = new Set((nav.primary || []).map(item => item.label));
 check('core-navigation', requiredNav.every(label => navLabels.has(label)),
   'Core navigation labels are present.');
-const requiredSymbols = ['SiteHeader', 'SiteFooter', 'RouteShell', 'PrimaryButton', 'SecondaryButton',
-  'CreamPanel', 'DarkFeaturePanel', 'SectionHeading', 'StatusChip', 'CategoryTabs', 'SearchField'];
-const symbolNames = new Set((symbols.items || []).map(item => String(item.name || '').toLowerCase().replace(/[^a-z0-9]/g, '')));
-check('reusable-shell-components', requiredSymbols.every(name => symbolNames.has(name)),
-  `Studio symbol-registry coverage: ${requiredSymbols.filter(name => symbolNames.has(name.toLowerCase())).length}/${requiredSymbols.length}; required named shell components are ${requiredSymbols.join(', ')}.`);
+const normalizeName = value => String(value || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+const symbolItems = symbols.items || [];
+const findSymbol = name => symbolItems.find(item => normalizeName(item.name) === normalizeName(name));
+const cssHas = pattern => pattern.test(css);
+const reuseArchitecture = {
+  SiteHeader: Boolean(site.brand && (nav.primary || []).length >= 7 && cssHas(/\.site-header\b/)),
+  SiteFooter: Boolean((nav.footer || []).length >= 1 && cssHas(/\.site-footer\b/)),
+  RouteShell: Boolean((pagesIndex.pages || []).some(page => page.route === '/') &&
+    (pagesIndex.pages || []).some(page => page.route === '/404.html' || page.route === '/404') &&
+    cssHas(/\.site-main\b|main\s*\{/)),
+  PrimaryButton: Boolean(findSymbol('Primary button')?.type === 'core.button' &&
+    findSymbol('Primary button')?.props?.kind === 'primary'),
+  SecondaryButton: Boolean(findSymbol('Secondary button')?.type === 'core.button' &&
+    findSymbol('Secondary button')?.props?.kind === 'secondary'),
+  CreamPanel: Boolean(cssHas(/\.today-panel\b/) && cssHas(/\.app-conversion-panel\b/) &&
+    cssHas(/background:\s*var\(--cream-50\)/)),
+  DarkFeaturePanel: Boolean(cssHas(/\.feast-pass-panel\b/) &&
+    cssHas(/background:\s*var\(--chocolate-800\)/)),
+  SectionHeading: Boolean(cssHas(/\.section-heading\b/) && /class=['"]section-heading['"]/.test(html)),
+  StatusChip: Boolean(cssHas(/\.status-chip\b/) && /class=['"][^'"]*status-chip/.test(html)),
+  CategoryTabs: Boolean(['all', 'preview', 'public'].every(value =>
+    new RegExp(`data-game-tab=['"]${value}['"]`).test(componentHtml('component.home.games-intro'))) &&
+    /data-game-tab/i.test(advanced.javascript || '')),
+  SearchField: Boolean(/class=['"]home-search['"]/.test(componentHtml('component.home.hero')) &&
+    /type=['"]search['"][^>]*disabled/i.test(componentHtml('component.home.hero')))
+};
+const requiredReuse = Object.keys(reuseArchitecture);
+const reusableCount = requiredReuse.filter(name => reuseArchitecture[name]).length;
+check('reusable-shell-components', reusableCount === requiredReuse.length,
+  `Effective reusable architecture coverage: ${reusableCount}/${requiredReuse.length}. ` +
+  requiredReuse.map(name => `${name}=${reuseArchitecture[name] ? 'yes' : 'no'}`).join(', ') +
+  '. Header/footer/route shell are shared Studio collections; visual primitives may be token/CSS patterns rather than fake unused symbols.');
 
 const failures = checks.filter(item => !item.ok && item.severity === 'gate');
 const warnings = checks.filter(item => !item.ok && item.severity === 'WARN');
