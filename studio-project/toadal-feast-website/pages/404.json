@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "page.404",
+  "route": "/404.html",
+  "title": "Page not found",
+  "description": "The requested page could not be found.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.404.main",
+      "type": "core.content-section",
+      "props": {
+        "heading": "Page not found",
+        "headingLevel": 1,
+        "body": "The page you were looking for is not here."
+      }
+    },
+    {
+      "id": "component.404.back",
+      "type": "core.button",
+      "props": {
+        "label": "Go home",
+        "href": "/",
+        "kind": "primary"
+      }
+    }
+  ],
+  "referenceFile": "404.html",
+  "studioGenerated": true
+}

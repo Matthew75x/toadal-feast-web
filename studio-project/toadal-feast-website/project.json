@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "toadal-feast-website",
+  "name": "TOADAL FEAST Website",
+  "projectKind": "generic-site",
+  "referenceDist": "reference",
+  "pageIndex": "pages/index.json",
+  "gameIndex": "games/index.json",
+  "navigation": "collections/navigation.json",
+  "assetCatalog": "assets/index.json",
+  "mechanics": "mechanics/core.json",
+  "variables": "variables/core.json",
+  "animations": "animations/index.json",
+  "collections": {
+    "updates": "collections/updates.json",
+    "status": "collections/status.json",
+    "site": "collections/site.json",
+    "presets": "collections/presets.json",
+    "symbols": "collections/symbols.json",
+    "publishing": "collections/publishing.json",
+    "cms": "collections/cms.json",
+    "advancedCode": "collections/advanced-code.json",
+    "integrations": "collections/integrations.json",
+    "patterns": "collections/patterns.json",
+    "behaviorPresets": "collections/behavior-presets.json"
+  },
+  "plugins": [],
+  "render": {
+    "mode": "generated"
+  },
+  "design": {
+    "activeTheme": "theme.modern",
+    "faviconAsset": null
+  },
+  "assetLibraries": [],
+  "sharedLibraries": []
+}

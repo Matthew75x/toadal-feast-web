@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "storefrontProviders": [],
+  "formProviders": [
+    {
+      "id": "disabled",
+      "name": "Disabled"
+    },
+    {
+      "id": "mailto",
+      "name": "Email client"
+    },
+    {
+      "id": "webhook",
+      "name": "HTTPS webhook"
+    },
+    {
+      "id": "formspree",
+      "name": "Formspree / compatible POST endpoint"
+    }
+  ],
+  "preview": {
+    "enabled": false,
+    "token": "",
+    "passwordHash": ""
+  },
+  "cloudflarePages": {
+    "projectName": "",
+    "branch": "preview"
+  },
+  "deployment": {
+    "target": "",
+    "sftp": {
+      "host": "",
+      "username": "",
+      "remotePath": ""
+    },
+    "customCommand": {
+      "command": "",
+      "args": [
+        "{buildDir}"
+      ]
+    }
+  }
+}

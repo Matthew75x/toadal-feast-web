@@ -1,0 +1,351 @@
+{
+  "schemaVersion": 1,
+  "pageTemplates": [
+    {
+      "id": "template.landing",
+      "name": "Landing Page",
+      "components": [
+        {
+          "id": "component.home.hero",
+          "type": "core.content-section",
+          "props": {
+            "layerName": "Hero",
+            "heading": "New landing page",
+            "body": "A focused page built to explain the value and make the next step obvious.",
+            "variant": "accent",
+            "headingLevel": 1,
+            "reveal": true,
+            "revealPreset": "slide-up"
+          }
+        },
+        {
+          "id": "component.home.actions",
+          "type": "core.button-group",
+          "props": {
+            "layerName": "Primary actions",
+            "heading": "",
+            "buttons": [
+              {
+                "label": "Get started",
+                "href": "#about",
+                "kind": "primary"
+              },
+              {
+                "label": "Learn more",
+                "href": "#faq",
+                "kind": "secondary"
+              }
+            ]
+          }
+        },
+        {
+          "id": "component.home.intro",
+          "type": "core.content-section",
+          "props": {
+            "layerName": "Introduction",
+            "heading": "Built to be edited",
+            "body": "Keep the message concise, prove the value, and make the primary action unmistakable."
+          }
+        },
+        {
+          "id": "component.home.grid",
+          "type": "layout.grid",
+          "props": {
+            "layerName": "Highlights",
+            "anchorId": "highlights",
+            "columns": 3,
+            "gap": 18,
+            "children": [
+              {
+                "id": "component.home.card.1",
+                "type": "core.content-section",
+                "props": {
+                  "heading": "Problem",
+                  "body": "Name the need clearly.",
+                  "variant": "card"
+                }
+              },
+              {
+                "id": "component.home.card.2",
+                "type": "core.content-section",
+                "props": {
+                  "heading": "Value",
+                  "body": "Show what changes for the visitor.",
+                  "variant": "card"
+                }
+              },
+              {
+                "id": "component.home.card.3",
+                "type": "core.content-section",
+                "props": {
+                  "heading": "Proof",
+                  "body": "Add evidence, examples, or FAQs.",
+                  "variant": "card"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "component.home.about",
+          "type": "core.content-section",
+          "props": {
+            "layerName": "About",
+            "anchorId": "about",
+            "heading": "Make the site yours",
+            "body": "Use the Theme panel for the design system, Insert for new sections, Layers for structure, Assets for media, and Health before publishing."
+          }
+        },
+        {
+          "id": "component.home.faq",
+          "type": "core.faq",
+          "props": {
+            "layerName": "FAQ",
+            "anchorId": "faq",
+            "heading": "Common questions",
+            "items": [
+              {
+                "question": "Can I add more pages?",
+                "answer": "Yes. Create blank pages or start from a page template in the Pages panel."
+              },
+              {
+                "question": "Can I reuse sections and assets?",
+                "answer": "Yes. Favorites, shared patterns, synchronized symbols and the Studio Vault are designed for repeat use."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "template.about",
+      "name": "About Page",
+      "components": [
+        {
+          "type": "core.content-section",
+          "props": {
+            "heading": "About",
+            "headingLevel": 1,
+            "body": "Tell your story here."
+          }
+        },
+        {
+          "type": "core.faq",
+          "props": {
+            "heading": "More about us",
+            "items": []
+          }
+        }
+      ]
+    },
+    {
+      "id": "template.contact",
+      "name": "Contact Page",
+      "components": [
+        {
+          "type": "core.content-section",
+          "props": {
+            "heading": "Contact",
+            "headingLevel": 1,
+            "body": "Make the next step clear."
+          }
+        },
+        {
+          "type": "core.form",
+          "props": {
+            "heading": "Send a message",
+            "provider": "disabled",
+            "action": "",
+            "submitLabel": "Send"
+          }
+        }
+      ]
+    },
+    {
+      "id": "template.portfolio",
+      "name": "Portfolio Page",
+      "components": [
+        {
+          "id": "component.home.hero",
+          "type": "core.content-section",
+          "props": {
+            "layerName": "Hero",
+            "heading": "Selected work",
+            "body": "Selected work, clear thinking, and a site that feels like you.",
+            "variant": "accent",
+            "headingLevel": 1,
+            "reveal": true,
+            "revealPreset": "slide-up"
+          }
+        },
+        {
+          "id": "component.home.actions",
+          "type": "core.button-group",
+          "props": {
+            "layerName": "Primary actions",
+            "heading": "",
+            "buttons": [
+              {
+                "label": "View work",
+                "href": "#highlights",
+                "kind": "primary"
+              },
+              {
+                "label": "Learn more",
+                "href": "#faq",
+                "kind": "secondary"
+              }
+            ]
+          }
+        },
+        {
+          "id": "component.home.intro",
+          "type": "core.content-section",
+          "props": {
+            "layerName": "Introduction",
+            "heading": "Built to be edited",
+            "body": "Tell visitors what you make, why it matters, and what you want them to explore next."
+          }
+        },
+        {
+          "id": "component.home.grid",
+          "type": "layout.grid",
+          "props": {
+            "layerName": "Highlights",
+            "anchorId": "highlights",
+            "columns": 3,
+            "gap": 18,
+            "children": [
+              {
+                "id": "component.home.card.1",
+                "type": "core.content-section",
+                "props": {
+                  "heading": "Work",
+                  "body": "Highlight your strongest projects.",
+                  "variant": "card"
+                }
+              },
+              {
+                "id": "component.home.card.2",
+                "type": "core.content-section",
+                "props": {
+                  "heading": "About",
+                  "body": "Explain your point of view.",
+                  "variant": "card"
+                }
+              },
+              {
+                "id": "component.home.card.3",
+                "type": "core.content-section",
+                "props": {
+                  "heading": "Contact",
+                  "body": "Make it easy to reach you.",
+                  "variant": "card"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "id": "component.home.about",
+          "type": "core.content-section",
+          "props": {
+            "layerName": "About",
+            "anchorId": "about",
+            "heading": "Make the site yours",
+            "body": "Use the Theme panel for the design system, Insert for new sections, Layers for structure, Assets for media, and Health before publishing."
+          }
+        },
+        {
+          "id": "component.home.faq",
+          "type": "core.faq",
+          "props": {
+            "layerName": "FAQ",
+            "anchorId": "faq",
+            "heading": "Common questions",
+            "items": [
+              {
+                "question": "Can I add more pages?",
+                "answer": "Yes. Create blank pages or start from a page template in the Pages panel."
+              },
+              {
+                "question": "Can I reuse sections and assets?",
+                "answer": "Yes. Favorites, shared patterns, synchronized symbols and the Studio Vault are designed for repeat use."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "sectionPatterns": [
+    {
+      "id": "pattern.cta",
+      "name": "Call to action",
+      "components": [
+        {
+          "type": "core.content-section",
+          "props": {
+            "heading": "Ready to continue?",
+            "body": "Give visitors one clear next step."
+          }
+        },
+        {
+          "type": "core.button-group",
+          "props": {
+            "heading": "",
+            "buttons": [
+              {
+                "label": "Get started",
+                "href": "#",
+                "kind": "primary"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.faq",
+      "name": "FAQ section",
+      "components": [
+        {
+          "type": "core.faq",
+          "props": {
+            "heading": "Frequently asked questions",
+            "items": [
+              {
+                "question": "Question?",
+                "answer": "Answer."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "favorites": [],
+  "recent": [],
+  "componentVariants": [
+    {
+      "id": "default",
+      "name": "Default"
+    },
+    {
+      "id": "card",
+      "name": "Card"
+    },
+    {
+      "id": "compact",
+      "name": "Compact"
+    },
+    {
+      "id": "accent",
+      "name": "Accent"
+    },
+    {
+      "id": "outline",
+      "name": "Outline"
+    }
+  ]
+}

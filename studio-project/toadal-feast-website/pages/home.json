@@ -1,0 +1,126 @@
+{
+  "schemaVersion": 1,
+  "id": "page.home",
+  "route": "/",
+  "title": "TOADAL FEAST Website",
+  "description": "",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.home.hero",
+      "type": "core.content-section",
+      "props": {
+        "layerName": "Hero",
+        "heading": "TOADAL FEAST Website",
+        "body": "A polished, responsive website you can shape without fighting the tool.",
+        "variant": "accent",
+        "headingLevel": 1,
+        "reveal": true,
+        "revealPreset": "slide-up"
+      }
+    },
+    {
+      "id": "component.home.actions",
+      "type": "core.button-group",
+      "props": {
+        "layerName": "Primary actions",
+        "heading": "",
+        "buttons": [
+          {
+            "label": "Get started",
+            "href": "#about",
+            "kind": "primary"
+          },
+          {
+            "label": "Learn more",
+            "href": "#faq",
+            "kind": "secondary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "component.home.intro",
+      "type": "core.content-section",
+      "props": {
+        "layerName": "Introduction",
+        "heading": "Built to be edited",
+        "body": "Start with a strong message, then build sections from reusable components, patterns, assets and CMS content."
+      }
+    },
+    {
+      "id": "component.home.grid",
+      "type": "layout.grid",
+      "props": {
+        "layerName": "Highlights",
+        "anchorId": "highlights",
+        "columns": 3,
+        "gap": 18,
+        "children": [
+          {
+            "id": "component.home.card.1",
+            "type": "core.content-section",
+            "props": {
+              "heading": "Clear structure",
+              "body": "Pages, sections and reusable components.",
+              "variant": "card"
+            }
+          },
+          {
+            "id": "component.home.card.2",
+            "type": "core.content-section",
+            "props": {
+              "heading": "Responsive by default",
+              "body": "Preview desktop, tablet and mobile quickly.",
+              "variant": "card"
+            }
+          },
+          {
+            "id": "component.home.card.3",
+            "type": "core.content-section",
+            "props": {
+              "heading": "Ready to publish",
+              "body": "SEO, health checks and static export are built in.",
+              "variant": "card"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "component.home.about",
+      "type": "core.content-section",
+      "props": {
+        "layerName": "About",
+        "anchorId": "about",
+        "heading": "Make the site yours",
+        "body": "Use the Theme panel for the design system, Insert for new sections, Layers for structure, Assets for media, and Health before publishing."
+      }
+    },
+    {
+      "id": "component.home.faq",
+      "type": "core.faq",
+      "props": {
+        "layerName": "FAQ",
+        "anchorId": "faq",
+        "heading": "Common questions",
+        "items": [
+          {
+            "question": "Can I add more pages?",
+            "answer": "Yes. Create blank pages or start from a page template in the Pages panel."
+          },
+          {
+            "question": "Can I reuse sections and assets?",
+            "answer": "Yes. Favorites, shared patterns, synchronized symbols and the Studio Vault are designed for repeat use."
+          }
+        ]
+      }
+    }
+  ],
+  "referenceFile": "index.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "TOADAL FEAST Website",
+    "description": ""
+  }
+}

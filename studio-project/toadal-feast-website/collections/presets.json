@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "preset.content",
+      "name": "Content Section",
+      "type": "core.content-section",
+      "props": {
+        "heading": "Section heading",
+        "body": "Add your content here."
+      }
+    },
+    {
+      "id": "preset.cta",
+      "name": "Call to Action",
+      "type": "core.button-group",
+      "props": {
+        "heading": "Ready for the next step?",
+        "buttons": [
+          {
+            "label": "Get started",
+            "href": "#",
+            "kind": "primary"
+          }
+        ]
+      }
+    },
+    {
+      "id": "preset.faq",
+      "name": "FAQ",
+      "type": "core.faq",
+      "props": {
+        "heading": "Frequently asked questions",
+        "items": [
+          {
+            "question": "Question?",
+            "answer": "Answer."
+          }
+        ]
+      }
+    }
+  ]
+}
