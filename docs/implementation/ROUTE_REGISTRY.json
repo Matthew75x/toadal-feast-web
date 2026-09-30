@@ -1,0 +1,248 @@
+{
+  "schema": "toadal-feast.web.routes.v1",
+  "basePathPolicy": "base-path-aware-static-export",
+  "githubPagesProjectPath": "/toadal-feast-web/",
+  "routes": [
+    {
+      "n": 1,
+      "id": "home",
+      "path": "/",
+      "template": "hub",
+      "phase": "WO-001",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 2,
+      "id": "play",
+      "path": "/play/",
+      "template": "hub",
+      "phase": "WO-002",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 3,
+      "id": "wicked-bites",
+      "path": "/play/wicked-bites/",
+      "template": "entity-detail",
+      "phase": "WO-002",
+      "state": "PREVIEW_UNTIL_REAL_BUILD"
+    },
+    {
+      "n": 4,
+      "id": "game-player",
+      "path": "/play/:gameId/player/",
+      "template": "focused-runtime",
+      "phase": "WO-002",
+      "state": "PUBLIC_PER_CARTRIDGE"
+    },
+    {
+      "n": 5,
+      "id": "world",
+      "path": "/world/",
+      "template": "hub",
+      "phase": "WO-003",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 6,
+      "id": "characters",
+      "path": "/characters/",
+      "template": "hub",
+      "phase": "WO-003",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 7,
+      "id": "toadal-profile",
+      "path": "/characters/toadal/",
+      "template": "entity-detail",
+      "phase": "WO-003",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 8,
+      "id": "stories",
+      "path": "/stories/",
+      "template": "hub",
+      "phase": "WO-004",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 9,
+      "id": "manga-series",
+      "path": "/stories/:seriesId/",
+      "template": "entity-detail",
+      "phase": "WO-004",
+      "state": "PUBLIC_PER_REAL_CONTENT"
+    },
+    {
+      "n": 10,
+      "id": "comic-reader",
+      "path": "/stories/:seriesId/:chapterId/read/",
+      "template": "focused-runtime",
+      "phase": "WO-004",
+      "state": "PUBLIC_PER_REAL_CONTENT"
+    },
+    {
+      "n": 11,
+      "id": "media",
+      "path": "/media/",
+      "template": "hub",
+      "phase": "WO-006",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 12,
+      "id": "news",
+      "path": "/news/",
+      "template": "editorial-index",
+      "phase": "WO-006",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 13,
+      "id": "devlog",
+      "path": "/news/:slug/",
+      "template": "editorial-detail",
+      "phase": "WO-006",
+      "state": "PUBLIC_PER_REAL_CONTENT"
+    },
+    {
+      "n": 14,
+      "id": "feast-pass",
+      "path": "/feast-pass/",
+      "template": "progression",
+      "phase": "WO-005",
+      "state": "PUBLIC_GUEST_LOCAL"
+    },
+    {
+      "n": 15,
+      "id": "quests",
+      "path": "/feast-pass/quests/",
+      "template": "progression",
+      "phase": "WO-005",
+      "state": "PUBLIC_GUEST_LOCAL"
+    },
+    {
+      "n": 16,
+      "id": "rewards",
+      "path": "/feast-pass/rewards/",
+      "template": "progression",
+      "phase": "WO-005",
+      "state": "PUBLIC_GUEST_LOCAL"
+    },
+    {
+      "n": 17,
+      "id": "leaderboards",
+      "path": "/leaderboards/",
+      "template": "progression",
+      "phase": "WO-005",
+      "state": "LOCAL_PUBLIC_GLOBAL_PLANNED"
+    },
+    {
+      "n": 18,
+      "id": "app",
+      "path": "/app/",
+      "template": "conversion",
+      "phase": "WO-006",
+      "state": "PUBLIC_INFORMATIONAL"
+    },
+    {
+      "n": 19,
+      "id": "account",
+      "path": "/account/",
+      "template": "account",
+      "phase": "WO-006",
+      "state": "PREVIEW_UNTIL_BACKEND"
+    },
+    {
+      "n": 20,
+      "id": "profile",
+      "path": "/profile/",
+      "template": "progression",
+      "phase": "WO-005",
+      "state": "GUEST_LOCAL_PUBLIC_REGISTERED_PLANNED"
+    },
+    {
+      "n": 21,
+      "id": "community",
+      "path": "/community/",
+      "template": "hub",
+      "phase": "WO-006",
+      "state": "COMING_SOON"
+    },
+    {
+      "n": 22,
+      "id": "store",
+      "path": "/store/",
+      "template": "hub",
+      "phase": "WO-006",
+      "state": "COMING_SOON_NO_CHECKOUT"
+    },
+    {
+      "n": 23,
+      "id": "search",
+      "path": "/search/",
+      "template": "utility",
+      "phase": "WO-006",
+      "state": "PUBLIC_LOCAL_SEARCH"
+    },
+    {
+      "n": 24,
+      "id": "roadmap",
+      "path": "/roadmap/",
+      "template": "editorial-index",
+      "phase": "WO-006",
+      "state": "PUBLIC_APPROVED_ITEMS_ONLY"
+    },
+    {
+      "n": 25,
+      "id": "support",
+      "path": "/support/",
+      "template": "utility",
+      "phase": "WO-006",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 26,
+      "id": "contact",
+      "path": "/contact/",
+      "template": "utility",
+      "phase": "WO-006",
+      "state": "PUBLIC_ROUTING_FORM_PER_REAL_ENDPOINT"
+    },
+    {
+      "n": 27,
+      "id": "about",
+      "path": "/about/",
+      "template": "utility",
+      "phase": "WO-006",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    },
+    {
+      "n": 28,
+      "id": "coming-soon",
+      "path": "/coming-soon/",
+      "template": "system",
+      "phase": "WO-006",
+      "state": "PUBLIC_REUSABLE"
+    },
+    {
+      "n": 29,
+      "id": "legal",
+      "path": "/legal/",
+      "template": "system",
+      "phase": "WO-006",
+      "state": "PUBLIC_APPROVED_COPY_ONLY"
+    },
+    {
+      "n": 30,
+      "id": "not-found",
+      "path": "*",
+      "output": "404.html",
+      "template": "system",
+      "phase": "WO-006",
+      "state": "PUBLIC_WHEN_IMPLEMENTED"
+    }
+  ]
+}
