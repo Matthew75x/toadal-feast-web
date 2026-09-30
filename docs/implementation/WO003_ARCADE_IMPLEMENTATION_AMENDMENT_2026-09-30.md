@@ -1,117 +1,61 @@
-# WO-003 Arcade Implementation Amendment — Three-Character Demo
+# WO-003 Arcade Implementation Amendment — Standard + FMF + Zen
 
 Date: 2026-09-30
 
-This amendment refines the product target without invalidating the current technical qualification work.
+Current state: **ARCADE HOLD**.
 
-## Keep the current Toadal-only work
+The completed 38/38 bounded audit remains valid smoke evidence, but the previous gameplay witness of 16 seconds / score 150 / level 1 is not sufficient to qualify website integration.
 
-The existing Toadal-only Standard Arcade cartridge remains the correct **Stage A qualification target**.
+## Qualification first
 
-Do not restart source discovery, package isolation, sandbox work, provenance, or player-bridge work because of this amendment.
+Continue WO-003 without integrating or deploying Arcade yet.
 
-Use Stage A to prove:
+Before integration, prove:
 
-- authoritative Arcade source;
-- isolated cartridge;
-- Standard Arcade;
-- Toadal real gameplay;
-- controls;
-- pause/resume;
-- fullscreen/exit;
-- network isolation;
-- package hashes;
-- browser/device behavior.
+- meaningful Standard Arcade progression or natural run completion;
+- required Toadal mechanic witnesses;
+- realistic mobile drag and simultaneous movement/action;
+- the final persistence behavior;
+- dependency classification and justified package closure;
+- authoritative mechanics/browser tests against the modified candidate;
+- exact-byte requalification of the final cartridge.
 
-## Final public product is Stage B
+## Final web sampler
 
-After Stage A passes, evolve the public preview into:
+After the HOLD closes, the intended website preview contains:
 
-### Web roster
+- **Standard Arcade** with the web roster: Toadal, Classic Frog, Gully;
+- **5 Minute Feast** (`fmf`) with canonical forced **Chomper**;
+- **Zen** (`zen`) with canonical forced **Princess Lily**.
 
-1. Toadal — start unlocked
-2. Classic Frog (`classic`) — unlock after first completed run
-3. Gully (`pelican`) — unlock at 600 best score OR after 3 completed runs
+FEAST FRENZY / `tc` remains excluded unless separately approved.
 
-Only these three are visible in the web character chooser.
+## Persistence
 
-## Important economy rule
+Stage A technical qualification may be session-only.
 
-The web roster is independent of the mobile coin economy.
+The final Standard web-preview progression must use website-host-owned local state in the isolated web-preview namespace. It must not alter the mobile game save or mobile character economy.
 
-Do not change canonical character pricing or mobile unlock logic.
+## Package strategy
 
-Gully remains `pelican` in the runtime and may retain his normal mobile `coinCost`.
+FMF and Zen are now intentional web-preview content. Their genuinely reachable runtime and presentation assets should count as required package content.
 
-The web host owns preview entitlement and may seed the equivalent character into the cartridge's **in-memory** ownership state for the current session after the host has determined that the web-preview unlock requirement is satisfied.
+Do not infer that every unresolved reference is a missing file, and do not delete donor files only because the earlier short Standard witness did not request them.
 
-Do not write preview unlocks into the mobile `froggyFeast` save.
+Qualify Standard, FMF and Zen, capture a combined reachability ledger, remove only proven-unreachable material, and requalify the exact final bytes.
 
-## Character chooser
+## Website integration remains gated
 
-Prefer a website/player-owned three-character chooser.
+After cartridge qualification, still close:
 
-Do not expose the full standalone:
+- Wicked Bites compatibility routing;
+- website regressions;
+- static export/base-path checks;
+- responsive evidence;
+- final package/static hashes;
+- the inherited Windows full-QA invocation issue without hiding direct test results.
 
-- character roster;
-- shop;
-- cosmetics;
-- daily-goal/progression surfaces;
-- Arcade variant selector
-
-merely to support the preview.
-
-The adapter should call the existing normal Arcade character-selection/start behavior after the website has selected an allowed preview character.
-
-## Run format
-
-Use natural Standard Arcade first.
-
-Do not add a hard timer before measuring actual run duration.
-
-Target a satisfying short-session experience of roughly 2–4 minutes.
-
-If measured runs consistently exceed the intended website-session budget, propose a bounded web-specific cap separately and prove it does not damage normal Arcade rules.
-
-## Preview progression
-
-Host-owned namespace:
-
-`toadal:game:toadal-feast-arcade-preview:v1:`
-
-Persist only:
-
-- overall best score;
-- per-character best score;
-- completed runs;
-- unlocked preview character IDs;
-- selected preview character ID;
-- preview settings.
-
-No account sync.
-
-## Results screen
-
-After every completed run, prioritize:
-
-1. score;
-2. new best / personal best;
-3. unlock or progress to next unlock;
-4. Replay;
-5. Change Character;
-6. full-game CTA.
-
-Do not interrupt active gameplay with conversion messaging.
-
-After all three web characters are unlocked, make the app/full-game CTA more prominent.
-
-## Acceptance
-
-Stage B is complete only when all three characters can start and complete real Standard Arcade runs and the web unlock rules are proven without mutating mobile economy/save state.
-
-The final PREVIEW may be technically Stage-A-qualified before Stage B is done, but it is not considered the intended product-complete web demo until Stage B passes.
-
-Canonical detailed references:
+Canonical references:
 
 - `docs/implementation/WEB_ARCADE_PREVIEW_PROFILE.json`
 - `docs/implementation/WEB_ARCADE_DEMO_PRODUCT_AUTHORITY_2026-09-30.md`
