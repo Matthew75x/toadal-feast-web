@@ -1,5 +1,5 @@
 # WO-001 — Global Shell + Home
-**Status:** HOLD until WO-000 PASS
+**Status:** ACTIVE — WO-000 PASS accepted
 **Execution branch:** `work/WO-001-global-shell-home`
 
 ## Goal
@@ -27,6 +27,12 @@ Create `work/WO-001-global-shell-home` from the accepted WO-000 commit. Do not b
 - `docs/implementation/CANONICAL_ASSET_SOURCE_MANIFEST.json`
 - `docs/implementation/TOADAL_COMPANION_STATE_MAP.json`
 - `docs/implementation/WO001_VISUAL_ACCEPTANCE_CHECKLIST.md`
+- `docs/implementation/CP9_V13_DONOR_BASELINE.md`
+
+## Donor/salvage rule
+Before rebuilding any capability already present in the recovered CP9/V13 replacement candidate, inspect the donor and prefer safe reuse/adaptation over reimplementation. CP9/V13 is not disposable. The certified Studio project is the new implementation environment, the approved Home mockup is visual authority, and current repository contracts are product-truth/runtime authority.
+
+Do not copy donor `dist/` wholesale. Preserve working route/player/cartridge/fullscreen/funnel patterns where they remain compatible, and document intentional replacements to avoid regressions.
 
 ## In scope
 
