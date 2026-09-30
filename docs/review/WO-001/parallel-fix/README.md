@@ -33,7 +33,9 @@ Pre-Studio browser captures now cover the full required viewport matrix:
 
 The first viewport sweep exposed a real grid min-content overflow on 390/430/768 widths; this branch adds the narrow `min-width:0` containment fix and the repeated sweep is clean.
 
-The captures are visual witnesses only. They do not replace the required final Studio 1.4.2 render/export/viewport matrix.
+Browser interaction probes are also recorded in `interaction-probes.json` for 390×844 and 1600×900. They confirm one H1, semantic header/nav/main/footer landmarks, zero broken in-page anchor targets, zero unlabeled buttons, truthful disabled search, functional mobile menu state change, contextual companion focus reaction, no document overflow, and an active reduced-motion override (`transition-duration: 0.001ms`).
+
+The captures and browser probes are pre-Studio witnesses only. They do not replace the required final Studio 1.4.2 render/export/viewport matrix.
 
 ## Acceptance boundary
 

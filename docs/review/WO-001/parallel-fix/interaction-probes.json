@@ -1,0 +1,104 @@
+﻿[
+    {
+        "viewport":  {
+                         "width":  390,
+                         "height":  844
+                     },
+        "result":  {
+                       "innerWidth":  390,
+                       "innerHeight":  844,
+                       "h1Count":  1,
+                       "landmarks":  {
+                                         "header":  true,
+                                         "nav":  true,
+                                         "main":  true,
+                                         "footer":  true
+                                     },
+                       "search":  {
+                                      "present":  true,
+                                      "disabled":  true,
+                                      "label":  "Search the Feast (coming soon)"
+                                  },
+                       "menu":  {
+                                    "present":  true,
+                                    "display":  "grid",
+                                    "initialMenu":  {
+                                                        "expanded":  "false",
+                                                        "open":  false
+                                                    },
+                                    "clickedMenu":  {
+                                                        "expanded":  "true",
+                                                        "open":  true
+                                                    }
+                                },
+                       "companion":  {
+                                         "present":  true,
+                                         "display":  "none",
+                                         "contextChanged":  true,
+                                         "initialCompanion":  "Try a browser adventure!",
+                                         "focusedCompanion":  "The Feast World is open. Pick a path and jump in!"
+                                     },
+                       "badAnchorTargets":  [
+
+                                            ],
+                       "unlabeledButtons":  0,
+                       "documentOverflow":  false
+                   },
+        "reducedMotion":  {
+                              "matches":  true,
+                              "transitionDuration":  "1e-06s",
+                              "animationDuration":  "1e-06s"
+                          }
+    },
+    {
+        "viewport":  {
+                         "width":  1600,
+                         "height":  900
+                     },
+        "result":  {
+                       "innerWidth":  1600,
+                       "innerHeight":  900,
+                       "h1Count":  1,
+                       "landmarks":  {
+                                         "header":  true,
+                                         "nav":  true,
+                                         "main":  true,
+                                         "footer":  true
+                                     },
+                       "search":  {
+                                      "present":  true,
+                                      "disabled":  true,
+                                      "label":  "Search the Feast (coming soon)"
+                                  },
+                       "menu":  {
+                                    "present":  true,
+                                    "display":  "none",
+                                    "initialMenu":  {
+                                                        "expanded":  "false",
+                                                        "open":  false
+                                                    },
+                                    "clickedMenu":  {
+                                                        "expanded":  "true",
+                                                        "open":  true
+                                                    }
+                                },
+                       "companion":  {
+                                         "present":  true,
+                                         "display":  "block",
+                                         "contextChanged":  true,
+                                         "initialCompanion":  "Try a browser adventure!",
+                                         "focusedCompanion":  "The Feast World is open. Pick a path and jump in!"
+                                     },
+                       "badAnchorTargets":  [
+
+                                            ],
+                       "unlabeledButtons":  0,
+                       "documentOverflow":  false
+                   },
+        "reducedMotion":  {
+                              "matches":  true,
+                              "transitionDuration":  "1e-06s",
+                              "animationDuration":  "1e-06s"
+                          }
+    }
+]
