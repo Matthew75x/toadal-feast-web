@@ -1671,6 +1671,22 @@ main {
   filter: drop-shadow(0 8px 7px rgb(62 27 7 / 32%));
 }
 
+/* Keep the character-led helper in its reserved page-end row on wide layouts. */
+@media (min-width: 961px) {
+  .toadal-companion {
+    position: static;
+    inset: auto;
+    margin: var(--space-6) auto;
+  }
+}
+
+@media (min-width: 1100px) {
+  .toadal-companion {
+    margin-inline-end: 0;
+    margin-inline-start: auto;
+  }
+}
+
 /* Desktop portal composition: approved dense band hierarchy. */
 @media (min-width: 1100px) {
   main:has(.home-hero) {
@@ -1951,7 +1967,7 @@ main {
     height: 510px;
     min-height: 510px;
     grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-    padding-block: 24px;
+    padding-block: 12px;
   }
 
   .home-hero__copy {
@@ -1959,8 +1975,17 @@ main {
   }
 
   .home-hero__title {
+    max-width: 18ch;
     font-size: clamp(3.5rem, 5.35vw, 5.25rem);
     line-height: .9;
+  }
+
+  .home-actions {
+    margin-block-start: 10px;
+  }
+
+  .hero-benefits {
+    margin-block-start: 8px;
   }
 
   .home-hero__toadal {
@@ -1979,6 +2004,26 @@ main {
 
   .home-search {
     width: min(100%, 510px);
-    margin-block-start: 10px;
+    margin-block-start: 6px;
+    grid-template-columns: minmax(150px, .7fr) minmax(0, 1.3fr);
+    align-items: center;
+    gap: 4px 8px;
+  }
+
+  .home-search > label {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .home-search__field {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .home-search__status {
+    grid-column: 1 / -1;
+    margin-block-start: 0;
+    padding: 3px 8px;
+    font-size: .68rem;
   }
 }
