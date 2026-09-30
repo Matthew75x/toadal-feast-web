@@ -1,26 +1,84 @@
 {
-  "schema": "toadal-feast.web.arcade-preview-profile.v1",
+  "schema": "toadal-feast.web.arcade-preview-profile.v2",
   "id": "toadal-feast-arcade-preview",
   "displayName": "TOADAL FEAST Arcade Preview",
   "publicState": "CANDIDATE",
+  "productIntent": "A compact, replayable Arcade demo that feels complete on the web without reproducing the full mobile game.",
   "donor": {
     "source": "TOADAL FEAST 1.2.9 Arcade standalone",
     "entry": "arcade-standalone.html",
     "sourceAuthority": "current owner-approved game/release source",
-    "note": "Web preview must be a derivative sealed cartridge; do not publish the entire standalone/player release package."
+    "note": "Web preview must remain a derivative sealed cartridge; do not publish the entire standalone/player release package."
+  },
+  "implementationStages": {
+    "qualification": {
+      "purpose": "Prove runtime fidelity, isolation, controls, host bridge, and package integrity before adding demo progression.",
+      "arcadeMode": "standard",
+      "characters": [
+        "toadal"
+      ],
+      "characterSelector": false,
+      "persistenceRequired": false,
+      "note": "The existing Toadal-only profile is a qualification stage, not the final web-demo product."
+    },
+    "finalPreview": {
+      "arcadeMode": "standard",
+      "webRoster": [
+        {
+          "id": "toadal",
+          "displayName": "Toadal",
+          "startUnlocked": true,
+          "unlock": null
+        },
+        {
+          "id": "classic",
+          "displayName": "Classic Frog",
+          "startUnlocked": false,
+          "unlock": {
+            "type": "completedRuns",
+            "threshold": 1
+          }
+        },
+        {
+          "id": "pelican",
+          "displayName": "Gully",
+          "startUnlocked": false,
+          "unlock": {
+            "type": "any",
+            "conditions": [
+              {
+                "type": "bestScore",
+                "threshold": 600
+              },
+              {
+                "type": "completedRuns",
+                "threshold": 3
+              }
+            ]
+          }
+        }
+      ],
+      "characterSelectorOwner": "website",
+      "variantsEnabled": false,
+      "shop": false,
+      "cosmetics": false,
+      "dailyGoals": false,
+      "mobileCurrencyEconomy": false,
+      "mobileUnlockEconomy": false,
+      "accountSync": false
+    }
   },
   "gameplay": {
-    "arcadeMode": "standard",
-    "character": "toadal",
-    "characterLocked": true,
-    "variantsEnabled": false,
-    "characterSelector": false,
-    "shop": false,
-    "cosmetics": false,
-    "dailyGoals": false,
-    "unlockMenus": false,
+    "format": "standard-arcade-high-score-demo",
+    "hardTimeLimitSeconds": null,
+    "targetSessionMinutes": {
+      "min": 2,
+      "max": 4
+    },
+    "calibrationRule": "Ship the natural Standard Arcade end condition first. Measure bounded playtest duration. Add a hard cap only if normal preview runs consistently exceed the intended short-session target.",
     "localBestScore": true,
-    "localRunHistory": false,
+    "localPerCharacterBestScores": true,
+    "localCompletedRuns": true,
     "mobileControls": true,
     "keyboard": true,
     "touch": true,
@@ -29,64 +87,119 @@
     "restart": true,
     "help": true
   },
+  "unlockDesign": {
+    "philosophy": "Give the first reward quickly, then provide a skill-or-persistence path to the third character so the demo never becomes a grind wall.",
+    "classic": "Unlock after the player's first completed run.",
+    "gully": "Unlock at 600 best score OR after 3 completed runs, whichever happens first.",
+    "independentFromMobileEconomy": true,
+    "canonicalCharacterDataMustNotChange": true,
+    "note": "Gully is character id 'pelican' in the runtime. Web-preview entitlement must not alter his mobile coinCost or the mobile save economy."
+  },
+  "resultsExperience": {
+    "priorityOrder": [
+      "run score",
+      "new-best/personal-best result",
+      "character unlock or unlock progress",
+      "Replay",
+      "Change Character",
+      "full-game conversion"
+    ],
+    "firstRunConversion": "subtle",
+    "rosterCompleteConversion": "prominent",
+    "noInterruptiveConversionDuringPlay": true
+  },
   "identity": {
     "headline": "Limited browser preview",
-    "conversionMessage": "Play a taste of TOADAL FEAST here, then continue with the full mobile adventure.",
+    "conversionMessage": "Play the Arcade preview here, unlock the three-character web roster, then continue with the full TOADAL FEAST adventure.",
     "doNotClaim": [
       "full mobile game",
       "all Arcade variants",
+      "full character roster",
+      "mobile currency economy",
       "cross-device progression",
       "app reward transfer",
       "global leaderboard"
     ]
   },
-  "toadalMechanics": [
-    "contact catch / Golden Charge",
-    "Royal Hop",
-    "short Tongue",
-    "Golden Throw",
-    "Golden Block"
-  ],
   "storage": {
     "requiredIsolation": true,
+    "owner": "website-host",
     "namespace": "toadal:game:toadal-feast-arcade-preview:v1:",
     "legacyMobileKeysAllowed": false,
-    "accountSync": "none"
+    "cartridgeDirectWebsiteStorageAccess": false,
+    "accountSync": "none",
+    "fields": [
+      "bestScoreOverall",
+      "bestScoreByCharacter",
+      "completedRuns",
+      "unlockedCharacterIds",
+      "selectedCharacterId",
+      "settings"
+    ],
+    "bridgeRule": "Opaque-origin cartridge receives only explicit preview state through toadal.game.v1. Do not add allow-same-origin merely for save access."
+  },
+  "runtimeEntitlementBridge": {
+    "purpose": "Allow the web-preview roster to use normal Arcade character implementations without changing mobile pricing/unlock rules.",
+    "rule": "Host sends the web-preview unlocked character IDs. The cartridge adapter may seed equivalent in-memory runtime ownership only for the current preview session before selecting a character.",
+    "forbidden": [
+      "changing canonical CHARACTER_DATA coinCost",
+      "writing preview unlocks into the mobile froggyFeast save",
+      "granting mobile currency",
+      "exposing arbitrary parent localStorage to the cartridge"
+    ]
   },
   "host": {
     "protocol": "toadal.game.v1",
     "exitOwner": "website",
     "fullscreenOwner": "website",
-    "routeOwner": "website"
+    "routeOwner": "website",
+    "characterChooserOwner": "website",
+    "progressionOwner": "website"
   },
   "assetPolicy": {
     "includeOnlyRuntimeRequired": true,
     "mandatoryFamilies": [
       "Toadal Arcade frozen core",
-      "Arcade runtime food actually reachable by selected profile",
-      "hazard/pickup assets actually reachable by selected profile",
-      "power-up assets actually reachable by selected profile",
+      "Classic Frog runtime assets",
+      "Gully/pelican runtime assets",
+      "Arcade runtime food actually reachable by the selected profile",
+      "hazard/pickup assets actually reachable by the selected profile",
+      "power-up assets actually reachable by the selected profile",
       "selected background/theme UI",
-      "shared Arcade runtime/scripts/styles required by standard mode"
+      "shared Arcade runtime/scripts/styles required by Standard mode"
     ],
     "excludeFamilies": [
-      "other playable character animation families unless runtime proves unavoidable",
-      "Arcade variants tc/fmf/zen presentation assets",
+      "non-preview playable character animation families unless runtime proves unavoidable",
+      "Arcade variant tc/fmf/zen presentation assets",
       "Puzzle/Feastfall/Infinite-only masters",
+      "shop/cosmetics/daily-goal presentation assets not required by gameplay",
       "authoring/QA/dev tools",
       "raw source/master art not needed at runtime"
+    ],
+    "optimizationOrder": [
+      "qualify intact Standard Arcade runtime first",
+      "add web-preview adapter and 3-character profile",
+      "capture runtime request/reachability ledger",
+      "remove only proven-unreachable files",
+      "requalify after every bounded trim"
     ]
   },
   "acceptance": [
-    "real run starts and completes with Toadal",
+    "real Standard Arcade run starts and completes with Toadal",
+    "Classic Frog unlocks after first completed run",
+    "Gully unlocks at 600 best score or 3 completed runs",
+    "all three web characters can start a real run through normal character behavior",
+    "web unlocks do not change canonical mobile coin costs or mobile save data",
+    "best score/unlocks persist through website-owned isolated storage when persistence is enabled",
+    "opaque-origin cartridge cannot access unrelated website/account/session storage",
     "Toadal mechanics verifier PASS",
-    "Toadal browser witness PASS",
     "mobile control contract/browser witness PASS",
-    "storage isolated from legacy froggyFeast keys",
     "no unexpected network egress",
     "no missing runtime assets",
     "pause/restart/exit/fullscreen work through host",
     "package provenance/hash recorded",
-    "real cartridge screenshot captured"
+    "real cartridge screenshots captured",
+    "results screen celebrates score/unlocks before conversion CTA",
+    "full-game CTA becomes prominent only after meaningful engagement or web-roster completion"
   ]
 }
