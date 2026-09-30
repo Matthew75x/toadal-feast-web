@@ -1,7 +1,8 @@
 # WO-000 — D-generator Environment Baseline
 **Status:** READY
-**Start:** main at 87050885331770ca3e30db7e463154aebd777512
-**Branch:** work/WO-000-environment-baseline
+**Authoritative setup branch:** `plan/design-system-work-orders-20260929`
+**Exact starting commit:** `8cbf923440159e6e946082569ce2b4d81694e2e2`
+**Execution branch:** `work/WO-000-environment-baseline`
 
 ## Goal
 Prepare D-generator as the website implementation machine and prove the exact Studio/project/export baseline works before design implementation.
@@ -10,25 +11,26 @@ Prepare D-generator as the website implementation machine and prove the exact St
 This is bounded environment setup, configuration verification and repeatable command/test work.
 
 ## In scope
-1. Clone/update Matthew75x/toadal-feast-web from the documented start.
-2. Install/reference the owner-supplied resealed TOADAL Studio 1.4.1 outside the public website repo.
-3. Verify Studio version and run npm run validate, npm test, and npm run ai:doctor when supported.
-4. Create/validate a fresh independent TOADAL FEAST website Studio project.
-5. Do NOT reuse Studio's legacy projects/toadal-games project.
-6. Set TOADAL_PROJECT explicitly to the exact project.json.
-7. Prove Studio MCP inspect/render/export/checkpoint targets only that project.
-8. Prove static export can write the website repo's dist/ target.
-9. Record commands, versions, paths and results in docs/environment/DGENERATOR_BASELINE.md.
-10. Make no design/page changes.
+1. Work only in `Matthew75x/toadal-feast-web` on `work/WO-000-environment-baseline`.
+2. Confirm the branch starts from commit `8cbf923440159e6e946082569ce2b4d81694e2e2`.
+3. Install/reference the owner-supplied resealed TOADAL Studio 1.4.1 outside the public website repository.
+4. Verify Studio version and run `npm run validate`, `npm test`, and `npm run ai:doctor` when supported.
+5. Create/validate a fresh independent TOADAL FEAST website Studio project.
+6. Do **not** reuse Studio's legacy `projects/toadal-games` project.
+7. Set `TOADAL_PROJECT` explicitly to the exact new `project.json`.
+8. Prove Studio MCP inspect/render/export/checkpoint targets only that project.
+9. Prove static export can write the website repo's `dist/` target.
+10. Record commands, versions, paths and results in `docs/environment/DGENERATOR_BASELINE.md`.
+11. Make no design/page changes.
 
 ## Out of scope
 Home implementation, design coding, image generation, Figma, backend providers, production deployment,
 DNS changes, mobile-game repo changes, broad architecture changes.
 
-## Evidence
-Report Studio/Node/npm versions, exact project.json, test results, export result, branch/final commit,
-git status, and any blocker for WO-001.
+## Required evidence
+Report Studio/Node/npm versions, exact `project.json`, test results, export result, branch/final commit,
+`git status`, and any blocker for WO-001.
 
-## Stop
+## Stop condition
 STOP after baseline documentation is committed.
 Do not begin WO-001 or improve the website.
