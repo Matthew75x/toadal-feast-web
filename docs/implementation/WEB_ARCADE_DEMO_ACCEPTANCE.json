@@ -1,63 +1,75 @@
 {
-  "schema": "toadal-feast.web-arcade-demo-acceptance.v1",
+  "schema": "toadal-feast.web-arcade-demo-acceptance.v2",
   "productProfile": "docs/implementation/WEB_ARCADE_PREVIEW_PROFILE.json",
   "authority": "docs/implementation/WEB_ARCADE_DEMO_PRODUCT_AUTHORITY_2026-09-30.md",
+  "currentStatus": "ARCADE HOLD until final cartridge qualification",
   "stages": [
     {
       "id": "A",
-      "name": "Technical qualification",
+      "name": "Cartridge technical qualification",
       "requiredBeforeStageB": true,
       "checks": [
-        "standard Arcade starts with Toadal",
-        "real gameplay loop operates",
+        "Standard Arcade runs beyond the previous 16-second/score-150/level-1 witness",
+        "meaningful level progression or natural run completion is observed",
+        "Toadal charged hop/direct catch/Golden Block/Golden Throw are directly witnessed as required by source authority",
+        "realistic touch drag is witnessed",
+        "simultaneous movement/action is witnessed on mobile",
         "opaque-origin isolation holds",
-        "host pause/resume/visibility works",
-        "host fullscreen/exit works",
+        "host pause/resume/visibility/fullscreen/exit works",
+        "persistence contract is explicitly classified as session-only for Stage A",
         "no unexpected network egress",
-        "no fatal console/page errors",
         "package provenance and hashes recorded"
       ]
     },
     {
       "id": "B",
-      "name": "Three-character demo",
+      "name": "Final web Arcade sampler",
       "requiredBeforePublicPreviewComplete": true,
       "checks": [
-        "website chooser exposes only toadal/classic/pelican",
+        "website experience chooser exposes Standard Arcade, 5 Minute Feast and Zen only",
+        "Standard chooser exposes only Toadal, Classic Frog and Gully",
         "Toadal starts unlocked",
-        "Classic unlocks after first completed run",
-        "Gully unlocks at bestScore>=600 OR completedRuns>=3",
-        "Gully display name is used while runtime id remains pelican",
-        "all three characters can start and finish Standard Arcade runs",
+        "Classic unlocks after first completed Standard run",
+        "Gully unlocks at Standard bestScore>=600 OR completedStandardRuns>=3",
+        "all three Standard roster characters can start and complete real Standard runs",
+        "5 Minute Feast runs with forced Chomper and canonical five-minute clock",
+        "Zen runs with forced Princess Lily and canonical Zen rules",
+        "Feast Frenzy/tc is not exposed unless separately owner-authorized",
         "preview unlocks do not mutate canonical mobile coinCost",
         "preview unlocks do not write to froggyFeast mobile save",
-        "best score and unlock state persist via host-owned isolated namespace",
-        "result screen shows score/best/unlock before app conversion",
-        "no interruptive app CTA appears during gameplay"
+        "Standard best score and unlock state persist via host-owned isolated namespace",
+        "result screens reward play before app conversion"
       ]
     },
     {
       "id": "C",
-      "name": "Optimization and polish",
+      "name": "Dependency closure, optimization and integration",
       "checks": [
-        "natural run duration is measured before deciding on a hard timer",
-        "runtime request/reachability ledger captured",
+        "101 unresolved audit references are classified individually rather than counted as 101 missing files",
+        "187 unrequested donor files are not deleted solely because a short witness did not request them",
+        "runtime request/reachability ledger covers Standard, 5 Minute Feast and Zen",
         "only proven-unreachable files are removed",
-        "package requalified after every bounded trim set",
+        "authoritative mechanics/browser verifiers target the modified final cartridge",
+        "final pruned package is requalified byte-for-byte",
+        "Wicked Bites legacy compatibility route passes",
+        "site regressions/static export/base-path pass",
+        "Windows spawnSync npm.cmd EINVAL is documented or resolved without masking direct npm test truth",
         "phone/tablet/desktop layouts pass",
-        "final screenshots show Toadal, Classic and Gully states",
-        "full-game CTA is strongest after web-roster completion or repeat engagement"
+        "final screenshots show Standard, 5 Minute Feast and Zen"
       ]
     }
   ],
   "storage": {
+    "stageA": "session-only acceptable",
+    "finalPreview": "host-owned local persistence required for Standard progression",
     "namespace": "toadal:game:toadal-feast-arcade-preview:v1:",
     "expectedFields": [
       "bestScoreOverall",
       "bestScoreByCharacter",
-      "completedRuns",
+      "completedStandardRuns",
       "unlockedCharacterIds",
       "selectedCharacterId",
+      "selectedExperienceId",
       "settings"
     ],
     "forbiddenKeys": [
@@ -65,36 +77,49 @@
     ],
     "accountSync": false
   },
-  "unlocks": {
-    "toadal": {
-      "runtimeId": "toadal",
-      "startUnlocked": true
-    },
-    "classic": {
-      "runtimeId": "classic",
-      "condition": {
-        "completedRuns": 1
-      }
-    },
-    "gully": {
-      "runtimeId": "pelican",
-      "conditionAny": [
-        {
-          "bestScore": 600
+  "experiences": {
+    "standard": {
+      "characters": {
+        "toadal": {
+          "runtimeId": "toadal",
+          "startUnlocked": true
         },
-        {
-          "completedRuns": 3
+        "classic": {
+          "runtimeId": "classic",
+          "condition": {
+            "completedStandardRuns": 1
+          }
+        },
+        "gully": {
+          "runtimeId": "pelican",
+          "conditionAny": [
+            {
+              "bestScore": 600
+            },
+            {
+              "completedStandardRuns": 3
+            }
+          ]
         }
-      ]
+      },
+      "initialHardLimitSeconds": null,
+      "targetSessionMinutes": [
+        2,
+        4
+      ],
+      "addHardLimitOnlyAfterMeasuredNeed": true
+    },
+    "fmf": {
+      "runtimeId": "fmf",
+      "displayName": "5 Minute Feast",
+      "forcedCharacter": "chomper",
+      "canonicalClockMinutes": 5
+    },
+    "zen": {
+      "runtimeId": "zen",
+      "displayName": "Zen",
+      "forcedCharacter": "princess"
     }
-  },
-  "timerPolicy": {
-    "initialHardLimitSeconds": null,
-    "targetSessionMinutes": [
-      2,
-      4
-    ],
-    "addHardLimitOnlyAfterMeasuredNeed": true
   },
   "finalProductBoundary": {
     "include": [
@@ -102,14 +127,18 @@
       "Toadal",
       "Classic Frog",
       "Gully",
-      "high-score loop",
-      "local web-preview unlocks"
+      "5 Minute Feast",
+      "Chomper",
+      "Zen",
+      "Princess Lily",
+      "local web-preview Standard unlock progression"
     ],
     "exclude": [
+      "Feast Frenzy/tc unless separately approved",
       "Puzzle",
       "Feastfall",
       "Infinite",
-      "Arcade variants",
+      "full Arcade character roster",
       "shop",
       "cosmetics",
       "daily goals",
