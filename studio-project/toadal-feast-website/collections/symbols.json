@@ -11,95 +11,78 @@
     },
     {
       "id": "symbol.site.primary-button",
-      "name": "Primary button",
+      "name": "PrimaryButton",
       "type": "core.button",
       "props": {
-        "label": "Explore the Feast",
+        "label": "Explore browser games",
         "href": "/#browser-games",
         "kind": "primary"
       }
     },
     {
       "id": "symbol.site.secondary-button",
-      "name": "Secondary button",
+      "name": "SecondaryButton",
       "type": "core.button",
       "props": {
-        "label": "Learn more",
-        "href": "/",
+        "label": "Discover the full adventure",
+        "href": "/#app",
         "kind": "secondary"
       }
     },
     {
-      "id": "symbol.site.header",
-      "name": "SiteHeader",
-      "type": "core.rich-text",
-      "props": {
-        "variant": "site-header",
-        "html": "<header class=\"site-header\" data-symbol=\"SiteHeader\"></header>"
-      }
-    },
-    {
-      "id": "symbol.site.footer",
-      "name": "SiteFooter",
-      "type": "core.rich-text",
-      "props": {
-        "variant": "site-footer",
-        "html": "<footer class=\"site-footer\" data-symbol=\"SiteFooter\"></footer>"
-      }
-    },
-    {
-      "id": "symbol.site.route-shell",
-      "name": "RouteShell",
-      "type": "layout.grid",
-      "props": {
-        "columns": 1,
-        "gap": 0,
-        "children": []
-      }
-    },
-    {
-      "id": "symbol.surface.cream-panel",
+      "id": "symbol.site.cream-panel",
       "name": "CreamPanel",
-      "type": "core.rich-text",
+      "type": "core.content-section",
       "props": {
         "variant": "cream-panel",
-        "html": "<section class=\"cream-panel\" data-symbol=\"CreamPanel\"></section>"
+        "heading": "That path wandered off.",
+        "body": "This page is not part of the current website preview. Head Home, browse the game previews, or explore the World."
       }
     },
     {
-      "id": "symbol.surface.dark-feature-panel",
+      "id": "symbol.site.dark-feature-panel",
       "name": "DarkFeaturePanel",
       "type": "core.rich-text",
       "props": {
         "variant": "dark-feature-panel",
-        "html": "<section class=\"dark-feature-panel\" data-symbol=\"DarkFeaturePanel\"></section>"
+        "html": "<div class='home-section-inner'><div class='feast-pass-panel' data-companion-context='feast-pass' data-companion-copy='Feast Pass is planned for WO-005; there are no live levels, rewards, or account sync here.' data-companion-reaction='proud'><div class='feast-pass-copy'><p class='section-kicker'>YOUR GUEST JOURNEY · PLANNED</p><h2 class='section-heading'>A Feast Pass built around your adventures</h2><p class='section-lede'>Feast Pass is planned for a later work order. This preview summary shows no level, XP, Sparks, Treats, streak, quest progress, or account sync as live product data.</p><div class='pass-signals' aria-label='Feast Pass status'><span class='pass-state'>Planned for WO-005</span><span class='pass-state'>Preview summary only</span><span class='pass-state'>No live progress</span></div></div><div class='pass-emblem' aria-hidden='true'><span>FEAST</span><strong>PASS</strong><i>✦</i></div></div></div>"
       }
     },
     {
-      "id": "symbol.surface.section-heading",
+      "id": "symbol.site.section-heading",
       "name": "SectionHeading",
-      "type": "core.rich-text",
+      "type": "core.text",
       "props": {
-        "variant": "section-heading",
-        "html": "<header class=\"section-heading-block\" data-symbol=\"SectionHeading\"></header>"
+        "tag": "h2",
+        "text": "Section heading",
+        "variant": "section-heading"
       }
     },
     {
-      "id": "symbol.surface.status-chip",
+      "id": "symbol.site.status-chip",
       "name": "StatusChip",
-      "type": "core.rich-text",
+      "type": "core.badges",
       "props": {
-        "variant": "status-chip",
-        "html": "<span class=\"status-chip\" data-symbol=\"StatusChip\"></span>"
+        "items": ["PREVIEW"],
+        "variant": "status-chip"
       }
     },
     {
-      "id": "symbol.surface.category-tabs",
+      "id": "symbol.home.category-tabs",
       "name": "CategoryTabs",
       "type": "core.rich-text",
       "props": {
-        "variant": "category-tabs",
-        "html": "<div class=\"category-tabs\" data-symbol=\"CategoryTabs\"></div>"
+        "variant": "games-intro",
+        "html": "<div class='home-section-inner' data-companion-context='browser-games' data-companion-copy='Wicked Bites and CLAW have qualified staging cartridges; Home launch links remain withheld until player integration in WO-002.' data-companion-reaction='excited'><p class='section-kicker'>YOUR NEXT LITTLE ADVENTURE</p><h2 class='section-heading'>Browser game discovery</h2><p class='section-lede'>Four browser experiences are shown on Home. Qualified staging cartridges exist for Wicked Bites and CLAW, but launch routing stays withheld until WO-002 player integration.</p><div class='game-tabs' role='group' aria-label='Filter browser game experiences'><button class='game-tab' type='button' aria-pressed='true' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='all'>All experiences <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='preview'>Previews <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='public'>Playable now <span>0</span></button></div><p id='browser-games-empty' class='game-empty' data-game-empty hidden role='status' aria-live='polite'>No game launches from this Home yet. Qualified staging cartridges are being connected through the player shell in WO-002. The four preview cards remain visible in All and Previews.</p></div>"
+      }
+    },
+    {
+      "id": "symbol.home.toadal-companion",
+      "name": "ToadalCompanion",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "companion",
+        "html": "<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL’S FIELD NOTES</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Welcome to the Feast. Wicked Bites and CLAW have qualified staging cartridges; Home launch links await WO-002 player integration.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='assets/images/characters/toadal-portrait.webp' alt='' width='256' height='256' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside>"
       }
     },
     {
@@ -108,7 +91,7 @@
       "type": "core.rich-text",
       "props": {
         "variant": "search-field",
-        "html": "<div class=\"search-field\" data-symbol=\"SearchField\"></div>"
+        "html": "<form class='home-search' role='search' aria-labelledby='home-search-label'><label id='home-search-label' for='home-search-field'>Find your place in the Feast</label><div class='home-search__field'><input class='home-search__input' id='home-search-field' type='search' placeholder='Search games, characters, stories…' disabled aria-describedby='home-search-status'><button type='button' disabled aria-label='Search is coming soon'>Search</button></div><p class='home-search__status' id='home-search-status'>Search is not live yet. This field will not submit or collect anything.</p></form>"
       }
     }
   ]

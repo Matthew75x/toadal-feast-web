@@ -42,3 +42,5 @@ Legend:
 ## Interpretation
 Layout approval does not approve generated mascot variants, fake screenshots, example dates/scores, invented roadmap items, commerce, accounts, or backend behavior.
 Canonical assets and real product truth override mockup content.
+
+For WO-001 Home closure, the original `MOCKUP_HOME_DESKTOP.png` and `MOCKUP_HOME_MOBILE.png` files were unavailable. The documented approved direction and retained CP9/V13 Home desktop/mobile captures were manually reviewed as the available visual authority and regression baseline. Their use supports a visual acceptance decision but not a pixel-perfect parity claim; missing originals alone are not a blocker.

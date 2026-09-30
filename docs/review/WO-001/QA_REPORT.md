@@ -1,5 +1,7 @@
 # WO-001 — final QA and disposition
 
+> Historical pre-remediation snapshot. This file is preserved to retain the earlier blocked assessment and its original evidence. Its donor-unavailable, visual-authority, free-play headline, Feast Pass, and 2/11 reuse conclusions are superseded by [`final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md`](final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md). Use that report for the current disposition: WO-001 **PASS**.
+
 Date: 2026-09-30
 Branch: `work/WO-001-global-shell-home`
 Overall result: **BLOCKED — the implementation and local technical checks are complete, but acceptance gates remain unresolved.**

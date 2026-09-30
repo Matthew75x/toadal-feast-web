@@ -2,7 +2,7 @@
 
 Date verified: 2026-09-30
 
-## Exact recovered donor
+## Exact pinned donor and local reproduction
 
 Archive on ASSIGNATOR:
 `C:\ASSIGNATOR\TOADAL_FEAST_V13_CHECKPOINT_IX_PUBLIC_POLISH (2).zip`
@@ -13,9 +13,11 @@ SHA-256:
 Extracted source/package root:
 `C:\ASSIGNATOR\TOADAL_V13_CP9\TOADAL_FEAST_V13_CHECKPOINT_IX_PUBLIC_POLISH`
 
-Extracted staging `dist/`:
-- 236 files
-- 6,605,121 bytes
+The earlier repository manifest recorded a staging `dist/` aggregate of 236 files / 6,605,121 bytes. That value was a stale inventory and has been superseded by the final read-only archive reconciliation below.
+
+The verified staging `dist/` aggregate is:
+- 234 files
+- 6,422,416 bytes
 - includes Home, Play, account/download/status/support/legal surfaces
 - includes staging player slots/routes for:
   - Wicked Bites
@@ -24,6 +26,8 @@ Extracted staging `dist/`:
   - Fruity Bash
   - Lily Pad Leap
   - TOADAL FEAST Arcade
+
+Final closure reverified the exact archive SHA-256 from the Downloads mirror, extracted it read-only, and matched all 234 archived `dist/` files individually (6,422,416 bytes) plus all 15 manifest witnesses. The repository manifest aggregate was reconciled to those measured contents; archive bytes, witness hashes, and verifier logic were not changed. The verifier now passes 17/17. The canonical ASSIGNATOR archive/root paths were absent in this environment; the Downloads mirror is byte-identical to the owner-pinned SHA, and the extracted mirror is the qualified local evidence source.
 
 The donor also contains source, tests, cartridge tooling, build/release tooling, QA evidence, and Checkpoint IX reports. It is not merely a raster reference.
 
@@ -66,7 +70,7 @@ WO-001 must not:
 
 The certified Studio project is the new implementation environment.
 CP9/V13 remains the working-product donor.
-The approved Home mockup remains visual authority.
+The documented approved Home direction and retained CP9/V13 screenshots are the available reviewed visual authority/regression baseline. Original mockup PNGs were not recovered; their absence alone does not block acceptance, and pixel-perfect parity is not claimed.
 The current repository contracts remain product-truth/runtime authority.
 
 ## Preservation boundary

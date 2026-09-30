@@ -1,21 +1,14 @@
 # WO-001 — Global Shell + Home
-**Status:** BLOCKED — implementation complete; acceptance gates remain open
+**Status:** PASS — final closure and verification completed 2026-09-30
 **Execution branch:** `work/WO-001-global-shell-home`
 
 ## Current disposition (2026-09-30)
 
-The Studio implementation and local technical QA are complete. Independent post-QA reconciliation recovered the approved Home visual and CP9/V13 donor authority, corrected browser-game evidence, resolved the Feast Pass staging boundary, made the free-play headline state-aware, and completed the required shell symbol registry.
+The Studio implementation and local technical QA are complete. The exact hash-pinned CP9/V13 archive verifies **17/17**, and its corrected `dist/` aggregate is 234 files / 6,422,416 bytes. Qualified Wicked Bites and CLAW staging cartridges exist; Home launch routing stays gated until WO-002, and Feast Pass live-state work stays gated to WO-005.
 
-WO-001 is now **FIX REQUIRED — targeted visual-composition remediation**.
+The owner’s bounded visual-composition targets and truth constraints were applied to the existing implementation. The current static export passed the Studio, Pages-shaped, and six-viewport browser gates (96/96), with no pixel-perfect claim for the unavailable original PNGs. See [`final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md`](../review/WO-001/final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md).
 
-The remaining work is not architecture or product discovery:
-1. bring the existing Home composition materially closer to the approved dense premium portal;
-2. preserve all current truth/accessibility/responsive behavior;
-3. rerun Studio 1.4.2 validation/render/export;
-4. compare final screenshots to the approved Home authority;
-5. accept or request one bounded visual fix.
-
-Do not begin WO-002 or deploy Pages until this visual remediation is accepted.
+WO-002 was not started. No Pages deployment occurred.
 
 See:
 - `docs/review/WO-001/APPROVED_HOME_VISUAL_PARITY_REVIEW_2026-09-30.md`
@@ -29,7 +22,7 @@ Implement the reusable TOADAL FEAST global shell and Home page from the locked H
 Do not begin until:
 1. WO-000 is reviewed and marked PASS;
 2. the accepted WO-000 commit SHA is supplied;
-3. the approved Home visual package is available locally;
+3. the approved Home package is available, or the owner-approved documented visual authority and CP9/V13 desktop/mobile regression captures are available for manual review (pixel-perfect parity is not claimed when original PNGs are absent);
 4. the canonical game-asset source repo is available locally or its exact approved assets are supplied.
 
 Create `work/WO-001-global-shell-home` from the accepted WO-000 commit. Do not branch from an older planning commit.
@@ -50,7 +43,7 @@ Create `work/WO-001-global-shell-home` from the accepted WO-000 commit. Do not b
 - `docs/implementation/CP9_V13_DONOR_BASELINE.md`
 
 ## Donor/salvage rule
-Before rebuilding any capability already present in the recovered CP9/V13 replacement candidate, inspect the donor and prefer safe reuse/adaptation over reimplementation. CP9/V13 is not disposable. The certified Studio project is the new implementation environment, the approved Home mockup is visual authority, and current repository contracts are product-truth/runtime authority.
+Before rebuilding any capability already present in the recovered CP9/V13 replacement candidate, inspect the donor and prefer safe reuse/adaptation over reimplementation. CP9/V13 is not disposable. The certified Studio project is the new implementation environment; until the original mockup PNGs are recovered, the available approved visual direction and retained CP9/V13 Home captures are the reviewed composition/regression authority (without pixel-parity claims), and current repository contracts are product-truth/runtime authority.
 
 Do not copy donor `dist/` wholesale. Preserve working route/player/cartridge/fullscreen/funnel patterns where they remain compatible, and document intentional replacements to avoid regressions.
 
@@ -75,9 +68,9 @@ Implement reusable:
 
 ### Home
 Implement, in order:
-1. hero — **Play the Feast World for Free**
+1. hero — **Explore the Feast World for Free** until WO-002 certifies at least one playable browser experience;
 2. immediate browser-game discovery
-3. truthful Feast Pass preview summary — live guest-local XP/Sparks/Treats/streak/quest state remains gated until WO-005
+3. truthful Feast Pass planned/preview summary only — live guest-local XP/Sparks/Treats/streak/quest state remains gated until WO-005
 4. Today / current-adventure surface
 5. Characters / World / Stories & Media discovery
 6. App conversion
@@ -132,7 +125,7 @@ Run the asset audit before implementation:
 
 If required canonical assets fail the audit, STOP and report the mismatch rather than substituting generated character art.
 
-The approved Home mockup is composition authority only.
+The documented approved Home direction is composition authority, with CP9/V13 captures as the regression baseline. The missing original PNGs do not independently block acceptance when these available references are manually reviewed; do not claim pixel-perfect parity.
 Do not use the app icon source as the website wordmark.
 
 ## Responsive acceptance

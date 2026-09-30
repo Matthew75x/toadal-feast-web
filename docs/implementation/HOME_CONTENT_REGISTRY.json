@@ -2,10 +2,11 @@
   "schema": "toadal-feast.web.home-content-prep.v1",
   "status": "PREP_ONLY_NOT_RUNTIME_AUTHORITY",
   "hero": {
-    "headline": "Play the Feast World for Free.",
+    "headline": "Explore the Feast World for Free.",
     "primary": {
-      "label": "Play Now",
-      "target": "/play"
+      "label": "Explore browser games",
+      "target": "/#browser-games",
+      "availability": "DISCOVERY_ONLY_HOME_LAUNCH_WITHHELD_UNTIL_WO002"
     },
     "secondary": {
       "label": "Get the App",
@@ -39,19 +40,19 @@
     {
       "id": "toadal-feast-arcade-preview",
       "displayName": "TOADAL FEAST Arcade",
-      "state": "PREVIEW"
+      "state": "CANDIDATE_REQUIRES_WEB_PACKAGE_AUDIT",
+      "homeCard": false
     }
   ],
+  "qualifiedStagingCartridges": [
+    { "id": "wicked-bites", "version": "5.5", "homeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION" },
+    { "id": "claw-feed-gulper", "version": "2.5.1", "homeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION" }
+  ],
   "feastPass": {
-    "storage": "guest-local-first",
-    "fields": [
-      "level",
-      "xp",
-      "sparks",
-      "treats",
-      "streak",
-      "currentQuest"
-    ],
+    "state": "PLANNED_PREVIEW_SUMMARY_ONLY",
+    "storage": "not_implemented_in_WO001",
+    "guestLocalImplementationWorkOrder": "WO-005",
+    "liveProgressFields": false,
     "mockupValuesAuthoritative": false,
     "accountSync": "PLANNED"
   },

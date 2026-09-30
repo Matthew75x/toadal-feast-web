@@ -16,8 +16,8 @@ The exact donor is pinned by `CP9_DONOR_MANIFEST.json` and can be verified with:
 
 | Capability | CP9 evidence | Current direction | Action |
 |---|---|---|---|
-| Home visual hierarchy | CP9 desktop/mobile captures + Checkpoint IX | Approved mockup is LOCK_VISUAL | REFERENCE + ADAPT |
-| Desktop search field | `src/styles/components.css` search-wrap/search-box | Current WO-001 pre-Studio shell regressed to icon-only | ADAPT; restore field treatment |
+| Home visual hierarchy | CP9 desktop/mobile captures + Checkpoint IX | Documented approved visual direction; original PNGs unavailable, so no pixel-parity claim | REFERENCE + ADAPT; manual visual review is the acceptance basis |
+| Desktop search field | `src/styles/components.css` search-wrap/search-box | Current Studio Home retains a visible, accessible, truthfully disabled field | ADAPT; keep the field treatment, never imply live search |
 | Living/context guide | `src/scripts/optimal.js`, guide assets | Current contextual Toadal uses pointer/focus messages | REUSE behavior ideas; keep current canonical Toadal |
 | Public-copy cleanup | Checkpoint IX jargon scan | Public pages must stay player-facing | REUSE rule |
 | Play hub | CP9 `/play/` + `src/data/web-games.json` | WO-002 Play family | ADAPT, do not restart from blank |
@@ -31,7 +31,7 @@ The exact donor is pinned by `CP9_DONOR_MANIFEST.json` and can be verified with:
 | Fruity Bash | CP9 staging slot | Preview/Planned until certified | REFERENCE / locate donor |
 | Lily Pad Leap | CP9 staging slot | Preview/Planned until certified | REFERENCE / locate donor |
 | TOADAL FEAST Arcade | CP9 slot + separate current donor audit | bounded browser preview | ADAPT / REQUALIFY |
-| Guest progression | CP9 Explorer/Passport concepts | current Feast Pass guest-local contract | ADAPT; current product truth wins |
+| Guest progression | CP9 Explorer/Passport concepts | WO-001 planned summary only; actual guest-local progress is gated to WO-005 | ADAPT the concept only; do not copy progression state or claims |
 | App funnel | CP9 web-is-playground/app-is-full-feast | current strong app conversion | REUSE message hierarchy |
 | Support/legal funnel | CP9 support/status/privacy surfaces | later utility routes | REUSE structure where compatible |
 | QA baseline | 11,687 staging checks; 11,014 production-shaped checks | current WO QA | REFERENCE; do not relabel as current |

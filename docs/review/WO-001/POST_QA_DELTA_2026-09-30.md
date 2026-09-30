@@ -1,4 +1,7 @@
 # WO-001 — Independent Post-QA Delta
+
+> Historical remediation trigger, superseded by the **PASS** in [`final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md`](final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md). The bounded visual-composition fix and final Studio/browser requalification are complete.
+
 **Date:** 2026-09-30  
 **Base QA commit reviewed:** `b56ce4fd5e64da246a51b09e9f8e7c04cdaf15b3`
 

@@ -723,7 +723,7 @@ function checkDocumentBasics(label, tree, isHome) {
   const h1s = nodes.filter((node) => node.tag === 'h1');
   check(`${label}: exactly one h1`, h1s.length === 1, `found ${h1s.length}`);
   if (isHome) {
-    check('Home h1 has the contractual text', h1s.length === 1 && textOf(h1s[0]) === 'Play the Feast World for Free.',
+    check('Home h1 has the contractual text', h1s.length === 1 && textOf(h1s[0]) === 'Explore the Feast World for Free.',
       h1s.length === 1 ? `found ${JSON.stringify(textOf(h1s[0]))}` : 'Home needs exactly one h1');
   }
   check(`${label}: main landmark exists`, nodes.some((node) => node.tag === 'main' || node.attrs.role?.toLowerCase() === 'main'));

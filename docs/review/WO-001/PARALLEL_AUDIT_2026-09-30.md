@@ -1,6 +1,8 @@
 # WO-001 Parallel Audit — 2026-09-30
 
-This audit was performed independently on ASSIGNATOR against the current WO-001 source lineage while Codex remains responsible for the bounded Studio implementation/certification lane.
+> Historical point-in-time audit, superseded for current disposition by [`final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md`](final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md). Its donor aggregate reflects a stale inventory; the exact archive now verifies 234 files / 6,422,416 bytes (17/17).
+
+This audit was performed independently on ASSIGNATOR against the then-current WO-001 source lineage while Codex remained responsible for the bounded Studio implementation/certification lane.
 
 **Evidence note:** this is a point-in-time audit snapshot from before the final local Home and navigation corrections. Its search, Today, and 13-target navigation failures are historical, not current. Current local results are in `QA_REPORT.md`; the CP9 integrity result remains external and is not a local donor-salvage review.
 
@@ -9,7 +11,7 @@ This audit was performed independently on ASSIGNATOR against the current WO-001 
 The recovered CP9/V13 donor is intact.
 
 - archive SHA-256: `ebbd2b7631268e39522a2f63eb7377ce2cd6571b86cb88947c597b0b1376e7a4`
-- donor static output: 236 files / 6,605,121 bytes
+- donor static output at audit time: 236 files / 6,605,121 bytes (later confirmed to be a stale aggregate)
 - pinned key files/screenshots: 15
 - `node scripts/verify-cp9-donor.mjs .`: **PASS**
 - total verifier witnesses: 17

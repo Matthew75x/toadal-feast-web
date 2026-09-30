@@ -322,6 +322,86 @@
           }
         }
       ]
+    },
+    {
+      "id": "pattern.cream-panel",
+      "name": "CreamPanel",
+      "components": [
+        {
+          "id": "component.pattern.cream-panel",
+          "type": "core.content-section",
+          "props": {
+            "symbolId": "symbol.site.cream-panel",
+            "heading": "Panel heading",
+            "body": "Add panel content here."
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.dark-feature-panel",
+      "name": "DarkFeaturePanel",
+      "components": [
+        {
+          "id": "component.pattern.dark-feature-panel",
+          "type": "core.rich-text",
+          "props": {
+            "symbolId": "symbol.site.dark-feature-panel"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.section-heading",
+      "name": "SectionHeading",
+      "components": [
+        {
+          "id": "component.pattern.section-heading",
+          "type": "core.text",
+          "props": {
+            "symbolId": "symbol.site.section-heading"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.status-chip",
+      "name": "StatusChip",
+      "components": [
+        {
+          "id": "component.pattern.status-chip",
+          "type": "core.badges",
+          "props": {
+            "symbolId": "symbol.site.status-chip"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.category-tabs",
+      "name": "CategoryTabs",
+      "components": [
+        {
+          "id": "component.pattern.category-tabs",
+          "type": "core.rich-text",
+          "props": {
+            "symbolId": "symbol.home.category-tabs"
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.toadal-companion",
+      "name": "ToadalCompanion",
+      "components": [
+        {
+          "id": "component.pattern.toadal-companion",
+          "type": "core.rich-text",
+          "props": {
+            "symbolId": "symbol.home.toadal-companion"
+          }
+        }
+      ]
     }
   ],
   "favorites": [],

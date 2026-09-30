@@ -1,4 +1,7 @@
 # WO-001 — Approved Home Visual Parity Review
+
+> Review disposition at the time of review: **FIX REQUIRED**. The bounded targets below were addressed and the final current disposition is **PASS**; see [`final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md`](final-closure-pass-2026-09-30/FINAL_CLOSURE_REPORT.md). This document remains the visual acceptance checklist, not the current status report.
+
 **Date:** 2026-09-30  
 **Reference authority:** `TOADAL_APPROVED_HOME_VISUAL_AUTHORITY.png`  
 **Current implementation reviewed:** `work/WO-001-global-shell-home` at `b56ce4fd5e64da246a51b09e9f8e7c04cdaf15b3`
