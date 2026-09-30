@@ -19,6 +19,14 @@ from the accepted WO-001 commit.
 - `docs/implementation/PUBLIC_FEATURE_STATE.json`
 - `docs/implementation/GITHUB_PAGES_ROUTING_CONTRACT.md`
 - `docs/implementation/ASSET_INTEGRATION_POLICY.md`
+- `docs/implementation/CP9_V13_DONOR_BASELINE.md`
+
+## CP9/V13 salvage gate
+Before creating or sealing a new player/cartridge implementation, inspect the recovered CP9/V13 donor. It already contains working staging Play/player surfaces and cartridge packages/evidence for Wicked Bites and CLAW: Feed Gulper, plus the broader fullscreen/player/routing/funnel architecture. Reuse or port those proven pieces when compatible; do not discard them and rebuild from scratch merely because the certified Studio project is newer.
+
+Preserve current product-truth states until each donor artifact is requalified in the new environment. Existing CP9 functionality is evidence to audit, not automatic permission to mark a game PUBLIC.
+
+Document any deliberate replacement of a previously working CP9 capability.
 
 ## In scope
 
@@ -51,17 +59,20 @@ Implement:
 - focus escape
 - cartridge postMessage protocol
 
-### First cartridge candidate
-Audit/build a **limited TOADAL FEAST Arcade preview** from the existing `arcade-standalone.html` donor.
+### Cartridge intake priority
+1. Audit the recovered CP9 Wicked Bites and CLAW cartridge packages/evidence first. If their qualification remains reproducible, port/reuse them rather than recreating them.
+2. Separately audit/build the **limited TOADAL FEAST Arcade preview** from the existing `arcade-standalone.html` donor where it still adds value.
 
 Do not copy the full game repo or entire assets tree.
 
-Seal only the dependencies required by the explicitly selected preview profile.
+Seal only dependencies required by explicitly selected preview/public profiles.
 
 ## Other games
-Wicked Bites, Tower Defense/Feast Defense, Fruity Bash and CLAW remain Preview unless a real runnable package is independently found and certified during the work order.
+The recovered CP9/V13 donor already contains staging packages/routes for Wicked Bites and CLAW; treat them as donor candidates requiring current-environment requalification, not as missing products.
 
-Do not implement those games merely because their cards exist.
+Tower Defense/Feast Defense, Fruity Bash, Lily Pad Leap and other slots remain Preview/Planned unless a real runnable package is found and certified during the work order.
+
+Do not implement a game merely because its card exists.
 
 ## Arcade preview truth
 The website must call it a limited browser preview.
