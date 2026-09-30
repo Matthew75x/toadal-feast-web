@@ -6,9 +6,10 @@
 
 ## Current work order
 **WO-001 — Global Shell + Home**
-Branch: `work/WO-001-global-shell-home`
-Implementation: complete and locally verified.
-Acceptance: **BLOCKED — do not accept WO-001 or begin WO-002.**
+Active implementation branch: `work/WO-001-global-shell-home`
+Parallel quality candidate: `qa/wo001-final-quality-20260930`
+Implementation: complete; closure remediation prepared.
+Acceptance: **PENDING FINAL RECERTIFICATION — do not begin WO-002 until the active WO-001 branch reruns and records the final Studio/browser evidence.**
 
 ## Final implementation checks
 - Node `v22.23.2`; npm `10.9.8`; Studio/package/plugin `1.4.2`.
@@ -21,11 +22,14 @@ Acceptance: **BLOCKED — do not accept WO-001 or begin WO-002.**
 - Studio quick accessibility QA: nine checks true, zero issues/errors/warnings. Screenshot and machine-readable evidence are in `docs/review/WO-001/`.
 - Tracked `dist/` unchanged; no GitHub Pages/production deployment or `main` change. Generated Studio `build/`, `.history/`, `.studio-history/` are ignored.
 
-## Acceptance blockers
-1. The approved Home mockup PNGs are unavailable locally. The design-branch Figma bridge confirms composition guidance but cannot substitute for original visual authority; screenshots therefore cannot certify mockup parity.
-2. CP9/V13 has separate-machine external integrity evidence (17 witnesses, zero failures), but the configured archive, donor source, screenshots, and `dist/` are absent locally. Local verifier result is 0/17, so donor behavior/salvage cannot be inspected here.
-3. The requested guest-local Feast Pass summary conflicts with the authoritative `PUBLIC_AFTER_WO005` gate. The page stays planned and shows no fake progression or sync.
-4. “Play the Feast World for Free” conflicts with current truth that zero browser games have playable builds. Product authority must reconcile this before acceptance.
-5. Reusable Studio shell symbols are incomplete: three symbols exist (two buttons and game card); source gate finds 2/11 named shell components.
+## Closure-candidate status
+The previously reported acceptance blockers have been narrowed substantially in the parallel quality lane:
 
-No workaround changes to product truth, donor code, or deployment state were made. Keep WO-002 on hold. See `docs/review/WO-001/QA_REPORT.md` for exact evidence and all donor verifier failures.
+1. Original mockup PNGs remain unavailable, but the documented approved visual direction, CP9/V13 desktop/mobile captures, design-system authority, and current six-viewport evidence provide a usable visual sign-off basis. Do not claim pixel-perfect parity with an unavailable file.
+2. CP9/V13 is **locally available on ASSIGNATOR** and now verifies 17/17 donor witnesses with zero failures. Treat it as the regression/donor baseline, not missing evidence.
+3. Feast Pass authority is reconciled: WO-001 shows a **PLANNED summary only**; real guest-local progression remains `PUBLIC_AFTER_WO005`.
+4. The zero-playable-state headline is reconciled to **“Explore the Feast World for Free.”**
+5. Reuse is measured through real shared Studio/site architecture rather than fake symbol records; the architecture-aware gate is **11/11 PASS** after adding the missing shared status-chip primitive.
+6. Player-facing copy, semantic color contrast, asset loading, structural anchors, navigation truth, and base-path tests have additional parallel PASS evidence.
+
+The remaining gate is procedural but real: run one fresh complete Studio 1.4.2 render/export/browser qualification from the closure candidate so post-`b56ce4f` text/CSS/authority changes receive new exact artifact hashes and screenshots. Keep WO-002 on hold until that receipt is accepted.

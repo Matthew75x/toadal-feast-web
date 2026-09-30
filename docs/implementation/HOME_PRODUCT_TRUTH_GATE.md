@@ -3,7 +3,7 @@
 ## Safe now
 - Home layout/navigation
 - route links
-- guest-local Feast Pass UI
+- Feast Pass planned/preview summary with no live guest-local progression
 - contextual Toadal plumbing
 - structured discovery cards
 - truthful Preview / Coming Soon states
@@ -11,6 +11,7 @@
 - search entry point
 
 ## Requires evidence before live claim
+- real guest-local Feast Pass progression before WO-005
 - individual browser-game `PUBLIC` state
 - app-store live URLs
 - final website wordmark asset

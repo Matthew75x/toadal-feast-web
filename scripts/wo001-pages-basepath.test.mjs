@@ -135,7 +135,7 @@ test('verifier rejects javascript URLs and checks nested HTML plus CSS reference
   await writeFile(path.join(exportRoot, 'index.html'), `<!doctype html><html><head>
 <link rel="stylesheet" href="/toadal-feast-web/assets/site.css">
 <style>.inline { background: url('/toadal-feast-web/missing-inline.webp'); }</style>
-</head><body><main><h1>Play the Feast World for Free.</h1><a href="javascript:alert(1)">unsafe</a><a href="java&Tab;script&colon;alert(2)">entity-obfuscated unsafe</a></main></body></html>`, 'utf8');
+</head><body><main><h1>Explore the Feast World for Free.</h1><a href="javascript:alert(1)">unsafe</a><a href="java&Tab;script&colon;alert(2)">entity-obfuscated unsafe</a></main></body></html>`, 'utf8');
   await writeFile(path.join(exportRoot, '404.html'), '<main><h1>Not found</h1></main>', 'utf8');
   await writeFile(path.join(exportRoot, 'play', 'index.html'), '<main><h1>Play</h1><a href="../world/">World</a><a href="/world/">Unprefixed broken route</a><link rel="stylesheet" href="../assets/nested.css"><img src="../images/nested.webp"></main>', 'utf8');
   await writeFile(path.join(exportRoot, 'world', 'index.html'), '<main><h1>World</h1></main>', 'utf8');
@@ -169,7 +169,7 @@ test('verifier requires the exact four PUBLIC_FEATURE_STATE preview cards and ex
   const arcade = '<article class="studio-game-card" data-studio-component="component.home.game.arcade-preview"><h3>TOADAL FEAST Arcade</h3><span>AUDIT REQUIRED</span></article>';
   await writeFile(path.join(exportRoot, '404.html'), '<main><h1>Not found</h1></main>', 'utf8');
   const run = async (cards) => {
-    const html = `<!doctype html><main><h1>Play the Feast World for Free.</h1><section id="home-game-grid">${cards.join('')}</section>
+    const html = `<!doctype html><main><h1>Explore the Feast World for Free.</h1><section id="home-game-grid">${cards.join('')}</section>
 <section id="companion" data-companion-state="ready"><div data-companion><button type="button" data-companion-toggle>Minimize Toadal companion</button></div></section></main>
 <script>var storageKey = 'toadal:site:companion:minimized:v1'; var minimized = false; var stored = window.localStorage.getItem(storageKey); window.localStorage.setItem(storageKey, minimized ? 'true' : 'false');</script>`;
     await writeFile(path.join(exportRoot, 'index.html'), html, 'utf8');
@@ -204,7 +204,7 @@ test('verifier recognizes Studio variant markers, intro filters, search explanat
     ['claw-feed-gulper', 'CLAW: Feed Gulper'],
   ].map(([slug, title]) => `<article class="studio-game-card" data-studio-component="component.home.game.${slug}"><h3>${title}</h3><span>PREVIEW</span></article>`).join('');
   const html = `<!doctype html><main>
-<section data-studio-variant="home-hero"><h1>Play the Feast World for Free.</h1>
+<section data-studio-variant="home-hero"><h1>Explore the Feast World for Free.</h1>
 <form id="home-search" role="search"><label for="search-field">Search the Feast</label><div class="home-search__field"><input id="search-field" type="search" disabled><button type="button" disabled aria-label="Search is coming soon">Search</button></div><p>Search is not live yet. This field will not submit or collect anything.</p></form></section>
 <section data-studio-variant="games-intro"><div class="game-tabs"><button type="button" data-game-tab="all">All experiences</button><button type="button" data-game-tab="preview">Previews</button><button type="button" data-game-tab="public">Playable now</button></div></section>
 <section data-studio-variant="home-game-grid">${previewCards}</section>

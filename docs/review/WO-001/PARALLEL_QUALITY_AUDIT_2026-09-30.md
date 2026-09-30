@@ -42,7 +42,7 @@ The current Studio Home and CP9 serve different useful purposes.
 - useful route/player contracts that should not be reimplemented from scratch.
 
 ### Current visual watch items
-1. The current headline still says **“Play the Feast World for Free.”** With zero public playable browser games, that copy is stronger than the current feature state. The planned closure change to **“Explore the Feast World for Free.”** is appropriate until WO-002 certifies actual playable content.
+1. The quality candidate now uses **“Explore the Feast World for Free.”** while zero browser games are PUBLIC/playable. The archived `b56ce4f` screenshots still show the previous “Play…” headline, so final Studio/browser evidence must be regenerated before acceptance.
 2. Two preview cards currently reuse generic Feast-world scenery. That is truthful, but visually repetitive. Replace with source-qualified game-specific art later rather than using unverified decorative art simply for variety.
 3. The 1920×1080 hero capture remains visually coherent. No forced hero-art swap is justified by the current witness.
 4. The companion occupies significant fixed desktop space, but current interaction/accessibility evidence shows it can be minimized and does not create a technical obstruction. Preserve the compact/minimizable behavior.
@@ -153,3 +153,29 @@ Internal feature-state attributes remain unchanged, so product-truth machinery s
 - 2 live regions
 - 0 failures
 - 0 warnings
+
+
+## Product-truth reconciliation candidate
+
+The parallel candidate now applies the same bounded authority corrections requested for final WO-001 closure:
+
+- Hero authority: **Explore the Feast World for Free.**
+- The stronger **Play the Feast World for Free** wording is retained only in archived pre-Studio evidence and may return after at least one browser game is actually certified playable.
+- Feast Pass in WO-001 is explicitly **PLANNED**. Real guest-local progression remains `PUBLIC_AFTER_WO005`.
+- The Home prep registry now routes the current primary discovery action to `/#browser-games` instead of implying a live `/play` route.
+- Player-facing operator jargon has been removed without weakening internal feature-state gates.
+
+Pure repository-level requalification after these changes:
+
+- CP9 donor verification: PASS
+- Home visual/source contract: **21/21 PASS**
+- architecture-aware reusable coverage: **11/11 PASS**
+- design contrast: **9/9 AA PASS**
+- public-copy audit: PASS, 0 hard / 0 soft jargon findings
+- Home asset audit: PASS
+- Home structural integrity: PASS
+- navigation truth: **14 targets / 0 unresolved**
+- Pages/base-path tests: **8/8 PASS**
+- `git diff --check`: PASS
+
+These checks are intentionally supplemental. A fresh Studio 1.4.2 render/export/browser run is still required before the active WO-001 branch can claim final acceptance, because the archived `b56ce4f` artifact hashes/screenshots predate these text/CSS/authority changes.

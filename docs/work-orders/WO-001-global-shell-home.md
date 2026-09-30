@@ -1,10 +1,10 @@
 # WO-001 — Global Shell + Home
-**Status:** BLOCKED — implementation complete; acceptance gates remain open
+**Status:** CLOSURE CANDIDATE — final Studio/browser recertification pending
 **Execution branch:** `work/WO-001-global-shell-home`
 
 ## Current disposition (2026-09-30)
 
-The Studio implementation, full test suite, export, static verification, viewport matrix, and browser/accessibility smoke checks pass. WO-001 is **not accepted**: CP9/V13 integrity has external audit evidence, but the source/archive are not locally available for the required salvage comparison; the original approved Home mockups are unavailable for visual sign-off; the guest-local Feast Pass requirement conflicts with the central `PUBLIC_AFTER_WO005` gate; the free-play headline needs reconciliation against zero playable browser builds; and reusable shell-symbol coverage is partial. The current page keeps Feast Pass planned and does not invent progress. See `docs/review/WO-001/QA_REPORT.md` for exact evidence and remaining blockers. Do not start WO-002 or deploy Pages.
+The `b56ce4f` Studio implementation passed its full test/export/browser matrix. A parallel closure candidate has since resolved the previously identified authority/reuse blockers: CP9/V13 is locally verified 17/17 on ASSIGNATOR, Feast Pass is explicitly a PLANNED summary until WO-005, the zero-playable-state headline is **Explore the Feast World for Free**, and the reusable architecture gate is 11/11 when measured through the actual shared Studio/site structures rather than symbol names alone. Original mockup PNGs remain unavailable, so visual acceptance must use the documented approved direction plus CP9/V13 and current viewport evidence without claiming pixel parity. WO-001 is not yet accepted because these post-`b56ce4f` changes require one fresh final Studio 1.4.2 render/export/browser evidence cycle. Do not start WO-002 or deploy Pages until that receipt is accepted.
 
 ## Goal
 Implement the reusable TOADAL FEAST global shell and Home page from the locked Home visual authority without inventing a new visual direction.
@@ -59,9 +59,9 @@ Implement reusable:
 
 ### Home
 Implement, in order:
-1. hero — **Play the Feast World for Free**
+1. hero — **Explore the Feast World for Free**
 2. immediate browser-game discovery
-3. guest-local Feast Pass summary
+3. planned Feast Pass summary; real guest-local progression remains WO-005
 4. Today / current-adventure surface
 5. Characters / World / Stories & Media discovery
 6. App conversion

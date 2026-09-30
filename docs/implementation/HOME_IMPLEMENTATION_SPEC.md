@@ -4,7 +4,7 @@
 
 ## Purpose
 The first viewport must communicate:
-1. free browser play is available;
+1. free Feast World exploration and browser-game discovery are available; playable browser games require their own PUBLIC evidence;
 2. TOADAL FEAST is a larger world of characters, places and stories;
 3. the mobile app is the full flagship adventure.
 
@@ -22,7 +22,7 @@ Temporary clean text branding is acceptable if the final web wordmark asset is n
 
 ### Hero
 Headline:
-**Play the Feast World for Free.**
+**Explore the Feast World for Free.**
 
 Required:
 - food-fantasy environment;
@@ -46,16 +46,16 @@ Intended family:
 Availability is data-driven. A visual card does not imply `PUBLIC`.
 
 ### Feast Pass
-Guest-local first.
+WO-001 presents a **planned progression summary only**. Real guest-local progression remains gated to WO-005.
 
-Display fields may include:
+Future fields may include:
 - level / XP
 - Sparks
 - Treats
 - streak
 - current quest
 
-Mockup numbers are illustrative only.
+Do not render these as live player data in WO-001. Mockup numbers are illustrative only.
 Account sync stays Planned until implemented.
 
 ### Discovery

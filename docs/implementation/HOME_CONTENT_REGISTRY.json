@@ -2,10 +2,10 @@
   "schema": "toadal-feast.web.home-content-prep.v1",
   "status": "PREP_ONLY_NOT_RUNTIME_AUTHORITY",
   "hero": {
-    "headline": "Play the Feast World for Free.",
+    "headline": "Explore the Feast World for Free.",
     "primary": {
-      "label": "Play Now",
-      "target": "/play"
+      "label": "Explore browser games",
+      "target": "/#browser-games"
     },
     "secondary": {
       "label": "Get the App",
@@ -43,8 +43,10 @@
     }
   ],
   "feastPass": {
-    "storage": "guest-local-first",
-    "fields": [
+    "state": "PLANNED",
+    "implementationGate": "PUBLIC_AFTER_WO005",
+    "plannedStorage": "guest-local-first",
+    "futureFields": [
       "level",
       "xp",
       "sparks",
@@ -52,6 +54,7 @@
       "streak",
       "currentQuest"
     ],
+    "renderLiveValuesInWO001": false,
     "mockupValuesAuthoritative": false,
     "accountSync": "PLANNED"
   },

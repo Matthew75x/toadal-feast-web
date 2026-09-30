@@ -58,3 +58,24 @@ The exact Studio ZIP was extracted outside the repository and tested under `/toa
 - Studio `build/`, `.history/`, and `.studio-history/` are ignored and not committed. Final tracked Git status is expected clean after committing the evidence on this work branch.
 
 WO-001 is therefore **BLOCKED**, not PASS: original visual comparison is unavailable; donor salvage is not locally reproducible; the Feast Pass and free-play headline conflict with feature truth; and reusable shell-symbol coverage is incomplete. Keep WO-002 on hold. Do not deploy Pages or merge `main`.
+
+
+---
+
+## Parallel closure-candidate delta
+
+The report above is the historical disposition for commit `b56ce4fd5e64da246a51b09e9f8e7c04cdaf15b3`. A separate quality lane subsequently resolved or corrected several of its stated blockers without claiming a new final Studio export.
+
+Verified on ASSIGNATOR:
+
+- CP9/V13 donor is locally available at the documented paths and now verifies **17/17 witnesses, 0 failures**. The historical 0/17 result was machine/path availability, not donor loss.
+- The Home headline authority is reconciled to **“Explore the Feast World for Free.”** while no browser game is PUBLIC/playable. The stronger “Play…” language may return after playable browser content is certified.
+- Feast Pass WO-001 authority is reconciled to a **PLANNED preview summary only**. Real guest-local progression remains gated to WO-005.
+- Reusable architecture is evaluated by actual Studio reuse, not by requiring every concern to be an unused symbol record. The architecture-aware gate is **11/11 PASS** after adding the missing shared status-chip primitive.
+- Public-copy audit removes operator language such as “work order,” “package audit,” “website QA,” and “AUDIT REQUIRED” from player-facing Home copy while preserving internal feature-state truth.
+- Design-token contrast audit: **9/9 semantic pairs pass WCAG AA normal-text contrast**.
+- Home asset audit: **12 references / 8 unique local images / ~0.37 MiB / 0 missing / correct eager-vs-lazy behavior**.
+- Home structural audit: **22 unique structural/anchor IDs, 13 anchor references, exactly 1 H1, 0 failures, 0 warnings**.
+- Pages/base-path tests remain **8/8 PASS** and navigation truth remains **14/14 with 0 unresolved targets** after the authority changes.
+
+This delta does **not** supersede the historical render/export hashes or screenshots above. Because the headline, public copy, status-chip CSS, and authority documents changed after `b56ce4f`, the final WO-001 acceptance still requires one fresh Studio 1.4.2 validation/render/export/browser-evidence pass from the closure candidate. The active work-order receipt, not this parallel lane, should make the final PASS/FIX/BLOCKED decision.

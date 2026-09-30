@@ -26,7 +26,7 @@ const check = (id, ok, detail, severity = 'gate') =>
 const has = (text, pattern) => pattern instanceof RegExp ? pattern.test(text) : text.includes(pattern);
 const variants = (home.components || []).map(item => item?.props?.variant).filter(Boolean);
 
-check('hero-headline', /Play the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
+check('hero-headline', /Explore the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
   'The authoritative Home headline is present in the structured Studio hero.');
 check('browser-games', component('component.home.games')?.props?.anchorId === 'browser-games' &&
   component('component.home.games-intro')?.props?.variant === 'games-intro',
