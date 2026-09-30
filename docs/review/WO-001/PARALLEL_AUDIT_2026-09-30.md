@@ -87,3 +87,34 @@ The current `navigation.json` points at future routes such as Play, World, Stori
 This is not permission to remove the approved navigation labels. It is a closure requirement to make unavailable destinations truthful in WO-001—for example, current-page anchors, disabled/planned states, or another Studio-supported non-broken treatment—until each real route lands in its own work order.
 
 Final Studio export must not ship a polished Home whose global navigation simply sends visitors to thirteen missing pages.
+## Parallel closure candidate
+
+A separate implementation candidate was created after the baseline findings rather than mutating this QA branch:
+
+- branch: `fix/wo001-search-today-nav-truth-20260930`
+- draft PR: #5
+- current candidate head: `458c43049373b9514fd003126da72c06dd28ee15`
+
+It closes the two source-level gaps found above:
+- approved desktop search-bar form factor restored as a truthful `Soon` surface;
+- dedicated truthful Today/current-adventure surface added.
+
+It also prevents current Home navigation from linking to not-yet-implemented Studio routes.
+## Exact viewport audit
+
+A reusable Chrome DevTools Protocol audit is now provided by:
+
+`node scripts/audit-home-viewports.mjs <repo>`
+
+Against PR #5 after the grid-containment fix:
+
+- 390×844: PASS; no horizontal overflow; mobile menu visible
+- 430×932: PASS; no horizontal overflow; mobile menu visible
+- 768×1024: PASS; no horizontal overflow; tablet/mobile menu visible
+- 1366×768: PASS; no horizontal overflow; desktop search visible
+- 1600×900: PASS; no horizontal overflow; desktop search visible
+- 1920×1080: PASS; no horizontal overflow; desktop search visible
+
+Result: **6 / 6 PASS**.
+
+The audit specifically caught a real intrinsic-grid overflow before closure. The fix adds min-width containment to the top and discovery grid children rather than hiding document overflow.
