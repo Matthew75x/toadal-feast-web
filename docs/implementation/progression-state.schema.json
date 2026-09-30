@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toadalfeast.com/schemas/progression-state-v1.json",
+  "title": "TOADAL FEAST Web Guest Progression State",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "updatedAt",
+    "level",
+    "xp",
+    "sparks",
+    "treats",
+    "streak"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "level": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "xp": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "sparks": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "treats": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "streak": {
+      "type": "object",
+      "required": [
+        "count"
+      ],
+      "properties": {
+        "count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lastQualifiedPeriod": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "badges": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "discoveries": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "collectibles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "count"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "quests": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "progress": {
+            "type": "number",
+            "minimum": 0
+          },
+          "completedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          },
+          "claimedAt": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "format": "date-time"
+          }
+        }
+      }
+    },
+    "localScores": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "number"
+      }
+    },
+    "profile": {
+      "type": "object",
+      "properties": {
+        "displayName": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "selectedBadge": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  },
+  "additionalProperties": true
+}
