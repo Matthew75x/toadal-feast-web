@@ -1,0 +1,69 @@
+{
+  "schema": "toadal-feast.web.asset-authority.v1",
+  "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+  "sourceRef": "main",
+  "note": "Acceptance still compares against latest owner-approved game/release authority.",
+  "required": [
+    {
+      "role": "toadalPortrait",
+      "path": "assets/images/characters/toadal-arcade/portrait.png",
+      "sha256": "7dd3c8f6a1548d4800100c3d565c3b1e86f85f365eefcb02b2d550bd1eec8987"
+    },
+    {
+      "role": "toadalVictory",
+      "path": "assets/images/characters/reactions-v1/toadal/victory.png",
+      "sha256": "8af7dfef69ffc8d0484845453ba462776376e4d1fc574459f2c8e9d1d138e026"
+    },
+    {
+      "role": "toadalSad",
+      "path": "assets/images/characters/reactions-v1/toadal/sad.png",
+      "sha256": "e53aafeec9f607e52c70fef37aed237a8f15745a2f503835268a2421799d2b2a"
+    },
+    {
+      "role": "princessLilyIdle",
+      "path": "assets/images/characters/curated-highres/princess/lilly_idle_1f_512_2026-09-08.png",
+      "sha256": "f5b400c5c20ffbb450f13afd15b22ae4b096de90e92ed872bc1754402df4fc96"
+    },
+    {
+      "role": "princessLilyWink",
+      "path": "assets/images/characters/curated-highres/princess/lilly_wink_3f_512_2026-09-08.png",
+      "sha256": "a577e19b15657dff567a23b29b7636b3f1050d4b55c6d1bbdfbcb74fd102ae8b"
+    },
+    {
+      "role": "gulper",
+      "path": "assets/images/characters/runtime-select/gulper.png",
+      "sha256": "951320c98d3f3183906cc29aa96d129692c9a5547a4ce8a58c5b38d5efee8a00"
+    },
+    {
+      "role": "gullyVictory",
+      "path": "assets/images/characters/results/gully-victory.png",
+      "sha256": "840434cf0ed178d246424b844f7760c06cdfd3c594786b432eebcdf98b814ccd"
+    },
+    {
+      "role": "genieSweet",
+      "path": "assets/images/ui/feast-genies/sweet_dialogue_atlas_256.png",
+      "sha256": "5f1af788c7b4e5700d42389091e34a85c94d4fc09db74da523b09c0706a457d5"
+    },
+    {
+      "role": "genieSavoury",
+      "path": "assets/images/ui/feast-genies/savoury_dialogue_atlas_256.png",
+      "sha256": "391849a9c0fab3d810d082f29aca1d76ec4b27ec062590013cef8bd7260dc829"
+    },
+    {
+      "role": "genieFruity",
+      "path": "assets/images/ui/feast-genies/fruity_dialogue_atlas_256.png",
+      "sha256": "57b0675194a91eb38e1b781de76f9bfe1f4d7036ab56f81448114523d19fdf77"
+    }
+  ],
+  "retiredNeverUse": [
+    "assets/images/characters/curated-highres/princess/walk_12f.png",
+    "assets/images/characters/curated-highres/princess/idle_blink_16f_256.png",
+    "assets/images/characters/curated-highres/princess/catch_open_10f.png",
+    "assets/images/characters/curated-highres/princess/idle.png"
+  ],
+  "externalOwnerAsset": {
+    "pathOnAssignator": "C:\\\\AMD\\\\EASY BRANDING.png",
+    "sha256": "c7fb79e1d466f417e3c8f374450b81ecf8d183ad6bdabe3eabb62c642fb17b7e",
+    "rule": "App/icon source only. Do not treat as website wordmark."
+  }
+}
