@@ -1,0 +1,484 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toadalfeast.com/schemas/content-registry-v1.json",
+  "title": "TOADAL FEAST Website Content Registry",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "games",
+    "characters",
+    "worlds",
+    "locations",
+    "storySeries",
+    "chapters",
+    "media",
+    "news",
+    "supportArticles",
+    "roadmapItems",
+    "legalDocuments"
+  ],
+  "$defs": {
+    "state": {
+      "enum": [
+        "DRAFT",
+        "PREVIEW",
+        "PUBLISHED",
+        "ARCHIVED"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "slug": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "base": {
+      "type": "object",
+      "required": [
+        "id",
+        "slug",
+        "publicationState"
+      ],
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "slug": {
+          "$ref": "#/$defs/slug"
+        },
+        "publicationState": {
+          "$ref": "#/$defs/state"
+        },
+        "summary": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "searchable": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    }
+  },
+  "properties": {
+    "schemaVersion": {
+      "const": 1
+    },
+    "games": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "displayName",
+              "publicState"
+            ],
+            "properties": {
+              "displayName": {
+                "type": "string"
+              },
+              "publicState": {
+                "enum": [
+                  "PUBLIC",
+                  "PREVIEW",
+                  "PLANNED",
+                  "COMING_SOON",
+                  "DISABLED"
+                ]
+              },
+              "cartridgeId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "characterIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              },
+              "worldIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "characters": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "displayName"
+            ],
+            "properties": {
+              "displayName": {
+                "type": "string"
+              },
+              "assetIds": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "worldIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "worlds": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "locationIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "locations": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title",
+              "worldId"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "worldId": {
+                "$ref": "#/$defs/id"
+              },
+              "characterIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "storySeries": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title",
+              "readingDirection"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "readingDirection": {
+                "enum": [
+                  "ltr",
+                  "rtl",
+                  "vertical"
+                ]
+              },
+              "chapterIds": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/id"
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title",
+              "seriesId",
+              "pages"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "seriesId": {
+                "$ref": "#/$defs/id"
+              },
+              "chapterLabel": {
+                "type": "string"
+              },
+              "publishedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "pages": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "id",
+                    "assetId"
+                  ],
+                  "properties": {
+                    "id": {
+                      "$ref": "#/$defs/id"
+                    },
+                    "assetId": {
+                      "type": "string"
+                    },
+                    "alt": {
+                      "type": [
+                        "string",
+                        "null"
+                      ]
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      }
+    },
+    "media": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title",
+              "kind"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "video",
+                  "artwork",
+                  "screenshot",
+                  "download"
+                ]
+              },
+              "assetId": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "news": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "publishedAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              },
+              "author": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              },
+              "bodySource": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "supportArticles": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title",
+              "category"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "category": {
+                "type": "string"
+              },
+              "bodySource": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            }
+          }
+        ]
+      }
+    },
+    "roadmapItems": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "publicState"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "#/$defs/id"
+          },
+          "title": {
+            "type": "string"
+          },
+          "publicState": {
+            "enum": [
+              "PUBLIC",
+              "PREVIEW",
+              "PLANNED",
+              "COMING_SOON",
+              "DISABLED"
+            ]
+          },
+          "description": {
+            "type": "string"
+          },
+          "timeWindow": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        }
+      }
+    },
+    "legalDocuments": {
+      "type": "array",
+      "items": {
+        "allOf": [
+          {
+            "$ref": "#/$defs/base"
+          },
+          {
+            "type": "object",
+            "required": [
+              "title",
+              "bodySource"
+            ],
+            "properties": {
+              "title": {
+                "type": "string"
+              },
+              "bodySource": {
+                "type": "string"
+              },
+              "effectiveAt": {
+                "type": [
+                  "string",
+                  "null"
+                ],
+                "format": "date-time"
+              }
+            }
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": false
+}
