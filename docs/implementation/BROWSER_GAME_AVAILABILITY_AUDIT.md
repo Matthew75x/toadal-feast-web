@@ -73,41 +73,21 @@ CP9 records:
 
 Current mobile source additionally confirms a real Arcade standalone runtime exists, so Arcade remains a strong current cartridge candidate after isolation/storage work.
 
-## Current launch matrix
+## Current website integration status — WO-002 (2026-09-30)
 
-| Experience | Evidence state | Current Home launch state | Next gate |
+The external CP9 evidence above remains historical evidence about the donor artifacts. It does not imply that each donor is integrated into this website. The current website deliberately exposes zero `PUBLIC` games; the four registered browser listings remain `PREVIEW`.
+
+| Experience | Donor evidence | Website route/state | Current gate |
 |---|---|---|---|
-| Wicked Bites | **QUALIFIED STAGING PREVIEW AVAILABLE** | withheld in WO-001 | integrate through current WO-002 player shell + compatibility smoke |
-| CLAW: Feed Gulper | **QUALIFIED STAGING PREVIEW AVAILABLE** | withheld in WO-001 | integrate through current WO-002 player shell + compatibility smoke |
-| Lily Pad Leap | contract-ready / planned integration | Preview | locate/re-qualify current source artifact |
-| Froggie Fruity Bash | contract-ready / planned integration | Preview | qualify public edition |
-| Feast Defense | contract-ready / planned adaptation | Preview | adaptation + qualification |
-| TOADAL FEAST Arcade | current candidate | withheld | bounded cartridge isolation/package audit |
+| Wicked Bites 5.5 | Qualified upstream donor; exact entry SHA preserved above | `/games/wicked-bites/` detail and `/player/wicked-bites/` isolated `PREVIEW` player | Session is sandboxed and has no persistent/account storage. Not `PUBLIC`. |
+| CLAW: Feed Gulper 2.5.1 | Qualified upstream donor; this does not certify the website wrapper | `/games/claw-feed-gulper/` detail only; launch-held, with no player route or package shipped | Keep held pending origin/storage/service-worker requalification. |
+| TOADAL Tower Defense | No runnable website cartridge | Informational concept listing/detail only | Not playable. |
+| Froggy Fruity Bash | No runnable website cartridge | Informational concept listing/detail only | Not playable. |
+| Lily Pad Leap / Feast Defense | Historical contract-ready/planned references only | No route or package in this WO-002 site | Requalify before future integration. |
+| TOADAL FEAST Arcade | A current candidate exists in the mobile source; it is not a website package | No listing, player route, or package | Explicit WO-002 decision: keep it out of website scope until a separate bounded isolation/package audit is authorized. No launch date or URL is implied. |
 
-## Home implication
+The website Home and `/play/` route send users to the preview directory; only the Wicked Bites detail page exposes its isolated staging player. All store buttons remain disabled because no verified store destination is configured. No account/backend or Pages deployment was part of WO-002.
 
-WO-001 should **not** directly launch Wicked Bites or CLAW until the current player shell/route is implemented and tested.
+The player uses an opaque-origin iframe and a local compatibility adapter around the upstream donor UI. The donor attempts `localStorage`, but that storage is unavailable in the sandbox; its fallback is in-memory state. The cartridge record therefore declares `persistence: none`, and progress is cleared on reload/close. The host communicates visibility and uses pause/resume controls; it does not introduce account sync.
 
-However, copy must no longer state that no real browser builds exist anywhere.
-
-Truthful wording:
-- qualified browser previews exist;
-- current Home launch routing is withheld until WO-002 integration;
-- the mobile app remains the flagship full experience.
-
-This distinction preserves product truth without discarding real qualified work.
-
-## WO-002 implication
-
-WO-002 should not begin by searching the mobile repository for Wicked Bites or CLAW.
-
-Begin with:
-1. CP9 `toadal-web-player-v2` compatibility review;
-2. current `toadal.game.v1` host contract;
-3. Wicked Bites 5.5 integration;
-4. CLAW 2.5.1 integration;
-5. then the current TOADAL FEAST Arcade candidate.
-
-See:
-- `docs/review/WO-001/CP9_DONOR_RECONCILIATION_2026-09-30.md`
-- `docs/implementation/WEB_GAME_EVIDENCE_LEDGER_2026-09-30.json`
+The retained WO-001 source archive, prior CP9 qualification, and external endpoint checks remain unchanged. For the actual WO-002 player/browser checks, route/export/screenshot results, and remaining limitations, see `docs/review/WO-002/WO-002_IMPLEMENTATION_EVIDENCE_2026-09-30.md` and the evidence images beside it.

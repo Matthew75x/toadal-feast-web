@@ -5,15 +5,25 @@
   "name": "Wicked Bites",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Qualified browser-preview evidence exists, but this Home page withholds launch until WO-002 player integration.",
-  "description": "Wicked Bites has a qualified staging browser cartridge from the CP9/V13 donor. WO-001 intentionally does not expose a launch route until the current player shell is integrated and regression-tested in WO-002. The current Home card remains a preview surface.",
-  "route": "/",
+  "summary": "A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release.",
+  "description": "A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release. Keyboard and touch controls are available in the game. Use the in-game guide for the current mapping. Progress is held in the isolated preview session and may not persist after reload; no account sync or cross-device save.",
+  "route": "/games/wicked-bites/",
   "artAsset": "asset.home.world.desktop",
   "platforms": [],
   "studioGenerated": false,
   "web": {
-    "enabled": false,
-    "shortDescription": "Qualified staging cartridge exists; Home launch remains withheld until WO-002 player integration."
+    "enabled": true,
+    "shortDescription": "A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release.",
+    "inputSupport": [
+      "Keyboard",
+      "Touch"
+    ],
+    "browserCartridge": {
+      "entry": "/public/games/wicked-bites/index.html",
+      "version": "5.5",
+      "publicState": "PREVIEW",
+      "protocol": "toadal.game.v1"
+    }
   },
   "evidence": {
     "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
@@ -22,6 +32,6 @@
     "version": "5.5",
     "entrySha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
     "reverifiedAt": "2026-09-30",
-    "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+    "currentHomeLaunch": "PREVIEW_ROUTE_ADDED_WO002"
   }
 }

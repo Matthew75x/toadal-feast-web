@@ -14,6 +14,7 @@ const assets = JSON.parse(read(path.join('assets', 'index.json')));
 const canonicalAssetManifest = JSON.parse(fs.readFileSync(path.join(repo, 'docs', 'implementation', 'CANONICAL_ASSET_SOURCE_MANIFEST.json'), 'utf8'));
 const sha256File = (abs) => crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
 const gameIndex = JSON.parse(read(path.join('games', 'index.json')));
+const pagesIndex = JSON.parse(read(path.join('pages', 'index.json')));
 const css = read(path.join('reference', 'assets', 'css', 'site.css'));
 const html = home.components?.map(c => c?.props?.html || '').join('\n') || '';
 const byId = new Map((home.components || []).map(component => [component.id, component]));
@@ -94,13 +95,26 @@ check('mobile-breakpoint', /@media\s*\(\s*max-width\s*:\s*(?:420|430)px\s*\)/i.t
 
 const indexedGames = gameIndex.games || [];
 const gameRecords = indexedGames.map(entry => JSON.parse(read(entry.file)));
+const stagingRoutes = gameRecords.filter(game => game.web?.enabled === true);
+const stagingGame = stagingRoutes.length === 1 ? stagingRoutes[0] : null;
+const registeredPlayerRoutes = new Set((pagesIndex.pages || []).map(page => page.route));
 const previewOnly = indexedGames.length === 4 && gameRecords.every(game =>
-  game.status === 'preview' && game.web?.enabled === false && !game.web?.launchUrl && !game.web?.buildUrl);
+  game.status === 'preview' && game.web?.browserCartridge?.publicState === 'PREVIEW' && !game.web?.launchUrl && !game.web?.buildUrl) &&
+  stagingGame?.slug === 'wicked-bites' &&
+  stagingGame.web?.browserCartridge?.entry === '/public/games/wicked-bites/index.html' &&
+  registeredPlayerRoutes.has('/player/wicked-bites/') &&
+  gameRecords.filter(game => game !== stagingGame).every(game => game.web?.enabled === false);
 check('preview-truth', previewOnly && component('component.home.games')?.props?.children?.length === 4 &&
-  /Playable now[\s\S]*?<span>0<\/span>/i.test(componentHtml('component.home.games-intro')),
-  'The four indexed browser games remain preview-only with no launch/build URLs or playable count.');
-check('preview-headline-truth', !previewOnly || /Explore the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
-  'When Home has zero integrated launch routes, staging uses Explore rather than implying a playable Home launch.');
+  /Public games[\s\S]*?<span>0<\/span>/i.test(componentHtml('component.home.games-intro')) &&
+  /Wicked Bites runs as a session-only staging preview/i.test(componentHtml('component.home.games-intro')),
+  'All four listings stay PREVIEW with zero public games; exactly one isolated Wicked Bites staging route is distinguished from held/concept entries.');
+check('preview-headline-truth', previewOnly
+  ? /Play the Feast World for Free\./.test(plainText(componentHtml('component.home.hero')))
+  : /Explore the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
+  'The Play headline appears only when a registered PREVIEW-only staging player route exists; PUBLIC remains zero.');
+check('home-play-funnel', /href=['"]\/play\/['"]/i.test(componentHtml('component.home.hero')) &&
+  /href=['"]\/play\/['"]/i.test(componentHtml('component.home.games-intro')),
+  'Home primary and browser-directory actions route into the registered Play experience.');
 check('arcade-withheld', !indexedGames.some(game => /arcade/i.test(game.slug || game.id)),
   'The unapproved Arcade candidate is not exposed as a public browser-game record.');
 check('store-link-truth', /type=["']button["'][^>]*disabled/i.test(componentHtml('component.home.app')) &&

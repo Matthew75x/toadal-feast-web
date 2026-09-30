@@ -5,15 +5,25 @@
   "name": "CLAW: Feed Gulper",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Qualified browser-preview evidence exists, but this Home page withholds launch until WO-002 player integration.",
-  "description": "CLAW: Feed Gulper has a qualified staging browser cartridge from the CP9/V13 donor. WO-001 intentionally does not expose a launch route until the current player shell is integrated and regression-tested in WO-002. The current Home card remains a preview surface.",
-  "route": "/",
+  "summary": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification.",
+  "description": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification. No launch is offered through the website player while host, storage, and service-worker integration are requalified. The donor uses a game-owned browser save key; website storage isolation is not yet certified.",
+  "route": "/games/claw-feed-gulper/",
   "artAsset": "asset.home.character.gulper",
   "platforms": [],
   "studioGenerated": false,
   "web": {
     "enabled": false,
-    "shortDescription": "Qualified staging cartridge exists; Home launch remains withheld until WO-002 player integration."
+    "shortDescription": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification.",
+    "inputSupport": [],
+    "browserCartridge": {
+      "entry": null,
+      "version": "2.5.1",
+      "publicState": "PREVIEW",
+      "protocol": "toadal.game.v1",
+      "runnable": false,
+      "launchHeld": true,
+      "reason": "shared-origin storage and upstream service-worker cache behavior require requalification"
+    }
   },
   "evidence": {
     "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
@@ -22,6 +32,6 @@
     "version": "2.5.1",
     "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
     "reverifiedAt": "2026-09-30",
-    "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+    "currentHomeLaunch": "LAUNCH_HELD_WO002"
   }
 }

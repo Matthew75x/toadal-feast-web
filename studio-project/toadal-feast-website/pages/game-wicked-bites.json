@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "page.game-wicked-bites",
+  "route": "/games/wicked-bites/",
+  "title": "Wicked Bites · TOADAL FEAST",
+  "description": "A compact browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW while its current player integration is evaluated.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.muogc38s.ly16t7",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "wo002-game-detail",
+        "html": "\n<article class=\"wo002-detail-page\" data-game-detail=\"wicked-bites\">\n  <nav class=\"detail-breadcrumb\" aria-label=\"Breadcrumb\"><a href=\"/play/\">Play</a><span aria-hidden=\"true\">/</span><span>Wicked Bites</span></nav>\n  <section class=\"wo002-detail-hero\"><div class=\"wo002-detail-copy\"><p class=\"section-kicker\">STAGING BROWSER BUILD · 5.5</p>\n    <span class=\"chip preview\">PREVIEW</span><h1>Wicked Bites</h1><p class=\"wo002-detail-lede\">A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release.</p>\n    <div class=\"wo002-detail-actions\"><a class=\"button-link button-link--primary\" href=\"/player/wicked-bites/\">Open staging preview <span aria-hidden=\"true\">→</span></a><a class=\"button-link button-link--secondary\" href=\"/play/\">All browser games</a></div>\n  </div><figure class=\"wo002-detail-art\"><img src=\"/assets/images/world/candy-kingdom.webp\" alt=\"Candy Kingdom world artwork, not an in-game screenshot.\" decoding=\"async\"><figcaption>World/character artwork — not a gameplay screenshot.</figcaption></figure></section>\n  <section class=\"wo002-detail-facts\" aria-label=\"Game preview information\">\n    <article class=\"detail-fact\"><p class=\"section-kicker\">STATUS</p><h2>Preview</h2><p>A runnable staging package is available for evaluation.</p></article>\n    <article class=\"detail-fact\"><p class=\"section-kicker\">CONTROLS</p><h2>How to play</h2><p>Keyboard and touch controls are available in the game. Use the in-game guide for the current mapping.</p></article>\n    <article class=\"detail-fact\"><p class=\"section-kicker\">SAVES</p><h2>Session-only</h2><p>Progress is held in the isolated preview session and may not persist after reload; no account sync or cross-device save.</p></article>\n  </section>\n</article>"
+      }
+    }
+  ],
+  "referenceFile": "games/wicked-bites/index.html",
+  "studioGenerated": true
+}

@@ -42,15 +42,20 @@ function localize(raw,fromFile){
 walk(dist);
 if(!htmlFiles.length) errors.push('no HTML files found');
 
-const re=/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi;
+const tagRe=/<[a-zA-Z][^>]*>/g;
+const attributeRe=/\b(?:href|src)\s*=\s*["']([^"']+)["']/gi;
 for(const file of htmlFiles){
-  const html=fs.readFileSync(file,'utf8');
-  let m;
-  while((m=re.exec(html))){
-    const x=localize(m[1],file);
-    if(!x) continue;
-    if(x.badBase){ errors.push(`${path.relative(dist,file)}: root URL outside base -> ${x.url}`); continue; }
-    if(!existsTarget(x.rel)) errors.push(`${path.relative(dist,file)}: missing -> ${m[1]} (resolved ${x.rel})`);
+  const html=fs.readFileSync(file,'utf8').replace(/<script\b[^>]*>[\s\S]*?<\/script\s*>/gi,' ');
+  const tags=html.match(tagRe)||[];
+  for(const tag of tags){
+    let m;
+    attributeRe.lastIndex=0;
+    while((m=attributeRe.exec(tag))){
+      const x=localize(m[1],file);
+      if(!x) continue;
+      if(x.badBase){ errors.push(`${path.relative(dist,file)}: root URL outside base -> ${x.url}`); continue; }
+      if(!existsTarget(x.rel)) errors.push(`${path.relative(dist,file)}: missing -> ${m[1]} (resolved ${x.rel})`);
+    }
   }
 }
 

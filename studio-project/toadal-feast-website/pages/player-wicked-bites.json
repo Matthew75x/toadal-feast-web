@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "page.player-wicked-bites",
+  "route": "/player/wicked-bites/",
+  "title": "Wicked Bites browser preview · TOADAL FEAST",
+  "description": "Open the Wicked Bites staging browser preview in the TOADAL FEAST player.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.muogc5wx.80e0fg",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "wo002-browser-player",
+        "html": "\n<section class=\"wo002-player-page\" data-player-shell data-game-id=\"wicked-bites\" aria-labelledby=\"player-title\">\n  <header class=\"wo002-player-heading\"><a class=\"player-back-link\" href=\"/games/wicked-bites/\">← <span>Game details</span></a>\n    <div><p class=\"section-kicker\">PREVIEW SESSION · 5.5</p><h1 id=\"player-title\">Wicked Bites</h1></div><span class=\"chip preview\">PREVIEW</span>\n  </header>\n  <div class=\"wo002-player-toolbar\" role=\"group\" aria-label=\"Browser player controls\"><div class=\"player-toolbar__controls\">\n    <button class=\"btn secondary\" type=\"button\" data-player-pause disabled>Pause</button><button class=\"btn secondary\" type=\"button\" data-player-resume disabled>Resume</button>\n    <button class=\"btn secondary\" type=\"button\" data-player-sound aria-pressed=\"false\">Request mute</button><button class=\"btn secondary\" type=\"button\" data-player-fullscreen>Full screen</button>\n  </div><a class=\"btn quiet\" data-player-exit href=\"/games/wicked-bites/\">Exit preview</a></div>\n  <p class=\"player-status\" data-player-status role=\"status\" aria-live=\"polite\">Loading the verified preview package…</p>\n  <div class=\"wo002-player-frame-wrap\" data-player-frame-wrap>\n    <iframe class=\"wo002-player-frame\" data-player-frame src=\"/public/games/wicked-bites/index.html\" title=\"Wicked Bites browser preview\" loading=\"eager\" referrerpolicy=\"origin\" sandbox=\"allow-scripts allow-pointer-lock\" allow=\"fullscreen\" allowfullscreen></iframe>\n    <button class=\"player-fullscreen-exit\" type=\"button\" data-player-fullscreen-exit hidden>Exit full screen</button>\n    <div class=\"player-error\" data-player-error hidden role=\"alert\"><span class=\"chip preview\">PREVIEW UNAVAILABLE</span><h2>The game did not load.</h2>\n      <p data-player-error-copy>Check your connection and retry, or return to the game details.</p><button class=\"btn primary\" type=\"button\" data-player-retry>Retry preview</button><a class=\"btn secondary\" href=\"/games/wicked-bites/\">Return to details</a>\n    </div>\n  </div>\n  <div class=\"wo002-player-footnote\"><p><strong>Preview status:</strong> This staging build is not marked PUBLIC. Progress stays in the isolated preview session and may not persist after reload; account sync is unavailable.</p><p><strong>Controls:</strong> Use the game menu and its keyboard or touch guidance. The host provides exit, fullscreen, sound requests, and pause/resume messages.</p></div>\n</section>"
+      }
+    }
+  ],
+  "referenceFile": "player/wicked-bites/index.html",
+  "studioGenerated": true
+}

@@ -5,14 +5,23 @@
   "name": "Froggy Fruity Bash",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Preview concept shown with canonical Fruity Genie character art, not gameplay footage.",
-  "description": "Froggy Fruity Bash is presented as a preview only. This website does not contain a runnable browser build or a game launch route. The card uses canonical Fruity Genie character art, not a game screenshot or confirmed title artwork.",
-  "route": "/",
+  "summary": "A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage.",
+  "description": "A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage. No playable website build is connected. No browser save is created.",
+  "route": "/games/froggy-fruity-bash/",
   "artAsset": "asset.home.genie.fruity-art",
   "platforms": [],
   "studioGenerated": false,
   "web": {
     "enabled": false,
-    "shortDescription": "Preview only — shown with canonical Fruity Genie character art, not gameplay footage; no public playable build is available."
+    "shortDescription": "A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage.",
+    "inputSupport": [],
+    "browserCartridge": {
+      "publicState": "PREVIEW",
+      "runnable": false,
+      "entry": "",
+      "version": null,
+      "launchHeld": false,
+      "reason": ""
+    }
   }
 }

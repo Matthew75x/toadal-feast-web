@@ -22,7 +22,14 @@
         "sha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
         "robots": "noindex"
       },
-      "homeLaunchState": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+      "homeLaunchState": "PREVIEW_PLAYER_ROUTE_AVAILABLE_WO002",
+      "websiteIntegration": {
+        "detailRoute": "/games/wicked-bites/",
+        "playerRoute": "/player/wicked-bites/",
+        "publicState": "PREVIEW",
+        "storagePersistence": "none",
+        "accountSync": "none"
+      }
     },
     {
       "id": "claw-feed-gulper",
@@ -43,23 +50,48 @@
         "indexSha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
         "robots": "noindex"
       },
-      "homeLaunchState": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+      "homeLaunchState": "LAUNCH_HELD_NO_WEBSITE_PLAYER",
+      "websiteIntegration": {
+        "detailRoute": "/games/claw-feed-gulper/",
+        "playerRoute": null,
+        "packageShipped": false,
+        "reason": "origin-safety, storage, and service-worker-cache behavior require requalification"
+      }
     },
     {
       "id": "lily-pad-leap",
-      "state": "CONTRACT_READY_PLANNED_INTEGRATION"
+      "state": "CONTRACT_READY_PLANNED_INTEGRATION",
+      "websiteIntegration": {
+        "route": null,
+        "packageShipped": false
+      }
     },
     {
       "id": "froggy-fruity-bash",
-      "state": "CONTRACT_READY_PLANNED_INTEGRATION"
+      "state": "CONTRACT_READY_PLANNED_INTEGRATION",
+      "websiteIntegration": {
+        "websiteListingState": "CONCEPT_ONLY",
+        "playerRoute": null,
+        "packageShipped": false
+      }
     },
     {
       "id": "feast-defense",
-      "state": "CONTRACT_READY_PLANNED_ADAPTATION"
+      "state": "CONTRACT_READY_PLANNED_ADAPTATION",
+      "websiteIntegration": {
+        "route": null,
+        "packageShipped": false
+      }
     },
     {
       "id": "toadal-feast-arcade",
-      "state": "CANDIDATE_REQUIRES_CURRENT_CARTRIDGE_AUDIT"
+      "state": "CANDIDATE_REQUIRES_CURRENT_CARTRIDGE_AUDIT",
+      "websiteIntegration": {
+        "websiteListingState": "OUT_OF_SCOPE_WO002",
+        "playerRoute": null,
+        "packageShipped": false,
+        "nextGate": "separately authorized bounded isolation/package audit"
+      }
     }
   ]
 }
