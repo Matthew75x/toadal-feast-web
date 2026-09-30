@@ -1,104 +1,60 @@
 # TOADAL FEAST Website — Execution Status
 **Updated:** 2026-09-30
 
-## Accepted environment gate
-**WO-000: PASS**
-- accepted evidence commit: `e639cd8ee68c6650aede6a2f04e524bef20a1c08`
-- TOADAL Studio 1.4.2
-- validation PASS
-- 81/81 Studio tests PASS
-- ai:doctor PASS
-- inspect/render/static export/verify checkpoint PASS
-- tracked `dist/` and `main` unchanged
+## WO-000
+**PASS** — environment baseline accepted.
 
-## Current work order
-**WO-001 — Global Shell + Home**
-Branch: `work/WO-001-global-shell-home`
+## WO-001 — Global Shell + Home
+Primary branch:
+`work/WO-001-global-shell-home`
 
-Current disposition:
-**FIX REQUIRED — targeted visual-composition remediation only.**
+Accepted reconciliation commit:
+`4e0b4f32b3f6e540bb518703101732e67de9cb2f`
 
-The architecture, source contracts, product-truth boundaries, responsive/accessibility implementation and Studio 1.4.2 pipeline are established. Do not restart the Home from scratch.
+Active bounded visual-remediation branch:
+`fix/wo001-approved-home-parity-20260930`
 
-## Technical foundation already PASS
-Historical Studio evidence at `b56ce4fd5e64da246a51b09e9f8e7c04cdaf15b3`:
-- Studio validation: PASS, zero errors/warnings
-- full Studio suite: PASS 81/81
-- ai:doctor: PASS
-- inspect/render/static export/checkpoint: PASS
-- browser QA: PASS 87/87 across all six required viewports
-- no horizontal overflow
-- no console/page/HTTP errors
-- keyboard/reduced-motion/mobile-nav/game-filter/companion/404 checks PASS
-- Pages base-path tests: PASS 8/8
-- canonical asset audit: PASS 10/10
-- tracked `dist/` unchanged
-- no Pages/production deployment
+Current state:
+**READY FOR FINAL STUDIO 1.4.2 VALIDATION — do not begin WO-002 yet.**
 
-## Independent post-QA reconciliation
+### Closed before visual remediation
+- CP9/V13 donor evidence recovered and reconciled.
+- Wicked Bites 5.5 and CLAW 2.5.1 qualified staging evidence reverified.
+- staging/product-truth headline boundary resolved.
+- Feast Pass live-data boundary fixed to WO-005.
+- required Studio shell symbol registry completed.
+- visual-contract verifier normalization corrected.
 
-### Donor authority
-**RESOLVED.**
+### Current visual remediation
+The existing architecture was preserved; only bounded composition/polish work was done.
 
-The authoritative CP9/V13 archive was independently recovered and matches the recorded SHA-256:
-`ebbd2b7631268e39522a2f63eb7377ce2cd6571b86cb88947c597b0b1376e7a4`
+Current source preflight:
+- visual contract: **26/26 PASS**
+- navigation truth: **14/14 PASS**
+- Pages base-path tests: **8/8 PASS**
+- canonical asset audit: **10/10 PASS**
+- interaction smoke: **13/13 PASS**
+- six required responsive viewports: **0 horizontal-overflow offenders**
+- desktop hero: **510px**
+- Games + Feast Pass share a desktop band
+- App + What's Next share a desktop band
+- canonical large Toadal hero
+- character-first contextual companion
+- no live feature claims invented
 
-All 17 required donor witnesses plus populated `dist/` are present.
+Approved Home authority:
+`TOADAL_APPROVED_HOME_VISUAL_AUTHORITY.png`
+SHA-256:
+`4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608`
 
-Two real browser staging cartridges were reverified on 2026-09-30:
-- Wicked Bites 5.5: HTTP 200, exact 1,462,042-byte artifact, exact manifest SHA-256
-- CLAW: Feed Gulper 2.5.1: HTTP 200, exact manifest index SHA-256
+### Remaining gate
+Run the exact Studio 1.4.2 final pass on the remediation branch:
+1. validate;
+2. inspect/render/export/checkpoint;
+3. final six viewport captures from the Studio export;
+4. final parity review;
+5. accept or one bounded visual correction.
 
-Current Home still withholds launch routing until WO-002 player-shell integration.
-
-### Product truth
-**RESOLVED for WO-001 staging.**
-
-Because current Home has zero integrated launch routes, its staging headline is:
-**Explore the Feast World for Free.**
-
-When WO-002 integrates at least one qualified player route, restore the approved final:
-**Play the Feast World for Free.**
-
-Live guest-local Feast Pass values remain gated to WO-005. WO-001 shows planned state only.
-
-### Reusable shell symbols
-**RESOLVED in source.**
-
-Current visual source contract:
-**22/22 PASS**
-
-Required named symbol registry:
-**11/11**
-
-The verifier's prior case-normalization error was corrected.
-
-### Approved visual authority
-**RECOVERED AND REVIEWED.**
-
-The current implementation is technically strong but does not yet match the approved Home closely enough.
-
-Major remediation targets:
-- stronger franchise header/brand treatment
-- brighter/lusher hero with much larger canonical Toadal
-- Games + Feast Pass composed in one desktop band
-- denser page rhythm
-- richer three-column discovery band
-- App + What's Next paired on desktop
-- character-like compact companion instead of admin-note treatment
-
-See:
-`docs/review/WO-001/APPROVED_HOME_VISUAL_PARITY_REVIEW_2026-09-30.md`
-
-## Current remaining gate
-1. targeted visual-composition remediation;
-2. Studio 1.4.2 validation/render/export on the remediated source;
-3. final six-viewport capture;
-4. side-by-side visual authority review;
-5. accept or one bounded visual-fix pass.
-
-WO-002 stays HOLD until this gate is accepted.
-
-## Production
-No production DNS/live replacement is authorized.
-GitHub Pages remains staging only after an accepted batch.
+No Pages deployment.
+No merge to `main`.
+WO-002 remains HOLD until acceptance.

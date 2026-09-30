@@ -1,0 +1,75 @@
+{
+  "capturedAt": "2026-09-30T12:28:15.855Z",
+  "summary": {
+    "pass": 13,
+    "fail": 0,
+    "total": 13
+  },
+  "results": [
+    {
+      "name": "companion-default-character-only",
+      "ok": true,
+      "detail": "{\"hidden\":true,\"toggleVisible\":true,\"expanded\":\"false\",\"storage\":null}"
+    },
+    {
+      "name": "companion-hover-reveals-context",
+      "ok": true,
+      "detail": "{\"hidden\":false,\"copy\":\"Feast Pass is planned for a later work order; there are no live levels, rewards, or account sync here.\"}"
+    },
+    {
+      "name": "companion-hover-exit-collapses",
+      "ok": true,
+      "detail": "{\"hidden\":true}"
+    },
+    {
+      "name": "companion-user-pin-open",
+      "ok": true,
+      "detail": "{\"hidden\":false,\"storage\":\"false\"}"
+    },
+    {
+      "name": "companion-user-minimize-persists",
+      "ok": true,
+      "detail": "{\"hidden\":true,\"storage\":\"true\"}"
+    },
+    {
+      "name": "companion-explicit-minimize-beats-hover",
+      "ok": true,
+      "detail": "{\"hidden\":true}"
+    },
+    {
+      "name": "game-public-filter-empty-state",
+      "ok": true,
+      "detail": "{\"visible\":0,\"empty\":true}"
+    },
+    {
+      "name": "game-all-filter-restores-four",
+      "ok": true,
+      "detail": "{\"visible\":4,\"empty\":false}"
+    },
+    {
+      "name": "mobile-nav-collapsed-by-default",
+      "ok": true,
+      "detail": "{\"button\":true,\"buttonHidden\":false,\"linksHidden\":true,\"expanded\":\"false\"}"
+    },
+    {
+      "name": "mobile-nav-opens",
+      "ok": true,
+      "detail": "{\"linksHidden\":false,\"expanded\":\"true\"}"
+    },
+    {
+      "name": "mobile-nav-escape-closes",
+      "ok": true,
+      "detail": "{\"linksHidden\":true,\"expanded\":\"false\",\"focused\":true}"
+    },
+    {
+      "name": "mobile-no-horizontal-overflow",
+      "ok": true,
+      "detail": "{\"scrollWidth\":390,\"innerWidth\":390,\"errors\":[]}"
+    },
+    {
+      "name": "runtime-error-capture-empty",
+      "ok": true,
+      "detail": "{\"scrollWidth\":390,\"innerWidth\":390,\"errors\":[]}"
+    }
+  ]
+}

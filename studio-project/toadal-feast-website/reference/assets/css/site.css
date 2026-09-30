@@ -1180,3 +1180,805 @@ main {
     transition-duration: 0.01ms !important;
   }
 }
+
+
+/* ==========================================================================
+   APPROVED HOME PARITY REMEDIATION — 2026-09-30
+   Target: owner-approved dense premium TOADAL FEAST portal.
+   Keep feature-state truth, accessibility, and responsive behavior intact.
+   ========================================================================== */
+
+.site-header {
+  box-shadow: 0 4px 0 rgb(24 8 4 / 22%), 0 10px 28px rgb(24 8 4 / 18%);
+}
+
+.site-brand {
+  position: relative;
+  gap: 9px;
+  color: var(--cream-50);
+  font-size: clamp(1.15rem, 1.65vw, 1.5rem);
+  letter-spacing: -0.045em;
+  text-shadow: 0 2px 0 rgb(117 52 9 / 55%);
+}
+
+.site-brand::before {
+  content: "";
+  width: 31px;
+  height: 24px;
+  flex: 0 0 31px;
+  background: url("../brand/brand-crown.svg") center / contain no-repeat;
+  filter: drop-shadow(0 2px 2px rgb(0 0 0 / 25%));
+}
+
+.site-links a {
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  padding-inline: clamp(7px, .8vw, 12px);
+  transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+
+.site-links a:hover {
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+.site-links a:first-child {
+  border-color: rgb(255 212 91 / 72%);
+  color: var(--pink-700);
+  background: linear-gradient(180deg, var(--cream-50), var(--cream-200));
+  box-shadow: 0 3px 0 rgb(130 70 12 / 32%);
+}
+
+/* Bright, character-led hero instead of a dark editorial masthead. */
+.home-hero {
+  min-height: clamp(430px, 34vw, 560px);
+  background: #694377;
+}
+
+.hero-scrim {
+  background:
+    linear-gradient(90deg,
+      rgb(30 16 13 / 68%) 0%,
+      rgb(30 16 13 / 48%) 31%,
+      rgb(30 16 13 / 13%) 62%,
+      rgb(30 16 13 / 5%) 100%);
+}
+
+.home-hero__layout {
+  min-height: inherit;
+  padding-block: clamp(26px, 3vw, 42px);
+  grid-template-columns: minmax(0, .92fr) minmax(390px, 1.08fr);
+  gap: clamp(var(--space-4), 2.8vw, var(--space-8));
+}
+
+.home-hero__copy {
+  max-width: 700px;
+  align-self: center;
+}
+
+.home-hero__title {
+  max-width: 9.2ch;
+  margin-block-end: 12px;
+  font-size: clamp(3.5rem, 6.7vw, 6.25rem);
+  line-height: .88;
+  letter-spacing: -.065em;
+  text-shadow: 0 4px 0 rgb(49 15 24 / 25%), 0 14px 32px rgb(30 16 13 / 34%);
+}
+
+.home-hero__lede {
+  max-width: 51ch;
+  margin-bottom: 12px;
+  font-size: clamp(.97rem, 1.15vw, 1.12rem);
+  line-height: 1.46;
+}
+
+.home-actions {
+  margin-block-start: 14px;
+  gap: 10px;
+}
+
+.home-actions .button-link {
+  min-height: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 5px 0 rgb(30 16 13 / 24%);
+}
+
+.home-actions .button-link--primary {
+  border-color: #ff7daf;
+  background: linear-gradient(180deg, var(--pink-500), var(--pink-700));
+}
+
+.hero-benefits {
+  max-width: 650px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 14px;
+  margin-top: 13px;
+  color: var(--cream-100);
+  font-size: .76rem;
+  font-weight: 800;
+}
+
+.hero-benefits span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hero-benefits b {
+  color: var(--gold-400);
+  font-size: .8em;
+}
+
+.home-hero__toadal {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 570px);
+  max-height: none;
+  justify-self: center;
+  align-self: end;
+  transform: translateY(7%);
+  filter: drop-shadow(0 22px 18px rgb(62 27 7 / 34%));
+}
+
+.home-hero__toadal img,
+.home-hero__toadal > img {
+  width: 100%;
+  height: auto;
+  max-height: 590px;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+.home-search {
+  width: min(100%, 520px);
+  margin-block-start: 13px;
+  gap: 5px;
+}
+
+.home-search > label {
+  font-size: .76rem;
+  font-weight: 800;
+}
+
+.home-search__field {
+  min-height: 44px;
+  padding-inline: 7px;
+}
+
+.home-search__input {
+  min-height: 42px;
+  padding-block: 5px;
+  font-size: .9rem;
+}
+
+.home-search__field button {
+  min-height: 40px;
+  padding: 6px 12px;
+  font-size: .82rem;
+}
+
+.home-search__status {
+  min-height: 0;
+  margin-block-start: 2px;
+  padding: 5px 8px;
+  border-width: 1px;
+  font-size: .7rem;
+  line-height: 1.3;
+}
+
+/* Denser portal rhythm. */
+.home-section-inner {
+  padding-block: clamp(22px, 3.4vw, 42px);
+}
+
+.studio-rich-text.shell.section[data-studio-variant="games-intro"] .home-section-inner {
+  padding-block: 24px 9px;
+}
+
+.studio-layout.variant-home-game-grid,
+.studio-layout-grid.variant-home-game-grid,
+.studio-layout[data-studio-variant="home-game-grid"],
+.studio-layout-grid[data-studio-variant="home-game-grid"] {
+  gap: 10px;
+}
+
+.studio-game-card.module {
+  border-color: rgb(166 102 6 / 27%);
+  border-radius: 15px;
+  box-shadow: 0 5px 0 rgb(66 36 22 / 9%), 0 12px 22px rgb(66 36 22 / 7%);
+}
+
+.studio-game-card :where(img, picture) {
+  max-height: 155px;
+}
+
+.studio-game-card :where(h2, h3, p, .chip) {
+  margin-inline: 13px;
+}
+
+.studio-game-card :where(h2, h3) {
+  margin-block: 11px 5px;
+  font-size: clamp(1rem, 1.3vw, 1.22rem);
+}
+
+.studio-game-card p {
+  font-size: .82rem;
+  line-height: 1.42;
+}
+
+.studio-game-card .chip.preview {
+  margin-block: 10px 0;
+  font-size: .67rem;
+}
+
+.studio-game-card :where(.button-link, .btn) {
+  margin: auto 13px 13px;
+}
+
+/* Planned Feast Pass reads like a premium sidecar without inventing live state. */
+.feast-pass-panel {
+  min-height: 100%;
+  padding: clamp(20px, 2.2vw, 30px);
+  border-width: 2px;
+  background:
+    radial-gradient(circle at 88% 18%, rgb(255 212 91 / 16%), transparent 32%),
+    linear-gradient(145deg, #542815 0%, var(--chocolate-800) 62%, #29120c 100%);
+}
+
+.feast-pass-panel::after {
+  content: "♛";
+  position: absolute;
+  inset-inline-end: 18px;
+  inset-block-end: 5px;
+  color: rgb(255 212 91 / 14%);
+  font-size: clamp(5rem, 8vw, 8rem);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.pass-signals {
+  grid-template-columns: 1fr;
+  gap: 8px;
+  margin-block: 15px 0;
+}
+
+.pass-signals > * {
+  padding: 9px 11px;
+  font-size: .76rem;
+}
+
+.pass-emblem {
+  position: absolute;
+  inset-inline-end: 18px;
+  inset-block-start: 22px;
+  display: grid;
+  justify-items: center;
+  color: var(--gold-400);
+  opacity: .95;
+}
+
+.pass-emblem span {
+  font-size: .55rem;
+  letter-spacing: .12em;
+}
+
+.pass-emblem strong {
+  font-size: .9rem;
+}
+
+/* "Today" becomes a compact current-adventure ribbon, not a full editorial page. */
+.today-panel {
+  min-height: 0;
+  padding: 17px 22px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  border-width: 1px;
+  background:
+    linear-gradient(90deg, var(--cream-100), #fff8db 58%, #ffe8a8 100%);
+}
+
+.today-panel .section-kicker {
+  margin-bottom: 4px;
+  font-size: .68rem;
+}
+
+.today-panel .section-heading {
+  max-width: none;
+  margin-bottom: 5px;
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
+}
+
+.today-panel .section-lede {
+  margin: 0;
+  font-size: .85rem;
+}
+
+/* Richer discovery dashboard. */
+.discovery-grid {
+  gap: 12px;
+}
+
+.discovery-card,
+.next-card {
+  padding: clamp(14px, 1.5vw, 20px);
+  border-color: rgb(166 102 6 / 24%);
+  box-shadow: 0 5px 0 rgb(66 36 22 / 8%), 0 12px 22px rgb(66 36 22 / 6%);
+}
+
+.character-row {
+  gap: 8px;
+  margin-block-start: 13px;
+}
+
+.character-figure img {
+  max-height: 145px;
+}
+
+.character-figure figcaption {
+  margin-block-start: 4px;
+  font-size: .74rem;
+}
+
+.genie-row {
+  gap: 6px;
+  margin-block-start: 10px;
+}
+
+.genie-row img {
+  max-height: 86px;
+}
+
+.world-art {
+  border-radius: 12px;
+  box-shadow: 0 4px 0 rgb(66 36 22 / 13%);
+}
+
+.stories-art {
+  min-height: 180px;
+  margin-block: 16px 12px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  border: 2px solid rgb(168 102 6 / 30%);
+  background:
+    radial-gradient(circle at 24% 24%, rgb(255 38 122 / 28%) 0 12%, transparent 13%),
+    radial-gradient(circle at 76% 34%, rgb(255 212 91 / 42%) 0 11%, transparent 12%),
+    radial-gradient(circle at 52% 80%, rgb(41 45 126 / 25%) 0 14%, transparent 15%),
+    linear-gradient(145deg, #fff6d0, #ffd77b 55%, #f5a2bb);
+  color: var(--navy-900);
+  text-align: center;
+  box-shadow: inset 0 0 0 6px rgb(255 255 255 / 38%);
+}
+
+.stories-art span {
+  font-size: .7rem;
+  font-weight: 900;
+  letter-spacing: .16em;
+}
+
+.stories-art strong {
+  display: block;
+  font-size: clamp(1.3rem, 2vw, 1.85rem);
+}
+
+.stories-art i {
+  color: var(--pink-700);
+  font-size: 1.4rem;
+}
+
+/* Premium app-conversion card. */
+.app-conversion-panel {
+  min-height: 100%;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, .65fr);
+  padding: clamp(18px, 2.3vw, 30px);
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 22%, rgb(255 38 122 / 14%), transparent 32%),
+    linear-gradient(135deg, #fff8df, var(--cream-200));
+}
+
+.app-art img {
+  max-height: 295px;
+  object-fit: contain;
+}
+
+.store-badge-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-start: 13px;
+}
+
+.store-badge {
+  min-height: 45px;
+  min-width: 145px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 7px 11px;
+  border: 1px solid #5b3929;
+  border-radius: 10px;
+  color: #fff;
+  background: #1d1512;
+  opacity: .62;
+  cursor: not-allowed;
+}
+
+.store-badge > span:last-child {
+  display: grid;
+  text-align: left;
+  font-size: .82rem;
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.store-badge small {
+  font-size: .52rem;
+  font-weight: 700;
+}
+
+/* Character-first companion: Toadal is the control, bubble is the support. */
+.toadal-companion {
+  width: min(250px, calc(100vw - 24px));
+  gap: 5px;
+}
+
+.companion-panel {
+  width: min(210px, calc(100vw - 32px));
+  padding: 10px 12px;
+  border-radius: 16px 16px 4px 16px;
+  box-shadow: 0 7px 0 rgb(30 16 13 / 18%);
+  font-size: .75rem;
+}
+
+.companion-label {
+  margin: 0 0 3px;
+  color: var(--pink-700);
+  font-size: .62rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.companion-message {
+  margin: 0;
+  line-height: 1.35;
+}
+
+.companion-toggle {
+  width: 118px;
+  height: 118px;
+  min-width: 0;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.companion-toggle:hover {
+  transform: translateY(-3px) rotate(-1deg);
+}
+
+.companion-image {
+  width: 118px;
+  max-height: 124px;
+  object-fit: contain;
+  filter: drop-shadow(0 8px 7px rgb(62 27 7 / 32%));
+}
+
+/* Desktop portal composition: approved dense band hierarchy. */
+@media (min-width: 1100px) {
+  main:has(.home-hero) {
+    display: grid;
+    grid-template-columns: minmax(0, 3fr) minmax(300px, 1fr);
+    grid-template-areas:
+      "access access"
+      "hero hero"
+      "games-intro pass"
+      "games pass"
+      "today today"
+      "discovery discovery"
+      "app next"
+      "companion companion";
+    column-gap: 10px;
+    background: var(--cream-100);
+  }
+
+  main:has(.home-hero) > [data-studio-variant="accessibility-tools"] { grid-area: access; }
+  main:has(.home-hero) > [data-studio-variant="home-hero"] { grid-area: hero; }
+  main:has(.home-hero) > [data-studio-variant="games-intro"] { grid-area: games-intro; }
+  main:has(.home-hero) > [data-studio-variant="home-game-grid"] { grid-area: games; }
+  main:has(.home-hero) > [data-studio-variant="feast-pass"] { grid-area: pass; }
+  main:has(.home-hero) > [data-studio-variant="today"] { grid-area: today; }
+  main:has(.home-hero) > [data-studio-variant="discovery"] { grid-area: discovery; }
+  main:has(.home-hero) > [data-studio-variant="app-conversion"] { grid-area: app; }
+  main:has(.home-hero) > [data-studio-variant="whats-next"] { grid-area: next; }
+  main:has(.home-hero) > [data-studio-variant="companion"] { grid-area: companion; }
+
+  main:has(.home-hero) > [data-studio-variant="games-intro"],
+  main:has(.home-hero) > [data-studio-variant="home-game-grid"] {
+    padding-inline-start: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  }
+
+  main:has(.home-hero) > [data-studio-variant="feast-pass"] {
+    padding-inline-end: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+    background: var(--cream-100);
+  }
+
+  main:has(.home-hero) > [data-studio-variant="feast-pass"] .home-section-inner {
+    width: 100%;
+    height: 100%;
+    padding: 24px 0 24px 0;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="home-game-grid"] {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding-block: 0 24px;
+    padding-inline-end: 0;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="games-intro"] .home-section-inner {
+    width: 100%;
+    margin: 0;
+    padding-inline-end: 0;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="today"] .home-section-inner {
+    padding-block: 10px;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="app-conversion"] {
+    background: var(--cream-200);
+    padding-inline-start: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  }
+
+  main:has(.home-hero) > [data-studio-variant="whats-next"] {
+    background: var(--cream-200);
+    padding-inline-end: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  }
+
+  main:has(.home-hero) > [data-studio-variant="app-conversion"] .home-section-inner,
+  main:has(.home-hero) > [data-studio-variant="whats-next"] .home-section-inner {
+    width: 100%;
+    margin: 0;
+    padding-block: 24px;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="app-conversion"] .home-section-inner {
+    padding-inline-end: 0;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="whats-next"] .home-section-inner {
+    padding-inline-start: 0;
+  }
+
+  .whats-next-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .next-card {
+    padding: 12px;
+  }
+
+  .next-card p {
+    font-size: .72rem;
+    line-height: 1.35;
+  }
+}
+
+@media (max-width: 1099px) {
+  .home-hero__layout {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, .8fr);
+  }
+
+  .home-hero__toadal {
+    width: min(100%, 440px);
+  }
+}
+
+@media (max-width: 760px) {
+  .site-brand::before {
+    width: 26px;
+    height: 20px;
+    flex-basis: 26px;
+  }
+
+  .home-hero {
+    min-height: 0;
+  }
+
+  .home-hero__layout {
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding-block: 22px 0;
+  }
+
+  .home-hero__title {
+    max-width: 8.5ch;
+    font-size: clamp(3rem, 13vw, 4.4rem);
+  }
+
+  .home-hero__toadal {
+    width: min(82vw, 360px);
+    max-height: 330px;
+    margin-top: -12px;
+    transform: translateY(5%);
+  }
+
+  .home-hero__toadal img,
+  .home-hero__toadal > img {
+    max-height: 340px;
+  }
+
+  .hero-benefits {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3px;
+    font-size: .7rem;
+  }
+
+  .today-panel {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .store-badge {
+    min-width: 132px;
+  }
+
+  .toadal-companion {
+    width: 180px;
+  }
+
+  .companion-panel {
+    width: 165px;
+  }
+
+  .companion-toggle,
+  .companion-image {
+    width: 86px;
+    height: 86px;
+  }
+}
+
+
+/* Layering hardening for the bright Feast-world hero. */
+.hero-world { z-index: 0; }
+.hero-scrim { z-index: 1; }
+.home-hero__layout { z-index: 2; }
+
+@media (max-width: 760px) {
+  .home-search { display: none; }
+  .home-hero__layout {
+    position: relative;
+    display: block;
+    padding-block: 22px 165px;
+  }
+  .home-hero__copy { max-width: 100%; }
+  .home-hero__toadal {
+    position: absolute;
+    inset-inline-end: -8px;
+    inset-block-end: -18px;
+    width: min(62vw, 235px);
+    margin: 0;
+    transform: none;
+  }
+  .home-hero__toadal img,
+  .home-hero__toadal > img {
+    width: 100%;
+    max-height: 250px;
+  }
+  .hero-scrim {
+    background:
+      linear-gradient(180deg,
+        rgb(30 16 13 / 64%) 0%,
+        rgb(30 16 13 / 47%) 54%,
+        rgb(30 16 13 / 16%) 100%);
+  }
+}
+
+
+/* Small-screen parity polish after 390px visual review. */
+@media (max-width: 760px) {
+  .home-hero__layout {
+    width: min(calc(100% - 32px), var(--content-max));
+    padding-block: 20px 142px;
+  }
+
+  .home-hero__title {
+    max-width: 8.7ch;
+    font-size: clamp(2.85rem, 12.4vw, 4.05rem);
+    line-height: .9;
+  }
+
+  .home-hero__lede {
+    width: 100%;
+    max-width: 100%;
+    font-size: .93rem;
+    line-height: 1.42;
+    overflow-wrap: anywhere;
+  }
+
+  .home-actions {
+    width: 100%;
+  }
+
+  .home-actions .button-link {
+    width: 100%;
+  }
+
+  .hero-benefits {
+    max-width: 67%;
+  }
+
+  .hero-world img {
+    object-position: 60% center;
+  }
+
+  .home-hero__toadal {
+    inset-inline-end: -4px;
+    inset-block-end: -8px;
+    width: min(48vw, 190px);
+  }
+
+  .home-hero__toadal img,
+  .home-hero__toadal > img {
+    max-height: 215px;
+  }
+
+  .section-heading {
+    text-wrap: balance;
+  }
+}
+
+
+/* Desktop hero compression: keep the approved focal character while revealing the portal content sooner. */
+@media (min-width: 1100px) {
+  .home-hero {
+    min-height: 510px;
+    height: 510px;
+  }
+
+  .home-hero__layout {
+    height: 510px;
+    min-height: 510px;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    padding-block: 24px;
+  }
+
+  .home-hero__copy {
+    max-width: 690px;
+  }
+
+  .home-hero__title {
+    font-size: clamp(3.5rem, 5.35vw, 5.25rem);
+    line-height: .9;
+  }
+
+  .home-hero__toadal {
+    position: absolute;
+    inset-inline-end: clamp(24px, 5vw, 82px);
+    inset-block-end: -10px;
+    width: min(42vw, 500px);
+    max-height: 500px;
+    transform: none;
+  }
+
+  .home-hero__toadal img,
+  .home-hero__toadal > img {
+    max-height: 510px;
+  }
+
+  .home-search {
+    width: min(100%, 510px);
+    margin-block-start: 10px;
+  }
+}

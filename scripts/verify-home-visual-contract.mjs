@@ -42,6 +42,17 @@ check('future-state', component('component.home.whats-next')?.props?.anchorId ==
 check('canonical-toadal', /assets\/images\/characters\/toadal-portrait\.webp/i.test(html) &&
   assets.assets?.some(asset => asset.source === 'reference/assets/images/characters/toadal-portrait.webp' && asset.tags?.includes('canonical')),
   'The canonical Toadal image derivative is used and registered.');
+check('hero-canonical-toadal-victory', /assets\/images\/characters\/toadal-victory\.png/i.test(componentHtml('component.home.hero')) &&
+  assets.assets?.some(asset => asset.id === 'asset.home.character.toadal-victory' && asset.tags?.includes('canonical')),
+  'The hero uses the canonical large Toadal victory pose rather than a generated mascot substitute.');
+check('branded-header-crown', /brand-crown\.svg/i.test(css) &&
+  assets.assets?.some(asset => asset.id === 'asset.brand.crown'),
+  'The shared shell has an explicit canonical brand-crown accent registered in the asset graph.');
+check('approved-dense-desktop-bands', /grid-template-areas[\s\S]*games-intro pass[\s\S]*app next/i.test(css),
+  'Desktop composition pairs Games with Feast Pass and App conversion with What’s Next, matching the approved dense portal hierarchy.');
+check('character-companion-treatment', /\.companion-toggle[\s\S]*background:\s*transparent/i.test(css) &&
+  /assets\/images\/characters\/toadal-victory\.png/i.test(componentHtml('component.home.companion')),
+  'The contextual companion is character-led rather than an admin-style toggle.');
 check('retired-lily-absent', !/(walk_12f|idle_blink_16f_256|catch_open_10f|curated-highres\/princess\/idle\.png)/i.test(html + css),
   'Retired Princess Lily assets are absent from Home markup and styling.');
 check('desktop-search-field', /type=["']search["'][^>]*disabled/i.test(componentHtml('component.home.hero')) &&

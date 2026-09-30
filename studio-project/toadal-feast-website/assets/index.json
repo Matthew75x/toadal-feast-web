@@ -14,9 +14,15 @@
       "referenceSource": "reference/assets/images/world/candy-kingdom.webp",
       "width": 1424,
       "height": 750,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "hero", "canonical-game-environment"]
+      "tags": [
+        "website-home",
+        "hero",
+        "canonical-game-environment"
+      ]
     },
     {
       "id": "asset.home.world.mobile",
@@ -31,9 +37,16 @@
       "referenceSource": "reference/assets/images/world/candy-kingdom-mobile.webp",
       "width": 470,
       "height": 750,
-      "renderTargets": ["website-home-mobile"],
+      "renderTargets": [
+        "website-home-mobile"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "hero", "responsive-crop", "source-candy-kingdom"]
+      "tags": [
+        "website-home",
+        "hero",
+        "responsive-crop",
+        "source-candy-kingdom"
+      ]
     },
     {
       "id": "asset.home.character.toadal",
@@ -48,9 +61,16 @@
       "referenceSource": "reference/assets/images/characters/toadal-portrait.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "mascot", "canonical", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "mascot",
+        "canonical",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.character.princess-lily",
@@ -65,9 +85,16 @@
       "referenceSource": "reference/assets/images/characters/princess-lily.webp",
       "width": 512,
       "height": 512,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical", "september-2026", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "canonical",
+        "september-2026",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.character.gulper",
@@ -82,9 +109,15 @@
       "referenceSource": "reference/assets/images/characters/gulper.webp",
       "width": 512,
       "height": 512,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "canonical",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.character.gully",
@@ -99,9 +132,15 @@
       "referenceSource": "reference/assets/images/characters/gully.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "canonical",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.genie.sweet-art",
@@ -116,9 +155,15 @@
       "referenceSource": "reference/assets/images/characters/genie-sweet.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical-genie-atlas-frame", "decorative"]
+      "tags": [
+        "website-home",
+        "canonical-genie-atlas-frame",
+        "decorative"
+      ]
     },
     {
       "id": "asset.home.genie.savoury-art",
@@ -133,9 +178,15 @@
       "referenceSource": "reference/assets/images/characters/genie-savoury.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical-genie-atlas-frame", "decorative"]
+      "tags": [
+        "website-home",
+        "canonical-genie-atlas-frame",
+        "decorative"
+      ]
     },
     {
       "id": "asset.home.genie.fruity-art",
@@ -150,9 +201,63 @@
       "referenceSource": "reference/assets/images/characters/genie-fruity.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical-genie-atlas-frame", "decorative"]
+      "tags": [
+        "website-home",
+        "canonical-genie-atlas-frame",
+        "decorative"
+      ]
+    },
+    {
+      "id": "asset.home.character.toadal-victory",
+      "name": "Toadal — canonical victory pose",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/toadal-victory.png",
+      "extension": "png",
+      "width": 611,
+      "height": 640,
+      "renderTargets": [
+        "website-home"
+      ],
+      "replaceable": false,
+      "tags": [
+        "website-home",
+        "mascot",
+        "canonical",
+        "hero",
+        "transparent"
+      ],
+      "bytes": 335410,
+      "sha256": "8af7dfef69ffc8d0484845453ba462776376e4d1fc574459f2c8e9d1d138e026",
+      "referenceSha256": "8af7dfef69ffc8d0484845453ba462776376e4d1fc574459f2c8e9d1d138e026",
+      "referenceSource": "reference/assets/images/characters/toadal-victory.png"
+    },
+    {
+      "id": "asset.brand.crown",
+      "name": "TOADAL FEAST brand crown accent",
+      "kind": "image",
+      "category": "brand",
+      "source": "reference/assets/brand/brand-crown.svg",
+      "extension": "svg",
+      "width": 64,
+      "height": 40,
+      "renderTargets": [
+        "website-shell"
+      ],
+      "replaceable": false,
+      "tags": [
+        "website-shell",
+        "brand",
+        "canonical-game-ui"
+      ],
+      "bytes": 708,
+      "sha256": "6fcbfd6dc4193ae86f9ffd42f999d2057fa12d4360bb35ef5d4d2b41a718ee4d",
+      "referenceSha256": "6fcbfd6dc4193ae86f9ffd42f999d2057fa12d4360bb35ef5d4d2b41a718ee4d",
+      "referenceSource": "reference/assets/brand/brand-crown.svg"
     }
   ]
 }
