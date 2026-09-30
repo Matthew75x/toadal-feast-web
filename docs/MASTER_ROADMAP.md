@@ -1,3 +1,5 @@
+[Reading 141 lines from start (total: 141 lines, 0 remaining)]
+
 # TOADAL FEAST Website — Master Roadmap
 **Status:** execution baseline
 **Canonical pages:** 30
@@ -7,17 +9,18 @@
 Complete:
 - dedicated public website repository
 - GitHub Pages staging
-- known-good TOADAL Studio 1.4.1 package
+- known-good corrected TOADAL Studio 1.4.2 package
 - 30-page reference set
 - design-system rules
 - public-truth rules
 - bounded Codex workflow
-
-Remaining gate:
-- WO-000 environment certification on D-generator.
+- WO-000 D-generator environment certification — PASS at `e639cd8ee68c6650aede6a2f04e524bef20a1c08`
 
 ## Phase 1 — Global shell + Home
-Owner: Codex implementation / ChatGPT visual acceptance.
+**Status: ACTIVE**
+Branch: `work/WO-001-global-shell-home`
+Current implementation head: `9195f77b94e6b7e8a7fec972d39889f6ed579d5e`
+
 Deliver:
 - global shell
 - shared tokens/primitives
@@ -131,11 +134,11 @@ Only after explicit owner approval.
 Production DNS/current live site remain untouched before this gate.
 
 ## Parallel operating rule
-While Codex implements the current approved work order, ChatGPT:
-- reviews diffs/screenshots;
-- resolves visual/product questions;
-- prepares canonical assets and next work order;
-- prevents scope expansion.
+The current execution model is intentionally multi-lane:
+- Codex handles bounded implementation/certification tasks where its local environment materially helps.
+- ChatGPT may implement directly on independent branches when the required source/tool access is available, in addition to reviewing visual/product quality.
+- ASSIGNATOR provides independent file, script, source and visual verification.
+- no lane may silently broaden another lane's current work order.
+- D-generator remains the Studio 1.4.2 certification/render authority until that exact environment is reproduced elsewhere.
 
-ASSIGNATOR remains clean integration/verification.
-D-generator is the primary implementation machine.
+[executed on device: ASSIGNATOR (df89eadc-2f4c-40da-b60e-eb480cd977a2)]
