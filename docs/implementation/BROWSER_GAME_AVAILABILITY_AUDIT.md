@@ -36,14 +36,26 @@ contains **Lily Pad Leap** marked `prototype`.
 
 That is donor evidence only, not current public-release proof.
 
+## Subsequent CP9 recovery
+
+After the mobile-checkout audit above, the exact CP9/V13 website donor was recovered and independently verified on ASSIGNATOR. It contains qualified cartridge manifests for **Wicked Bites** and **CLAW: Feed Gulper**, and those manifests resolve to live source authorities in GitHub.
+
+Therefore the phrase “no runnable packages were found” applies only to the current mobile-game checkout, not to the broader TOADAL website program.
+
+Exact donor/source details are recorded in:
+- `docs/implementation/CP9_SOURCE_AUTHORITY_VERIFICATION.md`
+- `docs/implementation/WO002_DONOR_PREFLIGHT_2026-09-30.md`
+
+Wicked Bites and CLAW remain PREVIEW in the new Studio site until **current-environment requalification**, but WO-002 should reuse/reseal those donors rather than search for or rebuild them from scratch.
+
 ## Conservative launch matrix
 
 | Experience | Default website state now | Promotion condition |
 |---|---|---|
-| Wicked Bites | PREVIEW | real runnable web package + QA |
+| Wicked Bites | PREVIEW | requalify recovered CP9 v5.5 donor in current player environment |
 | TOADAL Tower Defense / Feast Defense | PREVIEW | real runnable web package + QA |
 | Froggy Fruity Bash | PREVIEW | real runnable web package + QA |
-| CLAW: Feed Gulper | PREVIEW | real runnable web package + QA |
+| CLAW: Feed Gulper | PREVIEW | requalify recovered CP9 v2.5.1 donor with service-worker isolation |
 | TOADAL FEAST Arcade preview | CANDIDATE | bounded package/cartridge + website QA |
 | Lily Pad Leap | PROTOTYPE / PREVIEW | locate current prototype authority + QA |
 | Dry Dock | PLANNED | locate real implementation/package |
@@ -56,4 +68,4 @@ Until a build is certified:
 - do not use a direct Play CTA that implies a runnable game.
 
 ## Next implementation task
-WO-002 should begin with a cartridge/source audit before writing the final game registry.
+WO-002 should begin by re-verifying the exact Wicked Bites and CLAW donor source authorities and integrating them through the current player/cartridge contract. The Arcade donor remains a separate bounded-candidate audit.
