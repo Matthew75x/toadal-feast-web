@@ -60,10 +60,10 @@ The crown is a shell accent only. It does not replace the future exact approved 
 
 ## Source-contract results
 
-- Home visual contract: **26/26 PASS**
+- Home visual contract: **28/28 PASS**
 - navigation truth: **14/14 PASS**
 - Pages base-path suite: **8/8 PASS**
-- canonical asset audit: **10/10 PASS**
+- canonical asset audit: **11/11 PASS**
 - JSON parse: PASS
 - `git diff --check`: PASS
 

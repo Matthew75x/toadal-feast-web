@@ -29,10 +29,10 @@ Current state:
 The existing architecture was preserved; only bounded composition/polish work was done.
 
 Current source preflight:
-- visual contract: **26/26 PASS**
+- visual contract: **28/28 PASS**
 - navigation truth: **14/14 PASS**
 - Pages base-path tests: **8/8 PASS**
-- canonical asset audit: **10/10 PASS**
+- canonical asset audit: **11/11 PASS**
 - interaction smoke: **13/13 PASS**
 - six required responsive viewports: **0 horizontal-overflow offenders**
 - desktop hero: **510px**

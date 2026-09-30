@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import crypto from 'node:crypto';
 
 const repo = path.resolve(process.argv[2] || '.');
 const project = path.join(repo, 'studio-project', 'toadal-feast-website');
@@ -10,6 +11,8 @@ const nav = JSON.parse(read(path.join('collections', 'navigation.json')));
 const advanced = JSON.parse(read(path.join('collections', 'advanced-code.json')));
 const symbols = JSON.parse(read(path.join('collections', 'symbols.json')));
 const assets = JSON.parse(read(path.join('assets', 'index.json')));
+const canonicalAssetManifest = JSON.parse(fs.readFileSync(path.join(repo, 'docs', 'implementation', 'CANONICAL_ASSET_SOURCE_MANIFEST.json'), 'utf8'));
+const sha256File = (abs) => crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
 const gameIndex = JSON.parse(read(path.join('games', 'index.json')));
 const css = read(path.join('reference', 'assets', 'css', 'site.css'));
 const html = home.components?.map(c => c?.props?.html || '').join('\n') || '';
@@ -48,6 +51,24 @@ check('hero-canonical-toadal-victory', /assets\/images\/characters\/toadal-victo
 check('branded-header-crown', /brand-crown\.svg/i.test(css) &&
   assets.assets?.some(asset => asset.id === 'asset.brand.crown'),
   'The shared shell has an explicit canonical brand-crown accent registered in the asset graph.');
+const assetById = new Map((assets.assets || []).map(asset => [asset.id, asset]));
+const canonicalByRole = new Map((canonicalAssetManifest.required || []).map(asset => [asset.role, asset]));
+const victoryAsset = assetById.get('asset.home.character.toadal-victory');
+const victoryAuthority = canonicalByRole.get('toadalVictory');
+const crownAsset = assetById.get('asset.brand.crown');
+const crownAuthority = canonicalByRole.get('brandCrown');
+const victoryActualSha = victoryAsset ? sha256File(path.join(project, victoryAsset.source)) : null;
+const crownActualSha = crownAsset ? sha256File(path.join(project, crownAsset.source)) : null;
+check('hero-toadal-hash-chain', !!victoryAsset && !!victoryAuthority &&
+  victoryActualSha === victoryAsset.sha256 &&
+  victoryActualSha === victoryAsset.referenceSha256 &&
+  victoryActualSha === victoryAuthority.sha256,
+  'Hero Toadal bytes match the website asset index and canonical game-asset authority.');
+check('brand-crown-hash-chain', !!crownAsset && !!crownAuthority &&
+  crownActualSha === crownAsset.sha256 &&
+  crownActualSha === crownAsset.referenceSha256 &&
+  crownActualSha === crownAuthority.sha256,
+  'Brand-crown bytes match the website asset index and canonical game-asset authority.');
 check('approved-dense-desktop-bands', /grid-template-areas[\s\S]*games-intro pass[\s\S]*app next/i.test(css),
   'Desktop composition pairs Games with Feast Pass and App conversion with What’s Next, matching the approved dense portal hierarchy.');
 check('character-companion-treatment', /\.companion-toggle[\s\S]*background:\s*transparent/i.test(css) &&
