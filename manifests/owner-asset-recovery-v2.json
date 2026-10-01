@@ -23,7 +23,13 @@
       "needsRegeneration": 4,
       "libraryArtifacts": 6,
       "committed": false,
-      "reason": "Archive exceeds GitHub 100 MiB per-file limit."
+      "reason": "Archive exceeds GitHub 100 MiB per-file limit.",
+      "viewer": {
+        "path": "TOADAL_ASSET_LIBRARY_MASTER_V2/00_START_HERE/BROWSE_LIBRARY.html",
+        "bytes": 43245,
+        "sha256": "46f201264f70a4a4734201dc8327103604e5b51e8b4012dc41ebc2d1128639bf",
+        "role": "Interactive visual catalog for Production Ready, Sprite Sheets, User References and Alternates; badges include PREFERRED, PREFERRED_VARIANT and CANONICAL_REFERENCE."
+      }
     },
     "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1(1).zip": {
       "sha256": "0361a993c9ec2f905adba1b9df66a1c16e7a3a66ad26232351914201ce38681a",
@@ -43,8 +49,11 @@
     "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip": {
       "sha256": "06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a",
       "bytes": 99780639,
-      "committed": false,
-      "reason": "Local curated production-ready subset; selected source entries are verified against the re-supplied Master V2."
+      "committed": true,
+      "reason": "Complete verified 71-image production-ready pack preserved on dedicated archive branch; active runtime uses only explicitly selected states.",
+      "remoteBranch": "archive/production-ready-asset-pack-20261001",
+      "remoteCommit": "5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba",
+      "remotePath": "archives/asset-packs/TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip"
     }
   },
   "directOwnerReferences": [
@@ -586,5 +595,14 @@
       "runtime": "download",
       "notes": "Website extension backed by Master V2 Downloads role."
     }
-  ]
+  ],
+  "remotePreservation": {
+    "productionReadyPack": {
+      "branch": "archive/production-ready-asset-pack-20261001",
+      "commit": "5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba",
+      "path": "archives/asset-packs/TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip"
+    },
+    "masterArchive": "Not committed because 212,344,954 bytes exceeds GitHub normal 100 MiB per-file limit.",
+    "interactiveViewer": "Identified by exact internal path and SHA-256 in Master V2; source classification is also normalized into repository manifests."
+  }
 }

@@ -9,7 +9,9 @@ This record closes the ambiguity around the website mascot/source libraries re-s
 - `FroggyFeast_Food_Assets_Labeled.zip` — SHA-256 `7581092a3d8ead33f9f658fb25887725b93169dddc082b6416da714da5abac7d`, 82,539,537 bytes, 58 archive files.
 - The already-present curated subset `TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip` remains verified at SHA-256 `06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a`, 99,780,639 bytes.
 
-The large archives remain outside Git because they exceed or approach GitHub's normal file-size limits. Operational provenance is preserved by exact archive hashes, per-entry hashes, source-entry names and web derivatives in the manifests.
+The full Master V2 and interactive-handoff archives remain outside active Git history because each exceeds GitHub's normal 100 MiB per-file limit. The complete 71-image production-ready subset is now remotely preserved as one verified archive on `archive/production-ready-asset-pack-20261001@5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba` at `archives/asset-packs/TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip`. Operational provenance is preserved by exact archive hashes, per-entry hashes, source-entry names and web derivatives in the manifests.
+
+The exact visual catalog the owner referred to is `TOADAL_ASSET_LIBRARY_MASTER_V2/00_START_HERE/BROWSE_LIBRARY.html` inside Master V2: 43,245 bytes, SHA-256 `46f201264f70a4a4734201dc8327103604e5b51e8b4012dc41ebc2d1128639bf`. It is the source viewer that separates Production Ready, Sprite Sheets, User References and Alternates and displays statuses such as `PREFERRED`, `PREFERRED_VARIANT` and `CANONICAL_REFERENCE`.
 
 ## Binding classification rule
 
