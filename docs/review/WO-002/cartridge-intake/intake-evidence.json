@@ -1,0 +1,51 @@
+{
+  "schema": "toadal-feast.wo002-cartridge-intake-evidence.v1",
+  "date": "2026-09-30",
+  "baseCommit": "3e82fcd6990b92166769475aed3beffbec5b71f1",
+  "qualificationBoundary": "Imported packages remain PREVIEW until current player bridge/browser requalification passes.",
+  "qualifiedPreviewSources": {
+    "wickedBites": "https://6abaf01a1add5a24ea0bffbd--toadal-wicked-cartridge-preview.netlify.app/v/5.5/index.html",
+    "clawFeedGulper": "https://6abb0b5698d4e49a8a2b5d05--toadal-claw-cartridge-preview.netlify.app/v/2.5.1/"
+  },
+  "cartridges": [
+    {
+      "id": "wicked-bites",
+      "packageFiles": 3,
+      "packageBytes": 1498100,
+      "packageLedgerSha256": "d1dcc608ae8ce827ab431ac508eed21768bd5323ac5fb6d1b396ed8a2cfb7d1b",
+      "runtimeFiles": 1,
+      "runtimeBytes": 1462042,
+      "runtimeLedgerSha256": "a778eaad7458d7fe39b953dc192535c24c05727a1e99bf2afe4e1b8fa66a8caf",
+      "entry": {
+        "path": "index.html",
+        "bytes": 1462042,
+        "sha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5"
+      },
+      "serviceWorker": null
+    },
+    {
+      "id": "claw-feed-gulper",
+      "packageFiles": 86,
+      "packageBytes": 16637985,
+      "packageLedgerSha256": "0bdfc476a893f70e740b772b9fb0dde45a10b76ff5a72767da9287b2ee657755",
+      "runtimeFiles": 84,
+      "runtimeBytes": 16615206,
+      "runtimeLedgerSha256": "1305df7cca64d5ee189735fb36146b3cd28f374d5a07dd5f18f6e24ab4e1fdcc",
+      "entry": {
+        "path": "index.html",
+        "bytes": 16127,
+        "sha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701"
+      },
+      "serviceWorker": {
+        "path": "sw.js",
+        "bytes": 4039,
+        "sha256": "fb4b224cda4de0016c260b578882a3eb45d7a77086d68200ef87d7ee679ceadc"
+      }
+    }
+  ],
+  "notes": [
+    "Wicked Bites runtime is the exact previously qualified hosted single-file artifact.",
+    "CLAW runtime is the exact previously qualified hosted service-worker precache set: 84 web files recovered without the three source-only release helpers.",
+    "poster.webp and cartridge.json are website integration metadata and are not part of the historical donor runtime hash."
+  ]
+}

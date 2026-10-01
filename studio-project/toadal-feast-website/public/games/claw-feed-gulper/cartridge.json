@@ -1,0 +1,57 @@
+{
+  "schemaVersion": 1,
+  "id": "claw-feed-gulper",
+  "displayName": "CLAW: Feed Gulper",
+  "version": "2.5.1",
+  "publicState": "PREVIEW",
+  "entry": "index.html",
+  "poster": "poster.webp",
+  "orientation": "any",
+  "inputs": {
+    "touch": true,
+    "keyboard": true,
+    "mouse": true,
+    "gamepad": false
+  },
+  "storage": {
+    "namespace": "toadal.claw.feed-gulper.v7",
+    "persistence": "local",
+    "accountSync": "none"
+  },
+  "protocol": {
+    "name": "toadal.game",
+    "version": 1
+  },
+  "fullscreenSupport": true,
+  "mobileSupport": true,
+  "hostIntegration": {
+    "state": "PENDING_CURRENT_PLAYER_ADAPTER",
+    "sourceProtocol": "standalone-donor",
+    "messageBridgeCertified": false
+  },
+  "serviceWorker": {
+    "present": true,
+    "scopeRequirement": "cartridge-directory-only",
+    "cacheName": "claw-feed-gulper-2.5.1"
+  },
+  "source": {
+    "repository": "Matthew75x/claw-feed-gulper",
+    "ref": "7c49d1bf70ebf6503fde3b533a1acd356d12c77c",
+    "entrySource": "dist/index.html",
+    "sourceHash": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
+    "releaseTree": "7a55e0e637790418e121f9c29c0ea3b420e7107c"
+  },
+  "knownLimitations": [
+    "Current imported donor is PREVIEW until the toadal.game.v1 host bridge is integrated and certified.",
+    "Service worker must remain scoped to the cartridge directory and must not control the wider TOADAL website.",
+    "The donor retains its established legacy localStorage keys rather than the preferred toadal:game:<game-id>:v1 namespace.",
+    "Three source-only release-helper files were intentionally excluded: PLAYER_SERVER.ps1, START_CLAW.cmd, and build-manifest.json."
+  ],
+  "donorEvidence": {
+    "artifactFiles": 87,
+    "artifactBytes": 16618931,
+    "qualification": "PASS",
+    "deploymentQualification": "PASS",
+    "webRuntimeFiles": 84
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "page.play.wicked-bites",
+  "route": "/play/wicked-bites/",
+  "title": "Wicked Bites · TOADAL FEAST",
+  "description": "Dodge trouble, chase distance, bank Candy, and use character abilities in a compact arcade run built for desktop and touch play.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "page.play.wicked-bites.hero",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "game-detail-hero",
+        "html": "<section class='game-detail-hero'><a class='game-detail-back' href='../'>← Back to Play</a><div class='game-detail-grid'><div class='game-detail-copy'><p class='section-kicker'>FAST ARCADE BITES</p><h1 class='section-heading'>Wicked Bites</h1><div class='game-detail-status'><span class='status-chip status-chip--preview'>Preview</span><span>Version 5.5</span></div><p class='section-lede'>Dodge trouble, chase distance, bank Candy, and use character abilities in a compact arcade run built for desktop and touch play.</p><button class='button-link button-link--primary' type='button' disabled>Play preview — coming soon</button><p class='game-detail-disclosure'>This browser version is still being prepared, so launch stays disabled for now.</p></div><figure class='game-detail-shot'><img src='../../assets/images/games/wicked-bites-v5.5.webp' alt='Wicked Bites v5.5 gameplay preview' width='844' height='390'><figcaption>Gameplay preview from the current browser build.</figcaption></figure></div></section>"
+      }
+    },
+    {
+      "id": "page.play.wicked-bites.facts",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "game-detail-facts",
+        "html": "<section class='game-detail-facts'><article><h2>How it plays</h2><p>Use keyboard or touch to play. Mouse works for menus and controls. Gamepad support is not currently advertised.</p></article><article><h2>Your progress</h2><p>Progress stays on this browser. Account sync is not available.</p></article><article><h2>On the web</h2><p>The browser version is being prepared for this site. Launch will appear here only when it is ready.</p></article></section>"
+      }
+    }
+  ],
+  "referenceFile": "play/wicked-bites/index.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "Wicked Bites · TOADAL FEAST",
+    "description": "Dodge trouble, chase distance, bank Candy, and use character abilities in a compact arcade run built for desktop and touch play."
+  }
+}

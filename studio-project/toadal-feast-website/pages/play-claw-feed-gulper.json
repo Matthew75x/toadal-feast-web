@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "page.play.claw-feed-gulper",
+  "route": "/play/claw-feed-gulper/",
+  "title": "CLAW: Feed Gulper · TOADAL FEAST",
+  "description": "Control the claw, grab food, and feed Gulper across campaign, challenges, endless play, and demanding mastery modes.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "page.play.claw-feed-gulper.hero",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "game-detail-hero",
+        "html": "<section class='game-detail-hero'><a class='game-detail-back' href='../'>← Back to Play</a><div class='game-detail-grid'><div class='game-detail-copy'><p class='section-kicker'>GRAB · DROP · FEED</p><h1 class='section-heading'>CLAW: Feed Gulper</h1><div class='game-detail-status'><span class='status-chip status-chip--preview'>Preview</span><span>Version 2.5.1</span></div><p class='section-lede'>Control the claw, grab food, and feed Gulper across campaign, challenges, endless play, and demanding mastery modes.</p><button class='button-link button-link--primary' type='button' disabled>Play preview — coming soon</button><p class='game-detail-disclosure'>This browser version is still being prepared, so launch stays disabled for now.</p></div><figure class='game-detail-shot'><img src='../../assets/images/games/claw-feed-gulper-v2.5.1.webp' alt='CLAW Feed Gulper v2.5.1 gameplay preview' width='844' height='390'><figcaption>Gameplay preview from the current browser build.</figcaption></figure></div></section>"
+      }
+    },
+    {
+      "id": "page.play.claw-feed-gulper.facts",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "game-detail-facts",
+        "html": "<section class='game-detail-facts'><article><h2>How it plays</h2><p>Touch, keyboard, and mouse are supported. The game is designed to work across phone, tablet, and desktop layouts.</p></article><article><h2>Your progress</h2><p>Progress stays on this browser. Account sync is not available.</p></article><article><h2>On the web</h2><p>The browser version is being prepared for this site. Launch will appear here only when it is ready.</p></article></section>"
+      }
+    }
+  ],
+  "referenceFile": "play/claw-feed-gulper/index.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "CLAW: Feed Gulper · TOADAL FEAST",
+    "description": "Control the claw, grab food, and feed Gulper across campaign, challenges, endless play, and demanding mastery modes."
+  }
+}

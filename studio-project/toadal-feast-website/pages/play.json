@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "page.play",
+  "route": "/play/",
+  "title": "Play · TOADAL FEAST",
+  "description": "Explore TOADAL FEAST browser adventures, qualified previews, and what is coming next.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.play.hero",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "play-hero",
+        "anchorId": "play-top",
+        "html": "<section class='play-hero'><div class='play-hero__copy'><p class='section-kicker'>PLAY IN THE FEAST WORLD</p><h1 class='section-heading'>Pick your next little adventure.</h1><p class='section-lede'>Wicked Bites and CLAW: Feed Gulper are being prepared for browser play. Explore their preview pages now; Play buttons will appear when each browser version is ready.</p><div class='play-status-row' aria-label='Current browser-game availability'><span class='status-chip status-chip--preview'>2 browser previews</span><span class='status-chip status-chip--planned'>No browser launches yet</span></div></div><div class='play-hero__mascot'><img src='../assets/images/characters/toadal-portrait.webp' alt='Toadal, the crowned golden-yellow hero of TOADAL FEAST' width='256' height='256'></div></section>"
+      }
+    },
+    {
+      "id": "component.play.featured",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "play-featured",
+        "anchorId": "featured-previews",
+        "html": "<section class='play-section'><div class='play-section__heading'><p class='section-kicker'>BROWSER PREVIEWS</p><h2 class='section-heading'>The first two browser adventures</h2><p class='section-lede'>These previews come from real working game builds. Explore each game now; launch stays disabled until its browser version is ready.</p></div><div class='play-feature-grid'><article class='play-feature-card'><img src='../assets/images/games/wicked-bites-v5.5.webp' alt='Wicked Bites v5.5 gameplay preview' width='844' height='390' loading='lazy'><div><span class='status-chip status-chip--preview'>Preview</span><h3>Wicked Bites</h3><p>Fast arcade action built for short browser sessions. Designed for quick keyboard and touch sessions.</p><a class='button-link button-link--secondary' href='./wicked-bites/'>View Wicked Bites</a></div></article><article class='play-feature-card'><img src='../assets/images/games/claw-feed-gulper-v2.5.1.webp' alt='CLAW Feed Gulper v2.5.1 gameplay preview' width='844' height='390' loading='lazy'><div><span class='status-chip status-chip--preview'>Preview</span><h3>CLAW: Feed Gulper</h3><p>A timing-and-feeding challenge with campaign, challenge, endless, REAL GAMER, and LONG DROP modes in its current browser build.</p><a class='button-link button-link--secondary' href='./claw-feed-gulper/'>View CLAW</a></div></article></div></section>"
+      }
+    },
+    {
+      "id": "component.play.all",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "play-all",
+        "anchorId": "all-games",
+        "html": "<section class='play-section'><div class='play-section__heading'><p class='section-kicker'>THE REST OF THE FEAST</p><h2 class='section-heading'>More browser adventures are being prepared.</h2><p class='section-lede'>Preview means exactly that: the idea or donor exists, but there is no public launch until a real browser build is ready.</p></div><div class='play-mini-grid'><article><span class='status-chip status-chip--preview'>Preview</span><h3>TOADAL Tower Defense</h3><p>Defense-game concept. A runnable package still needs to be located and certified.</p></article><article><span class='status-chip status-chip--preview'>Preview</span><h3>Froggy Fruity Bash</h3><p>Fruit-focused browser concept. No public build is advertised yet.</p></article><article><span class='status-chip status-chip--preview'>Preview</span><h3>Lily Pad Leap</h3><p>Prototype lineage exists; current browser authority still needs qualification.</p></article><article><span class='status-chip status-chip--planned'>Planned</span><h3>Dry Dock</h3><p>A future defense experience. No runnable package is claimed.</p></article></div></section>"
+      }
+    },
+    {
+      "id": "component.play.app",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "play-app",
+        "html": "<section class='play-app-cta'><div><p class='section-kicker'>THE FLAGSHIP ADVENTURE</p><h2 class='section-heading'>Want the full feast?</h2><p class='section-lede'>The mobile app remains the complete TOADAL FEAST experience. Store links will appear only when verified destinations are ready.</p></div><a class='button-link button-link--primary' href='../#app'>Discover the app</a></section>"
+      }
+    }
+  ],
+  "referenceFile": "play/index.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "Play · TOADAL FEAST",
+    "description": "Explore TOADAL FEAST browser adventures and qualified previews."
+  }
+}

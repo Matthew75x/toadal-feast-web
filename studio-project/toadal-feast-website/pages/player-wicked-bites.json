@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "id": "page.player.wicked-bites",
+  "route": "/play/wicked-bites/player/",
+  "title": "Wicked Bites Player · TOADAL FEAST",
+  "description": "Browser player preview surface for Wicked Bites.",
+  "publicationState": "draft",
+  "components": [
+    {
+      "id": "component.player.wicked-bites",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "browser-player",
+        "html": "<section class='browser-player' data-browser-player data-game-id='wicked-bites' data-cartridge-src='../../../games/wicked-bites/index.html'><header class='browser-player__bar'><a class='browser-player__exit' href='../'>← Exit</a><div><span class='browser-player__eyebrow'>BROWSER PREVIEW</span><strong>Wicked Bites</strong></div><div class='browser-player__actions'><button type='button' data-player-mute aria-pressed='false'>Sound on</button><button type='button' data-player-fullscreen>Fullscreen</button></div></header><div class='browser-player__state' role='status' aria-live='polite' data-player-status>Preparing preview…</div><div class='browser-player__frame-wrap' data-player-frame-wrap><iframe title='Wicked Bites browser preview' data-player-frame src='../../../games/wicked-bites/index.html' sandbox='allow-scripts allow-same-origin allow-forms allow-pointer-lock' allow='fullscreen' loading='eager'></iframe></div><div class='browser-player__error' data-player-error hidden><h1>That preview did not start.</h1><p>You can retry without losing the rest of the site.</p><button type='button' data-player-retry>Retry</button><a href='../'>Return to game details</a></div></section>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 1,
+  "id": "wicked-bites",
+  "displayName": "Wicked Bites",
+  "version": "5.5",
+  "publicState": "PREVIEW",
+  "entry": "index.html",
+  "poster": "poster.webp",
+  "orientation": "any",
+  "inputs": {
+    "touch": true,
+    "keyboard": true,
+    "mouse": true,
+    "gamepad": false
+  },
+  "storage": {
+    "namespace": "toadalFeast.wickedBites.standalone.v4",
+    "persistence": "local",
+    "accountSync": "none"
+  },
+  "protocol": {
+    "name": "toadal.game",
+    "version": 1
+  },
+  "fullscreenSupport": true,
+  "mobileSupport": true,
+  "hostIntegration": {
+    "state": "ADAPTED_PENDING_BROWSER_QUALIFICATION",
+    "sourceProtocol": "standalone-donor",
+    "adapter": "toadal-host-bridge.js",
+    "adapterSha256": "c2ec3b47cc0e02d4ff90424ed07047cb575f9e3acb3da6e1a6eab748437d601c",
+    "adaptedEntrySha256": "99a46f1e8ba6e5617959d51b4189754f9cf98ea69200544f239fea8731ac2e38",
+    "messageBridgeCertified": false
+  },
+  "source": {
+    "repository": "Matthew75x/feast-crossing-wicked-bites",
+    "ref": "6fff3c89605092ba5c5e122565cb98415c8ab5e5",
+    "entrySource": "dist/PLAY_FEAST_CROSSING_WICKED_BITES_V5_5_MOTION_JUICE.html",
+    "sourceHash": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
+    "qualifiedDonorHash": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5"
+  },
+  "knownLimitations": [
+    "The exact qualified donor runtime was adapted with a small website host bridge; the adapted entry requires fresh browser qualification before PUBLIC promotion.",
+    "The donor retains its established legacy localStorage key rather than the preferred toadal:game:<game-id>:v1 namespace.",
+    "Home and Play launch routes remain disabled until current player qualification passes."
+  ],
+  "donorEvidence": {
+    "artifactFiles": 1,
+    "artifactBytes": 1462042,
+    "qualification": "PASS",
+    "deploymentQualification": "PASS"
+  }
+}
