@@ -33,9 +33,11 @@ const ALIASES = Object.freeze({
 export function normalizeCode(rawCode) {
   const value = String(rawCode || "").trim().toLowerCase();
   if (!value) return null;
-  const safe = value.replace(/[^a-z0-9_-]/g, "");
-  if (!safe) return null;
-  return ALIASES[safe] || safe;
+  // Reject malformed codes rather than deleting invalid characters. Deleting
+  // characters can accidentally transform an invalid public route into a valid
+  // campaign alias.
+  if (!/^[a-z0-9_-]+$/.test(value)) return null;
+  return ALIASES[value] || value;
 }
 
 export function campaignFor(rawCode) {
@@ -73,7 +75,13 @@ export function resolveRoute({
 } = {}) {
   const code = codeFromLocation(url || DEFAULT_DESTINATIONS.website);
   const campaign = campaignFor(code);
-  const destination = chooseDestination({ userAgent, destinations });
+  const platform = platformFamily(userAgent);
+  // Contract: unknown or malformed campaign codes must fall back to the
+  // TOADAL-controlled website. Platform/store routing applies only after a
+  // campaign has been recognized.
+  const destination = campaign
+    ? chooseDestination({ userAgent, destinations })
+    : (destinations?.website || DEFAULT_DESTINATIONS.website);
 
   return {
     routeVersion: ROUTE_VERSION,
@@ -81,7 +89,7 @@ export function resolveRoute({
     source: campaign?.source || "unknown",
     medium: campaign?.medium || "unknown",
     campaign: campaign?.campaign || "unattributed",
-    platform: platformFamily(userAgent),
+    platform,
     destination,
     knownCampaign: Boolean(campaign),
   };
