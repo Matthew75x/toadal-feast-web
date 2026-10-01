@@ -1,0 +1,36 @@
+{
+  "schema": "toadal-feast.asset-pack-archive.v1",
+  "date": "2026-10-01",
+  "branch": "archive/production-ready-asset-pack-20261001",
+  "pack": {
+    "file": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip",
+    "bytes": 99780639,
+    "sha256": "06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a",
+    "productionReadyImages": 71
+  },
+  "master": {
+    "file": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip",
+    "bytes": 212344954,
+    "sha256": "a38cdfaa57a801e198fff716029b8cd71e8a0096695d4989edffe078177ec8ea",
+    "committed": false,
+    "reason": "exceeds GitHub normal 100 MiB per-file limit",
+    "viewer": {
+      "path": "TOADAL_ASSET_LIBRARY_MASTER_V2/00_START_HERE/BROWSE_LIBRARY.html",
+      "bytes": 43245,
+      "sha256": "46f201264f70a4a4734201dc8327103604e5b51e8b4012dc41ebc2d1128639bf"
+    }
+  },
+  "handoff": {
+    "file": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1(1).zip",
+    "bytes": 157708471,
+    "sha256": "0361a993c9ec2f905adba1b9df66a1c16e7a3a66ad26232351914201ce38681a",
+    "states": 35,
+    "committed": false
+  },
+  "food": {
+    "file": "FroggyFeast_Food_Assets_Labeled.zip",
+    "bytes": 82539537,
+    "sha256": "7581092a3d8ead33f9f658fb25887725b93169dddc082b6416da714da5abac7d",
+    "committed": false
+  }
+}
