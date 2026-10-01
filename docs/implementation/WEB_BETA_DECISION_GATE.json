@@ -1,0 +1,30 @@
+{
+  "schema": "toadal-feast.web-beta-decision-gate.v1",
+  "minimumQualifiedSessions": 100,
+  "metrics": {
+    "launchSuccessRate": {
+      "continue": ">=0.95",
+      "iterate": "0.90-0.949",
+      "hold": "<0.90"
+    },
+    "replayOrExperienceSwitchRate": {
+      "continue": ">=0.35",
+      "iterate": "0.15-0.349",
+      "hold": "<0.15"
+    },
+    "meaningfulPlayToAppCtaRate": {
+      "continue": ">=0.10",
+      "iterate": "0.03-0.099",
+      "hold": "<0.03"
+    },
+    "runtimeErrorRate": {
+      "holdIf": ">0.05"
+    }
+  },
+  "meaning": {
+    "continue": "Keep the beta direction and continue planned expansion.",
+    "iterate": "Improve onboarding/pacing/results/load/conversion before adding scope.",
+    "hold": "Pause scope expansion and repair the core experience."
+  },
+  "privacy": "coarse vendor-neutral events only; no raw saves, fingerprinting, or arbitrary user text"
+}
