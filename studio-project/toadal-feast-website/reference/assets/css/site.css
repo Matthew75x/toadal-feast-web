@@ -5490,11 +5490,6 @@ body:has(.home-hero) #app .app-conversion-copy > .section-kicker {
   }
 }
 
-main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
-  inset-block-start: max(72px, calc(env(safe-area-inset-top, 0px) + 12px)) !important;
-  inset-block-end: auto !important;
-}
-
 /* Keep the Home companion outside the desktop grid and mobile document flow. */
 main:has(.home-hero) > #companion {
   height: 0 !important;
@@ -5503,13 +5498,56 @@ main:has(.home-hero) > #companion {
   overflow: visible !important;
 }
 
-/* Keep the floating helper clear of Search's persistent bottom-edge form controls. */
-body:has(.search-page) .toadal-companion {
+/* Keep the fixed companion out of Home's hero/section text at all tested scroll positions. */
+main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
   inset-block-start: max(72px, calc(env(safe-area-inset-top, 0px) + 12px)) !important;
   inset-block-end: auto !important;
 }
 
+/* Search and Contact keep fixed bottom-edge controls/forms clear of the companion. */
+body:has(.search-page) .toadal-companion,
 body:has(#contact-category) .toadal-companion {
   inset-block-start: max(72px, calc(env(safe-area-inset-top, 0px) + 12px)) !important;
   inset-block-end: auto !important;
+}
+
+@media (max-width: 760px) {
+  body:has(#contact-category) .toadal-companion {
+    inset-block-start: max(112px, calc(env(safe-area-inset-top, 0px) + 32px)) !important;
+  }
+}
+
+/* Beat the legacy Home-specific utility-icon sizing; keep Toadal appreciable. */
+main:has(.home-hero) > [data-studio-variant="companion"] .companion-toggle,
+main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
+  width: 96px;
+  height: 102px;
+}
+
+main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
+  max-height: 102px;
+}
+
+@media (max-width: 760px) {
+  main:has(.home-hero) > [data-studio-variant="companion"] .companion-toggle,
+  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
+    width: 82px;
+    height: 88px;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
+    max-height: 88px;
+  }
+}
+
+@media (max-width: 360px) {
+  main:has(.home-hero) > [data-studio-variant="companion"] .companion-toggle,
+  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
+    width: 72px;
+    height: 78px;
+  }
+
+  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
+    max-height: 78px;
+  }
 }

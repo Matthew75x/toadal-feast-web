@@ -4,22 +4,22 @@
   "captures": [
     {
       "file": "docs/review/owner-visual-closure-20261001/home-1440x900.png",
-      "bytes": 1084864,
+      "bytes": 1086088,
       "description": "Home desktop"
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/home-320x800.png",
-      "bytes": 294204,
+      "bytes": 294859,
       "description": "Home narrow mobile (layout inspection)"
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/home-390x844.png",
-      "bytes": 382198,
+      "bytes": 382565,
       "description": "Home mobile"
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/home-430x932.png",
-      "bytes": 444183,
+      "bytes": 445149,
       "description": "Home large mobile"
     },
     {
@@ -44,32 +44,32 @@
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/contact-390x844.png",
-      "bytes": 237721,
+      "bytes": 235925,
       "description": "Contact mobile"
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/companion-scroll-desktop.png",
-      "bytes": 1100088,
+      "bytes": 1102855,
       "description": "Toadal remains fixed while Home is scrolled (desktop)."
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/companion-scroll-mobile.png",
-      "bytes": 366230,
+      "bytes": 367087,
       "description": "Toadal remains fixed while Home is scrolled (mobile)."
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/companion-scroll-large-mobile.png",
-      "bytes": 425169,
+      "bytes": 422270,
       "description": "Toadal remains fixed while Home is scrolled (large-mobile)."
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/companion-reaction-world-hover.png",
-      "bytes": 1065617,
+      "bytes": 1066503,
       "description": "Real pointer hover on World nav changes Toadal reaction and artwork."
     },
     {
       "file": "docs/review/owner-visual-closure-20261001/companion-reaction-world-touch-390x844.png",
-      "bytes": 215210,
+      "bytes": 219326,
       "description": "Real browser touch on the World discovery card changes Toadal reaction and artwork."
     }
   ],
@@ -77,8 +77,8 @@
     "visible-1440": {
       "position": "fixed",
       "visible": true,
-      "width": 68,
-      "height": 72,
+      "width": 96,
+      "height": 102,
       "imageVisible": true
     },
     "hero-geometry-1440": {
@@ -155,8 +155,8 @@
     "visible-390": {
       "position": "fixed",
       "visible": true,
-      "width": 52,
-      "height": 56,
+      "width": 82,
+      "height": 88,
       "imageVisible": true
     },
     "hero-geometry-390": {
@@ -194,8 +194,8 @@
     "visible-430": {
       "position": "fixed",
       "visible": true,
-      "width": 52,
-      "height": 56,
+      "width": 82,
+      "height": 88,
       "imageVisible": true
     },
     "hero-geometry-430": {
@@ -237,6 +237,7 @@
       "companionFixed": true,
       "companionLoaded": true,
       "buttonVisible": true,
+      "buttonWidth": 82,
       "overlaps": {
         "controls": [],
         "copy": []
@@ -249,6 +250,7 @@
       "companionFixed": true,
       "companionLoaded": true,
       "buttonVisible": true,
+      "buttonWidth": 108,
       "overlaps": {
         "controls": [],
         "copy": []
@@ -261,6 +263,7 @@
       "companionFixed": true,
       "companionLoaded": true,
       "buttonVisible": true,
+      "buttonWidth": 82,
       "overlaps": {
         "controls": [],
         "copy": []
@@ -273,6 +276,7 @@
       "companionFixed": true,
       "companionLoaded": true,
       "buttonVisible": true,
+      "buttonWidth": 82,
       "overlaps": {
         "controls": [],
         "copy": []
@@ -285,12 +289,12 @@
           "scrollY": 0,
           "position": "fixed",
           "rect": {
-            "x": 1358,
+            "x": 1330,
             "y": 72,
-            "width": 68,
-            "height": 72,
+            "width": 96,
+            "height": 102,
             "right": 1426,
-            "bottom": 144
+            "bottom": 174
           },
           "image": true,
           "within": true
@@ -299,26 +303,26 @@
           "scrollY": 94,
           "position": "fixed",
           "rect": {
-            "x": 1358,
+            "x": 1330,
             "y": 72,
-            "width": 68,
-            "height": 72,
+            "width": 96,
+            "height": 102,
             "right": 1426,
-            "bottom": 144
+            "bottom": 174
           },
           "image": true,
           "within": true
         },
         {
-          "scrollY": 296,
+          "scrollY": 244,
           "position": "fixed",
           "rect": {
-            "x": 1358,
+            "x": 1330,
             "y": 72,
-            "width": 68,
-            "height": 72,
+            "width": 96,
+            "height": 102,
             "right": 1426,
-            "bottom": 144
+            "bottom": 174
           },
           "image": true,
           "within": true
@@ -351,12 +355,12 @@
           "scrollY": 0,
           "position": "fixed",
           "rect": {
-            "x": 326,
+            "x": 296,
             "y": 72,
-            "width": 52,
-            "height": 56,
+            "width": 82,
+            "height": 88,
             "right": 378,
-            "bottom": 128
+            "bottom": 160
           },
           "image": true,
           "within": true
@@ -365,12 +369,12 @@
           "scrollY": 83,
           "position": "fixed",
           "rect": {
-            "x": 326,
+            "x": 296,
             "y": 72,
-            "width": 52,
-            "height": 56,
+            "width": 82,
+            "height": 88,
             "right": 378,
-            "bottom": 128
+            "bottom": 160
           },
           "image": true,
           "within": true
@@ -379,12 +383,12 @@
           "scrollY": 180,
           "position": "fixed",
           "rect": {
-            "x": 326,
+            "x": 296,
             "y": 72,
-            "width": 52,
-            "height": 56,
+            "width": 82,
+            "height": 88,
             "right": 378,
-            "bottom": 128
+            "bottom": 160
           },
           "image": true,
           "within": true
@@ -417,40 +421,40 @@
           "scrollY": 0,
           "position": "fixed",
           "rect": {
-            "x": 366,
+            "x": 336,
             "y": 72,
-            "width": 52,
-            "height": 56,
+            "width": 82,
+            "height": 88,
             "right": 418,
-            "bottom": 128
+            "bottom": 160
           },
           "image": true,
           "within": true
         },
         {
-          "scrollY": 48,
+          "scrollY": 84,
           "position": "fixed",
           "rect": {
-            "x": 366,
+            "x": 336,
             "y": 72,
-            "width": 52,
-            "height": 56,
+            "width": 82,
+            "height": 88,
             "right": 418,
-            "bottom": 128
+            "bottom": 160
           },
           "image": true,
           "within": true
         },
         {
-          "scrollY": 127,
+          "scrollY": 182,
           "position": "fixed",
           "rect": {
-            "x": 366,
+            "x": 336,
             "y": 72,
-            "width": 52,
-            "height": 56,
+            "width": 82,
+            "height": 88,
             "right": 418,
-            "bottom": 128
+            "bottom": 160
           },
           "image": true,
           "within": true

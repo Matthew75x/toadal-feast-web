@@ -16,7 +16,8 @@ This is a bounded Home/global companion visual and behavior closure. No page/con
 
 - Kept the Home hero’s canonical world art and Toadal focal image, adding a restrained gold frame and clearer display type/flagship treatment. Truthful preview and availability copy remains unchanged.
 - At 320–430px, increased hero breathing room and scaled the foreground Toadal to avoid the hero image intersecting either primary action. Browser pixel-alpha comparison confirms zero opaque-art pixels over either CTA at 320, 390, and 430px.
-- Kept the contextual helper attached to the viewport, removed its Home document-flow slot, and placed it at the upper-right on Home, Search, and Contact where bottom-right placement obscured visible copy or form controls. Other routes retain the lower-right placement.
+- Kept the contextual helper attached to the viewport and removed its Home document-flow slot. The final character control measures 96×102px on desktop, 82×88px on 390/430px mobile, and 72×78px at 320px.
+- The requested lower-right corner was tested. At Home 430×932, it overlapped 12.5% of the Tower Defense heading and 31.6% of its preview copy; on Search desktop, it overlapped 38.9% of the Search control. To preserve the stronger no-obstruction requirement, Home, Search, and Contact use a fixed upper-right position; other routes retain lower-right. This is an explicit, unresolved placement deviation from the preferred bottom-right location, not a claim of strict compliance.
 - No runtime JavaScript or interaction semantics were modified.
 
 ## Studio render and checks
@@ -30,7 +31,7 @@ This is a bounded Home/global companion visual and behavior closure. No page/con
 
 ## Companion-specific browser verification
 
-The focused CDP harness passed with images decoded and navigation checked against the requested route. It verified fixed viewport geometry at Home 1440×900, 320×800, 390×844, and 430×932; top/middle/bottom Home scroll samples at desktop, 390px, and 430px; and no sampled companion collision with actionable controls or rendered text lines. It also proved real World hover and touch reactions (`curious` state plus loaded map-guide artwork), and panel toggle persistence across reload.
+The focused CDP harness passed with images decoded and navigation checked against the requested route. It verified fixed viewport geometry at Home 1440×900, 320×800, 390×844, and 430×932; top/middle/bottom Home scroll samples at desktop, 390px, and 430px; and no sampled companion collision above the 5% overlap threshold with actionable controls or rendered text lines at the final upper-right placements. It also proved real World hover and touch reactions (`curious` state plus loaded map-guide artwork), and panel toggle persistence across reload. A direct lower-right comparison was also performed: it failed the no-obstruction check on Home 430px and Search desktop, which is why those routes use the upper-right exception.
 
 Focused route checks passed with no horizontal overflow or sampled text/control obstruction on Toadal profile 390px, Search desktop/mobile, and Contact mobile. These checks found and drove fixes for the Search submit button and Contact form overlap before the final gate.
 
