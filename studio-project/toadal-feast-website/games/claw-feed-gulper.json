@@ -5,15 +5,19 @@
   "name": "CLAW: Feed Gulper",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Qualified browser-preview evidence exists, but this Home page withholds launch until WO-002 player integration.",
-  "description": "CLAW: Feed Gulper has a qualified staging browser cartridge from the CP9/V13 donor. WO-001 intentionally does not expose a launch route until the current player shell is integrated and regression-tested in WO-002. The current Home card remains a preview surface.",
-  "route": "/",
-  "artAsset": "asset.home.character.gulper",
-  "platforms": [],
+  "summary": "Grab food with the claw, time the drop, and feed Gulper through increasingly demanding challenges.",
+  "description": "CLAW: Feed Gulper is a timing-and-feeding browser adventure with campaign, challenge, endless, REAL GAMER, and LONG DROP modes.",
+  "route": "/play/claw-feed-gulper/",
+  "artAsset": "asset.wo002.claw-preview",
+  "platforms": [
+    "web-preview"
+  ],
   "studioGenerated": false,
   "web": {
     "enabled": false,
-    "shortDescription": "Qualified staging cartridge exists; Home launch remains withheld until WO-002 player integration."
+    "detailRoute": "/play/claw-feed-gulper/",
+    "playerRoute": "/play/claw-feed-gulper/player/",
+    "shortDescription": "Browser preview page available; playable launch is not live yet."
   },
   "evidence": {
     "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
@@ -22,6 +26,6 @@
     "version": "2.5.1",
     "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
     "reverifiedAt": "2026-09-30",
-    "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+    "currentHomeLaunch": "DETAIL_ROUTE_ONLY_PLAYER_WITHHELD"
   }
 }

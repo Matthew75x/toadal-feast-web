@@ -14,9 +14,15 @@
       "referenceSource": "reference/assets/images/world/candy-kingdom.webp",
       "width": 1424,
       "height": 750,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "hero", "canonical-game-environment"]
+      "tags": [
+        "website-home",
+        "hero",
+        "canonical-game-environment"
+      ]
     },
     {
       "id": "asset.home.world.mobile",
@@ -31,9 +37,16 @@
       "referenceSource": "reference/assets/images/world/candy-kingdom-mobile.webp",
       "width": 470,
       "height": 750,
-      "renderTargets": ["website-home-mobile"],
+      "renderTargets": [
+        "website-home-mobile"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "hero", "responsive-crop", "source-candy-kingdom"]
+      "tags": [
+        "website-home",
+        "hero",
+        "responsive-crop",
+        "source-candy-kingdom"
+      ]
     },
     {
       "id": "asset.home.character.toadal",
@@ -48,9 +61,16 @@
       "referenceSource": "reference/assets/images/characters/toadal-portrait.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "mascot", "canonical", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "mascot",
+        "canonical",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.character.princess-lily",
@@ -65,9 +85,16 @@
       "referenceSource": "reference/assets/images/characters/princess-lily.webp",
       "width": 512,
       "height": 512,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical", "september-2026", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "canonical",
+        "september-2026",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.character.gulper",
@@ -82,9 +109,15 @@
       "referenceSource": "reference/assets/images/characters/gulper.webp",
       "width": 512,
       "height": 512,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "canonical",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.character.gully",
@@ -99,9 +132,15 @@
       "referenceSource": "reference/assets/images/characters/gully.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "canonical",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.genie.sweet-art",
@@ -116,9 +155,15 @@
       "referenceSource": "reference/assets/images/characters/genie-sweet.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical-genie-atlas-frame", "decorative"]
+      "tags": [
+        "website-home",
+        "canonical-genie-atlas-frame",
+        "decorative"
+      ]
     },
     {
       "id": "asset.home.genie.savoury-art",
@@ -133,9 +178,15 @@
       "referenceSource": "reference/assets/images/characters/genie-savoury.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical-genie-atlas-frame", "decorative"]
+      "tags": [
+        "website-home",
+        "canonical-genie-atlas-frame",
+        "decorative"
+      ]
     },
     {
       "id": "asset.home.genie.fruity-art",
@@ -150,9 +201,61 @@
       "referenceSource": "reference/assets/images/characters/genie-fruity.webp",
       "width": 256,
       "height": 256,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "canonical-genie-atlas-frame", "decorative"]
+      "tags": [
+        "website-home",
+        "canonical-genie-atlas-frame",
+        "decorative"
+      ]
+    },
+    {
+      "id": "asset.wo002.wicked-bites-preview",
+      "name": "Wicked Bites v5.5 qualified donor screenshot",
+      "kind": "image",
+      "category": "game-preview",
+      "source": "reference/assets/images/games/wicked-bites-v5.5.webp",
+      "extension": "webp",
+      "bytes": 34526,
+      "sha256": "02468719f59c1f891a750435d261cf8aab1e42609cea3343e70fbd08b472c4d0",
+      "width": 844,
+      "height": 390,
+      "renderTargets": [
+        "website-play",
+        "website-game-detail"
+      ],
+      "replaceable": true,
+      "tags": [
+        "wo002",
+        "wicked-bites",
+        "qualified-donor",
+        "preview"
+      ]
+    },
+    {
+      "id": "asset.wo002.claw-preview",
+      "name": "CLAW Feed Gulper v2.5.1 qualified donor screenshot",
+      "kind": "image",
+      "category": "game-preview",
+      "source": "reference/assets/images/games/claw-feed-gulper-v2.5.1.webp",
+      "extension": "webp",
+      "bytes": 20930,
+      "sha256": "a2c11d58bc7c05ef0cfe7aea01c57c27ae71bfb86c99e590420c0045d5fbca4f",
+      "width": 844,
+      "height": 390,
+      "renderTargets": [
+        "website-play",
+        "website-game-detail"
+      ],
+      "replaceable": true,
+      "tags": [
+        "wo002",
+        "claw-feed-gulper",
+        "qualified-donor",
+        "preview"
+      ]
     }
   ]
 }

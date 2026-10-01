@@ -15,7 +15,7 @@
       "type": "core.button",
       "props": {
         "label": "Explore browser games",
-        "href": "/#browser-games",
+        "href": "./play/",
         "kind": "primary"
       }
     },
@@ -45,7 +45,7 @@
       "type": "core.rich-text",
       "props": {
         "variant": "dark-feature-panel",
-        "html": "<div class='home-section-inner'><div class='feast-pass-panel' data-companion-context='feast-pass' data-companion-copy='Feast Pass is planned for WO-005; there are no live levels, rewards, or account sync here.' data-companion-reaction='proud'><div class='feast-pass-copy'><p class='section-kicker'>YOUR GUEST JOURNEY · PLANNED</p><h2 class='section-heading'>A Feast Pass built around your adventures</h2><p class='section-lede'>Feast Pass is planned for a later work order. This preview summary shows no level, XP, Sparks, Treats, streak, quest progress, or account sync as live product data.</p><div class='pass-signals' aria-label='Feast Pass status'><span class='pass-state'>Planned for WO-005</span><span class='pass-state'>Preview summary only</span><span class='pass-state'>No live progress</span></div></div><div class='pass-emblem' aria-hidden='true'><span>FEAST</span><strong>PASS</strong><i>✦</i></div></div></div>"
+        "html": "<div class='home-section-inner'><div class='feast-pass-panel' data-companion-context='feast-pass' data-companion-copy='Feast Pass is planned for a later update; there are no live levels, rewards, or account sync here.' data-companion-reaction='proud'><div class='feast-pass-copy'><p class='section-kicker'>YOUR GUEST JOURNEY · PLANNED</p><h2 class='section-heading'>A Feast Pass built around your adventures</h2><p class='section-lede'>Feast Pass is planned for a later update. This preview summary shows no level, XP, Sparks, Treats, streak, quest progress, or account sync as live product data.</p><div class='pass-signals' aria-label='Feast Pass status'><span class='pass-state'>Planned for a later update</span><span class='pass-state'>Preview summary only</span><span class='pass-state'>No live progress</span></div></div><div class='pass-emblem' aria-hidden='true'><span>FEAST</span><strong>PASS</strong><i>✦</i></div></div></div>"
       }
     },
     {
@@ -63,7 +63,9 @@
       "name": "StatusChip",
       "type": "core.badges",
       "props": {
-        "items": ["PREVIEW"],
+        "items": [
+          "PREVIEW"
+        ],
         "variant": "status-chip"
       }
     },
@@ -73,7 +75,7 @@
       "type": "core.rich-text",
       "props": {
         "variant": "games-intro",
-        "html": "<div class='home-section-inner' data-companion-context='browser-games' data-companion-copy='Wicked Bites and CLAW have qualified staging cartridges; Home launch links remain withheld until player integration in WO-002.' data-companion-reaction='excited'><p class='section-kicker'>YOUR NEXT LITTLE ADVENTURE</p><h2 class='section-heading'>Browser game discovery</h2><p class='section-lede'>Four browser experiences are shown on Home. Qualified staging cartridges exist for Wicked Bites and CLAW, but launch routing stays withheld until WO-002 player integration.</p><div class='game-tabs' role='group' aria-label='Filter browser game experiences'><button class='game-tab' type='button' aria-pressed='true' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='all'>All experiences <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='preview'>Previews <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='public'>Playable now <span>0</span></button></div><p id='browser-games-empty' class='game-empty' data-game-empty hidden role='status' aria-live='polite'>No game launches from this Home yet. Qualified staging cartridges are being connected through the player shell in WO-002. The four preview cards remain visible in All and Previews.</p></div>"
+        "html": "<div class='home-section-inner' data-companion-context='browser-games' data-companion-copy='Wicked Bites and CLAW now have browser preview pages. Visit Play to explore them.' data-companion-reaction='excited'><p class='section-kicker'>YOUR NEXT LITTLE ADVENTURE</p><h2 class='section-heading'>Browser game discovery</h2><p class='section-lede'>Four browser experiences are previewed here. Wicked Bites and CLAW now have full preview pages in Play.</p><div class='game-tabs' role='group' aria-label='Filter browser game experiences'><button class='game-tab' type='button' aria-pressed='true' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='all'>All experiences <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='preview'>Previews <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='public'>Playable now <span>0</span></button></div><p id='browser-games-empty' class='game-empty' data-game-empty hidden role='status' aria-live='polite'>No game launches from Home. Use Play to explore preview pages while playable browser versions are being prepared. The four preview cards remain visible in All and Previews.</p></div>"
       }
     },
     {
@@ -82,7 +84,7 @@
       "type": "core.rich-text",
       "props": {
         "variant": "companion",
-        "html": "<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL’S FIELD NOTES</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Welcome to the Feast. Wicked Bites and CLAW have qualified staging cartridges; Home launch links await WO-002 player integration.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='assets/images/characters/toadal-portrait.webp' alt='' width='256' height='256' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside>"
+        "html": "<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL’S FIELD NOTES</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Welcome to the Feast. Wicked Bites and CLAW now have browser preview pages. Visit Play to explore them.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='assets/images/characters/toadal-portrait.webp' alt='' width='256' height='256' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside>"
       }
     },
     {

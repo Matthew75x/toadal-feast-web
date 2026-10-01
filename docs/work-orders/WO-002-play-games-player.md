@@ -1,5 +1,5 @@
 # WO-002 — Play + Game Detail + Browser Player
-**Status:** HOLD until WO-001 PASS
+**Status:** ACTIVE — accepted WO-001 base `3e82fcd6990b92166769475aed3beffbec5b71f1`
 
 ## Goal
 Implement the Play family and certify the first real browser cartridge without fabricating game availability.
@@ -20,6 +20,8 @@ from the accepted WO-001 commit.
 - `docs/implementation/GITHUB_PAGES_ROUTING_CONTRACT.md`
 - `docs/implementation/ASSET_INTEGRATION_POLICY.md`
 - `docs/implementation/CP9_V13_DONOR_BASELINE.md`
+- `docs/implementation/WO002_DONOR_PREFLIGHT_2026-09-30.md`
+- `docs/review/WO-002/cartridge-intake/intake-evidence.json`
 
 ## CP9/V13 salvage gate
 Before creating or sealing a new player/cartridge implementation, inspect the recovered CP9/V13 donor. It already contains working staging Play/player surfaces and cartridge packages/evidence for Wicked Bites and CLAW: Feed Gulper, plus the broader fullscreen/player/routing/funnel architecture. Reuse or port those proven pieces when compatible; do not discard them and rebuild from scratch merely because the certified Studio project is newer.
