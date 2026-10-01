@@ -10,7 +10,7 @@
     <article class="detail-fact"><p class="section-kicker">CONTROLS</p><h2>How to play</h2><p>No playable website build is connected.</p></article>
     <article class="detail-fact"><p class="section-kicker">SAVES</p><h2>No save</h2><p>No browser save is created.</p></article>
   </section>
-<aside class="toadal-companion" data-companion data-zone="hero" aria-label="Toadal contextual helper"><div class="companion-panel" id="toadal-companion-panel" data-companion-panel><p class="companion-label">TOADAL SAYS</p><p class="companion-message" data-companion-speech aria-live="polite" aria-atomic="true">This is a concept listing with no runnable website package or playable route.</p></div><button class="companion-toggle" type="button" data-companion-toggle aria-controls="toadal-companion-panel" aria-expanded="true" aria-label="Minimize Toadal helper"><img class="companion-image" data-companion-image src="/toadal-feast-web/assets/images/characters/toadal-victory.png" alt="" width="611" height="640" loading="lazy" decoding="async"><span class="sr-only">Minimize Toadal helper</span></button></aside>
+<aside class="toadal-companion" data-companion data-zone="hero" aria-label="Toadal contextual helper"><div class="companion-panel" id="toadal-companion-panel" data-companion-panel><p class="companion-label">TOADAL SAYS</p><p class="companion-message" data-companion-speech aria-live="polite" aria-atomic="true">This is a concept listing with no runnable website package or playable route.</p></div><button class="companion-toggle" type="button" data-companion-toggle aria-controls="toadal-companion-panel" aria-expanded="true" aria-label="Minimize Toadal helper"><img class="companion-image" data-companion-image src="/toadal-feast-web/assets/images/companion/welcome.webp" data-companion-image-reaction="welcome" alt="" width="611" height="640" loading="lazy" decoding="async"><span class="sr-only">Minimize Toadal helper</span></button></aside>
 </article></section></main><footer class="site-footer"><div class="site-footer-inner"><strong>TOADAL FEAST</strong><div class="site-footer-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a></div></div></footer><script data-toadal-advanced-code>(function () {
   'use strict';
 
@@ -176,6 +176,74 @@
     var touchTimer = null;
     var ratios = new Map();
     var lastInput = 'pointer';
+    var brandLink = document.querySelector('.site-brand');
+    var brandPath = brandLink ? new URL(brandLink.href, window.location.href).pathname : '/';
+    var companionRootPath = brandPath === '/' ? '' : brandPath.replace(/\/+$/, '');
+    var reactionImages = {
+      welcome: companionRootPath + '/assets/images/companion/welcome.webp',
+      excited: companionRootPath + '/assets/images/companion/excited.webp',
+      proud: companionRootPath + '/assets/images/companion/proud.webp',
+      curious: companionRootPath + '/assets/images/companion/curious.webp',
+      friendly: companionRootPath + '/assets/images/companion/friendly.webp',
+      thinking: companionRootPath + '/assets/images/companion/thinking.webp',
+      present: companionRootPath + '/assets/images/companion/present.webp',
+      construction: companionRootPath + '/assets/images/companion/construction.webp',
+      settings: companionRootPath + '/assets/images/companion/settings.webp',
+      news: companionRootPath + '/assets/images/companion/news.webp',
+      search: companionRootPath + '/assets/images/companion/search.webp',
+      privacy: companionRootPath + '/assets/images/companion/privacy.webp',
+      account: companionRootPath + '/assets/images/companion/account.webp',
+      contact: companionRootPath + '/assets/images/companion/contact.webp'
+    };
+    var reactionRequest = 0;
+    var currentReaction = image.getAttribute('data-companion-image-reaction') || '';
+
+    function inferReaction(element) {
+      if (!element) return null;
+      var explicitContext = element.getAttribute && element.getAttribute('data-companion-context');
+      var semantic = explicitContext ? explicitContext.toLowerCase() : [
+        element.getAttribute && element.getAttribute('href'),
+        element.getAttribute && element.getAttribute('aria-label'),
+        element.getAttribute && element.getAttribute('placeholder'),
+        element.getAttribute && element.getAttribute('name'),
+        element.getAttribute && element.getAttribute('type'),
+        element.id,
+        element.className && typeof element.className === 'string' ? element.className : '',
+        element.textContent
+      ].filter(Boolean).join(' ').toLowerCase();
+      if (/settings|controls|preferences/.test(semantic)) return 'settings';
+      if (/contact|mail/.test(semantic)) return 'contact';
+      if (/support|help/.test(semantic)) return 'friendly';
+      if (/feast-pass|reward|treasure|leaderboard/.test(semantic)) return 'proud';
+      if (/world|map|adventure|today/.test(semantic)) return 'curious';
+      if (/stories|story|reader/.test(semantic)) return 'thinking';
+      if (/news|devlog|announcement/.test(semantic)) return 'news';
+      if (/media|community|characters|browser-games|play/.test(semantic)) return 'excited';
+      if (/app|download|mobile/.test(semantic)) return 'present';
+      if (/coming|construction|whats-next|roadmap/.test(semantic)) return 'construction';
+      if (/search|find/.test(semantic)) return 'search';
+      if (/privacy|security/.test(semantic)) return 'privacy';
+      if (/account|login|register|profile/.test(semantic)) return 'account';
+      if (/hero|home/.test(semantic)) return 'welcome';
+      return null;
+    }
+
+    function applyReaction(reaction) {
+      var next = reactionImages[reaction] ? reaction : 'welcome';
+      if (next === currentReaction) return;
+      var requested = ++reactionRequest;
+      var preload = new Image();
+      preload.onload = function () {
+        if (requested !== reactionRequest) return;
+        image.src = reactionImages[next];
+        image.removeAttribute('srcset');
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        image.setAttribute('data-companion-image-reaction', next);
+        currentReaction = next;
+      };
+      preload.src = reactionImages[next];
+    }
 
     var speechRole = speech.getAttribute('role');
     if (speechRole === 'status' || speechRole === 'alert' || speechRole === 'log') speech.removeAttribute('role');
@@ -190,13 +258,16 @@
     toggle.setAttribute('aria-controls', panel.id);
 
     function contextElement(target) {
-      return target && target.closest ? target.closest('[data-companion-context]') : null;
+      if (!target || !target.closest) return null;
+      var interactive = target.closest('a, button, input, select, textarea, [aria-label]');
+      if (interactive && inferReaction(interactive)) return interactive;
+      return target.closest('[data-companion-context]');
     }
     function contextValue(element) {
       if (!element) return null;
       return {
         copy: element.getAttribute('data-companion-copy'),
-        reaction: element.getAttribute('data-companion-reaction')
+        reaction: element.getAttribute('data-companion-reaction') || inferReaction(element)
       };
     }
     function clearTouchedContext() {
@@ -213,14 +284,16 @@
       toggle.setAttribute('aria-expanded', panelVisible ? 'true' : 'false');
       toggle.setAttribute('aria-label', minimized ? 'Show Toadal companion' : 'Hide Toadal companion');
       panel.hidden = !panelVisible;
-      if (!panelVisible) return;
 
       var value = action || contextValue(focused) || contextValue(hovered) ||
         contextValue(touched) || contextValue(currentSection) || contextValue(hero);
+      var reaction = value && value.reaction ? value.reaction : inferReaction(currentSection) || inferReaction(hero) || 'welcome';
+      root.setAttribute('data-companion-current-reaction', reaction);
+      applyReaction(reaction);
+      if (!panelVisible) return;
+
       var copy = value && value.copy != null && value.copy !== '' ? value.copy : defaultCopy;
       if (speech.textContent !== copy) speech.textContent = copy;
-      if (value && value.reaction) root.setAttribute('data-companion-current-reaction', value.reaction);
-      else root.removeAttribute('data-companion-current-reaction');
     }
     function persistPreference() {
       try { window.localStorage.setItem(storageKey, minimized ? 'true' : 'false'); } catch (error) {}
@@ -278,7 +351,7 @@
       var copy = target.getAttribute('data-companion-action-copy');
       if (copy == null || copy.trim() === '') return;
       if (actionTimer !== null) window.clearTimeout(actionTimer);
-      action = { copy: copy, reaction: target.getAttribute('data-companion-reaction') };
+      action = { copy: copy, reaction: target.getAttribute('data-companion-reaction') || inferReaction(target) };
       render(event.detail === 0);
       actionTimer = window.setTimeout(function () {
         action = null;
