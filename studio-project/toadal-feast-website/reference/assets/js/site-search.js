@@ -9,14 +9,19 @@
   function absoluteRoute(route){var base=baseRoot(); return base+(route&&route.startsWith('/')?route:'/'+(route||''));}
   function score(entry,q){
     var needle=norm(q); if(!needle) return 0;
-    var title=norm(entry.title), summary=norm(entry.summary), group=norm(entry.group), category=norm(entry.category), status=norm(entry.status);
+    var rawTitle=String(entry.title||'').replace(/\s*[·—-]\s*TOADAL FEAST\s*$/i,'');
+    var title=norm(rawTitle), summary=norm(entry.summary), metadata=norm([entry.group,entry.category,entry.status].join(' '));
+    var tokens=needle.split(/\s+/).filter(function(token){return token.length>1;});
+    var combined=title+' '+summary+' '+metadata;
+    if(tokens.length>1&&!tokens.every(function(token){return combined.includes(token);})) return 0;
+    var brandOnly=tokens.length===1&&(tokens[0]==='toadal'||tokens[0]==='feast');
     var total=0;
     if(title===needle) total+=100;
     if(title.startsWith(needle)) total+=45;
     if(title.includes(needle)) total+=30;
-    if(summary.includes(needle)) total+=12;
-    if(group.includes(needle)||category.includes(needle)||status.includes(needle)) total+=8;
-    for(var token of needle.split(/\s+/)){ if(token.length>1&&title.includes(token)) total+=6; if(token.length>2&&summary.includes(token)) total+=2; }
+    if(!brandOnly&&summary.includes(needle)) total+=12;
+    if(!brandOnly&&metadata.includes(needle)) total+=8;
+    for(var token of tokens){ if(title.includes(token)) total+=6; if(!brandOnly&&token.length>2&&summary.includes(token)) total+=2; }
     return total;
   }
   function initSiteSearch(){
