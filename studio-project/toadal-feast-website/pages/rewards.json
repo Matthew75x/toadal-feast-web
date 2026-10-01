@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "page.rewards",
+  "route": "/feast-pass/rewards/",
+  "title": "Rewards & collection · Feast Pass · TOADAL FEAST",
+  "description": "Editable starter XP/Sparks and three local non-entitlement level milestones are configured. The claimable cosmetics, merchandise, premium, and mobile-transfer catalog is empty.",
+  "publicationState": "noindex",
+  "components": [
+    {
+      "id": "component.guest-rewards.rich-text",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "guest-progression-rewards",
+        "html": "<div class='progression-page' data-progression-page='rewards' data-companion-context='feast-pass-rewards' data-companion-copy='Only locally configured level milestones belong on this reward track.'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><a href='/feast-pass/'>Feast Pass</a><span aria-hidden='true'>/</span><span>Rewards</span></nav><header class='progression-hero'><p class='section-kicker'>TOADAL FEAST · GUEST JOURNEY</p><p class='progression-eyebrow'>MILESTONES &amp; COLLECTION</p><h1>Rewards &amp; collection</h1><p class='progression-lede'>Starter XP/Sparks settings and three local, non-entitlement level milestones are configured and editable. No claimable cosmetics, merchandise, premium items, or mobile-game transfer catalog is available.</p><p class='progression-truth-note'>The level milestones are local progress markers, not entitlements. The claimable cosmetics, merchandise, premium, and mobile-transfer catalog is empty.</p></header><section class='progression-section' aria-labelledby='rewards-status-title'><div class='progression-section-heading'><div><p class='section-kicker'>LOCAL REWARD TRACK</p><h2 id='rewards-status-title'>Available milestones</h2></div><span class='progression-local-badge'>Guest · this browser</span></div><p class='progression-storage' data-progression-storage-status role='status' aria-live='polite'>Guest progress is stored only in this browser.</p><div class='progression-empty' data-progression-reward-list aria-live='polite'><h3>No claimable catalog items</h3><p>Editable starter XP/Sparks and non-entitlement level milestones are configured. No claimable cosmetics, merchandise, premium items, food, relics, or mobile-transfer entitlements are available.</p></div></section><nav class='progression-nav' aria-label='Feast Pass pages'><a href='/feast-pass/'>Feast Pass</a><a href='/feast-pass/quests/'>Quests</a><a href='/feast-pass/rewards/' aria-current='page'>Rewards <span class='sr-only'>(current page)</span></a><a href='/profile/'>Guest profile</a></nav><section class='progression-controls' aria-labelledby='reward-controls-title'><div><h2 id='reward-controls-title'>Local data controls</h2><p>Clear website progression only. Unrelated game and mobile data are not affected.</p></div><button class='button-link button-link--secondary' type='button' data-clear-progression>Clear website progression</button></section></div>"
+      }
+    }
+  ],
+  "referenceFile": "feast-pass/rewards/index.html",
+  "studioGenerated": true
+}

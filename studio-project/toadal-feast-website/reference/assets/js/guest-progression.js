@@ -1,0 +1,340 @@
+/* Local-only guest progression runtime. No account, server, or mobile-game integration. */
+(function (root, factory) {
+  const definitions = (typeof module === 'object' && module.exports)
+    ? require('./progression-definitions.js')
+    : root && root.ToadalProgressionDefinitions;
+  const api = factory(definitions);
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  if (root) root.ToadalGuestProgression = api;
+  if (root && root.document) api.boot(root.document, root);
+})(typeof globalThis !== 'undefined' ? globalThis : this, function (defaultDefinitions) {
+  'use strict';
+
+  const VERSION = 1;
+  const KEYS = Object.freeze({
+    pass: 'toadal:web:v1:feast-pass',
+    quests: 'toadal:web:v1:quests',
+    discoveries: 'toadal:web:v1:discoveries',
+    profile: 'toadal:web:v1:profile'
+  });
+
+  function isoNow(now) {
+    const value = typeof now === 'function' ? now() : new Date();
+    const date = value instanceof Date ? value : new Date(value);
+    return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
+  }
+  function utcDay(iso) { return iso.slice(0, 10); }
+  function emptyRecords(timestamp) {
+    return {
+      pass: { schemaVersion: VERSION, updatedAt: timestamp, level: 1, xp: 0, sparks: 0, treats: 0, streak: { count: 0, lastQualifiedPeriod: null }, badges: [], collectibles: [] },
+      quests: { schemaVersion: VERSION, updatedAt: timestamp, items: {}, processedEventIds: [], dailyClaimedPeriod: null },
+      discoveries: { schemaVersion: VERSION, updatedAt: timestamp, items: [] },
+      profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null }
+    };
+  }
+  function makeMemoryStorage() {
+    const values = new Map();
+    return { getItem: key => values.has(key) ? values.get(key) : null, setItem: (key, value) => values.set(key, String(value)), removeItem: key => values.delete(key) };
+  }
+  function safeInt(value, fallback, minimum) {
+    return Number.isInteger(value) && value >= minimum ? value : fallback;
+  }
+  function createStore(options) {
+    options = options || {};
+    const suppliedStorage = Boolean(options.storage);
+    const storage = options.storage || makeMemoryStorage();
+    let persistent = suppliedStorage;
+    const now = options.now || (() => new Date());
+    const definitions = options.definitions || defaultDefinitions || {};
+    const diagnostics = [];
+    const blocked = new Set();
+    const timestamp = () => isoNow(now);
+    const defaults = emptyRecords(timestamp());
+    const records = {};
+
+    function read(name) {
+      let raw;
+      try { raw = storage.getItem(KEYS[name]); }
+      catch (error) { persistent = false; diagnostics.push({ key: KEYS[name], kind: 'read-failed', message: String(error && error.message || error) }); return structuredCopy(defaults[name]); }
+      if (raw == null || raw === '') return structuredCopy(defaults[name]);
+      let data;
+      try { data = JSON.parse(raw); }
+      catch (error) {
+        diagnostics.push({ key: KEYS[name], kind: 'malformed-json', message: String(error && error.message || error) });
+        return structuredCopy(defaults[name]);
+      }
+      if (!data || typeof data !== 'object' || Array.isArray(data) || !Number.isInteger(data.schemaVersion)) {
+        diagnostics.push({ key: KEYS[name], kind: 'invalid-record' });
+        return structuredCopy(defaults[name]);
+      }
+      if (data.schemaVersion > VERSION) {
+        blocked.add(name);
+        diagnostics.push({ key: KEYS[name], kind: 'future-version', schemaVersion: data.schemaVersion });
+        return structuredCopy(defaults[name]);
+      }
+      const merged = Object.assign({}, defaults[name], data, { schemaVersion: VERSION });
+      if (name === 'pass') {
+        merged.level = safeInt(merged.level, 1, 1);
+        merged.xp = safeInt(merged.xp, 0, 0);
+        merged.sparks = safeInt(merged.sparks, 0, 0);
+        merged.treats = safeInt(merged.treats, 0, 0);
+        const incomingStreak = merged.streak && typeof merged.streak === 'object' ? merged.streak : {};
+        merged.streak = {
+          count: safeInt(incomingStreak.count, 0, 0),
+          lastQualifiedPeriod: typeof incomingStreak.lastQualifiedPeriod === 'string' ? incomingStreak.lastQualifiedPeriod : null
+        };
+        merged.badges = Array.isArray(merged.badges) ? merged.badges : [];
+        merged.collectibles = Array.isArray(merged.collectibles) ? merged.collectibles : [];
+      } else if (name === 'quests') {
+        merged.items = merged.items && typeof merged.items === 'object' && !Array.isArray(merged.items) ? merged.items : {};
+        merged.processedEventIds = Array.isArray(merged.processedEventIds) ? merged.processedEventIds : [];
+        merged.dailyClaimedPeriod = typeof merged.dailyClaimedPeriod === 'string' ? merged.dailyClaimedPeriod : null;
+      } else if (name === 'discoveries') merged.items = Array.isArray(merged.items) ? merged.items : [];
+      return merged;
+    }
+    function structuredCopy(value) { return JSON.parse(JSON.stringify(value)); }
+    for (const name of Object.keys(KEYS)) records[name] = read(name);
+
+    function save(name) {
+      if (blocked.has(name)) return false;
+      records[name].schemaVersion = VERSION;
+      records[name].updatedAt = timestamp();
+      try { storage.setItem(KEYS[name], JSON.stringify(records[name])); return true; }
+      catch (error) { persistent = false; diagnostics.push({ key: KEYS[name], kind: 'write-failed', message: String(error && error.message || error) }); return false; }
+    }
+    function saveMany(names) {
+      if (names.some(name => blocked.has(name))) return false;
+      const previous = {};
+      try {
+        for (const name of names) previous[name] = storage.getItem(KEYS[name]);
+        for (const name of names) {
+          records[name].schemaVersion = VERSION;
+          records[name].updatedAt = timestamp();
+          storage.setItem(KEYS[name], JSON.stringify(records[name]));
+        }
+        return true;
+      } catch (error) {
+        persistent = false;
+        for (const name of names) {
+          try {
+            if (Object.prototype.hasOwnProperty.call(previous, name)) {
+              if (previous[name] == null) storage.removeItem(KEYS[name]);
+              else storage.setItem(KEYS[name], previous[name]);
+            }
+          } catch (_) { /* Best-effort rollback; original write error is retained below. */ }
+        }
+        diagnostics.push({ key: names.map(name => KEYS[name]).join(','), kind: 'write-failed', message: String(error && error.message || error) });
+        return false;
+      }
+    }
+    function refresh(names) {
+      for (const name of names) {
+        blocked.delete(name);
+        records[name] = read(name);
+      }
+    }
+    function progressFor(definition) {
+      const item = records.quests.items[definition.id] || {};
+      const progress = Number.isFinite(item.progress) ? Math.max(0, item.progress) : 0;
+      const target = Number.isFinite(definition.target) && definition.target > 0 ? definition.target : 1;
+      return { progress, target, complete: progress >= target, claimedAt: item.claimedAt || null, completedAt: item.completedAt || null };
+    }
+    function grant(reward) {
+      reward = reward || {};
+      records.pass.xp += Number.isFinite(reward.xp) && reward.xp > 0 ? Math.floor(reward.xp) : 0;
+      records.pass.sparks += Number.isFinite(reward.sparks) && reward.sparks > 0 ? Math.floor(reward.sparks) : 0;
+      const configuredThreshold = Number.isFinite(definitions.xpPerLevel) && definitions.xpPerLevel > 0 ? Math.floor(definitions.xpPerLevel) : null;
+      if (configuredThreshold) records.pass.level = 1 + Math.floor(records.pass.xp / configuredThreshold);
+    }
+    function getSnapshot() {
+      const currentPeriod = utcDay(timestamp());
+      const quests = (definitions.quests || []).map(definition => Object.assign({}, definition, progressFor(definition)));
+      const discoveryDefinitions = definitions.discoveries || [];
+      const discoveries = records.discoveries.items.map(id => {
+        const definition = discoveryDefinitions.find(item => item.id === id);
+        return definition ? { id, title: definition.title, description: definition.description || '' } : { id, title: 'Previously recorded discovery', description: '' };
+      });
+      const milestones = (definitions.levelMilestones || []).map(milestone => Object.assign({}, milestone, { unlocked: milestone.level <= records.pass.level, entitlement: false }));
+      const configuredThreshold = Number.isFinite(definitions.xpPerLevel) && definitions.xpPerLevel > 0 ? Math.floor(definitions.xpPerLevel) : null;
+      return {
+        pass: structuredCopy(records.pass), quests,
+        discoveries, profile: structuredCopy(records.profile),
+        rewards: structuredCopy(definitions.rewards || []), milestones,
+        xpToNext: configuredThreshold ? configuredThreshold - records.pass.xp % configuredThreshold : null,
+        daily: {
+          enabled: Boolean(definitions.dailyCheckIn && definitions.dailyCheckIn.enabled && definitions.dailyCheckIn.period === 'UTC-day'),
+          period: currentPeriod, claimed: records.quests.dailyClaimedPeriod === currentPeriod,
+          configStatus: definitions.configStatus || 'unverified-config'
+        },
+        questsComplete: quests.filter(q => q.complete).length,
+        storage: { local: persistent, persistent, available: persistent, diagnostics: diagnostics.slice(), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]) }
+      };
+    }
+    function recordEvent(eventId) {
+      if (typeof eventId !== 'string' || !eventId.trim()) return false;
+      refresh(['quests', 'discoveries']);
+      if (blocked.has('quests')) return false;
+      if (records.quests.processedEventIds.includes(eventId)) return false;
+      const matching = (definitions.quests || []).filter(q => q.event === 'route-visit' && eventId === 'route:' + q.route);
+      const matchingDiscoveries = (definitions.discoveries || []).filter(d => d.event === 'route-visit' && eventId === 'route:' + d.route);
+      if (!matching.length && !matchingDiscoveries.length) return false;
+      if (matchingDiscoveries.length && blocked.has('discoveries')) return false;
+      const priorQuestState = structuredCopy(records.quests);
+      const priorDiscoveryState = structuredCopy(records.discoveries);
+      records.quests.processedEventIds.push(eventId);
+      for (const quest of matching) {
+        const before = progressFor(quest);
+        if (before.complete) continue;
+        const progress = Math.min(before.target, before.progress + 1);
+        records.quests.items[quest.id] = Object.assign({}, records.quests.items[quest.id], { progress, completedAt: progress >= before.target ? timestamp() : null, claimedAt: records.quests.items[quest.id] && records.quests.items[quest.id].claimedAt || null });
+      }
+      for (const discovery of matchingDiscoveries) {
+        if (!records.discoveries.items.includes(discovery.id)) records.discoveries.items.push(discovery.id);
+      }
+      const changed = matchingDiscoveries.length ? saveMany(['quests', 'discoveries']) : save('quests');
+      if (!changed) {
+        records.quests = priorQuestState;
+        records.discoveries = priorDiscoveryState;
+        return false;
+      }
+      return true;
+    }
+    function claimQuest(id) {
+      refresh(['quests', 'pass']);
+      const definition = (definitions.quests || []).find(q => q.id === id);
+      if (!definition) return { ok: false, reason: 'unknown-quest' };
+      const progress = progressFor(definition);
+      if (!progress.complete) return { ok: false, reason: 'incomplete' };
+      if (progress.claimedAt) return { ok: false, reason: 'already-claimed' };
+      if (blocked.has('quests') || blocked.has('pass')) return { ok: false, reason: 'future-schema-read-only' };
+      const priorQuestState = structuredCopy(records.quests);
+      const priorPassState = structuredCopy(records.pass);
+      records.quests.items[id].claimedAt = timestamp();
+      grant(definition.reward);
+      if (!saveMany(['quests', 'pass'])) {
+        records.quests = priorQuestState;
+        records.pass = priorPassState;
+        return { ok: false, reason: 'storage-unavailable' };
+      }
+      return { ok: true };
+    }
+    function claimDaily() {
+      refresh(['quests', 'pass']);
+      const config = definitions.dailyCheckIn;
+      if (!config || !config.enabled || config.period !== 'UTC-day') return { ok: false, reason: 'not-configured' };
+      if (blocked.has('quests') || blocked.has('pass')) return { ok: false, reason: 'future-schema-read-only' };
+      const period = utcDay(timestamp());
+      if (records.quests.dailyClaimedPeriod === period) return { ok: false, reason: 'already-claimed' };
+      const priorQuestState = structuredCopy(records.quests);
+      const priorPassState = structuredCopy(records.pass);
+      const prior = records.pass.streak.lastQualifiedPeriod;
+      const priorDate = prior ? new Date(prior + 'T00:00:00.000Z') : null;
+      const thisDate = new Date(period + 'T00:00:00.000Z');
+      const difference = priorDate && !Number.isNaN(priorDate.getTime()) ? Math.round((thisDate - priorDate) / 86400000) : null;
+      records.pass.streak.count = difference === 1 ? records.pass.streak.count + 1 : (difference === 0 ? Math.max(1, records.pass.streak.count) : 1);
+      records.pass.streak.lastQualifiedPeriod = period;
+      records.quests.dailyClaimedPeriod = period;
+      grant(config);
+      if (!saveMany(['quests', 'pass'])) {
+        records.quests = priorQuestState;
+        records.pass = priorPassState;
+        return { ok: false, reason: 'storage-unavailable' };
+      }
+      return { ok: true, period };
+    }
+    function clear() {
+      for (const name of Object.keys(KEYS)) {
+        try { storage.removeItem(KEYS[name]); }
+        catch (error) { diagnostics.push({ key: KEYS[name], kind: 'clear-failed', message: String(error && error.message || error) }); }
+      }
+      const fresh = emptyRecords(timestamp());
+      for (const name of Object.keys(KEYS)) records[name] = fresh[name];
+      blocked.clear();
+      return getSnapshot();
+    }
+      return { getSnapshot, recordEvent, claimDaily, claimQuest, clear };
+  }
+
+  function boot(document, root) {
+    if (!document || !document.querySelectorAll) return;
+    let browserStorage;
+    try { browserStorage = root && root.localStorage; } catch (_) { browserStorage = undefined; }
+    const store = createStore({ storage: browserStorage });
+    const path = normalizePath(root && root.location && root.location.pathname || '/', definitionsForRuntime());
+    store.recordEvent('route:' + path);
+    const roots = document.querySelectorAll('[data-progression-page]');
+    roots.forEach(page => {
+      if (page.__toadalProgressionBooted) return;
+      page.__toadalProgressionBooted = true;
+      const status = page.querySelector('[data-progression-storage-status]');
+      const setStatus = text => { if (status) status.textContent = text; };
+      function render() {
+        const state = store.getSnapshot();
+      const values = { level: state.pass.level, xp: state.pass.xp, 'xp-to-next': state.xpToNext == null ? '—' : state.xpToNext, sparks: state.pass.sparks, treats: state.pass.treats, streak: state.pass.streak.count, discoveries: state.discoveries.length, 'quests-complete': state.questsComplete };
+        page.querySelectorAll('[data-progression-stat]').forEach(el => { const key = el.getAttribute('data-progression-stat'); if (Object.prototype.hasOwnProperty.call(values, key)) el.textContent = String(values[key]); });
+        renderList(page, '[data-progression-quest-list]', state.quests.map(q => {
+          const reward = [];
+          if (Number.isFinite(q.reward && q.reward.xp) && q.reward.xp > 0) reward.push(q.reward.xp + ' XP');
+          if (Number.isFinite(q.reward && q.reward.sparks) && q.reward.sparks > 0) reward.push(q.reward.sparks + ' Sparks');
+          const rewardText = reward.length ? ' · Reward: ' + reward.join(', ') : '';
+          return { title: q.title, detail: q.description + ' ' + q.progress + '/' + q.target + rewardText + (q.complete ? (q.claimedAt ? ' · Reward claimed' : ' · Complete') : ''), id: q.id, button: q.complete && !q.claimedAt ? 'Claim quest reward' : null };
+        }), id => { const result = store.claimQuest(id); setStatus(result.ok ? 'Quest reward claimed.' : result.reason === 'already-claimed' ? 'This quest reward was already claimed.' : 'Quest reward is not available yet.'); render(); });
+        const rewards = state.rewards.map(r => ({ title: r.title || r.name || r.id, detail: r.description || 'Configured reward' }));
+        const milestones = state.milestones.map(m => ({ title: m.title, detail: 'Level ' + m.level + ' milestone · ' + (m.unlocked ? 'Reached' : 'Not reached yet') + ' · No item, entitlement, or transfer is included.' }));
+        renderList(page, '[data-progression-reward-list]', rewards.concat(milestones));
+        renderList(page, '[data-progression-discovery-list]', state.discoveries.map(item => ({ title: item.title, detail: item.description || 'A visit to a site preview; no lore or food item is implied.' })));
+        const dailyStatus = page.querySelector('[data-daily-reward-status]');
+        if (dailyStatus) dailyStatus.textContent = state.daily.enabled ? (state.daily.claimed ? 'Today’s UTC check-in is already claimed.' : 'A starter-config UTC-day check-in is available. Progress is local to this browser.') : 'No daily check-in is configured.';
+        const dailyButton = page.querySelector('[data-claim-daily]');
+        if (dailyButton) {
+          const disabled = !state.daily.enabled || state.daily.claimed;
+          dailyButton.disabled = disabled;
+          dailyButton.setAttribute('aria-disabled', String(disabled));
+          dailyButton.textContent = !state.daily.enabled ? 'Daily check-in unavailable' : state.daily.claimed ? 'Already claimed today' : 'Claim daily check-in';
+          dailyButton.onclick = () => { const result = store.claimDaily(); setStatus(result.ok ? 'UTC-day check-in claimed on this browser.' : result.reason === 'already-claimed' ? 'Today’s check-in was already claimed.' : 'Check-in is unavailable.'); render(); };
+        }
+        if (!state.storage.persistent) setStatus('Browser storage is unavailable; progress may not persist after leaving this page.');
+        else if (state.storage.diagnostics.length) setStatus('Guest progress is using safe local defaults; stored data could not be read or was outdated.');
+        else if (status && !status.textContent) setStatus('Guest progress is stored only in this browser.');
+      }
+      page.querySelectorAll('[data-clear-progression]').forEach(button => button.addEventListener('click', () => { store.clear(); setStatus('Website guest progression was cleared from this browser. Other game and mobile data was not changed.'); render(); }));
+      render();
+      page.__toadalProgressionStore = store;
+    });
+  }
+  function definitionsForRuntime() { return defaultDefinitions || {}; }
+  function normalizePath(path, definitions) {
+    let clean = String(path == null ? '/' : path).split(/[?#]/, 1)[0].replace(/\\/g, '/');
+    clean = '/' + clean.split('/').filter(Boolean).join('/') + '/';
+    if (clean === '//') clean = '/';
+    const routes = [].concat((definitions && definitions.knownSiteRoutes) || [], (definitions && definitions.quests) || [], (definitions && definitions.discoveries) || [])
+      .map(item => typeof item === 'string' ? item : item.route).filter(route => typeof route === 'string' && route.startsWith('/'))
+      .sort((a, b) => b.length - a.length);
+    const match = routes.find(route => clean === route || clean.endsWith(route));
+    if (match) return match;
+    const segments = clean.split('/').filter(Boolean);
+    return segments.length <= 1 ? '/' : clean;
+  }
+  function renderList(page, selector, items, onClaim) {
+    const container = page.querySelector(selector);
+    if (!container) return;
+    while (container.firstChild) container.removeChild(container.firstChild);
+    container.setAttribute('role', 'list');
+    if (!items.length) {
+      const empty = page.ownerDocument.createElement('div');
+      empty.setAttribute('role', 'listitem');
+      empty.textContent = selector.includes('reward') ? 'No claimable or entitlement rewards are configured.' : 'Nothing recorded yet.';
+      container.appendChild(empty);
+      return;
+    }
+    items.forEach(item => {
+      const entry = page.ownerDocument.createElement('div');
+      entry.setAttribute('role', 'listitem');
+      const title = page.ownerDocument.createElement('strong'); title.textContent = item.title; entry.appendChild(title);
+      const detail = page.ownerDocument.createElement('p'); detail.textContent = item.detail || ''; entry.appendChild(detail);
+      if (item.button && onClaim) { const button = page.ownerDocument.createElement('button'); button.type = 'button'; button.textContent = item.button; button.addEventListener('click', () => onClaim(item.id)); entry.appendChild(button); }
+      container.appendChild(entry);
+    });
+  }
+  return { KEYS, createStore, boot, normalizePath, renderList };
+});
