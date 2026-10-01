@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "page.support",
+  "route": "/support.html",
+  "title": "Support · TOADAL FEAST",
+  "description": "Help and support for TOADAL FEAST visitors.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.support.main",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "route-page",
+        "html": "<section class='route-page-intro' data-companion-context='support' data-companion-copy='Support should be simple: tell visitors what help exists and never invent a contact destination.'><p class='section-kicker'>SUPPORT</p><h1 class='route-title'>Need a hand?</h1><p class='route-lede'>Quick help for the game, the website, and the Feast Pass direction.</p></section>\n<section class='route-section'>\n  <div class='route-card-grid route-card-grid--three'>\n    <article class='route-card'><p class='section-kicker'>GAME HELP</p><h3>Controls & gameplay</h3><p>Use the in-game help and controls for the full app. Web-game help will appear with each published browser experience.</p></article>\n    <article class='route-card'><p class='section-kicker'>FEAST PASS</p><h3>Guest progress</h3><p>Feast Pass is not live yet, so no account or reward balance is being represented here.</p></article>\n    <article class='route-card'><p class='section-kicker'>CONTACT</p><h3>Support contact</h3><p>A verified public support destination has not been wired into this staging build yet.</p></article>\n  </div>\n</section>"
+      }
+    },
+    {
+      "id": "component.support.companion",
+      "type": "core.rich-text",
+      "props": {
+        "symbolId": "symbol.home.toadal-companion"
+      }
+    }
+  ],
+  "referenceFile": "support.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "Support · TOADAL FEAST",
+    "description": "Help and support for TOADAL FEAST visitors."
+  }
+}
