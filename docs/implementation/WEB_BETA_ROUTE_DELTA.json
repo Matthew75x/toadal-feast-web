@@ -1,0 +1,88 @@
+{
+  "schema": "toadal-feast.web-beta-route-delta.v1",
+  "status": "PLANNING",
+  "sourceRegistry": "docs/implementation/ROUTE_REGISTRY.json",
+  "beta1": {
+    "requiredExistingOrPlanned": [
+      {
+        "id": "home",
+        "path": "/"
+      },
+      {
+        "id": "play",
+        "path": "/play/"
+      },
+      {
+        "id": "wicked-bites",
+        "path": "/play/wicked-bites/"
+      },
+      {
+        "id": "world",
+        "path": "/world/"
+      },
+      {
+        "id": "characters",
+        "path": "/characters/"
+      },
+      {
+        "id": "toadal-profile",
+        "path": "/characters/toadal/"
+      },
+      {
+        "id": "app",
+        "path": "/app/"
+      },
+      {
+        "id": "support",
+        "path": "/support/"
+      },
+      {
+        "id": "legal",
+        "path": "/legal/"
+      },
+      {
+        "id": "not-found",
+        "path": "*"
+      }
+    ],
+    "requiredArcadeAdditions": [
+      {
+        "id": "toadal-feast-arcade-preview",
+        "path": "/play/toadal-feast-arcade/"
+      },
+      {
+        "id": "toadal-feast-arcade-player",
+        "path": "/player/toadal-feast-arcade/"
+      }
+    ],
+    "compatibility": [
+      {
+        "id": "wicked-bites-legacy-game",
+        "path": "/play/wicked-bites/game/",
+        "target": "current canonical Wicked Bites player route"
+      }
+    ]
+  },
+  "canRemainDeferred": [
+    "stories",
+    "manga-series",
+    "comic-reader",
+    "media",
+    "news",
+    "devlog",
+    "feast-pass",
+    "quests",
+    "rewards",
+    "leaderboards",
+    "account",
+    "profile",
+    "community",
+    "store",
+    "search",
+    "roadmap",
+    "contact",
+    "about",
+    "coming-soon"
+  ],
+  "note": "Deferral means not required for Beta 1 completion, not cancelled."
+}
