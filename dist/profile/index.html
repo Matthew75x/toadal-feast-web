@@ -740,8 +740,31 @@
     document.head.appendChild(definitions);
   }
 
+  function initStoriesPublishingLoader() {
+    var page = document.querySelector('[data-stories-hub], [data-manga-series-page], [data-comic-reader]');
+    if (!page || window.__toadalStoriesPublishingLoading || window.__toadalStoriesPublishingLoaded) return;
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    window.__toadalStoriesPublishingLoading = true;
+    var script = document.createElement('script');
+    script.src = baseRoot + '/assets/js/stories-publishing.js';
+    script.async = false;
+    script.onload = function () {
+      window.__toadalStoriesPublishingLoading = false;
+      window.__toadalStoriesPublishingLoaded = true;
+    };
+    script.onerror = function () {
+      window.__toadalStoriesPublishingLoading = false;
+      var status = document.querySelector('[data-reader-message], [data-story-latest]');
+      if (status) status.textContent = 'The story tools could not load. No publication or reading data was changed.';
+    };
+    document.head.appendChild(script);
+  }
+
   function start() {
     if (window.self !== window.top) return;
+    try { initStoriesPublishingLoader(); } catch (error) {}
     try { initGuestProgressionLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}

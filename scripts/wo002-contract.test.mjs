@@ -108,7 +108,7 @@ function assertSchemaValue(value, schema, label) {
   }
 }
 
-test('page registry contains Play, all four details, and only Wicked Bites player route', () => {
+test('page registry contains the current site routes, Stories templates, and only Wicked Bites player route', () => {
   const expectedGameRoutes = [
     '/games/wicked-bites/',
     '/games/claw-feed-gulper/',
@@ -119,8 +119,13 @@ test('page registry contains Play, all four details, and only Wicked Bites playe
   assert.equal(new Set(routes).size, routes.length, 'page routes must be unique');
   assert.deepEqual(
     [...routes].sort(),
-    ['/', '/404.html', '/play/', ...expectedGameRoutes, '/player/wicked-bites/'].sort(),
-    'page registry should contain the current WO-002 route set and no extra player route',
+    [
+      '/', '/404.html', '/app/', '/characters/', '/characters/toadal/',
+      '/feast-pass/', '/feast-pass/quests/', '/feast-pass/rewards/',
+      ...expectedGameRoutes, '/manga/', '/media/', '/news/', '/play/',
+      '/player/wicked-bites/', '/profile/', '/reader/', '/stories/', '/support/', '/world/',
+    ].sort(),
+    'page registry should contain the current integration routes and no extra route',
   );
   for (const page of pages) {
     assert.equal(page.document.route, page.route, `${page.file} route must match the registry`);
