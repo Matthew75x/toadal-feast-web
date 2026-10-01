@@ -7,7 +7,7 @@ The [route registry](../implementation/ROUTE_REGISTRY.json) is the planned 30-fa
 | Home | Approved dense portal: hero, games/pass band, discovery, app/future band, contextual companion | Present; partial visual/content/companion closure |
 | Play, game detail, player | Registry-driven availability, real evidence, static detail/player paths and truthful launch controls | Play and four details; Wicked Bites preview player only |
 | World, Characters, Toadal profile | World/location discovery and canonical cast/relationships | World preview; character/profile routes absent |
-| Stories, series, reader | Real Series → Volume/Arc → Chapter → Page records, accessible reader, bookmarks/resume | Empty Stories preview; series/reader absent |
+| Stories, series, reader | Real Series → Volume/Arc → Chapter → Page records, accessible reader, bookmarks/resume | Stories remains an empty preview; /manga/ series template and /reader/ shell exist only on the unpromoted integration candidate. No approved series/chapter/page records are published. |
 | Media | Approved structured artwork/gallery/video entries with provenance | Empty preview |
 | News, article/devlog | Real dated published records and readable details | Empty News preview; articles absent |
 | Feast Pass, quests, rewards, leaderboards, profile | Guest-local XP/level/Sparks/Treats/streak/quests/discoveries, reading/local score references and future migration | Planned explanatory page; no live progression |

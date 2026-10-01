@@ -28,9 +28,9 @@
     "BLOCKED_APPROVED_COPY": "Cannot publish final legal/content copy until approved source text exists."
   },
   "pageStatusCounts": {
-    "PARTIAL_CANDIDATE": 14,
+    "PARTIAL_CANDIDATE": 16,
     "PARTIAL": 10,
-    "NOT_STARTED": 5,
+    "NOT_STARTED": 3,
     "DONE_PROVEN": 1
   },
   "pages": [
@@ -103,26 +103,26 @@
       "visualAuthority": "LOCK_LAYOUT",
       "delivery": "LIVE + CANDIDATE",
       "status": "PARTIAL",
-      "evidence": "Stories route exists; candidate adds canonical setting/cast composition.",
-      "remainingGap": "No published series/latest chapter/reading progress/comics/manga/shorts/lore/BTS data."
+      "evidence": "The existing /stories/ route is extended on the integration candidate with featured/latest/progress regions, Comics/Manga/Shorts/Lore/Behind-the-Scenes shelves, and truthful empty states.",
+      "remainingGap": "The public projection has zero approved series, chapters, or pages; published catalog, latest-chapter and reading-progress records remain absent."
     },
     {
       "n": 9,
       "page": "TOADAL FEAST Manga Series",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "Series/reader requirements are preserved in the manifest.",
-      "remainingGap": "Series route, cover/synopsis/chapter list/progress/character/lore links absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "The /manga/ reusable series template is implemented on the integration candidate and labels discovery art and empty publication state truthfully.",
+      "remainingGap": "No approved published series, cover, synopsis, creator, chapters, or reading-progress records exist."
     },
     {
       "n": 10,
       "page": "Comic / Manga Reader",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "Reader contract is documented.",
-      "remainingGap": "Reader, thumbnails, prev/next, fullscreen, progress and bookmarks absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "The /reader/ shell provides ordered-page navigation, thumbnails, fullscreen, progress, and isolated local bookmarks; interaction coverage used a non-public in-memory fixture.",
+      "remainingGap": "No approved published chapter/pages exist, so real-content reading, thumbnails, and chapter navigation are not yet available."
     },
     {
       "n": 11,
@@ -324,12 +324,12 @@
     {
       "requirement": "Discover characters/world/story",
       "status": "PARTIAL_CANDIDATE",
-      "evidence": "World/Stories/Media plus new Characters Hub and Toadal Profile candidate routes now cover more of the discovery journey; manga/reader and broader character depth remain."
+      "evidence": "World/Stories/Media plus Characters Hub, Toadal Profile, Manga template, and Reader shell candidate routes cover more of discovery; published story content and broader character depth remain absent."
     },
     {
       "requirement": "Consume media/manga/lore/news",
       "status": "PARTIAL",
-      "evidence": "Media/News previews exist; manga/reader/article publishing stack is absent."
+      "evidence": "Media/News previews and a fail-closed Stories/Manga/Reader publishing stack exist; approved public story records and the News Article route remain absent."
     },
     {
       "requirement": "Guest-first Feast Pass progression",

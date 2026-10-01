@@ -68,6 +68,12 @@ Series:
 - ordered arcs/volumes/chapters
 - publication state
 
+### Story Arc / Volume
+- id / slug / seriesId
+- title and explicit order within the series
+- ordered chapter IDs
+- publication state
+
 ### Chapter
 Chapter:
 - id / slug / seriesId
@@ -76,6 +82,14 @@ Chapter:
 - publication date when factual
 - ordered page manifest
 - optional thumbnail/cover
+- optional arcId and previous/next chapter IDs
+- publication state
+
+### Story Page
+- immutable id and chapterId
+- explicit order within the chapter (never inferred from filenames)
+- assetId and optional thumbnailAssetId
+- pixel width/height and accessible description
 - publication state
 
 ### Media
@@ -126,6 +140,12 @@ Example:
 `characterIds: ["toadal","princess-lily"]`
 
 The build validates referenced IDs.
+
+Story series, arcs, chapters, and pages are separate from reader progress. Public
+PREVIEW records require an explicit `publicPreview: true`; DRAFT and ARCHIVED
+records never enter the public story projection. A PUBLISHED chapter must point
+only to a PUBLISHED series and a non-empty, unique ordered list of PUBLISHED
+page records whose assets resolve through the asset catalog.
 
 ## Asset references
 Prefer logical asset IDs/manifest references over fragile relative paths in content.

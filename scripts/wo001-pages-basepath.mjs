@@ -6,6 +6,8 @@ import { pathToFileURL } from 'node:url';
 
 const URL_ATTRIBUTES = new Set(['href', 'src', 'action', 'poster']);
 const RAW_TEXT_TAGS = new Set(['script', 'textarea', 'title', 'xmp', 'iframe', 'noembed', 'noframes', 'plaintext']);
+const STAGING_ROBOTS_TARGET = 'public/games/wicked-bites/index.html';
+const STAGING_ROBOTS_META = '<meta name="robots" content="noindex,nofollow">';
 
 export function normalizeBasePath(basePath) {
   if (typeof basePath !== 'string' || basePath.length === 0) {
@@ -421,17 +423,44 @@ async function transformExport(exportDirectory, basePath) {
   return { filesScanned: files.length, filesRewritten: rewrittenFiles, urlsRewritten: rewrittenUrls };
 }
 
-async function runCli(args) {
-  if (args.length < 1 || args.length > 2) {
-    throw new TypeError('Usage: node scripts/wo001-pages-basepath.mjs <STATIC_EXPORT_DIR> [BASE_PATH]');
+function addStagingRobotsPolicy(html) {
+  const robotsMeta = /<meta\b(?=[^>]*\bname\s*=\s*(["'])robots\1)(?=[^>]*\bcontent\s*=\s*(["'])(.*?)\2)[^>]*>/iu;
+  const existing = robotsMeta.exec(html);
+  if (existing) {
+    if (existing[3].replace(/\s+/gu, '').toLowerCase() === 'noindex,nofollow') return html;
+    throw new Error('Staging robots policy conflicts with an existing robots meta tag.');
   }
 
-  const exportDirectory = args[0];
-  const basePath = normalizeBasePath(args[1] ?? '/');
+  const head = /<head\b[^>]*>/iu.exec(html);
+  if (!head) throw new Error('Staging robots target has no <head> element.');
+  const insertAt = head.index + head[0].length;
+  return `${html.slice(0, insertAt)}\n${STAGING_ROBOTS_META}${html.slice(insertAt)}`;
+}
+
+async function applyStagingRobotsPolicy(exportDirectory) {
+  const root = path.resolve(exportDirectory);
+  const target = path.join(root, STAGING_ROBOTS_TARGET);
+  const original = await readFile(target, 'utf8');
+  const transformed = addStagingRobotsPolicy(original);
+  if (transformed !== original) await writeFile(target, transformed, 'utf8');
+  return transformed !== original;
+}
+
+async function runCli(args) {
+  const stagingRobots = args.includes('--staging-robots');
+  const positional = args.filter((argument) => argument !== '--staging-robots');
+  if (positional.length < 1 || positional.length > 2 || args.filter((argument) => argument === '--staging-robots').length > 1) {
+    throw new TypeError('Usage: node scripts/wo001-pages-basepath.mjs <STATIC_EXPORT_DIR> [BASE_PATH] [--staging-robots]');
+  }
+
+  const exportDirectory = positional[0];
+  const basePath = normalizeBasePath(positional[1] ?? '/');
   const counts = await transformExport(exportDirectory, basePath);
+  const stagingRobotsApplied = stagingRobots ? await applyStagingRobotsPolicy(exportDirectory) : false;
   console.log(`Files scanned: ${counts.filesScanned}`);
   console.log(`Files rewritten: ${counts.filesRewritten}`);
   console.log(`URLs rewritten: ${counts.urlsRewritten}`);
+  if (stagingRobots) console.log(`Staging robots policy: ${stagingRobotsApplied ? 'added' : 'already present'}`);
 }
 
 const invokedPath = process.argv[1] ? pathToFileURL(path.resolve(process.argv[1])).href : null;

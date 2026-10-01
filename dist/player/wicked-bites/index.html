@@ -532,6 +532,11 @@
     if (!shell) return;
     var frame = shell.querySelector('[data-player-frame]');
     var wrap = shell.querySelector('[data-player-frame-wrap]');
+    function setFrameFocusIndicator() { if (wrap) wrap.classList.add('wo002-player-frame-focused'); }
+    function clearFrameFocusIndicator() { if (wrap) wrap.classList.remove('wo002-player-frame-focused'); }
+    window.addEventListener('blur', function () { if (document.activeElement === frame) setFrameFocusIndicator(); });
+    window.addEventListener('focus', clearFrameFocusIndicator);
+    document.addEventListener('focusin', function (event) { if (event.target !== frame) clearFrameFocusIndicator(); });
     var status = shell.querySelector('[data-player-status]');
     var errorPanel = shell.querySelector('[data-player-error]');
     var errorCopy = shell.querySelector('[data-player-error-copy]');
@@ -715,8 +720,75 @@
     });
   }
 
+  function initGuestProgressionLoader() {
+    var currentPath = window.location.pathname || '/';
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    var currentRelative = !baseRoot ? currentPath :
+      (currentPath === baseRoot || currentPath.indexOf(baseRoot + '/') === 0
+        ? currentPath.slice(baseRoot.length) || '/'
+        : currentPath);
+    if (currentRelative.length > 1) currentRelative = currentRelative.replace(/\/+$/, '') + '/';
+    var eligibleRoutes = [
+      '/feast-pass/',
+      '/feast-pass/quests/',
+      '/feast-pass/rewards/',
+      '/profile/',
+      '/world/',
+      '/stories/'
+    ];
+    if (eligibleRoutes.indexOf(currentRelative) === -1 || window.__toadalGuestProgressionLoading ||
+        window.__toadalGuestProgressionLoaded) return;
+
+    window.__toadalGuestProgressionLoading = true;
+    function fail() {
+      window.__toadalGuestProgressionLoading = false;
+      var status = document.querySelector('[data-progression-storage-status]');
+      if (status) status.textContent = 'Guest progress is unavailable right now. Your local starter data was not changed.';
+    }
+    var definitions = document.createElement('script');
+    definitions.src = baseRoot + '/assets/js/progression-definitions.js';
+    definitions.onload = function () {
+      var runtime = document.createElement('script');
+      runtime.src = baseRoot + '/assets/js/guest-progression.js';
+      runtime.onload = function () {
+        window.__toadalGuestProgressionLoading = false;
+        window.__toadalGuestProgressionLoaded = true;
+      };
+      runtime.onerror = fail;
+      document.head.appendChild(runtime);
+    };
+    definitions.onerror = fail;
+    document.head.appendChild(definitions);
+  }
+
+  function initStoriesPublishingLoader() {
+    var page = document.querySelector('[data-stories-hub], [data-manga-series-page], [data-comic-reader]');
+    if (!page || window.__toadalStoriesPublishingLoading || window.__toadalStoriesPublishingLoaded) return;
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    window.__toadalStoriesPublishingLoading = true;
+    var script = document.createElement('script');
+    script.src = baseRoot + '/assets/js/stories-publishing.js';
+    script.async = false;
+    script.onload = function () {
+      window.__toadalStoriesPublishingLoading = false;
+      window.__toadalStoriesPublishingLoaded = true;
+    };
+    script.onerror = function () {
+      window.__toadalStoriesPublishingLoading = false;
+      var status = document.querySelector('[data-reader-message], [data-story-latest]');
+      if (status) status.textContent = 'The story tools could not load. No publication or reading data was changed.';
+    };
+    document.head.appendChild(script);
+  }
+
   function start() {
     if (window.self !== window.top) return;
+    try { initStoriesPublishingLoader(); } catch (error) {}
+    try { initGuestProgressionLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}

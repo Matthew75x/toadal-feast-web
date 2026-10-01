@@ -113,6 +113,38 @@ test('CLI rejects invalid arguments without touching the export', async (t) => {
   assert.equal(await readFile(markerPath, 'utf8'), original);
 });
 
+test('staging robots opt-in changes only the generated Wicked Bites HTML and is idempotent', async (t) => {
+  const tempRoot = await mkdtemp(path.join(os.tmpdir(), 'wo001-pages-staging-robots-'));
+  t.after(() => rm(tempRoot, { recursive: true, force: true }));
+  const exportRoot = path.join(tempRoot, 'dist');
+  const targetDirectory = path.join(exportRoot, 'public', 'games', 'wicked-bites');
+  await mkdir(targetDirectory, { recursive: true });
+  const targetPath = path.join(targetDirectory, 'index.html');
+  const otherPath = path.join(exportRoot, 'index.html');
+  const cartridgeHtml = '<!doctype html><html><head><title>Wicked Bites</title></head><body>game</body></html>';
+  const otherHtml = '<!doctype html><html><head><title>Home</title></head><body>home</body></html>';
+  await writeFile(targetPath, cartridgeHtml, 'utf8');
+  await writeFile(otherPath, otherHtml, 'utf8');
+
+  const run = (...args) => spawnSync(process.execPath, [SCRIPT, exportRoot, '/', ...args], { encoding: 'utf8' });
+  const defaultRun = run();
+  assert.equal(defaultRun.status, 0, defaultRun.stderr);
+  assert.equal(await readFile(targetPath, 'utf8'), cartridgeHtml, 'default behavior must not add staging policy');
+  assert.equal(await readFile(otherPath, 'utf8'), otherHtml);
+
+  const stagingRun = run('--staging-robots');
+  assert.equal(stagingRun.status, 0, stagingRun.stderr);
+  assert.match(stagingRun.stdout, /Staging robots policy: added/u);
+  const transformed = await readFile(targetPath, 'utf8');
+  assert.equal(transformed, cartridgeHtml.replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow">'));
+  assert.equal(await readFile(otherPath, 'utf8'), otherHtml, 'other generated HTML remains byte-for-byte unchanged');
+
+  const repeatRun = run('--staging-robots');
+  assert.equal(repeatRun.status, 0, repeatRun.stderr);
+  assert.match(repeatRun.stdout, /Staging robots policy: already present/u);
+  assert.equal(await readFile(targetPath, 'utf8'), transformed, 'repeat runs must be byte-for-byte idempotent');
+});
+
 test('verifier shares strict base-path validation and rejects traversal-like paths', async (t) => {
   const tempRoot = await mkdtemp(path.join(os.tmpdir(), 'wo001-pages-basepath-validation-'));
   t.after(() => rm(tempRoot, { recursive: true, force: true }));

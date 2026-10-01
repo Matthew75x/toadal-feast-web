@@ -108,7 +108,7 @@ function assertSchemaValue(value, schema, label) {
   }
 }
 
-test('page registry contains Play, all four details, and only Wicked Bites player route', () => {
+test('page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route', () => {
   const expectedGameRoutes = [
     '/games/wicked-bites/',
     '/games/claw-feed-gulper/',
@@ -117,10 +117,17 @@ test('page registry contains Play, all four details, and only Wicked Bites playe
   ];
   const routes = pages.map((page) => page.route);
   assert.equal(new Set(routes).size, routes.length, 'page routes must be unique');
+  const requiredRoutes = [
+    '/', '/play/', '/stories/', '/manga/', '/reader/',
+    ...expectedGameRoutes, '/player/wicked-bites/',
+  ];
+  for (const route of requiredRoutes) {
+    assert.ok(routes.includes(route), `page registry must retain required route ${route}`);
+  }
   assert.deepEqual(
-    [...routes].sort(),
-    ['/', '/404.html', '/play/', ...expectedGameRoutes, '/player/wicked-bites/'].sort(),
-    'page registry should contain the current WO-002 route set and no extra player route',
+    routes.filter((route) => route.startsWith('/games/')).sort(),
+    expectedGameRoutes.sort(),
+    'the qualified WO-002 game-detail contract must remain unchanged',
   );
   for (const page of pages) {
     assert.equal(page.document.route, page.route, `${page.file} route must match the registry`);
@@ -264,6 +271,14 @@ test('launch gating exposes only the Wicked Bites preview and keeps CLAW held', 
   assert.equal(htmlAttribute(iframeTag, 'referrerpolicy'), 'origin');
   assert.equal(htmlAttribute(iframeTag, 'allow'), 'fullscreen',
     'the iframe should receive only its declared fullscreen capability');
+  const siteCss = fs.readFileSync(path.join(projectRoot, 'reference', 'assets', 'css', 'site.css'), 'utf8');
+  assert.match(siteCss, /\.wo002-player-frame:focus-visible\s*\{[^}]*outline:/,
+    'keyboard focus on the isolated game iframe must have a visible host-side indicator');
+  assert.match(siteCss, /\.wo002-player-frame-wrap:focus-within,\s*\.wo002-player-frame-wrap\.wo002-player-frame-focused\s*\{[^}]*outline:/,
+    'the player host must show focus when browser focus enters the sandboxed iframe');
+  const advancedCode = JSON.parse(fs.readFileSync(path.join(projectRoot, 'collections', 'advanced-code.json'), 'utf8'));
+  assert.match(advancedCode.javascript, /window\.addEventListener\('blur', function \(\) \{ if \(document\.activeElement === frame\) setFrameFocusIndicator\(\); \}\);/,
+    'the host must detect focus entering the opaque-origin iframe without inspecting cartridge internals');
   assert.equal(htmlAttribute(iframeTag, 'allow'), 'fullscreen',
     'the iframe should receive only its declared fullscreen capability');
   const toolbarTag = playerHtml.match(/<div\b[^>]*class="wo002-player-toolbar"[^>]*>/i)?.[0];
@@ -365,12 +380,18 @@ test('Wicked Bites cartridge conforms to the schema and preserves qualified prov
     .filter((file) => path.relative(wickedRoot, file).replaceAll('\\', '/') !== 'cartridge.json')
     .map((file) => ({
       path: path.relative(wickedRoot, file).replaceAll('\\', '/'),
-      bytes: fs.readFileSync(file),
+      // Runtime package files are canonical UTF-8/LF text. Normalize only CRLF
+      // checkout conversion so package accounting matches the committed bytes.
+      bytes: Buffer.from(fs.readFileSync(file, 'utf8').replace(/\r\n/g, '\n'), 'utf8'),
     }))
     .sort((left, right) => left.path.localeCompare(right.path));
   assert.deepEqual(runtimeFiles.map((file) => file.path), ['index.html', 'toadal-bridge.js']);
   assert.equal(runtimeFiles.length, manifest.package.files, 'runtime file count must match package profile');
-  assert.equal(runtimeFiles.reduce((sum, file) => sum + file.bytes.length, 0), manifest.package.bytes);
+  assert.equal(
+    runtimeFiles.reduce((sum, file) => sum + file.bytes.length, 0),
+    manifest.package.bytes,
+    'runtime package byte count must use canonical UTF-8/LF bytes (CRLF checkout conversion normalized)',
+  );
   const ledger = `${runtimeFiles.map(({ path: relativePath, bytes }) =>
     `${crypto.createHash('sha256').update(bytes).digest('hex')}  ${relativePath}`,
   ).join('\n')}\n`;

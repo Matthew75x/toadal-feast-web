@@ -39,9 +39,9 @@ The approved Home remains `docs/review/WO-002/evidence/approved-home-visual-auth
 | 5 | World Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | World route exists; candidate adds canonical environment/cast discovery. **Gap:** Interactive/structured world map, lore model, discoveries/progress and approved location structure remain absent. |
 | 6 | Characters Hub | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /characters/ route is implemented on the integrated candidate with canonical character registry, approved Batch-1 layout reference and responsive filtering. **Gap:** Still preview-state content; relationships/appearances/discovery-progress depth and final owner visual acceptance are not complete. |
 | 7 | Toadal Character Profile | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /characters/toadal/ route is implemented on the integrated candidate using canonical Toadal art and a structured profile layout. **Gap:** Biography/lore depth is intentionally bounded to verified content; broader appearances/collectibles/history remain incomplete and owner visual acceptance is pending. |
-| 8 | Stories / Comics Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | Stories route exists; candidate adds canonical setting/cast composition. **Gap:** No published series/latest chapter/reading progress/comics/manga/shorts/lore/BTS data. |
-| 9 | TOADAL FEAST Manga Series | LOCK_LAYOUT | ABSENT | **NOT_STARTED** | Series/reader requirements are preserved in the manifest. **Gap:** Series route, cover/synopsis/chapter list/progress/character/lore links absent. |
-| 10 | Comic / Manga Reader | LOCK_LAYOUT | ABSENT | **NOT_STARTED** | Reader contract is documented. **Gap:** Reader, thumbnails, prev/next, fullscreen, progress and bookmarks absent. |
+| 8 | Stories / Comics Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | The existing /stories/ route is extended on the integration candidate with featured/latest/progress regions, Comics/Manga/Shorts/Lore/Behind-the-Scenes shelves, and truthful empty states. **Gap:** The public projection has zero approved series, chapters or pages; published catalog, latest-chapter and reading-progress records remain absent. |
+| 9 | TOADAL FEAST Manga Series | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | The /manga/ reusable series template is implemented on the integration candidate and labels discovery art and empty publication state truthfully. **Gap:** No approved published series, cover, synopsis, creator, chapters or reading-progress records exist. |
+| 10 | Comic / Manga Reader | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | The /reader/ shell provides ordered-page navigation, thumbnails, fullscreen, progress and isolated local bookmarks; interaction coverage used a non-public in-memory fixture. **Gap:** No approved published chapter/pages exist, so real-content reading, thumbnails and chapter navigation are not yet available. |
 | 11 | Media Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | Media route exists; candidate adds canonical world and character gallery. **Gap:** Featured trailer/video/gameplay/shorts/wallpapers/downloads/creator/press structure and real published records absent. |
 | 12 | News / Updates Hub | LOCK_LAYOUT | LIVE | **PARTIAL** | News route exists with truthful placeholder state. **Gap:** No real dated published update catalog/filters/trending content. |
 | 13 | News Article / Devlog | LOCK_LAYOUT | ABSENT | **NOT_STARTED** | Editorial detail template is required. **Gap:** Article route, body/media slots, related links and prev/next absent. |
@@ -66,11 +66,11 @@ The approved Home remains `docs/review/WO-002/evidence/approved-home-visual-auth
 ### Page-family status count
 
 - **DONE_PROVEN: 1**
-- **NOT_STARTED: 5**
+- **NOT_STARTED: 3**
 - **PARTIAL: 10**
-- **PARTIAL_CANDIDATE: 14**
+- **PARTIAL_CANDIDATE: 16**
 
-Route presence is not the same as page completion. This candidate currently contains 27 static route records; several map to the same manifest family and many remain truthful previews.
+Route presence is not the same as page completion. This candidate adds the Stories/Manga/Reader publishing templates; several routes map to the same manifest family and many remain truthful previews. The current integration browser/static audit records the exact route count and qualification coverage.
 
 ## Cross-cutting product contract
 
@@ -79,8 +79,8 @@ Route presence is not the same as page completion. This candidate currently cont
 | TOADAL FEAST-first public identity | **DONE_PROVEN** | Current authority and candidate keep TOADAL FEAST primary and TOADAL GAMES subordinate. |
 | Website feels like entering the Feast World | **PARTIAL** | Canonical food-fantasy art is present, but approved Home is still much richer/denser than candidate. |
 | Play something free immediately | **PARTIAL** | Wicked Bites has an isolated preview player, but current authority still reports zero PUBLIC games. |
-| Discover characters/world/story | **PARTIAL_CANDIDATE** | World/Stories/Media plus new Characters Hub and Toadal Profile candidate routes now cover more of the discovery journey; manga/reader and broader character depth remain. |
-| Consume media/manga/lore/news | **PARTIAL** | Media/News previews exist; manga/reader/article publishing stack is absent. |
+| Discover characters/world/story | **PARTIAL_CANDIDATE** | World/Stories/Media plus Characters Hub, Toadal Profile, Manga template, and Reader shell candidate routes cover more of discovery; published story content and broader character depth remain absent. |
+| Consume media/manga/lore/news | **PARTIAL** | Media/News previews and a fail-closed Stories/Manga/Reader publishing stack exist; approved public story records and the News Article route remain absent. |
 | Guest-first Feast Pass progression | **PARTIAL_CANDIDATE** | Integrated candidate implements browser-local level/XP/Sparks/streak/discoveries/daily check-in/quest summary under the current namespaced contract. |
 | Account later for preserve/sync | **PARTIAL_CANDIDATE** | Account preview route now explains guest-local progress, optional future account benefits and disabled sign-up/login; connected identity/sync remains deferred. |
 | Convert visitors to flagship mobile app | **PARTIAL** | App route exists, but genuine product screenshots and verified store links are missing. |
@@ -175,7 +175,7 @@ The correct progression strategy is **behavior salvage + current-schema rebuild*
 ## Manifest-first execution order
 
 1. **Integrated candidate visual acceptance / staging gate** (manifest rows 1, 6, 7, 14, 15, 16, 20) - Core candidate is implemented and verified; Home remains LOCK_VISUAL and must be reviewed before staging promotion.
-2. **Stories publishing stack** (manifest rows 8, 9, 10) - Rows 9 and 10 are absent and row 8 is only a preview; Batch-1 references already exist.
+2. **Stories publishing stack** (manifest rows 8, 9, 10) - Candidate hub/template/reader routes and fail-closed plumbing are qualified; approved story records and page derivatives remain absent and must not be fabricated.
 3. **Editorial/discovery utilities** (manifest rows 11, 12, 13, 23, 24, 25) - Converts partial media/news/support and missing article/search/roadmap families into useful truthful pages.
 4. **App conversion evidence closure** (manifest rows 18) - Completes flagship conversion only when genuine evidence is available.
 5. **Play depth / additional browser-game integration** (manifest rows 2, 3, 4, 17) - Improves immediate-play depth after core structure is under control.

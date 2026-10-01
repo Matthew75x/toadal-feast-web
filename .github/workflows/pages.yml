@@ -25,6 +25,12 @@ jobs:
     steps:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
+      - name: Apply and verify staging-only Pages policy
+        run: |
+          node scripts/wo001-pages-basepath.mjs dist /toadal-feast-web/ --staging-robots
+          node scripts/verify-pages-basepath.mjs dist /toadal-feast-web/
+          node scripts/verify-static-links.mjs dist /toadal-feast-web/
+          node scripts/verify-staging-robots.mjs dist staging
       - uses: actions/upload-pages-artifact@v4
         with:
           path: dist

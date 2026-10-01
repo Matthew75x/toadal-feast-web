@@ -11,20 +11,20 @@ This matrix ranks work by original-manifest impact and actual dependencies. Work
 - Integrated core rows **1, 6, 7, 14, 15, 16, 20** remain `PARTIAL_CANDIDATE`.
 - Gated-ecosystem rows **19, 21, 22, 26, 27, 28, 29** now have dedicated truthful candidate routes.
 - Home remains `LOCK_VISUAL`; automated PASS does not equal owner acceptance.
-- Stories/Manga/Reader rows **8, 9, 10** are owned by the separate Codex publishing-stack lane and are not reconciled here until that branch is finished.
+- Stories/Manga/Reader rows **8, 9, 10** now have candidate routes and a fail-closed publishing/reader foundation. Rows 9–10 are `PARTIAL_CANDIDATE`; row 8 remains `PARTIAL`; approved story records/pages are still absent.
 - No staging or production deployment occurred.
 
 | Rank | Lane | Manifest rows | Why now | Done condition |
 |---:|---|---|---|---|
 | 1 | **Integrated candidate visual acceptance / staging gate** | 1, 6, 7, 14, 15, 16, 20 | Core candidate is implemented and verified; Home visual acceptance is the promotion dependency. | Owner accepts Home direction, bounded integrated review passes, rollback ref exists, then staging promotion may occur. |
-| 2 | **Stories publishing stack** | 8, 9, 10 | Rows 9/10 are absent on the integrated base and Batch-1 references exist. | Truthful Stories/Manga/Reader architecture exists without fabricated chapters; reconcile Codex result when complete. |
+| 2 | **Stories publishing stack** | 8, 9, 10 | Candidate hub, manga template and reader shell exist; approved public content remains absent. | Keep candidate routes and fail-closed projection qualified; add only approved story/series/chapter/page records in a later content-authorized lane. |
 | 3 | **Editorial / discovery utilities** | 11, 12, 13, 23, 24, 25 | Media/News/Support are partial; Article/Search/Roadmap are missing. | Structured records/templates, local search, roadmap and support depth exist with publication states enforced. |
 | 4 | **App conversion evidence closure** | 18 | App route exists, but genuine screenshots and verified store destinations are unavailable. | Approved current screenshots and verified store URLs are wired; otherwise store actions remain disabled. |
 | 5 | **Play depth / additional browser-game integration** | 2, 3, 4, 17 | Play depth matters, but Arcade HOLD must not consume the website roadmap. | Only bounded integration QA is used; already-qualified gameplay is not re-certified without a relevant integration change. |
 
 ## Parallelization
 
-- Stories publishing remains Codex-owned until its source/dist cleanup, final Studio render, verification, commit and push are complete.
+- Stories publishing integration is a separate candidate lane; this execution matrix records its route/status reconciliation while leaving content publication gated on approved records.
 - Editorial/discovery work may proceed separately if it does not touch Stories/Manga/Reader files.
 - The gated-ecosystem branch is complete as a candidate and should not receive speculative backend, legal-copy, commerce, or account-service work.
 
