@@ -58,6 +58,7 @@ Timestamp, coarse platform family, and destination may be added by the server/an
 3. If platform routing is enabled and the corresponding store destination is configured:
    - Android -> Google Play
    - iOS/iPadOS -> App Store
+   Store destinations may roll out independently; a missing platform destination falls back to the website and must not block another platform's verified store route.
 4. Desktop/unknown platform -> website landing page.
 5. Campaign tracking must not prevent navigation if analytics fails.
 
