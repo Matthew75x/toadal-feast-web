@@ -2280,9 +2280,9 @@ main {
 }
 
 @media (max-width: 760px) {
-  .toadal-companion { width: min(300px, calc(100vw - 20px)); inset-inline-end: max(10px, env(safe-area-inset-right)) !important; inset-block-end: max(10px, env(safe-area-inset-bottom)) !important; }
-  .toadal-companion .companion-panel { width: min(208px, calc(100vw - 94px)); padding: 8px 10px; font-size: .68rem; }
+  .toadal-companion { width: min(264px, calc(100vw - 20px)); inset-inline-end: max(12px, env(safe-area-inset-right)) !important; inset-block-end: max(12px, env(safe-area-inset-bottom)) !important; }
+  .toadal-companion .companion-panel { width: min(194px, calc(100vw - 78px)); padding: 8px 10px; font-size: .68rem; }
   .toadal-companion .companion-toggle,
-  .toadal-companion .companion-image { width: 68px; height: 72px; }
-  .toadal-companion .companion-image { max-height: 72px; }
+  .toadal-companion .companion-image { width: 52px; height: 56px; }
+  .toadal-companion .companion-image { max-height: 56px; }
 }
