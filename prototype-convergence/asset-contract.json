@@ -1,0 +1,51 @@
+{
+  "schema": "toadal-web-visual-asset-contract/v1",
+  "status": "integration-reference",
+  "rule": "Use approved production assets only. Do not invent replacement character art.",
+  "slots": {
+    "home.hero": {
+      "purpose": "Primary TOADAL FEAST hero artwork",
+      "subject": "Toadal / TOADAL FEAST world",
+      "requiredForCanonicalCandidate": true
+    },
+    "world.toadal": {
+      "purpose": "Toadal character card",
+      "subject": "Toadal",
+      "requiredForCanonicalCandidate": true
+    },
+    "world.princessLily": {
+      "purpose": "Princess Lily character card",
+      "subject": "Princess Lily",
+      "preferredSourceFamily": "lilly_*_2026-09-08",
+      "requiredForCanonicalCandidate": true
+    },
+    "world.gully": {
+      "purpose": "Gully character card",
+      "subject": "Gully",
+      "requiredForCanonicalCandidate": true
+    },
+    "world.chomper": {
+      "purpose": "Chomper character card",
+      "subject": "Chomper",
+      "requiredForCanonicalCandidate": true
+    },
+    "play.arcade": {
+      "purpose": "Qualified WO-003 player integration",
+      "type": "runtime-not-static-art",
+      "requiredForCanonicalCandidate": true
+    },
+    "media.gameplay": {
+      "purpose": "Strong approved gameplay screenshot",
+      "requiredForCanonicalCandidate": false
+    },
+    "download.android": {
+      "purpose": "Approved Android/store download treatment",
+      "requiredForCanonicalCandidate": true
+    },
+    "download.ios": {
+      "purpose": "Approved iOS/store download treatment",
+      "requiredForCanonicalCandidate": false,
+      "note": "Can remain coming-soon until iOS distribution is available."
+    }
+  }
+}
