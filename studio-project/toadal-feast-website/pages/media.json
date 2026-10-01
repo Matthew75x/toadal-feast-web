@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "page.media",
+  "route": "/media.html",
+  "title": "Media · TOADAL FEAST",
+  "description": "Gameplay, world art, and approved TOADAL FEAST imagery.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.media.main",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "route-page",
+        "html": "<section class='route-page-intro' data-companion-context='media' data-companion-copy='This page uses real approved game and world imagery rather than generic placeholders.'><p class='section-kicker'>MEDIA</p><h1 class='route-title'>See the Feast in motion.</h1><p class='route-lede'>Gameplay previews, world art, and character imagery from the TOADAL FEAST universe.</p></section>\n<section class='route-section'>\n  <div class='route-media-grid'>\n    <figure class='route-media route-media--wide'><img src='assets/images/games/wicked-bites-v5.5-preview.webp' alt='Wicked Bites gameplay preview' width='844' height='390'><figcaption>Wicked Bites gameplay preview</figcaption></figure>\n    <figure class='route-media'><img src='assets/images/world/candy-kingdom.webp' alt='Candy Kingdom world art' width='1424' height='750'><figcaption>Candy Kingdom</figcaption></figure>\n    <figure class='route-media'><img src='assets/images/games/claw-feed-gulper-v2.5.1-preview.webp' alt='CLAW Feed Gulper gameplay preview' width='844' height='390'><figcaption>CLAW: Feed Gulper</figcaption></figure>\n    <figure class='route-media'><img src='assets/images/world/forest-portal.webp' alt='Forest portal world art' width='1424' height='750'><figcaption>Forest Portal</figcaption></figure>\n    <figure class='route-media'><img src='assets/images/world/candyland-calm.webp' alt='Candyland scenic world art' width='1424' height='750'><figcaption>Candyland Scenic</figcaption></figure>\n  </div>\n</section>"
+      }
+    },
+    {
+      "id": "component.media.companion",
+      "type": "core.rich-text",
+      "props": {
+        "symbolId": "symbol.home.toadal-companion"
+      }
+    }
+  ],
+  "referenceFile": "media.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "Media · TOADAL FEAST",
+    "description": "Gameplay, world art, and approved TOADAL FEAST imagery."
+  }
+}
