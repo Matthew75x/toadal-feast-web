@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "page.news",
+  "route": "/news.html",
+  "title": "News · TOADAL FEAST",
+  "description": "Updates from the TOADAL FEAST world.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.news.main",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "route-page",
+        "html": "<section class='route-page-intro' data-companion-context='news' data-companion-copy='The news page stays public-facing. Internal work-order and QA language does not belong here.'><p class='section-kicker'>NEWS</p><h1 class='route-title'>What’s happening in the pond?</h1><p class='route-lede'>Public updates will live here when there is something worth sharing.</p></section>\n<section class='route-section'><div class='route-news-empty'><img src='assets/images/characters/toadal-portrait.webp' alt='Toadal' width='256' height='256'><div><span class='status-chip status-chip--preview'>QUIET FOR NOW</span><h2 class='section-heading'>No public updates posted yet.</h2><p class='section-lede'>The structure is ready. We will fill it with real announcements rather than internal development chatter.</p></div></div></section>"
+      }
+    },
+    {
+      "id": "component.news.companion",
+      "type": "core.rich-text",
+      "props": {
+        "symbolId": "symbol.home.toadal-companion"
+      }
+    }
+  ],
+  "referenceFile": "news.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "News · TOADAL FEAST",
+    "description": "Updates from the TOADAL FEAST world."
+  }
+}
