@@ -1,0 +1,33 @@
+{
+  "schema": "toadal-feast.web.public-feature-state.beta-2026-09-30.v1",
+  "note": "Beta truth overlay. Does not deploy or supersede production until accepted.",
+  "rules": {
+    "missingCapability": "COMING_SOON_OR_PREVIEW",
+    "noFakeSuccessPaths": true,
+    "accountNotRequiredForBetaPlay": true
+  },
+  "features": {
+    "home": "ACCEPTED_LOCAL_WO002_NOT_YET_PRODUCTION",
+    "playHub": "ACCEPTED_LOCAL_WO002_NOT_YET_PRODUCTION",
+    "wickedBites": "PREVIEW",
+    "toadalFeastArcadePreview": "HOLD_ARC_QUAL_01",
+    "arcadeStandard": "HOLD_WITH_PARENT",
+    "arcadeFiveMinuteFeast": "PLANNED_IN_FINAL_PREVIEW_AFTER_QUALIFICATION",
+    "arcadeZen": "PLANNED_IN_FINAL_PREVIEW_AFTER_QUALIFICATION",
+    "arcadeFeastFrenzy": "EXCLUDED_FROM_CURRENT_WEB_PREVIEW",
+    "worldHub": "BETA_REQUIRED_PLANNED",
+    "charactersHub": "BETA_REQUIRED_PLANNED",
+    "toadalProfile": "BETA_REQUIRED_PLANNED",
+    "appInformationPage": "BETA_REQUIRED_PLANNED",
+    "support": "BETA_REQUIRED_PLANNED",
+    "legalPrivacy": "BETA_REQUIRED_OWNER_APPROVED_COPY",
+    "accountAuthentication": "PLANNED_NOT_BETA_REQUIRED",
+    "accountSync": "PLANNED_NOT_BETA_REQUIRED",
+    "feastPassGuestLocal": "DEFERRED_BEYOND_BETA1",
+    "globalLeaderboards": "PLANNED_NOT_LIVE",
+    "storeCheckout": "PLANNED_NOT_LIVE",
+    "communityPosting": "PLANNED_NOT_LIVE",
+    "storiesReader": "DEFERRED_BEYOND_BETA1",
+    "localSearch": "DEFERRED_BEYOND_BETA1_UNLESS_LOW_COST"
+  }
+}
