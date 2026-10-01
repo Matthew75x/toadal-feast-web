@@ -54,6 +54,23 @@ assert.equal(
   "https://toadalfeast.com/",
 );
 
+result = await run(
+  "https://toadalfeast.com/go/not-real",
+  "Mozilla/5.0 (Linux; Android 16)",
+);
+assert.equal(result.response.status, 302);
+assert.equal(
+  result.response.headers.get("location"),
+  "https://toadalfeast.com/",
+);
+
+result = await run(
+  "https://toadalfeast.com/?ref=app-$qr",
+  "Mozilla/5.0 (Linux; Android 16)",
+);
+assert.equal(result.ctx.nextCalled, true);
+assert.equal(result.response.status, 200);
+
 vars.set("TOADAL_ROUTE_TO_STORES", "true");
 vars.set(
   "TOADAL_ANDROID_STORE_URL",
@@ -67,6 +84,18 @@ assert.equal(result.response.status, 302);
 assert.equal(
   result.response.headers.get("location"),
   "https://play.google.com/store/apps/details?id=com.toadalfeast.game",
+);
+
+// Platform store destinations may roll out independently. iOS remains
+// website-first until its verified destination is configured.
+result = await run(
+  "https://toadalfeast.com/go/app-share",
+  "Mozilla/5.0 (iPhone; CPU iPhone OS 18_0 like Mac OS X)",
+);
+assert.equal(result.response.status, 302);
+assert.equal(
+  result.response.headers.get("location"),
+  "https://toadalfeast.com/?ref=app_share",
 );
 
 console.log("Netlify acquisition edge scaffold: PASS");
