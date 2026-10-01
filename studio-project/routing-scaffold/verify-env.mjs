@@ -21,10 +21,13 @@ function validHttpUrl(value, label) {
 validHttpUrl(website, "TOADAL_WEBSITE_URL");
 
 if (direct) {
-  if (!android) errors.push("TOADAL_ROUTE_TO_STORES=true requires TOADAL_ANDROID_STORE_URL");
-  if (!ios) errors.push("TOADAL_ROUTE_TO_STORES=true requires TOADAL_IOS_STORE_URL");
+  if (!android && !ios) {
+    errors.push("TOADAL_ROUTE_TO_STORES=true requires at least one configured store destination");
+  }
   if (android) validHttpUrl(android, "TOADAL_ANDROID_STORE_URL");
   if (ios) validHttpUrl(ios, "TOADAL_IOS_STORE_URL");
+  if (!android) warnings.push("Android store URL is not configured; Android traffic will remain website-first.");
+  if (!ios) warnings.push("iOS store URL is not configured; iOS traffic will remain website-first.");
 } else {
   if (android || ios) warnings.push("Store URLs are configured but direct store routing is disabled; website-first routing remains active.");
 }
