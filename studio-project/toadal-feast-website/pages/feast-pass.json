@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "page.feast-pass",
+  "route": "/feast-pass.html",
+  "title": "Feast Pass · TOADAL FEAST",
+  "description": "Preview the planned Feast Pass progression experience.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.feastpass.main",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "route-page",
+        "html": "<section class='route-page-intro' data-companion-context='feast-pass' data-companion-copy='Feast Pass is a planned progression layer. This page shows the product direction without pretending live account data exists.'><p class='section-kicker'>FEAST PASS</p><h1 class='route-title'>A reason to come back hungry.</h1><p class='route-lede'>Play, explore, complete quests, and collect treats as the web experience grows.</p></section>\n<section class='route-section'>\n  <div class='route-pass-panel'>\n    <div><span class='status-chip status-chip--planned'>PLANNED</span><h2 class='section-heading'>Your guest journey, made visible.</h2><p class='section-lede'>The beta direction centers on quests, treats, streaks, and levels. No fake XP, rewards, sync, or account balances are shown before those systems exist.</p></div>\n    <div class='route-pass-steps'><div><strong>01</strong><span>Play</span></div><div><strong>02</strong><span>Quest</span></div><div><strong>03</strong><span>Reward</span></div></div>\n  </div>\n  <div class='route-card-grid route-card-grid--three'>\n    <article class='route-card'><p class='section-kicker'>QUESTS</p><h3>Little goals across the Feast</h3><p>Point visitors toward games, characters, and stories.</p></article>\n    <article class='route-card'><p class='section-kicker'>TREATS</p><h3>Collect something fun</h3><p>A visible reward language for site progress.</p></article>\n    <article class='route-card'><p class='section-kicker'>STREAKS</p><h3>Celebrate return visits</h3><p>Encourage coming back without punishing missed days.</p></article>\n  </div>\n</section>"
+      }
+    },
+    {
+      "id": "component.feastpass.companion",
+      "type": "core.rich-text",
+      "props": {
+        "symbolId": "symbol.home.toadal-companion"
+      }
+    }
+  ],
+  "referenceFile": "feast-pass.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "Feast Pass · TOADAL FEAST",
+    "description": "Preview the planned Feast Pass progression experience."
+  }
+}
