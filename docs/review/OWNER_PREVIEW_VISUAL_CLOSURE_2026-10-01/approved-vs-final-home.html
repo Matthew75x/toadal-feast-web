@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>TOADAL FEAST — Approved and Owner Preview Home</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; background: #fff8e9; color: #241a44; }
+    body { margin: 0; padding: 24px; }
+    h1 { margin: 0 0 8px; }
+    p { max-width: 80ch; line-height: 1.5; }
+    .pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; align-items: start; }
+    figure { margin: 0; padding: 12px; border: 1px solid #dfcda5; border-radius: 14px; background: #fffdf6; }
+    figcaption { margin: 0 0 10px; font-weight: 750; }
+    img { display: block; width: 100%; height: auto; border: 1px solid #d5c7ae; }
+    @media (max-width: 800px) { body { padding: 12px; } .pair { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h1>Approved authority vs owner-review candidate</h1>
+  <p>The left is the frozen approved Home visual authority. The right is the final rendered candidate at 1366×768. The comparison is for visual owner review; it does not declare <code>LOCK_VISUAL</code> accepted.</p>
+  <main class="pair">
+    <figure>
+      <figcaption>Approved Home visual authority (SHA-256: 4154F582…BF79608)</figcaption>
+      <img src="../WO-002/evidence/approved-home-visual-authority.png" alt="Approved TOADAL FEAST Home visual authority">
+    </figure>
+    <figure>
+      <figcaption>Final owner-preview Home — 1366×768</figcaption>
+      <img src="home-1366x768.jpg" alt="Final TOADAL FEAST owner-preview Home at 1366 by 768">
+    </figure>
+  </main>
+</body>
+</html>

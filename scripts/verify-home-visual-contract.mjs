@@ -11,6 +11,7 @@ const nav = JSON.parse(read(path.join('collections', 'navigation.json')));
 const advanced = JSON.parse(read(path.join('collections', 'advanced-code.json')));
 const symbols = JSON.parse(read(path.join('collections', 'symbols.json')));
 const assets = JSON.parse(read(path.join('assets', 'index.json')));
+const guestRuntime = read(path.join('reference', 'assets', 'js', 'guest-progression.js'));
 const canonicalAssetManifest = JSON.parse(fs.readFileSync(path.join(repo, 'docs', 'implementation', 'CANONICAL_ASSET_SOURCE_MANIFEST.json'), 'utf8'));
 const sha256File = (abs) => crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
 const gameIndex = JSON.parse(read(path.join('games', 'index.json')));
@@ -77,9 +78,45 @@ check('character-companion-treatment', /\.companion-toggle[\s\S]*background:\s*t
   'The contextual companion is character-led rather than an admin-style toggle.');
 check('retired-lily-absent', !/(walk_12f|idle_blink_16f_256|catch_open_10f|curated-highres\/princess\/idle\.png)/i.test(html + css),
   'Retired Princess Lily assets are absent from Home markup and styling.');
-check('desktop-search-field', /type=["']search["'][^>]*disabled/i.test(componentHtml('component.home.hero')) &&
-  /Find your place in the Feast/i.test(componentHtml('component.home.hero')),
-  'The approved search-field treatment is visible and honestly disabled.');
+const homeSearchLink = (nav.primary || []).some(item => item.label === 'Search' && item.href === '/search/');
+check('compact-home-search', homeSearchLink &&
+  !/type=["']search["'][^>]*disabled/i.test(componentHtml('component.home.hero')) &&
+  !/Search is not live|Find your place in the Feast/i.test(componentHtml('component.home.hero')),
+  'Home uses a compact header link to the functioning local Search surface, not the retired disabled hero field.');
+check('home-search-utility-style', /site-links a\[href\$=\"\/search\/\"\]/.test(css) &&
+  /background:\s*#f1c75b/i.test(css),
+  'The Search route is visually presented as a compact branded header utility.');
+const featureState = JSON.parse(fs.readFileSync(path.join(repo, 'docs', 'implementation', 'PUBLIC_FEATURE_STATE.json'), 'utf8'));
+const searchIndex = JSON.parse(read(path.join('reference', 'assets', 'data', 'local-search-index.json')));
+check('home-search-local-only', homeSearchLink && (pagesIndex.pages || []).some(page => page.route === '/search/') &&
+  featureState.features?.localSearch === 'PUBLIC_LOCAL_ONLY' && searchIndex.schema === 'toadal-feast.local-search.v1',
+  'The Home Search affordance reaches the registered local-only Search page without an external provider.');
+check('home-feast-pass-runtime', /data-progression-page/.test(componentHtml('component.home.feast-pass')) &&
+  /var eligibleRoutes\s*=\s*\[[\s\S]*?["']\/["'][\s\S]*?\]/.test(advanced.javascript || '') &&
+  ['level', 'xp', 'sparks', 'treats'].every(key => componentHtml('component.home.feast-pass').includes(`data-progression-stat='${key}'`)) &&
+  /Guest progress is stored only in this browser/i.test(componentHtml('component.home.feast-pass')) &&
+  /toadal:web:v1:feast-pass/.test(guestRuntime) && /data-progression-stat/.test(guestRuntime),
+  'The Home Feast Pass summary is bound to the existing browser-local progression runtime and its persisted state.');
+const homePassStats = [...componentHtml('component.home.feast-pass').matchAll(/<dd data-progression-stat=["']([^"']+)["']>(.*?)<\/dd>/g)];
+check('home-feast-pass-no-fake-values', homePassStats.length === 4 && homePassStats.every(([, , value]) => value === '—'),
+  'Progress numbers remain placeholders until the real local runtime hydrates them.');
+check('home-daily-checkin-runtime', /data-progression-page/.test(componentHtml('component.home.today')) &&
+  /data-daily-reward-status/.test(componentHtml('component.home.today')) &&
+  /data-claim-daily/.test(componentHtml('component.home.today')) && /claimDaily\(/.test(guestRuntime),
+  'The Home daily check-in reports and claims the configured browser-local state through the existing runtime.');
+check('home-character-truth', /character hub is open/i.test(componentHtml('component.home.discovery')) &&
+  /profile preview for Toadal/i.test(componentHtml('component.home.discovery')) &&
+  /href=["']\/characters\/toadal\/["']/.test(componentHtml('component.home.discovery')),
+  'Home distinguishes the existing Character hub and Toadal profile preview from incomplete broader profile depth.');
+check('home-stories-truth', /public reading surfaces are here/i.test(componentHtml('component.home.discovery')) &&
+  /catalogue is still empty/i.test(componentHtml('component.home.discovery')) &&
+  ['/stories/', '/manga/', '/reader/'].every(route => componentHtml('component.home.discovery').includes(`href='${route}'`)) &&
+  !/No stories or media library is published here/i.test(componentHtml('component.home.discovery')),
+  'Home presents the existing Stories/Manga/Reader surfaces while clearly stating that no approved catalogue is published.');
+check('home-app-illustration', /characters\/companion\/production-pack-v2\/toadal-mobile-app\.png/i.test(componentHtml('component.home.app')) &&
+  assets.assets?.some(asset => asset.id === 'asset.companion.context.app' && asset.source === 'reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png') &&
+  /disabled/.test(componentHtml('component.home.app')),
+  'The paired App feature uses its registered canonical Toadal/app illustration and keeps unverified store links disabled.');
 check('contextual-companion-source', /data-companion-copy=/i.test(html),
   'Home sections expose distinct contextual companion copy.');
 check('contextual-companion-pointer', /addEventListener\(['"]pointer(?:over|enter)['"]/i.test(advanced.javascript || ''),
@@ -118,7 +155,7 @@ check('home-play-funnel', /href=['"]\/play\/['"]/i.test(componentHtml('component
 check('arcade-withheld', !indexedGames.some(game => /arcade/i.test(game.slug || game.id)),
   'The unapproved Arcade candidate is not exposed as a public browser-game record.');
 check('store-link-truth', /type=["']button["'][^>]*disabled/i.test(componentHtml('component.home.app')) &&
-  /store links are not available|no download link is configured/i.test(componentHtml('component.home.app')),
+  /verified store links are not configured|store links are not available|no download link is configured/i.test(componentHtml('component.home.app')),
   'Store conversion is disabled and explains that no verified destination is configured.');
 
 const requiredNav = ['Home', 'Play', 'World', 'Stories', 'Media', 'Feast Pass', 'App'];

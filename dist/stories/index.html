@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stories &amp; Comics · TOADAL FEAST</title><meta name="description" content="Discover the TOADAL FEAST story library and its current publication state."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.stories.publishing-hub" data-studio-variant="stories-publishing-hub"><article class='stories-publishing-page' data-stories-hub data-companion-context='stories' data-companion-copy='I can point to the story shelves, but none are published yet.' data-companion-reaction='thinking'>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Stories &amp; Comics · TOADAL FEAST</title><meta name="description" content="Discover the TOADAL FEAST story library and its current publication state."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a><a href="/toadal-feast-web/search/">Search</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.stories.publishing-hub" data-studio-variant="stories-publishing-hub"><article class='stories-publishing-page' data-stories-hub data-companion-context='stories' data-companion-copy='I can point to the story shelves, but none are published yet.' data-companion-reaction='thinking'>
 <nav class='story-breadcrumb' aria-label='Breadcrumb'><a href='/toadal-feast-web/'>Home</a><span aria-hidden='true'>/</span><span aria-current='page'>Stories &amp; Comics</span></nav>
 <header class='stories-hero'><div class='stories-hero-copy'><p class='story-kicker'>THE FEAST WORLD · STORIES &amp; COMICS</p><span class='story-status'>Publishing preview · no published stories</span><h1>Stories from the Feast</h1><p>Meet the worlds and characters behind TOADAL FEAST, then return when approved comics, manga, shorts, lore, and behind-the-scenes stories are ready to read.</p><div class='story-actions'><a class='story-button story-button-primary' href='/toadal-feast-web/manga/'>Explore the manga preview <span aria-hidden='true'>→</span></a><a class='story-button story-button-secondary' href='/toadal-feast-web/world/'>Explore the Feast World</a></div><p class='story-art-note'>The artwork here is canonical character and environment art, not a published comic or story cover.</p></div><figure class='stories-hero-art'><img class='stories-world-art' src='/toadal-feast-web/assets/images/world/candy-kingdom.webp' alt='Canonical TOADAL FEAST environment artwork, shown as a world preview.' width='1424' height='750' fetchpriority='high'><img class='stories-toadal-art' src='/toadal-feast-web/assets/images/characters/toadal-portrait.webp' alt='Canonical portrait of Toadal, shown as character art rather than a story illustration.' width='256' height='256'><figcaption>Explore the world and cast while the story library is being prepared.</figcaption></figure></header>
 <section class='stories-feature-grid' aria-label='Featured stories and reading progress'><section class='story-panel story-featured-panel' aria-labelledby='stories-featured-heading'><div class='story-panel-heading'><div><p class='story-kicker'>THE LIBRARY</p><h2 id='stories-featured-heading'>Featured stories</h2></div><span class='story-status story-status-muted'>Nothing published yet</span></div><div class='story-series-list' data-story-series-list><div class='story-empty-card' data-story-empty><span class='story-empty-mark' aria-hidden='true'>✦</span><div><h3>The first story will appear here</h3><p>No story series or chapters are currently published. This shelf will only fill from approved public records.</p></div></div></div></section><aside class='story-panel story-progress-panel' aria-labelledby='stories-progress-heading'><p class='story-kicker'>YOUR BOOKMARKS</p><h2 id='stories-progress-heading'>Reading progress</h2><div data-story-progress><div class='story-progress-empty'><span aria-hidden='true'>▤</span><p>There is nothing to resume yet. Your reading progress will appear here after a published chapter is available.</p></div></div><a class='story-text-link' href='/toadal-feast-web/reader/'>Open the reader preview <span aria-hidden='true'>→</span></a></aside></section>
@@ -725,7 +725,8 @@
       '/feast-pass/rewards/',
       '/profile/',
       '/world/',
-      '/stories/'
+      '/stories/',
+      '/'
     ];
     if (eligibleRoutes.indexOf(currentRelative) === -1 || window.__toadalGuestProgressionLoading ||
         window.__toadalGuestProgressionLoaded) return;
@@ -774,10 +775,27 @@
     document.head.appendChild(script);
   }
 
+  function initLocalSearchLoader() {
+    var currentPath = window.location.pathname || '/';
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    var relative = !baseRoot ? currentPath : (currentPath === baseRoot || currentPath.indexOf(baseRoot + '/') === 0 ? currentPath.slice(baseRoot.length) || '/' : currentPath);
+    if (relative.length > 1) relative = relative.replace(/\/+$/, '') + '/';
+    if (['/search/', '/support/'].indexOf(relative) === -1 || window.__toadalSearchLoading || window.__toadalSearchLoaded) return;
+    window.__toadalSearchLoading = true;
+    var script = document.createElement('script');
+    script.src = baseRoot + '/assets/js/site-search.js';
+    script.onload = function () { window.__toadalSearchLoading = false; window.__toadalSearchLoaded = true; };
+    script.onerror = function () { window.__toadalSearchLoading = false; };
+    document.head.appendChild(script);
+  }
+
   function start() {
     if (window.self !== window.top) return;
     try { initStoriesPublishingLoader(); } catch (error) {}
     try { initGuestProgressionLoader(); } catch (error) {}
+    try { initLocalSearchLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}

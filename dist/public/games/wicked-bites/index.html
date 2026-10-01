@@ -2517,7 +2517,8 @@ if(typeof module!=='undefined'&&module.exports)module.exports=CrossingRenderer;
       '/feast-pass/rewards/',
       '/profile/',
       '/world/',
-      '/stories/'
+      '/stories/',
+      '/'
     ];
     if (eligibleRoutes.indexOf(currentRelative) === -1 || window.__toadalGuestProgressionLoading ||
         window.__toadalGuestProgressionLoaded) return;
@@ -2566,10 +2567,27 @@ if(typeof module!=='undefined'&&module.exports)module.exports=CrossingRenderer;
     document.head.appendChild(script);
   }
 
+  function initLocalSearchLoader() {
+    var currentPath = window.location.pathname || '/';
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    var relative = !baseRoot ? currentPath : (currentPath === baseRoot || currentPath.indexOf(baseRoot + '/') === 0 ? currentPath.slice(baseRoot.length) || '/' : currentPath);
+    if (relative.length > 1) relative = relative.replace(/\/+$/, '') + '/';
+    if (['/search/', '/support/'].indexOf(relative) === -1 || window.__toadalSearchLoading || window.__toadalSearchLoaded) return;
+    window.__toadalSearchLoading = true;
+    var script = document.createElement('script');
+    script.src = baseRoot + '/assets/js/site-search.js';
+    script.onload = function () { window.__toadalSearchLoading = false; window.__toadalSearchLoaded = true; };
+    script.onerror = function () { window.__toadalSearchLoading = false; };
+    document.head.appendChild(script);
+  }
+
   function start() {
     if (window.self !== window.top) return;
     try { initStoriesPublishingLoader(); } catch (error) {}
     try { initGuestProgressionLoader(); } catch (error) {}
+    try { initLocalSearchLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}

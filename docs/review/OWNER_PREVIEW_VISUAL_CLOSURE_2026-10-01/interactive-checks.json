@@ -1,0 +1,42 @@
+{
+  "homeDaily": {
+    "before": {
+      "stats": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "status": "A starter-config UTC-day check-in is available. Progress is local to this browser.",
+      "buttonDisabled": false,
+      "buttonText": "Claim daily check-in"
+    },
+    "after": {
+      "stats": [
+        "1",
+        "0",
+        "0",
+        "0"
+      ],
+      "status": "Today’s UTC check-in is already claimed.",
+      "buttonDisabled": true,
+      "buttonText": "Already claimed today",
+      "dailyClaimedPeriod": "2026-10-01"
+    },
+    "claimChanged": true
+  },
+  "search": {
+    "status": "29 local results for “Toadal”.",
+    "results": 29,
+    "firstHref": "/toadal-feast-web/characters/toadal/",
+    "basePathQuery": true
+  },
+  "mobileNav": {
+    "opened": {
+      "expanded": "true",
+      "searchVisible": true,
+      "searchHref": "/toadal-feast-web/search/"
+    },
+    "closed": "false"
+  }
+}

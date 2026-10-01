@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comic &amp; Manga Reader · TOADAL FEAST</title><meta name="description" content="Accessible comic and manga reader template. No published chapter is currently available."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.comic.reader-preview" data-studio-variant="comic-reader-preview"><article class='stories-publishing-page comic-reader-page' data-comic-reader data-story-index='/assets/data/story-content.json' data-companion-context='stories' data-companion-copy='The reader is ready for approved pages. None are published yet.' data-companion-reaction='thinking'>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Comic &amp; Manga Reader · TOADAL FEAST</title><meta name="description" content="Accessible comic and manga reader template. No published chapter is currently available."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a><a href="/toadal-feast-web/search/">Search</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.comic.reader-preview" data-studio-variant="comic-reader-preview"><article class='stories-publishing-page comic-reader-page' data-comic-reader data-story-index='/assets/data/story-content.json' data-companion-context='stories' data-companion-copy='The reader is ready for approved pages. None are published yet.' data-companion-reaction='thinking'>
 <nav class='story-breadcrumb' aria-label='Breadcrumb'><a href='/toadal-feast-web/'>Home</a><span aria-hidden='true'>/</span><a href='/toadal-feast-web/stories/'>Stories</a><span aria-hidden='true'>/</span><span aria-current='page'>Reader preview</span></nav>
 <header class='reader-page-heading'><div><p class='story-kicker'>COMIC · MANGA · READER</p><h1>Read at your own pace</h1></div><span class='story-status'>READER PREVIEW · NO CHAPTER SELECTED</span></header>
 <section class='comic-reader-layout' data-reader-shell aria-label='Comic and manga reader'><aside class='reader-side-panel reader-series-panel'><p class='story-kicker'>YOUR LIBRARY</p><h2>Stories</h2><p>No published series are available yet.</p><a href='/toadal-feast-web/stories/'>Browse Stories <span aria-hidden='true'>→</span></a><div class='reader-series-list' data-reader-series-list><span class='reader-empty-mini'>Published series will appear here.</span></div></aside>
@@ -726,7 +726,8 @@
       '/feast-pass/rewards/',
       '/profile/',
       '/world/',
-      '/stories/'
+      '/stories/',
+      '/'
     ];
     if (eligibleRoutes.indexOf(currentRelative) === -1 || window.__toadalGuestProgressionLoading ||
         window.__toadalGuestProgressionLoaded) return;
@@ -775,10 +776,27 @@
     document.head.appendChild(script);
   }
 
+  function initLocalSearchLoader() {
+    var currentPath = window.location.pathname || '/';
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    var relative = !baseRoot ? currentPath : (currentPath === baseRoot || currentPath.indexOf(baseRoot + '/') === 0 ? currentPath.slice(baseRoot.length) || '/' : currentPath);
+    if (relative.length > 1) relative = relative.replace(/\/+$/, '') + '/';
+    if (['/search/', '/support/'].indexOf(relative) === -1 || window.__toadalSearchLoading || window.__toadalSearchLoaded) return;
+    window.__toadalSearchLoading = true;
+    var script = document.createElement('script');
+    script.src = baseRoot + '/assets/js/site-search.js';
+    script.onload = function () { window.__toadalSearchLoading = false; window.__toadalSearchLoaded = true; };
+    script.onerror = function () { window.__toadalSearchLoading = false; };
+    document.head.appendChild(script);
+  }
+
   function start() {
     if (window.self !== window.top) return;
     try { initStoriesPublishingLoader(); } catch (error) {}
     try { initGuestProgressionLoader(); } catch (error) {}
+    try { initLocalSearchLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}

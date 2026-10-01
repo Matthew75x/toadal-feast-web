@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Play browser games · TOADAL FEAST</title><meta name="description" content="Browse TOADAL FEAST browser game previews and check the status of each playable build."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.muogc2on.jbosap" data-studio-variant="wo002-play-hub">
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Play browser games · TOADAL FEAST</title><meta name="description" content="Browse TOADAL FEAST browser game previews and check the status of each playable build."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a><a href="/toadal-feast-web/search/">Search</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.muogc2on.jbosap" data-studio-variant="wo002-play-hub">
 <div class="wo002-play-page" data-companion-context="play" data-companion-copy="Browse the listings and check each PREVIEW, hold, or concept label before opening a route.">
   <section class="wo002-play-hero" aria-labelledby="play-title">
     <div class="wo002-play-hero__copy"><p class="section-kicker">TOADAL FEAST · BROWSER GAMES</p><h1 id="play-title">Play a little Feast.</h1>
@@ -775,7 +775,8 @@
       '/feast-pass/rewards/',
       '/profile/',
       '/world/',
-      '/stories/'
+      '/stories/',
+      '/'
     ];
     if (eligibleRoutes.indexOf(currentRelative) === -1 || window.__toadalGuestProgressionLoading ||
         window.__toadalGuestProgressionLoaded) return;
@@ -824,10 +825,27 @@
     document.head.appendChild(script);
   }
 
+  function initLocalSearchLoader() {
+    var currentPath = window.location.pathname || '/';
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    var relative = !baseRoot ? currentPath : (currentPath === baseRoot || currentPath.indexOf(baseRoot + '/') === 0 ? currentPath.slice(baseRoot.length) || '/' : currentPath);
+    if (relative.length > 1) relative = relative.replace(/\/+$/, '') + '/';
+    if (['/search/', '/support/'].indexOf(relative) === -1 || window.__toadalSearchLoading || window.__toadalSearchLoaded) return;
+    window.__toadalSearchLoading = true;
+    var script = document.createElement('script');
+    script.src = baseRoot + '/assets/js/site-search.js';
+    script.onload = function () { window.__toadalSearchLoading = false; window.__toadalSearchLoaded = true; };
+    script.onerror = function () { window.__toadalSearchLoading = false; };
+    document.head.appendChild(script);
+  }
+
   function start() {
     if (window.self !== window.top) return;
     try { initStoriesPublishingLoader(); } catch (error) {}
     try { initGuestProgressionLoader(); } catch (error) {}
+    try { initLocalSearchLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}

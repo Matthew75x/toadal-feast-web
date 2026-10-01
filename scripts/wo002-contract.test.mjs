@@ -163,7 +163,7 @@ test('all four registered games and every Play card remain PREVIEW', () => {
   assert.ok(cards.every((card) => card.status === 'preview'), 'every card must advertise PREVIEW');
 });
 
-test('Home preserves approved hero, truthful game states, planned Feast Pass, and disabled store links', () => {
+test('Home preserves approved hero, truthful game states, live guest-local Feast Pass, and disabled store links', () => {
   const homePage = pageByRoute.get('/');
   assert.ok(homePage, 'Home page must be registered');
   const hero = componentHtml(homePage, 'home-hero');
@@ -208,9 +208,14 @@ test('Home preserves approved hero, truthful game states, planned Feast Pass, an
   }
 
   const feastPass = componentHtml(homePage, 'feast-pass');
-  assert.match(feastPass, /YOUR GUEST JOURNEY · PLANNED/);
-  assert.match(feastPass, /Guest-first progression is planned for later work/i);
-  assert.match(feastPass, /no level, XP, Sparks, Treats, streak, quest progress, or account sync as live product data/i);
+  assert.match(feastPass, /GUEST PROGRESS · THIS BROWSER/);
+  assert.match(feastPass, /data-progression-page/);
+  for (const stat of ['level', 'xp', 'sparks', 'treats']) {
+    assert.match(feastPass, new RegExp(`data-progression-stat=['"]${stat}['"]`), `Home Feast Pass must render real local ${stat} state`);
+  }
+  // The copy is intentionally concise; keep asserting the product truth, not a fixed sentence.
+  assert.match(feastPass, /account sync is (?:not available|unavailable)/i);
+  assert.doesNotMatch(feastPass, /Guest-first progression is planned|no level, XP, Sparks, Treats/i);
 
   const appConversion = componentHtml(homePage, 'app-conversion');
   const storeButtons = [...appConversion.matchAll(/<button\b[^>]*class=['"][^'"]*\bstore-badge\b[^'"]*['"][^>]*>/gi)]
@@ -220,8 +225,8 @@ test('Home preserves approved hero, truthful game states, planned Feast Pass, an
     storeButtons.every((tag) => /\sdisabled(?:\s|=|>)/i.test(tag) && htmlAttribute(tag, 'href') === null),
     'app-store badges must remain disabled buttons until verified store URLs exist',
   );
-  assert.match(appConversion, /app-store URLs .* are not available here/i);
-  assert.match(appConversion, /No download link is configured/i);
+  assert.match(appConversion, /store links remain unavailable until verified destinations exist/i);
+  assert.match(appConversion, /Verified store links are not configured/i);
 });
 
 test('Home companion is present and each context has its own copy', () => {

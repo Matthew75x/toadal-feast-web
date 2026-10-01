@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TOADAL FEAST Manga · Series preview</title><meta name="description" content="A truthful TOADAL FEAST Manga series template. No series or chapter has been published for online reading."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.manga.series-preview" data-studio-variant="manga-series-preview"><article class='stories-publishing-page manga-series-page' data-manga-series-page data-companion-context='stories' data-companion-copy='This shelf is ready, but there is no manga chapter published to read.' data-companion-reaction='thinking'>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TOADAL FEAST Manga · Series preview</title><meta name="description" content="A truthful TOADAL FEAST Manga series template. No series or chapter has been published for online reading."><link rel="stylesheet" href="/toadal-feast-web/assets/css/site.css"><meta name="robots" content="noindex,nofollow"><link rel="icon" href="/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp"></head><body><header class="site-header"><nav class="site-nav" aria-label="Primary navigation"><a class="site-brand" href="/toadal-feast-web/">TOADAL FEAST</a><div class="site-links"><a href="/toadal-feast-web/">Home</a><a href="/toadal-feast-web/play/">Play</a><a href="/toadal-feast-web/world/">World</a><a href="/toadal-feast-web/stories/">Stories</a><a href="/toadal-feast-web/media/">Media</a><a href="/toadal-feast-web/feast-pass/">Feast Pass</a><a href="/toadal-feast-web/news/">News</a><a href="/toadal-feast-web/app/">App</a><a href="/toadal-feast-web/support/">Support</a><a href="/toadal-feast-web/search/">Search</a></div></nav></header><main id="main-content"><section class="studio-rich-text shell section" data-studio-component="component.manga.series-preview" data-studio-variant="manga-series-preview"><article class='stories-publishing-page manga-series-page' data-manga-series-page data-companion-context='stories' data-companion-copy='This shelf is ready, but there is no manga chapter published to read.' data-companion-reaction='thinking'>
 <nav class='story-breadcrumb' aria-label='Breadcrumb'><a href='/toadal-feast-web/'>Home</a><span aria-hidden='true'>/</span><a href='/toadal-feast-web/stories/'>Stories</a><span aria-hidden='true'>/</span><span aria-current='page'>Manga preview</span></nav>
 <header class='manga-series-hero'><figure class='manga-series-art'><img src='/toadal-feast-web/assets/images/world/forest-portal.webp' alt='Canonical Feast World environment artwork; this is not a manga cover or comic page.' width='1424' height='750' fetchpriority='high'><figcaption>World artwork preview · not a published series cover</figcaption></figure><div class='manga-series-copy'><p class='story-kicker'>TOADAL FEAST · MANGA</p><span class='story-status'>PREVIEW · NOT PUBLISHED</span><h1>TOADAL FEAST Manga</h1><p class='manga-series-summary'>The series-page structure is ready. An approved synopsis, series cover, and chapters are not currently published for online reading.</p><div class='manga-series-actions'><button class='story-button story-button-disabled' type='button' disabled aria-disabled='true' data-story-continue>Continue reading · no published chapter</button><a class='story-button story-button-secondary' href='/toadal-feast-web/reader/'>Open reader preview</a></div><div class='manga-series-progress' data-story-progress><p class='story-empty-copy'>Reading progress will be available after a published chapter can be read.</p></div></div></header>
 <section class='manga-series-grid' aria-label='Series information and chapters'><section class='story-panel manga-synopsis-panel' aria-labelledby='manga-synopsis-heading'><div class='story-panel-heading'><div><p class='story-kicker'>THE SERIES</p><h2 id='manga-synopsis-heading'>Synopsis</h2></div><span class='story-status story-status-muted'>Awaiting approved copy</span></div><p class='story-empty-copy'>No series synopsis has been approved for publication yet.</p><div class='manga-series-facts'><div><span>Publication</span><strong>Not published</strong></div><div><span>Creator</span><strong>Not listed</strong></div><div><span>Reading direction</span><strong>Not specified</strong></div></div></section><section class='story-panel manga-chapters-panel' aria-labelledby='manga-chapters-heading'><div class='story-panel-heading'><div><p class='story-kicker'>READING ORDER</p><h2 id='manga-chapters-heading'>Chapters</h2></div><span class='story-status story-status-muted'>0 published</span></div><div data-story-chapter-list><div class='story-progress-empty'><span aria-hidden='true'>▤</span><p>No approved chapter is available yet. Chapters will appear here only after their pages, order, and publication state are validated.</p></div></div></section></section>
@@ -724,7 +724,8 @@
       '/feast-pass/rewards/',
       '/profile/',
       '/world/',
-      '/stories/'
+      '/stories/',
+      '/'
     ];
     if (eligibleRoutes.indexOf(currentRelative) === -1 || window.__toadalGuestProgressionLoading ||
         window.__toadalGuestProgressionLoaded) return;
@@ -773,10 +774,27 @@
     document.head.appendChild(script);
   }
 
+  function initLocalSearchLoader() {
+    var currentPath = window.location.pathname || '/';
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    var relative = !baseRoot ? currentPath : (currentPath === baseRoot || currentPath.indexOf(baseRoot + '/') === 0 ? currentPath.slice(baseRoot.length) || '/' : currentPath);
+    if (relative.length > 1) relative = relative.replace(/\/+$/, '') + '/';
+    if (['/search/', '/support/'].indexOf(relative) === -1 || window.__toadalSearchLoading || window.__toadalSearchLoaded) return;
+    window.__toadalSearchLoading = true;
+    var script = document.createElement('script');
+    script.src = baseRoot + '/assets/js/site-search.js';
+    script.onload = function () { window.__toadalSearchLoading = false; window.__toadalSearchLoaded = true; };
+    script.onerror = function () { window.__toadalSearchLoading = false; };
+    document.head.appendChild(script);
+  }
+
   function start() {
     if (window.self !== window.top) return;
     try { initStoriesPublishingLoader(); } catch (error) {}
     try { initGuestProgressionLoader(); } catch (error) {}
+    try { initLocalSearchLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}
