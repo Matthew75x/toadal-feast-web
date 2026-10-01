@@ -1,21 +1,12 @@
 {
   "summary": {
     "schema": "toadal-feast.owner-preview-browser-matrix.v1",
-    "status": "FAIL",
+    "status": "PASS",
     "routes": 30,
     "cases": 77,
-    "passed": 69,
-    "failed": 8,
-    "issueCounts": {
-      "companion-control-overlap": 3,
-      "clipped-controls": 2,
-      "missing-title": 4,
-      "missing-lang": 4,
-      "missing-viewport": 4,
-      "h1-count": 4,
-      "main-count": 4,
-      "network-errors": 4
-    }
+    "passed": 77,
+    "failed": 0,
+    "issueCounts": {}
   },
   "cases": [
     {
@@ -37,7 +28,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1506
+        "scrollHeight": 1594
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -66,7 +57,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 3344
+        "scrollHeight": 3589
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -95,7 +86,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 4956
+        "scrollHeight": 4670
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -124,7 +115,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 3625
+        "scrollHeight": 3918
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -197,10 +188,8 @@
       "w": 1440,
       "h": 900,
       "label": "desktop",
-      "status": "FAIL",
-      "issues": [
-        "companion-control-overlap"
-      ],
+      "status": "PASS",
+      "issues": [],
       "doc": {
         "title": "Play browser games · TOADAL FEAST",
         "lang": "en",
@@ -213,21 +202,14 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1118
+        "scrollHeight": 1244
       },
       "httpErrors": [],
       "loadErrors": [],
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
-      "overlaps": [
-        {
-          "scrollY": 0,
-          "tag": "a",
-          "name": "View game details →",
-          "ratio": 1
-        }
-      ],
+      "overlaps": [],
       "companionBad": []
     },
     {
@@ -249,7 +231,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2016
+        "scrollHeight": 2881
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -278,7 +260,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1867
+        "scrollHeight": 1825
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -293,11 +275,8 @@
       "w": 320,
       "h": 800,
       "label": "small-mobile",
-      "status": "FAIL",
-      "issues": [
-        "clipped-controls",
-        "companion-control-overlap"
-      ],
+      "status": "PASS",
+      "issues": [],
       "doc": {
         "title": "Play browser games · TOADAL FEAST",
         "lang": "en",
@@ -310,70 +289,14 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2159
+        "scrollHeight": 3120
       },
       "httpErrors": [],
       "loadErrors": [],
       "runtimeErrors": [],
       "consoleErrors": 0,
-      "clipped": [
-        {
-          "scrollY": 0,
-          "tag": "button",
-          "name": "Public 0",
-          "left": 237.40625,
-          "right": 325.90625,
-          "top": 724.703125,
-          "bottom": 762.703125
-        },
-        {
-          "scrollY": 679,
-          "tag": "button",
-          "name": "Public 0",
-          "left": 237.40625,
-          "right": 325.90625,
-          "top": 45.703125,
-          "bottom": 83.703125
-        },
-        {
-          "scrollY": 679,
-          "tag": "a",
-          "name": "View game details →",
-          "left": 305.5,
-          "right": 327.5,
-          "top": 385.828125,
-          "bottom": 461.78125
-        },
-        {
-          "scrollY": 1359,
-          "tag": "a",
-          "name": "View game details →",
-          "left": 305.5,
-          "right": 327.5,
-          "top": 147.59375,
-          "bottom": 223.546875
-        }
-      ],
-      "overlaps": [
-        {
-          "scrollY": 0,
-          "tag": "button",
-          "name": "All games 4",
-          "ratio": 0.6275389638588329
-        },
-        {
-          "scrollY": 0,
-          "tag": "button",
-          "name": "Preview 4",
-          "ratio": 0.8079769736842105
-        },
-        {
-          "scrollY": 0,
-          "tag": "button",
-          "name": "Public 0",
-          "ratio": 0.6444985817629348
-        }
-      ],
+      "clipped": [],
+      "overlaps": [],
       "companionBad": []
     },
     {
@@ -395,7 +318,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 900
+        "scrollHeight": 943
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -424,7 +347,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1469
+        "scrollHeight": 1545
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -453,7 +376,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 976
+        "scrollHeight": 1078
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -482,7 +405,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1707
+        "scrollHeight": 1783
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -511,7 +434,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 900
+        "scrollHeight": 997
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -540,7 +463,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1463
+        "scrollHeight": 1539
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -569,7 +492,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 910
+        "scrollHeight": 1012
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -598,7 +521,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1521
+        "scrollHeight": 1597
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -627,7 +550,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1218
+        "scrollHeight": 1237
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -685,7 +608,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1373
+        "scrollHeight": 1475
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -714,7 +637,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2702
+        "scrollHeight": 2778
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -743,7 +666,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2081
+        "scrollHeight": 2183
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -772,7 +695,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2838
+        "scrollHeight": 2914
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -801,7 +724,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1653
+        "scrollHeight": 1769
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -820,460 +743,6 @@
       "issues": [],
       "doc": {
         "title": "Characters Hub - TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 2663
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/characters/",
-      "w": 768,
-      "h": 1024,
-      "label": "tablet",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Characters Hub - TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 1990
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/characters/",
-      "w": 320,
-      "h": 800,
-      "label": "small-mobile",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Characters Hub - TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 2848
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/characters/toadal/",
-      "w": 1440,
-      "h": 900,
-      "label": "desktop",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Toadal - Character Profile - TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 1491
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/characters/toadal/",
-      "w": 390,
-      "h": 844,
-      "label": "mobile",
-      "status": "FAIL",
-      "issues": [
-        "clipped-controls"
-      ],
-      "doc": {
-        "title": "Toadal - Character Profile - TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 2628
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [
-        {
-          "scrollY": 0,
-          "tag": "a",
-          "name": "Locations",
-          "left": 387.65625,
-          "right": 459.453125,
-          "top": 554.015625,
-          "bottom": 585.9375
-        },
-        {
-          "scrollY": 0,
-          "tag": "a",
-          "name": "Games",
-          "left": 465.453125,
-          "right": 521.828125,
-          "top": 554.015625,
-          "bottom": 585.9375
-        },
-        {
-          "scrollY": 0,
-          "tag": "a",
-          "name": "Stories",
-          "left": 527.828125,
-          "right": 585.734375,
-          "top": 554.015625,
-          "bottom": 585.9375
-        },
-        {
-          "scrollY": 0,
-          "tag": "a",
-          "name": "Gallery",
-          "left": 591.734375,
-          "right": 651.03125,
-          "top": 554.015625,
-          "bottom": 585.9375
-        },
-        {
-          "scrollY": 0,
-          "tag": "a",
-          "name": "Collectibles",
-          "left": 657.03125,
-          "right": 739.859375,
-          "top": 554.015625,
-          "bottom": 585.9375
-        }
-      ],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/stories/",
-      "w": 1440,
-      "h": 900,
-      "label": "desktop",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Stories & Comics · TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 1926
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/stories/",
-      "w": 390,
-      "h": 844,
-      "label": "mobile",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Stories & Comics · TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 2931
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/stories/",
-      "w": 768,
-      "h": 1024,
-      "label": "tablet",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Stories & Comics · TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 2037
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/stories/",
-      "w": 320,
-      "h": 800,
-      "label": "small-mobile",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Stories & Comics · TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 3275
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/manga/",
-      "w": 1440,
-      "h": 900,
-      "label": "desktop",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "TOADAL FEAST Manga · Series preview",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 1592
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/manga/",
-      "w": 390,
-      "h": 844,
-      "label": "mobile",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "TOADAL FEAST Manga · Series preview",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 2597
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/reader/",
-      "w": 1440,
-      "h": 900,
-      "label": "desktop",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Comic & Manga Reader · TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 1349
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/reader/",
-      "w": 390,
-      "h": 844,
-      "label": "mobile",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Comic & Manga Reader · TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 1827
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/media/",
-      "w": 1440,
-      "h": 900,
-      "label": "desktop",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Media — TOADAL FEAST",
-        "lang": "en",
-        "viewport": "width=device-width,initial-scale=1",
-        "h1": 1,
-        "main": 1,
-        "overflow": false,
-        "brokenImages": [],
-        "missingAlt": [],
-        "duplicateIds": [],
-        "unnamedControls": [],
-        "brokenFragments": [],
-        "scrollHeight": 1712
-      },
-      "httpErrors": [],
-      "loadErrors": [],
-      "runtimeErrors": [],
-      "consoleErrors": 0,
-      "clipped": [],
-      "overlaps": [],
-      "companionBad": []
-    },
-    {
-      "route": "/media/",
-      "w": 390,
-      "h": 844,
-      "label": "mobile",
-      "status": "PASS",
-      "issues": [],
-      "doc": {
-        "title": "Media — TOADAL FEAST",
         "lang": "en",
         "viewport": "width=device-width,initial-scale=1",
         "h1": 1,
@@ -1285,6 +754,412 @@
         "unnamedControls": [],
         "brokenFragments": [],
         "scrollHeight": 2759
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2106
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2943
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/toadal/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Toadal - Character Profile - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1607
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/toadal/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Toadal - Character Profile - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2908
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2058
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3021
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2157
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3365
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/manga/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "TOADAL FEAST Manga · Series preview",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1724
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/manga/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "TOADAL FEAST Manga · Series preview",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2687
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/reader/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Comic & Manga Reader · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1481
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/reader/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Comic & Manga Reader · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1917
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/media/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Media — TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1814
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "overlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/media/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "doc": {
+        "title": "Media — TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2835
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1545,7 +1420,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1789
+        "scrollHeight": 1838
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1603,7 +1478,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 900
+        "scrollHeight": 987
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1632,7 +1507,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1609
+        "scrollHeight": 1711
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1647,35 +1522,23 @@
       "w": 1440,
       "h": 900,
       "label": "desktop",
-      "status": "FAIL",
-      "issues": [
-        "missing-title",
-        "missing-lang",
-        "missing-viewport",
-        "h1-count",
-        "main-count",
-        "network-errors"
-      ],
+      "status": "PASS",
+      "issues": [],
       "doc": {
-        "title": "",
-        "lang": "",
-        "viewport": "",
-        "h1": 0,
-        "main": 0,
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
         "overflow": false,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 900
+        "scrollHeight": 1309
       },
-      "httpErrors": [
-        {
-          "status": 404,
-          "url": "http://127.0.0.1:64012/toadal-feast-web/search/"
-        }
-      ],
+      "httpErrors": [],
       "loadErrors": [],
       "runtimeErrors": [],
       "consoleErrors": 0,
@@ -1688,35 +1551,23 @@
       "w": 390,
       "h": 844,
       "label": "mobile",
-      "status": "FAIL",
-      "issues": [
-        "missing-title",
-        "missing-lang",
-        "missing-viewport",
-        "h1-count",
-        "main-count",
-        "network-errors"
-      ],
+      "status": "PASS",
+      "issues": [],
       "doc": {
-        "title": "",
-        "lang": "",
-        "viewport": "",
-        "h1": 0,
-        "main": 0,
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
         "overflow": false,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2121
+        "scrollHeight": 1771
       },
-      "httpErrors": [
-        {
-          "status": 404,
-          "url": "http://127.0.0.1:64012/toadal-feast-web/search/"
-        }
-      ],
+      "httpErrors": [],
       "loadErrors": [],
       "runtimeErrors": [],
       "consoleErrors": 0,
@@ -1729,35 +1580,23 @@
       "w": 768,
       "h": 1024,
       "label": "tablet",
-      "status": "FAIL",
-      "issues": [
-        "missing-title",
-        "missing-lang",
-        "missing-viewport",
-        "h1-count",
-        "main-count",
-        "network-errors"
-      ],
+      "status": "PASS",
+      "issues": [],
       "doc": {
-        "title": "",
-        "lang": "",
-        "viewport": "",
-        "h1": 0,
-        "main": 0,
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
         "overflow": false,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1307
+        "scrollHeight": 1192
       },
-      "httpErrors": [
-        {
-          "status": 404,
-          "url": "http://127.0.0.1:64012/toadal-feast-web/search/"
-        }
-      ],
+      "httpErrors": [],
       "loadErrors": [],
       "runtimeErrors": [],
       "consoleErrors": 0,
@@ -1770,35 +1609,23 @@
       "w": 320,
       "h": 800,
       "label": "small-mobile",
-      "status": "FAIL",
-      "issues": [
-        "missing-title",
-        "missing-lang",
-        "missing-viewport",
-        "h1-count",
-        "main-count",
-        "network-errors"
-      ],
+      "status": "PASS",
+      "issues": [],
       "doc": {
-        "title": "",
-        "lang": "",
-        "viewport": "",
-        "h1": 0,
-        "main": 0,
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
         "overflow": false,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2450
+        "scrollHeight": 1918
       },
-      "httpErrors": [
-        {
-          "status": 404,
-          "url": "http://127.0.0.1:64012/toadal-feast-web/search/"
-        }
-      ],
+      "httpErrors": [],
       "loadErrors": [],
       "runtimeErrors": [],
       "consoleErrors": 0,
@@ -1825,7 +1652,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 980
+        "scrollHeight": 1383
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1854,7 +1681,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1924
+        "scrollHeight": 2236
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1883,7 +1710,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 942
+        "scrollHeight": 1044
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1912,7 +1739,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1740
+        "scrollHeight": 1816
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1941,7 +1768,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1091
+        "scrollHeight": 1193
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1970,7 +1797,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1933
+        "scrollHeight": 2009
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -1999,7 +1826,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1060
+        "scrollHeight": 1162
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2028,7 +1855,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1793
+        "scrollHeight": 1869
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2057,7 +1884,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1340
+        "scrollHeight": 1442
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2086,7 +1913,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1986
+        "scrollHeight": 2062
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2115,7 +1942,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1015
+        "scrollHeight": 1117
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2144,7 +1971,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1736
+        "scrollHeight": 1812
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2173,7 +2000,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1528
+        "scrollHeight": 1630
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2188,10 +2015,8 @@
       "w": 390,
       "h": 844,
       "label": "mobile",
-      "status": "FAIL",
-      "issues": [
-        "companion-control-overlap"
-      ],
+      "status": "PASS",
+      "issues": [],
       "doc": {
         "title": "Contact & feedback - TOADAL FEAST",
         "lang": "en",
@@ -2204,21 +2029,14 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2535
+        "scrollHeight": 2611
       },
       "httpErrors": [],
       "loadErrors": [],
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
-      "overlaps": [
-        {
-          "scrollY": 0,
-          "tag": "select",
-          "name": "General feedback Website support Business / press Privacy question",
-          "ratio": 0.5135289634146342
-        }
-      ],
+      "overlaps": [],
       "companionBad": []
     },
     {
@@ -2240,7 +2058,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1333
+        "scrollHeight": 1435
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2269,7 +2087,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2068
+        "scrollHeight": 2144
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2298,7 +2116,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1297
+        "scrollHeight": 1399
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2327,7 +2145,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1953
+        "scrollHeight": 2029
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2356,7 +2174,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 1750
+        "scrollHeight": 1852
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2385,7 +2203,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 2311
+        "scrollHeight": 2387
       },
       "httpErrors": [],
       "loadErrors": [],
@@ -2414,7 +2232,7 @@
         "duplicateIds": [],
         "unnamedControls": [],
         "brokenFragments": [],
-        "scrollHeight": 3344
+        "scrollHeight": 3554
       },
       "httpErrors": [],
       "loadErrors": [],
