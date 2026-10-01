@@ -92,9 +92,156 @@
   "locations": [],
   "storySeries": [],
   "chapters": [],
-  "media": [],
+  "media": [
+    {
+      "id": "media-candy-kingdom",
+      "slug": "candy-kingdom",
+      "title": "Candy Kingdom environment art",
+      "kind": "artwork",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "assetId": "asset.home.world.desktop",
+      "caption": "Canonical Feast World environment artwork used for website discovery.",
+      "route": "/media/#world-art"
+    },
+    {
+      "id": "media-candyland-calm",
+      "slug": "candyland-calm",
+      "title": "Candy-land scenic art",
+      "kind": "artwork",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "assetId": "asset.home.world.calm",
+      "caption": "Canonical scenic environment preview.",
+      "route": "/media/#world-art"
+    },
+    {
+      "id": "media-forest-portal",
+      "slug": "forest-portal",
+      "title": "Forest portal environment art",
+      "kind": "artwork",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "assetId": "asset.home.world.portal",
+      "caption": "Canonical forest portal environment preview.",
+      "route": "/media/#world-art"
+    },
+    {
+      "id": "media-toadal-portrait",
+      "slug": "toadal-portrait",
+      "title": "Toadal character art",
+      "kind": "artwork",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "assetId": "asset.home.character.toadal",
+      "caption": "Canonical Toadal portrait preview; not a downloadable press asset.",
+      "route": "/media/#character-art"
+    }
+  ],
   "news": [],
-  "supportArticles": [],
-  "roadmapItems": [],
+  "supportArticles": [
+    {
+      "id": "support-preview-states",
+      "slug": "preview-states",
+      "title": "What does PREVIEW mean?",
+      "category": "Games",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "body": "PREVIEW identifies an evaluation build or concept. It does not mean a public release.",
+      "route": "/support/#preview-states"
+    },
+    {
+      "id": "support-guest-progress",
+      "slug": "guest-progress",
+      "title": "Where is guest progress saved?",
+      "category": "Progress",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "body": "Feast Pass progress can persist locally in this browser. Sign-in and cross-device sync are not available.",
+      "route": "/support/#guest-progress"
+    },
+    {
+      "id": "support-app-status",
+      "slug": "app-status",
+      "title": "Where can I get the mobile app?",
+      "category": "App",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "body": "The App page explains current availability. Verified App Store and Google Play destinations are not configured on this preview.",
+      "route": "/app/"
+    },
+    {
+      "id": "support-contact-status",
+      "slug": "contact-status",
+      "title": "How do I contact support?",
+      "category": "Contact",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "body": "The Contact page is a non-submitting preview until a verified public mailbox or endpoint is configured.",
+      "route": "/contact/"
+    },
+    {
+      "id": "support-legal-status",
+      "slug": "legal-status",
+      "title": "Where are Privacy Policy and Terms?",
+      "category": "Legal",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "body": "The Legal page records publication status. Approved Privacy Policy and Terms text is not published yet.",
+      "route": "/legal/"
+    }
+  ],
+  "roadmapItems": [
+    {
+      "id": "roadmap-browser-previews",
+      "title": "Browser game previews",
+      "publicStatus": "PREVIEW",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "description": "Four browser-game listings remain preview or concept surfaces; none is marked PUBLIC.",
+      "evidenceSource": "Home What’s Next / Play directory",
+      "route": "/#whats-next"
+    },
+    {
+      "id": "roadmap-guest-feast-pass",
+      "title": "Guest Feast Pass",
+      "publicStatus": "PREVIEW",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "description": "Browser-local Feast Pass, quests, rewards and guest profile are available on the review candidate without account sync.",
+      "evidenceSource": "Guest progression foundation",
+      "route": "/feast-pass/"
+    },
+    {
+      "id": "roadmap-community",
+      "title": "Community",
+      "publicStatus": "COMING_SOON",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "description": "A curated community area is prepared, but posting and social services are not live.",
+      "evidenceSource": "Home What’s Next / Community preview",
+      "route": "/community/"
+    },
+    {
+      "id": "roadmap-store",
+      "title": "Store",
+      "publicStatus": "COMING_SOON",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "description": "A store preview exists without products, prices, cart or checkout.",
+      "evidenceSource": "Home What’s Next / Store preview",
+      "route": "/store/"
+    },
+    {
+      "id": "roadmap-account-sync",
+      "title": "Account sync",
+      "publicStatus": "PLANNED",
+      "publicationState": "PREVIEW",
+      "searchable": true,
+      "description": "Guest progress is local to this browser; sign-in and cross-device sync remain planned.",
+      "evidenceSource": "Home What’s Next / Account preview",
+      "route": "/account/"
+    }
+  ],
   "legalDocuments": []
 }
