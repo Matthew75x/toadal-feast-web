@@ -21,3 +21,12 @@ The recovered interaction-state source still explicitly contains a Settings stat
 `06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a`
 
 The machine-readable companion manifest has the correct hash. Correct the prose authority file before treating consolidation as closed.
+
+## Preservation-ledger audit
+
+The consolidation branch's current `manifests/local-work-preservation.json` does not yet list two remote loss-prevention branches created in parallel during this task:
+
+- `archive/wo002-wip-preservation-20261001@13fd7f16834e42a28338daba1bc39858ba44fccc`
+- `archive/pre-authority-local-wip-20261001@2aaca885efe1914028a2e28f719376dacb0ba354`
+
+It should also classify `parallel/contextual-companion-prep-20261001` as an implementation donor/reference, not staging or authority. These refs are already remote and do not require repointing or merging; they only need to be acknowledged so the consolidated source map is complete.
