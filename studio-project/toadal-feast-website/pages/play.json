@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "page.play",
+  "route": "/play.html",
+  "title": "Play · TOADAL FEAST",
+  "description": "Discover TOADAL FEAST browser experiences and the upcoming Arcade preview.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.play.main",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "route-page",
+        "html": "<section class='route-hero route-hero--play' data-companion-context='play' data-companion-copy='This is the Play hub. Finished browser experiences can live here without blocking the rest of the website.'>\n  <div class='route-hero__copy'>\n    <p class='section-kicker'>PLAY IN THE FEAST WORLD</p>\n    <h1 class='route-title'>Pick a little adventure.</h1>\n    <p class='route-lede'>Browser experiences live here as their own cartridges. The full TOADAL FEAST app remains the flagship adventure.</p>\n  </div>\n  <img class='route-hero__character' src='assets/images/characters/toadal-victory.webp' alt='Toadal smiling and pointing forward' width='611' height='640'>\n</section>\n<section class='route-section'>\n  <div class='route-section__heading'><p class='section-kicker'>BROWSER PREVIEWS</p><h2 class='section-heading'>Ready to discover</h2></div>\n  <div class='route-card-grid route-card-grid--games'>\n    <article class='route-card route-card--image' data-companion-context='wicked-bites' data-companion-copy='Wicked Bites has a real browser preview build. This staging page can show it without pretending every game is already public.'>\n      <img src='assets/images/games/wicked-bites-v5.5-preview.webp' alt='Wicked Bites gameplay preview' width='844' height='390'>\n      <div><span class='status-chip status-chip--preview'>PREVIEW</span><h3>Wicked Bites</h3><p>A fast browser-sized Feast adventure.</p></div>\n    </article>\n    <article class='route-card route-card--image' data-companion-context='claw' data-companion-copy='CLAW: Feed Gulper has a real qualified gameplay preview image from its own browser build.'>\n      <img src='assets/images/games/claw-feed-gulper-v2.5.1-preview.webp' alt='CLAW Feed Gulper gameplay preview' width='844' height='390'>\n      <div><span class='status-chip status-chip--preview'>PREVIEW</span><h3>CLAW: Feed Gulper</h3><p>Feed Gulper and keep the feast moving.</p></div>\n    </article>\n    <article class='route-card route-card--image route-card--arcade' data-companion-context='arcade' data-companion-copy='Arcade is a website feature, not a blocker. The existing standalone can be connected here when the wrapper is ready.'>\n      <img src='assets/images/world/candyland-calm.webp' alt='' width='1424' height='750'>\n      <div><span class='status-chip status-chip--planned'>COMING SOON</span><h3>TOADAL FEAST Arcade</h3><p>The standalone Arcade preview will plug into this slot. The rest of the website does not wait for it.</p></div>\n    </article>\n  </div>\n</section>"
+      }
+    },
+    {
+      "id": "component.play.companion",
+      "type": "core.rich-text",
+      "props": {
+        "symbolId": "symbol.home.toadal-companion"
+      }
+    }
+  ],
+  "referenceFile": "play.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "Play · TOADAL FEAST",
+    "description": "Discover TOADAL FEAST browser experiences and the upcoming Arcade preview."
+  }
+}
