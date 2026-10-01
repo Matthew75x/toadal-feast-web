@@ -14,7 +14,9 @@
     "charactersCandidate": "b1c837acb73137f75283223e57b080d7ec34484e",
     "progressionCandidate": "1f953861ca2a8d06773bb2f49267e3ccec06db7d",
     "currentReviewCandidate": "945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da",
-    "currentReviewBranch": "integration/manifest-home-characters-progression-20261001"
+    "currentReviewBranch": "integration/manifest-home-characters-progression-20261001",
+    "gatedEcosystemBase": "4f01ee29bddc1d25f0cf4e304057e10e93a51d38",
+    "gatedEcosystemCandidate": "61023edf34f14fc9131ebfe258000cffbea49520"
   },
   "statusDefinitions": {
     "DONE_PROVEN": "Requirement exists and has direct implementation/evidence.",
@@ -26,12 +28,9 @@
     "BLOCKED_APPROVED_COPY": "Cannot publish final legal/content copy until approved source text exists."
   },
   "pageStatusCounts": {
-    "PARTIAL_CANDIDATE": 7,
-    "PARTIAL": 11,
-    "NOT_STARTED": 6,
-    "DEFERRED_SERVICE": 3,
-    "BLOCKED_CONTENT_ENDPOINT": 1,
-    "BLOCKED_APPROVED_COPY": 1,
+    "PARTIAL_CANDIDATE": 14,
+    "PARTIAL": 10,
+    "NOT_STARTED": 5,
     "DONE_PROVEN": 1
   },
   "pages": [
@@ -201,10 +200,10 @@
       "n": 19,
       "page": "Account / Sign Up / Login",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "ABSENT",
-      "status": "DEFERRED_SERVICE",
-      "evidence": "Backend-connected account/sync is intentionally deferred.",
-      "remainingGap": "Manifest still requires a truthful guest/account-benefits preview and continue-as-guest surface; route absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /account/ preview now exposes current guest-local status, continue-as-guest paths, disabled sign-up/login controls, account benefits and legal-status linking without connecting a backend.",
+      "remainingGap": "Real account creation, login, credentials, cross-device sync and approved account/privacy service copy remain deferred."
     },
     {
       "n": 20,
@@ -219,19 +218,19 @@
       "n": 21,
       "page": "Community Hub",
       "visualAuthority": "POLISH",
-      "delivery": "HOME_CARD_ONLY",
-      "status": "DEFERRED_SERVICE",
-      "evidence": "Community is truthfully marked Coming Soon on Home.",
-      "remainingGap": "Dedicated polished gated route/creator spotlight/fan-art/event/guideline discovery absent. Posting remains deferred."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /community/ Coming Soon route now provides creator/fan-art/event/feedback structure without fabricated creators, posts, dates or uploads.",
+      "remainingGap": "Posting, moderation, creator records, events and connected social services remain deferred."
     },
     {
       "n": 22,
       "page": "Store",
       "visualAuthority": "POLISH",
-      "delivery": "HOME_CARD_ONLY",
-      "status": "DEFERRED_SERVICE",
-      "evidence": "Store is truthfully marked Coming Soon; no fake checkout.",
-      "remainingGap": "Dedicated polished preview route/categories/digital goodies/update CTA absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /store/ preview now provides merchandise/digital-goodies structure while explicitly exposing no catalog, prices, inventory, cart or checkout.",
+      "remainingGap": "Approved products, prices, commerce provider, fulfillment, entitlements and checkout remain deferred."
     },
     {
       "n": 23,
@@ -264,37 +263,37 @@
       "n": 26,
       "page": "Contact / Feedback",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "ABSENT",
-      "status": "BLOCKED_CONTENT_ENDPOINT",
-      "evidence": "Dedicated contact assets/state exist.",
-      "remainingGap": "Route/form/category/email/subject/message/device info and real endpoint/approved destinations absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /contact/ route now implements the manifest field structure and routing panels with submit/upload disabled and explicit no-endpoint/no-mailbox truth.",
+      "remainingGap": "A real approved submission endpoint or public mailbox is still required before contact can become functional."
     },
     {
       "n": 27,
       "page": "About TOADAL GAMES",
       "visualAuthority": "POLISH",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "TOADAL GAMES is subordinate in current shell/footer.",
-      "remainingGap": "Dedicated mission/flagship universe/experiments/stories/philosophy/press-business page absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /about/ route now presents TOADAL GAMES in its subordinate studio role, with TOADAL FEAST-first flagship, web-experiment and business/contact structure.",
+      "remainingGap": "Approved deeper studio history, press/business destinations and any additional public company copy remain."
     },
     {
       "n": 28,
       "page": "Coming Soon / Under Construction",
       "visualAuthority": "POLISH",
-      "delivery": "INLINE_STATES_ONLY",
-      "status": "PARTIAL",
-      "evidence": "Truthful Coming Soon cards and production construction Toadal asset exist.",
-      "remainingGap": "Dedicated reusable branded route with related available content/follow-up path absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated reusable /coming-soon/ construction route now provides available-content escape paths and explicitly avoids fake dates or release promises.",
+      "remainingGap": "Future destinations still need to route here consistently as they are added; final polish remains owner-reviewable."
     },
     {
       "n": 29,
       "page": "Privacy / Terms / Legal",
       "visualAuthority": "LOCK_STRUCTURE_ONLY",
-      "delivery": "ABSENT",
-      "status": "BLOCKED_APPROVED_COPY",
-      "evidence": "Privacy/legal assets and template requirement exist.",
-      "remainingGap": "Dedicated readable legal template and approved policy/terms copy absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /legal/ template now exposes readable Privacy/Terms/contact status and current guest-storage product facts while explicitly refusing generated legal policy text.",
+      "remainingGap": "Approved Privacy Policy, Terms, last-updated dates and verified privacy/legal contact copy are still blocked on real legal sources."
     },
     {
       "n": 30,
@@ -339,8 +338,8 @@
     },
     {
       "requirement": "Account later for preserve/sync",
-      "status": "DEFERRED_SERVICE",
-      "evidence": "Correctly deferred; guest/account preview route still absent."
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Account preview route now explains guest-local progress, optional future account benefits and disabled sign-up/login; connected identity/sync remains deferred."
     },
     {
       "requirement": "Convert visitors to flagship mobile app",
@@ -350,7 +349,7 @@
     {
       "requirement": "Reactive Toadal companion",
       "status": "PARTIAL_CANDIDATE",
-      "evidence": "Live staging has a bounded contextual image set; combined candidate expands semantic state artwork substantially. Many manifest destinations do not exist yet."
+      "evidence": "Contextual artwork now covers core routes plus account, community, merchandise, contact/business, construction and privacy/legal candidate surfaces."
     },
     {
       "requirement": "Hidden Treats / collectible food",
@@ -468,6 +467,11 @@
         "source": "integration/manifest-home-characters-progression-20261001",
         "sha": "945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da",
         "role": "Current manifest-core review candidate: Home + Characters/Toadal + guest progression; not approved or deployed."
+      },
+      {
+        "source": "work/gated-ecosystem-manifest-20261001",
+        "sha": "61023edf34f14fc9131ebfe258000cffbea49520",
+        "role": "Parallel candidate for Account, Community, Store, Contact, About, Coming Soon and Legal manifest rows; verified, not deployed."
       },
       {
         "source": "integration/visual-convergence-combined-20261001",
@@ -721,29 +725,6 @@
     },
     {
       "rank": 4,
-      "lane": "Truthful gated ecosystem routes",
-      "manifestRows": [
-        19,
-        21,
-        22,
-        26,
-        27,
-        28,
-        29
-      ],
-      "impact": "Closes missing ecosystem families without pretending connected services are live.",
-      "resources": [
-        "historical structural donors",
-        "Master V2 assets",
-        "page manifest"
-      ],
-      "parallelSafeWith": [
-        "editorial/discovery utilities"
-      ],
-      "doneWhen": "Polished truthful preview/Coming Soon/legal/contact/about routes exist; real blockers stay explicit."
-    },
-    {
-      "rank": 5,
       "lane": "App conversion evidence closure",
       "manifestRows": [
         18
@@ -758,7 +739,7 @@
       "doneWhen": "Approved screenshots and verified store URLs are wired; otherwise actions remain disabled."
     },
     {
-      "rank": 6,
+      "rank": 5,
       "lane": "Play depth / additional browser-game integration",
       "manifestRows": [
         2,
@@ -797,5 +778,43 @@
     },
     "deployment": "NOT_DEPLOYED",
     "promotionGate": "Home LOCK_VISUAL owner acceptance + integrated staging review"
+  },
+  "gatedEcosystem": {
+    "branch": "work/gated-ecosystem-manifest-20261001",
+    "base": "4f01ee29bddc1d25f0cf4e304057e10e93a51d38",
+    "rows": [
+      19,
+      21,
+      22,
+      26,
+      27,
+      28,
+      29
+    ],
+    "routes": [
+      "/account/",
+      "/community/",
+      "/store/",
+      "/contact/",
+      "/about/",
+      "/coming-soon/",
+      "/legal/"
+    ],
+    "supportTruthUpdated": true,
+    "deployment": "NOT_DEPLOYED",
+    "verification": {
+      "truthContract": "PASS",
+      "pagesBasePath": "PASS",
+      "navigation": "0 unresolved targets",
+      "browser": "0 failures / 0 console errors / 0 HTTP failures across desktop+mobile",
+      "companionStates": "PASS",
+      "homeVisual": "29/29 PASS",
+      "characterRegistry": "PASS",
+      "guestProgression": "17/17 PASS",
+      "cssParity": "PASS",
+      "cartridgeBoundary": "PASS",
+      "staticLinksLegacyChecker": "NOT_APPLICABLE: checker is not GitHub-project-base aware; Pages basepath + navigation + browser smoke are authoritative"
+    },
+    "implementationSha": "61023edf34f14fc9131ebfe258000cffbea49520"
   }
 }

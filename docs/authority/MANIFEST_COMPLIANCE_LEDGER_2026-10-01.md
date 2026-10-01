@@ -50,30 +50,27 @@ The approved Home remains `docs/review/WO-002/evidence/approved-home-visual-auth
 | 16 | Rewards / Collection | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /feast-pass/rewards/ route is implemented with truthful local non-entitlement milestones and empty claimable catalog behavior. **Gap:** Approved badges, titles, cosmetics, Treat/food/relic collections and any entitlement catalog remain intentionally absent. |
 | 17 | Leaderboards | LOCK_LAYOUT | ABSENT | **NOT_STARTED** | Global connected identity is correctly deferred. **Gap:** Even the truthful local-public leaderboard surface/game selector/time scopes/personal position is absent. |
 | 18 | App / Get TOADAL FEAST | LOCK_LAYOUT | LIVE | **PARTIAL** | Informational App route correctly describes mobile as flagship. **Gap:** Genuine approved screenshots/video and verified App Store/Google Play destinations are missing. |
-| 19 | Account / Sign Up / Login | LOCK_LAYOUT | ABSENT | **DEFERRED_SERVICE** | Backend-connected account/sync is intentionally deferred. **Gap:** Manifest still requires a truthful guest/account-benefits preview and continue-as-guest surface; route absent. |
+| 19 | Account / Sign Up / Login | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /account/ preview now exposes current guest-local status, continue-as-guest paths, disabled sign-up/login controls, account benefits and legal-status linking without connecting a backend. **Gap:** Real account creation, login, credentials, cross-device sync and approved account/privacy service copy remain deferred. |
 | 20 | Player Profile | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /profile/ guest-local profile is implemented with local level/XP/Sparks/streak/discovery/quest summary and explicit non-account scope. **Gap:** No connected identity, synced history, game-score feed, achievement showcase or approved title/avatar system exists yet. |
-| 21 | Community Hub | POLISH | HOME_CARD_ONLY | **DEFERRED_SERVICE** | Community is truthfully marked Coming Soon on Home. **Gap:** Dedicated polished gated route/creator spotlight/fan-art/event/guideline discovery absent. Posting remains deferred. |
-| 22 | Store | POLISH | HOME_CARD_ONLY | **DEFERRED_SERVICE** | Store is truthfully marked Coming Soon; no fake checkout. **Gap:** Dedicated polished preview route/categories/digital goodies/update CTA absent. |
+| 21 | Community Hub | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /community/ Coming Soon route now provides creator/fan-art/event/feedback structure without fabricated creators, posts, dates or uploads. **Gap:** Posting, moderation, creator records, events and connected social services remain deferred. |
+| 22 | Store | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /store/ preview now provides merchandise/digital-goodies structure while explicitly exposing no catalog, prices, inventory, cart or checkout. **Gap:** Approved products, prices, commerce provider, fulfillment, entitlements and checkout remain deferred. |
 | 23 | Search / Discovery | LOCK_LAYOUT | DISABLED_UTILITY | **NOT_STARTED** | Search is not falsely presented as live. **Gap:** Dedicated local search route, grouped results, filters and meaningful empty/results states absent. |
 | 24 | What's Next / Roadmap | LOCK_STRUCTURE_ONLY | HOME_SECTION_ONLY | **PARTIAL** | Truthful compact What's Next content exists without fake dates. **Gap:** Dedicated approved-items roadmap route/status taxonomy/devlog links absent. |
 | 25 | Support / Help Center | LOCK_LAYOUT | LIVE | **PARTIAL** | Support route exists. **Gap:** Help search/categories/popular questions/contact/status shortcuts and mature help content absent. |
-| 26 | Contact / Feedback | LOCK_LAYOUT | ABSENT | **BLOCKED_CONTENT_ENDPOINT** | Dedicated contact assets/state exist. **Gap:** Route/form/category/email/subject/message/device info and real endpoint/approved destinations absent. |
-| 27 | About TOADAL GAMES | POLISH | ABSENT | **NOT_STARTED** | TOADAL GAMES is subordinate in current shell/footer. **Gap:** Dedicated mission/flagship universe/experiments/stories/philosophy/press-business page absent. |
-| 28 | Coming Soon / Under Construction | POLISH | INLINE_STATES_ONLY | **PARTIAL** | Truthful Coming Soon cards and production construction Toadal asset exist. **Gap:** Dedicated reusable branded route with related available content/follow-up path absent. |
-| 29 | Privacy / Terms / Legal | LOCK_STRUCTURE_ONLY | ABSENT | **BLOCKED_APPROVED_COPY** | Privacy/legal assets and template requirement exist. **Gap:** Dedicated readable legal template and approved policy/terms copy absent. |
+| 26 | Contact / Feedback | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /contact/ route now implements the manifest field structure and routing panels with submit/upload disabled and explicit no-endpoint/no-mailbox truth. **Gap:** A real approved submission endpoint or public mailbox is still required before contact can become functional. |
+| 27 | About TOADAL GAMES | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /about/ route now presents TOADAL GAMES in its subordinate studio role, with TOADAL FEAST-first flagship, web-experiment and business/contact structure. **Gap:** Approved deeper studio history, press/business destinations and any additional public company copy remain. |
+| 28 | Coming Soon / Under Construction | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated reusable /coming-soon/ construction route now provides available-content escape paths and explicitly avoids fake dates or release promises. **Gap:** Future destinations still need to route here consistently as they are added; final polish remains owner-reviewable. |
+| 29 | Privacy / Terms / Legal | LOCK_STRUCTURE_ONLY | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /legal/ template now exposes readable Privacy/Terms/contact status and current guest-storage product facts while explicitly refusing generated legal policy text. **Gap:** Approved Privacy Policy, Terms, last-updated dates and verified privacy/legal contact copy are still blocked on real legal sources. |
 | 30 | 404 / Lost in the Feast | POLISH | LIVE | **DONE_PROVEN** | Branded 404/recovery page exists and routing/base-path behavior has been verified. **Gap:** Optional search/Treat embellishment may improve it later but is not required to call the recovery route functional. |
 
 ### Page-family status count
 
-- **BLOCKED_APPROVED_COPY: 1**
-- **BLOCKED_CONTENT_ENDPOINT: 1**
-- **DEFERRED_SERVICE: 3**
 - **DONE_PROVEN: 1**
-- **NOT_STARTED: 6**
-- **PARTIAL: 11**
-- **PARTIAL_CANDIDATE: 7**
+- **NOT_STARTED: 5**
+- **PARTIAL: 10**
+- **PARTIAL_CANDIDATE: 14**
 
-Route presence is not the same as page completion. The current implementation exposes 12 of the original 30 page families as actual routes/surfaces; several are still only truthful previews.
+Route presence is not the same as page completion. This candidate currently contains 27 static route records; several map to the same manifest family and many remain truthful previews.
 
 ## Cross-cutting product contract
 
@@ -85,9 +82,9 @@ Route presence is not the same as page completion. The current implementation ex
 | Discover characters/world/story | **PARTIAL_CANDIDATE** | World/Stories/Media plus new Characters Hub and Toadal Profile candidate routes now cover more of the discovery journey; manga/reader and broader character depth remain. |
 | Consume media/manga/lore/news | **PARTIAL** | Media/News previews exist; manga/reader/article publishing stack is absent. |
 | Guest-first Feast Pass progression | **PARTIAL_CANDIDATE** | Integrated candidate implements browser-local level/XP/Sparks/streak/discoveries/daily check-in/quest summary under the current namespaced contract. |
-| Account later for preserve/sync | **DEFERRED_SERVICE** | Correctly deferred; guest/account preview route still absent. |
+| Account later for preserve/sync | **PARTIAL_CANDIDATE** | Account preview route now explains guest-local progress, optional future account benefits and disabled sign-up/login; connected identity/sync remains deferred. |
 | Convert visitors to flagship mobile app | **PARTIAL** | App route exists, but genuine product screenshots and verified store links are missing. |
-| Reactive Toadal companion | **PARTIAL_CANDIDATE** | Live staging has a bounded contextual image set; combined candidate expands semantic state artwork substantially. Many manifest destinations do not exist yet. |
+| Reactive Toadal companion | **PARTIAL_CANDIDATE** | Contextual artwork now covers core routes plus account, community, merchandise, contact/business, construction and privacy/legal candidate surfaces. |
 | Hidden Treats / collectible food | **NOT_STARTED** | Food library exists; site interaction/progression loop not implemented. |
 | Daily rewards | **PARTIAL_CANDIDATE** | Candidate has one configurable UTC-day browser-local check-in with idempotent claim behavior; full reward calendar/content remains unapproved. |
 | Quests/challenges | **PARTIAL_CANDIDATE** | Candidate implements definition-driven route-visit quests with local progress and one-time claims; production quest catalog remains incomplete. |
@@ -134,6 +131,7 @@ Route presence is not the same as page completion. The current implementation ex
 
 - **staging/live-visual** `270940dee30b7aafb70af941c520c6d4d223e288` - Current public GitHub Pages implementation.
 - **integration/manifest-home-characters-progression-20261001** `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da` - Current manifest-core review candidate: Home + Characters/Toadal + guest progression; not approved or deployed.
+- **work/gated-ecosystem-manifest-20261001** `61023edf34f14fc9131ebfe258000cffbea49520` - Parallel candidate for Account, Community, Store, Contact, About, Coming Soon and Legal manifest rows; verified, not deployed.
 - **integration/visual-convergence-combined-20261001** `58a7121e363d3480c122623b1de5cd0d5ac1778e` - Older visual-only convergence candidate retained as implementation history/donor.
 - **integration/master-asset-authority-20261001** `62717951f4ffba0e8dd779116cc192d70f94d534` - Recovered Master V2 companion/asset authority.
 - **archive/production-ready-asset-pack-20261001** `5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba` - Remote preservation of complete 71-image production-ready pack.
@@ -179,8 +177,7 @@ The correct progression strategy is **behavior salvage + current-schema rebuild*
 1. **Integrated candidate visual acceptance / staging gate** (manifest rows 1, 6, 7, 14, 15, 16, 20) - Core candidate is implemented and verified; Home remains LOCK_VISUAL and must be reviewed before staging promotion.
 2. **Stories publishing stack** (manifest rows 8, 9, 10) - Rows 9 and 10 are absent and row 8 is only a preview; Batch-1 references already exist.
 3. **Editorial/discovery utilities** (manifest rows 11, 12, 13, 23, 24, 25) - Converts partial media/news/support and missing article/search/roadmap families into useful truthful pages.
-4. **Truthful gated ecosystem routes** (manifest rows 19, 21, 22, 26, 27, 28, 29) - Closes missing ecosystem families without pretending connected services are live.
-5. **App conversion evidence closure** (manifest rows 18) - Completes flagship conversion only when genuine evidence is available.
-6. **Play depth / additional browser-game integration** (manifest rows 2, 3, 4, 17) - Improves immediate-play depth after core structure is under control.
+4. **App conversion evidence closure** (manifest rows 18) - Completes flagship conversion only when genuine evidence is available.
+5. **Play depth / additional browser-game integration** (manifest rows 2, 3, 4, 17) - Improves immediate-play depth after core structure is under control.
 
 Arcade remains a separate HOLD/evidence lane and is **not** allowed to consume the website roadmap unless a manifest-level browser-game integration task specifically requires it.

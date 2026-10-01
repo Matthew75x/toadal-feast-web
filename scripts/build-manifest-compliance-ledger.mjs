@@ -4,6 +4,8 @@ import path from 'node:path';
 const root = process.cwd();
 const ledgerPath = path.join(root, 'manifests', 'manifest-compliance-ledger.json');
 const ledger = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
+const pageIndex = JSON.parse(fs.readFileSync(path.join(root, 'studio-project', 'toadal-feast-website', 'pages', 'index.json'), 'utf8'));
+const routeRecordCount = Array.isArray(pageIndex.pages) ? pageIndex.pages.length : 0;
 
 // Keep the local-only Home parity donor recoverable without making it authority.
 if (ledger.donorEvidence?.strictHomeParityWip) {
@@ -46,7 +48,7 @@ md.push('|---:|---|---|---|---|---|');
 for (const p of ledger.pages) md.push(`| ${p.n} | ${p.page} | ${p.visualAuthority} | ${p.delivery} | **${p.status}** | ${p.evidence} **Gap:** ${p.remainingGap} |`);
 md.push('', '### Page-family status count', '');
 for (const k of Object.keys(counts).sort()) md.push(`- **${k}: ${counts[k]}**`);
-md.push('', 'Route presence is not the same as page completion. The current implementation exposes 12 of the original 30 page families as actual routes/surfaces; several are still only truthful previews.', '');
+md.push('', `Route presence is not the same as page completion. This candidate currently contains ${routeRecordCount} static route records; several map to the same manifest family and many remain truthful previews.`, '');
 md.push('## Cross-cutting product contract', '');
 md.push('| Requirement | Status | Evidence / gap |');
 md.push('|---|---|---|');
@@ -83,6 +85,7 @@ sm.push('## Purpose', '', 'ASSIGNATOR contains many historical TOADAL website wo
 sm.push('## Active project folders', '');
 sm.push(`- \`C:/ReleaseOps/toadal-feast-web-live-staging\` - public staging lineage; remote staging SHA \`${ledger.authority.liveStaging}\`.`);
 sm.push(`- \`C:/ReleaseOps/toadal-feast-web-stories-stack-20261001\` - current integrated review candidate \`${ledger.authority.currentReviewCandidate || ledger.authority.integratedCandidate}\` on \`${ledger.authority.currentReviewBranch}\`.`);
+sm.push('- `C:/ReleaseOps/toadal-feast-web-gated-ecosystem-20261001` - parallel gated-ecosystem candidate for manifest rows 19, 21, 22, 26, 27, 28, 29; not deployed.');
 sm.push(`- \`C:/ReleaseOps/toadal-feast-web-visual-combined-20261001\` - older visual-only convergence candidate \`${ledger.authority.combinedVisualCandidate}\`; implementation history/donor, not current review head.`);
 sm.push('- `C:/ReleaseOps/toadal-feast-web-manifest-recalibration-20261001` - manifest-control baseline worktree.');
 sm.push(`- \`C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001\` - Master V2 asset authority \`${ledger.authority.assetAuthority}\`.`);

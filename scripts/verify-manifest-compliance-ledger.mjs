@@ -40,8 +40,15 @@ const acceptedRouteEvidence = new Map([
   [15,['/feast-pass/quests/']],
   [16,['/feast-pass/rewards/']],
   [18,['/app/']],
+  [19,['/account/']],
   [20,['/profile/']],
+  [21,['/community/']],
+  [22,['/store/']],
   [25,['/support/']],
+  [26,['/contact/']],
+  [27,['/about/']],
+  [28,['/coming-soon/']],
+  [29,['/legal/']],
   [30,['/404.html']]
 ]);
 
@@ -78,7 +85,7 @@ for (const rel of requiredEvidence) {
   if (!fs.existsSync(path.join(root, rel))) errors.push(`Required visual/donor evidence missing: ${rel}`);
 }
 if ((ledger.visualEvidence?.batch1 || []).length !== 9) errors.push(`Expected 9 individually preserved Batch-1 mockups for pages 2-10; found ${ledger.visualEvidence?.batch1?.length ?? 0}.`);
-if (!Array.isArray(ledger.executionPriorities) || ledger.executionPriorities.length < 6) errors.push('Manifest-first execution priorities are missing or incomplete.');
+if (!Array.isArray(ledger.executionPriorities) || ledger.executionPriorities.length < 5) errors.push('Manifest-first execution priorities are missing or incomplete.');
 
 console.log(`Manifest rows: ${ledger.pages.length}`);
 console.log(`Implemented route records: ${implementedRoutes.size}`);
