@@ -68,6 +68,24 @@
       "reason": "Byte-identical duplicate of the preserved alternate site plan."
     },
     {
+      "filename": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/00_APPROVED_HOME_VISUAL_AUTHORITY.png",
+      "bytes": 2722535,
+      "sha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608",
+      "reason": "Byte-identical to docs/review/WO-002/evidence/approved-home-visual-authority.png; already preserved."
+    },
+    {
+      "filename": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/01_HOME.png",
+      "bytes": 2794334,
+      "sha256": "747ec321b5a4aa153e4b674ba119cda22b43438b0f4af450b7a54082e50377ac",
+      "reason": "Byte-identical to docs/review/WO-002/evidence/approved-home-direction-batch1.png; already preserved."
+    },
+    {
+      "filename": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/desktop/01-home.png",
+      "bytes": 2794334,
+      "sha256": "747ec321b5a4aa153e4b674ba119cda22b43438b0f4af450b7a54082e50377ac",
+      "reason": "Byte-identical to the already-preserved approved Home direction reference at docs/review/WO-002/evidence/approved-home-direction-batch1.png; do not duplicate."
+    },
+    {
       "filename": "toadal-feast-web-wo003-20260930-closure.bundle",
       "bytes": 119247201,
       "sha256": "2ec00711af4dd58b4f678db0ff06bd98720c4c6a38f56266b261c0abe527d065",
@@ -91,11 +109,11 @@
     }
   ],
   "sourceManifest": "manifests/web-authority-sources.json",
-  "sourceManifestSha256": "50dc5992691a9d08e95b7b1fce45123eaa903a1275d97a26eb5507327f4a93ce",
+  "sourceManifestSha256": "9db0a44b472b63c73aaf4e9b9197984e572e643c4ca039623453048c41d61ee8",
   "companionManifest": "manifests/companion-runtime-assets.json",
   "companionManifestSha256": "b315f0d524473862aa23f8a1ded07d0e3693da07e7357ff7720bc2a32f9343d8",
   "localWorkManifest": "manifests/local-work-preservation.json",
-  "localWorkManifestSha256": "46115a6689f5c7c5644a90ba8fc78f0f7a8f48bb524e324efdf0835a949a6128",
+  "localWorkManifestSha256": "ebbfd807f8bc8363e0b6067fa7c77a700115053e98a09eb6d7527e3b296e1168",
   "files": [
     {
       "filename": "02_PLAY_GAMES_HUB.png",
@@ -357,8 +375,8 @@
       "source": "existing repository at staging/live-visual@7c17e28135688ace9139918f077a44e3d03d9765",
       "approvalState": "consolidated-authority-record",
       "status": "active",
-      "bytes": 2768,
-      "sha256": "7fe91d5d1e8dd2ef53218e70579961c5442375e48465947baccf7ee570f46a2a",
+      "bytes": 2950,
+      "sha256": "cf60a74a14a1f7e87eada81418ddda8b37931bb76dfa239a2010c4568991d6da",
       "hashEncoding": "utf8-lf"
     },
     {
@@ -539,6 +557,18 @@
       "sha256": "960bd6d51546ef7dd7fdcba0f9cb61d16287b958836847fc0942147c8bb3561a",
       "hashEncoding": "exact-bytes",
       "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/MOBILE_PLAN.md"
+    },
+    {
+      "filename": "MOTION_NOTES.md",
+      "path": "docs/authority/sources/mockups/MOTION_NOTES.md",
+      "purpose": "Current authority index, reconciliation, or retained source; not independent owner approval.",
+      "source": "existing repository at staging/live-visual@7c17e28135688ace9139918f077a44e3d03d9765",
+      "approvalState": "mockup-package-metadata",
+      "status": "reference",
+      "bytes": 652,
+      "sha256": "81446ca6568e19c1f57bd069e8facbb309107e78ec3e33c3c249dd87f2e96f71",
+      "hashEncoding": "exact-bytes",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/MOTION_NOTES.md"
     },
     {
       "filename": "OUTPUT_MANIFEST_SHA256.json",

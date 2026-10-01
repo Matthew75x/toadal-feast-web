@@ -30,6 +30,7 @@ $packages = @(
         @{ Entry = 'TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/README.md'; Destination = 'docs/authority/sources/mockups/README.md' },
         @{ Entry = 'TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/PAGE_MANIFEST.md'; Destination = 'docs/authority/sources/mockups/PAGE_MANIFEST.md' },
         @{ Entry = 'TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/DESIGN_SYSTEM.md'; Destination = 'docs/authority/sources/mockups/DESIGN_SYSTEM.md' },
+        @{ Entry = 'TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/MOTION_NOTES.md'; Destination = 'docs/authority/sources/mockups/MOTION_NOTES.md' },
         @{ Entry = 'TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/TOADAL_REACTION_STATE_MAP.md'; Destination = 'docs/authority/sources/mockups/TOADAL_REACTION_STATE_MAP.md' },
         @{ Entry = 'TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/ASSET_MAP.md'; Destination = 'docs/authority/sources/mockups/ASSET_MAP.md' },
         @{ Entry = 'TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/QA_REPORT.md'; Destination = 'docs/authority/sources/mockups/QA_REPORT.md' },
