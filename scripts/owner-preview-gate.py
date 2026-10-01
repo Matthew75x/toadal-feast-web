@@ -37,6 +37,7 @@ def main():
       ("manifest",[node,"scripts/verify-manifest-compliance-ledger.mjs"]),
       ("search-discovery",[node,"scripts/verify-search-discovery.mjs"]),
       ("nonhome-truth",[node,"scripts/verify-nonhome-truth.mjs"]),
+      ("visual-asset-authority",[node,"scripts/verify-visual-asset-authority.mjs","."]),
       ("cartridge-isolation",[node,"scripts/verify-cartridge-storage-isolation.mjs","."]),
       ("render-freshness",[node,"scripts/verify-owner-preview-render-freshness.mjs",".","dist"]),
       ("pages-basepath",[node,"scripts/verify-pages-basepath.mjs","dist",args.base_path]),
