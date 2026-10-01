@@ -12,11 +12,11 @@ const ArcadeSpriteRuntime = (() => {
     'dark-theme': 'assets/packs/dark-theme/manifest.json',
   });
 
-  // WO-003 preview profile: one canonical character, standard Arcade only.
-  // The source donor remains unchanged; this package-local initializer avoids
-  // loading unrelated character art and skips the optional JSON theme-pack
-  // fetch that cannot succeed from the required opaque-origin sandbox.
-  const PREVIEW_CHARACTER_IDS = Object.freeze(['toadal']);
+  // WO-003 sampler profile: only the five characters reachable through its
+  // website-owned Standard/FMF/Zen choices. The source donor remains
+  // unchanged; the package skips the optional JSON theme-pack fetch that
+  // cannot succeed from the required opaque-origin sandbox.
+  const PREVIEW_CHARACTER_IDS = Object.freeze(['toadal', 'classic', 'pelican', 'chomper', 'princess']);
 
   let currentAssetTheme = 'default';
   let initPromise = null;
@@ -112,7 +112,7 @@ const ArcadeSpriteRuntime = (() => {
     // empty default pack when unavailable. In an opaque-origin iframe, fetch
     // of that same-site JSON is blocked by CORS; use the identical empty-pack
     // baseline directly rather than issue a guaranteed failing request.
-    // Alternate themes are outside this single-character preview profile.
+    // Alternate themes are outside this bounded sampler profile.
     void themeName;
     finalizeThemeSwitch('default');
     return true;

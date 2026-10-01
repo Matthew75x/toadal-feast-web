@@ -10,16 +10,26 @@
     "note": "Web preview must be a derivative sealed cartridge; do not publish the entire standalone/player release package."
   },
   "gameplay": {
-    "arcadeMode": "standard",
-    "character": "toadal",
-    "characterLocked": true,
+    "experiences": ["standard", "fmf", "zen"],
+    "experienceChooserOwner": "website",
+    "standardCharacters": ["toadal", "classic", "pelican"],
+    "characterLabels": {"toadal": "Toadal", "classic": "Classic Frog", "pelican": "Gully"},
+    "characterChooserOwner": "website",
+    "characterUnlocks": {
+      "toadal": "start unlocked",
+      "classic": "unlocks after the first completed Standard run",
+      "pelican": "unlocks when Standard best score is at least 600 or after three completed Standard runs"
+    },
+    "forcedCharacters": {"fmf": "chomper", "zen": "princess"},
+    "characterLocked": false,
     "variantsEnabled": false,
-    "characterSelector": false,
+    "excludedArcadeVariant": "tc",
     "shop": false,
     "cosmetics": false,
     "dailyGoals": false,
     "unlockMenus": false,
     "localBestScore": true,
+    "localUnlockProgression": true,
     "localRunHistory": false,
     "mobileControls": true,
     "keyboard": true,
@@ -30,8 +40,8 @@
     "help": true
   },
   "identity": {
-    "headline": "Limited browser preview",
-    "conversionMessage": "Play a taste of TOADAL FEAST here, then continue with the full mobile adventure.",
+    "headline": "TOADAL FEAST Arcade Preview",
+    "conversionMessage": "Play a few Arcade experiences here, then continue with the full mobile adventure.",
     "doNotClaim": [
       "full mobile game",
       "all Arcade variants",
@@ -50,6 +60,17 @@
   "storage": {
     "requiredIsolation": true,
     "namespace": "toadal:game:toadal-feast-arcade-preview:v1:",
+    "owner": "website host",
+    "storageKey": "toadal:game:toadal-feast-arcade-preview:v1:state",
+    "persistedFields": [
+      "bestScoreOverall",
+      "bestScoreByCharacter",
+      "completedStandardRuns",
+      "unlockedCharacterIds",
+      "selectedCharacterId",
+      "selectedExperienceId",
+      "previewSettings"
+    ],
     "legacyMobileKeysAllowed": false,
     "accountSync": "none"
   },
@@ -63,26 +84,31 @@
     "includeOnlyRuntimeRequired": true,
     "mandatoryFamilies": [
       "Toadal Arcade frozen core",
-      "Arcade runtime food actually reachable by selected profile",
-      "hazard/pickup assets actually reachable by selected profile",
-      "power-up assets actually reachable by selected profile",
-      "selected background/theme UI",
-      "shared Arcade runtime/scripts/styles required by standard mode"
+      "Arcade runtime food actually reachable in Standard, 5 Minute Feast, and Zen",
+      "hazard/pickup assets actually reachable in Standard",
+      "power-up assets actually reachable in Standard, 5 Minute Feast, and Zen",
+      "selected backgrounds and theme UI for the three approved experiences",
+      "Toadal, Classic Frog, Gully, Chomper, and current Princess Lily runtime assets",
+      "shared Arcade runtime/scripts/styles required by Standard, FMF, and Zen"
     ],
     "excludeFamilies": [
       "other playable character animation families unless runtime proves unavoidable",
-      "Arcade variants tc/fmf/zen presentation assets",
+      "FEAST FRENZY / tc presentation and gameplay assets",
       "Puzzle/Feastfall/Infinite-only masters",
       "authoring/QA/dev tools",
       "raw source/master art not needed at runtime"
     ]
   },
   "acceptance": [
-    "real run starts and completes with Toadal",
+    "real Standard run starts and completes with Toadal",
+    "Standard Toadal, Classic Frog, and Gully are qualified against the final cartridge",
+    "5 Minute Feast enters with Chomper and preserves its five-minute rules",
+    "Zen enters with Princess Lily and preserves current approved artwork and Zen rules",
     "Toadal mechanics verifier PASS",
     "Toadal browser witness PASS",
     "mobile control contract/browser witness PASS",
-    "storage isolated from legacy froggyFeast keys",
+    "host-owned local preview state persists under the isolated namespace",
+    "opaque cartridge cannot access localStorage, cookies, parent DOM or mobile froggyFeast keys",
     "no unexpected network egress",
     "no missing runtime assets",
     "pause/restart/exit/fullscreen work through host",

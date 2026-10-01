@@ -257,8 +257,12 @@ async function startGame(modeId = 'standard', options = {}) {
   // Fall back to the known default instead of leaving currentMode invalid.
   if (!GameModeRegistry[modeId]) modeId = 'standard';
 
-  // Safety guard — never launch a locked mode directly
-  if (!isModeUnlocked(modeId)) {
+  // The website preview host may expose its explicitly allowlisted sampler
+  // modes without touching canonical mobile unlock progression. This adapter
+  // exists only in the isolated WO-003 cartridge; the authoritative donor
+  // retains the ordinary progression gate.
+  const webPreviewModeAllowed = Boolean(globalThis.ToadalArcadePreview?.allowsExperience?.(modeId));
+  if (!webPreviewModeAllowed && !isModeUnlocked(modeId)) {
     handleModeButtonClick(modeId); // shows tooltip
     return false;
   }

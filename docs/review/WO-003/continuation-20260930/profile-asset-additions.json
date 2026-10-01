@@ -1,0 +1,87 @@
+{
+  "schema": "toadal-feast.wo003.profile-asset-delta.v1",
+  "purpose": "Provenance for profile assets added to the isolated audit candidate during the WO-003 continuation; this is not a final package manifest or qualification result.",
+  "candidate": "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1",
+  "donorCommit": "6daedca1eb6aa5c953e53a538561e9c42ff9cb3c",
+  "method": "Extracted the exact listed blobs from the pinned donor commit. Each candidate Git blob ID was compared with the donor Git blob ID; SHA-256 and byte counts were recorded after extraction.",
+  "fileCount": 10,
+  "totalBytes": 7357438,
+  "entries": [
+    {
+      "path": "assets/images/characters/chomper-arcade/sheets_256/chomper_idle_static_1f_256.png",
+      "bytes": 82089,
+      "sha256": "4678A25333B081091C87E1491214C4135BB80931C8395CA142EA62ADBC7D0A06",
+      "donorBlob": "3c1146bee2f748ed5ca95c39934a6805ea026d18",
+      "candidateBlob": "3c1146bee2f748ed5ca95c39934a6805ea026d18"
+    },
+    {
+      "path": "assets/images/characters/chomper-arcade/sheets_256/chomper_move_14f_256.png",
+      "bytes": 997806,
+      "sha256": "4CD86DDEE855C7CC2A0EC7E839072E8D89873189429016E4ACB2468D6FB9F3FE",
+      "donorBlob": "f1d705f30ea081cb0c503e79735abccebc50f38a",
+      "candidateBlob": "f1d705f30ea081cb0c503e79735abccebc50f38a"
+    },
+    {
+      "path": "assets/images/characters/chomper-arcade/sheets_256/chomper_chomp_26f_256.png",
+      "bytes": 2171906,
+      "sha256": "BA9892FCB67B8209C184358F1F94D88565ECBC8E59B4F416BA426756C599B82E",
+      "donorBlob": "e692c73b37908ce28944ffdb20288479d629c7ff",
+      "candidateBlob": "e692c73b37908ce28944ffdb20288479d629c7ff"
+    },
+    {
+      "path": "assets/images/characters/curated-highres/princess/lilly_blink_3f_512_2026-09-08.png",
+      "bytes": 542190,
+      "sha256": "BECABADB3B38539E77CBFB1804C6EE573E65A330697A09B9F5782EECF4317519",
+      "donorBlob": "2f354669469f34cf63d8494f40cb2c53cef6a022",
+      "candidateBlob": "2f354669469f34cf63d8494f40cb2c53cef6a022"
+    },
+    {
+      "path": "assets/images/characters/curated-highres/princess/lilly_catch_hold_1f_512_2026-09-08.png",
+      "bytes": 264468,
+      "sha256": "73C4CAE155BE4781ACEC61915E876E65B87B322993A647B04ABE574F57CDCFEB",
+      "donorBlob": "f5e1f26fbbea666b52e034d1576c42a9866ce7a5",
+      "candidateBlob": "f5e1f26fbbea666b52e034d1576c42a9866ce7a5"
+    },
+    {
+      "path": "assets/images/characters/curated-highres/princess/lilly_catch_open_3f_512_2026-09-08.png",
+      "bytes": 801875,
+      "sha256": "C3E47D0E6E201FCF2F1A61748465149B8A7F5141B5F021985EFB008CE0A3DC20",
+      "donorBlob": "9059606b63d96fcc97ceb12405025a5b787b39ad",
+      "candidateBlob": "9059606b63d96fcc97ceb12405025a5b787b39ad"
+    },
+    {
+      "path": "assets/images/characters/curated-highres/princess/lilly_chew_swallow_3f_512_2026-09-08.png",
+      "bytes": 819379,
+      "sha256": "98310DD0BA92BFAA72CF4A18CB64CEC133932E6C1077A7AA3E043D8E6479AFB1",
+      "donorBlob": "b48b579f6de3eced09207f607ee2d4a1bb7392e3",
+      "candidateBlob": "b48b579f6de3eced09207f607ee2d4a1bb7392e3"
+    },
+    {
+      "path": "assets/images/characters/curated-highres/princess/lilly_hurt_1f_512_2026-09-08.png",
+      "bytes": 270365,
+      "sha256": "A29FD56C38923AFCEC33FFBF8BB164B6C231273241F6F912D1DBB2F80DCE15C3",
+      "donorBlob": "b70f8a49dd76e98fbc834be89f9ae1112040d81d",
+      "candidateBlob": "b70f8a49dd76e98fbc834be89f9ae1112040d81d"
+    },
+    {
+      "path": "assets/images/characters/curated-highres/princess/lilly_walk_4f_512_2026-09-08.png",
+      "bytes": 860170,
+      "sha256": "90959EE789A2635B3E7679C48C39EC8D5113FCC3489D8C2F60A2294F48A8026C",
+      "donorBlob": "de0eb6a079546c83dc4db55c0c5ac736aeba50b0",
+      "candidateBlob": "de0eb6a079546c83dc4db55c0c5ac736aeba50b0"
+    },
+    {
+      "path": "assets/images/characters/curated-highres/princess/lilly_wink_3f_512_2026-09-08.png",
+      "bytes": 547190,
+      "sha256": "A577E19B15657DFF567A23B29B7636B3F1050D4B55C6D1BBDFBCB74FD102AE8B",
+      "donorBlob": "97b0897ab6cb25ecba4a6b1d153618ca2e491909",
+      "candidateBlob": "97b0897ab6cb25ecba4a6b1d153618ca2e491909"
+    }
+  ],
+  "notIncluded": [
+    "assets/images/tongue-rig/golden_shaft.png",
+    "assets/images/tongue-rig/golden_stages.png",
+    "assets/images/tongue-rig/golden_tip.png"
+  ],
+  "notIncludedReason": "These Golden Toadal paths remain runtime-reachable for requested mechanics witnesses, but no blob exists at these paths in the pinned donor commit. No substitute artwork or unrelated runtime change was invented."
+}

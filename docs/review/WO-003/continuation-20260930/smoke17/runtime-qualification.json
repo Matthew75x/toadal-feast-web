@@ -1,0 +1,5179 @@
+{
+  "browser": {
+    "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "version": "154.0.8037.57"
+  },
+  "checks": [
+    {
+      "evidence": {
+        "allow": "fullscreen",
+        "sandbox": "allow-scripts allow-pointer-lock"
+      },
+      "name": "opaque-origin-sandbox-policy",
+      "pass": true
+    },
+    {
+      "evidence": "null",
+      "name": "child-opaque-origin",
+      "pass": true
+    },
+    {
+      "evidence": [
+        "toadal:game:toadal-feast-arcade-preview:v1:state"
+      ],
+      "name": "host-storage-initialized",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "character": "toadal",
+        "experience": "standard",
+        "fmfTimeLeft": 300,
+        "level": 1,
+        "lives": 3,
+        "mode": "playing",
+        "score": 0,
+        "x": 240
+      },
+      "name": "standard-starts-as-toadal",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "activePlayMs": 4004,
+        "completion": [],
+        "elapsedMs": 6094,
+        "finalMode": "playing",
+        "level": 1,
+        "lives": 3,
+        "mechanicsAfter": {
+          "airborneDirectFoodCatches": 0,
+          "blockChargeSpent": 0,
+          "blockFoodCatches": 0,
+          "chargedHops": 1,
+          "directFoodCatches": 1,
+          "elapsedSeconds": 6.514700000000121,
+          "elevatedSeconds": 0,
+          "fullChargeHops": 1,
+          "horizontalDistance": 180.14399999999995,
+          "lastHopChargeRatio": 1,
+          "lastHopSpeed": 660,
+          "lastX": 420.14399999999995,
+          "stationaryElevatedSeconds": 0,
+          "throwChargeSpent": 0,
+          "throwFoodCatches": 0,
+          "tongueFoodCatches": 0
+        },
+        "mechanicsBefore": {
+          "airborneDirectFoodCatches": 0,
+          "blockChargeSpent": 0,
+          "blockFoodCatches": 0,
+          "chargedHops": 0,
+          "directFoodCatches": 0,
+          "elapsedSeconds": 0.44190000000000057,
+          "elevatedSeconds": 0,
+          "fullChargeHops": 0,
+          "horizontalDistance": 0,
+          "lastHopChargeRatio": 0,
+          "lastHopSpeed": 0,
+          "lastX": 240,
+          "stationaryElevatedSeconds": 0,
+          "throwChargeSpent": 0,
+          "throwFoodCatches": 0,
+          "tongueFoodCatches": 0
+        },
+        "peakScore": 0,
+        "score": 20,
+        "startLevel": 1,
+        "startLives": 3,
+        "startScore": 0
+      },
+      "name": "standard-meaningful-live-gameplay",
+      "pass": false
+    },
+    {
+      "evidence": {
+        "activePlayMs": 4004,
+        "completion": [],
+        "elapsedMs": 6094,
+        "finalMode": "playing",
+        "level": 1,
+        "lives": 3,
+        "mechanicsAfter": {
+          "airborneDirectFoodCatches": 0,
+          "blockChargeSpent": 0,
+          "blockFoodCatches": 0,
+          "chargedHops": 1,
+          "directFoodCatches": 1,
+          "elapsedSeconds": 6.514700000000121,
+          "elevatedSeconds": 0,
+          "fullChargeHops": 1,
+          "horizontalDistance": 180.14399999999995,
+          "lastHopChargeRatio": 1,
+          "lastHopSpeed": 660,
+          "lastX": 420.14399999999995,
+          "stationaryElevatedSeconds": 0,
+          "throwChargeSpent": 0,
+          "throwFoodCatches": 0,
+          "tongueFoodCatches": 0
+        },
+        "mechanicsBefore": {
+          "airborneDirectFoodCatches": 0,
+          "blockChargeSpent": 0,
+          "blockFoodCatches": 0,
+          "chargedHops": 0,
+          "directFoodCatches": 0,
+          "elapsedSeconds": 0.44190000000000057,
+          "elevatedSeconds": 0,
+          "fullChargeHops": 0,
+          "horizontalDistance": 0,
+          "lastHopChargeRatio": 0,
+          "lastHopSpeed": 0,
+          "lastX": 240,
+          "stationaryElevatedSeconds": 0,
+          "throwChargeSpent": 0,
+          "throwFoodCatches": 0,
+          "tongueFoodCatches": 0
+        },
+        "peakScore": 0,
+        "score": 20,
+        "startLevel": 1,
+        "startLives": 3,
+        "startScore": 0
+      },
+      "name": "standard-natural-completion-or-progression",
+      "pass": false
+    },
+    {
+      "evidence": {
+        "after": 1,
+        "before": 0
+      },
+      "name": "toadal-direct-catch-witness",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "after": 1,
+        "before": 0
+      },
+      "name": "toadal-charged-hop-witness",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "after": 0,
+        "before": 0
+      },
+      "name": "toadal-golden-throw-witness",
+      "pass": false
+    },
+    {
+      "evidence": {
+        "after": 0,
+        "before": 0
+      },
+      "name": "toadal-golden-block-witness",
+      "pass": false
+    },
+    {
+      "evidence": {
+        "after": 0,
+        "before": 0
+      },
+      "name": "toadal-golden-throw-food-catch",
+      "pass": false
+    },
+    {
+      "evidence": {
+        "after": 0,
+        "before": 0
+      },
+      "name": "toadal-golden-block-food-catch",
+      "pass": false
+    },
+    {
+      "evidence": {
+        "afterReload": {
+          "bestScoreByCharacter": {
+            "toadal": 20
+          },
+          "bestScoreOverall": 20,
+          "completedStandardRuns": 0,
+          "previewSettings": {
+            "muted": false
+          },
+          "selectedCharacterId": "princess",
+          "selectedExperienceId": "zen",
+          "unlockedCharacterIds": [
+            "toadal"
+          ]
+        },
+        "fields": [
+          "bestScoreByCharacter",
+          "bestScoreOverall",
+          "completedStandardRuns",
+          "previewSettings",
+          "selectedCharacterId",
+          "selectedExperienceId",
+          "unlockedCharacterIds"
+        ],
+        "key": "toadal:game:toadal-feast-arcade-preview:v1:state",
+        "state": {
+          "bestScoreByCharacter": {
+            "toadal": 20
+          },
+          "bestScoreOverall": 20,
+          "completedStandardRuns": 0,
+          "previewSettings": {
+            "muted": false
+          },
+          "selectedCharacterId": "toadal",
+          "selectedExperienceId": "standard",
+          "unlockedCharacterIds": [
+            "toadal"
+          ]
+        }
+      },
+      "name": "host-owned-namespaced-persistence",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "origin": "null"
+      },
+      "name": "opaque-child-storage-denied",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "config": {
+          "activePack": "default",
+          "character": "chomper",
+          "fmfRemaining": 299.5885000000008,
+          "fmfTickSource": "onTick(dt) {\n      GameState.fmfTimeLeft -= dt;\n      if (GameState.fmfTimeLeft <= 0) {\n        GameState.fmfTimeLeft = 0;\n        triggerGameOver(\"Time's Up!\", 'Five Minute Feast Complete!', 'timer', true);\n      }\n    }",
+          "fmfTimerSetupSource": "onStart() {\n      GameState.fmfTimeLeft = 300;\n      GameState.lives = 5;\n      GameState.maxLives = 8;\n      applyEquippedCosmeticStats();\n      BackgroundMaps.initForMode(getCharDef().id);\n    }",
+          "mode": "fmf",
+          "princess": {
+            "firstFrame": "princess_idle",
+            "spriteSheet": "characters"
+          },
+          "zenSpawnInterval": 1.6,
+          "zenSpeed": 0.58
+        },
+        "runtime": {
+          "character": "chomper",
+          "experience": "fmf",
+          "fmfTimeLeft": 299.5885000000008,
+          "level": 1,
+          "lives": 5,
+          "mode": "playing",
+          "score": 0,
+          "x": 240
+        }
+      },
+      "name": "fmf-forced-mode-character",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "config": {
+          "activePack": "default",
+          "character": "chomper",
+          "fmfRemaining": 299.5885000000008,
+          "fmfTickSource": "onTick(dt) {\n      GameState.fmfTimeLeft -= dt;\n      if (GameState.fmfTimeLeft <= 0) {\n        GameState.fmfTimeLeft = 0;\n        triggerGameOver(\"Time's Up!\", 'Five Minute Feast Complete!', 'timer', true);\n      }\n    }",
+          "fmfTimerSetupSource": "onStart() {\n      GameState.fmfTimeLeft = 300;\n      GameState.lives = 5;\n      GameState.maxLives = 8;\n      applyEquippedCosmeticStats();\n      BackgroundMaps.initForMode(getCharDef().id);\n    }",
+          "mode": "fmf",
+          "princess": {
+            "firstFrame": "princess_idle",
+            "spriteSheet": "characters"
+          },
+          "zenSpawnInterval": 1.6,
+          "zenSpeed": 0.58
+        },
+        "runtime": {
+          "character": "chomper",
+          "experience": "fmf",
+          "fmfTimeLeft": 299.40500000000117,
+          "level": 1,
+          "lives": 5,
+          "mode": "paused",
+          "score": 0,
+          "x": 240
+        },
+        "scoreRun": {
+          "elapsedMs": 221,
+          "peakScore": 0,
+          "state": {
+            "character": "chomper",
+            "experience": "fmf",
+            "fmfTimeLeft": 299.40500000000117,
+            "level": 1,
+            "lives": 5,
+            "mode": "paused",
+            "score": 0,
+            "x": 240
+          }
+        }
+      },
+      "name": "fmf-real-score-and-pacing",
+      "pass": false
+    },
+    {
+      "evidence": {
+        "config": {
+          "activePack": "default",
+          "character": "princess",
+          "fmfRemaining": 299.40500000000117,
+          "fmfTickSource": "onTick(dt) {\n      GameState.fmfTimeLeft -= dt;\n      if (GameState.fmfTimeLeft <= 0) {\n        GameState.fmfTimeLeft = 0;\n        triggerGameOver(\"Time's Up!\", 'Five Minute Feast Complete!', 'timer', true);\n      }\n    }",
+          "fmfTimerSetupSource": "onStart() {\n      GameState.fmfTimeLeft = 300;\n      GameState.lives = 5;\n      GameState.maxLives = 8;\n      applyEquippedCosmeticStats();\n      BackgroundMaps.initForMode(getCharDef().id);\n    }",
+          "mode": "zen",
+          "princess": {
+            "firstFrame": "princess_idle",
+            "spriteSheet": "characters"
+          },
+          "zenSpawnInterval": 1.6,
+          "zenSpeed": 0.58
+        },
+        "runtime": {
+          "character": "princess",
+          "experience": "zen",
+          "fmfTimeLeft": 299.40500000000117,
+          "level": 1,
+          "lives": 10,
+          "mode": "playing",
+          "score": 0,
+          "x": 240
+        }
+      },
+      "name": "zen-forced-mode-character",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "config": {
+          "activePack": "default",
+          "character": "princess",
+          "fmfRemaining": 299.40500000000117,
+          "fmfTickSource": "onTick(dt) {\n      GameState.fmfTimeLeft -= dt;\n      if (GameState.fmfTimeLeft <= 0) {\n        GameState.fmfTimeLeft = 0;\n        triggerGameOver(\"Time's Up!\", 'Five Minute Feast Complete!', 'timer', true);\n      }\n    }",
+          "fmfTimerSetupSource": "onStart() {\n      GameState.fmfTimeLeft = 300;\n      GameState.lives = 5;\n      GameState.maxLives = 8;\n      applyEquippedCosmeticStats();\n      BackgroundMaps.initForMode(getCharDef().id);\n    }",
+          "mode": "zen",
+          "princess": {
+            "firstFrame": "princess_idle",
+            "spriteSheet": "characters"
+          },
+          "zenSpawnInterval": 1.6,
+          "zenSpeed": 0.58
+        },
+        "runtime": {
+          "character": "princess",
+          "experience": "zen",
+          "fmfTimeLeft": 299.40500000000117,
+          "level": 1,
+          "lives": 10,
+          "mode": "playing",
+          "score": 50,
+          "x": 253.66200000000555
+        },
+        "scoreRun": {
+          "elapsedMs": 15078,
+          "peakScore": 50,
+          "state": {
+            "character": "princess",
+            "experience": "zen",
+            "fmfTimeLeft": 299.40500000000117,
+            "level": 1,
+            "lives": 10,
+            "mode": "playing",
+            "score": 50,
+            "x": 253.66200000000555
+          }
+        }
+      },
+      "name": "zen-real-score-and-pacing",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "bestScoreByCharacter": {
+          "toadal": 20
+        },
+        "bestScoreOverall": 20,
+        "completedStandardRuns": 0,
+        "previewSettings": {
+          "muted": false
+        },
+        "selectedCharacterId": "princess",
+        "selectedExperienceId": "zen",
+        "unlockedCharacterIds": [
+          "toadal"
+        ]
+      },
+      "name": "host-persistence-survives-reload",
+      "pass": true
+    }
+  ],
+  "failures": [
+    "standard-meaningful-live-gameplay",
+    "standard-natural-completion-or-progression",
+    "toadal-golden-throw-witness",
+    "toadal-golden-block-witness",
+    "toadal-golden-throw-food-catch",
+    "toadal-golden-block-food-catch",
+    "fmf-real-score-and-pacing"
+  ],
+  "gameplay": {
+    "standardToadal": {
+      "activePlayMs": 4004,
+      "completion": [],
+      "elapsedMs": 6094,
+      "finalMode": "playing",
+      "level": 1,
+      "lives": 3,
+      "mechanicsAfter": {
+        "airborneDirectFoodCatches": 0,
+        "blockChargeSpent": 0,
+        "blockFoodCatches": 0,
+        "chargedHops": 1,
+        "directFoodCatches": 1,
+        "elapsedSeconds": 6.514700000000121,
+        "elevatedSeconds": 0,
+        "fullChargeHops": 1,
+        "horizontalDistance": 180.14399999999995,
+        "lastHopChargeRatio": 1,
+        "lastHopSpeed": 660,
+        "lastX": 420.14399999999995,
+        "stationaryElevatedSeconds": 0,
+        "throwChargeSpent": 0,
+        "throwFoodCatches": 0,
+        "tongueFoodCatches": 0
+      },
+      "mechanicsBefore": {
+        "airborneDirectFoodCatches": 0,
+        "blockChargeSpent": 0,
+        "blockFoodCatches": 0,
+        "chargedHops": 0,
+        "directFoodCatches": 0,
+        "elapsedSeconds": 0.44190000000000057,
+        "elevatedSeconds": 0,
+        "fullChargeHops": 0,
+        "horizontalDistance": 0,
+        "lastHopChargeRatio": 0,
+        "lastHopSpeed": 0,
+        "lastX": 240,
+        "stationaryElevatedSeconds": 0,
+        "throwChargeSpent": 0,
+        "throwFoodCatches": 0,
+        "tongueFoodCatches": 0
+      },
+      "peakScore": 0,
+      "score": 20,
+      "startLevel": 1,
+      "startLives": 3,
+      "startScore": 0
+    }
+  },
+  "network": {
+    "badResponses": [],
+    "consoleErrors": [
+      {
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "type": "error"
+      },
+      {
+        "text": "Failed to load resource: the server responded with a status of 404 (File not found)",
+        "type": "error"
+      }
+    ],
+    "externalRequests": [],
+    "failedResourceCount": 0,
+    "failures": [],
+    "pageErrors": [],
+    "requests": [
+      {
+        "method": "GET",
+        "type": "document",
+        "url": "http://127.0.0.1:8899/qualification-harness.html"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-host.js"
+      },
+      {
+        "method": "GET",
+        "type": "document",
+        "url": "http://127.0.0.1:8899/arcade-standalone.html"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/served-origin-guard.js"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/foundation/presentation-tokens.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/style.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/feast-genie-guide.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/standalone-mode.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/player-help.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-shell-overrides.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-standalone.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-launch-shell.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/ff-transition-overlay.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/froggy-ui-v2-qa-shell.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview.css"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/ff-transition-overlay.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_burger.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_donut.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_maki_roll.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_banana.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cupcake.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_broccoli.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pizza.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fries.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_icecream.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_strawberry.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_chicken.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cotton_candy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/classic.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/modes/arcade.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/mode-feast-frenzy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/gulper.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/five-minute-feast.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/royal.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/zen-garden.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_idle_1f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/release-meta.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/pause.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/candyland-scenic-calm.webp"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-host-integration.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-sheet-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-pack-loader.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-layout-config.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/ASSET_REGISTRY.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-renderer.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/error-handler.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/a11y-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-coverage-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-save-policy-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-system.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-save-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-contract.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-host.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/balance.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-visuals.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/content-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-source-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/legacy-cosmetic-save-id-map.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-rollout-config.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-unlock-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-asset-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-composition-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-provenance-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/food-presentation-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/food-presentation-contract.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-asset-bindings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-nonfood-asset-bindings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-powerup-candy-bindings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-icon-library.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/asset-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-renderer-adapters.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/audio-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/characters.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetic-character-profiles.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-character-behavior-profiles.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetics.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/shop.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/modes.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-damage-source.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/systems.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/mode-access.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/progression.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-revenge-challenges.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-reaction-art.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/reward-coin-celebration.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/effects/crown-coin.png"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-outcomes.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-victory.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/settings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guidance.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-target.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guide.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-polish.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-core.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-integration.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-director.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-wave-formations.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-systems.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/gamepad-controller.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-affinity-presentation.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-animation-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-toadal-mechanics.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-leaderboard.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-flow.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-loop.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-sprite-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-viewport.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-menu.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/player-help-content.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-authority-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-audio.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-pause.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-background.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/13_whimsical_lakeside_fairy_tale_valley.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/07_whimsical_riverside_feast_glade.webp"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-1.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-2.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-3.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/idle_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-world-entities.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-hud.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-render.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders-ui.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-result-ui.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/launch-shell.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/mobile-control-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-mode-adapters.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-bridge.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-left.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-right.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-up.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-down.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/play.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/control-restart.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/audio.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/settings.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-frog.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/close.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/hud-pantry.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/progress-trophy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-unlock.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-wardrobe.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/utility-store.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/help.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/chomper.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_candy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_apple.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pear.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_red.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_blue.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_bomb.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_fire.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_caution.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_sun.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_syringe.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_gift.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_shield.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_time.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_royal.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_haste.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_magnet.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_star.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_sword.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_portal.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/portrait.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_orange.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_lemon.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_grapes.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cherry.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pineapple.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_kiwi.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_mango.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_blueberry.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_coconut.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_meat.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cheese.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pretzel.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_carrot.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_candycorn.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_avocado.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_tomato.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_potato.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cookie.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cake.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_taco.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_hot_dog.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_nachos.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_ramen.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_curry.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fruit_bowl.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_brownie.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cheesecake.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_macaron.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_milkshake.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cinnamon_roll.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_golden_apple.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_jewel_candy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/run_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/jump_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/hurt_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/swallow_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/golden_throw_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/golden_block_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/victory_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/archive/tongue_catch_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/classic_stages.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/classic_shaft.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/classic_tip.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/effects/golden_block_world.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/effects/golden_projectile_cube.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_chicken_nuggets.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_onion_rings.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_jelly_beans.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/14_enchanted_sunset_feast_courtyard.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/chomper-arcade/sheets_256/chomper_idle_static_1f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_gummy_bear.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_lollipop.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_marshmallow.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_mochi.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_walk_4f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_catch_open_3f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_catch_hold_1f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_chew_swallow_3f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_blink_3f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_wink_3f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_hurt_1f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/princess_stages.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/princess_shaft.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/princess_tip.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/zen-royal-garden.webp"
+      },
+      {
+        "method": "GET",
+        "type": "document",
+        "url": "http://127.0.0.1:8899/qualification-harness.html"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-host.js"
+      },
+      {
+        "method": "GET",
+        "type": "document",
+        "url": "http://127.0.0.1:8899/arcade-standalone.html"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/served-origin-guard.js"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/foundation/presentation-tokens.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/style.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/feast-genie-guide.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/standalone-mode.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/player-help.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-shell-overrides.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-standalone.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-launch-shell.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/ff-transition-overlay.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/froggy-ui-v2-qa-shell.css"
+      },
+      {
+        "method": "GET",
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview.css"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/ff-transition-overlay.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_burger.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_donut.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_maki_roll.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_banana.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cupcake.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_broccoli.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pizza.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fries.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_icecream.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_strawberry.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_chicken.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cotton_candy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/classic.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/modes/arcade.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/mode-feast-frenzy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/gulper.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/five-minute-feast.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/royal.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/zen-garden.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_idle_1f_512_2026-09-08.png"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/release-meta.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/pause.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/candyland-scenic-calm.webp"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-host-integration.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-sheet-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-pack-loader.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-layout-config.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/ASSET_REGISTRY.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-renderer.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/error-handler.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/a11y-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-coverage-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-save-policy-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-system.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-save-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-contract.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-host.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/balance.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-visuals.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/content-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-source-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/legacy-cosmetic-save-id-map.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-rollout-config.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-unlock-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-asset-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-composition-resolver.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-provenance-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/food-presentation-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/food-presentation-contract.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-asset-bindings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-nonfood-asset-bindings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-powerup-candy-bindings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-icon-library.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/asset-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-renderer-adapters.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/audio-manager.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/characters.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetic-character-profiles.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-character-behavior-profiles.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetics.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/shop.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/modes.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-damage-source.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/systems.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/mode-access.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/progression.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-revenge-challenges.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-reaction-art.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/reward-coin-celebration.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/effects/crown-coin.png"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-outcomes.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-victory.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/settings.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guidance.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-target.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guide.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-polish.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-core.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-integration.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-director.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-wave-formations.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-systems.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/gamepad-controller.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-affinity-presentation.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-animation-registry.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-toadal-mechanics.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-leaderboard.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-flow.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-loop.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-sprite-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-viewport.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-menu.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/player-help-content.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-authority-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-audio.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-pause.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-background.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/13_whimsical_lakeside_fairy_tale_valley.webp"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/07_whimsical_riverside_feast_glade.webp"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-1.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-2.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-3.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/idle_8f_256.png"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-world-entities.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-hud.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-render.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders-ui.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-result-ui.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/launch-shell.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/mobile-control-runtime.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-mode-adapters.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js"
+      },
+      {
+        "method": "GET",
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-bridge.js"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-left.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-right.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-up.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-down.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/play.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/control-restart.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/audio.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/settings.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-frog.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/close.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/hud-pantry.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/progress-trophy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-unlock.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-wardrobe.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/utility-store.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/help.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/chomper.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_candy.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_apple.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pear.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_red.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_blue.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_bomb.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_fire.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_caution.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_sun.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_syringe.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_gift.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_shield.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_time.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_royal.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_haste.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_magnet.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_star.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_sword.png"
+      },
+      {
+        "method": "GET",
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_portal.png"
+      }
+    ],
+    "responses": [
+      {
+        "status": 200,
+        "type": "document",
+        "url": "http://127.0.0.1:8899/qualification-harness.html"
+      },
+      {
+        "status": 200,
+        "type": "document",
+        "url": "http://127.0.0.1:8899/arcade-standalone.html"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-host.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/served-origin-guard.js"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/foundation/presentation-tokens.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/feast-genie-guide.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/style.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/standalone-mode.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/player-help.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-shell-overrides.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-standalone.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-launch-shell.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/ff-transition-overlay.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/froggy-ui-v2-qa-shell.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview.css"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/ff-transition-overlay.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_burger.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_donut.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_maki_roll.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_banana.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cupcake.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_broccoli.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fries.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pizza.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_chicken.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_icecream.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_strawberry.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cotton_candy.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/modes/arcade.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/mode-feast-frenzy.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/release-meta.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/gulper.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/classic.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/five-minute-feast.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/royal.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/pause.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/candyland-scenic-calm.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/zen-garden.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_idle_1f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-host-integration.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-sheet-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-pack-loader.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-layout-config.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/ASSET_REGISTRY.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-renderer.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/error-handler.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/a11y-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-coverage-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-save-policy-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-system.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-save-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-contract.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-host.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/balance.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-visuals.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/content-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-source-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/legacy-cosmetic-save-id-map.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-rollout-config.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-unlock-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-asset-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-composition-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-provenance-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/food-presentation-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/food-presentation-contract.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-asset-bindings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-nonfood-asset-bindings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-powerup-candy-bindings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-icon-library.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/asset-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-renderer-adapters.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/audio-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/characters.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetic-character-profiles.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-character-behavior-profiles.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetics.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/shop.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/modes.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-damage-source.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/systems.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/mode-access.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/progression.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-revenge-challenges.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-reaction-art.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/reward-coin-celebration.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/effects/crown-coin.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-outcomes.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-victory.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/settings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guidance.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-target.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guide.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-polish.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-core.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-integration.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-director.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-wave-formations.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-systems.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/gamepad-controller.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-affinity-presentation.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-animation-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-toadal-mechanics.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-leaderboard.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-flow.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-loop.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-sprite-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-viewport.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-menu.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/player-help-content.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-authority-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-audio.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-pause.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-background.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/13_whimsical_lakeside_fairy_tale_valley.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/07_whimsical_riverside_feast_glade.webp"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-1.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-2.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-3.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/idle_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-world-entities.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-hud.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-render.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders-ui.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-result-ui.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/launch-shell.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/mobile-control-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-mode-adapters.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-bridge.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-left.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-right.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-up.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-down.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/play.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/control-restart.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/audio.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-frog.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/close.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/settings.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/hud-pantry.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/progress-trophy.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/chomper.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-unlock.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-wardrobe.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/help.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_candy.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/utility-store.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_apple.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pear.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_red.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_blue.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_bomb.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_fire.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_caution.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_sun.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_syringe.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_gift.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_shield.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_time.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_royal.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_haste.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_magnet.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_star.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_sword.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_portal.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/portrait.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_lemon.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_orange.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_grapes.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cherry.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pineapple.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_kiwi.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_mango.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_blueberry.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_coconut.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_meat.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cheese.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pretzel.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_carrot.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_candycorn.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_avocado.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_tomato.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_potato.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cookie.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cake.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_taco.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_hot_dog.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_nachos.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_ramen.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_curry.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fruit_bowl.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_brownie.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cheesecake.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_macaron.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cinnamon_roll.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_milkshake.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_golden_apple.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_jewel_candy.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/run_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/hurt_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/jump_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/swallow_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/golden_throw_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/golden_block_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/victory_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/archive/tongue_catch_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/classic_shaft.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/classic_stages.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/classic_tip.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/effects/golden_block_world.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/effects/golden_projectile_cube.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_chicken_nuggets.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_jelly_beans.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_onion_rings.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/14_enchanted_sunset_feast_courtyard.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/chomper-arcade/sheets_256/chomper_idle_static_1f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_gummy_bear.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_lollipop.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_marshmallow.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_mochi.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_walk_4f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_catch_open_3f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_catch_hold_1f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_chew_swallow_3f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_blink_3f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_wink_3f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_hurt_1f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/princess_stages.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/princess_shaft.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/zen-royal-garden.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/tongue-rig/princess_tip.png"
+      },
+      {
+        "status": 200,
+        "type": "document",
+        "url": "http://127.0.0.1:8899/qualification-harness.html"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-host.js"
+      },
+      {
+        "status": 200,
+        "type": "document",
+        "url": "http://127.0.0.1:8899/arcade-standalone.html"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/served-origin-guard.js"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/foundation/presentation-tokens.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/style.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/feast-genie-guide.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/standalone-mode.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/player-help.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-shell-overrides.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-standalone.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/modes/arcade/arcade-launch-shell.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/froggy-ui-v2-qa-shell.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/src/styles/components/ff-transition-overlay.css"
+      },
+      {
+        "status": 200,
+        "type": "stylesheet",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview.css"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/ff-transition-overlay.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_burger.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_donut.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_maki_roll.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_banana.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_broccoli.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cupcake.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pizza.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_chicken.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_strawberry.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fries.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_icecream.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cotton_candy.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/release-meta.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/candyland-scenic-calm.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/pause.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/classic.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/modes/arcade.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/mode-feast-frenzy.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/gulper.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/royal.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/zen-garden.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/arcade-variants/five-minute-feast.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/curated-highres/princess/lilly_idle_1f_512_2026-09-08.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-host-integration.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-sheet-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-pack-loader.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/asset-layout-config.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/ASSET_REGISTRY.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/prod/sprite-renderer.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/error-handler.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/a11y-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-coverage-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/themes/generated/theme-save-policy-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-system.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-save-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-contract.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-host.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/balance.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-visuals.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/content-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-source-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/legacy-cosmetic-save-id-map.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-rollout-config.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-unlock-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-asset-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/theme-composition-resolver.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/asset-provenance-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/content/generated/food-presentation-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/food-presentation-contract.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-asset-bindings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-nonfood-asset-bindings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-powerup-candy-bindings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-icon-library.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/asset-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/content-renderer-adapters.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/audio-manager.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/characters.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetic-character-profiles.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-character-behavior-profiles.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/cosmetics.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/shop.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/modes.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-damage-source.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/systems.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/mode-access.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/progression.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-revenge-challenges.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-reaction-art.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/reward-coin-celebration.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/effects/crown-coin.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-outcomes.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-victory.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/settings.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guidance.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-target.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-guide.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-run-polish.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-core.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/visual-background-integration.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-feast-director.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-wave-formations.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-systems.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/gamepad-controller.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-affinity-presentation.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-animation-registry.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-toadal-mechanics.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-leaderboard.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-flow.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/app/game-loop.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-sprite-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-viewport.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-menu.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/player-help-content.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/ui/ui-authority-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-audio.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/packages/shared/standalone-pause.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-background.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/13_whimsical_lakeside_fairy_tale_valley.webp"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/backgrounds/living-feast/07_whimsical_riverside_feast_glade.webp"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-1.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-2.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-characters-3.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/toadal-arcade/strips/idle_8f_256.png"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-world-entities.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-hud.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/rendering/draw-render.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/feast-orders-ui.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-result-ui.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/launch-shell.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/platform/mobile-control-runtime.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/shared/feast-genie-mode-adapters.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js"
+      },
+      {
+        "status": 200,
+        "type": "script",
+        "url": "http://127.0.0.1:8899/wo003-arcade-preview-bridge.js"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-left.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-right.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-up.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/nav-down.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/play.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/control-restart.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/audio.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/settings.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-frog.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/close.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/hud-pantry.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/progress-trophy.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-unlock.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/character-wardrobe.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-v2/controls/help.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/images/characters/runtime-select/chomper.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/ui-raster-authority/runtime-256/utility-store.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_apple.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_candy.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pear.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_red.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_heart_blue.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_fire.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_bomb.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_hazard_caution.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_syringe.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_sun.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-p0-nonfood-approved-2026-07-07/runtime-max-256/arcade_pickup_gift.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_shield.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_time.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_royal.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_haste.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_magnet.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_star.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_portal.png"
+      },
+      {
+        "status": 200,
+        "type": "image",
+        "url": "http://127.0.0.1:8899/assets/themes/froggy-feast/arcade-powerup-candies-v1/runtime-max-256/arcade_powerup_candy_sword.png"
+      }
+    ],
+    "uniqueRequests": 235
+  },
+  "pass": false,
+  "persistence": {
+    "afterReload": {
+      "bestScoreByCharacter": {
+        "toadal": 20
+      },
+      "bestScoreOverall": 20,
+      "completedStandardRuns": 0,
+      "previewSettings": {
+        "muted": false
+      },
+      "selectedCharacterId": "princess",
+      "selectedExperienceId": "zen",
+      "unlockedCharacterIds": [
+        "toadal"
+      ]
+    },
+    "fields": [
+      "bestScoreByCharacter",
+      "bestScoreOverall",
+      "completedStandardRuns",
+      "previewSettings",
+      "selectedCharacterId",
+      "selectedExperienceId",
+      "unlockedCharacterIds"
+    ],
+    "key": "toadal:game:toadal-feast-arcade-preview:v1:state",
+    "state": {
+      "bestScoreByCharacter": {
+        "toadal": 20
+      },
+      "bestScoreOverall": 20,
+      "completedStandardRuns": 0,
+      "previewSettings": {
+        "muted": false
+      },
+      "selectedCharacterId": "toadal",
+      "selectedExperienceId": "standard",
+      "unlockedCharacterIds": [
+        "toadal"
+      ]
+    }
+  },
+  "profiles": [
+    {
+      "after": {
+        "character": "chomper",
+        "experience": "fmf",
+        "fmfTimeLeft": 299.40500000000117,
+        "level": 1,
+        "lives": 5,
+        "mode": "paused",
+        "score": 0,
+        "x": 240
+      },
+      "character": "chomper",
+      "config": {
+        "activePack": "default",
+        "character": "chomper",
+        "fmfRemaining": 299.5885000000008,
+        "fmfTickSource": "onTick(dt) {\n      GameState.fmfTimeLeft -= dt;\n      if (GameState.fmfTimeLeft <= 0) {\n        GameState.fmfTimeLeft = 0;\n        triggerGameOver(\"Time's Up!\", 'Five Minute Feast Complete!', 'timer', true);\n      }\n    }",
+        "fmfTimerSetupSource": "onStart() {\n      GameState.fmfTimeLeft = 300;\n      GameState.lives = 5;\n      GameState.maxLives = 8;\n      applyEquippedCosmeticStats();\n      BackgroundMaps.initForMode(getCharDef().id);\n    }",
+        "mode": "fmf",
+        "princess": {
+          "firstFrame": "princess_idle",
+          "spriteSheet": "characters"
+        },
+        "zenSpawnInterval": 1.6,
+        "zenSpeed": 0.58
+      },
+      "controlledPlay": {
+        "elapsedMs": 221,
+        "peakScore": 0,
+        "state": {
+          "character": "chomper",
+          "experience": "fmf",
+          "fmfTimeLeft": 299.40500000000117,
+          "level": 1,
+          "lives": 5,
+          "mode": "paused",
+          "score": 0,
+          "x": 240
+        }
+      },
+      "experience": "fmf",
+      "runtimeDiagnostics": {
+        "focus": [
+          {
+            "at": 590.5999999940395,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 590.9000000059605,
+            "focused": false,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 591.2999999970198,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 1062.5,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "focus"
+          },
+          {
+            "at": 1062.9000000059605,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "blur"
+          },
+          {
+            "at": 7327.29999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "playing",
+            "name": "blur"
+          },
+          {
+            "at": 7341,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          },
+          {
+            "at": 7341.0999999940395,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          },
+          {
+            "at": 7352,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "blur"
+          },
+          {
+            "at": 7352.0999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "blur"
+          },
+          {
+            "at": 7407.70000000298,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 7407.9000000059605,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 8152.5,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 8152.5999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 8153.0999999940395,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 8558.40000000596,
+            "focused": false,
+            "hidden": false,
+            "mode": "playing",
+            "name": "blur"
+          },
+          {
+            "at": 8775.09999999404,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          },
+          {
+            "at": 8775.20000000298,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          }
+        ],
+        "lifecycle": [
+          {
+            "at": 687.4000000059605,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "gameStarted",
+            "payload": null
+          },
+          {
+            "at": 7328.0999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at http://127.0.0.1:8899/wo003-arcade-preview-bridge.js:167:64"
+          },
+          {
+            "at": 8164.29999999702,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "gameStarted",
+            "payload": null
+          },
+          {
+            "at": 8759.29999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at pauseForLifecycle (http://127.0.0.1:8899/src/runtime/app/game-flow.js:898:26)\n    at http://127.0.0.1:8899/src/runtime/app/game-flow.js:908:63\n    at dispatch (http://127.0.0.1:8899/src/runtime/app/game-core.js:72:13)\n    at interruption (http://127.0.0.1:8899/src/runtime/app/game-core.js:77:5)\n    at http://127.0.0.1:8899/src/runtime/app/game-core.js:103:35"
+          },
+          {
+            "at": 8759.79999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "arcadeLifecyclePaused",
+            "payload": {
+              "count": 1,
+              "reason": "blur"
+            }
+          },
+          {
+            "at": 8759.79999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "lifecycleInterruption",
+            "payload": {
+              "reason": "blur"
+            }
+          }
+        ],
+        "origin": "null",
+        "pauses": [
+          {
+            "at": 7328.0999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at http://127.0.0.1:8899/wo003-arcade-preview-bridge.js:167:64"
+          },
+          {
+            "at": 8759.29999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at pauseForLifecycle (http://127.0.0.1:8899/src/runtime/app/game-flow.js:898:26)\n    at http://127.0.0.1:8899/src/runtime/app/game-flow.js:908:63\n    at dispatch (http://127.0.0.1:8899/src/runtime/app/game-core.js:72:13)\n    at interruption (http://127.0.0.1:8899/src/runtime/app/game-core.js:77:5)\n    at http://127.0.0.1:8899/src/runtime/app/game-core.js:103:35"
+          }
+        ],
+        "sessionGuard": {
+          "lastReason": "blur",
+          "pauseCount": 1
+        },
+        "visibility": "visible"
+      },
+      "start": {
+        "character": "chomper",
+        "experience": "fmf",
+        "fmfTimeLeft": 299.5885000000008,
+        "level": 1,
+        "lives": 5,
+        "mode": "playing",
+        "score": 0,
+        "x": 240
+      }
+    },
+    {
+      "after": {
+        "character": "princess",
+        "experience": "zen",
+        "fmfTimeLeft": 299.40500000000117,
+        "level": 1,
+        "lives": 10,
+        "mode": "playing",
+        "score": 50,
+        "x": 253.66200000000555
+      },
+      "character": "princess",
+      "config": {
+        "activePack": "default",
+        "character": "princess",
+        "fmfRemaining": 299.40500000000117,
+        "fmfTickSource": "onTick(dt) {\n      GameState.fmfTimeLeft -= dt;\n      if (GameState.fmfTimeLeft <= 0) {\n        GameState.fmfTimeLeft = 0;\n        triggerGameOver(\"Time's Up!\", 'Five Minute Feast Complete!', 'timer', true);\n      }\n    }",
+        "fmfTimerSetupSource": "onStart() {\n      GameState.fmfTimeLeft = 300;\n      GameState.lives = 5;\n      GameState.maxLives = 8;\n      applyEquippedCosmeticStats();\n      BackgroundMaps.initForMode(getCharDef().id);\n    }",
+        "mode": "zen",
+        "princess": {
+          "firstFrame": "princess_idle",
+          "spriteSheet": "characters"
+        },
+        "zenSpawnInterval": 1.6,
+        "zenSpeed": 0.58
+      },
+      "controlledPlay": {
+        "elapsedMs": 15078,
+        "peakScore": 50,
+        "state": {
+          "character": "princess",
+          "experience": "zen",
+          "fmfTimeLeft": 299.40500000000117,
+          "level": 1,
+          "lives": 10,
+          "mode": "playing",
+          "score": 50,
+          "x": 253.66200000000555
+        }
+      },
+      "experience": "zen",
+      "runtimeDiagnostics": {
+        "focus": [
+          {
+            "at": 590.5999999940395,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 590.9000000059605,
+            "focused": false,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 591.2999999970198,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 1062.5,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "focus"
+          },
+          {
+            "at": 1062.9000000059605,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "blur"
+          },
+          {
+            "at": 7327.29999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "playing",
+            "name": "blur"
+          },
+          {
+            "at": 7341,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          },
+          {
+            "at": 7341.0999999940395,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          },
+          {
+            "at": 7352,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "blur"
+          },
+          {
+            "at": 7352.0999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "blur"
+          },
+          {
+            "at": 7407.70000000298,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 7407.9000000059605,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 8152.5,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 8152.5999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 8153.0999999940395,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 8558.40000000596,
+            "focused": false,
+            "hidden": false,
+            "mode": "playing",
+            "name": "blur"
+          },
+          {
+            "at": 8775.09999999404,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          },
+          {
+            "at": 8775.20000000298,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "focus"
+          },
+          {
+            "at": 8919.90000000596,
+            "focused": true,
+            "hidden": false,
+            "mode": "paused",
+            "name": "blur"
+          },
+          {
+            "at": 8920.09999999404,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "blur"
+          },
+          {
+            "at": 8933.90000000596,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 8934,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          },
+          {
+            "at": 9722,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 9722.09999999404,
+            "focused": false,
+            "hidden": false,
+            "mode": "menu",
+            "name": "blur"
+          },
+          {
+            "at": 9722.59999999404,
+            "focused": true,
+            "hidden": false,
+            "mode": "menu",
+            "name": "focus"
+          }
+        ],
+        "lifecycle": [
+          {
+            "at": 687.4000000059605,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "gameStarted",
+            "payload": null
+          },
+          {
+            "at": 7328.0999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at http://127.0.0.1:8899/wo003-arcade-preview-bridge.js:167:64"
+          },
+          {
+            "at": 8164.29999999702,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "gameStarted",
+            "payload": null
+          },
+          {
+            "at": 8759.29999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at pauseForLifecycle (http://127.0.0.1:8899/src/runtime/app/game-flow.js:898:26)\n    at http://127.0.0.1:8899/src/runtime/app/game-flow.js:908:63\n    at dispatch (http://127.0.0.1:8899/src/runtime/app/game-core.js:72:13)\n    at interruption (http://127.0.0.1:8899/src/runtime/app/game-core.js:77:5)\n    at http://127.0.0.1:8899/src/runtime/app/game-core.js:103:35"
+          },
+          {
+            "at": 8759.79999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "arcadeLifecyclePaused",
+            "payload": {
+              "count": 1,
+              "reason": "blur"
+            }
+          },
+          {
+            "at": 8759.79999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "lifecycleInterruption",
+            "payload": {
+              "reason": "blur"
+            }
+          },
+          {
+            "at": 9732.70000000298,
+            "focused": true,
+            "hidden": false,
+            "mode": "playing",
+            "name": "gameStarted",
+            "payload": null
+          }
+        ],
+        "origin": "null",
+        "pauses": [
+          {
+            "at": 7328.0999999940395,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at http://127.0.0.1:8899/wo003-arcade-preview-bridge.js:167:64"
+          },
+          {
+            "at": 8759.29999999702,
+            "focused": false,
+            "hidden": false,
+            "mode": "paused",
+            "name": "gamePaused",
+            "payload": {},
+            "stack": "Error\n    at EventBus.emit (eval at evaluate (:197:30), <anonymous>:17:32)\n    at pauseGame (http://127.0.0.1:8899/src/runtime/app/game-flow.js:371:12)\n    at Object.openPause (http://127.0.0.1:8899/src/runtime/modes/arcade/arcade-standalone-boot.js:368:42)\n    at pauseForLifecycle (http://127.0.0.1:8899/src/runtime/app/game-flow.js:898:26)\n    at http://127.0.0.1:8899/src/runtime/app/game-flow.js:908:63\n    at dispatch (http://127.0.0.1:8899/src/runtime/app/game-core.js:72:13)\n    at interruption (http://127.0.0.1:8899/src/runtime/app/game-core.js:77:5)\n    at http://127.0.0.1:8899/src/runtime/app/game-core.js:103:35"
+          }
+        ],
+        "sessionGuard": {
+          "lastReason": "blur",
+          "pauseCount": 1
+        },
+        "visibility": "visible"
+      },
+      "start": {
+        "character": "princess",
+        "experience": "zen",
+        "fmfTimeLeft": 299.40500000000117,
+        "level": 1,
+        "lives": 10,
+        "mode": "playing",
+        "score": 0,
+        "x": 240
+      }
+    }
+  ],
+  "python": "3.7.4 (tags/v3.7.4:e09359112e, Jul  8 2019, 20:34:20) [MSC v.1916 64 bit (AMD64)]",
+  "reportPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-wo003-20260930\\docs\\review\\WO-003\\continuation-20260930\\smoke17\\runtime-qualification.json",
+  "schema": "toadal-feast.wo003.arcade-sampler-runtime-qualification.v1",
+  "screenshots": [
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-wo003-20260930\\docs\\review\\WO-003\\continuation-20260930\\smoke17\\standard-toadal-start.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-wo003-20260930\\docs\\review\\WO-003\\continuation-20260930\\smoke17\\fmf-running.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-wo003-20260930\\docs\\review\\WO-003\\continuation-20260930\\smoke17\\zen-running.png"
+  ],
+  "url": "http://127.0.0.1:8899/qualification-harness.html"
+}

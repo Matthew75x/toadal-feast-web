@@ -61,6 +61,7 @@ const FroggyLifecycleCoordinator = (() => {
   const interruptionSubscribers = [];
   const resumeSubscribers = [];
   let installed = false;
+  let blurInterruptionTimer = 0;
 
   function isExternalModalActive() {
     return globalThis.__HYBRID_EXTERNAL_MODAL_ACTIVE__ === true;
@@ -93,7 +94,16 @@ const FroggyLifecycleCoordinator = (() => {
       if (document.hidden) interruption('hidden');
       else resume('visible');
     });
-    window.addEventListener('blur', () => interruption('blur'));
+    // An opaque preview iframe can briefly blur while focus moves between its
+    // website-owned controls and the child during launch. Treat only sustained
+    // focus loss as an interruption; hidden-tab visibility still pauses at once.
+    window.addEventListener('blur', () => {
+      window.clearTimeout(blurInterruptionTimer);
+      blurInterruptionTimer = window.setTimeout(() => {
+        if (!document.hasFocus()) interruption('blur');
+      }, 200);
+    });
+    window.addEventListener('focus', () => window.clearTimeout(blurInterruptionTimer));
     window.addEventListener('pagehide', () => interruption('pagehide'));
   }
 

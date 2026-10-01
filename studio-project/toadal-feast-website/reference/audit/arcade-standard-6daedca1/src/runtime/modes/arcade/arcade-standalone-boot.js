@@ -777,13 +777,33 @@ const ArcadeStandalone = (() => {
       AudioManager?.setMusicScene?.('arcade');
       ensureArcadeSelection();
       if (!GameModeRegistry?.[modeId]) modeId = 'standard';
+      const webPreview = globalThis.ToadalArcadePreview;
+      const previewProfile = webPreview?.getActiveProfile?.();
+      const previewModeAllowed = Boolean(previewProfile && webPreview?.allowsExperience?.(modeId));
+      if (previewModeAllowed) {
+        const previewCharacterId = webPreview.characterForExperience(modeId);
+        const previewCharacter = CHARACTER_DATA.find(character => character.id === previewCharacterId);
+        if (!previewCharacter) {
+          showMenu('This preview character is unavailable.');
+          return Object.freeze({ started: false, reason: 'preview-character-unavailable', mode: modeId });
+        }
+        // The website owns its sampler unlocks. Grant only the selected
+        // character in this opaque, non-persistent cartridge session; never
+        // alter canonical character costs or mobile save data.
+        SaveManager.set(data => {
+          data.selectedChar = previewCharacterId;
+          data.unlockedChars = [...new Set([...(data.unlockedChars || []), previewCharacterId])];
+        });
+        GameState.selectedCharacterId = previewCharacterId;
+        if (typeof initPlayerSpriteRenderer === 'function') initPlayerSpriteRenderer(previewCharacterId);
+      }
       try {
         const devCharacterId = new URLSearchParams(location.search).get('devCharacter');
         if (modeId === 'standard' && devCharacterId === 'toadal' && CHARACTER_DATA.some(character => character.id === 'toadal')) {
           GameState.selectedCharacterId = 'toadal';
         }
       } catch (_) {}
-      if (typeof isModeUnlocked === 'function' && !isModeUnlocked(modeId)) {
+      if (!previewModeAllowed && typeof isModeUnlocked === 'function' && !isModeUnlocked(modeId)) {
         const threshold = Number(GAME_BALANCE?.modeUnlocks?.[modeId]) || 0;
         showMenu(`Reach ${format(threshold)} points in Standard mode to unlock this mode.`);
         return Object.freeze({ started: false, reason: 'locked', mode: modeId });

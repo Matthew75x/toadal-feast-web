@@ -3,85 +3,89 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='8' cy='8' r='7' fill='%23f3c52b'/%3E%3C/svg%3E">
-  <title>WO-003 isolated Arcade qualification harness</title>
+  <title>WO-003 Arcade sampler qualification harness</title>
   <style>
-    html, body { margin: 0; min-height: 100%; background: #21151a; color: #fff7e8; font: 16px system-ui, sans-serif; }
-    header { min-height: 48px; box-sizing: border-box; padding: 8px 16px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
-    header button { border: 1px solid #806b2b; border-radius: 7px; padding: 6px 10px; color: #fff7e8; background: #302719; cursor: pointer; }
-    iframe { display: block; width: 100vw; height: calc(100vh - 48px); border: 0; background: #16110e; }
+    :root { color-scheme: dark; font: 16px/1.45 system-ui, sans-serif; background: #21151a; color: #fff7e8; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body { padding: 16px; }
+    [data-arcade-preview-shell] { width: min(1500px, 100%); min-height: calc(100vh - 32px); margin: auto; display: grid; grid-template-rows: auto auto auto 1fr; gap: 12px; }
+    header, .chooser, .toolbar, [data-arcade-preview-result] { border: 1px solid #685745; border-radius: 12px; padding: 12px 16px; background: #2c211e; }
+    header { display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    header strong { font-size: 1.1rem; }
+    .chooser, .toolbar { display:flex; flex-wrap:wrap; align-items:end; gap:12px; }
+    label { display:grid; gap:4px; font-size:.88rem; }
+    select, button { min-height:40px; padding:7px 12px; border:1px solid #90784a; border-radius:8px; color:inherit; background:#382b25; font:inherit; }
+    button { cursor:pointer; }
+    button:disabled { opacity:.55; cursor:not-allowed; }
+    [data-arcade-preview-best] { min-width:48px; font-variant-numeric:tabular-nums; }
+    [data-arcade-preview-result][hidden] { display:none; }
+    [data-arcade-preview-result] { display:flex; flex-wrap:wrap; align-items:center; gap:12px; }
+    [data-arcade-preview-result] h2, [data-arcade-preview-result] p { margin:0; }
+    [data-arcade-preview-status] { margin-left:auto; min-width:220px; }
+    .stage { min-height:420px; overflow:hidden; border:1px solid #685745; border-radius:12px; background:#140f0d; }
+    iframe { display:block; width:100%; height:100%; min-height:70vh; border:0; background:#16110e; }
+    :fullscreen { background:#140f0d; padding:10px; }
+    @media (max-width: 650px) { body { padding:8px; } [data-arcade-preview-shell] { min-height:calc(100vh - 16px); } header { align-items:flex-start; flex-direction:column; } [data-arcade-preview-status] { margin-left:0; } iframe { min-height:68vh; } }
   </style>
 </head>
 <body>
-  <header><span>WO-003 qualification harness · opaque-origin Arcade frame</span><button id="host-fullscreen" type="button">Host fullscreen</button></header>
-  <iframe
-    id="arcade-cartridge"
-    title="TOADAL FEAST Arcade isolated qualification"
-    src="arcade-standalone.html"
-    sandbox="allow-scripts allow-pointer-lock"
-    allow="fullscreen"
-    referrerpolicy="strict-origin-when-cross-origin"
-  ></iframe>
+  <main data-arcade-preview-shell>
+    <header><strong>TOADAL FEAST Arcade Preview · qualification host</strong><span>Opaque-origin cartridge · local browser progress</span></header>
+    <section class="chooser" aria-label="Arcade preview choices">
+      <label>Experience
+        <select data-arcade-preview-experience>
+          <option value="standard">Standard Arcade</option>
+          <option value="fmf">5 Minute Feast</option>
+          <option value="zen">Zen</option>
+        </select>
+      </label>
+      <label>Standard character
+        <select data-arcade-preview-character></select>
+      </label>
+      <button type="button" data-arcade-preview-start>Play</button>
+      <span>Standard best: <strong data-arcade-preview-best>0</strong></span>
+    </section>
+    <section class="toolbar" role="group" aria-label="Host-owned game controls">
+      <button type="button" data-arcade-preview-pause>Pause</button>
+      <button type="button" data-arcade-preview-resume>Resume</button>
+      <button type="button" data-arcade-preview-sound>Mute</button>
+      <button type="button" data-arcade-preview-fullscreen>Fullscreen</button>
+      <button type="button" data-arcade-preview-exit>Exit preview</button>
+      <span data-arcade-preview-status role="status" aria-live="polite">Loading preview…</span>
+    </section>
+    <section data-arcade-preview-result hidden aria-live="polite"></section>
+    <div class="stage"><iframe
+      data-arcade-preview-frame
+      title="TOADAL FEAST Arcade isolated sampler"
+      src="arcade-standalone.html"
+      sandbox="allow-scripts allow-pointer-lock"
+      allow="fullscreen"
+      allowfullscreen
+      referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
+  </main>
   <script>
-    (() => {
-      const frame = document.getElementById('arcade-cartridge');
-      document.getElementById('host-fullscreen').addEventListener('click', async () => {
-        try {
-          if (document.fullscreenElement) await document.exitFullscreen();
-          else await frame.requestFullscreen();
-        } catch (error) {
-          window.__wo003FullscreenError = String(error && error.name || error);
-        }
-      });
-      const protocol = 'toadal.game.v1';
-      const gameId = 'toadal-feast-arcade-preview';
-      window.__wo003Messages = [];
-      window.__wo003Send = (type, payload = {}) => {
-        // An opaque origin has no serializable targetOrigin. The host sends
-        // only to this exact iframe WindowProxy; inbound traffic is source- and
-        // origin-checked below.
-        frame.contentWindow.postMessage({ protocol, gameId, type, payload }, '*');
-      };
-      window.__wo003FocusReturn = () => window.__wo003Send('host:resume', { reason: 'host-focus-returned' });
-      // Model the existing website host's page-level focus ownership: only
-      // Window-targeted focus/blur is forwarded, never descendant focus traps.
-      window.addEventListener('blur', (event) => {
-        if (event.target === window) window.__wo003Send('host:pause', { reason: 'host-focus-lost' });
-      }, true);
-      window.addEventListener('focus', (event) => {
-        if (event.target === window) window.__wo003Send('host:resume', { reason: 'host-focus-returned' });
-      }, true);
-      window.__wo003SpoofPause = async () => {
-        const sibling = document.createElement('iframe');
-        sibling.hidden = true;
-        await new Promise((resolve) => {
-          sibling.addEventListener('load', resolve, { once: true });
-          document.body.appendChild(sibling);
-          if (sibling.contentDocument && sibling.contentDocument.readyState === 'complete') resolve();
-        });
-        const message = JSON.stringify({ protocol, gameId, type: 'host:pause', payload: { reason: 'spoof-source-test' } });
-        sibling.contentWindow.eval(`parent.document.getElementById('arcade-cartridge').contentWindow.postMessage(${message}, '*')`);
-        window.setTimeout(() => sibling.remove(), 100);
-      };
-      window.addEventListener('message', (event) => {
-        if (event.source !== frame.contentWindow || event.origin !== 'null') return;
-        const message = event.data;
-        if (!message || message.protocol !== protocol || message.gameId !== gameId) return;
+    window.__wo003Messages = [];
+    window.addEventListener('message', event => {
+      const frame = document.querySelector('[data-arcade-preview-frame]');
+      if (event.source !== frame.contentWindow || event.origin !== 'null') return;
+      const message = event.data;
+      if (message?.protocol === 'toadal.game.v1' && message?.gameId === 'toadal-feast-arcade-preview') {
         window.__wo003Messages.push({ type: message.type, payload: message.payload || {}, at: Date.now() });
-      });
-      const initialize = () => window.__wo003Send('host:init');
-      frame.addEventListener('load', initialize);
-      initialize();
-      document.addEventListener('visibilitychange', () => {
-        window.__wo003Send('host:visibility', { visibility: document.hidden ? 'hidden' : 'visible' });
-      });
-      let retries = 0;
-      const timer = window.setInterval(() => {
-        if (window.__wo003Messages.some((message) => message.type === 'game:ready') || retries++ > 20) {
-          window.clearInterval(timer);
-        } else initialize();
-      }, 250);
-    })();
+      }
+    });
+    window.__wo003Send = (type, payload = {}) => window.ToadalArcadePreviewHost?.send(type, payload);
+    window.__wo003FocusReturn = () => window.__wo003Send('host:resume', { reason: 'host-focus-returned' });
+    window.__wo003SpoofPause = async () => {
+      const frame = document.querySelector('[data-arcade-preview-frame]');
+      const sibling = document.createElement('iframe');
+      sibling.hidden = true;
+      await new Promise(resolve => { sibling.addEventListener('load', resolve, { once:true }); document.body.append(sibling); });
+      const message = JSON.stringify({ protocol:'toadal.game.v1', gameId:'toadal-feast-arcade-preview', type:'host:pause', payload:{reason:'spoof-source-test'} });
+      sibling.contentWindow.eval(`parent.document.querySelector('[data-arcade-preview-frame]').contentWindow.postMessage(${message}, '*')`);
+      window.setTimeout(() => sibling.remove(), 100);
+    };
   </script>
+  <script src="wo003-arcade-preview-host.js"></script>
 </body>
 </html>
