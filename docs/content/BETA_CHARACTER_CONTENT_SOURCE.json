@@ -1,0 +1,95 @@
+{
+  "schema": "toadal-feast.web.beta-character-source.v1",
+  "status": "SOURCE_FACTS_NOT_PUBLICATION_AUTHORITY",
+  "source": {
+    "repository": "Matthew75x/Toadal-Feast-Development",
+    "ref": "main",
+    "file": "src/runtime/shared/characters.js",
+    "note": "Use these factual gameplay identities to prepare beta copy. Do not invent lore beyond the source facts."
+  },
+  "characters": [
+    {
+      "id": "toadal",
+      "displayName": "Toadal",
+      "species": "frog",
+      "role": "TOADAL FEAST mascot and King of Feasts",
+      "gameplayFacts": [
+        "eats by contact to build Golden Charge",
+        "charged Royal Hop",
+        "short tongue for extra reach",
+        "Golden Throw",
+        "stackable Golden Blocks",
+        "score multiplier"
+      ],
+      "webUse": [
+        "Standard Arcade preview",
+        "Toadal character profile"
+      ],
+      "sourceAsset": "assets/images/characters/toadal-arcade/portrait.png"
+    },
+    {
+      "id": "classic",
+      "displayName": "Classic Frog",
+      "species": "frog",
+      "role": "reliable traditional frog",
+      "gameplayFacts": [
+        "tongue",
+        "legs"
+      ],
+      "webUse": [
+        "Standard Arcade preview"
+      ],
+      "sourceAsset": "assets/images/characters/runtime-select/classic.png"
+    },
+    {
+      "id": "pelican",
+      "displayName": "Gully",
+      "species": "seagull",
+      "role": "airborne combo-focused catcher",
+      "gameplayFacts": [
+        "glides in four directions",
+        "scoops food mid-air",
+        "builds combo score from consecutive catches"
+      ],
+      "webUse": [
+        "Standard Arcade preview"
+      ],
+      "sourceAsset": "assets/images/characters/runtime-select/pelican.png"
+    },
+    {
+      "id": "chomper",
+      "displayName": "Chomper",
+      "species": "chomper",
+      "role": "forced character for 5 Minute Feast",
+      "gameplayFacts": [
+        "catches falling food from above with a bite",
+        "scores immediately",
+        "has a short reset between chomps"
+      ],
+      "webUse": [
+        "5 Minute Feast"
+      ],
+      "sourceAsset": "assets/images/characters/runtime-select/chomper.png"
+    },
+    {
+      "id": "princess",
+      "displayName": "Princess Lily",
+      "species": "frog",
+      "role": "forced character for Zen",
+      "gameplayFacts": [
+        "Zen mode character",
+        "no miss damage in Zen",
+        "catches food to uncover the kingdom"
+      ],
+      "webUse": [
+        "Zen"
+      ],
+      "sourceAsset": "assets/images/characters/curated-highres/princess/lilly_idle_1f_512_2026-09-08.png",
+      "assetRule": "Use September lilly_*_2026-09-08 family; retired crowned Princess assets are forbidden."
+    }
+  ],
+  "unresolvedForBetaContent": {
+    "worldLore": "No world/location lore is established by this source file. Do not create world canon from these gameplay descriptions.",
+    "biographies": "Long-form biographies require owner-approved or canonical content authority."
+  }
+}
