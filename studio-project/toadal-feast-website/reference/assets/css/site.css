@@ -3319,12 +3319,10 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
   .wo002-game-library .game-tabs {
     width: 100%;
     max-width: 100%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     gap: 5px;
-    overflow-x: auto;
-    overscroll-behavior-inline: contain;
+    overflow: visible;
     padding-block-end: 4px;
-    scrollbar-width: thin;
   }
 
   .wo002-game-library .game-tab {
@@ -3401,12 +3399,12 @@ body:has(.home-hero) .home-hero__toadal img,body:has(.home-hero) .home-hero__toa
 #browser-games-intro .section-lede{display:-webkit-box;max-width:760px;margin:0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:1;font-size:.72rem;line-height:1.3;}
 #browser-games-intro .game-tabs{display:none;}
 #browser-games-intro .home-play-directory-link{position:absolute;right:6px;top:9px;min-height:30px;margin:0;padding:4px 9px;font-size:.68rem;}
-#browser-games{grid-column:1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:7px !important;min-height:0;padding:3px 6px 10px 14px;}
-#browser-games .studio-game-card{min-width:0;min-height:0;padding:7px;border-radius:12px;}
-#browser-games .studio-game-card img{width:100%;height:92px;object-fit:cover;border-radius:9px;}
-#browser-games .studio-game-card h3{margin:5px 0 2px;font-size:.82rem;line-height:1.05;}
-#browser-games .studio-game-card p{display:-webkit-box;margin:0 0 4px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.58rem;line-height:1.2;}
-#browser-games .studio-game-card .chip,#browser-games .status-chip{min-height:0;padding:3px 6px;font-size:.56rem;}
+body:has(.home-hero) #browser-games{grid-column:1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:7px !important;min-height:0;padding:3px 6px 10px 14px;}
+body:has(.home-hero) #browser-games .studio-game-card{min-width:0;min-height:0;padding:7px;border-radius:12px;}
+body:has(.home-hero) #browser-games .studio-game-card img{width:100%;height:92px;object-fit:cover;border-radius:9px;}
+body:has(.home-hero) #browser-games .studio-game-card h3{margin:5px 0 2px;font-size:.82rem;line-height:1.05;}
+body:has(.home-hero) #browser-games .studio-game-card p{display:-webkit-box;margin:0 0 4px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.58rem;line-height:1.2;}
+body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero) #browser-games .status-chip{min-height:0;padding:3px 6px;font-size:.56rem;}
 #feast-pass{grid-column:2;grid-row:2 / 4;padding:10px 14px 10px 0;}
 #feast-pass .home-section-inner,#feast-pass .feast-pass-panel{height:100%;}
 #feast-pass .feast-pass-panel{min-height:0;max-height:296px;padding:15px;overflow:hidden;}
@@ -3482,11 +3480,11 @@ body:has(.home-hero) .home-hero__toadal{width:170px;right:2px;bottom:-8px;}
 #browser-games-intro .section-lede{display:-webkit-box;margin:0 0 8px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3;font-size:.72rem;line-height:1.28;}
 #browser-games-intro .game-tabs{display:none;}
 #browser-games-intro .home-play-directory-link{min-height:34px;padding:5px 10px;font-size:.68rem;}
-#browser-games{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:7px !important;padding:4px 12px 14px;}
-#browser-games .studio-game-card{min-width:0;padding:7px;}
-#browser-games .studio-game-card img{width:100%;height:82px;object-fit:cover;border-radius:8px;}
-#browser-games .studio-game-card h3{margin:5px 0 2px;font-size:.77rem;line-height:1.05;}
-#browser-games .studio-game-card p{display:-webkit-box;margin:0 0 4px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.57rem;line-height:1.2;}
+body:has(.home-hero) #browser-games{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:7px !important;padding:4px 12px 14px;}
+body:has(.home-hero) #browser-games .studio-game-card{min-width:0;padding:7px;}
+body:has(.home-hero) #browser-games .studio-game-card img{width:100%;height:82px;object-fit:cover;border-radius:8px;}
+body:has(.home-hero) #browser-games .studio-game-card h3{margin:5px 0 2px;font-size:.77rem;line-height:1.05;}
+body:has(.home-hero) #browser-games .studio-game-card p{display:-webkit-box;margin:0 0 4px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.57rem;line-height:1.2;}
 #feast-pass{padding:0 12px 12px;}
 #feast-pass .feast-pass-panel{min-height:0;padding:15px;}
 #feast-pass .section-heading{margin:4px 0 6px;font-size:1.75rem;line-height:.95;}
@@ -3627,6 +3625,8 @@ main:has(.home-hero) > [data-studio-variant="companion"] .companion-image{max-he
   .character-card-copy h2{font-size:.88rem}
   .character-card-copy p{font-size:.62rem}
   .character-info-grid{grid-template-columns:1fr}
+  .profile-anchor-nav{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));overflow:visible;gap:5px;padding:7px}
+  .profile-anchor-nav a{min-width:0;text-align:center}
   .profile-grid{grid-template-columns:1fr 1fr;gap:7px}
   .profile-panel{padding:10px}
   .profile-panel--wide,.profile-panel--gallery{grid-column:1 / -1}
@@ -4680,13 +4680,13 @@ body:has(.home-hero) .home-hero__toadal {
   filter: drop-shadow(0 14px 15px rgb(38 17 8 / 28%));
 }
 
-#browser-games .studio-game-card {
+body:has(.home-hero) #browser-games .studio-game-card {
   border: 1px solid rgb(115 63 35 / 15%);
   background: linear-gradient(155deg, #fffdf6 0%, #f7e8cb 100%);
   box-shadow: 0 5px 12px rgb(77 42 22 / 10%);
 }
 
-#browser-games .studio-game-card img {
+body:has(.home-hero) #browser-games .studio-game-card img {
   display: block;
   border: 1px solid rgb(76 39 22 / 12%);
   box-shadow: inset 0 0 0 1px rgb(255 255 255 / 25%);
