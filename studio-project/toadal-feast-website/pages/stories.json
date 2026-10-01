@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "page.stories",
+  "route": "/stories.html",
+  "title": "Stories · TOADAL FEAST",
+  "description": "A home for future TOADAL FEAST stories and comics.",
+  "publicationState": "published",
+  "components": [
+    {
+      "id": "component.stories.main",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "route-page",
+        "html": "<section class='route-hero route-hero--stories' data-companion-context='stories' data-companion-copy='Stories are part of the world, but the staging site should not invent chapters that have not been published.'>\n  <img class='route-hero__world route-hero__world--cover' src='assets/images/world/forest-portal.webp' alt='' width='1424' height='750'>\n  <div class='route-hero__shade'></div>\n  <div class='route-hero__copy route-hero__copy--light'><p class='section-kicker'>STORIES FROM THE FEAST</p><h1 class='route-title'>Every path has a story.</h1><p class='route-lede'>This is the future home for comics, character stories, and world adventures. Nothing unpublished is being presented as finished content.</p></div>\n</section>\n<section class='route-section'>\n  <div class='route-story-feature'>\n    <div><span class='status-chip status-chip--planned'>COMING LATER</span><p class='section-kicker'>STORY LIBRARY</p><h2 class='section-heading'>A proper reading home is being prepared.</h2><p class='section-lede'>The visual structure is ready for featured stories and series when approved material is available.</p></div>\n    <img src='assets/images/characters/princess-lily.webp' alt='Princess Lily' width='512' height='512'>\n  </div>\n</section>"
+      }
+    },
+    {
+      "id": "component.stories.companion",
+      "type": "core.rich-text",
+      "props": {
+        "symbolId": "symbol.home.toadal-companion"
+      }
+    }
+  ],
+  "referenceFile": "stories.html",
+  "studioGenerated": true,
+  "seo": {
+    "title": "Stories · TOADAL FEAST",
+    "description": "A home for future TOADAL FEAST stories and comics."
+  }
+}
