@@ -1,0 +1,474 @@
+{
+  "version": "1.0",
+  "character": "Toadal",
+  "logo_status": "paused pending full visual identity lock",
+  "core_rules": {
+    "always": [
+      "golden-yellow body",
+      "cream muzzle/belly",
+      "amber-brown eyes",
+      "gold crown",
+      "recognizable face/proportions"
+    ],
+    "usually": [
+      "red scarf"
+    ],
+    "optional": [
+      "star medallion",
+      "brown backpack"
+    ],
+    "avoid": [
+      "automatic wink",
+      "automatic wide-open grin",
+      "same pose across adjacent pages",
+      "brand marks unless intentionally licensed"
+    ]
+  },
+  "interaction_states": [
+    {
+      "state": "idle",
+      "trigger": "No target",
+      "expression": "Neutral-friendly",
+      "asset_key": "base_idle",
+      "priority": 10
+    },
+    {
+      "state": "nav-hover",
+      "trigger": "Navigation link",
+      "expression": "Curious/attentive",
+      "asset_key": "contextual_nav",
+      "priority": 70
+    },
+    {
+      "state": "button-hover",
+      "trigger": "Primary CTA",
+      "expression": "Ready/encouraging",
+      "asset_key": "presenting",
+      "priority": 75
+    },
+    {
+      "state": "settings",
+      "trigger": "Settings",
+      "expression": "Focused/helpful",
+      "asset_key": "settings",
+      "priority": 80
+    },
+    {
+      "state": "mute",
+      "trigger": "Mute/Sound",
+      "expression": "Quiet/focused",
+      "asset_key": "mute",
+      "priority": 85
+    },
+    {
+      "state": "notifications",
+      "trigger": "Subscribe/notifications",
+      "expression": "Inviting",
+      "asset_key": "bell",
+      "priority": 80
+    },
+    {
+      "state": "register",
+      "trigger": "Create account",
+      "expression": "Warm/trustworthy",
+      "asset_key": "register",
+      "priority": 85
+    },
+    {
+      "state": "login",
+      "trigger": "Login",
+      "expression": "Welcoming/attentive",
+      "asset_key": "login",
+      "priority": 85
+    },
+    {
+      "state": "delete-account",
+      "trigger": "Delete account",
+      "expression": "Serious/thoughtful",
+      "asset_key": "delete_account",
+      "priority": 100
+    },
+    {
+      "state": "quit",
+      "trigger": "Quit/Exit",
+      "expression": "Polite goodbye",
+      "asset_key": "exit",
+      "priority": 95
+    },
+    {
+      "state": "support",
+      "trigger": "Help/Support",
+      "expression": "Attentive",
+      "asset_key": "support",
+      "priority": 85
+    },
+    {
+      "state": "faq",
+      "trigger": "FAQ",
+      "expression": "Curious",
+      "asset_key": "faq",
+      "priority": 80
+    },
+    {
+      "state": "contact",
+      "trigger": "Contact",
+      "expression": "Friendly",
+      "asset_key": "mail",
+      "priority": 80
+    },
+    {
+      "state": "leaderboard",
+      "trigger": "Leaderboard",
+      "expression": "Proud/celebratory",
+      "asset_key": "leaderboard",
+      "priority": 80
+    },
+    {
+      "state": "scoreboard",
+      "trigger": "Scoreboard",
+      "expression": "Focused/proud",
+      "asset_key": "scoreboard",
+      "priority": 80
+    },
+    {
+      "state": "rating",
+      "trigger": "Ratings",
+      "expression": "Pleased",
+      "asset_key": "rating",
+      "priority": 80
+    },
+    {
+      "state": "survey",
+      "trigger": "Survey",
+      "expression": "Attentive",
+      "asset_key": "survey",
+      "priority": 80
+    },
+    {
+      "state": "feedback-positive",
+      "trigger": "Thumbs up",
+      "expression": "Happy",
+      "asset_key": "thumbs_up",
+      "priority": 90
+    },
+    {
+      "state": "feedback-negative",
+      "trigger": "Thumbs down",
+      "expression": "Mildly dissatisfied",
+      "asset_key": "thumbs_down",
+      "priority": 90
+    },
+    {
+      "state": "ai-disclosure",
+      "trigger": "AI disclosure",
+      "expression": "Open/trustworthy",
+      "asset_key": "ai_handshake",
+      "priority": 90
+    },
+    {
+      "state": "mobile",
+      "trigger": "Mobile apps",
+      "expression": "Interested",
+      "asset_key": "phone",
+      "priority": 75
+    },
+    {
+      "state": "partnership",
+      "trigger": "Partnership/Licensing",
+      "expression": "Professional-friendly",
+      "asset_key": "partnership",
+      "priority": 85
+    },
+    {
+      "state": "merch",
+      "trigger": "Merch",
+      "expression": "Enthusiastic",
+      "asset_key": "merch",
+      "priority": 80
+    },
+    {
+      "state": "community",
+      "trigger": "Community/Social",
+      "expression": "Warm/inclusive",
+      "asset_key": "community",
+      "priority": 80
+    },
+    {
+      "state": "social-impact",
+      "trigger": "Social Cause/Impact",
+      "expression": "Sincere/warm",
+      "asset_key": "social_impact",
+      "priority": 85
+    },
+    {
+      "state": "blog",
+      "trigger": "Blog/News",
+      "expression": "Thoughtful",
+      "asset_key": "blog",
+      "priority": 75
+    },
+    {
+      "state": "developers",
+      "trigger": "Developers/API",
+      "expression": "Focused/curious",
+      "asset_key": "developer",
+      "priority": 75
+    },
+    {
+      "state": "legal",
+      "trigger": "Legal/Terms",
+      "expression": "Composed",
+      "asset_key": "legal",
+      "priority": 90
+    },
+    {
+      "state": "privacy",
+      "trigger": "Privacy/Security",
+      "expression": "Calm/confident",
+      "asset_key": "privacy",
+      "priority": 90
+    },
+    {
+      "state": "about",
+      "trigger": "About",
+      "expression": "Warm/proud",
+      "asset_key": "about",
+      "priority": 70
+    },
+    {
+      "state": "404",
+      "trigger": "404/Not found",
+      "expression": "Confused",
+      "asset_key": "404",
+      "priority": 95
+    },
+    {
+      "state": "maintenance",
+      "trigger": "Maintenance",
+      "expression": "Determined",
+      "asset_key": "maintenance",
+      "priority": 95
+    },
+    {
+      "state": "food-target",
+      "trigger": "Falling food nearby",
+      "expression": "Hungry/anticipating",
+      "asset_key": "food_track",
+      "priority": 60
+    },
+    {
+      "state": "eat",
+      "trigger": "Food reaches mouth zone",
+      "expression": "Delighted bite",
+      "asset_key": "eat",
+      "priority": 92
+    },
+    {
+      "state": "reward",
+      "trigger": "Reward/achievement",
+      "expression": "Celebratory",
+      "asset_key": "reward",
+      "priority": 90
+    }
+  ],
+  "asset_registry": [
+    {
+      "role": "Home / Welcome",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/01_support_help_center_1600px.png",
+      "status": "Prototype/replace",
+      "notes": "Warm welcoming neutral; support art is not ideal as homepage master."
+    },
+    {
+      "role": "Support / Help Center",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/01_support_help_center_1600px.png",
+      "status": "Keep with expression refinement",
+      "notes": "Headset/tablet works; prefer both eyes open for attentive support."
+    },
+    {
+      "role": "Creator / Influencer",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_frog_influencer_selfie.png",
+      "status": "Keep",
+      "notes": "Energetic expression appropriate; wink can be allowed selectively here."
+    },
+    {
+      "role": "Privacy / Security",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_toadal_security_guardian.png",
+      "status": "Keep",
+      "notes": "Calm, capable, both eyes open preferred."
+    },
+    {
+      "role": "Contact / Mail",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/04_contact_mail_1600px.png",
+      "status": "Keep",
+      "notes": "Friendly messenger context."
+    },
+    {
+      "role": "Mobile / Generic app",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/05_mobile_games_1600px.png",
+      "status": "Keep",
+      "notes": "Generic phone is safer than brand-specific marks."
+    },
+    {
+      "role": "Blog / News",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/06_blog_news_devlog_1600px.png",
+      "status": "Keep",
+      "notes": "Writing/laptop role is readable."
+    },
+    {
+      "role": "Licensing / Business",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_toad_partnership_mascot.png",
+      "status": "Keep / refine",
+      "notes": "Use professional friendly expression; no forced wink."
+    },
+    {
+      "role": "FAQ / Knowledge",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/08_faq_knowledge_base_1600px.png",
+      "status": "Keep",
+      "notes": "Thoughtful/curious expression."
+    },
+    {
+      "role": "Community / Social",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/09_community_social_1600px.png",
+      "status": "Keep",
+      "notes": "Inclusive/social energy."
+    },
+    {
+      "role": "404 / Lost",
+      "file": "02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/10_404_lost_page_1600px.png",
+      "status": "Keep",
+      "notes": "Confused map-reading state."
+    },
+    {
+      "role": "Scoreboard",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_crown_frog_scoreboard_mascot.png",
+      "status": "Keep",
+      "notes": "Focused/proud; useful for live scores."
+    },
+    {
+      "role": "Leaderboard / Victory",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_frog_victory_mascot.png",
+      "status": "Keep",
+      "notes": "Celebratory expression appropriate."
+    },
+    {
+      "role": "Mute / Sound",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_frog_king_shushing_with_mute_sign.png",
+      "status": "Keep / refine",
+      "notes": "Quiet/focused expression; avoid wink."
+    },
+    {
+      "role": "Register / Create account",
+      "file": "03_EXTENDED_FUNCTIONAL/royal_frog_sign_up_mascot.png",
+      "status": "Keep corrected",
+      "notes": "Both eyes open, welcoming and trustworthy."
+    },
+    {
+      "role": "Delete account",
+      "file": "03_EXTENDED_FUNCTIONAL/thoughtful_frog_account_deletion.png",
+      "status": "Keep / serious",
+      "notes": "Use calm thoughtful expression; no celebratory grin."
+    },
+    {
+      "role": "Quit / Exit",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_frog_king_says_goodbye.png",
+      "status": "Keep",
+      "notes": "Polite departure; open smile okay."
+    },
+    {
+      "role": "AI disclosure",
+      "file": "03_EXTENDED_FUNCTIONAL/toadal_and_robot_shake_hands.png",
+      "status": "Keep corrected",
+      "notes": "Friendly transparent handshake; both eyes open."
+    },
+    {
+      "role": "Partnership",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_toad_partnership_mascot.png",
+      "status": "Keep",
+      "notes": "Business-friendly expression; handshake variants should not wink."
+    },
+    {
+      "role": "Settings",
+      "file": "03_EXTENDED_FUNCTIONAL/crowned_frog_settings_mascot.png",
+      "status": "Keep",
+      "notes": "Useful hover state."
+    },
+    {
+      "role": "Notifications / Subscribe",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_frog_mascot_ringing_bell.png",
+      "status": "Keep",
+      "notes": "Invite/notify state; no wink needed."
+    },
+    {
+      "role": "Downloads",
+      "file": "03_EXTENDED_FUNCTIONAL/crowned_frog_download_mascot.png",
+      "status": "Keep",
+      "notes": "Clear functional iconography."
+    },
+    {
+      "role": "Updates",
+      "file": "03_EXTENDED_FUNCTIONAL/winking_frog_update_mascot.png",
+      "status": "Regenerate expression",
+      "notes": "Useful concept, but remove habitual wink."
+    },
+    {
+      "role": "Bug / Maintenance",
+      "file": "03_EXTENDED_FUNCTIONAL/glossy_frog_prince_bug_fixer_mascot.png",
+      "status": "Keep / refine",
+      "notes": "Determined technical expression preferred."
+    },
+    {
+      "role": "Rewards / Treasure",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_frog_treasure_celebration.png",
+      "status": "Keep",
+      "notes": "High-energy expression is appropriate."
+    },
+    {
+      "role": "Merch",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_crown_frog_merch_mascot.png",
+      "status": "Keep",
+      "notes": "Enthusiastic sales/merch context."
+    },
+    {
+      "role": "Ratings",
+      "file": "03_EXTENDED_FUNCTIONAL/crowned_frog_five_star_review_mascot.png",
+      "status": "Keep / choose neutral alt",
+      "notes": "Pleased smile; both eyes open preferred for general rating UI."
+    },
+    {
+      "role": "Survey",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_survey_frog_mascot.png",
+      "status": "Keep",
+      "notes": "Attentive clipboard expression."
+    },
+    {
+      "role": "Thumbs up",
+      "file": "03_EXTENDED_FUNCTIONAL/golden_frog_prince_thumbs_up_mascot.png",
+      "status": "Keep",
+      "notes": "Positive response."
+    },
+    {
+      "role": "Thumbs down",
+      "file": "03_EXTENDED_FUNCTIONAL/grumpy_golden_toad_king_thumbs_down.png",
+      "status": "Keep",
+      "notes": "Clear dissatisfaction; appropriate serious face."
+    },
+    {
+      "role": "Discovery / Search",
+      "file": "03_EXTENDED_FUNCTIONAL/toadal_s_sparkling_discovery.png",
+      "status": "Keep / refine",
+      "notes": "Magnifier concept strong; use curious rather than repeated wink."
+    },
+    {
+      "role": "Adventure / Explore",
+      "file": "03_EXTENDED_FUNCTIONAL/crowned_frog_adventure_guide.png",
+      "status": "Keep",
+      "notes": "Map/explore state."
+    },
+    {
+      "role": "Social Cause / Impact",
+      "file": "04_BOARDS_AND_ITERATIONS/a_large_colorful_grid_collection_illustration_on_a.png",
+      "status": "Needs individual render",
+      "notes": "Use sincere warm expression, globe/heart/community cue, no wink/comedy."
+    }
+  ]
+}

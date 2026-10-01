@@ -1,4 +1,6 @@
 # TOADAL FEAST Website — Execution Status
+> Historical WO-001 checkpoint, preserved unchanged below. Current operational authority and accepted staging lineage are recorded in [WEB_PRODUCT_AUTHORITY.md](authority/WEB_PRODUCT_AUTHORITY.md) and [preserved work-order history](work-orders/PRESERVED_WORK_ORDER_HISTORY.md). The old HOLD/deployment statements below are not the current task queue.
+
 **Updated:** 2026-09-30
 
 ## WO-000

@@ -41,7 +41,7 @@ A new build after any source/content/asset change receives:
 ## GitHub Pages
 Pages is staging until production cutover is explicitly approved.
 
-Deploy only accepted `main` snapshots.
+Deploy accepted visual updates only from `staging/live-visual`. The owner explicitly replaced the former main-only staging rule; see [authority changelog](../authority/AUTHORITY_CHANGELOG.md). `main` is not a Pages deployment target.
 
 Avoid repeated deploys for unfinished local iterations.
 

@@ -1,6 +1,8 @@
 [Reading 141 lines from start (total: 141 lines, 0 remaining)]
 
 # TOADAL FEAST Website — Master Roadmap
+> The product/page roadmap below remains preserved. Historical phase status and work-order numbering are not a current execution queue; see [the authority index](authority/WEB_PRODUCT_AUTHORITY.md) and [work-order reconciliation](work-orders/PRESERVED_WORK_ORDER_HISTORY.md).
+
 **Status:** execution baseline
 **Canonical pages:** 30
 **Current visual state:** complete structural/layout coverage; identity and product-truth rules control production.

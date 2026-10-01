@@ -1,4 +1,6 @@
 # TOADAL FEAST Studio project
+> Historical WO-001 project note, preserved below. Current source is the same Studio project on `staging/live-visual`; the accepted SHA, deployed routes, source/asset authority and known gaps are in [the authority index](../docs/authority/WEB_PRODUCT_AUTHORITY.md). The old BLOCKED and no-deployment statements are superseded operational history.
+
 
 This is the fresh `generic-site` project created for WO-001 with certified TOADAL Studio 1.4.2. The manifest is `toadal-feast-website/project.json`; Studio must receive its absolute path through `TOADAL_PROJECT`.
 

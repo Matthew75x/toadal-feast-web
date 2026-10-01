@@ -16,6 +16,8 @@ This repository is the isolated website-development and GitHub Pages staging wor
 
 ## Authority
 
+Start with [the consolidated product authority](docs/authority/WEB_PRODUCT_AUTHORITY.md). It records the owner-approved requirements, precedence rules, source inventories, preserved branch history, and [current staging gaps](docs/authority/STAGING_AUTHORITY_GAP_REPORT.md). Older work-order status documents are retained as history; their phase labels do not override the accepted staging lineage.
+
 Game/runtime assets come from the current TOADAL FEAST game repository.
 Website visual authority comes from approved mockups/design decisions.
 Do not substitute retired or generic assets for canonical TOADAL assets.

@@ -1,0 +1,66 @@
+{
+  "schema": "toadal-feast.companion-artwork-provenance.v1",
+  "date": "2026-10-01",
+  "package": {
+    "filename": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip",
+    "sha256": "06275F4803C8C63E141C34DBCF252BB9C9AB0C35EDAE460C7C940FD2F687A76A",
+    "bytes": 99780639,
+    "ownerDescription": "production-ready-only",
+    "perFileApprovalManifestPresent": false,
+    "licenseOrProvenanceReadmePresent": false,
+    "originalArchiveCommitted": false
+  },
+  "bindingStatus": "asset-catalog-registered; runtime-use-pending",
+  "assets": [
+    {
+      "path": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+      "sourceEntry": "01_PRODUCTION_READY_FULL_SIZE/16_Adventure_Discovery/TOADAL_ADVENTURE_MAP_GUIDE_POINTING_v03.png",
+      "bytes": 1410487,
+      "sha256": "e3340631b8be301952bfad18c4aa02e73845c6cf3777b36510a3c14f48f8dc2e",
+      "contexts": ["World / map-discovery companion context"],
+      "approvalState": "owner-pack-context-candidate; per-file approval unconfirmed",
+      "runtimeBinding": "pending",
+      "notEvidenceOf": ["a published canonical game map", "implemented map navigation"]
+    },
+    {
+      "path": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+      "sourceEntry": "01_PRODUCTION_READY_FULL_SIZE/01_Support_Help/TOADAL_SUPPORT_HEADSET_TABLET_v03.png",
+      "bytes": 1320726,
+      "sha256": "ffed40339cd16b938686f0c4f911561b9cbb318b367ce676dc0f40ed84a1a6c2",
+      "contexts": ["Support / help companion context"],
+      "approvalState": "owner-pack-context-candidate; per-file approval unconfirmed",
+      "runtimeBinding": "pending",
+      "notEvidenceOf": ["a configured support service or contact destination"]
+    },
+    {
+      "path": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+      "sourceEntry": "01_PRODUCTION_READY_FULL_SIZE/06_Mobile_Apps/TOADAL_MOBILE_APPS_SMARTPHONE_v01.png",
+      "bytes": 1279993,
+      "sha256": "70d793feb54ece0f1604fa48771abf28d4d64923d8e410b3a9dae0a4b0bdf194",
+      "contexts": ["App / mobile conversion companion context"],
+      "approvalState": "owner-pack-context-candidate; per-file approval unconfirmed",
+      "runtimeBinding": "pending",
+      "notEvidenceOf": ["a genuine current app screenshot", "verified app-store destinations"]
+    },
+    {
+      "path": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+      "sourceEntry": "01_PRODUCTION_READY_FULL_SIZE/17_Wellbeing_Time_Sleep/TOADAL_THINKING_SEATED_ROCK_NATURE_v01.png",
+      "bytes": 1528531,
+      "sha256": "700cde7cd4b28c1704430ef0e387cb4cdd5f8388b977527a13c8f939786285e1",
+      "contexts": ["Stories / media discovery companion context"],
+      "approvalState": "owner-pack-context-candidate; per-file approval unconfirmed",
+      "runtimeBinding": "pending",
+      "notEvidenceOf": ["published editorial content"]
+    }
+  ],
+  "explicitlyNotSelected": [
+    {
+      "sourceEntry": "01_PRODUCTION_READY_FULL_SIZE/15_Rewards_Merch_Leaderboard/TOADAL_REWARDS_TREASURE_CHEST_OPEN_EYES_v02.png",
+      "reason": "Could imply rewards or an active economy beyond current verified Feast Pass capabilities."
+    },
+    {
+      "sourceEntry": "01_PRODUCTION_READY_FULL_SIZE/18_Maintenance_Construction/TOADAL_MAINTENANCE_UNDER_CONSTRUCTION_WORKER_v01.png",
+      "reason": "Maintenance-specific pose is not a generic coming-soon or unavailable-state illustration."
+    }
+  ]
+}

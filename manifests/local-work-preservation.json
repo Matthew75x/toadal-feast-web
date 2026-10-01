@@ -1,0 +1,65 @@
+{
+  "schema": "toadal-feast.local-work-preservation.v1",
+  "date": "2026-10-01",
+  "repository": "Matthew75x/toadal-feast-web",
+  "defaultBranch": "main",
+  "baseline": {
+    "stagingBranch": "staging/live-visual",
+    "stagingSha": "7c17e28135688ace9139918f077a44e3d03d9765",
+    "mainSha": "87050885331770ca3e30db7e463154aebd777512",
+    "consolidationBranch": "ops/web-authority-consolidation-20261001",
+    "deploymentAllowedFromThisBranch": false
+  },
+  "preservationPlan": [
+    { "branch": "work/WO-000-environment-baseline", "sha": "e639cd8ee68c6650aede6a2f04e524bef20a1c08", "remote": "origin/work/WO-000-environment-baseline", "action": "leave exact remote ref unchanged" },
+    { "branch": "work/WO-001-global-shell-home", "sha": "3e82fcd6990b92166769475aed3beffbec5b71f1", "remote": "origin/work/WO-001-global-shell-home", "action": "leave exact remote ref unchanged" },
+    { "branch": "fix/wo001-approved-home-parity-20260930", "sha": "0e7f795d942f9fa6e9127e714a9ed83a7e61f2f8", "remote": "origin/fix/wo001-approved-home-parity-20260930", "preservedSha": "0e7f795d942f9fa6e9127e714a9ed83a7e61f2f8", "action": "fast-forwarded the one-commit-behind remote; no force push" },
+    { "branch": "work/WO-002-home-evolution-20260930", "sha": "8e0ded8ee1a94ddccaad6127ac05416551d23c6d", "remote": "origin/work/WO-002-home-evolution-20260930", "preservedSha": "8e0ded8ee1a94ddccaad6127ac05416551d23c6d", "action": "created same-named ref; legacy work/WO-002-play-games-player was not repointed" },
+    { "branch": "work/WO-003-arcade-isolation-20260930", "baseSha": "409a6d223a148937aa15073b5640379560594b89", "preservedSha": "0e815a9c68e3a30fdfcb605f73f58aa54c787e70", "remote": "origin/work/WO-003-arcade-isolation-20260930", "action": "committed and pushed existing qualification evidence only; no additional Arcade QA or website integration" },
+    { "branch": "ops/web-authority-consolidation-20261001", "baseSha": "7c17e28135688ace9139918f077a44e3d03d9765", "remote": "origin/ops/web-authority-consolidation-20261001", "action": "commit this authority consolidation and push this branch only" }
+  ],
+  "wo003ExistingWorkingTree": {
+    "branch": "work/WO-003-arcade-isolation-20260930",
+    "baseSha": "409a6d223a148937aa15073b5640379560594b89",
+    "changedTrackedFiles": [
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/qualification-harness.html",
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/wo003-arcade-preview-bridge.js",
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/wo003-arcade-preview-host.js"
+    ],
+    "untrackedEvidence": [
+      "docs/review/WO-003/arc-qual-01/mobile.json",
+      "docs/review/WO-003/arc-qual-01/PRESERVATION_NOTE.md",
+      "docs/review/WO-003/arc-qual-01/runtime-before-os-focus-control.json",
+      "docs/review/WO-003/arc-qual-01/runtime.json",
+      "docs/review/WO-003/arc-qual-01/security.json",
+      "scripts/arc-qual-01-mobile.py",
+      "scripts/arc-qual-01-package-ledger.mjs",
+      "scripts/arc-qual-01-runtime.py",
+      "scripts/arc-qual-01-security.py",
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/assets/images/characters/curated-highres/classic/catch_open_10f.png",
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/assets/images/characters/curated-highres/classic/catch_open_5f_polished_2026-09-08.png",
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/assets/images/characters/curated-highres/classic/idle_blink_16f_256.png",
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/assets/images/characters/curated-highres/classic/idle_blink_5f_polished_2026-09-08.png",
+      "studio-project/toadal-feast-website/reference/audit/arcade-standard-6daedca1/assets/images/characters/curated-highres/classic/walk_12f.png"
+    ],
+    "externalQaDriver": {
+      "includedInCandidate": false,
+      "sha256": "a2e7de0ad2622871ed1e53e90dcea82c1fc892dc124ca4e1dd4241bb36892127",
+      "localAbsolutePathsRedactedFromPushedEvidence": true,
+      "replayRequiresExplicitDriverPath": true
+    },
+    "qualificationState": "ARCADE HOLD; no change to this verdict in authority-consolidation work"
+  },
+  "oversizeLocalArtifact": {
+    "filename": "toadal-feast-web-wo003-20260930-closure.bundle",
+    "bytes": 119247201,
+    "sha256": "2ec00711af4dd58b4f678db0ff06bd98720c4c6a38f56266b261c0abe527d065",
+    "state": "remains local; named branch and source/evidence are the remote preservation mechanism"
+  },
+  "protectedRefs": {
+    "main": "do not change",
+    "staging/live-visual": "do not change or deploy from this task",
+    "productionOrDns": "out of scope"
+  },
+  "completion": "preservation commits/pushes completed; final remote refs still to be verified"
+}
