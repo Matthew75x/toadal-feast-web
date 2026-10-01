@@ -1,0 +1,100 @@
+{
+  "schemaVersion": 1,
+  "items": [
+    {
+      "id": "symbol.home.game-card",
+      "name": "Browser game preview card",
+      "type": "game.card",
+      "props": {
+        "gameId": "game.wicked-bites"
+      }
+    },
+    {
+      "id": "symbol.site.primary-button",
+      "name": "PrimaryButton",
+      "type": "core.button",
+      "props": {
+        "label": "Explore browser games",
+        "href": "/#browser-games",
+        "kind": "primary"
+      }
+    },
+    {
+      "id": "symbol.site.secondary-button",
+      "name": "SecondaryButton",
+      "type": "core.button",
+      "props": {
+        "label": "Discover the full adventure",
+        "href": "/#app",
+        "kind": "secondary"
+      }
+    },
+    {
+      "id": "symbol.site.cream-panel",
+      "name": "CreamPanel",
+      "type": "core.content-section",
+      "props": {
+        "variant": "cream-panel",
+        "heading": "That path wandered off.",
+        "body": "This page is not part of the current website preview. Head Home, browse the game previews, or explore the World."
+      }
+    },
+    {
+      "id": "symbol.site.dark-feature-panel",
+      "name": "DarkFeaturePanel",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "dark-feature-panel",
+        "html": "<div class='home-section-inner'><div class='feast-pass-panel' data-companion-context='feast-pass' data-companion-copy='Feast Pass is planned for a later update; there are no live levels, rewards, or account sync here yet.' data-companion-reaction='proud'><div class='feast-pass-copy'><p class='section-kicker'>YOUR GUEST JOURNEY · PLANNED</p><h2 class='section-heading'>A Feast Pass built around your adventures</h2><p class='section-lede'>Feast Pass is planned for a later update. This preview summary shows no level, XP, Sparks, Treats, streak, quest progress, or account sync as live product data.</p><div class='pass-signals' aria-label='Feast Pass status'><span class='pass-state'>Planned for later</span><span class='pass-state'>Preview summary only</span><span class='pass-state'>No live progress</span></div></div><div class='pass-emblem' aria-hidden='true'><span>FEAST</span><strong>PASS</strong><i>✦</i></div></div></div>"
+      }
+    },
+    {
+      "id": "symbol.site.section-heading",
+      "name": "SectionHeading",
+      "type": "core.text",
+      "props": {
+        "tag": "h2",
+        "text": "Section heading",
+        "variant": "section-heading"
+      }
+    },
+    {
+      "id": "symbol.site.status-chip",
+      "name": "StatusChip",
+      "type": "core.badges",
+      "props": {
+        "items": [
+          "PREVIEW"
+        ],
+        "variant": "status-chip"
+      }
+    },
+    {
+      "id": "symbol.home.category-tabs",
+      "name": "CategoryTabs",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "games-intro",
+        "html": "<div class='home-section-inner' data-companion-context='browser-games' data-companion-copy='These cards are previews for browser adventures being prepared for the Feast.' data-companion-reaction='excited'><p class='section-kicker'>YOUR NEXT LITTLE ADVENTURE</p><h2 class='section-heading'>Browser game discovery</h2><p class='section-lede'>Four browser adventures are in preview. Wicked Bites and CLAW already have qualified preview builds behind the scenes, but this page does not launch them yet.</p><div class='game-tabs' role='group' aria-label='Filter browser game experiences'><button class='game-tab' type='button' aria-pressed='true' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='all'>All experiences <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='preview'>Previews <span>4</span></button><button class='game-tab' type='button' aria-pressed='false' tabindex='0' aria-controls='browser-games browser-games-empty' data-game-tab='public'>Playable now <span>0</span></button></div><p id='browser-games-empty' class='game-empty' data-game-empty hidden role='status' aria-live='polite'>No browser game launches from this page yet. Playable previews will appear here only after their player experience is ready.</p></div>"
+      }
+    },
+    {
+      "id": "symbol.home.toadal-companion",
+      "name": "ToadalCompanion",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "companion",
+        "html": "<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL’S FIELD NOTES</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Welcome to the Feast. Browser adventures are being prepared while you explore the world, cast, and stories.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='assets/images/characters/toadal-portrait.webp' alt='' width='256' height='256' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside>"
+      }
+    },
+    {
+      "id": "symbol.form.search-field",
+      "name": "SearchField",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "search-field",
+        "html": "<form class='home-search' role='search' aria-labelledby='home-search-label'><label id='home-search-label' for='home-search-field'>Find your place in the Feast</label><div class='home-search__field'><input class='home-search__input' id='home-search-field' type='search' placeholder='Search games, characters, stories…' disabled aria-describedby='home-search-status'><button type='button' disabled aria-label='Search is coming soon'>Search</button></div><p class='home-search__status' id='home-search-status'>Search is not live yet. This field will not submit or collect anything.</p></form>"
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "game.wicked-bites",
+  "slug": "wicked-bites",
+  "name": "Wicked Bites",
+  "status": "preview",
+  "statusLabel": "PREVIEW",
+  "summary": "Qualified browser-preview evidence exists, but this site keeps launch disabled until the browser player is ready.",
+  "description": "Wicked Bites has a qualified staging browser cartridge from the CP9/V13 donor. This site keeps the launch route disabled until the browser player is integrated and tested. The current Home card remains a preview surface.",
+  "route": "/",
+  "artAsset": "asset.home.world.desktop",
+  "platforms": [],
+  "studioGenerated": false,
+  "web": {
+    "enabled": false,
+    "shortDescription": "Qualified staging cartridge exists; Launch remains disabled until the browser player is ready."
+  },
+  "evidence": {
+    "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
+    "repository": "Matthew75x/feast-crossing-wicked-bites",
+    "commit": "6fff3c89605092ba5c5e122565cb98415c8ab5e5",
+    "version": "5.5",
+    "entrySha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5",
+    "reverifiedAt": "2026-09-30",
+    "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+  }
+}

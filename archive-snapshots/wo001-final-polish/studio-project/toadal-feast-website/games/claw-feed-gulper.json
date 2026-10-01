@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "game.claw-feed-gulper",
+  "slug": "claw-feed-gulper",
+  "name": "CLAW: Feed Gulper",
+  "status": "preview",
+  "statusLabel": "PREVIEW",
+  "summary": "Qualified browser-preview evidence exists, but this site keeps launch disabled until the browser player is ready.",
+  "description": "CLAW: Feed Gulper has a qualified staging browser cartridge from the CP9/V13 donor. This site keeps the launch route disabled until the browser player is integrated and tested. The current Home card remains a preview surface.",
+  "route": "/",
+  "artAsset": "asset.home.character.gulper",
+  "platforms": [],
+  "studioGenerated": false,
+  "web": {
+    "enabled": false,
+    "shortDescription": "Qualified staging cartridge exists; Launch remains disabled until the browser player is ready."
+  },
+  "evidence": {
+    "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
+    "repository": "Matthew75x/claw-feed-gulper",
+    "commit": "7c49d1bf70ebf6503fde3b533a1acd356d12c77c",
+    "version": "2.5.1",
+    "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
+    "reverifiedAt": "2026-09-30",
+    "currentHomeLaunch": "WITHHELD_UNTIL_WO002_PLAYER_INTEGRATION"
+  }
+}
