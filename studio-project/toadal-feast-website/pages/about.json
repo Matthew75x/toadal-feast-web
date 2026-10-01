@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "page.about",
+  "route": "/about/",
+  "title": "About TOADAL GAMES - TOADAL FEAST",
+  "description": "TOADAL GAMES studio overview with TOADAL FEAST kept primary.",
+  "publicationState": "noindex",
+  "components": [
+    {
+      "id": "component.about.rich-text",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "gated-about",
+        "html": "<article class='gated-page' data-companion-context='business' data-companion-copy='TOADAL GAMES is the studio identity; TOADAL FEAST remains the public-facing flagship world on this website.' data-companion-reaction='partnership'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>TOADAL GAMES, behind the Feast</span></nav><section class='gated-hero'><div class='gated-hero-copy'><p class='section-kicker'>ABOUT THE STUDIO</p><span class='chip status-chip--coming'>TOADAL FEAST FIRST</span><h1>TOADAL GAMES, behind the Feast</h1><p class='gated-lede'>This page keeps the studio in its intended supporting role while explaining how the website, browser previews, stories, and app discovery fit around TOADAL FEAST.</p></div><figure class='gated-hero-art'><img src='/assets/images/characters/companion/runtime-v2/partnership.webp' alt='Toadal presenting a business or partnership theme' loading='eager' decoding='async'></figure></section><section class='gated-grid' aria-label='About TOADAL GAMES'><article class='gated-card'><p class='section-kicker'>STUDIO IDENTITY</p><h2>TOADAL GAMES</h2><p>TOADAL GAMES is the studio identity behind this website. The public experience remains TOADAL FEAST-first, with the studio presented mainly in footer, about, business, and legal contexts.</p></article><article class='gated-card'><p class='section-kicker'>FLAGSHIP WORLD</p><h2>TOADAL FEAST</h2><p>TOADAL FEAST is the flagship game world represented here. The website expands that world through browser previews, characters, stories, media, progression, and app discovery.</p><a href='/world/'>Explore the Feast World</a></article><article class='gated-card'><p class='section-kicker'>EXPERIMENTS</p><h2>Web experiences stay truthfully labeled</h2><p>Browser games and future experiments remain PREVIEW, PLANNED, or COMING SOON until their public status is explicitly approved.</p><a href='/play/'>Explore Play</a></article><article class='gated-card' data-companion-context='business'><p class='section-kicker'>PRESS / BUSINESS</p><h2>Contact route prepared</h2><p>No verified press or business inbox is published on this preview. The Contact page shows the future routing structure without pretending submissions work.</p><a href='/contact/'>Contact & feedback preview</a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>TOADAL GAMES is the studio identity; TOADAL FEAST remains the public-facing flagship world on this website.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+      }
+    }
+  ],
+  "referenceFile": "about/index.html",
+  "studioGenerated": true
+}
