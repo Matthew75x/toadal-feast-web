@@ -1,0 +1,76 @@
+{
+  "schema": "toadal-feast.companion-runtime-derivatives.v1",
+  "date": "2026-10-01",
+  "baseAuthorityCommit": "92decef6cef31622833458e2a98dd9e577ca79c2",
+  "sourceAuthorityManifest": "manifests/companion-runtime-assets.json",
+  "defaultArtwork": "existing canonical staging victory image",
+  "runtimeRule": "Only authority-selected World, Support, App, and Stories/Media contexts receive contextual artwork; every other context falls back to the existing default image.",
+  "records": [
+    {
+      "context": "world",
+      "source": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+      "sourceSha256": "e3340631b8be301952bfad18c4aa02e73845c6cf3777b36510a3c14f48f8dc2e",
+      "runtimeSource": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/runtime-v1/world-map.webp",
+      "runtimeDist": "dist/assets/images/characters/companion/runtime-v1/world-map.webp",
+      "runtimeSha256": "aa00d745e5ac64b1af309bcdeca8939068f46fef2eabbd071249330ef1a37d5b",
+      "bytes": 64578,
+      "width": 640,
+      "height": 640,
+      "pixelFormat": "yuva420p"
+    },
+    {
+      "context": "support",
+      "source": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+      "sourceSha256": "ffed40339cd16b938686f0c4f911561b9cbb318b367ce676dc0f40ed84a1a6c2",
+      "runtimeSource": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/runtime-v1/support-help.webp",
+      "runtimeDist": "dist/assets/images/characters/companion/runtime-v1/support-help.webp",
+      "runtimeSha256": "a926e1d2c2b282842494258fd98eb7e69539ae1533eabd41d6a375cde80a201c",
+      "bytes": 61202,
+      "width": 584,
+      "height": 640,
+      "pixelFormat": "yuva420p"
+    },
+    {
+      "context": "app",
+      "source": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+      "sourceSha256": "70d793feb54ece0f1604fa48771abf28d4d64923d8e410b3a9dae0a4b0bdf194",
+      "runtimeSource": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/runtime-v1/app-mobile.webp",
+      "runtimeDist": "dist/assets/images/characters/companion/runtime-v1/app-mobile.webp",
+      "runtimeSha256": "456099feff0dad0b45672b534c41478e343806e3e88fecf56bc701ec94390816",
+      "bytes": 59250,
+      "width": 640,
+      "height": 640,
+      "pixelFormat": "yuva420p"
+    },
+    {
+      "context": "stories_media",
+      "source": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+      "sourceSha256": "700cde7cd4b28c1704430ef0e387cb4cdd5f8388b977527a13c8f939786285e1",
+      "runtimeSource": "studio-project/toadal-feast-website/reference/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+      "runtimeDist": "dist/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+      "runtimeSha256": "bc36ea3be807b6aa1656d33db27dfd4fd98d35a655015affa8dd900bcca02c34",
+      "bytes": 55370,
+      "width": 474,
+      "height": 640,
+      "pixelFormat": "yuva420p"
+    }
+  ],
+  "patchedGeneratedPages": [
+    "404.html",
+    "index.html",
+    "app/index.html",
+    "feast-pass/index.html",
+    "media/index.html",
+    "news/index.html",
+    "play/index.html",
+    "stories/index.html",
+    "support/index.html",
+    "world/index.html",
+    "games/claw-feed-gulper/index.html",
+    "games/froggy-fruity-bash/index.html",
+    "games/toadal-tower-defense/index.html",
+    "games/wicked-bites/index.html",
+    "player/wicked-bites/index.html"
+  ],
+  "standaloneGamePackagesModified": false
+}

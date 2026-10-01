@@ -163,6 +163,48 @@
     var touchTimer = null;
     var ratios = new Map();
     var lastInput = 'pointer';
+    var defaultCompanionImage = image.getAttribute('src') || '';
+    var brandLink = document.querySelector('.site-brand');
+    var brandPath = brandLink ? new URL(brandLink.href, window.location.href).pathname : '/';
+    var siteRoot = brandPath === '/' ? '' : brandPath.replace(/\/+$/, '');
+    var companionArtwork = {
+      world: siteRoot + '/assets/images/characters/companion/runtime-v1/world-map.webp',
+      support: siteRoot + '/assets/images/characters/companion/runtime-v1/support-help.webp',
+      app: siteRoot + '/assets/images/characters/companion/runtime-v1/app-mobile.webp',
+      storiesMedia: siteRoot + '/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp'
+    };
+    var artworkRequest = 0;
+    var currentArtwork = defaultCompanionImage;
+
+    function artworkForContext(element) {
+      if (!element || !element.getAttribute) return defaultCompanionImage;
+      var context = (element.getAttribute('data-companion-context') || '').toLowerCase();
+      if (/^world(?:-|$)/.test(context)) return companionArtwork.world;
+      if (/^support(?:-|$)/.test(context)) return companionArtwork.support;
+      if (/^app(?:-|$)/.test(context)) return companionArtwork.app;
+      if (/^(?:stories|stories-media|media)(?:-|$)/.test(context)) return companionArtwork.storiesMedia;
+      return defaultCompanionImage;
+    }
+
+    function applyArtwork(src) {
+      var next = src || defaultCompanionImage;
+      if (!next || next === currentArtwork || image.getAttribute('src') === next) {
+        currentArtwork = next || currentArtwork;
+        return;
+      }
+      var request = ++artworkRequest;
+      var preload = new Image();
+      preload.onload = function () {
+        if (request !== artworkRequest) return;
+        image.setAttribute('src', next);
+        image.removeAttribute('srcset');
+        image.removeAttribute('width');
+        image.removeAttribute('height');
+        image.setAttribute('data-companion-artwork', next === defaultCompanionImage ? 'default' : 'contextual');
+        currentArtwork = next;
+      };
+      preload.src = next;
+    }
 
     var speechRole = speech.getAttribute('role');
     if (speechRole === 'status' || speechRole === 'alert' || speechRole === 'log') speech.removeAttribute('role');
@@ -183,7 +225,8 @@
       if (!element) return null;
       return {
         copy: element.getAttribute('data-companion-copy'),
-        reaction: element.getAttribute('data-companion-reaction')
+        reaction: element.getAttribute('data-companion-reaction'),
+        artwork: artworkForContext(element)
       };
     }
     function clearTouchedContext() {
@@ -200,14 +243,16 @@
       toggle.setAttribute('aria-expanded', panelVisible ? 'true' : 'false');
       toggle.setAttribute('aria-label', minimized ? 'Show Toadal companion' : 'Hide Toadal companion');
       panel.hidden = !panelVisible;
-      if (!panelVisible) return;
 
       var value = action || contextValue(focused) || contextValue(hovered) ||
         contextValue(touched) || contextValue(currentSection) || contextValue(hero);
-      var copy = value && value.copy != null && value.copy !== '' ? value.copy : defaultCopy;
-      if (speech.textContent !== copy) speech.textContent = copy;
+      applyArtwork(value && value.artwork ? value.artwork : defaultCompanionImage);
       if (value && value.reaction) root.setAttribute('data-companion-current-reaction', value.reaction);
       else root.removeAttribute('data-companion-current-reaction');
+      if (!panelVisible) return;
+
+      var copy = value && value.copy != null && value.copy !== '' ? value.copy : defaultCopy;
+      if (speech.textContent !== copy) speech.textContent = copy;
     }
     function persistPreference() {
       try { window.localStorage.setItem(storageKey, minimized ? 'true' : 'false'); } catch (error) {}
@@ -265,7 +310,12 @@
       var copy = target.getAttribute('data-companion-action-copy');
       if (copy == null || copy.trim() === '') return;
       if (actionTimer !== null) window.clearTimeout(actionTimer);
-      action = { copy: copy, reaction: target.getAttribute('data-companion-reaction') };
+      var actionContext = contextElement(target);
+      action = {
+        copy: copy,
+        reaction: target.getAttribute('data-companion-reaction'),
+        artwork: artworkForContext(actionContext)
+      };
       render(event.detail === 0);
       actionTimer = window.setTimeout(function () {
         action = null;
