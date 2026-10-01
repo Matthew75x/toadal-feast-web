@@ -13,14 +13,22 @@ A work order cannot silently redefine, delete, or mark complete an owner-approve
 
 Mockups approve only the dimensions identified in the visual ledger. Layout approval does not approve generated character identities, fabricated game/app screenshots, sample economy values, invented lore, dates, or working accounts/commerce.
 
+## Manifest compliance control
+
+The canonical project-level progress control is [MANIFEST_COMPLIANCE_LEDGER_2026-10-01.md](MANIFEST_COMPLIANCE_LEDGER_2026-10-01.md), with machine-readable state in `manifests/manifest-compliance-ledger.json`. It uses the original 30-page manifest plus locked cross-cutting product requirements as the denominator.
+
+Work-order PASS, automated QA PASS, route presence, branch cleanliness, or visual improvement do **not** upgrade a manifest row to complete. Future tasks must identify the manifest row(s), cross-cutting requirement(s), or release blocker they advance. Historical project folders are donor/evidence only unless the current authority explicitly cites them; see [PROJECT_SOURCE_MAP_2026-10-01.md](PROJECT_SOURCE_MAP_2026-10-01.md).
+
 ## Current operational authority
 
-- Accepted visual lineage: `staging/live-visual` at verified local and remote SHA `7c17e28135688ace9139918f077a44e3d03d9765`.
-- Consolidation branch: `ops/web-authority-consolidation-20261001`, created directly from that SHA.
-- Main snapshot at verification: `87050885331770ca3e30db7e463154aebd777512`.
+- Current public visual staging lineage: `staging/live-visual` at verified SHA `270940dee30b7aafb70af941c520c6d4d223e288`.
+- Authority consolidation baseline: `ops/web-authority-consolidation-20261001` at `92decef6cef31622833458e2a98dd9e577ca79c2`.
+- Latest combined visual review candidate: `integration/visual-convergence-combined-20261001` at `58a7121e363d3480c122623b1de5cd0d5ac1778e`; this is not automatically approved or deployed.
+- Manifest-control branch: `ops/manifest-recalibration-20261001`, created from the combined candidate to re-establish project-level compliance control.
+- Main snapshot remains `87050885331770ca3e30db7e463154aebd777512`.
 - Public visual staging: <https://matthew75x.github.io/toadal-feast-web/>.
 - Studio project: `studio-project/toadal-feast-website/project.json`; certified renderer: TOADAL Studio 1.4.2.
-- `staging/live-visual` is the deployment lane. Consolidation and archival branches do not deploy. Production and DNS require a separate explicit owner instruction.
+- `staging/live-visual` is the deployment lane. Review, consolidation and archival branches do not deploy. Production and DNS require a separate explicit owner instruction.
 
 The current owner's staging-restoration and authority-consolidation instructions supersede older operational statements that Pages must deploy `main`, WO-000 is unstarted, or accepted WO-001/002 work remains blocked. They do not supersede product/creative requirements. [Work-order history](../work-orders/PRESERVED_WORK_ORDER_HISTORY.md) distinguishes historical decisions from current state.
 
@@ -36,6 +44,10 @@ Feast Pass is guest-local first, designed for later guest-to-account migration. 
 
 ## Recoverable source map
 
+- [Manifest compliance ledger](MANIFEST_COMPLIANCE_LEDGER_2026-10-01.md): canonical 30-page + cross-cutting project progress control.
+- [Manifest-first execution matrix](MANIFEST_EXECUTION_MATRIX_2026-10-01.md): priority order based on original-product impact and reusable resources.
+- [Project source map / authority firewall](PROJECT_SOURCE_MAP_2026-10-01.md): active worktrees, historical donors, and external-system roles.
+- [Feature salvage audit](FEATURE_SALVAGE_AUDIT_2026-10-01.md): KEEP / IMPROVE / MERGE / RETIRE decisions for older living-site behavior.
 - [Source and asset inventory](../../manifests/web-authority-inventory.json): provenance, approval, status, hashes, and exclusions.
 - [Visual authority](VISUAL_AUTHORITY.md): approved reference scope and identity rules.
 - [Page requirements](PAGE_REQUIREMENTS.md): all 30 planned page families and current navigation reconciliation.

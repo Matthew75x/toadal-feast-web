@@ -1,0 +1,804 @@
+{
+  "schema": "toadal-feast.web.manifest-compliance.v1",
+  "date": "2026-10-01",
+  "purpose": "Permanent control ledger: future work must advance an explicit manifest row or a cross-cutting requirement.",
+  "authority": {
+    "main": "87050885331770ca3e30db7e463154aebd777512",
+    "liveStaging": "270940dee30b7aafb70af941c520c6d4d223e288",
+    "authorityConsolidation": "92decef6cef31622833458e2a98dd9e577ca79c2",
+    "assetAuthority": "62717951f4ffba0e8dd779116cc192d70f94d534",
+    "combinedVisualCandidate": "58a7121e363d3480c122623b1de5cd0d5ac1778e",
+    "approvedHomeSha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608"
+  },
+  "statusDefinitions": {
+    "DONE_PROVEN": "Requirement exists and has direct implementation/evidence.",
+    "PARTIAL": "Some of the manifest requirement exists; must not be reported as complete.",
+    "PARTIAL_CANDIDATE": "Implemented or improved on an unpromoted candidate branch but still not fully complete.",
+    "NOT_STARTED": "Manifest requirement remains substantially unimplemented.",
+    "DEFERRED_SERVICE": "Connected/backend functionality is intentionally deferred, but truthful preview/layout work may still be required.",
+    "BLOCKED_CONTENT_ENDPOINT": "Implementation depends on approved content or a real endpoint; structure can still be prepared without fabricating it.",
+    "BLOCKED_APPROVED_COPY": "Cannot publish final legal/content copy until approved source text exists."
+  },
+  "pageStatusCounts": {
+    "PARTIAL": 13,
+    "NOT_STARTED": 11,
+    "DEFERRED_SERVICE": 3,
+    "BLOCKED_CONTENT_ENDPOINT": 1,
+    "BLOCKED_APPROVED_COPY": 1,
+    "DONE_PROVEN": 1
+  },
+  "pages": [
+    {
+      "n": 1,
+      "page": "Home",
+      "visualAuthority": "LOCK_VISUAL",
+      "delivery": "LIVE + CANDIDATE",
+      "status": "PARTIAL",
+      "evidence": "Live route exists; combined candidate has Home/header convergence and contextual companion.",
+      "remainingGap": "Still does not match the approved dense Home closely enough: final franchise wordmark/header utilities, richer first-viewport composition, five-card/game-pass density, app evidence, guest progression, and owner visual acceptance remain."
+    },
+    {
+      "n": 2,
+      "page": "Play / Games Hub",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE + CANDIDATE",
+      "status": "PARTIAL",
+      "evidence": "Play route and four truthful PREVIEW listings exist; candidate improves illustrated portal treatment.",
+      "remainingGap": "Manifest calls for challenges, badges/rewards, leaderboard, Feast Pass integration and limited Arcade preview. Do not re-certify Arcade just to complete the page."
+    },
+    {
+      "n": 3,
+      "page": "Wicked Bites Game Detail",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE",
+      "status": "PARTIAL",
+      "evidence": "Real Wicked Bites detail route/evidence exists.",
+      "remainingGap": "Trailer/screenshots/mechanics depth, challenges, leaderboard, achievements/rewards and related-content depth are not manifest-complete."
+    },
+    {
+      "n": 4,
+      "page": "Browser Game Player",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE",
+      "status": "PARTIAL",
+      "evidence": "Wicked Bites preview player exists with static player shell.",
+      "remainingGap": "Full reusable player contract across approved games plus score/timer/achievement/XP/challenge surfaces is incomplete."
+    },
+    {
+      "n": 5,
+      "page": "World Hub",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE + CANDIDATE",
+      "status": "PARTIAL",
+      "evidence": "World route exists; candidate adds canonical environment/cast discovery.",
+      "remainingGap": "Interactive/structured world map, lore model, discoveries/progress and approved location structure remain absent."
+    },
+    {
+      "n": 6,
+      "page": "Characters Hub",
+      "visualAuthority": "POLISH",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Canonical character assets exist.",
+      "remainingGap": "Dedicated route, collection/filter/relationships/appearances/discovery-progress experience absent."
+    },
+    {
+      "n": 7,
+      "page": "Toadal Character Profile",
+      "visualAuthority": "POLISH",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Canonical Toadal identity/assets are established.",
+      "remainingGap": "Dedicated biography/personality/history/abilities/friends/locations/games/stories/gallery/collectibles page absent."
+    },
+    {
+      "n": 8,
+      "page": "Stories / Comics Hub",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE + CANDIDATE",
+      "status": "PARTIAL",
+      "evidence": "Stories route exists; candidate adds canonical setting/cast composition.",
+      "remainingGap": "No published series/latest chapter/reading progress/comics/manga/shorts/lore/BTS data."
+    },
+    {
+      "n": 9,
+      "page": "TOADAL FEAST Manga Series",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Series/reader requirements are preserved in the manifest.",
+      "remainingGap": "Series route, cover/synopsis/chapter list/progress/character/lore links absent."
+    },
+    {
+      "n": 10,
+      "page": "Comic / Manga Reader",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Reader contract is documented.",
+      "remainingGap": "Reader, thumbnails, prev/next, fullscreen, progress and bookmarks absent."
+    },
+    {
+      "n": 11,
+      "page": "Media Hub",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE + CANDIDATE",
+      "status": "PARTIAL",
+      "evidence": "Media route exists; candidate adds canonical world and character gallery.",
+      "remainingGap": "Featured trailer/video/gameplay/shorts/wallpapers/downloads/creator/press structure and real published records absent."
+    },
+    {
+      "n": 12,
+      "page": "News / Updates Hub",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE",
+      "status": "PARTIAL",
+      "evidence": "News route exists with truthful placeholder state.",
+      "remainingGap": "No real dated published update catalog/filters/trending content."
+    },
+    {
+      "n": 13,
+      "page": "News Article / Devlog",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Editorial detail template is required.",
+      "remainingGap": "Article route, body/media slots, related links and prev/next absent."
+    },
+    {
+      "n": 14,
+      "page": "Feast Pass Dashboard",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE",
+      "status": "PARTIAL",
+      "evidence": "Explanatory/planned Feast Pass route exists and avoids fake economy data.",
+      "remainingGap": "Guest-local level/XP/Sparks/Treats/streak/daily reward/reward track/discoveries are not implemented."
+    },
+    {
+      "n": 15,
+      "page": "Quests / Challenges",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Quest concepts and assets exist.",
+      "remainingGap": "Daily/weekly/exploration/game/story quests, rewards and history absent."
+    },
+    {
+      "n": 16,
+      "page": "Rewards / Collection",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Reward assets/state concepts exist.",
+      "remainingGap": "Reward track, badges, titles, cosmetics, foods/relics/collectibles and lock states absent."
+    },
+    {
+      "n": 17,
+      "page": "Leaderboards",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Global connected identity is correctly deferred.",
+      "remainingGap": "Even the truthful local-public leaderboard surface/game selector/time scopes/personal position is absent."
+    },
+    {
+      "n": 18,
+      "page": "App / Get TOADAL FEAST",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE",
+      "status": "PARTIAL",
+      "evidence": "Informational App route correctly describes mobile as flagship.",
+      "remainingGap": "Genuine approved screenshots/video and verified App Store/Google Play destinations are missing."
+    },
+    {
+      "n": 19,
+      "page": "Account / Sign Up / Login",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "DEFERRED_SERVICE",
+      "evidence": "Backend-connected account/sync is intentionally deferred.",
+      "remainingGap": "Manifest still requires a truthful guest/account-benefits preview and continue-as-guest surface; route absent."
+    },
+    {
+      "n": 20,
+      "page": "Player Profile",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "Guest-local profile is allowed without connected account.",
+      "remainingGap": "Guest profile, local level/XP/title/scores/discovery/achievement showcase absent."
+    },
+    {
+      "n": 21,
+      "page": "Community Hub",
+      "visualAuthority": "POLISH",
+      "delivery": "HOME_CARD_ONLY",
+      "status": "DEFERRED_SERVICE",
+      "evidence": "Community is truthfully marked Coming Soon on Home.",
+      "remainingGap": "Dedicated polished gated route/creator spotlight/fan-art/event/guideline discovery absent. Posting remains deferred."
+    },
+    {
+      "n": 22,
+      "page": "Store",
+      "visualAuthority": "POLISH",
+      "delivery": "HOME_CARD_ONLY",
+      "status": "DEFERRED_SERVICE",
+      "evidence": "Store is truthfully marked Coming Soon; no fake checkout.",
+      "remainingGap": "Dedicated polished preview route/categories/digital goodies/update CTA absent."
+    },
+    {
+      "n": 23,
+      "page": "Search / Discovery",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "DISABLED_UTILITY",
+      "status": "NOT_STARTED",
+      "evidence": "Search is not falsely presented as live.",
+      "remainingGap": "Dedicated local search route, grouped results, filters and meaningful empty/results states absent."
+    },
+    {
+      "n": 24,
+      "page": "What's Next / Roadmap",
+      "visualAuthority": "LOCK_STRUCTURE_ONLY",
+      "delivery": "HOME_SECTION_ONLY",
+      "status": "PARTIAL",
+      "evidence": "Truthful compact What's Next content exists without fake dates.",
+      "remainingGap": "Dedicated approved-items roadmap route/status taxonomy/devlog links absent."
+    },
+    {
+      "n": 25,
+      "page": "Support / Help Center",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "LIVE",
+      "status": "PARTIAL",
+      "evidence": "Support route exists.",
+      "remainingGap": "Help search/categories/popular questions/contact/status shortcuts and mature help content absent."
+    },
+    {
+      "n": 26,
+      "page": "Contact / Feedback",
+      "visualAuthority": "LOCK_LAYOUT",
+      "delivery": "ABSENT",
+      "status": "BLOCKED_CONTENT_ENDPOINT",
+      "evidence": "Dedicated contact assets/state exist.",
+      "remainingGap": "Route/form/category/email/subject/message/device info and real endpoint/approved destinations absent."
+    },
+    {
+      "n": 27,
+      "page": "About TOADAL GAMES",
+      "visualAuthority": "POLISH",
+      "delivery": "ABSENT",
+      "status": "NOT_STARTED",
+      "evidence": "TOADAL GAMES is subordinate in current shell/footer.",
+      "remainingGap": "Dedicated mission/flagship universe/experiments/stories/philosophy/press-business page absent."
+    },
+    {
+      "n": 28,
+      "page": "Coming Soon / Under Construction",
+      "visualAuthority": "POLISH",
+      "delivery": "INLINE_STATES_ONLY",
+      "status": "PARTIAL",
+      "evidence": "Truthful Coming Soon cards and production construction Toadal asset exist.",
+      "remainingGap": "Dedicated reusable branded route with related available content/follow-up path absent."
+    },
+    {
+      "n": 29,
+      "page": "Privacy / Terms / Legal",
+      "visualAuthority": "LOCK_STRUCTURE_ONLY",
+      "delivery": "ABSENT",
+      "status": "BLOCKED_APPROVED_COPY",
+      "evidence": "Privacy/legal assets and template requirement exist.",
+      "remainingGap": "Dedicated readable legal template and approved policy/terms copy absent."
+    },
+    {
+      "n": 30,
+      "page": "404 / Lost in the Feast",
+      "visualAuthority": "POLISH",
+      "delivery": "LIVE",
+      "status": "DONE_PROVEN",
+      "evidence": "Branded 404/recovery page exists and routing/base-path behavior has been verified.",
+      "remainingGap": "Optional search/Treat embellishment may improve it later but is not required to call the recovery route functional."
+    }
+  ],
+  "crossCutting": [
+    {
+      "requirement": "TOADAL FEAST-first public identity",
+      "status": "DONE_PROVEN",
+      "evidence": "Current authority and candidate keep TOADAL FEAST primary and TOADAL GAMES subordinate."
+    },
+    {
+      "requirement": "Website feels like entering the Feast World",
+      "status": "PARTIAL",
+      "evidence": "Canonical food-fantasy art is present, but approved Home is still much richer/denser than candidate."
+    },
+    {
+      "requirement": "Play something free immediately",
+      "status": "PARTIAL",
+      "evidence": "Wicked Bites has an isolated preview player, but current authority still reports zero PUBLIC games."
+    },
+    {
+      "requirement": "Discover characters/world/story",
+      "status": "PARTIAL",
+      "evidence": "World/Stories/Media routes exist; Characters Hub and Toadal Profile do not."
+    },
+    {
+      "requirement": "Consume media/manga/lore/news",
+      "status": "PARTIAL",
+      "evidence": "Media/News previews exist; manga/reader/article publishing stack is absent."
+    },
+    {
+      "requirement": "Guest-first Feast Pass progression",
+      "status": "NOT_STARTED",
+      "evidence": "No durable guest-local XP/level/Sparks/Treats/streak/quests/discoveries runtime."
+    },
+    {
+      "requirement": "Account later for preserve/sync",
+      "status": "DEFERRED_SERVICE",
+      "evidence": "Correctly deferred; guest/account preview route still absent."
+    },
+    {
+      "requirement": "Convert visitors to flagship mobile app",
+      "status": "PARTIAL",
+      "evidence": "App route exists, but genuine product screenshots and verified store links are missing."
+    },
+    {
+      "requirement": "Reactive Toadal companion",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Live staging has a bounded contextual image set; combined candidate expands semantic state artwork substantially. Many manifest destinations do not exist yet."
+    },
+    {
+      "requirement": "Hidden Treats / collectible food",
+      "status": "NOT_STARTED",
+      "evidence": "Food library exists; site interaction/progression loop not implemented."
+    },
+    {
+      "requirement": "Daily rewards",
+      "status": "NOT_STARTED",
+      "evidence": "Documented concept only."
+    },
+    {
+      "requirement": "Quests/challenges",
+      "status": "NOT_STARTED",
+      "evidence": "Documented concept only."
+    },
+    {
+      "requirement": "Sound/settings/search utilities",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Companion assets/semantic reactions exist; full user-facing settings/search system is not implemented."
+    },
+    {
+      "requirement": "Truthful PUBLIC/PREVIEW/PLANNED/COMING_SOON/DISABLED states",
+      "status": "DONE_PROVEN",
+      "evidence": "Current implementation is conservative and does not fabricate unavailable services."
+    },
+    {
+      "requirement": "Mobile navigation / responsive composition",
+      "status": "DONE_PROVEN_CURRENT_ROUTES",
+      "evidence": "Current implemented routes have responsive/menu verification; future routes remain unbuilt."
+    },
+    {
+      "requirement": "Keyboard/focus/reduced-motion/accessibility foundation",
+      "status": "DONE_PROVEN_CURRENT_ROUTES",
+      "evidence": "Verified on current shell; must remain a gate for every new route."
+    },
+    {
+      "requirement": "Git-backed source of truth / staging-production separation",
+      "status": "DONE_PROVEN",
+      "evidence": "GitHub Pages staging, branch preservation and production separation are established."
+    },
+    {
+      "requirement": "Final Home LOCK_VISUAL acceptance",
+      "status": "NOT_ACHIEVED",
+      "evidence": "Approved screenshot remains the north star; combined candidate is visibly not at parity and has not received owner visual acceptance."
+    },
+    {
+      "requirement": "Feature-salvage discipline",
+      "status": "ACTIVE_CONTROL",
+      "evidence": "Historical donor code was inspected. Guest progression/Treats/quests/daily rewards/parallax have working donors; Feast Catch is retired from the initial game plan."
+    },
+    {
+      "requirement": "Environmental motion / ambience",
+      "status": "NOT_STARTED_SALVAGE_AVAILABLE",
+      "evidence": "Reduced-motion-aware parallax donor exists; current visual shell has not integrated it as a manifest-level ambience layer."
+    },
+    {
+      "requirement": "Mobile fast-Play / bottom-navigation concept",
+      "status": "PARTIAL",
+      "evidence": "Current drawer/menu behavior is verified; the mockup mobile plan also calls for fast Play access/bottom navigation where useful."
+    },
+    {
+      "requirement": "Content publication states",
+      "status": "PARTIAL",
+      "evidence": "Truth labels are strong, but a complete DRAFT/PREVIEW/PUBLISHED/ARCHIVED publishing pipeline for stories/media/news is not yet built."
+    },
+    {
+      "requirement": "Guest progression storage contract",
+      "status": "NOT_STARTED_SALVAGE_AVAILABLE",
+      "evidence": "Current contract is defined; historical donor proves behavior, but migration to toadal:web:v1:* records has not been implemented."
+    }
+  ],
+  "sourceMap": {
+    "active_authority": [
+      {
+        "source": "Latest explicit owner instruction",
+        "rule": "Highest priority; can supersede older project documents."
+      },
+      {
+        "source": "docs/authority/sources/product/LOCKED_PRODUCT_DECISIONS.md",
+        "rule": "Product identity, visitor journey, companion, Feast Pass, browser games and playful-layer contract."
+      },
+      {
+        "source": "docs/authority/sources/mockups/PAGE_MANIFEST.md",
+        "rule": "30-page page-by-page product manifest."
+      },
+      {
+        "source": "docs/design/VISUAL_AUTHORITY_LEDGER.md",
+        "rule": "LOCK_VISUAL / LOCK_LAYOUT / LOCK_STRUCTURE_ONLY / POLISH status."
+      },
+      {
+        "source": "docs/authority/VISUAL_AUTHORITY.md",
+        "rule": "Approved Home and visual/identity rules."
+      },
+      {
+        "source": "docs/authority/PAGE_REQUIREMENTS.md",
+        "rule": "Reconciles manifest with current implementation without cancelling missing page families."
+      },
+      {
+        "source": "docs/authority/WEB_PRODUCT_AUTHORITY.md",
+        "rule": "Authority hierarchy and current operational source of truth."
+      },
+      {
+        "source": "docs/review/WO-002/evidence/approved-home-visual-authority.png",
+        "rule": "Home LOCK_VISUAL north star; SHA-256 4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608."
+      }
+    ],
+    "implementation_evidence": [
+      {
+        "source": "staging/live-visual",
+        "sha": "270940dee30b7aafb70af941c520c6d4d223e288",
+        "role": "Current public GitHub Pages implementation."
+      },
+      {
+        "source": "integration/visual-convergence-combined-20261001",
+        "sha": "58a7121e363d3480c122623b1de5cd0d5ac1778e",
+        "role": "Latest combined visual candidate; review only, not manifest completion."
+      },
+      {
+        "source": "integration/master-asset-authority-20261001",
+        "sha": "62717951f4ffba0e8dd779116cc192d70f94d534",
+        "role": "Recovered Master V2 companion/asset authority."
+      },
+      {
+        "source": "archive/production-ready-asset-pack-20261001",
+        "sha": "5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba",
+        "role": "Remote preservation of complete 71-image production-ready pack."
+      }
+    ],
+    "historical_or_donor_only": [
+      {
+        "path": "C:/ReleaseOps/toadal-games-redesign-20260925",
+        "reason": "Older TOADAL GAMES/Grove redesign authority. Contains superseded green/Toto and dashboard/left-rail concepts; cannot override later TOADAL FEAST-first 30-page authority."
+      },
+      {
+        "path": "Netlify: toadal-v13-site-preview",
+        "reason": "Older SSO-protected V13 preview/donor, not current deployment authority."
+      },
+      {
+        "path": "Netlify cartridge previews",
+        "reason": "Useful isolated game evidence only; not the website product roadmap."
+      },
+      {
+        "path": "Older WO-001/visual-remediation/recovery worktrees",
+        "reason": "Historical implementation evidence/donors only unless current authority explicitly cites them."
+      },
+      {
+        "path": "WO-003 Arcade HOLD lane",
+        "reason": "Qualification evidence only; cannot become a website-wide priority or block manifest implementation."
+      }
+    ]
+  },
+  "operatingRules": [
+    "No task may be called priority work unless it advances at least one explicit manifest page row, cross-cutting requirement, or real release blocker.",
+    "Automated QA proves implementation health, not manifest completion or visual acceptance.",
+    "A passed work order never cancels an unimplemented manifest requirement.",
+    "Home remains incomplete until LOCK_VISUAL is judged against the approved Home image and owner acceptance is recorded.",
+    "Do not spend Arcade/gameplay re-certification effort unless a website integration change plausibly changed the qualified game behavior.",
+    "Historical project folders are donors/evidence only unless cited by current authority.",
+    "Percentages must name their denominator: live shell, current candidate, or full 30-page manifest.",
+    "Connected services and unpublished content must remain truthful rather than fabricated."
+  ],
+  "featureSalvage": {
+    "audit": "docs/authority/FEATURE_SALVAGE_AUDIT_2026-10-01.md",
+    "strategy": "behavior salvage + current-schema rebuild",
+    "historicalDonor": "C:/ReleaseOps/toadal-games-redesign-20260925/site/src/scripts/app.js"
+  },
+  "visualEvidence": {
+    "home": {
+      "status": "LOCK_VISUAL",
+      "path": "docs/review/WO-002/evidence/approved-home-visual-authority.png",
+      "sha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608"
+    },
+    "batch1": [
+      {
+        "n": 2,
+        "page": "Play / Games Hub",
+        "path": "assets/reference/mockups/batch-1/02_PLAY_GAMES_HUB.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 3,
+        "page": "Wicked Bites Game Detail",
+        "path": "assets/reference/mockups/batch-1/03_WICKED_BITES_DETAIL.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 4,
+        "page": "Browser Game Player",
+        "path": "assets/reference/mockups/batch-1/04_BROWSER_GAME_PLAYER.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 5,
+        "page": "World Hub",
+        "path": "assets/reference/mockups/batch-1/05_WORLD_HUB.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 6,
+        "page": "Characters Hub",
+        "path": "assets/reference/mockups/batch-1/06_CHARACTERS_HUB.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 7,
+        "page": "Toadal Character Profile",
+        "path": "assets/reference/mockups/batch-1/07_TOADAL_PROFILE.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 8,
+        "page": "Stories / Comics Hub",
+        "path": "assets/reference/mockups/batch-1/08_STORIES_COMICS_HUB.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 9,
+        "page": "TOADAL FEAST Manga Series",
+        "path": "assets/reference/mockups/batch-1/09_MANGA_SERIES.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      },
+      {
+        "n": 10,
+        "page": "Comic / Manga Reader",
+        "path": "assets/reference/mockups/batch-1/10_COMIC_READER.png",
+        "approval": "owner-approved-batch-1-layout-reference"
+      }
+    ],
+    "mixedReference": {
+      "desktop30": "assets/reference/mockups/mixed-concepts/DESKTOP_30_PAGE_CONTACT_SHEET.jpg",
+      "mobile10": "assets/reference/mockups/mixed-concepts/MOBILE_10_FLOW_CONTACT_SHEET.jpg",
+      "rule": "Reference only; not every page has the same approval level as Home or Batch 1."
+    }
+  },
+  "donorEvidence": {
+    "strictHomeParityWip": {
+      "path": "C:/ReleaseOps/toadal-feast-web-home-lock-visual-20261001",
+      "branch": "fix/home-lock-visual-parity-20261001",
+      "base": "270940dee30b7aafb70af941c520c6d4d223e288",
+      "status": "LOCAL_WIP_DONOR",
+      "finding": "322-line CSS parity treatment is denser/closer to approved Home in games/pass/discovery/app-next composition than the later combined Home, but is not final or approved.",
+      "preservedPatch": "docs/authority/donors/home-lock-visual-parity-20261001.patch",
+      "preservedPatchSha256": "c215c613b6d67a40bde9ccc5b23cb84302e2cab6c03cb122eed42c47f5739d5d",
+      "visualProof": "docs/review/manifest-recalibration/home-lock-wip-donor-1440x900.webp",
+      "visualProofSha256": "31b00079fd7b97f91294c2c3957543ec334f17717e36f70e44e76497be8f0ca6"
+    },
+    "progressionDonor": {
+      "path": "C:/ReleaseOps/toadal-games-redesign-20260925/site/src/scripts/app.js",
+      "status": "HISTORICAL_DONOR",
+      "finding": "Working local Sparks, streaks, Treats, quest board, daily rewards, Feast Catch and reduced-motion-aware parallax. Salvage behavior, rebuild state contract."
+    },
+    "r2r3AdventureDonor": {
+      "path": "C:/ReleaseOps/toadal-games-web-r3/TOADAL_GAMES_R3_INTERACTIVE_MASCOT",
+      "status": "DEFERRED_DONOR_NOT_RELEASE_CANDIDATE",
+      "finding": "R2 smoke proved 21-route build plus browser-local Passport, sound, daily reward, Treat quest and reward persistence. R3 adventure.js adds collapsible Passport/HUD, route discovery and modal patterns. Branding/state schema are superseded."
+    },
+    "structuralRoutes": {
+      "routes": [
+        "toadal",
+        "account",
+        "community",
+        "store",
+        "support",
+        "privacy",
+        "terms",
+        "updates"
+      ],
+      "status": "STRUCTURAL_DONOR_ONLY",
+      "finding": "Older routes can accelerate templates/empty states but do not provide current authority or final copy."
+    }
+  },
+  "externalSystems": {
+    "figma": {
+      "fileKey": "T2CosIgfKTy32yNRqNThmS",
+      "topLevelPage": "Approved Home Target",
+      "status": "CONNECTED_RATE_LIMITED",
+      "rule": "Use preserved approved Home evidence when MCP call quota blocks further inspection."
+    },
+    "netlify": {
+      "status": "DONOR_PREVIEWS_ONLY",
+      "projects": [
+        "toadal-lily-pad-cartridge-preview",
+        "toadal-claw-cartridge-preview",
+        "toadal-wicked-cartridge-preview",
+        "toadal-v13-site-preview"
+      ],
+      "rule": "Current website staging remains GitHub Pages."
+    },
+    "githubPages": {
+      "status": "CURRENT_STAGING",
+      "sha": "270940dee30b7aafb70af941c520c6d4d223e288"
+    }
+  },
+  "executionPriorities": [
+    {
+      "rank": 1,
+      "lane": "Home LOCK_VISUAL closure",
+      "manifestRows": [
+        1
+      ],
+      "impact": "Required north-star acceptance; prevents visual drift across all later pages.",
+      "resources": [
+        "approved Home image",
+        "Figma Approved Home Target",
+        "strict Home parity WIP donor",
+        "combined candidate"
+      ],
+      "parallelSafeWith": [
+        "guest progression foundation",
+        "Characters/Toadal page implementation"
+      ],
+      "doneWhen": "Side-by-side composition is materially aligned and owner visual acceptance is recorded; truthful missing systems remain truthful."
+    },
+    {
+      "rank": 2,
+      "lane": "Guest progression foundation",
+      "manifestRows": [
+        14,
+        15,
+        16,
+        20
+      ],
+      "impact": "Closes a major cross-cutting product loop and unlocks Feast Pass/Quests/Rewards/Profile without waiting for account backend.",
+      "resources": [
+        "PROGRESSION_STATE_CONTRACT.md",
+        "historical app.js donor",
+        "R2/R3 adventure.js + smoke evidence",
+        "food asset library",
+        "companion reward assets"
+      ],
+      "parallelSafeWith": [
+        "Home visual closure",
+        "Characters/Toadal"
+      ],
+      "doneWhen": "toadal:web:v1:* storage, safe defaults/corruption recovery, config-driven definitions and basic UI state work offline."
+    },
+    {
+      "rank": 3,
+      "lane": "Characters Hub + Toadal Profile",
+      "manifestRows": [
+        6,
+        7
+      ],
+      "impact": "Two completely missing approved Batch-1 families; directly advances discovery journey.",
+      "resources": [
+        "06_CHARACTERS_HUB.png",
+        "07_TOADAL_PROFILE.png",
+        "canonical character assets",
+        "old /toadal structural donor"
+      ],
+      "parallelSafeWith": [
+        "Home visual closure",
+        "guest progression"
+      ],
+      "doneWhen": "responsive truthful routes match approved layout direction and use canonical content only."
+    },
+    {
+      "rank": 4,
+      "lane": "Stories publishing stack",
+      "manifestRows": [
+        8,
+        9,
+        10
+      ],
+      "impact": "Turns a placeholder hub into the required content/reader system.",
+      "resources": [
+        "08_STORIES_COMICS_HUB.png",
+        "09_MANGA_SERIES.png",
+        "10_COMIC_READER.png",
+        "PUBLICATION_RULES.md"
+      ],
+      "parallelSafeWith": [
+        "utilities/gated routes"
+      ],
+      "doneWhen": "real data model/templates/reader/bookmarks-resume plumbing exist; no fake chapters if content absent."
+    },
+    {
+      "rank": 5,
+      "lane": "Editorial/discovery utilities",
+      "manifestRows": [
+        11,
+        12,
+        13,
+        23,
+        24,
+        25
+      ],
+      "impact": "Converts empty previews into usable media/news/search/roadmap/support surfaces.",
+      "resources": [
+        "30-page contact sheet",
+        "publication rules",
+        "older updates/support structural donors",
+        "current media/news/support routes"
+      ],
+      "parallelSafeWith": [
+        "gated routes"
+      ],
+      "doneWhen": "structured records/templates/local search and truthful empty states exist."
+    },
+    {
+      "rank": 6,
+      "lane": "Truthful gated ecosystem routes",
+      "manifestRows": [
+        19,
+        21,
+        22,
+        26,
+        27,
+        28,
+        29
+      ],
+      "impact": "Eliminates dead-end/missing ecosystem families without fabricating backend functionality.",
+      "resources": [
+        "older account/community/store/privacy/terms structural donors",
+        "Master V2 contextual assets",
+        "manifest/contact sheet"
+      ],
+      "parallelSafeWith": [
+        "editorial utilities"
+      ],
+      "doneWhen": "polished routes exist with explicit Preview/Coming Soon/approved-content gates; real endpoint/copy blockers remain visible."
+    },
+    {
+      "rank": 7,
+      "lane": "App conversion evidence closure",
+      "manifestRows": [
+        18
+      ],
+      "impact": "Completes flagship conversion only when evidence is real.",
+      "resources": [
+        "physical device captures",
+        "APP_CONVERSION_EVIDENCE_GATE.md",
+        "future verified store destinations"
+      ],
+      "parallelSafeWith": [],
+      "doneWhen": "approved current screenshots and verified store URLs are wired; otherwise buttons remain disabled."
+    },
+    {
+      "rank": 8,
+      "lane": "Play depth / additional browser game integration",
+      "manifestRows": [
+        2,
+        3,
+        4,
+        17
+      ],
+      "impact": "Improves immediate-play funnel after core site product structure is under control.",
+      "resources": [
+        "qualified Wicked/CLAW donors",
+        "Netlify cartridge previews",
+        "Play mockups"
+      ],
+      "parallelSafeWith": [],
+      "doneWhen": "only bounded integration QA is needed; Arcade HOLD does not block unrelated pages."
+    }
+  ]
+}

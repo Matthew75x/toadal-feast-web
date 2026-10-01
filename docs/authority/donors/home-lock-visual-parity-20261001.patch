@@ -1,0 +1,660 @@
+﻿diff --git a/dist/assets/css/site.css b/dist/assets/css/site.css
+index f86d538..3472203 100644
+--- a/dist/assets/css/site.css
++++ b/dist/assets/css/site.css
+@@ -2286,3 +2286,325 @@ main {
+   .toadal-companion .companion-image { width: 52px; height: 56px; }
+   .toadal-companion .companion-image { max-height: 56px; }
+ }
++
++/* Home LOCK_VISUAL parity pass ΓÇö 2026-10-01.
++   Compresses the desktop home into the approved portal/dashboard hierarchy
++   without claiming unavailable product features. */
++@media (min-width: 1180px) {
++  body:has(.home-hero) .site-nav {
++    min-height: 58px;
++    padding-block: 4px;
++    gap: clamp(16px, 2vw, 30px);
++  }
++  body:has(.home-hero) .site-brand {
++    font-size: clamp(1.25rem, 1.55vw, 1.55rem);
++    letter-spacing: -0.055em;
++  }
++  body:has(.home-hero) .site-links {
++    gap: clamp(2px, .55vw, 8px);
++  }
++  body:has(.home-hero) .site-links a {
++    min-height: 38px;
++    padding: 6px 10px;
++    font-size: .86rem;
++  }
++  main:has(.home-hero) {
++    width: min(100%, var(--content-max));
++    margin-inline: auto;
++    display: grid;
++
++    grid-template-columns: minmax(0, 3.15fr) minmax(310px, .95fr);
++    column-gap: 12px;
++    align-items: stretch;
++    background: var(--cream-100);
++  }
++  main:has(.home-hero) > .section,
++  main:has(.home-hero) > .studio-layout {
++    width: 100%;
++    min-width: 0;
++    margin-inline: 0;
++  }
++  main:has(.home-hero) > [data-studio-variant="accessibility-tools"] {
++    position: absolute;
++    width: auto;
++    padding: 0;
++  }
++  main:has(.home-hero) > #top {
++    grid-column: 1 / -1;
++    grid-row: 1;
++    padding-block: 0;
++  }
++  body:has(.home-hero) .home-hero,
++  body:has(.home-hero) .home-hero__layout {
++    min-height: 400px;
++    height: 400px;
++  }
++  body:has(.home-hero) .home-hero__layout {
++
++    grid-template-columns: minmax(410px, .85fr) minmax(480px, 1.15fr);
++    padding: 22px clamp(28px, 3.2vw, 52px) 16px;
++  }
++  body:has(.home-hero) .home-hero__copy {
++    max-width: 510px;
++  }
++  body:has(.home-hero) .home-hero__title {
++    font-size: clamp(3rem, 4.1vw, 4.05rem);
++    line-height: .94;
++  }
++  body:has(.home-hero) .home-hero__lede {
++    max-width: 480px;
++    margin-block: 10px 12px;
++    line-height: 1.43;
++  }
++  body:has(.home-hero) .home-hero__toadal {
++    width: min(43vw, 535px);
++    transform: translate(-5%, 8%);
++  }
++  body:has(.home-hero) .home-hero__toadal img,
++  body:has(.home-hero) .home-hero__toadal > img {
++    max-height: 445px;
++  }
++  #browser-games-intro {
++    grid-column: 1;
++    grid-row: 2;
++    padding: 14px 0 4px;
++
++  }
++  #browser-games-intro .home-section-inner {
++    padding-inline: 14px 4px;
++  }
++  #browser-games-intro .section-heading {
++    margin-block: 2px 4px;
++    font-size: clamp(1.55rem, 2vw, 2.25rem);
++  }
++  #browser-games-intro .section-lede {
++    max-width: 760px;
++    margin-block: 0 8px;
++    font-size: .92rem;
++    line-height: 1.4;
++  }
++  #browser-games-intro .game-tabs {
++    margin-block: 5px 0;
++    gap: 6px;
++  }
++  #browser-games-intro .game-tab {
++    min-height: 34px;
++    padding: 5px 10px;
++    font-size: .78rem;
++  }
++  #browser-games-intro .home-play-directory-link {
++    margin-block-start: 7px;
++    min-height: 34px;
++    padding: 6px 12px;
++    font-size: .78rem;
++  }
++
++  #browser-games {
++    grid-column: 1;
++    grid-row: 3;
++    padding: 4px 4px 14px 14px;
++    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
++    gap: 9px !important;
++  }
++  #browser-games .studio-game-card {
++    padding: 8px;
++    border-radius: 14px;
++  }
++  #browser-games .studio-game-card img {
++    width: 100%;
++    height: 116px;
++    object-fit: cover;
++    border-radius: 10px;
++  }
++  #browser-games .studio-game-card h3 {
++    margin-block: 7px 3px;
++    font-size: 1rem;
++  }
++  #browser-games .studio-game-card p {
++    margin-block: 0 6px;
++    font-size: .72rem;
++    line-height: 1.35;
++  }
++  #feast-pass {
++    grid-column: 2;
++
++    grid-row: 2 / 4;
++    padding: 14px 14px 14px 0;
++  }
++  #feast-pass .home-section-inner,
++  #feast-pass .feast-pass-panel {
++    height: 100%;
++  }
++  #feast-pass .feast-pass-panel {
++    padding: 20px;
++    display: flex;
++    align-items: stretch;
++  }
++  #feast-pass .section-heading {
++    margin-block: 6px 8px;
++    font-size: clamp(1.9rem, 2.45vw, 2.85rem);
++    line-height: .98;
++  }
++  #feast-pass .section-lede {
++    font-size: .86rem;
++    line-height: 1.4;
++  }
++  #feast-pass .pass-signals {
++    gap: 6px;
++    margin-block: 10px 12px;
++  }
++  #today {
++    grid-column: 1 / -1;
++    grid-row: 4;
++    padding: 0 14px 10px;
++  }
++
++  #today .today-panel {
++    padding: 10px 14px;
++    border-radius: 14px;
++    grid-template-columns: minmax(0, 1fr) auto;
++    align-items: center;
++  }
++  #today .section-heading {
++    margin-block: 2px;
++    font-size: 1.25rem;
++  }
++  #today .section-lede {
++    margin: 0;
++    font-size: .78rem;
++  }
++  #discovery {
++    grid-column: 1 / -1;
++    grid-row: 5;
++    padding: 0 14px 12px;
++  }
++  #discovery .discovery-heading {
++    display: grid;
++    grid-template-columns: auto minmax(360px, 1fr);
++    column-gap: 18px;
++    align-items: end;
++    margin-block-end: 8px;
++  }
++  #discovery .discovery-heading .section-kicker {
++    grid-column: 1 / -1;
++  }
++  #discovery .discovery-heading .section-heading {
++
++    margin: 0;
++    font-size: 1.7rem;
++  }
++  #discovery .discovery-heading .section-lede {
++    margin: 0;
++    font-size: .82rem;
++  }
++  #discovery .discovery-grid {
++    grid-template-columns: 1.12fr 1fr .88fr;
++    gap: 10px;
++  }
++  #discovery .discovery-card {
++    min-height: 258px;
++    padding: 12px;
++    border-radius: 14px;
++  }
++  #discovery .discovery-card h3 {
++    margin-block: 3px 5px;
++    font-size: 1.05rem;
++  }
++  #discovery .discovery-card > p:not(.section-kicker) {
++    margin-block: 0 7px;
++    font-size: .75rem;
++    line-height: 1.35;
++  }
++  #discovery .character-row {
++    gap: 5px;
++    margin-block-start: 7px;
++  }
++
++  #discovery .character-figure img {
++    max-height: 96px;
++  }
++  #discovery .genie-row {
++    margin-block-start: 6px;
++    gap: 4px;
++  }
++  #discovery .world-art {
++    max-height: 122px;
++    object-fit: cover;
++  }
++  #app {
++    grid-column: 1;
++    grid-row: 6;
++    padding: 0 0 16px 14px;
++  }
++  #app .app-conversion-panel {
++    min-height: 310px;
++    height: 100%;
++    padding: 22px;
++    color: var(--cream-50);
++    border-color: rgb(255 196 51 / 55%);
++    background:
++      linear-gradient(90deg, rgb(35 14 8 / 92%) 0%, rgb(35 14 8 / 79%) 48%, rgb(35 14 8 / 24%) 100%),
++      url("../images/world/candy-kingdom.webp") 70% center / cover no-repeat;
++  }
++  #app .app-conversion-panel .section-heading,
++  #app .app-conversion-panel .section-lede {
++    color: var(--cream-50);
++  }
++
++  #app .app-art img {
++    max-height: 250px;
++    filter: drop-shadow(0 16px 14px rgb(0 0 0 / 34%));
++  }
++  #whats-next {
++    grid-column: 2;
++    grid-row: 6;
++    padding: 0 14px 16px 0;
++  }
++  #whats-next .home-section-inner {
++    height: 100%;
++    padding: 14px;
++    border: 1px solid rgb(166 102 6 / 24%);
++    border-radius: 16px;
++    background: #fffaf0;
++  }
++  #whats-next .section-heading {
++    margin-block: 2px 5px;
++    font-size: 1.35rem;
++  }
++  #whats-next .section-lede {
++    margin-block: 0 8px;
++    font-size: .76rem;
++    line-height: 1.35;
++  }
++  #whats-next .whats-next-grid {
++    grid-template-columns: repeat(2, minmax(0, 1fr));
++    gap: 7px;
++  }
++
++  #whats-next .next-card {
++    min-height: 0;
++    padding: 8px;
++    border-radius: 11px;
++  }
++  #whats-next .next-card h3 {
++    margin-block: 4px 3px;
++    font-size: .84rem;
++  }
++  #whats-next .next-card p {
++    margin: 0;
++    font-size: .64rem;
++    line-height: 1.28;
++  }
++  #whats-next .next-card .button-link {
++    min-height: 30px;
++    margin-block-start: 6px;
++    padding: 4px 7px;
++    font-size: .66rem;
++  }
++  #companion {
++    grid-column: 1 / -1;
++    grid-row: 7;
++    height: 0;
++    padding: 0;
++  }
++}
+diff --git a/studio-project/toadal-feast-website/reference/assets/css/site.css b/studio-project/toadal-feast-website/reference/assets/css/site.css
+index f86d538..3472203 100644
+--- a/studio-project/toadal-feast-website/reference/assets/css/site.css
++++ b/studio-project/toadal-feast-website/reference/assets/css/site.css
+@@ -2286,3 +2286,325 @@ main {
+   .toadal-companion .companion-image { width: 52px; height: 56px; }
+   .toadal-companion .companion-image { max-height: 56px; }
+ }
++
++/* Home LOCK_VISUAL parity pass ΓÇö 2026-10-01.
++   Compresses the desktop home into the approved portal/dashboard hierarchy
++   without claiming unavailable product features. */
++@media (min-width: 1180px) {
++  body:has(.home-hero) .site-nav {
++    min-height: 58px;
++    padding-block: 4px;
++    gap: clamp(16px, 2vw, 30px);
++  }
++  body:has(.home-hero) .site-brand {
++    font-size: clamp(1.25rem, 1.55vw, 1.55rem);
++    letter-spacing: -0.055em;
++  }
++  body:has(.home-hero) .site-links {
++    gap: clamp(2px, .55vw, 8px);
++  }
++  body:has(.home-hero) .site-links a {
++    min-height: 38px;
++    padding: 6px 10px;
++    font-size: .86rem;
++  }
++  main:has(.home-hero) {
++    width: min(100%, var(--content-max));
++    margin-inline: auto;
++    display: grid;
++
++    grid-template-columns: minmax(0, 3.15fr) minmax(310px, .95fr);
++    column-gap: 12px;
++    align-items: stretch;
++    background: var(--cream-100);
++  }
++  main:has(.home-hero) > .section,
++  main:has(.home-hero) > .studio-layout {
++    width: 100%;
++    min-width: 0;
++    margin-inline: 0;
++  }
++  main:has(.home-hero) > [data-studio-variant="accessibility-tools"] {
++    position: absolute;
++    width: auto;
++    padding: 0;
++  }
++  main:has(.home-hero) > #top {
++    grid-column: 1 / -1;
++    grid-row: 1;
++    padding-block: 0;
++  }
++  body:has(.home-hero) .home-hero,
++  body:has(.home-hero) .home-hero__layout {
++    min-height: 400px;
++    height: 400px;
++  }
++  body:has(.home-hero) .home-hero__layout {
++
++    grid-template-columns: minmax(410px, .85fr) minmax(480px, 1.15fr);
++    padding: 22px clamp(28px, 3.2vw, 52px) 16px;
++  }
++  body:has(.home-hero) .home-hero__copy {
++    max-width: 510px;
++  }
++  body:has(.home-hero) .home-hero__title {
++    font-size: clamp(3rem, 4.1vw, 4.05rem);
++    line-height: .94;
++  }
++  body:has(.home-hero) .home-hero__lede {
++    max-width: 480px;
++    margin-block: 10px 12px;
++    line-height: 1.43;
++  }
++  body:has(.home-hero) .home-hero__toadal {
++    width: min(43vw, 535px);
++    transform: translate(-5%, 8%);
++  }
++  body:has(.home-hero) .home-hero__toadal img,
++  body:has(.home-hero) .home-hero__toadal > img {
++    max-height: 445px;
++  }
++  #browser-games-intro {
++    grid-column: 1;
++    grid-row: 2;
++    padding: 14px 0 4px;
++
++  }
++  #browser-games-intro .home-section-inner {
++    padding-inline: 14px 4px;
++  }
++  #browser-games-intro .section-heading {
++    margin-block: 2px 4px;
++    font-size: clamp(1.55rem, 2vw, 2.25rem);
++  }
++  #browser-games-intro .section-lede {
++    max-width: 760px;
++    margin-block: 0 8px;
++    font-size: .92rem;
++    line-height: 1.4;
++  }
++  #browser-games-intro .game-tabs {
++    margin-block: 5px 0;
++    gap: 6px;
++  }
++  #browser-games-intro .game-tab {
++    min-height: 34px;
++    padding: 5px 10px;
++    font-size: .78rem;
++  }
++  #browser-games-intro .home-play-directory-link {
++    margin-block-start: 7px;
++    min-height: 34px;
++    padding: 6px 12px;
++    font-size: .78rem;
++  }
++
++  #browser-games {
++    grid-column: 1;
++    grid-row: 3;
++    padding: 4px 4px 14px 14px;
++    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
++    gap: 9px !important;
++  }
++  #browser-games .studio-game-card {
++    padding: 8px;
++    border-radius: 14px;
++  }
++  #browser-games .studio-game-card img {
++    width: 100%;
++    height: 116px;
++    object-fit: cover;
++    border-radius: 10px;
++  }
++  #browser-games .studio-game-card h3 {
++    margin-block: 7px 3px;
++    font-size: 1rem;
++  }
++  #browser-games .studio-game-card p {
++    margin-block: 0 6px;
++    font-size: .72rem;
++    line-height: 1.35;
++  }
++  #feast-pass {
++    grid-column: 2;
++
++    grid-row: 2 / 4;
++    padding: 14px 14px 14px 0;
++  }
++  #feast-pass .home-section-inner,
++  #feast-pass .feast-pass-panel {
++    height: 100%;
++  }
++  #feast-pass .feast-pass-panel {
++    padding: 20px;
++    display: flex;
++    align-items: stretch;
++  }
++  #feast-pass .section-heading {
++    margin-block: 6px 8px;
++    font-size: clamp(1.9rem, 2.45vw, 2.85rem);
++    line-height: .98;
++  }
++  #feast-pass .section-lede {
++    font-size: .86rem;
++    line-height: 1.4;
++  }
++  #feast-pass .pass-signals {
++    gap: 6px;
++    margin-block: 10px 12px;
++  }
++  #today {
++    grid-column: 1 / -1;
++    grid-row: 4;
++    padding: 0 14px 10px;
++  }
++
++  #today .today-panel {
++    padding: 10px 14px;
++    border-radius: 14px;
++    grid-template-columns: minmax(0, 1fr) auto;
++    align-items: center;
++  }
++  #today .section-heading {
++    margin-block: 2px;
++    font-size: 1.25rem;
++  }
++  #today .section-lede {
++    margin: 0;
++    font-size: .78rem;
++  }
++  #discovery {
++    grid-column: 1 / -1;
++    grid-row: 5;
++    padding: 0 14px 12px;
++  }
++  #discovery .discovery-heading {
++    display: grid;
++    grid-template-columns: auto minmax(360px, 1fr);
++    column-gap: 18px;
++    align-items: end;
++    margin-block-end: 8px;
++  }
++  #discovery .discovery-heading .section-kicker {
++    grid-column: 1 / -1;
++  }
++  #discovery .discovery-heading .section-heading {
++
++    margin: 0;
++    font-size: 1.7rem;
++  }
++  #discovery .discovery-heading .section-lede {
++    margin: 0;
++    font-size: .82rem;
++  }
++  #discovery .discovery-grid {
++    grid-template-columns: 1.12fr 1fr .88fr;
++    gap: 10px;
++  }
++  #discovery .discovery-card {
++    min-height: 258px;
++    padding: 12px;
++    border-radius: 14px;
++  }
++  #discovery .discovery-card h3 {
++    margin-block: 3px 5px;
++    font-size: 1.05rem;
++  }
++  #discovery .discovery-card > p:not(.section-kicker) {
++    margin-block: 0 7px;
++    font-size: .75rem;
++    line-height: 1.35;
++  }
++  #discovery .character-row {
++    gap: 5px;
++    margin-block-start: 7px;
++  }
++
++  #discovery .character-figure img {
++    max-height: 96px;
++  }
++  #discovery .genie-row {
++    margin-block-start: 6px;
++    gap: 4px;
++  }
++  #discovery .world-art {
++    max-height: 122px;
++    object-fit: cover;
++  }
++  #app {
++    grid-column: 1;
++    grid-row: 6;
++    padding: 0 0 16px 14px;
++  }
++  #app .app-conversion-panel {
++    min-height: 310px;
++    height: 100%;
++    padding: 22px;
++    color: var(--cream-50);
++    border-color: rgb(255 196 51 / 55%);
++    background:
++      linear-gradient(90deg, rgb(35 14 8 / 92%) 0%, rgb(35 14 8 / 79%) 48%, rgb(35 14 8 / 24%) 100%),
++      url("../images/world/candy-kingdom.webp") 70% center / cover no-repeat;
++  }
++  #app .app-conversion-panel .section-heading,
++  #app .app-conversion-panel .section-lede {
++    color: var(--cream-50);
++  }
++
++  #app .app-art img {
++    max-height: 250px;
++    filter: drop-shadow(0 16px 14px rgb(0 0 0 / 34%));
++  }
++  #whats-next {
++    grid-column: 2;
++    grid-row: 6;
++    padding: 0 14px 16px 0;
++  }
++  #whats-next .home-section-inner {
++    height: 100%;
++    padding: 14px;
++    border: 1px solid rgb(166 102 6 / 24%);
++    border-radius: 16px;
++    background: #fffaf0;
++  }
++  #whats-next .section-heading {
++    margin-block: 2px 5px;
++    font-size: 1.35rem;
++  }
++  #whats-next .section-lede {
++    margin-block: 0 8px;
++    font-size: .76rem;
++    line-height: 1.35;
++  }
++  #whats-next .whats-next-grid {
++    grid-template-columns: repeat(2, minmax(0, 1fr));
++    gap: 7px;
++  }
++
++  #whats-next .next-card {
++    min-height: 0;
++    padding: 8px;
++    border-radius: 11px;
++  }
++  #whats-next .next-card h3 {
++    margin-block: 4px 3px;
++    font-size: .84rem;
++  }
++  #whats-next .next-card p {
++    margin: 0;
++    font-size: .64rem;
++    line-height: 1.28;
++  }
++  #whats-next .next-card .button-link {
++    min-height: 30px;
++    margin-block-start: 6px;
++    padding: 4px 7px;
++    font-size: .66rem;
++  }
++  #companion {
++    grid-column: 1 / -1;
++    grid-row: 7;
++    height: 0;
++    padding: 0;
++  }
++}
