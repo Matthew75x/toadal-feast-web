@@ -251,9 +251,17 @@
       "authoritySha256": "8af7dfef69ffc8d0484845453ba462776376e4d1fc574459f2c8e9d1d138e026",
       "width": 611,
       "height": 640,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "hero", "mascot", "canonical", "transparent-web-derivative"]
+      "tags": [
+        "website-home",
+        "hero",
+        "mascot",
+        "canonical",
+        "transparent-web-derivative"
+      ]
     },
     {
       "id": "asset.home.world.portal",
@@ -270,9 +278,16 @@
       "authoritySha256": "84a855f13c6241eb7efa3425cda93cbde983178db48df671f366f05d421f4f71",
       "width": 1424,
       "height": 750,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "world", "stories-media", "canonical-game-environment"]
+      "tags": [
+        "website-home",
+        "world",
+        "stories-media",
+        "canonical-game-environment"
+      ]
     },
     {
       "id": "asset.home.world.calm",
@@ -289,9 +304,15 @@
       "authoritySha256": "a3e4105d6b5d7c5e2ceae49faaa8e10423b0d2c0b3f9e75a63a61fd3356dc15d",
       "width": 1424,
       "height": 750,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "world", "canonical-game-environment"]
+      "tags": [
+        "website-home",
+        "world",
+        "canonical-game-environment"
+      ]
     },
     {
       "id": "asset.home.game.wicked-bites-preview",
@@ -308,9 +329,16 @@
       "authoritySha256": "c4fc02ec29a576275cf1474467116211f434400f54f6990f73f4afed1e9199b4",
       "width": 844,
       "height": 390,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "game-preview", "qualified-donor", "wicked-bites-5.5"]
+      "tags": [
+        "website-home",
+        "game-preview",
+        "qualified-donor",
+        "wicked-bites-5.5"
+      ]
     },
     {
       "id": "asset.home.game.claw-feed-gulper-preview",
@@ -327,9 +355,16 @@
       "authoritySha256": "6579a55db36c81e1839ed151427e5a6c4e98c9d705abd2916f8fc54eb5d6bbe4",
       "width": 844,
       "height": 390,
-      "renderTargets": ["website-home"],
+      "renderTargets": [
+        "website-home"
+      ],
       "replaceable": true,
-      "tags": ["website-home", "game-preview", "qualified-donor", "claw-feed-gulper-2.5.1"]
+      "tags": [
+        "website-home",
+        "game-preview",
+        "qualified-donor",
+        "claw-feed-gulper-2.5.1"
+      ]
     },
     {
       "id": "asset.brand.crown",
@@ -356,7 +391,7 @@
     },
     {
       "id": "asset.companion.context.world",
-      "name": "Toadal — adventure map guide pose (context candidate)",
+      "name": "Toadal — adventure map guide pose",
       "kind": "image",
       "category": "character",
       "source": "reference/assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
@@ -369,13 +404,21 @@
       "referenceSource": "reference/assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
       "authoritySource": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip#01_PRODUCTION_READY_FULL_SIZE/16_Adventure_Discovery/TOADAL_ADVENTURE_MAP_GUIDE_POINTING_v03.png",
       "authoritySha256": "e3340631b8be301952bfad18c4aa02e73845c6cf3777b36510a3c14f48f8dc2e",
-      "renderTargets": ["companion-world-context"],
+      "renderTargets": [
+        "companion-world-context"
+      ],
       "replaceable": false,
-      "tags": ["companion", "context-candidate", "owner-pack-v2", "per-file-approval-unconfirmed", "runtime-binding-pending"]
+      "tags": [
+        "companion",
+        "owner-pack-v2",
+        "master-v2-production-ready",
+        "runtime-bound",
+        "browser-verified"
+      ]
     },
     {
       "id": "asset.companion.context.support",
-      "name": "Toadal — support headset pose (context candidate)",
+      "name": "Toadal — support headset pose",
       "kind": "image",
       "category": "character",
       "source": "reference/assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
@@ -388,13 +431,21 @@
       "referenceSource": "reference/assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
       "authoritySource": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip#01_PRODUCTION_READY_FULL_SIZE/01_Support_Help/TOADAL_SUPPORT_HEADSET_TABLET_v03.png",
       "authoritySha256": "ffed40339cd16b938686f0c4f911561b9cbb318b367ce676dc0f40ed84a1a6c2",
-      "renderTargets": ["companion-support-context"],
+      "renderTargets": [
+        "companion-support-context"
+      ],
       "replaceable": false,
-      "tags": ["companion", "context-candidate", "owner-pack-v2", "per-file-approval-unconfirmed", "runtime-binding-pending"]
+      "tags": [
+        "companion",
+        "owner-pack-v2",
+        "master-v2-production-ready",
+        "runtime-bound",
+        "browser-verified"
+      ]
     },
     {
       "id": "asset.companion.context.app",
-      "name": "Toadal — mobile app pose (context candidate)",
+      "name": "Toadal — mobile app pose",
       "kind": "image",
       "category": "character",
       "source": "reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
@@ -407,13 +458,21 @@
       "referenceSource": "reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
       "authoritySource": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip#01_PRODUCTION_READY_FULL_SIZE/06_Mobile_Apps/TOADAL_MOBILE_APPS_SMARTPHONE_v01.png",
       "authoritySha256": "70d793feb54ece0f1604fa48771abf28d4d64923d8e410b3a9dae0a4b0bdf194",
-      "renderTargets": ["companion-app-context"],
+      "renderTargets": [
+        "companion-app-context"
+      ],
       "replaceable": false,
-      "tags": ["companion", "context-candidate", "owner-pack-v2", "per-file-approval-unconfirmed", "runtime-binding-pending"]
+      "tags": [
+        "companion",
+        "owner-pack-v2",
+        "master-v2-production-ready",
+        "runtime-bound",
+        "browser-verified"
+      ]
     },
     {
       "id": "asset.companion.context.story",
-      "name": "Toadal — thinking seated pose (context candidate)",
+      "name": "Toadal — thinking seated pose",
       "kind": "image",
       "category": "character",
       "source": "reference/assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
@@ -426,9 +485,609 @@
       "referenceSource": "reference/assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
       "authoritySource": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip#01_PRODUCTION_READY_FULL_SIZE/17_Wellbeing_Time_Sleep/TOADAL_THINKING_SEATED_ROCK_NATURE_v01.png",
       "authoritySha256": "700cde7cd4b28c1704430ef0e387cb4cdd5f8388b977527a13c8f939786285e1",
-      "renderTargets": ["companion-story-context"],
+      "renderTargets": [
+        "companion-story-context"
+      ],
       "replaceable": false,
-      "tags": ["companion", "context-candidate", "owner-pack-v2", "per-file-approval-unconfirmed", "runtime-binding-pending"]
+      "tags": [
+        "companion",
+        "owner-pack-v2",
+        "master-v2-production-ready",
+        "runtime-bound",
+        "browser-verified"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.settings",
+      "name": "Toadal companion — settings",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/settings.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1393918,
+      "sha256": "5767d9a62f637c85fcdf245b88116a2f814ad9f058e9484d18cf76bdee76ca6e",
+      "referenceSha256": "5767d9a62f637c85fcdf245b88116a2f814ad9f058e9484d18cf76bdee76ca6e",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/settings.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/11_Settings_Notifications_Sound/TOADAL_SETTINGS_GEAR_CONTROLS_v03.png",
+      "authoritySha256": "5767d9a62f637c85fcdf245b88116a2f814ad9f058e9484d18cf76bdee76ca6e",
+      "renderTargets": [
+        "companion-settings-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-settings",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.search",
+      "name": "Toadal companion — search",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/search.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1335024,
+      "sha256": "d3703099c0b79764716138793caea2f41b7fb9cf24e2ceece74be4fcb4eb78ea",
+      "referenceSha256": "d3703099c0b79764716138793caea2f41b7fb9cf24e2ceece74be4fcb4eb78ea",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/search.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/12_Search_Download/TOADAL_SEARCH_DISCOVERY_MAGNIFIER_OPEN_EYES_v02.png",
+      "authoritySha256": "d3703099c0b79764716138793caea2f41b7fb9cf24e2ceece74be4fcb4eb78ea",
+      "renderTargets": [
+        "companion-search-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-search",
+        "runtime-bound",
+        "browser-verified"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.contact",
+      "name": "Toadal companion — contact",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/contact.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1313872,
+      "sha256": "b30e8c7244ea15da91637330a0465f47186d1aad9afdf4b8bea7591cdb7916d9",
+      "referenceSha256": "b30e8c7244ea15da91637330a0465f47186d1aad9afdf4b8bea7591cdb7916d9",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/contact.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/02_Contact_Mail/TOADAL_CONTACT_MAIL_CARRIER_v01.png",
+      "authoritySha256": "b30e8c7244ea15da91637330a0465f47186d1aad9afdf4b8bea7591cdb7916d9",
+      "renderTargets": [
+        "companion-contact-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-contact",
+        "runtime-bound",
+        "browser-verified"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.news",
+      "name": "Toadal companion — news",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/news.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1527629,
+      "sha256": "0cacffdc6f76e7b0cdd510b37f67c2ac3f72d7ef8ef385c55a43ef3058ce7f69",
+      "referenceSha256": "0cacffdc6f76e7b0cdd510b37f67c2ac3f72d7ef8ef385c55a43ef3058ce7f69",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/news.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/07_Blog_News_Devlog/TOADAL_BLOG_DEVLOG_DESK_WRITING_v01.png",
+      "authoritySha256": "0cacffdc6f76e7b0cdd510b37f67c2ac3f72d7ef8ef385c55a43ef3058ce7f69",
+      "renderTargets": [
+        "companion-news-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-news",
+        "runtime-bound",
+        "browser-verified"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.maintenance",
+      "name": "Toadal companion — maintenance",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/maintenance.png",
+      "extension": "png",
+      "width": 1312,
+      "height": 1199,
+      "bytes": 1663323,
+      "sha256": "1f924f45a5d48c6a5645fe542f216efb710599d8d41441ed38adba3f5b0a12a5",
+      "referenceSha256": "1f924f45a5d48c6a5645fe542f216efb710599d8d41441ed38adba3f5b0a12a5",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/maintenance.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/18_Maintenance_Construction/TOADAL_MAINTENANCE_UNDER_CONSTRUCTION_WORKER_v01.png",
+      "authoritySha256": "1f924f45a5d48c6a5645fe542f216efb710599d8d41441ed38adba3f5b0a12a5",
+      "renderTargets": [
+        "companion-maintenance-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-maintenance",
+        "runtime-bound",
+        "browser-verified",
+        "maintenance-only",
+        "not-generic-unavailable"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.privacy",
+      "name": "Toadal companion — privacy",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/privacy.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1338522,
+      "sha256": "d7bcec0ee917ee65b8791e4181acd3542701190fdb6cd56abdd7ceb5d0c79593",
+      "referenceSha256": "d7bcec0ee917ee65b8791e4181acd3542701190fdb6cd56abdd7ceb5d0c79593",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/privacy.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/03_Security_Privacy/TOADAL_PRIVACY_SECURITY_SHIELD_OPEN_EYES_v01.png",
+      "authoritySha256": "d7bcec0ee917ee65b8791e4181acd3542701190fdb6cd56abdd7ceb5d0c79593",
+      "renderTargets": [
+        "companion-privacy-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-privacy",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.account",
+      "name": "Toadal companion — account",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/account.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1271387,
+      "sha256": "99a93fb2d13b57509d3fab660086c8933a962dc3b5f62f249f482b4ddda755b9",
+      "referenceSha256": "99a93fb2d13b57509d3fab660086c8933a962dc3b5f62f249f482b4ddda755b9",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/account.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/09_Account_Login_Register/TOADAL_ACCOUNT_REGISTER_PROFILE_FORM_v03.png",
+      "authoritySha256": "99a93fb2d13b57509d3fab660086c8933a962dc3b5f62f249f482b4ddda755b9",
+      "renderTargets": [
+        "companion-account-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-account",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.notifications",
+      "name": "Toadal companion — notifications",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/notifications.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1299116,
+      "sha256": "e6355637e8b76104d46e653f2fd9fd180e1eef8d59a3d4f565d8961bcc5eb3a5",
+      "referenceSha256": "e6355637e8b76104d46e653f2fd9fd180e1eef8d59a3d4f565d8961bcc5eb3a5",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/notifications.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/11_Settings_Notifications_Sound/TOADAL_NOTIFICATIONS_BELL_POINTING_OPEN_EYES_v02.png",
+      "authoritySha256": "e6355637e8b76104d46e653f2fd9fd180e1eef8d59a3d4f565d8961bcc5eb3a5",
+      "renderTargets": [
+        "companion-notifications-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-notifications",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.mute",
+      "name": "Toadal companion — mute",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/mute.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1229040,
+      "sha256": "e61350e427a79c25b116be9d2f8ea4e72abb61b73e731838a029e8eff2ce39bb",
+      "referenceSha256": "e61350e427a79c25b116be9d2f8ea4e72abb61b73e731838a029e8eff2ce39bb",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/mute.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/11_Settings_Notifications_Sound/TOADAL_MUTE_SHUSH_BELL_OPEN_EYES_v02.png",
+      "authoritySha256": "e61350e427a79c25b116be9d2f8ea4e72abb61b73e731838a029e8eff2ce39bb",
+      "renderTargets": [
+        "companion-mute-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-mute",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.register",
+      "name": "Toadal companion — register",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/register.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1321069,
+      "sha256": "fff416affed012e3f7c894d1ebce76b98aab6fa93800575d1a4ac563d4c993c0",
+      "referenceSha256": "fff416affed012e3f7c894d1ebce76b98aab6fa93800575d1a4ac563d4c993c0",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/register.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/09_Account_Login_Register/TOADAL_REGISTER_SIGNUP_FORM_OPEN_EYES_v02.png",
+      "authoritySha256": "fff416affed012e3f7c894d1ebce76b98aab6fa93800575d1a4ac563d4c993c0",
+      "renderTargets": [
+        "companion-register-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-register",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.delete-account",
+      "name": "Toadal companion — delete account",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/delete-account.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1300325,
+      "sha256": "59f8d89f8e60842e90c15aa3d6b99aa988e1e6d47dd2844514a9a94b01ace0d1",
+      "referenceSha256": "59f8d89f8e60842e90c15aa3d6b99aa988e1e6d47dd2844514a9a94b01ace0d1",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/delete-account.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/09_Account_Login_Register/TOADAL_DELETE_ACCOUNT_THOUGHTFUL_TRASH_v01.png",
+      "authoritySha256": "59f8d89f8e60842e90c15aa3d6b99aa988e1e6d47dd2844514a9a94b01ace0d1",
+      "renderTargets": [
+        "companion-delete-account-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-delete-account",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.rating",
+      "name": "Toadal companion — rating",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/rating.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1333728,
+      "sha256": "bfdb6945ccdc49a626b7a761133232dce6e5441055b168479a0abfc0fe03c05b",
+      "referenceSha256": "bfdb6945ccdc49a626b7a761133232dce6e5441055b168479a0abfc0fe03c05b",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/rating.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/13_Feedback_Survey_Ratings/TOADAL_RATING_FIVE_STARS_OPEN_EYES_v03.png",
+      "authoritySha256": "bfdb6945ccdc49a626b7a761133232dce6e5441055b168479a0abfc0fe03c05b",
+      "renderTargets": [
+        "companion-rating-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-rating",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.survey",
+      "name": "Toadal companion — survey",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/survey.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1300901,
+      "sha256": "2008b88c660523fba8e98bb2bc2d4565e16b3fe7468160e39272f14e29002cd1",
+      "referenceSha256": "2008b88c660523fba8e98bb2bc2d4565e16b3fe7468160e39272f14e29002cd1",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/survey.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/13_Feedback_Survey_Ratings/TOADAL_SURVEY_CHECKLIST_OPEN_EYES_v02.png",
+      "authoritySha256": "2008b88c660523fba8e98bb2bc2d4565e16b3fe7468160e39272f14e29002cd1",
+      "renderTargets": [
+        "companion-survey-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-survey",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.thumbs-up",
+      "name": "Toadal companion — thumbs up",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/thumbs-up.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1071895,
+      "sha256": "97bc30ade575e056e0f7a2bced153267d2ba27c2e4eefde4526965169f9e653f",
+      "referenceSha256": "97bc30ade575e056e0f7a2bced153267d2ba27c2e4eefde4526965169f9e653f",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/thumbs-up.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/14_Thumbs_Up_Down/TOADAL_THUMBS_UP_OPEN_EYES_v04.png",
+      "authoritySha256": "97bc30ade575e056e0f7a2bced153267d2ba27c2e4eefde4526965169f9e653f",
+      "renderTargets": [
+        "companion-thumbs-up-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-thumbs-up",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.thumbs-down",
+      "name": "Toadal companion — thumbs down",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/thumbs-down.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1184647,
+      "sha256": "9b8bfdf14fce1c96ff469fb9ab23942e385caf3a62ca79d07de50a175b89725a",
+      "referenceSha256": "9b8bfdf14fce1c96ff469fb9ab23942e385caf3a62ca79d07de50a175b89725a",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/thumbs-down.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/14_Thumbs_Up_Down/TOADAL_THUMBS_DOWN_OPEN_EYES_v04.png",
+      "authoritySha256": "9b8bfdf14fce1c96ff469fb9ab23942e385caf3a62ca79d07de50a175b89725a",
+      "renderTargets": [
+        "companion-thumbs-down-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-thumbs-down",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.ai-disclosure",
+      "name": "Toadal companion — ai disclosure",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1577938,
+      "sha256": "c551977d1b662033b338e8adcf1e36a1dc3fef674c9518a5082816b66b70870b",
+      "referenceSha256": "c551977d1b662033b338e8adcf1e36a1dc3fef674c9518a5082816b66b70870b",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/10_AI_Disclosure/TOADAL_AI_DISCLOSURE_ROBOT_HANDSHAKE_OPEN_EYES_v02.png",
+      "authoritySha256": "c551977d1b662033b338e8adcf1e36a1dc3fef674c9518a5082816b66b70870b",
+      "renderTargets": [
+        "companion-ai-disclosure-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-ai-disclosure",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.partnership",
+      "name": "Toadal companion — partnership",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/partnership.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1273040,
+      "sha256": "7a9fd47e5ae440eadfdc787960682e8f804a2db5fb8280cff5a32b018a64ec7a",
+      "referenceSha256": "7a9fd47e5ae440eadfdc787960682e8f804a2db5fb8280cff5a32b018a64ec7a",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/partnership.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/08_Business_Licensing_Partnership/TOADAL_PARTNERSHIP_CONTRACT_HANDSHAKE_OPEN_EYES_v02.png",
+      "authoritySha256": "7a9fd47e5ae440eadfdc787960682e8f804a2db5fb8280cff5a32b018a64ec7a",
+      "renderTargets": [
+        "companion-partnership-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-partnership",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.community",
+      "name": "Toadal companion — community",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/community.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1480074,
+      "sha256": "f0704505918f7abcb2a333e0652fa4d807e9a3d9ab595e4ad9567d1ee613855e",
+      "referenceSha256": "f0704505918f7abcb2a333e0652fa4d807e9a3d9ab595e4ad9567d1ee613855e",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/community.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/04_Community_Social/TOADAL_COMMUNITY_SOCIAL_OPEN_ARMS_ICONS_v01.png",
+      "authoritySha256": "f0704505918f7abcb2a333e0652fa4d807e9a3d9ab595e4ad9567d1ee613855e",
+      "renderTargets": [
+        "companion-community-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-community",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.merch",
+      "name": "Toadal companion — merch",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/merch.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1457991,
+      "sha256": "fe6cdc82d6994a34f2b8da924ba6d87427c85169c66dd566ead7272ad1385e11",
+      "referenceSha256": "fe6cdc82d6994a34f2b8da924ba6d87427c85169c66dd566ead7272ad1385e11",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/merch.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/15_Rewards_Merch_Leaderboard/TOADAL_MERCH_TSHIRT_CAP_MUG_BAG_OPEN_EYES_v01.png",
+      "authoritySha256": "fe6cdc82d6994a34f2b8da924ba6d87427c85169c66dd566ead7272ad1385e11",
+      "renderTargets": [
+        "companion-merch-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-merch",
+        "semantic-ready",
+        "truth-gated"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.reward",
+      "name": "Toadal companion — reward",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/reward.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1733730,
+      "sha256": "40e38a8ca57ac9c6638a994dadfc40c89b985a1edf1df49d1ca0400434f7ae12",
+      "referenceSha256": "40e38a8ca57ac9c6638a994dadfc40c89b985a1edf1df49d1ca0400434f7ae12",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/reward.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/15_Rewards_Merch_Leaderboard/TOADAL_REWARDS_TREASURE_CHEST_OPEN_EYES_v02.png",
+      "authoritySha256": "40e38a8ca57ac9c6638a994dadfc40c89b985a1edf1df49d1ca0400434f7ae12",
+      "renderTargets": [
+        "companion-reward-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-reward",
+        "semantic-ready",
+        "truth-gated",
+        "earned-reward-only",
+        "not-feast-pass-default"
+      ]
+    },
+    {
+      "id": "asset.companion.master-v2.download",
+      "name": "Toadal companion — download",
+      "kind": "image",
+      "category": "character",
+      "source": "reference/assets/images/characters/companion/master-v2-selected/download.png",
+      "extension": "png",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 1209823,
+      "sha256": "4b7d7cc04dea4daed39f98dbb0ea0396b5e24ae6f002183efab807eb476fe048",
+      "referenceSha256": "4b7d7cc04dea4daed39f98dbb0ea0396b5e24ae6f002183efab807eb476fe048",
+      "referenceSource": "reference/assets/images/characters/companion/master-v2-selected/download.png",
+      "authoritySource": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip#01_PRODUCTION_READY_FULL_SIZE/12_Search_Download/TOADAL_DOWNLOAD_FOLDER_OPEN_EYES_v02.png",
+      "authoritySha256": "4b7d7cc04dea4daed39f98dbb0ea0396b5e24ae6f002183efab807eb476fe048",
+      "renderTargets": [
+        "companion-download-context"
+      ],
+      "replaceable": false,
+      "tags": [
+        "companion",
+        "master-v2-production-ready",
+        "owner-classified",
+        "state-download",
+        "semantic-ready",
+        "truth-gated"
+      ]
     }
   ]
 }

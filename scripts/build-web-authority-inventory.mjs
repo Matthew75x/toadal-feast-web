@@ -75,8 +75,18 @@ for (const asset of companion.assets) {
   if (!asset.contexts?.length || !asset.sourceEntry || !asset.approvalState) throw new Error('Incomplete companion authority: ' + asset.path);
 }
 
+const companionV2 = json('manifests/companion-runtime-v2.json');
+for (const asset of companionV2.assets) {
+  const sourceBytes = read(asset.projectSourcePath);
+  if (sha(sourceBytes) !== asset.sourceSha256) throw new Error('Master V2 source mismatch: ' + asset.projectSourcePath);
+  const runtimePath = projectRoot + 'reference/' + asset.runtimePath;
+  if (sha(read(runtimePath)) !== asset.runtimeSha256) throw new Error('Master V2 runtime derivative mismatch: ' + runtimePath);
+  if (!catalog.assets.some(item => projectRoot + item.source === asset.projectSourcePath)) throw new Error('Unregistered Master V2 companion source: ' + asset.projectSourcePath);
+  if (!asset.state || !asset.sourceEntry || !asset.runtimePath) throw new Error('Incomplete Master V2 companion authority: ' + asset.projectSourcePath);
+}
+
 const inventory = {
-  schema: 'toadal-feast.web-authority-inventory.v1', date: '2026-10-01',
+  schema: 'toadal-feast.web-authority-inventory.v2', date: '2026-10-01',
   repository: 'Matthew75x/toadal-feast-web', verifiedStagingSha: sources.verifiedStagingSha,
   authorityOrder: ['OWNER-APPROVED PRODUCT/CREATIVE REQUIREMENTS', 'AUTHORITY MANIFESTS / APPROVED ASSETS / MOCKUPS', 'IMPLEMENTATION WORK ORDERS', 'STAGING IMPLEMENTATION'],
   hashPolicy: 'Binary and preserved original sources use exact bytes; other text uses UTF-8 with LF so Windows checkout conversion does not change the ledger.',
@@ -84,6 +94,9 @@ const inventory = {
   sourceManifest: 'manifests/web-authority-sources.json', sourceManifestSha256: shaTextLF('manifests/web-authority-sources.json'),
   companionManifest: 'manifests/companion-runtime-assets.json',
   companionManifestSha256: shaTextLF('manifests/companion-runtime-assets.json'),
+  companionV2Manifest: 'manifests/companion-runtime-v2.json',
+  companionV2ManifestSha256: shaTextLF('manifests/companion-runtime-v2.json'),
+  companionAssetSummary: { liveV1Sources: companion.assets.length, masterV2SelectedSources: companionV2.assets.length, totalSelectedSources: companion.assets.length + companionV2.assets.length },
   localWorkManifest: 'manifests/local-work-preservation.json', localWorkManifestSha256: shaTextLF('manifests/local-work-preservation.json'),
   files: entries
 };
@@ -92,8 +105,8 @@ const target = 'manifests/web-authority-inventory.json';
 if (verify) {
   const old = read(target).toString('utf8').replace(/\r\n/g, '\n');
   if (old !== output) throw new Error('Authority inventory stale; run this script without --verify after reviewing the source changes.');
-  console.log(`PASS: ${entries.length} preserved files, ${companion.assets.length} companion assets; provenance, catalog references and inventory agree.`);
+  console.log(`PASS: ${entries.length} preserved files, ${companion.assets.length} live-v1 + ${companionV2.assets.length} Master-V2 companion sources; provenance, catalog references and inventory agree.`);
 } else {
   writeFileSync(resolve(root, target), output);
-  console.log(`Recorded ${entries.length} files and ${companion.assets.length} companion assets.`);
+  console.log(`Recorded ${entries.length} files, ${companion.assets.length} live-v1 + ${companionV2.assets.length} Master-V2 companion sources.`);
 }

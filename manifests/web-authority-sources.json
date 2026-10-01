@@ -1,64 +1,418 @@
 {
-  "schema": "toadal-feast.web-authority-sources.v1",
+  "schema": "toadal-feast.web-authority-sources.v2",
   "date": "2026-10-01",
   "repository": "Matthew75x/toadal-feast-web",
-  "verifiedStagingSha": "7c17e28135688ace9139918f077a44e3d03d9765",
+  "verifiedStagingSha": "270940dee30b7aafb70af941c520c6d4d223e288",
   "packages": [
-    { "filename": "TOADAL_WEBSITE_CODEX_HANDOFF_LEAN_2026-09-29.zip", "bytes": 203584063, "sha256": "a428aa2400e2de7deedd037a5ee36758f6d41fa9539f7995cf7974d6f19e468d", "scope": "Product contract, approved Batch 1 direction, and selected-source handoff; original ZIP exceeds GitHub 100 MiB per-file limit." },
-    { "filename": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS.zip", "bytes": 122196700, "sha256": "d5ba818c9328d31327ce557af68a5b40729e65a54ad649bd5e61a5bc48d3af8f", "scope": "Mockup references/contact sheets; original ZIP exceeds GitHub 100 MiB per-file limit; do not treat all pages as approved." },
-    { "filename": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1.zip", "bytes": 157708471, "sha256": "0361a993c9ec2f905adba1b9df66a1c16e7a3a66ad26232351914201ce38681a", "scope": "Historical mascot donor documents; pointer-follow proposal conflicts with current no-cursor-follow guardrail; original ZIP exceeds GitHub 100 MiB per-file limit." },
-    { "filename": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip", "bytes": 99780639, "sha256": "06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a", "scope": "Owner-described production-ready-only pack, 71 images; only four hashes-selected context candidates extracted; archive has no per-file approval manifest/readme/license provenance." },
-    { "filename": "toadal-games-interactive-site-plan.md", "bytes": 42369, "sha256": "3eb738fe0ef1932f2d7a50fd52c8c09bbb9de5c9cf81b5294de6ab6fac676dd1", "scope": "Exploratory historical site plan; retained for provenance, not current implementation authority." },
-    { "filename": "toadal-games-interactive-site-plan_v2.md", "bytes": 71002, "sha256": "03ea0f29cefd92a2da178ee320e067ce1c2749dcd94cb5e8bc64552d22e4c18c", "scope": "Exploratory historical site plan; retained for provenance, not current implementation authority." },
-    { "filename": "toadal-games-interactive-site-plan(1).md", "bytes": 67560, "sha256": "e9979579c14cde4a8237c0fe6e44554c4b4b31adca4487dcfc407059e60a5f22", "scope": "Distinct alternate exploratory plan; retained for provenance, not current implementation authority." }
+    {
+      "filename": "TOADAL_WEBSITE_CODEX_HANDOFF_LEAN_2026-09-29.zip",
+      "bytes": 203584063,
+      "sha256": "a428aa2400e2de7deedd037a5ee36758f6d41fa9539f7995cf7974d6f19e468d",
+      "scope": "Product contract, approved Batch 1 direction, and selected-source handoff; original ZIP exceeds GitHub 100 MiB per-file limit."
+    },
+    {
+      "filename": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS.zip",
+      "bytes": 122196700,
+      "sha256": "d5ba818c9328d31327ce557af68a5b40729e65a54ad649bd5e61a5bc48d3af8f",
+      "scope": "Mockup references/contact sheets; original ZIP exceeds GitHub 100 MiB per-file limit; do not treat all pages as approved."
+    },
+    {
+      "filename": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1.zip",
+      "bytes": 157708471,
+      "sha256": "0361a993c9ec2f905adba1b9df66a1c16e7a3a66ad26232351914201ce38681a",
+      "scope": "Interactive mascot semantic/state donor: 35 states. Current authority accepts semantic state intent while rejecting cursor-follow behavior; original ZIP exceeds GitHub 100 MiB per-file limit."
+    },
+    {
+      "filename": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip",
+      "bytes": 99780639,
+      "sha256": "06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a",
+      "scope": "Curated 71-image production-ready subset. Master V2 independently classifies the matched selected sources as production-ready; 25 exact selected source images are now preserved across the existing v1 and Master V2 selected source folders."
+    },
+    {
+      "filename": "toadal-games-interactive-site-plan.md",
+      "bytes": 42369,
+      "sha256": "3eb738fe0ef1932f2d7a50fd52c8c09bbb9de5c9cf81b5294de6ab6fac676dd1",
+      "scope": "Exploratory historical site plan; retained for provenance, not current implementation authority."
+    },
+    {
+      "filename": "toadal-games-interactive-site-plan_v2.md",
+      "bytes": 71002,
+      "sha256": "03ea0f29cefd92a2da178ee320e067ce1c2749dcd94cb5e8bc64552d22e4c18c",
+      "scope": "Exploratory historical site plan; retained for provenance, not current implementation authority."
+    },
+    {
+      "filename": "toadal-games-interactive-site-plan(1).md",
+      "bytes": 67560,
+      "sha256": "e9979579c14cde4a8237c0fe6e44554c4b4b31adca4487dcfc407059e60a5f22",
+      "scope": "Distinct alternate exploratory plan; retained for provenance, not current implementation authority."
+    },
+    {
+      "filename": "TOADAL_ASSET_LIBRARY_MASTER_V2_COMPLETE.zip",
+      "bytes": 212344954,
+      "sha256": "a38cdfaa57a801e198fff716029b8cd71e8a0096695d4989edffe078177ec8ea",
+      "scope": "Owner re-supplied Master V2: 161 archive files / 131 image records, including 71 production-ready full-size images, with references, alternates and needs-regeneration material explicitly separated. Original ZIP exceeds GitHub 100 MiB per-file limit."
+    },
+    {
+      "filename": "FroggyFeast_Food_Assets_Labeled.zip",
+      "bytes": 82539537,
+      "sha256": "7581092a3d8ead33f9f658fb25887725b93169dddc082b6416da714da5abac7d",
+      "scope": "Separate labeled food-art source library for future food interactions. It does not by itself qualify a final Toadal food-tracking/eating pose."
+    }
   ],
   "exclusions": [
-    { "filename": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1(1).zip", "bytes": 157708471, "sha256": "0361a993c9ec2f905adba1b9df66a1c16e7a3a66ad26232351914201ce38681a", "reason": "Byte-identical duplicate of TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1.zip." },
-    { "filename": "toadal-games-interactive-site-plan(2).md", "bytes": 67560, "sha256": "e9979579c14cde4a8237c0fe6e44554c4b4b31adca4487dcfc407059e60a5f22", "reason": "Byte-identical duplicate of the preserved alternate site plan." },
-    { "filename": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/00_APPROVED_HOME_VISUAL_AUTHORITY.png", "bytes": 2722535, "sha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608", "reason": "Byte-identical to docs/review/WO-002/evidence/approved-home-visual-authority.png; already preserved." },
-    { "filename": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/01_HOME.png", "bytes": 2794334, "sha256": "747ec321b5a4aa153e4b674ba119cda22b43438b0f4af450b7a54082e50377ac", "reason": "Byte-identical to docs/review/WO-002/evidence/approved-home-direction-batch1.png; already preserved." },
-    { "filename": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/desktop/01-home.png", "bytes": 2794334, "sha256": "747ec321b5a4aa153e4b674ba119cda22b43438b0f4af450b7a54082e50377ac", "reason": "Byte-identical to the already-preserved approved Home direction reference at docs/review/WO-002/evidence/approved-home-direction-batch1.png; do not duplicate." },
-    { "filename": "toadal-feast-web-wo003-20260930-closure.bundle", "bytes": 119247201, "sha256": "2ec00711af4dd58b4f678db0ff06bd98720c4c6a38f56266b261c0abe527d065", "reason": "Exceeds GitHub 100 MiB per-file limit; remains local and is not required to preserve the named WO-003 branch/source/evidence." },
-    { "filename": "TOADAL_V6_Implementation_Spec.md", "bytes": 19247, "sha256": "77c27856456715170815b6e13e7c2bd3ac6a5171a728020446184e3f58624f5b", "reason": "Unrelated TOADAL lettering V5-to-V6 specification, outside website authority." },
-    { "filename": "Owner prompt attachments", "sha256": "8d422a3a4c89bba358700dc2fc53ad9b340adff1fd1376c18adc5c55da78093a", "reason": "Do not copy private prompt attachment files into the public repository; current authority and decisions are distilled into the checked-in records." },
-    { "filename": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip (full archive)", "sha256": "06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a", "reason": "The full 71-image archive is intentionally not duplicated in Git; only four selected candidate images and their exact source entry hashes are included." }
+    {
+      "filename": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1(1).zip",
+      "bytes": 157708471,
+      "sha256": "0361a993c9ec2f905adba1b9df66a1c16e7a3a66ad26232351914201ce38681a",
+      "reason": "Byte-identical duplicate of TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1.zip."
+    },
+    {
+      "filename": "toadal-games-interactive-site-plan(2).md",
+      "bytes": 67560,
+      "sha256": "e9979579c14cde4a8237c0fe6e44554c4b4b31adca4487dcfc407059e60a5f22",
+      "reason": "Byte-identical duplicate of the preserved alternate site plan."
+    },
+    {
+      "filename": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/00_APPROVED_HOME_VISUAL_AUTHORITY.png",
+      "bytes": 2722535,
+      "sha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608",
+      "reason": "Byte-identical to docs/review/WO-002/evidence/approved-home-visual-authority.png; already preserved."
+    },
+    {
+      "filename": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/01_HOME.png",
+      "bytes": 2794334,
+      "sha256": "747ec321b5a4aa153e4b674ba119cda22b43438b0f4af450b7a54082e50377ac",
+      "reason": "Byte-identical to docs/review/WO-002/evidence/approved-home-direction-batch1.png; already preserved."
+    },
+    {
+      "filename": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/desktop/01-home.png",
+      "bytes": 2794334,
+      "sha256": "747ec321b5a4aa153e4b674ba119cda22b43438b0f4af450b7a54082e50377ac",
+      "reason": "Byte-identical to the already-preserved approved Home direction reference at docs/review/WO-002/evidence/approved-home-direction-batch1.png; do not duplicate."
+    },
+    {
+      "filename": "toadal-feast-web-wo003-20260930-closure.bundle",
+      "bytes": 119247201,
+      "sha256": "2ec00711af4dd58b4f678db0ff06bd98720c4c6a38f56266b261c0abe527d065",
+      "reason": "Exceeds GitHub 100 MiB per-file limit; remains local and is not required to preserve the named WO-003 branch/source/evidence."
+    },
+    {
+      "filename": "TOADAL_V6_Implementation_Spec.md",
+      "bytes": 19247,
+      "sha256": "77c27856456715170815b6e13e7c2bd3ac6a5171a728020446184e3f58624f5b",
+      "reason": "Unrelated TOADAL lettering V5-to-V6 specification, outside website authority."
+    },
+    {
+      "filename": "Owner prompt attachments",
+      "sha256": "8d422a3a4c89bba358700dc2fc53ad9b340adff1fd1376c18adc5c55da78093a",
+      "reason": "Do not copy private prompt attachment files into the public repository; current authority and decisions are distilled into the checked-in records."
+    },
+    {
+      "filename": "TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip (full archive)",
+      "sha256": "06275f4803c8c63e141c34dbcf252bb9c9ab0c35edae460c7c940fd2f687a76a",
+      "reason": "The 99.8 MB curated archive is not committed as one blob. Twenty-five exact selected full-resolution sources are preserved individually across the v1 production-pack source folder and Master V2 selected source folder, with hashes and archive-entry provenance."
+    }
   ],
   "documents": [
-    { "path": "docs/authority/sources/product/README_START_HERE.md", "sha256": "234563e0133c933053ee158e99e7d33dec8e8103ad5deefd6a57b3f2bfd93dfd", "hashEncoding": "exact-bytes", "status": "source", "approvalState": "owner-product-source", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/00_START_HERE/README_START_HERE.md" },
-    { "path": "docs/authority/sources/product/LOCKED_PRODUCT_DECISIONS.md", "sha256": "b49540de6d7137538c07709354bfd71bf4dc49299e3912c590dc934c0092a3c1", "hashEncoding": "exact-bytes", "status": "source", "approvalState": "owner-product-source", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/LOCKED_PRODUCT_DECISIONS.md" },
-    { "path": "docs/authority/sources/product/SITEMAP_30_PAGES.md", "sha256": "941ef5b199b26cefedddd6bc3316a7ffb180cd05d4c93376bceb148ed96ad9d2", "hashEncoding": "exact-bytes", "status": "source", "approvalState": "owner-product-source", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/SITEMAP_30_PAGES.md" },
-    { "path": "docs/authority/sources/product/VISUAL_SYSTEM_AND_CONTENT_RULES.md", "sha256": "0ecc43e54dfd6941eb21ebfdd4783b12b09435f1072bcc1469e454d19282a417", "hashEncoding": "exact-bytes", "status": "source", "approvalState": "owner-product-source", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/VISUAL_SYSTEM_AND_CONTENT_RULES.md" },
-    { "path": "docs/authority/sources/product/FEATURE_SALVAGE_RULES.md", "sha256": "27e1b610571e0b27bdca249db2c14c335121d78775833238fa3724c29c10604e", "hashEncoding": "exact-bytes", "status": "source", "approvalState": "owner-product-source", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/FEATURE_SALVAGE_RULES.md" },
-    { "path": "docs/authority/sources/mockups/README.md", "sha256": "160879b1a2f069167d63f2753bf1b5ea6b1259385fa1a37fbe441a9e720c7510", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/README.md" },
-    { "path": "docs/authority/sources/mockups/PAGE_MANIFEST.md", "sha256": "75b1afe3c26bcb76eb709d5ad5414ecee205977848c8c6b94e92b480117341a9", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/PAGE_MANIFEST.md" },
-    { "path": "docs/authority/sources/mockups/DESIGN_SYSTEM.md", "sha256": "ea13f09a3dab9c11afae92ba552287d59d2f152bd8cda77058b292ddd9c860e4", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/DESIGN_SYSTEM.md" },
-    { "path": "docs/authority/sources/mockups/MOTION_NOTES.md", "sha256": "81446ca6568e19c1f57bd069e8facbb309107e78ec3e33c3c249dd87f2e96f71", "bytes": 652, "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/MOTION_NOTES.md" },
-    { "path": "docs/authority/sources/mockups/TOADAL_REACTION_STATE_MAP.md", "sha256": "46f389a32fb798c045a2ebcca47c934d01564816529d4690fed9e82d186dfdbc", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/TOADAL_REACTION_STATE_MAP.md" },
-    { "path": "docs/authority/sources/mockups/ASSET_MAP.md", "sha256": "c7479e25738e410d6789e17630c3ef3ae2d4c9f6b441f40224dddf5e5bd9448b", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/ASSET_MAP.md" },
-    { "path": "docs/authority/sources/mockups/QA_REPORT.md", "sha256": "82fa8a491283ec0c4c04544d18c65f30136b2ff0f8dede20e836d999b42468a6", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/QA_REPORT.md" },
-    { "path": "docs/authority/sources/mockups/IMPLEMENTATION_NOTES.md", "sha256": "bac668d9808944bb7194443785f93d8f780cb190ee8cf7a9e69d2c616911663b", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/IMPLEMENTATION_NOTES.md" },
-    { "path": "docs/authority/sources/mockups/FEATURE_SALVAGE_LEDGER.md", "sha256": "1d48c3d60818019a24c38fc28af5711ce61a8483bfbac2f3a0f774dfbed6ef80", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/FEATURE_SALVAGE_LEDGER.md" },
-    { "path": "docs/authority/sources/mockups/MOBILE_PLAN.md", "sha256": "960bd6d51546ef7dd7fdcba0f9cb61d16287b958836847fc0942147c8bb3561a", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/MOBILE_PLAN.md" },
-    { "path": "docs/authority/sources/mockups/OUTPUT_MANIFEST_SHA256.json", "sha256": "d75c20c51d309af4130311299ff689210eb69d80183b69005d9fa88b68f25b73", "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mockup-package-metadata", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/OUTPUT_MANIFEST_SHA256.json" },
-    { "path": "docs/authority/sources/companion/TOADAL_WEBSITE_INTERACTIVE_MASCOT_MASTER_PLAN.md", "sha256": "9b017c7472be2bb2cdda183a458a0380bcd96f18ba69a91115ec81d11cb2833a", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "superseded-donor-reference", "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/TOADAL_WEBSITE_INTERACTIVE_MASCOT_MASTER_PLAN.md" },
-    { "path": "docs/authority/sources/companion/TOADAL_INTERACTION_ASSET_MAP.json", "sha256": "24441deb45642250e0200d6b30ed43ef12426bf112683a347f8f1a0ae759b9cb", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "superseded-donor-reference", "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/TOADAL_INTERACTION_ASSET_MAP.json" },
-    { "path": "docs/authority/sources/companion/INTERACTION_STATE_MAP.csv", "sha256": "ab38988fdca3e31ccd7cd54a74455eda54881a1dd363b7e290468148e048221f", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "superseded-donor-reference", "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/INTERACTION_STATE_MAP.csv" },
-    { "path": "docs/authority/sources/companion/EXPRESSION_AUDIT.csv", "sha256": "f95dd4132831c9e8a1ed1685fbb5e62ac3180f1792c585a1165000ec7f4fee0a", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "superseded-donor-reference", "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/EXPRESSION_AUDIT.csv" },
-    { "path": "docs/authority/sources/companion/ASSET_REGISTRY.csv", "sha256": "602ab45193b2953fc43a7ea95c69d1e427fdd9c42bbed0a9ba54758374b3e624", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "superseded-donor-reference", "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/ASSET_REGISTRY.csv" },
-    { "path": "docs/authority/sources/companion/TOADAL_10_INDIVIDUAL_WEB_ASSETS_manifest.json", "sha256": "ac8a1e0e5fc9325775305120c9adcac9b841a795a9067f43bc420df1a498dd3f", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "superseded-donor-reference", "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/manifest.json" },
-    { "path": "docs/authority/sources/history/toadal-games-interactive-site-plan.md", "sha256": "3eb738fe0ef1932f2d7a50fd52c8c09bbb9de5c9cf81b5294de6ab6fac676dd1", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "exploratory-historical-plan", "sourceEntry": "toadal-games-interactive-site-plan.md" },
-    { "path": "docs/authority/sources/history/toadal-games-interactive-site-plan_v2.md", "sha256": "03ea0f29cefd92a2da178ee320e067ce1c2749dcd94cb5e8bc64552d22e4c18c", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "exploratory-historical-plan", "sourceEntry": "toadal-games-interactive-site-plan_v2.md" },
-    { "path": "docs/authority/sources/history/toadal-games-interactive-site-plan-alternate.md", "sha256": "e9979579c14cde4a8237c0fe6e44554c4b4b31adca4487dcfc407059e60a5f22", "hashEncoding": "exact-bytes", "status": "historical-reference", "approvalState": "exploratory-historical-plan", "sourceEntry": "toadal-games-interactive-site-plan(1).md" },
-    { "path": "assets/reference/mockups/batch-1/02_PLAY_GAMES_HUB.png", "sha256": "4e6e64f91d3f6fae42432eff0ed978c3bcc26cbdd586a6175aa10e2488d11c09", "bytes": 2596858, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/02_PLAY_GAMES_HUB.png" },
-    { "path": "assets/reference/mockups/batch-1/03_WICKED_BITES_DETAIL.png", "sha256": "795b5acd11b8957adc946cdd0f3b31d59fcf51eeb85df8b341b30241eda2c76c", "bytes": 2741313, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/03_WICKED_BITES_DETAIL.png" },
-    { "path": "assets/reference/mockups/batch-1/04_BROWSER_GAME_PLAYER.png", "sha256": "4f6f5da9edf608ca33009448776bbc616ba8e94bcd3b50f6ff569343defadf81", "bytes": 2807228, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/04_BROWSER_GAME_PLAYER.png" },
-    { "path": "assets/reference/mockups/batch-1/05_WORLD_HUB.png", "sha256": "cb1a2407789ccf411327d451b32272a136233adc58e00b40ea4fbe3bc23f6b32", "bytes": 2790402, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/05_WORLD_HUB.png" },
-    { "path": "assets/reference/mockups/batch-1/06_CHARACTERS_HUB.png", "sha256": "325b1977132d32145d88a504873c9382179198dff5e364fcafa04e166bf751d7", "bytes": 2568708, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/06_CHARACTERS_HUB.png" },
-    { "path": "assets/reference/mockups/batch-1/07_TOADAL_PROFILE.png", "sha256": "8226bde3f0e555f99c8411aaac463518e1c8989e8c05e1a509306a642cf845c1", "bytes": 2715620, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/07_TOADAL_PROFILE.png" },
-    { "path": "assets/reference/mockups/batch-1/08_STORIES_COMICS_HUB.png", "sha256": "fcd6b627d8c87681b679542812b4a9e621047ef2e4a8193487eca6258d5a8023", "bytes": 2711519, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/08_STORIES_COMICS_HUB.png" },
-    { "path": "assets/reference/mockups/batch-1/09_MANGA_SERIES.png", "sha256": "030068f0c262e56aacd62fde708c3b9c44ee87a3ee3f83f6dfe973c398660a62", "bytes": 2755343, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/09_MANGA_SERIES.png" },
-    { "path": "assets/reference/mockups/batch-1/10_COMIC_READER.png", "sha256": "69b1857e73e0d0e105ad8f5a9a784ababd0ef7b20526b82b07c45aac2b5e4aa0", "bytes": 2439958, "hashEncoding": "exact-bytes", "status": "approved-reference", "approvalState": "owner-approved-batch-1-layout-reference", "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/10_COMIC_READER.png" },
-    { "path": "assets/reference/mockups/mixed-concepts/DESKTOP_30_PAGE_CONTACT_SHEET.jpg", "sha256": "5f654a07ccfdb2e40724f7f6fa18cd0a372d0474bbee3318fde8d4d86c7f36a4", "bytes": 1558501, "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mixed-concept-reference", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/contact-sheet/DESKTOP_30_PAGE_CONTACT_SHEET.jpg" },
-    { "path": "assets/reference/mockups/mixed-concepts/MOBILE_10_FLOW_CONTACT_SHEET.jpg", "sha256": "031b5ec746096920996587013c172a58f9c5b31677617d42bb115f239c6bebce", "bytes": 265083, "hashEncoding": "exact-bytes", "status": "reference", "approvalState": "mixed-concept-reference", "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/contact-sheet/MOBILE_10_FLOW_CONTACT_SHEET.jpg" }
+    {
+      "path": "docs/authority/sources/product/README_START_HERE.md",
+      "sha256": "234563e0133c933053ee158e99e7d33dec8e8103ad5deefd6a57b3f2bfd93dfd",
+      "hashEncoding": "exact-bytes",
+      "status": "source",
+      "approvalState": "owner-product-source",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/00_START_HERE/README_START_HERE.md"
+    },
+    {
+      "path": "docs/authority/sources/product/LOCKED_PRODUCT_DECISIONS.md",
+      "sha256": "b49540de6d7137538c07709354bfd71bf4dc49299e3912c590dc934c0092a3c1",
+      "hashEncoding": "exact-bytes",
+      "status": "source",
+      "approvalState": "owner-product-source",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/LOCKED_PRODUCT_DECISIONS.md"
+    },
+    {
+      "path": "docs/authority/sources/product/SITEMAP_30_PAGES.md",
+      "sha256": "941ef5b199b26cefedddd6bc3316a7ffb180cd05d4c93376bceb148ed96ad9d2",
+      "hashEncoding": "exact-bytes",
+      "status": "source",
+      "approvalState": "owner-product-source",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/SITEMAP_30_PAGES.md"
+    },
+    {
+      "path": "docs/authority/sources/product/VISUAL_SYSTEM_AND_CONTENT_RULES.md",
+      "sha256": "0ecc43e54dfd6941eb21ebfdd4783b12b09435f1072bcc1469e454d19282a417",
+      "hashEncoding": "exact-bytes",
+      "status": "source",
+      "approvalState": "owner-product-source",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/VISUAL_SYSTEM_AND_CONTENT_RULES.md"
+    },
+    {
+      "path": "docs/authority/sources/product/FEATURE_SALVAGE_RULES.md",
+      "sha256": "27e1b610571e0b27bdca249db2c14c335121d78775833238fa3724c29c10604e",
+      "hashEncoding": "exact-bytes",
+      "status": "source",
+      "approvalState": "owner-product-source",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/01_PRODUCT_SPEC/FEATURE_SALVAGE_RULES.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/README.md",
+      "sha256": "160879b1a2f069167d63f2753bf1b5ea6b1259385fa1a37fbe441a9e720c7510",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/README.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/PAGE_MANIFEST.md",
+      "sha256": "75b1afe3c26bcb76eb709d5ad5414ecee205977848c8c6b94e92b480117341a9",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/PAGE_MANIFEST.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/DESIGN_SYSTEM.md",
+      "sha256": "ea13f09a3dab9c11afae92ba552287d59d2f152bd8cda77058b292ddd9c860e4",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/DESIGN_SYSTEM.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/MOTION_NOTES.md",
+      "sha256": "81446ca6568e19c1f57bd069e8facbb309107e78ec3e33c3c249dd87f2e96f71",
+      "bytes": 652,
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/MOTION_NOTES.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/TOADAL_REACTION_STATE_MAP.md",
+      "sha256": "46f389a32fb798c045a2ebcca47c934d01564816529d4690fed9e82d186dfdbc",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/TOADAL_REACTION_STATE_MAP.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/ASSET_MAP.md",
+      "sha256": "c7479e25738e410d6789e17630c3ef3ae2d4c9f6b441f40224dddf5e5bd9448b",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/ASSET_MAP.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/QA_REPORT.md",
+      "sha256": "82fa8a491283ec0c4c04544d18c65f30136b2ff0f8dede20e836d999b42468a6",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/QA_REPORT.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/IMPLEMENTATION_NOTES.md",
+      "sha256": "bac668d9808944bb7194443785f93d8f780cb190ee8cf7a9e69d2c616911663b",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/IMPLEMENTATION_NOTES.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/FEATURE_SALVAGE_LEDGER.md",
+      "sha256": "1d48c3d60818019a24c38fc28af5711ce61a8483bfbac2f3a0f774dfbed6ef80",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/FEATURE_SALVAGE_LEDGER.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/MOBILE_PLAN.md",
+      "sha256": "960bd6d51546ef7dd7fdcba0f9cb61d16287b958836847fc0942147c8bb3561a",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/MOBILE_PLAN.md"
+    },
+    {
+      "path": "docs/authority/sources/mockups/OUTPUT_MANIFEST_SHA256.json",
+      "sha256": "d75c20c51d309af4130311299ff689210eb69d80183b69005d9fa88b68f25b73",
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mockup-package-metadata",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/OUTPUT_MANIFEST_SHA256.json"
+    },
+    {
+      "path": "docs/authority/sources/companion/TOADAL_WEBSITE_INTERACTIVE_MASCOT_MASTER_PLAN.md",
+      "sha256": "9b017c7472be2bb2cdda183a458a0380bcd96f18ba69a91115ec81d11cb2833a",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "superseded-donor-reference",
+      "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/TOADAL_WEBSITE_INTERACTIVE_MASCOT_MASTER_PLAN.md"
+    },
+    {
+      "path": "docs/authority/sources/companion/TOADAL_INTERACTION_ASSET_MAP.json",
+      "sha256": "24441deb45642250e0200d6b30ed43ef12426bf112683a347f8f1a0ae759b9cb",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "superseded-donor-reference",
+      "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/TOADAL_INTERACTION_ASSET_MAP.json"
+    },
+    {
+      "path": "docs/authority/sources/companion/INTERACTION_STATE_MAP.csv",
+      "sha256": "ab38988fdca3e31ccd7cd54a74455eda54881a1dd363b7e290468148e048221f",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "superseded-donor-reference",
+      "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/INTERACTION_STATE_MAP.csv"
+    },
+    {
+      "path": "docs/authority/sources/companion/EXPRESSION_AUDIT.csv",
+      "sha256": "f95dd4132831c9e8a1ed1685fbb5e62ac3180f1792c585a1165000ec7f4fee0a",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "superseded-donor-reference",
+      "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/EXPRESSION_AUDIT.csv"
+    },
+    {
+      "path": "docs/authority/sources/companion/ASSET_REGISTRY.csv",
+      "sha256": "602ab45193b2953fc43a7ea95c69d1e427fdd9c42bbed0a9ba54758374b3e624",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "superseded-donor-reference",
+      "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/00_DOCS/ASSET_REGISTRY.csv"
+    },
+    {
+      "path": "docs/authority/sources/companion/TOADAL_10_INDIVIDUAL_WEB_ASSETS_manifest.json",
+      "sha256": "ac8a1e0e5fc9325775305120c9adcac9b841a795a9067f43bc420df1a498dd3f",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "superseded-donor-reference",
+      "sourceEntry": "TOADAL_WEBSITE_INTERACTIVE_MASCOT_HANDOFF_v1/02_CORE_PACK/TOADAL_10_INDIVIDUAL_WEB_ASSETS/manifest.json"
+    },
+    {
+      "path": "docs/authority/sources/history/toadal-games-interactive-site-plan.md",
+      "sha256": "3eb738fe0ef1932f2d7a50fd52c8c09bbb9de5c9cf81b5294de6ab6fac676dd1",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "exploratory-historical-plan",
+      "sourceEntry": "toadal-games-interactive-site-plan.md"
+    },
+    {
+      "path": "docs/authority/sources/history/toadal-games-interactive-site-plan_v2.md",
+      "sha256": "03ea0f29cefd92a2da178ee320e067ce1c2749dcd94cb5e8bc64552d22e4c18c",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "exploratory-historical-plan",
+      "sourceEntry": "toadal-games-interactive-site-plan_v2.md"
+    },
+    {
+      "path": "docs/authority/sources/history/toadal-games-interactive-site-plan-alternate.md",
+      "sha256": "e9979579c14cde4a8237c0fe6e44554c4b4b31adca4487dcfc407059e60a5f22",
+      "hashEncoding": "exact-bytes",
+      "status": "historical-reference",
+      "approvalState": "exploratory-historical-plan",
+      "sourceEntry": "toadal-games-interactive-site-plan(1).md"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/02_PLAY_GAMES_HUB.png",
+      "sha256": "4e6e64f91d3f6fae42432eff0ed978c3bcc26cbdd586a6175aa10e2488d11c09",
+      "bytes": 2596858,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/02_PLAY_GAMES_HUB.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/03_WICKED_BITES_DETAIL.png",
+      "sha256": "795b5acd11b8957adc946cdd0f3b31d59fcf51eeb85df8b341b30241eda2c76c",
+      "bytes": 2741313,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/03_WICKED_BITES_DETAIL.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/04_BROWSER_GAME_PLAYER.png",
+      "sha256": "4f6f5da9edf608ca33009448776bbc616ba8e94bcd3b50f6ff569343defadf81",
+      "bytes": 2807228,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/04_BROWSER_GAME_PLAYER.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/05_WORLD_HUB.png",
+      "sha256": "cb1a2407789ccf411327d451b32272a136233adc58e00b40ea4fbe3bc23f6b32",
+      "bytes": 2790402,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/05_WORLD_HUB.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/06_CHARACTERS_HUB.png",
+      "sha256": "325b1977132d32145d88a504873c9382179198dff5e364fcafa04e166bf751d7",
+      "bytes": 2568708,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/06_CHARACTERS_HUB.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/07_TOADAL_PROFILE.png",
+      "sha256": "8226bde3f0e555f99c8411aaac463518e1c8989e8c05e1a509306a642cf845c1",
+      "bytes": 2715620,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/07_TOADAL_PROFILE.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/08_STORIES_COMICS_HUB.png",
+      "sha256": "fcd6b627d8c87681b679542812b4a9e621047ef2e4a8193487eca6258d5a8023",
+      "bytes": 2711519,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/08_STORIES_COMICS_HUB.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/09_MANGA_SERIES.png",
+      "sha256": "030068f0c262e56aacd62fde708c3b9c44ee87a3ee3f83f6dfe973c398660a62",
+      "bytes": 2755343,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/09_MANGA_SERIES.png"
+    },
+    {
+      "path": "assets/reference/mockups/batch-1/10_COMIC_READER.png",
+      "sha256": "69b1857e73e0d0e105ad8f5a9a784ababd0ef7b20526b82b07c45aac2b5e4aa0",
+      "bytes": 2439958,
+      "hashEncoding": "exact-bytes",
+      "status": "approved-reference",
+      "approvalState": "owner-approved-batch-1-layout-reference",
+      "sourceEntry": "TOADAL_WEBSITE_CODEX_HANDOFF/03_VISUAL_AUTHORITY/BATCH_1_APPROVED_DIRECTION/10_COMIC_READER.png"
+    },
+    {
+      "path": "assets/reference/mockups/mixed-concepts/DESKTOP_30_PAGE_CONTACT_SHEET.jpg",
+      "sha256": "5f654a07ccfdb2e40724f7f6fa18cd0a372d0474bbee3318fde8d4d86c7f36a4",
+      "bytes": 1558501,
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mixed-concept-reference",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/contact-sheet/DESKTOP_30_PAGE_CONTACT_SHEET.jpg"
+    },
+    {
+      "path": "assets/reference/mockups/mixed-concepts/MOBILE_10_FLOW_CONTACT_SHEET.jpg",
+      "sha256": "031b5ec746096920996587013c172a58f9c5b31677617d42bb115f239c6bebce",
+      "bytes": 265083,
+      "hashEncoding": "exact-bytes",
+      "status": "reference",
+      "approvalState": "mixed-concept-reference",
+      "sourceEntry": "TOADAL_WEBSITE_DEFINITIVE_MOCKUPS/contact-sheet/MOBILE_10_FLOW_CONTACT_SHEET.jpg"
+    }
   ]
 }
