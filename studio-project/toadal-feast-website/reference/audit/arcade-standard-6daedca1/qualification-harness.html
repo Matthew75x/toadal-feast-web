@@ -71,10 +71,22 @@
       if (event.source !== frame.contentWindow || event.origin !== 'null') return;
       const message = event.data;
       if (message?.protocol === 'toadal.game.v1' && message?.gameId === 'toadal-feast-arcade-preview') {
-        window.__wo003Messages.push({ type: message.type, payload: message.payload || {}, at: Date.now() });
+        window.__wo003Messages.push({ type: message.type, payload: message.payload || {}, sessionId: message.sessionId || null, at: Date.now() });
       }
     });
     window.__wo003Send = (type, payload = {}) => window.ToadalArcadePreviewHost?.send(type, payload);
+    window.__wo003Session = () => window.ToadalArcadePreviewHost?.sessionId?.() || '';
+    window.__wo003SiblingPost = async message => {
+      const sibling = document.createElement('iframe');
+      sibling.hidden = true;
+      sibling.setAttribute('sandbox', 'allow-scripts');
+      sibling.srcdoc = '<scr' + 'ipt>addEventListener("message",e=>parent.postMessage(e.data,"*"))</' + 'scr' + 'ipt>';
+      document.body.append(sibling);
+      await new Promise(resolve => sibling.addEventListener('load', resolve, { once:true }));
+      sibling.contentWindow.postMessage(message, '*');
+      await new Promise(resolve => setTimeout(resolve, 30));
+      sibling.remove();
+    };
     window.__wo003FocusReturn = () => window.__wo003Send('host:resume', { reason: 'host-focus-returned' });
     window.__wo003SpoofPause = async () => {
       const frame = document.querySelector('[data-arcade-preview-frame]');

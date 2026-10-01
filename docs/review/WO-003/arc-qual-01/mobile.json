@@ -1,0 +1,1583 @@
+{
+  "browser": {
+    "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+    "touchInput": "CDP Input.dispatchTouchEvent",
+    "version": "154.0.8037.57"
+  },
+  "checks": [
+    {
+      "evidence": {
+        "after": {
+          "actionStyle": "smart",
+          "controlStyle": "auto",
+          "mode": "joystick",
+          "visibilityMode": "full"
+        },
+        "available": true,
+        "before": {
+          "actionStyle": "smart",
+          "controlStyle": "auto",
+          "mode": "joystick",
+          "visibilityMode": "minimal"
+        }
+      },
+      "name": "runtime-mobile-control-api-available",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "character": "toadal",
+        "coarsePointer": true,
+        "controlStyle": "auto",
+        "experience": "standard",
+        "mobileViewport": {
+          "height": 612,
+          "width": 413
+        },
+        "mode": "playing",
+        "touchPoints": 1,
+        "visibilityMode": "full"
+      },
+      "name": "standard-toadal-playing-with-touch-controls",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "activePointerCount": 1,
+        "activePointerIds": [
+          2
+        ],
+        "atMs": 255,
+        "pointerId": 2,
+        "pointerType": "touch",
+        "state": {
+          "actionPressed": false,
+          "axis": {
+            "x": 0,
+            "y": 0
+          },
+          "character": "toadal",
+          "frog": {
+            "x": 240,
+            "y": 720
+          },
+          "joystickActive": false,
+          "joystickClass": false,
+          "keys": {
+            "down": false,
+            "left": false,
+            "right": false,
+            "up": false
+          },
+          "mode": "playing",
+          "tongue": {
+            "active": false,
+            "phase": "idle",
+            "shotId": 0
+          }
+        },
+        "targetId": "mobJoystick",
+        "type": "pointerdown"
+      },
+      "name": "real-touch-joystick-pointerdown",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "observedMoveEvents": 5,
+        "pointerId": 2,
+        "sampleCount": 6
+      },
+      "name": "joystick-delivered-multiple-real-pointermoves",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "after": {
+          "actionPressed": false,
+          "axis": {
+            "x": 0.8329271051772139,
+            "y": 0
+          },
+          "character": "toadal",
+          "frog": {
+            "x": 454,
+            "y": 720
+          },
+          "joystickActive": true,
+          "joystickClass": true,
+          "keys": {
+            "down": false,
+            "left": false,
+            "right": false,
+            "up": false
+          },
+          "mode": "playing",
+          "tongue": {
+            "active": false,
+            "phase": "idle",
+            "shotId": 0
+          }
+        },
+        "before": {
+          "actionPressed": false,
+          "axis": {
+            "x": 0,
+            "y": 0
+          },
+          "character": "toadal",
+          "frog": {
+            "x": 240,
+            "y": 720
+          },
+          "joystickActive": false,
+          "joystickClass": false,
+          "keys": {
+            "down": false,
+            "left": false,
+            "right": false,
+            "up": false
+          },
+          "mode": "playing",
+          "tongue": {
+            "active": false,
+            "phase": "idle",
+            "shotId": 0
+          }
+        },
+        "frogXDelta": 214,
+        "movementAxisWasActive": true
+      },
+      "name": "real-gameplay-movement-while-joystick-held",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "actionPointerDown": {
+          "activePointerCount": 2,
+          "activePointerIds": [
+            2,
+            3
+          ],
+          "atMs": 1195,
+          "pointerId": 3,
+          "pointerType": "touch",
+          "state": {
+            "actionPressed": false,
+            "axis": {
+              "x": 0.8329271051772139,
+              "y": 0
+            },
+            "character": "toadal",
+            "frog": {
+              "x": 454,
+              "y": 720
+            },
+            "joystickActive": true,
+            "joystickClass": true,
+            "keys": {
+              "down": false,
+              "left": false,
+              "right": false,
+              "up": false
+            },
+            "mode": "playing",
+            "tongue": {
+              "active": false,
+              "phase": "idle",
+              "shotId": 0
+            }
+          },
+          "targetId": "mobShoot",
+          "type": "pointerdown"
+        },
+        "movementPointerId": 2
+      },
+      "name": "second-touch-action-while-movement-pointer-remains-active",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "after": {
+          "active": true,
+          "phase": "extending",
+          "shotId": 1
+        },
+        "before": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        },
+        "observedRuntimeStateTransition": true,
+        "overlappingRuntimeEvent": {
+          "activePointerCount": 2,
+          "atMs": 1197,
+          "name": "shootPressed",
+          "payload": {
+            "catchSource": null,
+            "score": 0
+          },
+          "state": {
+            "actionPressed": true,
+            "axis": {
+              "x": 0.8329271051772139,
+              "y": 0
+            },
+            "character": "toadal",
+            "frog": {
+              "x": 454,
+              "y": 720
+            },
+            "joystickActive": true,
+            "joystickClass": true,
+            "keys": {
+              "down": false,
+              "left": false,
+              "right": false,
+              "up": false
+            },
+            "mode": "playing",
+            "tongue": {
+              "active": true,
+              "phase": "extending",
+              "shotId": 1
+            }
+          }
+        },
+        "shootPressedEvents": 1
+      },
+      "name": "real-gameplay-action-state-changed",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "actionPointerUp": {
+          "activePointerCount": 2,
+          "activePointerIds": [
+            2,
+            3
+          ],
+          "atMs": 1259,
+          "pointerId": 3,
+          "pointerType": "touch",
+          "state": {
+            "actionPressed": true,
+            "axis": {
+              "x": 0.8329271051772139,
+              "y": 0
+            },
+            "character": "toadal",
+            "frog": {
+              "x": 454,
+              "y": 720
+            },
+            "joystickActive": true,
+            "joystickClass": true,
+            "keys": {
+              "down": false,
+              "left": false,
+              "right": false,
+              "up": false
+            },
+            "mode": "playing",
+            "tongue": {
+              "active": true,
+              "phase": "extending",
+              "shotId": 1
+            }
+          },
+          "targetId": "mobShoot",
+          "type": "pointerup"
+        },
+        "stateAfterActionUp": {
+          "actionPressed": false,
+          "axis": {
+            "x": 0.8329271051772139,
+            "y": 0
+          },
+          "character": "toadal",
+          "frog": {
+            "x": 454,
+            "y": 720
+          },
+          "joystickActive": true,
+          "joystickClass": true,
+          "keys": {
+            "down": false,
+            "left": false,
+            "right": false,
+            "up": false
+          },
+          "mode": "playing",
+          "tongue": {
+            "active": true,
+            "phase": "retracting",
+            "shotId": 1
+          }
+        }
+      },
+      "name": "action-pointerup-preserves-active-movement-pointer",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "activePointerCount": 1,
+        "activePointerIds": [
+          2
+        ],
+        "atMs": 1438,
+        "pointerId": 2,
+        "pointerType": "touch",
+        "state": {
+          "actionPressed": false,
+          "axis": {
+            "x": 0.8329271051772139,
+            "y": 0
+          },
+          "character": "toadal",
+          "frog": {
+            "x": 454,
+            "y": 720
+          },
+          "joystickActive": true,
+          "joystickClass": true,
+          "keys": {
+            "down": false,
+            "left": false,
+            "right": false,
+            "up": false
+          },
+          "mode": "playing",
+          "tongue": {
+            "active": true,
+            "phase": "retracting",
+            "shotId": 1
+          }
+        },
+        "targetId": "mobJoystick",
+        "type": "pointerup"
+      },
+      "name": "movement-pointerup-observed",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "actionPointerDown": {
+          "activePointerCount": 2,
+          "activePointerIds": [
+            2,
+            3
+          ],
+          "atMs": 1195,
+          "pointerId": 3,
+          "pointerType": "touch",
+          "state": {
+            "actionPressed": false,
+            "axis": {
+              "x": 0.8329271051772139,
+              "y": 0
+            },
+            "character": "toadal",
+            "frog": {
+              "x": 454,
+              "y": 720
+            },
+            "joystickActive": true,
+            "joystickClass": true,
+            "keys": {
+              "down": false,
+              "left": false,
+              "right": false,
+              "up": false
+            },
+            "mode": "playing",
+            "tongue": {
+              "active": false,
+              "phase": "idle",
+              "shotId": 0
+            }
+          },
+          "targetId": "mobShoot",
+          "type": "pointerdown"
+        },
+        "joystickPointerDown": {
+          "activePointerCount": 1,
+          "activePointerIds": [
+            2
+          ],
+          "atMs": 255,
+          "pointerId": 2,
+          "pointerType": "touch",
+          "state": {
+            "actionPressed": false,
+            "axis": {
+              "x": 0,
+              "y": 0
+            },
+            "character": "toadal",
+            "frog": {
+              "x": 240,
+              "y": 720
+            },
+            "joystickActive": false,
+            "joystickClass": false,
+            "keys": {
+              "down": false,
+              "left": false,
+              "right": false,
+              "up": false
+            },
+            "mode": "playing",
+            "tongue": {
+              "active": false,
+              "phase": "idle",
+              "shotId": 0
+            }
+          },
+          "targetId": "mobJoystick",
+          "type": "pointerdown"
+        },
+        "movementPointerUp": {
+          "activePointerCount": 1,
+          "activePointerIds": [
+            2
+          ],
+          "atMs": 1438,
+          "pointerId": 2,
+          "pointerType": "touch",
+          "state": {
+            "actionPressed": false,
+            "axis": {
+              "x": 0.8329271051772139,
+              "y": 0
+            },
+            "character": "toadal",
+            "frog": {
+              "x": 454,
+              "y": 720
+            },
+            "joystickActive": true,
+            "joystickClass": true,
+            "keys": {
+              "down": false,
+              "left": false,
+              "right": false,
+              "up": false
+            },
+            "mode": "playing",
+            "tongue": {
+              "active": true,
+              "phase": "retracting",
+              "shotId": 1
+            }
+          },
+          "targetId": "mobJoystick",
+          "type": "pointerup"
+        }
+      },
+      "name": "movement-pointerup-matches-original-joystick-pointer",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": false,
+        "joystickClass": false,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 1
+        }
+      },
+      "name": "all-controls-neutral-after-pointerup",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "activeBeforeCancel": {
+          "actionPressed": false,
+          "axis": {
+            "x": 0.7594970191466416,
+            "y": 0
+          },
+          "character": "toadal",
+          "frog": {
+            "x": 454,
+            "y": 720
+          },
+          "joystickActive": true,
+          "joystickClass": true,
+          "keys": {
+            "down": false,
+            "left": false,
+            "right": false,
+            "up": false
+          },
+          "mode": "playing",
+          "tongue": {
+            "active": false,
+            "phase": "idle",
+            "shotId": 1
+          }
+        },
+        "cancelEvents": [
+          {
+            "activePointerCount": 0,
+            "activePointerIds": [],
+            "atMs": 1438,
+            "pointerId": 2,
+            "pointerType": "touch",
+            "state": {
+              "actionPressed": false,
+              "axis": {
+                "x": 0,
+                "y": 0
+              },
+              "character": "toadal",
+              "frog": {
+                "x": 454,
+                "y": 720
+              },
+              "joystickActive": false,
+              "joystickClass": false,
+              "keys": {
+                "down": false,
+                "left": false,
+                "right": false,
+                "up": false
+              },
+              "mode": "playing",
+              "tongue": {
+                "active": true,
+                "phase": "retracting",
+                "shotId": 1
+              }
+            },
+            "targetId": "mobJoystick",
+            "type": "lostpointercapture"
+          }
+        ]
+      },
+      "name": "browser-touchcancel-reaches-pointercancel-or-lost-capture",
+      "pass": true
+    },
+    {
+      "evidence": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": false,
+        "joystickClass": false,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 1
+        }
+      },
+      "name": "all-controls-neutral-after-touchcancel",
+      "pass": true
+    }
+  ],
+  "emulation": {
+    "hasTouch": true,
+    "isMobile": true,
+    "viewport": {
+      "height": 900,
+      "width": 430
+    }
+  },
+  "error": null,
+  "failures": [],
+  "gameplay": {
+    "actionAfter": {
+      "actionPressed": true,
+      "axis": {
+        "x": 0.8329271051772139,
+        "y": 0
+      },
+      "character": "toadal",
+      "frog": {
+        "x": 454,
+        "y": 720
+      },
+      "joystickActive": true,
+      "joystickClass": true,
+      "keys": {
+        "down": false,
+        "left": false,
+        "right": false,
+        "up": false
+      },
+      "mode": "playing",
+      "tongue": {
+        "active": true,
+        "phase": "extending",
+        "shotId": 1
+      }
+    },
+    "actionBaseline": {
+      "actionPressed": false,
+      "axis": {
+        "x": 0.8329271051772139,
+        "y": 0
+      },
+      "character": "toadal",
+      "frog": {
+        "x": 454,
+        "y": 720
+      },
+      "joystickActive": true,
+      "joystickClass": true,
+      "keys": {
+        "down": false,
+        "left": false,
+        "right": false,
+        "up": false
+      },
+      "mode": "playing",
+      "tongue": {
+        "active": false,
+        "phase": "idle",
+        "shotId": 0
+      }
+    },
+    "before": {
+      "actionPressed": false,
+      "axis": {
+        "x": 0,
+        "y": 0
+      },
+      "character": "toadal",
+      "frog": {
+        "x": 240,
+        "y": 720
+      },
+      "joystickActive": false,
+      "joystickClass": false,
+      "keys": {
+        "down": false,
+        "left": false,
+        "right": false,
+        "up": false
+      },
+      "mode": "playing",
+      "tongue": {
+        "active": false,
+        "phase": "idle",
+        "shotId": 0
+      }
+    },
+    "events": [
+      {
+        "activePointerCount": 2,
+        "atMs": 1197,
+        "name": "shootPressed",
+        "payload": {
+          "catchSource": null,
+          "score": 0
+        },
+        "state": {
+          "actionPressed": true,
+          "axis": {
+            "x": 0.8329271051772139,
+            "y": 0
+          },
+          "character": "toadal",
+          "frog": {
+            "x": 454,
+            "y": 720
+          },
+          "joystickActive": true,
+          "joystickClass": true,
+          "keys": {
+            "down": false,
+            "left": false,
+            "right": false,
+            "up": false
+          },
+          "mode": "playing",
+          "tongue": {
+            "active": true,
+            "phase": "extending",
+            "shotId": 1
+          }
+        }
+      }
+    ],
+    "neutralAfterPointerUp": {
+      "actionPressed": false,
+      "axis": {
+        "x": 0,
+        "y": 0
+      },
+      "character": "toadal",
+      "frog": {
+        "x": 454,
+        "y": 720
+      },
+      "joystickActive": false,
+      "joystickClass": false,
+      "keys": {
+        "down": false,
+        "left": false,
+        "right": false,
+        "up": false
+      },
+      "mode": "playing",
+      "tongue": {
+        "active": false,
+        "phase": "idle",
+        "shotId": 1
+      }
+    },
+    "neutralAfterTouchCancel": {
+      "actionPressed": false,
+      "axis": {
+        "x": 0,
+        "y": 0
+      },
+      "character": "toadal",
+      "frog": {
+        "x": 454,
+        "y": 720
+      },
+      "joystickActive": false,
+      "joystickClass": false,
+      "keys": {
+        "down": false,
+        "left": false,
+        "right": false,
+        "up": false
+      },
+      "mode": "playing",
+      "tongue": {
+        "active": false,
+        "phase": "idle",
+        "shotId": 1
+      }
+    },
+    "samples": [
+      {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.10838911835920807,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 246.83046546076062,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.3932488249537102,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 268.0871374448083,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.6781085315482124,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 304.7416160091153,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.8257661736470274,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 355.4927634969333,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.8329271051772139,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 400.51580524018254,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.8329271051772139,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      }
+    ]
+  },
+  "geometry": {
+    "child": {
+      "action": {
+        "height": 58,
+        "hidden": false,
+        "width": 58,
+        "x": 72,
+        "y": 104
+      },
+      "actionCenterHit": "mobShoot",
+      "joystick": {
+        "height": 612,
+        "hidden": false,
+        "width": 413.3333435058594,
+        "x": 0,
+        "y": 0
+      },
+      "viewport": {
+        "height": 612,
+        "width": 413
+      }
+    },
+    "selected": {
+      "actionChildCss": {
+        "hitTarget": "mobShoot",
+        "x": 101.0,
+        "y": 133.0
+      },
+      "actionHostCss": {
+        "x": 109.59,
+        "y": 420.74
+      },
+      "iframeHostCss": {
+        "height": 612.0000305175781,
+        "width": 412.66667652130127,
+        "x": 8.666666984558105,
+        "y": 287.7395935058594
+      },
+      "joystickChildCss": {
+        "hitTarget": "mobJoystick",
+        "x": 78.47,
+        "y": 440.64
+      },
+      "joystickHostCss": {
+        "x": 87.07,
+        "y": 728.38
+      }
+    }
+  },
+  "pointerTrace": [
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 255,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 240,
+          "y": 720
+        },
+        "joystickActive": false,
+        "joystickClass": false,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointerdown"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 377,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 240,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointermove"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 485,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.10838911835920807,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 246.83046546076062,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointermove"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 593,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.3932488249537102,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 268.0871374448083,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointermove"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 702,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.6781085315482124,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 310.8567987466171,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointermove"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 810,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.8257661736470274,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 355.4927634969333,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointermove"
+    },
+    {
+      "activePointerCount": 2,
+      "activePointerIds": [
+        2,
+        3
+      ],
+      "atMs": 1195,
+      "pointerId": 3,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.8329271051772139,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 0
+        }
+      },
+      "targetId": "mobShoot",
+      "type": "pointerdown"
+    },
+    {
+      "activePointerCount": 2,
+      "activePointerIds": [
+        2,
+        3
+      ],
+      "atMs": 1259,
+      "pointerId": 3,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": true,
+        "axis": {
+          "x": 0.8329271051772139,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": true,
+          "phase": "extending",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobShoot",
+      "type": "pointerup"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 1260,
+      "pointerId": 3,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.8329271051772139,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": true,
+          "phase": "extending",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobShoot",
+      "type": "lostpointercapture"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        2
+      ],
+      "atMs": 1438,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.8329271051772139,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": true,
+          "phase": "retracting",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointerup"
+    },
+    {
+      "activePointerCount": 0,
+      "activePointerIds": [],
+      "atMs": 1438,
+      "pointerId": 2,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": false,
+        "joystickClass": false,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": true,
+          "phase": "retracting",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "lostpointercapture"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        4
+      ],
+      "atMs": 1639,
+      "pointerId": 4,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": false,
+        "joystickClass": false,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointerdown"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        4
+      ],
+      "atMs": 1728,
+      "pointerId": 4,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointermove"
+    },
+    {
+      "activePointerCount": 1,
+      "activePointerIds": [
+        4
+      ],
+      "atMs": 1869,
+      "pointerId": 4,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0.7594970191466416,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": true,
+        "joystickClass": true,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "pointercancel"
+    },
+    {
+      "activePointerCount": 0,
+      "activePointerIds": [],
+      "atMs": 1869,
+      "pointerId": 4,
+      "pointerType": "touch",
+      "state": {
+        "actionPressed": false,
+        "axis": {
+          "x": 0,
+          "y": 0
+        },
+        "character": "toadal",
+        "frog": {
+          "x": 454,
+          "y": 720
+        },
+        "joystickActive": false,
+        "joystickClass": false,
+        "keys": {
+          "down": false,
+          "left": false,
+          "right": false,
+          "up": false
+        },
+        "mode": "playing",
+        "tongue": {
+          "active": false,
+          "phase": "idle",
+          "shotId": 1
+        }
+      },
+      "targetId": "mobJoystick",
+      "type": "lostpointercapture"
+    }
+  ],
+  "profile": {
+    "character": "toadal",
+    "coarsePointer": true,
+    "controlStyle": "auto",
+    "experience": "standard",
+    "mobileControlsSetup": {
+      "after": {
+        "actionStyle": "smart",
+        "controlStyle": "auto",
+        "mode": "joystick",
+        "visibilityMode": "full"
+      },
+      "available": true,
+      "before": {
+        "actionStyle": "smart",
+        "controlStyle": "auto",
+        "mode": "joystick",
+        "visibilityMode": "minimal"
+      }
+    },
+    "mobileViewport": {
+      "height": 612,
+      "width": 413
+    },
+    "mode": "playing",
+    "touchPoints": 1,
+    "visibilityMode": "full"
+  },
+  "result": "PASS",
+  "schema": "toadal-feast.arc-qual-01-mobile.v1",
+  "url": "http://127.0.0.1:8899/cartridge/qualification-harness.html"
+}

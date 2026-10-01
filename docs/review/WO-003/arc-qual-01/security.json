@@ -1,0 +1,263 @@
+{
+  "browser_executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+  "cases": [
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other",
+        "type": "game:preview-state"
+      },
+      "changed_fields": [],
+      "description": "valid-looking preview-state from sibling",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other"
+      },
+      "id": "sibling_preview_state",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other",
+        "type": "game:request-exit"
+      },
+      "changed_fields": [],
+      "description": "valid exit request from sibling",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other"
+      },
+      "id": "sibling_request_exit",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other",
+        "type": "game:request-fullscreen"
+      },
+      "changed_fields": [],
+      "description": "valid fullscreen request from sibling",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other"
+      },
+      "id": "sibling_request_fullscreen",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other",
+        "type": "game:score"
+      },
+      "changed_fields": [],
+      "description": "valid-looking score from sibling",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other"
+      },
+      "id": "sibling_score",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other",
+        "type": "game:complete"
+      },
+      "changed_fields": [],
+      "description": "valid-looking completion result from sibling",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "source",
+        "source": "other"
+      },
+      "id": "sibling_result",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "session",
+        "source": "cartridge",
+        "type": "game:paused"
+      },
+      "changed_fields": [],
+      "description": "legitimate cartridge source with missing session id",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "session",
+        "source": "cartridge"
+      },
+      "id": "legitimate_missing_session",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "session",
+        "source": "cartridge",
+        "type": "game:paused"
+      },
+      "changed_fields": [],
+      "description": "legitimate cartridge source with wrong session id",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "session",
+        "source": "cartridge"
+      },
+      "id": "legitimate_wrong_session",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "session",
+        "source": "cartridge",
+        "type": "game:paused"
+      },
+      "changed_fields": [],
+      "description": "legitimate source replaying pre-remount session id",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "session",
+        "source": "cartridge"
+      },
+      "id": "legitimate_stale_session_after_remount",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "envelope",
+        "source": "cartridge",
+        "type": "game:paused"
+      },
+      "changed_fields": [],
+      "description": "legitimate cartridge source using wrong protocol",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "envelope",
+        "source": "cartridge"
+      },
+      "id": "legitimate_wrong_protocol",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "envelope",
+        "source": "cartridge",
+        "type": "game:paused"
+      },
+      "changed_fields": [],
+      "description": "legitimate cartridge source using wrong cartridge id",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "envelope",
+        "source": "cartridge"
+      },
+      "id": "legitimate_wrong_game_id",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "schema",
+        "source": "cartridge",
+        "type": "game:score"
+      },
+      "changed_fields": [],
+      "description": "legitimate cartridge source with malformed score payload",
+      "expected": {
+        "decision": "rejected",
+        "origin": "null",
+        "reason": "schema",
+        "source": "cartridge"
+      },
+      "id": "legitimate_malformed_payload",
+      "no_side_effects": true,
+      "status": "PASS"
+    },
+    {
+      "actual": {
+        "decision": "accepted",
+        "origin": "null",
+        "reason": "",
+        "source": "cartridge",
+        "type": "game:ready"
+      },
+      "description": "real post-remount game:ready message with the current session is accepted",
+      "expected": {
+        "decision": "accepted",
+        "message_type": "game:ready",
+        "origin": "null",
+        "reason": "",
+        "source": "cartridge"
+      },
+      "handled_effect_observed": true,
+      "id": "legitimate_current_session_positive_control",
+      "status": "PASS"
+    }
+  ],
+  "evidence_file": "docs/review/WO-003/arc-qual-01/security.json",
+  "format": "arc-qual-01-security-v1",
+  "legitimate_start_accepted": true,
+  "live_run": {
+    "host_status": "standard is playing as toadal.",
+    "state": {
+      "character": "toadal",
+      "experience": "standard",
+      "mode": "playing"
+    }
+  },
+  "remount": {
+    "session_changed": true,
+    "stale_session_rejected": true
+  },
+  "scope_note": "Message isolation/protocol validation only; not protection against arbitrary script execution inside the trusted cartridge.",
+  "status": "PASS",
+  "target_url": "http://127.0.0.1:8899/cartridge/qualification-harness.html"
+}

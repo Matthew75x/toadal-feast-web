@@ -21,7 +21,74 @@
     selectedExperienceId: 'standard',
     previewSettings: { muted: false },
   };
-  const runtime = { ready: false, profileReady: false, startPending: false, activeRun: null, persistenceAvailable: false };
+  const runtime = { ready: false, profileReady: false, startPending: false, pendingStart: null, activeRun: null, persistenceAvailable: false, sessionId: createSessionId() };
+  const ACCEPTED_TYPES = new Set([
+    'game:ready', 'game:hello', 'game:profile-ready', 'game:started', 'game:score', 'game:complete',
+    'game:paused', 'game:resumed', 'game:request-exit', 'game:request-fullscreen', 'game:error', 'game:start-rejected',
+  ]);
+  const CHARACTERS = new Set(['toadal', 'classic', 'pelican', 'chomper', 'princess']);
+
+  function createSessionId() {
+    try { return crypto.randomUUID(); } catch (_) {}
+    const bytes = new Uint8Array(16);
+    crypto.getRandomValues(bytes);
+    return Array.from(bytes, value => value.toString(16).padStart(2, '0')).join('');
+  }
+
+  function isRecord(value) {
+    return value !== null && typeof value === 'object' && !Array.isArray(value);
+  }
+
+  function exactKeys(value, required, optional = []) {
+    if (!isRecord(value)) return false;
+    const allowed = new Set([...required, ...optional]);
+    return required.every(key => Object.prototype.hasOwnProperty.call(value, key))
+      && Object.keys(value).every(key => allowed.has(key));
+  }
+
+  function validText(value, max = 240) {
+    return typeof value === 'string' && value.length <= max;
+  }
+
+  function validCounter(value, minimum = 0) {
+    return Number.isSafeInteger(value) && value >= minimum;
+  }
+
+  function validPayload(type, payload) {
+    switch (type) {
+      case 'game:ready': return exactKeys(payload, ['gameId', 'version']) && payload.gameId === GAME_ID && validText(payload.version, 32);
+      case 'game:hello': return exactKeys(payload, ['gameId']) && payload.gameId === GAME_ID;
+      case 'game:profile-ready': return exactKeys(payload, ['experienceId', 'characterId']) && EXPERIENCES.has(payload.experienceId) && CHARACTERS.has(payload.characterId);
+      case 'game:started':
+      case 'game:paused':
+      case 'game:resumed': return exactKeys(payload, ['mode', ...(type === 'game:started' ? ['characterId'] : [])])
+        && EXPERIENCES.has(payload.mode) && (type !== 'game:started' || CHARACTERS.has(payload.characterId));
+      case 'game:score': return exactKeys(payload, ['score', 'level', 'mode', 'characterId', 'elapsedMs'])
+        && validCounter(payload.score) && validCounter(payload.level, 1) && EXPERIENCES.has(payload.mode)
+        && CHARACTERS.has(payload.characterId) && validCounter(payload.elapsedMs);
+      case 'game:complete': return exactKeys(payload,
+        ['score', 'level', 'mode', 'characterId', 'elapsedMs', 'voluntaryQuit', 'bankedEarly', 'badge', 'endCause', 'reason'])
+        && validCounter(payload.score) && validCounter(payload.level, 1) && EXPERIENCES.has(payload.mode)
+        && CHARACTERS.has(payload.characterId) && validCounter(payload.elapsedMs)
+        && typeof payload.voluntaryQuit === 'boolean' && typeof payload.bankedEarly === 'boolean'
+        && validText(payload.badge, 80) && validText(payload.endCause, 80) && validText(payload.reason, 80);
+      case 'game:request-exit': return exactKeys(payload, ['reason']) && validText(payload.reason, 80);
+      case 'game:request-fullscreen': return exactKeys(payload, []);
+      case 'game:error': return exactKeys(payload, ['message']) && validText(payload.message);
+      case 'game:start-rejected': return exactKeys(payload, ['reason', 'mode']) && validText(payload.reason, 80) && EXPERIENCES.has(payload.mode);
+      default: return false;
+    }
+  }
+
+  window.__wo003HostMessageAudit = [];
+  function auditMessage(message, event, decision, reason) {
+    const type = isRecord(message) && typeof message.type === 'string' ? message.type : '<malformed>';
+    window.__wo003HostMessageAudit.push({
+      type, decision, reason, at: Date.now(),
+      source: event.source === frame.contentWindow ? 'cartridge' : 'other',
+      origin: event.origin,
+    });
+  }
   const local = {
     experience: document.querySelector('[data-arcade-preview-experience]'),
     character: document.querySelector('[data-arcade-preview-character]'),
@@ -112,13 +179,13 @@
   }
 
   function send(type, payload = {}) {
-    if (!frame.contentWindow) return false;
+    if (!frame.contentWindow || !runtime.sessionId) return false;
     try {
       window.__wo003HostMessages = window.__wo003HostMessages || [];
       window.__wo003HostMessages.push({ type, payload, at: Date.now(), visibility: document.visibilityState });
       // The sandboxed child has an opaque origin. This targets only the exact
       // iframe WindowProxy; every child message is source/origin checked below.
-      frame.contentWindow.postMessage({ protocol: PROTOCOL, gameId: GAME_ID, type, payload }, '*');
+      frame.contentWindow.postMessage({ protocol: PROTOCOL, gameId: GAME_ID, type, payload, sessionId: runtime.sessionId }, '*');
       return true;
     } catch (_) { return false; }
   }
@@ -192,6 +259,7 @@
     frame.hidden = false;
     try { frame.focus({ preventScroll: false }); } catch (_) { frame.focus(); }
     runtime.startPending = true;
+    runtime.pendingStart = { sessionId: runtime.sessionId, experienceId, characterId: state.selectedCharacterId };
     setChooserLocked(true);
     runtime.activeRun = null;
     sendProfile();
@@ -259,9 +327,20 @@
   }
 
   window.addEventListener('message', event => {
-    if (event.source !== frame.contentWindow || event.origin !== 'null') return;
     const message = event.data;
-    if (!message || message.protocol !== PROTOCOL || message.gameId !== GAME_ID || !message.payload || typeof message.payload !== 'object') return;
+    if (event.source !== frame.contentWindow) { auditMessage(message, event, 'rejected', 'source'); return; }
+    if (event.origin !== 'null') { auditMessage(message, event, 'rejected', 'origin'); return; }
+    if (!isRecord(message) || message.protocol !== PROTOCOL || message.gameId !== GAME_ID || typeof message.type !== 'string') {
+      auditMessage(message, event, 'rejected', 'envelope'); return;
+    }
+    if (typeof message.sessionId !== 'string' || message.sessionId !== runtime.sessionId) {
+      auditMessage(message, event, 'rejected', 'session'); return;
+    }
+    if (!exactKeys(message, ['protocol', 'gameId', 'type', 'payload', 'sessionId'])
+        || !ACCEPTED_TYPES.has(message.type) || !validPayload(message.type, message.payload)) {
+      auditMessage(message, event, 'rejected', 'schema'); return;
+    }
+    auditMessage(message, event, 'accepted', '');
     const payload = message.payload;
     if (message.type === 'game:ready') {
       runtime.ready = true;
@@ -273,17 +352,20 @@
       runtime.profileReady = true;
       if (local.status) local.status.textContent = runtime.persistenceAvailable ? 'Preview ready. Progress saves in this browser.' : 'Preview ready for this session. Browser storage is unavailable.';
     } else if (message.type === 'game:started') {
-      const profile = childProfile();
-      if (payload.mode !== profile.experienceId || payload.characterId !== profile.selectedCharacterId) return;
+      const pending = runtime.pendingStart;
+      if (!runtime.startPending || !pending || pending.sessionId !== runtime.sessionId
+          || payload.mode !== pending.experienceId || payload.characterId !== pending.characterId) return;
+      runtime.startPending = false;
+      runtime.pendingStart = null;
       runtime.activeRun = {
-        experienceId: profile.experienceId,
-        characterId: profile.selectedCharacterId,
+        experienceId: pending.experienceId,
+        characterId: pending.characterId,
         startedAt: Date.now(),
         completed: false,
         unlockedGullyBefore: state.unlockedCharacterIds.includes('pelican'),
       };
       if (local.result) local.result.hidden = true;
-      if (local.status) local.status.textContent = `${profile.experienceId} is playing as ${profile.selectedCharacterId}.`;
+      if (local.status) local.status.textContent = `${pending.experienceId} is playing as ${pending.characterId}.`;
       if (local.start) local.start.textContent = 'Play';
     } else if (message.type === 'game:score') {
       handleScore(payload);
@@ -307,7 +389,9 @@
     } else if (message.type === 'game:error') {
       if (local.status) local.status.textContent = 'The preview reported an error.';
     } else if (message.type === 'game:start-rejected') {
+      if (!runtime.startPending || !runtime.pendingStart || payload.mode !== runtime.pendingStart.experienceId) return;
       runtime.startPending = false;
+      runtime.pendingStart = null;
       runtime.activeRun = null;
       setChooserLocked(false);
       if (local.status) local.status.textContent = `The ${payload.mode || 'selected'} experience could not start (${payload.reason || 'unknown reason'}).`;
@@ -315,8 +399,12 @@
   });
 
   frame.addEventListener('load', () => {
+    runtime.sessionId = createSessionId();
     runtime.ready = false;
     runtime.profileReady = false;
+    runtime.startPending = false;
+    runtime.pendingStart = null;
+    runtime.activeRun = null;
     setChooserLocked(true);
     send('host:init', { profile: childProfile() });
   });
@@ -358,6 +446,7 @@
     start: beginExperience,
     send,
     reload: () => frame.contentWindow?.location?.reload(),
+    sessionId: () => runtime.sessionId,
     persistenceAvailable: () => runtime.persistenceAvailable,
   });
 })();

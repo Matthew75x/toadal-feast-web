@@ -15,15 +15,16 @@
     'host:exit-confirmed', 'host:visibility',
   ]);
   const send = (type, payload = {}) => {
-    if (!embedded || !parentOrigin || parentOrigin === 'null') return false;
+    if (!embedded || !parentOrigin || parentOrigin === 'null' || !sessionId) return false;
     try {
-      window.parent.postMessage({ protocol: PROTOCOL, gameId: GAME_ID, type, payload }, parentOrigin);
+      window.parent.postMessage({ protocol: PROTOCOL, gameId: GAME_ID, type, payload, sessionId }, parentOrigin);
       return true;
     } catch (_) { return false; }
   };
 
   let activeProfile = null;
   let hostInitialized = false;
+  let sessionId = '';
   let readySent = false;
   let helloTimer = 0;
   let lastScore = null;
@@ -150,16 +151,30 @@
   window.addEventListener('message', event => {
     if (!embedded || !parentOrigin || event.origin !== parentOrigin || event.source !== window.parent) return;
     const message = event.data;
-    if (!message || message.protocol !== PROTOCOL || message.gameId !== GAME_ID || !allowedHostMessages.has(message.type)) return;
-    if (message.type === 'host:init') {
+    if (message?.type === 'host:init') {
+      if (!message || message.protocol !== PROTOCOL || message.gameId !== GAME_ID
+          || typeof message.sessionId !== 'string' || message.sessionId.length < 32 || message.sessionId.length > 64
+          || !message.payload || typeof message.payload !== 'object' || Array.isArray(message.payload)) return;
+      const isNewSession = message.sessionId !== sessionId;
+      sessionId = message.sessionId;
       hostInitialized = true;
+      if (isNewSession) {
+        readySent = false;
+        lastScore = null;
+        runStartedAt = 0;
+        autoPauseReasons.clear();
+        autoPauseOwned = false;
+      }
       activeProfile = sanitizeProfile(message.payload?.profile);
       if (domReady) {
         applyPreviewProfile(activeProfile);
         announceReady();
         send('game:profile-ready', { experienceId: activeProfile.experienceId, characterId: activeProfile.selectedCharacterId });
       }
-    } else if (message.type === 'host:start') {
+    } else if (!message || message.protocol !== PROTOCOL || message.gameId !== GAME_ID
+        || message.sessionId !== sessionId || !allowedHostMessages.has(message.type)
+        || !message.payload || typeof message.payload !== 'object' || Array.isArray(message.payload)) return;
+    else if (message.type === 'host:start') {
       if (!hostInitialized || !message.payload?.profile) return;
       startFromHost(message.payload.profile);
     } else if (message.type === 'host:pause') {
