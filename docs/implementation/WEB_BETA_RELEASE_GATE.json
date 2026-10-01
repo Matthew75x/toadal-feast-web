@@ -1,0 +1,98 @@
+{
+  "schema": "toadal-feast.web-beta-release-gate.v1",
+  "status": "PLANNING",
+  "criticalPath": [
+    {
+      "id": "B1",
+      "name": "ARC-QUAL-01",
+      "state": "ACTIVE_HOLD",
+      "blocks": [
+        "B2"
+      ]
+    },
+    {
+      "id": "B2",
+      "name": "ARC-INTEGRATE-01",
+      "state": "WAITING_FOR_B1",
+      "blocks": [
+        "B5"
+      ]
+    },
+    {
+      "id": "B3",
+      "name": "Beta navigation/content minimum",
+      "state": "PLANNED",
+      "blocks": [
+        "B5"
+      ]
+    },
+    {
+      "id": "B4",
+      "name": "App conversion truth",
+      "state": "PLANNED",
+      "blocks": [
+        "B6"
+      ]
+    },
+    {
+      "id": "B5",
+      "name": "Public-beta quality closure",
+      "state": "PLANNED",
+      "blocks": [
+        "B6"
+      ]
+    },
+    {
+      "id": "B6",
+      "name": "Beta release candidate",
+      "state": "PLANNED",
+      "blocks": [
+        "PRODUCTION_OWNER_ACCEPTANCE"
+      ]
+    }
+  ],
+  "betaRequiredRoutes": [
+    "Home",
+    "Play",
+    "Wicked Bites detail/player",
+    "TOADAL FEAST Arcade Preview detail/player",
+    "World hub",
+    "Characters hub",
+    "Toadal profile",
+    "App/Get the Game",
+    "Support",
+    "Legal/Privacy",
+    "404"
+  ],
+  "deferredBeyondBeta1": [
+    "full Stories/Manga/Reader",
+    "full Feast Pass/Quests/Rewards",
+    "registered-account backend",
+    "cross-device sync",
+    "global/friends leaderboards",
+    "community backend",
+    "full Store",
+    "all future browser mini-games",
+    "full editorial expansion",
+    "commerce"
+  ],
+  "arcadePreview": {
+    "standardRoster": [
+      "toadal",
+      "classic",
+      "pelican"
+    ],
+    "experiences": [
+      "standard",
+      "fmf",
+      "zen"
+    ],
+    "excluded": [
+      "tc",
+      "puzzle",
+      "feastfall",
+      "infinite"
+    ]
+  },
+  "productionDeployAuthorized": false
+}
