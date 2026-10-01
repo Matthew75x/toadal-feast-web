@@ -16,7 +16,7 @@
     { "branch": "fix/wo001-approved-home-parity-20260930", "sha": "0e7f795d942f9fa6e9127e714a9ed83a7e61f2f8", "remote": "origin/fix/wo001-approved-home-parity-20260930", "preservedSha": "0e7f795d942f9fa6e9127e714a9ed83a7e61f2f8", "action": "fast-forwarded the one-commit-behind remote; no force push" },
     { "branch": "work/WO-002-home-evolution-20260930", "sha": "8e0ded8ee1a94ddccaad6127ac05416551d23c6d", "remote": "origin/work/WO-002-home-evolution-20260930", "preservedSha": "8e0ded8ee1a94ddccaad6127ac05416551d23c6d", "action": "created same-named ref; legacy work/WO-002-play-games-player was not repointed" },
     { "branch": "work/WO-003-arcade-isolation-20260930", "baseSha": "409a6d223a148937aa15073b5640379560594b89", "preservedSha": "0e815a9c68e3a30fdfcb605f73f58aa54c787e70", "remote": "origin/work/WO-003-arcade-isolation-20260930", "action": "committed and pushed existing qualification evidence only; no additional Arcade QA or website integration" },
-    { "branch": "ops/web-authority-consolidation-20261001", "baseSha": "7c17e28135688ace9139918f077a44e3d03d9765", "remote": "origin/ops/web-authority-consolidation-20261001", "action": "commit this authority consolidation and push this branch only" }
+    { "branch": "ops/web-authority-consolidation-20261001", "baseSha": "7c17e28135688ace9139918f077a44e3d03d9765", "initialPushedCommit": "82aecb3ab4745207b6a5f8006a4239a2c76cb397", "remote": "origin/ops/web-authority-consolidation-20261001", "action": "authority commit pushed; this follow-on ledger records and closes preservation" }
   ],
   "wo003ExistingWorkingTree": {
     "branch": "work/WO-003-arcade-isolation-20260930",
@@ -61,5 +61,5 @@
     "staging/live-visual": "do not change or deploy from this task",
     "productionOrDns": "out of scope"
   },
-  "completion": "preservation commits/pushes completed; final remote refs still to be verified"
+  "completion": "all source/work preservation refs published; exact remote heads independently reverified after the final ledger commit"
 }
