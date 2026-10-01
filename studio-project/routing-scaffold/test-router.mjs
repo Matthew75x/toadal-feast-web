@@ -16,7 +16,8 @@ const destinations = {
 
 assert.equal(normalizeCode(" APP-QR "), "app_qr");
 assert.equal(normalizeCode("app_share"), "app_share");
-assert.equal(normalizeCode("bad<script>"), "badscript");
+assert.equal(normalizeCode("bad<script>"), null);
+assert.equal(normalizeCode("app-$qr"), null);
 
 assert.deepEqual(campaignFor("app_qr"), {
   code: "app_qr",
@@ -66,5 +67,23 @@ const unknown = resolveRoute({
 });
 assert.equal(unknown.knownCampaign, false);
 assert.equal(unknown.destination, destinations.website);
+
+const unknownAndroid = resolveRoute({
+  url: "https://toadalfeast.com/go/not-a-real-campaign",
+  userAgent: "Android",
+  destinations,
+});
+assert.equal(unknownAndroid.knownCampaign, false);
+assert.equal(unknownAndroid.platform, "android");
+assert.equal(unknownAndroid.destination, destinations.website);
+
+const malformedAndroid = resolveRoute({
+  url: "https://toadalfeast.com/?ref=app-$qr",
+  userAgent: "Android",
+  destinations,
+});
+assert.equal(malformedAndroid.knownCampaign, false);
+assert.equal(malformedAndroid.code, null);
+assert.equal(malformedAndroid.destination, destinations.website);
 
 console.log("QR attribution routing scaffold: PASS");
