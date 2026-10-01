@@ -33,10 +33,13 @@ The controlling visual target remains `docs/review/WO-002/evidence/approved-home
 - Persistent companion clearance: 12px desktop/wide, 10px mobile.
 
 Current evidence:
+- `docs/review/home-lock-manifest-20261001/approved-vs-candidate.jpg` — direct side-by-side owner-review aid.
 - `docs/review/home-lock-manifest-20261001/home-desktop.webp`
 - `docs/review/home-lock-manifest-20261001/home-wide.webp`
 - `docs/review/home-lock-manifest-20261001/home-mobile.webp`
 - `docs/review/home-lock-manifest-20261001/runtime-result.json`
+
+The side-by-side shows that hierarchy/density are now materially closer, but literal visual parity is **not** claimed. The approved target still has richer Feast World art, final-logo treatment, more illustrative game-card art, populated Feast Pass UI, media thumbnails, and real app-conversion evidence that the current truthful staging candidate does not yet possess.
 
 ## Verification
 
