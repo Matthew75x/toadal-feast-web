@@ -28,9 +28,9 @@
     "BLOCKED_APPROVED_COPY": "Cannot publish final legal/content copy until approved source text exists."
   },
   "pageStatusCounts": {
-    "PARTIAL_CANDIDATE": 16,
+    "PARTIAL_CANDIDATE": 17,
     "PARTIAL": 10,
-    "NOT_STARTED": 3,
+    "NOT_STARTED": 2,
     "DONE_PROVEN": 1
   },
   "pages": [
@@ -236,10 +236,10 @@
       "n": 23,
       "page": "Search / Discovery",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "DISABLED_UTILITY",
-      "status": "NOT_STARTED",
-      "evidence": "Search is not falsely presented as live.",
-      "remainingGap": "Dedicated local search route, grouped results, filters and meaningful empty/results states absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /search/ candidate route, 48-entry local static index, grouped result categories, category filter, query URL state, suggestions, support-page local filtering, and verified real route/fragment targets. Search stays local-only with no external search service.",
+      "remainingGap": "Owner visual acceptance, Home search-entry activation, richer content density, and final integrated Studio/browser qualification after this donor merge remain."
     },
     {
       "n": 24,
@@ -369,7 +369,7 @@
     {
       "requirement": "Sound/settings/search utilities",
       "status": "PARTIAL_CANDIDATE",
-      "evidence": "Companion assets/semantic reactions exist; full user-facing settings/search system is not implemented."
+      "evidence": "Local-only Search/Discovery is implemented as a candidate route with grouped results and support filtering; broader sound/settings utilities remain partial."
     },
     {
       "requirement": "Truthful PUBLIC/PREVIEW/PLANNED/COMING_SOON/DISABLED states",
