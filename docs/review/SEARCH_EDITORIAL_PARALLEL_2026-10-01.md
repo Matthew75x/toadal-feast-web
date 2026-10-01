@@ -67,3 +67,15 @@ After the Stories/gated convergence candidate is green:
 6. Decide Home search activation as part of the owner visual review rather than silently changing the locked Home treatment.
 
 No deployment occurred.
+## Pre-merge conflict map against Stories donor
+
+A read-only `git merge-tree --write-tree` comparison against Stories donor `8b681eeb31a56c7bb69133664b7ce5b5574aeeda` found a small, understandable conflict surface:
+
+- `studio-project/toadal-feast-website/collections/advanced-code.json` — preserve both Stories publishing loader logic and this local-search loader.
+- `studio-project/toadal-feast-website/content/registry.json` — preserve Stories series/chapter schema/content fields plus this lane's media/help/roadmap records.
+- `studio-project/toadal-feast-website/reference/assets/css/site.css` — retain both Stories styles and the isolated search/support styles.
+- `dist/assets/css/site.css` — generated conflict; resolve by authoritative Studio regeneration rather than hand-merging generated CSS.
+
+`pages/index.json` auto-merges in the hypothetical merge, so `/manga/`, `/reader/`, and `/search/` do not inherently collide.
+
+After reconciliation, rerun both content builders (`build-story-content.mjs` and `build-local-search-index.mjs`) before Studio render so neither generated data projection is stale.
