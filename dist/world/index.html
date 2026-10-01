@@ -697,8 +697,52 @@
     });
   }
 
+  function initGuestProgressionLoader() {
+    var currentPath = window.location.pathname || '/';
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    var currentRelative = !baseRoot ? currentPath :
+      (currentPath === baseRoot || currentPath.indexOf(baseRoot + '/') === 0
+        ? currentPath.slice(baseRoot.length) || '/'
+        : currentPath);
+    if (currentRelative.length > 1) currentRelative = currentRelative.replace(/\/+$/, '') + '/';
+    var eligibleRoutes = [
+      '/feast-pass/',
+      '/feast-pass/quests/',
+      '/feast-pass/rewards/',
+      '/profile/',
+      '/world/',
+      '/stories/'
+    ];
+    if (eligibleRoutes.indexOf(currentRelative) === -1 || window.__toadalGuestProgressionLoading ||
+        window.__toadalGuestProgressionLoaded) return;
+
+    window.__toadalGuestProgressionLoading = true;
+    function fail() {
+      window.__toadalGuestProgressionLoading = false;
+      var status = document.querySelector('[data-progression-storage-status]');
+      if (status) status.textContent = 'Guest progress is unavailable right now. Your local starter data was not changed.';
+    }
+    var definitions = document.createElement('script');
+    definitions.src = baseRoot + '/assets/js/progression-definitions.js';
+    definitions.onload = function () {
+      var runtime = document.createElement('script');
+      runtime.src = baseRoot + '/assets/js/guest-progression.js';
+      runtime.onload = function () {
+        window.__toadalGuestProgressionLoading = false;
+        window.__toadalGuestProgressionLoaded = true;
+      };
+      runtime.onerror = fail;
+      document.head.appendChild(runtime);
+    };
+    definitions.onerror = fail;
+    document.head.appendChild(definitions);
+  }
+
   function start() {
     if (window.self !== window.top) return;
+    try { initGuestProgressionLoader(); } catch (error) {}
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}

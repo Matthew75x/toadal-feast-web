@@ -3647,3 +3647,280 @@ main:has(.home-hero) > [data-studio-variant="companion"] .companion-image{max-he
   .character-family-page .companion-toggle,.character-family-page .companion-image{width:44px;height:48px}
   .character-family-page .companion-image{max-height:48px}
 }
+
+/* Guest-local progression surfaces. Intentionally scoped away from Home and shell. */
+[data-progression-page] {
+  --progression-ink: #351b32;
+  --progression-muted: #68545f;
+  --progression-line: rgb(91 48 69 / 16%);
+  --progression-paper: #fffdf7;
+  width: min(calc(100% - 32px), 1120px);
+  margin-inline: auto;
+  padding-block: clamp(18px, 3vw, 34px) 56px;
+  color: var(--progression-ink);
+}
+
+[data-progression-page] .detail-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-block-end: 14px;
+  color: var(--progression-muted);
+  font-size: .83rem;
+}
+
+[data-progression-page] .detail-breadcrumb a,
+[data-progression-page] .progression-nav a {
+  color: var(--pink-700);
+  font-weight: 800;
+  text-underline-offset: .18em;
+}
+
+[data-progression-page] :where(a, button):focus-visible {
+  outline: 3px solid var(--pink-700);
+  outline-offset: 3px;
+}
+
+[data-progression-page] .progression-hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(22px, 5vw, 52px);
+  border: 2px solid rgb(255 212 91 / 72%);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 90% 10%, rgb(255 212 91 / 68%), transparent 34%),
+    linear-gradient(135deg, #fff7df 0%, #fffdf6 56%, #ffeaf1 100%);
+  box-shadow: 0 8px 0 rgb(66 36 22 / 8%), 0 18px 36px rgb(66 36 22 / 8%);
+}
+
+[data-progression-page] .progression-hero h1 {
+  max-width: 16ch;
+  margin: 2px 0 12px;
+  color: var(--navy-900);
+  font-size: clamp(2.5rem, 7vw, 4.65rem);
+  line-height: .98;
+  letter-spacing: -.045em;
+}
+
+[data-progression-page] .progression-eyebrow {
+  margin: 0 0 8px;
+  color: var(--pink-700);
+  font-size: .72rem;
+  font-weight: 950;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+[data-progression-page] .progression-lede {
+  max-width: 70ch;
+  margin: 0;
+  color: #493a42;
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.55;
+}
+
+[data-progression-page] .progression-truth-note {
+  max-width: 78ch;
+  margin: 18px 0 0;
+  padding: 11px 14px;
+  border-inline-start: 4px solid var(--gold-400);
+  border-radius: 0 10px 10px 0;
+  color: #59444d;
+  background: rgb(255 255 255 / 66%);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+
+[data-progression-page] .progression-section,
+[data-progression-page] .progression-controls {
+  min-width: 0;
+  margin-block-start: 18px;
+  padding: clamp(17px, 3vw, 26px);
+  border: 1px solid var(--progression-line);
+  border-radius: 19px;
+  background: var(--progression-paper);
+  box-shadow: 0 5px 0 rgb(66 36 22 / 5%);
+}
+
+[data-progression-page] .progression-section-heading,
+[data-progression-page] .progression-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+[data-progression-page] .progression-section-heading {
+  margin-block-end: 16px;
+}
+
+[data-progression-page] .progression-section-heading .section-kicker {
+  margin: 0 0 4px;
+  color: var(--pink-700);
+  font-size: .66rem;
+  font-weight: 950;
+  letter-spacing: .13em;
+}
+
+[data-progression-page] .progression-section-heading h2,
+[data-progression-page] .progression-daily h2,
+[data-progression-page] .progression-controls h2 {
+  margin: 0;
+  color: var(--navy-900);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+  line-height: 1.12;
+}
+
+[data-progression-page] .progression-local-badge {
+  flex: 0 0 auto;
+  padding: 7px 11px;
+  border: 1px solid rgb(217 0 85 / 20%);
+  border-radius: 999px;
+  color: var(--pink-700);
+  background: #fff1f6;
+  font-size: .76rem;
+  font-weight: 850;
+}
+
+[data-progression-page] .progression-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+}
+
+[data-progression-page] .progression-stat {
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--progression-line);
+  border-radius: 14px;
+  background: linear-gradient(150deg, #fff 0%, #fff8e8 100%);
+}
+
+[data-progression-page] .progression-stat dt {
+  color: var(--progression-muted);
+  font-size: .77rem;
+  font-weight: 750;
+}
+
+[data-progression-page] .progression-stat dd {
+  overflow-wrap: anywhere;
+  margin: 5px 0 0;
+  color: var(--navy-900);
+  font-size: clamp(1.45rem, 3.8vw, 2rem);
+  font-weight: 950;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+[data-progression-page] .progression-storage,
+[data-progression-page] .progression-daily p,
+[data-progression-page] .progression-controls p {
+  color: var(--progression-muted);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+
+[data-progression-page] .progression-storage {
+  margin: 13px 0 0;
+}
+
+[data-progression-page] .progression-daily {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  background: linear-gradient(110deg, #fff5d8, #fffdf7 70%);
+}
+
+[data-progression-page] .progression-daily .section-kicker {
+  margin: 0 0 5px;
+  color: var(--pink-700);
+  font-size: .66rem;
+  font-weight: 950;
+  letter-spacing: .13em;
+}
+
+[data-progression-page] .progression-daily p:not(.section-kicker) {
+  margin: 8px 0 0;
+}
+
+[data-progression-page] .progression-daily button:disabled {
+  cursor: not-allowed;
+  opacity: .68;
+}
+
+[data-progression-page] .progression-empty {
+  min-width: 0;
+  padding: clamp(16px, 3vw, 24px);
+  border: 1px dashed rgb(91 48 69 / 27%);
+  border-radius: 15px;
+  color: var(--progression-muted);
+  background: #fffaf0;
+  line-height: 1.55;
+}
+
+[data-progression-page] .progression-empty > :first-child { margin-block-start: 0; }
+[data-progression-page] .progression-empty > :last-child { margin-block-end: 0; }
+[data-progression-page] .progression-empty h3 { color: var(--navy-900); }
+[data-progression-page] .progression-muted { color: var(--progression-muted); font-size: .84rem; }
+
+[data-progression-page] .progression-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-block-start: 18px;
+  padding: 12px;
+  border: 1px solid var(--progression-line);
+  border-radius: 15px;
+  background: #fffdf7;
+}
+
+[data-progression-page] .progression-nav a {
+  display: inline-flex;
+  min-height: 42px;
+  align-items: center;
+  padding: 8px 13px;
+  border: 1px solid rgb(217 0 85 / 17%);
+  border-radius: 999px;
+  background: #fff;
+}
+
+[data-progression-page] .progression-nav a[aria-current='page'] {
+  color: #fff;
+  background: var(--pink-700);
+}
+
+[data-progression-page] .progression-controls {
+  align-items: center;
+}
+
+[data-progression-page] .progression-controls h2 { font-size: 1.12rem; }
+[data-progression-page] .progression-controls p { max-width: 68ch; margin: 7px 0 0; }
+[data-progression-page] .progression-controls button { flex: 0 0 auto; cursor: pointer; }
+
+@media (max-width: 760px) {
+  [data-progression-page] {
+    width: min(calc(100% - 20px), 100%);
+    padding-block: 14px 36px;
+  }
+
+  [data-progression-page] .progression-hero { border-radius: 18px; }
+  [data-progression-page] .progression-stat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  [data-progression-page] .progression-stat { padding: 11px; }
+  [data-progression-page] .progression-section-heading,
+  [data-progression-page] .progression-daily,
+  [data-progression-page] .progression-controls { align-items: flex-start; }
+  [data-progression-page] .progression-daily,
+  [data-progression-page] .progression-controls { flex-direction: column; }
+  [data-progression-page] .progression-daily .button-link,
+  [data-progression-page] .progression-controls .button-link { width: 100%; justify-content: center; }
+  [data-progression-page] .progression-muted { max-width: 40%; text-align: end; }
+}
+
+@media (max-width: 360px) {
+  [data-progression-page] .progression-stat-grid { grid-template-columns: 1fr 1fr; }
+  [data-progression-page] .progression-stat dt { font-size: .7rem; }
+  [data-progression-page] .progression-nav { gap: 6px; padding: 9px; }
+  [data-progression-page] .progression-nav a { min-height: 40px; padding-inline: 10px; font-size: .86rem; }
+}
