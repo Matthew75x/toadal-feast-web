@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "wicked-bites",
+  "displayName": "Wicked Bites",
+  "version": "5.5",
+  "publicState": "PREVIEW",
+  "entry": "index.html",
+  "poster": null,
+  "orientation": "any",
+  "inputs": {
+    "touch": true,
+    "keyboard": true,
+    "mouse": true,
+    "gamepad": false
+  },
+  "storage": {
+    "namespace": "toadalFeast.wickedBites.previewSession.v1",
+    "persistence": "none",
+    "accountSync": "none"
+  },
+  "fullscreen": true,
+  "mobileSupport": true,
+  "protocol": {
+    "name": "toadal.game",
+    "version": 1
+  },
+  "source": {
+    "repository": "Matthew75x/feast-crossing-wicked-bites",
+    "ref": "6fff3c89605092ba5c5e122565cb98415c8ab5e5",
+    "entrySource": "dist/PLAY_FEAST_CROSSING_WICKED_BITES_V5_5_MOTION_JUICE.html",
+    "sourceHash": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5"
+  },
+  "knownLimitations": [
+    "PREVIEW only; this build is not a public game release.",
+    "The website bridge is a local compatibility adapter around the donor UI; the upstream package itself does not emit the TOADAL v1 protocol.",
+    "The donor standalone build uses localStorage. The website player uses an opaque-origin sandbox; the donor save layer falls back to in-memory state, which is cleared on reload or close and is never synced to an account.",
+    "The detail page uses approved world artwork, not an in-game screenshot."
+  ],
+  "donorPackage": {
+    "files": 1,
+    "bytes": 1462042,
+    "sha256": "a6d0772c608ff50e042f319dcb5cabe612cafeb656a2a19f922cc5f4068b50b5"
+  },
+  "package": {
+    "files": 2,
+    "bytes": 1467205,
+    "sha256": "d775a2fd2ee236b0b0171732f0d7202b6c95c1b1eb11127e86c9949963851153"
+  },
+  "packageHashMethod": "SHA-256 of sorted path/hash ledger for runtime files only; cartridge.json excluded to avoid self-reference."
+}

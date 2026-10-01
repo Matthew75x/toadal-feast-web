@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "page.world",
+  "route": "/world/",
+  "title": "The Feast World · TOADAL FEAST",
+  "description": "Explore a visual preview of the TOADAL FEAST food-fantasy world.",
+  "publicationState": "noindex",
+  "components": [
+    {
+      "id": "component.live-world.rich-text",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "live-world",
+        "html": "<article class='wo002-detail-page live-visual-page' data-companion-context='world' data-companion-copy='This is a visual preview of the Feast World, not a published world guide.' data-companion-reaction='curious'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>World</span></nav><section class='wo002-detail-hero'><div class='wo002-detail-copy'><p class='section-kicker'>A WORLD MADE FOR WONDER</p><span class='chip preview'>WORLD PREVIEW</span><h1>Welcome to the Feast World</h1><p class='wo002-detail-lede'>Follow candy-colored paths into a food-fantasy world filled with memorable characters and room for new adventures. This page is a visual introduction; a complete world guide and map have not been published.</p><div class='wo002-detail-actions'><a class='button-link button-link--primary' href='/stories/'>Explore stories <span aria-hidden='true'>→</span></a><a class='button-link button-link--secondary' href='/play/'>See browser games</a></div></div><figure class='wo002-detail-art'><img src='/assets/images/world/candy-kingdom.webp' alt='Candy Kingdom environment artwork from the TOADAL FEAST world.' decoding='async'><figcaption>Canonical Feast World environment art.</figcaption></figure></section><section class='wo002-detail-facts' aria-label='Feast World preview'><article class='detail-fact' data-companion-context='world-places' data-companion-copy='The scenery is canonical world art; it does not imply a complete location directory.'><p class='section-kicker'>PLACES</p><h2>Made to explore</h2><p>See the Candy Kingdom and other visual glimpses of the world. A full location directory is not available yet.</p></article><article class='detail-fact' data-companion-context='world-cast' data-companion-copy='Character portraits are previews; published character biographies are not available here.'><p class='section-kicker'>CHARACTERS</p><h2>Meet the cast</h2><p>Toadal, Princess Lily, Gulper, Gully, and the Feast Genies appear in canonical art across the site.</p><a href='/media/'>View media previews <span aria-hidden='true'>→</span></a></article><article class='detail-fact'><p class='section-kicker'>STATUS</p><h2>Discovery preview</h2><p>No interactive map, story archive, or unreleased destination is presented as live.</p></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>This is a visual preview of the Feast World, not a published world guide.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+      }
+    }
+  ],
+  "referenceFile": "world/index.html",
+  "studioGenerated": true
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "page.stories",
+  "route": "/stories/",
+  "title": "Stories · TOADAL FEAST",
+  "description": "A truthful preview of TOADAL FEAST stories and the characters behind the world.",
+  "publicationState": "noindex",
+  "components": [
+    {
+      "id": "component.live-stories.rich-text",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "live-stories",
+        "html": "<article class='wo002-detail-page live-visual-page' data-companion-context='stories' data-companion-copy='Stories are not published here yet; the character art is only a preview.' data-companion-reaction='thinking'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Stories</span></nav><section class='wo002-detail-hero'><div class='wo002-detail-copy'><p class='section-kicker'>CHARACTERS · WORLDS · ADVENTURES</p><span class='chip preview'>NOT PUBLISHED</span><h1>Stories from the Feast</h1><p class='wo002-detail-lede'>The Feast World is home to Toadal, Princess Lily, Gulper, Gully, and the Feast Genies. A story collection, episode archive, and publication schedule are not available on this staging site.</p><div class='wo002-detail-actions'><a class='button-link button-link--primary' href='/world/'>Explore the world <span aria-hidden='true'>→</span></a><a class='button-link button-link--secondary' href='/media/'>See character art</a></div></div><figure class='wo002-detail-art'><img src='/assets/images/characters/princess-lily.webp' alt='Princess Lily, shown in canonical character artwork.' width='512' height='512' decoding='async'><figcaption>Princess Lily character art — not an illustration for a published story.</figcaption></figure></section><section class='wo002-detail-facts' aria-label='Story availability'><article class='detail-fact' data-companion-context='stories-library' data-companion-copy='There are no published chapters or episodes to read on this page.'><p class='section-kicker'>READ</p><h2>No story archive yet</h2><p>No chapters, episodes, or long-form stories are published here.</p></article><article class='detail-fact'><p class='section-kicker'>MEET</p><h2>Characters of the Feast</h2><p>Canonical character art offers a first look at the cast without inventing biographies or plot details.</p><a href='/media/'>Browse media previews <span aria-hidden='true'>→</span></a></article><article class='detail-fact'><p class='section-kicker'>UPDATES</p><h2>No dates announced</h2><p>There is no confirmed story release date or publication schedule on this site.</p><a href='/news/'>News status <span aria-hidden='true'>→</span></a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Stories are not published here yet; the character art is only a preview.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+      }
+    }
+  ],
+  "referenceFile": "stories/index.html",
+  "studioGenerated": true
+}

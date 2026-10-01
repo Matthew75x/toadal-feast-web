@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "page.feast-pass",
+  "route": "/feast-pass/",
+  "title": "Feast Pass · TOADAL FEAST",
+  "description": "The Feast Pass is planned; no live rewards, levels, or progression are available.",
+  "publicationState": "noindex",
+  "components": [
+    {
+      "id": "component.live-feast-pass.rich-text",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "live-feast-pass",
+        "html": "<article class='wo002-detail-page live-visual-page' data-companion-context='feast-pass' data-companion-copy='Feast Pass is planned; no levels, XP, rewards, or account progression are live.' data-companion-reaction='proud'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Feast Pass</span></nav><section class='wo002-detail-hero'><div class='wo002-detail-copy'><p class='section-kicker'>A GUEST-FIRST JOURNEY · PLANNED</p><span class='chip preview'>PLANNED</span><h1>Your Feast Pass journey</h1><p class='wo002-detail-lede'>A guest-first progression experience is planned for a future phase. The Feast Pass is not live: this page does not track a level, XP, Sparks, Treats, streaks, quests, or account sync.</p><div class='wo002-detail-actions'><a class='button-link button-link--primary' href='/play/'>Explore browser previews <span aria-hidden='true'>→</span></a><a class='button-link button-link--secondary' href='/support/'>Read support information</a></div></div><figure class='wo002-detail-art'><img src='/assets/images/characters/toadal-portrait.webp' alt='Toadal, the crowned golden-yellow hero, in canonical character artwork.' width='256' height='256' decoding='async'><figcaption>Character artwork — no live pass balance or reward status is shown.</figcaption></figure></section><section class='wo002-detail-facts' aria-label='Feast Pass availability'><article class='detail-fact'><p class='section-kicker'>STATUS</p><h2>Planned</h2><p>No Feast Pass progression system is available on this staging site.</p></article><article class='detail-fact'><p class='section-kicker'>REWARDS</p><h2>Not announced</h2><p>No reward catalog, reward values, or redemption flow is being represented as live.</p></article><article class='detail-fact'><p class='section-kicker'>ACCOUNT</p><h2>No sign-in or sync</h2><p>This site does not create an account or save progress across devices.</p></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Feast Pass is planned; no levels, XP, rewards, or account progression are live.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+      }
+    }
+  ],
+  "referenceFile": "feast-pass/index.html",
+  "studioGenerated": true
+}
