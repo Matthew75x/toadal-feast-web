@@ -31,11 +31,16 @@ const acceptedRouteEvidence = new Map([
   [3,['/games/wicked-bites/','/play/wicked-bites/']],
   [4,['/player/wicked-bites/']],
   [5,['/world/']],
+  [6,['/characters/']],
+  [7,['/characters/toadal/']],
   [8,['/stories/']],
   [11,['/media/']],
   [12,['/news/']],
   [14,['/feast-pass/']],
+  [15,['/feast-pass/quests/']],
+  [16,['/feast-pass/rewards/']],
   [18,['/app/']],
+  [20,['/profile/']],
   [25,['/support/']],
   [30,['/404.html']]
 ]);

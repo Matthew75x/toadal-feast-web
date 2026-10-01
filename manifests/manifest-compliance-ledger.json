@@ -8,7 +8,13 @@
     "authorityConsolidation": "92decef6cef31622833458e2a98dd9e577ca79c2",
     "assetAuthority": "62717951f4ffba0e8dd779116cc192d70f94d534",
     "combinedVisualCandidate": "58a7121e363d3480c122623b1de5cd0d5ac1778e",
-    "approvedHomeSha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608"
+    "approvedHomeSha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608",
+    "integratedCandidate": "945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da",
+    "homeCandidate": "d4219fb9a7e8598512e142da4acafeb06225f293",
+    "charactersCandidate": "b1c837acb73137f75283223e57b080d7ec34484e",
+    "progressionCandidate": "1f953861ca2a8d06773bb2f49267e3ccec06db7d",
+    "currentReviewCandidate": "945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da",
+    "currentReviewBranch": "integration/manifest-home-characters-progression-20261001"
   },
   "statusDefinitions": {
     "DONE_PROVEN": "Requirement exists and has direct implementation/evidence.",
@@ -20,8 +26,9 @@
     "BLOCKED_APPROVED_COPY": "Cannot publish final legal/content copy until approved source text exists."
   },
   "pageStatusCounts": {
-    "PARTIAL": 13,
-    "NOT_STARTED": 11,
+    "PARTIAL_CANDIDATE": 7,
+    "PARTIAL": 11,
+    "NOT_STARTED": 6,
     "DEFERRED_SERVICE": 3,
     "BLOCKED_CONTENT_ENDPOINT": 1,
     "BLOCKED_APPROVED_COPY": 1,
@@ -33,9 +40,9 @@
       "page": "Home",
       "visualAuthority": "LOCK_VISUAL",
       "delivery": "LIVE + CANDIDATE",
-      "status": "PARTIAL",
-      "evidence": "Live route exists; combined candidate has Home/header convergence and contextual companion.",
-      "remainingGap": "Still does not match the approved dense Home closely enough: final franchise wordmark/header utilities, richer first-viewport composition, five-card/game-pass density, app evidence, guest progression, and owner visual acceptance remain."
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Home remains live from the older staging shell; candidate d4219fb / integrated 945c7ea materially restores the approved dense portal hierarchy, four truthful game listings, fixed contextual Toadal, paired Games/Feast Pass and App/What’s Next bands.",
+      "remainingGap": "LOCK_VISUAL still requires owner visual acceptance. Final franchise wordmark, real app-store evidence and richer approved content remain unavailable."
     },
     {
       "n": 2,
@@ -77,19 +84,19 @@
       "n": 6,
       "page": "Characters Hub",
       "visualAuthority": "POLISH",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "Canonical character assets exist.",
-      "remainingGap": "Dedicated route, collection/filter/relationships/appearances/discovery-progress experience absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /characters/ route is implemented on the integrated candidate with canonical character registry, approved Batch-1 layout reference and responsive filtering.",
+      "remainingGap": "Still preview-state content; relationships/appearances/discovery-progress depth and final owner visual acceptance are not complete."
     },
     {
       "n": 7,
       "page": "Toadal Character Profile",
       "visualAuthority": "POLISH",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "Canonical Toadal identity/assets are established.",
-      "remainingGap": "Dedicated biography/personality/history/abilities/friends/locations/games/stories/gallery/collectibles page absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /characters/toadal/ route is implemented on the integrated candidate using canonical Toadal art and a structured profile layout.",
+      "remainingGap": "Biography/lore depth is intentionally bounded to verified content; broader appearances/collectibles/history remain incomplete and owner visual acceptance is pending."
     },
     {
       "n": 8,
@@ -149,28 +156,28 @@
       "n": 14,
       "page": "Feast Pass Dashboard",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "LIVE",
-      "status": "PARTIAL",
-      "evidence": "Explanatory/planned Feast Pass route exists and avoids fake economy data.",
-      "remainingGap": "Guest-local level/XP/Sparks/Treats/streak/daily reward/reward track/discoveries are not implemented."
+      "delivery": "LIVE + CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Feast Pass candidate now renders browser-local level, XP, Sparks, streak, discoveries, quest summary and daily check-in using current namespaced storage.",
+      "remainingGap": "Starter values are explicitly non-canonical; Treat catalog, complete reward track, account sync and final visual/product acceptance remain."
     },
     {
       "n": 15,
       "page": "Quests / Challenges",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "Quest concepts and assets exist.",
-      "remainingGap": "Daily/weekly/exploration/game/story quests, rewards and history absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /feast-pass/quests/ route and definition-driven local route-visit quests are implemented with idempotent progress and safe reward claims.",
+      "remainingGap": "Only starter route-visit quests exist; daily/weekly/exploration content catalog and production quest definitions remain incomplete."
     },
     {
       "n": 16,
       "page": "Rewards / Collection",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "Reward assets/state concepts exist.",
-      "remainingGap": "Reward track, badges, titles, cosmetics, foods/relics/collectibles and lock states absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /feast-pass/rewards/ route is implemented with truthful local non-entitlement milestones and empty claimable catalog behavior.",
+      "remainingGap": "Approved badges, titles, cosmetics, Treat/food/relic collections and any entitlement catalog remain intentionally absent."
     },
     {
       "n": 17,
@@ -203,10 +210,10 @@
       "n": 20,
       "page": "Player Profile",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "ABSENT",
-      "status": "NOT_STARTED",
-      "evidence": "Guest-local profile is allowed without connected account.",
-      "remainingGap": "Guest profile, local level/XP/title/scores/discovery/achievement showcase absent."
+      "delivery": "CANDIDATE",
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Dedicated /profile/ guest-local profile is implemented with local level/XP/Sparks/streak/discovery/quest summary and explicit non-account scope.",
+      "remainingGap": "No connected identity, synced history, game-score feed, achievement showcase or approved title/avatar system exists yet."
     },
     {
       "n": 21,
@@ -317,8 +324,8 @@
     },
     {
       "requirement": "Discover characters/world/story",
-      "status": "PARTIAL",
-      "evidence": "World/Stories/Media routes exist; Characters Hub and Toadal Profile do not."
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "World/Stories/Media plus new Characters Hub and Toadal Profile candidate routes now cover more of the discovery journey; manga/reader and broader character depth remain."
     },
     {
       "requirement": "Consume media/manga/lore/news",
@@ -327,8 +334,8 @@
     },
     {
       "requirement": "Guest-first Feast Pass progression",
-      "status": "NOT_STARTED",
-      "evidence": "No durable guest-local XP/level/Sparks/Treats/streak/quests/discoveries runtime."
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Integrated candidate implements browser-local level/XP/Sparks/streak/discoveries/daily check-in/quest summary under the current namespaced contract."
     },
     {
       "requirement": "Account later for preserve/sync",
@@ -352,13 +359,13 @@
     },
     {
       "requirement": "Daily rewards",
-      "status": "NOT_STARTED",
-      "evidence": "Documented concept only."
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Candidate has one configurable UTC-day browser-local check-in with idempotent claim behavior; full reward calendar/content remains unapproved."
     },
     {
       "requirement": "Quests/challenges",
-      "status": "NOT_STARTED",
-      "evidence": "Documented concept only."
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Candidate implements definition-driven route-visit quests with local progress and one-time claims; production quest catalog remains incomplete."
     },
     {
       "requirement": "Sound/settings/search utilities",
@@ -412,8 +419,8 @@
     },
     {
       "requirement": "Guest progression storage contract",
-      "status": "NOT_STARTED_SALVAGE_AVAILABLE",
-      "evidence": "Current contract is defined; historical donor proves behavior, but migration to toadal:web:v1:* records has not been implemented."
+      "status": "PARTIAL_CANDIDATE",
+      "evidence": "Candidate implements toadal:web:v1:* records, safe defaults, schema/version protection, corruption recovery and scoped reset behavior."
     }
   ],
   "sourceMap": {
@@ -458,9 +465,14 @@
         "role": "Current public GitHub Pages implementation."
       },
       {
+        "source": "integration/manifest-home-characters-progression-20261001",
+        "sha": "945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da",
+        "role": "Current manifest-core review candidate: Home + Characters/Toadal + guest progression; not approved or deployed."
+      },
+      {
         "source": "integration/visual-convergence-combined-20261001",
         "sha": "58a7121e363d3480c122623b1de5cd0d5ac1778e",
-        "role": "Latest combined visual candidate; review only, not manifest completion."
+        "role": "Older visual-only convergence candidate retained as implementation history/donor."
       },
       {
         "source": "integration/master-asset-authority-20261001",
@@ -641,75 +653,37 @@
   "executionPriorities": [
     {
       "rank": 1,
-      "lane": "Home LOCK_VISUAL closure",
+      "lane": "Integrated candidate visual acceptance / staging gate",
       "manifestRows": [
-        1
-      ],
-      "impact": "Required north-star acceptance; prevents visual drift across all later pages.",
-      "resources": [
-        "approved Home image",
-        "Figma Approved Home Target",
-        "strict Home parity WIP donor",
-        "combined candidate"
-      ],
-      "parallelSafeWith": [
-        "guest progression foundation",
-        "Characters/Toadal page implementation"
-      ],
-      "doneWhen": "Side-by-side composition is materially aligned and owner visual acceptance is recorded; truthful missing systems remain truthful."
-    },
-    {
-      "rank": 2,
-      "lane": "Guest progression foundation",
-      "manifestRows": [
+        1,
+        6,
+        7,
         14,
         15,
         16,
         20
       ],
-      "impact": "Closes a major cross-cutting product loop and unlocks Feast Pass/Quests/Rewards/Profile without waiting for account backend.",
+      "impact": "Core candidate is implemented and verified; Home remains LOCK_VISUAL and must be reviewed before staging promotion.",
       "resources": [
-        "PROGRESSION_STATE_CONTRACT.md",
-        "historical app.js donor",
-        "R2/R3 adventure.js + smoke evidence",
-        "food asset library",
-        "companion reward assets"
+        "approved Home target",
+        "integrated candidate",
+        "visual proofs",
+        "progression evidence"
       ],
       "parallelSafeWith": [
-        "Home visual closure",
-        "Characters/Toadal"
+        "Stories publishing stack"
       ],
-      "doneWhen": "toadal:web:v1:* storage, safe defaults/corruption recovery, config-driven definitions and basic UI state work offline."
+      "doneWhen": "Owner accepts Home direction and bounded integrated staging review passes."
     },
     {
-      "rank": 3,
-      "lane": "Characters Hub + Toadal Profile",
-      "manifestRows": [
-        6,
-        7
-      ],
-      "impact": "Two completely missing approved Batch-1 families; directly advances discovery journey.",
-      "resources": [
-        "06_CHARACTERS_HUB.png",
-        "07_TOADAL_PROFILE.png",
-        "canonical character assets",
-        "old /toadal structural donor"
-      ],
-      "parallelSafeWith": [
-        "Home visual closure",
-        "guest progression"
-      ],
-      "doneWhen": "responsive truthful routes match approved layout direction and use canonical content only."
-    },
-    {
-      "rank": 4,
+      "rank": 2,
       "lane": "Stories publishing stack",
       "manifestRows": [
         8,
         9,
         10
       ],
-      "impact": "Turns a placeholder hub into the required content/reader system.",
+      "impact": "Rows 9 and 10 are absent and row 8 is only a preview; Batch-1 references already exist.",
       "resources": [
         "08_STORIES_COMICS_HUB.png",
         "09_MANGA_SERIES.png",
@@ -717,12 +691,12 @@
         "PUBLICATION_RULES.md"
       ],
       "parallelSafeWith": [
-        "utilities/gated routes"
+        "editorial/discovery utilities"
       ],
-      "doneWhen": "real data model/templates/reader/bookmarks-resume plumbing exist; no fake chapters if content absent."
+      "doneWhen": "Truthful Manga Series and Reader shell/bookmark-resume plumbing exist without fabricated chapters."
     },
     {
-      "rank": 5,
+      "rank": 3,
       "lane": "Editorial/discovery utilities",
       "manifestRows": [
         11,
@@ -732,20 +706,21 @@
         24,
         25
       ],
-      "impact": "Converts empty previews into usable media/news/search/roadmap/support surfaces.",
+      "impact": "Converts partial media/news/support and missing article/search/roadmap families into useful truthful pages.",
       "resources": [
         "30-page contact sheet",
         "publication rules",
-        "older updates/support structural donors",
-        "current media/news/support routes"
+        "current Media/News/Support",
+        "historical Updates/Support donors"
       ],
       "parallelSafeWith": [
-        "gated routes"
+        "Stories publishing stack",
+        "gated ecosystem routes"
       ],
-      "doneWhen": "structured records/templates/local search and truthful empty states exist."
+      "doneWhen": "Structured records/templates/local search/roadmap/support depth exist and publication states are enforced."
     },
     {
-      "rank": 6,
+      "rank": 4,
       "lane": "Truthful gated ecosystem routes",
       "manifestRows": [
         19,
@@ -756,49 +731,71 @@
         28,
         29
       ],
-      "impact": "Eliminates dead-end/missing ecosystem families without fabricating backend functionality.",
+      "impact": "Closes missing ecosystem families without pretending connected services are live.",
       "resources": [
-        "older account/community/store/privacy/terms structural donors",
-        "Master V2 contextual assets",
-        "manifest/contact sheet"
+        "historical structural donors",
+        "Master V2 assets",
+        "page manifest"
       ],
       "parallelSafeWith": [
-        "editorial utilities"
+        "editorial/discovery utilities"
       ],
-      "doneWhen": "polished routes exist with explicit Preview/Coming Soon/approved-content gates; real endpoint/copy blockers remain visible."
+      "doneWhen": "Polished truthful preview/Coming Soon/legal/contact/about routes exist; real blockers stay explicit."
     },
     {
-      "rank": 7,
+      "rank": 5,
       "lane": "App conversion evidence closure",
       "manifestRows": [
         18
       ],
-      "impact": "Completes flagship conversion only when evidence is real.",
+      "impact": "Completes flagship conversion only when genuine evidence is available.",
       "resources": [
-        "physical device captures",
         "APP_CONVERSION_EVIDENCE_GATE.md",
+        "future device screenshots",
         "future verified store destinations"
       ],
       "parallelSafeWith": [],
-      "doneWhen": "approved current screenshots and verified store URLs are wired; otherwise buttons remain disabled."
+      "doneWhen": "Approved screenshots and verified store URLs are wired; otherwise actions remain disabled."
     },
     {
-      "rank": 8,
-      "lane": "Play depth / additional browser game integration",
+      "rank": 6,
+      "lane": "Play depth / additional browser-game integration",
       "manifestRows": [
         2,
         3,
         4,
         17
       ],
-      "impact": "Improves immediate-play funnel after core site product structure is under control.",
+      "impact": "Improves immediate-play depth after core structure is under control.",
       "resources": [
         "qualified Wicked/CLAW donors",
         "Netlify cartridge previews",
         "Play mockups"
       ],
       "parallelSafeWith": [],
-      "doneWhen": "only bounded integration QA is needed; Arcade HOLD does not block unrelated pages."
+      "doneWhen": "Bounded integration checks pass; Arcade HOLD does not block unrelated website work."
     }
-  ]
+  ],
+  "integration": {
+    "branch": "integration/manifest-home-characters-progression-20261001",
+    "commit": "945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da",
+    "parents": {
+      "home": "d4219fb9a7e8598512e142da4acafeb06225f293",
+      "characters": "b1c837acb73137f75283223e57b080d7ec34484e",
+      "progression": "1f953861ca2a8d06773bb2f49267e3ccec06db7d"
+    },
+    "verification": {
+      "manifest": "PASS",
+      "homeVisual": "29/29 PASS",
+      "homeLegacy": "60 checks PASS",
+      "guestProgression": "17/17 PASS",
+      "characterRegistry": "PASS",
+      "pagesBasePath": "PASS",
+      "navigation": "0 unresolved targets",
+      "cartridgeIsolation": "PASS",
+      "combinedBrowser": "0 failures / 0 console errors / 0 HTTP failures at desktop+mobile across 9 key routes"
+    },
+    "deployment": "NOT_DEPLOYED",
+    "promotionGate": "Home LOCK_VISUAL owner acceptance + integrated staging review"
+  }
 }

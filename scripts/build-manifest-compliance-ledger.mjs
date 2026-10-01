@@ -21,9 +21,9 @@ for (const p of ledger.pages) counts[p.status] = (counts[p.status] || 0) + 1;
 
 const md = [];
 md.push('# TOADAL FEAST Website - Manifest Compliance Ledger', '');
-md.push('**Date:** 2026-10-01  ');
-md.push(`**Current public staging:** \`${ledger.authority.liveStaging}\`  `);
-md.push(`**Latest combined review candidate:** \`${ledger.authority.combinedVisualCandidate}\`  `);
+md.push('**Date:** 2026-10-01');
+md.push(`**Current public staging:** \`${ledger.authority.liveStaging}\``);
+md.push(`**Current integrated review candidate:** \`${ledger.authority.currentReviewCandidate || ledger.authority.integratedCandidate || ledger.authority.combinedVisualCandidate}\``);
 md.push('**Controlling denominator:** the original 30-page manifest plus locked cross-cutting product requirements.', '');
 md.push('## Why this exists', '');
 md.push('This ledger replaces work-order completion as the project-level progress measure. A green verifier, a clean branch, or a closed work order does **not** mean the website manifest is complete.', '');
@@ -82,8 +82,9 @@ sm.push('# TOADAL FEAST Website - Project Source Map / Authority Firewall', '', 
 sm.push('## Purpose', '', 'ASSIGNATOR contains many historical TOADAL website worktrees and redesign packages. This document prevents a historical donor from silently becoming current product authority.', '');
 sm.push('## Active project folders', '');
 sm.push(`- \`C:/ReleaseOps/toadal-feast-web-live-staging\` - public staging lineage; remote staging SHA \`${ledger.authority.liveStaging}\`.`);
-sm.push(`- \`C:/ReleaseOps/toadal-feast-web-visual-combined-20261001\` - latest combined review candidate \`${ledger.authority.combinedVisualCandidate}\`.`);
-sm.push('- `C:/ReleaseOps/toadal-feast-web-manifest-recalibration-20261001` - manifest control/ledger worktree.');
+sm.push(`- \`C:/ReleaseOps/toadal-feast-web-stories-stack-20261001\` - current integrated review candidate \`${ledger.authority.currentReviewCandidate || ledger.authority.integratedCandidate}\` on \`${ledger.authority.currentReviewBranch}\`.`);
+sm.push(`- \`C:/ReleaseOps/toadal-feast-web-visual-combined-20261001\` - older visual-only convergence candidate \`${ledger.authority.combinedVisualCandidate}\`; implementation history/donor, not current review head.`);
+sm.push('- `C:/ReleaseOps/toadal-feast-web-manifest-recalibration-20261001` - manifest-control baseline worktree.');
 sm.push(`- \`C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001\` - Master V2 asset authority \`${ledger.authority.assetAuthority}\`.`);
 sm.push('- `C:/ReleaseOps/toadal-feast-web-discovery-visual-20261001` - World/Stories/Media candidate.');
 sm.push('- `C:/ReleaseOps/toadal-feast-web-home-header-convergence-review-20261001` - reviewed Home/header candidate.');

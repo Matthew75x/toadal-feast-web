@@ -23,8 +23,9 @@ Work-order PASS, automated QA PASS, route presence, branch cleanliness, or visua
 
 - Current public visual staging lineage: `staging/live-visual` at verified SHA `270940dee30b7aafb70af941c520c6d4d223e288`.
 - Authority consolidation baseline: `ops/web-authority-consolidation-20261001` at `92decef6cef31622833458e2a98dd9e577ca79c2`.
-- Latest combined visual review candidate: `integration/visual-convergence-combined-20261001` at `58a7121e363d3480c122623b1de5cd0d5ac1778e`; this is not automatically approved or deployed.
-- Manifest-control branch: `ops/manifest-recalibration-20261001`, created from the combined candidate to re-establish project-level compliance control.
+- Current integrated review candidate: `integration/manifest-home-characters-progression-20261001` at `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da`. It combines the Home `LOCK_VISUAL` candidate, Characters Hub + Toadal Profile, and guest-local progression. It is **not** owner-approved, staged, or deployed.
+- Older visual-only convergence candidate: `integration/visual-convergence-combined-20261001` at `58a7121e363d3480c122623b1de5cd0d5ac1778e`; retain as implementation history/donor rather than the current review head.
+- Manifest-control baseline: `ops/manifest-recalibration-20261001` at `914a79f0e36c003583282ea7461cb9f8aba8d52a`.
 - Main snapshot remains `87050885331770ca3e30db7e463154aebd777512`.
 - Public visual staging: <https://matthew75x.github.io/toadal-feast-web/>.
 - Studio project: `studio-project/toadal-feast-website/project.json`; certified renderer: TOADAL Studio 1.4.2.
