@@ -1,0 +1,71 @@
+{
+  "schema": "toadal-feast.web-execution-queue.v1",
+  "generatedAt": "2026-09-30",
+  "current": "ARC-QUAL-01",
+  "items": [
+    {
+      "id": "ARC-QUAL-01",
+      "state": "ACTIVE_HOLD",
+      "estimatedRuns": 1,
+      "next": [
+        "ARC-INTEGRATE-01"
+      ]
+    },
+    {
+      "id": "ARC-INTEGRATE-01",
+      "state": "BLOCKED",
+      "estimatedRuns": 1,
+      "next": [
+        "BETA-01",
+        "BETA-QA-01"
+      ]
+    },
+    {
+      "id": "BETA-01",
+      "state": "PREPARED",
+      "estimatedRuns": [
+        1,
+        2
+      ],
+      "next": [
+        "BETA-QA-01"
+      ]
+    },
+    {
+      "id": "BETA-CONVERSION-01",
+      "state": "PREPARED",
+      "estimatedRuns": 1,
+      "parallelizable": true,
+      "next": [
+        "BETA-QA-01"
+      ]
+    },
+    {
+      "id": "BETA-QA-01",
+      "state": "WAITING",
+      "estimatedRuns": 1,
+      "next": [
+        "BETA-RC-01"
+      ]
+    },
+    {
+      "id": "BETA-RC-01",
+      "state": "WAITING",
+      "estimatedRuns": 1,
+      "next": [
+        "OWNER_ACCEPTANCE"
+      ]
+    }
+  ],
+  "estimatedSubstantiveRunsToBeta": [
+    5,
+    6
+  ],
+  "laterNotBetaBlocking": [
+    "WO-004 Stories/Reader",
+    "WO-005 Feast Pass",
+    "account backend",
+    "community",
+    "commerce"
+  ]
+}
