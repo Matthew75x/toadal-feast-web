@@ -43,9 +43,14 @@ function inspect(route, cfg = {}) {
 }
 
 for (const record of pageIndex) {
-  if (!fs.existsSync(distFileFor(record.route))) {
+  const renderedFile = distFileFor(record.route);
+  if (!fs.existsSync(renderedFile)) {
     errors.push(`registered route has no rendered HTML: ${record.route}`);
+    continue;
   }
+  const rendered = fs.readFileSync(renderedFile, 'utf8');
+  const hasRenderedCompanion = /<aside\b[^>]*class=["'][^"']*\btoadal-companion\b/i.test(rendered);
+  if (!hasRenderedCompanion) errors.push(`${record.route} rendered companion missing`);
 }
 
 inspect('/404.html', {

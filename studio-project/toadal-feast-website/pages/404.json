@@ -75,6 +75,14 @@
           }
         ]
       }
+    },
+    {
+      "id": "component.404.companion",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "companion",
+        "html": "<aside class='toadal-companion' data-companion data-zone='route' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>That path wandered off. I can help you get back to Home, Play, World, or Search.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/companion/runtime-v2/maintenance.webp' alt='' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside>"
+      }
     }
   ],
   "referenceFile": "404.html",

@@ -51,7 +51,7 @@ let seq=0; let events=[]; const pending=new Map();
 ws.onmessage=e=>{const m=JSON.parse(e.data);if(m.id&&pending.has(m.id)){pending.get(m.id)(m);pending.delete(m.id);}else events.push(m);};
 await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j});
 const call=(method,params={})=>new Promise((r,j)=>{const id=++seq;pending.set(id,m=>m.error?j(new Error(JSON.stringify(m.error))):r(m));ws.send(JSON.stringify({id,method,params}));});
-await call('Page.enable');await call('Runtime.enable');await call('Network.enable');await call('Network.setCacheDisabled',{cacheDisabled:true});
+await call('Page.enable');await call('Runtime.enable');await call('Network.enable');await call('Network.setCacheDisabled',{cacheDisabled:true});await call('Emulation.setEmulatedMedia',{media:'',features:[{name:'prefers-reduced-motion',value:'no-preference'}]});
 async function evaluate(expression){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});return r.result.result.value;}
 
 const inspectExpr=[
@@ -112,7 +112,13 @@ for(const c of casesToRun){
   const consoleErrors=events.filter(e=>e.method==='Runtime.consoleAPICalled'&&e.params?.type==='error').length;
   const clipped=samples.flatMap(s=>s.clipped.map(x=>({scrollY:s.scrollY,...x})));
   const overlaps=samples.flatMap(s=>s.overlaps.map(x=>({scrollY:s.scrollY,...x})));
+  const companionMissing=samples.filter(s=>!s.companion).length;
+  const companionNotFixed=samples.filter(s=>s.companion&&s.companion.position!=='fixed').map(s=>s.companion);
   const companionBad=samples.filter(s=>s.companion&&s.companion.position==='fixed'&&!s.companion.within).map(s=>s.companion);
+  let companionInteraction=null;
+  if(c.route==='/'&&(c.label==='desktop'||c.label==='mobile')){
+    companionInteraction=await evaluate(`(async()=>{const root=document.querySelector('[data-companion]');if(!root)return {ok:false,reason:'missing-root'};const img=root.querySelector('[data-companion-image]');const target=document.querySelector('[data-companion-context="world"], a[href$="/world/"]')||[...document.querySelectorAll('[data-companion-context]')].find(e=>e!==root&&!e.closest('[data-companion]'));if(!img||!target)return {ok:false,reason:'missing-image-or-target'};target.dispatchEvent(new PointerEvent('pointerover',{bubbles:true,pointerType:'mouse'}));await new Promise(r=>setTimeout(r,90));const cs=getComputedStyle(img);const pointer={engaged:root.getAttribute('data-companion-engaged'),reaction:root.getAttribute('data-companion-current-reaction'),transform:cs.transform,width:img.getBoundingClientRect().width,height:img.getBoundingClientRect().height};target.dispatchEvent(new PointerEvent('pointerout',{bubbles:true,pointerType:'mouse',relatedTarget:document.body}));target.dispatchEvent(new Event('touchstart',{bubbles:true}));await new Promise(r=>setTimeout(r,30));const touch={engaged:root.getAttribute('data-companion-engaged'),reaction:root.getAttribute('data-companion-current-reaction')};return {ok:pointer.engaged==='true'&&!!pointer.reaction&&pointer.transform!=='none'&&touch.engaged==='true'&&!!touch.reaction,pointer,touch};})()`);
+  }
   const issues=[];
   if(!doc.title)issues.push('missing-title');if(!doc.lang)issues.push('missing-lang');if(!doc.viewport)issues.push('missing-viewport');
   if(doc.h1!==1)issues.push('h1-count');if(doc.main!==1)issues.push('main-count');if(doc.overflow)issues.push('horizontal-overflow');
@@ -120,9 +126,11 @@ for(const c of casesToRun){
   if(doc.duplicateIds?.length)issues.push('duplicate-ids');if(doc.unnamedControls?.length)issues.push('unnamed-controls');
   if(doc.brokenFragments?.length)issues.push('broken-fragments');if(httpErrors.length||loadErrors.length)issues.push('network-errors');
   if(runtimeErrors.length||consoleErrors)issues.push('runtime-errors');if(clipped.length)issues.push('clipped-controls');
+  if(companionMissing)issues.push('companion-missing');if(companionNotFixed.length)issues.push('companion-not-fixed');
   if(overlaps.length)issues.push('companion-control-overlap');if(companionBad.length)issues.push('companion-out-of-bounds');
+  if(companionInteraction&&!companionInteraction.ok)issues.push('companion-interaction');
   const status=issues.length?'FAIL':'PASS';
-  results.push({...c,status,issues,doc,httpErrors,loadErrors,runtimeErrors,consoleErrors,clipped,overlaps,companionBad});
+  results.push({...c,status,issues,doc,httpErrors,loadErrors,runtimeErrors,consoleErrors,clipped,overlaps,companionMissing,companionNotFixed,companionBad,companionInteraction});
   process.stdout.write(status+'|'+c.label+'|'+c.route+'|'+issues.join(',')+'\n');
 }
 
