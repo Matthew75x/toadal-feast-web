@@ -5615,3 +5615,656 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
     animation: none !important;
   }
 }
+
+
+/* App / Download production package — real gameplay convergence (2026-10-01).
+   Scoped to the new production classes so the existing Home responsive stack is not reopened. */
+#app .app-conversion-panel--production {
+  position: relative;
+  isolation: isolate;
+  display: grid;
+  grid-template-columns: minmax(250px, .92fr) minmax(330px, 1.08fr);
+  align-items: stretch;
+  gap: clamp(10px, 1.3vw, 18px);
+  min-height: 230px;
+  max-height: 230px;
+  padding: 14px 16px 14px 18px;
+  overflow: hidden;
+  border: 2px solid rgb(255 196 51 / 82%);
+  border-radius: 18px;
+  color: var(--cream-50);
+  background:
+    linear-gradient(90deg, rgb(38 16 10 / 94%) 0%, rgb(38 16 10 / 83%) 42%, rgb(38 16 10 / 44%) 70%, rgb(38 16 10 / 18%) 100%),
+    url("../images/world/candy-kingdom.webp") 66% center / cover no-repeat;
+  box-shadow: 0 9px 0 rgb(66 36 22 / 10%), 0 18px 34px rgb(66 36 22 / 18%);
+}
+
+#app .app-conversion-panel--production::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 77% 28%, rgb(255 214 76 / 20%), transparent 24%),
+    radial-gradient(circle at 92% 72%, rgb(255 38 122 / 20%), transparent 30%);
+}
+
+#app .app-conversion-panel--production .app-conversion-copy {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  min-width: 0;
+  max-width: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2px 0;
+}
+
+#app .app-conversion-panel--production .section-kicker {
+  display: inline-flex;
+  margin: 0 0 5px;
+  padding: 3px 8px;
+  border: 1px solid rgb(255 214 92 / 76%);
+  border-radius: 999px;
+  color: var(--cream-50);
+  background: var(--pink-700);
+  font-size: .56rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+}
+
+#app .app-conversion-panel--production .section-heading {
+  max-width: 390px;
+  margin: 0 0 5px;
+  color: var(--cream-50);
+  font-size: clamp(1.6rem, 2.25vw, 2.35rem);
+  line-height: .94;
+  text-wrap: balance;
+  text-shadow: 0 2px 4px rgb(20 10 8 / 56%);
+}
+
+#app .app-conversion-panel--production .section-lede {
+  display: -webkit-box;
+  max-width: 430px;
+  margin: 0 0 7px;
+  overflow: hidden;
+  color: var(--cream-50);
+  font-size: .67rem;
+  line-height: 1.28;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  text-shadow: 0 1px 3px rgb(20 10 8 / 58%);
+}
+
+.app-mode-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin: 0 0 7px;
+  padding: 0;
+  list-style: none;
+}
+
+.app-mode-list li {
+  padding: 3px 7px;
+  border: 1px solid rgb(255 222 128 / 48%);
+  border-radius: 999px;
+  color: #fff7db;
+  background: rgb(33 15 11 / 62%);
+  font-size: .56rem;
+  font-weight: 900;
+  letter-spacing: .04em;
+}
+
+.app-conversion-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+#app .app-conversion-panel--production .store-badge-row {
+  gap: 5px;
+  margin: 0;
+}
+
+#app .app-conversion-panel--production .store-badge {
+  min-width: 118px;
+  min-height: 35px;
+  padding: 4px 8px;
+  border-color: rgb(255 255 255 / 26%);
+  background: rgb(12 10 10 / 86%);
+  font-size: .67rem;
+  opacity: .74;
+}
+
+#app .app-conversion-panel--production .store-badge small {
+  font-size: .48rem;
+}
+
+#app .app-conversion-panel--production .app-more-link {
+  min-height: 35px;
+  padding: 6px 9px;
+  border-color: rgb(255 214 92 / 70%);
+  color: #fff7dc;
+  background: rgb(255 255 255 / 10%);
+  font-size: .62rem;
+}
+
+#app .app-conversion-panel--production .app-links-status {
+  margin: 5px 0 0;
+  color: rgb(255 246 219 / 78%);
+  font-size: .51rem;
+  line-height: 1.25;
+}
+
+.app-production-showcase {
+  position: relative;
+  z-index: 2;
+  min-width: 0;
+  height: 202px;
+  align-self: center;
+}
+
+.app-phone-frame,
+.app-product-phone {
+  position: absolute;
+  overflow: hidden;
+  border: 5px solid #17110f;
+  border-radius: 22px;
+  background: #15110f;
+  box-shadow: 0 12px 24px rgb(0 0 0 / 38%), inset 0 0 0 1px rgb(255 255 255 / 12%);
+}
+
+.app-phone-frame {
+  top: 1px;
+  left: 46%;
+  z-index: 4;
+  width: 116px;
+  height: 196px;
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.app-phone-frame::before,
+.app-product-phone::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 50%;
+  z-index: 6;
+  width: 38%;
+  height: 7px;
+  border-radius: 0 0 8px 8px;
+  background: #17110f;
+  transform: translateX(-50%);
+}
+
+.app-phone-frame img,
+.app-product-phone img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-phone-frame figcaption,
+.app-product-phone figcaption,
+.app-shot-card figcaption,
+.app-product-stage-card figcaption {
+  position: absolute;
+  z-index: 7;
+  right: 6px;
+  bottom: 6px;
+  margin: 0;
+  padding: 2px 6px;
+  border: 1px solid rgb(255 255 255 / 22%);
+  border-radius: 999px;
+  color: #fff;
+  background: rgb(22 13 10 / 78%);
+  font-size: .5rem;
+  font-weight: 900;
+  letter-spacing: .05em;
+}
+
+.app-shot-label {
+  position: absolute;
+  top: 10px;
+  left: 8px;
+  z-index: 7;
+  padding: 2px 5px;
+  border-radius: 999px;
+  color: #2a150b;
+  background: #ffd351;
+  box-shadow: 0 2px 7px rgb(0 0 0 / 24%);
+  font-size: .43rem;
+  font-weight: 1000;
+  letter-spacing: .07em;
+}
+
+.app-shot-card,
+.app-product-stage-card {
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  border: 3px solid rgb(255 236 172 / 88%);
+  border-radius: 12px;
+  background: #1b100c;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 32%);
+}
+
+.app-shot-card img,
+.app-product-stage-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-shot-card--puzzle {
+  top: 19px;
+  left: 0;
+  z-index: 1;
+  width: 49%;
+  height: 92px;
+  transform: rotate(-5deg);
+}
+
+.app-shot-card--feastfall {
+  bottom: 11px;
+  left: 7%;
+  z-index: 2;
+  width: 48%;
+  height: 88px;
+  transform: rotate(4deg);
+}
+.app-product-page {
+  width: min(1180px, calc(100% - 32px));
+  margin-inline: auto;
+  padding-block: 20px 56px;
+}
+
+.app-product-hero {
+  display: grid;
+  grid-template-columns: minmax(300px, .8fr) minmax(440px, 1.2fr);
+  gap: clamp(22px, 3vw, 44px);
+  align-items: center;
+  min-height: 520px;
+  padding: clamp(24px, 4vw, 52px);
+  overflow: hidden;
+  border: 2px solid rgb(255 196 51 / 70%);
+  border-radius: 28px;
+  color: var(--cream-50);
+  background:
+    linear-gradient(104deg, rgb(37 15 10 / 95%) 0%, rgb(37 15 10 / 82%) 43%, rgb(37 15 10 / 32%) 100%),
+    url("../images/world/candy-kingdom.webp") center / cover no-repeat;
+  box-shadow: 0 12px 0 rgb(82 44 28 / 10%), 0 26px 60px rgb(82 44 28 / 22%);
+}
+
+.app-product-copy {
+  position: relative;
+  z-index: 4;
+}
+
+.app-product-copy .section-kicker {
+  color: var(--gold-400);
+}
+
+.app-product-copy h1 {
+  max-width: 580px;
+  margin: 10px 0 12px;
+  color: #fff9e7;
+  font-size: clamp(2.65rem, 5vw, 5.25rem);
+  line-height: .88;
+  text-wrap: balance;
+}
+
+.app-product-copy .wo002-detail-lede {
+  max-width: 590px;
+  color: rgb(255 249 231 / 90%);
+  font-size: clamp(.96rem, 1.4vw, 1.13rem);
+  line-height: 1.5;
+}
+
+.app-product-store-row {
+  margin-block-start: 18px;
+}
+
+.app-product-status {
+  max-width: 560px;
+  margin: 10px 0 0;
+  color: rgb(255 249 231 / 72%);
+  font-size: .75rem;
+  line-height: 1.4;
+}
+
+.app-product-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+
+.app-product-actions .button-link--secondary {
+  color: #fff7db;
+  border-color: rgb(255 219 109 / 70%);
+  background: rgb(255 255 255 / 10%);
+}
+
+.app-product-stage {
+  position: relative;
+  min-height: 430px;
+}
+
+.app-product-phone {
+  top: 10px;
+  left: 50%;
+  z-index: 5;
+  width: 205px;
+  height: 342px;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.app-product-stage-card--puzzle {
+  top: 22px;
+  left: 0;
+  z-index: 2;
+  width: 58%;
+  aspect-ratio: 16 / 9;
+  transform: rotate(-6deg);
+}
+
+.app-product-stage-card--feastfall {
+  right: 0;
+  bottom: 22px;
+  z-index: 3;
+  width: 58%;
+  aspect-ratio: 16 / 9;
+  transform: rotate(5deg);
+}
+.app-gameplay-section {
+  margin-top: 26px;
+  padding: clamp(20px, 3vw, 34px);
+  border: 1px solid rgb(166 102 6 / 24%);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #fffdf6, #f8ead1);
+  box-shadow: 0 10px 24px rgb(76 41 22 / 9%);
+}
+
+.app-gameplay-heading {
+  display: grid;
+  grid-template-columns: minmax(0, .65fr) minmax(300px, 1.35fr);
+  gap: 8px 28px;
+  align-items: end;
+  margin-bottom: 18px;
+}
+
+.app-gameplay-heading .section-kicker {
+  grid-column: 1;
+  margin: 0;
+}
+
+.app-gameplay-heading h2 {
+  grid-column: 1;
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(1.8rem, 3vw, 3rem);
+  line-height: .95;
+}
+
+.app-gameplay-heading p {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin: 0;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+
+.app-gameplay-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.app-gameplay-card {
+  overflow: hidden;
+  border: 1px solid rgb(155 93 23 / 22%);
+  border-radius: 18px;
+  background: #fffaf0;
+}
+
+.app-gameplay-card-art {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-bottom: 1px solid rgb(155 93 23 / 18%);
+  background: #21120d;
+}
+
+.app-gameplay-card-art img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.app-gameplay-card--arcade .app-gameplay-card-art img {
+  object-position: center 63%;
+}
+
+.app-gameplay-card > div:last-child {
+  padding: 14px;
+}
+
+.app-gameplay-card h3 {
+  margin: 8px 0 5px;
+  color: var(--ink);
+  font-size: 1.25rem;
+}
+
+.app-gameplay-card p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: .83rem;
+  line-height: 1.42;
+}
+
+.app-product-facts {
+  margin-top: 18px;
+}
+
+@media (max-width: 980px) {
+  .app-product-hero {
+    grid-template-columns: minmax(0, .88fr) minmax(340px, 1.12fr);
+    padding: 28px;
+  }
+}
+
+@media (max-width: 760px) {
+  #app .app-conversion-panel--production {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    min-height: 444px;
+    max-height: none;
+    padding: 14px;
+    background-position: 66% center;
+  }
+
+  #app .app-conversion-panel--production .app-conversion-copy {
+    padding: 10px 11px;
+    border: 1px solid rgb(255 207 91 / 58%);
+    border-radius: 13px;
+    background: rgb(38 16 10 / 91%);
+    box-shadow: 0 5px 14px rgb(20 10 8 / 28%);
+  }
+
+  #app .app-conversion-panel--production .section-heading {
+    font-size: 1.6rem;
+  }
+
+  #app .app-conversion-panel--production .section-lede {
+    -webkit-line-clamp: 3;
+  }
+
+  #app .app-conversion-panel--production .app-links-status {
+    display: block;
+  }
+
+  .app-production-showcase {
+    height: 196px;
+  }
+
+  .app-phone-frame {
+    left: 49%;
+    width: 110px;
+    height: 184px;
+  }
+
+  .app-shot-card--puzzle,
+  .app-shot-card--feastfall {
+    width: 48%;
+    height: 82px;
+  }
+.app-product-page {
+    width: min(100% - 24px, 680px);
+    padding-block: 14px 42px;
+  }
+
+  .app-product-hero {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    min-height: 0;
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .app-product-copy h1 {
+    font-size: clamp(2.45rem, 12vw, 4rem);
+  }
+
+  .app-product-stage {
+    min-height: 338px;
+  }
+
+  .app-product-phone {
+    width: 164px;
+    height: 274px;
+  }
+
+  .app-product-stage-card--puzzle,
+  .app-product-stage-card--feastfall {
+    width: 57%;
+  }
+.app-gameplay-heading {
+    grid-template-columns: 1fr;
+  }
+
+  .app-gameplay-heading .section-kicker,
+  .app-gameplay-heading h2,
+  .app-gameplay-heading p {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .app-gameplay-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-gameplay-card {
+    display: grid;
+    grid-template-columns: minmax(120px, 42%) 1fr;
+  }
+
+  .app-gameplay-card-art {
+    height: 100%;
+    min-height: 150px;
+    aspect-ratio: auto;
+    border-right: 1px solid rgb(155 93 23 / 18%);
+    border-bottom: 0;
+  }
+}
+
+@media (max-width: 430px) {
+  #app .app-conversion-panel--production {
+    min-height: 474px;
+  }
+
+  #app .app-conversion-panel--production .store-badge {
+    min-width: 0;
+    flex: 1 1 112px;
+  }
+
+  #app .app-conversion-panel--production .app-more-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .app-mode-list {
+    margin-bottom: 6px;
+  }
+
+  .app-product-store-row .store-badge {
+    flex: 1 1 130px;
+  }
+
+  .app-product-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .app-product-actions .button-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .app-product-stage {
+    min-height: 312px;
+  }
+
+  .app-product-phone {
+    width: 148px;
+    height: 248px;
+  }
+
+  .app-product-stage-card--puzzle {
+    top: 18px;
+    width: 59%;
+  }
+
+  .app-product-stage-card--feastfall {
+    bottom: 18px;
+    width: 59%;
+  }
+.app-gameplay-section {
+    padding: 16px;
+  }
+
+  .app-gameplay-card {
+    grid-template-columns: 1fr;
+  }
+
+  .app-gameplay-card-art {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+    border-right: 0;
+    border-bottom: 1px solid rgb(155 93 23 / 18%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-phone-frame,
+  .app-shot-card,
+  .app-product-phone,
+  .app-product-stage-card {
+    transform: none !important;
+  }
+}
+
+/* App product label separation. */
+.app-product-copy > .section-kicker {
+  display: block;
+  margin: 0 0 8px;
+}
+
+.app-product-copy > .chip {
+  display: inline-flex;
+  margin: 0 0 6px;
+}

@@ -113,10 +113,13 @@ check('home-stories-truth', /public reading surfaces are here/i.test(componentHt
   ['/stories/', '/manga/', '/reader/'].every(route => componentHtml('component.home.discovery').includes(`href='${route}'`)) &&
   !/No stories or media library is published here/i.test(componentHtml('component.home.discovery')),
   'Home presents the existing Stories/Manga/Reader surfaces while clearly stating that no approved catalogue is published.');
-check('home-app-illustration', /characters\/companion\/production-pack-v2\/toadal-mobile-app\.png/i.test(componentHtml('component.home.app')) &&
-  assets.assets?.some(asset => asset.id === 'asset.companion.context.app' && asset.source === 'reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png') &&
+check('home-app-illustration',
+  ['asset.app.gameplay.arcade', 'asset.app.gameplay.puzzle', 'asset.app.gameplay.feastfall'].every(id =>
+    assets.assets?.some(asset => asset.id === id && (asset.tags || []).includes('real-gameplay'))) &&
+  ['arcade-real-gameplay.webp', 'puzzle-real-gameplay.webp', 'feastfall-real-gameplay.webp'].every(file => componentHtml('component.home.app').includes(file)) &&
+  /REAL GAMEPLAY/i.test(componentHtml('component.home.app')) &&
   /disabled/.test(componentHtml('component.home.app')),
-  'The paired App feature uses its registered canonical Toadal/app illustration and keeps unverified store links disabled.');
+  'The paired App feature uses registered real Arcade, Puzzle, and Feastfall gameplay captures and keeps unverified store controls disabled.');
 check('contextual-companion-source', /data-companion-copy=/i.test(html),
   'Home sections expose distinct contextual companion copy.');
 check('contextual-companion-pointer', /addEventListener\(['"]pointer(?:over|enter)['"]/i.test(advanced.javascript || ''),
