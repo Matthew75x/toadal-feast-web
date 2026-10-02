@@ -1,0 +1,187 @@
+{
+  "schemaVersion": 1,
+  "authority": "PAGE_MANIFEST.md + locked cross-cutting requirements",
+  "frozenParent": "6e543f2abebe66ef46ca6ecaa6da20e3196a5c43",
+  "rows": [
+    {
+      "row": 1,
+      "family": "Home",
+      "route": "/",
+      "action": "POLISH"
+    },
+    {
+      "row": 2,
+      "family": "Play / Games Hub",
+      "route": "/play/",
+      "action": "INTEGRATE_POLISH"
+    },
+    {
+      "row": 3,
+      "family": "Wicked Bites — Game Detail",
+      "route": "/games/wicked-bites/",
+      "action": "POLISH_CONNECT"
+    },
+    {
+      "row": 4,
+      "family": "Browser Game Player / Console",
+      "route": "/player/wicked-bites/",
+      "action": "KEEP_THIN_INTEGRATION"
+    },
+    {
+      "row": 5,
+      "family": "World Hub",
+      "route": "/world/",
+      "action": "POLISH_STRUCTURE"
+    },
+    {
+      "row": 6,
+      "family": "Characters Hub",
+      "route": "/characters/",
+      "action": "POLISH"
+    },
+    {
+      "row": 7,
+      "family": "Toadal — Character Profile",
+      "route": "/characters/toadal/",
+      "action": "POLISH_APPROVED_DATA"
+    },
+    {
+      "row": 8,
+      "family": "Stories / Comics Hub",
+      "route": "/stories/",
+      "action": "KEEP"
+    },
+    {
+      "row": 9,
+      "family": "TOADAL FEAST Manga — Series Page",
+      "route": "/manga/",
+      "action": "KEEP"
+    },
+    {
+      "row": 10,
+      "family": "Comic / Manga Reader",
+      "route": "/reader/",
+      "action": "KEEP"
+    },
+    {
+      "row": 11,
+      "family": "Media Hub",
+      "route": "/media/",
+      "action": "POLISH"
+    },
+    {
+      "row": 12,
+      "family": "News / Updates Hub",
+      "route": "/news/",
+      "action": "POLISH"
+    },
+    {
+      "row": 13,
+      "family": "News Article / Devlog",
+      "route": "/news/devlog/",
+      "action": "BUILD_THIN"
+    },
+    {
+      "row": 14,
+      "family": "Feast Pass Dashboard",
+      "route": "/feast-pass/",
+      "action": "MERGE_PORT"
+    },
+    {
+      "row": 15,
+      "family": "Quests / Challenges",
+      "route": "/feast-pass/quests/",
+      "action": "MERGE_EXPAND"
+    },
+    {
+      "row": 16,
+      "family": "Rewards / Collection",
+      "route": "/feast-pass/rewards/",
+      "action": "MERGE_POLISH"
+    },
+    {
+      "row": 17,
+      "family": "Leaderboards",
+      "route": "/leaderboards/",
+      "action": "INTEGRATE"
+    },
+    {
+      "row": 18,
+      "family": "App / Get TOADAL FEAST",
+      "route": "/app/",
+      "action": "KEEP_POLISH"
+    },
+    {
+      "row": 19,
+      "family": "Account / Sign Up / Login",
+      "route": "/account/",
+      "action": "GATED_INTEGRATION"
+    },
+    {
+      "row": 20,
+      "family": "Player Profile",
+      "route": "/profile/",
+      "action": "INTEGRATE_POLISH"
+    },
+    {
+      "row": 21,
+      "family": "Community Hub",
+      "route": "/community/",
+      "action": "FUTURE_STATE"
+    },
+    {
+      "row": 22,
+      "family": "Store",
+      "route": "/store/",
+      "action": "FUTURE_STATE"
+    },
+    {
+      "row": 23,
+      "family": "Search / Discovery",
+      "route": "/search/",
+      "action": "KEEP"
+    },
+    {
+      "row": 24,
+      "family": "What's Next / Roadmap",
+      "route": "/roadmap/",
+      "action": "BUILD_THIN"
+    },
+    {
+      "row": 25,
+      "family": "Support / Help Center",
+      "route": "/support/",
+      "action": "POLISH"
+    },
+    {
+      "row": 26,
+      "family": "Contact / Feedback",
+      "route": "/contact/",
+      "action": "FUTURE_STATE"
+    },
+    {
+      "row": 27,
+      "family": "About TOADAL GAMES",
+      "route": "/about/",
+      "action": "POLISH"
+    },
+    {
+      "row": 28,
+      "family": "Coming Soon / Under Construction",
+      "route": "/coming-soon/",
+      "action": "KEEP_EXTEND"
+    },
+    {
+      "row": 29,
+      "family": "Privacy / Terms / Legal Template",
+      "route": "/legal/",
+      "action": "KEEP_TEMPLATE"
+    },
+    {
+      "row": 30,
+      "family": "404 / Lost in the Feast",
+      "route": "/404.html",
+      "action": "KEEP"
+    }
+  ]
+}

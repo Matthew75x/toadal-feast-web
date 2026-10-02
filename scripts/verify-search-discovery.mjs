@@ -54,6 +54,7 @@ const ids = new Set();
 for (const entry of index.entries || []) {
   ok(!ids.has(entry.id), `duplicate search id: ${entry.id}`);
   ids.add(entry.id);
+  // Roadmap became a real manifest route during final closure; generic route validation below now governs it.
   const [routePath, fragment = ''] = String(entry.route || '').split('#');
   const normalized = routePath || '/';
   ok(routes.has(normalized) || normalized === '/', `search target route missing: ${entry.route}`);
