@@ -14,8 +14,10 @@ Read in this order before editing product code:
 5. `docs/authority/CROSS_PROJECT_HARVEST_2026-10-02.md`
 6. `docs/authority/EXISTING_ASSET_REUSE_MAP_2026-10-02.md`
 7. `docs/authority/DORMANT_CONTRACT_ACTIVATION_MAP_2026-10-02.md`
-8. `docs/authority/STUDIO_ASSEMBLY_RECIPES_2026-10-02.md`
-9. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
+8. `docs/authority/LEADERBOARDS_INTEGRATION_SPEC_2026-10-02.md`
+9. `docs/authority/FEAST_PASS_PORT_SPEC_2026-10-02.md`
+10. `docs/authority/STUDIO_ASSEMBLY_RECIPES_2026-10-02.md`
+11. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
 
 Operating rule:
 
