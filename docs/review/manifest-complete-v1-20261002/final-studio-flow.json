@@ -15,7 +15,7 @@
     "pages": 33,
     "games": 4,
     "assets": 59,
-    "components": 56
+    "components": 57
   },
   "validationAtInspect": {
     "valid": true,
@@ -23,8 +23,8 @@
     "warnings": 0
   },
   "graph": {
-    "nodes": 165,
-    "edges": 105,
+    "nodes": 166,
+    "edges": 106,
     "dangling": [
       {
         "from": "component.home.games",
@@ -50,7 +50,7 @@
     "nodeTypes": {
       "asset": 59,
       "collection": 11,
-      "component": 56,
+      "component": 57,
       "game": 4,
       "page": 33,
       "project": 1,
@@ -81,8 +81,8 @@
     "previewDir": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\build\\ai-preview",
     "performance": {
       "files": 141,
-      "totalBytes": 42311448,
-      "htmlBytes": 3107784,
+      "totalBytes": 42313320,
+      "htmlBytes": 3108719,
       "largest": [
         {
           "file": "assets/images/characters/companion/master-v2-selected/reward.png",
@@ -168,7 +168,7 @@
       "largeFileWarnings": 20
     },
     "html": {
-      "createdAt": "2026-10-02T10:57:19.676Z",
+      "createdAt": "2026-10-02T11:10:55.681Z",
       "pages": [
         {
           "file": "404.html",
@@ -252,7 +252,7 @@
         },
         {
           "file": "media/index.html",
-          "sha256": "2ae2b3a35e39cb2c8539f606463cab093674be8accfabcb992bd60bdb4adacdc"
+          "sha256": "b70365dc88ccdd83cafc41046d5a48d74ba77e00af1f5166aecf26d22744f58a"
         },
         {
           "file": "news/devlog/index.html",
@@ -268,7 +268,7 @@
         },
         {
           "file": "player/wicked-bites/index.html",
-          "sha256": "fcaf21efbafd42ba3bb713b35f27b11a32460b92a2486b926f326615831fd42b"
+          "sha256": "6e7122103d315e320db74307d06185bcb394099e862badbccbe203ca074cbaad"
         },
         {
           "file": "profile/index.html",
@@ -311,12 +311,12 @@
   },
   "staticExport": {
     "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
-    "bytes": 39885154
+    "bytes": 39885569
   },
   "checkpoint": {
     "mode": "verify",
     "label": "manifest-v1-closure-final",
-    "startedAt": "2026-10-02T10:57:21.949Z",
+    "startedAt": "2026-10-02T11:10:57.738Z",
     "validation": {
       "ok": true,
       "status": 0,
@@ -325,14 +325,14 @@
       "error": null
     },
     "handoff": {
-      "markdown": "AI/HANDOFFS/2026-10-02T10-57-22-414Z-manifest-v1-closure-final.md",
-      "json": "AI/HANDOFFS/2026-10-02T10-57-22-414Z-manifest-v1-closure-final.json",
+      "markdown": "AI/HANDOFFS/2026-10-02T11-10-58-239Z-manifest-v1-closure-final.md",
+      "json": "AI/HANDOFFS/2026-10-02T11-10-58-239Z-manifest-v1-closure-final.json",
       "state": {
         "schemaVersion": 1,
-        "createdAt": "2026-10-02T10:57:22.415Z",
+        "createdAt": "2026-10-02T11:10:58.239Z",
         "label": "manifest-v1-closure-final",
-        "task": "Final deterministic Manifest V1 qualification after Treat migration and score history closure",
-        "notes": "Exact final source. Review-only staging candidate. No production integration. Four graph edges are typed component discriminants; product game references resolve.",
+        "task": "Final deterministic Manifest V1 qualification after Media and Player truth-map reconciliation",
+        "notes": "Reconciled the newly merged Media Content and Player HUD authorities; preserve exact project source, render/export/checkpoint, and record all evidence.",
         "studio": {
           "name": "toadal-studio",
           "version": "1.4.2"
@@ -341,7 +341,7 @@
           "id": "toadal-feast-website",
           "name": "TOADAL FEAST Website",
           "manifest": "../../toadal-feast-web-owner-visual-convergence-20261002/studio-project/toadal-feast-website/project.json",
-          "treeSha256": "13b98cc046c7c14bb2b97155369af53ac01036f8a0a234f3fb8bf32abf0d2f1d"
+          "treeSha256": "b25cc00be67497e51800e782ad734579612d1408c608413f950bb223fdd8ace5"
         },
         "authority": {
           "visualBaseline": null,
@@ -355,8 +355,8 @@
             "warnings": 0
           },
           "graph": {
-            "nodes": 165,
-            "edges": 105,
+            "nodes": 166,
+            "edges": 106,
             "dangling": 4
           },
           "history": {
@@ -448,7 +448,7 @@
         ]
       }
     },
-    "finishedAt": "2026-10-02T10:57:22.516Z",
+    "finishedAt": "2026-10-02T11:10:58.305Z",
     "ok": true
   }
 }

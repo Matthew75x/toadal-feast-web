@@ -5,7 +5,7 @@
   "measurements": [
     {
       "label": "Home",
-      "url": "http://127.0.0.1:53968/toadal-feast-web/",
+      "url": "http://127.0.0.1:55551/toadal-feast-web/",
       "requestCount": 15,
       "totalTransferredBytes": 955895,
       "externalRequests": [],
@@ -90,9 +90,9 @@
     },
     {
       "label": "Play",
-      "url": "http://127.0.0.1:53968/toadal-feast-web/play/",
+      "url": "http://127.0.0.1:55551/toadal-feast-web/play/",
       "requestCount": 15,
-      "totalTransferredBytes": 1036191,
+      "totalTransferredBytes": 1037129,
       "externalRequests": [],
       "masterPngRequests": [],
       "resources": [
@@ -164,7 +164,7 @@
         {
           "path": "/toadal-feast-web/assets/js/website-score-adapter.js",
           "status": 200,
-          "bytes": 9965
+          "bytes": 10903
         },
         {
           "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
@@ -175,7 +175,7 @@
     },
     {
       "label": "World",
-      "url": "http://127.0.0.1:53968/toadal-feast-web/world/",
+      "url": "http://127.0.0.1:55551/toadal-feast-web/world/",
       "requestCount": 18,
       "totalTransferredBytes": 1317654,
       "externalRequests": [],
@@ -200,11 +200,6 @@
           "path": "/toadal-feast-web/assets/js/companion-position.js",
           "status": 200,
           "bytes": 17013
-        },
-        {
-          "path": "/toadal-feast-web/assets/js/progression-definitions.js",
-          "status": 200,
-          "bytes": 3823
         },
         {
           "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
@@ -247,14 +242,9 @@
           "bytes": 335587
         },
         {
-          "path": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/world-map.webp",
+          "path": "/toadal-feast-web/assets/js/progression-definitions.js",
           "status": 200,
-          "bytes": 64755
-        },
-        {
-          "path": "/toadal-feast-web/assets/js/guest-progression.js",
-          "status": 200,
-          "bytes": 48097
+          "bytes": 3823
         },
         {
           "path": "/toadal-feast-web/assets/js/manifest-shell.js",
@@ -262,9 +252,19 @@
           "bytes": 5242
         },
         {
+          "path": "/toadal-feast-web/assets/js/guest-progression.js",
+          "status": 200,
+          "bytes": 48097
+        },
+        {
           "path": "/toadal-feast-web/assets/js/world-discovery.js",
           "status": 200,
           "bytes": 3091
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/world-map.webp",
+          "status": 200,
+          "bytes": 64755
         },
         {
           "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
@@ -275,16 +275,16 @@
     },
     {
       "label": "Media",
-      "url": "http://127.0.0.1:53968/toadal-feast-web/media/",
+      "url": "http://127.0.0.1:55551/toadal-feast-web/media/",
       "requestCount": 14,
-      "totalTransferredBytes": 701826,
+      "totalTransferredBytes": 1038240,
       "externalRequests": [],
       "masterPngRequests": [],
       "resources": [
         {
           "path": "/toadal-feast-web/media/",
           "status": 200,
-          "bytes": 51801
+          "bytes": 52628
         },
         {
           "path": "/toadal-feast-web/assets/css/site.css",
@@ -324,7 +324,7 @@
         {
           "path": "/toadal-feast-web/assets/images/characters/toadal-victory.png",
           "status": 200,
-          "bytes": 0
+          "bytes": 335587
         },
         {
           "path": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
@@ -355,7 +355,7 @@
     },
     {
       "label": "App",
-      "url": "http://127.0.0.1:53968/toadal-feast-web/app/",
+      "url": "http://127.0.0.1:55551/toadal-feast-web/app/",
       "requestCount": 12,
       "totalTransferredBytes": 1026112,
       "externalRequests": [],
@@ -425,7 +425,7 @@
     },
     {
       "label": "Feast Pass",
-      "url": "http://127.0.0.1:53968/toadal-feast-web/feast-pass/",
+      "url": "http://127.0.0.1:55551/toadal-feast-web/feast-pass/",
       "requestCount": 9,
       "totalTransferredBytes": 688471,
       "externalRequests": [],
@@ -480,7 +480,7 @@
     },
     {
       "label": "Home baseline 6e543f2a",
-      "url": "http://127.0.0.1:53968/toadal-feast-web/?baseline=6e543f2a",
+      "url": "http://127.0.0.1:55551/toadal-feast-web/?baseline=6e543f2a",
       "requestCount": 14,
       "totalTransferredBytes": 918786,
       "externalRequests": [],
@@ -559,5 +559,5 @@
       ]
     }
   ],
-  "checkedAt": "2026-10-02T10:58:21.318Z"
+  "checkedAt": "2026-10-02T11:13:26.725Z"
 }

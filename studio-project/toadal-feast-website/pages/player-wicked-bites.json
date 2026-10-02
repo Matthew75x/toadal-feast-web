@@ -27,7 +27,7 @@
       "type": "core.rich-text",
       "props": {
         "variant": "manifest-challenge-status",
-        "html": "<p class='progression-truth-note'><strong>Active challenge:</strong> No active challenge is linked to this preview.</p>"
+        "html": "<section class='progression-truth-note' aria-label='Preview session disclosures'><p><strong>Session time:</strong> Host-measured preview time; this is not an authoritative in-game timer.</p><p><strong>Active website challenge:</strong> No active website challenge for this preview.</p></section>"
       }
     }
   ],

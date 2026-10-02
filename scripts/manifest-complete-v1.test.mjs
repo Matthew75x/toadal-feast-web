@@ -46,6 +46,23 @@ test('thin editorial, leaderboard, roadmap, and support experiences use real cur
   assert.equal(JSON.parse(fs.readFileSync(path.join(site, 'reference', 'assets', 'data', 'manifest-public-content.json'), 'utf8')).news.length, 0);
 });
 
+test('Media uses genuine stills, truthful empty categories, optimized assets, and working product routes', () => {
+  const media = html('/media/');
+  assert.match(media, /No public trailer, video, or short is available/);
+  assert.match(media, /genuine gameplay stills/i);
+  assert.match(media, /no public wallpaper, logo, or other media downloads/i);
+  assert.match(media, /No press kit is published/);
+  for (const route of ['/app/', '/games/wicked-bites/', '/player/wicked-bites/', '/play/']) assert.ok(media.includes(`href='${route}'`), `Media links to ${route}`);
+  assert.doesNotMatch(media, /<video\b|(?:src|href)=["'][^"']+\.(?:mp4|webm|mov|m4v)(?:[?#][^"']*)?["']/i);
+  assert.doesNotMatch(media, /master-v2-selected\/.*\.png|production-pack-v2\/.*\.png/i);
+});
+
+test('Player HUD labels host-measured time and does not imply an active challenge', () => {
+  const player = html('/player/wicked-bites/');
+  assert.match(player, /Host-measured preview time; this is not an authoritative in-game timer/);
+  assert.match(player, /No active website challenge for this preview/);
+});
+
 test('guest progression and connected-service boundaries stay within existing contracts', () => {
   const runtime = fs.readFileSync(path.join(site, 'reference', 'assets', 'js', 'guest-progression.js'), 'utf8');
   for (const key of ['toadal:web:v1:feast-pass', 'toadal:web:v1:quests', 'toadal:web:v1:discoveries', 'toadal:web:v1:profile']) assert.ok(runtime.includes(key));

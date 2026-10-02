@@ -30,6 +30,7 @@ test('accepts the exact opaque-origin iframe and rejects sibling or synthetic me
   assert.equal(adapter.isTrustedMessage({ ...valid, data: { ...valid.data, payload: null } }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);
   assert.equal(adapter.isTrustedMessage({ ...valid, data: { ...valid.data, payload: { score: 'bad' } } }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);
   assert.equal(adapter.isTrustedMessage({ ...valid, data: { ...valid.data, sessionId: 'stale' } }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);
+  assert.equal(adapter.isTrustedMessage({ ...valid, data: { protocol: 'toadal.game.v1', gameId: 'wicked-bites', type: 'game:error', payload: { message: 'failed' } } }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), true);
 });
 
 test('tracks in-memory session best and excludes paused time from play duration', () => {
@@ -54,4 +55,25 @@ test('does not accept score or completion outside an active run', () => {
   const session = adapter.createSession(() => 500);
   assert.equal(session.accept('game:complete', { score: 999 }).state, 'idle');
   assert.equal(session.accept('game:score', { score: 999 }).score, null);
+});
+
+test('error and exit stop host-measured session time; a retry starts a fresh run', () => {
+  let now = 1000;
+  const session = adapter.createSession(() => now);
+  session.accept('game:started');
+  now = 9000;
+  session.accept('game:score', { score: '45' });
+  const failed = session.accept('game:error');
+  assert.equal(failed.state, 'error');
+  assert.equal(failed.elapsedMs, 8000);
+  now = 20000;
+  assert.equal(session.snapshot().elapsedMs, 8000);
+  session.accept('game:started');
+  assert.equal(session.snapshot().state, 'playing');
+  assert.equal(session.snapshot().elapsedMs, 0);
+  assert.equal(session.snapshot().score, null);
+  now = 25000;
+  assert.equal(session.accept('host:exit').state, 'exited');
+  now = 50000;
+  assert.equal(session.snapshot().elapsedMs, 5000);
 });

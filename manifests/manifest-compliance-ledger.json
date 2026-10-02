@@ -78,7 +78,7 @@
       "evidence": "Wicked Bites preview player exists with static player shell.",
       "remainingGap": "Full reusable player contract across approved games plus score/timer/achievement/XP/challenge surfaces is incomplete.",
       "manifestV1Action": "KEEP / INTEGRATE",
-      "manifestV1Evidence": "Existing isolated player retained; validated host adapter persists bounded completed runs only."
+      "manifestV1Evidence": "Existing isolated player retained; host-measured session timer stops on pause/error/exit, resets transient run values on retry, persists validated bounded completions only, and states no active website challenge exists."
     },
     {
       "n": 5,
@@ -155,7 +155,7 @@
       "evidence": "Media route exists; candidate adds canonical world and character gallery.",
       "remainingGap": "Featured trailer/video/gameplay/shorts/wallpapers/downloads/creator/press structure and real published records absent.",
       "manifestV1Action": "POLISH / KEEP",
-      "manifestV1Evidence": "Canonical existing media assets and working filters; media records await approved content."
+      "manifestV1Evidence": "Genuine gameplay stills and canonical world/character art; truthful empty video/download/press states and links to App, Wicked Bites detail/player, and Play."
     },
     {
       "n": 12,
@@ -891,7 +891,7 @@
     "studioValidation": "PASS",
     "studioAiDoctor": "PASS",
     "studioInspectRenderExportCheckpoint": "PASS",
-    "nodeTests": "83/83 PASS",
+    "nodeTests": "86/86 PASS",
     "ownerPreviewGates": "16/16 PASS",
     "browserMatrix": "83/83 PASS across 33 routes",
     "visualEvidence": "13 captures and 17/17 companion interactions PASS; cold initial payload recorded for Home/Play/World/Media/App/Feast Pass",

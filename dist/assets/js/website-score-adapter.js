@@ -9,7 +9,7 @@
 
   const PROTOCOL = 'toadal.game.v1';
   const GAME_ID = 'wicked-bites';
-  const MESSAGE_TYPES = new Set(['game:ready', 'game:started', 'game:paused', 'game:resumed', 'game:score', 'game:complete']);
+  const MESSAGE_TYPES = new Set(['game:ready', 'game:started', 'game:paused', 'game:resumed', 'game:score', 'game:complete', 'game:error']);
   const GAME_NAMES = Object.freeze({
     'wicked-bites': 'Wicked Bites',
     'claw-feed-gulper': 'CLAW: Feed Gulper',
@@ -63,11 +63,15 @@
     function accept(type, payload) {
       payload = payload && typeof payload === 'object' ? payload : {};
       if (type === 'game:started') {
-        if (state !== 'playing') { state = 'playing'; startedAt = now(); }
+        if (state !== 'playing') { state = 'playing'; startedAt = now(); elapsedBeforePause = 0; score = null; sessionBest = null; }
       } else if (type === 'game:paused' && state === 'playing') {
         elapsedBeforePause = elapsed(); startedAt = null; state = 'paused';
       } else if (type === 'game:resumed' && state === 'paused') {
         startedAt = now(); state = 'playing';
+      } else if (type === 'game:error' && (state === 'playing' || state === 'paused')) {
+        elapsedBeforePause = elapsed(); startedAt = null; state = 'error';
+      } else if (type === 'host:exit' && (state === 'playing' || state === 'paused')) {
+        elapsedBeforePause = elapsed(); startedAt = null; state = 'exited';
       } else if (type === 'game:score' || type === 'game:complete') {
         if (state !== 'playing' && state !== 'paused') return snapshot();
         const received = normalizeScore(payload.score);
@@ -147,15 +151,21 @@
     const bestNode = shell.querySelector('[data-score-session-best]');
     const elapsedNode = shell.querySelector('[data-score-elapsed]');
     if (!frame || !initialSrc || !scoreNode || !elapsedNode) return;
+    const elapsedLabel = elapsedNode.parentElement && elapsedNode.parentElement.querySelector('dt');
+    if (elapsedLabel) elapsedLabel.textContent = 'Session time';
     const session = createSession(() => root.performance && root.performance.now ? root.performance.now() : Date.now());
     let completionRecorded = false;
+    const exitLink = shell.querySelector('[data-player-exit]');
 
     function paint() {
+      const errorPanel = shell.querySelector('[data-player-error]');
+      if (errorPanel && !errorPanel.hidden && ['playing', 'paused'].includes(session.snapshot().state)) session.accept('game:error');
       const state = session.snapshot();
       scoreNode.textContent = state.score === null ? 'Waiting for a run' : state.score.toLocaleString();
       if (bestNode) bestNode.textContent = state.sessionBest === null ? '—' : state.sessionBest.toLocaleString();
       elapsedNode.textContent = formatElapsed(state.elapsedMs);
     }
+    if (exitLink) exitLink.addEventListener('click', () => session.accept('host:exit'));
     root.addEventListener('message', event => {
       if (!frame.isConnected || (typeof shell.contains === 'function' && !shell.contains(frame))) return;
       if (!isTrustedMessage(event, frame, shell.getAttribute('data-game-id'), initialSrc, root.location.href)) return;
@@ -184,5 +194,5 @@
     document.querySelectorAll('[data-player-shell]').forEach(shell => renderPlayer(root, shell));
   }
 
-  return { PROTOCOL, GAME_ID, GAME_NAMES, normalizeScore, formatElapsed, expectedFrame, isTrustedMessage, createSession, boot };
+  return { PROTOCOL, GAME_ID, GAME_NAMES, MESSAGE_TYPES, normalizeScore, formatElapsed, expectedFrame, isTrustedMessage, createSession, boot };
 });
