@@ -81,8 +81,8 @@
     "previewDir": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\build\\ai-preview",
     "performance": {
       "files": 141,
-      "totalBytes": 42301708,
-      "htmlBytes": 3107167,
+      "totalBytes": 42302029,
+      "htmlBytes": 3107488,
       "largest": [
         {
           "file": "assets/images/characters/companion/master-v2-selected/reward.png",
@@ -168,7 +168,7 @@
       "largeFileWarnings": 20
     },
     "html": {
-      "createdAt": "2026-10-02T10:14:51.475Z",
+      "createdAt": "2026-10-02T10:29:03.638Z",
       "pages": [
         {
           "file": "404.html",
@@ -196,7 +196,7 @@
         },
         {
           "file": "coming-soon/index.html",
-          "sha256": "82a581894830f6df5681eb1f18bdf521193358a6108e5c48fdfd7167d9871d8b"
+          "sha256": "e096f1fd521f2bdfee7dce19ad014ad3ef5292be452f6ac3537528dce40ecada"
         },
         {
           "file": "community/index.html",
@@ -208,7 +208,7 @@
         },
         {
           "file": "feast-pass/index.html",
-          "sha256": "7314b1531d6a3239d0d5562e370a053c0046f35b7ac078328ef2494c4205ddbe"
+          "sha256": "a8fb28e76647956d79e6ed3535ae3dc7516f7e0b4e6f4b1600a820fcf2f616b0"
         },
         {
           "file": "feast-pass/quests/index.html",
@@ -256,11 +256,11 @@
         },
         {
           "file": "news/devlog/index.html",
-          "sha256": "c466fb53d18ae2ec21ed3df215a51f4a8c8be6b49f8c7f23f5acf9a2b3034b14"
+          "sha256": "607ec3b84fa9b621b8b0e813e7d42722d8c7243728559afd8dcf0872a3a04f37"
         },
         {
           "file": "news/index.html",
-          "sha256": "ed971678ced74709a9137bb796a9ddac36589443ef3da60bdedacf9b93a05c5c"
+          "sha256": "8ee29b63f2c46ee4d0e43a722e94d88fb6b85e70ebea3682e01a08f22b267bb3"
         },
         {
           "file": "play/index.html",
@@ -272,7 +272,7 @@
         },
         {
           "file": "profile/index.html",
-          "sha256": "f7fcc3e59412086a841ce0498c54b5bea0e6544f41bae5e9ac6e5c23ea2ae794"
+          "sha256": "bf3a61f96c60b45518a89d4c799f35fa41ea62eb1e4c252f53d686a461dfc6c9"
         },
         {
           "file": "public/games/wicked-bites/index.html",
@@ -284,7 +284,7 @@
         },
         {
           "file": "roadmap/index.html",
-          "sha256": "1a3f16a6a1f0223b76b2b1fab8b31afb47faae23a735e65759f46bc78487c378"
+          "sha256": "e7ff8b45bc39eee9ca266ae2ca8da841e84bc25d59c5c8645be60ed39ed9d936"
         },
         {
           "file": "search/index.html",
@@ -292,7 +292,7 @@
         },
         {
           "file": "store/index.html",
-          "sha256": "efbb72be9da90e8b256f689620e419193a0b62847cafe837430ccfeaae48f54f"
+          "sha256": "a70026539282ab776613d87d8ea6e6e3fc447a5f2bdd656f85b970730a01f21d"
         },
         {
           "file": "stories/index.html",
@@ -311,12 +311,12 @@
   },
   "staticExport": {
     "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
-    "bytes": 39883238
+    "bytes": 39883333
   },
   "checkpoint": {
     "mode": "verify",
     "label": "manifest-v1-final-verify",
-    "startedAt": "2026-10-02T10:14:53.643Z",
+    "startedAt": "2026-10-02T10:29:05.898Z",
     "validation": {
       "ok": true,
       "status": 0,
@@ -325,14 +325,14 @@
       "error": null
     },
     "handoff": {
-      "markdown": "AI/HANDOFFS/2026-10-02T10-14-54-212Z-manifest-v1-final-verify.md",
-      "json": "AI/HANDOFFS/2026-10-02T10-14-54-212Z-manifest-v1-final-verify.json",
+      "markdown": "AI/HANDOFFS/2026-10-02T10-29-06-388Z-manifest-v1-final-verify.md",
+      "json": "AI/HANDOFFS/2026-10-02T10-29-06-388Z-manifest-v1-final-verify.json",
       "state": {
         "schemaVersion": 1,
-        "createdAt": "2026-10-02T10:14:54.212Z",
+        "createdAt": "2026-10-02T10:29:06.388Z",
         "label": "manifest-v1-final-verify",
         "task": "Qualify all 30 TOADAL FEAST manifest families and locked cross-cutting requirements on the frozen baseline",
-        "notes": "Final owner-preview website integration only. Static export and local render; staging deploy follows only after the entire owner-preview gate. Four graph warnings are typed game.card component discriminants, not unresolved gameId references.",
+        "notes": "Final owner-preview website integration only. Static export and local render; staging deploy follows only after the entire owner-preview and manifest closure gates. Four graph warnings are typed game.card component discriminants, not unresolved gameId references.",
         "studio": {
           "name": "toadal-studio",
           "version": "1.4.2"
@@ -341,7 +341,7 @@
           "id": "toadal-feast-website",
           "name": "TOADAL FEAST Website",
           "manifest": "../../toadal-feast-web-owner-visual-convergence-20261002/studio-project/toadal-feast-website/project.json",
-          "treeSha256": "c73261074dd10585f1af16648563c6601b84652ab68106460c1b07c0c15e9948"
+          "treeSha256": "ca9b993cbb41bd854d1fd7a6128ee751fc2e18dbb7de0afdf3534ed166a77ac2"
         },
         "authority": {
           "visualBaseline": null,
@@ -448,7 +448,7 @@
         ]
       }
     },
-    "finishedAt": "2026-10-02T10:14:54.363Z",
+    "finishedAt": "2026-10-02T10:29:06.449Z",
     "ok": true
   }
 }
