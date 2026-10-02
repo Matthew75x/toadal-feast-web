@@ -1,8 +1,8 @@
 # TOADAL FEAST Website - Manifest Compliance Ledger
 
-**Date:** 2026-10-01
-**Current public staging:** `270940dee30b7aafb70af941c520c6d4d223e288`
-**Current integrated review candidate:** `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da`
+**Date:** 2026-10-02
+**Current public staging:** `688e1c471fdc97207c5ebfeaa0ef313ab9c44e52`
+**Current integrated review candidate:** `UNCOMMITTED_REMEDIATION_WORKTREE`
 **Controlling denominator:** the original 30-page manifest plus locked cross-cutting product requirements.
 
 ## Why this exists
@@ -22,9 +22,9 @@ Future work must map to this ledger. If a task does not advance a row below, a c
 - Unavailable account/community/store/future destinations should be visible only through truthful polished states, never fake-live.
 - The 30 page families remain requirements. Work orders are implementation slices, not replacements for the roadmap.
 
-## Critical recalibration finding
+## Qualification and owner acceptance
 
-**Home is still PARTIAL, not complete.** It is `LOCK_VISUAL`. The combined candidate is cleaner and closer, but side-by-side with the approved Home it remains visibly sparser and less game-world dense. Technical checks cannot upgrade that to visual acceptance.
+**Phase:** QUALIFICATION_PENDING. Current source/artifact qualification and owner visual acceptance are separate. Home remains PARTIAL because LOCK_VISUAL acceptance is owner-pending; this remediation does not redesign it or claim acceptance.
 
 The approved Home remains `docs/review/WO-002/evidence/approved-home-visual-authority.png` (SHA-256 `4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608`).
 
@@ -32,73 +32,71 @@ The approved Home remains `docs/review/WO-002/evidence/approved-home-visual-auth
 
 | # | Manifest page | Visual authority | Delivery | Status | Evidence / remaining gap |
 |---:|---|---|---|---|---|
-| 1 | Home | LOCK_VISUAL | LIVE + CANDIDATE | **PARTIAL_CANDIDATE** | Home remains live from the older staging shell; candidate d4219fb / integrated 945c7ea materially restores the approved dense portal hierarchy, four truthful game listings, fixed contextual Toadal, paired Games/Feast Pass and App/What’s Next bands. **Gap:** LOCK_VISUAL still requires owner visual acceptance. Final franchise wordmark, real app-store evidence and richer approved content remain unavailable. |
-| 2 | Play / Games Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | Play route and four truthful PREVIEW listings exist; candidate improves illustrated portal treatment. **Gap:** Manifest calls for challenges, badges/rewards, leaderboard, Feast Pass integration and limited Arcade preview. Do not re-certify Arcade just to complete the page. |
-| 3 | Wicked Bites Game Detail | LOCK_LAYOUT | LIVE | **PARTIAL** | Real Wicked Bites detail route/evidence exists. **Gap:** Trailer/screenshots/mechanics depth, challenges, leaderboard, achievements/rewards and related-content depth are not manifest-complete. |
-| 4 | Browser Game Player | LOCK_LAYOUT | LIVE | **PARTIAL** | Wicked Bites preview player exists with static player shell. **Gap:** Full reusable player contract across approved games plus score/timer/achievement/XP/challenge surfaces is incomplete. |
-| 5 | World Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | World route exists; candidate adds canonical environment/cast discovery. **Gap:** Interactive/structured world map, lore model, discoveries/progress and approved location structure remain absent. |
-| 6 | Characters Hub | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /characters/ route is implemented on the integrated candidate with canonical character registry, approved Batch-1 layout reference and responsive filtering. **Gap:** Still preview-state content; relationships/appearances/discovery-progress depth and final owner visual acceptance are not complete. |
-| 7 | Toadal Character Profile | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /characters/toadal/ route is implemented on the integrated candidate using canonical Toadal art and a structured profile layout. **Gap:** Biography/lore depth is intentionally bounded to verified content; broader appearances/collectibles/history remain incomplete and owner visual acceptance is pending. |
-| 8 | Stories / Comics Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | The existing /stories/ route is extended on the integration candidate with featured/latest/progress regions, Comics/Manga/Shorts/Lore/Behind-the-Scenes shelves, and truthful empty states. **Gap:** The public projection has zero approved series, chapters or pages; published catalog, latest-chapter and reading-progress records remain absent. |
-| 9 | TOADAL FEAST Manga Series | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | The /manga/ reusable series template is implemented on the integration candidate and labels discovery art and empty publication state truthfully. **Gap:** No approved published series, cover, synopsis, creator, chapters or reading-progress records exist. |
-| 10 | Comic / Manga Reader | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | The /reader/ shell provides ordered-page navigation, thumbnails, fullscreen, progress and isolated local bookmarks; interaction coverage used a non-public in-memory fixture. **Gap:** No approved published chapter/pages exist, so real-content reading, thumbnails and chapter navigation are not yet available. |
-| 11 | Media Hub | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL** | Media route exists; candidate adds canonical world and character gallery. **Gap:** Featured trailer/video/gameplay/shorts/wallpapers/downloads/creator/press structure and real published records absent. |
-| 12 | News / Updates Hub | LOCK_LAYOUT | LIVE | **PARTIAL** | News route exists with truthful placeholder state. **Gap:** No real dated published update catalog/filters/trending content. |
-| 13 | News Article / Devlog | LOCK_LAYOUT | ABSENT | **NOT_STARTED** | Editorial detail template is required. **Gap:** Article route, body/media slots, related links and prev/next absent. |
-| 14 | Feast Pass Dashboard | LOCK_LAYOUT | LIVE + CANDIDATE | **PARTIAL_CANDIDATE** | Feast Pass candidate now renders browser-local level, XP, Sparks, streak, discoveries, quest summary and daily check-in using current namespaced storage. **Gap:** Starter values are explicitly non-canonical; Treat catalog, complete reward track, account sync and final visual/product acceptance remain. |
-| 15 | Quests / Challenges | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /feast-pass/quests/ route and definition-driven local route-visit quests are implemented with idempotent progress and safe reward claims. **Gap:** Only starter route-visit quests exist; daily/weekly/exploration content catalog and production quest definitions remain incomplete. |
-| 16 | Rewards / Collection | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /feast-pass/rewards/ route is implemented with truthful local non-entitlement milestones and empty claimable catalog behavior. **Gap:** Approved badges, titles, cosmetics, Treat/food/relic collections and any entitlement catalog remain intentionally absent. |
-| 17 | Leaderboards | LOCK_LAYOUT | ABSENT | **NOT_STARTED** | Global connected identity is correctly deferred. **Gap:** Even the truthful local-public leaderboard surface/game selector/time scopes/personal position is absent. |
-| 18 | App / Get TOADAL FEAST | LOCK_LAYOUT | LIVE | **PARTIAL** | Informational App route correctly describes mobile as flagship. **Gap:** Genuine approved screenshots/video and verified App Store/Google Play destinations are missing. |
-| 19 | Account / Sign Up / Login | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /account/ preview now exposes current guest-local status, continue-as-guest paths, disabled sign-up/login controls, account benefits and legal-status linking without connecting a backend. **Gap:** Real account creation, login, credentials, cross-device sync and approved account/privacy service copy remain deferred. |
-| 20 | Player Profile | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /profile/ guest-local profile is implemented with local level/XP/Sparks/streak/discovery/quest summary and explicit non-account scope. **Gap:** No connected identity, synced history, game-score feed, achievement showcase or approved title/avatar system exists yet. |
-| 21 | Community Hub | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /community/ Coming Soon route now provides creator/fan-art/event/feedback structure without fabricated creators, posts, dates or uploads. **Gap:** Posting, moderation, creator records, events and connected social services remain deferred. |
-| 22 | Store | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /store/ preview now provides merchandise/digital-goodies structure while explicitly exposing no catalog, prices, inventory, cart or checkout. **Gap:** Approved products, prices, commerce provider, fulfillment, entitlements and checkout remain deferred. |
-| 23 | Search / Discovery | LOCK_LAYOUT | DISABLED_UTILITY | **NOT_STARTED** | Search is not falsely presented as live. **Gap:** Dedicated local search route, grouped results, filters and meaningful empty/results states absent. |
-| 24 | What's Next / Roadmap | LOCK_STRUCTURE_ONLY | HOME_SECTION_ONLY | **PARTIAL** | Truthful compact What's Next content exists without fake dates. **Gap:** Dedicated approved-items roadmap route/status taxonomy/devlog links absent. |
-| 25 | Support / Help Center | LOCK_LAYOUT | LIVE | **PARTIAL** | Support route exists. **Gap:** Help search/categories/popular questions/contact/status shortcuts and mature help content absent. |
-| 26 | Contact / Feedback | LOCK_LAYOUT | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /contact/ route now implements the manifest field structure and routing panels with submit/upload disabled and explicit no-endpoint/no-mailbox truth. **Gap:** A real approved submission endpoint or public mailbox is still required before contact can become functional. |
-| 27 | About TOADAL GAMES | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /about/ route now presents TOADAL GAMES in its subordinate studio role, with TOADAL FEAST-first flagship, web-experiment and business/contact structure. **Gap:** Approved deeper studio history, press/business destinations and any additional public company copy remain. |
-| 28 | Coming Soon / Under Construction | POLISH | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated reusable /coming-soon/ construction route now provides available-content escape paths and explicitly avoids fake dates or release promises. **Gap:** Future destinations still need to route here consistently as they are added; final polish remains owner-reviewable. |
-| 29 | Privacy / Terms / Legal | LOCK_STRUCTURE_ONLY | CANDIDATE | **PARTIAL_CANDIDATE** | Dedicated /legal/ template now exposes readable Privacy/Terms/contact status and current guest-storage product facts while explicitly refusing generated legal policy text. **Gap:** Approved Privacy Policy, Terms, last-updated dates and verified privacy/legal contact copy are still blocked on real legal sources. |
-| 30 | 404 / Lost in the Feast | POLISH | LIVE | **DONE_PROVEN** | Branded 404/recovery page exists and routing/base-path behavior has been verified. **Gap:** Optional search/Treat embellishment may improve it later but is not required to call the recovery route functional. |
+| 1 | Home | LOCK_VISUAL | REMEDIATION_CANDIDATE | **PARTIAL** | Existing Home composition, games/Pass/discovery/App hierarchy and companion preserved; no redesign. Final integrated qualification pending. **Gap:** Owner Home LOCK_VISUAL acceptance remains pending. |
+| 2 | Play / Games Hub | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Existing catalog/filtering, truthful preview states, challenges/rewards/leaderboard links and App path. Final integrated qualification pending. **Gap:** Additional game availability requires qualification. |
+| 3 | Wicked Bites Game Detail | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Genuine Wicked Bites media/mechanics; current launch and progression/related paths. Final integrated qualification pending. **Gap:** Approved additional trailer/character/reward content may publish later. |
+| 4 | Browser Game Player | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Explicit sibling HUD association; validated current score/session time, pause/error/exit lifecycle and completed local score persistence. Final integrated qualification pending. **Gap:** No cartridge XP/challenge/achievement telemetry is invented. |
+| 5 | World Hub | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Existing approved World art/registry, locked locations, site discoveries and App path. Final integrated qualification pending. **Gap:** Approved location lore/map details await publication. |
+| 6 | Characters Hub | POLISH | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Seven approved character artwork discoveries save idempotently in the existing discoveries key; filters and unpublished canon slots preserved. Final integrated qualification pending. **Gap:** Relationships/appearance canon remains unpublished. |
+| 7 | Toadal Character Profile | POLISH | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Biography/personality/history/abilities/friends/locations/games/stories/gallery/collectible structures with truthful canon states. Final integrated qualification pending. **Gap:** Additional approved canon remains unpublished. |
+| 8 | Stories / Comics Hub | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Featured/latest/progress/comics/manga/short/lore/BTS publishing structures preserved. Final integrated qualification pending. **Gap:** Approved published story content required. |
+| 9 | TOADAL FEAST Manga Series | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Reusable series cover/synopsis/chapters/characters/progress/world/media structure, fail-closed publishing. Final integrated qualification pending. **Gap:** Approved series/chapter content required. |
+| 10 | Comic / Manga Reader | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Existing reader navigation/thumbnails/fullscreen/bookmark/progress/story-info code and graceful unpublished shell. Final integrated qualification pending. **Gap:** Approved published page manifests required. |
+| 11 | Media Hub | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Genuine stills/art plus truthful trailer/video/short/wallpaper/download/press availability slots. Final integrated qualification pending. **Gap:** Approved video/download/press content required. |
+| 12 | News / Updates Hub | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Featured/latest/filter/trending structures; only valid published editorial, no invented activity metrics. Final integrated qualification pending. **Gap:** Approved news and verified trending data required. |
+| 13 | News Article / Devlog | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Allowlisted article body/media/quote/related links/neighbor navigation and Roadmap handoff. Final integrated qualification pending. **Gap:** Approved published articles/quotes required. |
+| 14 | Feast Pass Dashboard | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Current four-key schema, level/XP/Sparks/Treats/streak/daily/milestones/discoveries and optional account boundary. Final integrated qualification pending. **Gap:** Connected sync remains inactive. |
+| 15 | Quests / Challenges | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Configured daily/exploration activities and five quest categories; runtime links honor Pages base path. Final integrated qualification pending. **Gap:** Weekly/game/story goals require supported configured activities. |
+| 16 | Rewards / Collection | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Local reward track/badges/titles/collection and locked/unlocked milestones; no paid/mobile entitlements. Final integrated qualification pending. **Gap:** Additional approved reward catalog required. |
+| 17 | Leaderboards | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Validated completed local runs, preserved all-time best beyond 50-run history, safe local table and personal-best state. Final integrated qualification pending. **Gap:** Froggy connected/global service and unsupported mode/ruleset fields remain future. |
+| 18 | App / Get TOADAL FEAST | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Hash-verified genuine App icon, three genuine gameplay captures, all four modes and canonical Infinite copy; web/App distinction retained. Final integrated qualification pending. **Gap:** Approved trailer/Infinite capture and official store destinations remain unavailable. |
+| 19 | Account / Sign Up / Login | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Guest status, account benefits/privacy and guest continuation; real signup/login intentionally unavailable. Final integrated qualification pending. **Gap:** Configured Froggy identity/cloud endpoint required. |
+| 20 | Player Profile | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Non-identifying guest avatar, selected title, scores, route/Treat and character artwork views, local badges/showcase, tab-only appearance controls. Final integrated qualification pending. **Gap:** Connected/game achievements/history require actual service/data. |
+| 21 | Community Hub | POLISH | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Creator/fan-art/event/feed/guidelines/feedback structures; no fabricated public community activity. Final integrated qualification pending. **Gap:** Approved guidelines/content and posting/moderation service required. |
+| 22 | Store | POLISH | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Merch/digital/categories and real News/Roadmap update CTAs; no fake signup/cart/prices/checkout. Final integrated qualification pending. **Gap:** Approved catalog and real commerce service required. |
+| 23 | Search / Discovery | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Existing local grouped search, filters/suggestions/empty states preserved and current index regenerated. Final integrated qualification pending. **Gap:** No external activation required for local search. |
+| 24 | What's Next / Roadmap | LOCK_STRUCTURE_ONLY | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Four status groups plus related published-devlog links or explicit publication empty state; no invented dates. Final integrated qualification pending. **Gap:** Approved devlogs required to populate related links. |
+| 25 | Support / Help Center | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Existing local help search/categories/popular FAQs/contact/status paths. Final integrated qualification pending. **Gap:** Ticket/contact endpoint requires configuration. |
+| 26 | Contact / Feedback | LOCK_LAYOUT | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Complete contact field/routing structure and truthful disabled non-submitting behavior. Final integrated qualification pending. **Gap:** Verified endpoint/mailboxes required. |
+| 27 | About TOADAL GAMES | POLISH | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Mission/flagship/experiments/stories/characters/philosophy/press/business structures without invented studio statements. Final integrated qualification pending. **Gap:** Approved mission/philosophy/business copy and contact required. |
+| 28 | Coming Soon / Under Construction | POLISH | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Branded contextual construction destination, useful available routes and updates; no false dates. Final integrated qualification pending. **Gap:** External capabilities remain honestly unavailable. |
+| 29 | Privacy / Terms / Legal | LOCK_STRUCTURE_ONLY | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Privacy/Terms readable template/TOC/related/contact and undated last-updated slot. Final integrated qualification pending. **Gap:** Approved policy text, publication dates and legal contact required. |
+| 30 | 404 / Lost in the Feast | POLISH | REMEDIATION_CANDIDATE | **PARTIAL_CANDIDATE** | Actual branded HTTP404, Home/Play/Search/Stories recovery and current assets. Final integrated qualification pending. **Gap:** No buildable gap. |
 
 ### Page-family status count
 
-- **DONE_PROVEN: 1**
-- **NOT_STARTED: 3**
-- **PARTIAL: 10**
-- **PARTIAL_CANDIDATE: 16**
+- **PARTIAL: 1**
+- **PARTIAL_CANDIDATE: 29**
 
-Route presence is not the same as page completion. This candidate adds the Stories/Manga/Reader publishing templates; several routes map to the same manifest family and many remain truthful previews. The current integration browser/static audit records the exact route count and qualification coverage.
+Route presence is not the same as page completion. This candidate currently contains 33 static route records; several map to the same manifest family and many remain truthful previews.
 
 ## Cross-cutting product contract
 
 | Requirement | Status | Evidence / gap |
 |---|---|---|
-| TOADAL FEAST-first public identity | **DONE_PROVEN** | Current authority and candidate keep TOADAL FEAST primary and TOADAL GAMES subordinate. |
-| Website feels like entering the Feast World | **PARTIAL** | Canonical food-fantasy art is present, but approved Home is still much richer/denser than candidate. |
-| Play something free immediately | **PARTIAL** | Wicked Bites has an isolated preview player, but current authority still reports zero PUBLIC games. |
-| Discover characters/world/story | **PARTIAL_CANDIDATE** | World/Stories/Media plus Characters Hub, Toadal Profile, Manga template, and Reader shell candidate routes cover more of discovery; published story content and broader character depth remain absent. |
-| Consume media/manga/lore/news | **PARTIAL** | Media/News previews and a fail-closed Stories/Manga/Reader publishing stack exist; approved public story records and the News Article route remain absent. |
-| Guest-first Feast Pass progression | **PARTIAL_CANDIDATE** | Integrated candidate implements browser-local level/XP/Sparks/streak/discoveries/daily check-in/quest summary under the current namespaced contract. |
-| Account later for preserve/sync | **PARTIAL_CANDIDATE** | Account preview route now explains guest-local progress, optional future account benefits and disabled sign-up/login; connected identity/sync remains deferred. |
-| Convert visitors to flagship mobile app | **PARTIAL** | App route exists, but genuine product screenshots and verified store links are missing. |
-| Reactive Toadal companion | **PARTIAL_CANDIDATE** | Contextual artwork now covers core routes plus account, community, merchandise, contact/business, construction and privacy/legal candidate surfaces. |
-| Hidden Treats / collectible food | **NOT_STARTED** | Food library exists; site interaction/progression loop not implemented. |
-| Daily rewards | **PARTIAL_CANDIDATE** | Candidate has one configurable UTC-day browser-local check-in with idempotent claim behavior; full reward calendar/content remains unapproved. |
-| Quests/challenges | **PARTIAL_CANDIDATE** | Candidate implements definition-driven route-visit quests with local progress and one-time claims; production quest catalog remains incomplete. |
-| Sound/settings/search utilities | **PARTIAL_CANDIDATE** | Companion assets/semantic reactions exist; full user-facing settings/search system is not implemented. |
-| Truthful PUBLIC/PREVIEW/PLANNED/COMING_SOON/DISABLED states | **DONE_PROVEN** | Current implementation is conservative and does not fabricate unavailable services. |
-| Mobile navigation / responsive composition | **DONE_PROVEN_CURRENT_ROUTES** | Current implemented routes have responsive/menu verification; future routes remain unbuilt. |
-| Keyboard/focus/reduced-motion/accessibility foundation | **DONE_PROVEN_CURRENT_ROUTES** | Verified on current shell; must remain a gate for every new route. |
-| Git-backed source of truth / staging-production separation | **DONE_PROVEN** | GitHub Pages staging, branch preservation and production separation are established. |
-| Final Home LOCK_VISUAL acceptance | **NOT_ACHIEVED** | Approved screenshot remains the north star; combined candidate is visibly not at parity and has not received owner visual acceptance. |
-| Feature-salvage discipline | **ACTIVE_CONTROL** | Historical donor code was inspected. Guest progression/Treats/quests/daily rewards/parallax have working donors; Feast Catch is retired from the initial game plan. |
-| Environmental motion / ambience | **NOT_STARTED_SALVAGE_AVAILABLE** | Reduced-motion-aware parallax donor exists; current visual shell has not integrated it as a manifest-level ambience layer. |
-| Mobile fast-Play / bottom-navigation concept | **PARTIAL** | Current drawer/menu behavior is verified; the mockup mobile plan also calls for fast Play access/bottom navigation where useful. |
-| Content publication states | **PARTIAL** | Truth labels are strong, but a complete DRAFT/PREVIEW/PUBLISHED/ARCHIVED publishing pipeline for stories/media/news is not yet built. |
-| Guest progression storage contract | **PARTIAL_CANDIDATE** | Candidate implements toadal:web:v1:* records, safe defaults, schema/version protection, corruption recovery and scoped reset behavior. |
+| TOADAL FEAST-first public identity | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Website feels like entering the Feast World | **OWNER_REVIEW_PENDING** | Current owner-preview composition preserved; no LOCK_VISUAL acceptance or redesign claimed. |
+| Play something free immediately | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Discover characters/world/story | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Consume media/manga/lore/news | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Guest-first Feast Pass progression | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Account later for preserve/sync | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Convert visitors to flagship mobile app | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Reactive Toadal companion | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Hidden Treats / collectible food | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Daily rewards | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Quests/challenges | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Sound/settings/search utilities | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. Local Search, existing player sound requests, and tab-only Profile CSS-animation preference; no site-audio service invented. |
+| Truthful PUBLIC/PREVIEW/PLANNED/COMING_SOON/DISABLED states | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Mobile navigation / responsive composition | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Keyboard/focus/reduced-motion/accessibility foundation | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Git-backed source of truth / staging-production separation | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Final Home LOCK_VISUAL acceptance | **OWNER_REVIEW_PENDING** | Current owner-preview composition preserved; no LOCK_VISUAL acceptance or redesign claimed. |
+| Feature-salvage discipline | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Environmental motion / ambience | **CONDITIONAL_SALVAGE_NOT_ACTIVATED** | Scenic composition and reduced-motion-safe existing interactions retained. Extra parallax is conditional on adding delight without clutter under LOCKED_PRODUCT_DECISIONS; not added during bug remediation. |
+| Mobile fast-Play / bottom-navigation concept | **CURRENT_NAVIGATION_PRESERVED** | Current mobile drawer and direct Play entry retained; extra bottom navigation is conditional (if useful), not a required replacement. |
+| Content publication states | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
+| Guest progression storage contract | **QUALIFICATION_PENDING** | Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. |
 
 ## Visual evidence levels
 
@@ -175,7 +173,7 @@ The correct progression strategy is **behavior salvage + current-schema rebuild*
 ## Manifest-first execution order
 
 1. **Integrated candidate visual acceptance / staging gate** (manifest rows 1, 6, 7, 14, 15, 16, 20) - Core candidate is implemented and verified; Home remains LOCK_VISUAL and must be reviewed before staging promotion.
-2. **Stories publishing stack** (manifest rows 8, 9, 10) - Candidate hub/template/reader routes and fail-closed plumbing are qualified; approved story records and page derivatives remain absent and must not be fabricated.
+2. **Stories publishing stack** (manifest rows 8, 9, 10) - Rows 9 and 10 are absent and row 8 is only a preview; Batch-1 references already exist.
 3. **Editorial/discovery utilities** (manifest rows 11, 12, 13, 23, 24, 25) - Converts partial media/news/support and missing article/search/roadmap families into useful truthful pages.
 4. **App conversion evidence closure** (manifest rows 18) - Completes flagship conversion only when genuine evidence is available.
 5. **Play depth / additional browser-game integration** (manifest rows 2, 3, 4, 17) - Improves immediate-play depth after core structure is under control.

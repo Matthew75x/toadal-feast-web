@@ -35,6 +35,10 @@ def main() -> int:
     node = "node"
     py = sys.executable
     steps: list[dict] = []
+    def fingerprint():
+        return json.loads(subprocess.check_output(
+            [node, "scripts/fingerprint-site-inputs.mjs", str(repo)], cwd=str(repo), text=True))
+    input_fingerprint = fingerprint()
 
     source_commands = [
         ("final-manifest-surfaces", [node, "scripts/verify-final-manifest-surfaces.mjs"]),
@@ -54,7 +58,11 @@ def main() -> int:
             "scripts/story-content.test.mjs",
             "scripts/wo001-pages-basepath.test.mjs",
             "scripts/wo002-contract.test.mjs",
-            "scripts/guest-progression.test.mjs"
+            "scripts/guest-progression.test.mjs",
+            "scripts/manifest-runtime-regressions.test.mjs",
+            "scripts/manifest-audit-utility.test.mjs",
+            "scripts/manifest-profile-discovery.test.mjs",
+            "scripts/editorial-manifest.test.mjs"
         ]),
         ("cartridge-storage-isolation", [node, "scripts/verify-cartridge-storage-isolation.mjs", "."]),
         ("wicked-score-bridge", [node, "scripts/verify-wicked-bites-score-bridge.mjs", "."]),
@@ -81,7 +89,9 @@ def main() -> int:
                 ".", "dist", args.base_path, str(browser_report)
             ], repo))
 
-    status = "PASS" if all(step["status"] == "PASS" for step in steps) else "FAIL"
+    output_fingerprint = fingerprint()
+    stable = input_fingerprint == output_fingerprint
+    status = "PASS" if stable and all(step["status"] == "PASS" for step in steps) else "FAIL"
     summary = {
         "schema": "toadal-feast.final-manifest-closure-gate.v1",
         "status": status,
@@ -92,6 +102,8 @@ def main() -> int:
         "failed": sum(step["status"] == "FAIL" for step in steps),
         "steps": [{k: step[k] for k in ("name", "status", "exitCode", "seconds")} for step in steps]
     }
+    summary["inputFingerprint"] = input_fingerprint
+    summary["inputsUnchangedDuringGate"] = stable
 
     (report_dir / "final-manifest-closure-gate.json").write_text(
         json.dumps({"summary": summary, "details": steps}, indent=2) + "\n",

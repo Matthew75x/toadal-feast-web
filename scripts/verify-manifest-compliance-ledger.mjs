@@ -21,7 +21,8 @@ if (new Set(nums).size !== nums.length) errors.push('Duplicate manifest page num
 for (const p of ledger.pages) {
   if (!allowedStatuses.has(p.status)) errors.push(`Invalid status ${p.status} for page #${p.n} ${p.page}.`);
   if (!p.evidence || !p.remainingGap) errors.push(`Page #${p.n} ${p.page} must carry evidence and remainingGap text.`);
-  if (p.status === 'DONE_PROVEN' && p.remainingGap.toLowerCase().includes('absent')) errors.push(`DONE_PROVEN page #${p.n} still says required content is absent.`);
+  if (p.status === 'DONE_PROVEN' && (!Array.isArray(p.buildableGaps) || p.buildableGaps.length ||
+      p.engineeringStatus !== 'QUALIFIED')) errors.push(`DONE_PROVEN page #${p.n} lacks qualified buildable-gap reconciliation.`);
 }
 
 const implementedRoutes = new Set((pagesIndex.pages || []).map(p => p.route));
@@ -93,6 +94,16 @@ if (!Array.isArray(ledger.executionPriorities) || ledger.executionPriorities.len
 if (ledger.latestManifestV1Closure?.originalManifestFamilies !== 30) errors.push('Latest manifest v1 closure metadata is missing the original 30-family denominator.');
 if (ledger.latestManifestV1Closure?.routeRecords !== implementedRoutes.size) errors.push('Latest manifest v1 closure route count does not match the registered route index.');
 if (ledger.pages.some(page => !page.manifestV1Action || !page.manifestV1Evidence)) errors.push('One or more manifest rows lack a current action/evidence reconciliation.');
+const closure = ledger.latestManifestV1Closure;
+if (closure?.status?.includes('ENGINEERING COMPLETE')) {
+  if (!/^[a-f0-9]{40}$/.test(closure.qualifiedSha || '') || ledger.authority.currentReviewCandidate !== closure.qualifiedSha)
+    errors.push('Engineering-complete ledger lacks an exact qualified review SHA.');
+  if (ledger.authority.liveStaging !== closure.stagingSha) errors.push('Current staging identities disagree.');
+  if (ledger.pages.some(page => !Array.isArray(page.buildableGaps) || page.buildableGaps.length))
+    errors.push('Engineering-complete ledger retains a buildable gap.');
+}
+if (ledger.authority.currentReviewCandidate === 'qualification-pending-commit') errors.push('Stale ambiguous pending-commit identity.');
+if (ledger.integration || ledger.gatedEcosystem) errors.push('Historical deployment snapshots must not remain unlabeled current state.');
 
 console.log(`Manifest rows: ${ledger.pages.length}`);
 console.log(`Implemented route records: ${implementedRoutes.size}`);

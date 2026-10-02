@@ -319,7 +319,7 @@ function rewriteCss(css, basePath) {
   return { value: output, rewrites };
 }
 
-function rewriteHtml(html, basePath) {
+export function rewriteHtml(html, basePath) {
   let output = '';
   let index = 0;
   let rewrites = 0;

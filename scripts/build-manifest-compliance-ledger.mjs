@@ -23,7 +23,7 @@ for (const p of ledger.pages) counts[p.status] = (counts[p.status] || 0) + 1;
 
 const md = [];
 md.push('# TOADAL FEAST Website - Manifest Compliance Ledger', '');
-md.push('**Date:** 2026-10-01');
+md.push('**Date:** ' + ledger.date);
 md.push(`**Current public staging:** \`${ledger.authority.liveStaging}\``);
 md.push(`**Current integrated review candidate:** \`${ledger.authority.currentReviewCandidate || ledger.authority.integratedCandidate || ledger.authority.combinedVisualCandidate}\``);
 md.push('**Controlling denominator:** the original 30-page manifest plus locked cross-cutting product requirements.', '');
@@ -39,8 +39,8 @@ md.push('- Toadal is a **reactive site companion**, using semantic context and a
 md.push('- Guest progression starts without an account and is stored durably in-browser; account/sync expands it later.');
 md.push('- Unavailable account/community/store/future destinations should be visible only through truthful polished states, never fake-live.');
 md.push('- The 30 page families remain requirements. Work orders are implementation slices, not replacements for the roadmap.', '');
-md.push('## Critical recalibration finding', '');
-md.push('**Home is still PARTIAL, not complete.** It is `LOCK_VISUAL`. The combined candidate is cleaner and closer, but side-by-side with the approved Home it remains visibly sparser and less game-world dense. Technical checks cannot upgrade that to visual acceptance.', '');
+md.push('## Qualification and owner acceptance', '');
+md.push('**Phase:** ' + ledger.latestManifestV1Closure.phase + '. Current source/artifact qualification and owner visual acceptance are separate. Home remains PARTIAL because LOCK_VISUAL acceptance is owner-pending; this remediation does not redesign it or claim acceptance.', '');
 md.push(`The approved Home remains \`${ledger.visualEvidence?.home?.path || 'docs/review/WO-002/evidence/approved-home-visual-authority.png'}\` (SHA-256 \`${ledger.authority.approvedHomeSha256}\`).`, '');
 md.push('## 30-page compliance', '');
 md.push('| # | Manifest page | Visual authority | Delivery | Status | Evidence / remaining gap |');

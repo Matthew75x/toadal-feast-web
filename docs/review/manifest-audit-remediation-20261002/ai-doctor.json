@@ -1,0 +1,176 @@
+{
+  "ok": true,
+  "server": {
+    "name": "toadal-studio",
+    "version": "1.4.2"
+  },
+  "checks": [
+    {
+      "name": "config:plugin.json",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:mcp.json",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:.mcp.json",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:.codex-plugin/plugin.json",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:.vscode/mcp.json",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:.cursor/mcp.json",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:AGENTS.md",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:AI/OPERATING_CONTRACT.md",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:AI/AI_MANIFEST.json",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:AI/AI_CAPABILITY_LEDGER.md",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "config:skills/toadal-studio/SKILL.md",
+      "ok": true,
+      "details": ""
+    },
+    {
+      "name": "portable-plugin-shape",
+      "ok": true,
+      "details": {
+        "schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json"
+      }
+    },
+    {
+      "name": "portable-mcp-shape",
+      "ok": true,
+      "details": {
+        "server": {
+          "type": "stdio",
+          "command": "node",
+          "args": [
+            "--no-warnings",
+            "--experimental-strip-types",
+            "apps/mcp/server.ts"
+          ],
+          "cwd": "./"
+        }
+      }
+    },
+    {
+      "name": "codex-compat-shape",
+      "ok": true,
+      "details": {
+        "skills": "./skills/",
+        "mcpServers": "./.mcp.json"
+      }
+    },
+    {
+      "name": "tool-names-unique",
+      "ok": true,
+      "details": {
+        "count": 16
+      }
+    },
+    {
+      "name": "tool-annotations",
+      "ok": true,
+      "details": {}
+    },
+    {
+      "name": "modern-discovery",
+      "ok": true,
+      "details": [
+        "2026-07-28",
+        "2025-11-25"
+      ]
+    },
+    {
+      "name": "legacy-initialize",
+      "ok": true,
+      "details": "2025-11-25"
+    },
+    {
+      "name": "tools-list",
+      "ok": true,
+      "details": {
+        "count": 16
+      }
+    },
+    {
+      "name": "tool-call",
+      "ok": true,
+      "details": {
+        "valid": true,
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    {
+      "name": "resource-read",
+      "ok": true,
+      "details": {}
+    },
+    {
+      "name": "prompts-list",
+      "ok": true,
+      "details": {
+        "count": 5
+      }
+    },
+    {
+      "name": "stdio-process",
+      "ok": true,
+      "details": {
+        "stderr": "[toadal-studio-mcp] 1.4.2 transport=stdio project=C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\project.json"
+      }
+    },
+    {
+      "name": "http-process",
+      "ok": true,
+      "details": {
+        "stderr": "[toadal-studio-mcp] 1.4.2 transport=http url=http://127.0.0.1:44428/mcp project=C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\project.json"
+      }
+    },
+    {
+      "name": "http-origin-protection",
+      "ok": true,
+      "details": {
+        "status": 403
+      }
+    },
+    {
+      "name": "http-rate-limit",
+      "ok": true,
+      "details": {
+        "status": 429
+      }
+    }
+  ]
+}

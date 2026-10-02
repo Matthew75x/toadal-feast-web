@@ -1,12 +1,21 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { rewriteHtml, normalizeBasePath } from './wo001-pages-basepath.mjs';
 
 const root = path.resolve(process.argv[2] || '.');
 const dist = path.resolve(root, process.argv[3] || 'dist');
 const site = path.join(root, 'studio-project', 'toadal-feast-website');
 const pageIndex = JSON.parse(fs.readFileSync(path.join(site, 'pages', 'index.json'), 'utf8')).pages || [];
 const errors = [];
+const basePath = normalizeBasePath(process.argv[4] || '/toadal-feast-web/');
+const normalizeText = value => value.replaceAll('\r\n', '\n');
+// Match Studio 1.4.2's safeRich boundary: scripts are loaded by the shared
+// runtime, never emitted from authored rich text. No Studio source is changed.
+const studioRichText = value => String(value)
+  .replace(/<script[\s\S]*?<\/script>/gi, '')
+  .replace(/\son\w+\s*=\s*(["']).*?\1/gi, '')
+  .replace(/javascript:/gi, '');
 
 function distFileFor(route) {
   if (route === '/') return path.join(dist, 'index.html');
@@ -45,6 +54,21 @@ function inspect(route, cfg = {}) {
 for (const record of pageIndex) {
   if (!fs.existsSync(distFileFor(record.route))) {
     errors.push(`registered route has no rendered HTML: ${record.route}`);
+    continue;
+  }
+  const page = JSON.parse(fs.readFileSync(path.join(site, record.file), 'utf8'));
+  const rendered = normalizeText(fs.readFileSync(distFileFor(record.route), 'utf8'));
+  for (const component of page.components || []) {
+    if (component.type !== 'core.rich-text' || !component.props?.html) continue;
+    const expected = normalizeText(rewriteHtml(studioRichText(component.props.html), basePath).value);
+    if (!rendered.includes(expected)) errors.push(`${record.route} rich-text component stale: ${component.id}`);
+  }
+}
+for (const name of ['guest-progression.js', 'progression-definitions.js', 'website-score-adapter.js', 'editorial-manifest.js']) {
+  const source = path.join(site, 'reference/assets/js', name);
+  const exported = path.join(dist, 'assets/js', name);
+  if (!fs.existsSync(exported) || normalizeText(fs.readFileSync(source, 'utf8')) !== normalizeText(fs.readFileSync(exported, 'utf8'))) {
+    errors.push('Runtime export stale: ' + name);
   }
 }
 

@@ -20,7 +20,11 @@
     "externalOwnerIcon": {
       "name": "EASY BRANDING.png",
       "use": "app/icon source only",
-      "websiteWordmarkUse": "FORBIDDEN"
+      "websiteWordmarkUse": "FORBIDDEN",
+      "websiteAssetId": "asset.app.approved-icon",
+      "websiteAssetPath": "/assets/images/app/approved-app-icon.webp",
+      "sourceSha256": "c7fb79e1d466f417e3c8f374450b81ecf8d183ad6bdabe3eabb62c642fb17b7e",
+      "sha256": "7c1ba16ae5ab67c2ab2297c3ca84ad9f313b82627d17673efc578e45ee201a44"
     }
   },
   "characters": {
@@ -481,6 +485,13 @@
       "sha256": "7078593d7481c9b2ff7cdb730f15d927db98a5f3fec33b05b3c0a50cfaf09e51",
       "bytes": 66070,
       "category": "app-capture"
+    },
+    {
+      "id": "asset.app.approved-icon",
+      "source": "reference/assets/images/app/approved-app-icon.webp",
+      "sha256": "7c1ba16ae5ab67c2ab2297c3ca84ad9f313b82627d17673efc578e45ee201a44",
+      "bytes": 120158,
+      "category": "app-icon"
     }
   ],
   "approvedRuntimeDerivatives": [

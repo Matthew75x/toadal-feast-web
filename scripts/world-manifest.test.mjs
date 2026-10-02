@@ -62,7 +62,11 @@ test('characters and Toadal keep registry-backed cast, filters, and explicit unp
   assert.match(characters, /RELATIONSHIPS[\s\S]*NOT PUBLISHED/);
   assert.match(characters, /APPEARANCES/);
   assert.match(characters, /Guest website progression is active on this browser/);
-  assert.match(characters, /character-specific discovery tracking is not connected yet/);
+  assert.match(characters, /data-progression-page='characters'/);
+  assert.equal((characters.match(/data-discover-character='/g) || []).length, 7);
+  assert.equal((characters.match(/data-character-discovery-status='/g) || []).length, 7);
+  assert.match(characters, /does not mean game, story, or canonical character completion/);
+  assert.doesNotMatch(characters, /character-specific discovery tracking is not connected yet/);
   assert.match(toadal, /King of Feasts/);
   assert.match(toadal, /Browser-local progression is active/);
   assert.match(toadal, /Character-specific collectible records are not configured/);

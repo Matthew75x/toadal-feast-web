@@ -22,12 +22,20 @@ def main():
     py=sys.executable
     node="node"
     steps=[]
+    def fingerprint():
+        return json.loads(subprocess.check_output(
+            [node, "scripts/fingerprint-site-inputs.mjs", str(repo)], cwd=str(repo), text=True))
+    input_fingerprint=fingerprint()
 
     steps.append(run_step("integrated-node-48",[
       node,"--test",
       "scripts/stories-publishing.test.mjs","scripts/story-content.test.mjs",
       "scripts/wo001-pages-basepath.test.mjs","scripts/wo002-contract.test.mjs",
-      "scripts/guest-progression.test.mjs"],repo))
+      "scripts/guest-progression.test.mjs",
+      "scripts/manifest-runtime-regressions.test.mjs",
+      "scripts/manifest-audit-utility.test.mjs",
+      "scripts/manifest-profile-discovery.test.mjs",
+      "scripts/editorial-manifest.test.mjs"],repo))
 
     commands=[
       ("home-visual-contract",[node,"scripts/verify-home-visual-contract.mjs","."]),
@@ -53,12 +61,15 @@ def main():
         steps.append(run_step("browser-matrix",[
           node,"scripts/owner-preview-browser-matrix.mjs",".","dist",args.base_path,str(broad_report)],repo))
 
-    status="PASS" if all(s["status"]=="PASS" for s in steps) else "FAIL"
+    stable=input_fingerprint==fingerprint()
+    status="PASS" if stable and all(s["status"]=="PASS" for s in steps) else "FAIL"
     summary={"schema":"toadal-feast.owner-preview-gate.v1","status":status,
              "repo":str(repo),"basePath":args.base_path,
              "steps":[{k:s[k] for k in ("name","status","exitCode","seconds")} for s in steps],
              "passed":sum(s["status"]=="PASS" for s in steps),
              "failed":sum(s["status"]=="FAIL" for s in steps)}
+    summary["inputFingerprint"]=input_fingerprint
+    summary["inputsUnchangedDuringGate"]=stable
     (report_dir/"owner-preview-gate.json").write_text(json.dumps({"summary":summary,"details":steps},indent=2)+"\n",encoding="utf-8")
     lines=["# Owner Preview Gate","",f"**Result: {status}**","",
            f"- Passed: {summary['passed']}","- Failed: "+str(summary["failed"]),"",

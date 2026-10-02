@@ -32,7 +32,10 @@ test('uses the exact four scoped keys and safe guest defaults', () => {
   assert.equal(state.quests.length, 4);
   assert.equal(definitions.treats.length, 3);
   assert.deepEqual(definitions.treats.map(item => item.id), ['portal-candy', 'lower-page-candy', 'golden-block-candy']);
-  assert.deepEqual(definitions.discoveries.map(item => item.route), ['/world/', '/stories/']);
+  assert.deepEqual(definitions.discoveries.filter(item => item.event === 'route-visit').map(item => item.route), ['/world/', '/stories/']);
+  assert.deepEqual(definitions.discoveries.filter(item => item.event === 'character-view').map(item => item.characterId),
+    ['toadal', 'princess-lily', 'genie-sweet', 'genie-fruity', 'genie-savoury', 'gulper', 'gully']);
+  assert.equal(state.characterDiscoveries.length, 0);
   assert.equal(state.rewards.length, 3);
   assert.equal(definitions.configStatus, 'starter-config-editable-not-canonical');
 });

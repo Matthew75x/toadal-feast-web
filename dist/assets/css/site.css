@@ -7265,3 +7265,10 @@ body:has(.home-hero) .site-footer { margin-top: 18px; border-top: 1px solid rgb(
   body:has(.home-hero) .home-hero__layout { min-height: 480px; height: 480px; }
   body:has(.home-hero) .home-hero__layout { padding-block: 20px 86px; }
 }
+/* Tab-local appearance preference; never overrides OS reduced-motion protection. */
+html[data-site-reduced-motion] *, html[data-site-reduced-motion] *::before,
+html[data-site-reduced-motion] *::after {
+  animation: none !important;
+  transition: none !important;
+  scroll-behavior: auto !important;
+}

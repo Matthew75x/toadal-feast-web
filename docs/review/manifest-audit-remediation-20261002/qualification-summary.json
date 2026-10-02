@@ -1,0 +1,375 @@
+{
+  "schema": "toadal-feast.manifest-audit-remediation-qualification.v1",
+  "status": "PASS",
+  "date": "2026-10-02",
+  "baseline": {
+    "sha": "60c4d8bee7edd818fcc794e3f87232058585b9d8",
+    "tree": "152294e80804ef7b065bdca2911c4f404f84fe80",
+    "staging": "688e1c471fdc97207c5ebfeaa0ef313ab9c44e52",
+    "main": "87050885331770ca3e30db7e463154aebd777512"
+  },
+  "inputFingerprint": {
+    "source": {
+      "sha256": "6ee0dcfd08d1a63086d684a376e7081c91360be0cf28f4d44cbacf1b2c019164",
+      "files": 236
+    },
+    "dist": {
+      "sha256": "04b14527463ddc841f5201f2f16dbc91a8b6b4f0d1e2e1c0e3c2843dd2904b9e",
+      "files": 142
+    }
+  },
+  "environment": {
+    "node": "v22.23.2",
+    "npm": "10.9.8",
+    "studioVersion": "1.4.2",
+    "studioPath": "C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-1.4.2/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER",
+    "projectManifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\project.json",
+    "plugins": []
+  },
+  "studio": {
+    "validation": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0
+    },
+    "inspect": "PASS",
+    "render": {
+      "status": "PASS",
+      "files": 142,
+      "bytes": 42456519
+    },
+    "staticExport": {
+      "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
+      "bytes": 40010960
+    },
+    "staticArchiveEvidence": {
+      "indexHtml": true,
+      "indexHtmlBytes": 69270,
+      "notFoundHtml": true,
+      "notFoundBytes": 44786
+    },
+    "checkpoint": {
+      "status": "PASS",
+      "ok": true,
+      "label": "manifest-audit-remediation-final-qualified"
+    },
+    "aiDoctor": {
+      "status": "PASS",
+      "checks": 26,
+      "failed": 0
+    },
+    "danglingReferences": {
+      "count": 4,
+      "status": "EXPLAINED_BENIGN_COMPONENT_TYPE_SCANNER",
+      "evidence": "DANGLING_GRAPH_REFERENCES.md"
+    }
+  },
+  "nodeTests": {
+    "command": "node --test --test-reporter=spec scripts/*.test.mjs",
+    "passed": 99,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "node-tests.txt"
+  },
+  "ownerPreviewGate": {
+    "schema": "toadal-feast.owner-preview-gate.v1",
+    "status": "PASS",
+    "repo": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002",
+    "basePath": "/toadal-feast-web/",
+    "steps": [
+      {
+        "name": "integrated-node-48",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 2.47
+      },
+      {
+        "name": "home-visual-contract",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "navigation-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "character-registry",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "gated-ecosystem",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "manifest",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "search-discovery",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "nonhome-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.07
+      },
+      {
+        "name": "visual-asset-authority",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.15
+      },
+      {
+        "name": "nonhome-layout-closure",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "cartridge-isolation",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.86
+      },
+      {
+        "name": "render-freshness",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.09
+      },
+      {
+        "name": "pages-basepath",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "static-links",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.42
+      },
+      {
+        "name": "staging-robots",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "browser-matrix",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 29.87
+      }
+    ],
+    "passed": 16,
+    "failed": 0,
+    "inputFingerprint": {
+      "source": {
+        "sha256": "6ee0dcfd08d1a63086d684a376e7081c91360be0cf28f4d44cbacf1b2c019164",
+        "files": 236
+      },
+      "dist": {
+        "sha256": "04b14527463ddc841f5201f2f16dbc91a8b6b4f0d1e2e1c0e3c2843dd2904b9e",
+        "files": 142
+      }
+    },
+    "inputsUnchangedDuringGate": true
+  },
+  "manifestGate": {
+    "schema": "toadal-feast.final-manifest-closure-gate.v1",
+    "status": "PASS",
+    "repo": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002",
+    "sourceOnly": false,
+    "basePath": "/toadal-feast-web/",
+    "passed": 19,
+    "failed": 0,
+    "steps": [
+      {
+        "name": "final-manifest-surfaces",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.07
+      },
+      {
+        "name": "final-interaction-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "final-product-contracts",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.09
+      },
+      {
+        "name": "final-manifest-discoverability",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.1
+      },
+      {
+        "name": "navigation-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "character-registry",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "gated-ecosystem",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "search-discovery",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "nonhome-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.07
+      },
+      {
+        "name": "visual-asset-authority",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.16
+      },
+      {
+        "name": "manifest-ledger",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.48
+      },
+      {
+        "name": "core-node-tests",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 1.93
+      },
+      {
+        "name": "cartridge-storage-isolation",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.76
+      },
+      {
+        "name": "wicked-score-bridge",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "canonical-gully-authority",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.48
+      },
+      {
+        "name": "render-freshness",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.1
+      },
+      {
+        "name": "pages-basepath",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.09
+      },
+      {
+        "name": "static-links",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.5
+      },
+      {
+        "name": "staging-robots",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.11
+      }
+    ],
+    "inputFingerprint": {
+      "source": {
+        "sha256": "6ee0dcfd08d1a63086d684a376e7081c91360be0cf28f4d44cbacf1b2c019164",
+        "files": 236
+      },
+      "dist": {
+        "sha256": "04b14527463ddc841f5201f2f16dbc91a8b6b4f0d1e2e1c0e3c2843dd2904b9e",
+        "files": 142
+      }
+    },
+    "inputsUnchangedDuringGate": true
+  },
+  "browserMatrix": {
+    "schema": "toadal-feast.owner-preview-browser-matrix.v1",
+    "status": "PASS",
+    "routes": 33,
+    "cases": 83,
+    "passed": 83,
+    "failed": 0,
+    "diagnostics": {
+      "genericControlOverlapCases": 0,
+      "genericControlOverlapEntries": 0
+    },
+    "issueCounts": {}
+  },
+  "browserReuse": "The manifest gate uses --skip-browser because the same exact input fingerprint was independently qualified by owner gate's full83case matrix. No case skipped in that matrix.",
+  "visualEvidence": {
+    "status": "PASS",
+    "captures": 13,
+    "passedCaptures": 13,
+    "companionInteractions": 17,
+    "passedCompanionInteractions": 17,
+    "failedChecks": 0
+  },
+  "realRuntimeWitnesses": {
+    "status": "PASS",
+    "evidence": "runtime-browser-witnesses.json"
+  },
+  "supplementalStudioSuite": {
+    "status": "NOT_RERUN_IN_BOUNDED_WEBSITE_REMEDIATION",
+    "previousResult": "76/81;5 missing zip/ImageMagick CLI prerequisite failures",
+    "testsAltered": false
+  },
+  "preservation": {
+    "homeSourceAndRenderedHomeUnchanged": true,
+    "companionRuntimeUnchanged": true,
+    "cartridgeSourceAndGeneratedBytesUnchanged": true,
+    "mainUntouched": true,
+    "productionUntouched": true,
+    "studioBuildHistoryTracked": false
+  },
+  "ownerVisualStatus": "OWNER_REVIEW_PENDING_NOT_LOCK_VISUAL",
+  "remainingDependencies": [
+    "Owner Home visual acceptance",
+    "Approved published stories/news/lore/legal/mission/community/catalog content",
+    "Approved trailer/Infinite capture",
+    "Official App store URLs",
+    "Actual Froggy identity/connected ranking, contact/moderation/commerce services"
+  ],
+  "publication": "QUALIFIED_PENDING_COMMIT_AND_STAGING_DEPLOYMENT"
+}

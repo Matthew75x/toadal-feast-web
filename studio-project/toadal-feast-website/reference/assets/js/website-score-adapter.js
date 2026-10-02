@@ -20,8 +20,11 @@
   function normalizeScore(value) {
     if (typeof value !== 'string' && typeof value !== 'number') return null;
     const text = String(value).trim();
-    if (!/^\d+$/.test(text)) return null;
-    const score = Number(text);
+    // The unchanged compatibility bridge reads the real wbScore UI, whose
+    // en-US formatter uses grouped thousands above 999. Reject malformed
+    // grouping instead of permissively stripping arbitrary punctuation.
+    if (!/^(?:\d+|[1-9]\d{0,2}(?:,\d{3})+)$/.test(text)) return null;
+    const score = Number(text.replaceAll(',', ''));
     return Number.isSafeInteger(score) && score >= 0 ? score : null;
   }
 
@@ -147,9 +150,14 @@
   function renderPlayer(root, shell) {
     const frame = shell.querySelector('[data-player-frame]');
     const initialSrc = frame && frame.getAttribute('src');
-    const scoreNode = shell.querySelector('[data-score-current]');
-    const bestNode = shell.querySelector('[data-score-session-best]');
-    const elapsedNode = shell.querySelector('[data-score-elapsed]');
+    // Studio renders the host and HUD as sibling components. Associate them
+    // explicitly rather than assuming the HUD is nested inside the host shell.
+    const hudId = shell.getAttribute('data-player-hud');
+    const hud = hudId ? root.document.getElementById(hudId) : shell;
+    const scoreNode = hud && hud.querySelector('[data-score-current]');
+    const bestNode = hud && hud.querySelector('[data-score-session-best]');
+    const elapsedNode = hud && hud.querySelector('[data-score-elapsed]');
+    const statusNode = hud && hud.querySelector('[data-score-session-status]');
     if (!frame || !initialSrc || !scoreNode || !elapsedNode) return;
     const elapsedLabel = elapsedNode.parentElement && elapsedNode.parentElement.querySelector('dt');
     if (elapsedLabel) elapsedLabel.textContent = 'Session time';
@@ -172,15 +180,24 @@
       const message = event.data;
       const priorState = session.snapshot().state;
       if (message.type === 'game:complete' && priorState !== 'playing' && priorState !== 'paused') return;
-      if (message.type === 'game:started') completionRecorded = false;
+      if (message.type === 'game:started') {
+        completionRecorded = false;
+        if (statusNode) statusNode.textContent = 'Current run is in memory. A completed score can save in this browser only; no XP, Sparks, or global ranking is granted.';
+      }
       session.accept(message.type, message.payload);
       if (message.type === 'game:complete' && !completionRecorded) {
         completionRecorded = true;
         const score = normalizeScore(message.payload.score);
-        const progressionPage = root.document.querySelector('[data-progression-page="game-session"]');
+        const progressionPage = hud.matches && hud.matches('[data-progression-page="game-session"]')
+          ? hud : hud.querySelector('[data-progression-page="game-session"]');
         const store = progressionPage && progressionPage.__toadalProgressionStore;
         if (score !== null && store && typeof store.recordLocalScore === 'function') {
-          store.recordLocalScore({ gameId: GAME_ID, score, source: 'website-preview-session' });
+          const result = store.recordLocalScore({ gameId: GAME_ID, score, source: 'website-preview-session' });
+          if (statusNode) statusNode.textContent = result.ok
+            ? 'Completed score saved in this browser only. No XP, Sparks, or global ranking is granted.'
+            : 'Run complete; the local score could not be saved. The current score remains visible in this tab.';
+        } else if (statusNode) {
+          statusNode.textContent = 'Run complete; browser-local score storage is unavailable. The score is visible in this tab only.';
         }
       }
       paint();

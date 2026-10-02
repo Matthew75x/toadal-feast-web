@@ -21,6 +21,14 @@
         "variant": "gated-community-actions",
         "html": "<section class='construction-panel' data-companion-context='community' data-companion-copy='Posting and uploads are unavailable until a moderated community service is connected. You can explore published stories or visit the construction guide.' data-companion-reaction='construction' aria-labelledby='community-actions-title'><div><p class='section-kicker'>POSTING IS NOT AVAILABLE</p><h2 id='community-actions-title'>The community feed is not connected</h2><p>There is no posting or upload service here. Browse the published site areas while community features are being prepared.</p><button type='button' disabled>Posting unavailable</button></div><div class='construction-links'><a href='/coming-soon/' data-companion-context='under-construction' data-companion-action data-companion-action-copy='Community posting is unavailable until a moderated social service is connected.'>Why posting is unavailable</a><a href='/stories/'>Explore Stories</a><a href='/media/'>Explore Media</a><a href='/contact/'>Contact status</a></div></section>"
       }
+    },
+    {
+      "id": "component.community.feed-guidelines",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "community-feed-guidelines",
+        "html": "<section class='gated-grid' aria-label='Community feed and participation guidelines'><article class='gated-card' id='community-feed-preview'><p class='section-kicker'>FEED PREVIEW</p><h2>No community posts are published</h2><p>This feed preview has no posts, creator profiles, reactions, or activity counts because no public community service is connected.</p><span class='status-chip status-chip--coming'>FEED NOT CONNECTED</span></article><article class='gated-card' id='community-guidelines'><p class='section-kicker'>COMMUNITY GUIDELINES</p><h2>Guidelines are awaiting approved publication</h2><p>Participation rules have not been approved for publication. Posting, uploads, and event participation remain unavailable until a moderated service and its published guidelines are ready.</p><span class='status-chip status-chip--coming'>APPROVED GUIDELINES PENDING</span></article></section>"
+      }
     }
   ],
   "referenceFile": "community/index.html",

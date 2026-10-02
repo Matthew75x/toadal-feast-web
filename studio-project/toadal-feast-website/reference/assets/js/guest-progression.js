@@ -127,7 +127,9 @@
     }
     if (runs.length) {
       const bounded = runs.slice(-MAX_LOCAL_RUNS);
-      const best = bounded.reduce((value, run) => Math.max(value, run.score), 0);
+      // The personal best is all-time; the run list is only the latest 50.
+      const best = Math.max(normalizeScore(candidate && candidate.best) || 0,
+        bounded.reduce((value, run) => Math.max(value, run.score), 0));
       output['wicked-bites'] = { best, runs: bounded };
     }
     return output;
@@ -140,7 +142,8 @@
       const validRuns = state.runs.every(run => run && typeof run === 'object' && normalizeScore(run.score) !== null &&
         typeof run.completedAt === 'string' && !Number.isNaN(Date.parse(run.completedAt)) && new Date(run.completedAt).toISOString() === run.completedAt &&
         ['mode', 'ruleset', 'characterId'].every(key => run[key] === null || typeof run[key] === 'string'));
-      return validRuns && state.best === state.runs.reduce((best, run) => Math.max(best, run.score), 0);
+      return validRuns && typeof state.best === 'number' &&
+        state.best >= state.runs.reduce((best, run) => Math.max(best, run.score), 0);
     });
   }
   function createStore(options) {
@@ -303,7 +306,10 @@
       const discoveryDefinitions = definitions.discoveries || [];
       const discoveries = records.discoveries.items.map(id => {
         const definition = discoveryDefinitions.find(item => item.id === id);
-        return definition ? { id, title: definition.title, description: definition.description || '' } : { id, title: 'Previously recorded discovery', description: '' };
+        return definition ? { id, title: definition.title, description: definition.description || '',
+          characterId: definition.event === 'character-view' ? definition.characterId : null,
+          routeVisit: definition.event === 'route-visit' } :
+          { id, title: 'Previously recorded discovery', description: '', characterId: null };
       });
       const pass = structuredCopy(records.pass);
       pass.collectibles = normalizeCollectibles(pass.collectibles);
@@ -342,7 +348,8 @@
       });
       return {
         pass, quests,
-        discoveries, treats, profile: structuredCopy(records.profile), localScores, localHighScores,
+        discoveries, characterDiscoveries: discoveries.filter(item => item.characterId),
+        treats, profile: structuredCopy(records.profile), localScores, localHighScores,
         rewards, milestones,
         xpToNext: configuredThreshold ? configuredThreshold - records.pass.xp % configuredThreshold : null,
         daily,
@@ -378,6 +385,17 @@
         return false;
       }
       return true;
+    }
+    function discoverCharacter(id) {
+      const definition = (definitions.discoveries || []).find(item => item.event === 'character-view' && item.characterId === id);
+      if (!definition) return { ok: false, reason: 'unknown-character' };
+      refresh(['discoveries']);
+      if (blocked.has('discoveries') || unwritable.has('discoveries')) return { ok: false, reason: 'stored-data-read-only' };
+      if (records.discoveries.items.includes(definition.id)) return { ok: false, reason: 'already-discovered' };
+      const before = structuredCopy(records.discoveries);
+      records.discoveries.items.push(definition.id);
+      if (!save('discoveries')) { records.discoveries = before; return { ok: false, reason: 'storage-unavailable' }; }
+      return { ok: true, characterId: id };
     }
     function claimQuest(id) {
       refresh(['quests', 'pass']);
@@ -577,7 +595,7 @@
       unwritable.clear();
       return getSnapshot();
     }
-      return { getSnapshot, recordEvent, claimDaily, claimQuest, claimReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
+      return { getSnapshot, recordEvent, discoverCharacter, claimDaily, claimQuest, claimReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
   }
 
   function boot(document, root) {
@@ -596,7 +614,10 @@
       const setStatus = text => { if (status) status.textContent = text; };
       function render() {
         const state = store.getSnapshot();
-      const values = { level: state.pass.level, xp: state.pass.xp, 'xp-to-next': state.xpToNext == null ? '—' : state.xpToNext, sparks: state.pass.sparks, treats: state.pass.treats, streak: state.pass.streak.count, discoveries: state.discoveries.length, 'quests-complete': state.questsComplete };
+        const title = state.rewards.find(item => item.type === 'title' && item.awardId === state.profile.selectedTitle);
+        const values = { level: state.pass.level, xp: state.pass.xp, 'xp-to-next': state.xpToNext == null ? '—' : state.xpToNext, sparks: state.pass.sparks, treats: state.pass.treats, streak: state.pass.streak.count, discoveries: state.discoveries.length, 'quests-complete': state.questsComplete,
+          'route-visits': state.discoveries.filter(item => item.routeVisit).length,
+          'character-discoveries': state.characterDiscoveries.length, 'selected-title': title ? title.title : (state.profile.selectedTitle || 'No title selected') };
         page.querySelectorAll('[data-progression-stat]').forEach(el => { const key = el.getAttribute('data-progression-stat'); if (Object.prototype.hasOwnProperty.call(values, key)) el.textContent = String(values[key]); });
         const questGroups = { daily: 'Daily', weekly: 'Weekly', exploration: 'Exploration', game: 'Game', story: 'Story' };
         const questEmpty = {
@@ -616,7 +637,7 @@
         });
         questItems.sort((a, b) => Object.keys(questGroups).indexOf(a.group) - Object.keys(questGroups).indexOf(b.group));
         renderList(page, '[data-progression-quest-list]', questItems, id => {
-          if (id === 'daily-check-in') { if (root && root.location) root.location.href = '/feast-pass/#daily-reward-title'; return; }
+          if (id === 'daily-check-in') { if (root && root.location) root.location.href = siteHref(document, '/feast-pass/#daily-reward-title'); return; }
           const result = store.claimQuest(id); setStatus(result.ok ? 'Quest reward claimed.' : result.reason === 'already-claimed' ? 'This quest reward was already claimed.' : 'Quest reward is not available yet.'); render();
         });
         const rewards = state.rewards.map(r => ({ id: r.id, title: r.title || r.name || r.id, detail: (r.description || 'Configured reward') + ' · Level ' + r.level + ' · Website-local, non-transferable · ' + (r.claimed ? 'Claimed' : r.unlocked ? 'Ready to claim' : 'Locked'), button: r.claimed ? null : r.unlocked ? 'Claim locally' : null }));
@@ -624,9 +645,20 @@
         renderList(page, '[data-progression-reward-list]', rewards.concat(milestones), id => {
           const result = store.claimReward(id); setStatus(result.ok ? 'A website-local reward was added to this guest profile.' : result.reason === 'already-claimed' ? 'This reward was already claimed in this browser.' : 'This reward is not available yet.'); render();
         });
-        const discoveryItems = state.discoveries.map(item => ({ title: item.title, detail: item.description || 'A visit to a site preview; no lore or food item is implied.' }));
+        const discoveryItems = state.discoveries.filter(item => !item.characterId).map(item => ({ title: item.title, detail: item.description || 'A visit to a site preview; no lore or food item is implied.' }));
         const treatItems = state.treats.map(item => ({ title: item.title, detail: item.description + ' · Found · Saved in this browser' }));
         renderList(page, '[data-progression-discovery-list]', discoveryItems.concat(treatItems));
+        renderList(page, '[data-progression-character-list]', state.characterDiscoveries.map(item => ({ title: item.title, detail: item.description })));
+        page.querySelectorAll('[data-discover-character]').forEach(button => {
+          const found = state.characterDiscoveries.some(item => item.characterId === button.getAttribute('data-discover-character'));
+          button.disabled = found;
+          button.setAttribute('aria-disabled', String(found));
+          button.textContent = found ? 'Artwork discovered' : 'Discover this character artwork';
+        });
+        page.querySelectorAll('[data-character-discovery-status]').forEach(node => {
+          const found = state.characterDiscoveries.some(item => item.characterId === node.getAttribute('data-character-discovery-status'));
+          node.textContent = found ? 'Discovered in this browser' : 'Not discovered in this browser';
+        });
         const profileItems = [];
         state.treats.forEach(item => profileItems.push({ title: item.title, detail: item.description + ' · Treat · Website-local' }));
         ['badges', 'titles', 'collectibles'].forEach(type => (state.profile[type] || []).forEach(id => {
@@ -634,6 +666,10 @@
           profileItems.push({ title: reward ? reward.title : id, detail: type.slice(0, -1) + ' · Website-local, non-transferable' });
         }));
         renderList(page, '[data-progression-collection-list]', profileItems);
+        renderList(page, '[data-progression-achievement-list]', (state.profile.badges || []).map(id => {
+          const reward = state.rewards.find(item => item.type === 'badge' && item.awardId === id);
+          return { title: reward ? reward.title : id, detail: 'Claimed website-local badge; not a game or connected achievement.' };
+        }));
         const scoreItems = (state.localHighScores || []).map(item => ({
           title: item.gameId === 'wicked-bites' ? 'Wicked Bites personal best' : 'Local game personal best',
           detail: Number(item.score).toLocaleString() + ' points · saved in this browser · not a global rank or progression reward',
@@ -672,6 +708,20 @@
         else if (status && !status.textContent) setStatus('Guest progress is stored only in this browser.');
       }
       page.querySelectorAll('[data-clear-progression]').forEach(button => button.addEventListener('click', () => { store.clear(); setStatus('Website guest progression was cleared from this browser. Other game and mobile data was not changed.'); render(); }));
+      page.querySelectorAll('[data-discover-character]').forEach(button => button.addEventListener('click', () => {
+        const result = store.discoverCharacter(button.getAttribute('data-discover-character'));
+        setStatus(result.ok ? 'Character artwork discovery saved in this browser. No game completion or reward is implied.' :
+          result.reason === 'already-discovered' ? 'This artwork is already discovered in this browser.' : 'Character discovery could not be saved.');
+        render();
+      }));
+      page.querySelectorAll('[data-site-motion-toggle]').forEach(input => {
+        input.checked = Boolean(document.documentElement && document.documentElement.hasAttribute('data-site-reduced-motion'));
+        input.addEventListener('change', () => {
+          if (document.documentElement) document.documentElement.toggleAttribute('data-site-reduced-motion', input.checked);
+          setStatus(input.checked ? 'Site CSS animations reduced in this tab. Operating-system reduced motion remains respected.' :
+            'Tab-only CSS animation preference cleared. Operating-system reduced motion remains respected.');
+        });
+      });
       render();
       page.__toadalProgressionStore = store;
     });
@@ -688,6 +738,15 @@
     if (match) return match;
     const segments = clean.split('/').filter(Boolean);
     return segments.length <= 1 ? '/' : clean;
+  }
+  function siteHref(document, href) {
+    if (typeof href !== 'string' || !/^\/(?!\/)/.test(href)) return href;
+    const brand = document && document.querySelector && document.querySelector('.site-brand');
+    const home = brand && (brand.getAttribute && brand.getAttribute('href') || brand.href);
+    let base = '';
+    try { if (home) base = new URL(home, document.baseURI || 'https://local.invalid/').pathname.replace(/\/+$/, ''); }
+    catch (_) { /* Root hosting remains the safe default. */ }
+    return base && href !== base && !href.startsWith(base + '/') ? base + href : href;
   }
   function renderList(page, selector, items, onClaim) {
     const container = page.querySelector(selector);
@@ -706,7 +765,7 @@
       entry.setAttribute('role', 'listitem');
       const title = page.ownerDocument.createElement('strong'); title.textContent = item.title; entry.appendChild(title);
       const detail = page.ownerDocument.createElement('p'); detail.textContent = item.detail || ''; entry.appendChild(detail);
-      if (item.href) { const link = page.ownerDocument.createElement('a'); link.href = item.href; link.textContent = item.button || 'Open'; entry.appendChild(link); }
+      if (item.href) { const link = page.ownerDocument.createElement('a'); link.href = siteHref(page.ownerDocument, item.href); link.textContent = item.button || 'Open'; entry.appendChild(link); }
       else if (item.button && onClaim) { const button = page.ownerDocument.createElement('button'); button.type = 'button'; button.textContent = item.button; button.addEventListener('click', () => onClaim(item.id)); entry.appendChild(button); }
       list.appendChild(entry);
     }
@@ -732,5 +791,5 @@
       });
     } else items.forEach(item => appendItem(container, item));
   }
-  return { KEYS, createStore, boot, normalizePath, renderList };
+  return { KEYS, createStore, boot, normalizePath, siteHref, renderList };
 });

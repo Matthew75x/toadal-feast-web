@@ -5,10 +5,13 @@ import { createRequire } from 'node:module';
 const require = createRequire(import.meta.url);
 const adapter = require('../studio-project/toadal-feast-website/reference/assets/js/website-score-adapter.js');
 
-test('accepts only strict non-negative safe integer scores', () => {
+test('accepts safe integers and the real cartridge strictly grouped score format only', () => {
   assert.equal(adapter.normalizeScore('1234'), 1234);
   assert.equal(adapter.normalizeScore(' 1234 '), 1234);
-  for (const value of ['', '-1', '+1', '1.5', '1,23', '1,234', '1,234x', '9007199254740992', null, {}]) {
+  assert.equal(adapter.normalizeScore('1,234'), 1234);
+  assert.equal(adapter.normalizeScore('1,489'), 1489);
+  assert.equal(adapter.normalizeScore('1,234,567'), 1234567);
+  for (const value of ['', '-1', '+1', '1.5', '1,23', '12,34', '1234,567', '0,123', ',123', '1,234x', '9,007,199,254,740,992', '9007199254740992', null, {}]) {
     assert.equal(adapter.normalizeScore(value), null, String(value));
   }
 });
@@ -23,6 +26,7 @@ test('accepts the exact opaque-origin iframe and rejects sibling or synthetic me
   const frame = { src: 'https://site.example/public/games/wicked-bites/index.html', contentWindow: {} };
   const valid = { source: frame.contentWindow, origin: 'null', data: { protocol: 'toadal.game.v1', gameId: 'wicked-bites', type: 'game:score', payload: { score: '1234' } } };
   assert.equal(adapter.isTrustedMessage(valid, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), true);
+  assert.equal(adapter.isTrustedMessage({ ...valid, data: { ...valid.data, payload: { score: '1,489' } } }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), true);
   assert.equal(adapter.isTrustedMessage({ ...valid, source: {} }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);
   assert.equal(adapter.isTrustedMessage({ ...valid, origin: 'https://site.example' }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);
   assert.equal(adapter.isTrustedMessage({ ...valid, data: { ...valid.data, gameId: 'other' } }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);

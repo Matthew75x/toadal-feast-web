@@ -1,0 +1,83 @@
+{
+  "schema": "toadal-feast.manifest-audit-runtime-witnesses.v1",
+  "status": "PASS",
+  "date": "2026-10-02",
+  "base": "http://127.0.0.1:8147/toadal-feast-web/",
+  "inputFingerprint": {
+    "source": {
+      "sha256": "6ee0dcfd08d1a63086d684a376e7081c91360be0cf28f4d44cbacf1b2c019164",
+      "files": 236
+    },
+    "dist": {
+      "sha256": "04b14527463ddc841f5201f2f16dbc91a8b6b4f0d1e2e1c0e3c2843dd2904b9e",
+      "files": 142
+    }
+  },
+  "method": "Actual in-app Chromium browser interactions on the final Studio dist through a loopback server using the GitHub Pages prefix. Read-only DOM observations; real cartridge UI/protocol. No direct score injection, game-result spoofing, storage mutation, or game-source modification.",
+  "observations": [
+    {
+      "name": "actual-game-score-and-completion",
+      "status": "PASS",
+      "detail": "Started the real cartridge using START CROSSING. HUD tracked 1,759 above 999. Natural third-hit game-over dialog showed SCORE 1,953, GOOD FOOD 16, HITS TAKEN 3; HUD matched 1,953, session best1,953, Session time0:29, and Completed score saved in this browser only."
+    },
+    {
+      "name": "completed-score-persistence",
+      "status": "PASS",
+      "detail": "Navigated to the local leaderboard: numeric1953 record present, alongside other actual completed runs (2005,1544,992,752,688). All-time best2005 matched Profile's2,005 points. Mode remains not supplied; connected/global absent."
+    },
+    {
+      "name": "pause-resume-lifecycle",
+      "status": "PASS",
+      "detail": "Real host Pause froze timer0:18 across separate observations; Resume continued gameplay. Earlier same lifecycle implementation retained. Grouped-score defect found during this witness was corrected in the website adapter and all final gates rerun."
+    },
+    {
+      "name": "new-run-status",
+      "status": "PASS",
+      "detail": "Reloaded final player and started a real run: Current run is in memory replaced any previous completion notice. Unit coverage asserts restart reset and duplicate-completion suppression."
+    },
+    {
+      "name": "daily-dynamic-link",
+      "status": "PASS",
+      "detail": "Clicked runtime-created Open daily check-in from Quests; URL became /toadal-feast-web/feast-pass/#daily-reward-title and actual Daily check-in heading/Claim daily check-in control rendered."
+    },
+    {
+      "name": "profile-dynamic-link",
+      "status": "PASS",
+      "detail": "Rendered View local leaderboard href equals /toadal-feast-web/leaderboards/?game=wicked-bites; actual click reached the supported board."
+    },
+    {
+      "name": "character-discovery",
+      "status": "PASS",
+      "detail": "Clicked Gully Mark artwork viewed. On later route/reload the UI showed Discovered in this browser, disabled button, count1 of7. Profile showed Gully artwork discovered. XP0/Sparks0/Treats0; website route visits0 separately from character discoveries1."
+    },
+    {
+      "name": "actual-local-badge",
+      "status": "PASS",
+      "detail": "Clicked Rewards Claim locally for existing First Feast badge. Claimed state persisted into Profile Local milestones and Your local collection. No game/connected achievement claimed."
+    },
+    {
+      "name": "tab-only-motion",
+      "status": "PASS",
+      "detail": "Actual Profile checkbox added data-site-reduced-motion and checked=true; uncheck removed attribute and checked=false. On route/reload it returned neutral; no saved preference or OS setting change."
+    },
+    {
+      "name": "approved-icon-decode",
+      "status": "PASS",
+      "detail": "Scrolled via actual App icon click; img complete=true naturalWidth256 naturalHeight256, Pages-prefixed registered WebP source. Lazy unloaded off-screen state was not misclassified as decode failure."
+    },
+    {
+      "name": "news-truthful-structures",
+      "status": "PASS",
+      "detail": "Rendered Featured updates, Latest updates/search, Trending. No approved featured/public updates; activity data unavailable, so no invented ranking."
+    }
+  ],
+  "isolatedRegressions": {
+    "allTimeBest": "1000 then50 lower completed runs: recent history remains50, stored best1000 survives reload, new1001 stays writable. Corrupt best lower than retained max remains read-only.",
+    "formattedScores": "Strict en-US thousands grouping accepted and normalized to safe integer; malformed grouping, unsafe/fractional/negative and untrusted sources rejected."
+  },
+  "separateEvidence": {
+    "matrix": "gate/browser-matrix.json",
+    "screenshots": "screenshots-final/owner-visual-acceptance-qa.json",
+    "fullNodeSuite": "node-tests.txt"
+  }
+}

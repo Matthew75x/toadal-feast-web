@@ -355,6 +355,14 @@
               "title": {
                 "type": "string"
               },
+              "category": {
+                "enum": [
+                  "announcements",
+                  "development",
+                  "games",
+                  "world-stories"
+                ]
+              },
               "publishedAt": {
                 "type": [
                   "string",
@@ -373,6 +381,32 @@
                   "string",
                   "null"
                 ]
+              },
+              "featured": {
+                "type": "boolean"
+              },
+              "pullQuote": {
+                "type": "object",
+                "required": [
+                  "text"
+                ],
+                "properties": {
+                  "text": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "attribution": {
+                    "type": "string"
+                  }
+                },
+                "additionalProperties": false
+              },
+              "relatedSlugs": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/$defs/slug"
+                },
+                "uniqueItems": true
               }
             }
           }
@@ -437,6 +471,13 @@
           },
           "description": {
             "type": "string"
+          },
+          "relatedDevlogSlugs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/slug"
+            },
+            "uniqueItems": true
           },
           "timeWindow": {
             "type": [

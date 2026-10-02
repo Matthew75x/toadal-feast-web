@@ -10,7 +10,7 @@
     configStatus: 'starter-config-editable-not-canonical',
     schemaVersion: 1,
     xpPerLevel: 100,
-    knownSiteRoutes: ['/feast-pass/', '/feast-pass/quests/', '/feast-pass/rewards/', '/profile/', '/world/', '/stories/'],
+    knownSiteRoutes: ['/feast-pass/', '/feast-pass/quests/', '/feast-pass/rewards/', '/profile/', '/world/', '/stories/', '/characters/'],
     dailyCheckIn: {
       enabled: true,
       period: 'UTC-day',
@@ -60,7 +60,15 @@
     ],
     discoveries: [
       { id: 'world-page-preview', title: 'Visited the World preview', description: 'A visit to the World page preview.', route: '/world/', event: 'route-visit' },
-      { id: 'stories-page-preview', title: 'Visited the Stories preview', description: 'A visit to the Stories page preview.', route: '/stories/', event: 'route-visit' }
+      { id: 'stories-page-preview', title: 'Visited the Stories preview', description: 'A visit to the Stories page preview.', route: '/stories/', event: 'route-visit' },
+      ...[
+        ['toadal', 'Toadal'], ['princess-lily', 'Princess Lily'], ['genie-sweet', 'Sweet Genie'],
+        ['genie-fruity', 'Fruity Genie'], ['genie-savoury', 'Savoury Genie'], ['gulper', 'Gulper'], ['gully', 'Gully']
+      ].map(([characterId, name]) => ({
+        id: 'character-artwork-' + characterId, characterId, event: 'character-view',
+        title: name + ' artwork discovered',
+        description: 'Viewed approved character artwork on this website. Browser-local only; not game, story, or canon completion.'
+      }))
     ],
     levelMilestones: [
       { level: 1, title: 'Feast journey started', entitlement: false },

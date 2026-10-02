@@ -1568,6 +1568,32 @@
         "not-browser-game",
         "mobile-app-ui-capture"
       ]
+    },
+    {
+      "id": "asset.app.approved-icon",
+      "name": "TOADAL FEAST — owner-approved App icon",
+      "kind": "image",
+      "category": "app-icon",
+      "source": "reference/assets/images/app/approved-app-icon.webp",
+      "extension": "webp",
+      "width": 256,
+      "height": 256,
+      "bytes": 120158,
+      "sha256": "7c1ba16ae5ab67c2ab2297c3ca84ad9f313b82627d17673efc578e45ee201a44",
+      "referenceSha256": "7c1ba16ae5ab67c2ab2297c3ca84ad9f313b82627d17673efc578e45ee201a44",
+      "referenceSource": "reference/assets/images/app/approved-app-icon.webp",
+      "authoritySource": "owner:EASY BRANDING.png; docs/implementation/CANONICAL_ASSET_SOURCE_MANIFEST.json#externalOwnerAsset",
+      "authoritySha256": "c7fb79e1d466f417e3c8f374450b81ecf8d183ad6bdabe3eabb62c642fb17b7e",
+      "renderTargets": [
+        "website-app-page"
+      ],
+      "replaceable": false,
+      "tags": [
+        "owner-approved",
+        "app-icon-only",
+        "not-website-wordmark",
+        "not-companion"
+      ]
     }
   ]
 }

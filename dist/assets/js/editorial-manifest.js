@@ -45,6 +45,24 @@
       !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
   }
 
+  function cleanSlugs(value, excludedSlug) {
+    if (!Array.isArray(value)) return [];
+    var seen = new Set();
+    return value.filter(function (slug) {
+      if (!validSlug(slug) || slug === excludedSlug || seen.has(slug)) return false;
+      seen.add(slug);
+      return true;
+    });
+  }
+
+  function projectPullQuote(value) {
+    if (!isObject(value) || typeof value.text !== 'string' || !value.text.trim()) return null;
+    return {
+      text: value.text.trim(),
+      attribution: typeof value.attribution === 'string' ? value.attribution.trim() : ''
+    };
+  }
+
   function projectPublishedNews(records) {
     var categories = new Set(NEWS_TAXONOMY.map(function (item) { return item.id; }));
     return (Array.isArray(records) ? records : []).filter(function (record) {
@@ -59,8 +77,11 @@
         summary: record.summary.trim(),
         category: record.category,
         publishedAt: record.publishedAt,
+        featured: record.featured === true,
         tags: Array.isArray(record.tags) ? record.tags.filter(function (tag) { return typeof tag === 'string'; }) : [],
         body: Array.isArray(record.body) ? record.body.filter(function (paragraph) { return typeof paragraph === 'string' && paragraph.trim(); }) : [],
+        pullQuote: projectPullQuote(record.pullQuote),
+        relatedSlugs: cleanSlugs(record.relatedSlugs, record.slug),
         image: typeof record.image === 'string' && /^\/assets\/[a-zA-Z0-9_./-]+$/.test(record.image) && !record.image.includes('..') ? record.image : '',
         imageAlt: typeof record.imageAlt === 'string' ? record.imageAlt : ''
       };
@@ -79,6 +100,13 @@
     });
   }
 
+  function projectRelatedNews(record, records) {
+    if (!record) return [];
+    var published = projectPublishedNews(records);
+    var bySlug = new Map(published.map(function (item) { return [item.slug, item]; }));
+    return cleanSlugs(record.relatedSlugs, record.slug).map(function (slug) { return bySlug.get(slug); }).filter(Boolean);
+  }
+
   function projectRoadmap(records) {
     var statuses = new Set(ROADMAP_STATUSES.map(function (item) { return item.id; }));
     return (Array.isArray(records) ? records : []).filter(function (record) {
@@ -87,8 +115,31 @@
         typeof record.summary === 'string' && record.summary.trim() && validInternalRoute(record.route) &&
         ['PREVIEW', 'COMING_SOON', 'PLANNED'].indexOf(record.publicStatus) !== -1;
     }).map(function (record) {
-      return { slug: record.slug, title: record.title.trim(), summary: record.summary.trim(), status: record.status, publicStatus: record.publicStatus, route: record.route };
+      return {
+        slug: record.slug,
+        title: record.title.trim(),
+        summary: record.summary.trim(),
+        status: record.status,
+        publicStatus: record.publicStatus,
+        route: record.route,
+        relatedDevlogSlugs: cleanSlugs(record.relatedDevlogSlugs)
+      };
     });
+  }
+
+  function projectRoadmapDevlogs(roadmapRecords, newsRecords) {
+    var roadmap = projectRoadmap(roadmapRecords);
+    var published = new Map(projectPublishedNews(newsRecords).map(function (item) { return [item.slug, item]; }));
+    var seen = new Set();
+    return roadmap.reduce(function (related, item) {
+      item.relatedDevlogSlugs.forEach(function (slug) {
+        var article = published.get(slug);
+        if (!article || seen.has(slug)) return;
+        seen.add(slug);
+        related.push({ roadmapTitle: item.title, article: article });
+      });
+      return related;
+    }, []);
   }
 
   function baseRoot(document) {
@@ -111,9 +162,18 @@
     var filters = root.querySelector('[data-news-filters]');
     var query = root.querySelector('[data-news-query]');
     var list = root.querySelector('[data-news-list]');
+    var featuredList = root.querySelector('[data-news-featured-list]');
+    var featuredEmpty = root.querySelector('[data-news-featured-empty]');
     var status = root.querySelector('[data-news-status]');
-    if (!filters || !query || !list || !status) return;
+    if (!filters || !query || !list || !featuredList || !featuredEmpty || !status) return;
     var base = baseRoot(document);
+    var published = projectPublishedNews(records);
+    var featured = published.filter(function (record) { return record.featured; });
+    featuredList.replaceChildren();
+    featured.forEach(function (record) {
+      featuredList.appendChild(newsCard(document, record, base, true));
+    });
+    featuredEmpty.hidden = featured.length > 0;
     var selected = options && options.category || 'all';
     var taxonomy = [{ id: 'all', label: 'All updates' }].concat(NEWS_TAXONOMY);
     filters.replaceChildren();
@@ -131,15 +191,7 @@
       var results = filterNews(records, { category: selected, query: query.value });
       list.replaceChildren();
       results.forEach(function (record) {
-        var card = element(document, 'article', 'detail-fact news-card');
-        var category = NEWS_TAXONOMY.find(function (item) { return item.id === record.category; });
-        card.appendChild(element(document, 'p', 'section-kicker', (category ? category.label : 'Update') + ' · ' + record.publishedAt));
-        var heading = element(document, 'h2');
-        var link = element(document, 'a', '', record.title);
-        link.href = base + '/news/devlog/?article=' + encodeURIComponent(record.slug);
-        heading.appendChild(link);
-        card.append(heading, element(document, 'p', '', record.summary));
-        list.appendChild(card);
+        list.appendChild(newsCard(document, record, base, false));
       });
       var empty = root.querySelector('[data-news-empty]');
       if (empty) empty.hidden = results.length > 0;
@@ -153,6 +205,18 @@
     renderList();
   }
 
+  function newsCard(document, record, base, isFeatured) {
+    var card = element(document, 'article', 'detail-fact news-card');
+    var category = NEWS_TAXONOMY.find(function (item) { return item.id === record.category; });
+    card.appendChild(element(document, 'p', 'section-kicker', (isFeatured ? 'Featured · ' : '') + (category ? category.label : 'Update') + ' · ' + record.publishedAt));
+    var heading = element(document, 'h2');
+    var link = element(document, 'a', '', record.title);
+    link.href = base + '/news/devlog/?article=' + encodeURIComponent(record.slug);
+    heading.appendChild(link);
+    card.append(heading, element(document, 'p', '', record.summary));
+    return card;
+  }
+
   function renderArticle(document, records) {
     var root = document.querySelector('[data-editorial-article]');
     if (!root) return;
@@ -163,13 +227,25 @@
     var title = root.querySelector('[data-article-title]');
     var date = root.querySelector('[data-article-date]');
     var state = root.querySelector('[data-article-state]');
-    if (!content || !title || !date || !state) return;
+    var quoteFigure = root.querySelector('[data-article-quote]');
+    var quoteText = root.querySelector('[data-article-quote-text]');
+    var quoteAttribution = root.querySelector('[data-article-quote-attribution]');
+    var relatedSection = root.querySelector('[data-article-related]');
+    var relatedList = root.querySelector('[data-article-related-list]');
+    var relatedEmpty = root.querySelector('[data-article-related-empty]');
+    if (!content || !title || !date || !state || !quoteFigure || !quoteText || !quoteAttribution || !relatedSection || !relatedList || !relatedEmpty) return;
     content.replaceChildren();
+    quoteFigure.hidden = true;
+    quoteText.textContent = '';
+    quoteAttribution.textContent = '';
+    quoteAttribution.hidden = true;
+    relatedList.replaceChildren();
     if (!record) {
       title.textContent = 'News & devlog';
       date.textContent = '';
       state.textContent = 'AWAITING PUBLICATION';
       content.appendChild(element(document, 'p', '', 'There are no published articles available here yet. Drafts stay private until an approved article is published.'));
+      relatedEmpty.hidden = false;
       return;
     }
     title.textContent = record.title;
@@ -186,6 +262,19 @@
       figure.appendChild(image);
       content.appendChild(figure);
     }
+    if (record.pullQuote) {
+      quoteText.textContent = record.pullQuote.text;
+      quoteAttribution.textContent = record.pullQuote.attribution;
+      quoteAttribution.hidden = !record.pullQuote.attribution;
+      quoteFigure.hidden = false;
+    }
+    var related = projectRelatedNews(record, records);
+    related.forEach(function (item) {
+      var link = element(document, 'a', 'button-link button-link--secondary', item.title);
+      link.href = '?article=' + encodeURIComponent(item.slug);
+      relatedList.appendChild(link);
+    });
+    relatedEmpty.hidden = related.length > 0;
     var index = items.indexOf(record);
     var navigation = root.querySelector('[data-article-neighbors]');
     if (navigation) {
@@ -199,7 +288,7 @@
     }
   }
 
-  function renderRoadmap(document, records) {
+  function renderRoadmap(document, records, newsRecords) {
     var root = document.querySelector('[data-editorial-roadmap]');
     if (!root) return;
     var items = projectRoadmap(records);
@@ -228,6 +317,22 @@
         if (!matching.length && status.id === 'in-development') empty.textContent = 'Nothing is publicly classified here yet.';
       }
     });
+    var relatedSection = root.querySelector('[data-roadmap-related-devlogs]');
+    var relatedList = root.querySelector('[data-roadmap-devlog-list]');
+    var relatedEmpty = root.querySelector('[data-roadmap-devlog-empty]');
+    if (relatedSection && relatedList && relatedEmpty) {
+      var related = projectRoadmapDevlogs(records, newsRecords);
+      relatedList.replaceChildren();
+      related.forEach(function (item) {
+        var card = element(document, 'article', 'detail-fact');
+        card.appendChild(element(document, 'p', 'section-kicker', 'Related to ' + item.roadmapTitle));
+        var link = element(document, 'a', '', item.article.title);
+        link.href = baseRoot(document) + '/news/devlog/?article=' + encodeURIComponent(item.article.slug);
+        card.appendChild(link);
+        relatedList.appendChild(card);
+      });
+      relatedEmpty.hidden = related.length > 0;
+    }
   }
 
   function renderMediaFilters(document) {
@@ -275,7 +380,7 @@
       var roadmap = data && Array.isArray(data.roadmap) ? data.roadmap : ROADMAP_RECORDS;
       if (document.querySelector('[data-editorial-news]')) renderNews(document, news);
       if (document.querySelector('[data-editorial-article]')) renderArticle(document, news);
-      if (document.querySelector('[data-editorial-roadmap]')) renderRoadmap(document, roadmap);
+      if (document.querySelector('[data-editorial-roadmap]')) renderRoadmap(document, roadmap, news);
       renderMediaFilters(document);
     }
     if (!fetcher) { render(null); return; }
@@ -292,7 +397,9 @@
     ROADMAP_STATUSES: ROADMAP_STATUSES,
     filterNews: filterNews,
     projectPublishedNews: projectPublishedNews,
+    projectRelatedNews: projectRelatedNews,
     projectRoadmap: projectRoadmap,
+    projectRoadmapDevlogs: projectRoadmapDevlogs,
     renderArticle: renderArticle,
     renderMediaFilters: renderMediaFilters,
     renderNews: renderNews,

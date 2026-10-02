@@ -8,12 +8,12 @@ ASSIGNATOR contains many historical TOADAL website worktrees and redesign packag
 
 ## Active project folders
 
-- `C:/ReleaseOps/toadal-feast-web-live-staging` - public staging lineage; remote staging SHA `270940dee30b7aafb70af941c520c6d4d223e288`.
-- `C:/ReleaseOps/toadal-feast-web-stories-stack-20261001` - current integrated review candidate `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da` on `integration/manifest-home-characters-progression-20261001`.
+- `C:/ReleaseOps/toadal-feast-web-live-staging` - public staging lineage; remote staging SHA `688e1c471fdc97207c5ebfeaa0ef313ab9c44e52`.
+- `C:/ReleaseOps/toadal-feast-web-stories-stack-20261001` - current integrated review candidate `UNCOMMITTED_REMEDIATION_WORKTREE` on `work/manifest-complete-v1-20261002`.
 - `C:/ReleaseOps/toadal-feast-web-gated-ecosystem-20261001` - parallel gated-ecosystem candidate for manifest rows 19, 21, 22, 26, 27, 28, 29; not deployed.
-- `C:/ReleaseOps/toadal-feast-web-visual-combined-20261001` - older visual-only convergence candidate `58a7121e363d3480c122623b1de5cd0d5ac1778e`; implementation history/donor, not current review head.
+- `C:/ReleaseOps/toadal-feast-web-visual-combined-20261001` - older visual-only convergence candidate `undefined`; implementation history/donor, not current review head.
 - `C:/ReleaseOps/toadal-feast-web-manifest-recalibration-20261001` - manifest-control baseline worktree.
-- `C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001` - Master V2 asset authority `62717951f4ffba0e8dd779116cc192d70f94d534`.
+- `C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001` - Master V2 asset authority `undefined`.
 - `C:/ReleaseOps/toadal-feast-web-discovery-visual-20261001` - World/Stories/Media candidate.
 - `C:/ReleaseOps/toadal-feast-web-home-header-convergence-review-20261001` - reviewed Home/header candidate.
 - `C:/ReleaseOps/toadal-feast-web-production-asset-archive-20261001` - complete production-ready asset-pack preservation.
