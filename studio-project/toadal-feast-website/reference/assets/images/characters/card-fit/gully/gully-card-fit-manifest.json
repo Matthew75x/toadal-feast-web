@@ -1,77 +1,91 @@
 {
-  "assetPack": "TOADAL Gully owner-approved website card-fit derivatives",
-  "date": "2026-10-02",
-  "authoritySource": "studio-project/toadal-feast-website/reference/assets/images/characters/gully.webp",
-  "authoritySha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
-  "policy": "Exact approved website Gully artwork preserved. Only proportional scaling and transparent padding are applied.",
-  "measuredCardGeometry": {
-    "desktop": "character cards use a 160px media row and four-column grid; 7:4 derivative is primary",
-    "mobile": "character cards use a 115px media row and two-column grid; 3:2 derivative is primary"
-  },
-  "studio": {
-    "desktopAsset": "gully-card-fit-desktop-7x4-1050x600.png",
-    "mobileAsset": "gully-card-fit-mobile-3x2-900x600.png",
-    "fit": "cover",
-    "focalX": 50,
-    "focalY": 51,
-    "zoom": 1,
-    "reason": "Aspect-matched derivatives let cover maximize Gully while any small crop lands in transparent safe margin."
-  },
-  "variants": [
-    {
-      "file": "gully-card-fit-desktop-7x4-1050x600.png",
-      "width": 1050,
-      "height": 600,
-      "aspect": "desktop-7x4",
-      "sha256": "27e208134daad4054ef903e08e396cdb428b9bd92b8346fd9386789239fcf482",
-      "recommendedFit": "cover",
-      "recommendedFocalX": 50,
-      "recommendedFocalY": 51,
-      "sourceScale": 0.86
-    },
-    {
-      "file": "gully-card-fit-mobile-3x2-900x600.png",
-      "width": 900,
-      "height": 600,
-      "aspect": "mobile-3x2",
-      "sha256": "56303242668682ca5b8860a8a8c6257be9fbdbe42a5d04026d54a58b84ef4a24",
-      "recommendedFit": "cover",
-      "recommendedFocalX": 50,
-      "recommendedFocalY": 51,
-      "sourceScale": 0.88
-    },
-    {
-      "file": "gully-card-fit-compact-4x3-800x600.png",
-      "width": 800,
-      "height": 600,
-      "aspect": "compact-4x3",
-      "sha256": "dfdab86564aa3c62357391ab54336ecb5a2ef26a961b14b490d6efdf60b29246",
-      "recommendedFit": "cover",
-      "recommendedFocalX": 50,
-      "recommendedFocalY": 51,
-      "sourceScale": 0.88
-    },
-    {
-      "file": "gully-card-fit-wide-2x1-1200x600.png",
-      "width": 1200,
-      "height": 600,
-      "aspect": "wide-2x1",
-      "sha256": "96817e644d3eca93992dc48ce50580dd822f55e099cb616840c210d6a1c402d3",
-      "recommendedFit": "cover",
-      "recommendedFocalX": 50,
-      "recommendedFocalY": 51,
-      "sourceScale": 0.84
-    },
-    {
-      "file": "gully-card-fit-square-600x600.png",
-      "width": 600,
-      "height": 600,
-      "aspect": "square",
-      "sha256": "9a8fc384c5271a3bfc41f34c4fb2045848a40768a60298c52451eaf3f312b2e8",
-      "recommendedFit": "cover",
-      "recommendedFocalX": 50,
-      "recommendedFocalY": 51,
-      "sourceScale": 0.88
-    }
-  ]
+    "assetPack":  "TOADAL Gully owner-approved website card-fit derivatives",
+    "date":  "2026-10-02",
+    "revision":  "scale-calibrated-v2",
+    "authoritySource":  "studio-project/toadal-feast-website/reference/assets/images/characters/gully.webp",
+    "authoritySha256":  "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
+    "authorityAlphaBounds":  {
+                                 "canvas":  "319x319",
+                                 "x":  50,
+                                 "y":  14,
+                                 "width":  212,
+                                 "height":  292,
+                                 "subjectHeightRatio":  0.9154
+                             },
+    "policy":  "Exact approved website Gully artwork preserved. Only proportional scaling and transparent padding are applied.",
+    "measuredCardGeometry":  {
+                                 "desktop":  "160px media row / four-column card grid; 7:4 is primary",
+                                 "mobile":  "115px media row / two-column card grid at \u003c=680px; 3:2 is primary"
+                             },
+    "studio":  {
+                   "desktopAsset":  "gully-card-fit-desktop-7x4-1050x600.png",
+                   "mobileAsset":  "gully-card-fit-mobile-3x2-900x600.png",
+                   "fit":  "cover",
+                   "focalX":  50,
+                   "focalY":  50,
+                   "zoom":  1,
+                   "reason":  "Aspect-matched safe-margin derivatives allow cover to maximize scale without clipping character pixels."
+               },
+    "variants":  [
+                     {
+                         "file":  "gully-card-fit-desktop-7x4-1050x600.png",
+                         "width":  1050,
+                         "height":  600,
+                         "aspect":  "desktop-7x4",
+                         "sha256":  "481ad8dc37e26180319314452644e73c4743d2e2c0240640fc5ef661902ad499",
+                         "recommendedFit":  "cover",
+                         "recommendedFocalX":  50,
+                         "recommendedFocalY":  50,
+                         "sourceScale":  0.96,
+                         "estimatedSubjectHeightRatio":  0.8788
+                     },
+                     {
+                         "file":  "gully-card-fit-mobile-3x2-900x600.png",
+                         "width":  900,
+                         "height":  600,
+                         "aspect":  "mobile-3x2",
+                         "sha256":  "a2f72ce4b16429ddac86a4f38291ed2ad3e6d5073e3d79e1add037dfcb241265",
+                         "recommendedFit":  "cover",
+                         "recommendedFocalX":  50,
+                         "recommendedFocalY":  50,
+                         "sourceScale":  0.96,
+                         "estimatedSubjectHeightRatio":  0.8788
+                     },
+                     {
+                         "file":  "gully-card-fit-compact-4x3-800x600.png",
+                         "width":  800,
+                         "height":  600,
+                         "aspect":  "compact-4x3",
+                         "sha256":  "a7138f3f01745d54eac94b7c149b26ce19fbac5771bf75cfbab762b4918f6151",
+                         "recommendedFit":  "cover",
+                         "recommendedFocalX":  50,
+                         "recommendedFocalY":  50,
+                         "sourceScale":  0.96,
+                         "estimatedSubjectHeightRatio":  0.8788
+                     },
+                     {
+                         "file":  "gully-card-fit-wide-2x1-1200x600.png",
+                         "width":  1200,
+                         "height":  600,
+                         "aspect":  "wide-2x1",
+                         "sha256":  "a993a618facc764658264eea9571a95438a788db729256ba841e7bc34a44aeee",
+                         "recommendedFit":  "cover",
+                         "recommendedFocalX":  50,
+                         "recommendedFocalY":  50,
+                         "sourceScale":  0.94,
+                         "estimatedSubjectHeightRatio":  0.8605
+                     },
+                     {
+                         "file":  "gully-card-fit-square-600x600.png",
+                         "width":  600,
+                         "height":  600,
+                         "aspect":  "square",
+                         "sha256":  "66aff294deff550187579a4fe9f3bc70db62e0989456f4f6026b64c6a94326f5",
+                         "recommendedFit":  "cover",
+                         "recommendedFocalX":  50,
+                         "recommendedFocalY":  50,
+                         "sourceScale":  0.96,
+                         "estimatedSubjectHeightRatio":  0.8788
+                     }
+                 ]
 }

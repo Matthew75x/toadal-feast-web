@@ -10,7 +10,7 @@
       "source": "reference/assets/images/characters/card-fit/gully/gully-card-fit-mobile-3x2-900x600.png",
       "fit": "cover",
       "focalX": 50,
-      "focalY": 51,
+      "focalY": 50,
       "zoom": 1
     },
     {
@@ -18,7 +18,7 @@
       "source": "reference/assets/images/characters/card-fit/gully/gully-card-fit-desktop-7x4-1050x600.png",
       "fit": "cover",
       "focalX": 50,
-      "focalY": 51,
+      "focalY": 50,
       "zoom": 1
     }
   ],
@@ -36,5 +36,19 @@
       "preferredAsset": "gully-card-fit-mobile-3x2-900x600.png"
     }
   },
-  "fitRationale": "Use cover with the aspect-matched derivatives to maximize character scale while preserving head, body, wings, and feet."
+  "fitRationale": "Aspect-matched transparent-safe derivatives + cover maximize Gully while retaining the complete character silhouette.",
+  "calibration": {
+    "revision": "scale-calibrated-v2",
+    "authorityAlphaBounds": {
+      "canvas": "319x319",
+      "x": 50,
+      "y": 14,
+      "width": 212,
+      "height": 292,
+      "subjectHeightRatio": 0.9154
+    },
+    "primarySourceScale": 0.96,
+    "wideSourceScale": 0.94,
+    "estimatedPrimarySubjectHeightRatio": 0.8788
+  }
 }
