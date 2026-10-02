@@ -23,7 +23,8 @@ Read in this order before editing product code:
 14. `docs/authority/BATCH1_VISUAL_MODULE_REUSE_MAP_2026-10-02.md`
 15. `docs/authority/APP_INFINITE_SOURCE_NOTE_2026-10-02.md`
 16. `docs/authority/FINAL_DEPENDENCY_CUTLINE_2026-10-02.md`
-17. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
+17. `docs/authority/FINAL_ASSET_PERFORMANCE_GUARDRAILS_2026-10-02.md`
+18. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
 
 Operating rule:
 
