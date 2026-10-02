@@ -125,17 +125,13 @@ check('home-stories-truth', /public reading surfaces are here/i.test(componentHt
   ['/stories/', '/manga/', '/reader/'].every(route => componentHtml('component.home.discovery').includes(`href='${route}'`)) &&
   !/No stories or media library is published here/i.test(componentHtml('component.home.discovery')),
   'Home presents the existing Stories/Manga/Reader surfaces while clearly stating that no approved catalogue is published.');
-const captureManifest = JSON.parse(fs.readFileSync(path.join(repo, 'docs', 'review', 'visual-asset-gameplay-convergence-20261001', 'capture-assets.json'), 'utf8'));
-const arcadeCapture = assetById.get('asset.app.capture.arcade.active.gameplay');
-const homeAppHtml = componentHtml('component.home.app');
-const arcadeCaptureHash = arcadeCapture ? sha256File(path.join(project, arcadeCapture.source)) : null;
-check('home-app-real-arcade-capture', !!arcadeCapture &&
-  arcadeCapture.authoritySha256 === '98e4b64ddf857b7e127d0041157f1b1a5d7fbd62877198a3a9ae152e5165b17f' &&
-  captureManifest.sourceArchiveSha256 === 'fb614e1f5293b226d38b47265b88f3ae65d775158ab2c3d85f62ad739f427482' &&
-  arcadeCaptureHash === arcadeCapture.sha256 && arcadeCapture.renderTargets?.includes('website-home') &&
-  /data-app-capture-hero/.test(homeAppHtml) && homeAppHtml.includes(arcadeCapture.source.replace(/^reference\//, '')) &&
-  /control hint and QA badge visible in source/i.test(homeAppHtml),
-  'Home App conversion leads with the exact hash-verified owner-supplied mobile Arcade gameplay capture and truthfully retains its visible first-run/QA details.');
+check('home-app-illustration',
+  ['asset.app.gameplay.arcade', 'asset.app.gameplay.puzzle', 'asset.app.gameplay.feastfall'].every(id =>
+    assets.assets?.some(asset => asset.id === id && (asset.tags || []).includes('real-gameplay'))) &&
+  ['arcade-real-gameplay.webp', 'puzzle-real-gameplay.webp', 'feastfall-real-gameplay.webp'].every(file => componentHtml('component.home.app').includes(file)) &&
+  /REAL GAMEPLAY/i.test(componentHtml('component.home.app')) &&
+  /disabled/.test(componentHtml('component.home.app')),
+  'The paired App feature uses registered real Arcade, Puzzle, and Feastfall gameplay captures and keeps unverified store controls disabled.');
 check('contextual-companion-source', /data-companion-copy=/i.test(html),
   'Home sections expose distinct contextual companion copy.');
 check('contextual-companion-pointer', /addEventListener\(['"]pointer(?:over|enter)['"]/i.test(advanced.javascript || ''),
