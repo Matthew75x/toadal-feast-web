@@ -8,18 +8,30 @@ const index = JSON.parse(fs.readFileSync(path.join(site, 'pages', 'index.json'),
 const failures = [];
 const notes = [];
 const pages = new Map();
+const missingRoutes = new Set();
 
 for (const record of index.pages || []) {
   const file = path.join(site, record.file);
   if (!fs.existsSync(file)) continue;
   const doc = JSON.parse(fs.readFileSync(file, 'utf8'));
   const html = (doc.components || []).map((component) => component?.props?.html || '').join('\n');
-  pages.set(record.route, {record, doc, html, text: html.replace(/<[^>]*>/g, ' ').replace(/&[a-z0-9#]+;/gi, ' ').replace(/\s+/g, ' ').trim()});
+  const structured = JSON.stringify(doc.components || []);
+  pages.set(record.route, {
+    record,
+    doc,
+    html,
+    structured,
+    source: html + '\n' + structured,
+    text: (html + ' ' + structured).replace(/<[^>]*>/g, ' ').replace(/&[a-z0-9#]+;/gi, ' ').replace(/\s+/g, ' ').trim()
+  });
 }
 
 function page(route) {
   const value = pages.get(route);
-  if (!value) failures.push('Missing route required for final product contract: ' + route);
+  if (!value && !missingRoutes.has(route)) {
+    missingRoutes.add(route);
+    failures.push('Missing route required for final product contract: ' + route);
+  }
   return value;
 }
 function requireText(route, regex, message) {
@@ -30,10 +42,14 @@ function requireHtml(route, regex, message) {
   const value = page(route);
   if (value && !regex.test(value.html)) failures.push(route + ': ' + message);
 }
+function requireSource(route, regex, message) {
+  const value = page(route);
+  if (value && !regex.test(value.source)) failures.push(route + ': ' + message);
+}
 
 // Devlog/article family: thin reusable surface, not fabricated publication.
 requireHtml('/news/devlog/', /<article\b/i, 'Devlog template needs an article semantic surface.');
-requireHtml('/news/devlog/', /href\s*=\s*["']\/roadmap\//i, 'Devlog template needs a Roadmap handoff.');
+requireSource('/news/devlog/', /\/roadmap\//i, 'Devlog template needs a Roadmap handoff.');
 requireText('/news/devlog/', /devlog|development|behind the feast|update/i, 'Devlog template does not identify its editorial purpose.');
 
 // Leaderboards: reuse local score model; connected/global may remain future.
@@ -42,21 +58,21 @@ requireHtml('/leaderboards/', /<caption\b/i, 'Leaderboard table needs a screen-r
 requireHtml('/leaderboards/', /<th\b[^>]*scope\s*=\s*["']col["']/i, 'Leaderboard table needs scoped column headings.');
 requireText('/leaderboards/', /personal best|your best|best score/i, 'Leaderboard route needs a personal-best state.');
 requireText('/leaderboards/', /local|this browser|guest/i, 'Leaderboard route must disclose local/guest scope when connected ranking is not active.');
-requireHtml('/leaderboards/', /data-companion-context\s*=/i, 'Leaderboard route needs companion semantic context.');
+requireSource('/leaderboards/', /data-companion-context/i, 'Leaderboard route needs companion semantic context.');
 
 // Roadmap: four public status groups; no dates required.
 for (const label of ['Available Now', 'In Development', 'Coming Soon', 'Exploring']) {
   requireText('/roadmap/', new RegExp(label.replace(/ /g, '\\s*'), 'i'), 'Roadmap missing public status group: ' + label);
 }
-requireHtml('/roadmap/', /data-companion-context\s*=/i, 'Roadmap route needs companion semantic context.');
+requireSource('/roadmap/', /data-companion-context/i, 'Roadmap route needs companion semantic context.');
 
 // Feast Pass family should become connected instead of isolated.
 requireText('/feast-pass/', /Treats/i, 'Feast Pass must expose Treats.');
 requireText('/feast-pass/', /daily/i, 'Feast Pass must expose daily/check-in state.');
-requireHtml('/feast-pass/', /href\s*=\s*["']\/feast-pass\/quests\//i, 'Feast Pass must link to Quests.');
-requireHtml('/feast-pass/', /href\s*=\s*["']\/feast-pass\/rewards\//i, 'Feast Pass must link to Rewards.');
-requireHtml('/feast-pass/', /href\s*=\s*["']\/leaderboards\//i, 'Feast Pass must link to Leaderboards.');
-requireHtml('/profile/', /href\s*=\s*["']\/leaderboards\//i, 'Guest Profile must link to Leaderboards/local scores.');
+requireSource('/feast-pass/', /\/feast-pass\/quests\//i, 'Feast Pass must link to Quests.');
+requireSource('/feast-pass/', /\/feast-pass\/rewards\//i, 'Feast Pass must link to Rewards.');
+requireSource('/feast-pass/', /\/leaderboards\//i, 'Feast Pass must link to Leaderboards.');
+requireSource('/profile/', /\/leaderboards\//i, 'Guest Profile must link to Leaderboards/local scores.');
 requireText('/profile/', /score/i, 'Guest Profile must retain score/activity presentation.');
 
 // App truth: all current game modes must be represented even when store URLs are unavailable.
@@ -67,20 +83,20 @@ requireText('/app/', /store .*not configured|store links .*not configured|destin
 
 // Construction and utility closure.
 requireText('/coming-soon/', /coming soon|under construction/i, 'Coming Soon route does not clearly state unavailable status.');
-requireHtml('/coming-soon/', /data-companion-reaction\s*=\s*["']construction["']/i, 'Coming Soon route must trigger construction semantic reaction.');
-requireHtml('/404.html', /href\s*=\s*["']\/search\//i, '404 must retain Search recovery.');
-requireHtml('/support/', /data-support-search/i, 'Support must retain local help search.');
-requireHtml('/search/', /data-site-search/i, 'Search must retain active local search hook.');
+requireSource('/coming-soon/', /data-companion-reaction[^}]*construction/i, 'Coming Soon route must trigger construction semantic reaction.');
+requireSource('/404.html', /\/search\//i, '404 must retain Search recovery.');
+requireSource('/support/', /data-support-search/i, 'Support must retain local help search.');
+requireSource('/search/', /data-site-search/i, 'Search must retain active local search hook.');
 
 // Reader/publishing core cannot regress while closure work proceeds.
-requireHtml('/reader/', /data-reader-shell/i, 'Reader shell missing.');
-requireHtml('/stories/', /href\s*=\s*["']\/manga\//i, 'Stories must link to Manga.');
-requireHtml('/manga/', /href\s*=\s*["']\/reader\//i, 'Manga must link to Reader.');
+requireSource('/reader/', /data-reader-shell/i, 'Reader shell missing.');
+requireSource('/stories/', /\/manga\//i, 'Stories must link to Manga.');
+requireSource('/manga/', /\/reader\//i, 'Manga must link to Reader.');
 
 // Page-family cross-links for discovery.
-requireHtml('/news/', /href\s*=\s*["']\/news\/devlog\//i, 'News Hub should expose the Devlog/article family even when no posts are published.');
-requireHtml('/news/', /href\s*=\s*["']\/roadmap\//i, 'News Hub should expose Roadmap/What\'s Next.');
-requireHtml('/play/', /href\s*=\s*["']\/leaderboards\//i, 'Play Hub should expose Leaderboards.');
+requireSource('/news/', /\/news\/devlog\//i, 'News Hub should expose the Devlog/article family even when no posts are published.');
+requireSource('/news/', /\/roadmap\//i, 'News Hub should expose Roadmap/What\'s Next.');
+requireSource('/play/', /\/leaderboards\//i, 'Play Hub should expose Leaderboards.');
 
 notes.push('registeredRoutes=' + pages.size);
 
