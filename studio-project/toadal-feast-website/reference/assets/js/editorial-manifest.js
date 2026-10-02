@@ -36,6 +36,10 @@
     return typeof value === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
   }
 
+  function validInternalRoute(value) {
+    return typeof value === 'string' && /^\/(?!\/)/.test(value) && !/[\\\s]/.test(value) && !/(?:^|\/)\.\.(?:\/|$)/.test(value);
+  }
+
   function validDate(value) {
     return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) &&
       !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
@@ -80,9 +84,10 @@
     return (Array.isArray(records) ? records : []).filter(function (record) {
       return isObject(record) && record.publicationState === 'PUBLISHED' && statuses.has(record.status) &&
         validSlug(record.slug) && typeof record.title === 'string' && record.title.trim() &&
-        typeof record.summary === 'string' && record.summary.trim();
+        typeof record.summary === 'string' && record.summary.trim() && validInternalRoute(record.route) &&
+        ['PREVIEW', 'COMING_SOON', 'PLANNED'].indexOf(record.publicStatus) !== -1;
     }).map(function (record) {
-      return { slug: record.slug, title: record.title.trim(), summary: record.summary.trim(), status: record.status };
+      return { slug: record.slug, title: record.title.trim(), summary: record.summary.trim(), status: record.status, publicStatus: record.publicStatus, route: record.route };
     });
   }
 
@@ -207,11 +212,21 @@
       var matching = items.filter(function (item) { return item.status === status.id; });
       matching.forEach(function (item) {
         var card = element(document, 'article', 'detail-fact');
-        card.append(element(document, 'h3', '', item.title), element(document, 'p', '', item.summary));
+        var heading = element(document, 'h3', '', item.title);
+        var badgeText = item.publicStatus === 'PREVIEW' ? 'PREVIEW — available on this review website' :
+          item.publicStatus === 'COMING_SOON' ? 'COMING SOON' : 'PLANNED — timing not announced';
+        var badge = element(document, 'p', 'roadmap-status', badgeText);
+        var summary = element(document, 'p', '', item.summary);
+        var link = element(document, 'a', 'text-link', 'Explore ' + item.title);
+        link.href = baseRoot(document) + item.route;
+        card.append(heading, badge, summary, link);
         list.appendChild(card);
       });
       var empty = column.querySelector('[data-roadmap-empty]');
-      if (empty) empty.hidden = matching.length > 0;
+      if (empty) {
+        empty.hidden = matching.length > 0;
+        if (!matching.length && status.id === 'in-development') empty.textContent = 'Nothing is publicly classified here yet.';
+      }
     });
   }
 

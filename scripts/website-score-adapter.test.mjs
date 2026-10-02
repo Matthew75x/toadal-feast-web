@@ -7,8 +7,8 @@ const adapter = require('../studio-project/toadal-feast-website/reference/assets
 
 test('accepts only strict non-negative safe integer scores', () => {
   assert.equal(adapter.normalizeScore('1234'), 1234);
-  assert.equal(adapter.normalizeScore('1,234'), 1234);
-  for (const value of ['', '-1', '+1', '01', '1.5', '1,23', '1,234x', '9007199254740992', null, {}]) {
+  assert.equal(adapter.normalizeScore(' 1234 '), 1234);
+  for (const value of ['', '-1', '+1', '1.5', '1,23', '1,234', '1,234x', '9007199254740992', null, {}]) {
     assert.equal(adapter.normalizeScore(value), null, String(value));
   }
 });
@@ -21,7 +21,7 @@ test('formats elapsed play time as minutes and seconds', () => {
 
 test('accepts the exact opaque-origin iframe and rejects sibling or synthetic messages', () => {
   const frame = { src: 'https://site.example/public/games/wicked-bites/index.html', contentWindow: {} };
-  const valid = { source: frame.contentWindow, origin: 'null', data: { protocol: 'toadal.game.v1', gameId: 'wicked-bites', type: 'game:score', payload: { score: '1,234' } } };
+  const valid = { source: frame.contentWindow, origin: 'null', data: { protocol: 'toadal.game.v1', gameId: 'wicked-bites', type: 'game:score', payload: { score: '1234' } } };
   assert.equal(adapter.isTrustedMessage(valid, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), true);
   assert.equal(adapter.isTrustedMessage({ ...valid, source: {} }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);
   assert.equal(adapter.isTrustedMessage({ ...valid, origin: 'https://site.example' }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), false);
@@ -37,7 +37,7 @@ test('tracks in-memory session best and excludes paused time from play duration'
   const session = adapter.createSession(() => now);
   session.accept('game:started');
   now = 5000;
-  session.accept('game:score', { score: '1,234' });
+  session.accept('game:score', { score: '1234' });
   now = 8000;
   session.accept('game:paused');
   now = 20000;

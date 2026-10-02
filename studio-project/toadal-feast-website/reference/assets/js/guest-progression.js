@@ -37,6 +37,7 @@
   const VERSION = 1;
   const HOME_INTERACTION_VERSION = 1;
   const HOME_CANDY_IDS = Object.freeze(['portal-candy', 'lower-page-candy', 'golden-block-candy']);
+  const MAX_LOCAL_RUNS = 50;
   const KEYS = Object.freeze({
     pass: 'toadal:web:v1:feast-pass',
     quests: 'toadal:web:v1:quests',
@@ -78,7 +79,7 @@
       pass: { schemaVersion: VERSION, updatedAt: timestamp, level: 1, xp: 0, sparks: 0, treats: 0, streak: { count: 0, lastQualifiedPeriod: null }, badges: [], collectibles: [], claimedRewardIds: [] },
       quests: { schemaVersion: VERSION, updatedAt: timestamp, items: {}, processedEventIds: [], dailyClaimedPeriod: null },
       discoveries: { schemaVersion: VERSION, updatedAt: timestamp, items: [], homeInteraction: emptyHomeInteraction() },
-      profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null, selectedTitle: null, badges: [], titles: [], collectibles: [], rewardClaims: {}, localHighScores: [] }
+      profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null, selectedTitle: null, badges: [], titles: [], collectibles: [], rewardClaims: {}, localScores: {}, localHighScores: [] }
     };
   }
   function makeMemoryStorage() {
@@ -87,6 +88,60 @@
   }
   function safeInt(value, fallback, minimum) {
     return Number.isInteger(value) && value >= minimum ? value : fallback;
+  }
+  function normalizeScore(value) {
+    if (Number.isSafeInteger(value) && value >= 0) return value;
+    if (typeof value !== 'string' || !/^\d+$/.test(value.trim())) return null;
+    const normalized = Number(value.trim());
+    return Number.isSafeInteger(normalized) && normalized >= 0 ? normalized : null;
+  }
+  function normalizeCollectibles(value) {
+    const counts = new Map();
+    for (const item of Array.isArray(value) ? value : []) {
+      const id = typeof item === 'string' ? item : item && item.id;
+      const count = typeof item === 'string' ? 1 : item && item.count;
+      if (typeof id !== 'string' || !id.trim() || !Number.isSafeInteger(count) || count < 0) continue;
+      counts.set(id, (counts.get(id) || 0) + count);
+    }
+    return Array.from(counts, ([id, count]) => ({ id, count }));
+  }
+  function normalizeLocalScores(value, legacyBest) {
+    const source = value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+    const output = {};
+    const candidate = source['wicked-bites'];
+    const runs = [];
+    if (candidate && Array.isArray(candidate.runs)) {
+      for (const run of candidate.runs) {
+        const score = normalizeScore(run && run.score);
+        if (score === null || !run || typeof run.completedAt !== 'string') continue;
+        runs.push({ score, completedAt: run.completedAt, mode: null, ruleset: null, characterId: null });
+      }
+    }
+    if (!runs.length && Array.isArray(legacyBest)) {
+      for (const item of legacyBest) {
+        if (!item || item.gameId !== 'wicked-bites') continue;
+        const score = normalizeScore(item.score);
+        const completedAt = typeof item.updatedAt === 'string' ? item.updatedAt : null;
+        if (score !== null && completedAt) runs.push({ score, completedAt, mode: null, ruleset: null, characterId: null });
+      }
+    }
+    if (runs.length) {
+      const bounded = runs.slice(-MAX_LOCAL_RUNS);
+      const best = bounded.reduce((value, run) => Math.max(value, run.score), 0);
+      output['wicked-bites'] = { best, runs: bounded };
+    }
+    return output;
+  }
+  function validLocalScores(value) {
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return false;
+    return Object.entries(value).every(([gameId, state]) => {
+      if (gameId !== 'wicked-bites' || !state || typeof state !== 'object' || Array.isArray(state) ||
+          normalizeScore(state.best) === null || !Array.isArray(state.runs) || state.runs.length > MAX_LOCAL_RUNS) return false;
+      const validRuns = state.runs.every(run => run && typeof run === 'object' && normalizeScore(run.score) !== null &&
+        typeof run.completedAt === 'string' && !Number.isNaN(Date.parse(run.completedAt)) && new Date(run.completedAt).toISOString() === run.completedAt &&
+        ['mode', 'ruleset', 'characterId'].every(key => run[key] === null || typeof run[key] === 'string'));
+      return validRuns && state.best === state.runs.reduce((best, run) => Math.max(best, run.score), 0);
+    });
   }
   function createStore(options) {
     options = options || {};
@@ -97,6 +152,7 @@
     const definitions = options.definitions || defaultDefinitions || {};
     const diagnostics = [];
     const blocked = new Set();
+    const unwritable = new Set();
     const timestamp = () => isoNow(now);
     const defaults = emptyRecords(timestamp());
     const records = {};
@@ -104,23 +160,32 @@
     function read(name) {
       let raw;
       try { raw = storage.getItem(KEYS[name]); }
-      catch (error) { persistent = false; diagnostics.push({ key: KEYS[name], kind: 'read-failed', message: String(error && error.message || error) }); return structuredCopy(defaults[name]); }
-      if (raw == null || raw === '') return structuredCopy(defaults[name]);
+      catch (error) { persistent = false; unwritable.add(name); diagnostics.push({ key: KEYS[name], kind: 'read-failed', message: String(error && error.message || error) }); return structuredCopy(defaults[name]); }
+      if (raw == null || raw === '') { blocked.delete(name); unwritable.delete(name); return structuredCopy(defaults[name]); }
       let data;
       try { data = JSON.parse(raw); }
       catch (error) {
+        unwritable.add(name);
         diagnostics.push({ key: KEYS[name], kind: 'malformed-json', message: String(error && error.message || error) });
         return structuredCopy(defaults[name]);
       }
       if (!data || typeof data !== 'object' || Array.isArray(data) || !Number.isInteger(data.schemaVersion)) {
+        unwritable.add(name);
         diagnostics.push({ key: KEYS[name], kind: 'invalid-record' });
         return structuredCopy(defaults[name]);
       }
       if (data.schemaVersion > VERSION) {
         blocked.add(name);
+        unwritable.delete(name);
         diagnostics.push({ key: KEYS[name], kind: 'future-version', schemaVersion: data.schemaVersion });
         return structuredCopy(defaults[name]);
       }
+      if (name === 'profile' && Object.prototype.hasOwnProperty.call(data, 'localScores') && !validLocalScores(data.localScores)) {
+        unwritable.add(name);
+        diagnostics.push({ key: KEYS[name], kind: 'invalid-score-state-read-only' });
+      }
+      blocked.delete(name);
+      if (!(name === 'profile' && Object.prototype.hasOwnProperty.call(data, 'localScores') && !validLocalScores(data.localScores))) unwritable.delete(name);
       const merged = Object.assign({}, defaults[name], data, { schemaVersion: VERSION });
       if (name === 'pass') {
         merged.level = safeInt(merged.level, 1, 1);
@@ -133,7 +198,7 @@
           lastQualifiedPeriod: typeof incomingStreak.lastQualifiedPeriod === 'string' ? incomingStreak.lastQualifiedPeriod : null
         };
         merged.badges = Array.isArray(merged.badges) ? merged.badges : [];
-        merged.collectibles = Array.isArray(merged.collectibles) ? merged.collectibles : [];
+        merged.collectibles = normalizeCollectibles(merged.collectibles);
         merged.claimedRewardIds = Array.isArray(merged.claimedRewardIds) ? merged.claimedRewardIds.filter(id => typeof id === 'string') : [];
       } else if (name === 'quests') {
         merged.items = merged.items && typeof merged.items === 'object' && !Array.isArray(merged.items) ? merged.items : {};
@@ -148,10 +213,8 @@
         merged.collectibles = Array.isArray(merged.collectibles) ? merged.collectibles.filter(id => typeof id === 'string') : [];
         merged.selectedTitle = typeof merged.selectedTitle === 'string' ? merged.selectedTitle : null;
         merged.rewardClaims = merged.rewardClaims && typeof merged.rewardClaims === 'object' && !Array.isArray(merged.rewardClaims) ? merged.rewardClaims : {};
-        merged.localHighScores = Array.isArray(merged.localHighScores) ? merged.localHighScores.filter(item =>
-          item && item.gameId === 'wicked-bites' && Number.isSafeInteger(item.score) && item.score >= 0 &&
-          typeof item.updatedAt === 'string'
-        ).slice(0, 50) : [];
+        merged.localScores = normalizeLocalScores(merged.localScores, merged.localHighScores);
+        delete merged.localHighScores;
       }
       return merged;
     }
@@ -159,14 +222,14 @@
     for (const name of Object.keys(KEYS)) records[name] = read(name);
 
     function save(name) {
-      if (blocked.has(name)) return false;
+      if (blocked.has(name) || unwritable.has(name)) return false;
       records[name].schemaVersion = VERSION;
       records[name].updatedAt = timestamp();
       try { storage.setItem(KEYS[name], JSON.stringify(records[name])); return true; }
       catch (error) { persistent = false; diagnostics.push({ key: KEYS[name], kind: 'write-failed', message: String(error && error.message || error) }); return false; }
     }
     function saveMany(names) {
-      if (names.some(name => blocked.has(name))) return false;
+      if (names.some(name => blocked.has(name) || unwritable.has(name))) return false;
       const previous = {};
       try {
         for (const name of names) previous[name] = storage.getItem(KEYS[name]);
@@ -193,6 +256,7 @@
     function refresh(names) {
       for (const name of names) {
         blocked.delete(name);
+        unwritable.delete(name);
         records[name] = read(name);
       }
     }
@@ -201,6 +265,30 @@
       const progress = Number.isFinite(item.progress) ? Math.max(0, item.progress) : 0;
       const target = Number.isFinite(definition.target) && definition.target > 0 ? definition.target : 1;
       return { progress, target, complete: progress >= target, claimedAt: item.claimedAt || null, completedAt: item.completedAt || null };
+    }
+    function treatCollectibleId(definition) {
+      return definition && typeof definition.collectibleId === 'string' && definition.collectibleId
+        ? definition.collectibleId : (definition ? 'treat-' + definition.id : null);
+    }
+    function treatTotal(collectibles) {
+      const ids = new Set((definitions.treats || []).map(treatCollectibleId));
+      return normalizeCollectibles(collectibles).reduce((total, item) => total + (ids.has(item.id) ? Math.min(1, item.count) : 0), 0);
+    }
+    function applyTreatQuestEvent(id) {
+      const eventId = 'treat:' + id;
+      if (records.quests.processedEventIds.includes(eventId)) return false;
+      records.quests.processedEventIds.push(eventId);
+      for (const quest of (definitions.quests || []).filter(item => item.event === 'treat-collect')) {
+        const before = progressFor(quest);
+        if (before.complete) continue;
+        const progress = Math.min(before.target, before.progress + 1);
+        records.quests.items[quest.id] = Object.assign({}, records.quests.items[quest.id], {
+          progress,
+          completedAt: progress >= before.target ? timestamp() : null,
+          claimedAt: records.quests.items[quest.id] && records.quests.items[quest.id].claimedAt || null
+        });
+      }
+      return true;
     }
     function grant(reward) {
       reward = reward || {};
@@ -218,11 +306,14 @@
         return definition ? { id, title: definition.title, description: definition.description || '' } : { id, title: 'Previously recorded discovery', description: '' };
       });
       const pass = structuredCopy(records.pass);
-      const treatIds = new Set((definitions.treats || []).map(treat => treat.id));
-      const treats = (records.discoveries.homeInteraction && records.discoveries.homeInteraction.candies || [])
-        .filter(id => treatIds.has(id))
-        .map(id => Object.assign({}, definitions.treats.find(treat => treat.id === id), { collected: true, localOnly: true }));
-      pass.treats = Math.max(pass.treats, treats.length);
+      pass.collectibles = normalizeCollectibles(pass.collectibles);
+      pass.treats = treatTotal(pass.collectibles);
+      const collectibleIds = new Set(pass.collectibles.filter(item => item.count > 0).map(item => item.id));
+      const treats = (definitions.treats || [])
+        .filter(treat => collectibleIds.has(treatCollectibleId(treat)))
+        .map(treat => Object.assign({}, treat, { collected: true, localOnly: true }));
+      const localScores = structuredCopy(records.profile.localScores || {});
+      const localHighScores = Object.entries(localScores).map(([gameId, scoreState]) => ({ gameId, score: scoreState.best }));
       const milestones = (definitions.levelMilestones || []).map(milestone => Object.assign({}, milestone, { unlocked: milestone.level <= pass.level, entitlement: false }));
       const rewards = (definitions.rewards || []).map(reward => Object.assign({}, reward, {
         unlocked: Number.isInteger(reward.level) && reward.level <= pass.level,
@@ -251,7 +342,7 @@
       });
       return {
         pass, quests,
-        discoveries, treats, profile: structuredCopy(records.profile), localHighScores: structuredCopy(records.profile.localHighScores || []),
+        discoveries, treats, profile: structuredCopy(records.profile), localScores, localHighScores,
         rewards, milestones,
         xpToNext: configuredThreshold ? configuredThreshold - records.pass.xp % configuredThreshold : null,
         daily,
@@ -315,6 +406,7 @@
       if (!Number.isInteger(definition.level) || records.pass.level < definition.level) return { ok: false, reason: 'locked' };
       if (!['badge', 'title', 'collectible'].includes(definition.type) || typeof definition.awardId !== 'string' || !definition.awardId) return { ok: false, reason: 'invalid-reward-definition' };
       if (blocked.has('pass') || blocked.has('profile')) return { ok: false, reason: 'future-schema-read-only' };
+      if (unwritable.has('pass') || unwritable.has('profile')) return { ok: false, reason: 'stored-data-read-only' };
       const priorPassState = structuredCopy(records.pass);
       const priorProfileState = structuredCopy(records.profile);
       records.pass.claimedRewardIds.push(id);
@@ -323,7 +415,9 @@
       if (!records.pass[collection]) records.pass[collection] = [];
       if (!records.profile[collection].includes(definition.awardId)) records.profile[collection].push(definition.awardId);
       if (definition.type === 'badge' && !records.pass.badges.includes(definition.awardId)) records.pass.badges.push(definition.awardId);
-      if (definition.type === 'collectible' && !records.pass.collectibles.includes(definition.awardId)) records.pass.collectibles.push(definition.awardId);
+      if (definition.type === 'collectible' && !records.pass.collectibles.some(item => item.id === definition.awardId && item.count > 0)) {
+        records.pass.collectibles.push({ id: definition.awardId, count: 1 });
+      }
       if (definition.type === 'title' && !records.profile.selectedTitle) records.profile.selectedTitle = definition.awardId;
       if (!saveMany(['pass', 'profile'])) {
         records.pass = priorPassState;
@@ -332,17 +426,32 @@
       }
       return { ok: true, id };
     }
-    function recordLocalHighScore(input) {
+    function recordLocalScore(input) {
       refresh(['profile']);
-      if (!input || input.gameId !== 'wicked-bites' || !Number.isSafeInteger(input.score) || input.score < 0) return { ok: false, reason: 'invalid-score-record' };
+      const score = normalizeScore(input && input.score);
+      if (!input || input.gameId !== 'wicked-bites' || score === null) return { ok: false, reason: 'invalid-score-record' };
       if (blocked.has('profile')) return { ok: false, reason: 'future-schema-read-only' };
-      const previous = (records.profile.localHighScores || []).find(item => item.gameId === input.gameId);
-      if (previous && previous.score >= input.score) return { ok: false, reason: 'not-a-personal-best' };
+      if (unwritable.has('profile')) return { ok: false, reason: 'stored-data-read-only' };
       const before = structuredCopy(records.profile);
-      records.profile.localHighScores = (records.profile.localHighScores || []).filter(item => item.gameId !== input.gameId);
-      records.profile.localHighScores.unshift({ gameId: input.gameId, score: input.score, updatedAt: timestamp() });
+      const previous = records.profile.localScores['wicked-bites'] || { best: null, runs: [] };
+      const run = { score, completedAt: timestamp(), mode: null, ruleset: null, characterId: null };
+      const runs = previous.runs.concat(run).slice(-MAX_LOCAL_RUNS);
+      records.profile.localScores['wicked-bites'] = {
+        best: Math.max(previous.best || 0, score),
+        runs
+      };
       if (!save('profile')) { records.profile = before; return { ok: false, reason: 'storage-unavailable' }; }
-      return { ok: true, gameId: input.gameId, score: input.score };
+      return { ok: true, gameId: input.gameId, score, personalBest: previous.best === null || score > previous.best, runCount: runs.length };
+    }
+    function recordLocalHighScore(input) {
+      const score = normalizeScore(input && input.score);
+      if (!input || input.gameId !== 'wicked-bites' || score === null) return { ok: false, reason: 'invalid-score-record' };
+      refresh(['profile']);
+      if (blocked.has('profile')) return { ok: false, reason: 'future-schema-read-only' };
+      const previous = records.profile.localScores['wicked-bites'];
+      if (previous && previous.best >= score) return { ok: false, reason: 'not-a-personal-best' };
+      const result = recordLocalScore({ gameId: input.gameId, score });
+      return result.ok ? { ok: true, gameId: input.gameId, score } : result;
     }
     function claimDaily() {
       refresh(['quests', 'pass']);
@@ -387,36 +496,62 @@
       const state = normalizeHomeInteraction(records.discoveries.homeInteraction);
       if (blocked.has('discoveries') || state.readOnly) return { ok: false, reason: state.readOnlyReason || 'future-schema-read-only', state };
       if (!HOME_CANDY_IDS.includes(id)) return { ok: false, reason: 'unknown-candy', state };
-      if (!(definitions.treats || []).some(treat => treat.id === id)) return { ok: false, reason: 'treat-not-configured', state };
+      const definition = (definitions.treats || []).find(treat => treat.id === id);
+      if (!definition || !treatCollectibleId(definition)) return { ok: false, reason: 'treat-not-configured', state };
       if (id === 'golden-block-candy' && !state.goldenBlock.complete) return { ok: false, reason: 'locked', state };
       if (state.candies.includes(id)) return { ok: false, reason: 'already-collected', state };
       if (blocked.has('pass') || blocked.has('quests')) return { ok: false, reason: 'future-schema-read-only', state };
+      if (unwritable.has('pass') || unwritable.has('quests') || unwritable.has('discoveries')) return { ok: false, reason: 'stored-data-read-only', state };
       const priorDiscoveryState = structuredCopy(records.discoveries);
       const priorPassState = structuredCopy(records.pass);
       const priorQuestState = structuredCopy(records.quests);
       state.candies.push(id);
       records.discoveries.homeInteraction = state;
-      const collectedTreatCount = state.candies.filter(candyId => (definitions.treats || []).some(treat => treat.id === candyId)).length;
-      records.pass.treats = Math.max(records.pass.treats, collectedTreatCount);
-      const eventId = 'treat:' + id;
-      if (!records.quests.processedEventIds.includes(eventId)) {
-        records.quests.processedEventIds.push(eventId);
-        for (const quest of (definitions.quests || []).filter(item => item.event === 'treat-collect')) {
-          const before = progressFor(quest);
-          if (before.complete) continue;
-          const progress = Math.min(before.target, before.progress + 1);
-          records.quests.items[quest.id] = Object.assign({}, records.quests.items[quest.id], {
-            progress,
-            completedAt: progress >= before.target ? timestamp() : null,
-            claimedAt: records.quests.items[quest.id] && records.quests.items[quest.id].claimedAt || null
-          });
-        }
-      }
+      const collectibleId = treatCollectibleId(definition);
+      if (!records.pass.collectibles.some(item => item.id === collectibleId && item.count > 0)) records.pass.collectibles.push({ id: collectibleId, count: 1 });
+      records.pass.treats = treatTotal(records.pass.collectibles);
+      applyTreatQuestEvent(id);
       if (saveMany(['discoveries', 'pass', 'quests'])) return { ok: true, state: getHomeInteractionState() };
       records.discoveries = priorDiscoveryState;
       records.pass = priorPassState;
       records.quests = priorQuestState;
       return { ok: false, reason: 'storage-unavailable', state: getHomeInteractionState() };
+    }
+    function reconcileHomeTreats() {
+      refresh(['discoveries', 'pass', 'quests']);
+      const state = normalizeHomeInteraction(records.discoveries.homeInteraction);
+      if (state.readOnly || blocked.has('discoveries') || blocked.has('pass') || blocked.has('quests')) {
+        return { ok: false, reason: state.readOnlyReason || 'future-schema-read-only', migrated: 0 };
+      }
+      if (unwritable.has('discoveries') || unwritable.has('pass') || unwritable.has('quests')) {
+        return { ok: false, reason: 'stored-data-read-only', migrated: 0 };
+      }
+      const prior = {
+        discoveries: structuredCopy(records.discoveries),
+        pass: structuredCopy(records.pass),
+        quests: structuredCopy(records.quests)
+      };
+      let migrated = 0;
+      for (const id of state.candies) {
+        const definition = (definitions.treats || []).find(treat => treat.id === id);
+        if (!definition) continue;
+        const collectibleId = treatCollectibleId(definition);
+        if (!records.pass.collectibles.some(item => item.id === collectibleId && item.count > 0)) {
+          records.pass.collectibles.push({ id: collectibleId, count: 1 });
+          migrated += 1;
+        }
+        applyTreatQuestEvent(id);
+      }
+      records.pass.collectibles = normalizeCollectibles(records.pass.collectibles);
+      records.pass.treats = treatTotal(records.pass.collectibles);
+      if (!migrated && records.pass.treats === prior.pass.treats && records.quests.processedEventIds.length === prior.quests.processedEventIds.length) {
+        return { ok: true, migrated: 0 };
+      }
+      if (saveMany(['discoveries', 'pass', 'quests'])) return { ok: true, migrated };
+      records.discoveries = prior.discoveries;
+      records.pass = prior.pass;
+      records.quests = prior.quests;
+      return { ok: false, reason: 'storage-unavailable', migrated: 0 };
     }
     function hitGoldenBlock() {
       refresh(['discoveries']);
@@ -439,9 +574,10 @@
       const fresh = emptyRecords(timestamp());
       for (const name of Object.keys(KEYS)) records[name] = fresh[name];
       blocked.clear();
+      unwritable.clear();
       return getSnapshot();
     }
-      return { getSnapshot, recordEvent, claimDaily, claimQuest, claimReward, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, hitGoldenBlock, clear };
+      return { getSnapshot, recordEvent, claimDaily, claimQuest, claimReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
   }
 
   function boot(document, root) {
@@ -449,6 +585,7 @@
     let browserStorage;
     try { browserStorage = root && root.localStorage; } catch (_) { browserStorage = undefined; }
     const store = createStore({ storage: browserStorage });
+    store.reconcileHomeTreats();
     const path = normalizePath(root && root.location && root.location.pathname || '/', definitionsForRuntime());
     store.recordEvent('route:' + path);
     const roots = document.querySelectorAll('[data-progression-page]');

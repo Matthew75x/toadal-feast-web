@@ -78,7 +78,7 @@
       "evidence": "Wicked Bites preview player exists with static player shell.",
       "remainingGap": "Full reusable player contract across approved games plus score/timer/achievement/XP/challenge surfaces is incomplete.",
       "manifestV1Action": "KEEP / INTEGRATE",
-      "manifestV1Evidence": "Existing isolated player retained; validated host adapter only persists a completed local best."
+      "manifestV1Evidence": "Existing isolated player retained; validated host adapter persists bounded completed runs only."
     },
     {
       "n": 5,
@@ -188,7 +188,7 @@
       "evidence": "Feast Pass candidate now renders browser-local level, XP, Sparks, streak, discoveries, quest summary and daily check-in using current namespaced storage.",
       "remainingGap": "Starter values are explicitly non-canonical; Treat catalog, complete reward track, account sync and final visual/product acceptance remain.",
       "manifestV1Action": "PORT / INTEGRATE",
-      "manifestV1Evidence": "Current four-key guest schema with local progression, Treats, daily, quests, and rewards."
+      "manifestV1Evidence": "Current four-key guest schema with atomic Treat collectible migration, local progression, daily, quests, and rewards."
     },
     {
       "n": 15,
@@ -218,10 +218,10 @@
       "visualAuthority": "LOCK_LAYOUT",
       "delivery": "CANDIDATE",
       "status": "PARTIAL_CANDIDATE",
-      "evidence": "Website leaderboard view uses supported local score contract; connected/global stays future.",
+      "evidence": "Website leaderboard view uses bounded completed local runs and personal best; connected/global stays future.",
       "remainingGap": "Even the truthful local-public leaderboard surface/game selector/time scopes/personal position is absent.",
       "manifestV1Action": "BUILD THIN / INTEGRATE",
-      "manifestV1Evidence": "Website leaderboard view uses supported local score contract; connected/global stays future."
+      "manifestV1Evidence": "Website leaderboard view uses bounded completed local runs and personal best; connected/global stays future."
     },
     {
       "n": 18,
@@ -416,7 +416,7 @@
     {
       "requirement": "Hidden Treats / collectible food",
       "status": "PARTIAL_CANDIDATE",
-      "evidence": "Three configured Home candies connect current discoveries to browser-local Pass Treats and definition-driven Treat quest progress; no permanent economy is asserted."
+      "evidence": "Three Home candies map one-to-one to schema-compatible {id,count} collectibles; boot migration is idempotent, and collection atomically updates discovery, Pass, and quest state; no permanent economy is asserted."
     },
     {
       "requirement": "Daily rewards",
@@ -891,10 +891,10 @@
     "studioValidation": "PASS",
     "studioAiDoctor": "PASS",
     "studioInspectRenderExportCheckpoint": "PASS",
-    "nodeTests": "72/72 PASS",
+    "nodeTests": "83/83 PASS",
     "ownerPreviewGates": "16/16 PASS",
     "browserMatrix": "83/83 PASS across 33 routes",
-    "visualEvidence": "13 captures and 17/17 companion interactions PASS",
+    "visualEvidence": "13 captures and 17/17 companion interactions PASS; cold initial payload recorded for Home/Play/World/Media/App/Feast Pass",
     "homeLockVisual": "OWNER REVIEW PENDING; NOT CLAIMED",
     "requiredContentAndExternalDependencies": "See closure report",
     "stagingSha": "pending deployment verification",

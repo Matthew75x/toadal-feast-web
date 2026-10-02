@@ -1,0 +1,563 @@
+{
+  "schema": "toadal-feast.cold-network-payload.v1",
+  "baseline": "6e543f2abebe66ef46ca6ecaa6da20e3196a5c43",
+  "basePath": "/toadal-feast-web/",
+  "measurements": [
+    {
+      "label": "Home",
+      "url": "http://127.0.0.1:53968/toadal-feast-web/",
+      "requestCount": 15,
+      "totalTransferredBytes": 955895,
+      "externalRequests": [],
+      "masterPngRequests": [],
+      "resources": [
+        {
+          "path": "/toadal-feast-web/",
+          "status": 200,
+          "bytes": 70379
+        },
+        {
+          "path": "/toadal-feast-web/assets/css/site.css",
+          "status": 200,
+          "bytes": 213694
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candy-kingdom.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+          "status": 200,
+          "bytes": 63599
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/companion-position.js",
+          "status": 200,
+          "bytes": 17013
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/progression-definitions.js",
+          "status": 200,
+          "bytes": 3823
+        },
+        {
+          "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
+          "status": 200,
+          "bytes": 886
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-game-wicked-bites-preview.02468719f5.webp",
+          "status": 200,
+          "bytes": 34703
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-world-desktop.da8261fa30.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-game-froggy-fruity-bash-concept.4dd67ff42a.webp",
+          "status": 200,
+          "bytes": 80795
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-game-claw-feed-gulper-preview.a2c11d58bc.webp",
+          "status": 200,
+          "bytes": 21107
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/guest-progression.js",
+          "status": 200,
+          "bytes": 48097
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/manifest-shell.js",
+          "status": 200,
+          "bytes": 5242
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/home-interactive-discovery.js",
+          "status": 200,
+          "bytes": 14588
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
+          "status": 200,
+          "bytes": 14917
+        }
+      ]
+    },
+    {
+      "label": "Play",
+      "url": "http://127.0.0.1:53968/toadal-feast-web/play/",
+      "requestCount": 15,
+      "totalTransferredBytes": 1036191,
+      "externalRequests": [],
+      "masterPngRequests": [],
+      "resources": [
+        {
+          "path": "/toadal-feast-web/play/",
+          "status": 200,
+          "bytes": 52037
+        },
+        {
+          "path": "/toadal-feast-web/assets/css/site.css",
+          "status": 200,
+          "bytes": 213694
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/companion-position.js",
+          "status": 200,
+          "bytes": 17013
+        },
+        {
+          "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
+          "status": 200,
+          "bytes": 886
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candy-kingdom-mobile.webp",
+          "status": 200,
+          "bytes": 69537
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/games/wicked-bites-v5.5-preview.webp",
+          "status": 200,
+          "bytes": 34703
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/games/claw-feed-gulper-v2.5.1-preview.webp",
+          "status": 200,
+          "bytes": 21107
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candy-kingdom.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/genie-fruity.webp",
+          "status": 200,
+          "bytes": 26057
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-victory.png",
+          "status": 200,
+          "bytes": 335587
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/manifest-shell.js",
+          "status": 200,
+          "bytes": 5242
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/progression-definitions.js",
+          "status": 200,
+          "bytes": 3823
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/guest-progression.js",
+          "status": 200,
+          "bytes": 48097
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/website-score-adapter.js",
+          "status": 200,
+          "bytes": 9965
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
+          "status": 200,
+          "bytes": 14917
+        }
+      ]
+    },
+    {
+      "label": "World",
+      "url": "http://127.0.0.1:53968/toadal-feast-web/world/",
+      "requestCount": 18,
+      "totalTransferredBytes": 1317654,
+      "externalRequests": [],
+      "masterPngRequests": [],
+      "resources": [
+        {
+          "path": "/toadal-feast-web/world/",
+          "status": 200,
+          "bytes": 52500
+        },
+        {
+          "path": "/toadal-feast-web/assets/css/site.css",
+          "status": 200,
+          "bytes": 213694
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candy-kingdom.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/companion-position.js",
+          "status": 200,
+          "bytes": 17013
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/progression-definitions.js",
+          "status": 200,
+          "bytes": 3823
+        },
+        {
+          "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
+          "status": 200,
+          "bytes": 886
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candyland-calm.webp",
+          "status": 200,
+          "bytes": 177552
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/forest-portal.webp",
+          "status": 200,
+          "bytes": 72701
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-portrait.webp",
+          "status": 200,
+          "bytes": 14917
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/princess-lily.webp",
+          "status": 200,
+          "bytes": 49705
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/gully.webp",
+          "status": 200,
+          "bytes": 15975
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/gulper.webp",
+          "status": 200,
+          "bytes": 43673
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-victory.png",
+          "status": 200,
+          "bytes": 335587
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/world-map.webp",
+          "status": 200,
+          "bytes": 64755
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/guest-progression.js",
+          "status": 200,
+          "bytes": 48097
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/manifest-shell.js",
+          "status": 200,
+          "bytes": 5242
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/world-discovery.js",
+          "status": 200,
+          "bytes": 3091
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
+          "status": 200,
+          "bytes": 14917
+        }
+      ]
+    },
+    {
+      "label": "Media",
+      "url": "http://127.0.0.1:53968/toadal-feast-web/media/",
+      "requestCount": 14,
+      "totalTransferredBytes": 701826,
+      "externalRequests": [],
+      "masterPngRequests": [],
+      "resources": [
+        {
+          "path": "/toadal-feast-web/media/",
+          "status": 200,
+          "bytes": 51801
+        },
+        {
+          "path": "/toadal-feast-web/assets/css/site.css",
+          "status": 200,
+          "bytes": 213694
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candy-kingdom.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/companion-position.js",
+          "status": 200,
+          "bytes": 17013
+        },
+        {
+          "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
+          "status": 200,
+          "bytes": 886
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/app/arcade-real-gameplay.webp",
+          "status": 200,
+          "bytes": 63479
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/app/puzzle-real-gameplay.webp",
+          "status": 200,
+          "bytes": 43613
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/app/feastfall-real-gameplay.webp",
+          "status": 200,
+          "bytes": 35477
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-victory.png",
+          "status": 200,
+          "bytes": 0
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+          "status": 200,
+          "bytes": 55547
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/manifest-shell.js",
+          "status": 200,
+          "bytes": 5242
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/editorial-manifest.js",
+          "status": 200,
+          "bytes": 14778
+        },
+        {
+          "path": "/toadal-feast-web/assets/data/manifest-public-content.json",
+          "status": 200,
+          "bytes": 1853
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
+          "status": 200,
+          "bytes": 14917
+        }
+      ]
+    },
+    {
+      "label": "App",
+      "url": "http://127.0.0.1:53968/toadal-feast-web/app/",
+      "requestCount": 12,
+      "totalTransferredBytes": 1026112,
+      "externalRequests": [],
+      "masterPngRequests": [],
+      "resources": [
+        {
+          "path": "/toadal-feast-web/app/",
+          "status": 200,
+          "bytes": 53251
+        },
+        {
+          "path": "/toadal-feast-web/assets/css/site.css",
+          "status": 200,
+          "bytes": 213694
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/app/arcade-real-gameplay.webp",
+          "status": 200,
+          "bytes": 63479
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/app/puzzle-real-gameplay.webp",
+          "status": 200,
+          "bytes": 43613
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/app/feastfall-real-gameplay.webp",
+          "status": 200,
+          "bytes": 35477
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/companion-position.js",
+          "status": 200,
+          "bytes": 17013
+        },
+        {
+          "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
+          "status": 200,
+          "bytes": 886
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candy-kingdom.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-victory.png",
+          "status": 200,
+          "bytes": 335587
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/manifest-shell.js",
+          "status": 200,
+          "bytes": 5242
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/app-mobile.webp",
+          "status": 200,
+          "bytes": 59427
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
+          "status": 200,
+          "bytes": 14917
+        }
+      ]
+    },
+    {
+      "label": "Feast Pass",
+      "url": "http://127.0.0.1:53968/toadal-feast-web/feast-pass/",
+      "requestCount": 9,
+      "totalTransferredBytes": 688471,
+      "externalRequests": [],
+      "masterPngRequests": [],
+      "resources": [
+        {
+          "path": "/toadal-feast-web/feast-pass/",
+          "status": 200,
+          "bytes": 49212
+        },
+        {
+          "path": "/toadal-feast-web/assets/css/site.css",
+          "status": 200,
+          "bytes": 213694
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/companion-position.js",
+          "status": 200,
+          "bytes": 17013
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/progression-definitions.js",
+          "status": 200,
+          "bytes": 3823
+        },
+        {
+          "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
+          "status": 200,
+          "bytes": 886
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-victory.png",
+          "status": 200,
+          "bytes": 335587
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/guest-progression.js",
+          "status": 200,
+          "bytes": 48097
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/manifest-shell.js",
+          "status": 200,
+          "bytes": 5242
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
+          "status": 200,
+          "bytes": 14917
+        }
+      ]
+    },
+    {
+      "label": "Home baseline 6e543f2a",
+      "url": "http://127.0.0.1:53968/toadal-feast-web/?baseline=6e543f2a",
+      "requestCount": 14,
+      "totalTransferredBytes": 918786,
+      "externalRequests": [],
+      "masterPngRequests": [],
+      "resources": [
+        {
+          "path": "/toadal-feast-web/",
+          "status": 200,
+          "bytes": 69733
+        },
+        {
+          "path": "/toadal-feast-web/assets/css/site.css",
+          "status": 200,
+          "bytes": 206427
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/world/candy-kingdom.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+          "status": 200,
+          "bytes": 63599
+        },
+        {
+          "path": "/toadal-feast-web/assets/brand/brand-crown.svg",
+          "status": 200,
+          "bytes": 886
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-game-wicked-bites-preview.02468719f5.webp",
+          "status": 200,
+          "bytes": 34703
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-world-desktop.da8261fa30.webp",
+          "status": 200,
+          "bytes": 183526
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-game-froggy-fruity-bash-concept.4dd67ff42a.webp",
+          "status": 200,
+          "bytes": 80795
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-game-claw-feed-gulper-preview.a2c11d58bc.webp",
+          "status": 200,
+          "bytes": 21107
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/companion-position.js",
+          "status": 200,
+          "bytes": 15722
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/progression-definitions.js",
+          "status": 200,
+          "bytes": 2056
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/guest-progression.js",
+          "status": 200,
+          "bytes": 27482
+        },
+        {
+          "path": "/toadal-feast-web/assets/js/home-interactive-discovery.js",
+          "status": 200,
+          "bytes": 14307
+        },
+        {
+          "path": "/toadal-feast-web/assets/studio/asset-home-character-toadal.b44601a13e.webp",
+          "status": 200,
+          "bytes": 14917
+        }
+      ]
+    }
+  ],
+  "checkedAt": "2026-10-02T10:58:21.318Z"
+}

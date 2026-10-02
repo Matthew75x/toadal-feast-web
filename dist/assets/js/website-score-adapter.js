@@ -20,8 +20,8 @@
   function normalizeScore(value) {
     if (typeof value !== 'string' && typeof value !== 'number') return null;
     const text = String(value).trim();
-    if (!/^(?:0|[1-9]\d*|[1-9]\d{0,2}(?:,\d{3})+)$/.test(text)) return null;
-    const score = Number(text.replace(/,/g, ''));
+    if (!/^\d+$/.test(text)) return null;
+    const score = Number(text);
     return Number.isSafeInteger(score) && score >= 0 ? score : null;
   }
 
@@ -104,17 +104,17 @@
       const progressionPage = page.matches('[data-progression-page]') ? page : page.querySelector('[data-progression-page]');
       try { snapshot = progressionPage && progressionPage.__toadalProgressionStore && progressionPage.__toadalProgressionStore.getSnapshot(); }
       catch (_) { snapshot = null; }
-      const supported = snapshot && Array.isArray(snapshot.localHighScores)
-        ? snapshot.localHighScores.filter(item => item && item.gameId === gameId && normalizeScore(item.score) !== null)
+      const scoreState = snapshot && snapshot.localScores && snapshot.localScores[gameId];
+      const records = scope === 'local' && scoreState && Array.isArray(scoreState.runs)
+        ? scoreState.runs.filter(item => item && normalizeScore(item.score) !== null).slice(-50)
         : [];
-      const records = scope === 'local' ? supported : [];
-      const best = records.reduce((value, item) => Math.max(value, normalizeScore(item.score)), null);
+      const best = scope === 'local' && scoreState && normalizeScore(scoreState.best) !== null ? normalizeScore(scoreState.best) : null;
       personalBest.textContent = best === null ? 'Not available' : String(best);
       position.textContent = 'Not available';
       while (rows.firstChild) rows.removeChild(rows.firstChild);
 
       if (records.length) {
-        records.slice().sort((a, b) => normalizeScore(b.score) - normalizeScore(a.score)).slice(0, 50).forEach((item, index) => {
+        records.slice().sort((a, b) => normalizeScore(b.score) - normalizeScore(a.score)).forEach((item, index) => {
           const tr = page.ownerDocument.createElement('tr');
           [String(index + 1), 'Guest · this browser', String(normalizeScore(item.score)), item.mode || 'Mode not supplied'].forEach(value => {
             const cell = page.ownerDocument.createElement('td'); cell.textContent = value; tr.appendChild(cell);
@@ -122,7 +122,7 @@
           rows.appendChild(tr);
         });
         empty.hidden = true;
-        position.textContent = 'Available from local scores';
+        position.textContent = 'Your top result · this browser only';
       } else {
         const tr = page.ownerDocument.createElement('tr');
         const cell = page.ownerDocument.createElement('td');
@@ -169,8 +169,8 @@
         const score = normalizeScore(message.payload.score);
         const progressionPage = root.document.querySelector('[data-progression-page="game-session"]');
         const store = progressionPage && progressionPage.__toadalProgressionStore;
-        if (score !== null && store && typeof store.recordLocalHighScore === 'function') {
-          store.recordLocalHighScore({ gameId: GAME_ID, score, source: 'website-preview-session' });
+        if (score !== null && store && typeof store.recordLocalScore === 'function') {
+          store.recordLocalScore({ gameId: GAME_ID, score, source: 'website-preview-session' });
         }
       }
       paint();

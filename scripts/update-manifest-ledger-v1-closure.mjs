@@ -19,7 +19,7 @@ const completionRows = new Map([
   [1, ['POLISH / KEEP', 'Home contract 38/38; fresh desktop/mobile visual evidence. Owner visual acceptance remains pending.']],
   [2, ['INTEGRATE / POLISH', 'Existing game registry, truthful availability, filters, and links to progression/leaderboards retained.']],
   [3, ['KEEP / INTEGRATE', 'Existing detail/cartridge and score boundary retained; no game engine rewrite.']],
-  [4, ['KEEP / INTEGRATE', 'Existing isolated player retained; validated host adapter only persists a completed local best.']],
+  [4, ['KEEP / INTEGRATE', 'Existing isolated player retained; validated host adapter persists bounded completed runs only.']],
   [5, ['POLISH / PORT', 'Existing world registry and approved assets; structured discovery integrated without invented canon.']],
   [6, ['KEEP / POLISH', 'Character registry, approved assets, filtering, and desktop/mobile proof.']],
   [7, ['KEEP / POLISH', 'Structured canonical Toadal profile and guest progression links.']],
@@ -29,10 +29,10 @@ const completionRows = new Map([
   [11, ['POLISH / KEEP', 'Canonical existing media assets and working filters; media records await approved content.']],
   [12, ['POLISH', 'Registry-backed editorial search/filter and honest empty state.']],
   [13, ['BUILD THIN', 'New article/devlog route reuses editorial records, empty state, and adjacent links.']],
-  [14, ['PORT / INTEGRATE', 'Current four-key guest schema with local progression, Treats, daily, quests, and rewards.']],
+  [14, ['PORT / INTEGRATE', 'Current four-key guest schema with atomic Treat collectible migration, local progression, daily, quests, and rewards.']],
   [15, ['PORT / POLISH', 'Existing definition-driven quest system with route/Treat/daily events and safe claims.']],
   [16, ['PORT / POLISH', 'Existing renderer plus non-entitlement milestone/Treat definitions; no paid economy.']],
-  [17, ['BUILD THIN / INTEGRATE', 'Website leaderboard view uses supported local score contract; connected/global stays future.']],
+  [17, ['BUILD THIN / INTEGRATE', 'Website leaderboard view uses bounded completed local runs and personal best; connected/global stays future.']],
   [18, ['KEEP / POLISH', 'Four modes represented with existing gameplay evidence; unverified store destinations disabled.']],
   [19, ['PLACEHOLDER / INTEGRATE', 'Guest-first account shell; real identity/sync remains gated on configured Froggy activation.']],
   [20, ['INTEGRATE / POLISH', 'Guest progression and validated local personal-best summary; no connected profile implied.']],
@@ -62,7 +62,7 @@ for (const n of [13, 17, 24]) {
 }
 const treats = ledger.crossCutting.find(item => item.requirement === 'Hidden Treats / collectible food');
 treats.status = 'PARTIAL_CANDIDATE';
-treats.evidence = 'Three configured Home candies connect current discoveries to browser-local Pass Treats and definition-driven Treat quest progress; no permanent economy is asserted.';
+treats.evidence = 'Three Home candies map one-to-one to schema-compatible {id,count} collectibles; boot migration is idempotent, and collection atomically updates discovery, Pass, and quest state; no permanent economy is asserted.';
 const storyCrossCutting = ledger.crossCutting.find(item => item.requirement === 'Consume media/manga/lore/news');
 storyCrossCutting.evidence = 'Media/News previews, registry-backed article/roadmap presentation, and fail-closed Stories/Manga/Reader publishing surfaces exist; approved public records remain absent.';
 const previousStatusCounts = {};
@@ -80,10 +80,10 @@ ledger.latestManifestV1Closure = {
   studioValidation: 'PASS',
   studioAiDoctor: 'PASS',
   studioInspectRenderExportCheckpoint: 'PASS',
-  nodeTests: '72/72 PASS',
+  nodeTests: '83/83 PASS',
   ownerPreviewGates: '16/16 PASS',
   browserMatrix: '83/83 PASS across 33 routes',
-  visualEvidence: '13 captures and 17/17 companion interactions PASS',
+  visualEvidence: '13 captures and 17/17 companion interactions PASS; cold initial payload recorded for Home/Play/World/Media/App/Feast Pass',
   homeLockVisual: 'OWNER REVIEW PENDING; NOT CLAIMED',
   requiredContentAndExternalDependencies: 'See closure report',
   stagingSha: 'pending deployment verification',

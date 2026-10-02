@@ -10,7 +10,7 @@ const news = (Array.isArray(registry.news) ? registry.news : []).filter((item) =
 const statusMap = { PREVIEW: 'available-now', COMING_SOON: 'coming-soon', PLANNED: 'exploring' };
 const roadmap = (Array.isArray(registry.roadmapItems) ? registry.roadmapItems : [])
   .filter((item) => item?.publicationState === 'PREVIEW' && statusMap[item.publicStatus])
-  .map((item) => ({ slug: item.slug, title: item.title, summary: item.description, status: statusMap[item.publicStatus], publicationState: 'PUBLISHED' }));
+  .map((item) => ({ slug: item.slug, title: item.title, summary: item.description, status: statusMap[item.publicStatus], publicStatus: item.publicStatus, route: item.route, publicationState: 'PUBLISHED' }));
 
 const output = path.join(project, 'reference', 'assets', 'data', 'manifest-public-content.json');
 fs.mkdirSync(path.dirname(output), { recursive: true });

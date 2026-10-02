@@ -99,6 +99,37 @@ test('Wicked Bites personal best persists locally only from the validated websit
   assert.equal(store.getSnapshot().pass.xp, 0, 'scores never grant progression currency');
   const reloaded = runtime.createStore({ storage, now, definitions });
   assert.deepEqual(reloaded.getSnapshot().localHighScores.map(({ gameId, score }) => [gameId, score]), [['wicked-bites', 120]]);
+  assert.equal(reloaded.getSnapshot().localScores['wicked-bites'].runs.length, 1);
+});
+
+test('completed score runs accept equal later runs, reject unsafe values, and cap history at fifty', () => {
+  const { store } = fixture();
+  for (const score of [1.5, -1, '  ', '1.0', '9e2', '9007199254740992', Infinity]) {
+    assert.equal(store.recordLocalScore({ gameId: 'wicked-bites', score }).ok, false, String(score));
+  }
+  for (let score = 10; score < 70; score += 1) assert.equal(store.recordLocalScore({ gameId: 'wicked-bites', score }).ok, true);
+  const state = store.getSnapshot().localScores['wicked-bites'];
+  assert.equal(state.runs.length, 50);
+  assert.equal(state.best, 69);
+  assert.equal(state.runs[0].score, 20);
+});
+
+test('legacy local high score is migrated to a bounded completed run without adding storage keys', () => {
+  const profile = { schemaVersion: 1, updatedAt: '2026-09-30T12:00:00.000Z', localHighScores: [{ gameId: 'wicked-bites', score: '123', updatedAt: '2026-09-30T12:00:00.000Z' }] };
+  const { store } = fixture({ [runtime.KEYS.profile]: JSON.stringify(profile) });
+  assert.deepEqual(store.getSnapshot().localScores['wicked-bites'], {
+    best: 123, runs: [{ score: 123, completedAt: '2026-09-30T12:00:00.000Z', mode: null, ruleset: null, characterId: null }]
+  });
+  assert.deepEqual(Object.values(runtime.KEYS), ['toadal:web:v1:feast-pass', 'toadal:web:v1:quests', 'toadal:web:v1:discoveries', 'toadal:web:v1:profile']);
+});
+
+test('corrupt local score records are read-only and preserved instead of normalized into writes', () => {
+  const raw = JSON.stringify({ schemaVersion: 1, localScores: { 'wicked-bites': { best: 999, runs: [{ score: -4, completedAt: 'not-a-date', mode: null, ruleset: null, characterId: null }] } } });
+  const { store, storage, writes } = fixture({ [runtime.KEYS.profile]: raw });
+  assert.deepEqual(store.recordLocalScore({ gameId: 'wicked-bites', score: 100 }), { ok: false, reason: 'stored-data-read-only' });
+  assert.equal(storage.getItem(runtime.KEYS.profile), raw);
+  assert.deepEqual(writes, []);
+  assert.ok(store.getSnapshot().storage.diagnostics.some(item => item.kind === 'invalid-score-state-read-only'));
 });
 
 test('UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days', () => {
@@ -232,6 +263,122 @@ test('Home discoveries use the existing discoveries key and persist exactly thre
   const reloaded = runtime.createStore({ storage, now: first.now, definitions });
   assert.deepEqual(reloaded.getHomeInteractionState().candies, ['portal-candy', 'lower-page-candy', 'golden-block-candy']);
   assert.equal(reloaded.getHomeInteractionState().goldenBlock.hits, 4);
+  assert.deepEqual(reloaded.getSnapshot().pass.collectibles.filter(item => item.count > 0), [
+    { id: 'treat-home-blue', count: 1 }, { id: 'treat-home-green', count: 1 }, { id: 'treat-home-purple', count: 1 }
+  ]);
+  assert.equal(reloaded.getSnapshot().pass.treats, 3);
+});
+
+test('all six Home candy collection orders yield one mapped schema collectible and one quest event per treat', () => {
+  const permutations = [
+    ['portal-candy', 'lower-page-candy', 'golden-block-candy'],
+    ['portal-candy', 'golden-block-candy', 'lower-page-candy'],
+    ['lower-page-candy', 'portal-candy', 'golden-block-candy'],
+    ['lower-page-candy', 'golden-block-candy', 'portal-candy'],
+    ['golden-block-candy', 'portal-candy', 'lower-page-candy'],
+    ['golden-block-candy', 'lower-page-candy', 'portal-candy']
+  ];
+  for (const order of permutations) {
+    const { store } = fixture();
+    for (const candy of order) {
+      if (candy === 'golden-block-candy') for (let hit = 0; hit < 4; hit += 1) store.hitGoldenBlock();
+      assert.equal(store.collectHomeCandy(candy).ok, true);
+    }
+    const pass = store.getSnapshot().pass;
+    assert.deepEqual(pass.collectibles.slice().sort((a, b) => a.id.localeCompare(b.id)), [
+      { id: 'treat-home-blue', count: 1 }, { id: 'treat-home-green', count: 1 }, { id: 'treat-home-purple', count: 1 }
+    ].sort((a, b) => a.id.localeCompare(b.id)));
+    assert.equal(pass.treats, 3);
+    assert.equal(store.getSnapshot().quests.find(item => item.id === 'find-feast-treats').progress, 3);
+  }
+});
+
+test('existing users migrate all already-recorded candies at boot exactly once', () => {
+  const discoveries = { schemaVersion: 1, items: [], homeInteraction: { schemaVersion: 1, candies: ['portal-candy', 'lower-page-candy'], goldenBlock: { hits: 0, complete: false } } };
+  const pass = { schemaVersion: 1, level: 1, xp: 0, sparks: 0, treats: 0, collectibles: [] };
+  const { storage } = fixture({ [runtime.KEYS.discoveries]: JSON.stringify(discoveries), [runtime.KEYS.pass]: JSON.stringify(pass) });
+  const document = { querySelector: () => ({}), querySelectorAll: () => [] };
+  runtime.boot(document, { localStorage: storage, location: { pathname: '/' } });
+  const migrated = runtime.createStore({ storage, definitions });
+  assert.deepEqual(migrated.getSnapshot().pass.collectibles, [{ id: 'treat-home-blue', count: 1 }, { id: 'treat-home-green', count: 1 }]);
+  assert.equal(migrated.getSnapshot().quests.find(item => item.id === 'find-feast-treats').progress, 2);
+  const raw = [runtime.KEYS.discoveries, runtime.KEYS.pass, runtime.KEYS.quests].map(key => storage.getItem(key));
+  assert.equal(migrated.reconcileHomeTreats().migrated, 0);
+  assert.deepEqual([runtime.KEYS.discoveries, runtime.KEYS.pass, runtime.KEYS.quests].map(key => storage.getItem(key)), raw);
+});
+
+test('boot reconciliation runs before Feast Pass, Rewards, and Profile render without requiring Home', () => {
+  const discoveries = { schemaVersion: 1, items: [], homeInteraction: { schemaVersion: 1, candies: ['portal-candy'], goldenBlock: { hits: 0, complete: false } } };
+  const pass = { schemaVersion: 1, level: 1, xp: 0, sparks: 0, treats: 0, collectibles: [] };
+  const { storage } = fixture({ [runtime.KEYS.discoveries]: JSON.stringify(discoveries), [runtime.KEYS.pass]: JSON.stringify(pass) });
+  const page = { __toadalProgressionBooted: false, querySelector: () => null, querySelectorAll: () => [] };
+  const document = { querySelectorAll: selector => selector === '[data-progression-page]' ? [page] : [], querySelector: () => null };
+  runtime.boot(document, { localStorage: storage, location: { pathname: '/profile/' } });
+  assert.deepEqual(JSON.parse(storage.getItem(runtime.KEYS.pass)).collectibles, [{ id: 'treat-home-blue', count: 1 }]);
+});
+
+test('all three legacy candy discoveries migrate to exactly three local Treat records', () => {
+  const discoveries = { schemaVersion: 1, items: [], homeInteraction: { schemaVersion: 1, candies: ['portal-candy', 'lower-page-candy', 'golden-block-candy'], goldenBlock: { hits: 4, complete: true } } };
+  const pass = { schemaVersion: 1, level: 1, xp: 0, sparks: 0, treats: 0, collectibles: [] };
+  const quests = { schemaVersion: 1, items: {}, processedEventIds: [], dailyClaimedPeriod: null };
+  const { store } = fixture({ [runtime.KEYS.discoveries]: JSON.stringify(discoveries), [runtime.KEYS.pass]: JSON.stringify(pass), [runtime.KEYS.quests]: JSON.stringify(quests) });
+  assert.equal(store.reconcileHomeTreats().migrated, 3);
+  assert.deepEqual(store.getSnapshot().pass.collectibles, [{ id: 'treat-home-blue', count: 1 }, { id: 'treat-home-green', count: 1 }, { id: 'treat-home-purple', count: 1 }]);
+  assert.equal(store.getSnapshot().pass.treats, 3);
+  assert.equal(store.getSnapshot().quests.find(item => item.id === 'find-feast-treats').progress, 3);
+});
+
+test('Golden Block hits are discovery-only until hit four and the candy is collected', () => {
+  const { store } = fixture();
+  for (let hit = 1; hit <= 4; hit += 1) store.hitGoldenBlock();
+  assert.equal(store.getSnapshot().pass.treats, 0);
+  assert.equal(store.getSnapshot().quests.find(item => item.id === 'find-feast-treats').progress, 0);
+  assert.equal(store.collectHomeCandy('golden-block-candy').ok, true);
+  assert.equal(store.getSnapshot().pass.treats, 1);
+  assert.equal(store.getSnapshot().quests.find(item => item.id === 'find-feast-treats').progress, 1);
+});
+
+test('Home reconciliation preserves future pass, quest, and malformed records without partial writes', () => {
+  const futurePass = JSON.stringify({ schemaVersion: 99, marker: 'pass' });
+  const discoveries = JSON.stringify({ schemaVersion: 1, items: [], homeInteraction: { schemaVersion: 1, candies: ['portal-candy'], goldenBlock: { hits: 0, complete: false } } });
+  const { store, storage, writes } = fixture({ [runtime.KEYS.pass]: futurePass, [runtime.KEYS.discoveries]: discoveries });
+  assert.equal(store.reconcileHomeTreats().ok, false);
+  assert.equal(storage.getItem(runtime.KEYS.pass), futurePass);
+  assert.equal(storage.getItem(runtime.KEYS.discoveries), discoveries);
+  assert.deepEqual(writes, []);
+});
+
+test('Home candy transaction restores all three in-memory records if a later storage write fails', () => {
+  const map = new Map();
+  let failKey = runtime.KEYS.quests;
+  let shouldFail = false;
+  const storage = {
+    getItem(key) { return map.has(key) ? map.get(key) : null; },
+    setItem(key, value) { if (shouldFail && key === failKey) { shouldFail = false; throw new Error('quota'); } map.set(key, String(value)); },
+    removeItem(key) { map.delete(key); }
+  };
+  const store = runtime.createStore({ storage, definitions, now: () => new Date('2026-10-01T12:00:00Z') });
+  shouldFail = true;
+  assert.equal(store.collectHomeCandy('portal-candy').reason, 'storage-unavailable');
+  assert.deepEqual(store.getHomeInteractionState().candies, []);
+  assert.equal(store.getSnapshot().pass.treats, 0);
+  assert.equal(store.getSnapshot().quests.find(item => item.id === 'find-feast-treats').progress, 0);
+});
+
+test('Home candy transaction rolls back the discovery write when the second pass write fails', () => {
+  const map = new Map();
+  let failPass = false;
+  const storage = {
+    getItem(key) { return map.has(key) ? map.get(key) : null; },
+    setItem(key, value) { if (failPass && key === runtime.KEYS.pass) { failPass = false; throw new Error('quota'); } map.set(key, String(value)); },
+    removeItem(key) { map.delete(key); }
+  };
+  const store = runtime.createStore({ storage, definitions, now: () => new Date('2026-10-01T12:00:00Z') });
+  failPass = true;
+  assert.equal(store.collectHomeCandy('portal-candy').reason, 'storage-unavailable');
+  assert.equal(map.has(runtime.KEYS.discoveries), false);
+  assert.deepEqual(store.getHomeInteractionState().candies, []);
+  assert.equal(store.getSnapshot().pass.treats, 0);
 });
 
 test('a future Home-interaction schema is readable but cannot be overwritten', () => {

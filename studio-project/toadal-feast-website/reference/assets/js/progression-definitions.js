@@ -49,9 +49,9 @@
       }
     ],
     treats: [
-      { id: 'portal-candy', title: 'Portal Candy', description: 'A little blue Feast candy found in the Home portal.', source: 'home-interactive-discovery' },
-      { id: 'lower-page-candy', title: 'Story Candy', description: 'A Feast candy tucked into the existing mobile-app story panel.', source: 'home-interactive-discovery' },
-      { id: 'golden-block-candy', title: 'Golden Block Candy', description: 'The candy revealed by completing the existing Golden Block interaction.', source: 'home-interactive-discovery' }
+      { id: 'portal-candy', collectibleId: 'treat-home-blue', title: 'Portal Candy', description: 'A little blue Feast candy found in the Home portal.', source: 'home-interactive-discovery' },
+      { id: 'lower-page-candy', collectibleId: 'treat-home-green', title: 'Story Candy', description: 'A Feast candy tucked into the existing mobile-app story panel.', source: 'home-interactive-discovery' },
+      { id: 'golden-block-candy', collectibleId: 'treat-home-purple', title: 'Golden Block Candy', description: 'The candy revealed by completing the existing Golden Block interaction.', source: 'home-interactive-discovery' }
     ],
     rewards: [
       { id: 'starter-feaster-badge', title: 'First Feast', description: 'A small marker for beginning a guest-local Feast Pass journey.', type: 'badge', awardId: 'first-feast', level: 1, entitlement: false, localOnly: true },

@@ -18,14 +18,16 @@ assert.deepEqual(editorial.filterNews(news, { category: 'world-stories' }), []);
 assert.deepEqual(editorial.projectPublishedNews([]), []);
 
 const roadmap = [
-  { slug: 'available', title: 'Current feature', summary: 'Verified current feature.', status: 'available-now', publicationState: 'PUBLISHED' },
+  { slug: 'available', title: 'Current feature', summary: 'Verified current feature.', status: 'available-now', publicStatus: 'PREVIEW', route: '/play/', publicationState: 'PUBLISHED' },
   { slug: 'internal', title: 'Internal task', summary: 'Not approved for public display.', status: 'in-development', publicationState: 'DRAFT' },
   { slug: 'bad-state', title: 'Unrecognized state', summary: 'Must not leak.', status: 'paused', publicationState: 'PUBLISHED' },
-  { slug: 'no-date', title: 'No date item', summary: 'Dates are not required.', status: 'exploring', publicationState: 'PUBLISHED', publishedAt: 'not a date' }
+  { slug: 'no-date', title: 'No date item', summary: 'Dates are not required.', status: 'exploring', publicStatus: 'PLANNED', route: '/account/', publicationState: 'PUBLISHED', publishedAt: 'not a date' },
+  { slug: 'unsafe-route', title: 'Bad route', summary: 'Do not link this.', status: 'available-now', publicStatus: 'PREVIEW', route: '//attacker.example', publicationState: 'PUBLISHED' }
 ];
 
 assert.deepEqual(editorial.projectRoadmap(roadmap).map((item) => item.slug), ['available', 'no-date']);
 assert.deepEqual(editorial.projectRoadmap([]), []);
+assert.equal(editorial.projectRoadmap(roadmap)[0].route, '/play/');
 assert.deepEqual(editorial.ROADMAP_STATUSES.map(({ id }) => id), ['available-now', 'in-development', 'coming-soon', 'exploring']);
 assert.deepEqual(editorial.NEWS_RECORDS, []);
 assert.deepEqual(editorial.ROADMAP_RECORDS, []);

@@ -114,12 +114,6 @@
         }
       }
     },
-    "localScores": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "number"
-      }
-    },
     "profile": {
       "type": "object",
       "properties": {
@@ -134,8 +128,40 @@
             "string",
             "null"
           ]
+        },
+        "localScores": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/localScoreState"
+          }
         }
       }
+    }
+  },
+  "$defs": {
+    "localScoreState": {
+      "type": "object",
+      "required": ["best", "runs"],
+      "properties": {
+        "best": { "type": "integer", "minimum": 0 },
+        "runs": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "type": "object",
+            "required": ["score", "completedAt", "mode", "ruleset", "characterId"],
+            "properties": {
+              "score": { "type": "integer", "minimum": 0 },
+              "completedAt": { "type": "string", "format": "date-time" },
+              "mode": { "type": ["string", "null"] },
+              "ruleset": { "type": ["string", "null"] },
+              "characterId": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": true
