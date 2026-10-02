@@ -19,7 +19,8 @@ Read in this order before editing product code:
 10. `docs/authority/STUDIO_ASSEMBLY_RECIPES_2026-10-02.md`
 11. `docs/authority/FINAL_BUILDABLE_LAST_MILE_BACKLOG_2026-10-02.md`
 12. `docs/authority/REFERENCE_VISUAL_AVAILABILITY_2026-10-02.md`
-13. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
+13. `docs/authority/HOME_VISUAL_DONOR_RECONCILIATION_2026-10-02.md`
+14. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
 
 Operating rule:
 
