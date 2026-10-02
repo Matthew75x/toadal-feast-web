@@ -34,3 +34,11 @@ Before creating new code or art:
 Do not block manifest closure on a Studio refactor, PWA work, production-host migration, or unavailable external services. Finish the public shell with truthful states.
 
 The final report must reconcile all 30 manifest rows and the cross-cutting requirements against the final SHA.
+
+## Mechanical closure gate
+
+Run:
+
+`node scripts/verify-final-manifest-surfaces.mjs`
+
+The frozen baseline is expected to fail because the dedicated Devlog, Leaderboards and Roadmap routes are not yet registered. Final manifest closure must make this check pass while preserving the additional game routes.
