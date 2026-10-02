@@ -17,7 +17,9 @@ Read in this order before editing product code:
 8. `docs/authority/LEADERBOARDS_INTEGRATION_SPEC_2026-10-02.md`
 9. `docs/authority/FEAST_PASS_PORT_SPEC_2026-10-02.md`
 10. `docs/authority/STUDIO_ASSEMBLY_RECIPES_2026-10-02.md`
-11. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
+11. `docs/authority/FINAL_BUILDABLE_LAST_MILE_BACKLOG_2026-10-02.md`
+12. `docs/authority/REFERENCE_VISUAL_AVAILABILITY_2026-10-02.md`
+13. `docs/authority/FINAL_MANIFEST_ACCEPTANCE_MATRIX_2026-10-02.md`
 
 Operating rule:
 
