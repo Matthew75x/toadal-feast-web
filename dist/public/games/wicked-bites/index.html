@@ -1938,7 +1938,54 @@ if(typeof module!=='undefined'&&module.exports)module.exports=CrossingRenderer;
 
   function initCompanion() {
     var root = document.querySelector('[data-companion]');
-    if (!root) return;
+    if (!root) {
+      var brand = document.querySelector('.site-brand');
+      var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+      var siteRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+      root = document.createElement('aside');
+      root.className = 'toadal-companion';
+      root.setAttribute('data-companion', '');
+      root.setAttribute('data-zone', 'global');
+      root.setAttribute('aria-label', 'Toadal contextual helper');
+
+      var panel = document.createElement('div');
+      panel.className = 'companion-panel';
+      panel.id = 'toadal-companion-panel-global';
+      panel.setAttribute('data-companion-panel', '');
+      var label = document.createElement('p');
+      label.className = 'companion-label';
+      label.textContent = 'TOADAL SAYS';
+      var speech = document.createElement('p');
+      speech.className = 'companion-message';
+      speech.setAttribute('data-companion-speech', '');
+      speech.setAttribute('aria-live', 'polite');
+      speech.setAttribute('aria-atomic', 'true');
+      speech.textContent = 'Drag me anywhere on the screen. Tap to minimize or restore me.';
+      panel.append(label, speech);
+
+      var toggle = document.createElement('button');
+      toggle.className = 'companion-toggle';
+      toggle.type = 'button';
+      toggle.setAttribute('data-companion-toggle', '');
+      toggle.setAttribute('aria-controls', panel.id);
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Show Toadal companion');
+      var image = document.createElement('img');
+      image.className = 'companion-image';
+      image.setAttribute('data-companion-image', '');
+      image.src = siteRoot + '/assets/images/characters/toadal-victory.png';
+      image.alt = '';
+      image.width = 611;
+      image.height = 640;
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      var hiddenLabel = document.createElement('span');
+      hiddenLabel.className = 'sr-only';
+      hiddenLabel.textContent = 'Show Toadal companion';
+      toggle.append(image, hiddenLabel);
+      root.append(panel, toggle);
+      document.body.appendChild(root);
+    }
     var image = root.querySelector('[data-companion-image]');
     var speech = root.querySelector('[data-companion-speech]');
     var toggle = root.querySelector('[data-companion-toggle]');
@@ -2598,5 +2645,16 @@ if(typeof module!=='undefined'&&module.exports)module.exports=CrossingRenderer;
 
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
   else start();
+})();
+(function () {
+  'use strict';
+  if (window.self !== window.top) return;
+  var brand = document.querySelector('.site-brand');
+  var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+  var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+  var script = document.createElement('script');
+  script.src = baseRoot + '/assets/js/companion-position.js';
+  script.async = false;
+  document.head.appendChild(script);
 })();</script></body>
 </html>

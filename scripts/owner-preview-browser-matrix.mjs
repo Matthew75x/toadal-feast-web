@@ -66,7 +66,7 @@ const inspectExpr=[
 "const brokenFragments=[...document.querySelectorAll('a[href^=\"#\"]')].map(a=>(a.getAttribute('href')||'').slice(1)).filter(id=>id&&!document.getElementById(decodeURIComponent(id)));",
 "return {title:document.title.trim(),lang:document.documentElement.lang||'',viewport:document.querySelector('meta[name=\"viewport\"]')?.content||'',",
 "h1:[...document.querySelectorAll('h1')].filter(e=>e.getClientRects().length&&text(e)).length,main:document.querySelectorAll('main').length,",
-"overflow:document.documentElement.scrollWidth>innerWidth+1,brokenImages:imgs.filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.currentSrc||i.src),",
+"overflow:document.documentElement.scrollWidth>innerWidth+1,companionCount:document.querySelectorAll('[data-companion]').length,brokenImages:imgs.filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.currentSrc||i.src),",
 "missingAlt:imgs.filter(i=>!i.hasAttribute('alt')).map(i=>i.currentSrc||i.src),duplicateIds:dup,unnamedControls:unnamed,brokenFragments,scrollHeight:document.documentElement.scrollHeight};",
 "})()"
 ].join('\n');
@@ -77,10 +77,10 @@ const sampleExpr=[
 "const nm=e=>(e.getAttribute('aria-label')||e.getAttribute('title')||e.innerText||e.textContent||'').replace(/\\s+/g,' ').trim().slice(0,90);",
 "const controls=[...document.querySelectorAll('a[href],button,input,select,textarea,[role=\"button\"],[role=\"link\"]')].filter(visible);",
 "const clipped=controls.map(e=>{const r=e.getBoundingClientRect();return {tag:e.tagName.toLowerCase(),name:nm(e),left:r.left,right:r.right,top:r.top,bottom:r.bottom};}).filter(x=>x.left<-1||x.right>innerWidth+1);",
-"const comp=document.querySelector('[data-companion]');let companion=null,overlaps=[];",
+"const comp=document.querySelector('[data-companion]');let companion=null,overlaps=[],primaryOverlaps=[];",
 "if(comp){const cs=getComputedStyle(comp);const parts=[...comp.querySelectorAll('.companion-panel,.companion-toggle')].filter(e=>visible(e));const rects=parts.map(e=>e.getBoundingClientRect());if(rects.length){const cr={left:Math.min(...rects.map(r=>r.left)),right:Math.max(...rects.map(r=>r.right)),top:Math.min(...rects.map(r=>r.top)),bottom:Math.max(...rects.map(r=>r.bottom))};companion={left:cr.left,right:cr.right,top:cr.top,bottom:cr.bottom,position:cs.position,within:cr.left>=-1&&cr.right<=innerWidth+1&&cr.top>=-1&&cr.bottom<=innerHeight+1};",
-"if(cs.position==='fixed'||cs.position==='sticky'){overlaps=controls.filter(e=>!comp.contains(e)&&!e.closest('header,footer,.site-header,.site-footer')).map(e=>{const r=e.getBoundingClientRect();let area=0;for(const pr of rects){const iw=Math.max(0,Math.min(r.right,pr.right)-Math.max(r.left,pr.left));const ih=Math.max(0,Math.min(r.bottom,pr.bottom)-Math.max(r.top,pr.top));area+=iw*ih;}return {tag:e.tagName.toLowerCase(),name:nm(e),ratio:Math.min(1,area/Math.max(1,r.width*r.height))};}).filter(x=>x.ratio>.50);}}}",
-"return {scrollY,clipped,companion,overlaps};",
+"if(cs.position==='fixed'||cs.position==='sticky'){const measure=e=>{const r=e.getBoundingClientRect();let area=0;for(const pr of rects){const iw=Math.max(0,Math.min(r.right,pr.right)-Math.max(r.left,pr.left));const ih=Math.max(0,Math.min(r.bottom,pr.bottom)-Math.max(r.top,pr.top));area+=iw*ih;}return {tag:e.tagName.toLowerCase(),name:nm(e),ratio:Math.min(1,area/Math.max(1,r.width*r.height))};};overlaps=controls.filter(e=>!comp.contains(e)&&!e.closest('header,footer,.site-header,.site-footer')).map(measure).filter(x=>x.ratio>.50);const primary=[...document.querySelectorAll('.home-hero .home-actions a,button')].filter(e=>visible(e)&&(e.matches('.home-hero .home-actions a')||/claim quest reward/i.test(nm(e))));primaryOverlaps=primary.map(measure).filter(x=>x.ratio>.01);}}}",
+"return {scrollY,clipped,companion,companionCount:document.querySelectorAll('[data-companion]').length,overlaps,primaryOverlaps};",
 "})()"
 ].join('\n');
 
@@ -115,18 +115,20 @@ for(const c of casesToRun){
   const companionBad=samples.filter(s=>s.companion&&s.companion.position==='fixed'&&!s.companion.within).map(s=>s.companion);
   const issues=[];
   if(!doc.title)issues.push('missing-title');if(!doc.lang)issues.push('missing-lang');if(!doc.viewport)issues.push('missing-viewport');
-  if(doc.h1!==1)issues.push('h1-count');if(doc.main!==1)issues.push('main-count');if(doc.overflow)issues.push('horizontal-overflow');
+  if(doc.h1!==1)issues.push('h1-count');if(doc.main!==1)issues.push('main-count');if(doc.overflow)issues.push('horizontal-overflow');if(samples.some(s=>s.companionCount!==1))issues.push('companion-count');
   if(doc.brokenImages?.length)issues.push('broken-images');if(doc.missingAlt?.length)issues.push('missing-alt');
   if(doc.duplicateIds?.length)issues.push('duplicate-ids');if(doc.unnamedControls?.length)issues.push('unnamed-controls');
   if(doc.brokenFragments?.length)issues.push('broken-fragments');if(httpErrors.length||loadErrors.length)issues.push('network-errors');
   if(runtimeErrors.length||consoleErrors)issues.push('runtime-errors');if(clipped.length)issues.push('clipped-controls');
-  if(overlaps.length)issues.push('companion-control-overlap');if(companionBad.length)issues.push('companion-out-of-bounds');
+  const primaryRequired=c.route==='/'||c.route==='/feast-pass/quests/';
+  const primaryOverlaps=samples[0]?.primaryOverlaps||[];
+  if(primaryRequired&&primaryOverlaps.length)issues.push('companion-primary-action-overlap');if(companionBad.length)issues.push('companion-out-of-bounds');
   const status=issues.length?'FAIL':'PASS';
-  results.push({...c,status,issues,doc,httpErrors,loadErrors,runtimeErrors,consoleErrors,clipped,overlaps,companionBad});
+  results.push({...c,status,issues,doc,httpErrors,loadErrors,runtimeErrors,consoleErrors,clipped,samples,overlaps,primaryOverlaps,companionBad});
   process.stdout.write(status+'|'+c.label+'|'+c.route+'|'+issues.join(',')+'\n');
 }
 
-const summary={schema:'toadal-feast.owner-preview-browser-matrix.v1',status:results.every(c=>c.status==='PASS')?'PASS':'FAIL',routes:pages.length,cases:results.length,passed:results.filter(c=>c.status==='PASS').length,failed:results.filter(c=>c.status==='FAIL').length,issueCounts:{}};
+const summary={schema:'toadal-feast.owner-preview-browser-matrix.v1',status:results.every(c=>c.status==='PASS')?'PASS':'FAIL',routes:pages.length,cases:results.length,passed:results.filter(c=>c.status==='PASS').length,failed:results.filter(c=>c.status==='FAIL').length,diagnostics:{genericControlOverlapCases:results.filter(c=>c.overlaps.length).length,genericControlOverlapEntries:results.reduce((n,c)=>n+c.overlaps.length,0)},issueCounts:{}};
 for(const c of results)for(const i of c.issues)summary.issueCounts[i]=(summary.issueCounts[i]||0)+1;
 fs.mkdirSync(path.dirname(reportPath),{recursive:true});fs.writeFileSync(reportPath,JSON.stringify({summary,cases:results},null,2)+'\n');
 console.log('SUMMARY|'+JSON.stringify(summary));

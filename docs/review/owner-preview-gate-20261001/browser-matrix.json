@@ -6,6 +6,10 @@
     "cases": 77,
     "passed": 77,
     "failed": 0,
+    "diagnostics": {
+      "genericControlOverlapCases": 3,
+      "genericControlOverlapEntries": 10
+    },
     "issueCounts": {}
   },
   "cases": [
@@ -23,6 +27,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -35,7 +40,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 13,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -52,6 +105,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -64,7 +118,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 276,
+            "right": 378,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 276,
+            "right": 378,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 276,
+            "right": 378,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -81,6 +183,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -93,7 +196,68 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
-      "overlaps": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 278,
+            "right": 420,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 278,
+            "right": 420,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 278,
+            "right": 420,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [
+            {
+              "tag": "button",
+              "name": "Public games 0",
+              "ratio": 0.552543079046886
+            }
+          ],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [
+        {
+          "scrollY": 4,
+          "tag": "button",
+          "name": "Public games 0",
+          "ratio": 0.552543079046886
+        }
+      ],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -110,6 +274,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -122,7 +287,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -139,6 +352,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -151,7 +365,25 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -168,6 +400,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -180,7 +413,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 5,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -197,6 +478,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -209,7 +491,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 21,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -226,6 +556,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -238,7 +569,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -255,6 +634,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -267,7 +647,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -284,6 +712,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -296,7 +725,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -313,6 +790,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -325,7 +803,25 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -342,6 +838,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -354,7 +851,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -371,6 +916,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -383,7 +929,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 24,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 32,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -400,6 +994,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -412,7 +1007,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 33,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -429,6 +1072,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -441,7 +1085,25 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -458,6 +1120,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -470,7 +1133,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -487,6 +1198,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -499,7 +1211,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 9,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -516,6 +1276,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -528,7 +1289,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -545,6 +1354,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -557,7 +1367,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 17,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -574,6 +1432,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -586,7 +1445,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 13,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -603,6 +1510,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -615,7 +1523,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -632,6 +1588,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -644,7 +1601,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -661,6 +1666,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -673,7 +1679,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -690,6 +1744,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -702,7 +1757,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -719,6 +1822,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -731,7 +1835,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -748,6 +1900,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -760,7 +1913,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -777,6 +1978,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -789,7 +1991,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -806,6 +2056,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -818,7 +2069,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -835,6 +2134,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -847,7 +2147,125 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
-      "overlaps": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [
+            {
+              "tag": "a",
+              "name": "Personality",
+              "ratio": 1
+            },
+            {
+              "tag": "a",
+              "name": "History",
+              "ratio": 0.9331578947368421
+            }
+          ],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [
+            {
+              "tag": "a",
+              "name": "Personality",
+              "ratio": 1
+            },
+            {
+              "tag": "a",
+              "name": "History",
+              "ratio": 0.9331578947368421
+            }
+          ],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 13,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [
+            {
+              "tag": "a",
+              "name": "Personality",
+              "ratio": 0.6823299069995106
+            },
+            {
+              "tag": "a",
+              "name": "History",
+              "ratio": 0.6367215395316485
+            }
+          ],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [
+        {
+          "scrollY": 0,
+          "tag": "a",
+          "name": "Personality",
+          "ratio": 1
+        },
+        {
+          "scrollY": 0,
+          "tag": "a",
+          "name": "History",
+          "ratio": 0.9331578947368421
+        },
+        {
+          "scrollY": 2,
+          "tag": "a",
+          "name": "Personality",
+          "ratio": 1
+        },
+        {
+          "scrollY": 2,
+          "tag": "a",
+          "name": "History",
+          "ratio": 0.9331578947368421
+        },
+        {
+          "scrollY": 13,
+          "tag": "a",
+          "name": "Personality",
+          "ratio": 0.6823299069995106
+        },
+        {
+          "scrollY": 13,
+          "tag": "a",
+          "name": "History",
+          "ratio": 0.6367215395316485
+        }
+      ],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -864,6 +2282,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -876,7 +2295,92 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
-      "overlaps": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [
+            {
+              "tag": "a",
+              "name": "History",
+              "ratio": 0.5291632597437994
+            }
+          ],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [
+            {
+              "tag": "a",
+              "name": "History",
+              "ratio": 0.5291632597437994
+            }
+          ],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [
+            {
+              "tag": "a",
+              "name": "History",
+              "ratio": 0.5291632597437994
+            }
+          ],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [
+        {
+          "scrollY": 0,
+          "tag": "a",
+          "name": "History",
+          "ratio": 0.5291632597437994
+        },
+        {
+          "scrollY": 2,
+          "tag": "a",
+          "name": "History",
+          "ratio": 0.5291632597437994
+        },
+        {
+          "scrollY": 10,
+          "tag": "a",
+          "name": "History",
+          "ratio": 0.5291632597437994
+        }
+      ],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -893,6 +2397,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -905,7 +2410,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -922,6 +2475,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -934,7 +2488,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -951,6 +2553,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -963,7 +2566,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -980,6 +2631,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -992,7 +2644,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1009,6 +2709,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1021,7 +2722,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1038,6 +2787,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1050,7 +2800,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 26,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1067,6 +2865,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1079,7 +2878,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1096,6 +2943,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1108,7 +2956,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1125,6 +3021,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1137,7 +3034,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 14,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1154,6 +3099,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1166,7 +3112,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1183,6 +3177,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1195,7 +3190,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1212,6 +3255,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1224,7 +3268,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 28,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1241,6 +3333,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1253,7 +3346,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1270,6 +3411,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1282,7 +3424,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 27,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1299,6 +3489,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1311,7 +3502,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1328,6 +3567,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1340,7 +3580,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 14,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1357,6 +3645,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1369,7 +3658,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 46,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1386,6 +3723,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1398,7 +3736,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1415,6 +3801,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1427,7 +3814,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 32,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1444,6 +3879,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1456,7 +3892,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1473,6 +3957,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1485,7 +3970,25 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1502,6 +4005,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1514,7 +4018,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 14,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1531,6 +4083,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1543,7 +4096,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 16,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1560,6 +4161,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1572,7 +4174,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1589,6 +4239,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1601,7 +4252,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 29,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1618,6 +4317,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1630,7 +4330,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1647,6 +4395,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1659,7 +4408,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 17,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1676,6 +4473,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1688,7 +4486,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1705,6 +4551,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1717,7 +4564,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 6,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 17,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1734,6 +4629,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1746,7 +4642,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1763,6 +4707,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1775,7 +4720,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 26,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1792,6 +4785,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1804,7 +4798,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 308,
+            "top": 566,
+            "bottom": 662,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1821,6 +4863,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1833,7 +4876,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 24,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1850,6 +4941,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1862,7 +4954,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 31,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1879,6 +5019,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1891,7 +5032,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1908,6 +5097,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1920,7 +5110,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1937,6 +5175,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1949,7 +5188,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 6,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1966,6 +5253,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -1978,7 +5266,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -1995,6 +5331,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2007,7 +5344,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 14,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2024,6 +5409,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2036,7 +5422,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 27,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2053,6 +5487,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2065,7 +5500,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2082,6 +5565,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2094,7 +5578,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 4,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2111,6 +5643,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2123,7 +5656,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 14,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2140,6 +5721,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2152,7 +5734,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 13,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2169,6 +5799,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2181,7 +5812,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 218,
+            "right": 360,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2198,6 +5877,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2210,7 +5890,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     },
     {
@@ -2227,6 +5955,7 @@
         "h1": 1,
         "main": 1,
         "overflow": false,
+        "companionCount": 1,
         "brokenImages": [],
         "missingAlt": [],
         "duplicateIds": [],
@@ -2239,7 +5968,55 @@
       "runtimeErrors": [],
       "consoleErrors": 0,
       "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 216,
+            "right": 318,
+            "top": 566,
+            "bottom": 672,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
       "overlaps": [],
+      "primaryOverlaps": [],
       "companionBad": []
     }
   ]

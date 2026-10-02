@@ -5490,7 +5490,14 @@ body:has(.home-hero) #app .app-conversion-copy > .section-kicker {
   }
 }
 
-/* Keep the Home companion outside the desktop grid and mobile document flow. */
+/* One viewport shell; script-owned x/y never follows contextual reactions or page flow. */
+:root {
+  --toadal-safe-top: env(safe-area-inset-top, 0px);
+  --toadal-safe-right: env(safe-area-inset-right, 0px);
+  --toadal-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --toadal-safe-left: env(safe-area-inset-left, 0px);
+}
+
 main:has(.home-hero) > #companion {
   height: 0 !important;
   min-height: 0 !important;
@@ -5498,56 +5505,113 @@ main:has(.home-hero) > #companion {
   overflow: visible !important;
 }
 
-/* Keep the fixed companion out of Home's hero/section text at all tested scroll positions. */
+.toadal-companion,
 main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
-  inset-block-start: max(72px, calc(env(safe-area-inset-top, 0px) + 12px)) !important;
-  inset-block-end: auto !important;
+  position: fixed !important;
+  z-index: 1000;
+  inset: 0 auto auto 0 !important;
+  width: 152px;
+  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  gap: 0;
+  pointer-events: none;
+  left: var(--toadal-companion-x, calc(100vw - 164px)) !important;
+  top: var(--toadal-companion-y, calc(100vh - 164px)) !important;
 }
 
-/* Search and Contact keep fixed bottom-edge controls/forms clear of the companion. */
-body:has(.search-page) .toadal-companion,
-body:has(#contact-category) .toadal-companion {
-  inset-block-start: max(72px, calc(env(safe-area-inset-top, 0px) + 12px)) !important;
-  inset-block-end: auto !important;
+.toadal-companion .companion-toggle {
+  width: 142px;
+  height: 142px;
+  min-width: 142px;
+  min-height: 142px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+}
+
+.toadal-companion[data-dragging="true"] .companion-toggle { cursor: grabbing; }
+.toadal-companion .companion-image {
+  display: block;
+  width: 142px;
+  height: 142px;
+  max-height: 142px;
+  margin: 0;
+  object-fit: contain;
+  pointer-events: none;
+  transform-origin: 50% 75%;
+  transition: transform 180ms ease, filter 180ms ease;
+  filter: drop-shadow(0 8px 7px rgb(62 27 7 / 32%));
+}
+
+.toadal-companion[data-companion-current-reaction] .companion-image {
+  transform: scale(1.045);
+}
+
+.toadal-companion .companion-panel {
+  position: fixed !important;
+  z-index: 1001;
+  width: min(250px, calc(100vw - 24px)) !important;
+  max-height: min(48vh, 360px);
+  margin: 0;
 }
 
 @media (max-width: 760px) {
-  body:has(#contact-category) .toadal-companion {
-    inset-block-start: max(112px, calc(env(safe-area-inset-top, 0px) + 32px)) !important;
-  }
-}
-
-/* Beat the legacy Home-specific utility-icon sizing; keep Toadal appreciable. */
-main:has(.home-hero) > [data-studio-variant="companion"] .companion-toggle,
-main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
-  width: 96px;
-  height: 102px;
-}
-
-main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
-  max-height: 102px;
-}
-
-@media (max-width: 760px) {
-  main:has(.home-hero) > [data-studio-variant="companion"] .companion-toggle,
-  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
-    width: 82px;
-    height: 88px;
+  .toadal-companion,
+  main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
+    width: 110px;
+    left: var(--toadal-companion-x, calc(100vw - 122px)) !important;
+    top: var(--toadal-companion-y, calc(100vh - 122px)) !important;
   }
 
-  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
-    max-height: 88px;
+  .toadal-companion .companion-toggle {
+    width: 102px;
+    height: 106px;
+    min-width: 102px;
+    min-height: 106px;
+  }
+
+  .toadal-companion .companion-image {
+    width: 102px;
+    height: 106px;
+    max-height: 106px;
   }
 }
 
 @media (max-width: 360px) {
-  main:has(.home-hero) > [data-studio-variant="companion"] .companion-toggle,
-  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
-    width: 72px;
-    height: 78px;
+  .toadal-companion,
+  main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
+    width: 100px;
+    left: var(--toadal-companion-x, calc(100vw - 112px)) !important;
+    top: var(--toadal-companion-y, calc(100vh - 112px)) !important;
   }
 
-  main:has(.home-hero) > [data-studio-variant="companion"] .companion-image {
-    max-height: 78px;
+  .toadal-companion .companion-toggle {
+    width: 92px;
+    height: 96px;
+    min-width: 92px;
+    min-height: 96px;
+  }
+
+  .toadal-companion .companion-image {
+    width: 92px;
+    height: 96px;
+    max-height: 96px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toadal-companion .companion-image {
+    transition-duration: 0.01ms !important;
+    animation: none !important;
   }
 }

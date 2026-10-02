@@ -1,0 +1,1165 @@
+{
+  "schema": "toadal-feast.owner-visual-closure-browser-qa.v1",
+  "basePath": "/toadal-feast-web/",
+  "captures": [
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/home-1440x900.png",
+      "bytes": 1099238,
+      "description": "Home desktop"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/home-320x800.png",
+      "bytes": 293231,
+      "description": "Home narrow mobile (layout inspection)"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/home-390x844.png",
+      "bytes": 391212,
+      "description": "Home mobile"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/home-430x932.png",
+      "bytes": 461471,
+      "description": "Home large mobile"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/play-320x800.png",
+      "bytes": 215176,
+      "description": "Play mobile"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/toadal-profile-390x844.png",
+      "bytes": 307671,
+      "description": "Toadal profile mobile"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/search-1440x900.png",
+      "bytes": 356390,
+      "description": "Search desktop"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/search-390x844.png",
+      "bytes": 175572,
+      "description": "Search mobile"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/contact-390x844.png",
+      "bytes": 240649,
+      "description": "Contact mobile"
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-scroll-desktop.png",
+      "bytes": 1085487,
+      "description": "Toadal remains fixed while Home is scrolled (desktop)."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-scroll-mobile.png",
+      "bytes": 384649,
+      "description": "Toadal remains fixed while Home is scrolled (mobile)."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-scroll-large-mobile.png",
+      "bytes": 433171,
+      "description": "Toadal remains fixed while Home is scrolled (large-mobile)."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-reaction-world-hover.png",
+      "bytes": 1095075,
+      "description": "Real pointer hover on World nav changes Toadal reaction and artwork."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-reaction-world-touch-390x844.png",
+      "bytes": 210183,
+      "description": "Real browser touch on the World discovery card changes Toadal reaction and artwork."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-position-desktop-1440x900-upper-left.png",
+      "bytes": 1073237,
+      "description": "Toadal manually dragged to upper-left at desktop-1440x900."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-position-large-mobile-430x932-upper-right.png",
+      "bytes": 434044,
+      "description": "Toadal manually dragged to upper-right at large-mobile-430x932."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-position-mobile-390x844-lower-left.png",
+      "bytes": 396994,
+      "description": "Toadal manually dragged to lower-left at mobile-390x844."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-position-narrow-mobile-320x800-center.png",
+      "bytes": 267632,
+      "description": "Toadal manually dragged to center at narrow-mobile-320x800."
+    },
+    {
+      "file": "docs/review/companion-floating-architecture-20261001/companion-position-reaction-preserved.png",
+      "bytes": 1251503,
+      "description": "World hover reaction leaves manually selected x/y unchanged."
+    }
+  ],
+  "checks": {
+    "visible-1440": {
+      "position": "fixed",
+      "visible": true,
+      "width": 142,
+      "height": 142,
+      "imageVisible": true
+    },
+    "hero-geometry-1440": {
+      "art": {
+        "x": 851.890625,
+        "y": 84.4000015258789,
+        "right": 1311.890625,
+        "bottom": 474.4000015258789,
+        "width": 460,
+        "height": 390
+      },
+      "actions": [
+        {
+          "text": "Explore browser games\n→",
+          "x": 87.828125,
+          "y": 332.375,
+          "right": 285.390625,
+          "bottom": 372.375,
+          "opaqueOverlapPixels": 0
+        },
+        {
+          "text": "Discover the full adventure",
+          "x": 293.390625,
+          "y": 332.375,
+          "right": 497.3125,
+          "bottom": 372.375,
+          "opaqueOverlapPixels": 0
+        }
+      ]
+    },
+    "overlap-1440": {
+      "primaryCtaOverlap": []
+    },
+    "visible-320": {
+      "position": "fixed",
+      "visible": true,
+      "width": 92,
+      "height": 96,
+      "imageVisible": true
+    },
+    "hero-geometry-320": {
+      "art": {
+        "x": 192,
+        "y": 506.3125,
+        "right": 312,
+        "bottom": 632,
+        "width": 120,
+        "height": 125.6875
+      },
+      "actions": [
+        {
+          "text": "Explore browser games\n→",
+          "x": 31,
+          "y": 421.265625,
+          "right": 252.875,
+          "bottom": 463.265625,
+          "opaqueOverlapPixels": 0
+        },
+        {
+          "text": "Discover the full adventure",
+          "x": 31,
+          "y": 468.265625,
+          "right": 252.875,
+          "bottom": 510.265625,
+          "opaqueOverlapPixels": 0
+        }
+      ]
+    },
+    "overlap-320": {
+      "primaryCtaOverlap": []
+    },
+    "visible-390": {
+      "position": "fixed",
+      "visible": true,
+      "width": 102,
+      "height": 106,
+      "imageVisible": true
+    },
+    "hero-geometry-390": {
+      "art": {
+        "x": 254,
+        "y": 478.9375,
+        "right": 382,
+        "bottom": 613,
+        "width": 128,
+        "height": 134.0625
+      },
+      "actions": [
+        {
+          "text": "Explore browser games\n→",
+          "x": 31,
+          "y": 429.015625,
+          "right": 192.5,
+          "bottom": 463.015625,
+          "opaqueOverlapPixels": 0
+        },
+        {
+          "text": "Discover the full adventure",
+          "x": 197.5,
+          "y": 429.015625,
+          "right": 359,
+          "bottom": 463.015625,
+          "opaqueOverlapPixels": 0
+        }
+      ]
+    },
+    "overlap-390": {
+      "primaryCtaOverlap": []
+    },
+    "visible-430": {
+      "position": "fixed",
+      "visible": true,
+      "width": 102,
+      "height": 106,
+      "imageVisible": true
+    },
+    "hero-geometry-430": {
+      "art": {
+        "x": 286.5625,
+        "y": 471.140625,
+        "right": 422,
+        "bottom": 613,
+        "width": 135.4375,
+        "height": 141.859375
+      },
+      "actions": [
+        {
+          "text": "Explore browser games\n→",
+          "x": 31,
+          "y": 432.6875,
+          "right": 212.5,
+          "bottom": 466.6875,
+          "opaqueOverlapPixels": 0
+        },
+        {
+          "text": "Discover the full adventure",
+          "x": 217.5,
+          "y": 432.6875,
+          "right": 399,
+          "bottom": 466.6875,
+          "opaqueOverlapPixels": 0
+        }
+      ]
+    },
+    "overlap-430": {
+      "primaryCtaOverlap": []
+    },
+    "route-/characters/toadal/-390": {
+      "path": "/toadal-feast-web/characters/toadal/",
+      "title": "Toadal - Character Profile - TOADAL FEAST",
+      "overflow": false,
+      "companionFixed": true,
+      "companionLoaded": true,
+      "buttonVisible": true,
+      "buttonWidth": 102,
+      "overlaps": {
+        "primaryCtaOverlap": []
+      }
+    },
+    "route-/search/-1440": {
+      "path": "/toadal-feast-web/search/",
+      "title": "Search · TOADAL FEAST",
+      "overflow": false,
+      "companionFixed": true,
+      "companionLoaded": true,
+      "buttonVisible": true,
+      "buttonWidth": 142,
+      "overlaps": {
+        "primaryCtaOverlap": []
+      }
+    },
+    "route-/search/-390": {
+      "path": "/toadal-feast-web/search/",
+      "title": "Search · TOADAL FEAST",
+      "overflow": false,
+      "companionFixed": true,
+      "companionLoaded": true,
+      "buttonVisible": true,
+      "buttonWidth": 102,
+      "overlaps": {
+        "primaryCtaOverlap": []
+      }
+    },
+    "route-/contact/-390": {
+      "path": "/toadal-feast-web/contact/",
+      "title": "Contact & feedback - TOADAL FEAST",
+      "overflow": false,
+      "companionFixed": true,
+      "companionLoaded": true,
+      "buttonVisible": true,
+      "buttonWidth": 102,
+      "overlaps": {
+        "primaryCtaOverlap": []
+      }
+    },
+    "scroll-desktop": {
+      "scrollHeight": 1488,
+      "states": [
+        {
+          "scrollY": 0,
+          "position": "fixed",
+          "rect": {
+            "x": 1286,
+            "y": 566,
+            "width": 142,
+            "height": 142,
+            "right": 1428,
+            "bottom": 708
+          },
+          "image": true,
+          "within": true
+        },
+        {
+          "scrollY": 165,
+          "position": "fixed",
+          "rect": {
+            "x": 1286,
+            "y": 566,
+            "width": 142,
+            "height": 142,
+            "right": 1428,
+            "bottom": 708
+          },
+          "image": true,
+          "within": true
+        },
+        {
+          "scrollY": 296,
+          "position": "fixed",
+          "rect": {
+            "x": 1286,
+            "y": 566,
+            "width": 142,
+            "height": 142,
+            "right": 1428,
+            "bottom": 708
+          },
+          "image": true,
+          "within": true
+        }
+      ],
+      "overlapsAtPosition": [
+        {
+          "primaryCtaOverlap": []
+        },
+        {
+          "primaryCtaOverlap": []
+        },
+        {
+          "primaryCtaOverlap": []
+        }
+      ],
+      "stable": true
+    },
+    "scroll-overlap-desktop": {
+      "primaryCtaOverlap": []
+    },
+    "scroll-mobile": {
+      "scrollHeight": 3626,
+      "states": [
+        {
+          "scrollY": 0,
+          "position": "fixed",
+          "rect": {
+            "x": 276,
+            "y": 546,
+            "width": 102,
+            "height": 106,
+            "right": 378,
+            "bottom": 652
+          },
+          "image": true,
+          "within": true
+        },
+        {
+          "scrollY": 83,
+          "position": "fixed",
+          "rect": {
+            "x": 276,
+            "y": 546,
+            "width": 102,
+            "height": 106,
+            "right": 378,
+            "bottom": 652
+          },
+          "image": true,
+          "within": true
+        },
+        {
+          "scrollY": 180,
+          "position": "fixed",
+          "rect": {
+            "x": 276,
+            "y": 546,
+            "width": 102,
+            "height": 106,
+            "right": 378,
+            "bottom": 652
+          },
+          "image": true,
+          "within": true
+        }
+      ],
+      "overlapsAtPosition": [
+        {
+          "primaryCtaOverlap": []
+        },
+        {
+          "primaryCtaOverlap": []
+        },
+        {
+          "primaryCtaOverlap": []
+        }
+      ],
+      "stable": true
+    },
+    "scroll-overlap-mobile": {
+      "primaryCtaOverlap": []
+    },
+    "scroll-large-mobile": {
+      "scrollHeight": 3595,
+      "states": [
+        {
+          "scrollY": 0,
+          "position": "fixed",
+          "rect": {
+            "x": 316,
+            "y": 634,
+            "width": 102,
+            "height": 106,
+            "right": 418,
+            "bottom": 740
+          },
+          "image": true,
+          "within": true
+        },
+        {
+          "scrollY": 84,
+          "position": "fixed",
+          "rect": {
+            "x": 316,
+            "y": 634,
+            "width": 102,
+            "height": 106,
+            "right": 418,
+            "bottom": 740
+          },
+          "image": true,
+          "within": true
+        },
+        {
+          "scrollY": 182,
+          "position": "fixed",
+          "rect": {
+            "x": 316,
+            "y": 634,
+            "width": 102,
+            "height": 106,
+            "right": 418,
+            "bottom": 740
+          },
+          "image": true,
+          "within": true
+        }
+      ],
+      "overlapsAtPosition": [
+        {
+          "primaryCtaOverlap": []
+        },
+        {
+          "primaryCtaOverlap": []
+        },
+        {
+          "primaryCtaOverlap": []
+        }
+      ],
+      "stable": true
+    },
+    "scroll-overlap-large-mobile": {
+      "primaryCtaOverlap": []
+    },
+    "hoverReaction": {
+      "passed": true,
+      "reaction": "curious",
+      "image": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/world-map.webp"
+    },
+    "touchReaction": {
+      "passed": true,
+      "reaction": "curious",
+      "image": "/toadal-feast-web/assets/images/characters/companion/runtime-v1/world-map.webp"
+    },
+    "togglePersistence": {
+      "before": {
+        "expanded": "false",
+        "hidden": true,
+        "pref": null
+      },
+      "toggled": {
+        "expanded": "true",
+        "hidden": false,
+        "pref": "false",
+        "imageVisible": true
+      },
+      "persisted": {
+        "expanded": "true",
+        "hidden": false,
+        "pref": "false",
+        "imageVisible": true
+      }
+    },
+    "dragViewportMatrix": {
+      "desktop-1440x900": {
+        "firstUse": {
+          "x": 1276,
+          "y": 566
+        },
+        "targets": [
+          {
+            "name": "upper-left",
+            "x": 16,
+            "y": 16,
+            "width": 152,
+            "height": 142,
+            "button": {
+              "x": 24.77169418334961,
+              "y": 11.771692276000977,
+              "width": 144.45660400390625,
+              "height": 144.45660400390625
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 16
+            },
+            "overflow": false
+          },
+          {
+            "name": "upper-right",
+            "x": 1272,
+            "y": 16,
+            "width": 152,
+            "height": 142,
+            "button": {
+              "x": 1280.771728515625,
+              "y": 11.771692276000977,
+              "width": 144.45654296875,
+              "height": 144.45660400390625
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 1272,
+              "y": 16
+            },
+            "overflow": false
+          },
+          {
+            "name": "lower-left",
+            "x": 16,
+            "y": 742,
+            "width": 152,
+            "height": 142,
+            "button": {
+              "x": 24.77169418334961,
+              "y": 737.7716674804688,
+              "width": 144.45660400390625,
+              "height": 144.45660400390625
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 742
+            },
+            "overflow": false
+          },
+          {
+            "name": "center",
+            "x": 644,
+            "y": 379,
+            "width": 152,
+            "height": 142,
+            "button": {
+              "x": 652.7716674804688,
+              "y": 374.7716979980469,
+              "width": 144.45660400390625,
+              "height": 144.45657348632812
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 644,
+              "y": 379
+            },
+            "overflow": false
+          }
+        ],
+        "tap": {
+          "before": null,
+          "after": "false"
+        }
+      },
+      "large-mobile-430x932": {
+        "firstUse": {
+          "x": 308,
+          "y": 634
+        },
+        "targets": [
+          {
+            "name": "upper-left",
+            "x": 16,
+            "y": 16,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 23.08279037475586,
+              "y": 12.117999076843262,
+              "width": 103.83442687988281,
+              "height": 107.76400756835938
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 16
+            },
+            "overflow": false
+          },
+          {
+            "name": "upper-right",
+            "x": 304,
+            "y": 16,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 311.0827941894531,
+              "y": 12.117999076843262,
+              "width": 103.83441162109375,
+              "height": 107.76400756835938
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 304,
+              "y": 16
+            },
+            "overflow": false
+          },
+          {
+            "name": "lower-left",
+            "x": 16,
+            "y": 810,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 23.08279037475586,
+              "y": 806.1179809570312,
+              "width": 103.83442687988281,
+              "height": 107.7640380859375
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 810
+            },
+            "overflow": false
+          },
+          {
+            "name": "center",
+            "x": 160,
+            "y": 413,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 167.08279418945312,
+              "y": 409.1180114746094,
+              "width": 103.83441162109375,
+              "height": 107.76400756835938
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 160,
+              "y": 413
+            },
+            "overflow": false
+          }
+        ],
+        "tap": {
+          "before": null,
+          "after": "false"
+        }
+      },
+      "mobile-390x844": {
+        "firstUse": {
+          "x": 268,
+          "y": 546
+        },
+        "targets": [
+          {
+            "name": "upper-left",
+            "x": 16,
+            "y": 16,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 23.08279037475586,
+              "y": 12.117999076843262,
+              "width": 103.83442687988281,
+              "height": 107.76400756835938
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 16
+            },
+            "overflow": false
+          },
+          {
+            "name": "upper-right",
+            "x": 264,
+            "y": 16,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 271.0827941894531,
+              "y": 12.117999076843262,
+              "width": 103.83441162109375,
+              "height": 107.76400756835938
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 264,
+              "y": 16
+            },
+            "overflow": false
+          },
+          {
+            "name": "center",
+            "x": 140,
+            "y": 369,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 147.08279418945312,
+              "y": 365.1180114746094,
+              "width": 103.83441162109375,
+              "height": 107.76400756835938
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 140,
+              "y": 369
+            },
+            "overflow": false
+          },
+          {
+            "name": "lower-left",
+            "x": 16,
+            "y": 722,
+            "width": 110,
+            "height": 106,
+            "button": {
+              "x": 24,
+              "y": 722,
+              "width": 102,
+              "height": 106
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 722
+            },
+            "overflow": false
+          }
+        ],
+        "tap": {
+          "before": null,
+          "after": "false"
+        }
+      },
+      "narrow-mobile-320x800": {
+        "firstUse": {
+          "x": 208,
+          "y": 512
+        },
+        "targets": [
+          {
+            "name": "upper-right",
+            "x": 204,
+            "y": 16,
+            "width": 100,
+            "height": 96,
+            "button": {
+              "x": 211.16929626464844,
+              "y": 12.204500198364258,
+              "width": 93.66142272949219,
+              "height": 97.59100341796875
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 204,
+              "y": 16
+            },
+            "overflow": false
+          },
+          {
+            "name": "lower-left",
+            "x": 16,
+            "y": 688,
+            "width": 100,
+            "height": 96,
+            "button": {
+              "x": 23.16929054260254,
+              "y": 684.2045288085938,
+              "width": 93.66142272949219,
+              "height": 97.59100341796875
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 688
+            },
+            "overflow": false
+          },
+          {
+            "name": "center",
+            "x": 110,
+            "y": 352,
+            "width": 100,
+            "height": 96,
+            "button": {
+              "x": 117.1692886352539,
+              "y": 348.2044982910156,
+              "width": 93.66143035888672,
+              "height": 97.59100341796875
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 110,
+              "y": 352
+            },
+            "overflow": false
+          },
+          {
+            "name": "upper-left",
+            "x": 16,
+            "y": 16,
+            "width": 100,
+            "height": 96,
+            "button": {
+              "x": 24,
+              "y": 16,
+              "width": 92,
+              "height": 96
+            },
+            "minimized": null,
+            "reaction": "friendly",
+            "dragging": null,
+            "saved": {
+              "version": 1,
+              "x": 16,
+              "y": 16
+            },
+            "overflow": false
+          }
+        ],
+        "tap": {
+          "before": null,
+          "after": "false"
+        }
+      }
+    },
+    "bubblePlacement": [
+      {
+        "name": "upper-left",
+        "position": {
+          "x": 16,
+          "y": 16
+        },
+        "bubble": {
+          "hidden": false,
+          "placement": "below-right",
+          "rect": {
+            "left": 181,
+            "top": 168,
+            "right": 431,
+            "bottom": 259.4375,
+            "width": 250,
+            "height": 91.4375
+          },
+          "within": true
+        }
+      },
+      {
+        "name": "upper-right",
+        "position": {
+          "x": 1272,
+          "y": 16
+        },
+        "bubble": {
+          "hidden": false,
+          "placement": "below-left",
+          "rect": {
+            "left": 1019,
+            "top": 168,
+            "right": 1269,
+            "bottom": 259.4375,
+            "width": 250,
+            "height": 91.4375
+          },
+          "within": true
+        }
+      },
+      {
+        "name": "lower-left",
+        "position": {
+          "x": 16,
+          "y": 742
+        },
+        "bubble": {
+          "hidden": false,
+          "placement": "above-right",
+          "rect": {
+            "left": 181,
+            "top": 634,
+            "right": 431,
+            "bottom": 725.4375,
+            "width": 250,
+            "height": 91.4375
+          },
+          "within": true
+        }
+      },
+      {
+        "name": "center",
+        "position": {
+          "x": 644,
+          "y": 379
+        },
+        "bubble": {
+          "hidden": false,
+          "placement": "above-right",
+          "rect": {
+            "left": 809,
+            "top": 271,
+            "right": 1059,
+            "bottom": 362.4375,
+            "width": 250,
+            "height": 91.4375
+          },
+          "within": true
+        }
+      }
+    ],
+    "pointerCancel": {
+      "origin": {
+        "x": 1276,
+        "y": 566
+      },
+      "during": {
+        "x": 1136,
+        "y": 466
+      },
+      "after": {
+        "x": 1276,
+        "y": 566,
+        "dragging": null
+      }
+    },
+    "lostPointerCapture": {
+      "before": {
+        "x": 1276,
+        "y": 566
+      },
+      "during": {
+        "x": 1156,
+        "y": 476
+      },
+      "after": {
+        "x": 1276,
+        "y": 566,
+        "dragging": null
+      }
+    },
+    "resizeOrientationAndReducedMotion": {
+      "beforeResize": {
+        "x": 1276,
+        "y": 746
+      },
+      "afterResize": {
+        "x": 208,
+        "y": 692
+      },
+      "afterOrientation": {
+        "x": 208,
+        "y": 166
+      },
+      "reducedMotion": {
+        "transition": [
+          0.00001
+        ],
+        "animation": "none"
+      }
+    },
+    "manualPositionSurvivesScroll": {
+      "before": {
+        "x": 16,
+        "y": 16
+      },
+      "after": {
+        "x": 16,
+        "y": 16
+      }
+    },
+    "reactionPreservesPosition": {
+      "reaction": "curious",
+      "before": {
+        "x": 16,
+        "y": 16
+      },
+      "after": {
+        "x": 16,
+        "y": 16
+      }
+    },
+    "minimizeRestorePosition": {
+      "position": {
+        "x": 16,
+        "y": 16
+      },
+      "minimized": "true",
+      "minimizedAfterReload": {
+        "x": 16,
+        "y": 16,
+        "preference": "true"
+      },
+      "restored": {
+        "x": 16,
+        "y": 16,
+        "preference": "false"
+      }
+    },
+    "routeCoverage": [
+      {
+        "path": "/toadal-feast-web/404.html",
+        "count": 1,
+        "fixed": true,
+        "ready": "true",
+        "x": 16,
+        "y": 16,
+        "width": 110,
+        "height": 106,
+        "overflow": false,
+        "iframe": false
+      },
+      {
+        "path": "/toadal-feast-web/player/wicked-bites/",
+        "count": 1,
+        "fixed": true,
+        "ready": "true",
+        "x": 16,
+        "y": 16,
+        "width": 110,
+        "height": 106,
+        "overflow": false,
+        "iframe": true
+      },
+      {
+        "path": "/toadal-feast-web/feast-pass/",
+        "count": 1,
+        "fixed": true,
+        "ready": "true",
+        "x": 16,
+        "y": 16,
+        "width": 110,
+        "height": 106,
+        "overflow": false,
+        "iframe": false
+      },
+      {
+        "path": "/toadal-feast-web/feast-pass/quests/",
+        "count": 1,
+        "fixed": true,
+        "ready": "true",
+        "x": 16,
+        "y": 16,
+        "width": 110,
+        "height": 106,
+        "overflow": false,
+        "iframe": false
+      },
+      {
+        "path": "/toadal-feast-web/feast-pass/rewards/",
+        "count": 1,
+        "fixed": true,
+        "ready": "true",
+        "x": 16,
+        "y": 16,
+        "width": 110,
+        "height": 106,
+        "overflow": false,
+        "iframe": false
+      },
+      {
+        "path": "/toadal-feast-web/profile/",
+        "count": 1,
+        "fixed": true,
+        "ready": "true",
+        "x": 16,
+        "y": 16,
+        "width": 110,
+        "height": 106,
+        "overflow": false,
+        "iframe": false
+      }
+    ]
+  },
+  "status": "PASS"
+}

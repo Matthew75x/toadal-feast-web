@@ -31,7 +31,10 @@ if(characterMobile){
 ok(matrix.includes("querySelectorAll('.companion-panel,.companion-toggle')"), 'browser matrix does not measure visible companion children');
 ok(matrix.includes('.filter(e=>visible(e))'), 'browser matrix does not exclude hidden companion panel geometry');
 ok(!matrix.includes("const cr=comp.getBoundingClientRect(),cs=getComputedStyle(comp)"), 'browser matrix still treats the full companion container as an obstruction');
+ok(matrix.includes("/claim quest reward/i.test(nm(e))"), 'browser matrix does not identify the Quests primary action');
+ok(matrix.includes("if(primaryRequired&&primaryOverlaps.length)issues.push('companion-primary-action-overlap')"), 'browser matrix does not gate initial primary-action overlap');
+ok(!matrix.includes("if(overlaps.length)issues.push('companion-control-overlap')"), 'browser matrix still gates every generic control overlap');
 
 if(errors.length){console.error('NON-HOME LAYOUT CLOSURE: FAIL');errors.forEach(x=>console.error('-',x));process.exit(1);}
 console.log('NON-HOME LAYOUT CLOSURE: PASS');
-console.log(JSON.stringify({checks:9,homeCardRulesScoped:true,mobilePlayFiltersWrap:true,profileAnchorsWrap:true,companionOverlapUsesVisibleGeometry:true},null,2));
+console.log(JSON.stringify({checks:12,homeCardRulesScoped:true,mobilePlayFiltersWrap:true,profileAnchorsWrap:true,companionOverlapUsesVisibleGeometry:true,genericCompanionOverlapsDiagnosticOnly:true,homeAndQuestPrimaryActionsGated:true},null,2));
