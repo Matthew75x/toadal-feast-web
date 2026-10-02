@@ -26,6 +26,32 @@ The current browser-player host already accepts both messages in `collections/ad
 
 Therefore the website already has the correct score-ingress boundary.
 
+### Wicked Bites compatibility bridge is already score-capable
+
+Current file:
+`studio-project/toadal-feast-website/reference/public/games/wicked-bites/toadal-bridge.js`
+
+It already:
+- reads `#wbScore`;
+- emits `game:score` when the score text changes;
+- detects `#wbResult`;
+- emits `game:complete` once when the result becomes visible;
+- emits `game:started`, pause/resume and error state;
+- validates parent origin before posting.
+
+The bridge currently sends the score from DOM text, so `payload.score` may be a string.
+
+The website score adapter must normalize an exact finite non-negative integer value before persistence. Do not persist the raw bridge payload.
+
+For Wicked Bites V1 local score records, factual context available from the bridge is primarily:
+- `gameId = "wicked-bites"`
+- score
+- completion time owned by the website
+
+Do not invent character/ruleset/mode metadata when the bridge did not send it. A website label such as `preview` may describe the public feature state, but should not masquerade as cartridge-emitted gameplay metadata.
+
+No cartridge rewrite is required merely to make local Wicked Bites score capture work.
+
 ### Game donor
 `Matthew75x/Toadal-Feast-Development`
 
