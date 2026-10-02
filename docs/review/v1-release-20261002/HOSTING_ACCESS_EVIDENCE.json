@@ -1,0 +1,33 @@
+{
+  "schema": "toadal-feast.v1-hosting-access-evidence.v1",
+  "productionProbe": {
+    "observedAt": "2026-10-02T08:04:22.931Z",
+    "url": "https://toadalfeast.com/",
+    "status": 200,
+    "server": "cloudflare",
+    "bytes": 22331,
+    "sha256": "12f045e849b6dffac2cf62796e8c4341c4ec3d7c82f615cb8cd789c2573b214a",
+    "title": "TOADAL GAMES — Different worlds. One home."
+  },
+  "dnsNameservers": ["katja.ns.cloudflare.com", "zod.ns.cloudflare.com"],
+  "pagesApi": {
+    "repository": "Matthew75x/toadal-feast-web",
+    "buildType": "workflow",
+    "cname": null,
+    "htmlUrl": "https://matthew75x.github.io/toadal-feast-web/",
+    "sourceBranchMetadata": "main",
+    "interpretation": "Workflow job explicitly runs only on staging/live-visual; Pages source metadata is not evidence that main deploys production."
+  },
+  "availableDeploymentEnvironment": "github-pages",
+  "repositoryActionsSecretNames": [],
+  "productionWorkflowPresent": false,
+  "productionDeploymentEnvironmentVariablesFound": false,
+  "localWranglerOrNetlifyLoginFound": false,
+  "authenticatedHostBrowserSurfaceFound": false,
+  "ownedSitesItems": 0,
+  "editableSitesItems": 0,
+  "cloudflareNetlifyPluginSearchItems": 0,
+  "mainPolicy": "Reviewed baseline, not a GitHub Pages or production deployment source under existing repository policy.",
+  "externalDependency": "Authenticated deployment access and the existing target/project binding for the host serving toadalfeast.com. Cloudflare proxy/DNS alone does not identify or authorize the origin deployment.",
+  "credentialOrDnsMutationPerformed": false
+}

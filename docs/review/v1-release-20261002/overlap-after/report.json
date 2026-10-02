@@ -1,0 +1,180 @@
+{
+  "schema": "toadal-feast.v1-companion-controls-qa.v1",
+  "dist": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\dist",
+  "basePath": "/toadal-feast-web/",
+  "caseTimeoutSeconds": 30,
+  "cases": [
+    {
+      "name": "play-desktop",
+      "route": "/play/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "beforeClick": {
+        "target": {
+          "left": 1280.359375,
+          "top": 596.25,
+          "right": 1380.359375,
+          "bottom": 640.25,
+          "width": 100,
+          "height": 44
+        },
+        "targetLabel": "Public 0",
+        "intersections": [
+          {
+            "part": "companion-toggle",
+            "area": 0,
+            "rect": {
+              "left": 1286,
+              "top": 75,
+              "right": 1428,
+              "bottom": 217,
+              "width": 142,
+              "height": 142
+            }
+          }
+        ],
+        "center": {
+          "x": 1330.359375,
+          "y": 618.25,
+          "topTag": "BUTTON",
+          "topClass": "game-tab",
+          "isTarget": true,
+          "inCompanion": false
+        },
+        "companionRect": {
+          "left": 1276,
+          "top": 75,
+          "right": 1428,
+          "bottom": 217,
+          "width": 152,
+          "height": 142
+        },
+        "docked": null
+      },
+      "beforeClickScreenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\overlap-after\\play-desktop.png",
+      "actionAfterClick": {
+        "pressed": "true",
+        "visibleGames": 0,
+        "emptyVisible": true
+      },
+      "elapsedSeconds": 0.907,
+      "status": "PASS"
+    },
+    {
+      "name": "search-tablet",
+      "route": "/search/",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "beforeClick": {
+        "target": {
+          "left": 628.828125,
+          "top": 688.046875,
+          "right": 723.234375,
+          "bottom": 736.046875,
+          "width": 94.40625,
+          "height": 48
+        },
+        "targetLabel": "Search",
+        "intersections": [
+          {
+            "part": "companion-panel",
+            "area": 0,
+            "rect": {
+              "left": 352,
+              "top": 231,
+              "right": 602,
+              "bottom": 322.4375,
+              "width": 250,
+              "height": 91.4375
+            }
+          },
+          {
+            "part": "companion-toggle",
+            "area": 0,
+            "rect": {
+              "left": 614,
+              "top": 77,
+              "right": 756,
+              "bottom": 219,
+              "width": 142,
+              "height": 142
+            }
+          }
+        ],
+        "center": {
+          "x": 676.03125,
+          "y": 712.046875,
+          "topTag": "BUTTON",
+          "topClass": "button-link button-link--primary",
+          "isTarget": true,
+          "inCompanion": false
+        },
+        "companionRect": {
+          "left": 604,
+          "top": 77,
+          "right": 756,
+          "bottom": 219,
+          "width": 152,
+          "height": 142
+        },
+        "docked": null
+      },
+      "beforeClickScreenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\overlap-after\\search-tablet.png",
+      "actionAfterClick": {
+        "url": "http://127.0.0.1:63397/toadal-feast-web/search/?q=Toadal",
+        "status": "8 local results for \u201cToadal\u201d.",
+        "resultCards": 8
+      },
+      "elapsedSeconds": 0.323,
+      "status": "PASS"
+    },
+    {
+      "name": "manual-drag-preservation",
+      "route": "/play/",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "beforeInvalidation": {
+        "rect": {
+          "left": 89,
+          "top": 109,
+          "right": 241,
+          "bottom": 251
+        },
+        "saved": {
+          "x": 89,
+          "y": 109,
+          "manual": true
+        }
+      },
+      "afterResizeAndScroll": {
+        "rect": {
+          "left": 89,
+          "top": 109,
+          "right": 241,
+          "bottom": 251
+        },
+        "saved": {
+          "x": 89,
+          "y": 109,
+          "manual": true
+        }
+      },
+      "screenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\overlap-after\\manual-drag-preserved.png",
+      "status": "PASS",
+      "elapsedSeconds": 1.026
+    }
+  ],
+  "failures": [],
+  "summary": {
+    "status": "PASS",
+    "cases": 3,
+    "passed": 3,
+    "failed": 0
+  }
+}

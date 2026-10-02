@@ -131,6 +131,7 @@
       var dock = !drag || !drag.moved ? mobileDock() : null;
       setDock(dock);
       var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
+      if (!dock && !manualPosition && !drag) next = avoidControls(next);
       x = next.x;
       y = next.y;
       root.style.setProperty('--toadal-companion-x', x + 'px');
@@ -141,6 +142,44 @@
       root.setAttribute('data-position-y', String(y));
       placePanel();
       if (persist) persistPosition();
+    }
+
+    function avoidControls(preferred) {
+      var view = viewport();
+      var width = root.offsetWidth || button.offsetWidth;
+      var height = root.offsetHeight || button.offsetHeight;
+      var header = document.querySelector('.site-header');
+      var contentTop = header ? Math.max(view.top, header.getBoundingClientRect().bottom) : view.top;
+      var controls = Array.from(document.querySelectorAll('a[href], button, input, select, textarea, [role="button"]')).filter(function (control) {
+        if (root.contains(control)) return false;
+        var style = getComputedStyle(control);
+        var rect = control.getBoundingClientRect();
+        return style.visibility !== 'hidden' && style.display !== 'none' && style.opacity !== '0' &&
+          rect.width > 0 && rect.height > 0 && rect.bottom > contentTop && rect.top < view.top + view.height &&
+          rect.right > view.left && rect.left < view.left + view.width;
+      }).map(function (control) { return control.getBoundingClientRect(); });
+      function collisionArea(position) {
+        return controls.reduce(function (area, rect) {
+          var overlapWidth = Math.max(0, Math.min(position.x + width + 8, rect.right) - Math.max(position.x - 8, rect.left));
+          var overlapHeight = Math.max(0, Math.min(position.y + height + 8, rect.bottom) - Math.max(position.y - 8, rect.top, contentTop));
+          return area + overlapWidth * overlapHeight;
+        }, 0);
+      }
+      if (collisionArea(preferred) === 0) return preferred;
+      var right = view.left + view.width - width - EDGE_GAP;
+      var left = view.left + EDGE_GAP;
+      var bottom = view.top + view.height - height - EDGE_GAP;
+      var top = contentTop + EDGE_GAP;
+      var candidates = [preferred, { x: right, y: bottom }, { x: left, y: bottom }, { x: right, y: top }, { x: left, y: top }];
+      var best = preferred;
+      var bestArea = collisionArea(preferred);
+      for (var i = 1; i < candidates.length; i += 1) {
+        var candidate = clampPosition(candidates[i].x, candidates[i].y);
+        var area = collisionArea(candidate);
+        if (area < bestArea) { best = candidate; bestArea = area; }
+        if (bestArea === 0) break;
+      }
+      return best;
     }
 
     function defaultPosition() {
@@ -277,8 +316,18 @@
     window.addEventListener('resize', clampAfterViewportChange, { passive: true });
     window.addEventListener('orientationchange', clampAfterViewportChange, { passive: true });
     window.addEventListener('scroll', function () {
-      if (!manualPosition && !drag && window.innerWidth <= 600) applyPosition(x, y, false);
+      if (!manualPosition && !drag) schedulePosition(x, y, false);
     }, { passive: true });
+    window.addEventListener('load', function () {
+      if (!manualPosition && !drag) schedulePosition(x, y, false);
+    }, { once: true });
+    if (window.ResizeObserver) {
+      var layoutObserver = new ResizeObserver(function () {
+        if (!manualPosition && !drag) schedulePosition(x, y, false);
+      });
+      var main = document.querySelector('main');
+      if (main) layoutObserver.observe(main);
+    }
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', clampAfterViewportChange, { passive: true });
       window.visualViewport.addEventListener('scroll', clampAfterViewportChange, { passive: true });

@@ -1,0 +1,326 @@
+{
+  "summary": {
+    "schema": "toadal-feast.owner-preview-gate.v1",
+    "status": "PASS",
+    "repo": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002",
+    "basePath": "/toadal-feast-web/",
+    "steps": [
+      {
+        "name": "integrated-node-48",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 1.54
+      },
+      {
+        "name": "home-visual-contract",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "navigation-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.05
+      },
+      {
+        "name": "character-registry",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.05
+      },
+      {
+        "name": "gated-ecosystem",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.05
+      },
+      {
+        "name": "manifest",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.05
+      },
+      {
+        "name": "search-discovery",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.05
+      },
+      {
+        "name": "nonhome-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "visual-asset-authority",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.14
+      },
+      {
+        "name": "nonhome-layout-closure",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.05
+      },
+      {
+        "name": "cartridge-isolation",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.37
+      },
+      {
+        "name": "render-freshness",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.07
+      },
+      {
+        "name": "pages-basepath",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.07
+      },
+      {
+        "name": "static-links",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.26
+      },
+      {
+        "name": "staging-robots",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "browser-matrix",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 28.44
+      }
+    ],
+    "passed": 16,
+    "failed": 0
+  },
+  "details": [
+    {
+      "name": "integrated-node-48",
+      "command": [
+        "node",
+        "--test",
+        "scripts/stories-publishing.test.mjs",
+        "scripts/story-content.test.mjs",
+        "scripts/wo001-pages-basepath.test.mjs",
+        "scripts/wo002-contract.test.mjs",
+        "scripts/guest-progression.test.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 1.54,
+      "stdout": "TAP version 13\n# Subtest: uses the exact four scoped keys and safe guest defaults\nok 1 - uses the exact four scoped keys and safe guest defaults\n  ---\n  duration_ms: 4.8698\n  type: 'test'\n  ...\n# Subtest: persists events and state across store reloads; route event is idempotent\nok 2 - persists events and state across store reloads; route event is idempotent\n  ---\n  duration_ms: 1.7325\n  type: 'test'\n  ...\n# Subtest: malformed JSON falls back safely with diagnostics and is not overwritten just by reading\nok 3 - malformed JSON falls back safely with diagnostics and is not overwritten just by reading\n  ---\n  duration_ms: 0.4616\n  type: 'test'\n  ...\n# Subtest: migrates missing legacy fields and preserves unknown fields on the same schema version\nok 4 - migrates missing legacy fields and preserves unknown fields on the same schema version\n  ---\n  duration_ms: 0.8756\n  type: 'test'\n  ...\n# Subtest: future schema is safe to read and never overwritten by progression writes\nok 5 - future schema is safe to read and never overwritten by progression writes\n  ---\n  duration_ms: 0.4425\n  type: 'test'\n  ...\n# Subtest: quest rewards require completion and are claimed once without direct score writes\nok 6 - quest rewards require completion and are claimed once without direct score writes\n  ---\n  duration_ms: 1.5513\n  type: 'test'\n  ...\n# Subtest: UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days\nok 7 - UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days\n  ---\n  duration_ms: 0.6475\n  type: 'test'\n  ...\n# Subtest: reset removes only the four guest progression keys and leaves unrelated data intact\nok 8 - reset removes only the four guest progression keys and leaves unrelated data intact\n  ---\n  duration_ms: 0.557\n  type: 'test'\n  ...\n# Subtest: milestones are surfaced as truthful locked/unlocked non-entitlement rewards\nok 9 - milestones are surfaced as truthful locked/unlocked non-entitlement rewards\n  ---\n  duration_ms: 0.5423\n  type: 'test'\n  ...\n# Subtest: route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes\nok 10 - route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes\n  ---\n  duration_ms: 0.7391\n  type: 'test'\n  ...\n# Subtest: configured route events count only the exact normalized event route\nok 11 - configured route events count only the exact normalized event route\n  ---\n  duration_ms: 0.3643\n  type: 'test'\n  ...\n# Subtest: boot persists configured route activity even when the page has no progression root\nok 12 - boot persists configured route activity even when the page has no progression root\n  ---\n  duration_ms: 0.3991\n  type: 'test'\n  ...\n# Subtest: daily snapshot computes claimed status against one UTC period value\nok 13 - daily snapshot computes claimed status against one UTC period value\n  ---\n  duration_ms: 0.2573\n  type: 'test'\n  ...\n# Subtest: missing browser storage reports non-persistent memory mode and has no economy fallback\nok 14 - missing browser storage reports non-persistent memory mode and has no economy fallback\n  ---\n  duration_ms: 0.276\n  type: 'test'\n  ...\n# Subtest: refreshes quest and daily state across stale stores before granting claims\nok 15 - refreshes quest and daily state across stale stores before granting claims\n  ---\n  duration_ms: 0.6047\n  type: 'test'\n  ...\n# Subtest: Home discoveries use the existing discoveries key and persist exactly three gated candies\nok 16 - Home discoveries use the existing discoveries key and persist exactly three gated candies\n  ---\n  duration_ms: 1.0651\n  type: 'test'\n  ...\n# Subtest: a future Home-interaction schema is readable but cannot be overwritten\nok 17 - a future Home-interaction schema is readable but cannot be overwritten\n  ---\n  duration_ms: 0.2423\n  type: 'test'\n  ...\n# Subtest: malformed Home-interaction data is preserved and read-only until a safe migration exists\nok 18 - malformed Home-interaction data is preserved and read-only until a safe migration exists\n  ---\n  duration_ms: 0.1997\n  type: 'test'\n  ...\n# Subtest: runtime list rendering uses div role=list/listitem semantics\nok 19 - runtime list rendering uses div role=list/listitem semantics\n  ---\n  duration_ms: 0.3728\n  type: 'test'\n  ...\n# Subtest: daily button label and aria-disabled track claim state; quest entries show configured reward metadata\nok 20 - daily button label and aria-disabled track claim state; quest entries show configured reward metadata\n  ---\n  duration_ms: 1.4304\n  type: 'test'\n  ...\n# Subtest: publishing routes have static preview shells and do not invent a published catalogue\nok 21 - publishing routes have static preview shells and do not invent a published catalogue\n  ---\n  duration_ms: 4.3697\n  type: 'test'\n  ...\n# Subtest: reader resolves only public series, chapter, and an explicit ordered page manifest\nok 22 - reader resolves only public series, chapter, and an explicit ordered page manifest\n  ---\n  duration_ms: 0.6047\n  type: 'test'\n  ...\n# Subtest: keyboard, swipe, and chapter order obey the content manifest\nok 23 - keyboard, swipe, and chapter order obey the content manifest\n  ---\n  duration_ms: 0.3865\n  type: 'test'\n  ...\n# Subtest: reader progress persists stable IDs in its own namespace and preserves corrupt data\nok 24 - reader progress persists stable IDs in its own namespace and preserves corrupt data\n  ---\n  duration_ms: 0.5592\n  type: 'test'\n  ...\n# Subtest: excludes DRAFT and ARCHIVED records and only includes referenced assets\nok 25 - excludes DRAFT and ARCHIVED records and only includes referenced assets\n  ---\n  duration_ms: 23.3071\n  type: 'test'\n  ...\n# Subtest: removes draft and archived IDs from all projected records and relationships\nok 26 - removes draft and archived IDs from all projected records and relationships\n  ---\n  duration_ms: 8.9847\n  type: 'test'\n  ...\n# Subtest: includes deliberate PREVIEW series visibly labeled but no preview chapters\nok 27 - includes deliberate PREVIEW series visibly labeled but no preview chapters\n  ---\n  duration_ms: 6.6478\n  type: 'test'\n  ...\n# Subtest: does not reader-project a PUBLISHED chapter under a PREVIEW series\nok 28 - does not reader-project a PUBLISHED chapter under a PREVIEW series\n  ---\n  duration_ms: 8.2404\n  type: 'test'\n  ...\n# Subtest: rejects asset traversal, invalid slug requirement, and inconsistent arc ownership/order metadata\nok 29 - rejects asset traversal, invalid slug requirement, and inconsistent arc ownership/order metadata\n  ---\n  duration_ms: 6.5681\n  type: 'test'\n  ...\n# Subtest: projects a PUBLISHED ordered reader manifest deterministically\nok 30 - projects a PUBLISHED ordered reader manifest deterministically\n  ---\n  duration_ms: 13.5536\n  type: 'test'\n  ...\n# Subtest: public projection allowlists schema fields and excludes private/editorial metadata\nok 31 - public projection allowlists schema fields and excludes private/editorial metadata\n  ---\n  duration_ms: 8.1965\n  type: 'test'\n  ...\n# Subtest: rejects missing assets, empty/duplicate page order, and unsafe published chapter links\nok 32 - rejects missing assets, empty/duplicate page order, and unsafe published chapter links\n  ---\n  duration_ms: 7.4317\n  type: 'test'\n  ...\n# Subtest: rejects asset paths that escape the approved root through a symlink\nok 33 - rejects asset paths that escape the approved root through a symlink\n  ---\n  duration_ms: 8.3643\n  type: 'test'\n  ...\n# Subtest: resolveBasePath rewrites only unprefixed root-absolute same-origin URLs\nok 34 - resolveBasePath rewrites only unprefixed root-absolute same-origin URLs\n  ---\n  duration_ms: 1.3994\n  type: 'test'\n  ...\n# Subtest: resolveBasePath rejects invalid base paths\nok 35 - resolveBasePath rejects invalid base paths\n  ---\n  duration_ms: 1.252\n  type: 'test'\n  ...\n# Subtest: CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idempotent\nok 36 - CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idempotent\n  ---\n  duration_ms: 250.3102\n  type: 'test'\n  ...\n# Subtest: CLI rejects invalid arguments without touching the export\nok 37 - CLI rejects invalid arguments without touching the export\n  ---\n  duration_ms: 59.8222\n  type: 'test'\n  ...\n# Subtest: staging robots opt-in changes only the generated Wicked Bites HTML and is idempotent\nok 38 - staging robots opt-in changes only the generated Wicked Bites HTML and is idempotent\n  ---\n  duration_ms: 202.3555\n  type: 'test'\n  ...\n# Subtest: verifier shares strict base-path validation and rejects traversal-like paths\nok 39 - verifier shares strict base-path validation and rejects traversal-like paths\n  ---\n  duration_ms: 420.4645\n  type: 'test'\n  ...\n# Subtest: verifier rejects javascript URLs and checks nested HTML plus CSS references in deployed context\nok 40 - verifier rejects javascript URLs and checks nested HTML plus CSS references in deployed context\n  ---\n  duration_ms: 100.9479\n  type: 'test'\n  ...\n# Subtest: verifier requires the exact four PUBLIC_FEATURE_STATE preview cards and excludes Arcade candidate\nok 41 - verifier requires the exact four PUBLIC_FEATURE_STATE preview cards and excludes Arcade candidate\n  ---\n  duration_ms: 224.5702\n  type: 'test'\n  ...\n# Subtest: verifier recognizes Studio variant markers, intro filters, search explanation, and disabled store-links control\nok 42 - verifier recognizes Studio variant markers, intro filters, search explanation, and disabled store-links control\n  ---\n  duration_ms: 92.8101\n  type: 'test'\n  ...\n# Subtest: page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route\nok 43 - page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route\n  ---\n  duration_ms: 2.03\n  type: 'test'\n  ...\n# Subtest: all four registered games and every Play card remain PREVIEW\nok 44 - all four registered games and every Play card remain PREVIEW\n  ---\n  duration_ms: 1.0571\n  type: 'test'\n  ...\n# Subtest: Home preserves approved hero, truthful game states, live guest-local Feast Pass, and disabled store links\nok 45 - Home preserves approved hero, truthful game states, live guest-local Feast Pass, and disabled store links\n  ---\n  duration_ms: 2.5673\n  type: 'test'\n  ...\n# Subtest: Home companion is present and each context has its own copy\nok 46 - Home companion is present and each context has its own copy\n  ---\n  duration_ms: 1.663\n  type: 'test'\n  ...\n# Subtest: launch gating exposes only the Wicked Bites preview and keeps CLAW held\nok 47 - launch gating exposes only the Wicked Bites preview and keeps CLAW held\n  ---\n  duration_ms: 3.3557\n  type: 'test'\n  ...\n# Subtest: player host enforces opaque-origin identity and does not echo ready/init\nok 48 - player host enforces opaque-origin identity and does not echo ready/init\n  ---\n  duration_ms: 1.0248\n  type: 'test'\n  ...\n# Subtest: Wicked Bites cartridge conforms to the schema and preserves qualified provenance\nok 49 - Wicked Bites cartridge conforms to the schema and preserves qualified provenance\n  ---\n  duration_ms: 26.8742\n  type: 'test'\n  ...\n# Subtest: primary and footer navigation both route to Play\nok 50 - primary and footer navigation both route to Play\n  ---\n  duration_ms: 0.2642\n  type: 'test'\n  ...\n# Subtest: static link verifier scans markup attributes without mistaking runtime JavaScript for missing files\nok 51 - static link verifier scans markup attributes without mistaking runtime JavaScript for missing files\n  ---\n  duration_ms: 120.007\n  type: 'test'\n  ...\n1..51\n# tests 51\n# suites 0\n# pass 51\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1477.3432\n",
+      "stderr": ""
+    },
+    {
+      "name": "home-visual-contract",
+      "command": [
+        "node",
+        "scripts/verify-home-visual-contract.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.06,
+      "stdout": "{\n  \"schema\": \"toadal-feast.home-visual-contract-check.v2\",\n  \"repo\": \"C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-visual-convergence-20261002\",\n  \"checks\": [\n    {\n      \"id\": \"hero-headline\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The Home hero preserves the approved Feast World/free headline family while allowing the staging truth state.\"\n    },\n    {\n      \"id\": \"browser-games\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Browser-game discovery has an immediate, addressable structured section.\"\n    },\n    {\n      \"id\": \"feast-pass\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The Feast Pass summary has its required section anchor.\"\n    },\n    {\n      \"id\": \"today-surface\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"A dedicated current-adventure/Today surface exists.\"\n    },\n    {\n      \"id\": \"discovery-lanes\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Character, world, and stories/media discovery lanes are present.\"\n    },\n    {\n      \"id\": \"app-conversion\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The flagship mobile-app conversion section has its required anchor.\"\n    },\n    {\n      \"id\": \"future-state\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The future-state section has its required anchor.\"\n    },\n    {\n      \"id\": \"canonical-toadal\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The canonical Toadal image derivative is used and registered.\"\n    },\n    {\n      \"id\": \"hero-canonical-toadal-victory\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The hero uses the canonical large Toadal victory pose rather than a generated mascot substitute.\"\n    },\n    {\n      \"id\": \"branded-header-crown\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The shared shell has an explicit canonical brand-crown accent registered in the asset graph.\"\n    },\n    {\n      \"id\": \"hero-toadal-hash-chain\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Hero Toadal bytes match the website asset index and canonical game-asset authority.\"\n    },\n    {\n      \"id\": \"brand-crown-hash-chain\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Brand-crown bytes match the website asset index and canonical game-asset authority.\"\n    },\n    {\n      \"id\": \"approved-dense-desktop-bands\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Desktop composition pairs Games with Feast Pass and App conversion with What\u2019s Next, matching the approved dense portal hierarchy.\"\n    },\n    {\n      \"id\": \"desktop-home-grid-rows-preserve-discovery\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The later desktop layout keeps browser games, Daily Treat, Interactive Discovery, character/world discovery, App, What\u2019s Next, and the companion in their intended non-overlapping rows.\"\n    },\n    {\n      \"id\": \"character-companion-treatment\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The contextual companion is character-led rather than an admin-style toggle.\"\n    },\n    {\n      \"id\": \"retired-lily-absent\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Retired Princess Lily assets are absent from Home markup and styling.\"\n    },\n    {\n      \"id\": \"compact-home-search\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Home uses a compact header link to the functioning local Search surface, not the retired disabled hero field.\"\n    },\n    {\n      \"id\": \"home-search-utility-style\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The Search route is visually presented as a compact branded header utility.\"\n    },\n    {\n      \"id\": \"home-search-local-only\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The Home Search affordance reaches the registered local-only Search page without an external provider.\"\n    },\n    {\n      \"id\": \"home-feast-pass-runtime\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The Home Feast Pass summary is bound to the existing browser-local progression runtime and its persisted state.\"\n    },\n    {\n      \"id\": \"home-feast-pass-no-fake-values\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Progress numbers remain placeholders until the real local runtime hydrates them.\"\n    },\n    {\n      \"id\": \"home-daily-checkin-runtime\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The Home daily check-in reports and claims the configured browser-local state through the existing runtime.\"\n    },\n    {\n      \"id\": \"home-character-truth\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Home distinguishes the existing Character hub and Toadal profile preview from incomplete broader profile depth.\"\n    },\n    {\n      \"id\": \"home-stories-truth\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Home presents the existing Stories/Manga/Reader surfaces while clearly stating that no approved catalogue is published.\"\n    },\n    {\n      \"id\": \"home-app-illustration\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The paired App feature uses registered real Arcade, Puzzle, and Feastfall gameplay captures and keeps unverified store controls disabled.\"\n    },\n    {\n      \"id\": \"contextual-companion-source\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Home sections expose distinct contextual companion copy.\"\n    },\n    {\n      \"id\": \"contextual-companion-pointer\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The companion reacts to pointer hover context.\"\n    },\n    {\n      \"id\": \"contextual-companion-focus\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The companion reacts to keyboard focus context.\"\n    },\n    {\n      \"id\": \"companion-minimize-persistence\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The companion minimize preference persists locally.\"\n    },\n    {\n      \"id\": \"reduced-motion\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Reduced-motion behavior is defined.\"\n    },\n    {\n      \"id\": \"mobile-breakpoint\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"A small-phone responsive breakpoint is defined.\"\n    },\n    {\n      \"id\": \"preview-truth\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"All four listings stay PREVIEW with zero public games; exactly one isolated Wicked Bites staging route is distinguished from held/concept entries.\"\n    },\n    {\n      \"id\": \"preview-headline-truth\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The Play headline appears only when a registered PREVIEW-only staging player route exists; PUBLIC remains zero.\"\n    },\n    {\n      \"id\": \"home-play-funnel\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Home primary and browser-directory actions route into the registered Play experience.\"\n    },\n    {\n      \"id\": \"arcade-withheld\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"The unapproved Arcade candidate is not exposed as a public browser-game record.\"\n    },\n    {\n      \"id\": \"store-link-truth\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Store conversion is disabled and explains that no verified destination is configured.\"\n    },\n    {\n      \"id\": \"core-navigation\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Core navigation labels are present.\"\n    },\n    {\n      \"id\": \"reusable-shell-components\",\n      \"ok\": true,\n      \"severity\": \"gate\",\n      \"detail\": \"Studio symbol-registry coverage: 11/11; required named shell components are SiteHeader, SiteFooter, RouteShell, PrimaryButton, SecondaryButton, CreamPanel, DarkFeaturePanel, SectionHeading, StatusChip, CategoryTabs, SearchField.\"\n    }\n  ],\n  \"summary\": {\n    \"total\": 38,\n    \"pass\": 38,\n    \"fail\": 0,\n    \"warn\": 0\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "navigation-truth",
+      "command": [
+        "node",
+        "scripts/verify-navigation-truth.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.05,
+      "stdout": "{\n  \"schema\": \"toadal-feast.navigation-truth-check.v2\",\n  \"implementedRoutes\": [\n    \"/\",\n    \"/404.html\",\n    \"/about/\",\n    \"/account/\",\n    \"/app/\",\n    \"/characters/\",\n    \"/characters/toadal/\",\n    \"/coming-soon/\",\n    \"/community/\",\n    \"/contact/\",\n    \"/feast-pass/\",\n    \"/feast-pass/quests/\",\n    \"/feast-pass/rewards/\",\n    \"/games/claw-feed-gulper/\",\n    \"/games/froggy-fruity-bash/\",\n    \"/games/toadal-tower-defense/\",\n    \"/games/wicked-bites/\",\n    \"/legal/\",\n    \"/manga/\",\n    \"/media/\",\n    \"/news/\",\n    \"/play/\",\n    \"/player/wicked-bites/\",\n    \"/profile/\",\n    \"/reader/\",\n    \"/search/\",\n    \"/store/\",\n    \"/stories/\",\n    \"/support/\",\n    \"/world/\"\n  ],\n  \"implementedHomeFragments\": [\n    \"app\",\n    \"app-links-status\",\n    \"browser-games\",\n    \"browser-games-empty\",\n    \"browser-games-intro\",\n    \"characters\",\n    \"community\",\n    \"companion\",\n    \"daily-chest-help\",\n    \"discovery\",\n    \"feast-pass\",\n    \"interactive-discovery\",\n    \"store\",\n    \"stories-media\",\n    \"toadal-companion-panel\",\n    \"today\",\n    \"top\",\n    \"whats-next\",\n    \"world\"\n  ],\n  \"violations\": [],\n  \"summary\": {\n    \"implemented\": 30,\n    \"navTargetsChecked\": 19,\n    \"unresolvedTargets\": 0\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "character-registry",
+      "command": [
+        "node",
+        "scripts/verify-character-content-registry.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.05,
+      "stdout": "{\n  \"schema\": \"toadal-feast.character-content-check.v1\",\n  \"characters\": [\n    {\n      \"id\": \"toadal\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.toadal\"\n      ]\n    },\n    {\n      \"id\": \"princess-lily\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.princess-lily\"\n      ]\n    },\n    {\n      \"id\": \"sweet-genie\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.genie.sweet-art\"\n      ]\n    },\n    {\n      \"id\": \"fruity-genie\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.genie.fruity-art\"\n      ]\n    },\n    {\n      \"id\": \"savoury-genie\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.genie.savoury-art\"\n      ]\n    },\n    {\n      \"id\": \"gulper\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.gulper\"\n      ]\n    },\n    {\n      \"id\": \"gully\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.gully\"\n      ]\n    }\n  ],\n  \"routes\": [\n    \"/characters/\",\n    \"/characters/toadal/\"\n  ],\n  \"errors\": []\n}\nCHARACTER CONTENT REGISTRY CHECK PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "gated-ecosystem",
+      "command": [
+        "node",
+        "scripts/verify-gated-ecosystem-routes.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.05,
+      "stdout": "Gated route records: 7\nGATED ECOSYSTEM VERIFY: PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "manifest",
+      "command": [
+        "node",
+        "scripts/verify-manifest-compliance-ledger.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.05,
+      "stdout": "Manifest rows: 30\nImplemented route records: 30\nCross-cutting requirements: 23\nPage status counts: {\"PARTIAL_CANDIDATE\":17,\"PARTIAL\":10,\"NOT_STARTED\":2,\"DONE_PROVEN\":1}\nMANIFEST COMPLIANCE VERIFY: PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "search-discovery",
+      "command": [
+        "node",
+        "scripts/verify-search-discovery.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.05,
+      "stdout": "SEARCH / DISCOVERY VERIFY: PASS\n{\n  \"routeCount\": 30,\n  \"searchEntries\": 48,\n  \"groups\": {\n    \"Characters\": 9,\n    \"Help\": 6,\n    \"Media\": 5,\n    \"News\": 1,\n    \"Pages\": 22,\n    \"Roadmap\": 5\n  },\n  \"searchRoute\": \"/search/\",\n  \"externalSearchService\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "nonhome-truth",
+      "command": [
+        "node",
+        "scripts/verify-nonhome-truth.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.06,
+      "stdout": "NON-HOME TRUTH VERIFY: PASS\n{\n  \"registeredRoutes\": 30,\n  \"nonHomeRoutesScanned\": 29,\n  \"currentCapabilityRoutesChecked\": 10,\n  \"staleClaimPatternsChecked\": 15,\n  \"notes\": [\n    \"localSearchEntries=48\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "visual-asset-authority",
+      "command": [
+        "node",
+        "scripts/verify-visual-asset-authority.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.14,
+      "stdout": "VISUAL ASSET AUTHORITY: PASS\n{\n  \"schema\": \"toadal-feast.web.visual-asset-authority-lock.v1\",\n  \"status\": \"LOCKED_FOR_OWNER_PREVIEW\",\n  \"notes\": [\n    \"registeredAssets=59\",\n    \"runtimeDerivatives=25\",\n    \"visualFilesCovered=84/84\",\n    \"productVisualReferences=45\",\n    \"brandFiles=brand-crown.svg\",\n    \"wordmarkStatus=NOT_PRESENT_NOT_APPROVED\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "nonhome-layout-closure",
+      "command": [
+        "node",
+        "scripts/verify-nonhome-layout-closure.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.05,
+      "stdout": "NON-HOME LAYOUT CLOSURE: PASS\n{\n  \"checks\": 12,\n  \"homeCardRulesScoped\": true,\n  \"mobilePlayFiltersWrap\": true,\n  \"profileAnchorsWrap\": true,\n  \"companionOverlapUsesVisibleGeometry\": true,\n  \"genericCompanionOverlapsDiagnosticOnly\": true,\n  \"homeAndQuestPrimaryActionsGated\": true\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "cartridge-isolation",
+      "command": [
+        "node",
+        "scripts/verify-cartridge-storage-isolation.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.37,
+      "stdout": "{\n  \"root\": \"C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-visual-convergence-20261002\",\n  \"expectedNamespace\": \"toadal:game:toadal-feast-arcade-preview:v1:\",\n  \"namespacedFiles\": [\n    \"docs/implementation/WEB_ARCADE_PREVIEW_PROFILE.json\",\n    \"docs/review/interactive-discovery-v1-20261001/owner-preview-gate/owner-preview-gate.json\",\n    \"docs/review/owner-preview-gate-20261001/owner-preview-gate.json\",\n    \"docs/review/owner-visual-acceptance-20261002/evidence/gate/owner-preview-gate.json\",\n    \"docs/review/owner-visual-convergence-20261002/owner-preview-gate/owner-preview-gate.json\",\n    \"docs/review/v1-release-20261002/gate/owner-preview-gate.json\",\n    \"docs/review/visual-asset-gameplay-convergence-20261001/owner-preview-gate/owner-preview-gate.json\",\n    \"scripts/verify-cartridge-storage-isolation.mjs\"\n  ],\n  \"legacyStorageReferences\": []\n}\nCARTRIDGE STORAGE ISOLATION CHECK PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "render-freshness",
+      "command": [
+        "node",
+        "scripts/verify-owner-preview-render-freshness.mjs",
+        ".",
+        "dist"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.07,
+      "stdout": "OWNER PREVIEW RENDER FRESHNESS: PASS\n{\n  \"registeredRoutes\": 30,\n  \"dist\": \"C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-visual-convergence-20261002\\\\dist\",\n  \"searchEntriesMinimum\": 48\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "pages-basepath",
+      "command": [
+        "node",
+        "scripts/verify-pages-basepath.mjs",
+        "dist",
+        "/toadal-feast-web/"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.07,
+      "stdout": "PAGES BASEPATH CHECK PASS\nHTML files: 31\nBase: /toadal-feast-web/\n",
+      "stderr": ""
+    },
+    {
+      "name": "static-links",
+      "command": [
+        "node",
+        "scripts/verify-static-links.mjs",
+        "dist",
+        "/toadal-feast-web/"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.26,
+      "stdout": "STATIC LINK CHECK PASS\nHTML files: 31\nBase: /toadal-feast-web/\n",
+      "stderr": ""
+    },
+    {
+      "name": "staging-robots",
+      "command": [
+        "node",
+        "scripts/verify-staging-robots.mjs",
+        "dist",
+        "staging"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.08,
+      "stdout": "ROBOTS CHECK PASS\nMode: staging\nHTML files: 31\n",
+      "stderr": ""
+    },
+    {
+      "name": "browser-matrix",
+      "command": [
+        "node",
+        "scripts/owner-preview-browser-matrix.mjs",
+        ".",
+        "dist",
+        "/toadal-feast-web/",
+        "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\gate-final\\browser-matrix.json"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 28.44,
+      "stdout": "PASS|desktop|/|\nPASS|mobile|/|\nPASS|tablet|/|\nPASS|small-mobile|/|\nPASS|desktop|/404.html|\nPASS|mobile|/404.html|\nPASS|desktop|/play/|\nPASS|mobile|/play/|\nPASS|tablet|/play/|\nPASS|small-mobile|/play/|\nPASS|desktop|/games/wicked-bites/|\nPASS|mobile|/games/wicked-bites/|\nPASS|desktop|/games/claw-feed-gulper/|\nPASS|mobile|/games/claw-feed-gulper/|\nPASS|desktop|/games/toadal-tower-defense/|\nPASS|mobile|/games/toadal-tower-defense/|\nPASS|desktop|/games/froggy-fruity-bash/|\nPASS|mobile|/games/froggy-fruity-bash/|\nPASS|desktop|/player/wicked-bites/|\nPASS|mobile|/player/wicked-bites/|\nPASS|desktop|/world/|\nPASS|mobile|/world/|\nPASS|tablet|/world/|\nPASS|small-mobile|/world/|\nPASS|desktop|/characters/|\nPASS|mobile|/characters/|\nPASS|tablet|/characters/|\nPASS|small-mobile|/characters/|\nPASS|desktop|/characters/toadal/|\nPASS|mobile|/characters/toadal/|\nPASS|desktop|/stories/|\nPASS|mobile|/stories/|\nPASS|tablet|/stories/|\nPASS|small-mobile|/stories/|\nPASS|desktop|/manga/|\nPASS|mobile|/manga/|\nPASS|desktop|/reader/|\nPASS|mobile|/reader/|\nPASS|desktop|/media/|\nPASS|mobile|/media/|\nPASS|desktop|/feast-pass/|\nPASS|mobile|/feast-pass/|\nPASS|tablet|/feast-pass/|\nPASS|small-mobile|/feast-pass/|\nPASS|desktop|/feast-pass/quests/|\nPASS|mobile|/feast-pass/quests/|\nPASS|desktop|/feast-pass/rewards/|\nPASS|mobile|/feast-pass/rewards/|\nPASS|desktop|/profile/|\nPASS|mobile|/profile/|\nPASS|desktop|/news/|\nPASS|mobile|/news/|\nPASS|desktop|/search/|\nPASS|mobile|/search/|\nPASS|tablet|/search/|\nPASS|small-mobile|/search/|\nPASS|desktop|/support/|\nPASS|mobile|/support/|\nPASS|desktop|/app/|\nPASS|mobile|/app/|\nPASS|tablet|/app/|\nPASS|small-mobile|/app/|\nPASS|desktop|/account/|\nPASS|mobile|/account/|\nPASS|desktop|/community/|\nPASS|mobile|/community/|\nPASS|desktop|/store/|\nPASS|mobile|/store/|\nPASS|desktop|/contact/|\nPASS|mobile|/contact/|\nPASS|desktop|/about/|\nPASS|mobile|/about/|\nPASS|desktop|/coming-soon/|\nPASS|mobile|/coming-soon/|\nPASS|desktop|/legal/|\nPASS|mobile|/legal/|\nPASS|large-mobile|/|\nSUMMARY|{\"schema\":\"toadal-feast.owner-preview-browser-matrix.v1\",\"status\":\"PASS\",\"routes\":30,\"cases\":77,\"passed\":77,\"failed\":0,\"diagnostics\":{\"genericControlOverlapCases\":0,\"genericControlOverlapEntries\":0},\"issueCounts\":{}}\n",
+      "stderr": ""
+    }
+  ]
+}

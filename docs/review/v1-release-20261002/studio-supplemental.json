@@ -1,0 +1,273 @@
+{
+  "schema": "toadal-feast.v1-studio-supplemental.v1",
+  "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\studio-project\\toadal-feast-website\\project.json",
+  "qa": {
+    "level": "full",
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "graph": {
+      "dangling": [
+        {
+          "from": "component.home.games",
+          "to": "game.card",
+          "kind": "uses-game"
+        },
+        {
+          "from": "component.home.games",
+          "to": "game.card",
+          "kind": "uses-game"
+        },
+        {
+          "from": "component.home.games",
+          "to": "game.card",
+          "kind": "uses-game"
+        },
+        {
+          "from": "component.home.games",
+          "to": "game.card",
+          "kind": "uses-game"
+        }
+      ]
+    },
+    "accessibility": {
+      "checks": {
+        "altText": true,
+        "iframeTitles": true,
+        "controlNames": true,
+        "headingHierarchy": true,
+        "focusVisibility": true,
+        "keyboardOperation": true,
+        "reducedMotion": true,
+        "touchTargets": true,
+        "contrastHeuristics": true
+      },
+      "issues": [],
+      "errors": 0,
+      "warnings": 0
+    },
+    "performance": {
+      "files": 133,
+      "totalBytes": 42088042,
+      "htmlBytes": 2941826,
+      "largest": [
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/reward.png",
+          "bytes": 1733730
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/maintenance.png",
+          "bytes": 1663323
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+          "bytes": 1577938
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+          "bytes": 1528531
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/news.png",
+          "bytes": 1527629
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "bytes": 1505538
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/community.png",
+          "bytes": 1480074
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/merch.png",
+          "bytes": 1457991
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+          "bytes": 1410487
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/settings.png",
+          "bytes": 1393918
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/privacy.png",
+          "bytes": 1338522
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/search.png",
+          "bytes": 1335024
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/rating.png",
+          "bytes": 1333728
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/register.png",
+          "bytes": 1321069
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+          "bytes": 1320726
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/contact.png",
+          "bytes": 1313872
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/survey.png",
+          "bytes": 1300901
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/delete-account.png",
+          "bytes": 1300325
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/notifications.png",
+          "bytes": 1299116
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+          "bytes": 1279993
+        }
+      ],
+      "largeFileWarnings": 20
+    },
+    "referenceFiles": 97,
+    "previewFiles": 133,
+    "tests": {
+      "ok": false,
+      "status": null,
+      "stdout": "",
+      "stderr": "",
+      "error": "spawnSync npm.cmd EINVAL"
+    }
+  },
+  "checkpoint": {
+    "mode": "full",
+    "label": "v1-release-full",
+    "startedAt": "2026-10-02T07:52:14.923Z",
+    "validation": {
+      "ok": true,
+      "status": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr": "",
+      "error": null
+    },
+    "tests": {
+      "ok": false,
+      "status": null,
+      "stdout": "",
+      "stderr": "",
+      "error": "spawnSync npm.cmd EINVAL"
+    },
+    "aiDoctor": {
+      "ok": false,
+      "status": null,
+      "stdout": "",
+      "stderr": "",
+      "error": "spawnSync npm.cmd EINVAL"
+    },
+    "handoff": {
+      "markdown": "AI/HANDOFFS/2026-10-02T07-52-15-322Z-v1-release-full.md",
+      "json": "AI/HANDOFFS/2026-10-02T07-52-15-322Z-v1-release-full.json",
+      "state": {
+        "schemaVersion": 1,
+        "createdAt": "2026-10-02T07:52:15.322Z",
+        "label": "v1-release-full",
+        "task": "Final V1 supplemental qualification",
+        "notes": "Windows npm.cmd wrapper failures remain recorded. Direct unmodified canonical fixture suite and exact-project doctor are run separately.",
+        "studio": {
+          "name": "toadal-studio",
+          "version": "1.4.2"
+        },
+        "project": {
+          "id": "toadal-feast-website",
+          "name": "TOADAL FEAST Website",
+          "manifest": "../../toadal-feast-web-owner-visual-convergence-20261002/studio-project/toadal-feast-website/project.json",
+          "treeSha256": "8ead2f1b61cefbe23c8c8a163b808576b0119931966bdd374b84ccdc8ad36f65"
+        },
+        "authority": {
+          "visualBaseline": null,
+          "operatingContract": "AI/OPERATING_CONTRACT.md",
+          "agents": "AGENTS.md"
+        },
+        "quality": {
+          "validation": {
+            "valid": true,
+            "errors": 0,
+            "warnings": 0
+          },
+          "graph": {
+            "nodes": 148,
+            "edges": 88,
+            "dangling": 4
+          },
+          "history": {
+            "canUndo": true,
+            "canRedo": false,
+            "cursor": 2,
+            "total": 2,
+            "undoLabel": "AI: update component component.home.companion",
+            "redoLabel": null
+          }
+        },
+        "capabilityLedger": {
+          "release": "1.2.0",
+          "scope": "Foundation + Tier 1 + Tier 2 + Tier 3 + Tier 4",
+          "implemented": 175,
+          "deferred": 23,
+          "total": 198
+        },
+        "aiSurface": {
+          "tools": 16,
+          "resources": 12,
+          "resourceTemplates": 3,
+          "prompts": 5,
+          "manifest": "AI/AI_MANIFEST.json"
+        },
+        "recentStudioCommands": [
+          {
+            "id": "1790927395725-fd774f4d",
+            "label": "AI: update collection advancedCode",
+            "at": "2026-10-02T07:49:55.846Z"
+          },
+          {
+            "id": "1790927444255-a3534ea3",
+            "label": "AI: update component component.home.companion",
+            "at": "2026-10-02T07:50:44.370Z"
+          }
+        ],
+        "nextAgentStartup": [
+          "Read AGENTS.md and AI/OPERATING_CONTRACT.md.",
+          "Call toadal.inspect(scope=\"workspace\").",
+          "Read the relevant entity with toadal.inspect before mutating it.",
+          "Use typed TOADAL MCP tools; avoid direct JSON edits unless the tool surface genuinely lacks the operation.",
+          "After changes, call toadal.qa(level=\"full\") and toadal.checkpoint(mode=\"full\")."
+        ]
+      }
+    },
+    "finishedAt": "2026-10-02T07:52:15.395Z",
+    "ok": false
+  },
+  "packageFixture": "Studio canonical fixture; TOADAL_PROJECT/TOADAL_PREVIEW unset only in fixture child",
+  "packageTests": {
+    "command": "npm test",
+    "status": 0,
+    "ok": true,
+    "stdout": "\n> toadal-studio@1.4.2 test\n> node --no-warnings --experimental-strip-types --test --test-concurrency=1 tests/*.test.ts\n\nTAP version 13\n# Subtest: generated starter runtime compiles, escapes script-breaking data, and all fragment CTAs resolve\nok 1 - generated starter runtime compiles, escapes script-breaking data, and all fragment CTAs resolve\n  ---\n  duration_ms: 43.0121\n  type: 'test'\n  ...\n# Subtest: Studio HTTP boundary rejects hostile Host/Origin and sandboxes untrusted project previews\nok 2 - Studio HTTP boundary rejects hostile Host/Origin and sandboxes untrusted project previews\n  ---\n  duration_ms: 379.6677\n  type: 'test'\n  ...\n# Subtest: AI tool catalog is deterministic, annotated and schema-validatable\nok 3 - AI tool catalog is deterministic, annotated and schema-validatable\n  ---\n  duration_ms: 3.5538\n  type: 'test'\n  ...\n# Subtest: MCP supports modern discovery, legacy initialize, resources, prompts and structured tools\nok 4 - MCP supports modern discovery, legacy initialize, resources, prompts and structured tools\n  ---\n  duration_ms: 50.1204\n  type: 'test'\n  ...\n# Subtest: AI mutations use persistent Studio history and remain reversible\nok 5 - AI mutations use persistent Studio history and remain reversible\n  ---\n  duration_ms: 1080.3235\n  type: 'test'\n  ...\n# Subtest: AI asset import cannot read arbitrary files outside allowed roots\nok 6 - AI asset import cannot read arbitrary files outside allowed roots\n  ---\n  duration_ms: 0.8245\n  type: 'test'\n  ...\n# Subtest: classified TOADAL delivery is installed as a persistent project-independent Studio Vault\nok 7 - classified TOADAL delivery is installed as a persistent project-independent Studio Vault\n  ---\n  duration_ms: 7.8834\n  type: 'test'\n  ...\n# Subtest: Studio server exposes guarded persistent Vault browse/import/upload APIs\nok 8 - Studio server exposes guarded persistent Vault browse/import/upload APIs\n  ---\n  duration_ms: 0.9003\n  type: 'test'\n  ...\n# Subtest: Creator Workbench and Slice Lab make classified assets reusable without weakening authority\nok 9 - Creator Workbench and Slice Lab make classified assets reusable without weakening authority\n  ---\n  duration_ms: 3.2044\n  type: 'test'\n  ...\n# Subtest: HUD Designer can consume persistent Vault images directly while preserving source classification\nok 10 - HUD Designer can consume persistent Vault images directly while preserving source classification\n  ---\n  duration_ms: 3.0502\n  type: 'test'\n  ...\n# Subtest: HUD schema/runtime versions and catalog breadth\nok 11 - HUD schema/runtime versions and catalog breadth\n  ---\n  duration_ms: 1.0837\n  type: 'test'\n  ...\n# Subtest: all 15 style kits create valid starter HUD documents\nok 12 - all 15 style kits create valid starter HUD documents\n  ---\n  duration_ms: 5.9207\n  type: 'test'\n  ...\n# Subtest: legacy-ish documents normalize into schema v2\nok 13 - legacy-ish documents normalize into schema v2\n  ---\n  duration_ms: 0.4406\n  type: 'test'\n  ...\n# Subtest: custom high resolution canvas remains valid\nok 14 - custom high resolution canvas remains valid\n  ---\n  duration_ms: 1.2777\n  type: 'test'\n  ...\n# Subtest: auto-bind creates stable export IDs, bindings and anchors\nok 15 - auto-bind creates stable export IDs, bindings and anchors\n  ---\n  duration_ms: 0.5746\n  type: 'test'\n  ...\n# Subtest: runtime export retains identity, grouping, bindings, image and animation metadata\nok 16 - runtime export retains identity, grouping, bindings, image and animation metadata\n  ---\n  duration_ms: 1.0641\n  type: 'test'\n  ...\n# Subtest: bindings and design tokens exports are usable text artifacts\nok 17 - bindings and design tokens exports are usable text artifacts\n  ---\n  duration_ms: 1.341\n  type: 'test'\n  ...\n# Subtest: HUD audit catches missing binding, contrast, fast motion and image alt\nok 18 - HUD audit catches missing binding, contrast, fast motion and image alt\n  ---\n  duration_ms: 1.5307\n  type: 'test'\n  ...\n# Subtest: auto contrast correction improves low contrast\nok 19 - auto contrast correction improves low contrast\n  ---\n  duration_ms: 0.8261\n  type: 'test'\n  ...\n# Subtest: simulation is transient and does not mutate the source document\nok 20 - simulation is transient and does not mutate the source document\n  ---\n  duration_ms: 1.5295\n  type: 'test'\n  ...\n# Subtest: runtime HTML/CSS contains effects, animation hooks and reduced-motion protection\nok 21 - runtime HTML/CSS contains effects, animation hooks and reduced-motion protection\n  ---\n  duration_ms: 1.6385\n  type: 'test'\n  ...\n# Subtest: Studio UI exposes professional HUD authoring controls\nok 22 - Studio UI exposes professional HUD authoring controls\n  ---\n  duration_ms: 0.7773\n  type: 'test'\n  ...\n# Subtest: Studio registers and renders typed hud.overlay component\nok 23 - Studio registers and renders typed hud.overlay component\n  ---\n  duration_ms: 0.6528\n  type: 'test'\n  ...\n# Subtest: MCP exposes HUD authoring and Studio version 1.4.2\nok 24 - MCP exposes HUD authoring and Studio version 1.4.2\n  ---\n  duration_ms: 0.1357\n  type: 'test'\n  ...\n# Subtest: HUD donor artifacts are preserved as references\nok 25 - HUD donor artifacts are preserved as references\n  ---\n  duration_ms: 2.0414\n  type: 'test'\n  ...\n# Subtest: HUD capability ledger is additive and complete\nok 26 - HUD capability ledger is additive and complete\n  ---\n  duration_ms: 1.0646\n  type: 'test'\n  ...\n# Subtest: proposal component definition contract and exact Insert taxonomy are executable\nok 27 - proposal component definition contract and exact Insert taxonomy are executable\n  ---\n  duration_ms: 2.7518\n  type: 'test'\n  ...\n# Subtest: plugin failures are visible and full extension points remain permission gated\nok 28 - plugin failures are visible and full extension points remain permission gated\n  ---\n  duration_ms: 1.8385\n  type: 'test'\n  ...\n# Subtest: nested Layers operations persist across reopen and validate through one project model\nok 29 - nested Layers operations persist across reopen and validate through one project model\n  ---\n  duration_ms: 310.8358\n  type: 'test'\n  ...\n# Subtest: Studio browser surface exposes safe Design/Content modes, searchable Insert, and complete nested Layers actions\nok 30 - Studio browser surface exposes safe Design/Content modes, searchable Insert, and complete nested Layers actions\n  ---\n  duration_ms: 1.7312\n  type: 'test'\n  ...\n# Subtest: no-code gallery lightbox and generic game-site blocks render without changing frozen defaults\nok 31 - no-code gallery lightbox and generic game-site blocks render without changing frozen defaults\n  ---\n  duration_ms: 381.626\n  type: 'test'\n  ...\n# Subtest: accessibility inspector proves the full published-site acceptance surface\nok 32 - accessibility inspector proves the full published-site acceptance surface\n  ---\n  duration_ms: 2033.2447\n  type: 'test'\n  ...\n# Subtest: AI/MCP structural parity covers nested group, reparent, metadata and undo\nok 33 - AI/MCP structural parity covers nested group, reparent, metadata and undo\n  ---\n  duration_ms: 1881.7998\n  type: 'test'\n  ...\n# Subtest: versioned project schemas reject unsupported implicit jumps\nok 34 - versioned project schemas reject unsupported implicit jumps\n  ---\n  duration_ms: 275.947\n  type: 'test'\n  ...\n# Subtest: proposal prose conformance ledger is complete, evidence-backed and scope-correct\nok 35 - proposal prose conformance ledger is complete, evidence-backed and scope-correct\n  ---\n  duration_ms: 14.8786\n  type: 'test'\n  ...\n# Subtest: catalog and prose ledgers agree on authoritative completion scope\nok 36 - catalog and prose ledgers agree on authoritative completion scope\n  ---\n  duration_ms: 0.4362\n  type: 'test'\n  ...\n# Subtest: Product closure ledger accounts for the complete authoritative roadmap scope\nok 37 - Product closure ledger accounts for the complete authoritative roadmap scope\n  ---\n  duration_ms: 53.6886\n  type: 'test'\n  ...\n# Subtest: Foundation migration is explicit, backup-first and reversible\nok 38 - Foundation migration is explicit, backup-first and reversible\n  ---\n  duration_ms: 7.5083\n  type: 'test'\n  ...\n# Subtest: Final published-site gate is editor-independent, valid and reference-exact\nok 39 - Final published-site gate is editor-independent, valid and reference-exact\n  ---\n  duration_ms: 285.2724\n  type: 'test'\n  ...\n# Subtest: project loads all canonical pages, games and assets\nok 40 - project loads all canonical pages, games and assets\n  ---\n  duration_ms: 8.1596\n  type: 'test'\n  ...\n# Subtest: project validates without errors\nok 41 - project validates without errors\n  ---\n  duration_ms: 8.2322\n  type: 'test'\n  ...\n# Subtest: path resolution blocks project-root escape\nok 42 - path resolution blocks project-root escape\n  ---\n  duration_ms: 0.2779\n  type: 'test'\n  ...\n# Subtest: compat renderer is byte-identical to frozen current distribution\nok 43 - compat renderer is byte-identical to frozen current distribution\n  ---\n  duration_ms: 235.9373\n  type: 'test'\n  ...\n# Subtest: every game route resolves and game assets resolve\nok 44 - every game route resolves and game assets resolve\n  ---\n  duration_ms: 4.0413\n  type: 'test'\n  ...\n# Subtest: TOADAL identity stays separate from generic green frog naming\nok 45 - TOADAL identity stays separate from generic green frog naming\n  ---\n  duration_ms: 3.952\n  type: 'test'\n  ...\n# Subtest: typed home hero properties persist through shared renderer\nok 46 - typed home hero properties persist through shared renderer\n  ---\n  duration_ms: 153.6468\n  type: 'test'\n  ...\n# Subtest: atomic page mutation detects stale editor revisions\nok 47 - atomic page mutation detects stale editor revisions\n  ---\n  duration_ms: 8.331\n  type: 'test'\n  ...\n# Subtest: reference graph resolves all current project links\nok 48 - reference graph resolves all current project links\n  ---\n  duration_ms: 5.1153\n  type: 'test'\n  ...\n# Subtest: TOADAL core plugin manifest valid + explicit permissions\nok 49 - TOADAL core plugin manifest valid + explicit permissions\n  ---\n  duration_ms: 4.4377\n  type: 'test'\n  ...\n# Subtest: theme records use semantic token registry\nok 50 - theme records use semantic token registry\n  ---\n  duration_ms: 3.8494\n  type: 'test'\n  ...\n# Subtest: history stack supports reversible editor commands\nok 51 - history stack supports reversible editor commands\n  ---\n  duration_ms: 0.222\n  type: 'test'\n  ...\n# Subtest: migration registry refuses implicit schema jumps\nok 52 - migration registry refuses implicit schema jumps\n  ---\n  duration_ms: 0.2541\n  type: 'test'\n  ...\n# Subtest: theme validation rejects CSS-breaking token values\nok 53 - theme validation rejects CSS-breaking token values\n  ---\n  duration_ms: 3.4779\n  type: 'test'\n  ...\n# Subtest: game manager edit changes output and exact revert restores frozen parity\nok 54 - game manager edit changes output and exact revert restores frozen parity\n  ---\n  duration_ms: 385.8467\n  type: 'test'\n  ...\n# Subtest: theme and font edit changes CSS and exact revert restores frozen parity\nok 55 - theme and font edit changes CSS and exact revert restores frozen parity\n  ---\n  duration_ms: 355.9019\n  type: 'test'\n  ...\n# Subtest: inserted content component renders and deletion restores exact parity\nok 56 - inserted content component renders and deletion restores exact parity\n  ---\n  duration_ms: 367.2181\n  type: 'test'\n  ...\n# Subtest: asset replacement materializes in output and reset restores exact parity\nok 57 - asset replacement materializes in output and reset restores exact parity\n  ---\n  duration_ms: 382.0541\n  type: 'test'\n  ...\n# Subtest: named page snapshots are created for recovery/version workflow\nok 58 - named page snapshots are created for recovery/version workflow\n  ---\n  duration_ms: 15.928\n  type: 'test'\n  ...\n# Subtest: recovered V7 reference library is mounted but inert by default\nok 59 - recovered V7 reference library is mounted but inert by default\n  ---\n  duration_ms: 4.1328\n  type: 'test'\n  ...\n# Subtest: exact SHA import dedupe reuses an existing project asset\nok 60 - exact SHA import dedupe reuses an existing project asset\n  ---\n  duration_ms: 16.4918\n  type: 'test'\n  ...\n# Subtest: editable 404 content changes output and exact revert restores frozen parity\nok 61 - editable 404 content changes output and exact revert restores frozen parity\n  ---\n  duration_ms: 376.6879\n  type: 'test'\n  ...\n# Subtest: inserted visual blocks can reorder without crossing compatibility content\nok 62 - inserted visual blocks can reorder without crossing compatibility content\n  ---\n  duration_ms: 410.3556\n  type: 'test'\n  ...\n# Subtest: clean website starters are independent, valid, warning-free and render generic site chrome\nok 63 - clean website starters are independent, valid, warning-free and render generic site chrome\n  ---\n  duration_ms: 212.4707\n  type: 'test'\n  ...\n# Subtest: starter project carries the reusable website-builder essentials\nok 64 - starter project carries the reusable website-builder essentials\n  ---\n  duration_ms: 64.778\n  type: 'test'\n  ...\n# Subtest: Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\nok 65 - Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\n  ---\n  duration_ms: 1.3509\n  type: 'test'\n  ...\n# Subtest: Studio server exposes safe clean-project creation and project-level settings\nok 66 - Studio server exposes safe clean-project creation and project-level settings\n  ---\n  duration_ms: 0.3834\n  type: 'test'\n  ...\n# Subtest: general websites do not inherit recovered TOADAL baseline validation rules\nok 67 - general websites do not inherit recovered TOADAL baseline validation rules\n  ---\n  duration_ms: 0.2255\n  type: 'test'\n  ...\n# Subtest: portable project backups round-trip safely into independent projects with collision-safe ids\nok 68 - portable project backups round-trip safely into independent projects with collision-safe ids\n  ---\n  duration_ms: 2135.1019\n  type: 'test'\n  ...\n# Subtest: optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\nok 69 - optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\n  ---\n  duration_ms: 2.0367\n  type: 'test'\n  ...\n# Subtest: Studio exposes a lightweight ping endpoint for launch and connection checks\nok 70 - Studio exposes a lightweight ping endpoint for launch and connection checks\n  ---\n  duration_ms: 0.3501\n  type: 'test'\n  ...\n# Subtest: HUD authoring preserves a local recovery copy around autosave failures\nok 71 - HUD authoring preserves a local recovery copy around autosave failures\n  ---\n  duration_ms: 0.3643\n  type: 'test'\n  ...\n# Subtest: Windows launchers share one health-aware Node 22+ launcher\nok 72 - Windows launchers share one health-aware Node 22+ launcher\n  ---\n  duration_ms: 1.4735\n  type: 'test'\n  ...\n# Subtest: Tier 1 closure primitives work together without changing the source project\nok 73 - Tier 1 closure primitives work together without changing the source project\n  ---\n  duration_ms: 4465.893\n  type: 'test'\n  ...\n# Subtest: Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\nok 74 - Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\n  ---\n  duration_ms: 16.3013\n  type: 'test'\n  ...\n# Subtest: Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\nok 75 - Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\n  ---\n  duration_ms: 2225.272\n  type: 'test'\n  ...\n# Subtest: Tier 3 catalogs expose the complete polish/productivity contract\nok 76 - Tier 3 catalogs expose the complete polish/productivity contract\n  ---\n  duration_ms: 13.3662\n  type: 'test'\n  ...\n# Subtest: Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\nok 77 - Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\n  ---\n  duration_ms: 2695.1788\n  type: 'test'\n  ...\n# Subtest: Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\nok 78 - Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\n  ---\n  duration_ms: 2614.0337\n  type: 'test'\n  ...\n# Subtest: Tier 4 catalogs and architecture expose the advanced authoring contract\nok 79 - Tier 4 catalogs and architecture expose the advanced authoring contract\n  ---\n  duration_ms: 9.793\n  type: 'test'\n  ...\n# Subtest: Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\nok 80 - Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\n  ---\n  duration_ms: 867.1046\n  type: 'test'\n  ...\n# Subtest: Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\nok 81 - Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\n  ---\n  duration_ms: 9020.7144\n  type: 'test'\n  ...\n1..81\n# tests 81\n# suites 0\n# pass 81\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 36828.369\n",
+    "stderr": "",
+    "error": null
+  },
+  "doctor": {
+    "command": "npm run ai:doctor",
+    "status": 0,
+    "ok": true,
+    "stdout": "\n> toadal-studio@1.4.2 ai:doctor\n> node --no-warnings --experimental-strip-types scripts/ai-doctor.ts\n\n{\n  \"ok\": true,\n  \"server\": {\n    \"name\": \"toadal-studio\",\n    \"version\": \"1.4.2\"\n  },\n  \"checks\": [\n    {\n      \"name\": \"config:plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.codex-plugin/plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.vscode/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.cursor/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AGENTS.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/OPERATING_CONTRACT.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_MANIFEST.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_CAPABILITY_LEDGER.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:skills/toadal-studio/SKILL.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"portable-plugin-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"schema\": \"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json\"\n      }\n    },\n    {\n      \"name\": \"portable-mcp-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"server\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\n            \"--no-warnings\",\n            \"--experimental-strip-types\",\n            \"apps/mcp/server.ts\"\n          ],\n          \"cwd\": \"./\"\n        }\n      }\n    },\n    {\n      \"name\": \"codex-compat-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"skills\": \"./skills/\",\n        \"mcpServers\": \"./.mcp.json\"\n      }\n    },\n    {\n      \"name\": \"tool-names-unique\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-annotations\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"modern-discovery\",\n      \"ok\": true,\n      \"details\": [\n        \"2026-07-28\",\n        \"2025-11-25\"\n      ]\n    },\n    {\n      \"name\": \"legacy-initialize\",\n      \"ok\": true,\n      \"details\": \"2025-11-25\"\n    },\n    {\n      \"name\": \"tools-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-call\",\n      \"ok\": true,\n      \"details\": {\n        \"valid\": true,\n        \"errors\": 0,\n        \"warnings\": 0\n      }\n    },\n    {\n      \"name\": \"resource-read\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"prompts-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 5\n      }\n    },\n    {\n      \"name\": \"stdio-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=stdio project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-visual-convergence-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=http url=http://127.0.0.1:44672/mcp project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-visual-convergence-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-origin-protection\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 403\n      }\n    },\n    {\n      \"name\": \"http-rate-limit\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 429\n      }\n    }\n  ]\n}\n",
+    "stderr": "",
+    "error": null
+  }
+}

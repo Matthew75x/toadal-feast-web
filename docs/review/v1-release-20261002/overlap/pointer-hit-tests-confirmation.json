@@ -1,0 +1,88 @@
+{
+  "candidate": "0dfa18d2b7bad97d862849a4360000c3fa8c8aff",
+  "method": "narrow real-pointer confirmation against current dist; no full matrix",
+  "cases": [
+    {
+      "case": "play-desktop",
+      "targetCenterHitBeforeDrag": {
+        "tag": "BUTTON",
+        "className": "companion-toggle",
+        "label": "Show Toadal companion",
+        "inCompanion": true
+      },
+      "resultOfPhysicalClickBeforeDrag": {
+        "pressed": "false",
+        "menuExpanded": "true",
+        "panelHidden": false,
+        "searchStatus": null,
+        "resultCount": 0,
+        "resultsText": null
+      },
+      "companionAfterRealDrag": {
+        "rect": {
+          "left": 12,
+          "top": 62,
+          "right": 164,
+          "bottom": 204
+        },
+        "manual": true
+      },
+      "targetCenterHitAfterDrag": {
+        "tag": "BUTTON",
+        "className": "game-tab",
+        "label": "Public 0",
+        "inCompanion": false
+      },
+      "resultOfPhysicalClickAfterDrag": {
+        "pressed": "true",
+        "disabled": false,
+        "visibleGames": [],
+        "searchStatus": null,
+        "resultText": null,
+        "url": "http://127.0.0.1:62353/toadal-feast-web/play/"
+      },
+      "screenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\overlap\\play-desktop-companion-moved.png"
+    },
+    {
+      "case": "search-tablet",
+      "targetCenterHitBeforeDrag": {
+        "tag": "BUTTON",
+        "className": "companion-toggle",
+        "label": "Show Toadal companion",
+        "inCompanion": true
+      },
+      "resultOfPhysicalClickBeforeDrag": {
+        "pressed": null,
+        "menuExpanded": "true",
+        "panelHidden": false,
+        "searchStatus": "8 local results for \u201cToadal\u201d.",
+        "resultCount": 0,
+        "resultsText": "CHARACTERS \u00b7 PREVIEW\n\nToadal\n\nThe crowned golden hero at the center of TOADAL FEAST.\n\nCHARACTERS\n\nToadal - Character Profile - TOADAL FEAST\n\nMeet Toadal through"
+      },
+      "companionAfterRealDrag": {
+        "rect": {
+          "left": 12,
+          "top": 62,
+          "right": 164,
+          "bottom": 204
+        },
+        "manual": true
+      },
+      "targetCenterHitAfterDrag": {
+        "tag": "BUTTON",
+        "className": "button-link button-link--primary",
+        "label": "Search",
+        "inCompanion": false
+      },
+      "resultOfPhysicalClickAfterDrag": {
+        "pressed": null,
+        "disabled": false,
+        "visibleGames": [],
+        "searchStatus": "8 local results for \u201cToadal\u201d.",
+        "resultText": "CHARACTERS \u00b7 PREVIEW\n\nToadal\n\nThe crowned golden hero at the center of TOADAL FEAST.\n\nCHARACTERS\n\nToadal - Character Profile - TOADAL FEAST\n\nMeet Toadal through a canonical character profile preview.\n\nMEDIA \u00b7 PREVIEW\n\nToadal character art\n\nCanonical ",
+        "url": "http://127.0.0.1:62353/toadal-feast-web/search/?q=Toadal"
+      },
+      "screenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\overlap\\search-tablet-companion-moved.png"
+    }
+  ]
+}
