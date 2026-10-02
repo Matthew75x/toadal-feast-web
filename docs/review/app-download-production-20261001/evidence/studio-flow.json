@@ -1,0 +1,386 @@
+{
+  "schema": "toadal-feast.visual-asset-gameplay-studio-flow.v1",
+  "projectManifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-preview-20261001\\studio-project\\toadal-feast-website\\project.json",
+  "studio": {
+    "name": "toadal-studio",
+    "version": "1.4.2"
+  },
+  "project": {
+    "id": "toadal-feast-website",
+    "name": "TOADAL FEAST Website",
+    "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-preview-20261001\\studio-project\\toadal-feast-website\\project.json",
+    "schemaVersion": 1
+  },
+  "counts": {
+    "pages": 30,
+    "games": 4,
+    "assets": 59,
+    "components": 42
+  },
+  "validationAtInspect": {
+    "valid": true,
+    "errors": 0,
+    "warnings": 0
+  },
+  "graph": {
+    "nodes": 148,
+    "edges": 88,
+    "dangling": [
+      {
+        "from": "component.home.games",
+        "to": "game.card",
+        "kind": "uses-game"
+      },
+      {
+        "from": "component.home.games",
+        "to": "game.card",
+        "kind": "uses-game"
+      },
+      {
+        "from": "component.home.games",
+        "to": "game.card",
+        "kind": "uses-game"
+      },
+      {
+        "from": "component.home.games",
+        "to": "game.card",
+        "kind": "uses-game"
+      }
+    ],
+    "nodeTypes": {
+      "asset": 59,
+      "collection": 11,
+      "component": 42,
+      "game": 4,
+      "page": 30,
+      "project": 1,
+      "theme": 1
+    }
+  },
+  "inspectedPages": [
+    {
+      "id": "page.home",
+      "route": "/",
+      "title": "TOADAL FEAST — Play the Feast World for Free",
+      "componentCount": 11
+    },
+    {
+      "id": "page.app",
+      "route": "/app/",
+      "title": "The TOADAL FEAST app · TOADAL FEAST",
+      "componentCount": 2
+    },
+    {
+      "id": "page.game-wicked-bites",
+      "route": "/games/wicked-bites/",
+      "title": "Wicked Bites · TOADAL FEAST",
+      "componentCount": 1
+    }
+  ],
+  "render": {
+    "previewDir": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-preview-20261001\\studio-project\\toadal-feast-website\\build\\ai-preview",
+    "performance": {
+      "files": 133,
+      "totalBytes": 42064589,
+      "htmlBytes": 2940885,
+      "largest": [
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/reward.png",
+          "bytes": 1733730
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/maintenance.png",
+          "bytes": 1663323
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+          "bytes": 1577938
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+          "bytes": 1528531
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/news.png",
+          "bytes": 1527629
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "bytes": 1505510
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/community.png",
+          "bytes": 1480074
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/merch.png",
+          "bytes": 1457991
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+          "bytes": 1410487
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/settings.png",
+          "bytes": 1393918
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/privacy.png",
+          "bytes": 1338522
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/search.png",
+          "bytes": 1335024
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/rating.png",
+          "bytes": 1333728
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/register.png",
+          "bytes": 1321069
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+          "bytes": 1320726
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/contact.png",
+          "bytes": 1313872
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/survey.png",
+          "bytes": 1300901
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/delete-account.png",
+          "bytes": 1300325
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/notifications.png",
+          "bytes": 1299116
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+          "bytes": 1279993
+        }
+      ],
+      "largeFileWarnings": 20
+    },
+    "html": {
+      "createdAt": "2026-10-02T04:21:48.004Z",
+      "pages": [
+        {
+          "file": "404.html",
+          "sha256": "b99f8344d35e372805307c3179a583d9a5c157bf9b3170fae76519581769c0ad"
+        },
+        {
+          "file": "about/index.html",
+          "sha256": "08c00a3866bec391c14e51003e9ea9d6a0f8e754ac447e865773dfe8011a7d35"
+        },
+        {
+          "file": "account/index.html",
+          "sha256": "75767588268c4e5aacf46555475bb8fdfbbb740eea230fc01f96bfeafe434bad"
+        },
+        {
+          "file": "app/index.html",
+          "sha256": "1276ca78c5860141bc232aeeb5c275ab204e358870cbc0f72b9c8997fd175565"
+        },
+        {
+          "file": "characters/index.html",
+          "sha256": "4f20238d4dcd3849de03082bd9e3b7862528fa01fb6c2c7520e3880a4afa2549"
+        },
+        {
+          "file": "characters/toadal/index.html",
+          "sha256": "f847fa171ffc8db2743a2527d80ec50bc6e38e6fdfd5ef0110caab10157946be"
+        },
+        {
+          "file": "coming-soon/index.html",
+          "sha256": "5b1de799cacaad0672e978d0515f40400ad3bc2dfa8b09ebba05e4e6794aa223"
+        },
+        {
+          "file": "community/index.html",
+          "sha256": "e238a945e5e1d94dfd477ca69cdffbbd709e3b47820913b9e6d7f22717cbd3b5"
+        },
+        {
+          "file": "contact/index.html",
+          "sha256": "33f32cb60ee9652f29a2753cfa59b8c59ac2ae872273b9c77b08c784e2cc40c3"
+        },
+        {
+          "file": "feast-pass/index.html",
+          "sha256": "608c33c184f061205ff0cba71e7db3097d7cc045eb8c6189a8f83c84907b6fcd"
+        },
+        {
+          "file": "feast-pass/quests/index.html",
+          "sha256": "2ebaf1a214d0f59ca67ebde2ca4bc3e77ffbaa0368a808d618c778aacf69004f"
+        },
+        {
+          "file": "feast-pass/rewards/index.html",
+          "sha256": "bda948cef3083ec4d8bf68e9d2e7391e523f0e271313cd8512c11ed32cdea54b"
+        },
+        {
+          "file": "games/claw-feed-gulper/index.html",
+          "sha256": "fdbf4429ad9cc44bc43fdbced44b5a5cee6292d534cf6aa0babd5d7e056c68fe"
+        },
+        {
+          "file": "games/froggy-fruity-bash/index.html",
+          "sha256": "3ea7e88fa28a9f867deb285f959c148623e642677f58f2c95b7ede357d97d851"
+        },
+        {
+          "file": "games/toadal-tower-defense/index.html",
+          "sha256": "7eb32d20f958199ba3eb18734fc2cb5dd9e9e40fcb38c6edc331b13a68f3100d"
+        },
+        {
+          "file": "games/wicked-bites/index.html",
+          "sha256": "bd76829b5b72a6c6d2562384ff9261a54982b250b4d28e9432a4520edc50f9a1"
+        },
+        {
+          "file": "index.html",
+          "sha256": "e569d4e8560e3dcc5c9d2db1321e127d5530d5e3d180af36a145d3cd1115ac22"
+        },
+        {
+          "file": "legal/index.html",
+          "sha256": "fec1e9c3b393fc9ea3e690fda97a858046b04e19c28d3bf0c6ced52de8899922"
+        },
+        {
+          "file": "manga/index.html",
+          "sha256": "e4635449b75be424be45fa3aa0ac601659c592f2b716b3bc7565e43553d5d305"
+        },
+        {
+          "file": "media/index.html",
+          "sha256": "fd52cdfd78df771e22b6d6ae69ee8c55405417e856aff34c96f545b35fd7605d"
+        },
+        {
+          "file": "news/index.html",
+          "sha256": "1da0ecba06ef182555d1f3a4845d8f40be74ce7ad20e364f35d8e6d75ce55136"
+        },
+        {
+          "file": "play/index.html",
+          "sha256": "5f78f9b3679f5f03e0799123230b4d4b384f97b9e0f1f53066fb1635cd31956c"
+        },
+        {
+          "file": "player/wicked-bites/index.html",
+          "sha256": "c802bffd9ac274d21e52d39f32e7bcd0e9d686d1299138d532d65072cd5c1061"
+        },
+        {
+          "file": "profile/index.html",
+          "sha256": "73e61895fbe17445205c3cb7846e17d2ff3633a5edb141c7c45ec0f0964f84cc"
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "sha256": "7b1129ff79e17f7fa99d1df49e2eb161b4ef31de0ec9768f6b8206a9e43e55e6"
+        },
+        {
+          "file": "reader/index.html",
+          "sha256": "1111c86f0d1c3442f0b54902e7d6c35468a63c1969062a40e05df58908120d70"
+        },
+        {
+          "file": "search/index.html",
+          "sha256": "5a3fc22b00d2c334983492d2a480b9c708341a7449e131e75182327997de068d"
+        },
+        {
+          "file": "store/index.html",
+          "sha256": "f217f49072531a39b4e94cf526043169581fa7e8653101042adda2fadfbd19ca"
+        },
+        {
+          "file": "stories/index.html",
+          "sha256": "ff70909c06e1187aade3d873194231bacecd2193db4a052ac95b3ea667adcb17"
+        },
+        {
+          "file": "support/index.html",
+          "sha256": "e9414939652fbb59f2080067f407da344dde56b6c25a5784a4ce5a8c5cfc054e"
+        },
+        {
+          "file": "world/index.html",
+          "sha256": "df3c7f1e0bd0bd457ddf3b5e73c573c341a1d2f0d6d1c38a5bd1d5dc399cc3ad"
+        }
+      ]
+    }
+  },
+  "staticExport": {
+    "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-preview-20261001\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
+    "bytes": 39823033
+  },
+  "checkpoint": {
+    "mode": "verify",
+    "label": "app-download-owner-preview-final",
+    "startedAt": "2026-10-02T04:21:49.802Z",
+    "validation": {
+      "ok": true,
+      "status": 0,
+      "stdout": "{\n  \"valid\": true,\n  \"errors\": [],\n  \"warnings\": []\n}\n",
+      "stderr": "",
+      "error": null
+    },
+    "handoff": {
+      "markdown": "AI/HANDOFFS/2026-10-02T04-21-50-185Z-app-download-owner-preview-final.md",
+      "json": "AI/HANDOFFS/2026-10-02T04-21-50-185Z-app-download-owner-preview-final.json",
+      "state": {
+        "schemaVersion": 1,
+        "createdAt": "2026-10-02T04:21:50.185Z",
+        "label": "app-download-owner-preview-final",
+        "task": "Qualify App and Download production plus focused Home conversion-panel overflow correction, derived from integration source a40d2dd.",
+        "notes": "Exact current source tree validation, inspect, render, static-export, and verify checkpoint. Local owner-preview qualification only; no Pages deployment.",
+        "studio": {
+          "name": "toadal-studio",
+          "version": "1.4.2"
+        },
+        "project": {
+          "id": "toadal-feast-website",
+          "name": "TOADAL FEAST Website",
+          "manifest": "../../toadal-feast-web-owner-preview-20261001/studio-project/toadal-feast-website/project.json",
+          "treeSha256": "f4dcd5a5d6539d80e200abf117496b36d973c8ed54376296f7510c0eaed945e2"
+        },
+        "authority": {
+          "visualBaseline": null,
+          "operatingContract": "AI/OPERATING_CONTRACT.md",
+          "agents": "AGENTS.md"
+        },
+        "quality": {
+          "validation": {
+            "valid": true,
+            "errors": 0,
+            "warnings": 0
+          },
+          "graph": {
+            "nodes": 148,
+            "edges": 88,
+            "dangling": 4
+          },
+          "history": {
+            "canUndo": false,
+            "canRedo": false,
+            "cursor": 0,
+            "total": 0,
+            "undoLabel": null,
+            "redoLabel": null
+          }
+        },
+        "capabilityLedger": {
+          "release": "1.2.0",
+          "scope": "Foundation + Tier 1 + Tier 2 + Tier 3 + Tier 4",
+          "implemented": 175,
+          "deferred": 23,
+          "total": 198
+        },
+        "aiSurface": {
+          "tools": 16,
+          "resources": 12,
+          "resourceTemplates": 3,
+          "prompts": 5,
+          "manifest": "AI/AI_MANIFEST.json"
+        },
+        "recentStudioCommands": [],
+        "nextAgentStartup": [
+          "Read AGENTS.md and AI/OPERATING_CONTRACT.md.",
+          "Call toadal.inspect(scope=\"workspace\").",
+          "Read the relevant entity with toadal.inspect before mutating it.",
+          "Use typed TOADAL MCP tools; avoid direct JSON edits unless the tool surface genuinely lacks the operation.",
+          "After changes, call toadal.qa(level=\"full\") and toadal.checkpoint(mode=\"full\")."
+        ]
+      }
+    },
+    "finishedAt": "2026-10-02T04:21:50.246Z",
+    "ok": true
+  }
+}

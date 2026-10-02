@@ -1,0 +1,1102 @@
+{
+  "schema": "toadal-feast.app-download-browser-qa.v1",
+  "status": "PASS",
+  "repo": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-preview-20261001",
+  "dist": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-preview-20261001\\dist",
+  "basePath": "/toadal-feast-web/",
+  "generatedAt": "2026-10-02T04:23:29.023Z",
+  "captures": [
+    {
+      "id": "home-app-1440x900",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/home-app-1440x900.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 905398,
+      "route": "/"
+    },
+    {
+      "id": "home-app-430x932",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/home-app-430x932.png",
+      "width": 430,
+      "height": 932,
+      "bytes": 300787,
+      "route": "/"
+    },
+    {
+      "id": "home-app-390x844",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/home-app-390x844.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 287454,
+      "route": "/"
+    },
+    {
+      "id": "home-app-320x800",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/home-app-320x800.png",
+      "width": 320,
+      "height": 800,
+      "bytes": 228211,
+      "route": "/"
+    },
+    {
+      "id": "app-hero-1440x900",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/app-hero-1440x900.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1203464,
+      "route": "/app/"
+    },
+    {
+      "id": "app-hero-390x844",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/app-hero-390x844.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 353786,
+      "route": "/app/"
+    },
+    {
+      "id": "app-gameplay-gallery-1440x900",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/app-gameplay-gallery-1440x900.png",
+      "width": 1440,
+      "height": 900,
+      "bytes": 630369,
+      "route": "/app/"
+    },
+    {
+      "id": "app-gameplay-gallery-390x844",
+      "file": "docs/review/app-download-production-20261001/evidence/integrated/app-gameplay-gallery-390x844.png",
+      "width": 390,
+      "height": 844,
+      "bytes": 330106,
+      "route": "/app/"
+    }
+  ],
+  "checks": [
+    {
+      "name": "home-app-1440x900: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/",
+        "expectedRoute": "/toadal-feast-web/",
+        "section": {
+          "left": 0,
+          "top": 384.078125,
+          "right": 1097.109375,
+          "bottom": 809.359375,
+          "width": 1097.109375,
+          "height": 425.28125
+        }
+      }
+    },
+    {
+      "name": "home-app-1440x900: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      }
+    },
+    {
+      "name": "home-app-1440x900: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "home-app-1440x900: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    },
+    {
+      "name": "home-app-1440x900: store controls exist and are disabled",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 34,
+            "top": 582.90625,
+            "right": 152,
+            "bottom": 617.90625,
+            "width": 118,
+            "height": 35
+          },
+          "parent": {
+            "left": 34,
+            "top": 582.90625,
+            "right": 275,
+            "bottom": 617.90625,
+            "width": 241,
+            "height": 35
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 157,
+            "top": 582.90625,
+            "right": 275,
+            "bottom": 617.90625,
+            "width": 118,
+            "height": 35
+          },
+          "parent": {
+            "left": 34,
+            "top": 582.90625,
+            "right": 275,
+            "bottom": 617.90625,
+            "width": 241,
+            "height": 35
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "home-app-1440x900: store controls visible and not clipped",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 34,
+            "top": 582.90625,
+            "right": 152,
+            "bottom": 617.90625,
+            "width": 118,
+            "height": 35
+          },
+          "parent": {
+            "left": 34,
+            "top": 582.90625,
+            "right": 275,
+            "bottom": 617.90625,
+            "width": 241,
+            "height": 35
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 157,
+            "top": 582.90625,
+            "right": 275,
+            "bottom": 617.90625,
+            "width": 118,
+            "height": 35
+          },
+          "parent": {
+            "left": 34,
+            "top": 582.90625,
+            "right": 275,
+            "bottom": 617.90625,
+            "width": 241,
+            "height": 35
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "home-app-430x932: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/",
+        "expectedRoute": "/toadal-feast-web/",
+        "section": {
+          "left": 0,
+          "top": 74.453125,
+          "right": 430,
+          "bottom": 845.640625,
+          "width": 430,
+          "height": 771.1875
+        }
+      }
+    },
+    {
+      "name": "home-app-430x932: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 430,
+        "viewportWidth": 430
+      }
+    },
+    {
+      "name": "home-app-430x932: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "home-app-430x932: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    },
+    {
+      "name": "home-app-430x932: store controls exist and are disabled",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 60,
+            "top": 282.1875,
+            "right": 264.40625,
+            "bottom": 317.1875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 60,
+            "top": 282.1875,
+            "right": 264.40625,
+            "bottom": 357.1875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 60,
+            "top": 322.1875,
+            "right": 264.40625,
+            "bottom": 357.1875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 60,
+            "top": 282.1875,
+            "right": 264.40625,
+            "bottom": 357.1875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "home-app-430x932: store controls visible and not clipped",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 60,
+            "top": 282.1875,
+            "right": 264.40625,
+            "bottom": 317.1875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 60,
+            "top": 282.1875,
+            "right": 264.40625,
+            "bottom": 357.1875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 60,
+            "top": 322.1875,
+            "right": 264.40625,
+            "bottom": 357.1875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 60,
+            "top": 282.1875,
+            "right": 264.40625,
+            "bottom": 357.1875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "home-app-390x844: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/",
+        "expectedRoute": "/toadal-feast-web/",
+        "section": {
+          "left": 0,
+          "top": 73.765625,
+          "right": 390,
+          "bottom": 844.953125,
+          "width": 390,
+          "height": 771.1875
+        }
+      }
+    },
+    {
+      "name": "home-app-390x844: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 390,
+        "viewportWidth": 390
+      }
+    },
+    {
+      "name": "home-app-390x844: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "home-app-390x844: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    },
+    {
+      "name": "home-app-390x844: store controls exist and are disabled",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 281.5,
+            "right": 260.40625,
+            "bottom": 316.5,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.5,
+            "right": 260.40625,
+            "bottom": 356.5,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 321.5,
+            "right": 260.40625,
+            "bottom": 356.5,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.5,
+            "right": 260.40625,
+            "bottom": 356.5,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "home-app-390x844: store controls visible and not clipped",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 281.5,
+            "right": 260.40625,
+            "bottom": 316.5,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.5,
+            "right": 260.40625,
+            "bottom": 356.5,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 321.5,
+            "right": 260.40625,
+            "bottom": 356.5,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.5,
+            "right": 260.40625,
+            "bottom": 356.5,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "home-app-320x800: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/",
+        "expectedRoute": "/toadal-feast-web/",
+        "section": {
+          "left": 0,
+          "top": 74.0625,
+          "right": 320,
+          "bottom": 862.625,
+          "width": 320,
+          "height": 788.5625
+        }
+      }
+    },
+    {
+      "name": "home-app-320x800: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 320,
+        "viewportWidth": 320
+      }
+    },
+    {
+      "name": "home-app-320x800: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "home-app-320x800: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    },
+    {
+      "name": "home-app-320x800: store controls exist and are disabled",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 281.796875,
+            "right": 260.40625,
+            "bottom": 316.796875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.796875,
+            "right": 260.40625,
+            "bottom": 356.796875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 321.796875,
+            "right": 260.40625,
+            "bottom": 356.796875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.796875,
+            "right": 260.40625,
+            "bottom": 356.796875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "home-app-320x800: store controls visible and not clipped",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 281.796875,
+            "right": 260.40625,
+            "bottom": 316.796875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.796875,
+            "right": 260.40625,
+            "bottom": 356.796875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 56,
+            "top": 321.796875,
+            "right": 260.40625,
+            "bottom": 356.796875,
+            "width": 204.40625,
+            "height": 35
+          },
+          "parent": {
+            "left": 56,
+            "top": 281.796875,
+            "right": 260.40625,
+            "bottom": 356.796875,
+            "width": 204.40625,
+            "height": 75
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "app-hero-1440x900: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/app/",
+        "expectedRoute": "/toadal-feast-web/app/",
+        "section": {
+          "left": 130,
+          "top": 77.921875,
+          "right": 1310,
+          "bottom": 793.34375,
+          "width": 1180,
+          "height": 715.421875
+        }
+      }
+    },
+    {
+      "name": "app-hero-1440x900: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      }
+    },
+    {
+      "name": "app-hero-1440x900: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "app-hero-1440x900: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    },
+    {
+      "name": "app-hero-1440x900: store controls exist and are disabled",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 184,
+            "top": 527.75,
+            "right": 329,
+            "bottom": 572.75,
+            "width": 145,
+            "height": 45
+          },
+          "parent": {
+            "left": 184,
+            "top": 527.75,
+            "right": 595.515625,
+            "bottom": 572.75,
+            "width": 411.515625,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 337,
+            "top": 527.75,
+            "right": 482,
+            "bottom": 572.75,
+            "width": 145,
+            "height": 45
+          },
+          "parent": {
+            "left": 184,
+            "top": 527.75,
+            "right": 595.515625,
+            "bottom": 572.75,
+            "width": 411.515625,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "app-hero-1440x900: store controls visible and not clipped",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 184,
+            "top": 527.75,
+            "right": 329,
+            "bottom": 572.75,
+            "width": 145,
+            "height": 45
+          },
+          "parent": {
+            "left": 184,
+            "top": 527.75,
+            "right": 595.515625,
+            "bottom": 572.75,
+            "width": 411.515625,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 337,
+            "top": 527.75,
+            "right": 482,
+            "bottom": 572.75,
+            "width": 145,
+            "height": 45
+          },
+          "parent": {
+            "left": 184,
+            "top": 527.75,
+            "right": 595.515625,
+            "bottom": 572.75,
+            "width": 411.515625,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "app-hero-390x844: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/app/",
+        "expectedRoute": "/toadal-feast-web/app/",
+        "section": {
+          "left": 12,
+          "top": 74.015625,
+          "right": 378,
+          "bottom": 977.78125,
+          "width": 366,
+          "height": 903.765625
+        }
+      }
+    },
+    {
+      "name": "app-hero-390x844: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 390,
+        "viewportWidth": 390
+      }
+    },
+    {
+      "name": "app-hero-390x844: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "app-hero-390x844: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    },
+    {
+      "name": "app-hero-390x844: store controls exist and are disabled",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 32,
+            "top": 395.390625,
+            "right": 191,
+            "bottom": 440.390625,
+            "width": 159,
+            "height": 45
+          },
+          "parent": {
+            "left": 32,
+            "top": 395.390625,
+            "right": 358,
+            "bottom": 440.390625,
+            "width": 326,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 199,
+            "top": 395.390625,
+            "right": 358,
+            "bottom": 440.390625,
+            "width": 159,
+            "height": 45
+          },
+          "parent": {
+            "left": 32,
+            "top": 395.390625,
+            "right": 358,
+            "bottom": 440.390625,
+            "width": 326,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "app-hero-390x844: store controls visible and not clipped",
+      "status": "PASS",
+      "detail": [
+        {
+          "text": "●\nDownload on the\nApp Store",
+          "disabled": true,
+          "rect": {
+            "left": 32,
+            "top": 395.390625,
+            "right": 191,
+            "bottom": 440.390625,
+            "width": 159,
+            "height": 45
+          },
+          "parent": {
+            "left": 32,
+            "top": 395.390625,
+            "right": 358,
+            "bottom": 440.390625,
+            "width": 326,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        },
+        {
+          "text": "▶\nGet it on\nGoogle Play",
+          "disabled": true,
+          "rect": {
+            "left": 199,
+            "top": 395.390625,
+            "right": 358,
+            "bottom": 440.390625,
+            "width": 159,
+            "height": 45
+          },
+          "parent": {
+            "left": 32,
+            "top": 395.390625,
+            "right": 358,
+            "bottom": 440.390625,
+            "width": 326,
+            "height": 45
+          },
+          "clipped": false,
+          "visible": true
+        }
+      ]
+    },
+    {
+      "name": "app-gameplay-gallery-1440x900: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/app/",
+        "expectedRoute": "/toadal-feast-web/app/",
+        "section": {
+          "left": 130,
+          "top": 78.34375,
+          "right": 1310,
+          "bottom": 634.0625,
+          "width": 1180,
+          "height": 555.71875
+        }
+      }
+    },
+    {
+      "name": "app-gameplay-gallery-1440x900: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 1440,
+        "viewportWidth": 1440
+      }
+    },
+    {
+      "name": "app-gameplay-gallery-1440x900: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "app-gameplay-gallery-1440x900: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    },
+    {
+      "name": "app-gameplay-gallery-390x844: route and target",
+      "status": "PASS",
+      "detail": {
+        "path": "/toadal-feast-web/app/",
+        "expectedRoute": "/toadal-feast-web/app/",
+        "section": {
+          "left": 12,
+          "top": 73.78125,
+          "right": 378,
+          "bottom": 1280.75,
+          "width": 366,
+          "height": 1206.96875
+        }
+      }
+    },
+    {
+      "name": "app-gameplay-gallery-390x844: no document horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "documentWidth": 390,
+        "viewportWidth": 390
+      }
+    },
+    {
+      "name": "app-gameplay-gallery-390x844: persistent companion only; no section-local decorative Toadal",
+      "status": "PASS",
+      "detail": {
+        "companionCount": 1,
+        "decorativeToadal": []
+      }
+    },
+    {
+      "name": "app-gameplay-gallery-390x844: all three real gameplay images loaded",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "arcade-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 360
+        },
+        {
+          "name": "puzzle-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        },
+        {
+          "name": "feastfall-real-gameplay.webp",
+          "loaded": true,
+          "naturalWidth": 640
+        }
+      ]
+    }
+  ],
+  "limitations": [],
+  "finishedAt": "2026-10-02T04:23:33.009Z"
+}

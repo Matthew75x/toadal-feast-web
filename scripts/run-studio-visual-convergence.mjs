@@ -6,6 +6,10 @@ import { pathToFileURL } from 'node:url';
 const repo = path.resolve(process.argv[2] || '.');
 const manifest = path.resolve(process.argv[3] || path.join(repo, 'studio-project/toadal-feast-website/project.json'));
 const studioRoot = path.resolve(process.argv[4] || process.env.TOADAL_STUDIO_ROOT || '');
+const checkpointLabel = process.env.TOADAL_STUDIO_FLOW_LABEL || 'visual-asset-gameplay-convergence';
+const checkpointTask = process.env.TOADAL_STUDIO_FLOW_TASK || 'Qualify owner-preview visual asset authority and real gameplay convergence from the exact 40e4437 baseline.';
+const checkpointNotes = process.env.TOADAL_STUDIO_FLOW_NOTES || 'Validated neutral Gully provenance, hash-verified mobile app QA captures, Home/App device framing, and Wicked Bites gameplay detail. Local export only; no website deployment.';
+const reportPath = path.resolve(process.env.TOADAL_STUDIO_FLOW_REPORT || path.join(repo, 'docs/review/visual-asset-gameplay-convergence-20261001/studio-flow.json'));
 if (!studioRoot || !fs.existsSync(path.join(studioRoot, 'packages/ai-bridge/src/index.ts'))) {
   throw new Error('Pass the audited Studio 1.4.2 root as argument 3 or TOADAL_STUDIO_ROOT.');
 }
@@ -31,9 +35,9 @@ const rendered = await call('toadal.render');
 const exported = await call('toadal.export', { kind: 'static' });
 const checkpoint = await call('toadal.checkpoint', {
   mode: 'verify',
-  label: 'visual-asset-gameplay-convergence',
-  task: 'Qualify owner-preview visual asset authority and real gameplay convergence from the exact 40e4437 baseline.',
-  notes: 'Validated neutral Gully provenance, hash-verified mobile app QA captures, Home/App device framing, and Wicked Bites gameplay detail. Local export only; no website deployment.'
+  label: checkpointLabel,
+  task: checkpointTask,
+  notes: checkpointNotes
 });
 
 const summary = {
@@ -49,9 +53,8 @@ const summary = {
   staticExport: exported,
   checkpoint
 };
-const reportDir = path.join(repo, 'docs/review/visual-asset-gameplay-convergence-20261001');
-fs.mkdirSync(reportDir, { recursive: true });
-fs.writeFileSync(path.join(reportDir, 'studio-flow.json'), JSON.stringify(summary, null, 2) + '\n');
+fs.mkdirSync(path.dirname(reportPath), { recursive: true });
+fs.writeFileSync(reportPath, JSON.stringify(summary, null, 2) + '\n');
 console.log(JSON.stringify({
   schema: summary.schema,
   projectManifest: summary.projectManifest,
@@ -63,6 +66,6 @@ console.log(JSON.stringify({
   render: summary.render,
   staticExport: summary.staticExport,
   checkpoint: summary.checkpoint,
-  report: 'docs/review/visual-asset-gameplay-convergence-20261001/studio-flow.json'
+  report: path.relative(repo, reportPath).replaceAll(path.sep, '/')
 }, null, 2));
 if (!inspected.validation?.valid || checkpoint.ok === false || checkpoint.validation?.ok === false) process.exitCode = 1;

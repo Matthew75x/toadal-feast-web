@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-02T02:08:35.720Z",
+  "generatedAt": "2026-10-02T04:23:51.025Z",
   "basePath": "/toadal-feast-web/",
-  "origin": "http://127.0.0.1:61482",
+  "origin": "http://127.0.0.1:61626",
   "renderedDist": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-preview-20261001\\dist",
   "status": "PASS",
   "checkCount": 49,
@@ -202,8 +202,8 @@
       "status": "PASS",
       "detail": {
         "dailyAfter": {
-          "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.052Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
-          "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.053Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}",
+          "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+          "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}",
           "label": "Already claimed today",
           "disabled": true,
           "opened": "true",
@@ -220,13 +220,13 @@
             "detail": {
               "period": "2026-10-02"
             },
-            "at": 1790906910053
+            "at": 1790915025374
           },
           "toadal:daily-chest-opened": {
             "detail": {
               "period": "2026-10-02"
             },
-            "at": 1790906910053
+            "at": 1790915025374
           }
         }
       }
@@ -241,8 +241,8 @@
           "style": "--toadal-companion-x: 268px; --toadal-companion-y: 566px; left: 268px !important; top: 566px !important;"
         },
         "after": {
-          "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.052Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
-          "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.053Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}",
+          "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+          "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}",
           "label": "Already claimed today",
           "disabled": true,
           "opened": "true",
@@ -260,8 +260,8 @@
       "name": "Second daily click is idempotent",
       "status": "PASS",
       "detail": {
-        "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.052Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
-        "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.053Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}"
+        "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+        "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}"
       }
     },
     {
@@ -288,7 +288,7 @@
         "ok": true,
         "rect": {
           "x": 195,
-          "y": 459.390625,
+          "y": 458.609375,
           "width": 302,
           "height": 56,
           "disabled": false,
@@ -540,7 +540,7 @@
       "name": "Surprise Me navigates to a curated same-origin destination",
       "status": "PASS",
       "detail": {
-        "destination": "/toadal-feast-web/characters/",
+        "destination": "/toadal-feast-web/play/",
         "portalState": {
           "path": "/toadal-feast-web/",
           "portal": "activated",
@@ -549,9 +549,9 @@
           "status": "The portal is opening a curated Feast destination…",
           "signal": {
             "detail": {
-              "path": "/toadal-feast-web/characters/"
+              "path": "/toadal-feast-web/play/"
             },
-            "at": 1790906915015
+            "at": 1790915030323
           },
           "history": 2
         }
@@ -561,7 +561,7 @@
       "name": "Portal navigation preserves normal browser history",
       "status": "PASS",
       "detail": {
-        "previousEntry": "http://127.0.0.1:61482/toadal-feast-web/",
+        "previousEntry": "http://127.0.0.1:61626/toadal-feast-web/",
         "length": 3,
         "portalState": {
           "path": "/toadal-feast-web/",
@@ -571,9 +571,9 @@
           "status": "The portal is opening a curated Feast destination…",
           "signal": {
             "detail": {
-              "path": "/toadal-feast-web/characters/"
+              "path": "/toadal-feast-web/play/"
             },
-            "at": 1790906915015
+            "at": 1790915030323
           },
           "history": 2
         }
@@ -607,8 +607,8 @@
       "pressed": "false"
     },
     "afterDaily": {
-      "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.052Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
-      "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T02:08:30.053Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}",
+      "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+      "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T04:23:45.374Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[]}",
       "label": "Already claimed today",
       "disabled": true,
       "opened": "true",
