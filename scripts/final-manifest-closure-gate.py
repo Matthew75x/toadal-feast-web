@@ -40,6 +40,7 @@ def main() -> int:
         ("final-manifest-surfaces", [node, "scripts/verify-final-manifest-surfaces.mjs"]),
         ("final-interaction-truth", [node, "scripts/verify-final-interaction-truth.mjs", "."]),
         ("final-product-contracts", [node, "scripts/verify-final-product-contracts.mjs", "."]),
+        ("final-manifest-discoverability", [node, "scripts/verify-final-manifest-discoverability.mjs", "."]),
         ("navigation-truth", [node, "scripts/verify-navigation-truth.mjs", "."]),
         ("character-registry", [node, "scripts/verify-character-content-registry.mjs", "."]),
         ("gated-ecosystem", [node, "scripts/verify-gated-ecosystem-routes.mjs", "."]),
