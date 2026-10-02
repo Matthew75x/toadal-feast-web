@@ -1,0 +1,51 @@
+{
+  "schema": "toadal-feast.owner-visual-acceptance-final-bytes.v1",
+  "startingCommit": "d6be86a9762370b66e79c1d5a36ab8066e421496",
+  "startingTree": "cedf1be2bf8e2b2016696509f18a6927bd6b0354",
+  "candidateBranch": "work/owner-visual-acceptance-20261002",
+  "lineEndings": "Git canonicalizes tracked text to LF. Source and generated deployment copies have identical Git blobs; raw local Windows hashes are listed separately.",
+  "productFiles": [
+    {
+      "source": "studio-project/toadal-feast-website/reference/assets/css/site.css",
+      "generated": "dist/assets/css/site.css",
+      "gitBlobBoth": "6a0042ebe1ee167db97d403560360c861826023b",
+      "gitCanonicalSha256Both": "f7f7e27b259a5bd07e3965e56abde7e35c6b30760260eb7f882d64ad2399ca34",
+      "localRawSha256Both": "d0a3068be5f5d877e841f8a750ddf0054b2fc5ad0aa613974419720d330f35a7"
+    },
+    {
+      "source": "studio-project/toadal-feast-website/reference/assets/js/companion-position.js",
+      "generated": "dist/assets/js/companion-position.js",
+      "gitBlobBoth": "eabc75f0e339c987fb09d199c5634be51972604f",
+      "gitCanonicalSha256Both": "005678b1cb880c46aa1f175a384ab210a3d3bff37e79ad8917048435eb5de9d8",
+      "localRawSha256Both": "e133c88701b09f18ad14b1a75fb641f134e5f041364d1f8e0e4c1fa9129858e5"
+    }
+  ],
+  "staticExport": {
+    "path": "studio-project/toadal-feast-website/build/exports/toadal-feast-website-static-site.zip",
+    "tracked": false,
+    "bytes": 39829960,
+    "sha256": "c081dd2cf1285800466dde62e6a44d928c99d9098fafe0153cfc9367300600b1"
+  },
+  "qualification": {
+    "repositoryTests": { "passed": 52, "failed": 0, "skipped": 0 },
+    "ownerGateRequiredTests": { "passed": 48, "failed": 0 },
+    "ownerGates": { "passed": 16, "failed": 0 },
+    "browserCases": { "passed": 77, "failed": 0, "routes": 30 },
+    "focusedViews": { "passed": 13, "failed": 0 },
+    "companionInteractions": { "passed": 17, "failed": 0 },
+    "studioPackageCanonicalFixture": { "passed": 81, "failed": 0, "skipped": 0 },
+    "studioDoctor": { "passed": 26, "failed": 0 },
+    "studioVerifyCheckpoint": "PASS",
+    "studioFullWrapper": "Windows npm.cmd spawn EINVAL; not reported as PASS. Direct package tests and doctor passed.",
+    "mobileHeroPrimaryCtaOpaqueOverlapPixels": [0, 0],
+    "mobileDefaultCompanionMeaningfulContentIntersections": 0
+  },
+  "neutralGullySha256Unchanged": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
+  "gameplaySourcesAndGeneratedBytes": "unchanged",
+  "protectedRefs": {
+    "main": "87050885331770ca3e30db7e463154aebd777512",
+    "staging/live-visual": "d6be86a9762370b66e79c1d5a36ab8066e421496"
+  },
+  "deploymentPerformed": false,
+  "ownerAcceptance": "READY FOR OWNER VISUAL REVIEW; not LOCK_VISUAL"
+}

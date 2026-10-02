@@ -7074,3 +7074,194 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
     width: min(100%, 146px);
   }
 }
+
+/* Owner acceptance polish: approved world framing and compact illustrated lanes. */
+body:has(.home-hero) {
+  background:
+    linear-gradient(180deg, rgb(47 20 16 / 8%), rgb(47 20 16 / 40%)),
+    url("../images/world/candy-kingdom.webp") center / cover fixed;
+}
+
+body:has(.home-hero) main { background: transparent; }
+
+body:has(.home-hero) .section-heading,
+body:has(.home-hero) .discovery-card h3,
+body:has(.home-hero) .home-discovery-card__heading h3 {
+  font-family: Georgia, "Times New Roman", serif;
+  letter-spacing: -.035em;
+}
+
+body:has(.home-hero) .hero-scrim {
+  background: linear-gradient(90deg, rgb(40 17 16 / 70%), rgb(40 17 16 / 24%) 44%, transparent 68%);
+}
+
+body:has(.home-hero) #interactive-discovery,
+body:has(.home-hero) #discovery {
+  background: var(--cream-100);
+  border: 1px solid rgb(255 215 122 / 85%);
+  border-radius: 20px;
+  box-shadow: 0 6px 18px rgb(35 14 8 / 20%);
+}
+
+body:has(.home-hero) .home-discovery-card { background: linear-gradient(135deg, #fffef8, #fff1ce); }
+body:has(.home-hero) .site-footer { margin-top: 18px; border-top: 1px solid rgb(255 204 95 / 65%); }
+
+@media (min-width: 1180px) {
+  main:has(.home-hero) {
+    width: min(calc(100% - 48px), 1640px);
+    column-gap: 14px;
+    row-gap: 12px;
+  }
+
+  body:has(.home-hero) .home-hero { margin-bottom: 2px; }
+  body:has(.home-hero) #browser-games-intro {
+    padding: 14px 0 0;
+    margin-bottom: -12px;
+    border: 1px solid rgb(255 215 122 / 85%);
+    border-bottom: 0;
+    border-radius: 20px 20px 0 0;
+    background: var(--cream-100);
+  }
+
+  body:has(.home-hero) #browser-games {
+    padding: 8px 14px 14px;
+    gap: 10px !important;
+    border: 1px solid rgb(255 215 122 / 85%);
+    border-top: 0;
+    border-radius: 0 0 20px 20px;
+    background: var(--cream-100);
+    box-shadow: 0 6px 18px rgb(35 14 8 / 20%);
+  }
+
+  body:has(.home-hero) #browser-games .studio-game-card { background: #fffdf6; border-color: rgb(174 109 41 / 25%); }
+  body:has(.home-hero) #browser-games .studio-game-card img { height: clamp(106px, 8.6vw, 146px); }
+  body:has(.home-hero) #browser-games .studio-game-card h3 { font-size: .95rem; }
+  body:has(.home-hero) #browser-games .studio-game-card p { font-size: .68rem; line-height: 1.3; }
+
+  body:has(.home-hero) #feast-pass {
+    padding: 0;
+    border: 1px solid rgb(255 215 122 / 85%);
+    border-radius: 20px;
+    background: var(--cream-100);
+    box-shadow: 0 6px 18px rgb(35 14 8 / 20%);
+  }
+
+  #feast-pass .home-feast-pass-panel {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 20px;
+    color: var(--chocolate-800);
+    border: 0;
+    border-radius: 20px;
+    background: linear-gradient(145deg, #fffdf6, #ffedba);
+    box-shadow: none;
+  }
+
+  #feast-pass .home-feast-pass-panel :is(.section-kicker, .section-lede, .home-pass-storage-status, dt) { color: var(--chocolate-800); }
+  #feast-pass .home-feast-pass-panel .section-heading { color: var(--navy-900); }
+  #feast-pass .home-pass-metrics > div { background: rgb(255 255 255 / 70%); border-color: #e3c689; }
+  #feast-pass .home-pass-metrics dd { color: #925505; }
+
+  body:has(.home-hero) #today { padding: 0; }
+  #today .today-panel { border-radius: 18px; }
+  #today .today-panel .today-actions.daily-chest-actions { grid-template-columns: 112px minmax(0, 1fr); }
+  #today .today-panel .daily-chest-actions .daily-chest-button {
+    min-height: 94px;
+    min-width: 0;
+    width: 112px;
+    border-radius: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    white-space: normal;
+    font-size: .72rem;
+  }
+  #today .daily-chest-button [data-daily-claim-label] { min-width: 0; width: 100%; line-height: 1.2; }
+  #today .today-panel .daily-chest-actions .daily-chest-scene { width: 62px; }
+
+  body:has(.home-hero) #interactive-discovery { padding: 0 18px; }
+  .home-discovery-section { padding-block: 16px; }
+  .home-discovery-heading { max-width: none; margin-bottom: 12px; }
+  .home-discovery-heading .section-heading { font-size: 1.8rem; }
+  .home-discovery-heading .section-lede { font-size: .78rem; }
+  .home-discovery-grid { gap: 12px; }
+
+  .home-discovery-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 126px;
+    align-content: start;
+    gap: 6px 16px;
+    min-height: 0;
+    padding: 14px;
+  }
+
+  .home-discovery-card__heading { grid-column: 1; grid-row: 1; }
+  .home-discovery-card__heading h3 { margin: 0; font-size: 1.2rem; }
+  .home-discovery-card :is(.portal-discovery-art, .golden-block-art) {
+    grid-column: 2;
+    grid-row: 1 / span 3;
+    width: 126px;
+    margin: 0;
+    align-self: center;
+  }
+  .home-discovery-card :is(.portal-discovery-button, .golden-block-hit-button) { grid-column: 1; grid-row: 2; }
+  .home-discovery-card .discovery-action-status { grid-column: 1; grid-row: 3; margin: 0; min-height: 0; font-size: .73rem; }
+  .home-discovery-card :is(.home-candy-button, .home-candy-reveal) { grid-column: 1 / -1; }
+  .home-discovery-card .home-candy-button { min-height: 48px; }
+
+  body:has(.home-hero) #discovery { padding: 14px; }
+  #discovery .discovery-heading { min-height: 0; margin-bottom: 12px; }
+  #discovery .discovery-heading .section-heading { font-size: 1.6rem; }
+  #discovery .discovery-card { min-height: 242px; max-height: none; padding: 12px; }
+  #discovery .discovery-card h3 { font-size: 1.15rem; }
+  #discovery .discovery-card > p:not(.section-kicker) { font-size: .7rem; }
+  #discovery .character-figure img { max-height: 74px; }
+  #discovery .character-figure figcaption { font-size: .66rem; }
+  #discovery .world-art { height: 94px; max-height: 94px; }
+  #discovery .button-link { min-height: 32px; font-size: .69rem; }
+  #discovery .discovery-card--stories .stories-art--illustrated { min-height: 94px; }
+
+  body:has(.home-hero) #app { padding: 0; }
+  body:has(.home-hero) #whats-next { padding: 0; }
+  #whats-next .home-section-inner { min-height: 100%; max-height: none; }
+}
+
+@media (max-width: 1179px) {
+  body:has(.home-hero) #browser-games-intro,
+  body:has(.home-hero) #browser-games { background: var(--cream-100); }
+  body:has(.home-hero) #browser-games-intro { border-radius: 18px 18px 0 0; }
+  body:has(.home-hero) #browser-games { border-radius: 0 0 18px 18px; margin-bottom: 14px; }
+  body:has(.home-hero) #interactive-discovery,
+  body:has(.home-hero) #discovery { margin-block: 14px; }
+  body:has(.home-hero) #discovery { padding: 16px 0; }
+}
+
+@media (max-width: 600px) {
+  /* The automatic companion fits between the brand and Menu; content stays free. */
+  .toadal-companion[data-mobile-docked="true"] {
+    width: var(--toadal-dock-width, 102px);
+    height: 52px;
+    align-items: center;
+  }
+  .toadal-companion[data-mobile-docked="true"] .companion-toggle {
+    width: var(--toadal-dock-width, 102px);
+    min-width: 0;
+    height: 52px;
+    min-height: 52px;
+  }
+  .toadal-companion[data-mobile-docked="true"] .companion-image {
+    width: 52px;
+    height: 52px;
+    max-height: 52px;
+    margin-inline: auto;
+    filter: drop-shadow(0 2px 3px rgb(0 0 0 / 28%));
+    transform: none;
+  }
+  body:has(.home-hero) .hero-scrim { background: linear-gradient(180deg, rgb(40 17 16 / 65%), rgb(40 17 16 / 34%) 63%, transparent); }
+}
+
+@media (min-width: 361px) and (max-width: 430px) {
+  /* Remove excess sky while retaining the separate hero-character pocket. */
+  body:has(.home-hero) .home-hero,
+  body:has(.home-hero) .home-hero__layout { min-height: 480px; height: 480px; }
+  body:has(.home-hero) .home-hero__layout { padding-block: 20px 86px; }
+}

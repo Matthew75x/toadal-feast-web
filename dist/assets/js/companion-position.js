@@ -28,6 +28,28 @@
     var suppressTimer = null;
     var moveFrame = 0;
     var queuedPosition = null;
+    var manualPosition = false;
+
+    function mobileDock() {
+      if (manualPosition || window.innerWidth > 600) return null;
+      var nav = document.querySelector('.site-nav');
+      var brand = nav && nav.querySelector('.site-brand');
+      var menu = nav && nav.querySelector('.nav-toggle');
+      if (!brand || !menu || getComputedStyle(menu).display === 'none') return null;
+      var a = brand.getBoundingClientRect();
+      var b = menu.getBoundingClientRect();
+      var gap = b.left - a.right - 16;
+      if (gap < 52) return null;
+      var width = Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
+      return { x: a.right + 8 + (gap - width) / 2, y: Math.max(4, a.top + (a.height - 52) / 2), width: width };
+    }
+
+    function setDock(dock) {
+      if (dock) {
+        root.setAttribute('data-mobile-docked', 'true');
+        root.style.setProperty('--toadal-dock-width', dock.width + 'px');
+      } else root.removeAttribute('data-mobile-docked');
+    }
 
     function viewport() {
       var visual = window.visualViewport;
@@ -55,7 +77,7 @@
 
     function persistPosition() {
       try {
-        window.localStorage.setItem(POSITION_KEY, JSON.stringify({ version: 1, x: x, y: y }));
+        window.localStorage.setItem(POSITION_KEY, JSON.stringify({ version: 1, x: x, y: y, manual: manualPosition }));
       } catch (error) { /* Keep the in-memory position when storage is unavailable. */ }
     }
 
@@ -106,7 +128,9 @@
     }
 
     function applyPosition(nextX, nextY, persist) {
-      var next = clampPosition(nextX, nextY);
+      var dock = !drag || !drag.moved ? mobileDock() : null;
+      setDock(dock);
+      var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
       x = next.x;
       y = next.y;
       root.style.setProperty('--toadal-companion-x', x + 'px');
@@ -119,17 +143,24 @@
       if (persist) persistPosition();
     }
 
-    function loadPosition() {
-      var saved = null;
-      try { saved = JSON.parse(window.localStorage.getItem(POSITION_KEY) || 'null'); } catch (error) { saved = null; }
-      if (saved && saved.version === 1 && Number.isFinite(saved.x) && Number.isFinite(saved.y)) {
-        return { x: saved.x, y: saved.y };
-      }
+    function defaultPosition() {
       var view = viewport();
       return {
         x: view.left + view.width - root.offsetWidth - EDGE_GAP,
         y: view.top + view.height - root.offsetHeight - EDGE_GAP - DEFAULT_BOTTOM_GAP
       };
+    }
+
+    function loadPosition() {
+      var saved = null;
+      try { saved = JSON.parse(window.localStorage.getItem(POSITION_KEY) || 'null'); } catch (error) { saved = null; }
+      if (saved && saved.version === 1 && Number.isFinite(saved.x) && Number.isFinite(saved.y)) {
+        // Legacy records cannot distinguish a default from a deliberate drag.
+        // Migrate them once to safe defaults, regardless of the old viewport.
+        manualPosition = saved.manual === true;
+        if (manualPosition) return { x: saved.x, y: saved.y };
+      }
+      return defaultPosition();
     }
 
     function schedulePosition(nextX, nextY, persist) {
@@ -157,6 +188,7 @@
         originY: rect.top,
         offsetX: event.clientX - rect.left,
         offsetY: event.clientY - rect.top,
+        manual: manualPosition,
         moved: false
       };
       try { button.setPointerCapture(event.pointerId); } catch (error) { /* Window listeners still provide cleanup. */ }
@@ -167,6 +199,10 @@
       var dx = event.clientX - drag.startX;
       var dy = event.clientY - drag.startY;
       if (!drag.moved && Math.hypot(dx, dy) < DRAG_THRESHOLD) return;
+      if (!drag.moved) {
+        manualPosition = true;
+        setDock(null);
+      }
       drag.moved = true;
       root.setAttribute('data-dragging', 'true');
       if (event.cancelable) event.preventDefault();
@@ -179,6 +215,7 @@
       drag = null;
       root.removeAttribute('data-dragging');
       if (cancelled) {
+        manualPosition = ended.manual;
         if (moveFrame) window.cancelAnimationFrame(moveFrame);
         moveFrame = 0;
         queuedPosition = null;
@@ -223,6 +260,8 @@
       else if (event.key === 'ArrowDown') nextY += step;
       else return;
       event.preventDefault();
+      manualPosition = true;
+      setDock(null);
       applyPosition(nextX, nextY, true);
     });
     root.addEventListener('touchstart', function (event) {
@@ -230,10 +269,16 @@
     }, { passive: true });
 
     function clampAfterViewportChange() {
-      applyPosition(x, y, true);
+      // Automatic mobile header coordinates must not become a desktop preference.
+      setDock(mobileDock());
+      var next = manualPosition ? { x: x, y: y } : defaultPosition();
+      applyPosition(next.x, next.y, true);
     }
     window.addEventListener('resize', clampAfterViewportChange, { passive: true });
     window.addEventListener('orientationchange', clampAfterViewportChange, { passive: true });
+    window.addEventListener('scroll', function () {
+      if (!manualPosition && !drag && window.innerWidth <= 600) applyPosition(x, y, false);
+    }, { passive: true });
     if (window.visualViewport) {
       window.visualViewport.addEventListener('resize', clampAfterViewportChange, { passive: true });
       window.visualViewport.addEventListener('scroll', clampAfterViewportChange, { passive: true });
