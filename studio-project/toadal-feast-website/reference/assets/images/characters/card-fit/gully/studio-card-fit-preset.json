@@ -8,7 +8,7 @@
     {
       "media": "(max-width: 680px)",
       "source": "reference/assets/images/characters/card-fit/gully/gully-card-fit-mobile-3x2-900x600.png",
-      "fit": "contain",
+      "fit": "cover",
       "focalX": 50,
       "focalY": 51,
       "zoom": 1
@@ -16,11 +16,25 @@
     {
       "media": "default",
       "source": "reference/assets/images/characters/card-fit/gully/gully-card-fit-desktop-7x4-1050x600.png",
-      "fit": "contain",
+      "fit": "cover",
       "focalX": 50,
       "focalY": 51,
       "zoom": 1
     }
   ],
-  "sourcePolicy": "Derivatives only: proportional scaling + transparent padding. Approved source stays untouched."
+  "sourcePolicy": "Derivatives only: proportional scaling + transparent padding. Approved source stays untouched.",
+  "geometryProof": {
+    "desktop": {
+      "mediaRowHeightPx": 160,
+      "layout": "four-column",
+      "preferredAsset": "gully-card-fit-desktop-7x4-1050x600.png"
+    },
+    "mobile": {
+      "maxWidthPx": 680,
+      "mediaRowHeightPx": 115,
+      "layout": "two-column",
+      "preferredAsset": "gully-card-fit-mobile-3x2-900x600.png"
+    }
+  },
+  "fitRationale": "Use cover with the aspect-matched derivatives to maximize character scale while preserving head, body, wings, and feet."
 }
