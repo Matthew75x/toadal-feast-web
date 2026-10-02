@@ -371,5 +371,21 @@
     "Official App store URLs",
     "Actual Froggy identity/connected ranking, contact/moderation/commerce services"
   ],
-  "publication": "QUALIFIED_PENDING_COMMIT_AND_STAGING_DEPLOYMENT"
+  "publication": "STAGING_VERIFIED",
+  "qualifiedCommit": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+  "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
+  "deployment": {
+    "status": "PASS",
+    "headSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "branch": "staging/live-visual",
+    "runUrl": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/37011524073",
+    "livePages": 33,
+    "matchingArtifactProbes": 10,
+    "branded404": true,
+    "browserSmoke": [
+      "Home",
+      "Characters",
+      "App"
+    ]
+  }
 }

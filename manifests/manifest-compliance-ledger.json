@@ -4,10 +4,10 @@
   "purpose": "Permanent control ledger: future work must advance an explicit manifest row or a cross-cutting requirement.",
   "authority": {
     "main": "87050885331770ca3e30db7e463154aebd777512",
-    "liveStaging": "688e1c471fdc97207c5ebfeaa0ef313ab9c44e52",
+    "liveStaging": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
     "currentReviewBranch": "work/manifest-complete-v1-20261002",
-    "currentReviewCandidate": "UNCOMMITTED_REMEDIATION_WORKTREE",
-    "qualifiedTree": null,
+    "currentReviewCandidate": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
     "approvedHomeSha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608",
     "remediationBase": "60c4d8bee7edd818fcc794e3f87232058585b9d8",
     "frozenRelease": "6e543f2abebe66ef46ca6ecaa6da20e3196a5c43",
@@ -24,404 +24,404 @@
   },
   "pageStatusCounts": {
     "PARTIAL": 1,
-    "PARTIAL_CANDIDATE": 29
+    "DONE_PROVEN": 29
   },
   "pages": [
     {
       "n": 1,
       "page": "Home",
       "visualAuthority": "LOCK_VISUAL",
-      "delivery": "REMEDIATION_CANDIDATE",
+      "delivery": "LIVE_STAGING",
       "status": "PARTIAL",
-      "evidence": "Existing Home composition, games/Pass/discovery/App hierarchy and companion preserved; no redesign. Final integrated qualification pending.",
+      "evidence": "Existing Home composition, games/Pass/discovery/App hierarchy and companion preserved; no redesign. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Owner Home LOCK_VISUAL acceptance remains pending.",
       "manifestV1Action": "KEEP / POLISH",
-      "manifestV1Evidence": "Existing Home composition, games/Pass/discovery/App hierarchy and companion preserved; no redesign. Final integrated qualification pending.",
+      "manifestV1Evidence": "Existing Home composition, games/Pass/discovery/App hierarchy and companion preserved; no redesign. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 2,
       "page": "Play / Games Hub",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Existing catalog/filtering, truthful preview states, challenges/rewards/leaderboard links and App path. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Existing catalog/filtering, truthful preview states, challenges/rewards/leaderboard links and App path. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Additional game availability requires qualification.",
       "manifestV1Action": "KEEP / INTEGRATE",
-      "manifestV1Evidence": "Existing catalog/filtering, truthful preview states, challenges/rewards/leaderboard links and App path. Final integrated qualification pending.",
+      "manifestV1Evidence": "Existing catalog/filtering, truthful preview states, challenges/rewards/leaderboard links and App path. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 3,
       "page": "Wicked Bites Game Detail",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Genuine Wicked Bites media/mechanics; current launch and progression/related paths. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Genuine Wicked Bites media/mechanics; current launch and progression/related paths. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved additional trailer/character/reward content may publish later.",
       "manifestV1Action": "KEEP / INTEGRATE",
-      "manifestV1Evidence": "Genuine Wicked Bites media/mechanics; current launch and progression/related paths. Final integrated qualification pending.",
+      "manifestV1Evidence": "Genuine Wicked Bites media/mechanics; current launch and progression/related paths. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 4,
       "page": "Browser Game Player",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Explicit sibling HUD association; validated current score/session time, pause/error/exit lifecycle and completed local score persistence. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Explicit sibling HUD association; validated current score/session time, pause/error/exit lifecycle and completed local score persistence. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "No cartridge XP/challenge/achievement telemetry is invented.",
       "manifestV1Action": "INTEGRATE / FIX",
-      "manifestV1Evidence": "Explicit sibling HUD association; validated current score/session time, pause/error/exit lifecycle and completed local score persistence. Final integrated qualification pending.",
+      "manifestV1Evidence": "Explicit sibling HUD association; validated current score/session time, pause/error/exit lifecycle and completed local score persistence. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 5,
       "page": "World Hub",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Existing approved World art/registry, locked locations, site discoveries and App path. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Existing approved World art/registry, locked locations, site discoveries and App path. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved location lore/map details await publication.",
       "manifestV1Action": "KEEP / POLISH",
-      "manifestV1Evidence": "Existing approved World art/registry, locked locations, site discoveries and App path. Final integrated qualification pending.",
+      "manifestV1Evidence": "Existing approved World art/registry, locked locations, site discoveries and App path. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 6,
       "page": "Characters Hub",
       "visualAuthority": "POLISH",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Seven approved character artwork discoveries save idempotently in the existing discoveries key; filters and unpublished canon slots preserved. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Seven approved character artwork discoveries save idempotently in the existing discoveries key; filters and unpublished canon slots preserved. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Relationships/appearance canon remains unpublished.",
       "manifestV1Action": "INTEGRATE / POLISH",
-      "manifestV1Evidence": "Seven approved character artwork discoveries save idempotently in the existing discoveries key; filters and unpublished canon slots preserved. Final integrated qualification pending.",
+      "manifestV1Evidence": "Seven approved character artwork discoveries save idempotently in the existing discoveries key; filters and unpublished canon slots preserved. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 7,
       "page": "Toadal Character Profile",
       "visualAuthority": "POLISH",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Biography/personality/history/abilities/friends/locations/games/stories/gallery/collectible structures with truthful canon states. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Biography/personality/history/abilities/friends/locations/games/stories/gallery/collectible structures with truthful canon states. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Additional approved canon remains unpublished.",
       "manifestV1Action": "KEEP / POLISH",
-      "manifestV1Evidence": "Biography/personality/history/abilities/friends/locations/games/stories/gallery/collectible structures with truthful canon states. Final integrated qualification pending.",
+      "manifestV1Evidence": "Biography/personality/history/abilities/friends/locations/games/stories/gallery/collectible structures with truthful canon states. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 8,
       "page": "Stories / Comics Hub",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Featured/latest/progress/comics/manga/short/lore/BTS publishing structures preserved. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Featured/latest/progress/comics/manga/short/lore/BTS publishing structures preserved. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved published story content required.",
       "manifestV1Action": "KEEP / POLISH",
-      "manifestV1Evidence": "Featured/latest/progress/comics/manga/short/lore/BTS publishing structures preserved. Final integrated qualification pending.",
+      "manifestV1Evidence": "Featured/latest/progress/comics/manga/short/lore/BTS publishing structures preserved. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 9,
       "page": "TOADAL FEAST Manga Series",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Reusable series cover/synopsis/chapters/characters/progress/world/media structure, fail-closed publishing. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Reusable series cover/synopsis/chapters/characters/progress/world/media structure, fail-closed publishing. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved series/chapter content required.",
       "manifestV1Action": "KEEP / PLACEHOLDER",
-      "manifestV1Evidence": "Reusable series cover/synopsis/chapters/characters/progress/world/media structure, fail-closed publishing. Final integrated qualification pending.",
+      "manifestV1Evidence": "Reusable series cover/synopsis/chapters/characters/progress/world/media structure, fail-closed publishing. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 10,
       "page": "Comic / Manga Reader",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Existing reader navigation/thumbnails/fullscreen/bookmark/progress/story-info code and graceful unpublished shell. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Existing reader navigation/thumbnails/fullscreen/bookmark/progress/story-info code and graceful unpublished shell. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved published page manifests required.",
       "manifestV1Action": "KEEP / INTEGRATE",
-      "manifestV1Evidence": "Existing reader navigation/thumbnails/fullscreen/bookmark/progress/story-info code and graceful unpublished shell. Final integrated qualification pending.",
+      "manifestV1Evidence": "Existing reader navigation/thumbnails/fullscreen/bookmark/progress/story-info code and graceful unpublished shell. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 11,
       "page": "Media Hub",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Genuine stills/art plus truthful trailer/video/short/wallpaper/download/press availability slots. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Genuine stills/art plus truthful trailer/video/short/wallpaper/download/press availability slots. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved video/download/press content required.",
       "manifestV1Action": "KEEP / POLISH",
-      "manifestV1Evidence": "Genuine stills/art plus truthful trailer/video/short/wallpaper/download/press availability slots. Final integrated qualification pending.",
+      "manifestV1Evidence": "Genuine stills/art plus truthful trailer/video/short/wallpaper/download/press availability slots. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 12,
       "page": "News / Updates Hub",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Featured/latest/filter/trending structures; only valid published editorial, no invented activity metrics. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Featured/latest/filter/trending structures; only valid published editorial, no invented activity metrics. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved news and verified trending data required.",
       "manifestV1Action": "BUILD THIN / POLISH",
-      "manifestV1Evidence": "Featured/latest/filter/trending structures; only valid published editorial, no invented activity metrics. Final integrated qualification pending.",
+      "manifestV1Evidence": "Featured/latest/filter/trending structures; only valid published editorial, no invented activity metrics. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 13,
       "page": "News Article / Devlog",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Allowlisted article body/media/quote/related links/neighbor navigation and Roadmap handoff. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Allowlisted article body/media/quote/related links/neighbor navigation and Roadmap handoff. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved published articles/quotes required.",
       "manifestV1Action": "BUILD THIN / INTEGRATE",
-      "manifestV1Evidence": "Allowlisted article body/media/quote/related links/neighbor navigation and Roadmap handoff. Final integrated qualification pending.",
+      "manifestV1Evidence": "Allowlisted article body/media/quote/related links/neighbor navigation and Roadmap handoff. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 14,
       "page": "Feast Pass Dashboard",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Current four-key schema, level/XP/Sparks/Treats/streak/daily/milestones/discoveries and optional account boundary. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Current four-key schema, level/XP/Sparks/Treats/streak/daily/milestones/discoveries and optional account boundary. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Connected sync remains inactive.",
       "manifestV1Action": "KEEP / INTEGRATE",
-      "manifestV1Evidence": "Current four-key schema, level/XP/Sparks/Treats/streak/daily/milestones/discoveries and optional account boundary. Final integrated qualification pending.",
+      "manifestV1Evidence": "Current four-key schema, level/XP/Sparks/Treats/streak/daily/milestones/discoveries and optional account boundary. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 15,
       "page": "Quests / Challenges",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Configured daily/exploration activities and five quest categories; runtime links honor Pages base path. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Configured daily/exploration activities and five quest categories; runtime links honor Pages base path. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Weekly/game/story goals require supported configured activities.",
       "manifestV1Action": "KEEP / FIX",
-      "manifestV1Evidence": "Configured daily/exploration activities and five quest categories; runtime links honor Pages base path. Final integrated qualification pending.",
+      "manifestV1Evidence": "Configured daily/exploration activities and five quest categories; runtime links honor Pages base path. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 16,
       "page": "Rewards / Collection",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Local reward track/badges/titles/collection and locked/unlocked milestones; no paid/mobile entitlements. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Local reward track/badges/titles/collection and locked/unlocked milestones; no paid/mobile entitlements. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Additional approved reward catalog required.",
       "manifestV1Action": "KEEP / POLISH",
-      "manifestV1Evidence": "Local reward track/badges/titles/collection and locked/unlocked milestones; no paid/mobile entitlements. Final integrated qualification pending.",
+      "manifestV1Evidence": "Local reward track/badges/titles/collection and locked/unlocked milestones; no paid/mobile entitlements. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 17,
       "page": "Leaderboards",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Validated completed local runs, preserved all-time best beyond 50-run history, safe local table and personal-best state. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Validated completed local runs, preserved all-time best beyond 50-run history, safe local table and personal-best state. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Froggy connected/global service and unsupported mode/ruleset fields remain future.",
       "manifestV1Action": "KEEP / FIX",
-      "manifestV1Evidence": "Validated completed local runs, preserved all-time best beyond 50-run history, safe local table and personal-best state. Final integrated qualification pending.",
+      "manifestV1Evidence": "Validated completed local runs, preserved all-time best beyond 50-run history, safe local table and personal-best state. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 18,
       "page": "App / Get TOADAL FEAST",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Hash-verified genuine App icon, three genuine gameplay captures, all four modes and canonical Infinite copy; web/App distinction retained. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Hash-verified genuine App icon, three genuine gameplay captures, all four modes and canonical Infinite copy; web/App distinction retained. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved trailer/Infinite capture and official store destinations remain unavailable.",
       "manifestV1Action": "INTEGRATE / POLISH",
-      "manifestV1Evidence": "Hash-verified genuine App icon, three genuine gameplay captures, all four modes and canonical Infinite copy; web/App distinction retained. Final integrated qualification pending.",
+      "manifestV1Evidence": "Hash-verified genuine App icon, three genuine gameplay captures, all four modes and canonical Infinite copy; web/App distinction retained. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 19,
       "page": "Account / Sign Up / Login",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Guest status, account benefits/privacy and guest continuation; real signup/login intentionally unavailable. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Guest status, account benefits/privacy and guest continuation; real signup/login intentionally unavailable. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Configured Froggy identity/cloud endpoint required.",
       "manifestV1Action": "KEEP / PLACEHOLDER",
-      "manifestV1Evidence": "Guest status, account benefits/privacy and guest continuation; real signup/login intentionally unavailable. Final integrated qualification pending.",
+      "manifestV1Evidence": "Guest status, account benefits/privacy and guest continuation; real signup/login intentionally unavailable. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 20,
       "page": "Player Profile",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Non-identifying guest avatar, selected title, scores, route/Treat and character artwork views, local badges/showcase, tab-only appearance controls. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Non-identifying guest avatar, selected title, scores, route/Treat and character artwork views, local badges/showcase, tab-only appearance controls. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Connected/game achievements/history require actual service/data.",
       "manifestV1Action": "INTEGRATE / POLISH",
-      "manifestV1Evidence": "Non-identifying guest avatar, selected title, scores, route/Treat and character artwork views, local badges/showcase, tab-only appearance controls. Final integrated qualification pending.",
+      "manifestV1Evidence": "Non-identifying guest avatar, selected title, scores, route/Treat and character artwork views, local badges/showcase, tab-only appearance controls. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 21,
       "page": "Community Hub",
       "visualAuthority": "POLISH",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Creator/fan-art/event/feed/guidelines/feedback structures; no fabricated public community activity. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Creator/fan-art/event/feed/guidelines/feedback structures; no fabricated public community activity. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved guidelines/content and posting/moderation service required.",
       "manifestV1Action": "PLACEHOLDER / POLISH",
-      "manifestV1Evidence": "Creator/fan-art/event/feed/guidelines/feedback structures; no fabricated public community activity. Final integrated qualification pending.",
+      "manifestV1Evidence": "Creator/fan-art/event/feed/guidelines/feedback structures; no fabricated public community activity. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 22,
       "page": "Store",
       "visualAuthority": "POLISH",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Merch/digital/categories and real News/Roadmap update CTAs; no fake signup/cart/prices/checkout. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Merch/digital/categories and real News/Roadmap update CTAs; no fake signup/cart/prices/checkout. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved catalog and real commerce service required.",
       "manifestV1Action": "PLACEHOLDER / POLISH",
-      "manifestV1Evidence": "Merch/digital/categories and real News/Roadmap update CTAs; no fake signup/cart/prices/checkout. Final integrated qualification pending.",
+      "manifestV1Evidence": "Merch/digital/categories and real News/Roadmap update CTAs; no fake signup/cart/prices/checkout. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 23,
       "page": "Search / Discovery",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Existing local grouped search, filters/suggestions/empty states preserved and current index regenerated. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Existing local grouped search, filters/suggestions/empty states preserved and current index regenerated. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "No external activation required for local search.",
       "manifestV1Action": "KEEP",
-      "manifestV1Evidence": "Existing local grouped search, filters/suggestions/empty states preserved and current index regenerated. Final integrated qualification pending.",
+      "manifestV1Evidence": "Existing local grouped search, filters/suggestions/empty states preserved and current index regenerated. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 24,
       "page": "What's Next / Roadmap",
       "visualAuthority": "LOCK_STRUCTURE_ONLY",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Four status groups plus related published-devlog links or explicit publication empty state; no invented dates. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Four status groups plus related published-devlog links or explicit publication empty state; no invented dates. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved devlogs required to populate related links.",
       "manifestV1Action": "BUILD THIN / INTEGRATE",
-      "manifestV1Evidence": "Four status groups plus related published-devlog links or explicit publication empty state; no invented dates. Final integrated qualification pending.",
+      "manifestV1Evidence": "Four status groups plus related published-devlog links or explicit publication empty state; no invented dates. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 25,
       "page": "Support / Help Center",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Existing local help search/categories/popular FAQs/contact/status paths. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Existing local help search/categories/popular FAQs/contact/status paths. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Ticket/contact endpoint requires configuration.",
       "manifestV1Action": "KEEP / POLISH",
-      "manifestV1Evidence": "Existing local help search/categories/popular FAQs/contact/status paths. Final integrated qualification pending.",
+      "manifestV1Evidence": "Existing local help search/categories/popular FAQs/contact/status paths. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 26,
       "page": "Contact / Feedback",
       "visualAuthority": "LOCK_LAYOUT",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Complete contact field/routing structure and truthful disabled non-submitting behavior. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Complete contact field/routing structure and truthful disabled non-submitting behavior. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Verified endpoint/mailboxes required.",
       "manifestV1Action": "KEEP / PLACEHOLDER",
-      "manifestV1Evidence": "Complete contact field/routing structure and truthful disabled non-submitting behavior. Final integrated qualification pending.",
+      "manifestV1Evidence": "Complete contact field/routing structure and truthful disabled non-submitting behavior. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 27,
       "page": "About TOADAL GAMES",
       "visualAuthority": "POLISH",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Mission/flagship/experiments/stories/characters/philosophy/press/business structures without invented studio statements. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Mission/flagship/experiments/stories/characters/philosophy/press/business structures without invented studio statements. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved mission/philosophy/business copy and contact required.",
       "manifestV1Action": "PLACEHOLDER / POLISH",
-      "manifestV1Evidence": "Mission/flagship/experiments/stories/characters/philosophy/press/business structures without invented studio statements. Final integrated qualification pending.",
+      "manifestV1Evidence": "Mission/flagship/experiments/stories/characters/philosophy/press/business structures without invented studio statements. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 28,
       "page": "Coming Soon / Under Construction",
       "visualAuthority": "POLISH",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Branded contextual construction destination, useful available routes and updates; no false dates. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Branded contextual construction destination, useful available routes and updates; no false dates. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "External capabilities remain honestly unavailable.",
       "manifestV1Action": "KEEP",
-      "manifestV1Evidence": "Branded contextual construction destination, useful available routes and updates; no false dates. Final integrated qualification pending.",
+      "manifestV1Evidence": "Branded contextual construction destination, useful available routes and updates; no false dates. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 29,
       "page": "Privacy / Terms / Legal",
       "visualAuthority": "LOCK_STRUCTURE_ONLY",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Privacy/Terms readable template/TOC/related/contact and undated last-updated slot. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Privacy/Terms readable template/TOC/related/contact and undated last-updated slot. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "Approved policy text, publication dates and legal contact required.",
       "manifestV1Action": "PLACEHOLDER / POLISH",
-      "manifestV1Evidence": "Privacy/Terms readable template/TOC/related/contact and undated last-updated slot. Final integrated qualification pending.",
+      "manifestV1Evidence": "Privacy/Terms readable template/TOC/related/contact and undated last-updated slot. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     },
     {
       "n": 30,
       "page": "404 / Lost in the Feast",
       "visualAuthority": "POLISH",
-      "delivery": "REMEDIATION_CANDIDATE",
-      "status": "PARTIAL_CANDIDATE",
-      "evidence": "Actual branded HTTP404, Home/Play/Search/Stories recovery and current assets. Final integrated qualification pending.",
+      "delivery": "LIVE_STAGING",
+      "status": "DONE_PROVEN",
+      "evidence": "Actual branded HTTP404, Home/Play/Search/Stories recovery and current assets. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "remainingGap": "No buildable gap.",
       "manifestV1Action": "KEEP",
-      "manifestV1Evidence": "Actual branded HTTP404, Home/Play/Search/Stories recovery and current assets. Final integrated qualification pending.",
+      "manifestV1Evidence": "Actual branded HTTP404, Home/Play/Search/Stories recovery and current assets. Qualified evidence: docs/review/manifest-audit-remediation-20261002.",
       "buildableGaps": [],
-      "engineeringStatus": "IMPLEMENTED_AWAITING_QUALIFICATION"
+      "engineeringStatus": "QUALIFIED"
     }
   ],
   "crossCutting": [
     {
       "requirement": "TOADAL FEAST-first public identity",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
@@ -431,77 +431,77 @@
     },
     {
       "requirement": "Play something free immediately",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Discover characters/world/story",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Consume media/manga/lore/news",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Guest-first Feast Pass progression",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Account later for preserve/sync",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Convert visitors to flagship mobile app",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Reactive Toadal companion",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Hidden Treats / collectible food",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Daily rewards",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Quests/challenges",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Sound/settings/search utilities",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful. Local Search, existing player sound requests, and tab-only Profile CSS-animation preference; no site-audio service invented."
     },
     {
       "requirement": "Truthful PUBLIC/PREVIEW/PLANNED/COMING_SOON/DISABLED states",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Mobile navigation / responsive composition",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Keyboard/focus/reduced-motion/accessibility foundation",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Git-backed source of truth / staging-production separation",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
@@ -511,7 +511,7 @@
     },
     {
       "requirement": "Feature-salvage discipline",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
@@ -526,12 +526,12 @@
     },
     {
       "requirement": "Content publication states",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     },
     {
       "requirement": "Guest progression storage contract",
-      "status": "QUALIFICATION_PENDING",
+      "status": "DONE_PROVEN",
       "evidence": "Current implementation qualified by manifest/owner gates and runtime witnesses in docs/review/manifest-audit-remediation-20261002; unavailable services/content stay truthful."
     }
   ],
@@ -871,12 +871,12 @@
     }
   ],
   "latestManifestV1Closure": {
-    "status": "QUALIFICATION PENDING — NOT COMPLETE",
-    "phase": "QUALIFICATION_PENDING",
+    "status": "MANIFEST V1 ENGINEERING COMPLETE — ONLY EXTERNAL ACTIVATION/CONTENT DEPENDENCIES REMAIN",
+    "phase": "STAGING_VERIFIED",
     "report": "docs/review/manifest-audit-remediation-20261002/AUDIT_REMEDIATION_CLOSURE.md",
     "branch": "work/manifest-complete-v1-20261002",
-    "qualifiedSha": null,
-    "qualifiedTree": null,
+    "qualifiedSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
     "routeRecords": 33,
     "originalManifestFamilies": 30,
     "inputFingerprint": {
@@ -889,9 +889,15 @@
         "files": 142
       }
     },
-    "nodeTests": null,
-    "stagingSha": "688e1c471fdc97207c5ebfeaa0ef313ab9c44e52",
-    "deploymentVerified": false,
+    "nodeTests": {
+      "command": "node --test --test-reporter=spec scripts/*.test.mjs",
+      "passed": 99,
+      "failed": 0,
+      "skipped": 0,
+      "evidence": "node-tests.txt"
+    },
+    "stagingSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "deploymentVerified": true,
     "homeLockVisual": "OWNER REVIEW PENDING; NOT CLAIMED",
     "rollback": "688e1c471fdc97207c5ebfeaa0ef313ab9c44e52",
     "historicalRollback": "d6be86a9762370b66e79c1d5a36ab8066e421496"

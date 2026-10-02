@@ -8,8 +8,8 @@ ASSIGNATOR contains many historical TOADAL website worktrees and redesign packag
 
 ## Active project folders
 
-- `C:/ReleaseOps/toadal-feast-web-live-staging` - public staging lineage; remote staging SHA `688e1c471fdc97207c5ebfeaa0ef313ab9c44e52`.
-- `C:/ReleaseOps/toadal-feast-web-stories-stack-20261001` - current integrated review candidate `UNCOMMITTED_REMEDIATION_WORKTREE` on `work/manifest-complete-v1-20261002`.
+- `C:/ReleaseOps/toadal-feast-web-live-staging` - public staging lineage; remote staging SHA `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6`.
+- `C:/ReleaseOps/toadal-feast-web-stories-stack-20261001` - current integrated review candidate `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6` on `work/manifest-complete-v1-20261002`.
 - `C:/ReleaseOps/toadal-feast-web-gated-ecosystem-20261001` - parallel gated-ecosystem candidate for manifest rows 19, 21, 22, 26, 27, 28, 29; not deployed.
 - `C:/ReleaseOps/toadal-feast-web-visual-combined-20261001` - older visual-only convergence candidate `undefined`; implementation history/donor, not current review head.
 - `C:/ReleaseOps/toadal-feast-web-manifest-recalibration-20261001` - manifest-control baseline worktree.

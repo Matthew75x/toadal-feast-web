@@ -1,0 +1,83 @@
+{
+  "conclusion": "success",
+  "headSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+  "jobs": [
+    {
+      "completedAt": "2026-10-02T13:13:42Z",
+      "conclusion": "success",
+      "databaseId": 110852153349,
+      "name": "deploy",
+      "startedAt": "2026-10-02T13:13:09Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-02T13:13:12Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-02T13:13:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-02T13:13:28Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v6",
+          "number": 2,
+          "startedAt": "2026-10-02T13:13:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-02T13:13:28Z",
+          "conclusion": "success",
+          "name": "Run actions/configure-pages@v5",
+          "number": 3,
+          "startedAt": "2026-10-02T13:13:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-02T13:13:29Z",
+          "conclusion": "success",
+          "name": "Apply and verify staging-only Pages policy",
+          "number": 4,
+          "startedAt": "2026-10-02T13:13:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-02T13:13:32Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-pages-artifact@v4",
+          "number": 5,
+          "startedAt": "2026-10-02T13:13:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-02T13:13:39Z",
+          "conclusion": "success",
+          "name": "Run actions/deploy-pages@v4",
+          "number": 6,
+          "startedAt": "2026-10-02T13:13:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-02T13:13:40Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v6",
+          "number": 12,
+          "startedAt": "2026-10-02T13:13:39Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-02T13:13:40Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 13,
+          "startedAt": "2026-10-02T13:13:40Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/37011524073/job/110852153349"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/37011524073"
+}
