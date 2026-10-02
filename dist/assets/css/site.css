@@ -3371,7 +3371,7 @@ body:has(.home-hero) .site-brand{position:relative;padding-left:30px;font-size:1
 body:has(.home-hero) .site-brand::before{content:"";position:absolute;left:0;top:50%;width:24px;height:24px;transform:translateY(-53%);background:url("../brand/brand-crown.svg") center / contain no-repeat;}
 body:has(.home-hero) .site-links{gap:clamp(2px,.55vw,8px);}
 body:has(.home-hero) .site-links a{min-height:34px;padding:5px 8px;font-size:.78rem;}
-main:has(.home-hero){width:min(100%,var(--content-max));margin-inline:auto;display:grid;grid-template-columns:minmax(0,3.15fr) minmax(310px,.95fr);column-gap:12px;align-items:stretch;background:var(--cream-100);}
+main:has(.home-hero){width:min(100%,var(--content-max));margin-inline:auto;display:grid;grid-template-columns:minmax(0,3.15fr) minmax(310px,.95fr);grid-template-areas:"hero hero" "games-intro pass" "games pass" "today today" "interactive interactive" "discovery discovery" "app next" "companion companion";column-gap:12px;align-items:stretch;background:var(--cream-100);}
 main:has(.home-hero) > .section,main:has(.home-hero) > .studio-layout{width:100%;min-width:0;margin-inline:0;}
 main:has(.home-hero) > [data-studio-variant="accessibility-tools"]{position:absolute;width:auto;padding:0;}
 main:has(.home-hero) > #top{grid-column:1 / -1;grid-row:1;padding-block:0;}
@@ -3391,7 +3391,7 @@ body:has(.home-hero) .home-hero__toadal img,body:has(.home-hero) .home-hero__toa
 #browser-games-intro .section-heading{margin:0 0 2px;font-size:1.45rem;}
 #browser-games-intro .section-lede{display:-webkit-box;max-width:760px;margin:0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:1;font-size:.72rem;line-height:1.3;}
 #browser-games-intro .game-tabs{display:none;}
-#browser-games-intro .home-play-directory-link{position:absolute;right:6px;top:9px;min-height:30px;margin:0;padding:4px 9px;font-size:.68rem;}
+#browser-games-intro .home-play-directory-link{position:absolute;right:6px;top:9px;width:190px;min-height:30px;margin:0;padding:4px 9px;font-size:.68rem;white-space:nowrap;}
 body:has(.home-hero) #browser-games{grid-column:1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:7px !important;min-height:0;padding:3px 6px 10px 14px;}
 body:has(.home-hero) #browser-games .studio-game-card{min-width:0;min-height:0;padding:7px;border-radius:12px;}
 body:has(.home-hero) #browser-games .studio-game-card img{width:100%;height:92px;object-fit:cover;border-radius:9px;}
@@ -3415,7 +3415,7 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #today .section-heading{margin:0;font-size:1rem;}
 #today .section-lede{display:none;}
 #today .button-link{min-height:32px;padding:5px 10px;font-size:.68rem;}
-#discovery{grid-column:1 / -1;grid-row:5;padding:0 14px 9px;}
+#discovery{grid-column:1 / -1;grid-row:6;padding:0 14px 9px;}
 #discovery .discovery-heading{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);min-height:48px;margin-bottom:5px;column-gap:14px;align-items:end;}
 #discovery .discovery-heading .section-kicker{display:none;}
 #discovery .discovery-heading .section-heading{margin:0;font-size:1.35rem;}
@@ -3436,8 +3436,8 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #discovery .stories-art span{font-size:.48rem;}
 #discovery .stories-art strong{font-size:1rem;}
 #discovery .discovery-card--stories .status-chip,#discovery .discovery-card--stories .home-actions{display:none;}
-#app{grid-column:1;grid-row:6;padding:0 0 11px 14px;}
-#app .app-conversion-panel{min-height:230px;max-height:230px;height:100%;padding:16px 18px;color:var(--cream-50);border-color:rgb(255 196 51 / 55%);background:linear-gradient(90deg,rgb(35 14 8 / 92%) 0%,rgb(35 14 8 / 79%) 48%,rgb(35 14 8 / 24%) 100%),url("../images/world/candy-kingdom.webp") 70% center / cover no-repeat;}
+#app{grid-column:1;grid-row:7;padding:0 0 11px 14px;}
+#app .app-conversion-panel{min-height:230px;max-height:none;height:auto;overflow:visible;padding:16px 18px;color:var(--cream-50);border-color:rgb(255 196 51 / 55%);background:linear-gradient(90deg,rgb(35 14 8 / 92%) 0%,rgb(35 14 8 / 79%) 48%,rgb(35 14 8 / 24%) 100%),url("../images/world/candy-kingdom.webp") 70% center / cover no-repeat;}
 #app .app-conversion-copy{max-width:57%;}
 #app .app-conversion-panel .section-heading,#app .app-conversion-panel .section-lede{color:var(--cream-50);}
 #app .section-heading{margin:4px 0 5px;font-size:clamp(1.85rem,2.5vw,2.55rem);line-height:.95;}
@@ -3446,7 +3446,7 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #app .store-badge-row{gap:6px;}
 #app .store-badge{min-height:38px;padding:5px 9px;}
 #app .app-links-status{margin-top:4px;font-size:.56rem;}
-#whats-next{grid-column:2;grid-row:6;padding:0 14px 11px 0;}
+#whats-next{grid-column:2;grid-row:7;padding:0 14px 11px 0;}
 #whats-next .home-section-inner{min-height:230px;max-height:230px;height:100%;padding:10px;overflow:hidden;border:1px solid rgb(166 102 6 / 24%);border-radius:16px;background:#fffaf0;}
 #whats-next .whats-next-heading .section-kicker,#whats-next .section-lede{display:none;}
 #whats-next .section-heading{margin:0 0 5px;font-size:1.08rem;}
@@ -3456,7 +3456,7 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #whats-next .next-card p{display:-webkit-box;margin:0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.53rem;line-height:1.2;}
 #whats-next .status-chip{padding:2px 4px;font-size:.48rem;}
 #whats-next .next-card .button-link{min-height:24px;padding:3px 5px;font-size:.5rem;}
-#companion{grid-column:1 / -1;grid-row:7;height:0;padding:0;}
+#companion{grid-column:1 / -1;grid-row:8;height:0;padding:0;}
 }
 @media (max-width:680px){body:has(.home-hero) main{padding-bottom:18px;}
 body:has(.home-hero) .home-hero,body:has(.home-hero) .home-hero__layout{min-height:455px;height:455px;}
@@ -5429,6 +5429,15 @@ body:has(.home-hero) #app .app-conversion-panel {
   box-shadow: 0 9px 0 rgb(66 36 22 / 10%), 0 18px 34px rgb(66 36 22 / 18%);
 }
 
+body:has(.home-hero) #app .app-capture-caption {
+  color: var(--cream-50);
+  text-shadow: 0 1px 3px rgb(0 0 0 / 90%);
+}
+
+body:has(.home-hero) #app .app-capture-caption span {
+  color: var(--cream-50);
+}
+
 body:has(.home-hero) #app .app-conversion-copy > .section-kicker {
   display: inline-flex;
   margin: 0 0 6px;
@@ -5996,5 +6005,183 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
   .home-candy-button {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+/* Real mobile-app captures: reusable device frame, separate from browser-game cards. */
+.app-device-frame {
+  box-sizing: border-box;
+  width: min(100%, 174px);
+  margin-inline: auto;
+  padding: 5px;
+  border: 2px solid #3b2319;
+  border-radius: 24px;
+  background: #24140f;
+  box-shadow: 0 8px 18px rgb(35 18 11 / 24%);
+}
+
+.app-device-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  max-height: none;
+  aspect-ratio: 440 / 820;
+  border-radius: 16px;
+  object-fit: cover;
+  filter: none;
+}
+
+.app-home-capture {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  gap: 5px;
+  min-width: 0;
+  overflow: visible;
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+}
+
+.app-home-capture .app-device-frame {
+  width: min(100%, 96px);
+  padding: 4px;
+  border-radius: 17px;
+}
+
+.app-home-capture .app-device-frame img {
+  border-radius: 11px;
+}
+
+.app-capture-caption {
+  max-width: 19ch;
+  margin: 0;
+  color: var(--chocolate-800);
+  font-size: .65rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.app-capture-caption span {
+  font-size: .58rem;
+  font-weight: 650;
+}
+
+.app-detail-capture {
+  display: grid;
+  justify-items: center;
+  align-content: start;
+}
+
+.app-detail-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-detail-status .section-kicker,
+.app-detail-status .chip {
+  margin: 0;
+}
+
+@media (max-width: 680px) {
+  .wo002-detail-copy #app-download-status {
+    padding-inline-end: 90px;
+  }
+
+  .app-detail-capture figcaption {
+    padding-inline-end: 96px;
+    text-align: start;
+  }
+}
+
+.app-detail-capture .app-device-frame {
+  width: min(100%, 188px);
+}
+
+.app-capture-gallery {
+  margin-block: clamp(18px, 3vw, 30px);
+  padding: clamp(18px, 2.8vw, 30px);
+  border: 1px solid rgb(166 102 6 / 28%);
+  border-radius: var(--radius-panel);
+  background: linear-gradient(145deg, #fffaf0, #fff0c9);
+  box-shadow: 0 6px 0 rgb(66 36 22 / 7%);
+}
+
+.app-capture-gallery-heading {
+  max-width: 760px;
+  margin: 0 auto clamp(16px, 2vw, 24px);
+  text-align: center;
+}
+
+.app-capture-gallery-heading h2 {
+  margin: 4px 0 7px;
+  color: var(--navy-900);
+}
+
+.app-capture-gallery-heading p:last-child {
+  margin: 0;
+  color: var(--chocolate-800);
+  font-size: .9rem;
+}
+
+.app-capture-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(8px, 1.4vw, 16px);
+}
+
+.app-capture-card {
+  min-width: 0;
+  margin: 0;
+  padding: clamp(8px, 1vw, 13px);
+  border: 1px solid rgb(66 36 22 / 15%);
+  border-radius: 16px;
+  background: #fffdf7;
+}
+
+.app-capture-card .app-device-frame {
+  width: min(100%, 152px);
+}
+
+.app-capture-card figcaption {
+  display: grid;
+  gap: 3px;
+  margin-block-start: 9px;
+  color: var(--chocolate-800);
+  font-size: .72rem;
+  line-height: 1.35;
+  text-align: center;
+}
+
+.app-capture-card figcaption strong {
+  color: var(--navy-900);
+  font-size: .78rem;
+}
+
+.wicked-gameplay-capture img {
+  object-fit: contain;
+}
+
+@media (max-width: 900px) {
+  .app-capture-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 680px) {
+  #app .app-home-capture .app-device-frame img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+
+  .app-capture-card .app-device-frame {
+    width: min(100%, 126px);
   }
 }

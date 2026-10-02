@@ -6,7 +6,8 @@
     "websiteAssetIndex": "studio-project/toadal-feast-website/assets/index.json",
     "canonicalGameSourceManifest": "docs/implementation/CANONICAL_ASSET_SOURCE_MANIFEST.json",
     "assetProvenance": "docs/review/WO-001/ASSET_PROVENANCE.md",
-    "masterCompanionClosure": "docs/review/MASTER_ASSET_RUNTIME_CLOSURE_2026-10-01.md"
+    "masterCompanionClosure": "docs/review/MASTER_ASSET_RUNTIME_CLOSURE_2026-10-01.md",
+    "ownerCaptureManifest": "docs/review/visual-asset-gameplay-convergence-20261001/capture-assets.json"
   },
   "brand": {
     "approvedWebsiteBrandAssetId": "asset.brand.crown",
@@ -37,6 +38,15 @@
         "assets/images/characters/curated-highres/princess/catch_open_10f.png",
         "assets/images/characters/curated-highres/princess/idle.png"
       ]
+    },
+    "gullyNeutralIdentity": {
+      "requiredAssetId": "asset.home.character.gully",
+      "approvedCanonicalSource": "TOADAL_WEBSITE_INTERACTIVE_ASSET_AUTHORITY_20261001.zip#characters/gully/gully-happy-canonical.png",
+      "approvedSourceSha256": "5c06144b728acb893eca1996c83d92e771e73b27be466f2acf5aec0ffff96388",
+      "websiteDerivative": "reference/assets/images/characters/gully.webp",
+      "websiteDerivativeSha256": "f9009fbe628b912518347a9bfb1f5cf5c817e10bb1168bc73d8121cbdd4c6612",
+      "semantics": "neutral-happy-standing-identity",
+      "excludeRuntimeGameplay": true
     },
     "requiredRegistryAssetIds": [
       "asset.home.character.toadal",
@@ -415,6 +425,41 @@
       "sha256": "40796e8ed221dfacc94d98a391ae6adaf50ab7f812d770fc5676d9573a8f722b",
       "bytes": 36504,
       "category": "character"
+    },
+    {
+      "id": "asset.app.capture.arcade.active.gameplay",
+      "source": "reference/assets/images/app/convergence-20261001/arcade-active-gameplay.webp",
+      "sha256": "62f91010e5dd81a4ffd91506593b3a8d89e6446208c29325a366c183cd5237c4",
+      "bytes": 92398,
+      "category": "app-capture"
+    },
+    {
+      "id": "asset.app.capture.app.mode.menu",
+      "source": "reference/assets/images/app/convergence-20261001/menu-onboarding-overlay.webp",
+      "sha256": "74e68ba251e731462051158af2f4c96ffc209fde1ee84cbde84ffc061eb283a4",
+      "bytes": 127510,
+      "category": "app-capture"
+    },
+    {
+      "id": "asset.app.capture.feastfall.entry.onboarding.overlay",
+      "source": "reference/assets/images/app/convergence-20261001/feastfall-entry-onboarding-overlay.webp",
+      "sha256": "d310a96b383a81fc693f447ba6d44a4bb790349f9771aff6642d16d041f76ecf",
+      "bytes": 51016,
+      "category": "app-capture"
+    },
+    {
+      "id": "asset.app.capture.puzzle.entry",
+      "source": "reference/assets/images/app/convergence-20261001/puzzle-entry.webp",
+      "sha256": "de5beb0ebfd4e58d7b76902b9c19e330cde1275d6221b0bfbaa34961fcff9f53",
+      "bytes": 35208,
+      "category": "app-capture"
+    },
+    {
+      "id": "asset.app.capture.puzzle.result.proof",
+      "source": "reference/assets/images/app/convergence-20261001/puzzle-result-proof.webp",
+      "sha256": "7078593d7481c9b2ff7cdb730f15d927db98a5f3fec33b05b3c0a50cfaf09e51",
+      "bytes": 66070,
+      "category": "app-capture"
     }
   ],
   "approvedRuntimeDerivatives": [
@@ -576,5 +621,11 @@
     "unapprovedWordmarkFilesForbidden": true,
     "generatedOrAlternateMascotSubstitutionForbidden": true,
     "gamePreviewArtMustNotBeRepresentedAsGameplayFootage": true
+  },
+  "ownerSuppliedCaptureSource": {
+    "filename": "TOADAL_FEAST_OWNER_VISUAL_QA_2026-09-27.zip",
+    "sha256": "fb614e1f5293b226d38b47265b88f3ae65d775158ab2c3d85f62ad739f427482",
+    "approvalScope": "local owner-preview only; not blanket public-marketing approval",
+    "note": "Only selected raw QA captures/result proof listed in the capture ledger are represented. Source ZIP and diagnostic-footer captures are not shipped."
   }
 }

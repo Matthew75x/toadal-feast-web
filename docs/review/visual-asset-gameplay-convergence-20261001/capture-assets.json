@@ -1,0 +1,146 @@
+{
+  "schema": "toadal-feast.owner-qa-capture-assets.v1",
+  "sourceArchive": "TOADAL_FEAST_OWNER_VISUAL_QA_2026-09-27.zip",
+  "sourceArchiveSha256": "fb614e1f5293b226d38b47265b88f3ae65d775158ab2c3d85f62ad739f427482",
+  "encoder": {
+    "pillow": "9.5.0",
+    "libwebp": "1.3.0",
+    "format": "webp",
+    "quality": 86,
+    "method": 6
+  },
+  "assets": [
+    {
+      "id": "asset.app.capture.arcade.active.gameplay",
+      "name": "Arcade active gameplay capture",
+      "kind": "image",
+      "category": "app-capture",
+      "source": "reference/assets/images/app/convergence-20261001/arcade-active-gameplay.webp",
+      "extension": "webp",
+      "bytes": 92398,
+      "sha256": "62f91010e5dd81a4ffd91506593b3a8d89e6446208c29325a366c183cd5237c4",
+      "referenceSha256": "62f91010e5dd81a4ffd91506593b3a8d89e6446208c29325a366c183cd5237c4",
+      "referenceSource": "reference/assets/images/app/convergence-20261001/arcade-active-gameplay.webp",
+      "authoritySource": "TOADAL_FEAST_OWNER_VISUAL_QA_2026-09-27.zip#visual/arcade-raw/004-active-gameplay-raw.png",
+      "authoritySha256": "98e4b64ddf857b7e127d0041157f1b1a5d7fbd62877198a3a9ae152e5165b17f",
+      "width": 440,
+      "height": 820,
+      "renderTargets": [
+        "website-home",
+        "website-app"
+      ],
+      "replaceable": true,
+      "tags": [
+        "mobile-app-capture",
+        "owner-supplied-qa-capture",
+        "not-browser-game",
+        "actual-app-gameplay",
+        "first-run-control-hint"
+      ]
+    },
+    {
+      "id": "asset.app.capture.app.mode.menu",
+      "name": "TOADAL FEAST mobile app mode menu capture",
+      "kind": "image",
+      "category": "app-capture",
+      "source": "reference/assets/images/app/convergence-20261001/menu-onboarding-overlay.webp",
+      "extension": "webp",
+      "bytes": 127510,
+      "sha256": "74e68ba251e731462051158af2f4c96ffc209fde1ee84cbde84ffc061eb283a4",
+      "referenceSha256": "74e68ba251e731462051158af2f4c96ffc209fde1ee84cbde84ffc061eb283a4",
+      "referenceSource": "reference/assets/images/app/convergence-20261001/menu-onboarding-overlay.webp",
+      "authoritySource": "TOADAL_FEAST_OWNER_VISUAL_QA_2026-09-27.zip#visual/standard-raw/002-menu-raw.png",
+      "authoritySha256": "9c87794c7756d4a869b0d0e9b2ff3e33a27dfb15cd4bcdca44d30489685d2ab7",
+      "width": 440,
+      "height": 820,
+      "renderTargets": [
+        "website-app"
+      ],
+      "replaceable": true,
+      "tags": [
+        "mobile-app-capture",
+        "owner-supplied-qa-capture",
+        "not-browser-game",
+        "mobile-app-ui-capture"
+      ]
+    },
+    {
+      "id": "asset.app.capture.feastfall.entry.onboarding.overlay",
+      "name": "Feastfall entry capture with onboarding/UI overlay",
+      "kind": "image",
+      "category": "app-capture",
+      "source": "reference/assets/images/app/convergence-20261001/feastfall-entry-onboarding-overlay.webp",
+      "extension": "webp",
+      "bytes": 51016,
+      "sha256": "d310a96b383a81fc693f447ba6d44a4bb790349f9771aff6642d16d041f76ecf",
+      "referenceSha256": "d310a96b383a81fc693f447ba6d44a4bb790349f9771aff6642d16d041f76ecf",
+      "referenceSource": "reference/assets/images/app/convergence-20261001/feastfall-entry-onboarding-overlay.webp",
+      "authoritySource": "TOADAL_FEAST_OWNER_VISUAL_QA_2026-09-27.zip#visual/standard-raw/006-feastfall-entry-raw.png",
+      "authoritySha256": "006397c6ec05d8d647ee1729c5d7f13d32bcc013ad1cb3ee1b6ad60e3db0254c",
+      "width": 440,
+      "height": 820,
+      "renderTargets": [
+        "website-app"
+      ],
+      "replaceable": true,
+      "tags": [
+        "mobile-app-capture",
+        "owner-supplied-qa-capture",
+        "not-browser-game",
+        "mobile-app-ui-capture"
+      ]
+    },
+    {
+      "id": "asset.app.capture.puzzle.entry",
+      "name": "Puzzle entry capture",
+      "kind": "image",
+      "category": "app-capture",
+      "source": "reference/assets/images/app/convergence-20261001/puzzle-entry.webp",
+      "extension": "webp",
+      "bytes": 35208,
+      "sha256": "de5beb0ebfd4e58d7b76902b9c19e330cde1275d6221b0bfbaa34961fcff9f53",
+      "referenceSha256": "de5beb0ebfd4e58d7b76902b9c19e330cde1275d6221b0bfbaa34961fcff9f53",
+      "referenceSource": "reference/assets/images/app/convergence-20261001/puzzle-entry.webp",
+      "authoritySource": "TOADAL_FEAST_OWNER_VISUAL_QA_2026-09-27.zip#visual/standard-raw/010-puzzle-entry-raw.png",
+      "authoritySha256": "4894ffd9561e29a956bdc0b797ae6a1003c1a8202f2d7763c6533030bde2cba2",
+      "width": 440,
+      "height": 820,
+      "renderTargets": [
+        "website-app"
+      ],
+      "replaceable": true,
+      "tags": [
+        "mobile-app-capture",
+        "owner-supplied-qa-capture",
+        "not-browser-game",
+        "mobile-app-ui-capture"
+      ]
+    },
+    {
+      "id": "asset.app.capture.puzzle.result.proof",
+      "name": "Puzzle result proof capture",
+      "kind": "image",
+      "category": "app-capture",
+      "source": "reference/assets/images/app/convergence-20261001/puzzle-result-proof.webp",
+      "extension": "webp",
+      "bytes": 66070,
+      "sha256": "7078593d7481c9b2ff7cdb730f15d927db98a5f3fec33b05b3c0a50cfaf09e51",
+      "referenceSha256": "7078593d7481c9b2ff7cdb730f15d927db98a5f3fec33b05b3c0a50cfaf09e51",
+      "referenceSource": "reference/assets/images/app/convergence-20261001/puzzle-result-proof.webp",
+      "authoritySource": "TOADAL_FEAST_OWNER_VISUAL_QA_2026-09-27.zip#visual/puzzle/p001-result.png",
+      "authoritySha256": "7cdad19d126e129efac72da18a6d6f3633d742e00caf8cb65be1bd35fd08f617",
+      "width": 780,
+      "height": 1688,
+      "renderTargets": [
+        "website-app"
+      ],
+      "replaceable": true,
+      "tags": [
+        "mobile-app-capture",
+        "owner-supplied-qa-capture",
+        "not-browser-game",
+        "mobile-app-ui-capture"
+      ]
+    }
+  ]
+}

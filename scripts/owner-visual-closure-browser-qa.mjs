@@ -131,6 +131,8 @@ try {
 
   const viewportCaptures = [
     { route: '/', width: 1440, height: 900, file: 'home-1440x900.png', desc: 'Home desktop' },
+    { route: '/', width: 1366, height: 768, file: 'home-1366x768.png', desc: 'Home wide desktop' },
+    { route: '/', width: 768, height: 1024, file: 'home-768x1024.png', desc: 'Home tablet' },
     { route: '/', width: 320, height: 800, file: 'home-320x800.png', desc: 'Home narrow mobile (layout inspection)' },
     { route: '/', width: 390, height: 844, file: 'home-390x844.png', desc: 'Home mobile' },
     { route: '/', width: 430, height: 932, file: 'home-430x932.png', desc: 'Home large mobile' },
@@ -157,18 +159,47 @@ try {
 
   for (const item of [
     { route: '/characters/toadal/', width: 390, height: 844, file: 'toadal-profile-390x844.png', desc: 'Toadal profile mobile' },
+    { route: '/', width: 1440, height: 900, file: 'home-app-arcade-1440x900.png', desc: 'Home App section with Arcade capture', selector: '.app-conversion-panel' },
+    { route: '/app/', width: 1440, height: 900, file: 'app-arcade-gameplay-desktop.png', desc: 'App page Arcade gameplay lead' },
+    { route: '/app/', width: 390, height: 844, file: 'app-arcade-gameplay-390x844.png', desc: 'App page Arcade gameplay mobile' },
+    { route: '/app/', width: 390, height: 844, file: 'app-arcade-phone-390x844.png', desc: 'App page Arcade phone capture mobile', selector: '[data-app-capture-hero]' },
+    { route: '/app/', width: 1440, height: 900, file: 'app-mode-captures-1440x900.png', desc: 'App mode capture gallery', selector: '.app-capture-gallery' },
+    { route: '/app/', width: 390, height: 844, file: 'app-puzzle-golden-block-390x844.png', desc: 'Mobile Puzzle Golden Block concept art', selector: '#puzzle-abilities' },
+    { route: '/characters/', width: 1366, height: 768, file: 'characters-gully-1366x768.png', desc: 'Characters page canonical Gully identity', selector: "img[src*='characters/gully.webp']" },
+    { route: '/world/', width: 1366, height: 768, file: 'world-gully-1366x768.png', desc: 'World page canonical Gully identity', selector: "img[src*='characters/gully.webp']" },
+    { route: '/media/', width: 1366, height: 768, file: 'media-gully-1366x768.png', desc: 'Media page canonical Gully identity', selector: "img[src*='characters/gully.webp']" },
+    { route: '/games/froggy-fruity-bash/', width: 1366, height: 768, file: 'fruity-bash-candy-shooter-1366x768.png', desc: 'Fruity Bash Candy Shooter concept (not gameplay)', selector: "img[src*='candy-shooter-fruity-bash.webp']" },
+    { route: '/games/wicked-bites/', width: 1366, height: 768, file: 'wicked-bites-real-gameplay-1366x768.png', desc: 'Wicked Bites real v5.5 gameplay capture', selector: "img[src*='wicked-bites-v5.5-preview.webp']" },
     { route: '/search/', width: 1440, height: 900, file: 'search-1440x900.png', desc: 'Search desktop' },
     { route: '/search/', width: 390, height: 844, file: 'search-390x844.png', desc: 'Search mobile' },
     { route: '/contact/', width: 390, height: 844, file: 'contact-390x844.png', desc: 'Contact mobile' }
   ]) {
     await navigate(item.route, item.width, item.height);
-    const state = await evaluate(`(()=>{const root=document.querySelector('[data-companion]'),button=root?.querySelector('[data-companion-toggle]'),image=root?.querySelector('[data-companion-image]'),rect=button?.getBoundingClientRect();return {path:location.pathname,title:document.title,overflow:document.documentElement.scrollWidth>innerWidth,companionFixed:!!root&&getComputedStyle(root).position==='fixed',companionLoaded:!!image&&image.complete&&image.naturalWidth>0,buttonVisible:!!rect&&rect.bottom>0&&rect.top<innerHeight,buttonWidth:rect?.width??0};})()`);
+    await evaluate("Promise.all([...document.images].map(image=>{image.loading='eager';return image.decode().catch(()=>null)}))");
+    if (item.minimizeCompanion !== false) {
+      const expanded = await evaluate("document.querySelector('[data-companion-toggle]')?.getAttribute('aria-expanded')");
+      if (expanded === 'true') await evaluate("document.querySelector('[data-companion-toggle]')?.click(); true");
+      const minimized = await waitFor("document.querySelector('[data-companion-toggle]')?.getAttribute('aria-expanded')==='false' && document.querySelector('[data-companion-panel]')?.hidden");
+      assert(minimized, `${item.desc}: companion did not remain minimized for an unobstructed content capture.`);
+    }
+    if (item.selector) {
+      const found = await evaluate('(()=>{const node=document.querySelector(' + JSON.stringify(item.selector) + ');if(!node)return false;node.scrollIntoView({block:\'center\',behavior:\'instant\'});return true})()');
+      assert(found, `${item.desc}: screenshot target was not found (${item.selector}).`);
+      await sleep(180);
+    }
+    const state = await evaluate(`(()=>{const root=document.querySelector('[data-companion]'),button=root?.querySelector('[data-companion-toggle]'),panel=root?.querySelector('[data-companion-panel]'),image=root?.querySelector('[data-companion-image]'),rect=button?.getBoundingClientRect();return {path:location.pathname,title:document.title,overflow:document.documentElement.scrollWidth>innerWidth,companionFixed:!!root&&getComputedStyle(root).position==='fixed',companionLoaded:!!image&&image.complete&&image.naturalWidth>0,companionMinimized:button?.getAttribute('aria-expanded')==='false'&&panel?.hidden===true,buttonVisible:!!rect&&rect.bottom>0&&rect.top<innerHeight,buttonWidth:rect?.width??0};})()`);
     assert(state.path === basePath + item.route.replace(/^\//, '') && !state.overflow && state.companionFixed && state.companionLoaded && state.buttonVisible, `${item.desc}: route or layout integrity check failed: ${JSON.stringify(state)}`);
     const minRouteWidth = item.width <= 360 ? 92 : item.width <= 760 ? 102 : 142;
     assert(state.buttonWidth >= minRouteWidth, `${item.desc}: contextual Toadal is too small (${state.buttonWidth}px; minimum ${minRouteWidth}px).`);
+    assert(state.companionMinimized, `${item.desc}: screenshot companion state was not minimized.`);
     await capture(item.file, item.desc);
     const overlaps = await criticalOverlap();
     results.checks[`route-${item.route}-${item.width}`] = { ...state, overlaps };
+    if (item.route === '/' && item.selector === '.app-conversion-panel') {
+      const layout = await evaluate(`(()=>{const pick=s=>{const e=document.querySelector(s);if(!e)return null;const r=e.getBoundingClientRect(),c=getComputedStyle(e);return {selector:s,rect:{x:r.x,y:r.y+scrollY,width:r.width,height:r.height,right:r.right,bottom:r.bottom+scrollY},display:c.display,gridColumn:c.gridColumn,gridRow:c.gridRow,minHeight:c.minHeight,maxHeight:c.maxHeight,overflow:c.overflow,scrollHeight:e.scrollHeight,clientHeight:e.clientHeight}};const app=pick('#app'),next=pick('#whats-next'),today=pick('#today'),interactive=pick('#interactive-discovery'),discovery=pick('#discovery'),panel=pick('#app .app-conversion-panel'),candy=pick('#app .home-app-candy'),candyButton=pick('#app .home-app-candy .home-candy-button');const ordered=!!today&&!!interactive&&!!discovery&&!!app&&today.rect.bottom<=interactive.rect.y+2&&interactive.rect.bottom<=discovery.rect.y+2&&discovery.rect.bottom<=app.rect.y+2;const aligned=!!app&&!!next&&Math.abs(app.rect.y-next.rect.y)<=2;const candyVisible=!!panel&&!!candyButton&&candyButton.rect.height>0&&candyButton.rect.y>=panel.rect.y&&candyButton.rect.bottom<=panel.rect.bottom+2;return {today,interactive,discovery,app,next,panel,candy,candyButton,ordered,aligned,candyVisible}})()`);
+      results.checks.homeAppLayout = layout;
+      assert(layout.ordered && layout.aligned && layout.candyVisible, `Home desktop sections overlap or the green candy is clipped: ${JSON.stringify(layout)}`);
+    }
     assert(!overlaps.primaryCtaOverlap.length, `${item.desc}: the first-use companion position obscures a primary Home CTA: ${JSON.stringify(overlaps)}`);
   }
 

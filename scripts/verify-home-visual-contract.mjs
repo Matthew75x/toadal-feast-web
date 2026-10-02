@@ -73,6 +73,18 @@ check('brand-crown-hash-chain', !!crownAsset && !!crownAuthority &&
   'Brand-crown bytes match the website asset index and canonical game-asset authority.');
 check('approved-dense-desktop-bands', /grid-template-areas[\s\S]*games-intro pass[\s\S]*app next/i.test(css),
   'Desktop composition pairs Games with Feast Pass and App conversion with What’s Next, matching the approved dense portal hierarchy.');
+const desktopGridRows = [
+  /#browser-games-intro\{grid-column:1;grid-row:2;/,
+  /body:has\(\.home-hero\) #browser-games\{grid-column:1;grid-row:3;/,
+  /#feast-pass\{grid-column:2;grid-row:2\s*\/\s*4;/,
+  /#today\{grid-column:1\s*\/\s*-1;grid-row:4;/,
+  /#discovery\{grid-column:1\s*\/\s*-1;grid-row:6;/,
+  /#app\{grid-column:1;grid-row:7;/,
+  /#whats-next\{grid-column:2;grid-row:7;/,
+  /#companion\{grid-column:1\s*\/\s*-1;grid-row:8;/
+];
+check('desktop-home-grid-rows-preserve-discovery', desktopGridRows.every(pattern => pattern.test(css)),
+  'The later desktop layout keeps browser games, Daily Treat, Interactive Discovery, character/world discovery, App, What’s Next, and the companion in their intended non-overlapping rows.');
 check('character-companion-treatment', /\.companion-toggle[\s\S]*background:\s*transparent/i.test(css) &&
   /assets\/images\/characters\/toadal-victory\.png/i.test(componentHtml('component.home.companion')),
   'The contextual companion is character-led rather than an admin-style toggle.');
@@ -113,10 +125,17 @@ check('home-stories-truth', /public reading surfaces are here/i.test(componentHt
   ['/stories/', '/manga/', '/reader/'].every(route => componentHtml('component.home.discovery').includes(`href='${route}'`)) &&
   !/No stories or media library is published here/i.test(componentHtml('component.home.discovery')),
   'Home presents the existing Stories/Manga/Reader surfaces while clearly stating that no approved catalogue is published.');
-check('home-app-illustration', /characters\/companion\/production-pack-v2\/toadal-mobile-app\.png/i.test(componentHtml('component.home.app')) &&
-  assets.assets?.some(asset => asset.id === 'asset.companion.context.app' && asset.source === 'reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png') &&
-  /disabled/.test(componentHtml('component.home.app')),
-  'The paired App feature uses its registered canonical Toadal/app illustration and keeps unverified store links disabled.');
+const captureManifest = JSON.parse(fs.readFileSync(path.join(repo, 'docs', 'review', 'visual-asset-gameplay-convergence-20261001', 'capture-assets.json'), 'utf8'));
+const arcadeCapture = assetById.get('asset.app.capture.arcade.active.gameplay');
+const homeAppHtml = componentHtml('component.home.app');
+const arcadeCaptureHash = arcadeCapture ? sha256File(path.join(project, arcadeCapture.source)) : null;
+check('home-app-real-arcade-capture', !!arcadeCapture &&
+  arcadeCapture.authoritySha256 === '98e4b64ddf857b7e127d0041157f1b1a5d7fbd62877198a3a9ae152e5165b17f' &&
+  captureManifest.sourceArchiveSha256 === 'fb614e1f5293b226d38b47265b88f3ae65d775158ab2c3d85f62ad739f427482' &&
+  arcadeCaptureHash === arcadeCapture.sha256 && arcadeCapture.renderTargets?.includes('website-home') &&
+  /data-app-capture-hero/.test(homeAppHtml) && homeAppHtml.includes(arcadeCapture.source.replace(/^reference\//, '')) &&
+  /control hint and QA badge visible in source/i.test(homeAppHtml),
+  'Home App conversion leads with the exact hash-verified owner-supplied mobile Arcade gameplay capture and truthfully retains its visible first-run/QA details.');
 check('contextual-companion-source', /data-companion-copy=/i.test(html),
   'Home sections expose distinct contextual companion copy.');
 check('contextual-companion-pointer', /addEventListener\(['"]pointer(?:over|enter)['"]/i.test(advanced.javascript || ''),
