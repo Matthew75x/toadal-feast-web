@@ -37,3 +37,11 @@
 - Studio project histories/build/export archives and test scratch are generated state. Preserve them until the owner decides what can be archived or cleaned.
 - Minimum resume command (from the Studio repository):
   `$env:TOADAL_PROJECT='C:\Users\Metarator\Documents\Codex\2026-09-29\t-3\work\toadal-feast-web-owner-native-authoring-20261002\studio-project\toadal-feast-website\project.json'; $env:PORT='4320'; $env:TOADAL_HOST='127.0.0.1'; $env:TEMP='D:\Codex-TOADAL-Owner-QA-8b9080b3491b414fadb09ccb022b838e\studio-export-tmp'; $env:TMP=$env:TEMP; node --no-warnings --experimental-strip-types apps/studio/server.ts`
+
+## Preservation checkpoint update — 2026-10-02
+
+- Website owner-native checkpoint: commit `8701e59c83a704eed2d14ad2c18ce01d62ef2b2b`, tree `cb24c85d0c66158b0d6a066b25937c614a73a68f` (219 paths). It includes the native project/source, intentional tracked `dist/`, authoring tests, docs, and evidence.
+- Studio owner-native checkpoint: commit `c504b8e247640f097d85c86ae9da8c9b20c20762`, tree `8adfe0a97e7f9341b5fd1769a010e2244148637e` (36 paths). It includes Studio source, owner-authoring controls, renderer symbol fix/regression test, exporter updates, and launcher/config files.
+- Qualification remains: Studio full suite **147/183**; all 36 observed failures were disk-space `ENOSPC` write failures on C:. No evidence yet determines whether they pass with D: temp storage. The owner-preview gate remains **interrupted/incomplete**; do not claim it passed. Previously completed, unaffected checks remain as documented above.
+- Preservation exclusions: Studio `AI/AUDIT/mcp-tools.jsonl` remains modified (generated tool-call audit entries); `projects/ai-test-1790966509110/` and six zero-byte `projects/toadal-games/*.tmp` files remain untracked as generated QA/test residue. They were not discarded. The verified static ZIP was moved intact to `D:\Codex-TOADAL-Owner-QA-8b9080b3491b414fadb09ccb022b838e\checkpoint-preserve-20261002\toadal-feast-website-static-site.zip`; SHA-256 remains `5B03E85FDC0AE3878583AD968BFD9879C9DC45D16AF2803C0693BE667B4AC917`.
+- No further qualification was started due the user's instruction to stop when usage is constrained. The next action is a single Studio-suite rerun with `TEMP`/`TMP` on D:, after confirming adequate space, then continue only if the result and available resources warrant it.
