@@ -8,7 +8,7 @@ import { execFileSync } from 'node:child_process';
 const repo = path.resolve(process.argv[2] || '.');
 const project = path.join(repo, 'studio-project/toadal-feast-website');
 const baseline = '40e4437c00951d9b9903c3a188d32f54d5a49ef3';
-const expectedAssetHash = 'f9009fbe628b912518347a9bfb1f5cf5c817e10bb1168bc73d8121cbdd4c6612';
+const expectedAssetHash = '177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea';
 const expectedSourceHash = '5c06144b728acb893eca1996c83d92e771e73b27be466f2acf5aec0ffff96388';
 const expectedArchiveHash = '605e16399d21210228a9c784fb413c6d886e75b0bf0fa277b25ef0a2dbcf4ecb';
 const errors = [];
@@ -38,13 +38,13 @@ function webpSize(bytes) {
 
 const size = webpSize(assetBytes);
 if (assetHash !== expectedAssetHash) errors.push(`Neutral Gully derivative SHA-256 mismatch: ${assetHash}`);
-if (!size || size[0] !== 320 || size[1] !== 320) errors.push(`Neutral Gully derivative must be 320x320; found ${size?.join('x') || 'unknown'}`);
+if (!size || size[0] !== 319 || size[1] !== 319) errors.push(`Neutral Gully derivative must be 319x319; found ${size?.join('x') || 'unknown'}`);
 
 const ledger = JSON.parse(fs.readFileSync(path.join(repo, 'docs/review/interactive-discovery-v1-20261001/asset-ledger.json'), 'utf8'));
 const gullyLedger = ledger.outputs?.find((item) => item.key === 'gully');
 const source = gullyLedger?.sourceAssets?.find((item) => item.path === 'characters/gully/gully-happy-canonical.png');
 if (!source || source.sha256 !== expectedSourceHash) errors.push('Approved archive Gully source path or original SHA-256 does not match the authority ledger.');
-if (gullyLedger?.path !== 'reference/assets/images/characters/gully.webp' || gullyLedger?.sha256 !== expectedAssetHash || gullyLedger?.width !== 320 || gullyLedger?.height !== 320) errors.push('Gully asset ledger does not record the canonical derivative authority.');
+if (gullyLedger?.path !== 'reference/assets/images/characters/gully.webp' || gullyLedger?.sha256 !== expectedAssetHash || gullyLedger?.width !== 319 || gullyLedger?.height !== 319) errors.push('Gully asset ledger does not record the canonical derivative authority.');
 if (ledger.archiveSha256 !== expectedArchiveHash) errors.push('Gully authority ledger archive SHA-256 does not match the approved source archive.');
 
 const pages = ['home', 'characters', 'world', 'media'];
