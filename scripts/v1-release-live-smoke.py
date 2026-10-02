@@ -159,7 +159,7 @@ def main() -> int:
             page = context.new_page()
             page.set_viewport_size({"width": viewport[0], "height": viewport[1]})
             errors = {"console": [], "page": [], "http": [], "requestFailures": []}
-            page.on("console", lambda msg, bucket=errors: bucket["console"].append(msg.text) if msg.type == "error" else None)
+            page.on("console", lambda msg, bucket=errors: bucket["console"].append({"text": msg.text, "url": msg.location.get("url", "")}) if msg.type == "error" else None)
             page.on("pageerror", lambda exc, bucket=errors: bucket["page"].append(str(exc)))
             page.on("response", lambda response, bucket=errors: bucket["http"].append({"status": response.status, "url": response.url}) if response.status >= 400 else None)
             page.on("requestfailed", lambda request, bucket=errors: bucket["requestFailures"].append({"url": request.url, "failure": request.failure}))
@@ -223,7 +223,15 @@ def main() -> int:
         missing_page.screenshot(path=str(missing_screenshot), full_page=False, animations="disabled")
         report["screenshots"].append(str(missing_screenshot))
         record(report, "certification:missing-route-http-404-visible-fallback", bool(missing_response and missing_response.status == 404 and fallback.is_visible() and fallback_text.strip()), {"url": missing_url, "httpStatus": missing_response.status if missing_response else None, "fallbackText": fallback_text[:500], "screenshot": str(missing_screenshot)})
-        fallback_asset_errors = {**missing_errors, "http": [item for item in missing_errors["http"] if item["url"].rstrip("/") != missing_url.rstrip("/")]}
+        # Chromium logs the deliberately missing document's required HTTP 404.
+        # Classify only that exact URL/status; every asset/runtime error still fails.
+        expected_404_console = [item for item in missing_errors["console"]
+            if item["url"].rstrip("/") == missing_url.rstrip("/")
+            and item["text"].startswith("Failed to load resource: the server responded with a status of 404")]
+        fallback_asset_errors = {**missing_errors,
+            "console": [item for item in missing_errors["console"] if item not in expected_404_console],
+            "http": [item for item in missing_errors["http"] if item["url"].rstrip("/") != missing_url.rstrip("/")]}
+        report["expected404Console"] = expected_404_console
         record(report, "certification:404-fallback-assets-have-no-browser-errors", not any(fallback_asset_errors.values()), fallback_asset_errors)
         missing_page.close()
 

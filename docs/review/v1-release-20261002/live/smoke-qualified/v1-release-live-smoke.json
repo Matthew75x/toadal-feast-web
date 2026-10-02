@@ -1,0 +1,1836 @@
+{
+  "schema": "toadal-feast.v1-release-live-smoke.v1",
+  "status": "PASS",
+  "generatedAt": "2026-10-02T08:12:42.581126+00:00",
+  "baseUrl": "https://matthew75x.github.io/toadal-feast-web/",
+  "expectedRobots": "staging",
+  "expectedSha": null,
+  "checks": [
+    {
+      "name": "home:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "TOADAL FEAST — Play the Feast World for Free"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": [
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/interactive/candy-purple.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/genie-sweet.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/genie-savoury.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/genie-fruity.webp"
+            ]
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "home:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "play:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Play browser games · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "play:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "public-game-entry:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Wicked Bites · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "game-entry-truth-label",
+          "pass": true,
+          "detail": "Visible page copy identifies preview/session/isolated status."
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "public-game-entry:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "world:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "The Feast World — TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/world-map.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "world:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "characters:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Characters Hub - TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "characters:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "stories:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Stories & Comics · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "stories:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "media:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Media — TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "media:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "feast-pass:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Feast Pass · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "feast-pass:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "app:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "The TOADAL FEAST app · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": [
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/puzzle/toadal-push-golden-block.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/puzzle/toadal-magic-golden-block.webp"
+            ]
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/app-mobile.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "app-store-availability-truth",
+          "pass": true,
+          "detail": [
+            {
+              "text": "●\nDownload on the\nApp Store",
+              "disabled": true,
+              "href": null
+            },
+            {
+              "text": "▶\nGet it on\nGoogle Play",
+              "disabled": true,
+              "href": null
+            }
+          ]
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "app:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "search:checks",
+      "status": "PASS",
+      "detail": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Search · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v2/search.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ]
+    },
+    {
+      "name": "search:no-browser-errors-or-http-404",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "certification:home-390-primary-cta-to-play",
+      "status": "PASS",
+      "detail": {
+        "screenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\home-390x844-cta.png",
+        "ctaHref": "/toadal-feast-web/play/",
+        "landedUrl": "https://matthew75x.github.io/toadal-feast-web/play/"
+      }
+    },
+    {
+      "name": "certification:home-mobile-no-browser-errors",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "certification:search-768-real-form-toadal-results",
+      "status": "PASS",
+      "detail": {
+        "query": "Toadal",
+        "resultCount": 8,
+        "status": "8 local results for “Toadal”."
+      }
+    },
+    {
+      "name": "certification:search-no-browser-errors",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "certification:real-play-entry-to-mounted-gameplay-start",
+      "status": "PASS",
+      "detail": {
+        "launchHref": "/toadal-feast-web/player/wicked-bites/",
+        "iframeSrc": "/toadal-feast-web/public/games/wicked-bites/index.html",
+        "status": "Game started. Progress lasts for this preview session only.",
+        "screenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\wicked-bites-player-started.png",
+        "gameplayStarted": true
+      }
+    },
+    {
+      "name": "certification:player-no-browser-errors-or-http-failures",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "certification:missing-route-http-404-visible-fallback",
+      "status": "PASS",
+      "detail": {
+        "url": "https://matthew75x.github.io/toadal-feast-web/__v1-release-smoke-route-that-does-not-exist-7f3a9c/",
+        "httpStatus": 404,
+        "fallbackText": "That path wandered off.\n\nThis page is not part of the current website preview. You can head Home, browse the game previews, explore the World, visit Stories & Media, or search the Feast.\n\nGo Home\nBrowse previews\nExplore the World\nStories & Media\nSearch the Feast",
+        "screenshot": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\missing-route-visible-404.png"
+      }
+    },
+    {
+      "name": "certification:404-fallback-assets-have-no-browser-errors",
+      "status": "PASS",
+      "detail": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "robots-policy",
+      "status": "PASS",
+      "detail": {
+        "url": "https://matthew75x.github.io/toadal-feast-web/robots.txt",
+        "status": 200,
+        "meta": "noindex,nofollow",
+        "disallowAll": false,
+        "expected": "staging"
+      }
+    },
+    {
+      "name": "expected-build-identity",
+      "status": "NOT_REQUESTED",
+      "detail": null
+    }
+  ],
+  "routes": [
+    {
+      "name": "home",
+      "path": "/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "httpStatus": 200,
+      "title": "TOADAL FEAST — Play the Feast World for Free",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "TOADAL FEAST — Play the Feast World for Free"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": [
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/interactive/candy-purple.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/genie-sweet.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/genie-savoury.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/genie-fruity.webp"
+            ]
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "play",
+      "path": "/play/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/play/",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "httpStatus": 200,
+      "title": "Play browser games · TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Play browser games · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "public-game-entry",
+      "path": "/games/wicked-bites/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/games/wicked-bites/",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "httpStatus": 200,
+      "title": "Wicked Bites · TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Wicked Bites · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "game-entry-truth-label",
+          "pass": true,
+          "detail": "Visible page copy identifies preview/session/isolated status."
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "world",
+      "path": "/world/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/world/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "title": "The Feast World — TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "The Feast World — TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/world-map.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "characters",
+      "path": "/characters/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/characters/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "title": "Characters Hub - TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Characters Hub - TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "stories",
+      "path": "/stories/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/stories/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "title": "Stories & Comics · TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Stories & Comics · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "media",
+      "path": "/media/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/media/",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "httpStatus": 200,
+      "title": "Media — TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Media — TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 1366,
+            "document": 1366
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "feast-pass",
+      "path": "/feast-pass/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/feast-pass/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "title": "Feast Pass · TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Feast Pass · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/toadal-victory.png",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "app",
+      "path": "/app/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/app/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "title": "The TOADAL FEAST app · TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "The TOADAL FEAST app · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": [
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/puzzle/toadal-push-golden-block.webp",
+              "https://matthew75x.github.io/toadal-feast-web/assets/images/puzzle/toadal-magic-golden-block.webp"
+            ]
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v1/app-mobile.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "app-store-availability-truth",
+          "pass": true,
+          "detail": [
+            {
+              "text": "●\nDownload on the\nApp Store",
+              "disabled": true,
+              "href": null
+            },
+            {
+              "text": "▶\nGet it on\nGoogle Play",
+              "disabled": true,
+              "href": null
+            }
+          ]
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    },
+    {
+      "name": "search",
+      "path": "/search/",
+      "url": "https://matthew75x.github.io/toadal-feast-web/search/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "httpStatus": 200,
+      "title": "Search · TOADAL FEAST",
+      "checks": [
+        {
+          "name": "http-200",
+          "pass": true,
+          "detail": 200
+        },
+        {
+          "name": "document-title",
+          "pass": true,
+          "detail": "Search · TOADAL FEAST"
+        },
+        {
+          "name": "no-horizontal-overflow",
+          "pass": true,
+          "detail": {
+            "viewport": 390,
+            "document": 390
+          }
+        },
+        {
+          "name": "no-decoded-image-failures",
+          "pass": true,
+          "detail": {
+            "failures": [],
+            "unrequestedLazyImages": []
+          }
+        },
+        {
+          "name": "companion-single-and-art-loaded",
+          "pass": true,
+          "detail": {
+            "count": 1,
+            "image": {
+              "src": "https://matthew75x.github.io/toadal-feast-web/assets/images/characters/companion/runtime-v2/search.webp",
+              "loaded": true
+            }
+          }
+        },
+        {
+          "name": "global-navigation-routes",
+          "pass": true,
+          "detail": {
+            "home": "/toadal-feast-web/",
+            "play": "/toadal-feast-web/play/",
+            "world": "/toadal-feast-web/world/",
+            "stories": "/toadal-feast-web/stories/",
+            "media": "/toadal-feast-web/media/",
+            "feast pass": "/toadal-feast-web/feast-pass/",
+            "app": "/toadal-feast-web/app/",
+            "search": "/toadal-feast-web/search/"
+          }
+        },
+        {
+          "name": "mobile-menu-opens-and-closes",
+          "pass": true,
+          "detail": {
+            "found": true,
+            "opened": true
+          }
+        },
+        {
+          "name": "companion-toggle-open-close",
+          "pass": true,
+          "detail": {
+            "initial": "false",
+            "opened": true,
+            "restored": true
+          }
+        }
+      ],
+      "errors": {
+        "console": [],
+        "page": [],
+        "http": [],
+        "requestFailures": []
+      }
+    }
+  ],
+  "screenshots": [
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\home-1366x900.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\play-1366x900.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\public-game-entry-1366x900.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\world-390x844.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\characters-390x844.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\stories-390x844.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\media-1366x900.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\feast-pass-390x844.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\app-390x844.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\search-390x844.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\home-390x844-cta.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\search-768x900-submitted.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\wicked-bites-player-started.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-visual-convergence-20261002\\docs\\review\\v1-release-20261002\\live\\smoke-qualified\\screenshots\\missing-route-visible-404.png"
+  ],
+  "limitations": [
+    "This is a bounded route/release smoke, not full gameplay, visual-parity, or historical browser-matrix qualification."
+  ],
+  "expected404Console": [
+    {
+      "text": "Failed to load resource: the server responded with a status of 404 ()",
+      "url": "https://matthew75x.github.io/toadal-feast-web/__v1-release-smoke-route-that-does-not-exist-7f3a9c/"
+    }
+  ]
+}
