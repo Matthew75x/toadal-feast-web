@@ -1,13 +1,15 @@
+import argparse
 import json
+from datetime import datetime, timezone
 from pathlib import Path
 
 from playwright.sync_api import sync_playwright
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'http://127.0.0.1:4173/toadal-feast-web/'
+BASE = 'http://127.0.0.1:4332/toadal-feast-web/'
 CHROME = r'C:\Program Files\Google\Chrome\Application\chrome.exe'
-EVIDENCE = ROOT / 'docs/review/STORIES_PUBLISHING_STACK_2026-10-01/evidence'
+DEFAULT_EVIDENCE = ROOT / 'docs/authoring/stories-browser-qa'
 FIXTURE = {
     'schemaVersion': 1,
     'series': [{
@@ -50,16 +52,29 @@ def assert_clean(failures, label):
 
 
 def main():
-    EVIDENCE.mkdir(parents=True, exist_ok=True)
+    parser = argparse.ArgumentParser(description='Run browser QA for Stories, Manga, and Reader.')
+    parser.add_argument('--base-url', default=BASE, help='Site base URL, including its path prefix and trailing slash.')
+    parser.add_argument('--report-dir', type=Path, default=DEFAULT_EVIDENCE, help='Directory for the new JSON report and screenshots.')
+    parser.add_argument('--debug-port', type=int, default=0, help='Optional isolated Chrome remote debugging port (0 lets Playwright choose).')
+    args = parser.parse_args()
+    base = args.base_url.rstrip('/') + '/'
+    if not base.endswith('/toadal-feast-web/'):
+        parser.error('--base-url must end with /toadal-feast-web/')
+    evidence = args.report_dir if args.report_dir.is_absolute() else ROOT / args.report_dir
+    evidence.mkdir(parents=True, exist_ok=True)
     checks = []
+    screenshots = []
+    launch_options = {'headless': True, 'executable_path': CHROME}
+    if args.debug_port:
+        launch_options['args'] = ['--remote-debugging-port=' + str(args.debug_port)]
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True, executable_path=CHROME)
+        browser = playwright.chromium.launch(**launch_options)
         for width, height, device in [(1366, 900, 'desktop'), (390, 844, 'mobile'), (320, 800, 'narrow-mobile')]:
             for route, slug in [('stories/', 'stories'), ('manga/', 'manga'), ('reader/', 'reader')]:
                 context = browser.new_context(viewport={'width': width, 'height': height}, reduced_motion='reduce')
                 page = context.new_page()
                 failures, requests = page_watch(page)
-                response = page.goto(BASE + route, wait_until='networkidle')
+                response = page.goto(base + route, wait_until='networkidle')
                 assert response and response.status == 200, route + ' did not return 200'
                 page.locator('h1').first.wait_for(state='visible')
                 page.wait_for_function('window.TFStoriesPublishing !== undefined')
@@ -76,8 +91,8 @@ def main():
                 })''')
                 assert metrics['scrollWidth'] <= metrics['width'], route + ' horizontal overflow at ' + str(width)
                 assert metrics['storyRuntime'] and metrics['reducedMotion'], route + ' runtime/media query missing'
-                assert any(url.startswith(BASE) and url.endswith('/assets/js/stories-publishing.js') for url in requests), route + ' story runtime request did not use the Pages base path'
-                assert any(url.startswith(BASE) and url.endswith('/assets/data/story-content.json') for url in requests), route + ' story registry request did not use the Pages base path'
+                assert any(url.startswith(base) and url.endswith('/assets/js/stories-publishing.js') for url in requests), route + ' story runtime request did not use the Pages base path'
+                assert any(url.startswith(base) and url.endswith('/assets/data/story-content.json') for url in requests), route + ' story registry request did not use the Pages base path'
                 if route == 'stories/':
                     body = page.locator('body').inner_text()
                     assert 'no published stories' in body.lower(), 'Stories page must expose its truthful empty state'
@@ -94,7 +109,9 @@ def main():
                     assert companion.get_attribute('data-minimized') == 'true', 'reader companion must default to minimized'
                     assert companion.get_attribute('data-panel-visible') == 'false', 'reader companion must not cover the empty reader by default'
                     if device != 'narrow-mobile':
-                        page.screenshot(path=str(EVIDENCE / (slug + '-' + device + '-empty.png')), full_page=True)
+                        screenshot = evidence / (slug + '-' + device + '-empty.png')
+                        page.screenshot(path=str(screenshot), full_page=True)
+                        screenshots.append(str(screenshot.relative_to(ROOT)))
                     full = page.locator('[data-reader-fullscreen]')
                     assert full.get_attribute('aria-label') == 'Enter reader fullscreen'
                     full.click()
@@ -103,7 +120,9 @@ def main():
                     page.evaluate('document.exitFullscreen()')
                     page.wait_for_function("document.querySelector('[data-reader-fullscreen]').getAttribute('aria-label') === 'Enter reader fullscreen'")
                 if route != 'reader/' and device != 'narrow-mobile':
-                    page.screenshot(path=str(EVIDENCE / (slug + '-' + device + '-empty.png')), full_page=True)
+                    screenshot = evidence / (slug + '-' + device + '-empty.png')
+                    page.screenshot(path=str(screenshot), full_page=True)
+                    screenshots.append(str(screenshot.relative_to(ROOT)))
                 assert_clean(failures, route + ' at ' + str(width))
                 checks.append({'route': '/' + route, 'viewport': [width, height], 'status': response.status, 'overflow': False, 'runtimeAndRegistryBasePath': True})
                 context.close()
@@ -117,13 +136,13 @@ def main():
             localStorage.setItem('toadal:web:v1:profile', 'fixture-profile');
         })()""")
         page.route('**/assets/data/story-content.json', lambda route: route.fulfill(status=200, content_type='application/json', body=json.dumps(FIXTURE)))
-        response = page.goto(BASE + 'manga/?series=fixture-series', wait_until='networkidle')
+        response = page.goto(base + 'manga/?series=fixture-series', wait_until='networkidle')
         assert response and response.status == 200
         page.get_by_role('heading', name='Browser QA Fixture').wait_for()
         assert page.locator('[data-story-chapter-list] a').count() == 1
         assert not page.locator('[data-story-continue]').is_disabled()
 
-        page.goto(BASE + 'reader/?series=fixture-series&chapter=fixture-chapter', wait_until='networkidle')
+        page.goto(base + 'reader/?series=fixture-series&chapter=fixture-chapter', wait_until='networkidle')
         page.locator('[data-reader-page]').wait_for(state='visible')
         assert page.locator('[data-reader-page-number]').inner_text() == '1'
         assert page.locator('[data-reader-page-total]').inner_text() == '2'
@@ -153,7 +172,7 @@ def main():
         context = browser.new_context(viewport={'width': 1366, 'height': 900})
         page = context.new_page()
         failures, requests = page_watch(page)
-        response = page.goto(BASE, wait_until='networkidle')
+        response = page.goto(base, wait_until='networkidle')
         assert response and response.status == 200
         assert not any(url.endswith('/assets/js/stories-publishing.js') for url in requests), 'Stories runtime must stay off non-story routes'
         assert not page.evaluate('!!window.TFStoriesPublishing'), 'Stories runtime must stay off Home'
@@ -162,7 +181,18 @@ def main():
         context.close()
         browser.close()
 
-    print(json.dumps({'result': 'PASS', 'checks': checks, 'screenshots': sorted(str(path.relative_to(ROOT)) for path in EVIDENCE.glob('*-empty.png'))}, indent=2))
+    report = {
+        'schema': 'toadal-feast.stories-browser-qa.v1',
+        'status': 'PASS',
+        'baseUrl': base,
+        'generatedAt': datetime.now(timezone.utc).isoformat(),
+        'checks': checks,
+        'screenshots': screenshots,
+    }
+    report_path = evidence / 'stories-browser-qa.json'
+    report_path.write_text(json.dumps(report, indent=2) + '\n', encoding='utf-8')
+    report['report'] = str(report_path.relative_to(ROOT))
+    print(json.dumps(report, indent=2))
 
 
 if __name__ == '__main__':

@@ -8,18 +8,1947 @@
   "components": [
     {
       "id": "component.live-media.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "live-media",
-        "html": "<article class='wo002-detail-page live-visual-page discovery-page discovery-media' data-companion-context='media' data-companion-copy='Browse canonical site art and real gameplay stills; this is not a downloadable press or media library.' data-companion-reaction='thinking'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Media</span></nav><section class='wo002-detail-hero'><div class='wo002-detail-copy'><p class='section-kicker'>ART, GAMEPLAY &amp; FEAST WORLD</p><span class='chip preview'>SELECTED SITE PREVIEWS</span><h1>TOADAL FEAST media</h1><p class='wo002-detail-lede'>Explore canonical character and world artwork alongside genuine gameplay stills. This is not a downloadable press or media library; no usage license or press kit is offered here.</p><div class='wo002-detail-actions'><a class='button-link button-link--primary' href='#gameplay'>See gameplay <span aria-hidden='true'>&darr;</span></a><a class='button-link button-link--secondary' href='/stories/'>Stories status</a></div></div><figure class='wo002-detail-art'><img src='/assets/images/world/candy-kingdom.webp' alt='Candy Kingdom environment artwork.' decoding='async'><figcaption>Feast World environment artwork.</figcaption></figure></section><section class='discovery-band' aria-labelledby='media-video-title'><div class='discovery-band-heading'><p class='section-kicker'>VIDEO</p><h2 id='media-video-title'>Watch the Feast</h2><p>No public trailer, video, or short is available on this site yet.</p></div><p class='detail-fact'>Video shelf · awaiting an approved published video.</p></section><section id='gameplay' class='discovery-band discovery-media-worlds' aria-labelledby='media-gameplay-title'><div class='discovery-band-heading'><p class='section-kicker'>GAMEPLAY</p><h2 id='media-gameplay-title'>Real game moments</h2><p>Genuine product captures already approved for the website. These are still images, not video previews.</p></div><div class='discovery-scene-grid'><figure class='discovery-scene-card'><img src='/assets/images/app/arcade-real-gameplay.webp' alt='TOADAL FEAST Arcade gameplay capture.' loading='lazy' decoding='async'><figcaption><strong>Arcade</strong><span>Genuine gameplay still.</span></figcaption></figure><figure class='discovery-scene-card'><img src='/assets/images/app/puzzle-real-gameplay.webp' alt='TOADAL FEAST Puzzle gameplay capture.' loading='lazy' decoding='async'><figcaption><strong>Puzzle</strong><span>Genuine gameplay still.</span></figcaption></figure><figure class='discovery-scene-card'><img src='/assets/images/app/feastfall-real-gameplay.webp' alt='TOADAL FEAST Feastfall gameplay capture.' loading='lazy' decoding='async'><figcaption><strong>Feastfall</strong><span>Genuine gameplay still.</span></figcaption></figure></div></section><section id='world-art' class='discovery-band discovery-media-worlds' aria-label='Selected world artwork'><div class='discovery-band-heading'><p class='section-kicker'>WORLD ART</p><h2>Selected Feast World scenes</h2><p>Canonical scenery used for discovery across the website.</p></div><div class='discovery-scene-grid'><figure class='discovery-scene-card'><img src='/assets/images/world/candyland-calm.webp' alt='Candy-land environment artwork.' loading='lazy' decoding='async'><figcaption><strong>Candy-land</strong><span>Environment preview.</span></figcaption></figure><figure class='discovery-scene-card'><img src='/assets/images/world/forest-portal.webp' alt='Forest portal environment artwork.' loading='lazy' decoding='async'><figcaption><strong>Forest portal</strong><span>Environment preview.</span></figcaption></figure></div></section><section id='character-art' class='discovery-band discovery-media-cast' aria-label='Selected canonical character artwork previews'><div class='discovery-band-heading'><p class='section-kicker'>CHARACTER ART</p><h2>Faces from the Feast</h2><p>Selected canonical character art, presented as site previews.</p></div><div class='media-character-grid'><article class='media-character-card'><img src='/assets/images/characters/toadal-portrait.webp' alt='Toadal, the crowned golden-yellow hero.' loading='lazy' decoding='async'><div><p class='section-kicker'>CHARACTER PREVIEW</p><h2>Toadal</h2></div></article><article class='media-character-card'><img src='/assets/images/characters/princess-lily.webp' alt='Princess Lily in canonical character artwork.' loading='lazy' decoding='async'><div><p class='section-kicker'>CHARACTER PREVIEW</p><h2>Princess Lily</h2></div></article><article class='media-character-card'><img src='/assets/images/characters/gully.webp' alt='Gully, happy and standing in canonical character artwork.' loading='lazy' decoding='async'><div><p class='section-kicker'>CHARACTER PREVIEW</p><h2>Gully</h2></div></article><article class='media-character-card'><img src='/assets/images/characters/gulper.webp' alt='Gulper in canonical character artwork.' loading='lazy' decoding='async'><div><p class='section-kicker'>CHARACTER PREVIEW</p><h2>Gulper</h2></div></article><article class='media-character-card'><img src='/assets/images/characters/genie-fruity.webp' alt='Fruity Feast Genie.' loading='lazy' decoding='async'><div><p class='section-kicker'>FEAST GENIE</p><h2>Fruity</h2></div></article><article class='media-character-card'><img src='/assets/images/characters/genie-sweet.webp' alt='Sweet Feast Genie.' loading='lazy' decoding='async'><div><p class='section-kicker'>FEAST GENIE</p><h2>Sweet</h2></div></article><article class='media-character-card'><img src='/assets/images/characters/genie-savoury.webp' alt='Savoury Feast Genie.' loading='lazy' decoding='async'><div><p class='section-kicker'>FEAST GENIE</p><h2>Savoury</h2></div></article></div></section><section class='wo002-detail-facts' aria-label='Downloads and press resources'><article class='detail-fact' id='downloads'><p class='section-kicker'>DOWNLOADS</p><h2>No files are offered</h2><p>There are no public wallpaper, logo, or other media downloads here. Artwork previews on this page are not download or reuse permissions.</p></article><article class='detail-fact' id='press'><p class='section-kicker'>PRESS &amp; CREATORS</p><h2>No press kit is published</h2><p>A press kit, creator asset pack, and public press contact have not been configured.</p><a href='/contact/'>Contact status</a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Browse canonical site art and real gameplay stills; this is not a downloadable press or media library.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Media · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.live-media.rich-text.26ddf826e577.wo002-detail-page-live-v",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "wo002-detail-page live-visual-page discovery-page discovery-media",
+              "attributes": {
+                "data-companion-context": "media",
+                "data-companion-copy": "Browse canonical site art and real gameplay stills; this is not a downloadable press or media library.",
+                "data-companion-reaction": "thinking"
+              },
+              "style": "",
+              "layerName": "TOADAL FEAST media",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.live-media.rich-text.532e2bdfd82b.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Media",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.32db771ae110.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.8ae73075f228.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.bf39d793bf24.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Media",
+                          "text": "Media"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.422c6ce18dc2.wo002-detail-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-detail-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "TOADAL FEAST media",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.c30a1bfb570c.wo002-detail-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "wo002-detail-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST media",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.be27dc276fe4.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "ART, GAMEPLAY & FEAST WORLD",
+                                "text": "ART, GAMEPLAY & FEAST WORLD"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.ce15fffd4844.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "SELECTED SITE PREVIEWS",
+                                "text": "SELECTED SITE PREVIEWS"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.46f4a1211b11.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL FEAST media",
+                                "text": "TOADAL FEAST media"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.7a0b7b88a659.wo002-detail-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "wo002-detail-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore canonical character and world artwork alongside genuine gameplay",
+                                "text": "Explore canonical character and world artwork alongside genuine gameplay stills. This is not a downloadable press or media library; no usage license or press kit is offered here."
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.85b9a9981f84.wo002-detail-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "wo002-detail-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "See gameplay ↓Stories status",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.999686db3aae.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--primary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "See gameplay ↓",
+                                      "href": "#gameplay",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.20fa478c6318.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "See gameplay ",
+                                            "layerName": "Text: See gameplay"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.5df2383a114d.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "↓",
+                                            "text": "↓"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.fc415f638658.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Stories status",
+                                      "href": "/stories/",
+                                      "label": "Stories status"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.6987ed37467c.wo002-detail-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "wo002-detail-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast World environment artwork.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.e211be318ccb.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Candy Kingdom environment artwork.",
+                                "asset": "asset.home.world.desktop",
+                                "alt": "Candy Kingdom environment artwork."
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.3e20723889e8.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feast World environment artwork.",
+                                "text": "Feast World environment artwork."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.6e5ea3b872c6.discovery-band",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band",
+                    "attributes": {
+                      "aria-labelledby": "media-video-title"
+                    },
+                    "style": "",
+                    "layerName": "Watch the Feast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.c079f3183fa1.discovery-band-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Watch the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.2920a1b836ea.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "VIDEO",
+                                "text": "VIDEO"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.239ec68366d5.media-video-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "media-video-title"
+                                },
+                                "style": "",
+                                "layerName": "media video title",
+                                "text": "Watch the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.48dfc9865dfc.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No public trailer, video, or short is available on this site yet.",
+                                "text": "No public trailer, video, or short is available on this site yet."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.ae4038782ff7.detail-fact",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Video shelf · awaiting an approved published video.",
+                          "text": "Video shelf · awaiting an approved published video."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.82bfa3fe5972.gameplay",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band discovery-media-worlds",
+                    "attributes": {
+                      "id": "gameplay",
+                      "aria-labelledby": "media-gameplay-title"
+                    },
+                    "style": "",
+                    "layerName": "gameplay",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.ba76111ec975.discovery-band-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Real game moments",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.a8776dc9c153.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "GAMEPLAY",
+                                "text": "GAMEPLAY"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.246d9ebbd7fd.media-gameplay-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "media-gameplay-title"
+                                },
+                                "style": "",
+                                "layerName": "media gameplay title",
+                                "text": "Real game moments"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.4eb18c6fbc5e.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Genuine product captures already approved for the website. These are sti",
+                                "text": "Genuine product captures already approved for the website. These are still images, not video previews."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.a04e080724e9.discovery-scene-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-scene-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "ArcadeGenuine gameplay still.PuzzleGenuine gameplay still.FeastfallGenui",
+                          "mode": "inherit",
+                          "collection": true,
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.5dd6613b5bd0.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "discovery-scene-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "ArcadeGenuine gameplay still.",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.501cdb4ebe27.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "TOADAL FEAST Arcade gameplay capture.",
+                                      "asset": "asset.app.gameplay.arcade",
+                                      "alt": "TOADAL FEAST Arcade gameplay capture."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.d8dafe628bba.figcaption",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "ArcadeGenuine gameplay still.",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.91b8ae5d0c84.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Arcade",
+                                            "text": "Arcade"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.d87d3d98e46b.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Genuine gameplay still.",
+                                            "text": "Genuine gameplay still."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.036834fb7bed.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "discovery-scene-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PuzzleGenuine gameplay still.",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.b94b509eaee1.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "TOADAL FEAST Puzzle gameplay capture.",
+                                      "asset": "asset.app.gameplay.puzzle",
+                                      "alt": "TOADAL FEAST Puzzle gameplay capture."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.f5513df6466d.figcaption",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "PuzzleGenuine gameplay still.",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.bab9a8c49551.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Puzzle",
+                                            "text": "Puzzle"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.8771767b602f.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Genuine gameplay still.",
+                                            "text": "Genuine gameplay still."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.7136396906da.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "discovery-scene-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FeastfallGenuine gameplay still.",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.07712d28ad97.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "TOADAL FEAST Feastfall gameplay capture.",
+                                      "asset": "asset.app.gameplay.feastfall",
+                                      "alt": "TOADAL FEAST Feastfall gameplay capture."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.f25a62ace7d3.figcaption",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "FeastfallGenuine gameplay still.",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.8bcb45efa324.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Feastfall",
+                                            "text": "Feastfall"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.2139d995a0c2.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Genuine gameplay still.",
+                                            "text": "Genuine gameplay still."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.7ea0bf119db8.world-art",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band discovery-media-worlds",
+                    "attributes": {
+                      "id": "world-art",
+                      "aria-label": "Selected world artwork"
+                    },
+                    "style": "",
+                    "layerName": "world art",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.5ee238ef5352.discovery-band-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Selected Feast World scenes",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.fe275d2dba3b.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "WORLD ART",
+                                "text": "WORLD ART"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.e076675c8821.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Selected Feast World scenes",
+                                "text": "Selected Feast World scenes"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.b9579e3c7f43.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Canonical scenery used for discovery across the website.",
+                                "text": "Canonical scenery used for discovery across the website."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.5800e08ae79a.discovery-scene-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-scene-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Candy-landEnvironment preview.Forest portalEnvironment preview.",
+                          "mode": "inherit",
+                          "collection": true,
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.7dac9dce8d7e.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "discovery-scene-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Candy-landEnvironment preview.",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.7ea05f809369.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Candy-land environment artwork.",
+                                      "asset": "asset.home.world.calm",
+                                      "alt": "Candy-land environment artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.ccaa018d79e1.figcaption",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Candy-landEnvironment preview.",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.a369db23814c.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Candy-land",
+                                            "text": "Candy-land"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.2f47a00a0e67.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Environment preview.",
+                                            "text": "Environment preview."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.8c21bc8937e5.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "discovery-scene-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Forest portalEnvironment preview.",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.fec8a02b1c63.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Forest portal environment artwork.",
+                                      "asset": "asset.home.world.portal",
+                                      "alt": "Forest portal environment artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.607b29fc1ecf.figcaption",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Forest portalEnvironment preview.",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.039bb279124a.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Forest portal",
+                                            "text": "Forest portal"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.77aec12bab42.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Environment preview.",
+                                            "text": "Environment preview."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.ce5a7bb278f6.character-art",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band discovery-media-cast",
+                    "attributes": {
+                      "id": "character-art",
+                      "aria-label": "Selected canonical character artwork previews"
+                    },
+                    "style": "",
+                    "layerName": "character art",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.f58e734dc988.discovery-band-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Faces from the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.7bc076d35928.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CHARACTER ART",
+                                "text": "CHARACTER ART"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.d8b4f7b0ad05.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Faces from the Feast",
+                                "text": "Faces from the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.b3b1b727fb75.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Selected canonical character art, presented as site previews.",
+                                "text": "Selected canonical character art, presented as site previews."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.84dd52cd88da.media-character-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "media-character-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Toadal",
+                          "mode": "inherit",
+                          "collection": true,
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.4f74ed3eeca6.media-character-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "media-character-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Toadal",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.50ae655f4ad3.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Toadal, the crowned golden-yellow hero.",
+                                      "asset": "asset.home.character.toadal",
+                                      "alt": "Toadal, the crowned golden-yellow hero."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.cb1a3d9562ed.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Toadal",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.82959a049bcd.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "CHARACTER PREVIEW",
+                                            "text": "CHARACTER PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.5a5fce557c7c.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Toadal",
+                                            "text": "Toadal"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.4fa17fd4dd51.media-character-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "media-character-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Princess Lily",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.8666746eed07.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Princess Lily in canonical character artwork.",
+                                      "asset": "asset.home.character.princess-lily",
+                                      "alt": "Princess Lily in canonical character artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.545dc816d664.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Princess Lily",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.7acb4e422cac.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "CHARACTER PREVIEW",
+                                            "text": "CHARACTER PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.8d3ae0b4234e.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Princess Lily",
+                                            "text": "Princess Lily"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.b5bd3b635ec0.media-character-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "media-character-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Gully",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.d80aa2fa77a8.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Gully, happy and standing in canonical character artwork.",
+                                      "asset": "asset.home.character.gully",
+                                      "alt": "Gully, happy and standing in canonical character artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.25210b5d411f.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Gully",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.8b51fd48622d.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "CHARACTER PREVIEW",
+                                            "text": "CHARACTER PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.c98239a5a0d2.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Gully",
+                                            "text": "Gully"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.324ec27035b7.media-character-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "media-character-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Gulper",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.3e759bfb17b4.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Gulper in canonical character artwork.",
+                                      "asset": "asset.home.character.gulper",
+                                      "alt": "Gulper in canonical character artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.42e849f1b1dc.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Gulper",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.42a5bc573c08.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "CHARACTER PREVIEW",
+                                            "text": "CHARACTER PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.ba14a25ce6cc.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Gulper",
+                                            "text": "Gulper"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.c14caa495ac4.media-character-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "media-character-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Fruity",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.63b741b66541.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Fruity Feast Genie.",
+                                      "asset": "asset.home.genie.fruity-art",
+                                      "alt": "Fruity Feast Genie."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.fccac28eca38.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Fruity",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.cb719a4a25d3.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "FEAST GENIE",
+                                            "text": "FEAST GENIE"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.7b89f77b8c2a.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Fruity",
+                                            "text": "Fruity"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.3ae4fb61b11a.media-character-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "media-character-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Sweet",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.7b98d2adc6b1.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Sweet Feast Genie.",
+                                      "asset": "asset.home.genie.sweet-art",
+                                      "alt": "Sweet Feast Genie."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.95eea99f3d00.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Sweet",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.a392095569e5.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "FEAST GENIE",
+                                            "text": "FEAST GENIE"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.dc17f9142d17.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Sweet",
+                                            "text": "Sweet"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.289b848e9e21.media-character-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "media-character-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Savoury",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-media.rich-text.fe92461dc19e.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Savoury Feast Genie.",
+                                      "asset": "asset.home.genie.savoury-art",
+                                      "alt": "Savoury Feast Genie."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-media.rich-text.312f0a6ead2c.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Savoury",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-media.rich-text.6244a0bf1c97.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "FEAST GENIE",
+                                            "text": "FEAST GENIE"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-media.rich-text.a2f5941ae64b.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Savoury",
+                                            "text": "Savoury"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.3441ba60982c.wo002-detail-facts",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-detail-facts",
+                    "attributes": {
+                      "aria-label": "Downloads and press resources"
+                    },
+                    "style": "",
+                    "layerName": "No files are offered",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.f13996501acb.downloads",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "downloads"
+                          },
+                          "style": "",
+                          "layerName": "downloads",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.0e2f4b389ef4.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "DOWNLOADS",
+                                "text": "DOWNLOADS"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.42dc9ea266cb.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No files are offered",
+                                "text": "No files are offered"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.f2dc50179243.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "There are no public wallpaper, logo, or other media downloads here. Artw",
+                                "text": "There are no public wallpaper, logo, or other media downloads here. Artwork previews on this page are not download or reuse permissions."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.68089d92883b.press",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "press"
+                          },
+                          "style": "",
+                          "layerName": "press",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.6f62bc900977.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PRESS & CREATORS",
+                                "text": "PRESS & CREATORS"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.bd6a80768357.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No press kit is published",
+                                "text": "No press kit is published"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.f7dfbba153ca.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A press kit, creator asset pack, and public press contact have not been ",
+                                "text": "A press kit, creator asset pack, and public press contact have not been configured."
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.7c93fb0e9e2c.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Contact status",
+                                "href": "/contact/",
+                                "label": "Contact status"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.209f58b878de.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSBrowse canonical site art and real gameplay stills; this is n",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.ca6756b0ab0d.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.40e9f497c98f.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.b0c128bc61f4.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "Browse canonical site art and real gameplay stills; this is not a downlo",
+                                "text": "Browse canonical site art and real gameplay stills; this is not a downloadable press or media library."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.67390af566a1.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.03a193f0fb0a.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.d619296cef3f.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.media.related-routes",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "manifest-media-related-routes",
-        "html": "<section class='discovery-band' aria-labelledby='media-next-title'><div class='discovery-band-heading'><p class='section-kicker'>KEEP EXPLORING</p><h2 id='media-next-title'>See the Feast in action</h2><p>Open the full mobile adventure, the isolated Wicked Bites preview, or browse every browser-game preview.</p></div><nav class='progression-nav' aria-label='Media destinations'><a href='/app/'>TOADAL FEAST mobile app</a><a href='/games/wicked-bites/'>Wicked Bites details</a><a href='/player/wicked-bites/'>Wicked Bites browser preview</a><a href='/play/'>Browse all games</a></nav></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Media · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.media.related-routes.f200bd9de26a.discovery-band",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "discovery-band",
+              "attributes": {
+                "aria-labelledby": "media-next-title"
+              },
+              "style": "",
+              "layerName": "See the Feast in action",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.media.related-routes.634786049e8f.discovery-band-heading",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "discovery-band-heading",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "See the Feast in action",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.media.related-routes.6bf3a0420012.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "KEEP EXPLORING",
+                          "text": "KEEP EXPLORING"
+                        }
+                      },
+                      {
+                        "id": "component.media.related-routes.d07fd81dc933.media-next-title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "media-next-title"
+                          },
+                          "style": "",
+                          "layerName": "media next title",
+                          "text": "See the Feast in action"
+                        }
+                      },
+                      {
+                        "id": "component.media.related-routes.0f522d4c1ddf.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Open the full mobile adventure, the isolated Wicked Bites preview, or br",
+                          "text": "Open the full mobile adventure, the isolated Wicked Bites preview, or browse every browser-game preview."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.media.related-routes.b6e4812d8a74.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav",
+                    "attributes": {
+                      "aria-label": "Media destinations"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL FEAST mobile appWicked Bites detailsWicked Bites browser previewB",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.media.related-routes.1868b0233968.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST mobile app",
+                          "href": "/app/",
+                          "label": "TOADAL FEAST mobile app"
+                        }
+                      },
+                      {
+                        "id": "component.media.related-routes.e42e685de72a.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Wicked Bites details",
+                          "href": "/games/wicked-bites/",
+                          "label": "Wicked Bites details"
+                        }
+                      },
+                      {
+                        "id": "component.media.related-routes.a94fc0d81c7f.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Wicked Bites browser preview",
+                          "href": "/player/wicked-bites/",
+                          "label": "Wicked Bites browser preview"
+                        }
+                      },
+                      {
+                        "id": "component.media.related-routes.2a8a84517c62.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browse all games",
+                          "href": "/play/",
+                          "label": "Browse all games"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 // Run from the repository root: node scripts/verify-canonical-gully-gameplay-authority.mjs
 const repo = path.resolve(process.argv[2] || '.');
@@ -12,6 +13,7 @@ const expectedAssetHash = '177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fa
 const expectedSourceHash = '5c06144b728acb893eca1996c83d92e771e73b27be466f2acf5aec0ffff96388';
 const expectedArchiveHash = '605e16399d21210228a9c784fb413c6d886e75b0bf0fa277b25ef0a2dbcf4ecb';
 const errors = [];
+const projector = await createOwnerNativeProjector();
 const sha256 = (bytes) => crypto.createHash('sha256').update(bytes).digest('hex');
 const readJson = (relative) => JSON.parse(fs.readFileSync(path.join(project, relative), 'utf8'));
 const assetBytes = fs.readFileSync(path.join(project, 'reference/assets/images/characters/gully.webp'));
@@ -50,7 +52,7 @@ if (ledger.archiveSha256 !== expectedArchiveHash) errors.push('Gully authority l
 const pages = ['home', 'characters', 'world', 'media'];
 for (const page of pages) {
   const document = readJson(`pages/${page}.json`);
-  const html = (document.components || []).map((component) => component.props?.html || '').join('\n');
+  const html = projector.projectPageComponents(project, document).map(({ html }) => html).join('\n');
   if (!/assets\/images\/characters\/gully\.webp/i.test(html)) errors.push(`pages/${page}.json does not reference the neutral Gully derivative.`);
 }
 const registry = readJson('content/registry.json');

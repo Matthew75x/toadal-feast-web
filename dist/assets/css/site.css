@@ -7272,3 +7272,10 @@ html[data-site-reduced-motion] *::after {
   transition: none !important;
   scroll-behavior: auto !important;
 }
+:is(a, [role='button']).character-card { color: inherit; text-decoration: none; cursor: pointer; }
+:is(a, [role='button']).character-card:focus-visible { outline: 3px solid #126fd6; outline-offset: 4px; }
+:is(a, [role='button']).character-card:hover { box-shadow: 0 5px 22px #45356426; }
+/* Native whole-object navigation retains each approved card's existing paint. */
+a.owner-object-link { color: inherit; text-decoration: none; cursor: pointer; }
+a.owner-object-link:focus-visible { outline: 3px solid #126fd6; outline-offset: 4px; }
+a.owner-object-link:hover { outline: 2px solid #126fd680; outline-offset: 2px; }

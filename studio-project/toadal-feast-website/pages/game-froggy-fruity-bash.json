@@ -8,10 +8,760 @@
   "components": [
     {
       "id": "component.muogc5bb.tnywdf",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "wo002-game-detail",
-        "html": "\n<article class=\"wo002-detail-page\" data-game-detail=\"froggy-fruity-bash\" data-companion-context=\"froggy-fruity-bash\" data-companion-copy=\"This is a concept listing with no runnable website package or playable route.\">\n  <nav class=\"detail-breadcrumb\" aria-label=\"Breadcrumb\"><a href=\"/play/\">Play</a><span aria-hidden=\"true\">/</span><span>Froggy Fruity Bash</span></nav>\n  <section class=\"wo002-detail-hero\"><div class=\"wo002-detail-copy\"><p class=\"section-kicker\">BROWSER GAME CONCEPT</p>\n    <span class=\"chip preview\">PREVIEW</span><h1>Froggy Fruity Bash</h1><p class=\"wo002-detail-lede\">A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage.</p>\n    <div class=\"wo002-detail-actions\"><p class=\"detail-unavailable\"><strong>No playable browser build is connected.</strong> This listing is informational only.</p><a class=\"button-link button-link--secondary\" href=\"/play/\">All browser games</a></div>\n  </div><figure class=\"wo002-detail-art\"><img src=\"/assets/images/characters/candy-shooter-fruity-bash.webp\" alt=\"Candy Shooter character concept art for Froggy Fruity Bash; not gameplay footage.\" decoding=\"async\"><figcaption>Temporary concept character art — not a gameplay screenshot. No runnable browser package is connected.</figcaption></figure></section>\n  <section class=\"wo002-detail-facts\" aria-label=\"Game preview information\">\n    <article class=\"detail-fact\"><p class=\"section-kicker\">STATUS</p><h2>Preview</h2><p>A playable website package is not available.</p></article>\n    <article class=\"detail-fact\"><p class=\"section-kicker\">CONTROLS</p><h2>How to play</h2><p>No playable website build is connected.</p></article>\n    <article class=\"detail-fact\"><p class=\"section-kicker\">SAVES</p><h2>No save</h2><p>No browser save is created.</p></article>\n  </section>\n<aside class=\"toadal-companion\" data-companion data-zone=\"hero\" aria-label=\"Toadal contextual helper\"><div class=\"companion-panel\" id=\"toadal-companion-panel\" data-companion-panel><p class=\"companion-label\">TOADAL SAYS</p><p class=\"companion-message\" data-companion-speech aria-live=\"polite\" aria-atomic=\"true\">This is a concept listing with no runnable website package or playable route.</p></div><button class=\"companion-toggle\" type=\"button\" data-companion-toggle aria-controls=\"toadal-companion-panel\" aria-expanded=\"true\" aria-label=\"Minimize Toadal helper\"><img class=\"companion-image\" data-companion-image src=\"/assets/images/characters/toadal-victory.png\" alt=\"\" width=\"611\" height=\"640\" loading=\"lazy\" decoding=\"async\"><span class=\"sr-only\">Minimize Toadal helper</span></button></aside>\n</article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Froggy Fruity Bash · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.muogc5bb.tnywdf.24549a2a6ca9.text",
+            "type": "core.text",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "#text",
+              "className": "",
+              "attributes": {},
+              "style": "",
+              "text": "\n",
+              "layerName": "Text: whitespace"
+            }
+          },
+          {
+            "id": "component.muogc5bb.tnywdf.f3ed0cd7ed3a.wo002-detail-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "wo002-detail-page",
+              "attributes": {
+                "data-game-detail": "froggy-fruity-bash",
+                "data-companion-context": "froggy-fruity-bash",
+                "data-companion-copy": "This is a concept listing with no runnable website package or playable route."
+              },
+              "style": "",
+              "layerName": "Froggy Fruity Bash",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.muogc5bb.tnywdf.abf61296091b.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.5c968dd5d0f0.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Play/Froggy Fruity Bash",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc5bb.tnywdf.18ae254fe1de.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Play",
+                          "href": "/play/",
+                          "label": "Play"
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.fa013e9b9d23.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.4fd21b4ffece.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Froggy Fruity Bash",
+                          "text": "Froggy Fruity Bash"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.76ead75a7f25.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.0bf04e512244.wo002-detail-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-detail-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Froggy Fruity Bash",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc5bb.tnywdf.fb23ecdbc1b8.wo002-detail-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "wo002-detail-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Froggy Fruity Bash",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc5bb.tnywdf.a90c6381d798.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "BROWSER GAME CONCEPT",
+                                "text": "BROWSER GAME CONCEPT"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.b5202192835a.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.8e06ee876482.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PREVIEW",
+                                "text": "PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.cd9531bae8f6.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Froggy Fruity Bash",
+                                "text": "Froggy Fruity Bash"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.8959d64477e5.wo002-detail-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "wo002-detail-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A preview concept only. No runnable browser package is connected, and th",
+                                "text": "A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage."
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.c38c99467689.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.084bffb90c2c.wo002-detail-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "wo002-detail-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No playable browser build is connected. This listing is informational on",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.muogc5bb.tnywdf.f2971e089f74.detail-unavailable",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "detail-unavailable",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "No playable browser build is connected. This listing is informational on",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc5bb.tnywdf.82bad56ffd7c.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "No playable browser build is connected.",
+                                            "text": "No playable browser build is connected."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc5bb.tnywdf.27d16360e785.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": " This listing is informational only.",
+                                            "layerName": "Text: This listing is informational only."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc5bb.tnywdf.4a7d036ea365.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "All browser games",
+                                      "href": "/play/",
+                                      "label": "All browser games"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.1a0753c4cf8b.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.41556d6ee634.wo002-detail-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "wo002-detail-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Temporary concept character art — not a gameplay screenshot. No runnable",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc5bb.tnywdf.ff884fce53a9.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Candy Shooter character concept art for Froggy Fruity Bash; not gameplay footage.",
+                                "asset": "asset.home.game.froggy-fruity-bash-concept",
+                                "alt": "Candy Shooter character concept art for Froggy Fruity Bash; not gameplay footage."
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.6a08c56d0c83.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Temporary concept character art — not a gameplay screenshot. No runnable",
+                                "text": "Temporary concept character art — not a gameplay screenshot. No runnable browser package is connected."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.ad80019664d0.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.193935db72dc.wo002-detail-facts",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-detail-facts",
+                    "attributes": {
+                      "aria-label": "Game preview information"
+                    },
+                    "style": "",
+                    "layerName": "Preview",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc5bb.tnywdf.ec4923f74078.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.50b75548f3f4.detail-fact",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Preview",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc5bb.tnywdf.2de5061a9c15.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "STATUS",
+                                "text": "STATUS"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.ac8e7ffc4e53.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Preview",
+                                "text": "Preview"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.24b901ae7162.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A playable website package is not available.",
+                                "text": "A playable website package is not available."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.9f220a3eba48.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.5136b3b11320.detail-fact",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "How to play",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc5bb.tnywdf.8eb3dfb35c50.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CONTROLS",
+                                "text": "CONTROLS"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.a911c06a9b75.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "How to play",
+                                "text": "How to play"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.5b1b4afec78c.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No playable website build is connected.",
+                                "text": "No playable website build is connected."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.8606853514d1.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.e89b6847f9ae.detail-fact",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "No save",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc5bb.tnywdf.f3f0deab0a72.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "SAVES",
+                                "text": "SAVES"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.240c6da61862.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No save",
+                                "text": "No save"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.5fc177d222ce.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No browser save is created.",
+                                "text": "No browser save is created."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.279b6abc0a2b.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.9443860a0e83.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.8b8963024dc1.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSThis is a concept listing with no runnable website package or",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc5bb.tnywdf.fd389a0a4e5e.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc5bb.tnywdf.5d95dbccfe46.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.42b25500d2a0.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "This is a concept listing with no runnable website package or playable r",
+                                "text": "This is a concept listing with no runnable website package or playable route."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc5bb.tnywdf.5640bd783a33.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.muogc5bb.tnywdf.2984c9565e8d.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.muogc5bb.tnywdf.7626bc493e97.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc5bb.tnywdf.12c0d3ef4353.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

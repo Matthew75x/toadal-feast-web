@@ -8,10 +8,829 @@
   "components": [
     {
       "id": "component.manifest-support",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "manifest-support",
-        "html": "<section class='wo002-detail-page live-visual-page' data-companion-context='support' data-companion-copy='This page explains the current preview state. Guest website progress can persist locally, but account sync and a public support endpoint are not configured.'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Support</span></nav><header class='wo002-detail-hero'><div class='wo002-detail-copy'><p class='section-kicker'>HELP FOR THIS WEBSITE PREVIEW</p><span class='chip preview'>STAGING INFORMATION</span><h1>How can we help?</h1><p class='wo002-detail-lede'>A public support contact, inbox, and contact form have not been configured on this preview.</p><div class='wo002-detail-actions'><a class='button-link button-link--primary' href='/play/'>Understand game previews <span aria-hidden='true'>→</span></a><a class='button-link button-link--secondary' href='/app/'>App availability</a></div></div><figure class='wo002-detail-art'><img src='/assets/images/characters/toadal-portrait.webp' alt='Toadal, the crowned golden-yellow hero of TOADAL FEAST.' width='256' height='256' decoding='async'><figcaption>Toadal character artwork.</figcaption></figure></header><section class='support-search-panel' aria-labelledby='support-search-title'><p class='section-kicker'>FILTER HELP</p><h2 id='support-search-title'>Find a help topic</h2><label for='support-search-input'>Search these help topics</label><input id='support-search-input' data-support-search type='search' autocomplete='off' placeholder='Try progress, preview, app, or contact'><p data-support-count role='status' aria-live='polite'>5 help topics shown.</p></section><section class='wo002-detail-facts' aria-label='Frequently asked questions'><article class='detail-fact' id='preview-states' data-support-article data-support-text='games preview public release' data-companion-context='support-games' data-companion-copy='PREVIEW is for evaluation and does not mean a game is publicly released.'><p class='section-kicker'>GAMES</p><h2>What does PREVIEW mean?</h2><p>PREVIEW identifies an evaluation build or concept. It is not a public-release label. The Play directory describes which entries can open and which remain held or concept-only.</p><a href='/play/'>Visit Play <span aria-hidden='true'>→</span></a></article><article class='detail-fact' id='guest-progress' data-support-article data-support-text='progress guest local browser save account sync'><p class='section-kicker'>PROGRESS</p><h2>Where is guest progress saved?</h2><p>Feast Pass progress can persist locally on this browser. Sign-in and cross-device sync are not available.</p><a href='/feast-pass/'>Feast Pass status <span aria-hidden='true'>→</span></a></article><article class='detail-fact' id='app-status' data-support-article data-support-text='app mobile store google play apple download'><p class='section-kicker'>APP</p><h2>Where can I get the mobile app?</h2><p>The App page explains current availability. Verified App Store and Google Play destinations are not configured on this preview.</p><a href='/app/'>App availability</a></article><article class='detail-fact' id='contact-status' data-support-article data-support-text='contact support email form endpoint'><p class='section-kicker'>CONTACT</p><h2>How do I contact support?</h2><p>The Contact page is a non-submitting preview until a verified public mailbox or endpoint is configured.</p><a href='/contact/'>Contact &amp; feedback preview</a></article><article class='detail-fact' id='legal-status' data-support-article data-support-text='legal privacy policy terms'><p class='section-kicker'>LEGAL</p><h2>Where are Privacy Policy and Terms?</h2><p>The Legal page records publication status. Approved Privacy Policy and Terms text is not published yet.</p><a href='/legal/'>Legal status</a></article></section></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Support · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.manifest-support.bb8383606b39.wo002-detail-page-live-v",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "wo002-detail-page live-visual-page",
+              "attributes": {
+                "data-companion-context": "support",
+                "data-companion-copy": "This page explains the current preview state. Guest website progress can persist locally, but account sync and a public support endpoint are not configured."
+              },
+              "style": "",
+              "layerName": "How can we help?",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.manifest-support.a6191deb7e2b.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Support",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-support.fdac30a95473.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.5084a51e1ef7.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.6279b36798f1.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Support",
+                          "text": "Support"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-support.1a63c7916603.wo002-detail-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "wo002-detail-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "How can we help?",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-support.f1f71e8030c0.wo002-detail-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "wo002-detail-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "How can we help?",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-support.192c78be7f31.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "HELP FOR THIS WEBSITE PREVIEW",
+                                "text": "HELP FOR THIS WEBSITE PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.1e9ca25b7758.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "STAGING INFORMATION",
+                                "text": "STAGING INFORMATION"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.841c4bdc435d.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "How can we help?",
+                                "text": "How can we help?"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.efe01216f38e.wo002-detail-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "wo002-detail-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A public support contact, inbox, and contact form have not been configur",
+                                "text": "A public support contact, inbox, and contact form have not been configured on this preview."
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.ed33c0b8c521.wo002-detail-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "wo002-detail-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Understand game previews →App availability",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.d833ae95623e.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--primary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Understand game previews →",
+                                      "href": "/play/",
+                                      "children": [
+                                        {
+                                          "id": "component.manifest-support.435b34d37f09.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Understand game previews ",
+                                            "layerName": "Text: Understand game previews"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.manifest-support.ed31033944a8.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.6fe330507a78.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "App availability",
+                                      "href": "/app/",
+                                      "label": "App availability"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.113d3b4c5007.wo002-detail-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "wo002-detail-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Toadal character artwork.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-support.1cf9502c6a95.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "width": "256",
+                                  "height": "256",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal, the crowned golden-yellow hero of TOADAL FEAST.",
+                                "asset": "asset.home.character.toadal",
+                                "alt": "Toadal, the crowned golden-yellow hero of TOADAL FEAST."
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.297bd08b3edd.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Toadal character artwork.",
+                                "text": "Toadal character artwork."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-support.167748ebef06.support-search-panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "support-search-panel",
+                    "attributes": {
+                      "aria-labelledby": "support-search-title"
+                    },
+                    "style": "",
+                    "layerName": "Find a help topic",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-support.49fedc9b2489.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "FILTER HELP",
+                          "text": "FILTER HELP"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.f14af039d4c2.support-search-title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "support-search-title"
+                          },
+                          "style": "",
+                          "layerName": "support search title",
+                          "text": "Find a help topic"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.f2fbad73eaf2.label",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "label",
+                          "className": "",
+                          "attributes": {
+                            "for": "support-search-input"
+                          },
+                          "style": "",
+                          "layerName": "Search these help topics",
+                          "text": "Search these help topics"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.4046bc9f368c.support-search-input",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "input",
+                          "className": "",
+                          "attributes": {
+                            "id": "support-search-input",
+                            "data-support-search": "",
+                            "type": "search",
+                            "autocomplete": "off",
+                            "placeholder": "Try progress, preview, app, or contact"
+                          },
+                          "style": "",
+                          "layerName": "support search input",
+                          "mode": "inherit",
+                          "children": []
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.75beeff73ce9.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {
+                            "data-support-count": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "5 help topics shown.",
+                          "text": "5 help topics shown."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-support.d7645f98d460.wo002-detail-facts",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-detail-facts",
+                    "attributes": {
+                      "aria-label": "Frequently asked questions"
+                    },
+                    "style": "",
+                    "layerName": "What does PREVIEW mean?",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-support.4e8cfc13e807.preview-states",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "preview-states",
+                            "data-support-article": "",
+                            "data-support-text": "games preview public release",
+                            "data-companion-context": "support-games",
+                            "data-companion-copy": "PREVIEW is for evaluation and does not mean a game is publicly released."
+                          },
+                          "style": "",
+                          "layerName": "preview states",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-support.aa0322729f66.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "GAMES",
+                                "text": "GAMES"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.e4a2c488cb76.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "What does PREVIEW mean?",
+                                "text": "What does PREVIEW mean?"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.23c37c83bd4e.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PREVIEW identifies an evaluation build or concept. It is not a public-re",
+                                "text": "PREVIEW identifies an evaluation build or concept. It is not a public-release label. The Play directory describes which entries can open and which remain held or concept-only."
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.cb53089af3d2.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Visit Play →",
+                                "href": "/play/",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.c093164ee524.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Visit Play ",
+                                      "layerName": "Text: Visit Play"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.033cbea57776.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.3cde7a71a97e.guest-progress",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "guest-progress",
+                            "data-support-article": "",
+                            "data-support-text": "progress guest local browser save account sync"
+                          },
+                          "style": "",
+                          "layerName": "guest progress",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-support.c3f1b2e96149.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PROGRESS",
+                                "text": "PROGRESS"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.cec331d899dc.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Where is guest progress saved?",
+                                "text": "Where is guest progress saved?"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.2eb74de5f566.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feast Pass progress can persist locally on this browser. Sign-in and cro",
+                                "text": "Feast Pass progress can persist locally on this browser. Sign-in and cross-device sync are not available."
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.6077e85ef434.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feast Pass status →",
+                                "href": "/feast-pass/",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.26e5f5ddd0e1.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Feast Pass status ",
+                                      "layerName": "Text: Feast Pass status"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.a64ee2200863.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.31cfb754b89b.app-status",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "app-status",
+                            "data-support-article": "",
+                            "data-support-text": "app mobile store google play apple download"
+                          },
+                          "style": "",
+                          "layerName": "app status",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-support.b190229aed7a.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "APP",
+                                "text": "APP"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.a3795fc95921.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Where can I get the mobile app?",
+                                "text": "Where can I get the mobile app?"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.896db622d665.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The App page explains current availability. Verified App Store and Googl",
+                                "text": "The App page explains current availability. Verified App Store and Google Play destinations are not configured on this preview."
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.2a919297a877.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "App availability",
+                                "href": "/app/",
+                                "label": "App availability"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.27580cf735d5.contact-status",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "contact-status",
+                            "data-support-article": "",
+                            "data-support-text": "contact support email form endpoint"
+                          },
+                          "style": "",
+                          "layerName": "contact status",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-support.8b31cc52540a.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CONTACT",
+                                "text": "CONTACT"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.d29cb61aa84d.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "How do I contact support?",
+                                "text": "How do I contact support?"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.1eec92b12881.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The Contact page is a non-submitting preview until a verified public mai",
+                                "text": "The Contact page is a non-submitting preview until a verified public mailbox or endpoint is configured."
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.23c6c93319c0.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Contact & feedback preview",
+                                "href": "/contact/",
+                                "label": "Contact & feedback preview"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-support.36b4b62c3ddb.legal-status",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "legal-status",
+                            "data-support-article": "",
+                            "data-support-text": "legal privacy policy terms"
+                          },
+                          "style": "",
+                          "layerName": "legal status",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-support.a06e44df4f29.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "LEGAL",
+                                "text": "LEGAL"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.f3c627473b4d.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Where are Privacy Policy and Terms?",
+                                "text": "Where are Privacy Policy and Terms?"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.4d490a9d8294.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The Legal page records publication status. Approved Privacy Policy and T",
+                                "text": "The Legal page records publication status. Approved Privacy Policy and Terms text is not published yet."
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.6108d0230980.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Legal status",
+                                "href": "/legal/",
+                                "label": "Legal status"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const repo = path.resolve(process.argv[2] || '.');
 const project = path.join(repo, 'studio-project', 'toadal-feast-website');
 const pagesIndex = JSON.parse(fs.readFileSync(path.join(project, 'pages', 'index.json'), 'utf8'));
 const nav = JSON.parse(fs.readFileSync(path.join(project, 'collections', 'navigation.json'), 'utf8'));
 const home = JSON.parse(fs.readFileSync(path.join(project, 'pages', 'home.json'), 'utf8'));
+const projector = await createOwnerNativeProjector();
 
 const implemented = new Set((pagesIndex.pages || []).map(p => p.route));
 const homeIds = new Set();
-for (const item of home.components || []) {
+for (const { component: item, html: markup } of projector.projectPageComponents(project, home)) {
   if (item?.props?.anchorId) homeIds.add(item.props.anchorId);
-  const markup = item?.props?.html || '';
   for (const match of markup.matchAll(/\bid\s*=\s*["']([^"']+)["']/giu)) homeIds.add(match[1]);
 }
 const normalize = (href) => {

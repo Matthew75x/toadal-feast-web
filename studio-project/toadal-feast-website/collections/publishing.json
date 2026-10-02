@@ -14,12 +14,17 @@
   },
   "pwa": {
     "enabled": false,
-    "name": "TOADAL FEAST Website",
-    "shortName": "TOADAL FEAST Websi",
+    "name": "TOADAL FEAST",
+    "shortName": "TOADAL FEAST",
     "themeColor": "#243b64",
     "backgroundColor": "#f5f7fb",
     "display": "standalone",
     "offlineCache": false,
     "iconAsset": ""
+  },
+  "staticExport": {
+    "schemaVersion": 1,
+    "basePath": "/toadal-feast-web/",
+    "staging": true
   }
 }

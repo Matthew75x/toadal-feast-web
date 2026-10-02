@@ -1,9 +1,14 @@
 import assert from 'node:assert/strict';
 import { createRequire } from 'node:module';
+import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const require = createRequire(import.meta.url);
 const editorial = require('../studio-project/toadal-feast-website/reference/assets/js/editorial-manifest.js');
 const { projectNewsRecords, projectRoadmapItems } = await import('./build-manifest-public-content.mjs');
+const projectRoot = path.resolve('studio-project/toadal-feast-website');
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
 
 const news = [
   { id: 'draft-note', slug: 'draft-note', title: 'Draft note', summary: 'Not public.', category: 'development', publishedAt: '2026-10-01', publicationState: 'DRAFT' },
@@ -96,11 +101,11 @@ for (const [file, requiredSlots] of [
   ['roadmap.json', ['data-roadmap-related-devlogs', 'data-roadmap-devlog-list', 'data-roadmap-devlog-empty']]
 ]) {
   const page = JSON.parse(await readFile(new URL(`../studio-project/toadal-feast-website/pages/${file}`, import.meta.url), 'utf8'));
-  const html = page.components[0].props.html;
+  const html = projectPage(projectRoot, { ...page, components: [page.components[0]] });
   for (const slot of requiredSlots) assert.ok(html.includes(slot), `${file} must include required slot ${slot}`);
 }
 const articlePage = JSON.parse(await readFile(new URL('../studio-project/toadal-feast-website/pages/news-article.json', import.meta.url), 'utf8'));
-assert.match(articlePage.components[0].props.html, /data-article-quote-text[^>]*>/, 'quote text has a dedicated text-only projection target');
+assert.match(projectPage(projectRoot, { ...articlePage, components: [articlePage.components[0]] }), /data-article-quote-text[^>]*>/, 'quote text has a dedicated text-only projection target');
 assert.match(editorial.renderArticle.toString(), /quoteText\.textContent = record\.pullQuote\.text/, 'quotes render as text, not injected markup');
 assert.match(editorial.renderArticle.toString(), /projectRelatedNews\(record, records\)/, 'article related links use the published-record resolver');
 assert.match(editorial.renderRoadmap.toString(), /projectRoadmapDevlogs\(records, newsRecords\)/, 'roadmap links use the published-record resolver');

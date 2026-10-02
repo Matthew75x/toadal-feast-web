@@ -8,18 +8,763 @@
   "components": [
     {
       "id": "component.account.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "gated-account",
-        "html": "<article class='gated-page' data-companion-context='account' data-companion-copy='Account services are not connected yet. Your current website progress can remain local to this browser.' data-companion-reaction='account'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Account & guest status</span></nav><section class='gated-hero'><div class='gated-hero-copy'><p class='section-kicker'>ACCOUNT PREVIEW</p><span class='chip status-chip--coming'>FUTURE SERVICE</span><h1>Account & guest status</h1><p class='gated-lede'>Browse as a guest now; sign-up, login, and cross-device sync are future capabilities, not active services.</p></div><figure class='gated-hero-art'><img src='/assets/images/characters/companion/runtime-v2/account.webp' alt='Toadal with account-themed accessories' loading='eager' decoding='async'></figure></section><section class='gated-grid' aria-label='Account preview'><article class='gated-card' data-companion-context='account'><p class='section-kicker'>GUEST STATUS</p><h2>Continue without an account</h2><p>Website progression can already stay on this browser. It is not synced to another device and is not attached to an online identity.</p><div class='gated-actions'><a class='button-link button-link--primary' href='/profile/'>Open guest profile</a><a class='button-link button-link--secondary' href='/feast-pass/'>View Feast Pass</a></div></article><article class='gated-card' data-companion-context='register'><p class='section-kicker'>FUTURE ACCOUNT</p><h2>Sign up and login are not live</h2><p>A future account may preserve or sync progress and unlock fuller identity features. No account service or credential flow is connected in this build.</p><div class='gated-disabled-actions'><button type='button' disabled>Create free account</button><button type='button' disabled>Log in</button></div></article><article class='gated-card' data-companion-context='privacy'><p class='section-kicker'>PRIVACY</p><h2>No hidden account collection</h2><p>This preview does not create an online account. Final legal text is not published here; the Legal page records that boundary without inventing policy language.</p><a href='/legal/'>Legal status</a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Account services are not connected yet. Your current website progress can remain local to this browser.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Account preview - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.account.rich-text.d24310336650.gated-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "gated-page",
+              "attributes": {
+                "data-companion-context": "account",
+                "data-companion-copy": "Account services are not connected yet. Your current website progress can remain local to this browser.",
+                "data-companion-reaction": "account"
+              },
+              "style": "",
+              "layerName": "Account & guest status",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.account.rich-text.065373075d45.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Account & guest status",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.account.rich-text.7a13d64a7871.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.account.rich-text.4c5c8fcbab07.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.account.rich-text.5406f4c3bb22.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Account & guest status",
+                          "text": "Account & guest status"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.account.rich-text.f3a1b4388489.gated-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Account & guest status",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.account.rich-text.27bf2b369d61.gated-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "gated-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Account & guest status",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.account.rich-text.3c1ccc54ec0b.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "ACCOUNT PREVIEW",
+                                "text": "ACCOUNT PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.992d316fbba6.chip-status-chip-coming",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FUTURE SERVICE",
+                                "text": "FUTURE SERVICE"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.04277467b4a0.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Account & guest status",
+                                "text": "Account & guest status"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.aaf9a87277bf.gated-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "gated-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Browse as a guest now; sign-up, login, and cross-device sync are future ",
+                                "text": "Browse as a guest now; sign-up, login, and cross-device sync are future capabilities, not active services."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.account.rich-text.0eea1df9e110.gated-hero-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "gated-hero-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "figure gated-hero-art",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.account.rich-text.b50147512cb9.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "eager",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal with account-themed accessories",
+                                "asset": "asset.owner-native.reference-assets-images-characters-companion-runtime-v2-.de14b8b8",
+                                "alt": "Toadal with account-themed accessories"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.account.rich-text.ae3ddb59e880.gated-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-grid",
+                    "attributes": {
+                      "aria-label": "Account preview"
+                    },
+                    "style": "",
+                    "layerName": "Continue without an account",
+                    "mode": "inherit",
+                    "collection": true,
+                    "children": [
+                      {
+                        "id": "component.account.rich-text.c2f627dcea83.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {
+                            "data-companion-context": "account"
+                          },
+                          "style": "",
+                          "layerName": "Continue without an account",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.account.rich-text.b86a321d0338.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "GUEST STATUS",
+                                "text": "GUEST STATUS"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.cc5f3f98b349.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Continue without an account",
+                                "text": "Continue without an account"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.7e7b16512c91.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Website progression can already stay on this browser. It is not synced t",
+                                "text": "Website progression can already stay on this browser. It is not synced to another device and is not attached to an online identity."
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.412e5fc80805.gated-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "gated-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Open guest profileView Feast Pass",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.account.rich-text.90fa62fc8082.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--primary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Open guest profile",
+                                      "href": "/profile/",
+                                      "label": "Open guest profile"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.account.rich-text.38e7f052d3a0.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "View Feast Pass",
+                                      "href": "/feast-pass/",
+                                      "label": "View Feast Pass"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.account.rich-text.4956ba3b2717.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {
+                            "data-companion-context": "register"
+                          },
+                          "style": "",
+                          "layerName": "Sign up and login are not live",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.account.rich-text.066ecfa44b26.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FUTURE ACCOUNT",
+                                "text": "FUTURE ACCOUNT"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.10e6f5a37db7.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Sign up and login are not live",
+                                "text": "Sign up and login are not live"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.ce0d4c884ab2.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A future account may preserve or sync progress and unlock fuller identit",
+                                "text": "A future account may preserve or sync progress and unlock fuller identity features. No account service or credential flow is connected in this build."
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.f8fa731cd1e4.gated-disabled-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "gated-disabled-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Create free accountLog in",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.account.rich-text.51dc1fefa179.button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "",
+                                      "attributes": {
+                                        "type": "button",
+                                        "disabled": true
+                                      },
+                                      "style": "",
+                                      "layerName": "Create free account",
+                                      "label": "Create free account"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.account.rich-text.eeca4219101c.button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "",
+                                      "attributes": {
+                                        "type": "button",
+                                        "disabled": true
+                                      },
+                                      "style": "",
+                                      "layerName": "Log in",
+                                      "label": "Log in"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.account.rich-text.78b5a9c72224.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {
+                            "data-companion-context": "privacy"
+                          },
+                          "style": "",
+                          "layerName": "No hidden account collection",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.account.rich-text.1fa2a8c952c1.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PRIVACY",
+                                "text": "PRIVACY"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.5452e146105d.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No hidden account collection",
+                                "text": "No hidden account collection"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.6a3eed681c2c.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "This preview does not create an online account. Final legal text is not ",
+                                "text": "This preview does not create an online account. Final legal text is not published here; the Legal page records that boundary without inventing policy language."
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.ed32a2b5f1ec.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Legal status",
+                                "href": "/legal/",
+                                "label": "Legal status"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.account.rich-text.c1a2a17f131e.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSAccount services are not connected yet. Your current website ",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.account.rich-text.e46ef6f7abd5.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.account.rich-text.f2ede3e005c6.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.53014f432bec.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "Account services are not connected yet. Your current website progress ca",
+                                "text": "Account services are not connected yet. Your current website progress can remain local to this browser."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.account.rich-text.faa1c045a0ad.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.account.rich-text.cb92ecee046b.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.account.rich-text.91cfbb46e25f.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.account.live-guest-status",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "gated-account-status",
-        "html": "<section class='gated-card' data-progression-page='account' data-companion-context='account' data-companion-copy='Account sign-up and sync are unavailable. Your browser-local guest progress can still be checked here.' data-companion-reaction='account' aria-labelledby='account-local-status-title'><p class='section-kicker'>LIVE GUEST STATUS</p><h2 id='account-local-status-title'>This browser’s progress</h2><p data-progression-storage-status role='status' aria-live='polite'>Checking browser-local progress status…</p><div class='gated-actions'><a class='button-link button-link--secondary' href='/profile/'>View guest profile</a><a class='button-link button-link--secondary' href='/feast-pass/'>Open Feast Pass</a><a href='/coming-soon/' data-companion-context='under-construction' data-companion-action data-companion-action-copy='Account sign-up, login, and sync are not connected. Guest progress remains available on this browser.'>Why account features are unavailable</a></div></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Account preview - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.account.live-guest-status.743c24ea475d.gated-card",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "gated-card",
+              "attributes": {
+                "data-progression-page": "account",
+                "data-companion-context": "account",
+                "data-companion-copy": "Account sign-up and sync are unavailable. Your browser-local guest progress can still be checked here.",
+                "data-companion-reaction": "account",
+                "aria-labelledby": "account-local-status-title"
+              },
+              "style": "",
+              "layerName": "This browser’s progress",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.account.live-guest-status.9c0c02822961.section-kicker",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "section-kicker",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "LIVE GUEST STATUS",
+                    "text": "LIVE GUEST STATUS"
+                  }
+                },
+                {
+                  "id": "component.account.live-guest-status.e11cd82ca563.account-local-status-tit",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "h2",
+                    "className": "",
+                    "attributes": {
+                      "id": "account-local-status-title"
+                    },
+                    "style": "",
+                    "layerName": "account local status title",
+                    "text": "This browser’s progress"
+                  }
+                },
+                {
+                  "id": "component.account.live-guest-status.ed9f903168d3.p",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "",
+                    "attributes": {
+                      "data-progression-storage-status": "",
+                      "role": "status",
+                      "aria-live": "polite"
+                    },
+                    "style": "",
+                    "layerName": "Checking browser-local progress status…",
+                    "text": "Checking browser-local progress status…"
+                  }
+                },
+                {
+                  "id": "component.account.live-guest-status.8f4c161ad87b.gated-actions",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "gated-actions",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "View guest profileOpen Feast PassWhy account features are unavailable",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.account.live-guest-status.62578c49f2fc.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "View guest profile",
+                          "href": "/profile/",
+                          "label": "View guest profile"
+                        }
+                      },
+                      {
+                        "id": "component.account.live-guest-status.2b1eca1a2c08.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Open Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Open Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.account.live-guest-status.399ac8cd1dd9.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "data-companion-context": "under-construction",
+                            "data-companion-action": "",
+                            "data-companion-action-copy": "Account sign-up, login, and sync are not connected. Guest progress remains available on this browser."
+                          },
+                          "style": "",
+                          "layerName": "Why account features are unavailable",
+                          "href": "/coming-soon/",
+                          "label": "Why account features are unavailable"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

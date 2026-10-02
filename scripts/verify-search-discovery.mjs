@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root = path.resolve(process.argv[2] || '.');
 const site = path.join(root, 'studio-project', 'toadal-feast-website');
@@ -9,6 +10,7 @@ const ok = (condition, message) => { if (!condition) errors.push(message); };
 const readJson = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 const pagesIndex = readJson(path.join(site, 'pages', 'index.json'));
 const routes = new Map((pagesIndex.pages || []).map((p) => [p.route, p]));
+const projector = await createOwnerNativeProjector();
 
 ok(routes.has('/search/'), 'search route is not registered');
 ok(routes.has('/roadmap/'), 'manifest Roadmap route is not registered');
@@ -16,21 +18,21 @@ ok(routes.has('/leaderboards/'), 'manifest Leaderboards route is not registered'
 ok(routes.has('/news/devlog/'), 'manifest News Article / Devlog route is not registered');
 const searchRecord = routes.get('/search/');
 const searchPage = searchRecord ? readJson(path.join(site, searchRecord.file)) : null;
-const searchHtml = searchPage?.components?.map((x) => x?.props?.html || '').join('\n') || '';
+const searchHtml = searchPage ? projector.projectPageComponents(site, searchPage).map(({ html }) => html).join('\n') : '';
 for (const token of ['data-site-search','data-search-input','data-search-category','data-search-results','data-search-status']) {
   ok(searchHtml.includes(token), `search page missing ${token}`);
 }
 ok(searchPage?.publicationState === 'noindex', 'search page must remain noindex on staging');
 
 const support = readJson(path.join(site, 'pages', 'support.json'));
-const supportHtml = support.components.map((x) => x?.props?.html || '').join('\n');
+const supportHtml = projector.projectPageComponents(site, support).map(({ html }) => html).join('\n');
 ok(supportHtml.includes('data-support-search'), 'support search control missing');
 for (const id of ['preview-states','guest-progress','app-status','contact-status','legal-status']) {
   ok(supportHtml.includes(`id='${id}'`) || supportHtml.includes(`id="${id}"`), `support anchor missing: ${id}`);
 }
 
 const media = readJson(path.join(site, 'pages', 'media.json'));
-const mediaHtml = media.components.map((x) => x?.props?.html || '').join('\n');for (const id of ['world-art','character-art']) {
+const mediaHtml = projector.projectPageComponents(site, media).map(({ html }) => html).join('\n');for (const id of ['world-art','character-art']) {
   ok(mediaHtml.includes(`id='${id}'`) || mediaHtml.includes(`id="${id}"`), `media anchor missing: ${id}`);
 }
 
@@ -61,8 +63,9 @@ for (const entry of index.entries || []) {
   if (!fragment) continue;  const record = routes.get(normalized === '' ? '/' : normalized);
   if (!record) continue;
   const page = readJson(path.join(site, record.file));
-  const serialized = JSON.stringify(page);
-  const hasId = serialized.includes(`id='${fragment}'`) || serialized.includes(`id=\"${fragment}\"`) || serialized.includes(`\"anchorId\":\"${fragment}\"`);
+  const projected = projector.projectPageComponents(site, page).map(({ html }) => html).join('\n');
+  const serialized = JSON.stringify(page.components || []);
+  const hasId = projected.includes(`id='${fragment}'`) || projected.includes(`id=\"${fragment}\"`) || serialized.includes(`\"anchorId\":\"${fragment}\"`);
   ok(hasId, `search target fragment missing: ${entry.route}`);
 }
 

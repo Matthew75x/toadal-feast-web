@@ -1,0 +1,418 @@
+{
+  "summary": {
+    "schema": "toadal-feast.final-manifest-closure-gate.v1",
+    "status": "PASS",
+    "repo": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002",
+    "sourceOnly": false,
+    "basePath": "/toadal-feast-web/",
+    "passed": 20,
+    "failed": 0,
+    "steps": [
+      {
+        "name": "final-manifest-surfaces",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "final-interaction-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.13
+      },
+      {
+        "name": "final-product-contracts",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.15
+      },
+      {
+        "name": "final-manifest-discoverability",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.09
+      },
+      {
+        "name": "navigation-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.07
+      },
+      {
+        "name": "character-registry",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "gated-ecosystem",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "search-discovery",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.1
+      },
+      {
+        "name": "nonhome-truth",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.11
+      },
+      {
+        "name": "visual-asset-authority",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.17
+      },
+      {
+        "name": "manifest-ledger",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.07
+      },
+      {
+        "name": "core-node-tests",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 1.65
+      },
+      {
+        "name": "cartridge-storage-isolation",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.88
+      },
+      {
+        "name": "wicked-score-bridge",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.06
+      },
+      {
+        "name": "canonical-gully-authority",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.47
+      },
+      {
+        "name": "render-freshness",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.27
+      },
+      {
+        "name": "pages-basepath",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.08
+      },
+      {
+        "name": "static-links",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.36
+      },
+      {
+        "name": "staging-robots",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 0.09
+      },
+      {
+        "name": "browser-matrix",
+        "status": "PASS",
+        "exitCode": 0,
+        "seconds": 30.91
+      }
+    ],
+    "inputFingerprint": {
+      "source": {
+        "sha256": "3f7fbcffabf9c3e764682d78d15a352d89c78f80e3470460a6e73f26d73d39b7",
+        "files": 255
+      },
+      "dist": {
+        "sha256": "12239266fecab2ef20b108a88c0fe121963c155ef4779c9eed50142eff8f7a21",
+        "files": 138
+      }
+    },
+    "inputsUnchangedDuringGate": true
+  },
+  "details": [
+    {
+      "name": "final-manifest-surfaces",
+      "command": [
+        "node",
+        "scripts/verify-final-manifest-surfaces.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.08,
+      "stdout": "FINAL MANIFEST SURFACE CHECK: PASS\n30/30 required manifest routes are registered and have readable page components.\n- Additional non-manifest routes retained: /games/claw-feed-gulper/, /games/toadal-tower-defense/, /games/froggy-fruity-bash/\n",
+      "stderr": ""
+    },
+    {
+      "name": "final-interaction-truth",
+      "command": [
+        "node",
+        "scripts/verify-final-interaction-truth.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.13,
+      "stdout": "FINAL INTERACTION/TRUTH CHECK: PASS\npagesScanned=33\nlegalDocuments=0\n",
+      "stderr": ""
+    },
+    {
+      "name": "final-product-contracts",
+      "command": [
+        "node",
+        "scripts/verify-final-product-contracts.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.15,
+      "stdout": "FINAL PRODUCT CONTRACT CHECK: PASS\nregisteredRoutes=33\n",
+      "stderr": ""
+    },
+    {
+      "name": "final-manifest-discoverability",
+      "command": [
+        "node",
+        "scripts/verify-final-manifest-discoverability.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.09,
+      "stdout": "FINAL MANIFEST DISCOVERABILITY CHECK: PASS\nregisteredRoutes=33\ninternalEdges=253\nmanifestRoutes=30\n",
+      "stderr": ""
+    },
+    {
+      "name": "navigation-truth",
+      "command": [
+        "node",
+        "scripts/verify-navigation-truth.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.07,
+      "stdout": "{\n  \"schema\": \"toadal-feast.navigation-truth-check.v2\",\n  \"implementedRoutes\": [\n    \"/\",\n    \"/404.html\",\n    \"/about/\",\n    \"/account/\",\n    \"/app/\",\n    \"/characters/\",\n    \"/characters/toadal/\",\n    \"/coming-soon/\",\n    \"/community/\",\n    \"/contact/\",\n    \"/feast-pass/\",\n    \"/feast-pass/quests/\",\n    \"/feast-pass/rewards/\",\n    \"/games/claw-feed-gulper/\",\n    \"/games/froggy-fruity-bash/\",\n    \"/games/toadal-tower-defense/\",\n    \"/games/wicked-bites/\",\n    \"/leaderboards/\",\n    \"/legal/\",\n    \"/manga/\",\n    \"/media/\",\n    \"/news/\",\n    \"/news/devlog/\",\n    \"/play/\",\n    \"/player/wicked-bites/\",\n    \"/profile/\",\n    \"/reader/\",\n    \"/roadmap/\",\n    \"/search/\",\n    \"/store/\",\n    \"/stories/\",\n    \"/support/\",\n    \"/world/\"\n  ],\n  \"implementedHomeFragments\": [\n    \"app\",\n    \"app-links-status\",\n    \"browser-games\",\n    \"browser-games-empty\",\n    \"browser-games-intro\",\n    \"characters\",\n    \"community\",\n    \"companion\",\n    \"daily-chest-help\",\n    \"discovery\",\n    \"feast-pass\",\n    \"interactive-discovery\",\n    \"store\",\n    \"stories-media\",\n    \"toadal-companion-panel\",\n    \"today\",\n    \"top\",\n    \"whats-next\",\n    \"world\"\n  ],\n  \"violations\": [],\n  \"summary\": {\n    \"implemented\": 33,\n    \"navTargetsChecked\": 31,\n    \"unresolvedTargets\": 0\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "character-registry",
+      "command": [
+        "node",
+        "scripts/verify-character-content-registry.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.06,
+      "stdout": "{\n  \"schema\": \"toadal-feast.character-content-check.v1\",\n  \"characters\": [\n    {\n      \"id\": \"toadal\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.toadal\"\n      ]\n    },\n    {\n      \"id\": \"princess-lily\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.princess-lily\"\n      ]\n    },\n    {\n      \"id\": \"sweet-genie\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.genie.sweet-art\"\n      ]\n    },\n    {\n      \"id\": \"fruity-genie\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.genie.fruity-art\"\n      ]\n    },\n    {\n      \"id\": \"savoury-genie\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.genie.savoury-art\"\n      ]\n    },\n    {\n      \"id\": \"gulper\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.gulper\"\n      ]\n    },\n    {\n      \"id\": \"gully\",\n      \"state\": \"PREVIEW\",\n      \"assets\": [\n        \"asset.home.character.gully\"\n      ]\n    }\n  ],\n  \"routes\": [\n    \"/characters/\",\n    \"/characters/toadal/\"\n  ],\n  \"errors\": []\n}\nCHARACTER CONTENT REGISTRY CHECK PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "gated-ecosystem",
+      "command": [
+        "node",
+        "scripts/verify-gated-ecosystem-routes.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.08,
+      "stdout": "Gated route records: 7\nGATED ECOSYSTEM VERIFY: PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "search-discovery",
+      "command": [
+        "node",
+        "scripts/verify-search-discovery.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.1,
+      "stdout": "SEARCH / DISCOVERY VERIFY: PASS\n{\n  \"routeCount\": 33,\n  \"searchEntries\": 51,\n  \"groups\": {\n    \"Characters\": 9,\n    \"Help\": 6,\n    \"Media\": 5,\n    \"News\": 2,\n    \"Pages\": 23,\n    \"Roadmap\": 6\n  },\n  \"searchRoute\": \"/search/\",\n  \"externalSearchService\": false\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "nonhome-truth",
+      "command": [
+        "node",
+        "scripts/verify-nonhome-truth.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.11,
+      "stdout": "NON-HOME TRUTH VERIFY: PASS\n{\n  \"registeredRoutes\": 33,\n  \"nonHomeRoutesScanned\": 32,\n  \"currentCapabilityRoutesChecked\": 10,\n  \"staleClaimPatternsChecked\": 15,\n  \"notes\": [\n    \"localSearchEntries=51\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "visual-asset-authority",
+      "command": [
+        "node",
+        "scripts/verify-visual-asset-authority.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.17,
+      "stdout": "VISUAL ASSET AUTHORITY: PASS\n{\n  \"schema\": \"toadal-feast.web.visual-asset-authority-lock.v1\",\n  \"status\": \"LOCKED_FOR_OWNER_PREVIEW\",\n  \"notes\": [\n    \"registeredAssets=68\",\n    \"runtimeDerivatives=25\",\n    \"visualFilesCovered=85/85\",\n    \"productVisualReferences=26\",\n    \"brandFiles=brand-crown.svg\",\n    \"wordmarkStatus=NOT_PRESENT_NOT_APPROVED\"\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "manifest-ledger",
+      "command": [
+        "node",
+        "scripts/verify-manifest-compliance-ledger.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.07,
+      "stdout": "Manifest rows: 30\nImplemented route records: 33\nCross-cutting requirements: 23\nPage status counts: {\"PARTIAL\":1,\"DONE_PROVEN\":29}\nMANIFEST COMPLIANCE VERIFY: PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "core-node-tests",
+      "command": [
+        "node",
+        "--test",
+        "scripts/stories-publishing.test.mjs",
+        "scripts/story-content.test.mjs",
+        "scripts/wo001-pages-basepath.test.mjs",
+        "scripts/wo002-contract.test.mjs",
+        "scripts/guest-progression.test.mjs",
+        "scripts/manifest-runtime-regressions.test.mjs",
+        "scripts/manifest-audit-utility.test.mjs",
+        "scripts/manifest-profile-discovery.test.mjs",
+        "scripts/editorial-manifest.test.mjs"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 1.65,
+      "stdout": "- completed score runs accept equal later runs, reject unsafe values, and cap history at fifty\n  ---\n  duration_ms: 16.467\n  type: 'test'\n  ...\n# Subtest: legacy local high score is migrated to a bounded completed run without adding storage keys\nok 10 - legacy local high score is migrated to a bounded completed run without adding storage keys\n  ---\n  duration_ms: 0.8005\n  type: 'test'\n  ...\n# Subtest: corrupt local score records are read-only and preserved instead of normalized into writes\nok 11 - corrupt local score records are read-only and preserved instead of normalized into writes\n  ---\n  duration_ms: 0.8741\n  type: 'test'\n  ...\n# Subtest: UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days\nok 12 - UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days\n  ---\n  duration_ms: 0.8259\n  type: 'test'\n  ...\n# Subtest: reset removes only the four guest progression keys and leaves unrelated data intact\nok 13 - reset removes only the four guest progression keys and leaves unrelated data intact\n  ---\n  duration_ms: 0.6269\n  type: 'test'\n  ...\n# Subtest: milestones are surfaced as truthful locked/unlocked non-entitlement rewards\nok 14 - milestones are surfaced as truthful locked/unlocked non-entitlement rewards\n  ---\n  duration_ms: 0.2974\n  type: 'test'\n  ...\n# Subtest: route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes\nok 15 - route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes\n  ---\n  duration_ms: 0.4807\n  type: 'test'\n  ...\n# Subtest: configured route events count only the exact normalized event route\nok 16 - configured route events count only the exact normalized event route\n  ---\n  duration_ms: 0.3348\n  type: 'test'\n  ...\n# Subtest: boot persists configured route activity even when the page has no progression root\nok 17 - boot persists configured route activity even when the page has no progression root\n  ---\n  duration_ms: 0.8281\n  type: 'test'\n  ...\n# Subtest: daily snapshot computes claimed status against one UTC period value\nok 18 - daily snapshot computes claimed status against one UTC period value\n  ---\n  duration_ms: 0.3103\n  type: 'test'\n  ...\n# Subtest: missing browser storage reports non-persistent memory mode and has no economy fallback\nok 19 - missing browser storage reports non-persistent memory mode and has no economy fallback\n  ---\n  duration_ms: 0.3553\n  type: 'test'\n  ...\n# Subtest: refreshes quest and daily state across stale stores before granting claims\nok 20 - refreshes quest and daily state across stale stores before granting claims\n  ---\n  duration_ms: 0.894\n  type: 'test'\n  ...\n# Subtest: Home discoveries use the existing discoveries key and persist exactly three gated candies\nok 21 - Home discoveries use the existing discoveries key and persist exactly three gated candies\n  ---\n  duration_ms: 2.4307\n  type: 'test'\n  ...\n# Subtest: all six Home candy collection orders yield one mapped schema collectible and one quest event per treat\nok 22 - all six Home candy collection orders yield one mapped schema collectible and one quest event per treat\n  ---\n  duration_ms: 16.2692\n  type: 'test'\n  ...\n# Subtest: existing users migrate all already-recorded candies at boot exactly once\nok 23 - existing users migrate all already-recorded candies at boot exactly once\n  ---\n  duration_ms: 1.0379\n  type: 'test'\n  ...\n# Subtest: boot reconciliation runs before Feast Pass, Rewards, and Profile render without requiring Home\nok 24 - boot reconciliation runs before Feast Pass, Rewards, and Profile render without requiring Home\n  ---\n  duration_ms: 2.1623\n  type: 'test'\n  ...\n# Subtest: all three legacy candy discoveries migrate to exactly three local Treat records\nok 25 - all three legacy candy discoveries migrate to exactly three local Treat records\n  ---\n  duration_ms: 0.7772\n  type: 'test'\n  ...\n# Subtest: Golden Block hits are discovery-only until hit four and the candy is collected\nok 26 - Golden Block hits are discovery-only until hit four and the candy is collected\n  ---\n  duration_ms: 0.6219\n  type: 'test'\n  ...\n# Subtest: Home reconciliation preserves future pass, quest, and malformed records without partial writes\nok 27 - Home reconciliation preserves future pass, quest, and malformed records without partial writes\n  ---\n  duration_ms: 0.296\n  type: 'test'\n  ...\n# Subtest: Home candy transaction restores all three in-memory records if a later storage write fails\nok 28 - Home candy transaction restores all three in-memory records if a later storage write fails\n  ---\n  duration_ms: 0.7007\n  type: 'test'\n  ...\n# Subtest: Home candy transaction rolls back the discovery write when the second pass write fails\nok 29 - Home candy transaction rolls back the discovery write when the second pass write fails\n  ---\n  duration_ms: 0.7792\n  type: 'test'\n  ...\n# Subtest: a future Home-interaction schema is readable but cannot be overwritten\nok 30 - a future Home-interaction schema is readable but cannot be overwritten\n  ---\n  duration_ms: 0.4669\n  type: 'test'\n  ...\n# Subtest: malformed Home-interaction data is preserved and read-only until a safe migration exists\nok 31 - malformed Home-interaction data is preserved and read-only until a safe migration exists\n  ---\n  duration_ms: 0.3393\n  type: 'test'\n  ...\n# Subtest: runtime list rendering uses div role=list/listitem semantics\nok 32 - runtime list rendering uses div role=list/listitem semantics\n  ---\n  duration_ms: 0.5708\n  type: 'test'\n  ...\n# Subtest: daily button label and aria-disabled track claim state; quest entries show configured reward metadata\nok 33 - daily button label and aria-disabled track claim state; quest entries show configured reward metadata\n  ---\n  duration_ms: 2.6739\n  type: 'test'\n  ...\n# Subtest: Community exposes feed and guidelines previews without fabricated social activity\nok 34 - Community exposes feed and guidelines previews without fabricated social activity\n  ---\n  duration_ms: 13.0948\n  type: 'test'\n  ...\n# Subtest: Store updates lead to News and Roadmap without implying a subscription\nok 35 - Store updates lead to News and Roadmap without implying a subscription\n  ---\n  duration_ms: 5.0309\n  type: 'test'\n  ...\n# Subtest: About supplies required page structure while leaving mission and philosophy unpublished\nok 36 - About supplies required page structure while leaving mission and philosophy unpublished\n  ---\n  duration_ms: 2.9721\n  type: 'test'\n  ...\n# Subtest: Legal includes a last-updated slot without inventing a policy date or text\nok 37 - Legal includes a last-updated slot without inventing a policy date or text\n  ---\n  duration_ms: 3.577\n  type: 'test'\n  ...\n# Subtest: App retains real gameplay, distinguishes web and app, and uses the approved app icon only as app art\nok 38 - App retains real gameplay, distinguishes web and app, and uses the approved app icon only as app art\n  ---\n  duration_ms: 7.5973\n  type: 'test'\n  ...\n# Subtest: Profile exposes guest identity, current local title, route visits, achievements, and collection hooks\nok 39 - Profile exposes guest identity, current local title, route visits, achievements, and collection hooks\n  ---\n  duration_ms: 10.8481\n  type: 'test'\n  ...\n# Subtest: Characters provides one accessible artwork-view discovery control and status per approved record\nok 40 - Characters provides one accessible artwork-view discovery control and status per approved record\n  ---\n  duration_ms: 7.5776\n  type: 'test'\n  ...\n# Subtest: all-time best survives eviction from the latest 50 runs and remains writable\nok 41 - all-time best survives eviction from the latest 50 runs and remains writable\n  ---\n  duration_ms: 17.02\n  type: 'test'\n  ...\n# Subtest: best below retained run maximum is still invalid and never overwritten\nok 42 - best below retained run maximum is still invalid and never overwritten\n  ---\n  duration_ms: 0.9631\n  type: 'test'\n  ...\n# Subtest: runtime-generated quest and score links retain root/project hosting and query/fragments\nok 43 - runtime-generated quest and score links retain root/project hosting and query/fragments\n  ---\n  duration_ms: 1.1548\n  type: 'test'\n  ...\n# Subtest: authored sibling HUD receives validated lifecycle messages, timer and completed local score\nok 44 - authored sibling HUD receives validated lifecycle messages, timer and completed local score\n  ---\n  duration_ms: 31.0645\n  type: 'test'\n  ...\n# Subtest: character artwork discovery persists idempotently without inventing progression rewards\nok 45 - character artwork discovery persists idempotently without inventing progression rewards\n  ---\n  duration_ms: 1.9\n  type: 'test'\n  ...\n# Subtest: character discovery respects future record and storage failures\nok 46 - character discovery respects future record and storage failures\n  ---\n  duration_ms: 0.6176\n  type: 'test'\n  ...\n# Subtest: publishing routes have static preview shells and do not invent a published catalogue\nok 47 - publishing routes have static preview shells and do not invent a published catalogue\n  ---\n  duration_ms: 18.0021\n  type: 'test'\n  ...\n# Subtest: reader resolves only public series, chapter, and an explicit ordered page manifest\nok 48 - reader resolves only public series, chapter, and an explicit ordered page manifest\n  ---\n  duration_ms: 0.9683\n  type: 'test'\n  ...\n# Subtest: keyboard, swipe, and chapter order obey the content manifest\nok 49 - keyboard, swipe, and chapter order obey the content manifest\n  ---\n  duration_ms: 0.699\n  type: 'test'\n  ...\n# Subtest: reader progress persists stable IDs in its own namespace and preserves corrupt data\nok 50 - reader progress persists stable IDs in its own namespace and preserves corrupt data\n  ---\n  duration_ms: 0.7095\n  type: 'test'\n  ...\n# Subtest: excludes DRAFT and ARCHIVED records and only includes referenced assets\nok 51 - excludes DRAFT and ARCHIVED records and only includes referenced assets\n  ---\n  duration_ms: 23.5384\n  type: 'test'\n  ...\n# Subtest: removes draft and archived IDs from all projected records and relationships\nok 52 - removes draft and archived IDs from all projected records and relationships\n  ---\n  duration_ms: 6.942\n  type: 'test'\n  ...\n# Subtest: includes deliberate PREVIEW series visibly labeled but no preview chapters\nok 53 - includes deliberate PREVIEW series visibly labeled but no preview chapters\n  ---\n  duration_ms: 6.3515\n  type: 'test'\n  ...\n# Subtest: does not reader-project a PUBLISHED chapter under a PREVIEW series\nok 54 - does not reader-project a PUBLISHED chapter under a PREVIEW series\n  ---\n  duration_ms: 8.9838\n  type: 'test'\n  ...\n# Subtest: rejects asset traversal, invalid slug requirement, and inconsistent arc ownership/order metadata\nok 55 - rejects asset traversal, invalid slug requirement, and inconsistent arc ownership/order metadata\n  ---\n  duration_ms: 6.7346\n  type: 'test'\n  ...\n# Subtest: projects a PUBLISHED ordered reader manifest deterministically\nok 56 - projects a PUBLISHED ordered reader manifest deterministically\n  ---\n  duration_ms: 12.8208\n  type: 'test'\n  ...\n# Subtest: public projection allowlists schema fields and excludes private/editorial metadata\nok 57 - public projection allowlists schema fields and excludes private/editorial metadata\n  ---\n  duration_ms: 7.245\n  type: 'test'\n  ...\n# Subtest: rejects missing assets, empty/duplicate page order, and unsafe published chapter links\nok 58 - rejects missing assets, empty/duplicate page order, and unsafe published chapter links\n  ---\n  duration_ms: 7.2818\n  type: 'test'\n  ...\n# Subtest: rejects asset paths that escape the approved root through a symlink\nok 59 - rejects asset paths that escape the approved root through a symlink\n  ---\n  duration_ms: 7.3617\n  type: 'test'\n  ...\n# Subtest: resolveBasePath rewrites only unprefixed root-absolute same-origin URLs\nok 60 - resolveBasePath rewrites only unprefixed root-absolute same-origin URLs\n  ---\n  duration_ms: 2.3058\n  type: 'test'\n  ...\n# Subtest: resolveBasePath rejects invalid base paths\nok 61 - resolveBasePath rejects invalid base paths\n  ---\n  duration_ms: 1.1287\n  type: 'test'\n  ...\n# Subtest: CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idempotent\nok 62 - CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idempotent\n  ---\n  duration_ms: 238.4148\n  type: 'test'\n  ...\n# Subtest: CLI rejects invalid arguments without touching the export\nok 63 - CLI rejects invalid arguments without touching the export\n  ---\n  duration_ms: 62.2251\n  type: 'test'\n  ...\n# Subtest: staging robots opt-in changes only the generated Wicked Bites HTML and is idempotent\nok 64 - staging robots opt-in changes only the generated Wicked Bites HTML and is idempotent\n  ---\n  duration_ms: 240.2769\n  type: 'test'\n  ...\n# Subtest: verifier shares strict base-path validation and rejects traversal-like paths\nok 65 - verifier shares strict base-path validation and rejects traversal-like paths\n  ---\n  duration_ms: 471.3147\n  type: 'test'\n  ...\n# Subtest: verifier rejects javascript URLs and checks nested HTML plus CSS references in deployed context\nok 66 - verifier rejects javascript URLs and checks nested HTML plus CSS references in deployed context\n  ---\n  duration_ms: 100.5908\n  type: 'test'\n  ...\n# Subtest: verifier requires the exact four PUBLIC_FEATURE_STATE preview cards and excludes Arcade candidate\nok 67 - verifier requires the exact four PUBLIC_FEATURE_STATE preview cards and excludes Arcade candidate\n  ---\n  duration_ms: 226.9405\n  type: 'test'\n  ...\n# Subtest: verifier recognizes Studio variant markers, intro filters, search explanation, and disabled store-links control\nok 68 - verifier recognizes Studio variant markers, intro filters, search explanation, and disabled store-links control\n  ---\n  duration_ms: 84.1756\n  type: 'test'\n  ...\n# Subtest: page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route\nok 69 - page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route\n  ---\n  duration_ms: 1.6224\n  type: 'test'\n  ...\n# Subtest: all four registered games and every Play card remain PREVIEW\nok 70 - all four registered games and every Play card remain PREVIEW\n  ---\n  duration_ms: 7.8501\n  type: 'test'\n  ...\n# Subtest: Home preserves approved hero, truthful game states, live guest-local Feast Pass, and disabled store links\nok 71 - Home preserves approved hero, truthful game states, live guest-local Feast Pass, and disabled store links\n  ---\n  duration_ms: 21.1613\n  type: 'test'\n  ...\n# Subtest: Home companion is present and each context has its own copy\nok 72 - Home companion is present and each context has its own copy\n  ---\n  duration_ms: 14.5002\n  type: 'test'\n  ...\n# Subtest: launch gating exposes only the Wicked Bites preview and keeps CLAW held\nok 73 - launch gating exposes only the Wicked Bites preview and keeps CLAW held\n  ---\n  duration_ms: 9.6357\n  type: 'test'\n  ...\n# Subtest: player host enforces opaque-origin identity and does not echo ready/init\nok 74 - player host enforces opaque-origin identity and does not echo ready/init\n  ---\n  duration_ms: 0.9273\n  type: 'test'\n  ...\n# Subtest: Wicked Bites cartridge conforms to the schema and preserves qualified provenance\nok 75 - Wicked Bites cartridge conforms to the schema and preserves qualified provenance\n  ---\n  duration_ms: 19.3634\n  type: 'test'\n  ...\n# Subtest: primary and footer navigation both route to Play\nok 76 - primary and footer navigation both route to Play\n  ---\n  duration_ms: 0.1862\n  type: 'test'\n  ...\n# Subtest: static link verifier scans markup attributes without mistaking runtime JavaScript for missing files\nok 77 - static link verifier scans markup attributes without mistaking runtime JavaScript for missing files\n  ---\n  duration_ms: 109.9913\n  type: 'test'\n  ...\n1..77\n# tests 77\n# suites 0\n# pass 77\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 1585.7367\n",
+      "stderr": ""
+    },
+    {
+      "name": "cartridge-storage-isolation",
+      "command": [
+        "node",
+        "scripts/verify-cartridge-storage-isolation.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.88,
+      "stdout": "{\n  \"root\": \"C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\",\n  \"expectedNamespace\": \"toadal:game:toadal-feast-arcade-preview:v1:\",\n  \"namespacedFiles\": [\n    \"docs/authoring/pre-object-manifest-gate/final-manifest-closure-gate.json\",\n    \"docs/authoring/pre-object-owner-gate/owner-preview-gate.json\",\n    \"docs/authoring/qualified-manifest-gate/final-manifest-closure-gate.json\",\n    \"docs/authoring/qualified-owner-gate/owner-preview-gate.json\",\n    \"docs/implementation/WEB_ARCADE_PREVIEW_PROFILE.json\",\n    \"docs/review/interactive-discovery-v1-20261001/owner-preview-gate/owner-preview-gate.json\",\n    \"docs/review/manifest-audit-remediation-20261002/gate/owner-preview-gate.json\",\n    \"docs/review/manifest-audit-remediation-20261002/manifest-gate/final-manifest-closure-gate.json\",\n    \"docs/review/manifest-complete-v1-20261002/final-gate/final-manifest-closure-gate.json\",\n    \"docs/review/manifest-complete-v1-20261002/final-gate-final/final-manifest-closure-gate.json\",\n    \"docs/review/manifest-complete-v1-20261002/gate/owner-preview-gate.json\",\n    \"docs/review/manifest-complete-v1-20261002/gate-final/owner-preview-gate.json\",\n    \"docs/review/owner-preview-gate-20261001/owner-preview-gate.json\",\n    \"docs/review/owner-visual-acceptance-20261002/evidence/gate/owner-preview-gate.json\",\n    \"docs/review/owner-visual-convergence-20261002/owner-preview-gate/owner-preview-gate.json\",\n    \"docs/review/v1-release-20261002/gate/owner-preview-gate.json\",\n    \"docs/review/v1-release-20261002/gate-final/owner-preview-gate.json\",\n    \"docs/review/v1-release-20261002/gate-qualified/owner-preview-gate.json\",\n    \"docs/review/visual-asset-gameplay-convergence-20261001/owner-preview-gate/owner-preview-gate.json\",\n    \"scripts/verify-cartridge-storage-isolation.mjs\"\n  ],\n  \"legacyStorageReferences\": []\n}\nCARTRIDGE STORAGE ISOLATION CHECK PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "wicked-score-bridge",
+      "command": [
+        "node",
+        "scripts/verify-wicked-bites-score-bridge.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.06,
+      "stdout": "WICKED BITES SCORE BRIDGE CHECK: PASS\nExisting compatibility bridge emits score/completion and remains storage-isolated.\n",
+      "stderr": ""
+    },
+    {
+      "name": "canonical-gully-authority",
+      "command": [
+        "node",
+        "scripts/verify-canonical-gully-gameplay-authority.mjs",
+        "."
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.47,
+      "stdout": "{\n  \"schema\": \"toadal.canonical-gully-gameplay-authority.v1\",\n  \"baseline\": \"40e4437c00951d9b9903c3a188d32f54d5a49ef3\",\n  \"neutralAsset\": {\n    \"path\": \"reference/assets/images/characters/gully.webp\",\n    \"sha256\": \"177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea\",\n    \"width\": 319,\n    \"height\": 319,\n    \"archiveSource\": \"characters/gully/gully-happy-canonical.png\",\n    \"archiveSourceSha256\": \"5c06144b728acb893eca1996c83d92e771e73b27be466f2acf5aec0ffff96388\",\n    \"archiveSha256\": \"605e16399d21210228a9c784fb413c6d886e75b0bf0fa277b25ef0a2dbcf4ecb\"\n  },\n  \"neutralReferences\": [\n    \"pages/home.json\",\n    \"pages/characters.json\",\n    \"pages/world.json\",\n    \"pages/media.json\",\n    \"content/registry.json\"\n  ],\n  \"unchangedGameplaySources\": [\n    {\n      \"path\": \"studio-project/toadal-feast-website/reference/public/games/wicked-bites/index.html\",\n      \"rawSha256\": \"26a8e1f0cc717560f30a786fa9705f4b538f01c742fa120eb1bf7544705f4fec\",\n      \"baselineBlob\": \"60d284b803e83b92efef4109d115b2c255050c57\",\n      \"workingTreeBlob\": \"60d284b803e83b92efef4109d115b2c255050c57\",\n      \"unchanged\": true\n    },\n    {\n      \"path\": \"studio-project/toadal-feast-website/reference/public/games/wicked-bites/toadal-bridge.js\",\n      \"rawSha256\": \"4b81cb831c93dc60c8fdf4211f5b552de67ed36a42b66556417411782c56bbec\",\n      \"baselineBlob\": \"58f0f0eb94ce934431864a20159366852bde27b2\",\n      \"workingTreeBlob\": \"58f0f0eb94ce934431864a20159366852bde27b2\",\n      \"unchanged\": true\n    },\n    {\n      \"path\": \"studio-project/toadal-feast-website/reference/public/games/wicked-bites/cartridge.json\",\n      \"rawSha256\": \"00f58f9c98c4b0d079f0f8645d76403c56407dd816a87cac6660074447f5a6db\",\n      \"baselineBlob\": \"bea4d3fe13c3f9961a28fedb31de023699dd3de9\",\n      \"workingTreeBlob\": \"bea4d3fe13c3f9961a28fedb31de023699dd3de9\",\n      \"unchanged\": true\n    },\n    {\n      \"path\": \"dist/public/games/wicked-bites/index.html\",\n      \"rawSha256\": \"992c2125f2ba122c4af60d0558135aec869d6a4baaa2a18e144d5ce7f40355ab\",\n      \"baselineBlob\": \"b8710064ccab7bdf46671d992ed7428b484b4148\",\n      \"workingTreeBlob\": \"b8710064ccab7bdf46671d992ed7428b484b4148\",\n      \"unchanged\": true\n    },\n    {\n      \"path\": \"dist/public/games/wicked-bites/toadal-bridge.js\",\n      \"rawSha256\": \"4b81cb831c93dc60c8fdf4211f5b552de67ed36a42b66556417411782c56bbec\",\n      \"baselineBlob\": \"58f0f0eb94ce934431864a20159366852bde27b2\",\n      \"workingTreeBlob\": \"58f0f0eb94ce934431864a20159366852bde27b2\",\n      \"unchanged\": true\n    },\n    {\n      \"path\": \"dist/public/games/wicked-bites/cartridge.json\",\n      \"rawSha256\": \"00f58f9c98c4b0d079f0f8645d76403c56407dd816a87cac6660074447f5a6db\",\n      \"baselineBlob\": \"bea4d3fe13c3f9961a28fedb31de023699dd3de9\",\n      \"workingTreeBlob\": \"bea4d3fe13c3f9961a28fedb31de023699dd3de9\",\n      \"unchanged\": true\n    }\n  ],\n  \"errors\": []\n}\nCANONICAL GULLY AUTHORITY AND FROZEN GAMEPLAY SOURCE CHECK PASS\n",
+      "stderr": ""
+    },
+    {
+      "name": "render-freshness",
+      "command": [
+        "node",
+        "scripts/verify-owner-preview-render-freshness.mjs",
+        ".",
+        "dist"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.27,
+      "stdout": "OWNER PREVIEW RENDER FRESHNESS: PASS\n{\n  \"registeredRoutes\": 33,\n  \"dist\": \"C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\dist\",\n  \"searchEntriesMinimum\": 48\n}\n",
+      "stderr": ""
+    },
+    {
+      "name": "pages-basepath",
+      "command": [
+        "node",
+        "scripts/verify-pages-basepath.mjs",
+        "dist",
+        "/toadal-feast-web/"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.08,
+      "stdout": "PAGES BASEPATH CHECK PASS\nHTML files: 34\nBase: /toadal-feast-web/\n",
+      "stderr": ""
+    },
+    {
+      "name": "static-links",
+      "command": [
+        "node",
+        "scripts/verify-static-links.mjs",
+        "dist",
+        "/toadal-feast-web/"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.36,
+      "stdout": "STATIC LINK CHECK PASS\nHTML files: 34\nBase: /toadal-feast-web/\n",
+      "stderr": ""
+    },
+    {
+      "name": "staging-robots",
+      "command": [
+        "node",
+        "scripts/verify-staging-robots.mjs",
+        "dist",
+        "staging"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 0.09,
+      "stdout": "ROBOTS CHECK PASS\nMode: staging\nHTML files: 34\n",
+      "stderr": ""
+    },
+    {
+      "name": "browser-matrix",
+      "command": [
+        "node",
+        "scripts/owner-preview-browser-matrix.mjs",
+        ".",
+        "dist",
+        "/toadal-feast-web/",
+        "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\docs\\authoring\\qualification\\manifest-gate-final\\browser-matrix.json"
+      ],
+      "exitCode": 0,
+      "status": "PASS",
+      "seconds": 30.91,
+      "stdout": "PASS|desktop|/|\nPASS|mobile|/|\nPASS|tablet|/|\nPASS|small-mobile|/|\nPASS|desktop|/404.html|\nPASS|mobile|/404.html|\nPASS|desktop|/play/|\nPASS|mobile|/play/|\nPASS|tablet|/play/|\nPASS|small-mobile|/play/|\nPASS|desktop|/games/wicked-bites/|\nPASS|mobile|/games/wicked-bites/|\nPASS|desktop|/games/claw-feed-gulper/|\nPASS|mobile|/games/claw-feed-gulper/|\nPASS|desktop|/games/toadal-tower-defense/|\nPASS|mobile|/games/toadal-tower-defense/|\nPASS|desktop|/games/froggy-fruity-bash/|\nPASS|mobile|/games/froggy-fruity-bash/|\nPASS|desktop|/player/wicked-bites/|\nPASS|mobile|/player/wicked-bites/|\nPASS|desktop|/world/|\nPASS|mobile|/world/|\nPASS|tablet|/world/|\nPASS|small-mobile|/world/|\nPASS|desktop|/characters/|\nPASS|mobile|/characters/|\nPASS|tablet|/characters/|\nPASS|small-mobile|/characters/|\nPASS|desktop|/characters/toadal/|\nPASS|mobile|/characters/toadal/|\nPASS|desktop|/stories/|\nPASS|mobile|/stories/|\nPASS|tablet|/stories/|\nPASS|small-mobile|/stories/|\nPASS|desktop|/manga/|\nPASS|mobile|/manga/|\nPASS|desktop|/reader/|\nPASS|mobile|/reader/|\nPASS|desktop|/media/|\nPASS|mobile|/media/|\nPASS|desktop|/feast-pass/|\nPASS|mobile|/feast-pass/|\nPASS|tablet|/feast-pass/|\nPASS|small-mobile|/feast-pass/|\nPASS|desktop|/feast-pass/quests/|\nPASS|mobile|/feast-pass/quests/|\nPASS|desktop|/feast-pass/rewards/|\nPASS|mobile|/feast-pass/rewards/|\nPASS|desktop|/profile/|\nPASS|mobile|/profile/|\nPASS|desktop|/news/|\nPASS|mobile|/news/|\nPASS|desktop|/search/|\nPASS|mobile|/search/|\nPASS|tablet|/search/|\nPASS|small-mobile|/search/|\nPASS|desktop|/support/|\nPASS|mobile|/support/|\nPASS|desktop|/app/|\nPASS|mobile|/app/|\nPASS|tablet|/app/|\nPASS|small-mobile|/app/|\nPASS|desktop|/account/|\nPASS|mobile|/account/|\nPASS|desktop|/community/|\nPASS|mobile|/community/|\nPASS|desktop|/store/|\nPASS|mobile|/store/|\nPASS|desktop|/contact/|\nPASS|mobile|/contact/|\nPASS|desktop|/about/|\nPASS|mobile|/about/|\nPASS|desktop|/coming-soon/|\nPASS|mobile|/coming-soon/|\nPASS|desktop|/legal/|\nPASS|mobile|/legal/|\nPASS|desktop|/news/devlog/|\nPASS|mobile|/news/devlog/|\nPASS|desktop|/leaderboards/|\nPASS|mobile|/leaderboards/|\nPASS|desktop|/roadmap/|\nPASS|mobile|/roadmap/|\nPASS|large-mobile|/|\nSUMMARY|{\"schema\":\"toadal-feast.owner-preview-browser-matrix.v1\",\"status\":\"PASS\",\"routes\":33,\"cases\":83,\"passed\":83,\"failed\":0,\"diagnostics\":{\"genericControlOverlapCases\":0,\"genericControlOverlapEntries\":0},\"issueCounts\":{}}\n",
+      "stderr": ""
+    }
+  ]
+}

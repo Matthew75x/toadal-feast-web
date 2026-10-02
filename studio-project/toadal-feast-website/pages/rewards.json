@@ -8,10 +8,532 @@
   "components": [
     {
       "id": "component.guest-rewards.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "guest-progression-rewards",
-        "html": "<div class='progression-page' data-progression-page='rewards' data-companion-context='feast-pass-rewards' data-companion-copy='Only locally configured level milestones belong on this reward track.'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><a href='/feast-pass/'>Feast Pass</a><span aria-hidden='true'>/</span><span>Rewards</span></nav><header class='progression-hero'><p class='section-kicker'>TOADAL FEAST · GUEST JOURNEY</p><p class='progression-eyebrow'>MILESTONES &amp; COLLECTION</p><h1>Rewards &amp; collection</h1><p class='progression-lede'>Starter XP/Sparks settings and three local, non-entitlement level milestones are configured and editable. No claimable cosmetics, merchandise, premium items, or mobile-game transfer catalog is available.</p><p class='progression-truth-note'>The level milestones are local progress markers, not entitlements. The claimable cosmetics, merchandise, premium, and mobile-transfer catalog is empty.</p></header><section class='progression-section' aria-labelledby='rewards-status-title'><div class='progression-section-heading'><div><p class='section-kicker'>LOCAL REWARD TRACK</p><h2 id='rewards-status-title'>Available milestones</h2></div><span class='progression-local-badge'>Guest · this browser</span></div><p class='progression-storage' data-progression-storage-status role='status' aria-live='polite'>Guest progress is stored only in this browser.</p><div class='progression-empty' data-progression-reward-list aria-live='polite'><h3>No claimable catalog items</h3><p>Editable starter XP/Sparks and non-entitlement level milestones are configured. No claimable cosmetics, merchandise, premium items, food, relics, or mobile-transfer entitlements are available.</p></div></section><nav class='progression-nav' aria-label='Feast Pass pages'><a href='/feast-pass/'>Feast Pass</a><a href='/feast-pass/quests/'>Quests</a><a href='/feast-pass/rewards/' aria-current='page'>Rewards <span class='sr-only'>(current page)</span></a><a href='/profile/'>Guest profile</a></nav><section class='progression-controls' aria-labelledby='reward-controls-title'><div><h2 id='reward-controls-title'>Local data controls</h2><p>Clear website progression only. Unrelated game and mobile data are not affected.</p></div><button class='button-link button-link--secondary' type='button' data-clear-progression>Clear website progression</button></section></div>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Rewards & collection · Feast Pass · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.guest-rewards.rich-text.e78d06d784f8.progression-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "div",
+              "className": "progression-page",
+              "attributes": {
+                "data-progression-page": "rewards",
+                "data-companion-context": "feast-pass-rewards",
+                "data-companion-copy": "Only locally configured level milestones belong on this reward track."
+              },
+              "style": "",
+              "layerName": "Rewards & collection",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.guest-rewards.rich-text.3dc4f42dd71a.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Feast Pass/Rewards",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-rewards.rich-text.623fe7d38e9c.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.509ee7d81aab.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.ea424b5d05e4.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.33f371ddb110.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.bfa5382f3817.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Rewards",
+                          "text": "Rewards"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-rewards.rich-text.83d31eb83252.progression-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "progression-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Rewards & collection",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-rewards.rich-text.a4024fb0a0c1.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST · GUEST JOURNEY",
+                          "text": "TOADAL FEAST · GUEST JOURNEY"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.8e3c19c66f6e.progression-eyebrow",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-eyebrow",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "MILESTONES & COLLECTION",
+                          "text": "MILESTONES & COLLECTION"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.47ecbfe8e82b.h1",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h1",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Rewards & collection",
+                          "text": "Rewards & collection"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.17ec14eb8968.progression-lede",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-lede",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Starter XP/Sparks settings and three local, non-entitlement level milest",
+                          "text": "Starter XP/Sparks settings and three local, non-entitlement level milestones are configured and editable. No claimable cosmetics, merchandise, premium items, or mobile-game transfer catalog is available."
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.1db98eb176a2.progression-truth-note",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-truth-note",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "The level milestones are local progress markers, not entitlements. The c",
+                          "text": "The level milestones are local progress markers, not entitlements. The claimable cosmetics, merchandise, premium, and mobile-transfer catalog is empty."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-rewards.rich-text.5665404fa594.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "rewards-status-title"
+                    },
+                    "style": "",
+                    "layerName": "Available milestones",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-rewards.rich-text.8aad720a0d4a.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Available milestones",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-rewards.rich-text.d636fd99d45f.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Available milestones",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-rewards.rich-text.28a64aa8a67c.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "LOCAL REWARD TRACK",
+                                      "text": "LOCAL REWARD TRACK"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-rewards.rich-text.7d03446c2f82.rewards-status-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "rewards-status-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "rewards status title",
+                                      "text": "Available milestones"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-rewards.rich-text.c242224e1052.progression-local-badge",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "progression-local-badge",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest · this browser",
+                                "text": "Guest · this browser"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.b8e8c2752249.progression-storage",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-storage",
+                          "attributes": {
+                            "data-progression-storage-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Guest progress is stored only in this browser.",
+                          "text": "Guest progress is stored only in this browser."
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.b344592d39ab.progression-empty",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-empty",
+                          "attributes": {
+                            "data-progression-reward-list": "",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "No claimable catalog items",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-rewards.rich-text.d0cb4a63801e.h3",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h3",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No claimable catalog items",
+                                "text": "No claimable catalog items"
+                              }
+                            },
+                            {
+                              "id": "component.guest-rewards.rich-text.155d44b880e6.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Editable starter XP/Sparks and non-entitlement level milestones are conf",
+                                "text": "Editable starter XP/Sparks and non-entitlement level milestones are configured. No claimable cosmetics, merchandise, premium items, food, relics, or mobile-transfer entitlements are available."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-rewards.rich-text.4f2eb5071ece.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav",
+                    "attributes": {
+                      "aria-label": "Feast Pass pages"
+                    },
+                    "style": "",
+                    "layerName": "Feast PassQuestsRewards (current page)Guest profile",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-rewards.rich-text.b194bddf98c5.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.11b851f5bcaf.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Quests",
+                          "href": "/feast-pass/quests/",
+                          "label": "Quests"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.c3c6976bb378.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Rewards (current page)",
+                          "href": "/feast-pass/rewards/",
+                          "children": [
+                            {
+                              "id": "component.guest-rewards.rich-text.c403ba14486f.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Rewards ",
+                                "layerName": "Text: Rewards"
+                              }
+                            },
+                            {
+                              "id": "component.guest-rewards.rich-text.322c1eb4ade0.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "(current page)",
+                                "text": "(current page)"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.9b1fec02af7b.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest profile",
+                          "href": "/profile/",
+                          "label": "Guest profile"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-rewards.rich-text.5dcee26efc9e.progression-controls",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-controls",
+                    "attributes": {
+                      "aria-labelledby": "reward-controls-title"
+                    },
+                    "style": "",
+                    "layerName": "Local data controls",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-rewards.rich-text.65c1dd4bfc0f.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Local data controls",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-rewards.rich-text.8dd2a9af34c5.reward-controls-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "reward-controls-title"
+                                },
+                                "style": "",
+                                "layerName": "reward controls title",
+                                "text": "Local data controls"
+                              }
+                            },
+                            {
+                              "id": "component.guest-rewards.rich-text.793fa6317a43.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Clear website progression only. Unrelated game and mobile data are not a",
+                                "text": "Clear website progression only. Unrelated game and mobile data are not affected."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.0caeb4160702.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "data-clear-progression": ""
+                          },
+                          "style": "",
+                          "layerName": "Clear website progression",
+                          "label": "Clear website progression"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

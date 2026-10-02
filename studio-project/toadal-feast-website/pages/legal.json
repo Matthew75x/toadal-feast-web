@@ -8,18 +8,813 @@
   "components": [
     {
       "id": "component.legal.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "gated-legal",
-        "html": "<article class='gated-page' data-companion-context='privacy' data-companion-copy='Approved legal text is not published here. This page explains that boundary without inventing policy language.' data-companion-reaction='privacy'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Legal templates, without invented legal text</span></nav><section class='gated-hero'><div class='gated-hero-copy'><p class='section-kicker'>LEGAL & PRIVACY</p><span class='chip status-chip--coming'>APPROVED COPY REQUIRED</span><h1>Legal templates, without invented legal text</h1><p class='gated-lede'>Privacy Policy and Terms belong here only when approved source text exists. Until then this page exposes the publication status and current product facts without pretending they are legal policy.</p></div><figure class='gated-hero-art'><img src='/assets/images/characters/companion/runtime-v2/privacy.webp' alt='Toadal with privacy and security themed artwork' loading='eager' decoding='async'></figure></section><section class='legal-template' data-companion-context='privacy'><nav class='legal-toc' aria-label='Legal document status'><a href='#privacy-status'>Privacy Policy</a><a href='#terms-status'>Terms</a><a href='#guest-data'>Guest progress</a><a href='#contact-status'>Contact</a></nav><article id='privacy-status' class='legal-card'><p class='section-kicker'>PRIVACY POLICY</p><h2>Approved policy text is not published</h2><p>This website preview does not substitute generated copy for a legal Privacy Policy. A final policy can be published here only from approved legal text.</p><span class='status-chip status-chip--coming'>NOT PUBLISHED</span></article><article id='terms-status' class='legal-card'><p class='section-kicker'>TERMS</p><h2>Approved Terms are not published</h2><p>No generated terms, warranties, rights grants, or obligations are being presented as legal text.</p><span class='status-chip status-chip--coming'>NOT PUBLISHED</span></article><article id='guest-data' class='legal-card'><p class='section-kicker'>TECHNICAL PRODUCT FACT</p><h2>Guest website progress is browser-local</h2><p>The current guest progression implementation uses browser-local storage and does not provide account sync. This describes present product behavior; it is not a replacement for a privacy policy.</p><a href='/feast-pass/'>Feast Pass</a></article><article id='contact-status' class='legal-card'><p class='section-kicker'>CONTACT</p><h2>No verified privacy mailbox is configured</h2><p>The Contact page is a non-submitting preview until a real endpoint or approved public mailbox is supplied.</p><a href='/contact/'>Contact status</a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Approved legal text is not published here. This page explains that boundary without inventing policy language.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Legal status - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.legal.rich-text.95252e1732c0.gated-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "gated-page",
+              "attributes": {
+                "data-companion-context": "privacy",
+                "data-companion-copy": "Approved legal text is not published here. This page explains that boundary without inventing policy language.",
+                "data-companion-reaction": "privacy"
+              },
+              "style": "",
+              "layerName": "Legal templates, without invented legal text",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.legal.rich-text.bb0c3630cb6c.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Legal templates, without invented legal text",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.legal.rich-text.11a53690ca3a.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.cee730d37247.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.05b9656bc82a.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Legal templates, without invented legal text",
+                          "text": "Legal templates, without invented legal text"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.legal.rich-text.8c04b3d423f1.gated-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Legal templates, without invented legal text",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.legal.rich-text.ac9a0cd434ef.gated-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "gated-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Legal templates, without invented legal text",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.5875cee8adc9.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "LEGAL & PRIVACY",
+                                "text": "LEGAL & PRIVACY"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.f2faf3ad8e7b.chip-status-chip-coming",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "APPROVED COPY REQUIRED",
+                                "text": "APPROVED COPY REQUIRED"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.be68c04c4ec7.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Legal templates, without invented legal text",
+                                "text": "Legal templates, without invented legal text"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.29d4e16444ee.gated-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "gated-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Privacy Policy and Terms belong here only when approved source text exis",
+                                "text": "Privacy Policy and Terms belong here only when approved source text exists. Until then this page exposes the publication status and current product facts without pretending they are legal policy."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.029e873e2795.gated-hero-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "gated-hero-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "figure gated-hero-art",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.26426eb32e78.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "eager",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal with privacy and security themed artwork",
+                                "asset": "asset.owner-native.reference-assets-images-characters-companion-runtime-v2-.dd905d87",
+                                "alt": "Toadal with privacy and security themed artwork"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.legal.rich-text.42764c56c8f3.legal-template",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "legal-template",
+                    "attributes": {
+                      "data-companion-context": "privacy"
+                    },
+                    "style": "",
+                    "layerName": "Approved policy text is not published",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.legal.rich-text.7eec5c939a60.legal-toc",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "nav",
+                          "className": "legal-toc",
+                          "attributes": {
+                            "aria-label": "Legal document status"
+                          },
+                          "style": "",
+                          "layerName": "Privacy PolicyTermsGuest progressContact",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.4dec28a07f02.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Privacy Policy",
+                                "href": "#privacy-status",
+                                "label": "Privacy Policy"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.a82f51886725.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Terms",
+                                "href": "#terms-status",
+                                "label": "Terms"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.752d4a12c317.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest progress",
+                                "href": "#guest-data",
+                                "label": "Guest progress"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.65d832088439.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Contact",
+                                "href": "#contact-status",
+                                "label": "Contact"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.d2a79426dd4b.privacy-status",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "legal-card",
+                          "attributes": {
+                            "id": "privacy-status"
+                          },
+                          "style": "",
+                          "layerName": "privacy status",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.03b8f79ba70c.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PRIVACY POLICY",
+                                "text": "PRIVACY POLICY"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.65b05e72ad7b.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Approved policy text is not published",
+                                "text": "Approved policy text is not published"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.f46fde3b6d29.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "This website preview does not substitute generated copy for a legal Priv",
+                                "text": "This website preview does not substitute generated copy for a legal Privacy Policy. A final policy can be published here only from approved legal text."
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.280aad6eaad6.status-chip-status-chip-",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "status-chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "NOT PUBLISHED",
+                                "text": "NOT PUBLISHED"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.c394f7fb33a9.terms-status",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "legal-card",
+                          "attributes": {
+                            "id": "terms-status"
+                          },
+                          "style": "",
+                          "layerName": "terms status",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.41d1c9356788.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TERMS",
+                                "text": "TERMS"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.7e91f7a29db6.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Approved Terms are not published",
+                                "text": "Approved Terms are not published"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.1f1ee94d526e.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No generated terms, warranties, rights grants, or obligations are being ",
+                                "text": "No generated terms, warranties, rights grants, or obligations are being presented as legal text."
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.415d4f296910.status-chip-status-chip-",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "status-chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "NOT PUBLISHED",
+                                "text": "NOT PUBLISHED"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.d4dad0d4dc00.guest-data",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "legal-card",
+                          "attributes": {
+                            "id": "guest-data"
+                          },
+                          "style": "",
+                          "layerName": "guest data",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.92820021facc.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TECHNICAL PRODUCT FACT",
+                                "text": "TECHNICAL PRODUCT FACT"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.2f2114ac2d7c.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest website progress is browser-local",
+                                "text": "Guest website progress is browser-local"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.5d78df30a267.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The current guest progression implementation uses browser-local storage ",
+                                "text": "The current guest progression implementation uses browser-local storage and does not provide account sync. This describes present product behavior; it is not a replacement for a privacy policy."
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.a170e51a503a.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feast Pass",
+                                "href": "/feast-pass/",
+                                "label": "Feast Pass"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.5a3c3935a2e9.contact-status",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "legal-card",
+                          "attributes": {
+                            "id": "contact-status"
+                          },
+                          "style": "",
+                          "layerName": "contact status",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.7a8893329c34.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CONTACT",
+                                "text": "CONTACT"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.140cb44c14f2.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No verified privacy mailbox is configured",
+                                "text": "No verified privacy mailbox is configured"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.13ee18594ca5.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The Contact page is a non-submitting preview until a real endpoint or ap",
+                                "text": "The Contact page is a non-submitting preview until a real endpoint or approved public mailbox is supplied."
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.5c5330e45acb.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Contact status",
+                                "href": "/contact/",
+                                "label": "Contact status"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.legal.rich-text.7bd8ad454452.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSApproved legal text is not published here. This page explains",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.legal.rich-text.8c90ef9c2bbb.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.c127aec71e70.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.7cf626ae3ae7.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "Approved legal text is not published here. This page explains that bound",
+                                "text": "Approved legal text is not published here. This page explains that boundary without inventing policy language."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.legal.rich-text.703dcf75336c.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.legal.rich-text.61b158bc689c.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.legal.rich-text.3a782b1c3c72.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.legal.last-updated-slot",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "legal-last-updated-slot",
-        "html": "<section class='legal-card' aria-labelledby='legal-last-updated-title'><p class='section-kicker'>DOCUMENT STATUS</p><h2 id='legal-last-updated-title'>Last updated</h2><p>Policy publication date: <span class='status-chip status-chip--coming'>Not published</span></p><p>No policy date is shown because approved Privacy Policy and Terms text has not been published.</p></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Legal status - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.legal.last-updated-slot.ec1980b46fae.legal-card",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "legal-card",
+              "attributes": {
+                "aria-labelledby": "legal-last-updated-title"
+              },
+              "style": "",
+              "layerName": "Last updated",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.legal.last-updated-slot.edfa39f69bcb.section-kicker",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "section-kicker",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "DOCUMENT STATUS",
+                    "text": "DOCUMENT STATUS"
+                  }
+                },
+                {
+                  "id": "component.legal.last-updated-slot.ab0e65667c4b.legal-last-updated-title",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "h2",
+                    "className": "",
+                    "attributes": {
+                      "id": "legal-last-updated-title"
+                    },
+                    "style": "",
+                    "layerName": "legal last updated title",
+                    "text": "Last updated"
+                  }
+                },
+                {
+                  "id": "component.legal.last-updated-slot.6332123bdfb4.p",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Policy publication date: Not published",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.legal.last-updated-slot.005812425440.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "Policy publication date: ",
+                          "layerName": "Text: Policy publication date:"
+                        }
+                      },
+                      {
+                        "id": "component.legal.last-updated-slot.d86d228ef138.status-chip-status-chip-",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "status-chip status-chip--coming",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Not published",
+                          "text": "Not published"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.legal.last-updated-slot.56ae7dc21d27.p",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "No policy date is shown because approved Privacy Policy and Terms text h",
+                    "text": "No policy date is shown because approved Privacy Policy and Terms text has not been published."
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

@@ -1,0 +1,116 @@
+{
+  "schema": "toadal-feast.stories-browser-qa.v1",
+  "status": "PASS",
+  "baseUrl": "http://127.0.0.1:4332/toadal-feast-web/",
+  "generatedAt": "2026-10-02T16:31:25.646651+00:00",
+  "checks": [
+    {
+      "route": "/stories/",
+      "viewport": [
+        1366,
+        900
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/manga/",
+      "viewport": [
+        1366,
+        900
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/reader/",
+      "viewport": [
+        1366,
+        900
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/stories/",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/manga/",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/reader/",
+      "viewport": [
+        390,
+        844
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/stories/",
+      "viewport": [
+        320,
+        800
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/manga/",
+      "viewport": [
+        320,
+        800
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/reader/",
+      "viewport": [
+        320,
+        800
+      ],
+      "status": 200,
+      "overflow": false,
+      "runtimeAndRegistryBasePath": true
+    },
+    {
+      "route": "/reader/?series=fixture-series&chapter=fixture-chapter",
+      "keyboardPages": "1\u21922\u21921",
+      "save": "stable IDs persisted",
+      "fixturePublicOutput": false
+    },
+    {
+      "route": "/",
+      "storyRuntimeLoaded": false
+    }
+  ],
+  "screenshots": [
+    "docs\\authoring\\stories-browser-qa\\stories-desktop-empty.png",
+    "docs\\authoring\\stories-browser-qa\\manga-desktop-empty.png",
+    "docs\\authoring\\stories-browser-qa\\reader-desktop-empty.png",
+    "docs\\authoring\\stories-browser-qa\\stories-mobile-empty.png",
+    "docs\\authoring\\stories-browser-qa\\manga-mobile-empty.png",
+    "docs\\authoring\\stories-browser-qa\\reader-mobile-empty.png"
+  ]
+}

@@ -1,0 +1,13 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {stripTypeScriptTypes} from 'node:module';
+const studio=path.resolve(process.argv[2]||process.env.TOADAL_STUDIO_ROOT||'');
+if(!process.argv[2]&&!process.env.TOADAL_STUDIO_ROOT)throw Error('Pass reviewed Studio source root explicitly');
+const sourceName='packages/owner-authoring/src/index.ts',source=fs.readFileSync(path.join(studio,sourceName));
+const version=JSON.parse(fs.readFileSync(path.join(studio,'package.json'),'utf8')).version;
+if(version!=='1.4.2')throw Error('Review package version before regenerating the pinned SDK');
+const generated=stripTypeScriptTypes(source.toString('utf8'),{mode:'strip'}),hash=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
+const output=path.resolve(import.meta.dirname,'vendor/owner-authoring-renderer.mjs');
+const provenance={schema:'toadal-studio.owner-authoring-renderer-provenance.v1',studioVersion:version,source:sourceName,sourceSha256:hash(source),generated:'scripts/vendor/owner-authoring-renderer.mjs',generatedSha256:hash(generated),transformation:'node:module.stripTypeScriptTypes(mode=strip)',nodeMajor:22};
+fs.writeFileSync(output,generated);fs.writeFileSync(path.join(path.dirname(output),'owner-authoring-renderer.provenance.json'),JSON.stringify(provenance,null,2)+'\n');console.log(JSON.stringify(provenance,null,2));

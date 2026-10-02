@@ -5,14 +5,554 @@
   "title": "What's next · TOADAL FEAST",
   "description": "A reuse-first status view of currently documented TOADAL FEAST preview, coming-soon, and planned areas.",
   "publicationState": "noindex",
-  "components": [{
-    "id": "component.manifest-roadmap",
-    "type": "core.rich-text",
-    "props": {
-      "variant": "manifest-roadmap",
-      "html": "<section class='progression-page' data-editorial-roadmap data-companion-context='roadmap' data-companion-copy='This page shows approved public status records without dates or delivery guarantees.'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Roadmap</span></nav><header class='progression-hero'><p class='section-kicker'>TOADAL FEAST · STATUS</p><p class='progression-eyebrow'>NO DATES OR PROMISES</p><h1>What's next</h1><p class='progression-lede'>This view reflects existing public page states only. It does not promise delivery dates or imply unannounced work.</p></header><div class='roadmap-grid'><section class='progression-section' data-roadmap-status='available-now' aria-labelledby='roadmap-available'><h2 id='roadmap-available'>Available Now</h2><div data-roadmap-items></div><p data-roadmap-empty>No approved items are listed in this status.</p></section><section class='progression-section' data-roadmap-status='in-development' aria-labelledby='roadmap-development'><h2 id='roadmap-development'>In Development</h2><div data-roadmap-items></div><p data-roadmap-empty>No approved items are listed in this status.</p></section><section class='progression-section' data-roadmap-status='coming-soon' aria-labelledby='roadmap-coming'><h2 id='roadmap-coming'>Coming Soon</h2><div data-roadmap-items></div><p data-roadmap-empty>No approved items are listed in this status.</p></section><section class='progression-section' data-roadmap-status='exploring' aria-labelledby='roadmap-exploring'><h2 id='roadmap-exploring'>Exploring</h2><div data-roadmap-items></div><p data-roadmap-empty>No approved items are listed in this status.</p></section></div><section class='progression-section' data-roadmap-related-devlogs aria-labelledby='roadmap-devlogs-title'><h2 id='roadmap-devlogs-title'>Related devlogs</h2><div data-roadmap-devlog-list></div><p data-roadmap-devlog-empty>No published devlogs are currently linked to roadmap items. Visit <a href='/news/'>News &amp; updates</a> for the current publication status.</p></section><p class='progression-truth-note'>Statuses are descriptive, not guarantees. Store, account synchronization, connected leaderboards, and community services are not activated.</p></section>"
+  "components": [
+    {
+      "id": "component.manifest-roadmap",
+      "type": "layout.container",
+      "props": {
+        "variant": "manifest-roadmap",
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "What's next · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.manifest-roadmap.aaf8e01b1192.progression-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "progression-page",
+              "attributes": {
+                "data-editorial-roadmap": "",
+                "data-companion-context": "roadmap",
+                "data-companion-copy": "This page shows approved public status records without dates or delivery guarantees."
+              },
+              "style": "",
+              "layerName": "What's next",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.manifest-roadmap.c3d063f10ff3.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Roadmap",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-roadmap.a5eea1f1a137.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.3fda4453b323.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.849227caead3.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Roadmap",
+                          "text": "Roadmap"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-roadmap.5944252a6a15.progression-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "progression-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "What's next",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-roadmap.2f6528670262.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST · STATUS",
+                          "text": "TOADAL FEAST · STATUS"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.ecd884d30412.progression-eyebrow",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-eyebrow",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "NO DATES OR PROMISES",
+                          "text": "NO DATES OR PROMISES"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.e65aa088d9c1.h1",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h1",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "What's next",
+                          "text": "What's next"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.241fb0d5eeba.progression-lede",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-lede",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "This view reflects existing public page states only. It does not promise",
+                          "text": "This view reflects existing public page states only. It does not promise delivery dates or imply unannounced work."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-roadmap.d5c2311a3159.roadmap-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "roadmap-grid",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Available Now",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-roadmap.07521b8dfab6.progression-section",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "section",
+                          "className": "progression-section",
+                          "attributes": {
+                            "data-roadmap-status": "available-now",
+                            "aria-labelledby": "roadmap-available"
+                          },
+                          "style": "",
+                          "layerName": "Available Now",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-roadmap.d3478f700d08.roadmap-available",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "roadmap-available"
+                                },
+                                "style": "",
+                                "layerName": "roadmap available",
+                                "text": "Available Now"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.6a52080c7038.div",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-items": ""
+                                },
+                                "style": "",
+                                "layerName": "div",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.cdf551abfab2.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-empty": ""
+                                },
+                                "style": "",
+                                "layerName": "No approved items are listed in this status.",
+                                "text": "No approved items are listed in this status."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.d1220c4754da.progression-section",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "section",
+                          "className": "progression-section",
+                          "attributes": {
+                            "data-roadmap-status": "in-development",
+                            "aria-labelledby": "roadmap-development"
+                          },
+                          "style": "",
+                          "layerName": "In Development",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-roadmap.90b29d7b72cf.roadmap-development",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "roadmap-development"
+                                },
+                                "style": "",
+                                "layerName": "roadmap development",
+                                "text": "In Development"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.42d2139ce63b.div",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-items": ""
+                                },
+                                "style": "",
+                                "layerName": "div",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.300680414707.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-empty": ""
+                                },
+                                "style": "",
+                                "layerName": "No approved items are listed in this status.",
+                                "text": "No approved items are listed in this status."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.7eadb0763cbd.progression-section",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "section",
+                          "className": "progression-section",
+                          "attributes": {
+                            "data-roadmap-status": "coming-soon",
+                            "aria-labelledby": "roadmap-coming"
+                          },
+                          "style": "",
+                          "layerName": "Coming Soon",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-roadmap.a9b148d4f6af.roadmap-coming",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "roadmap-coming"
+                                },
+                                "style": "",
+                                "layerName": "roadmap coming",
+                                "text": "Coming Soon"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.8ce9c1caf314.div",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-items": ""
+                                },
+                                "style": "",
+                                "layerName": "div",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.ba45b4629638.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-empty": ""
+                                },
+                                "style": "",
+                                "layerName": "No approved items are listed in this status.",
+                                "text": "No approved items are listed in this status."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.d651165755d6.progression-section",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "section",
+                          "className": "progression-section",
+                          "attributes": {
+                            "data-roadmap-status": "exploring",
+                            "aria-labelledby": "roadmap-exploring"
+                          },
+                          "style": "",
+                          "layerName": "Exploring",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-roadmap.d4f1f3375272.roadmap-exploring",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "roadmap-exploring"
+                                },
+                                "style": "",
+                                "layerName": "roadmap exploring",
+                                "text": "Exploring"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.7abb4f0fb4aa.div",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-items": ""
+                                },
+                                "style": "",
+                                "layerName": "div",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.060cfcbc6403.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-roadmap-empty": ""
+                                },
+                                "style": "",
+                                "layerName": "No approved items are listed in this status.",
+                                "text": "No approved items are listed in this status."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-roadmap.a4207ecf102f.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "data-roadmap-related-devlogs": "",
+                      "aria-labelledby": "roadmap-devlogs-title"
+                    },
+                    "style": "",
+                    "layerName": "Related devlogs",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-roadmap.77681d93183d.roadmap-devlogs-title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "roadmap-devlogs-title"
+                          },
+                          "style": "",
+                          "layerName": "roadmap devlogs title",
+                          "text": "Related devlogs"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.ae3bc5fd4f99.div",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-roadmap-devlog-list": ""
+                          },
+                          "style": "",
+                          "layerName": "div",
+                          "text": ""
+                        }
+                      },
+                      {
+                        "id": "component.manifest-roadmap.b3d37398f1ee.p",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {
+                            "data-roadmap-devlog-empty": ""
+                          },
+                          "style": "",
+                          "layerName": "No published devlogs are currently linked to roadmap items. Visit News &",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.manifest-roadmap.274c12022486.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "No published devlogs are currently linked to roadmap items. Visit ",
+                                "layerName": "Text: No published devlogs are currently linked to roadmap"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.6554c35f1f8e.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "News & updates",
+                                "href": "/news/",
+                                "label": "News & updates"
+                              }
+                            },
+                            {
+                              "id": "component.manifest-roadmap.eb2f8ee05df7.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": " for the current publication status.",
+                                "layerName": "Text: for the current publication status."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-roadmap.ef4947a56407.progression-truth-note",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "progression-truth-note",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Statuses are descriptive, not guarantees. Store, account synchronization",
+                    "text": "Statuses are descriptive, not guarantees. Store, account synchronization, connected leaderboards, and community services are not activated."
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
     }
-  }],
+  ],
   "referenceFile": "roadmap/index.html",
   "studioGenerated": true
 }

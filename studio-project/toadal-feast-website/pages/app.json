@@ -8,35 +8,1884 @@
   "components": [
     {
       "id": "component.live-app.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "live-app",
-        "html": "<article class='app-product-page live-visual-page' data-companion-context='app' data-companion-copy='The mobile app is the flagship adventure. These screenshots are real Arcade, Puzzle, and Feastfall gameplay; verified store links are not configured yet.' data-companion-reaction='present'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>App</span></nav><section class='app-product-hero'><div class='app-product-copy'><p class='section-kicker'>THE FULL ADVENTURE</p><span class='chip preview'>REAL GAMEPLAY · STORE LINKS NOT CONFIGURED</span><h1>Take the whole Feast with you</h1><p class='wo002-detail-lede'>TOADAL FEAST on mobile is the flagship adventure. The screens beside this copy are real captured gameplay from Arcade, Puzzle, and Feastfall—not concept mockups.</p><div class='store-badge-row app-product-store-row' aria-describedby='app-download-status'><button class='store-badge' type='button' disabled><span aria-hidden='true'>●</span><span><small>Download on the</small>App Store</span></button><button class='store-badge' type='button' disabled><span aria-hidden='true'>▶</span><span><small>Get it on</small>Google Play</span></button></div><p class='app-product-status' id='app-download-status'>Verified store destination URLs are not configured on this staging site, so these controls intentionally do not open a store.</p><div class='app-product-actions'><a class='button-link button-link--secondary' href='/play/'>Explore browser previews <span aria-hidden='true'>&rarr;</span></a><a class='button-link button-link--secondary' href='/world/'>Explore the Feast World <span aria-hidden='true'>&rarr;</span></a></div></div><div class='app-product-stage' aria-label='Real TOADAL FEAST mobile gameplay'><figure class='app-product-phone'><span class='app-shot-label'>REAL GAMEPLAY</span><img src='/assets/images/app/arcade-real-gameplay.webp' alt='Real TOADAL FEAST Arcade gameplay showing Froggie and falling food in a lush waterfall world' width='360' height='600' decoding='async'><figcaption>Arcade</figcaption></figure><figure class='app-product-stage-card app-product-stage-card--puzzle'><img src='/assets/images/app/puzzle-real-gameplay.webp' alt='Real TOADAL FEAST Puzzle gameplay from First Feast' width='640' height='360' decoding='async'><figcaption>Puzzle</figcaption></figure><figure class='app-product-stage-card app-product-stage-card--feastfall'><img src='/assets/images/app/feastfall-real-gameplay.webp' alt='Real TOADAL FEAST Feastfall gameplay with the Froggy visitor and food grid' width='640' height='360' decoding='async'><figcaption>Feastfall</figcaption></figure></div></section><section class='app-gameplay-section' aria-labelledby='app-gameplay-heading'><div class='app-gameplay-heading'><p class='section-kicker'>CAPTURED FROM THE GAME</p><h2 id='app-gameplay-heading'>Three ways the Feast plays</h2><p>These images come from real runnable TOADAL FEAST modes. They are presented as mobile-game imagery, not as separate browser games.</p></div><div class='app-gameplay-grid'><article class='app-gameplay-card app-gameplay-card--arcade'><div class='app-gameplay-card-art'><img src='/assets/images/app/arcade-real-gameplay.webp' alt='' width='360' height='600' loading='lazy' decoding='async'></div><div><span class='status-chip'>REAL GAMEPLAY</span><h3>Arcade</h3><p>Catch falling food, protect your lives, and keep the feast going.</p></div></article><article class='app-gameplay-card'><div class='app-gameplay-card-art'><img src='/assets/images/app/puzzle-real-gameplay.webp' alt='' width='640' height='360' loading='lazy' decoding='async'></div><div><span class='status-chip'>REAL GAMEPLAY</span><h3>Puzzle</h3><p>First Feast turns movement, energy, hearts, and food placement into a tactical challenge.</p></div></article><article class='app-gameplay-card'><div class='app-gameplay-card-art'><img src='/assets/images/app/feastfall-real-gameplay.webp' alt='' width='640' height='360' loading='lazy' decoding='async'></div><div><span class='status-chip'>REAL GAMEPLAY</span><h3>Feastfall</h3><p>Build the right food pattern for each visitor and plan around the pantry.</p></div></article></div></section><section class='wo002-detail-facts app-product-facts' aria-label='App information'><article class='detail-fact'><p class='section-kicker'>FLAGSHIP</p><h2>The complete adventure</h2><p>The mobile app is the intended home of the full TOADAL FEAST experience.</p></article><article class='detail-fact'><p class='section-kicker'>DOWNLOAD</p><h2>Destinations pending</h2><p>No unverified store URL is exposed. Download controls stay disabled until official destinations are confirmed.</p></article><article class='detail-fact'><p class='section-kicker'>WEBSITE</p><h2>Explore while you wait</h2><p>The website remains the place to discover the world, characters, stories, and current browser-preview states.</p></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>These are real Arcade, Puzzle, and Feastfall screens from the mobile adventure.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "The TOADAL FEAST app · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.live-app.rich-text.8fa4a4bb17ce.app-product-page-live-vi",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "app-product-page live-visual-page",
+              "attributes": {
+                "data-companion-context": "app",
+                "data-companion-copy": "The mobile app is the flagship adventure. These screenshots are real Arcade, Puzzle, and Feastfall gameplay; verified store links are not configured yet.",
+                "data-companion-reaction": "present"
+              },
+              "style": "",
+              "layerName": "Take the whole Feast with you",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.live-app.rich-text.e93a778f1e85.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/App",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-app.rich-text.ed4742149a94.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.live-app.rich-text.3cbd9a498387.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.live-app.rich-text.44edfe704b8d.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "App",
+                          "text": "App"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-app.rich-text.47a389234b6f.app-product-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "app-product-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Take the whole Feast with you",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-app.rich-text.440382b3bf41.app-product-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "app-product-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Take the whole Feast with you",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.49f21a4bb618.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "THE FULL ADVENTURE",
+                                "text": "THE FULL ADVENTURE"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.00b4891acdb4.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "REAL GAMEPLAY · STORE LINKS NOT CONFIGURED",
+                                "text": "REAL GAMEPLAY · STORE LINKS NOT CONFIGURED"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.6d6305ef8b37.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Take the whole Feast with you",
+                                "text": "Take the whole Feast with you"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.fee4aee4949b.wo002-detail-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "wo002-detail-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL FEAST on mobile is the flagship adventure. The screens beside thi",
+                                "text": "TOADAL FEAST on mobile is the flagship adventure. The screens beside this copy are real captured gameplay from Arcade, Puzzle, and Feastfall—not concept mockups."
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.64c2fb293d23.store-badge-row-app-prod",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "store-badge-row app-product-store-row",
+                                "attributes": {
+                                  "aria-describedby": "app-download-status"
+                                },
+                                "style": "",
+                                "layerName": "●Download on theApp Store▶Get it onGoogle Play",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.af7f33fd5cee.store-badge",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "store-badge",
+                                      "attributes": {
+                                        "type": "button",
+                                        "disabled": true
+                                      },
+                                      "style": "",
+                                      "layerName": "●Download on theApp Store",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.932860af996b.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "●",
+                                            "text": "●"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.a5ffea22e22b.span",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Download on theApp Store",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.live-app.rich-text.e2c3a49e2d46.small",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "small",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Download on the",
+                                                  "text": "Download on the"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.live-app.rich-text.9cba6e7b3b6e.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "App Store",
+                                                  "layerName": "Text: App Store"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.c7f0b5601720.store-badge",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "store-badge",
+                                      "attributes": {
+                                        "type": "button",
+                                        "disabled": true
+                                      },
+                                      "style": "",
+                                      "layerName": "▶Get it onGoogle Play",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.0936be346626.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "▶",
+                                            "text": "▶"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.f0cf73931b5e.span",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Get it onGoogle Play",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.live-app.rich-text.27ce47225183.small",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "small",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Get it on",
+                                                  "text": "Get it on"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.live-app.rich-text.34c7c871cfd2.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "Google Play",
+                                                  "layerName": "Text: Google Play"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.0c710ef6bbed.app-download-status",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "app-product-status",
+                                "attributes": {
+                                  "id": "app-download-status"
+                                },
+                                "style": "",
+                                "layerName": "app download status",
+                                "text": "Verified store destination URLs are not configured on this staging site, so these controls intentionally do not open a store."
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.769d7c5762e6.app-product-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "app-product-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore browser previews →Explore the Feast World →",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.71d771deac74.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore browser previews →",
+                                      "href": "/play/",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.adb00cb47d68.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Explore browser previews ",
+                                            "layerName": "Text: Explore browser previews"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.4ebcd9bbf329.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.1941204a42ee.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore the Feast World →",
+                                      "href": "/world/",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.4af9789c69ea.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Explore the Feast World ",
+                                            "layerName": "Text: Explore the Feast World"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.cc8250968ed2.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-app.rich-text.481d43c950a4.app-product-stage",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "app-product-stage",
+                          "attributes": {
+                            "aria-label": "Real TOADAL FEAST mobile gameplay"
+                          },
+                          "style": "",
+                          "layerName": "REAL GAMEPLAYArcadePuzzleFeastfall",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.7bbc10829c36.app-product-phone",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "app-product-phone",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "REAL GAMEPLAYArcade",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.b8e2c6a343df.app-shot-label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "app-shot-label",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "REAL GAMEPLAY",
+                                      "text": "REAL GAMEPLAY"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.f39d67952b33.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "width": "360",
+                                        "height": "600",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Real TOADAL FEAST Arcade gameplay showing Froggie and falling food in a lush waterfall world",
+                                      "asset": "asset.app.gameplay.arcade",
+                                      "alt": "Real TOADAL FEAST Arcade gameplay showing Froggie and falling food in a lush waterfall world"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.43289265daf4.figcaption",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Arcade",
+                                      "text": "Arcade"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.96cacf66b78a.app-product-stage-card-a",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "app-product-stage-card app-product-stage-card--puzzle",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Puzzle",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.acf4d62d141c.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "width": "640",
+                                        "height": "360",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Real TOADAL FEAST Puzzle gameplay from First Feast",
+                                      "asset": "asset.app.gameplay.puzzle",
+                                      "alt": "Real TOADAL FEAST Puzzle gameplay from First Feast"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.accd419fb425.figcaption",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Puzzle",
+                                      "text": "Puzzle"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.ea2fe8e70054.app-product-stage-card-a",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "app-product-stage-card app-product-stage-card--feastfall",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feastfall",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.426ebe76b5fd.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "width": "640",
+                                        "height": "360",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Real TOADAL FEAST Feastfall gameplay with the Froggy visitor and food grid",
+                                      "asset": "asset.app.gameplay.feastfall",
+                                      "alt": "Real TOADAL FEAST Feastfall gameplay with the Froggy visitor and food grid"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.6137b676a6e5.figcaption",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Feastfall",
+                                      "text": "Feastfall"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-app.rich-text.617e5b05cc72.app-gameplay-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "app-gameplay-section",
+                    "attributes": {
+                      "aria-labelledby": "app-gameplay-heading"
+                    },
+                    "style": "",
+                    "layerName": "Three ways the Feast plays",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-app.rich-text.151f454dd30b.app-gameplay-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "app-gameplay-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Three ways the Feast plays",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.a1faaf30fe3c.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CAPTURED FROM THE GAME",
+                                "text": "CAPTURED FROM THE GAME"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.6705e8abac21.app-gameplay-heading",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "app-gameplay-heading"
+                                },
+                                "style": "",
+                                "layerName": "app gameplay heading",
+                                "text": "Three ways the Feast plays"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.31ce0e222024.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "These images come from real runnable TOADAL FEAST modes. They are presen",
+                                "text": "These images come from real runnable TOADAL FEAST modes. They are presented as mobile-game imagery, not as separate browser games."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-app.rich-text.a4c346931a3b.app-gameplay-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "app-gameplay-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Arcade",
+                          "mode": "inherit",
+                          "collection": true,
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.6215a3f97496.app-gameplay-card-app-ga",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "app-gameplay-card app-gameplay-card--arcade",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Arcade",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.73c4b4e6ed03.app-gameplay-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "app-gameplay-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div app-gameplay-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.080b660b60fb.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "width": "360",
+                                              "height": "600",
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "img",
+                                            "asset": "asset.app.gameplay.arcade",
+                                            "alt": ""
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.ede9bbbb7f38.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Arcade",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.fb644329fe93.status-chip",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "status-chip",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "REAL GAMEPLAY",
+                                            "text": "REAL GAMEPLAY"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.f76c2c8e28a7.h3",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Arcade",
+                                            "text": "Arcade"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.ebdd1289952e.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Catch falling food, protect your lives, and keep the feast going.",
+                                            "text": "Catch falling food, protect your lives, and keep the feast going."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.56181011325d.app-gameplay-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "app-gameplay-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Puzzle",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.8b16a7b907f9.app-gameplay-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "app-gameplay-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div app-gameplay-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.4521ab8072fc.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "width": "640",
+                                              "height": "360",
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "img",
+                                            "asset": "asset.app.gameplay.puzzle",
+                                            "alt": ""
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.b2c7c7d36a9b.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Puzzle",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.8cbf843826dc.status-chip",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "status-chip",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "REAL GAMEPLAY",
+                                            "text": "REAL GAMEPLAY"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.bccadd3938f1.h3",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Puzzle",
+                                            "text": "Puzzle"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.45aa4bb2b6f4.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "First Feast turns movement, energy, hearts, and food placement into a ta",
+                                            "text": "First Feast turns movement, energy, hearts, and food placement into a tactical challenge."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.dca4d599a311.app-gameplay-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "app-gameplay-card",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feastfall",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.live-app.rich-text.f8ea42f84004.app-gameplay-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "app-gameplay-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div app-gameplay-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.6ad1d9ec1a72.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "width": "640",
+                                              "height": "360",
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "img",
+                                            "asset": "asset.app.gameplay.feastfall",
+                                            "alt": ""
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.live-app.rich-text.83271141e7d9.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Feastfall",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.a7f92c6ec8df.status-chip",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "status-chip",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "REAL GAMEPLAY",
+                                            "text": "REAL GAMEPLAY"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.a5dc7b8ada0f.h3",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Feastfall",
+                                            "text": "Feastfall"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.live-app.rich-text.771bd65f0417.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Build the right food pattern for each visitor and plan around the pantry",
+                                            "text": "Build the right food pattern for each visitor and plan around the pantry."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-app.rich-text.6c541fa35828.wo002-detail-facts-app-p",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-detail-facts app-product-facts",
+                    "attributes": {
+                      "aria-label": "App information"
+                    },
+                    "style": "",
+                    "layerName": "The complete adventure",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-app.rich-text.f77bf2b613f7.detail-fact",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "The complete adventure",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.7a24fe291bbc.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FLAGSHIP",
+                                "text": "FLAGSHIP"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.ff5ff1cee13a.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The complete adventure",
+                                "text": "The complete adventure"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.74a91192e0d4.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The mobile app is the intended home of the full TOADAL FEAST experience.",
+                                "text": "The mobile app is the intended home of the full TOADAL FEAST experience."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-app.rich-text.556e7b2155db.detail-fact",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Destinations pending",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.10e79900c031.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "DOWNLOAD",
+                                "text": "DOWNLOAD"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.e38ca7eedd62.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Destinations pending",
+                                "text": "Destinations pending"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.d07e49396dc3.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No unverified store URL is exposed. Download controls stay disabled unti",
+                                "text": "No unverified store URL is exposed. Download controls stay disabled until official destinations are confirmed."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-app.rich-text.316126c47bed.detail-fact",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore while you wait",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.1163cff8fc22.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "WEBSITE",
+                                "text": "WEBSITE"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.87ee1d556b55.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore while you wait",
+                                "text": "Explore while you wait"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.7abf4ee4e324.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The website remains the place to discover the world, characters, stories",
+                                "text": "The website remains the place to discover the world, characters, stories, and current browser-preview states."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-app.rich-text.4e1b6b98d92d.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSThese are real Arcade, Puzzle, and Feastfall screens from the",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-app.rich-text.ccde7ca8e5b3.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.4c3e2897d42b.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.8d4276e6e2bd.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "These are real Arcade, Puzzle, and Feastfall screens from the mobile adv",
+                                "text": "These are real Arcade, Puzzle, and Feastfall screens from the mobile adventure."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-app.rich-text.8ba8ce3ff86a.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.live-app.rich-text.194989670c21.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.live-app.rich-text.63e2904c9132.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.app.puzzle-abilities",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "anchorId": "puzzle-abilities",
         "variant": "app-puzzle-abilities",
-        "html": "<section class='app-puzzle-abilities' aria-labelledby='puzzle-abilities-title' data-companion-context='app' data-companion-copy='These Golden Block illustrations are mobile Puzzle ability concepts, not Tower Defense or browser gameplay.' data-companion-reaction='curious'><p class='section-kicker'>MOBILE PUZZLE · CONCEPT ART</p><h2 id='puzzle-abilities-title'>Golden Block abilities</h2><p>Owner-supplied illustrations for the mobile Puzzle abilities. They are concept presentation art, not a playable website feature; store links remain unavailable.</p><div class='app-puzzle-ability-grid'><figure><img src='/assets/images/puzzle/toadal-push-golden-block.webp' alt='Toadal pushing a Golden Block, mobile Puzzle ability concept art.' width='384' height='384' loading='lazy' decoding='async'><figcaption>Push · mobile Puzzle ability concept</figcaption></figure><figure><img src='/assets/images/puzzle/toadal-magic-golden-block.webp' alt='Toadal using magic on a Golden Block, mobile Puzzle ability concept art.' width='384' height='384' loading='lazy' decoding='async'><figcaption>Magic · mobile Puzzle ability concept</figcaption></figure></div></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "The TOADAL FEAST app · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.app.puzzle-abilities.e90821765e08.app-puzzle-abilities",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "app-puzzle-abilities",
+              "attributes": {
+                "aria-labelledby": "puzzle-abilities-title",
+                "data-companion-context": "app",
+                "data-companion-copy": "These Golden Block illustrations are mobile Puzzle ability concepts, not Tower Defense or browser gameplay.",
+                "data-companion-reaction": "curious"
+              },
+              "style": "",
+              "layerName": "Golden Block abilities",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.app.puzzle-abilities.9956a859ecd7.section-kicker",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "section-kicker",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "MOBILE PUZZLE · CONCEPT ART",
+                    "text": "MOBILE PUZZLE · CONCEPT ART"
+                  }
+                },
+                {
+                  "id": "component.app.puzzle-abilities.3ecf7d295d01.puzzle-abilities-title",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "h2",
+                    "className": "",
+                    "attributes": {
+                      "id": "puzzle-abilities-title"
+                    },
+                    "style": "",
+                    "layerName": "puzzle abilities title",
+                    "text": "Golden Block abilities"
+                  }
+                },
+                {
+                  "id": "component.app.puzzle-abilities.aad74bf43b33.p",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Owner-supplied illustrations for the mobile Puzzle abilities. They are c",
+                    "text": "Owner-supplied illustrations for the mobile Puzzle abilities. They are concept presentation art, not a playable website feature; store links remain unavailable."
+                  }
+                },
+                {
+                  "id": "component.app.puzzle-abilities.8a76e07d1e95.app-puzzle-ability-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "app-puzzle-ability-grid",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Push · mobile Puzzle ability conceptMagic · mobile Puzzle ability concep",
+                    "mode": "inherit",
+                    "collection": true,
+                    "children": [
+                      {
+                        "id": "component.app.puzzle-abilities.d585e5267080.figure",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Push · mobile Puzzle ability concept",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.app.puzzle-abilities.5ab8b099d8be.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "width": "384",
+                                  "height": "384",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal pushing a Golden Block, mobile Puzzle ability concept art.",
+                                "asset": "asset.app.puzzle.toadal-push-golden-block",
+                                "alt": "Toadal pushing a Golden Block, mobile Puzzle ability concept art."
+                              }
+                            },
+                            {
+                              "id": "component.app.puzzle-abilities.67a1e0dff75d.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Push · mobile Puzzle ability concept",
+                                "text": "Push · mobile Puzzle ability concept"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.app.puzzle-abilities.820898a022a5.figure",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Magic · mobile Puzzle ability concept",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.app.puzzle-abilities.736d549093c5.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "width": "384",
+                                  "height": "384",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal using magic on a Golden Block, mobile Puzzle ability concept art.",
+                                "asset": "asset.app.puzzle.toadal-magic-golden-block",
+                                "alt": "Toadal using magic on a Golden Block, mobile Puzzle ability concept art."
+                              }
+                            },
+                            {
+                              "id": "component.app.puzzle-abilities.27767d11bd7a.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Magic · mobile Puzzle ability concept",
+                                "text": "Magic · mobile Puzzle ability concept"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.app.infinite-mode",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "app-infinite-mode",
-        "html": "<section class='app-gameplay-section' aria-labelledby='infinite-mode-title' data-companion-context='app' data-companion-copy='Infinite Feasts is a mobile colony and territory mode. No approved Infinite gameplay capture yet.' data-companion-reaction='curious'><div class='app-gameplay-heading'><p class='section-kicker'>FULL MOBILE APP · MODE OVERVIEW</p><h2 id='infinite-mode-title'>Infinite</h2><p><strong>Infinite Feasts:</strong> Food is overrunning the land. Assign friends, reclaim plots, and expand carefully. Recruit and assign frog helpers, reclaim pressured plots, explore territory, and build stations. Infinite uses its own Colony Coins for recruitment skips, stations, exploration, and territory purchases.</p><span class='status-chip status-chip--coming'>GAMEPLAY CAPTURE NOT AVAILABLE</span></div><div class='app-product-actions'><a class='button-link button-link--secondary' href='/coming-soon/' data-companion-context='under-construction' data-companion-action data-companion-action-copy='No approved Infinite gameplay capture is available yet. Explore the Feast while the capture is prepared.'>Why the mode preview is unavailable</a><a class='button-link button-link--secondary' href='/coming-soon/' data-companion-context='under-construction' data-companion-action data-companion-action-copy='Official App Store and Google Play destinations are not configured yet. Explore the available browser previews.'>Why official downloads are unavailable</a><a class='button-link button-link--secondary' href='/play/'>Explore available browser previews</a></div></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "The TOADAL FEAST app · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.app.infinite-mode.7e3b8647e9ca.app-gameplay-section",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "app-gameplay-section",
+              "attributes": {
+                "aria-labelledby": "infinite-mode-title",
+                "data-companion-context": "app",
+                "data-companion-copy": "Infinite Feasts is a mobile colony and territory mode. No approved Infinite gameplay capture yet.",
+                "data-companion-reaction": "curious"
+              },
+              "style": "",
+              "layerName": "Infinite",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.app.infinite-mode.7376c07e2c41.app-gameplay-heading",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "app-gameplay-heading",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Infinite",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.app.infinite-mode.c14185eb22ec.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "FULL MOBILE APP · MODE OVERVIEW",
+                          "text": "FULL MOBILE APP · MODE OVERVIEW"
+                        }
+                      },
+                      {
+                        "id": "component.app.infinite-mode.0c72f6c874d5.infinite-mode-title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "infinite-mode-title"
+                          },
+                          "style": "",
+                          "layerName": "infinite mode title",
+                          "text": "Infinite"
+                        }
+                      },
+                      {
+                        "id": "component.app.infinite-mode.4110af541a07.p",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Infinite Feasts: Food is overrunning the land. Assign friends, reclaim p",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.app.infinite-mode.d77ef21d52f8.strong",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "strong",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Infinite Feasts:",
+                                "text": "Infinite Feasts:"
+                              }
+                            },
+                            {
+                              "id": "component.app.infinite-mode.273ea0ac28cc.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": " Food is overrunning the land. Assign friends, reclaim plots, and expand carefully. Recruit and assign frog helpers, reclaim pressured plots, explore territory, and build stations. Infinite uses its own Colony Coins for recruitment skips, stations, exploration, and territory purchases.",
+                                "layerName": "Text: Food is overrunning the land. Assign friends, reclai"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.app.infinite-mode.315d8cb2a29e.status-chip-status-chip-",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "status-chip status-chip--coming",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "GAMEPLAY CAPTURE NOT AVAILABLE",
+                          "text": "GAMEPLAY CAPTURE NOT AVAILABLE"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.app.infinite-mode.d9bf060b9145.app-product-actions",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "app-product-actions",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Why the mode preview is unavailableWhy official downloads are unavailabl",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.app.infinite-mode.ceae2359321e.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "data-companion-context": "under-construction",
+                            "data-companion-action": "",
+                            "data-companion-action-copy": "No approved Infinite gameplay capture is available yet. Explore the Feast while the capture is prepared."
+                          },
+                          "style": "",
+                          "layerName": "Why the mode preview is unavailable",
+                          "href": "/coming-soon/",
+                          "label": "Why the mode preview is unavailable"
+                        }
+                      },
+                      {
+                        "id": "component.app.infinite-mode.ac90aad34e3f.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "data-companion-context": "under-construction",
+                            "data-companion-action": "",
+                            "data-companion-action-copy": "Official App Store and Google Play destinations are not configured yet. Explore the available browser previews."
+                          },
+                          "style": "",
+                          "layerName": "Why official downloads are unavailable",
+                          "href": "/coming-soon/",
+                          "label": "Why official downloads are unavailable"
+                        }
+                      },
+                      {
+                        "id": "component.app.infinite-mode.b7e02bcc1fa2.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore available browser previews",
+                          "href": "/play/",
+                          "label": "Explore available browser previews"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.app.icon-trailer-availability",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "app-icon-trailer-availability",
-        "html": "<section class='app-gameplay-section' aria-label='App icon and trailer availability'><article class='app-gameplay-card app-icon-card'><h2>App icon</h2><figure class='app-icon-figure'><img class='app-icon-image' src='/assets/images/app/approved-app-icon.webp' alt='TOADAL FEAST mobile app icon' width='256' height='256' loading='lazy' decoding='async'><figcaption>Approved mobile app icon</figcaption></figure></article><article class='app-gameplay-card'><span class='status-chip status-chip--coming'>NOT AVAILABLE</span><h2>App trailer</h2><p>No public app trailer is available yet. The gameplay images above remain genuine still captures and are not presented as a trailer.</p><a href='/media/'>Explore available media</a></article></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "The TOADAL FEAST app · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.app.icon-trailer-availability.097a16b48695.app-gameplay-section",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "app-gameplay-section",
+              "attributes": {
+                "aria-label": "App icon and trailer availability"
+              },
+              "style": "",
+              "layerName": "App icon",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.app.icon-trailer-availability.3e731fccbad2.app-gameplay-card-app-ic",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "app-gameplay-card app-icon-card",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "App icon",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.app.icon-trailer-availability.12b5b57614ed.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "App icon",
+                          "text": "App icon"
+                        }
+                      },
+                      {
+                        "id": "component.app.icon-trailer-availability.930c87ac0e92.app-icon-figure",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "app-icon-figure",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Approved mobile app icon",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.app.icon-trailer-availability.4533ddd8eda7.app-icon-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "app-icon-image",
+                                "attributes": {
+                                  "width": "256",
+                                  "height": "256",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "TOADAL FEAST mobile app icon",
+                                "asset": "asset.app.approved-icon",
+                                "alt": "TOADAL FEAST mobile app icon"
+                              }
+                            },
+                            {
+                              "id": "component.app.icon-trailer-availability.72e725b113ba.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Approved mobile app icon",
+                                "text": "Approved mobile app icon"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.app.icon-trailer-availability.82717a890699.app-gameplay-card",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "app-gameplay-card",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "App trailer",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.app.icon-trailer-availability.775c7c81221a.status-chip-status-chip-",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "status-chip status-chip--coming",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "NOT AVAILABLE",
+                          "text": "NOT AVAILABLE"
+                        }
+                      },
+                      {
+                        "id": "component.app.icon-trailer-availability.aa233ce40f59.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "App trailer",
+                          "text": "App trailer"
+                        }
+                      },
+                      {
+                        "id": "component.app.icon-trailer-availability.3635dc4fa282.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "No public app trailer is available yet. The gameplay images above remain",
+                          "text": "No public app trailer is available yet. The gameplay images above remain genuine still captures and are not presented as a trailer."
+                        }
+                      },
+                      {
+                        "id": "component.app.icon-trailer-availability.9b2b3bb20261.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore available media",
+                          "href": "/media/",
+                          "label": "Explore available media"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

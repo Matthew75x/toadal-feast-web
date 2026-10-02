@@ -3,11 +3,18 @@ import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { createRequire } from 'node:module';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const require = createRequire(import.meta.url);
 const runtime = require('../studio-project/toadal-feast-website/reference/assets/js/stories-publishing.js');
 const root = process.cwd();
 const project = path.join(root, 'studio-project/toadal-feast-website');
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
+
+function firstComponentHtml(page) {
+  return projectPage(project, { ...page, components: [page.components[0]] });
+}
 
 test('publishing routes have static preview shells and do not invent a published catalogue', () => {
   const pages = JSON.parse(fs.readFileSync(path.join(project, 'pages/index.json'), 'utf8'));
@@ -24,11 +31,12 @@ test('publishing routes have static preview shells and do not invent a published
   const stories = JSON.parse(fs.readFileSync(path.join(project, 'pages/stories.json'), 'utf8'));
   const manga = JSON.parse(fs.readFileSync(path.join(project, 'pages/manga-series.json'), 'utf8'));
   const reader = JSON.parse(fs.readFileSync(path.join(project, 'pages/comic-reader.json'), 'utf8'));
-  assert.match(stories.components[0].props.html, /no published stories/i);
-  assert.match(manga.components[0].props.html, /PREVIEW · NOT PUBLISHED/);
-  assert.match(reader.components[0].props.html, /No published chapter is available/);
-  for (const source of [stories, manga, reader]) {
-    assert.doesNotMatch(source.components[0].props.html, /Chapter\s+12|Tastier Tomorrow|\b(?:128K|125K|50%)\b/i);
+  const projectedSources = [stories, manga, reader].map(firstComponentHtml);
+  assert.match(projectedSources[0], /no published stories/i);
+  assert.match(projectedSources[1], /PREVIEW · NOT PUBLISHED/);
+  assert.match(projectedSources[2], /No published chapter is available/);
+  for (const source of projectedSources) {
+    assert.doesNotMatch(source, /Chapter\s+12|Tastier Tomorrow|\b(?:128K|125K|50%)\b/i);
   }
 });
 

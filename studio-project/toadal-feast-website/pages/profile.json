@@ -8,10 +8,1687 @@
   "components": [
     {
       "id": "component.guest-profile.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "guest-progression-profile",
-        "html": "<div class='progression-page' data-progression-page='profile' data-companion-context='guest-profile' data-companion-copy='This is a guest-local website profile, not a connected identity.'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Guest profile</span></nav><header class='progression-hero'><p class='section-kicker'>TOADAL FEAST · GUEST JOURNEY</p><p class='progression-eyebrow'>LOCAL PROFILE</p><h1>Your guest profile</h1><p class='progression-lede'>This is a browser-local view of website progression, not a connected identity. There is no sign-in, account, backend profile, or sync across devices.</p><div class='guest-profile-identity' aria-label='Anonymous guest profile'><span class='guest-profile-avatar' aria-hidden='true'>G</span><div><p class='section-kicker'>BROWSER-LOCAL GUEST</p><h2>Guest Feaster</h2><p class='progression-muted'>A non-identifying label for this browser; no account or canonical character ownership is implied.</p></div></div><p class='progression-truth-note'>No biography, score, title, character, world, or story history is fabricated. The profile can show only state that is actually available in this browser.</p></header><section class='progression-section' aria-labelledby='profile-status-title'><div class='progression-section-heading'><div><p class='section-kicker'>GUEST STATUS</p><h2 id='profile-status-title'>Progress snapshot</h2></div><span class='progression-local-badge'>Not connected</span></div><dl class='progression-stat-grid'><div class='progression-stat'><dt>Level</dt><dd data-progression-stat='level' aria-live='polite'>—</dd></div><div class='progression-stat'><dt>Total XP</dt><dd data-progression-stat='xp' aria-live='polite'>—</dd></div><div class='progression-stat'><dt>XP to next level</dt><dd data-progression-stat='xp-to-next' aria-live='polite'>—</dd></div><div class='progression-stat'><dt>Selected local title</dt><dd data-progression-stat='selected-title' aria-live='polite'>No title selected</dd></div><div class='progression-stat'><dt>Sparks</dt><dd data-progression-stat='sparks' aria-live='polite'>—</dd></div><div class='progression-stat'><dt>Treats</dt><dd data-progression-stat='treats' aria-live='polite'>0</dd></div><div class='progression-stat'><dt>Streak</dt><dd data-progression-stat='streak' aria-live='polite'>—</dd></div><div class='progression-stat'><dt>Website route visits</dt><dd data-progression-stat='route-visits' aria-live='polite'>—</dd></div><div class='progression-stat'><dt>Character artwork discoveries</dt><dd data-progression-stat='character-discoveries' aria-live='polite'>—</dd></div><div class='progression-stat'><dt>Quests complete</dt><dd data-progression-stat='quests-complete' aria-live='polite'>—</dd></div></dl><p class='progression-storage' data-progression-storage-status role='status' aria-live='polite'>Guest progress is stored only in this browser.</p></section><section class='progression-section' aria-labelledby='profile-scores-title'><div class='progression-section-heading'><div><p class='section-kicker'>WEBSITE RECORD</p><h2 id='profile-scores-title'>Scores &amp; activity</h2></div></div><p class='progression-muted'>Supported completed previews may add browser-local personal bests below. Scores are not global rankings or Feast Pass rewards.</p><div class='progression-empty' data-progression-score-list role='list'><div role='listitem'>No local game scores are available yet.</div></div></section><section class='progression-section' aria-labelledby='profile-route-visits-title'><div class='progression-section-heading'><div><p class='section-kicker'>SITE EXPLORATION</p><h2 id='profile-route-visits-title'>World, characters &amp; stories visited</h2></div></div><p class='progression-muted'>These entries record configured website route visits only. A visit does not mean a world was completed, a story was read, or a character’s story or canon was discovered.</p><div class='progression-empty' data-progression-discovery-list><p>No configured website route visits or local Treats are recorded in this browser yet.</p></div><h3>Character artwork viewed</h3><p class='progression-muted'>Artwork views are browser-local discovery records. They do not indicate game, story, or canonical character completion.</p><div class='progression-empty' data-progression-character-list aria-live='polite'><p>No approved character artwork discoveries are recorded in this browser yet.</p></div></section><section class='progression-section' aria-labelledby='profile-achievements-title'><div class='progression-section-heading'><div><p class='section-kicker'>ACHIEVEMENTS</p><h2 id='profile-achievements-title'>Local milestones</h2></div></div><p class='progression-muted'>This list reflects claimed local badges only. A game achievement catalog and connected achievement service are unavailable; no game or connected achievements are represented as earned.</p><div class='progression-empty' data-progression-achievement-list data-profile-achievements-empty aria-live='polite'><p>No local badges have been claimed in this browser.</p></div></section><section class='progression-section' aria-labelledby='profile-showcase-title'><div class='progression-section-heading'><div><p class='section-kicker'>SHOWCASE</p><h2 id='profile-showcase-title'>Your local collection</h2></div></div><p class='progression-muted'>Only badges, titles, and collectibles present in this browser’s current guest profile appear here. Nothing is transferable or publicly displayed.</p><div class='progression-empty' data-progression-collection-list aria-live='polite'><p>No local badges, titles, or collectibles are in this profile yet.</p></div></section><section class='progression-section' data-companion-context='settings' data-companion-copy='This setting changes CSS animations in this tab only; operating-system reduced-motion preferences are always respected.' aria-labelledby='profile-display-settings-title'><div class='progression-section-heading'><div><p class='section-kicker'>APPEARANCE</p><h2 id='profile-display-settings-title'>Display settings</h2></div></div><label for='site-motion-toggle'><input type='checkbox' id='site-motion-toggle' data-site-motion-toggle> Reduce site CSS animations in this tab</label><p class='progression-muted'>This control applies only in this browser tab and is not saved as a preference. Your operating system’s reduced-motion setting is always respected.</p></section><nav class='progression-nav' aria-label='Feast Pass pages'><a href='/feast-pass/'>Feast Pass</a><a href='/feast-pass/quests/'>Quests</a><a href='/feast-pass/rewards/'>Rewards</a><a href='/leaderboards/'>Leaderboards</a><a href='/profile/' aria-current='page'>Guest profile <span class='sr-only'>(current page)</span></a></nav><section class='progression-controls' aria-labelledby='profile-controls-title'><div><h2 id='profile-controls-title'>Local data controls</h2><p>Clear website progression only. Unrelated game and mobile data are not affected.</p></div><button class='button-link button-link--secondary' type='button' data-clear-progression>Clear website progression</button></section></div>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Guest profile · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.guest-profile.rich-text.49ac34b0189e.progression-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "div",
+              "className": "progression-page",
+              "attributes": {
+                "data-progression-page": "profile",
+                "data-companion-context": "guest-profile",
+                "data-companion-copy": "This is a guest-local website profile, not a connected identity."
+              },
+              "style": "",
+              "layerName": "Your guest profile",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.guest-profile.rich-text.853ea0781c6b.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Guest profile",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.7604671e9e8b.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.2d2cc8f5b8dd.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.63cf14e93a33.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest profile",
+                          "text": "Guest profile"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.5db5c2c70e06.progression-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "progression-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Your guest profile",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.9cc584100f82.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST · GUEST JOURNEY",
+                          "text": "TOADAL FEAST · GUEST JOURNEY"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.fc268ec2a697.progression-eyebrow",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-eyebrow",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "LOCAL PROFILE",
+                          "text": "LOCAL PROFILE"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.bafb3b992a3d.h1",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h1",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Your guest profile",
+                          "text": "Your guest profile"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.e20c61714085.progression-lede",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-lede",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "This is a browser-local view of website progression, not a connected ide",
+                          "text": "This is a browser-local view of website progression, not a connected identity. There is no sign-in, account, backend profile, or sync across devices."
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.6f22df42ae88.guest-profile-identity",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "guest-profile-identity",
+                          "attributes": {
+                            "aria-label": "Anonymous guest profile"
+                          },
+                          "style": "",
+                          "layerName": "Guest Feaster",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.4f1c2057e7a3.guest-profile-avatar",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "guest-profile-avatar",
+                                "attributes": {
+                                  "aria-hidden": "true"
+                                },
+                                "style": "",
+                                "layerName": "G",
+                                "text": "G"
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.fa4bff612b39.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest Feaster",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.7b3c581e8453.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "BROWSER-LOCAL GUEST",
+                                      "text": "BROWSER-LOCAL GUEST"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.3645b612ba01.h2",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Guest Feaster",
+                                      "text": "Guest Feaster"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.736a958031e5.progression-muted",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "A non-identifying label for this browser; no account or canonical charac",
+                                      "text": "A non-identifying label for this browser; no account or canonical character ownership is implied."
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.f51d1d081ac2.progression-truth-note",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-truth-note",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "No biography, score, title, character, world, or story history is fabric",
+                          "text": "No biography, score, title, character, world, or story history is fabricated. The profile can show only state that is actually available in this browser."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.1616bd41d3aa.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "profile-status-title"
+                    },
+                    "style": "",
+                    "layerName": "Progress snapshot",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.971ca3b81824.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Progress snapshot",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.e23330f1e5bf.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Progress snapshot",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.25460b07aa57.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "GUEST STATUS",
+                                      "text": "GUEST STATUS"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.92670813eb91.profile-status-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "profile-status-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "profile status title",
+                                      "text": "Progress snapshot"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.4ad63bcfaa37.progression-local-badge",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "progression-local-badge",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Not connected",
+                                "text": "Not connected"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.90a59d5c0366.progression-stat-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "dl",
+                          "className": "progression-stat-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Level—Total XP—XP to next level—Selected local titleNo title selectedSpa",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.2854ceae8b4c.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Level—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.3b6d3a67119e.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Level",
+                                      "text": "Level"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.dafd12a4ab40.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "level",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.045e6f0af6b3.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Total XP—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.4f989eb97519.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Total XP",
+                                      "text": "Total XP"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.27b5e4e26ee2.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "xp",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.14461de553ee.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "XP to next level—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.f2f5418901b8.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "XP to next level",
+                                      "text": "XP to next level"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.2a882d9bf9f8.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "xp-to-next",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.648b5b3dd74d.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Selected local titleNo title selected",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.ba6a3f4fe287.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Selected local title",
+                                      "text": "Selected local title"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.e4162c20247c.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "selected-title",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "No title selected",
+                                      "text": "No title selected"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.b68402360d97.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Sparks—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.312bf52097f5.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Sparks",
+                                      "text": "Sparks"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.90ae11b098e7.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "sparks",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.f7bcf9d57e63.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Treats0",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.a33401e67c4a.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Treats",
+                                      "text": "Treats"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.a483b1274d4a.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "treats",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "0",
+                                      "text": "0"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.b626c5c308c7.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Streak—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.544cce0951ee.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Streak",
+                                      "text": "Streak"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.81ef7a6cdf7c.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "streak",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.f7535a71c64b.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Website route visits—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.e5cb8e493068.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Website route visits",
+                                      "text": "Website route visits"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.520591886ed5.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "route-visits",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.75af4e7b57fa.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Character artwork discoveries—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.27a83e51dfef.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Character artwork discoveries",
+                                      "text": "Character artwork discoveries"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.33ae8651bab4.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "character-discoveries",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.497437a2333c.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Quests complete—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.e565eaca3be1.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Quests complete",
+                                      "text": "Quests complete"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.dc82f53acf1c.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "quests-complete",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.7ddd45824b7b.progression-storage",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-storage",
+                          "attributes": {
+                            "data-progression-storage-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Guest progress is stored only in this browser.",
+                          "text": "Guest progress is stored only in this browser."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.8c9f7732b564.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "profile-scores-title"
+                    },
+                    "style": "",
+                    "layerName": "Scores & activity",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.9f1e10c2ed29.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Scores & activity",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.f97fcc00f555.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Scores & activity",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.904b40048d6c.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "WEBSITE RECORD",
+                                      "text": "WEBSITE RECORD"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.6593b020a78d.profile-scores-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "profile-scores-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "profile scores title",
+                                      "text": "Scores & activity"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.681f9dd14ace.progression-muted",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Supported completed previews may add browser-local personal bests below.",
+                          "text": "Supported completed previews may add browser-local personal bests below. Scores are not global rankings or Feast Pass rewards."
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.f66795758066.progression-empty",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-empty",
+                          "attributes": {
+                            "data-progression-score-list": "",
+                            "role": "list"
+                          },
+                          "style": "",
+                          "layerName": "No local game scores are available yet.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.a542188c3f71.div",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "role": "listitem"
+                                },
+                                "style": "",
+                                "layerName": "No local game scores are available yet.",
+                                "text": "No local game scores are available yet."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.504ae47ee2f2.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "profile-route-visits-title"
+                    },
+                    "style": "",
+                    "layerName": "World, characters & stories visited",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.f9ad43740659.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "World, characters & stories visited",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.083c3eb72183.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "World, characters & stories visited",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.90b4e7c4ad48.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "SITE EXPLORATION",
+                                      "text": "SITE EXPLORATION"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.fc3ed649980b.profile-route-visits-tit",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "profile-route-visits-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "profile route visits title",
+                                      "text": "World, characters & stories visited"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.e0e00933da52.progression-muted",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "These entries record configured website route visits only. A visit does ",
+                          "text": "These entries record configured website route visits only. A visit does not mean a world was completed, a story was read, or a character’s story or canon was discovered."
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.cdb83cc95e04.progression-empty",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-empty",
+                          "attributes": {
+                            "data-progression-discovery-list": ""
+                          },
+                          "style": "",
+                          "layerName": "No configured website route visits or local Treats are recorded in this ",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.8d392ac7954b.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No configured website route visits or local Treats are recorded in this ",
+                                "text": "No configured website route visits or local Treats are recorded in this browser yet."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.4939ea6a610c.h3",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h3",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Character artwork viewed",
+                          "text": "Character artwork viewed"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.2ffa3fcdb459.progression-muted",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Artwork views are browser-local discovery records. They do not indicate ",
+                          "text": "Artwork views are browser-local discovery records. They do not indicate game, story, or canonical character completion."
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.95febf6c7f75.progression-empty",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-empty",
+                          "attributes": {
+                            "data-progression-character-list": "",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "No approved character artwork discoveries are recorded in this browser y",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.62fc21ee6139.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No approved character artwork discoveries are recorded in this browser y",
+                                "text": "No approved character artwork discoveries are recorded in this browser yet."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.3be237622de9.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "profile-achievements-title"
+                    },
+                    "style": "",
+                    "layerName": "Local milestones",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.ad408172e5ad.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Local milestones",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.fd6992e9eb43.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Local milestones",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.1649ae966be9.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "ACHIEVEMENTS",
+                                      "text": "ACHIEVEMENTS"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.8ba835c4e142.profile-achievements-tit",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "profile-achievements-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "profile achievements title",
+                                      "text": "Local milestones"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.7439220535e5.progression-muted",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "This list reflects claimed local badges only. A game achievement catalog",
+                          "text": "This list reflects claimed local badges only. A game achievement catalog and connected achievement service are unavailable; no game or connected achievements are represented as earned."
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.b1eed8a274ab.progression-empty",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-empty",
+                          "attributes": {
+                            "data-progression-achievement-list": "",
+                            "data-profile-achievements-empty": "",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "No local badges have been claimed in this browser.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.bffe75dc58f8.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No local badges have been claimed in this browser.",
+                                "text": "No local badges have been claimed in this browser."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.4070e3b3a49b.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "profile-showcase-title"
+                    },
+                    "style": "",
+                    "layerName": "Your local collection",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.75e9dfe9608c.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Your local collection",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.20559b64841a.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Your local collection",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.d1b24f331e37.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "SHOWCASE",
+                                      "text": "SHOWCASE"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.7958cf2e4069.profile-showcase-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "profile-showcase-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "profile showcase title",
+                                      "text": "Your local collection"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.17b47b41868c.progression-muted",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Only badges, titles, and collectibles present in this browser’s current ",
+                          "text": "Only badges, titles, and collectibles present in this browser’s current guest profile appear here. Nothing is transferable or publicly displayed."
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.3e9341a5a333.progression-empty",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-empty",
+                          "attributes": {
+                            "data-progression-collection-list": "",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "No local badges, titles, or collectibles are in this profile yet.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.55054a1001e2.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No local badges, titles, or collectibles are in this profile yet.",
+                                "text": "No local badges, titles, or collectibles are in this profile yet."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.e3320d1b418b.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "data-companion-context": "settings",
+                      "data-companion-copy": "This setting changes CSS animations in this tab only; operating-system reduced-motion preferences are always respected.",
+                      "aria-labelledby": "profile-display-settings-title"
+                    },
+                    "style": "",
+                    "layerName": "Display settings",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.b04ad686f818.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Display settings",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.395cb1c5a56b.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Display settings",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-profile.rich-text.78ec66e72ec9.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "APPEARANCE",
+                                      "text": "APPEARANCE"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-profile.rich-text.3454c85e3a15.profile-display-settings",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "profile-display-settings-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "profile display settings title",
+                                      "text": "Display settings"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.7398d6e13d24.label",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "label",
+                          "className": "",
+                          "attributes": {
+                            "for": "site-motion-toggle"
+                          },
+                          "style": "",
+                          "layerName": "Reduce site CSS animations in this tab",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.389803bf2c95.site-motion-toggle",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "input",
+                                "className": "",
+                                "attributes": {
+                                  "type": "checkbox",
+                                  "id": "site-motion-toggle",
+                                  "data-site-motion-toggle": ""
+                                },
+                                "style": "",
+                                "layerName": "site motion toggle",
+                                "mode": "inherit",
+                                "children": []
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.405ea888409a.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": " Reduce site CSS animations in this tab",
+                                "layerName": "Text: Reduce site CSS animations in this tab"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.4b5c9302612f.progression-muted",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "This control applies only in this browser tab and is not saved as a pref",
+                          "text": "This control applies only in this browser tab and is not saved as a preference. Your operating system’s reduced-motion setting is always respected."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.d13b7db00c20.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav",
+                    "attributes": {
+                      "aria-label": "Feast Pass pages"
+                    },
+                    "style": "",
+                    "layerName": "Feast PassQuestsRewardsLeaderboardsGuest profile (current page)",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.771f8731488a.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.9fcabd7a5afc.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Quests",
+                          "href": "/feast-pass/quests/",
+                          "label": "Quests"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.4044dc942d9b.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Rewards",
+                          "href": "/feast-pass/rewards/",
+                          "label": "Rewards"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.bb4774fbc0b5.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Leaderboards",
+                          "href": "/leaderboards/",
+                          "label": "Leaderboards"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.bdb3890f503d.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Guest profile (current page)",
+                          "href": "/profile/",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.257413412610.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Guest profile ",
+                                "layerName": "Text: Guest profile"
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.64a0ab0d5516.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "(current page)",
+                                "text": "(current page)"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.46d3fbd063ed.progression-controls",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-controls",
+                    "attributes": {
+                      "aria-labelledby": "profile-controls-title"
+                    },
+                    "style": "",
+                    "layerName": "Local data controls",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.b0845656f86e.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Local data controls",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.a0fcbc4a4e79.profile-controls-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "profile-controls-title"
+                                },
+                                "style": "",
+                                "layerName": "profile controls title",
+                                "text": "Local data controls"
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.54b3318ea0f8.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Clear website progression only. Unrelated game and mobile data are not a",
+                                "text": "Clear website progression only. Unrelated game and mobile data are not affected."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.07cc75f95836.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "data-clear-progression": ""
+                          },
+                          "style": "",
+                          "layerName": "Clear website progression",
+                          "label": "Clear website progression"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

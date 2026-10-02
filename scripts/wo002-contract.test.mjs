@@ -6,12 +6,15 @@ import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import test from 'node:test';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const repoRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const projectManifestPath = process.env.TOADAL_PROJECT
   ? path.resolve(process.cwd(), process.env.TOADAL_PROJECT)
   : path.join(repoRoot, 'studio-project', 'toadal-feast-website', 'project.json');
 const projectRoot = path.dirname(projectManifestPath);
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8').replace(/^\uFEFF/, ''));
@@ -37,12 +40,25 @@ const games = gameIndex.games.map((record) => ({
 const pageByRoute = new Map(pages.map((page) => [page.route, page]));
 const gameBySlug = new Map(games.map((game) => [game.slug, game]));
 
+// Remove only owner-editor metadata attributes for semantic contract matching.
+function semanticMarkup(markup) {
+  return markup.replace(/<[a-z][^>]*>/gi, (tag) =>
+    tag.replace(/\sdata-studio-(?:component|edit-field)=(['"])[^'"]*\1/g, ''));
+}
+
 function componentHtml(page, variant) {
   const component = page.document.components.find((entry) =>
-    entry.type === 'core.rich-text' && entry.props?.variant === variant,
+    (entry.type === 'core.rich-text' || entry.props?.authoringVersion) && entry.props?.variant === variant,
   );
-  assert.ok(component, `${page.route} must contain rich-text variant ${variant}`);
-  return component.props.html;
+  assert.ok(component, `${page.route} must contain authored component variant ${variant}`);
+  return semanticMarkup(projectPage(projectRoot, { ...page.document, components: [component] }));
+}
+
+function pageHtml(page) {
+  return page.document.components
+    .filter((component) => component.props?.authoringVersion || typeof component.props?.html === 'string')
+    .map((component) => semanticMarkup(projectPage(projectRoot, { ...page.document, components: [component] })))
+    .join('\n');
 }
 
 function htmlAttribute(tag, name) {
@@ -153,10 +169,10 @@ test('all four registered games and every Play card remain PREVIEW', () => {
   const playPage = pageByRoute.get('/play/');
   assert.ok(playPage, 'Play page must be registered');
   const html = componentHtml(playPage, 'wo002-play-hub');
-  const cards = [...html.matchAll(/<article\b[^>]*class="[^"]*\bplay-card\b[^"]*"[^>]*>/g)]
+  const cards = [...html.matchAll(/<article\b[^>]*class=(['"])[^'"]*\bplay-card\b[^'"]*\1[^>]*>/g)]
     .map(([tag]) => ({
-      id: tag.match(/\bdata-game-id="([^"]+)"/)?.[1],
-      status: tag.match(/\bdata-game-status="([^"]+)"/)?.[1],
+      id: htmlAttribute(tag, 'data-game-id'),
+      status: htmlAttribute(tag, 'data-game-status'),
     }));
   assert.equal(cards.length, games.length, 'Play must show exactly one card for each registered game');
   assert.deepEqual(cards.map((card) => card.id).sort(), games.map((game) => game.slug).sort());
@@ -190,7 +206,7 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
     'Home SEO title should stay aligned with its visible title');
   assert.equal(homePage.document.seo.description, homePage.document.description,
     'Home SEO description should stay aligned with its route description');
-  const publicEmptyState = homePage.document.components.map((component) => component.props?.html ?? '').join('\n');
+  const publicEmptyState = pageHtml(homePage);
   assert.match(publicEmptyState, /No PUBLIC browser games are available yet/,
     'the empty public filter should explain the actual public-state gate');
   assert.doesNotMatch(publicEmptyState, /Qualified staging previews are being connected/,
@@ -232,7 +248,7 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
 test('Home companion is present and each context has its own copy', () => {
   const homePage = pageByRoute.get('/');
   assert.ok(homePage, 'Home page must be registered');
-  const markup = homePage.document.components.map((component) => component.props?.html ?? '').join('\n');
+  const markup = pageHtml(homePage);
   assert.match(markup, /<aside\b[^>]*\bdata-companion(?:\s|>|=)/i, 'contextual companion must be present');
   const contexts = [...markup.matchAll(/<[^>]*\bdata-companion-context=(?:"[^"]+"|'[^']+')[^>]*>/gi)]
     .map(([tag]) => tag);
@@ -259,15 +275,15 @@ test('launch gating exposes only the Wicked Bites preview and keeps CLAW held', 
 
   const detailLaunches = pages
     .filter((page) => page.route.startsWith('/games/'))
-    .flatMap((page) => [...componentHtml(page, 'wo002-game-detail').matchAll(/href="(\/player\/[^"]+)"/g)]
-      .map((match) => ({ route: page.route, href: match[1] })));
+    .flatMap((page) => [...componentHtml(page, 'wo002-game-detail').matchAll(/\bhref=(['"])(\/player\/[^'"]+)\1/g)]
+      .map((match) => ({ route: page.route, href: match[2] })));
   assert.deepEqual(detailLaunches, [{ route: '/games/wicked-bites/', href: '/player/wicked-bites/' }]);
 
   const playerPage = pageByRoute.get('/player/wicked-bites/');
   assert.ok(playerPage, 'Wicked Bites player page must exist');
   const playerHtml = componentHtml(playerPage, 'wo002-browser-player');
-  const iframeSources = [...playerHtml.matchAll(/<iframe\b[^>]*\bsrc="([^"]+)"[^>]*>/g)]
-    .map((match) => match[1]);
+  const iframeSources = [...playerHtml.matchAll(/<iframe\b[^>]*\bsrc=(['"])([^'"]+)\1[^>]*>/g)]
+    .map((match) => match[2]);
   assert.deepEqual(iframeSources, ['/public/games/wicked-bites/index.html']);
   const iframeTag = playerHtml.match(/<iframe\b[^>]*>/i)?.[0];
   assert.ok(iframeTag, 'player must contain its cartridge iframe');
@@ -286,7 +302,7 @@ test('launch gating exposes only the Wicked Bites preview and keeps CLAW held', 
     'the host must detect focus entering the opaque-origin iframe without inspecting cartridge internals');
   assert.equal(htmlAttribute(iframeTag, 'allow'), 'fullscreen',
     'the iframe should receive only its declared fullscreen capability');
-  const toolbarTag = playerHtml.match(/<div\b[^>]*class="wo002-player-toolbar"[^>]*>/i)?.[0];
+  const toolbarTag = playerHtml.match(/<div\b[^>]*class=(['"])wo002-player-toolbar\1[^>]*>/i)?.[0];
   assert.ok(toolbarTag, 'player toolbar must exist');
   assert.equal(htmlAttribute(toolbarTag, 'role'), 'group');
   assert.equal(htmlAttribute(toolbarTag, 'aria-label'), 'Browser player controls');

@@ -1,0 +1,135 @@
+{
+  "schema": "toadal-feast.owner-native-studio-qualification.v1",
+  "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\studio-project\\toadal-feast-website\\project.json",
+  "studio": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\studio-owner-authoring-20261002\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER",
+  "node": "v22.23.2",
+  "qa": {
+    "level": "full",
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "graph": {
+      "dangling": []
+    },
+    "accessibility": {
+      "checks": {
+        "altText": true,
+        "iframeTitles": true,
+        "controlNames": true,
+        "headingHierarchy": true,
+        "focusVisibility": true,
+        "keyboardOperation": true,
+        "reducedMotion": true,
+        "touchTargets": true,
+        "contrastHeuristics": true
+      },
+      "issues": [],
+      "errors": 0,
+      "warnings": 0
+    },
+    "performance": {
+      "files": 138,
+      "totalBytes": 42372192,
+      "htmlBytes": 3351008,
+      "largest": [
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/reward.png",
+          "bytes": 1733730
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/maintenance.png",
+          "bytes": 1663323
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+          "bytes": 1577938
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+          "bytes": 1528531
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/news.png",
+          "bytes": 1527629
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "bytes": 1505510
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/community.png",
+          "bytes": 1480074
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/merch.png",
+          "bytes": 1457991
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+          "bytes": 1410487
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/settings.png",
+          "bytes": 1393918
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/privacy.png",
+          "bytes": 1338522
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/search.png",
+          "bytes": 1335024
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/rating.png",
+          "bytes": 1333728
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/register.png",
+          "bytes": 1321069
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+          "bytes": 1320726
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/contact.png",
+          "bytes": 1313872
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/survey.png",
+          "bytes": 1300901
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/delete-account.png",
+          "bytes": 1300325
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/notifications.png",
+          "bytes": 1299116
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+          "bytes": 1279993
+        }
+      ],
+      "largeFileWarnings": 20
+    },
+    "referenceFiles": 103,
+    "previewFiles": 138,
+    "tests": {
+      "ok": true,
+      "status": 0,
+      "stdout": "otation\n  ---\n  duration_ms: 1.064\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver PATCHes exact canvas items for a valid minimum size and maximum rotation boundaries\nok 94 - actual Studio receiver PATCHes exact canvas items for a valid minimum size and maximum rotation boundaries\n  ---\n  duration_ms: 1.1394\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects canvas messages for other component types\nok 95 - actual Studio receiver rejects canvas messages for other component types\n  ---\n  duration_ms: 3.3081\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects canvas transforms in Content mode\nok 96 - actual Studio receiver rejects canvas transforms in Content mode\n  ---\n  duration_ms: 1.156\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects locked and hidden canvas components from current page data\nok 97 - actual Studio receiver rejects locked and hidden canvas components from current page data\n  ---\n  duration_ms: 2.1547\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects invalid or missing canvas item indices\nok 98 - actual Studio receiver rejects invalid or missing canvas item indices\n  ---\n  duration_ms: 7.2427\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects canvas patches with unknown keys atomically\nok 99 - actual Studio receiver rejects canvas patches with unknown keys atomically\n  ---\n  duration_ms: 6.8307\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects non-finite and string values for every canvas transform key\nok 100 - actual Studio receiver rejects non-finite and string values for every canvas transform key\n  ---\n  duration_ms: 18.5029\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects negative and undersized canvas width or height\nok 101 - actual Studio receiver rejects negative and undersized canvas width or height\n  ---\n  duration_ms: 8.5578\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects canvas angles beyond 360 degrees and excessive coordinates\nok 102 - actual Studio receiver rejects canvas angles beyond 360 degrees and excessive coordinates\n  ---\n  duration_ms: 5.4038\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects malformed or empty canvas patch objects\nok 103 - actual Studio receiver rejects malformed or empty canvas patch objects\n  ---\n  duration_ms: 10.7913\n  type: 'test'\n  ...\n# Subtest: actual Studio receiver rejects canvas messages with invalid source/origin/session/protocol before reading the page\nok 104 - actual Studio receiver rejects canvas messages with invalid source/origin/session/protocol before reading the page\n  ---\n  duration_ms: 7.1651\n  type: 'test'\n  ...\n# Subtest: actual owner preview configuration receiver accepts its parent and sends canvas messages with session and parent origin\nok 105 - actual owner preview configuration receiver accepts its parent and sends canvas messages with session and parent origin\n  ---\n  duration_ms: 1.456\n  type: 'test'\n  ...\n# Subtest: actual owner preview configuration receiver rejects wrong parent/origin/session/protocol/kind and malformed data\nok 106 - actual owner preview configuration receiver rejects wrong parent/origin/session/protocol/kind and malformed data\n  ---\n  duration_ms: 11.3797\n  type: 'test'\n  ...\n# Subtest: native presentation preserves existing section anchors and layout/runtime metadata\nok 107 - native presentation preserves existing section anchors and layout/runtime metadata\n  ---\n  duration_ms: 3.2535\n  type: 'test'\n  ...\n# Subtest: native flow containers do not acquire legacy intrinsic-size containment by default\nok 108 - native flow containers do not acquire legacy intrinsic-size containment by default\n  ---\n  duration_ms: 87.8238\n  type: 'test'\n  ...\n# Subtest: protected compatibility leaves validate exact version, bytes and bounded policy\nok 109 - protected compatibility leaves validate exact version, bytes and bounded policy\n  ---\n  duration_ms: 3.1027\n  type: 'test'\n  ...\n# Subtest: protected runtime leaves cannot be unlocked or replaced through typed component mutations\nok 110 - protected runtime leaves cannot be unlocked or replaced through typed component mutations\n  ---\n  duration_ms: 34.0936\n  type: 'test'\n  ...\n# Subtest: background replacement preserves approved layered paint and shorthand sizing\nok 111 - background replacement preserves approved layered paint and shorthand sizing\n  ---\n  duration_ms: 0.7626\n  type: 'test'\n  ...\n# Subtest: link labels with inline decoration are individually editable without flattening children\nok 112 - link labels with inline decoration are individually editable without flattening children\n  ---\n  duration_ms: 0.7893\n  type: 'test'\n  ...\n# Subtest: studio defaultProps inserts native version 1 core and layout components into native projects\nok 113 - studio defaultProps inserts native version 1 core and layout components into native projects\n  ---\n  duration_ms: 2.7027\n  type: 'test'\n  ...\n# Subtest: studio defaultProps preserves original definition defaults for legacy projects\nok 114 - studio defaultProps preserves original definition defaults for legacy projects\n  ---\n  duration_ms: 0.8716\n  type: 'test'\n  ...\n# Subtest: studio readCompFields removes empty attributes.id and aria-label while retaining nonempty attributes\nok 115 - studio readCompFields removes empty attributes.id and aria-label while retaining nonempty attributes\n  ---\n  duration_ms: 1.479\n  type: 'test'\n  ...\n# Subtest: real cloneComponentWithIds import remaps nested local anchors and their ARIA, label, and href references\nok 116 - real cloneComponentWithIds import remaps nested local anchors and their ARIA, label, and href references\n  ---\n  duration_ms: 0.9437\n  type: 'test'\n  ...\n# Subtest: legacy cloning preserves original props without native anchor or reference rewriting\nok 117 - legacy cloning preserves original props without native anchor or reference rewriting\n  ---\n  duration_ms: 0.2944\n  type: 'test'\n  ...\n# Subtest: Copy/Paste requests backend fresh-ID cloning rather than publishing duplicate child IDs\nok 118 - Copy/Paste requests backend fresh-ID cloning rather than publishing duplicate child IDs\n  ---\n  duration_ms: 2.0384\n  type: 'test'\n  ...\n# Subtest: proposal component definition contract and exact Insert taxonomy are executable\nok 119 - proposal component definition contract and exact Insert taxonomy are executable\n  ---\n  duration_ms: 1.9797\n  type: 'test'\n  ...\n# Subtest: plugin failures are visible and full extension points remain permission gated\nok 120 - plugin failures are visible and full extension points remain permission gated\n  ---\n  duration_ms: 1.8152\n  type: 'test'\n  ...\n# Subtest: nested Layers operations persist across reopen and validate through one project model\nok 121 - nested Layers operations persist across reopen and validate through one project model\n  ---\n  duration_ms: 414.4101\n  type: 'test'\n  ...\n# Subtest: Studio browser surface exposes safe Design/Content modes, searchable Insert, and complete nested Layers actions\nok 122 - Studio browser surface exposes safe Design/Content modes, searchable Insert, and complete nested Layers actions\n  ---\n  duration_ms: 2.035\n  type: 'test'\n  ...\n# Subtest: no-code gallery lightbox and generic game-site blocks render without changing frozen defaults\nok 123 - no-code gallery lightbox and generic game-site blocks render without changing frozen defaults\n  ---\n  duration_ms: 490.3725\n  type: 'test'\n  ...\n# Subtest: accessibility inspector proves the full published-site acceptance surface\nok 124 - accessibility inspector proves the full published-site acceptance surface\n  ---\n  duration_ms: 2630.2788\n  type: 'test'\n  ...\n# Subtest: AI/MCP structural parity covers nested group, reparent, metadata and undo\nok 125 - AI/MCP structural parity covers nested group, reparent, metadata and undo\n  ---\n  duration_ms: 1735.4749\n  type: 'test'\n  ...\n# Subtest: versioned project schemas reject unsupported implicit jumps\nok 126 - versioned project schemas reject unsupported implicit jumps\n  ---\n  duration_ms: 199.5453\n  type: 'test'\n  ...\n# Subtest: proposal prose conformance ledger is complete, evidence-backed and scope-correct\nok 127 - proposal prose conformance ledger is complete, evidence-backed and scope-correct\n  ---\n  duration_ms: 14.8694\n  type: 'test'\n  ...\n# Subtest: catalog and prose ledgers agree on authoritative completion scope\nok 128 - catalog and prose ledgers agree on authoritative completion scope\n  ---\n  duration_ms: 0.3823\n  type: 'test'\n  ...\n# Subtest: Product closure ledger accounts for the complete authoritative roadmap scope\nok 129 - Product closure ledger accounts for the complete authoritative roadmap scope\n  ---\n  duration_ms: 54.3445\n  type: 'test'\n  ...\n# Subtest: Foundation migration is explicit, backup-first and reversible\nok 130 - Foundation migration is explicit, backup-first and reversible\n  ---\n  duration_ms: 8.1087\n  type: 'test'\n  ...\n# Subtest: Final published-site gate is editor-independent, valid and reference-exact\nok 131 - Final published-site gate is editor-independent, valid and reference-exact\n  ---\n  duration_ms: 245.841\n  type: 'test'\n  ...\n# Subtest: project loads all canonical pages, games and assets\nok 132 - project loads all canonical pages, games and assets\n  ---\n  duration_ms: 7.4694\n  type: 'test'\n  ...\n# Subtest: project validates without errors\nok 133 - project validates without errors\n  ---\n  duration_ms: 10.9811\n  type: 'test'\n  ...\n# Subtest: path resolution blocks project-root escape\nok 134 - path resolution blocks project-root escape\n  ---\n  duration_ms: 0.6145\n  type: 'test'\n  ...\n# Subtest: compat renderer is byte-identical to frozen current distribution\nok 135 - compat renderer is byte-identical to frozen current distribution\n  ---\n  duration_ms: 229.7828\n  type: 'test'\n  ...\n# Subtest: every game route resolves and game assets resolve\nok 136 - every game route resolves and game assets resolve\n  ---\n  duration_ms: 4.4601\n  type: 'test'\n  ...\n# Subtest: TOADAL identity stays separate from generic green frog naming\nok 137 - TOADAL identity stays separate from generic green frog naming\n  ---\n  duration_ms: 3.9915\n  type: 'test'\n  ...\n# Subtest: typed home hero properties persist through shared renderer\nok 138 - typed home hero properties persist through shared renderer\n  ---\n  duration_ms: 390.2231\n  type: 'test'\n  ...\n# Subtest: atomic page mutation detects stale editor revisions\nok 139 - atomic page mutation detects stale editor revisions\n  ---\n  duration_ms: 12.6753\n  type: 'test'\n  ...\n# Subtest: reference graph resolves all current project links\nok 140 - reference graph resolves all current project links\n  ---\n  duration_ms: 6.1251\n  type: 'test'\n  ...\n# Subtest: TOADAL core plugin manifest valid + explicit permissions\nok 141 - TOADAL core plugin manifest valid + explicit permissions\n  ---\n  duration_ms: 6.1123\n  type: 'test'\n  ...\n# Subtest: theme records use semantic token registry\nok 142 - theme records use semantic token registry\n  ---\n  duration_ms: 5.1632\n  type: 'test'\n  ...\n# Subtest: history stack supports reversible editor commands\nok 143 - history stack supports reversible editor commands\n  ---\n  duration_ms: 0.4745\n  type: 'test'\n  ...\n# Subtest: migration registry refuses implicit schema jumps\nok 144 - migration registry refuses implicit schema jumps\n  ---\n  duration_ms: 0.5067\n  type: 'test'\n  ...\n# Subtest: theme validation rejects CSS-breaking token values\nok 145 - theme validation rejects CSS-breaking token values\n  ---\n  duration_ms: 4.8301\n  type: 'test'\n  ...\n# Subtest: game manager edit changes output and exact revert restores frozen parity\nok 146 - game manager edit changes output and exact revert restores frozen parity\n  ---\n  duration_ms: 641.6705\n  type: 'test'\n  ...\n# Subtest: theme and font edit changes CSS and exact revert restores frozen parity\nok 147 - theme and font edit changes CSS and exact revert restores frozen parity\n  ---\n  duration_ms: 837.9044\n  type: 'test'\n  ...\n# Subtest: inserted content component renders and deletion restores exact parity\nok 148 - inserted content component renders and deletion restores exact parity\n  ---\n  duration_ms: 807.4842\n  type: 'test'\n  ...\n# Subtest: asset replacement materializes in output and reset restores exact parity\nok 149 - asset replacement materializes in output and reset restores exact parity\n  ---\n  duration_ms: 816.2188\n  type: 'test'\n  ...\n# Subtest: named page snapshots are created for recovery/version workflow\nok 150 - named page snapshots are created for recovery/version workflow\n  ---\n  duration_ms: 12.9076\n  type: 'test'\n  ...\n# Subtest: recovered V7 reference library is mounted but inert by default\nok 151 - recovered V7 reference library is mounted but inert by default\n  ---\n  duration_ms: 3.7213\n  type: 'test'\n  ...\n# Subtest: exact SHA import dedupe reuses an existing project asset\nok 152 - exact SHA import dedupe reuses an existing project asset\n  ---\n  duration_ms: 12.2938\n  type: 'test'\n  ...\n# Subtest: editable 404 content changes output and exact revert restores frozen parity\nok 153 - editable 404 content changes output and exact revert restores frozen parity\n  ---\n  duration_ms: 770.8242\n  type: 'test'\n  ...\n# Subtest: inserted visual blocks can reorder without crossing compatibility content\nok 154 - inserted visual blocks can reorder without crossing compatibility content\n  ---\n  duration_ms: 847.3743\n  type: 'test'\n  ...\n# Subtest: clean website starters are independent, valid, warning-free and render generic site chrome\nok 155 - clean website starters are independent, valid, warning-free and render generic site chrome\n  ---\n  duration_ms: 204.6074\n  type: 'test'\n  ...\n# Subtest: starter project carries the reusable website-builder essentials\nok 156 - starter project carries the reusable website-builder essentials\n  ---\n  duration_ms: 17.7131\n  type: 'test'\n  ...\n# Subtest: Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\nok 157 - Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\n  ---\n  duration_ms: 1.373\n  type: 'test'\n  ...\n# Subtest: Studio server exposes safe clean-project creation and project-level settings\nok 158 - Studio server exposes safe clean-project creation and project-level settings\n  ---\n  duration_ms: 0.3728\n  type: 'test'\n  ...\n# Subtest: general websites do not inherit recovered TOADAL baseline validation rules\nok 159 - general websites do not inherit recovered TOADAL baseline validation rules\n  ---\n  duration_ms: 0.2245\n  type: 'test'\n  ...\n# Subtest: portable project backups round-trip safely into independent projects with collision-safe ids\nok 160 - portable project backups round-trip safely into independent projects with collision-safe ids\n  ---\n  duration_ms: 1966.0556\n  type: 'test'\n  ...\n# Subtest: optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\nok 161 - optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\n  ---\n  duration_ms: 2.0905\n  type: 'test'\n  ...\n# Subtest: Studio exposes a lightweight ping endpoint for launch and connection checks\nok 162 - Studio exposes a lightweight ping endpoint for launch and connection checks\n  ---\n  duration_ms: 0.4494\n  type: 'test'\n  ...\n# Subtest: HUD authoring preserves a local recovery copy around autosave failures\nok 163 - HUD authoring preserves a local recovery copy around autosave failures\n  ---\n  duration_ms: 0.4322\n  type: 'test'\n  ...\n# Subtest: Windows launchers share one health-aware Node 22+ launcher\nok 164 - Windows launchers share one health-aware Node 22+ launcher\n  ---\n  duration_ms: 1.4658\n  type: 'test'\n  ...\n# Subtest: Tier 1 closure primitives work together without changing the source project\nok 165 - Tier 1 closure primitives work together without changing the source project\n  ---\n  duration_ms: 2833.9465\n  type: 'test'\n  ...\n# Subtest: Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\nok 166 - Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\n  ---\n  duration_ms: 15.2977\n  type: 'test'\n  ...\n# Subtest: Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\nok 167 - Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\n  ---\n  duration_ms: 1327.6334\n  type: 'test'\n  ...\n# Subtest: Tier 3 catalogs expose the complete polish/productivity contract\nok 168 - Tier 3 catalogs expose the complete polish/productivity contract\n  ---\n  duration_ms: 10.1617\n  type: 'test'\n  ...\n# Subtest: Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\nok 169 - Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\n  ---\n  duration_ms: 1511.758\n  type: 'test'\n  ...\n# Subtest: Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\nok 170 - Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\n  ---\n  duration_ms: 2489.4609\n  type: 'test'\n  ...\n# Subtest: Tier 4 catalogs and architecture expose the advanced authoring contract\nok 171 - Tier 4 catalogs and architecture expose the advanced authoring contract\n  ---\n  duration_ms: 10.3636\n  type: 'test'\n  ...\n# Subtest: Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\nok 172 - Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\n  ---\n  duration_ms: 623.6088\n  type: 'test'\n  ...\n# Subtest: Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\nok 173 - Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\n  ---\n  duration_ms: 7782.0535\n  type: 'test'\n  ...\n1..173\n# tests 173\n# suites 0\n# pass 173\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 36537.4476\n",
+      "stderr": "",
+      "error": null
+    }
+  },
+  "doctor": {
+    "exitCode": 0,
+    "stdout": "{\n  \"ok\": true,\n  \"server\": {\n    \"name\": \"toadal-studio\",\n    \"version\": \"1.4.2\"\n  },\n  \"checks\": [\n    {\n      \"name\": \"config:plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.codex-plugin/plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.vscode/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.cursor/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AGENTS.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/OPERATING_CONTRACT.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_MANIFEST.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_CAPABILITY_LEDGER.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:skills/toadal-studio/SKILL.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"portable-plugin-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"schema\": \"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json\"\n      }\n    },\n    {\n      \"name\": \"portable-mcp-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"server\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\n            \"--no-warnings\",\n            \"--experimental-strip-types\",\n            \"apps/mcp/server.ts\"\n          ],\n          \"cwd\": \"./\"\n        }\n      }\n    },\n    {\n      \"name\": \"codex-compat-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"skills\": \"./skills/\",\n        \"mcpServers\": \"./.mcp.json\"\n      }\n    },\n    {\n      \"name\": \"tool-names-unique\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-annotations\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"modern-discovery\",\n      \"ok\": true,\n      \"details\": [\n        \"2026-07-28\",\n        \"2025-11-25\"\n      ]\n    },\n    {\n      \"name\": \"legacy-initialize\",\n      \"ok\": true,\n      \"details\": \"2025-11-25\"\n    },\n    {\n      \"name\": \"tools-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-call\",\n      \"ok\": true,\n      \"details\": {\n        \"valid\": true,\n        \"errors\": 0,\n        \"warnings\": 0\n      }\n    },\n    {\n      \"name\": \"resource-read\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"prompts-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 5\n      }\n    },\n    {\n      \"name\": \"stdio-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=stdio project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=http url=http://127.0.0.1:44196/mcp project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-origin-protection\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 403\n      }\n    },\n    {\n      \"name\": \"http-rate-limit\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 429\n      }\n    }\n  ]\n}\n",
+    "stderr": ""
+  }
+}

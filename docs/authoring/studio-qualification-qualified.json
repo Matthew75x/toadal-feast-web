@@ -1,0 +1,135 @@
+{
+  "schema": "toadal-feast.owner-native-studio-qualification.v1",
+  "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\studio-project\\toadal-feast-website\\project.json",
+  "studio": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\studio-owner-authoring-20261002\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER",
+  "node": "v22.23.2",
+  "qa": {
+    "level": "full",
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "graph": {
+      "dangling": []
+    },
+    "accessibility": {
+      "checks": {
+        "altText": true,
+        "iframeTitles": true,
+        "controlNames": true,
+        "headingHierarchy": true,
+        "focusVisibility": true,
+        "keyboardOperation": true,
+        "reducedMotion": true,
+        "touchTargets": true,
+        "contrastHeuristics": true
+      },
+      "issues": [],
+      "errors": 0,
+      "warnings": 0
+    },
+    "performance": {
+      "files": 138,
+      "totalBytes": 42372192,
+      "htmlBytes": 3351008,
+      "largest": [
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/reward.png",
+          "bytes": 1733730
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/maintenance.png",
+          "bytes": 1663323
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+          "bytes": 1577938
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+          "bytes": 1528531
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/news.png",
+          "bytes": 1527629
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "bytes": 1505510
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/community.png",
+          "bytes": 1480074
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/merch.png",
+          "bytes": 1457991
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+          "bytes": 1410487
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/settings.png",
+          "bytes": 1393918
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/privacy.png",
+          "bytes": 1338522
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/search.png",
+          "bytes": 1335024
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/rating.png",
+          "bytes": 1333728
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/register.png",
+          "bytes": 1321069
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+          "bytes": 1320726
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/contact.png",
+          "bytes": 1313872
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/survey.png",
+          "bytes": 1300901
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/delete-account.png",
+          "bytes": 1300325
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/notifications.png",
+          "bytes": 1299116
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+          "bytes": 1279993
+        }
+      ],
+      "largeFileWarnings": 20
+    },
+    "referenceFiles": 103,
+    "previewFiles": 138,
+    "tests": {
+      "ok": false,
+      "status": 1,
+      "stdout": "DER\\\\tests\\\\recovery.test.ts:22:1'\n  failureType: 'testCodeFailure'\n  error: 'Unknown game.starship-engineer'\n  code: 'ERR_TEST_FAILURE'\n  stack: |-\n    relFile (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:3:275)\n    findGameFile (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:4:139)\n    readGameWithRevision (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:8:65)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:22:92)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: theme and font edit changes CSS and exact revert restores frozen parity\nnot ok 146 - theme and font edit changes CSS and exact revert restores frozen parity\n  ---\n  duration_ms: 16.3104\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:23:1'\n  failureType: 'testCodeFailure'\n  error: \"ENOENT: no such file or directory, open 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\themes\\\\theme.world.json'\"\n  code: 'ENOENT'\n  stack: |-\n    Object.readFileSync (node:fs:440:20)\n    readJson (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/io.ts:2:66)\n    readRev (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:5:41)\n    readThemeWithRevision (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:10:89)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:23:91)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n  ...\n# Subtest: inserted content component renders and deletion restores exact parity\nnot ok 147 - inserted content component renders and deletion restores exact parity\n  ---\n  duration_ms: 2716.1642\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:24:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    36 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 36\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:24:683)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: asset replacement materializes in output and reset restores exact parity\nnot ok 148 - asset replacement materializes in output and reset restores exact parity\n  ---\n  duration_ms: 35.3179\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:25:1'\n  failureType: 'testCodeFailure'\n  error: \"ENOENT: no such file or directory, open 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\assets\\\\source\\\\lily-pad-leap.webp'\"\n  code: 'ENOENT'\n  stack: |-\n    Object.openSync (node:fs:560:18)\n    Object.readFileSync (node:fs:444:35)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:25:266)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: named page snapshots are created for recovery/version workflow\nok 149 - named page snapshots are created for recovery/version workflow\n  ---\n  duration_ms: 78.0631\n  type: 'test'\n  ...\n# Subtest: recovered V7 reference library is mounted but inert by default\nnot ok 150 - recovered V7 reference library is mounted but inert by default\n  ---\n  duration_ms: 19.7981\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:29:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    0 !== 1\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 1\n  actual: 0\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:29:100)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: exact SHA import dedupe reuses an existing project asset\nnot ok 151 - exact SHA import dedupe reuses an existing project asset\n  ---\n  duration_ms: 19.497\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:30:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    The expression evaluated to a falsy value:\n    \n      assert.ok(a)\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  operator: '=='\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:30:160)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: editable 404 content changes output and exact revert restores frozen parity\nnot ok 152 - editable 404 content changes output and exact revert restores frozen parity\n  ---\n  duration_ms: 20.9272\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:31:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    The expression evaluated to a falsy value:\n    \n      assert.ok(c)\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  operator: '=='\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:31:258)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: inserted visual blocks can reorder without crossing compatibility content\nnot ok 153 - inserted visual blocks can reorder without crossing compatibility content\n  ---\n  duration_ms: 4300.4682\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:32:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    36 !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: 36\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:32:1343)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: clean website starters are independent, valid, warning-free and render generic site chrome\nok 154 - clean website starters are independent, valid, warning-free and render generic site chrome\n  ---\n  duration_ms: 411.8603\n  type: 'test'\n  ...\n# Subtest: starter project carries the reusable website-builder essentials\nok 155 - starter project carries the reusable website-builder essentials\n  ---\n  duration_ms: 23.5601\n  type: 'test'\n  ...\n# Subtest: Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\nok 156 - Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\n  ---\n  duration_ms: 3.7172\n  type: 'test'\n  ...\n# Subtest: Studio server exposes safe clean-project creation and project-level settings\nok 157 - Studio server exposes safe clean-project creation and project-level settings\n  ---\n  duration_ms: 0.5408\n  type: 'test'\n  ...\n# Subtest: general websites do not inherit recovered TOADAL baseline validation rules\nok 158 - general websites do not inherit recovered TOADAL baseline validation rules\n  ---\n  duration_ms: 0.2566\n  type: 'test'\n  ...\n# Subtest: portable project backups round-trip safely into independent projects with collision-safe ids\nok 159 - portable project backups round-trip safely into independent projects with collision-safe ids\n  ---\n  duration_ms: 2674.1712\n  type: 'test'\n  ...\n# Subtest: optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\nok 160 - optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\n  ---\n  duration_ms: 2.3896\n  type: 'test'\n  ...\n# Subtest: Studio exposes a lightweight ping endpoint for launch and connection checks\nok 161 - Studio exposes a lightweight ping endpoint for launch and connection checks\n  ---\n  duration_ms: 0.4108\n  type: 'test'\n  ...\n# Subtest: HUD authoring preserves a local recovery copy around autosave failures\nok 162 - HUD authoring preserves a local recovery copy around autosave failures\n  ---\n  duration_ms: 1.5028\n  type: 'test'\n  ...\n# Subtest: Windows launchers share one health-aware Node 22+ launcher\nok 163 - Windows launchers share one health-aware Node 22+ launcher\n  ---\n  duration_ms: 2.5703\n  type: 'test'\n  ...\n# Subtest: Tier 1 closure primitives work together without changing the source project\nok 164 - Tier 1 closure primitives work together without changing the source project\n  ---\n  duration_ms: 4411.5199\n  type: 'test'\n  ...\n# Subtest: Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\nok 165 - Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\n  ---\n  duration_ms: 20.0831\n  type: 'test'\n  ...\n# Subtest: Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\nnot ok 166 - Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\n  ---\n  duration_ms: 1337.0324\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier2-closure.test.ts:49:1'\n  failureType: 'testCodeFailure'\n  error: 'ZIP_FAILED: null'\n  code: 'ERR_TEST_FAILURE'\n  stack: |-\n    buildPressPack (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/game-web-pack/src/index.ts:20:1201)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier2-closure.test.ts:79:14)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)\n  ...\n# Subtest: Tier 3 catalogs expose the complete polish/productivity contract\nok 167 - Tier 3 catalogs expose the complete polish/productivity contract\n  ---\n  duration_ms: 11.757\n  type: 'test'\n  ...\n# Subtest: Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\nnot ok 168 - Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\n  ---\n  duration_ms: 813.6022\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier3-closure.test.ts:51:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    ImageMagick is required by the Tier-3 optimization checkpoint\n    \n    false !== true\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  actual: false\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier3-closure.test.ts:88:12)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)\n  ...\n# Subtest: Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\nnot ok 169 - Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\n  ---\n  duration_ms: 1988.8254\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier3-closure.test.ts:113:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    null !== 0\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: 0\n  actual: ~\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier3-closure.test.ts:122:161)\n    process.processTicksAndRejections (node:internal/process/task_queues:103:5)\n    async Test.run (node:internal/test_runner/test:1054:7)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: Tier 4 catalogs and architecture expose the advanced authoring contract\nok 170 - Tier 4 catalogs and architecture expose the advanced authoring contract\n  ---\n  duration_ms: 10.2242\n  type: 'test'\n  ...\n# Subtest: Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\nok 171 - Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\n  ---\n  duration_ms: 593.7894\n  type: 'test'\n  ...\n# Subtest: Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\nok 172 - Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\n  ---\n  duration_ms: 8921.4722\n  type: 'test'\n  ...\n1..172\n# tests 172\n# suites 0\n# pass 156\n# fail 16\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 46440.4673\n",
+      "stderr": "",
+      "error": null
+    }
+  },
+  "doctor": {
+    "exitCode": 0,
+    "stdout": "{\n  \"ok\": true,\n  \"server\": {\n    \"name\": \"toadal-studio\",\n    \"version\": \"1.4.2\"\n  },\n  \"checks\": [\n    {\n      \"name\": \"config:plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.codex-plugin/plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.vscode/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.cursor/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AGENTS.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/OPERATING_CONTRACT.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_MANIFEST.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_CAPABILITY_LEDGER.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:skills/toadal-studio/SKILL.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"portable-plugin-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"schema\": \"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json\"\n      }\n    },\n    {\n      \"name\": \"portable-mcp-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"server\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\n            \"--no-warnings\",\n            \"--experimental-strip-types\",\n            \"apps/mcp/server.ts\"\n          ],\n          \"cwd\": \"./\"\n        }\n      }\n    },\n    {\n      \"name\": \"codex-compat-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"skills\": \"./skills/\",\n        \"mcpServers\": \"./.mcp.json\"\n      }\n    },\n    {\n      \"name\": \"tool-names-unique\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-annotations\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"modern-discovery\",\n      \"ok\": true,\n      \"details\": [\n        \"2026-07-28\",\n        \"2025-11-25\"\n      ]\n    },\n    {\n      \"name\": \"legacy-initialize\",\n      \"ok\": true,\n      \"details\": \"2025-11-25\"\n    },\n    {\n      \"name\": \"tools-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-call\",\n      \"ok\": true,\n      \"details\": {\n        \"valid\": true,\n        \"errors\": 0,\n        \"warnings\": 0\n      }\n    },\n    {\n      \"name\": \"resource-read\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"prompts-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 5\n      }\n    },\n    {\n      \"name\": \"stdio-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=stdio project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=http url=http://127.0.0.1:44444/mcp project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-origin-protection\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 403\n      }\n    },\n    {\n      \"name\": \"http-rate-limit\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 429\n      }\n    }\n  ]\n}\n",
+    "stderr": ""
+  }
+}

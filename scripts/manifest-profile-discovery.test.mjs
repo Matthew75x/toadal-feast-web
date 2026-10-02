@@ -2,18 +2,28 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root = process.cwd();
 const pagesDir = path.join(root, 'studio-project', 'toadal-feast-website', 'pages');
+const projectRoot = path.dirname(pagesDir);
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
 const approvedCharacters = [
   'toadal', 'princess-lily', 'genie-sweet', 'genie-fruity',
   'genie-savoury', 'gulper', 'gully'
 ];
 
+// Remove only owner-editor metadata attributes for semantic contract matching.
+function semanticMarkup(markup) {
+  return markup.replace(/<[a-z][^>]*>/gi, (tag) =>
+    tag.replace(/\sdata-studio-(?:component|edit-field)=(['"])[^'"]*\1/g, ''));
+}
+
 function authoredMarkup(filename) {
   const page = JSON.parse(fs.readFileSync(path.join(pagesDir, filename), 'utf8'));
   assert.equal(page.components.length, 1, `${filename} has one authored rich-text component`);
-  const html = page.components[0].props?.html;
+  const html = semanticMarkup(projectPage(projectRoot, { ...page, components: [page.components[0]] }));
   assert.equal(typeof html, 'string', `${filename} exposes authored renderer HTML`);
   return html;
 }
@@ -36,7 +46,7 @@ test('Profile exposes guest identity, current local title, route visits, achieve
   assert.ok(settings, 'Profile has an appearance settings section with settings companion context');
   assert.match(settings, /data-companion-copy='[^']*CSS animations[^']*'/);
   assert.match(settings, /<h2 id='profile-display-settings-title'>Display settings<\/h2>/);
-  assert.match(settings, /<input type='checkbox' id='site-motion-toggle' data-site-motion-toggle> Reduce site CSS animations in this tab/);
+  assert.match(settings, /<input type='checkbox' id='site-motion-toggle' data-site-motion-toggle(?:='')?> Reduce site CSS animations in this tab/);
   assert.match(settings, /only in this browser tab and is not saved as a preference/);
   assert.match(settings, /operating-system reduced-motion preferences are always respected/);
   assert.doesNotMatch(settings, /sound|audio|localStorage|persist/i);
@@ -57,17 +67,27 @@ test('Characters provides one accessible artwork-view discovery control and stat
   assert.match(html, /This records an artwork view only; it does not mean game, story, or canonical character completion/);
   assert.ok(html.includes('Guest website progression is active on this browser'), 'existing rendered source freshness phrase is preserved exactly');
 
-  const cards = [...html.matchAll(/<article class='character-card(?: [^']*)?'[\s\S]*?<\/article>/g)].map(match => match[0]);
+  const cards = [...html.matchAll(/<(article|a) class='character-card(?: [^']*)?'[\s\S]*?<\/\1>/g)].map(match => match[0]);
   const authoredButtons = [...html.matchAll(/data-discover-character='([^']+)'/g)].map(match => match[1]);
-  assert.deepEqual(authoredButtons, approvedCharacters, 'the only artwork discovery buttons target the seven approved records');
+  assert.deepEqual(authoredButtons, approvedCharacters, 'the only whole-card artwork discovery controls target the seven approved records');
   const controls = [];
   for (const slug of approvedCharacters) {
     const card = cards.find(candidate => candidate.includes(`data-discover-character='${slug}'`));
     assert.ok(card, `approved character ${slug} has a card discovery control`);
     assert.equal((card.match(new RegExp(`data-discover-character='${slug}'`, 'g')) || []).length, 1, `${slug} has one control`);
     assert.equal((card.match(new RegExp(`data-character-discovery-status='${slug}'`, 'g')) || []).length, 1, `${slug} has one matching status`);
-    assert.match(card, new RegExp(`<button class='character-card-action' type='button' data-discover-character='${slug}'>Mark artwork viewed<\\/button>`));
-    assert.match(card, new RegExp(`<p class='character-card-state' data-character-discovery-status='${slug}' role='status' aria-live='polite'>Not discovered in this browser<\\/p>`));
+    const opening = card.slice(0, card.indexOf('>') + 1);
+    assert.match(opening, new RegExp(`data-discover-character='${slug}'`), 'the visual card itself owns the real discovery binding');
+    if (slug === 'toadal') {
+      assert.match(opening, /^<a\b/);
+      assert.match(opening, /href='\/characters\/toadal\/'/, 'the whole published-profile card remains a real navigation link');
+    } else {
+      assert.match(opening, /role='button'/);
+      assert.match(opening, /tabindex='0'/);
+      assert.match(opening, /aria-label='Discover [^']+ artwork'/);
+    }
+    assert.doesNotMatch(card, /<button[^>]*data-discover-character|Mark artwork viewed/, 'no redundant discovery button is introduced');
+    assert.match(card, new RegExp(`<p class='character-card-state' data-character-discovery-status='${slug}' role='status' aria-live='polite'[^>]*>Not discovered in this browser<\\/p>`));
     controls.push(slug);
   }
   assert.deepEqual(controls, approvedCharacters);

@@ -8,10 +8,1596 @@
   "components": [
     {
       "id": "component.stories.publishing-hub",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "stories-publishing-hub",
-        "html": "<article class='stories-publishing-page' data-stories-hub data-companion-context='stories' data-companion-copy='I can point to the story shelves, but none are published yet.' data-companion-reaction='thinking'>\n<nav class='story-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span aria-current='page'>Stories &amp; Comics</span></nav>\n<header class='stories-hero'><div class='stories-hero-copy'><p class='story-kicker'>THE FEAST WORLD · STORIES &amp; COMICS</p><span class='story-status'>Publishing preview · no published stories</span><h1>Stories from the Feast</h1><p>Meet the worlds and characters behind TOADAL FEAST, then return when approved comics, manga, shorts, lore, and behind-the-scenes stories are ready to read.</p><div class='story-actions'><a class='story-button story-button-primary' href='/manga/'>Explore the manga preview <span aria-hidden='true'>→</span></a><a class='story-button story-button-secondary' href='/world/'>Explore the Feast World</a></div><p class='story-art-note'>The artwork here is canonical character and environment art, not a published comic or story cover.</p></div><figure class='stories-hero-art'><img class='stories-world-art' src='/assets/images/world/candy-kingdom.webp' alt='Canonical TOADAL FEAST environment artwork, shown as a world preview.' width='1424' height='750' fetchpriority='high'><img class='stories-toadal-art' src='/assets/images/characters/toadal-portrait.webp' alt='Canonical portrait of Toadal, shown as character art rather than a story illustration.' width='256' height='256'><figcaption>Explore the world and cast while the story library is being prepared.</figcaption></figure></header>\n<section class='stories-feature-grid' aria-label='Featured stories and reading progress'><section class='story-panel story-featured-panel' aria-labelledby='stories-featured-heading'><div class='story-panel-heading'><div><p class='story-kicker'>THE LIBRARY</p><h2 id='stories-featured-heading'>Featured stories</h2></div><span class='story-status story-status-muted'>Nothing published yet</span></div><div class='story-series-list' data-story-series-list><div class='story-empty-card' data-story-empty><span class='story-empty-mark' aria-hidden='true'>✦</span><div><h3>The first story will appear here</h3><p>No story series or chapters are currently published. This shelf will only fill from approved public records.</p></div></div></div></section><aside class='story-panel story-progress-panel' aria-labelledby='stories-progress-heading'><p class='story-kicker'>YOUR BOOKMARKS</p><h2 id='stories-progress-heading'>Reading progress</h2><div data-story-progress><div class='story-progress-empty'><span aria-hidden='true'>▤</span><p>There is nothing to resume yet. Your reading progress will appear here after a published chapter is available.</p></div></div><a class='story-text-link' href='/reader/'>Open the reader preview <span aria-hidden='true'>→</span></a></aside></section>\n<section class='story-panel story-latest-panel' aria-labelledby='stories-latest-heading'><div class='story-panel-heading'><div><p class='story-kicker'>LATEST CHAPTER</p><h2 id='stories-latest-heading'>A chapter appears after publication</h2></div><span class='story-status story-status-muted'>No latest chapter</span></div><div data-story-latest><p class='story-empty-copy'>No chapter is marked PUBLISHED, so there is no latest chapter to show.</p></div></section>\n<section class='story-categories' id='story-categories' aria-labelledby='story-categories-heading'><div class='story-section-heading'><div><p class='story-kicker'>EXPLORE BY CATEGORY</p><h2 id='story-categories-heading'>A shelf for every kind of story</h2></div><p>These shelves are ready for approved records; none currently contain published entries.</p></div><div class='story-category-grid'><article class='story-category-card' id='comics'><span class='story-category-icon' aria-hidden='true'>▤</span><h3>Comics</h3><p>No comics are published yet.</p></article><a class='story-category-card story-category-link' id='manga' href='/manga/'><span class='story-category-icon' aria-hidden='true'>✧</span><h3>Manga</h3><p>View the truthful TOADAL FEAST Manga series template.</p><span class='story-category-cta'>Open preview <span aria-hidden='true'>→</span></span></a><article class='story-category-card' id='shorts'><span class='story-category-icon' aria-hidden='true'>▶</span><h3>Shorts</h3><p>No animated story shorts are published yet.</p></article><article class='story-category-card' id='lore'><span class='story-category-icon' aria-hidden='true'>⌂</span><h3>World &amp; lore</h3><p>Explore established world artwork without inferring unpublished lore.</p><a href='/world/'>Explore the world <span aria-hidden='true'>→</span></a></article><article class='story-category-card' id='behind-the-scenes'><span class='story-category-icon' aria-hidden='true'>✎</span><h3>Behind the scenes</h3><p>No behind-the-scenes stories are published yet.</p></article></div></section>\n<section class='story-discovery-band' aria-label='Explore the Feast world and characters'><div><p class='story-kicker'>WHILE YOU WAIT</p><h2>Explore what is already here</h2><p>Discover the established world and canonical character art. These links do not imply that a story relationship or appearance has been published.</p></div><div class='story-actions'><a class='story-button story-button-secondary' href='/characters/'>Meet the characters</a><a class='story-button story-button-secondary' href='/world/'>Explore the world</a></div></section>\n<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>I can point to the story shelves, but none are published yet.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Stories & Comics · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.stories.publishing-hub.2aa8d71d4cee.stories-publishing-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "stories-publishing-page",
+              "attributes": {
+                "data-stories-hub": "",
+                "data-companion-context": "stories",
+                "data-companion-copy": "I can point to the story shelves, but none are published yet.",
+                "data-companion-reaction": "thinking"
+              },
+              "style": "",
+              "layerName": "Stories from the Feast",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.stories.publishing-hub.654f2bc6b403.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.7002ce3add21.story-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "story-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Stories & Comics",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.stories.publishing-hub.32cbebccebfe.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.6c7175846c0a.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.61e0b433102d.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Stories & Comics",
+                          "text": "Stories & Comics"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.3caba9402882.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.a8ce2be7e16e.stories-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "stories-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Stories from the Feast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.stories.publishing-hub.d012ca023022.stories-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "stories-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Stories from the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.11940e1d2d5e.story-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "THE FEAST WORLD · STORIES & COMICS",
+                                "text": "THE FEAST WORLD · STORIES & COMICS"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.61ac33c6ccf0.story-status",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "story-status",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Publishing preview · no published stories",
+                                "text": "Publishing preview · no published stories"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.42afce8a71c4.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Stories from the Feast",
+                                "text": "Stories from the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.93585663fe76.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Meet the worlds and characters behind TOADAL FEAST, then return when app",
+                                "text": "Meet the worlds and characters behind TOADAL FEAST, then return when approved comics, manga, shorts, lore, and behind-the-scenes stories are ready to read."
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.2ed26e093886.story-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "story-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore the manga preview →Explore the Feast World",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.54d7d112f433.story-button-story-butto",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "story-button story-button-primary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore the manga preview →",
+                                      "href": "/manga/",
+                                      "children": [
+                                        {
+                                          "id": "component.stories.publishing-hub.56109a496019.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Explore the manga preview ",
+                                            "layerName": "Text: Explore the manga preview"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.stories.publishing-hub.86c1cf7fabc3.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.88e5296c84e5.story-button-story-butto",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "story-button story-button-secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore the Feast World",
+                                      "href": "/world/",
+                                      "label": "Explore the Feast World"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.7e2357933d85.story-art-note",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-art-note",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The artwork here is canonical character and environment art, not a publi",
+                                "text": "The artwork here is canonical character and environment art, not a published comic or story cover."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.fd179c5b983a.stories-hero-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "stories-hero-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore the world and cast while the story library is being prepared.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.0e0a2ade2c33.stories-world-art",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "stories-world-art",
+                                "attributes": {
+                                  "width": "1424",
+                                  "height": "750",
+                                  "fetchpriority": "high"
+                                },
+                                "style": "",
+                                "layerName": "Canonical TOADAL FEAST environment artwork, shown as a world preview.",
+                                "asset": "asset.home.world.desktop",
+                                "alt": "Canonical TOADAL FEAST environment artwork, shown as a world preview."
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.80a406f89052.stories-toadal-art",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "stories-toadal-art",
+                                "attributes": {
+                                  "width": "256",
+                                  "height": "256"
+                                },
+                                "style": "",
+                                "layerName": "Canonical portrait of Toadal, shown as character art rather than a story illustration.",
+                                "asset": "asset.home.character.toadal",
+                                "alt": "Canonical portrait of Toadal, shown as character art rather than a story illustration."
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.61681bdff43e.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore the world and cast while the story library is being prepared.",
+                                "text": "Explore the world and cast while the story library is being prepared."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.7ece36fd6a60.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.56497ad0ca45.stories-feature-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "stories-feature-grid",
+                    "attributes": {
+                      "aria-label": "Featured stories and reading progress"
+                    },
+                    "style": "",
+                    "layerName": "Featured stories",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.stories.publishing-hub.e671e7a4a3f2.story-panel-story-featur",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "section",
+                          "className": "story-panel story-featured-panel",
+                          "attributes": {
+                            "aria-labelledby": "stories-featured-heading"
+                          },
+                          "style": "",
+                          "layerName": "Featured stories",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.0a278c37efb4.story-panel-heading",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "story-panel-heading",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Featured stories",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.c6cdc54caa3d.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Featured stories",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.stories.publishing-hub.70bcf63edd84.story-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "story-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "THE LIBRARY",
+                                            "text": "THE LIBRARY"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.stories.publishing-hub.0470a4e3a834.stories-featured-heading",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {
+                                              "id": "stories-featured-heading"
+                                            },
+                                            "style": "",
+                                            "layerName": "stories featured heading",
+                                            "text": "Featured stories"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.551d05cf4772.story-status-story-statu",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "story-status story-status-muted",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Nothing published yet",
+                                      "text": "Nothing published yet"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.0bb67e97d048.story-series-list",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "story-series-list",
+                                "attributes": {
+                                  "data-story-series-list": ""
+                                },
+                                "style": "",
+                                "layerName": "The first story will appear here",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.0607f6259493.story-empty-card",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "story-empty-card",
+                                      "attributes": {
+                                        "data-story-empty": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "The first story will appear here",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.stories.publishing-hub.fac4dc4cfb4a.story-empty-mark",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "story-empty-mark",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "✦",
+                                            "text": "✦"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.stories.publishing-hub.5561267db0d2.div",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "The first story will appear here",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.stories.publishing-hub.8833cb49ce35.h3",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "h3",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "The first story will appear here",
+                                                  "text": "The first story will appear here"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.stories.publishing-hub.7b351fa2aaa6.p",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "p",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "No story series or chapters are currently published. This shelf will onl",
+                                                  "text": "No story series or chapters are currently published. This shelf will only fill from approved public records."
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.a54f11cb2322.story-panel-story-progre",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "aside",
+                          "className": "story-panel story-progress-panel",
+                          "attributes": {
+                            "aria-labelledby": "stories-progress-heading"
+                          },
+                          "style": "",
+                          "layerName": "Reading progress",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.caa0f8958594.story-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "YOUR BOOKMARKS",
+                                "text": "YOUR BOOKMARKS"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.447d265e9821.stories-progress-heading",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "stories-progress-heading"
+                                },
+                                "style": "",
+                                "layerName": "stories progress heading",
+                                "text": "Reading progress"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.22fcb632b062.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "data-story-progress": ""
+                                },
+                                "style": "",
+                                "layerName": "▤There is nothing to resume yet. Your reading progress will appear here ",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.b8e3613ed432.story-progress-empty",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "story-progress-empty",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "▤There is nothing to resume yet. Your reading progress will appear here ",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.stories.publishing-hub.aacab0e7bb18.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "▤",
+                                            "text": "▤"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.stories.publishing-hub.02d339ab915d.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "There is nothing to resume yet. Your reading progress will appear here a",
+                                            "text": "There is nothing to resume yet. Your reading progress will appear here after a published chapter is available."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.f964cf3a7be0.story-text-link",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "story-text-link",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Open the reader preview →",
+                                "href": "/reader/",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.8e9760083234.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Open the reader preview ",
+                                      "layerName": "Text: Open the reader preview"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.cce615ccc1f7.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.14258a782124.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.e704af5899be.story-panel-story-latest",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "story-panel story-latest-panel",
+                    "attributes": {
+                      "aria-labelledby": "stories-latest-heading"
+                    },
+                    "style": "",
+                    "layerName": "A chapter appears after publication",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.stories.publishing-hub.3d0b82330fad.story-panel-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "story-panel-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "A chapter appears after publication",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.a1256997071c.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A chapter appears after publication",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.2685f54c9b32.story-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "story-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "LATEST CHAPTER",
+                                      "text": "LATEST CHAPTER"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.4367486ec1c7.stories-latest-heading",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "stories-latest-heading"
+                                      },
+                                      "style": "",
+                                      "layerName": "stories latest heading",
+                                      "text": "A chapter appears after publication"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.c2e7dcf9b099.story-status-story-statu",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "story-status story-status-muted",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No latest chapter",
+                                "text": "No latest chapter"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.e6f1d3a5831b.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-story-latest": ""
+                          },
+                          "style": "",
+                          "layerName": "No chapter is marked PUBLISHED, so there is no latest chapter to show.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.0532a26e61f6.story-empty-copy",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-empty-copy",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No chapter is marked PUBLISHED, so there is no latest chapter to show.",
+                                "text": "No chapter is marked PUBLISHED, so there is no latest chapter to show."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.a961b2dbdf0b.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.e119e2aeaf5e.story-categories",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "story-categories",
+                    "attributes": {
+                      "id": "story-categories",
+                      "aria-labelledby": "story-categories-heading"
+                    },
+                    "style": "",
+                    "layerName": "story categories",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.stories.publishing-hub.bd10c4077fbb.story-section-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "story-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "A shelf for every kind of story",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.d223468f6a84.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A shelf for every kind of story",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.f1228941e2a5.story-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "story-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "EXPLORE BY CATEGORY",
+                                      "text": "EXPLORE BY CATEGORY"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.beaff32206d1.story-categories-heading",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "story-categories-heading"
+                                      },
+                                      "style": "",
+                                      "layerName": "story categories heading",
+                                      "text": "A shelf for every kind of story"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.d630dc12b93f.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "These shelves are ready for approved records; none currently contain pub",
+                                "text": "These shelves are ready for approved records; none currently contain published entries."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.10f9994ae50f.story-category-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "story-category-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Comics",
+                          "mode": "inherit",
+                          "collection": true,
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.4d865bec5688.comics",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "story-category-card",
+                                "attributes": {
+                                  "id": "comics"
+                                },
+                                "style": "",
+                                "layerName": "comics",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.5a8b8803e0e4.story-category-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "story-category-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "▤",
+                                      "text": "▤"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.b599a636015c.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Comics",
+                                      "text": "Comics"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.76de42708ba0.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "No comics are published yet.",
+                                      "text": "No comics are published yet."
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.af5664dbdf66.manga",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "story-category-card story-category-link",
+                                "attributes": {
+                                  "id": "manga"
+                                },
+                                "style": "",
+                                "layerName": "manga",
+                                "href": "/manga/",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.ada07027f545.story-category-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "story-category-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "✧",
+                                      "text": "✧"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.552eaf353231.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Manga",
+                                      "text": "Manga"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.af63e04f4b08.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "View the truthful TOADAL FEAST Manga series template.",
+                                      "text": "View the truthful TOADAL FEAST Manga series template."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.37020d57f43f.story-category-cta",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "story-category-cta",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Open preview →",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.stories.publishing-hub.a13cc1642367.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Open preview ",
+                                            "layerName": "Text: Open preview"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.stories.publishing-hub.d3608254cd11.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.bab3a4022280.shorts",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "story-category-card",
+                                "attributes": {
+                                  "id": "shorts"
+                                },
+                                "style": "",
+                                "layerName": "shorts",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.8d0f0483c005.story-category-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "story-category-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "▶",
+                                      "text": "▶"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.9c6bccd8f6f2.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Shorts",
+                                      "text": "Shorts"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.e14bc8105609.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "No animated story shorts are published yet.",
+                                      "text": "No animated story shorts are published yet."
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.fdf6d1b3bc45.lore",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "story-category-card",
+                                "attributes": {
+                                  "id": "lore"
+                                },
+                                "style": "",
+                                "layerName": "lore",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.bdb2aec3d729.story-category-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "story-category-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "⌂",
+                                      "text": "⌂"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.526c34d9a62b.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "World & lore",
+                                      "text": "World & lore"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.4c3eee7b5389.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore established world artwork without inferring unpublished lore.",
+                                      "text": "Explore established world artwork without inferring unpublished lore."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.151738f55211.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore the world →",
+                                      "href": "/world/",
+                                      "children": [
+                                        {
+                                          "id": "component.stories.publishing-hub.fd179b170037.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Explore the world ",
+                                            "layerName": "Text: Explore the world"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.stories.publishing-hub.6987f3e6df2f.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.a2a4975485c9.behind-the-scenes",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "story-category-card",
+                                "attributes": {
+                                  "id": "behind-the-scenes"
+                                },
+                                "style": "",
+                                "layerName": "behind the scenes",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.stories.publishing-hub.c5b7ef57f863.story-category-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "story-category-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "✎",
+                                      "text": "✎"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.950112c6eccf.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Behind the scenes",
+                                      "text": "Behind the scenes"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.stories.publishing-hub.6e56fd8c2ee8.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "No behind-the-scenes stories are published yet.",
+                                      "text": "No behind-the-scenes stories are published yet."
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.d939b5a33f8e.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.1d55904a0328.story-discovery-band",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "story-discovery-band",
+                    "attributes": {
+                      "aria-label": "Explore the Feast world and characters"
+                    },
+                    "style": "",
+                    "layerName": "Explore what is already here",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.stories.publishing-hub.2465bdbcb0a4.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore what is already here",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.aaa15624bcb5.story-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "WHILE YOU WAIT",
+                                "text": "WHILE YOU WAIT"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.95bf910308f2.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore what is already here",
+                                "text": "Explore what is already here"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.d1579a272b33.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Discover the established world and canonical character art. These links ",
+                                "text": "Discover the established world and canonical character art. These links do not imply that a story relationship or appearance has been published."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.da7ac4202ec3.story-actions",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "story-actions",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Meet the charactersExplore the world",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.37e5a4146073.story-button-story-butto",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "story-button story-button-secondary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Meet the characters",
+                                "href": "/characters/",
+                                "label": "Meet the characters"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.299f641912ff.story-button-story-butto",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "story-button story-button-secondary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore the world",
+                                "href": "/world/",
+                                "label": "Explore the world"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.40736a1067da.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.stories.publishing-hub.4fd25471169c.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSI can point to the story shelves, but none are published yet.",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.stories.publishing-hub.5f7c43d9aba4.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.c5d1601b62cc.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.bc6f53dba67a.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "I can point to the story shelves, but none are published yet.",
+                                "text": "I can point to the story shelves, but none are published yet."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.stories.publishing-hub.7c1ef3bc93d4.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.stories.publishing-hub.013959b4635a.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.stories.publishing-hub.4338e2e0a3ee.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

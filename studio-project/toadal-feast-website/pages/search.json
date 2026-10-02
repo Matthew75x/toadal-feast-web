@@ -8,10 +8,767 @@
   "components": [
     {
       "id": "component.search.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "search-discovery",
-        "html": "<article class='wo002-detail-page live-visual-page search-page' data-companion-context='search' data-companion-copy='Search uses a local index of this TOADAL FEAST preview. Your query is not sent to an external search service.' data-companion-reaction='search'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Search</span></nav><section class='wo002-detail-hero'><div class='wo002-detail-copy'><p class='section-kicker'>FIND YOUR WAY AROUND THE FEAST</p><span class='chip preview'>LOCAL PREVIEW SEARCH</span><h1>Search the Feast</h1><p class='wo002-detail-lede'>Search the pages, characters, artwork, help topics, and truthful roadmap states included in this review candidate. Results come from a local static index; no remote search service is used.</p></div><figure class='wo002-detail-art'><img src='/assets/images/characters/companion/runtime-v2/search.webp' alt='Toadal search helper artwork.' loading='eager' decoding='async'><figcaption>Local site discovery.</figcaption></figure></section><section class='search-workspace' aria-labelledby='search-form-title'><div class='search-heading'><p class='section-kicker'>SITE DISCOVERY</p><h2 id='search-form-title'>What are you looking for?</h2><p>Only published or explicitly searchable preview records are included.</p></div><form class='search-form' data-site-search role='search' action='/search/' method='get'><label for='site-search-input'>Search terms</label><div class='search-controls'><input id='site-search-input' data-search-input name='q' type='search' autocomplete='off' placeholder='Try Toadal, Feast Pass, world…'><label class='sr-only' for='site-search-category'>Result category</label><select id='site-search-category' data-search-category name='category'><option>All</option><option>Pages</option><option>Characters</option><option>Media</option><option>Help</option><option>Roadmap</option><option>News</option></select><button class='button-link button-link--primary' type='submit'>Search</button></div><div class='search-suggestions' aria-label='Search suggestions'><span>Try:</span><button type='button' data-search-suggestion='Toadal'>Toadal</button><button type='button' data-search-suggestion='browser games'>browser games</button><button type='button' data-search-suggestion='Feast Pass'>Feast Pass</button><button type='button' data-search-suggestion='world'>world</button><button type='button' data-search-suggestion='support'>support</button></div></form><p class='search-status' data-search-status role='status' aria-live='polite'>Loading the local search index…</p><div class='search-results' data-search-results></div></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>Search uses a local index of this TOADAL FEAST preview. Your query is not sent to an external search service.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/companion/runtime-v2/search.webp' alt='' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Search · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.search.rich-text.7b71ac083ee0.wo002-detail-page-live-v",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "wo002-detail-page live-visual-page search-page",
+              "attributes": {
+                "data-companion-context": "search",
+                "data-companion-copy": "Search uses a local index of this TOADAL FEAST preview. Your query is not sent to an external search service.",
+                "data-companion-reaction": "search"
+              },
+              "style": "",
+              "layerName": "Search the Feast",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.search.rich-text.8c1bb2d93d18.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Search",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.search.rich-text.2026b9c51add.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.search.rich-text.fdc35a43993f.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.search.rich-text.c15b1a4be1f1.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Search",
+                          "text": "Search"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.search.rich-text.34c31803156e.wo002-detail-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-detail-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Search the Feast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.search.rich-text.b1a386f29937.wo002-detail-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "wo002-detail-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Search the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.search.rich-text.e92bc7790826.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FIND YOUR WAY AROUND THE FEAST",
+                                "text": "FIND YOUR WAY AROUND THE FEAST"
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.e87e10bbf203.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "LOCAL PREVIEW SEARCH",
+                                "text": "LOCAL PREVIEW SEARCH"
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.3dbf6dec6fc8.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Search the Feast",
+                                "text": "Search the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.fd44cda78a62.wo002-detail-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "wo002-detail-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Search the pages, characters, artwork, help topics, and truthful roadmap",
+                                "text": "Search the pages, characters, artwork, help topics, and truthful roadmap states included in this review candidate. Results come from a local static index; no remote search service is used."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.search.rich-text.47b3dfc1d077.wo002-detail-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "wo002-detail-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Local site discovery.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.search.rich-text.b6b5069157ab.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "eager",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal search helper artwork.",
+                                "asset": "asset.owner-native.reference-assets-images-characters-companion-runtime-v2-",
+                                "alt": "Toadal search helper artwork."
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.f9afddac5b6e.figcaption",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Local site discovery.",
+                                "text": "Local site discovery."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.search.rich-text.b6b593a6fd03.search-workspace",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "search-workspace",
+                    "attributes": {
+                      "aria-labelledby": "search-form-title"
+                    },
+                    "style": "",
+                    "layerName": "What are you looking for?",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.search.rich-text.34c24d40906a.search-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "search-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "What are you looking for?",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.search.rich-text.e5284944e0ca.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "SITE DISCOVERY",
+                                "text": "SITE DISCOVERY"
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.e23292b87968.search-form-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "search-form-title"
+                                },
+                                "style": "",
+                                "layerName": "search form title",
+                                "text": "What are you looking for?"
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.e05f95907972.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Only published or explicitly searchable preview records are included.",
+                                "text": "Only published or explicitly searchable preview records are included."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.search.rich-text.2e93a8dba8b4.search-form",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "form",
+                          "className": "search-form",
+                          "attributes": {
+                            "data-site-search": "",
+                            "role": "search",
+                            "action": "/search/",
+                            "method": "get"
+                          },
+                          "style": "",
+                          "layerName": "Search termsResult categoryAllPagesCharactersMediaHelpRoadmapNewsSearchT",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.search.rich-text.9a35fb8c944a.label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "label",
+                                "className": "",
+                                "attributes": {
+                                  "for": "site-search-input"
+                                },
+                                "style": "",
+                                "layerName": "Search terms",
+                                "text": "Search terms"
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.9b636e04e18d.search-controls",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "search-controls",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Result categoryAllPagesCharactersMediaHelpRoadmapNewsSearch",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.search.rich-text.f071f14657be.site-search-input",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "input",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "site-search-input",
+                                        "data-search-input": "",
+                                        "name": "q",
+                                        "type": "search",
+                                        "autocomplete": "off",
+                                        "placeholder": "Try Toadal, Feast Pass, world…"
+                                      },
+                                      "style": "",
+                                      "layerName": "site search input",
+                                      "mode": "inherit",
+                                      "children": []
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.0d748246300e.sr-only",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "label",
+                                      "className": "sr-only",
+                                      "attributes": {
+                                        "for": "site-search-category"
+                                      },
+                                      "style": "",
+                                      "layerName": "Result category",
+                                      "text": "Result category"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.168e28f4fd7e.site-search-category",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "select",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "site-search-category",
+                                        "data-search-category": "",
+                                        "name": "category"
+                                      },
+                                      "style": "",
+                                      "layerName": "site search category",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.search.rich-text.96a5154447fb.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "All",
+                                            "text": "All"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.search.rich-text.45cfc97298aa.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Pages",
+                                            "text": "Pages"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.search.rich-text.5cd529a7f901.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Characters",
+                                            "text": "Characters"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.search.rich-text.d35212ab9ee6.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Media",
+                                            "text": "Media"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.search.rich-text.714251080684.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Help",
+                                            "text": "Help"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.search.rich-text.2f02ce698cb5.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Roadmap",
+                                            "text": "Roadmap"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.search.rich-text.b46143c1d438.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "News",
+                                            "text": "News"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.755a9465972f.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "button-link button-link--primary",
+                                      "attributes": {
+                                        "type": "submit"
+                                      },
+                                      "style": "",
+                                      "layerName": "Search",
+                                      "label": "Search"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.349020bddccb.search-suggestions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "search-suggestions",
+                                "attributes": {
+                                  "aria-label": "Search suggestions"
+                                },
+                                "style": "",
+                                "layerName": "Try:Toadalbrowser gamesFeast Passworldsupport",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.search.rich-text.827387e0a021.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Try:",
+                                      "text": "Try:"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.f3f69d046875.button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-search-suggestion": "Toadal"
+                                      },
+                                      "style": "",
+                                      "layerName": "Toadal",
+                                      "label": "Toadal"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.53f441c72a98.button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-search-suggestion": "browser games"
+                                      },
+                                      "style": "",
+                                      "layerName": "browser games",
+                                      "label": "browser games"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.faed5835e166.button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-search-suggestion": "Feast Pass"
+                                      },
+                                      "style": "",
+                                      "layerName": "Feast Pass",
+                                      "label": "Feast Pass"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.9f7e3a70de8b.button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-search-suggestion": "world"
+                                      },
+                                      "style": "",
+                                      "layerName": "world",
+                                      "label": "world"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.search.rich-text.8f6520854982.button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-search-suggestion": "support"
+                                      },
+                                      "style": "",
+                                      "layerName": "support",
+                                      "label": "support"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.search.rich-text.a3e8ad60cad0.search-status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "search-status",
+                          "attributes": {
+                            "data-search-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Loading the local search index…",
+                          "text": "Loading the local search index…"
+                        }
+                      },
+                      {
+                        "id": "component.search.rich-text.79f4d70ddcc3.search-results",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "search-results",
+                          "attributes": {
+                            "data-search-results": ""
+                          },
+                          "style": "",
+                          "layerName": "div search-results",
+                          "text": ""
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.search.rich-text.1800a0e60a8b.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSSearch uses a local index of this TOADAL FEAST preview. Your ",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.search.rich-text.ea8b72c82e4c.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.search.rich-text.37cca891faee.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.a3054e1ae2d4.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "Search uses a local index of this TOADAL FEAST preview. Your query is no",
+                                "text": "Search uses a local index of this TOADAL FEAST preview. Your query is not sent to an external search service."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.search.rich-text.4145176fae55.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.search.rich-text.ac632f8a359a.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.owner-native.reference-assets-images-characters-companion-runtime-v2-",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.search.rich-text.bb914c04056b.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

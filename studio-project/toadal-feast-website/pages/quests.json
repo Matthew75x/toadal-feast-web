@@ -8,10 +8,519 @@
   "components": [
     {
       "id": "component.guest-quests.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "guest-progression-quests",
-        "html": "<div class='progression-page' data-progression-page='quests' data-companion-context='feast-pass-quests' data-companion-copy='Configured daily check-in, exploration, and Treat quests record browser-local activity.'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><a href='/feast-pass/'>Feast Pass</a><span aria-hidden='true'>/</span><span>Quests</span></nav><header class='progression-hero'><p class='section-kicker'>TOADAL FEAST · GUEST JOURNEY</p><p class='progression-eyebrow'>QUEST BOARD</p><h1>Quests &amp; challenges</h1><p class='progression-lede'>Follow configured guest activities across daily check-in, exploration, games, and stories. Definitions and browser-local progress are separate. Starter XP and Sparks settings are editable, not permanent promises.</p><p class='progression-truth-note'>Only the existing UTC-day check-in, site route visits, and Home Treat collection are active. There is no weekly timer; game and story goals appear only when supported by published, configured activities.</p></header><section class='progression-section' aria-labelledby='quests-status-title'><div class='progression-section-heading'><div><p class='section-kicker'>YOUR LOCAL STATUS</p><h2 id='quests-status-title'>Quest progress</h2></div><span class='progression-local-badge'>Guest · this browser</span></div><p class='progression-storage' data-progression-storage-status role='status' aria-live='polite'>Guest progress is stored only in this browser.</p><div class='progression-empty' data-progression-quest-list aria-live='polite'><p>Daily, weekly, exploration, game, and story quest groups appear here. Unpublished content and unsupported gameplay are never counted.</p></div></section><nav class='progression-nav' aria-label='Feast Pass pages'><a href='/feast-pass/'>Feast Pass</a><a href='/feast-pass/quests/' aria-current='page'>Quests <span class='sr-only'>(current page)</span></a><a href='/feast-pass/rewards/'>Rewards</a><a href='/profile/'>Guest profile</a></nav><section class='progression-controls' aria-labelledby='quest-controls-title'><div><h2 id='quest-controls-title'>Local data controls</h2><p>Clear website progression only. Unrelated game and mobile data are not affected.</p></div><button class='button-link button-link--secondary' type='button' data-clear-progression>Clear website progression</button></section></div>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Quests · Feast Pass · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.guest-quests.rich-text.754b2bd9d464.progression-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "div",
+              "className": "progression-page",
+              "attributes": {
+                "data-progression-page": "quests",
+                "data-companion-context": "feast-pass-quests",
+                "data-companion-copy": "Configured daily check-in, exploration, and Treat quests record browser-local activity."
+              },
+              "style": "",
+              "layerName": "Quests & challenges",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.guest-quests.rich-text.3c079883256b.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Feast Pass/Quests",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-quests.rich-text.c9310d798cd1.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.5c665809d4cd.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.88bf319ecaef.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.d6d3d023666e.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.cb7615ec6efb.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Quests",
+                          "text": "Quests"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-quests.rich-text.2634688be3b5.progression-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "progression-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Quests & challenges",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-quests.rich-text.6407f31efb85.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST · GUEST JOURNEY",
+                          "text": "TOADAL FEAST · GUEST JOURNEY"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.290e751ac280.progression-eyebrow",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-eyebrow",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "QUEST BOARD",
+                          "text": "QUEST BOARD"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.acee213a10b0.h1",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h1",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Quests & challenges",
+                          "text": "Quests & challenges"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.93b328eab6f2.progression-lede",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-lede",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Follow configured guest activities across daily check-in, exploration, g",
+                          "text": "Follow configured guest activities across daily check-in, exploration, games, and stories. Definitions and browser-local progress are separate. Starter XP and Sparks settings are editable, not permanent promises."
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.c7c2994950b7.progression-truth-note",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-truth-note",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Only the existing UTC-day check-in, site route visits, and Home Treat co",
+                          "text": "Only the existing UTC-day check-in, site route visits, and Home Treat collection are active. There is no weekly timer; game and story goals appear only when supported by published, configured activities."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-quests.rich-text.df8833fc3d4c.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "quests-status-title"
+                    },
+                    "style": "",
+                    "layerName": "Quest progress",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-quests.rich-text.89b23c4c3ab4.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Quest progress",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-quests.rich-text.98904d42bab2.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Quest progress",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-quests.rich-text.f79a6105a0bd.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "YOUR LOCAL STATUS",
+                                      "text": "YOUR LOCAL STATUS"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-quests.rich-text.d196abb32d89.quests-status-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "quests-status-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "quests status title",
+                                      "text": "Quest progress"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-quests.rich-text.bb848555fff9.progression-local-badge",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "progression-local-badge",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest · this browser",
+                                "text": "Guest · this browser"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.a1a3fa109b28.progression-storage",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-storage",
+                          "attributes": {
+                            "data-progression-storage-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Guest progress is stored only in this browser.",
+                          "text": "Guest progress is stored only in this browser."
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.4aa25bbb38af.progression-empty",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-empty",
+                          "attributes": {
+                            "data-progression-quest-list": "",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Daily, weekly, exploration, game, and story quest groups appear here. Un",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-quests.rich-text.2104f25d65f4.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Daily, weekly, exploration, game, and story quest groups appear here. Un",
+                                "text": "Daily, weekly, exploration, game, and story quest groups appear here. Unpublished content and unsupported gameplay are never counted."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-quests.rich-text.07717575de84.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav",
+                    "attributes": {
+                      "aria-label": "Feast Pass pages"
+                    },
+                    "style": "",
+                    "layerName": "Feast PassQuests (current page)RewardsGuest profile",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-quests.rich-text.2ab11a332a5e.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.fe11702a0891.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Quests (current page)",
+                          "href": "/feast-pass/quests/",
+                          "children": [
+                            {
+                              "id": "component.guest-quests.rich-text.b7e2b4d740ed.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Quests ",
+                                "layerName": "Text: Quests"
+                              }
+                            },
+                            {
+                              "id": "component.guest-quests.rich-text.861150608b83.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "(current page)",
+                                "text": "(current page)"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.5764f588fd14.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Rewards",
+                          "href": "/feast-pass/rewards/",
+                          "label": "Rewards"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.cac90f8360a3.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest profile",
+                          "href": "/profile/",
+                          "label": "Guest profile"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-quests.rich-text.877cfc2fba56.progression-controls",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-controls",
+                    "attributes": {
+                      "aria-labelledby": "quest-controls-title"
+                    },
+                    "style": "",
+                    "layerName": "Local data controls",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-quests.rich-text.19f7e35b1cb6.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Local data controls",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-quests.rich-text.093e95787a2e.quest-controls-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "quest-controls-title"
+                                },
+                                "style": "",
+                                "layerName": "quest controls title",
+                                "text": "Local data controls"
+                              }
+                            },
+                            {
+                              "id": "component.guest-quests.rich-text.5f9f69b9026d.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Clear website progression only. Unrelated game and mobile data are not a",
+                                "text": "Clear website progression only. Unrelated game and mobile data are not affected."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.10236c2f73f4.button-link-button-link-",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "data-clear-progression": ""
+                          },
+                          "style": "",
+                          "layerName": "Clear website progression",
+                          "label": "Clear website progression"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root = path.resolve(process.argv[2] || '.');
 const site = path.join(root, 'studio-project', 'toadal-feast-website');
@@ -13,6 +14,7 @@ const index = readJson(path.join(pagesDir, 'index.json'));
 const records = index.pages || [];
 const routes = new Map(records.map((record) => [record.route, record]));
 const nonHome = records.filter((record) => record.route !== '/');
+const projector = await createOwnerNativeProjector();
 
 const currentRoutes = [
   '/search/',
@@ -59,10 +61,18 @@ for (const record of nonHome) {
   }
 }
 
-function pageRaw(route) {
+function pageSource(route) {
   const record = routes.get(route);
   if (!record) return '';
   return fs.readFileSync(path.join(site, record.file), 'utf8');
+}
+
+function pageRaw(route) {
+  const record = routes.get(route);
+  if (!record) return '';
+  const page = readJson(path.join(site, record.file));
+  const projected = projector.projectPageComponents(site, page).map(({ html }) => html).join('\n');
+  return `${projected}\n${JSON.stringify(page.components || [], null, 2)}`;
 }
 
 const search = pageRaw('/search/');
@@ -127,7 +137,8 @@ ok(reader.includes('data-reader-shell'), '/reader/ missing reader shell');
 ok(reader.toLowerCase().includes('no chapter selected'), '/reader/ must preserve truthful empty reader state');
 
 const notFound = pageRaw('/404.html');
-ok(notFound.includes('"href": "/search/"'), '/404.html missing Search recovery action');
+const notFoundStructuredSource = pageSource('/404.html');
+ok(notFoundStructuredSource.includes('"href": "/search/"'), '/404.html missing raw structured Search recovery action');
 ok(notFound.includes('search the Feast'), '/404.html does not acknowledge current Search route');
 
 const progressionRuntime = path.join(site, 'reference', 'assets', 'js', 'guest-progression.js');

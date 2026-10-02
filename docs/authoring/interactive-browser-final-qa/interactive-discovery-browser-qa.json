@@ -1,0 +1,643 @@
+{
+  "generatedAt": "2026-10-02T16:30:41.247Z",
+  "basePath": "/toadal-feast-web/",
+  "origin": "http://127.0.0.1:61869",
+  "renderedDist": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\dist",
+  "status": "PASS",
+  "checkCount": 49,
+  "passed": 49,
+  "failed": [],
+  "checks": [
+    {
+      "name": "Home progression loader completed",
+      "status": "PASS"
+    },
+    {
+      "name": "Home discovery controller initialized",
+      "status": "PASS"
+    },
+    {
+      "name": "Discovery controller script fetched",
+      "status": "PASS"
+    },
+    {
+      "name": "Home layout 1440x900 has no horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "discovery": true,
+        "portal": {
+          "width": 454.359375,
+          "height": 48
+        },
+        "daily": {
+          "width": 112,
+          "height": 103.625
+        }
+      }
+    },
+    {
+      "name": "Home layout 1440x900 keeps portal and daily controls usable",
+      "status": "PASS",
+      "detail": {
+        "width": 1440,
+        "scrollWidth": 1440,
+        "discovery": true,
+        "portal": {
+          "width": 454.359375,
+          "height": 48
+        },
+        "daily": {
+          "width": 112,
+          "height": 103.625
+        }
+      }
+    },
+    {
+      "name": "Home layout 430x932 has no horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "width": 430,
+        "scrollWidth": 430,
+        "discovery": true,
+        "portal": {
+          "width": 362,
+          "height": 48
+        },
+        "daily": {
+          "width": 156,
+          "height": 129.234375
+        }
+      }
+    },
+    {
+      "name": "Home layout 430x932 keeps portal and daily controls usable",
+      "status": "PASS",
+      "detail": {
+        "width": 430,
+        "scrollWidth": 430,
+        "discovery": true,
+        "portal": {
+          "width": 362,
+          "height": 48
+        },
+        "daily": {
+          "width": 156,
+          "height": 129.234375
+        }
+      }
+    },
+    {
+      "name": "Home layout 390x844 has no horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "discovery": true,
+        "portal": {
+          "width": 298,
+          "height": 48
+        },
+        "daily": {
+          "width": 140,
+          "height": 129.234375
+        }
+      }
+    },
+    {
+      "name": "Home layout 390x844 keeps portal and daily controls usable",
+      "status": "PASS",
+      "detail": {
+        "width": 390,
+        "scrollWidth": 390,
+        "discovery": true,
+        "portal": {
+          "width": 298,
+          "height": 48
+        },
+        "daily": {
+          "width": 140,
+          "height": 129.234375
+        }
+      }
+    },
+    {
+      "name": "Home layout 320x800 has no horizontal overflow",
+      "status": "PASS",
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "discovery": true,
+        "portal": {
+          "width": 228,
+          "height": 48
+        },
+        "daily": {
+          "width": 218,
+          "height": 118.828125
+        }
+      }
+    },
+    {
+      "name": "Home layout 320x800 keeps portal and daily controls usable",
+      "status": "PASS",
+      "detail": {
+        "width": 320,
+        "scrollWidth": 320,
+        "discovery": true,
+        "portal": {
+          "width": 228,
+          "height": 48
+        },
+        "daily": {
+          "width": 218,
+          "height": 118.828125
+        }
+      }
+    },
+    {
+      "name": "Companion exists once",
+      "status": "PASS"
+    },
+    {
+      "name": "No standalone interaction localStorage key is introduced",
+      "status": "PASS"
+    },
+    {
+      "name": "Home image decode audit is clean",
+      "status": "PASS",
+      "detail": []
+    },
+    {
+      "name": "Golden Block lazy sprite loaded",
+      "status": "PASS"
+    },
+    {
+      "name": "Daily chest lazy sprite loaded",
+      "status": "PASS"
+    },
+    {
+      "name": "Daily check-in control receives mobile touch activation",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 121,
+          "y": 459.2109375,
+          "width": 140,
+          "height": 129.234375,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Daily check-in uses the UTC daily claim",
+      "status": "PASS"
+    },
+    {
+      "name": "Daily chest opens from the existing successful claim",
+      "status": "PASS",
+      "detail": {
+        "dailyAfter": {
+          "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+          "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[],\"claimedRewardIds\":[]}",
+          "label": "Already claimed today",
+          "disabled": true,
+          "opened": "true",
+          "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+          "minimized": null,
+          "keys": [
+            "toadal:site:companion:position:v1",
+            "toadal:web:v1:feast-pass",
+            "toadal:web:v1:quests"
+          ]
+        },
+        "dailySignals": {
+          "toadal:daily-checkin-claimed": {
+            "detail": {
+              "period": "2026-10-02"
+            },
+            "at": 1790958634874
+          },
+          "toadal:daily-chest-opened": {
+            "detail": {
+              "period": "2026-10-02"
+            },
+            "at": 1790958634874
+          }
+        }
+      }
+    },
+    {
+      "name": "Daily check-in leaves the companion position/minimized state intact",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+          "minimized": null,
+          "style": "--toadal-dock-width: 102px; --toadal-companion-x: 177px; --toadal-companion-y: 6px; left: 177px !important; top: 6px !important;"
+        },
+        "after": {
+          "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+          "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[],\"claimedRewardIds\":[]}",
+          "label": "Already claimed today",
+          "disabled": true,
+          "opened": "true",
+          "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+          "minimized": null,
+          "keys": [
+            "toadal:site:companion:position:v1",
+            "toadal:web:v1:feast-pass",
+            "toadal:web:v1:quests"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Second daily click is idempotent",
+      "status": "PASS",
+      "detail": {
+        "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+        "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[],\"claimedRewardIds\":[]}"
+      }
+    },
+    {
+      "name": "Daily claim creates no standalone feature key",
+      "status": "PASS",
+      "detail": [
+        "toadal:site:companion:position:v1",
+        "toadal:web:v1:feast-pass",
+        "toadal:web:v1:quests"
+      ]
+    },
+    {
+      "name": "Blue candy supports keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "name": "Blue candy activates by keyboard and persists",
+      "status": "PASS"
+    },
+    {
+      "name": "Green candy receives touch activation at mobile width",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 458.921875,
+          "width": 302,
+          "height": 56,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Green candy collects from real touch input",
+      "status": "PASS"
+    },
+    {
+      "name": "Third candy is hidden before Golden Block completion",
+      "status": "PASS"
+    },
+    {
+      "name": "Golden Block hit 1 receives touch input",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 459.390625,
+          "width": 298,
+          "height": 48,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Golden Block hit 1 advances and animation settles",
+      "status": "PASS"
+    },
+    {
+      "name": "Golden Block hit 2 receives touch input",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 459.390625,
+          "width": 298,
+          "height": 48,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Golden Block hit 2 advances and animation settles",
+      "status": "PASS"
+    },
+    {
+      "name": "Golden Block hit 3 receives touch input",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 459.390625,
+          "width": 298,
+          "height": 48,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Golden Block hit 3 advances and animation settles",
+      "status": "PASS"
+    },
+    {
+      "name": "Golden Block hit 4 receives touch input",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 459.390625,
+          "width": 298,
+          "height": 48,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Golden Block hit 4 advances and animation settles",
+      "status": "PASS"
+    },
+    {
+      "name": "Exactly four deliberate hits complete one Golden Block",
+      "status": "PASS",
+      "detail": {
+        "state": {
+          "schemaVersion": 1,
+          "candies": [
+            "portal-candy",
+            "lower-page-candy"
+          ],
+          "goldenBlock": {
+            "hits": 4,
+            "complete": true
+          }
+        },
+        "frame": "24",
+        "revealed": true,
+        "events": 0,
+        "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+        "minimized": null
+      }
+    },
+    {
+      "name": "Golden Block did not change companion position/minimized state",
+      "status": "PASS",
+      "detail": {
+        "before": {
+          "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+          "minimized": null
+        },
+        "after": {
+          "state": {
+            "schemaVersion": 1,
+            "candies": [
+              "portal-candy",
+              "lower-page-candy"
+            ],
+            "goldenBlock": {
+              "hits": 4,
+              "complete": true
+            }
+          },
+          "frame": "24",
+          "revealed": true,
+          "events": 0,
+          "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+          "minimized": null
+        }
+      }
+    },
+    {
+      "name": "Only the expected existing progression keys are present",
+      "status": "PASS"
+    },
+    {
+      "name": "Purple candy receives touch input only after reveal",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 459.203125,
+          "width": 298,
+          "height": 56,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Purple candy is manually collected and saved",
+      "status": "PASS"
+    },
+    {
+      "name": "Exactly three candies are collected",
+      "status": "PASS",
+      "detail": {
+        "candies": [
+          "portal-candy",
+          "lower-page-candy",
+          "golden-block-candy"
+        ],
+        "block": {
+          "hits": 4,
+          "complete": true
+        }
+      }
+    },
+    {
+      "name": "Three candy discoveries and four block hits persist after reload",
+      "status": "PASS",
+      "detail": {
+        "candies": [
+          "portal-candy",
+          "lower-page-candy",
+          "golden-block-candy"
+        ],
+        "block": {
+          "hits": 4,
+          "complete": true
+        },
+        "found": 3
+      }
+    },
+    {
+      "name": "Reduced-motion Golden Block accepts touch",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 458.921875,
+          "width": 298,
+          "height": 48,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Reduced-motion mode jumps to the hit frame without animating",
+      "status": "PASS",
+      "detail": {
+        "reduced": true,
+        "frame": "9",
+        "animations": 0,
+        "animating": "false"
+      }
+    },
+    {
+      "name": "Surprise Me supports keyboard focus",
+      "status": "PASS"
+    },
+    {
+      "name": "Surprise Me receives real mobile touch activation",
+      "status": "PASS",
+      "detail": {
+        "ok": true,
+        "rect": {
+          "x": 195,
+          "y": 458.5625,
+          "width": 298,
+          "height": 48,
+          "disabled": false,
+          "inViewport": true,
+          "hitTarget": true
+        }
+      }
+    },
+    {
+      "name": "Surprise Me navigates to a curated same-origin destination",
+      "status": "PASS",
+      "detail": {
+        "destination": "/toadal-feast-web/play/",
+        "portalState": {
+          "path": "/toadal-feast-web/",
+          "portal": "activated",
+          "disabled": true,
+          "busy": "true",
+          "status": "The portal is opening a curated Feast destination…",
+          "signal": {
+            "detail": {
+              "path": "/toadal-feast-web/play/"
+            },
+            "at": 1790958640448
+          },
+          "history": 2
+        }
+      }
+    },
+    {
+      "name": "Portal navigation preserves normal browser history",
+      "status": "PASS",
+      "detail": {
+        "previousEntry": "http://127.0.0.1:61869/toadal-feast-web/",
+        "length": 3,
+        "portalState": {
+          "path": "/toadal-feast-web/",
+          "portal": "activated",
+          "disabled": true,
+          "busy": "true",
+          "status": "The portal is opening a curated Feast destination…",
+          "signal": {
+            "detail": {
+              "path": "/toadal-feast-web/play/"
+            },
+            "at": 1790958640448
+          },
+          "history": 2
+        }
+      }
+    },
+    {
+      "name": "No browser request/console/runtime errors",
+      "status": "PASS",
+      "detail": []
+    }
+  ],
+  "screenshots": [
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-1440x900.png",
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-430x932.png",
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-390x844.png",
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-320x800.png",
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-blue-candy-found.png",
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-golden-block-broken.png",
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-three-candies-collected.png",
+    "docs/authoring/interactive-browser-final-qa/screenshots/home-portal-opening.png"
+  ],
+  "browserErrors": [],
+  "persistence": {
+    "initial": {
+      "keys": [
+        "toadal:site:companion:position:v1"
+      ],
+      "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+      "minimized": null,
+      "companionStyle": "--toadal-dock-width: 102px; --toadal-companion-x: 177px; --toadal-companion-y: 6px; left: 177px !important; top: 6px !important;",
+      "pressed": "false"
+    },
+    "afterDaily": {
+      "quests": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"items\":{},\"processedEventIds\":[],\"dailyClaimedPeriod\":\"2026-10-02\"}",
+      "pass": "{\"schemaVersion\":1,\"updatedAt\":\"2026-10-02T16:30:34.874Z\",\"level\":1,\"xp\":5,\"sparks\":1,\"treats\":0,\"streak\":{\"count\":1,\"lastQualifiedPeriod\":\"2026-10-02\"},\"badges\":[],\"collectibles\":[],\"claimedRewardIds\":[]}",
+      "label": "Already claimed today",
+      "disabled": true,
+      "opened": "true",
+      "position": "{\"version\":1,\"x\":177,\"y\":6,\"manual\":false}",
+      "minimized": null,
+      "keys": [
+        "toadal:site:companion:position:v1",
+        "toadal:web:v1:feast-pass",
+        "toadal:web:v1:quests"
+      ]
+    },
+    "afterReload": {
+      "candies": [
+        "portal-candy",
+        "lower-page-candy",
+        "golden-block-candy"
+      ],
+      "block": {
+        "hits": 4,
+        "complete": true
+      },
+      "found": 3
+    },
+    "reducedMotion": {
+      "reduced": true,
+      "frame": "9",
+      "animations": 0,
+      "animating": "false"
+    }
+  },
+  "conclusion": "All interactions are browser-local, gated and score-free; no game score or companion position/minimized key is written by discovery actions."
+}

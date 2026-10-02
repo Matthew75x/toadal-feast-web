@@ -8,26 +8,867 @@
   "components": [
     {
       "id": "component.store.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "gated-store",
-        "html": "<article class='gated-page' data-companion-context='merch' data-companion-copy='The store has no live catalog or checkout. No purchase path is being implied.' data-companion-reaction='merch'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Merchandise without a fake checkout</span></nav><section class='gated-hero'><div class='gated-hero-copy'><p class='section-kicker'>STORE PREVIEW</p><span class='chip status-chip--coming'>COMING SOON</span><h1>Merchandise without a fake checkout</h1><p class='gated-lede'>The structure is ready for future approved merchandise and digital goodies, but there are no public products, prices, or checkout flows here.</p></div><figure class='gated-hero-art'><img src='/assets/images/characters/companion/runtime-v2/merch.webp' alt='Toadal presenting merchandise' loading='eager' decoding='async'></figure></section><section class='gated-grid' aria-label='Store preview'><article class='gated-card'><p class='section-kicker'>MERCHANDISE</p><h2>Physical merchandise concepts</h2><p>No public merchandise catalog, inventory, prices, cart, checkout, or shipping flow is live on this website.</p><span class='status-chip status-chip--coming'>COMING SOON</span></article><article class='gated-card'><p class='section-kicker'>DIGITAL GOODIES</p><h2>No purchasable downloads yet</h2><p>Digital goodies may appear later only when specific items and rights are approved. Nothing on this page is an entitlement or purchase offer.</p><span class='status-chip status-chip--coming'>COMING SOON</span></article><article class='gated-card'><p class='section-kicker'>CATEGORIES</p><h2>Structure without fake products</h2><p>The page is ready for future approved categories, but product names and prices are deliberately absent.</p><a href='/coming-soon/'>Why this page is gated</a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>The store has no live catalog or checkout. No purchase path is being implied.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Store preview - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.store.rich-text.12a8b50d9a93.gated-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "gated-page",
+              "attributes": {
+                "data-companion-context": "merch",
+                "data-companion-copy": "The store has no live catalog or checkout. No purchase path is being implied.",
+                "data-companion-reaction": "merch"
+              },
+              "style": "",
+              "layerName": "Merchandise without a fake checkout",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.store.rich-text.bcc786e83424.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Merchandise without a fake checkout",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.store.rich-text.5131f4d37b72.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.store.rich-text.d7aa1b2c3a57.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.store.rich-text.b4f1e9074ca7.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Merchandise without a fake checkout",
+                          "text": "Merchandise without a fake checkout"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.store.rich-text.dc51b349dd0e.gated-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Merchandise without a fake checkout",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.store.rich-text.eff8cde8765f.gated-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "gated-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Merchandise without a fake checkout",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.store.rich-text.8a38f3c871cf.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "STORE PREVIEW",
+                                "text": "STORE PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.2f00fd7ad9ac.chip-status-chip-coming",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "COMING SOON",
+                                "text": "COMING SOON"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.bb2523dbb182.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Merchandise without a fake checkout",
+                                "text": "Merchandise without a fake checkout"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.6ee811fb5e00.gated-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "gated-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The structure is ready for future approved merchandise and digital goodi",
+                                "text": "The structure is ready for future approved merchandise and digital goodies, but there are no public products, prices, or checkout flows here."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.store.rich-text.fcaf28d5113f.gated-hero-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "gated-hero-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "figure gated-hero-art",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.store.rich-text.b1fd875e7844.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "eager",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal presenting merchandise",
+                                "asset": "asset.owner-native.reference-assets-images-characters-companion-runtime-v2-.169f74f9",
+                                "alt": "Toadal presenting merchandise"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.store.rich-text.4d9a67d14581.gated-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-grid",
+                    "attributes": {
+                      "aria-label": "Store preview"
+                    },
+                    "style": "",
+                    "layerName": "Physical merchandise concepts",
+                    "mode": "inherit",
+                    "collection": true,
+                    "children": [
+                      {
+                        "id": "component.store.rich-text.5f6202c7c13a.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Physical merchandise concepts",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.store.rich-text.144e2f72a891.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "MERCHANDISE",
+                                "text": "MERCHANDISE"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.8a260d4316f3.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Physical merchandise concepts",
+                                "text": "Physical merchandise concepts"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.0bbb027c4ee1.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No public merchandise catalog, inventory, prices, cart, checkout, or shi",
+                                "text": "No public merchandise catalog, inventory, prices, cart, checkout, or shipping flow is live on this website."
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.230c0a8320e2.status-chip-status-chip-",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "status-chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "COMING SOON",
+                                "text": "COMING SOON"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.store.rich-text.076bdbc3bd93.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "No purchasable downloads yet",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.store.rich-text.f90645d07413.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "DIGITAL GOODIES",
+                                "text": "DIGITAL GOODIES"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.6ac8cec2c94e.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No purchasable downloads yet",
+                                "text": "No purchasable downloads yet"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.3bbad251f6e0.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Digital goodies may appear later only when specific items and rights are",
+                                "text": "Digital goodies may appear later only when specific items and rights are approved. Nothing on this page is an entitlement or purchase offer."
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.22205c38cc10.status-chip-status-chip-",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "status-chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "COMING SOON",
+                                "text": "COMING SOON"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.store.rich-text.026b5e4ece54.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Structure without fake products",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.store.rich-text.18aa229ae5fd.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CATEGORIES",
+                                "text": "CATEGORIES"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.99d65f807a71.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Structure without fake products",
+                                "text": "Structure without fake products"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.4dd158f41aee.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The page is ready for future approved categories, but product names and ",
+                                "text": "The page is ready for future approved categories, but product names and prices are deliberately absent."
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.4d5a1caddb2f.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Why this page is gated",
+                                "href": "/coming-soon/",
+                                "label": "Why this page is gated"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.store.rich-text.6585085e608f.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSThe store has no live catalog or checkout. No purchase path i",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.store.rich-text.33a4d0d123c0.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.store.rich-text.330109865bec.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.0d0ebe0fc373.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "The store has no live catalog or checkout. No purchase path is being imp",
+                                "text": "The store has no live catalog or checkout. No purchase path is being implied."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.store.rich-text.00b18e94bb45.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.store.rich-text.cfa3ebec5302.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.store.rich-text.6122c5e5b216.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.store.guided-exits",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "gated-store-actions",
-        "html": "<section class='construction-panel' data-companion-context='merch' data-companion-copy='There is no approved product catalog or checkout provider, so purchases are disabled. Explore the available website while the store remains a preview.' data-companion-reaction='construction' aria-labelledby='store-actions-title'><div><p class='section-kicker'>CHECKOUT IS NOT AVAILABLE</p><h2 id='store-actions-title'>No products are for sale here</h2><p>There is no approved catalog, price, inventory, cart, or checkout to purchase from.</p><button type='button' disabled>Checkout unavailable</button></div><div class='construction-links'><a href='/coming-soon/' data-companion-context='under-construction' data-companion-action data-companion-action-copy='Checkout is unavailable until an approved catalog and provider exist.'>Why the shop is paused</a><a href='/play/'>Explore browser previews</a><a href='/media/'>Explore Media</a><a href='/app/'>Discover the mobile app</a></div></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Store preview - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.store.guided-exits.6d9e7f5180fe.construction-panel",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "construction-panel",
+              "attributes": {
+                "data-companion-context": "merch",
+                "data-companion-copy": "There is no approved product catalog or checkout provider, so purchases are disabled. Explore the available website while the store remains a preview.",
+                "data-companion-reaction": "construction",
+                "aria-labelledby": "store-actions-title"
+              },
+              "style": "",
+              "layerName": "No products are for sale here",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.store.guided-exits.bf085fe10fed.div",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "No products are for sale here",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.store.guided-exits.1159def4f135.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "CHECKOUT IS NOT AVAILABLE",
+                          "text": "CHECKOUT IS NOT AVAILABLE"
+                        }
+                      },
+                      {
+                        "id": "component.store.guided-exits.dfecde719843.store-actions-title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "store-actions-title"
+                          },
+                          "style": "",
+                          "layerName": "store actions title",
+                          "text": "No products are for sale here"
+                        }
+                      },
+                      {
+                        "id": "component.store.guided-exits.8a5c67a84319.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "There is no approved catalog, price, inventory, cart, or checkout to pur",
+                          "text": "There is no approved catalog, price, inventory, cart, or checkout to purchase from."
+                        }
+                      },
+                      {
+                        "id": "component.store.guided-exits.f6741c00f73e.button",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "",
+                          "attributes": {
+                            "type": "button",
+                            "disabled": true
+                          },
+                          "style": "",
+                          "layerName": "Checkout unavailable",
+                          "label": "Checkout unavailable"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.store.guided-exits.f67348158486.construction-links",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "construction-links",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Why the shop is pausedExplore browser previewsExplore MediaDiscover the ",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.store.guided-exits.5ebf834bfca6.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "data-companion-context": "under-construction",
+                            "data-companion-action": "",
+                            "data-companion-action-copy": "Checkout is unavailable until an approved catalog and provider exist."
+                          },
+                          "style": "",
+                          "layerName": "Why the shop is paused",
+                          "href": "/coming-soon/",
+                          "label": "Why the shop is paused"
+                        }
+                      },
+                      {
+                        "id": "component.store.guided-exits.17424fa36b57.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore browser previews",
+                          "href": "/play/",
+                          "label": "Explore browser previews"
+                        }
+                      },
+                      {
+                        "id": "component.store.guided-exits.dd5e2e445900.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore Media",
+                          "href": "/media/",
+                          "label": "Explore Media"
+                        }
+                      },
+                      {
+                        "id": "component.store.guided-exits.ddb33445f72e.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Discover the mobile app",
+                          "href": "/app/",
+                          "label": "Discover the mobile app"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.store.updates",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "store-updates-link",
-        "html": "<section class='construction-panel' aria-labelledby='store-updates-title'><div><p class='section-kicker'>STORE UPDATES</p><h2 id='store-updates-title'>Follow published news and plans</h2><p>There is no store mailing list or subscription service. Check published News or the Roadmap for updates; neither link signs you up for messages.</p></div><nav class='construction-links' aria-label='Store updates'><a href='/news/'>Read News</a><a href='/roadmap/'>View the Roadmap</a></nav></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Store preview - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.store.updates.e0f57f24ba50.construction-panel",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "construction-panel",
+              "attributes": {
+                "aria-labelledby": "store-updates-title"
+              },
+              "style": "",
+              "layerName": "Follow published news and plans",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.store.updates.fa6cca14beef.div",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Follow published news and plans",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.store.updates.b718da6450d6.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "STORE UPDATES",
+                          "text": "STORE UPDATES"
+                        }
+                      },
+                      {
+                        "id": "component.store.updates.460d105b938b.store-updates-title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "store-updates-title"
+                          },
+                          "style": "",
+                          "layerName": "store updates title",
+                          "text": "Follow published news and plans"
+                        }
+                      },
+                      {
+                        "id": "component.store.updates.b18d159d1bb5.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "There is no store mailing list or subscription service. Check published ",
+                          "text": "There is no store mailing list or subscription service. Check published News or the Roadmap for updates; neither link signs you up for messages."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.store.updates.2eec20d9bd95.construction-links",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "construction-links",
+                    "attributes": {
+                      "aria-label": "Store updates"
+                    },
+                    "style": "",
+                    "layerName": "Read NewsView the Roadmap",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.store.updates.68864afd5258.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Read News",
+                          "href": "/news/",
+                          "label": "Read News"
+                        }
+                      },
+                      {
+                        "id": "component.store.updates.40d25459ebab.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "View the Roadmap",
+                          "href": "/roadmap/",
+                          "label": "View the Roadmap"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

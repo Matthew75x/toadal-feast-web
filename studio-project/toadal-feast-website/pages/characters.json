@@ -8,10 +8,2470 @@
   "components": [
     {
       "id": "component.characters.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
         "variant": "characters",
-        "html": "<article class='character-family-page characters-page' data-progression-page='characters' data-companion-context='characters' data-companion-copy='This hub uses canonical character art and distinguishes published previews from future character slots.' data-companion-reaction='friendly'>\n<nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>Characters</span></nav>\n<section class='character-hero'>\n  <div class='character-hero-bg' aria-hidden='true'></div>\n  <div class='character-hero-copy'><p class='section-kicker'>MEET THE FEAST</p><span class='chip preview'>CHARACTER PREVIEW</span>\n    <h1>Characters Hub</h1><p>Meet the currently approved TOADAL FEAST cast through canonical artwork. Full biographies, relationships, and future character identities publish only when canonical source material is approved.</p>\n    <a class='button-link button-link--primary' href='/characters/toadal/'>Meet Toadal <span aria-hidden='true'>&rarr;</span></a>\n  </div>\n  <img class='character-hero-toadal' src='/assets/images/characters/toadal-victory.webp' alt='Toadal, the crowned golden hero of TOADAL FEAST' width='611' height='640' decoding='async'>\n</section>\n<section class='character-browser' aria-label='Character collection preview'>\n  <div class='character-browser-heading'><div><p class='section-kicker'>CANONICAL CAST</p><h2>Browse character previews</h2></div><p>Filters operate only on the approved character records currently published to this preview.</p></div>\n  <div class='character-filter-controls' role='group' aria-label='Filter character previews'>\n    <input checked type='radio' name='character-filter' id='character-filter-all'><label for='character-filter-all'>All characters</label>\n    <input type='radio' name='character-filter' id='character-filter-hero'><label for='character-filter-hero'>Hero</label>\n    <input type='radio' name='character-filter' id='character-filter-genies'><label for='character-filter-genies'>Genies</label>\n    <input type='radio' name='character-filter' id='character-filter-cast'><label for='character-filter-cast'>Other cast</label>\n    <input type='radio' name='character-filter' id='character-filter-future'><label for='character-filter-future'>Coming soon</label>\n  </div>\n  <div class='character-card-grid'><article class='character-card' data-character-group='hero' data-companion-context='characters' data-companion-copy='Toadal uses canonical character art. Unsupported biography or relationship details are not being invented.'><div class='character-card-art'><img src='/assets/images/characters/toadal-portrait.webp' alt='Toadal' loading='lazy' decoding='async'></div><div class='character-card-copy'><span class='chip preview'>PREVIEW</span><h2>Toadal</h2><p>The crowned golden hero at the center of TOADAL FEAST.</p><a class='character-card-action' href='/characters/toadal/'>Open profile <span aria-hidden='true'>&rarr;</span></a><button class='character-card-action' type='button' data-discover-character='toadal'>Mark artwork viewed</button><p class='character-card-state' data-character-discovery-status='toadal' role='status' aria-live='polite'>Not discovered in this browser</p></div></article><article class='character-card' data-character-group='cast' data-companion-context='characters' data-companion-copy='Princess Lily uses canonical character art. Unsupported biography or relationship details are not being invented.'><div class='character-card-art'><img src='/assets/images/characters/princess-lily.webp' alt='Princess Lily' loading='lazy' decoding='async'></div><div class='character-card-copy'><span class='chip preview'>PREVIEW</span><h2>Princess Lily</h2><p>Canonical Princess Lily artwork is published; a full profile is not yet available.</p><span class='character-card-state'>Profile preview not published</span><button class='character-card-action' type='button' data-discover-character='princess-lily'>Mark artwork viewed</button><p class='character-card-state' data-character-discovery-status='princess-lily' role='status' aria-live='polite'>Not discovered in this browser</p></div></article><article class='character-card' data-character-group='genie' data-companion-context='characters' data-companion-copy='Sweet Genie uses canonical character art. Unsupported biography or relationship details are not being invented.'><div class='character-card-art'><img src='/assets/images/characters/genie-sweet.webp' alt='Sweet Genie' loading='lazy' decoding='async'></div><div class='character-card-copy'><span class='chip preview'>PREVIEW</span><h2>Sweet Genie</h2><p>Canonical Sweet Genie artwork is published; a full profile is not yet available.</p><span class='character-card-state'>Profile preview not published</span><button class='character-card-action' type='button' data-discover-character='genie-sweet'>Mark artwork viewed</button><p class='character-card-state' data-character-discovery-status='genie-sweet' role='status' aria-live='polite'>Not discovered in this browser</p></div></article><article class='character-card' data-character-group='genie' data-companion-context='characters' data-companion-copy='Fruity Genie uses canonical character art. Unsupported biography or relationship details are not being invented.'><div class='character-card-art'><img src='/assets/images/characters/genie-fruity.webp' alt='Fruity Genie' loading='lazy' decoding='async'></div><div class='character-card-copy'><span class='chip preview'>PREVIEW</span><h2>Fruity Genie</h2><p>Canonical Fruity Genie artwork is published; a full profile is not yet available.</p><span class='character-card-state'>Profile preview not published</span><button class='character-card-action' type='button' data-discover-character='genie-fruity'>Mark artwork viewed</button><p class='character-card-state' data-character-discovery-status='genie-fruity' role='status' aria-live='polite'>Not discovered in this browser</p></div></article><article class='character-card' data-character-group='genie' data-companion-context='characters' data-companion-copy='Savoury Genie uses canonical character art. Unsupported biography or relationship details are not being invented.'><div class='character-card-art'><img src='/assets/images/characters/genie-savoury.webp' alt='Savoury Genie' loading='lazy' decoding='async'></div><div class='character-card-copy'><span class='chip preview'>PREVIEW</span><h2>Savoury Genie</h2><p>Canonical Savoury Genie artwork is published; a full profile is not yet available.</p><span class='character-card-state'>Profile preview not published</span><button class='character-card-action' type='button' data-discover-character='genie-savoury'>Mark artwork viewed</button><p class='character-card-state' data-character-discovery-status='genie-savoury' role='status' aria-live='polite'>Not discovered in this browser</p></div></article><article class='character-card' data-character-group='cast' data-companion-context='characters' data-companion-copy='Gulper uses canonical character art. Unsupported biography or relationship details are not being invented.'><div class='character-card-art'><img src='/assets/images/characters/gulper.webp' alt='Gulper' loading='lazy' decoding='async'></div><div class='character-card-copy'><span class='chip preview'>PREVIEW</span><h2>Gulper</h2><p>Canonical Gulper artwork is published; a full profile is not yet available.</p><span class='character-card-state'>Profile preview not published</span><button class='character-card-action' type='button' data-discover-character='gulper'>Mark artwork viewed</button><p class='character-card-state' data-character-discovery-status='gulper' role='status' aria-live='polite'>Not discovered in this browser</p></div></article><article class='character-card' data-character-group='cast' data-companion-context='characters' data-companion-copy='Gully uses canonical character art. Unsupported biography or relationship details are not being invented.'><div class='character-card-art'><img src='/assets/images/characters/gully.webp' alt='Gully, happy and standing' loading='lazy' decoding='async'></div><div class='character-card-copy'><span class='chip preview'>PREVIEW</span><h2>Gully</h2><p>Canonical Gully artwork is published; a full profile is not yet available.</p><span class='character-card-state'>Profile preview not published</span><button class='character-card-action' type='button' data-discover-character='gully'>Mark artwork viewed</button><p class='character-card-state' data-character-discovery-status='gully' role='status' aria-live='polite'>Not discovered in this browser</p></div></article><article class='character-card character-card--future' data-character-group='future' data-companion-context='characters-future' data-companion-copy='Future characters stay deliberately unnamed until approved canonical material exists.'><div class='future-character-mark' aria-hidden='true'>?</div><div class='character-card-copy'><span class='chip'>COMING SOON</span><h2>More characters</h2><p>Future cast members are intentionally not named or described before approved canonical material exists.</p><span class='character-card-state'>Future character slot</span></div></article></div>\n</section>\n<section class='character-info-grid'>\n  <article class='character-info-panel' data-companion-context='characters-relationships'><p class='section-kicker'>RELATIONSHIPS</p><h2>Canonical links only</h2><p>Relationship labels from generated mockups are not treated as canon. This panel will populate only from approved character records.</p><span class='status-chip'>NOT PUBLISHED</span></article>\n  <article class='character-info-panel'><p class='section-kicker'>DISCOVERY</p><h2>Character artwork discoveries</h2><p>Guest website progression is active on this browser. Mark a character’s approved artwork as viewed to save that browser-local discovery. This records an artwork view only; it does not mean game, story, or canonical character completion.</p><p class='character-discovery-summary'>Viewed artwork in this browser: <strong data-progression-stat='character-discoveries' aria-live='polite'>—</strong> of 7</p><a href='/feast-pass/'>Feast Pass status <span aria-hidden='true'>&rarr;</span></a></article>\n  <article class='character-info-panel'><p class='section-kicker'>APPEARANCES</p><h2>Explore the current site</h2><p>Use World, Stories, Media, and Play to discover the cast without inventing unpublished appearance lists.</p><div class='character-info-links'><a href='/world/'>World</a><a href='/stories/'>Stories</a><a href='/media/'>Media</a><a href='/play/'>Play</a></div></article>\n</section>\n<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>This hub uses canonical character art and keeps unapproved character lore out.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside>\n</article>"
+        "layerName": "Characters page content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.characters.rich-text.823078fc1e6c.character-family-page-ch",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "character-family-page characters-page",
+              "attributes": {
+                "data-progression-page": "characters",
+                "data-companion-context": "characters",
+                "data-companion-copy": "This hub uses canonical character art and distinguishes published previews from future character slots.",
+                "data-companion-reaction": "friendly"
+              },
+              "style": "",
+              "layerName": "Characters Hub",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.characters.rich-text.4f56b6cdd62d.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.6ae5afc2013c.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Characters",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.characters.rich-text.ba1d892dd96e.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.3adb7a07da59.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.54fbae163b64.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Characters",
+                          "text": "Characters"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.31b79a5b4e78.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.1ed7622fcfce.character-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "character-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Characters Hub",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.characters.rich-text.57fdfa1a63e3.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.bccef9d831a8.character-hero-bg",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "character-hero-bg",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "div character-hero-bg",
+                          "text": ""
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.7e962e05f889.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.f9ff7b27ce0f.character-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "character-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Characters Hub",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.237007200fd7.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "MEET THE FEAST",
+                                "text": "MEET THE FEAST"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.663a8e20c8d5.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CHARACTER PREVIEW",
+                                "text": "CHARACTER PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.8c580fdac5ce.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.cb052f26dae6.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Characters Hub",
+                                "text": "Characters Hub"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.07c2895738b1.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Meet the currently approved TOADAL FEAST cast through canonical artwork.",
+                                "text": "Meet the currently approved TOADAL FEAST cast through canonical artwork. Full biographies, relationships, and future character identities publish only when canonical source material is approved."
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.9a4b2d89fdf5.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.0cff54808ba3.button-link-button-link-",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "button-link button-link--primary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Meet Toadal →",
+                                "href": "/characters/toadal/",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.a444a630ea20.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Meet Toadal ",
+                                      "layerName": "Text: Meet Toadal"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.8e21462085bc.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.c295d9684bf4.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.54fb2dd584a9.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.2d15ed615529.character-hero-toadal",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "character-hero-toadal",
+                          "attributes": {
+                            "width": "611",
+                            "height": "640",
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "Toadal, the crowned golden hero of TOADAL FEAST",
+                          "asset": "asset.home.character.toadal-victory-web",
+                          "alt": "Toadal, the crowned golden hero of TOADAL FEAST"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.5b914bfb17bc.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.44b0ad9a229a.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.f4cf3d31ccaf.character-browser",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "character-browser",
+                    "attributes": {
+                      "aria-label": "Character collection preview"
+                    },
+                    "style": "",
+                    "layerName": "Browse character previews",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.characters.rich-text.819f02c87ccb.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.e7dd76e4e3d0.character-browser-headin",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "character-browser-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browse character previews",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.bf5dde0e213b.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Browse character previews",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.d5c61bb49d05.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "CANONICAL CAST",
+                                      "text": "CANONICAL CAST"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.0efeb78b0751.h2",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Browse character previews",
+                                      "text": "Browse character previews"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.8b56a22f91ec.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Filters operate only on the approved character records currently publish",
+                                "text": "Filters operate only on the approved character records currently published to this preview."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.ee235a64094f.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.d7004fffe691.character-filter-control",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "character-filter-controls",
+                          "attributes": {
+                            "role": "group",
+                            "aria-label": "Filter character previews"
+                          },
+                          "style": "",
+                          "layerName": "All characters Hero Genies Other cast Coming soon",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.1a1da9fe21ab.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.e85db3d26a73.character-filter-all",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "input",
+                                "className": "",
+                                "attributes": {
+                                  "checked": "",
+                                  "type": "radio",
+                                  "name": "character-filter",
+                                  "id": "character-filter-all"
+                                },
+                                "style": "",
+                                "layerName": "character filter all",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.683d91050229.label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "label",
+                                "className": "",
+                                "attributes": {
+                                  "for": "character-filter-all"
+                                },
+                                "style": "",
+                                "layerName": "All characters",
+                                "text": "All characters"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.2ccd6a4d28e8.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.3c0f098c775d.character-filter-hero",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "input",
+                                "className": "",
+                                "attributes": {
+                                  "type": "radio",
+                                  "name": "character-filter",
+                                  "id": "character-filter-hero"
+                                },
+                                "style": "",
+                                "layerName": "character filter hero",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.2cd56cab3c54.label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "label",
+                                "className": "",
+                                "attributes": {
+                                  "for": "character-filter-hero"
+                                },
+                                "style": "",
+                                "layerName": "Hero",
+                                "text": "Hero"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.427b5e992db2.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.a346f311fd1a.character-filter-genies",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "input",
+                                "className": "",
+                                "attributes": {
+                                  "type": "radio",
+                                  "name": "character-filter",
+                                  "id": "character-filter-genies"
+                                },
+                                "style": "",
+                                "layerName": "character filter genies",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.fb053000f18a.label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "label",
+                                "className": "",
+                                "attributes": {
+                                  "for": "character-filter-genies"
+                                },
+                                "style": "",
+                                "layerName": "Genies",
+                                "text": "Genies"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.18131b7a0f80.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.b47b6f89c0ea.character-filter-cast",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "input",
+                                "className": "",
+                                "attributes": {
+                                  "type": "radio",
+                                  "name": "character-filter",
+                                  "id": "character-filter-cast"
+                                },
+                                "style": "",
+                                "layerName": "character filter cast",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.3f2e166d8f57.label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "label",
+                                "className": "",
+                                "attributes": {
+                                  "for": "character-filter-cast"
+                                },
+                                "style": "",
+                                "layerName": "Other cast",
+                                "text": "Other cast"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.65a9662c3d40.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.8bcf37ff0ad1.character-filter-future",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "input",
+                                "className": "",
+                                "attributes": {
+                                  "type": "radio",
+                                  "name": "character-filter",
+                                  "id": "character-filter-future"
+                                },
+                                "style": "",
+                                "layerName": "character filter future",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.6441952b6cb4.label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "label",
+                                "className": "",
+                                "attributes": {
+                                  "for": "character-filter-future"
+                                },
+                                "style": "",
+                                "layerName": "Coming soon",
+                                "text": "Coming soon"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.f6eee4af6ad8.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.aa8b7d219aeb.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.a6c6b395288d.character-card-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "character-card-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Toadal",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.5b51d392b04e.toadal",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "character-card",
+                                "attributes": {
+                                  "data-character-group": "hero",
+                                  "data-companion-context": "characters",
+                                  "data-companion-copy": "Toadal uses canonical character art. Unsupported biography or relationship details are not being invented.",
+                                  "data-discover-character": "toadal"
+                                },
+                                "style": "",
+                                "layerName": "Toadal",
+                                "href": "/characters/toadal/",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.f0d16743d4c6.character-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div character-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.40070c08ca7f.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Toadal",
+                                            "asset": "asset.home.character.toadal",
+                                            "alt": "Toadal"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.f633c0605f7a.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Toadal",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.da3a001a3d68.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.395dc37cd4ce.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Toadal",
+                                            "text": "Toadal"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.34f3c7699a07.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "The crowned golden hero at the center of TOADAL FEAST.",
+                                            "text": "The crowned golden hero at the center of TOADAL FEAST."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.f9f59dc6dc7a.character-card-action",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-action",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Open profile →",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.characters.rich-text.69de67da94ee.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "Open profile ",
+                                                  "layerName": "Text: Open profile"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.characters.rich-text.2b3ef2b3a962.span",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "aria-hidden": "true"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "→",
+                                                  "text": "→"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.ae37fd90105c.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "character-card-state",
+                                            "attributes": {
+                                              "data-character-discovery-status": "toadal",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not discovered in this browser",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.31a68938d4f9.princess-lily",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "character-card",
+                                "attributes": {
+                                  "data-character-group": "cast",
+                                  "data-companion-context": "characters",
+                                  "data-companion-copy": "Princess Lily uses canonical character art. Unsupported biography or relationship details are not being invented.",
+                                  "data-discover-character": "princess-lily",
+                                  "role": "button",
+                                  "tabindex": "0",
+                                  "aria-label": "Discover Princess Lily artwork"
+                                },
+                                "style": "",
+                                "layerName": "Princess Lily",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.aa370e3d59a7.character-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div character-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.3d6be0c2e849.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Princess Lily",
+                                            "asset": "asset.home.character.princess-lily",
+                                            "alt": "Princess Lily"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.6c975e3370cd.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Princess Lily",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.c1e352950c02.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.baf08bca11a1.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Princess Lily",
+                                            "text": "Princess Lily"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.34c08d341549.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Canonical Princess Lily artwork is published; a full profile is not yet ",
+                                            "text": "Canonical Princess Lily artwork is published; a full profile is not yet available."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.204734d71fb8.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-state",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Profile preview not published",
+                                            "text": "Profile preview not published"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.3cc14ebc56f9.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "character-card-state",
+                                            "attributes": {
+                                              "data-character-discovery-status": "princess-lily",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not discovered in this browser",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.07721383d2e1.genie-sweet",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "character-card",
+                                "attributes": {
+                                  "data-character-group": "genie",
+                                  "data-companion-context": "characters",
+                                  "data-companion-copy": "Sweet Genie uses canonical character art. Unsupported biography or relationship details are not being invented.",
+                                  "data-discover-character": "genie-sweet",
+                                  "role": "button",
+                                  "tabindex": "0",
+                                  "aria-label": "Discover Sweet Genie artwork"
+                                },
+                                "style": "",
+                                "layerName": "Sweet Genie",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.cf085388d47f.character-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div character-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.b1e157d907fa.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Sweet Genie",
+                                            "asset": "asset.home.genie.sweet-art",
+                                            "alt": "Sweet Genie"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.12790c95532e.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Sweet Genie",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.bfe462db7a67.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.7395da68ca2f.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Sweet Genie",
+                                            "text": "Sweet Genie"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.dca2ac7ee8d1.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Canonical Sweet Genie artwork is published; a full profile is not yet av",
+                                            "text": "Canonical Sweet Genie artwork is published; a full profile is not yet available."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.6a485e1c0786.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-state",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Profile preview not published",
+                                            "text": "Profile preview not published"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.142825f5d74c.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "character-card-state",
+                                            "attributes": {
+                                              "data-character-discovery-status": "genie-sweet",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not discovered in this browser",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.276531593999.genie-fruity",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "character-card",
+                                "attributes": {
+                                  "data-character-group": "genie",
+                                  "data-companion-context": "characters",
+                                  "data-companion-copy": "Fruity Genie uses canonical character art. Unsupported biography or relationship details are not being invented.",
+                                  "data-discover-character": "genie-fruity",
+                                  "role": "button",
+                                  "tabindex": "0",
+                                  "aria-label": "Discover Fruity Genie artwork"
+                                },
+                                "style": "",
+                                "layerName": "Fruity Genie",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.405fab1e3a7c.character-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div character-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.44cd8a0d6055.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Fruity Genie",
+                                            "asset": "asset.home.genie.fruity-art",
+                                            "alt": "Fruity Genie"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.c84179fecca0.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Fruity Genie",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.00cc2f93d00e.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.5a5b9eb75e46.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Fruity Genie",
+                                            "text": "Fruity Genie"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.57c021b873a7.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Canonical Fruity Genie artwork is published; a full profile is not yet a",
+                                            "text": "Canonical Fruity Genie artwork is published; a full profile is not yet available."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.cad27a72a3c1.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-state",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Profile preview not published",
+                                            "text": "Profile preview not published"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.e5077c876821.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "character-card-state",
+                                            "attributes": {
+                                              "data-character-discovery-status": "genie-fruity",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not discovered in this browser",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.ea34f0ca1bad.genie-savoury",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "character-card",
+                                "attributes": {
+                                  "data-character-group": "genie",
+                                  "data-companion-context": "characters",
+                                  "data-companion-copy": "Savoury Genie uses canonical character art. Unsupported biography or relationship details are not being invented.",
+                                  "data-discover-character": "genie-savoury",
+                                  "role": "button",
+                                  "tabindex": "0",
+                                  "aria-label": "Discover Savoury Genie artwork"
+                                },
+                                "style": "",
+                                "layerName": "Savoury Genie",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.760591ed4c58.character-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div character-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.4761f1cdb5cb.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Savoury Genie",
+                                            "asset": "asset.home.genie.savoury-art",
+                                            "alt": "Savoury Genie"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.f71602eb3089.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Savoury Genie",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.9c469e9e3895.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.306e35676bd0.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Savoury Genie",
+                                            "text": "Savoury Genie"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.649dbe343173.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Canonical Savoury Genie artwork is published; a full profile is not yet ",
+                                            "text": "Canonical Savoury Genie artwork is published; a full profile is not yet available."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.c49416870788.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-state",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Profile preview not published",
+                                            "text": "Profile preview not published"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.ead2a7fde71e.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "character-card-state",
+                                            "attributes": {
+                                              "data-character-discovery-status": "genie-savoury",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not discovered in this browser",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.fc3924dbea1e.gulper",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "character-card",
+                                "attributes": {
+                                  "data-character-group": "cast",
+                                  "data-companion-context": "characters",
+                                  "data-companion-copy": "Gulper uses canonical character art. Unsupported biography or relationship details are not being invented.",
+                                  "data-discover-character": "gulper",
+                                  "role": "button",
+                                  "tabindex": "0",
+                                  "aria-label": "Discover Gulper artwork"
+                                },
+                                "style": "",
+                                "layerName": "Gulper",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.15889f681f5f.character-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div character-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.441d08dec231.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Gulper",
+                                            "asset": "asset.home.character.gulper",
+                                            "alt": "Gulper"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.f8327c2d0a2b.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Gulper",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.019704df4071.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.dc16a6cad779.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Gulper",
+                                            "text": "Gulper"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.86c0307e82f1.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Canonical Gulper artwork is published; a full profile is not yet availab",
+                                            "text": "Canonical Gulper artwork is published; a full profile is not yet available."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.2fba00a067db.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-state",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Profile preview not published",
+                                            "text": "Profile preview not published"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.37de25aed2bc.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "character-card-state",
+                                            "attributes": {
+                                              "data-character-discovery-status": "gulper",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not discovered in this browser",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.6871eb90a581.gully",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "character-card",
+                                "attributes": {
+                                  "data-character-group": "cast",
+                                  "data-companion-context": "characters",
+                                  "data-companion-copy": "Gully uses canonical character art. Unsupported biography or relationship details are not being invented.",
+                                  "data-discover-character": "gully",
+                                  "role": "button",
+                                  "tabindex": "0",
+                                  "aria-label": "Discover Gully artwork"
+                                },
+                                "style": "",
+                                "layerName": "Gully",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.d72b50ff55e1.character-card-art",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-art",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "div character-card-art",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.b6b62f40fca1.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Gully, happy and standing",
+                                            "asset": "asset.home.character.gully",
+                                            "alt": "Gully, happy and standing"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.e225ca726946.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Gully",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.9526376b502e.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.f01ddc656c49.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Gully",
+                                            "text": "Gully"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.4a577c7dbd13.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Canonical Gully artwork is published; a full profile is not yet availabl",
+                                            "text": "Canonical Gully artwork is published; a full profile is not yet available."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.6ab5a0f6dce4.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-state",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Profile preview not published",
+                                            "text": "Profile preview not published"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.6048f2563787.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "character-card-state",
+                                            "attributes": {
+                                              "data-character-discovery-status": "gully",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not discovered in this browser",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.6b25666e8b26.character-card-character",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "character-card character-card--future",
+                                "attributes": {
+                                  "data-character-group": "future",
+                                  "data-companion-context": "characters-future",
+                                  "data-companion-copy": "Future characters stay deliberately unnamed until approved canonical material exists."
+                                },
+                                "style": "",
+                                "layerName": "More characters",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.fb1c64ab7bfb.future-character-mark",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "future-character-mark",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "?",
+                                      "text": "?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.3ca9a5bba82b.character-card-copy",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "character-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "More characters",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.characters.rich-text.df93f0f31226.chip",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "COMING SOON",
+                                            "text": "COMING SOON"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.59984a78adba.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "More characters",
+                                            "text": "More characters"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.4be33d215c96.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Future cast members are intentionally not named or described before appr",
+                                            "text": "Future cast members are intentionally not named or described before approved canonical material exists."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.characters.rich-text.4f8cb3aae09b.character-card-state",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "character-card-state",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Future character slot",
+                                            "text": "Future character slot"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.b38fe1cf8123.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.4acfc147f4fc.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.3173935a10ff.character-info-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "character-info-grid",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Canonical links only",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.characters.rich-text.395c91e93813.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.76102787d5da.character-info-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "character-info-panel",
+                          "attributes": {
+                            "data-companion-context": "characters-relationships"
+                          },
+                          "style": "",
+                          "layerName": "Canonical links only",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.084811ca139e.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "RELATIONSHIPS",
+                                "text": "RELATIONSHIPS"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.265a9a238287.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Canonical links only",
+                                "text": "Canonical links only"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.bbd0e383a184.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Relationship labels from generated mockups are not treated as canon. Thi",
+                                "text": "Relationship labels from generated mockups are not treated as canon. This panel will populate only from approved character records."
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.c36172555415.status-chip",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "status-chip",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "NOT PUBLISHED",
+                                "text": "NOT PUBLISHED"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.84b3fcf7010a.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.7cb5a9845b82.character-info-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "character-info-panel",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Character artwork discoveries",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.69e44afcf681.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "DISCOVERY",
+                                "text": "DISCOVERY"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.6b1e20b75937.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Character artwork discoveries",
+                                "text": "Character artwork discoveries"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.f2d40ff3465e.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest website progression is active on this browser. Mark a character’s ",
+                                "text": "Guest website progression is active on this browser. Mark a character’s approved artwork as viewed to save that browser-local discovery. This records an artwork view only; it does not mean game, story, or canonical character completion."
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.1b262e3bdbcc.character-discovery-summ",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "character-discovery-summary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Viewed artwork in this browser: — of 7",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.dd6b5c76bb6d.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Viewed artwork in this browser: ",
+                                      "layerName": "Text: Viewed artwork in this browser:"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.bdd06fd2730d.strong",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "strong",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-progression-stat": "character-discoveries",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.76f0d4b7aade.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": " of 7",
+                                      "layerName": "Text: of 7"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.69e0a0bbe361.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feast Pass status →",
+                                "href": "/feast-pass/",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.51f53b590ca2.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Feast Pass status ",
+                                      "layerName": "Text: Feast Pass status"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.b3f19a300aba.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.748d92901dbd.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.c57f072a6fad.character-info-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "character-info-panel",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore the current site",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.77c9b26f74c5.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "APPEARANCES",
+                                "text": "APPEARANCES"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.c92467555dec.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore the current site",
+                                "text": "Explore the current site"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.4d0da5b631a2.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Use World, Stories, Media, and Play to discover the cast without inventi",
+                                "text": "Use World, Stories, Media, and Play to discover the cast without inventing unpublished appearance lists."
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.81efb7d9ebfd.character-info-links",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "character-info-links",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "WorldStoriesMediaPlay",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.characters.rich-text.5ae4275e478a.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "World",
+                                      "href": "/world/",
+                                      "label": "World"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.987006ee3bc9.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Stories",
+                                      "href": "/stories/",
+                                      "label": "Stories"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.c8e7208ae277.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Media",
+                                      "href": "/media/",
+                                      "label": "Media"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.characters.rich-text.7d30cceb605f.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Play",
+                                      "href": "/play/",
+                                      "label": "Play"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.c80b89762628.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.ade0042d42ce.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.381560633fb1.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSThis hub uses canonical character art and keeps unapproved ch",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.characters.rich-text.b35a9adcd1c3.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.c350d43b1e35.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.b591f2fc1442.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "This hub uses canonical character art and keeps unapproved character lor",
+                                "text": "This hub uses canonical character art and keeps unapproved character lore out."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.characters.rich-text.f3be347256c5.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.characters.rich-text.c05aa101eaac.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.characters.rich-text.b6d2a4ec0774.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.characters.rich-text.06f667e55f75.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

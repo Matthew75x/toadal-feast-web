@@ -8,18 +8,1772 @@
   "components": [
     {
       "id": "component.comic.reader-preview",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "comic-reader-preview",
-        "html": "<article class='stories-publishing-page comic-reader-page' data-comic-reader data-story-index='/assets/data/story-content.json' data-companion-context='stories' data-companion-copy='The reader is ready for approved pages. None are published yet.' data-companion-reaction='thinking'>\n<nav class='story-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><a href='/stories/'>Stories</a><span aria-hidden='true'>/</span><span aria-current='page'>Reader preview</span></nav>\n<header class='reader-page-heading'><div><p class='story-kicker'>COMIC · MANGA · READER</p><h1>Read at your own pace</h1></div><span class='story-status'>READER PREVIEW · NO CHAPTER SELECTED</span></header>\n<section class='comic-reader-layout' data-reader-shell aria-label='Comic and manga reader'><aside class='reader-side-panel reader-series-panel'><p class='story-kicker'>YOUR LIBRARY</p><h2>Stories</h2><p>No published series are available yet.</p><a href='/stories/'>Browse Stories <span aria-hidden='true'>→</span></a><div class='reader-series-list' data-reader-series-list><span class='reader-empty-mini'>Published series will appear here.</span></div></aside>\n<section class='reader-main-panel' aria-label='Comic page viewer'><header class='reader-toolbar'><div class='reader-current-story'><span class='reader-story-mark' aria-hidden='true'>▤</span><div><strong data-reader-title>TOADAL FEAST stories</strong><span data-reader-chapter-label>No published chapter selected</span></div></div><div class='reader-toolbar-actions'><button type='button' class='reader-control' data-reader-save disabled aria-disabled='true'>Save position</button><button type='button' class='reader-control' data-reader-fullscreen aria-label='Enter reader fullscreen'>Fullscreen</button></div></header><div class='reader-progress-track' aria-label='Reading progress'><span data-reader-progress-bar></span></div><div class='reader-viewer' data-reader-viewer tabindex='0' aria-label='Reader page area'><div class='reader-empty-state' data-reader-empty><span class='reader-empty-icon' aria-hidden='true'>✦</span><h2 data-reader-state>No published chapter is available</h2><p data-reader-message>This reader will show approved comic pages when a chapter is published. No sample pages are included.</p><a class='story-button story-button-primary' href='/manga/'>View the manga series preview <span aria-hidden='true'>→</span></a></div><figure class='reader-page-figure' data-reader-page-figure hidden><img data-reader-page alt='' decoding='async'><figcaption data-reader-page-alt></figcaption></figure><div class='reader-load-error' data-reader-error hidden role='alert'><p>This page could not be loaded.</p><button type='button' class='story-button story-button-secondary' data-reader-retry>Retry page</button></div></div><div class='reader-controls'><button type='button' class='reader-control reader-chapter-control' data-reader-previous-chapter disabled aria-disabled='true'>Previous chapter</button><button type='button' class='reader-control' data-reader-previous disabled aria-disabled='true'>← Previous page</button><span class='reader-page-count' aria-live='polite' aria-atomic='true'><span data-reader-page-number>—</span> / <span data-reader-page-total>—</span></span><button type='button' class='reader-control reader-control-next' data-reader-next disabled aria-disabled='true'>Next page →</button><button type='button' class='reader-control reader-chapter-control' data-reader-next-chapter disabled aria-disabled='true'>Next chapter</button></div><p class='reader-keyboard-hint'>When a published chapter is open, use ← / → or swipe to turn pages.</p></section>\n<aside class='reader-side-panel reader-story-panel'><p class='story-kicker'>ABOUT THIS STORY</p><h2 data-reader-info-title>TOADAL FEAST</h2><p data-reader-info-status>Series publication state: Preview</p><p data-reader-info-summary>No published series description is available yet.</p><a href='/manga/' data-reader-series-link>Series preview <span aria-hidden='true'>→</span></a><div class='reader-chapter-list'><h3>Chapters</h3><div data-reader-chapter-list><span class='reader-empty-mini'>No published chapters.</span></div></div></aside></section>\n<section class='reader-thumbnail-panel' aria-label='Page navigator'><div class='reader-thumbnail-heading'><h2>Pages</h2><span data-reader-thumbnail-label>No pages</span></div><ol data-reader-thumbnails><li class='reader-empty-mini'>Thumbnails appear when a published chapter is available.</li></ol></section>\n<div class='manga-back-link'><a href='/stories/'>← Back to Stories &amp; Comics</a></div>\n<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>The reader is ready for approved pages. None are published yet.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Comic & Manga Reader · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.comic.reader-preview.7e546c86cfc8.stories-publishing-page-",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "stories-publishing-page comic-reader-page",
+              "attributes": {
+                "data-comic-reader": "",
+                "data-story-index": "/assets/data/story-content.json",
+                "data-companion-context": "stories",
+                "data-companion-copy": "The reader is ready for approved pages. None are published yet.",
+                "data-companion-reaction": "thinking"
+              },
+              "style": "",
+              "layerName": "Read at your own pace",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.comic.reader-preview.8825ef4484da.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.fecff9096a74.story-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "story-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Stories/Reader preview",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-preview.c65f603042a5.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.42342629ab21.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.d4be095a382d.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Stories",
+                          "href": "/stories/",
+                          "label": "Stories"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.3b5f8164537f.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.7132dd545044.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Reader preview",
+                          "text": "Reader preview"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.d91b55d4b06c.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.55011d21cc08.reader-page-heading",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "reader-page-heading",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Read at your own pace",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-preview.7262f5aec54b.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Read at your own pace",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.c64613a88f32.story-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "COMIC · MANGA · READER",
+                                "text": "COMIC · MANGA · READER"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.18a1304f1ce9.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Read at your own pace",
+                                "text": "Read at your own pace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.401927e55dff.story-status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "story-status",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "READER PREVIEW · NO CHAPTER SELECTED",
+                          "text": "READER PREVIEW · NO CHAPTER SELECTED"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.383866cb0c30.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.50d86163daeb.comic-reader-layout",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "comic-reader-layout",
+                    "attributes": {
+                      "data-reader-shell": "",
+                      "aria-label": "Comic and manga reader"
+                    },
+                    "style": "",
+                    "layerName": "Stories",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-preview.b1a5ff2c0c4a.reader-side-panel-reader",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "aside",
+                          "className": "reader-side-panel reader-series-panel",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Stories",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.f58929efd784.story-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "YOUR LIBRARY",
+                                "text": "YOUR LIBRARY"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.d017177ea09e.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Stories",
+                                "text": "Stories"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.3212c8123b4a.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No published series are available yet.",
+                                "text": "No published series are available yet."
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.68a6bb24c3f2.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Browse Stories →",
+                                "href": "/stories/",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.f4642e8ee908.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Browse Stories ",
+                                      "layerName": "Text: Browse Stories"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.b166d1164152.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.ae1b99e628dc.reader-series-list",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "reader-series-list",
+                                "attributes": {
+                                  "data-reader-series-list": ""
+                                },
+                                "style": "",
+                                "layerName": "Published series will appear here.",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.84342efc2a7a.reader-empty-mini",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "reader-empty-mini",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Published series will appear here.",
+                                      "text": "Published series will appear here."
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.74be028a59ee.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.ceba84ed4a50.reader-main-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "section",
+                          "className": "reader-main-panel",
+                          "attributes": {
+                            "aria-label": "Comic page viewer"
+                          },
+                          "style": "",
+                          "layerName": "No published chapter is available",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.bc783949602d.reader-toolbar",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "header",
+                                "className": "reader-toolbar",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "▤TOADAL FEAST storiesNo published chapter selectedSave positionFullscree",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.4f915878bb6f.reader-current-story",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "reader-current-story",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "▤TOADAL FEAST storiesNo published chapter selected",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.comic.reader-preview.6e90dd5c73db.reader-story-mark",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "reader-story-mark",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "▤",
+                                            "text": "▤"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.f725a7d04018.div",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "TOADAL FEAST storiesNo published chapter selected",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.comic.reader-preview.c1a2bba2ca80.strong",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "strong",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-reader-title": ""
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "TOADAL FEAST stories",
+                                                  "text": "TOADAL FEAST stories"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.comic.reader-preview.5bb214869aac.span",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-reader-chapter-label": ""
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "No published chapter selected",
+                                                  "text": "No published chapter selected"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.e2ce31fcc7d3.reader-toolbar-actions",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "reader-toolbar-actions",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Save positionFullscreen",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.comic.reader-preview.6240f8f3f13c.reader-control",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "button",
+                                            "className": "reader-control",
+                                            "attributes": {
+                                              "type": "button",
+                                              "data-reader-save": "",
+                                              "disabled": true,
+                                              "aria-disabled": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "Save position",
+                                            "label": "Save position"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.f77914ced7c9.reader-control",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "button",
+                                            "className": "reader-control",
+                                            "attributes": {
+                                              "type": "button",
+                                              "data-reader-fullscreen": "",
+                                              "aria-label": "Enter reader fullscreen"
+                                            },
+                                            "style": "",
+                                            "layerName": "Fullscreen",
+                                            "label": "Fullscreen"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.837053eccdb3.reader-progress-track",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "reader-progress-track",
+                                "attributes": {
+                                  "aria-label": "Reading progress"
+                                },
+                                "style": "",
+                                "layerName": "div reader-progress-track",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.40b15b30c96c.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-reader-progress-bar": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "span",
+                                      "text": ""
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.174c1d315a05.reader-viewer",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "reader-viewer",
+                                "attributes": {
+                                  "data-reader-viewer": "",
+                                  "tabindex": "0",
+                                  "aria-label": "Reader page area"
+                                },
+                                "style": "",
+                                "layerName": "No published chapter is available",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.75bf194ba947.reader-empty-state",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "reader-empty-state",
+                                      "attributes": {
+                                        "data-reader-empty": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "No published chapter is available",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.comic.reader-preview.2cb93800a411.reader-empty-icon",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "reader-empty-icon",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "✦",
+                                            "text": "✦"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.2a33ae2f4c19.h2",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-reader-state": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "No published chapter is available",
+                                            "text": "No published chapter is available"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.3f94c11b4abb.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-reader-message": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "This reader will show approved comic pages when a chapter is published. ",
+                                            "text": "This reader will show approved comic pages when a chapter is published. No sample pages are included."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.cf1060abb54f.story-button-story-butto",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "story-button story-button-primary",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "View the manga series preview →",
+                                            "href": "/manga/",
+                                            "children": [
+                                              {
+                                                "id": "component.comic.reader-preview.122d1c5ee156.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "View the manga series preview ",
+                                                  "layerName": "Text: View the manga series preview"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.comic.reader-preview.ec83417ffc10.span",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "aria-hidden": "true"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "→",
+                                                  "text": "→"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.06f21e63acb2.reader-page-figure",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figure",
+                                      "className": "reader-page-figure",
+                                      "attributes": {
+                                        "data-reader-page-figure": "",
+                                        "hidden": true
+                                      },
+                                      "style": "",
+                                      "layerName": "figure reader-page-figure",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.comic.reader-preview.a0eec156f188.dynamic-image",
+                                          "type": "core.rich-text",
+                                          "props": {
+                                            "html": "<img data-reader-page alt='' decoding='async'>",
+                                            "runtimeOnly": true,
+                                            "readOnly": true,
+                                            "locked": true,
+                                            "runtimeVersion": 1,
+                                            "runtimeKind": "dynamic-image",
+                                            "runtimeSha256": "585ce16ad9d1bdcfb03840c580ad1a6fbdc53681a4f614c6da7915b912830e3b",
+                                            "runtimeCodeResources": [
+                                              {
+                                                "url": "/assets/js/stories-publishing.js",
+                                                "sha256": "ab17e0ec3c363a0391740cfa605e5a5be69a027bbd837d624ae0462aa288c504"
+                                              },
+                                              {
+                                                "url": "/assets/js/manifest-shell.js",
+                                                "sha256": "b5997ed5df1d715039835560c7b84a8373fd348b7ca28f9cffa29992ed51802e"
+                                              }
+                                            ],
+                                            "runtimePolicy": {
+                                              "id": "stories-publishing-dynamic-image-v1",
+                                              "mode": "dynamic-image-slot",
+                                              "selector": "[data-reader-page]",
+                                              "sourceMustBeAbsent": true
+                                            },
+                                            "layerName": "Read-only runtime: dynamic-image"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.65fce1037acf.figcaption",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "figcaption",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-reader-page-alt": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "figcaption",
+                                            "text": ""
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.9e3c9e95435c.reader-load-error",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "reader-load-error",
+                                      "attributes": {
+                                        "data-reader-error": "",
+                                        "hidden": true,
+                                        "role": "alert"
+                                      },
+                                      "style": "",
+                                      "layerName": "This page could not be loaded.Retry page",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.comic.reader-preview.da61d5ddc1e1.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "This page could not be loaded.",
+                                            "text": "This page could not be loaded."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.2f1562424191.story-button-story-butto",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "button",
+                                            "className": "story-button story-button-secondary",
+                                            "attributes": {
+                                              "type": "button",
+                                              "data-reader-retry": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "Retry page",
+                                            "label": "Retry page"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.b093ac5146e3.reader-controls",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "reader-controls",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Previous chapter← Previous page— / —Next page →Next chapter",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.dc260724227e.reader-control-reader-ch",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "reader-control reader-chapter-control",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-reader-previous-chapter": "",
+                                        "disabled": true,
+                                        "aria-disabled": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "Previous chapter",
+                                      "label": "Previous chapter"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.3df556960a94.reader-control",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "reader-control",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-reader-previous": "",
+                                        "disabled": true,
+                                        "aria-disabled": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "← Previous page",
+                                      "label": "← Previous page"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.5ca55b469986.reader-page-count",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "reader-page-count",
+                                      "attributes": {
+                                        "aria-live": "polite",
+                                        "aria-atomic": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "— / —",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.comic.reader-preview.fa28f520c876.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-reader-page-number": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.90f4d5d67207.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": " / ",
+                                            "layerName": "Text: /"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.comic.reader-preview.2c04adac6c78.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-reader-page-total": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.8e0cb02b90c5.reader-control-reader-co",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "reader-control reader-control-next",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-reader-next": "",
+                                        "disabled": true,
+                                        "aria-disabled": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "Next page →",
+                                      "label": "Next page →"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.09366c42f251.reader-control-reader-ch",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "reader-control reader-chapter-control",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-reader-next-chapter": "",
+                                        "disabled": true,
+                                        "aria-disabled": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "Next chapter",
+                                      "label": "Next chapter"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.933405ac2275.reader-keyboard-hint",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "reader-keyboard-hint",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "When a published chapter is open, use ← / → or swipe to turn pages.",
+                                "text": "When a published chapter is open, use ← / → or swipe to turn pages."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.feb187dfdca1.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.ba6c483fb9c0.reader-side-panel-reader",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "aside",
+                          "className": "reader-side-panel reader-story-panel",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.994a39383525.story-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "story-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "ABOUT THIS STORY",
+                                "text": "ABOUT THIS STORY"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.3fa13887aa63.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "data-reader-info-title": ""
+                                },
+                                "style": "",
+                                "layerName": "TOADAL FEAST",
+                                "text": "TOADAL FEAST"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.fb8b3236381e.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-reader-info-status": ""
+                                },
+                                "style": "",
+                                "layerName": "Series publication state: Preview",
+                                "text": "Series publication state: Preview"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.db9b7f058114.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-reader-info-summary": ""
+                                },
+                                "style": "",
+                                "layerName": "No published series description is available yet.",
+                                "text": "No published series description is available yet."
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.c13d13e4c87c.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {
+                                  "data-reader-series-link": ""
+                                },
+                                "style": "",
+                                "layerName": "Series preview →",
+                                "href": "/manga/",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.2d02b7dab594.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Series preview ",
+                                      "layerName": "Text: Series preview"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.22632963c710.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.62eda0b2bc86.reader-chapter-list",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "reader-chapter-list",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Chapters",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.comic.reader-preview.ee6da3eddcd8.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Chapters",
+                                      "text": "Chapters"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.comic.reader-preview.1b0469206a05.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-reader-chapter-list": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "No published chapters.",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.comic.reader-preview.e619e03e61fe.reader-empty-mini",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "reader-empty-mini",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "No published chapters.",
+                                            "text": "No published chapters."
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.8395192d577a.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.1337f5942add.reader-thumbnail-panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "reader-thumbnail-panel",
+                    "attributes": {
+                      "aria-label": "Page navigator"
+                    },
+                    "style": "",
+                    "layerName": "Pages",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-preview.f449a315e51c.reader-thumbnail-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "reader-thumbnail-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Pages",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.56d084b8fe52.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Pages",
+                                "text": "Pages"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.ce9b6a382790.span",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "data-reader-thumbnail-label": ""
+                                },
+                                "style": "",
+                                "layerName": "No pages",
+                                "text": "No pages"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.d25890033213.ol",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "ol",
+                          "className": "",
+                          "attributes": {
+                            "data-reader-thumbnails": ""
+                          },
+                          "style": "",
+                          "layerName": "Thumbnails appear when a published chapter is available.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.1f705eb477b0.reader-empty-mini",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "li",
+                                "className": "reader-empty-mini",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Thumbnails appear when a published chapter is available.",
+                                "text": "Thumbnails appear when a published chapter is available."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.09dc98aa12b7.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.b540b401ee24.manga-back-link",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "manga-back-link",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "← Back to Stories & Comics",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-preview.cc7d99efcb29.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "← Back to Stories & Comics",
+                          "href": "/stories/",
+                          "label": "← Back to Stories & Comics"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.8fab8e97cf8e.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.comic.reader-preview.fc847a9b8278.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSThe reader is ready for approved pages. None are published ye",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-preview.6ac41b828e9e.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.6a4f2469c203.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.09b209696483.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "The reader is ready for approved pages. None are published yet.",
+                                "text": "The reader is ready for approved pages. None are published yet."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-preview.71f828ad2577.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-preview.2ae803361521.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-preview.1e068385debb.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.comic.reader-related-links",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "comic-reader-related-links",
-        "html": "<section class='manga-related-grid reader-related-links' aria-label='Explore related Feast content while the reader awaits publication'><article class='story-panel'><p class='story-kicker'>WORLD</p><h2>Explore the Feast World</h2><p>Browse canonical environment previews; no unpublished story locations are implied.</p><a class='story-text-link' href='/world/'>Open World <span aria-hidden='true'>→</span></a></article><article class='story-panel'><p class='story-kicker'>CHARACTERS</p><h2>Meet the cast</h2><p>See approved character artwork and clearly marked profile states.</p><a class='story-text-link' href='/characters/'>Open Characters <span aria-hidden='true'>→</span></a></article><article class='story-panel'><p class='story-kicker'>MEDIA</p><h2>View published art previews</h2><p>Canonical environment and character art is available while no comic pages are published.</p><a class='story-text-link' href='/media/'>Open Media <span aria-hidden='true'>→</span></a></article></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Comic & Manga Reader · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.comic.reader-related-links.9c2887135948.manga-related-grid-reade",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "manga-related-grid reader-related-links",
+              "attributes": {
+                "aria-label": "Explore related Feast content while the reader awaits publication"
+              },
+              "style": "",
+              "layerName": "Explore the Feast World",
+              "mode": "inherit",
+              "collection": true,
+              "children": [
+                {
+                  "id": "component.comic.reader-related-links.0a6cdd88cd11.story-panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "story-panel",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Explore the Feast World",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-related-links.5d7f3b5cda1d.story-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "story-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "WORLD",
+                          "text": "WORLD"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.c6502b6907ce.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore the Feast World",
+                          "text": "Explore the Feast World"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.940c111eca19.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browse canonical environment previews; no unpublished story locations ar",
+                          "text": "Browse canonical environment previews; no unpublished story locations are implied."
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.12732002b9b1.story-text-link",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "story-text-link",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Open World →",
+                          "href": "/world/",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-related-links.8a68f65bc524.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Open World ",
+                                "layerName": "Text: Open World"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-related-links.8abc576fcf53.span",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "aria-hidden": "true"
+                                },
+                                "style": "",
+                                "layerName": "→",
+                                "text": "→"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.comic.reader-related-links.8f0dbd539b13.story-panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "story-panel",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Meet the cast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-related-links.49222dce8fc1.story-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "story-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "CHARACTERS",
+                          "text": "CHARACTERS"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.928489aa394e.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Meet the cast",
+                          "text": "Meet the cast"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.73380a4885fe.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "See approved character artwork and clearly marked profile states.",
+                          "text": "See approved character artwork and clearly marked profile states."
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.a36405b51a57.story-text-link",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "story-text-link",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Open Characters →",
+                          "href": "/characters/",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-related-links.f1660e79c055.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Open Characters ",
+                                "layerName": "Text: Open Characters"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-related-links.e2ccf365d192.span",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "aria-hidden": "true"
+                                },
+                                "style": "",
+                                "layerName": "→",
+                                "text": "→"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.comic.reader-related-links.40908357b044.story-panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "story-panel",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "View published art previews",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.comic.reader-related-links.a87f8f94e191.story-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "story-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "MEDIA",
+                          "text": "MEDIA"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.da1931731ee0.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "View published art previews",
+                          "text": "View published art previews"
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.c0102fe50ecb.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Canonical environment and character art is available while no comic page",
+                          "text": "Canonical environment and character art is available while no comic pages are published."
+                        }
+                      },
+                      {
+                        "id": "component.comic.reader-related-links.463d86447be8.story-text-link",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "story-text-link",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Open Media →",
+                          "href": "/media/",
+                          "children": [
+                            {
+                              "id": "component.comic.reader-related-links.3c1ec6d74b4f.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Open Media ",
+                                "layerName": "Text: Open Media"
+                              }
+                            },
+                            {
+                              "id": "component.comic.reader-related-links.0429f840fc99.span",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "aria-hidden": "true"
+                                },
+                                "style": "",
+                                "layerName": "→",
+                                "text": "→"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

@@ -5,14 +5,388 @@
   "title": "News & devlog · TOADAL FEAST",
   "description": "Published TOADAL FEAST news and development notes, when approved editorial is available.",
   "publicationState": "noindex",
-  "components": [{
-    "id": "component.manifest-news-article",
-    "type": "core.rich-text",
-    "props": {
-      "variant": "manifest-news-article",
-      "html": "<section class='progression-page' data-editorial-article><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><a href='/news/'>News</a><span aria-hidden='true'>/</span><span>Article</span></nav><header class='progression-hero'><p class='section-kicker'>TOADAL FEAST · NEWS</p><p class='progression-eyebrow' data-article-state>AWAITING PUBLICATION</p><h1 data-article-title>News &amp; devlog</h1><p data-article-date></p></header><article class='progression-section' data-article-content><p>There are no published articles available here yet. Drafts stay private until an approved article is published.</p></article><figure class='detail-fact' data-article-quote hidden><blockquote data-article-quote-text></blockquote><figcaption data-article-quote-attribution hidden></figcaption></figure><section class='progression-section' data-article-related aria-labelledby='article-related-title'><h2 id='article-related-title'>Related content</h2><div data-article-related-list></div><p data-article-related-empty>No approved related articles are available yet.</p></section><nav data-article-neighbors aria-label='Adjacent articles'></nav><a href='/roadmap/'>View Roadmap</a><a href='/news/'>Back to News</a></section>"
+  "components": [
+    {
+      "id": "component.manifest-news-article",
+      "type": "layout.container",
+      "props": {
+        "variant": "manifest-news-article",
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "News & devlog · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.manifest-news-article.8166d88b1f44.progression-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "progression-page",
+              "attributes": {
+                "data-editorial-article": ""
+              },
+              "style": "",
+              "layerName": "News & devlog",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.manifest-news-article.2f7dbec967f7.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/News/Article",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-news-article.16f16c84fa4a.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.dc07066553d6.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.3f3097ce1ec2.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "News",
+                          "href": "/news/",
+                          "label": "News"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.3df7124545fe.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.523c5f81478c.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Article",
+                          "text": "Article"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-news-article.c1d13e9af0ed.progression-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "progression-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "News & devlog",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-news-article.55d9324dd3de.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST · NEWS",
+                          "text": "TOADAL FEAST · NEWS"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.0f64c02150b3.progression-eyebrow",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-eyebrow",
+                          "attributes": {
+                            "data-article-state": ""
+                          },
+                          "style": "",
+                          "layerName": "AWAITING PUBLICATION",
+                          "text": "AWAITING PUBLICATION"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.cc69b86532bd.h1",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h1",
+                          "className": "",
+                          "attributes": {
+                            "data-article-title": ""
+                          },
+                          "style": "",
+                          "layerName": "News & devlog",
+                          "text": "News & devlog"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.8bb863ce66c2.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {
+                            "data-article-date": ""
+                          },
+                          "style": "",
+                          "layerName": "p",
+                          "text": ""
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-news-article.37baebdb5c4a.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "progression-section",
+                    "attributes": {
+                      "data-article-content": ""
+                    },
+                    "style": "",
+                    "layerName": "There are no published articles available here yet. Drafts stay private ",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-news-article.206f1ea6d049.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "There are no published articles available here yet. Drafts stay private ",
+                          "text": "There are no published articles available here yet. Drafts stay private until an approved article is published."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-news-article.c3b39501aa66.detail-fact",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "figure",
+                    "className": "detail-fact",
+                    "attributes": {
+                      "data-article-quote": "",
+                      "hidden": true
+                    },
+                    "style": "",
+                    "layerName": "figure detail-fact",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-news-article.7480f7fc118c.blockquote",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "blockquote",
+                          "className": "",
+                          "attributes": {
+                            "data-article-quote-text": ""
+                          },
+                          "style": "",
+                          "layerName": "blockquote",
+                          "text": ""
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.d8c32f04a8a4.figcaption",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figcaption",
+                          "className": "",
+                          "attributes": {
+                            "data-article-quote-attribution": "",
+                            "hidden": true
+                          },
+                          "style": "",
+                          "layerName": "figcaption",
+                          "text": ""
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-news-article.8e9367abeb0b.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "data-article-related": "",
+                      "aria-labelledby": "article-related-title"
+                    },
+                    "style": "",
+                    "layerName": "Related content",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-news-article.b9812050c610.article-related-title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "article-related-title"
+                          },
+                          "style": "",
+                          "layerName": "article related title",
+                          "text": "Related content"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.a7deca312ccf.div",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-article-related-list": ""
+                          },
+                          "style": "",
+                          "layerName": "div",
+                          "text": ""
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.7360bc064ac8.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {
+                            "data-article-related-empty": ""
+                          },
+                          "style": "",
+                          "layerName": "No approved related articles are available yet.",
+                          "text": "No approved related articles are available yet."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.manifest-news-article.a5324c19cd44.nav",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "",
+                    "attributes": {
+                      "data-article-neighbors": "",
+                      "aria-label": "Adjacent articles"
+                    },
+                    "style": "",
+                    "layerName": "nav",
+                    "text": ""
+                  }
+                },
+                {
+                  "id": "component.manifest-news-article.cc26e3094531.a",
+                  "type": "core.button",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "a",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "View Roadmap",
+                    "href": "/roadmap/",
+                    "label": "View Roadmap"
+                  }
+                },
+                {
+                  "id": "component.manifest-news-article.e7355eac985f.a",
+                  "type": "core.button",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "a",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Back to News",
+                    "href": "/news/",
+                    "label": "Back to News"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
     }
-  }],
+  ],
   "referenceFile": "news/devlog/index.html",
   "studioGenerated": true
 }

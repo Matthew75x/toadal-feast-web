@@ -1,0 +1,144 @@
+{
+  "schema": "toadal-feast.owner-native-studio-qualification.v1",
+  "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\studio-project\\toadal-feast-website\\project.json",
+  "studio": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\studio-owner-authoring-20261002\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER",
+  "node": "v22.23.2",
+  "qa": {
+    "level": "full",
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "graph": {
+      "dangling": []
+    },
+    "accessibility": {
+      "checks": {
+        "altText": true,
+        "iframeTitles": true,
+        "controlNames": true,
+        "headingHierarchy": true,
+        "focusVisibility": true,
+        "keyboardOperation": true,
+        "reducedMotion": true,
+        "touchTargets": true,
+        "contrastHeuristics": true
+      },
+      "issues": [],
+      "errors": 0,
+      "warnings": 0
+    },
+    "performance": {
+      "files": 138,
+      "totalBytes": 42372192,
+      "htmlBytes": 3351008,
+      "largest": [
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/reward.png",
+          "bytes": 1733730
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/maintenance.png",
+          "bytes": 1663323
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+          "bytes": 1577938
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+          "bytes": 1528531
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/news.png",
+          "bytes": 1527629
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "bytes": 1505510
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/community.png",
+          "bytes": 1480074
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/merch.png",
+          "bytes": 1457991
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+          "bytes": 1410487
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/settings.png",
+          "bytes": 1393918
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/privacy.png",
+          "bytes": 1338522
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/search.png",
+          "bytes": 1335024
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/rating.png",
+          "bytes": 1333728
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/register.png",
+          "bytes": 1321069
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+          "bytes": 1320726
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/contact.png",
+          "bytes": 1313872
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/survey.png",
+          "bytes": 1300901
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/delete-account.png",
+          "bytes": 1300325
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/notifications.png",
+          "bytes": 1299116
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+          "bytes": 1279993
+        }
+      ],
+      "largeFileWarnings": 20
+    },
+    "referenceFiles": 103,
+    "previewFiles": 138,
+    "tests": {
+      "ok": false,
+      "status": 1,
+      "stdout": "el/src/mutations.ts:7:158)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:31:383)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n  ...\n# Subtest: inserted visual blocks can reorder without crossing compatibility content\nnot ok 164 - inserted visual blocks can reorder without crossing compatibility content\n  ---\n  duration_ms: 13.2916\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\recovery.test.ts:32:1'\n  failureType: 'testCodeFailure'\n  error: 'ENOSPC: no space left on device, write'\n  code: 'ENOSPC'\n  stack: |-\n    Object.writeFileSync (node:fs:2430:20)\n    writeJson (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/io.ts:3:116)\n    writeRev (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:6:124)\n    writePageWithRevision (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:7:158)\n    insertComponent (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/mutations.ts:20:117)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/recovery.test.ts:32:147)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n  ...\n# Subtest: clean website starters are independent, valid, warning-free and render generic site chrome\nnot ok 165 - clean website starters are independent, valid, warning-free and render generic site chrome\n  ---\n  duration_ms: 11.7678\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\site-builder-productization.test.ts:15:1'\n  failureType: 'testCodeFailure'\n  error: 'ENOSPC: no space left on device, write'\n  code: 'ENOSPC'\n  stack: |-\n    Object.writeFileSync (node:fs:2430:20)\n    writeJson (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/starter.ts:4:86)\n    createStarterProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/starter.ts:33:2)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/site-builder-productization.test.ts:19:15)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)\n  ...\n# Subtest: starter project carries the reusable website-builder essentials\nnot ok 166 - starter project carries the reusable website-builder essentials\n  ---\n  duration_ms: 2.7876\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\site-builder-productization.test.ts:36:1'\n  failureType: 'testCodeFailure'\n  error: 'ENOSPC: no space left on device, write'\n  code: 'ENOSPC'\n  stack: |-\n    Object.writeFileSync (node:fs:2430:20)\n    writeJson (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/starter.ts:4:86)\n    createStarterProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/starter.ts:33:2)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/site-builder-productization.test.ts:39:13)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)\n  ...\n# Subtest: Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\nok 167 - Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\n  ---\n  duration_ms: 1.7021\n  type: 'test'\n  ...\n# Subtest: Studio server exposes safe clean-project creation and project-level settings\nok 168 - Studio server exposes safe clean-project creation and project-level settings\n  ---\n  duration_ms: 0.5086\n  type: 'test'\n  ...\n# Subtest: general websites do not inherit recovered TOADAL baseline validation rules\nok 169 - general websites do not inherit recovered TOADAL baseline validation rules\n  ---\n  duration_ms: 0.3471\n  type: 'test'\n  ...\n# Subtest: portable project backups round-trip safely into independent projects with collision-safe ids\nnot ok 170 - portable project backups round-trip safely into independent projects with collision-safe ids\n  ---\n  duration_ms: 3.0191\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\site-builder-productization.test.ts:74:1'\n  failureType: 'testCodeFailure'\n  error: 'ENOSPC: no space left on device, write'\n  code: 'ENOSPC'\n  stack: |-\n    Object.writeFileSync (node:fs:2430:20)\n    writeJson (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/starter.ts:4:86)\n    createStarterProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/packages/project-kernel/src/starter.ts:33:2)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/site-builder-productization.test.ts:78:13)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n# Subtest: optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\nok 171 - optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\n  ---\n  duration_ms: 1.9873\n  type: 'test'\n  ...\n# Subtest: Studio exposes a lightweight ping endpoint for launch and connection checks\nok 172 - Studio exposes a lightweight ping endpoint for launch and connection checks\n  ---\n  duration_ms: 0.3585\n  type: 'test'\n  ...\n# Subtest: HUD authoring preserves a local recovery copy around autosave failures\nok 173 - HUD authoring preserves a local recovery copy around autosave failures\n  ---\n  duration_ms: 0.9909\n  type: 'test'\n  ...\n# Subtest: Windows launchers share one health-aware Node 22+ launcher\nok 174 - Windows launchers share one health-aware Node 22+ launcher\n  ---\n  duration_ms: 1.5565\n  type: 'test'\n  ...\n# Subtest: Tier 1 closure primitives work together without changing the source project\nnot ok 175 - Tier 1 closure primitives work together without changing the source project\n  ---\n  duration_ms: 7.0497\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier1-closure.test.ts:8:1'\n  failureType: 'testCodeFailure'\n  error: \"EINPROGRESS, There is not enough space on the disk. '\\\\\\\\?\\\\C:\\\\Users\\\\METARA~1\\\\AppData\\\\Local\\\\Temp\\\\toadal-tier1-tEBBrS\\\\project\\\\.history\\\\page.home'\"\n  code: 'EINPROGRESS'\n  stack: |-\n    copyDir (node:internal/fs/cp/cp-sync:145:22)\n    onDir (node:internal/fs/cp/cp-sync:136:25)\n    getStats (node:internal/fs/cp/cp-sync:68:12)\n    cpSyncFn (node:internal/fs/cp/cp-sync:58:10)\n    Object.cpSync (node:fs:3132:3)\n    copyProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier1-closure.test.ts:7:118)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier1-closure.test.ts:8:97)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.start (node:internal/test_runner/test:944:17)\n  ...\n# Subtest: Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\nok 176 - Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\n  ---\n  duration_ms: 14.6845\n  type: 'test'\n  ...\n# Subtest: Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\nnot ok 177 - Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\n  ---\n  duration_ms: 4.7598\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier2-closure.test.ts:49:1'\n  failureType: 'testCodeFailure'\n  error: \"EINPROGRESS, There is not enough space on the disk. '\\\\\\\\?\\\\C:\\\\Users\\\\METARA~1\\\\AppData\\\\Local\\\\Temp\\\\toadal-tier2-XovmBR\\\\project\\\\.history\\\\page.home'\"\n  code: 'EINPROGRESS'\n  stack: |-\n    copyDir (node:internal/fs/cp/cp-sync:145:22)\n    onDir (node:internal/fs/cp/cp-sync:136:25)\n    getStats (node:internal/fs/cp/cp-sync:68:12)\n    cpSyncFn (node:internal/fs/cp/cp-sync:58:10)\n    Object.cpSync (node:fs:3132:3)\n    copyProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier2-closure.test.ts:18:6)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier2-closure.test.ts:50:10)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n  ...\n# Subtest: Tier 3 catalogs expose the complete polish/productivity contract\nok 178 - Tier 3 catalogs expose the complete polish/productivity contract\n  ---\n  duration_ms: 8.3981\n  type: 'test'\n  ...\n# Subtest: Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\nnot ok 179 - Tier 3 render/export workflow covers polish, SEO, feeds, scheduling, PWA and optimized media\n  ---\n  duration_ms: 5.3021\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier3-closure.test.ts:51:1'\n  failureType: 'testCodeFailure'\n  error: \"EINPROGRESS, There is not enough space on the disk. '\\\\\\\\?\\\\C:\\\\Users\\\\METARA~1\\\\AppData\\\\Local\\\\Temp\\\\toadal-tier3-vOwA7N\\\\project\\\\.history\\\\page.home'\"\n  code: 'EINPROGRESS'\n  stack: |-\n    copyDir (node:internal/fs/cp/cp-sync:145:22)\n    onDir (node:internal/fs/cp/cp-sync:136:25)\n    getStats (node:internal/fs/cp/cp-sync:68:12)\n    cpSyncFn (node:internal/fs/cp/cp-sync:58:10)\n    Object.cpSync (node:fs:3132:3)\n    copyProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier3-closure.test.ts:19:6)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier3-closure.test.ts:52:11)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n  ...\n# Subtest: Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\nnot ok 180 - Tier 3 Studio HTTP surface exposes theme modes, QR generation and automatic import optimization\n  ---\n  duration_ms: 2.6774\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier3-closure.test.ts:113:1'\n  failureType: 'testCodeFailure'\n  error: \"EINPROGRESS, There is not enough space on the disk. '\\\\\\\\?\\\\C:\\\\Users\\\\METARA~1\\\\AppData\\\\Local\\\\Temp\\\\toadal-tier3-KiRWgJ\\\\project\\\\.history\\\\page.home'\"\n  code: 'EINPROGRESS'\n  stack: |-\n    copyDir (node:internal/fs/cp/cp-sync:145:22)\n    onDir (node:internal/fs/cp/cp-sync:136:25)\n    getStats (node:internal/fs/cp/cp-sync:68:12)\n    cpSyncFn (node:internal/fs/cp/cp-sync:58:10)\n    Object.cpSync (node:fs:3132:3)\n    copyProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier3-closure.test.ts:19:6)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier3-closure.test.ts:114:11)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n  ...\n# Subtest: Tier 4 catalogs and architecture expose the advanced authoring contract\nok 181 - Tier 4 catalogs and architecture expose the advanced authoring contract\n  ---\n  duration_ms: 9.8998\n  type: 'test'\n  ...\n# Subtest: Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\nnot ok 182 - Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\n  ---\n  duration_ms: 6.2539\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier4-closure.test.ts:27:1'\n  failureType: 'testCodeFailure'\n  error: \"EINPROGRESS, There is not enough space on the disk. '\\\\\\\\?\\\\C:\\\\Users\\\\METARA~1\\\\AppData\\\\Local\\\\Temp\\\\toadal-tier4-BZKdfY\\\\project\\\\.history\\\\page.home'\"\n  code: 'EINPROGRESS'\n  stack: |-\n    copyDir (node:internal/fs/cp/cp-sync:145:22)\n    onDir (node:internal/fs/cp/cp-sync:136:25)\n    getStats (node:internal/fs/cp/cp-sync:68:12)\n    cpSyncFn (node:internal/fs/cp/cp-sync:58:10)\n    Object.cpSync (node:fs:3132:3)\n    copyProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier4-closure.test.ts:17:118)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier4-closure.test.ts:30:10)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n  ...\n# Subtest: Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\nnot ok 183 - Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\n  ---\n  duration_ms: 4.0089\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\studio-owner-authoring-20261002\\\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\\\tests\\\\tier4-closure.test.ts:33:1'\n  failureType: 'testCodeFailure'\n  error: \"EINPROGRESS, There is not enough space on the disk. '\\\\\\\\?\\\\C:\\\\Users\\\\METARA~1\\\\AppData\\\\Local\\\\Temp\\\\toadal-tier4-8wQis1\\\\project\\\\.history\\\\page.home'\"\n  code: 'EINPROGRESS'\n  stack: |-\n    copyDir (node:internal/fs/cp/cp-sync:145:22)\n    onDir (node:internal/fs/cp/cp-sync:136:25)\n    getStats (node:internal/fs/cp/cp-sync:68:12)\n    cpSyncFn (node:internal/fs/cp/cp-sync:58:10)\n    Object.cpSync (node:fs:3132:3)\n    copyProject (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier4-closure.test.ts:17:118)\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER/tests/tier4-closure.test.ts:35:10)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n  ...\n1..183\n# tests 183\n# suites 0\n# pass 147\n# fail 36\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 7765.6385\n",
+      "stderr": "",
+      "error": null
+    }
+  },
+  "doctor": {
+    "exitCode": 0,
+    "stdout": "{\n  \"ok\": true,\n  \"server\": {\n    \"name\": \"toadal-studio\",\n    \"version\": \"1.4.2\"\n  },\n  \"checks\": [\n    {\n      \"name\": \"config:plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.codex-plugin/plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.vscode/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.cursor/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AGENTS.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/OPERATING_CONTRACT.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_MANIFEST.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_CAPABILITY_LEDGER.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:skills/toadal-studio/SKILL.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"portable-plugin-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"schema\": \"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json\"\n      }\n    },\n    {\n      \"name\": \"portable-mcp-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"server\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\n            \"--no-warnings\",\n            \"--experimental-strip-types\",\n            \"apps/mcp/server.ts\"\n          ],\n          \"cwd\": \"./\"\n        }\n      }\n    },\n    {\n      \"name\": \"codex-compat-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"skills\": \"./skills/\",\n        \"mcpServers\": \"./.mcp.json\"\n      }\n    },\n    {\n      \"name\": \"tool-names-unique\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-annotations\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"modern-discovery\",\n      \"ok\": true,\n      \"details\": [\n        \"2026-07-28\",\n        \"2025-11-25\"\n      ]\n    },\n    {\n      \"name\": \"legacy-initialize\",\n      \"ok\": true,\n      \"details\": \"2025-11-25\"\n    },\n    {\n      \"name\": \"tools-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 16\n      }\n    },\n    {\n      \"name\": \"tool-call\",\n      \"ok\": true,\n      \"details\": {\n        \"valid\": true,\n        \"errors\": 0,\n        \"warnings\": 0\n      }\n    },\n    {\n      \"name\": \"resource-read\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"prompts-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 5\n      }\n    },\n    {\n      \"name\": \"stdio-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=stdio project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=http url=http://127.0.0.1:44152/mcp project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-09-29\\\\t-3\\\\work\\\\toadal-feast-web-owner-native-authoring-20261002\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-origin-protection\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 403\n      }\n    },\n    {\n      \"name\": \"http-rate-limit\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 429\n      }\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  "sourceBefore": {
+    "sha256": "07d58351f0795733ade2db0abb8c76cc20973f4f6e13065922cdcb8d644de753",
+    "files": 60
+  },
+  "sourceAfter": {
+    "sha256": "07d58351f0795733ade2db0abb8c76cc20973f4f6e13065922cdcb8d644de753",
+    "files": 60
+  },
+  "sourceUnchanged": true
+}

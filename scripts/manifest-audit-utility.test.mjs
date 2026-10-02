@@ -2,17 +2,33 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root = process.cwd();
 const site = path.join(root, 'studio-project', 'toadal-feast-website');
 const assets = JSON.parse(fs.readFileSync(path.join(site, 'assets', 'index.json'), 'utf8')).assets;
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
 
 function page(slug) {
   return JSON.parse(fs.readFileSync(path.join(site, 'pages', `${slug}.json`), 'utf8'));
 }
 
+// Remove only owner-editor metadata attributes for semantic contract matching.
+function semanticMarkup(markup) {
+  return markup.replace(/<[a-z][^>]*>/gi, (tag) =>
+    tag.replace(/\sdata-studio-(?:component|edit-field)=(['"])[^'"]*\1/g, ''));
+}
+
+function projectableMarkup(record) {
+  return record.components
+    .filter((component) => component.props?.authoringVersion || typeof component.props?.html === 'string')
+    .map((component) => semanticMarkup(projectPage(site, { ...record, components: [component] })))
+    .join('\n');
+}
+
 function html(slug) {
-  return page(slug).components.map((component) => component.props?.html || '').join('\n');
+  return projectableMarkup(page(slug));
 }
 
 test('Community exposes feed and guidelines previews without fabricated social activity', () => {
@@ -69,7 +85,7 @@ test('App retains real gameplay, distinguishes web and app, and uses the approve
   assert.match(content, /its own Colony Coins/);
   assert.match(content, /GAMEPLAY CAPTURE NOT AVAILABLE/);
   assert.match(content, /<h1>Take the whole Feast with you<\/h1>/);
-  assert.match(content, /<figure class='app-icon-figure'><img class='app-icon-image' src='\/assets\/images\/app\/approved-app-icon\.webp' alt='TOADAL FEAST mobile app icon' width='256' height='256' loading='lazy'/);
+  assert.match(content, /<figure class='app-icon-figure'><img\b(?=[^>]*\sclass='app-icon-image')(?=[^>]*\ssrc='\/assets\/images\/app\/approved-app-icon\.webp')(?=[^>]*\salt='TOADAL FEAST mobile app icon')(?=[^>]*\swidth='256')(?=[^>]*\sheight='256')(?=[^>]*\sloading='lazy')[^>]*>/);
   assert.equal((content.match(/\/assets\/images\/app\/approved-app-icon\.webp/g) || []).length, 1,
     'approved external icon is used once in the App icon slot');
   assert.doesNotMatch(content, /class='(?:site-logo|brandmark|toadal-mascot)[^']*'[^>]*src='\/assets\/images\/app\/approved-app-icon\.webp'/i);

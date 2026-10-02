@@ -8,18 +8,2312 @@
   "components": [
     {
       "id": "component.muogc2on.jbosap",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "wo002-play-hub",
-        "html": "\n<div class=\"wo002-play-page\" data-companion-context=\"play\" data-companion-copy=\"Browse the listings and check each PREVIEW, hold, or concept label before opening a route.\">\n  <section class=\"wo002-play-hero\" aria-labelledby=\"play-title\">\n    <div class=\"wo002-play-hero__copy\"><p class=\"section-kicker\">TOADAL FEAST · BROWSER GAMES</p><h1 id=\"play-title\">Play a little Feast.</h1>\n      <p>Explore four browser-game listings. One staging build opens in the website player; the CLAW candidate is held for origin-safety work, and two concepts have no playable website package.</p>\n      <a class=\"button-link button-link--primary\" href=\"#browser-games\">Browse the games <span aria-hidden=\"true\">↓</span></a>\n    </div>\n    <aside class=\"wo002-play-proof\" aria-label=\"Play availability summary\"><span class=\"chip preview\">PREVIEW ONLY</span><strong>1</strong><p>staging build open in player</p><small>CLAW is held pending origin-safe integration. No account or cross-device save is offered.</small></aside>\n  </section>\n  <section class=\"wo002-game-library\" aria-labelledby=\"game-library-title\">\n    <header class=\"wo002-section-heading\"><div><p class=\"section-kicker\">CHOOSE YOUR NEXT ADVENTURE</p><h2 id=\"game-library-title\">Browser games</h2></div><a class=\"text-link\" href=\"/\">Back to Home <span aria-hidden=\"true\">↗</span></a></header>\n    <div class=\"game-tabs\" role=\"group\" aria-label=\"Filter browser games\">\n      <button class=\"game-tab\" type=\"button\" aria-pressed=\"true\" data-game-tab=\"all\">All games <span>4</span></button>\n      <button class=\"game-tab\" type=\"button\" aria-pressed=\"false\" data-game-tab=\"preview\">Preview <span>4</span></button>\n      <button class=\"game-tab\" type=\"button\" aria-pressed=\"false\" data-game-tab=\"public\">Public <span>0</span></button>\n    </div>\n    <p class=\"game-empty\" data-game-empty hidden role=\"status\" aria-live=\"polite\">No games are listed in this state yet.</p>\n    <div id=\"browser-games\" class=\"play-card-grid\">\n  <article class=\"module studio-game-card play-card\" data-game-id=\"wicked-bites\" data-game-status=\"preview\">\n    <a class=\"play-card__art\" href=\"/games/wicked-bites/\" aria-label=\"View Wicked Bites game details\">\n      <img src=\"/assets/images/games/wicked-bites-v5.5-preview.webp\" alt=\"Wicked Bites 5.5 staging gameplay preview.\" loading=\"lazy\" decoding=\"async\"><span class=\"chip preview\">PREVIEW</span>\n    </a>\n    <div class=\"play-card__body\"><p class=\"play-card__eyebrow\">STAGING BUILD · 5.5</p>\n      <h3>Wicked Bites</h3><p>A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release.</p>\n      <a class=\"button-link button-link--secondary\" href=\"/games/wicked-bites/\">View game details <span aria-hidden=\"true\">→</span></a>\n    </div>\n  </article>\n  <article class=\"module studio-game-card play-card\" data-game-id=\"claw-feed-gulper\" data-game-status=\"preview\">\n    <a class=\"play-card__art\" href=\"/games/claw-feed-gulper/\" aria-label=\"View CLAW: Feed Gulper game details\">\n      <img src=\"/assets/images/games/claw-feed-gulper-v2.5.1-preview.webp\" alt=\"CLAW: Feed Gulper 2.5.1 staging package screenshot; website launch remains held.\" loading=\"lazy\" decoding=\"async\"><span class=\"chip preview\">PREVIEW</span>\n    </a>\n    <div class=\"play-card__body\"><p class=\"play-card__eyebrow\">STAGING CANDIDATE · LAUNCH HELD · 2.5.1</p>\n      <h3>CLAW: Feed Gulper</h3><p>A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification.</p>\n      <a class=\"button-link button-link--secondary\" href=\"/games/claw-feed-gulper/\">View game details <span aria-hidden=\"true\">→</span></a>\n    </div>\n  </article>\n  <article class=\"module studio-game-card play-card\" data-game-id=\"toadal-tower-defense\" data-game-status=\"preview\">\n    <a class=\"play-card__art\" href=\"/games/toadal-tower-defense/\" aria-label=\"View TOADAL Tower Defense game details\">\n      <img src=\"/assets/images/world/candy-kingdom.webp\" alt=\"Candy Kingdom world artwork, not game footage.\" loading=\"lazy\" decoding=\"async\"><span class=\"chip preview\">PREVIEW</span>\n    </a>\n    <div class=\"play-card__body\"><p class=\"play-card__eyebrow\">CONCEPT PREVIEW</p>\n      <h3>TOADAL Tower Defense</h3><p>A preview concept only. No runnable browser package is connected, and the shared world artwork is not gameplay footage.</p>\n      <a class=\"button-link button-link--secondary\" href=\"/games/toadal-tower-defense/\">View game details <span aria-hidden=\"true\">→</span></a>\n    </div>\n  </article>\n  <article class=\"module studio-game-card play-card\" data-game-id=\"froggy-fruity-bash\" data-game-status=\"preview\">\n    <a class=\"play-card__art\" href=\"/games/froggy-fruity-bash/\" aria-label=\"View Froggy Fruity Bash game details\">\n      <img src=\"/assets/images/characters/genie-fruity.webp\" alt=\"Fruity Genie character artwork, not game footage.\" loading=\"lazy\" decoding=\"async\"><span class=\"chip preview\">PREVIEW</span>\n    </a>\n    <div class=\"play-card__body\"><p class=\"play-card__eyebrow\">CONCEPT PREVIEW</p>\n      <h3>Froggy Fruity Bash</h3><p>A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage.</p>\n      <a class=\"button-link button-link--secondary\" href=\"/games/froggy-fruity-bash/\">View game details <span aria-hidden=\"true\">→</span></a>\n    </div>\n  </article></div>\n  </section>\n  <aside class=\"wo002-truth-note\"><strong>About these previews</strong><p>PREVIEW means a build is available for evaluation, not that it is a public release. Each detail page identifies whether a runnable website package is connected.</p></aside>\n<aside class=\"toadal-companion\" data-companion data-zone=\"hero\" aria-label=\"Toadal contextual helper\"><div class=\"companion-panel\" id=\"toadal-companion-panel\" data-companion-panel><p class=\"companion-label\">TOADAL SAYS</p><p class=\"companion-message\" data-companion-speech aria-live=\"polite\" aria-atomic=\"true\">Browse the listings and check each PREVIEW, hold, or concept label before opening a route.</p></div><button class=\"companion-toggle\" type=\"button\" data-companion-toggle aria-controls=\"toadal-companion-panel\" aria-expanded=\"true\" aria-label=\"Minimize Toadal helper\"><img class=\"companion-image\" data-companion-image src=\"/assets/images/characters/toadal-victory.png\" alt=\"\" width=\"611\" height=\"640\" loading=\"lazy\" decoding=\"async\"><span class=\"sr-only\">Minimize Toadal helper</span></button></aside>\n</div>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Play browser games · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.muogc2on.jbosap.23450a987dfd.text",
+            "type": "core.text",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "#text",
+              "className": "",
+              "attributes": {},
+              "style": "",
+              "text": "\n",
+              "layerName": "Text: whitespace"
+            }
+          },
+          {
+            "id": "component.muogc2on.jbosap.ee17f3327f84.wo002-play-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "div",
+              "className": "wo002-play-page",
+              "attributes": {
+                "data-companion-context": "play",
+                "data-companion-copy": "Browse the listings and check each PREVIEW, hold, or concept label before opening a route."
+              },
+              "style": "",
+              "layerName": "Play a little Feast.",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.muogc2on.jbosap.44ea746f6095.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.2c22722e5c39.wo002-play-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-play-hero",
+                    "attributes": {
+                      "aria-labelledby": "play-title"
+                    },
+                    "style": "",
+                    "layerName": "Play a little Feast.",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc2on.jbosap.90f67d097284.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.3fb89bac1599.wo002-play-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "wo002-play-hero__copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Play a little Feast.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc2on.jbosap.27b0102da490.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL FEAST · BROWSER GAMES",
+                                "text": "TOADAL FEAST · BROWSER GAMES"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.581c3afd49a3.play-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {
+                                  "id": "play-title"
+                                },
+                                "style": "",
+                                "layerName": "play title",
+                                "text": "Play a little Feast."
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.88e906086046.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n      ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.c400c9745c2f.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore four browser-game listings. One staging build opens in the websi",
+                                "text": "Explore four browser-game listings. One staging build opens in the website player; the CLAW candidate is held for origin-safety work, and two concepts have no playable website package."
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.ebfde9a63417.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n      ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.d40b251bdf9e.button-link-button-link-",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "button-link button-link--primary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Browse the games ↓",
+                                "href": "#browser-games",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.cc7f93976b47.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Browse the games ",
+                                      "layerName": "Text: Browse the games"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.bbb33e333748.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "↓",
+                                      "text": "↓"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.e20a74d6ca16.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.65b9bb9c76fa.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.55c36f1b976d.wo002-play-proof",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "aside",
+                          "className": "wo002-play-proof",
+                          "attributes": {
+                            "aria-label": "Play availability summary"
+                          },
+                          "style": "",
+                          "layerName": "PREVIEW ONLY1staging build open in playerCLAW is held pending origin-saf",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc2on.jbosap.0f5f61b30d89.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PREVIEW ONLY",
+                                "text": "PREVIEW ONLY"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.f1bf132f1b9c.strong",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "strong",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "1",
+                                "text": "1"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.2c3edfb3c074.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "staging build open in player",
+                                "text": "staging build open in player"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.3495f18188d9.small",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "small",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CLAW is held pending origin-safe integration. No account or cross-device",
+                                "text": "CLAW is held pending origin-safe integration. No account or cross-device save is offered."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.5e18ed102b81.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.f5edeb5ca1ae.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.3354e634b232.wo002-game-library",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "wo002-game-library",
+                    "attributes": {
+                      "aria-labelledby": "game-library-title"
+                    },
+                    "style": "",
+                    "layerName": "Browser games",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc2on.jbosap.819c2f0ec2e5.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.1e53245ba805.wo002-section-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "header",
+                          "className": "wo002-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browser games",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc2on.jbosap.834d176af710.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Browser games",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.667b3ded20fa.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "CHOOSE YOUR NEXT ADVENTURE",
+                                      "text": "CHOOSE YOUR NEXT ADVENTURE"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.a6b148ee892c.game-library-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "game-library-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "game library title",
+                                      "text": "Browser games"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.783209477320.text-link",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "text-link",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Back to Home ↗",
+                                "href": "/",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.9dc434ddf698.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Back to Home ",
+                                      "layerName": "Text: Back to Home"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.b63df211b166.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "↗",
+                                      "text": "↗"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.ab2e39db11fe.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.bac77dc79fa7.game-tabs",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "game-tabs",
+                          "attributes": {
+                            "role": "group",
+                            "aria-label": "Filter browser games"
+                          },
+                          "style": "",
+                          "layerName": "All games 4 Preview 4 Public 0",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc2on.jbosap.936a91d7b11d.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n      ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.f420423b5279.game-tab",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "game-tab",
+                                "attributes": {
+                                  "type": "button",
+                                  "aria-pressed": "true",
+                                  "data-game-tab": "all"
+                                },
+                                "style": "",
+                                "layerName": "All games 4",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.7bd2c1760b53.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "All games ",
+                                      "layerName": "Text: All games"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.c6daaf0564c4.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "4",
+                                      "text": "4"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.fd66463729c2.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n      ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.fd8f811d1710.game-tab",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "game-tab",
+                                "attributes": {
+                                  "type": "button",
+                                  "aria-pressed": "false",
+                                  "data-game-tab": "preview"
+                                },
+                                "style": "",
+                                "layerName": "Preview 4",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.97188d55619e.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Preview ",
+                                      "layerName": "Text: Preview"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.f30f34466cb4.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "4",
+                                      "text": "4"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.895c6f0f3410.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n      ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.7b812c22bcfb.game-tab",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "game-tab",
+                                "attributes": {
+                                  "type": "button",
+                                  "aria-pressed": "false",
+                                  "data-game-tab": "public"
+                                },
+                                "style": "",
+                                "layerName": "Public 0",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.c170c29ce9f3.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Public ",
+                                      "layerName": "Text: Public"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.6d8e90bb095f.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "0",
+                                      "text": "0"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.7738fa4a55ad.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.93c8cc088600.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.72ad58a02b10.game-empty",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "game-empty",
+                          "attributes": {
+                            "data-game-empty": "",
+                            "hidden": true,
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "No games are listed in this state yet.",
+                          "text": "No games are listed in this state yet."
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.877b8d318c8a.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.f6114c2d00a6.browser-games",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "play-card-grid",
+                          "attributes": {
+                            "id": "browser-games"
+                          },
+                          "style": "",
+                          "layerName": "browser games",
+                          "mode": "inherit",
+                          "collection": true,
+                          "children": [
+                            {
+                              "id": "component.muogc2on.jbosap.32e77a55f432.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.2f1f0acdb5d9.module-studio-game-card-",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "module studio-game-card play-card",
+                                "attributes": {
+                                  "data-game-id": "wicked-bites",
+                                  "data-game-status": "preview"
+                                },
+                                "style": "",
+                                "layerName": "Wicked Bites",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.5051d446b178.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.fdbe595b9128.play-card-art",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "play-card__art",
+                                      "attributes": {
+                                        "aria-label": "View Wicked Bites game details"
+                                      },
+                                      "style": "",
+                                      "layerName": "PREVIEW",
+                                      "href": "/games/wicked-bites/",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.d0c6677d5114.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.f1bf4bf23e0e.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Wicked Bites 5.5 staging gameplay preview.",
+                                            "asset": "asset.home.game.wicked-bites-preview",
+                                            "alt": "Wicked Bites 5.5 staging gameplay preview."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.3ebcd945b52c.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.0206e13340a2.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.8fd4b5292b5a.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.6ab892f8298e.play-card-body",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "play-card__body",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Wicked Bites",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.8c50a7c4a0b3.play-card-eyebrow",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "play-card__eyebrow",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "STAGING BUILD · 5.5",
+                                            "text": "STAGING BUILD · 5.5"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.321a59cd8673.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.7f5256f179cf.h3",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Wicked Bites",
+                                            "text": "Wicked Bites"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.59236a7be323.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "A compact, isolated browser preview from the Wicked Bites 5.5 staging bu",
+                                            "text": "A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.735bc2341b68.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.1790a7b9cc90.button-link-button-link-",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "View game details →",
+                                            "href": "/games/wicked-bites/",
+                                            "children": [
+                                              {
+                                                "id": "component.muogc2on.jbosap.94155b6b781d.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "View game details ",
+                                                  "layerName": "Text: View game details"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.muogc2on.jbosap.b51c13a7141b.span",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "aria-hidden": "true"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "→",
+                                                  "text": "→"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.30708c6ff673.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.da298824decf.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n  ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.6f31dbf8e88d.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.fcfdfaa39dd7.module-studio-game-card-",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "module studio-game-card play-card",
+                                "attributes": {
+                                  "data-game-id": "claw-feed-gulper",
+                                  "data-game-status": "preview"
+                                },
+                                "style": "",
+                                "layerName": "CLAW: Feed Gulper",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.fde092da1137.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.44ed7377e6a0.play-card-art",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "play-card__art",
+                                      "attributes": {
+                                        "aria-label": "View CLAW: Feed Gulper game details"
+                                      },
+                                      "style": "",
+                                      "layerName": "PREVIEW",
+                                      "href": "/games/claw-feed-gulper/",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.ac1546258530.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.0b0ec2c92ca4.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "CLAW: Feed Gulper 2.5.1 staging package screenshot; website launch remains held.",
+                                            "asset": "asset.home.game.claw-feed-gulper-preview",
+                                            "alt": "CLAW: Feed Gulper 2.5.1 staging package screenshot; website launch remains held."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.83240312e14c.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.11c1a8e00564.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.9fb94c333412.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.92695bf19e05.play-card-body",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "play-card__body",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "CLAW: Feed Gulper",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.cf5e3f75f1cd.play-card-eyebrow",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "play-card__eyebrow",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1",
+                                            "text": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.f96e1a93c41c.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.38b559738d30.h3",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "CLAW: Feed Gulper",
+                                            "text": "CLAW: Feed Gulper"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.780b2378b8c2.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "A versioned staging package exists, but website launch is held: its save",
+                                            "text": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.340fe9e100cc.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.3265428e4b66.button-link-button-link-",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "View game details →",
+                                            "href": "/games/claw-feed-gulper/",
+                                            "children": [
+                                              {
+                                                "id": "component.muogc2on.jbosap.5817dad556df.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "View game details ",
+                                                  "layerName": "Text: View game details"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.muogc2on.jbosap.271741559d95.span",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "aria-hidden": "true"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "→",
+                                                  "text": "→"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.687d6d20ff54.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.84a7f1e7b620.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n  ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.38815bc39f80.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.f8857a6db1ba.module-studio-game-card-",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "module studio-game-card play-card",
+                                "attributes": {
+                                  "data-game-id": "toadal-tower-defense",
+                                  "data-game-status": "preview"
+                                },
+                                "style": "",
+                                "layerName": "TOADAL Tower Defense",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.3d5d168e4a81.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.7d4e8400b892.play-card-art",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "play-card__art",
+                                      "attributes": {
+                                        "aria-label": "View TOADAL Tower Defense game details"
+                                      },
+                                      "style": "",
+                                      "layerName": "PREVIEW",
+                                      "href": "/games/toadal-tower-defense/",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.c8f66fcd81ec.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.5cf921988c93.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Candy Kingdom world artwork, not game footage.",
+                                            "asset": "asset.home.world.desktop",
+                                            "alt": "Candy Kingdom world artwork, not game footage."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.5a8a96490b0b.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.6ce5b41a824a.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.17e966c76d61.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.2e44f407826f.play-card-body",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "play-card__body",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "TOADAL Tower Defense",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.f5c1a6b1ef8a.play-card-eyebrow",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "play-card__eyebrow",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "CONCEPT PREVIEW",
+                                            "text": "CONCEPT PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.1ce16b5fa5d2.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.370452246fbe.h3",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "TOADAL Tower Defense",
+                                            "text": "TOADAL Tower Defense"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.6e7b04184f87.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "A preview concept only. No runnable browser package is connected, and th",
+                                            "text": "A preview concept only. No runnable browser package is connected, and the shared world artwork is not gameplay footage."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.69745b9e4e0d.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.29ed2aa96dbd.button-link-button-link-",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "View game details →",
+                                            "href": "/games/toadal-tower-defense/",
+                                            "children": [
+                                              {
+                                                "id": "component.muogc2on.jbosap.09d0dd9ef478.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "View game details ",
+                                                  "layerName": "Text: View game details"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.muogc2on.jbosap.6573b0897f0d.span",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "aria-hidden": "true"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "→",
+                                                  "text": "→"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.06e3c073e8f9.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.2e01aaed65c2.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n  ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.3ef7db619111.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.21dd8db19e6e.module-studio-game-card-",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "module studio-game-card play-card",
+                                "attributes": {
+                                  "data-game-id": "froggy-fruity-bash",
+                                  "data-game-status": "preview"
+                                },
+                                "style": "",
+                                "layerName": "Froggy Fruity Bash",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.muogc2on.jbosap.42f6eabbf105.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.23fc78aad5ba.play-card-art",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "play-card__art",
+                                      "attributes": {
+                                        "aria-label": "View Froggy Fruity Bash game details"
+                                      },
+                                      "style": "",
+                                      "layerName": "PREVIEW",
+                                      "href": "/games/froggy-fruity-bash/",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.15a127b75762.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.42905ff267fd.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "Fruity Genie character artwork, not game footage.",
+                                            "asset": "asset.home.genie.fruity-art",
+                                            "alt": "Fruity Genie character artwork, not game footage."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.1286a4f16f1a.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.4814020ee25f.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.bc8aee637d94.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n    ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.2d8c34816406.play-card-body",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "play-card__body",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Froggy Fruity Bash",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.7d34c8930f5b.play-card-eyebrow",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "play-card__eyebrow",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "CONCEPT PREVIEW",
+                                            "text": "CONCEPT PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.41bbc9c24997.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.f49c750dece1.h3",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Froggy Fruity Bash",
+                                            "text": "Froggy Fruity Bash"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.1589307f19d1.p",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "A preview concept only. No runnable browser package is connected, and th",
+                                            "text": "A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.1b4fdda0f2f5.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n      ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.6ec2847065aa.button-link-button-link-",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "View game details →",
+                                            "href": "/games/froggy-fruity-bash/",
+                                            "children": [
+                                              {
+                                                "id": "component.muogc2on.jbosap.d70d459e6fa9.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "View game details ",
+                                                  "layerName": "Text: View game details"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.muogc2on.jbosap.0e91ddee7caa.span",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "aria-hidden": "true"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "→",
+                                                  "text": "→"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.muogc2on.jbosap.0d8b64ae2555.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "\n    ",
+                                            "layerName": "Text: whitespace"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.muogc2on.jbosap.a09b85b9b8fc.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "\n  ",
+                                      "layerName": "Text: whitespace"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.9313e0efad9b.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.43ee5e05a853.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.496d382250cc.wo002-truth-note",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "wo002-truth-note",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "About these previewsPREVIEW means a build is available for evaluation, n",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc2on.jbosap.01981914d88a.strong",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "strong",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "About these previews",
+                          "text": "About these previews"
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.979b602d5a4b.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "PREVIEW means a build is available for evaluation, not that it is a publ",
+                          "text": "PREVIEW means a build is available for evaluation, not that it is a public release. Each detail page identifies whether a runnable website package is connected."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.8ec3c06760ce.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.94268eb30db6.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSBrowse the listings and check each PREVIEW, hold, or concept ",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.muogc2on.jbosap.f302383e928c.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc2on.jbosap.34976aa9dc35.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.2ed1ebd85ea4.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "Browse the listings and check each PREVIEW, hold, or concept label befor",
+                                "text": "Browse the listings and check each PREVIEW, hold, or concept label before opening a route."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.muogc2on.jbosap.e6e4f342db56.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.muogc2on.jbosap.13bb76a27526.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.muogc2on.jbosap.a92df649557e.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.muogc2on.jbosap.2ffe7c97b875.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.play.manifest-links",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "play-manifest-links",
-        "html": "<section class='wo002-detail-facts' aria-label='Play and progression links'><article class='detail-fact'><p class='section-kicker'>CHALLENGES</p><h2>Website quests</h2><p>Browse the current guest-local quest definitions. No Wicked Bites score challenge is configured.</p><a href='/feast-pass/quests/'>View quests</a></article><article class='detail-fact'><p class='section-kicker'>SCORES</p><h2>Leaderboard preview</h2><p>See supported local score references and the connected leaderboard status.</p><a href='/leaderboards/?game=wicked-bites'>View leaderboards</a></article><article class='detail-fact'><p class='section-kicker'>FEAST PASS</p><h2>Guest progress</h2><p>Website-local progression is separate from the isolated browser game session.</p><a href='/feast-pass/'>Open Feast Pass</a></article></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Play browser games · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.play.manifest-links.a8e2acd5f7aa.wo002-detail-facts",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "wo002-detail-facts",
+              "attributes": {
+                "aria-label": "Play and progression links"
+              },
+              "style": "",
+              "layerName": "Website quests",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.play.manifest-links.5682458faf30.detail-fact",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "detail-fact",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Website quests",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.play.manifest-links.a6e1a6efaef1.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "CHALLENGES",
+                          "text": "CHALLENGES"
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.8bae39dbc6a9.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Website quests",
+                          "text": "Website quests"
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.7dd2d4eafbc9.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browse the current guest-local quest definitions. No Wicked Bites score ",
+                          "text": "Browse the current guest-local quest definitions. No Wicked Bites score challenge is configured."
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.ca148e8e76b1.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "View quests",
+                          "href": "/feast-pass/quests/",
+                          "label": "View quests"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.play.manifest-links.2d2b471d3fa2.detail-fact",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "detail-fact",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Leaderboard preview",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.play.manifest-links.36424b1cb2c9.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "SCORES",
+                          "text": "SCORES"
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.778d5f7affb4.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Leaderboard preview",
+                          "text": "Leaderboard preview"
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.27170288a67e.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "See supported local score references and the connected leaderboard statu",
+                          "text": "See supported local score references and the connected leaderboard status."
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.577ea62b4bc8.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "View leaderboards",
+                          "href": "/leaderboards/?game=wicked-bites",
+                          "label": "View leaderboards"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.play.manifest-links.84cd925a0120.detail-fact",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "detail-fact",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Guest progress",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.play.manifest-links.ebc4b382a787.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "FEAST PASS",
+                          "text": "FEAST PASS"
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.430e554c1a77.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest progress",
+                          "text": "Guest progress"
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.80c19a44d88e.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Website-local progression is separate from the isolated browser game ses",
+                          "text": "Website-local progression is separate from the isolated browser game session."
+                        }
+                      },
+                      {
+                        "id": "component.play.manifest-links.cba6ca37f7b6.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Open Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Open Feast Pass"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

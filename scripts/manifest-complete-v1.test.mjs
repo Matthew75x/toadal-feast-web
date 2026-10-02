@@ -2,11 +2,14 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root = process.cwd();
 const site = path.join(root, 'studio-project', 'toadal-feast-website');
 const index = JSON.parse(fs.readFileSync(path.join(site, 'pages', 'index.json'), 'utf8'));
 const routes = new Map(index.pages.map((record) => [record.route, record]));
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
 const families = [
   ['Home', '/'], ['Play / Games Hub', '/play/'], ['Wicked Bites Detail', '/games/wicked-bites/'],
   ['Browser Game Player', '/player/wicked-bites/'], ['World Hub', '/world/'], ['Characters Hub', '/characters/'],
@@ -26,8 +29,19 @@ function source(route) {
   assert.ok(fs.existsSync(file), `${route} source exists: ${record.file}`);
   return JSON.parse(fs.readFileSync(file, 'utf8'));
 }
+// Remove only owner-editor metadata attributes for semantic contract matching.
+function semanticMarkup(markup) {
+  return markup.replace(/<[a-z][^>]*>/gi, (tag) =>
+    tag.replace(/\sdata-studio-(?:component|edit-field)=(['"])[^'"]*\1/g, ''));
+}
+function projectableMarkup(record) {
+  return record.components
+    .filter((component) => component.props?.authoringVersion || typeof component.props?.html === 'string')
+    .map((component) => semanticMarkup(projectPage(site, { ...record, components: [component] })))
+    .join('\n');
+}
 function html(route) {
-  return source(route).components.map((component) => component.props?.html || '').join('\n');
+  return projectableMarkup(source(route));
 }
 
 test('all 30 original manifest families have distinct, source-backed route records', () => {

@@ -2,9 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root = process.cwd();
 const pagesDir = path.join(root, 'studio-project', 'toadal-feast-website', 'pages');
+const projectRoot = path.dirname(pagesDir);
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
 const expectedPages = {
   app: '/app/',
   account: '/account/',
@@ -21,8 +25,23 @@ function page(slug) {
   return JSON.parse(fs.readFileSync(path.join(pagesDir, `${slug}.json`), 'utf8'));
 }
 
+// Remove only owner-editor metadata attributes for semantic contract matching.
+function semanticMarkup(markup) {
+  return markup.replace(/<[a-z][^>]*>/gi, (tag) =>
+    tag.replace(/\sdata-studio-(?:component|edit-field)=(['"])[^'"]*\1/g, ''));
+}
+
+function projectedMarkup(record) {
+  return record.components.map(component => {
+    if (component.props?.authoringVersion || typeof component.props?.html === 'string') {
+      return semanticMarkup(projectPage(projectRoot, { ...record, components: [component] }));
+    }
+    return JSON.stringify(component.props || {});
+  }).join('\n');
+}
+
 function html(slug) {
-  return page(slug).components.map(component => component.props?.html || JSON.stringify(component.props || {})).join('\n');
+  return projectedMarkup(page(slug));
 }
 
 test('all lane-owned manifest pages have valid route records and authored content', () => {
@@ -55,7 +74,7 @@ test('Account keeps auth gated and reads live browser-local guest status', () =>
   assert.match(content, /<button type='button' disabled>Create free account/);
   assert.match(content, /<button type='button' disabled>Log in/);
   assert.match(content, /data-progression-page='account'/);
-  assert.match(content, /data-progression-storage-status role='status' aria-live='polite'/);
+  assert.match(content, /data-progression-storage-status(?:='')? role='status' aria-live='polite'/);
   assert.match(content, /href='\/profile\//);
   assert.match(content, /href='\/feast-pass\//);
   assert.match(content, /data-companion-action-copy='Account sign-up, login, and sync are not connected\./);
@@ -129,6 +148,6 @@ test('About, construction, legal and 404 remain truthful and useful', () => {
 test('enabled unavailable-action guides use the shared construction semantics', () => {
   for (const slug of ['app', 'account', 'community', 'store', 'contact']) {
     const content = html(slug);
-    assert.match(content, /href='\/coming-soon\/'[^>]*data-companion-context='under-construction'[^>]*data-companion-action data-companion-action-copy=/, `${slug} has an actionable construction guide`);
+    assert.match(content, /<a\b(?=[^>]*\shref='\/coming-soon\/')(?=[^>]*\sdata-companion-context='under-construction')(?=[^>]*\sdata-companion-action(?:=''|(?=\s|>)))(?=[^>]*\sdata-companion-action-copy=)[^>]*>/, `${slug} has an actionable construction guide`);
   }
 });

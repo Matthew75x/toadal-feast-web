@@ -651,9 +651,16 @@
         renderList(page, '[data-progression-character-list]', state.characterDiscoveries.map(item => ({ title: item.title, detail: item.description })));
         page.querySelectorAll('[data-discover-character]').forEach(button => {
           const found = state.characterDiscoveries.some(item => item.characterId === button.getAttribute('data-discover-character'));
-          button.disabled = found;
-          button.setAttribute('aria-disabled', String(found));
-          button.textContent = found ? 'Artwork discovered' : 'Discover this character artwork';
+          const isButton = String(button.tagName || '').toLowerCase() === 'button';
+          const isRoleButton = button.getAttribute('role') === 'button';
+          if (isButton) {
+            button.disabled = found;
+            button.setAttribute('aria-disabled', String(found));
+            button.textContent = found ? 'Artwork discovered' : 'Discover this character artwork';
+          } else if (isRoleButton) {
+            if (!button.hasAttribute('tabindex')) button.setAttribute('tabindex', '0');
+            button.setAttribute('aria-disabled', String(found));
+          }
         });
         page.querySelectorAll('[data-character-discovery-status]').forEach(node => {
           const found = state.characterDiscoveries.some(item => item.characterId === node.getAttribute('data-character-discovery-status'));
@@ -708,12 +715,44 @@
         else if (status && !status.textContent) setStatus('Guest progress is stored only in this browser.');
       }
       page.querySelectorAll('[data-clear-progression]').forEach(button => button.addEventListener('click', () => { store.clear(); setStatus('Website guest progression was cleared from this browser. Other game and mobile data was not changed.'); render(); }));
-      page.querySelectorAll('[data-discover-character]').forEach(button => button.addEventListener('click', () => {
-        const result = store.discoverCharacter(button.getAttribute('data-discover-character'));
+      function isNestedInteractiveTarget(target, control) {
+        let current = target;
+        while (current && current !== control) {
+          const tag = String(current.tagName || '').toLowerCase();
+          const role = current.getAttribute && current.getAttribute('role');
+          if (['a', 'button', 'input', 'select', 'textarea', 'summary'].includes(tag) ||
+              role === 'button' || role === 'link' || (current.hasAttribute && current.hasAttribute('contenteditable'))) return true;
+          current = current.parentNode;
+        }
+        return false;
+      }
+      function discoverFromControl(control) {
+        const characterId = control.getAttribute('data-discover-character');
+        const alreadyFound = store.getSnapshot().characterDiscoveries.some(item => item.characterId === characterId);
+        if (alreadyFound) return;
+        const result = store.discoverCharacter(characterId);
         setStatus(result.ok ? 'Character artwork discovery saved in this browser. No game completion or reward is implied.' :
           result.reason === 'already-discovered' ? 'This artwork is already discovered in this browser.' : 'Character discovery could not be saved.');
         render();
-      }));
+      }
+      page.querySelectorAll('[data-discover-character]').forEach(control => {
+        control.addEventListener('click', event => {
+          if (isNestedInteractiveTarget(event.target, control)) return;
+          discoverFromControl(control);
+        });
+        control.addEventListener('touchend', event => {
+          if (isNestedInteractiveTarget(event.target, control)) return;
+          discoverFromControl(control);
+        }, { passive: true });
+        if (control.getAttribute('role') === 'button' && String(control.tagName || '').toLowerCase() !== 'button') {
+          control.addEventListener('keydown', event => {
+            if (isNestedInteractiveTarget(event.target, control)) return;
+            if (event.key !== 'Enter' && event.key !== ' ' && event.key !== 'Spacebar') return;
+            if (event.preventDefault) event.preventDefault();
+            discoverFromControl(control);
+          });
+        }
+      });
       page.querySelectorAll('[data-site-motion-toggle]').forEach(input => {
         input.checked = Boolean(document.documentElement && document.documentElement.hasAttribute('data-site-reduced-motion'));
         input.addEventListener('change', () => {

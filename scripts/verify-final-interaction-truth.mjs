@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root = path.resolve(process.argv[2] || '.');
 const site = path.join(root, 'studio-project', 'toadal-feast-website');
@@ -11,12 +12,13 @@ const contentRegistry = JSON.parse(fs.readFileSync(path.join(site, 'content', 'r
 const failures = [];
 const notes = [];
 const pages = new Map();
+const projector = await createOwnerNativeProjector();
 
 for (const record of pagesIndex.pages || []) {
   const file = path.join(site, record.file);
   if (!fs.existsSync(file)) continue;
   const doc = JSON.parse(fs.readFileSync(file, 'utf8'));
-  const html = (doc.components || []).map((component) => component?.props?.html || '').join('\n');
+  const html = projector.projectPageComponents(site, doc).map(({ html }) => html).join('\n');
   pages.set(record.route, {record, doc, html});
 }
 

@@ -1,0 +1,33 @@
+# Owner-native authoring: Studio reuse and additions
+
+This is the canonical capability-reuse record for the 33-route native website authoring migration. The audited Studio core is **1.4.2**; the owner-authoring work is the local extension `1.4.2-owner-authoring.1` (`OWNER_AUTHORING_EXTENSION.json`), not an official Studio 1.4.3 release. Its scope is local owner authoring and static export; no deployment is claimed. Current route/source closure, qualification evidence, and remaining package gates are summarized in [OWNER_NATIVE_MIGRATION_INVENTORY.md](OWNER_NATIVE_MIGRATION_INVENTORY.md). This is not a package-completion claim.
+
+## Existing Studio capabilities reused
+
+The migration uses Studio 1.4.2's existing page registry, component definitions and renderer; stable component IDs; nested component tree; selectable Layers and Inspector; revision-aware mutations and persistent history; asset catalog, import, replacement and optimization; layout containers/grids; responsive preview and overrides; Content/Design modes; save/build; project backup; and validation. Website static export still uses the owner CLI step. A general `publishing.staticExport` profile and Pages UI are being implemented so owners can perform that step in Studio; neither is complete yet.
+
+Page copy, labels, link destinations, image asset identities and alternatives, semantic attributes, layout mode, and children are stored as typed component properties. Existing `core.text`, `core.image`, `core.button`, `layout.container`, `layout.stack`, and `layout.grid` are reused with the versioned `authoringVersion: 1` property model. Existing runtime data attributes, IDs, ARIA hooks, CSS flow, content registries, and route records are preserved as data or attributes where their current contracts require them. Studio's current `core.content-section` remains in use for `/404.html`.
+
+The added owner-authoring work maps those semantic properties into the Inspector's owner controls and the nested Layers tree, and projects typed nodes through Studio's renderer. It reuses Studio's page registry, component system, history, and existing export behavior; the website's owner CLI export step remains until the new profile and Pages UI are implemented and qualified. Studio revisions protect edits from stale writes; the preview bridge validates the current component/field and remount session before persisting an inline change against the current revision.
+
+Stable route-level component IDs are retained while formerly indivisible page blobs become nested selectable layers. Current migration source contains 2,732 nodes across 33 routes. The native page trees have no shadow `props.html` source. Exactly three small locked rich-text leaves remain for Home discovery loading, the isolated Wicked Bites frame, and the dynamic Reader image slot; each has a route/parent/fragment policy and digest. This does not establish a general-purpose HTML or runtime-fragment feature.
+
+## Native owner interface and secure preview bridge
+
+The native authoring extension is implemented and exercised through the real Studio UI. The bridge exists because an opaque-origin preview sandbox cannot expose `frame.contentDocument` to the Studio parent. The bridge uses `postMessage` with source-window/origin checks appropriate to the opaque sandbox, a per-remount session, component and field validation, and revision-aware persistence. The sandbox retains its opaque origin; exports do not contain the authoring bridge.
+
+The owner-facing Layers and Inspector expose selectable nested page parts and typed copy, asset, framing, link, and layout values. The Characters pilot's real UI evidence includes image replacement/framing, copy edits, route selection, reorder/duplicate, undo/redo, asset import/optimization/usage, insertion, inline copy editing, and responsive preview. It also records real pointer manipulation for free-canvas decoration in a disposable QA copy. See [CHARACTERS_OWNER_PILOT.md](CHARACTERS_OWNER_PILOT.md) for the bounded proof and its limits.
+
+The Home game cards and World preview links are now closed as native selectable objects. The Characters pilot remains bounded evidence for real UI editing; it does not establish that every route received an equivalent editing exercise. Current gate/test results and remaining qualification are in the canonical inventory linked above.
+
+## Portable renderer provenance and source cross-check
+
+The website verifier uses a vendored portable owner renderer at `scripts/vendor/owner-authoring-renderer.mjs`. Read the checked-in `scripts/vendor/owner-authoring-renderer.provenance.json` as the current pin; it reflects the latest reduced-motion fallback change. The current Studio 1.4.2 source SHA-256 is `ff3e9c52d178451121b3512331f7f9bec2c6ce7094a84ae568d13f9100e6a19e`, and the generated portable module SHA-256 is `61258647ffcf5250e123089fc4fc7bc9c61617c03dff442517c376f42153b1d9`.
+
+With the audited Studio root configured, provenance verification checks the Studio version, source digest, and byte-for-byte TypeScript-stripped generated module. Projection tests compare portable and live-Studio page output and renderer source behavior. Without a Studio root, the pinned portable module supports isolated/offline projection and still checks its generated-file hash. This is a reproducible source cross-check, not a replacement for the real UI pilot or final browser/site gates.
+
+The active audited source checkout is `C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER`. The separate ASSIGNATOR-only document `C:/ReleaseOps/TOADAL_STUDIO_OWNER_AUTHORING_MIGRATION_20261002.md` was not present. Its absence is recorded as a missing document; this note does not infer or recreate its authority.
+
+## Current qualification status
+
+The current saved Studio qualification record reports 173/173 tests PASS, project validation with zero errors/warnings, no dangling graph references, no accessibility errors/warnings, and Studio doctor 26/26 checks PASS. The general `publishing.staticExport` profile and Pages UI are still being implemented to replace the owner CLI export step; this work is not complete and has no passing qualification result yet. Additional symbol and motion-compatibility tests are in progress and still require a final rerun. The website owner gate is 16/16 PASS with an 83/83 browser matrix. The manifest gate has 20 green steps but failed its unchanged-input fingerprint check; a clean rerun after source freeze remains required. See [OWNER_NATIVE_MIGRATION_INVENTORY.md](OWNER_NATIVE_MIGRATION_INVENTORY.md) for the full evidence boundary and package status. Overall package completion and final commit remain pending.

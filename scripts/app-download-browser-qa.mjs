@@ -8,10 +8,17 @@ import { spawn } from 'node:child_process';
 // QA-only local capture harness. It does not alter the site or dispatch gameplay.
 const repo = path.resolve(process.argv[2] || '.');
 const dist = path.resolve(repo, process.argv[3] || 'dist');
-const evidenceDir = path.join(repo, 'docs/review/app-download-production-20261001/evidence/integrated');
+const options = Object.fromEntries(process.argv.slice(4).map((value, index, args) => {
+  if (!value.startsWith('--')) return [];
+  const [key, inlineValue] = value.slice(2).split('=', 2);
+  return [key, inlineValue ?? (args[index + 1]?.startsWith('--') ? '' : args[index + 1])];
+}));
+const evidenceDir = path.resolve(repo, options['report-dir'] || 'docs/authoring/app-download-browser-qa');
 const basePath = '/toadal-feast-web/';
 const reportPath = path.join(evidenceDir, 'app-download-browser-qa.json');
 const assert = (condition, message) => { if (!condition) throw new Error(message); };
+const externalBase = options['base-url'] ? new URL(options['base-url']) : null;
+assert(!externalBase || externalBase.pathname.endsWith(basePath), `Base URL must end with ${basePath}`);
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 const mime = file => ({ '.html':'text/html; charset=utf-8','.css':'text/css; charset=utf-8','.js':'application/javascript; charset=utf-8','.json':'application/json; charset=utf-8','.png':'image/png','.jpg':'image/jpeg','.jpeg':'image/jpeg','.webp':'image/webp','.svg':'image/svg+xml','.woff2':'font/woff2','.ico':'image/x-icon' }[path.extname(file).toLowerCase()] || 'application/octet-stream');
 
@@ -35,7 +42,8 @@ let chrome, ws;
 const profile = fs.mkdtempSync(path.join(os.tmpdir(), 'toadal-app-download-qa-'));
 const results = {
   schema: 'toadal-feast.app-download-browser-qa.v1', status: 'RUNNING', repo, dist,
-  basePath, generatedAt: new Date().toISOString(), captures: [], checks: [], limitations: [],
+  basePath, baseUrl: externalBase ? externalBase.href : null,
+  generatedAt: new Date().toISOString(), captures: [], checks: [], limitations: [],
 };
 const record = (name, pass, detail = null) => {
   results.checks.push({ name, status: pass ? 'PASS' : 'FAIL', detail });
@@ -43,15 +51,21 @@ const record = (name, pass, detail = null) => {
 };
 
 try {
-  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
-  const origin = `http://127.0.0.1:${server.address().port}`;
+  if (!externalBase) await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  const origin = externalBase ? externalBase.origin : `http://127.0.0.1:${server.address().port}`;
   const chromeCandidates = [process.env.CHROME_PATH, 'C:/Program Files/Google/Chrome/Application/chrome.exe', 'C:/Program Files (x86)/Google/Chrome/Application/chrome.exe'].filter(Boolean);
   const chromePath = chromeCandidates.find(file => fs.existsSync(file));
   assert(chromePath, 'Chrome executable not found (set CHROME_PATH).');
+  const requestedDebugPort = Number(options['debug-port'] || 0);
   const probe = http.createServer();
-  await new Promise(resolve => probe.listen(0, '127.0.0.1', resolve));
+  if (requestedDebugPort) await new Promise((resolve, reject) => {
+    probe.once('error', reject);
+    probe.listen(requestedDebugPort, '127.0.0.1', resolve);
+  });
+  else await new Promise(resolve => probe.listen(0, '127.0.0.1', resolve));
   const debugPort = probe.address().port;
   await new Promise(resolve => probe.close(resolve));
+  results.debugPort = debugPort;
   chrome = spawn(chromePath, [`--remote-debugging-port=${debugPort}`, `--user-data-dir=${profile}`, '--headless=new', '--disable-gpu', '--no-first-run', '--no-default-browser-check', '--hide-scrollbars', 'about:blank'], { stdio: 'ignore', windowsHide: true });
 
   let target;
@@ -101,7 +115,7 @@ try {
   for (const item of targets) {
     await call('Emulation.setDeviceMetricsOverride', { width:item.width, height:item.height, deviceScaleFactor:1, mobile:item.width <= 768 });
     await call('Emulation.setTouchEmulationEnabled', { enabled:item.width <= 768, maxTouchPoints:1 });
-    const url = origin + basePath + item.route;
+    const url = (externalBase ? externalBase.href : origin + basePath) + item.route;
     await call('Page.navigate', { url });
     assert(await waitFor(`location.href === ${JSON.stringify(url)} && document.readyState === 'complete'`), `Navigation failed for ${item.id}`);
     const targetReady = await evaluate(`(()=>{const e=document.querySelector(${JSON.stringify(item.selector)});if(!e)return false;document.documentElement.style.scrollBehavior='auto';e.scrollIntoView({block:'start',inline:'nearest',behavior:'instant'});return true})()`);

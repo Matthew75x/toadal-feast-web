@@ -8,18 +8,864 @@
   "components": [
     {
       "id": "component.about.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "gated-about",
-        "html": "<article class='gated-page' data-companion-context='business' data-companion-copy='TOADAL GAMES is the studio identity; TOADAL FEAST remains the public-facing flagship world on this website.' data-companion-reaction='partnership'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>TOADAL GAMES, behind the Feast</span></nav><section class='gated-hero'><div class='gated-hero-copy'><p class='section-kicker'>ABOUT THE STUDIO</p><span class='chip status-chip--coming'>TOADAL FEAST FIRST</span><h1>TOADAL GAMES, behind the Feast</h1><p class='gated-lede'>This page keeps the studio in its intended supporting role while explaining how the website, browser previews, stories, and app discovery fit around TOADAL FEAST.</p></div><figure class='gated-hero-art'><img src='/assets/images/characters/companion/runtime-v2/partnership.webp' alt='Toadal presenting a business or partnership theme' loading='eager' decoding='async'></figure></section><section class='gated-grid' aria-label='About TOADAL GAMES'><article class='gated-card'><p class='section-kicker'>STUDIO IDENTITY</p><h2>TOADAL GAMES</h2><p>TOADAL GAMES is the studio identity behind this website. The public experience remains TOADAL FEAST-first, with the studio presented mainly in footer, about, business, and legal contexts.</p></article><article class='gated-card'><p class='section-kicker'>FLAGSHIP WORLD</p><h2>TOADAL FEAST</h2><p>TOADAL FEAST is the flagship game world represented here. The website expands that world through browser previews, characters, stories, media, progression, and app discovery.</p><a href='/world/'>Explore the Feast World</a></article><article class='gated-card'><p class='section-kicker'>EXPERIMENTS</p><h2>Web experiences stay truthfully labeled</h2><p>Browser games and future experiments remain PREVIEW, PLANNED, or COMING SOON until their public status is explicitly approved.</p><a href='/play/'>Explore Play</a></article><article class='gated-card' data-companion-context='business'><p class='section-kicker'>PRESS / BUSINESS</p><h2>Contact route prepared</h2><p>No verified press or business inbox is published on this preview. The Contact page shows the future routing structure without pretending submissions work.</p><a href='/contact/'>Contact & feedback preview</a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>TOADAL GAMES is the studio identity; TOADAL FEAST remains the public-facing flagship world on this website.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "About TOADAL GAMES - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.about.rich-text.7afb58dd3dc3.gated-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "gated-page",
+              "attributes": {
+                "data-companion-context": "business",
+                "data-companion-copy": "TOADAL GAMES is the studio identity; TOADAL FEAST remains the public-facing flagship world on this website.",
+                "data-companion-reaction": "partnership"
+              },
+              "style": "",
+              "layerName": "TOADAL GAMES, behind the Feast",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.about.rich-text.b22da414d029.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/TOADAL GAMES, behind the Feast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.about.rich-text.34cdcea883cc.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.about.rich-text.478d14be7c67.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.about.rich-text.ccc487134f54.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL GAMES, behind the Feast",
+                          "text": "TOADAL GAMES, behind the Feast"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.about.rich-text.2805915c2192.gated-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "TOADAL GAMES, behind the Feast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.about.rich-text.df4866bc0a4d.gated-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "gated-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL GAMES, behind the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.6fd6b7b8b3e0.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "ABOUT THE STUDIO",
+                                "text": "ABOUT THE STUDIO"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.7943ada8b555.chip-status-chip-coming",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL FEAST FIRST",
+                                "text": "TOADAL FEAST FIRST"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.89c7ef482195.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL GAMES, behind the Feast",
+                                "text": "TOADAL GAMES, behind the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.011c7dbf8a38.gated-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "gated-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "This page keeps the studio in its intended supporting role while explain",
+                                "text": "This page keeps the studio in its intended supporting role while explaining how the website, browser previews, stories, and app discovery fit around TOADAL FEAST."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.about.rich-text.5595195a7aca.gated-hero-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "gated-hero-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "figure gated-hero-art",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.371eae063fe2.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "eager",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal presenting a business or partnership theme",
+                                "asset": "asset.owner-native.reference-assets-images-characters-companion-runtime-v2-.548906f1",
+                                "alt": "Toadal presenting a business or partnership theme"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.about.rich-text.b69dc09f2eae.gated-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-grid",
+                    "attributes": {
+                      "aria-label": "About TOADAL GAMES"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL GAMES",
+                    "mode": "inherit",
+                    "collection": true,
+                    "children": [
+                      {
+                        "id": "component.about.rich-text.2a09afbec4df.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL GAMES",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.60ffca710218.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "STUDIO IDENTITY",
+                                "text": "STUDIO IDENTITY"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.f81c3a1a854b.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL GAMES",
+                                "text": "TOADAL GAMES"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.95c6649009b2.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL GAMES is the studio identity behind this website. The public expe",
+                                "text": "TOADAL GAMES is the studio identity behind this website. The public experience remains TOADAL FEAST-first, with the studio presented mainly in footer, about, business, and legal contexts."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.about.rich-text.0c5a1ee41b9b.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL FEAST",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.26d2168b512b.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FLAGSHIP WORLD",
+                                "text": "FLAGSHIP WORLD"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.d5794006e20f.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL FEAST",
+                                "text": "TOADAL FEAST"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.6f12e51b2613.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL FEAST is the flagship game world represented here. The website ex",
+                                "text": "TOADAL FEAST is the flagship game world represented here. The website expands that world through browser previews, characters, stories, media, progression, and app discovery."
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.77275f4ff33c.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore the Feast World",
+                                "href": "/world/",
+                                "label": "Explore the Feast World"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.about.rich-text.729cd02cf25d.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Web experiences stay truthfully labeled",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.afb920996492.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "EXPERIMENTS",
+                                "text": "EXPERIMENTS"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.0691fc2114df.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Web experiences stay truthfully labeled",
+                                "text": "Web experiences stay truthfully labeled"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.df4a823ec8f7.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Browser games and future experiments remain PREVIEW, PLANNED, or COMING ",
+                                "text": "Browser games and future experiments remain PREVIEW, PLANNED, or COMING SOON until their public status is explicitly approved."
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.621f5906acda.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore Play",
+                                "href": "/play/",
+                                "label": "Explore Play"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.about.rich-text.301fe1b23aad.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {
+                            "data-companion-context": "business"
+                          },
+                          "style": "",
+                          "layerName": "Contact route prepared",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.25941b10cc6d.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PRESS / BUSINESS",
+                                "text": "PRESS / BUSINESS"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.c1d7570c4745.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Contact route prepared",
+                                "text": "Contact route prepared"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.ac8cdc79d0b0.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No verified press or business inbox is published on this preview. The Co",
+                                "text": "No verified press or business inbox is published on this preview. The Contact page shows the future routing structure without pretending submissions work."
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.0751a3095139.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Contact & feedback preview",
+                                "href": "/contact/",
+                                "label": "Contact & feedback preview"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.about.rich-text.970786c0c2b4.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSTOADAL GAMES is the studio identity; TOADAL FEAST remains the",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.about.rich-text.ff14e0c24fec.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.3d52412dcc13.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.1472507cabc5.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "TOADAL GAMES is the studio identity; TOADAL FEAST remains the public-fac",
+                                "text": "TOADAL GAMES is the studio identity; TOADAL FEAST remains the public-facing flagship world on this website."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.about.rich-text.96781f459769.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.about.rich-text.036e3ec7c06a.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.about.rich-text.12be185574e2.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.about.mission-stories",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "about-mission-philosophy-stories",
-        "html": "<section class='gated-grid' aria-label='Mission, philosophy, stories, and characters'><article class='gated-card' id='about-mission'><p class='section-kicker'>MISSION</p><h2>Approved copy awaiting publication</h2><p>No mission statement has been approved for publication yet.</p><span class='status-chip status-chip--coming'>COPY PENDING</span></article><article class='gated-card' id='about-philosophy'><p class='section-kicker'>PHILOSOPHY</p><h2>Approved copy awaiting publication</h2><p>No studio philosophy statement has been approved for publication yet.</p><span class='status-chip status-chip--coming'>COPY PENDING</span></article><article class='gated-card' id='about-stories-characters'><p class='section-kicker'>STORIES &amp; CHARACTERS</p><h2>Explore published world material</h2><p>Browse the current story and character areas. Their structure does not imply unpublished stories, relationships, or character details.</p><a href='/stories/'>Explore Stories</a><a href='/characters/'>Meet the Characters</a></article></section>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "About TOADAL GAMES - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.about.mission-stories.733dc5d3f176.gated-grid",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "gated-grid",
+              "attributes": {
+                "aria-label": "Mission, philosophy, stories, and characters"
+              },
+              "style": "",
+              "layerName": "Approved copy awaiting publication",
+              "mode": "inherit",
+              "collection": true,
+              "children": [
+                {
+                  "id": "component.about.mission-stories.b6c8806e3984.about-mission",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "gated-card",
+                    "attributes": {
+                      "id": "about-mission"
+                    },
+                    "style": "",
+                    "layerName": "about mission",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.about.mission-stories.845eb5ed93da.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "MISSION",
+                          "text": "MISSION"
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.3d0decdc855c.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Approved copy awaiting publication",
+                          "text": "Approved copy awaiting publication"
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.e343025b3529.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "No mission statement has been approved for publication yet.",
+                          "text": "No mission statement has been approved for publication yet."
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.89a90cdbc3ae.status-chip-status-chip-",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "status-chip status-chip--coming",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "COPY PENDING",
+                          "text": "COPY PENDING"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.about.mission-stories.8f3c31f6053d.about-philosophy",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "gated-card",
+                    "attributes": {
+                      "id": "about-philosophy"
+                    },
+                    "style": "",
+                    "layerName": "about philosophy",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.about.mission-stories.446134941d39.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "PHILOSOPHY",
+                          "text": "PHILOSOPHY"
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.425e1beba40d.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Approved copy awaiting publication",
+                          "text": "Approved copy awaiting publication"
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.0308a93c2d93.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "No studio philosophy statement has been approved for publication yet.",
+                          "text": "No studio philosophy statement has been approved for publication yet."
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.5e04b8e40a86.status-chip-status-chip-",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "status-chip status-chip--coming",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "COPY PENDING",
+                          "text": "COPY PENDING"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.about.mission-stories.9fc32ca945ca.about-stories-characters",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "gated-card",
+                    "attributes": {
+                      "id": "about-stories-characters"
+                    },
+                    "style": "",
+                    "layerName": "about stories characters",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.about.mission-stories.67e04dc0cc9a.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "STORIES & CHARACTERS",
+                          "text": "STORIES & CHARACTERS"
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.3de4f56b8774.h2",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore published world material",
+                          "text": "Explore published world material"
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.51ad8b665e90.p",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browse the current story and character areas. Their structure does not i",
+                          "text": "Browse the current story and character areas. Their structure does not imply unpublished stories, relationships, or character details."
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.e842ac927f41.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore Stories",
+                          "href": "/stories/",
+                          "label": "Explore Stories"
+                        }
+                      },
+                      {
+                        "id": "component.about.mission-stories.71aa7c3074ee.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Meet the Characters",
+                          "href": "/characters/",
+                          "label": "Meet the Characters"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

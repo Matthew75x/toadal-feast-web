@@ -8,10 +8,638 @@
   "components": [
     {
       "id": "component.coming-soon.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "gated-coming-soon",
-        "html": "<article class='gated-page' data-companion-context='under-construction' data-companion-copy='This feature is not public yet. Use the working Feast areas instead of hitting a dead end.' data-companion-reaction='construction'><nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><span>The Feast is still growing</span></nav><section class='gated-hero'><div class='gated-hero-copy'><p class='section-kicker'>CONSTRUCTION ZONE</p><span class='chip status-chip--coming'>COMING SOON</span><h1>The Feast is still growing</h1><p class='gated-lede'>This reusable destination gives unavailable features a polished, truthful home without placeholder dates or broken navigation.</p></div><figure class='gated-hero-art'><img src='/assets/images/characters/companion/runtime-v2/maintenance.webp' alt='Toadal mascot artwork used as a preview illustration for unavailable features' loading='eager' decoding='async'></figure></section><section class='construction-panel' data-companion-context='under-construction'><div><p class='section-kicker'>UNDER CONSTRUCTION</p><h2>This corner of the Feast is not ready yet.</h2><p>Unavailable destinations should never become dead ends. Use one of the working areas below while this feature is still being prepared.</p></div><div class='construction-links'><a href='/play/'>Play</a><a href='/world/'>World</a><a href='/characters/'>Characters</a><a href='/stories/'>Stories</a><a href='/roadmap/'>Roadmap</a><a href='/feast-pass/'>Feast Pass</a></div></section><section class='gated-grid'><article class='gated-card'><p class='section-kicker'>NO FAKE DATE</p><h2>No release promise is implied</h2><p>This reusable page intentionally contains no placeholder countdown, launch date, or invented availability estimate.</p></article><article class='gated-card'><p class='section-kicker'>FOLLOW THE REAL STATE</p><h2>Use the current site</h2><p>Public future-state communication should contain only owner-approved items and statuses. Internal work orders are not automatically public roadmap content.</p><a href='/'>Return Home</a></article></section><aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>This feature is not public yet. Use the working Feast areas instead of hitting a dead end.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside></article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Coming Soon - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.coming-soon.rich-text.d0142619cc02.gated-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "gated-page",
+              "attributes": {
+                "data-companion-context": "under-construction",
+                "data-companion-copy": "This feature is not public yet. Use the working Feast areas instead of hitting a dead end.",
+                "data-companion-reaction": "construction"
+              },
+              "style": "",
+              "layerName": "The Feast is still growing",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.coming-soon.rich-text.d27c4c192277.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/The Feast is still growing",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.coming-soon.rich-text.320bf60c5a3c.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.coming-soon.rich-text.8c9dbaebe572.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.coming-soon.rich-text.133b766de88f.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "The Feast is still growing",
+                          "text": "The Feast is still growing"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.coming-soon.rich-text.2a2c6a72efbb.gated-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "The Feast is still growing",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.coming-soon.rich-text.44be107e915a.gated-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "gated-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "The Feast is still growing",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.482c906fe7e2.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CONSTRUCTION ZONE",
+                                "text": "CONSTRUCTION ZONE"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.8a35de0990e3.chip-status-chip-coming",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip status-chip--coming",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "COMING SOON",
+                                "text": "COMING SOON"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.7be04aaf46b2.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The Feast is still growing",
+                                "text": "The Feast is still growing"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.d2b47c774982.gated-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "gated-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "This reusable destination gives unavailable features a polished, truthfu",
+                                "text": "This reusable destination gives unavailable features a polished, truthful home without placeholder dates or broken navigation."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.coming-soon.rich-text.441b3334c7b2.gated-hero-art",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "gated-hero-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "figure gated-hero-art",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.70b6b21dd389.img",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "eager",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Toadal mascot artwork used as a preview illustration for unavailable features",
+                                "asset": "asset.owner-native.reference-assets-images-characters-companion-runtime-v2-.714ff437",
+                                "alt": "Toadal mascot artwork used as a preview illustration for unavailable features"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.coming-soon.rich-text.44d9552f225d.construction-panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "construction-panel",
+                    "attributes": {
+                      "data-companion-context": "under-construction"
+                    },
+                    "style": "",
+                    "layerName": "This corner of the Feast is not ready yet.",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.coming-soon.rich-text.06d4466d3fa2.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "This corner of the Feast is not ready yet.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.c0c0764f2e3c.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "UNDER CONSTRUCTION",
+                                "text": "UNDER CONSTRUCTION"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.712ad8e1a8c3.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "This corner of the Feast is not ready yet.",
+                                "text": "This corner of the Feast is not ready yet."
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.955635aae099.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Unavailable destinations should never become dead ends. Use one of the w",
+                                "text": "Unavailable destinations should never become dead ends. Use one of the working areas below while this feature is still being prepared."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.coming-soon.rich-text.64f461f5ec73.construction-links",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "construction-links",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "PlayWorldCharactersStoriesRoadmapFeast Pass",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.7f0217625d14.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Play",
+                                "href": "/play/",
+                                "label": "Play"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.780bff8c0573.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "World",
+                                "href": "/world/",
+                                "label": "World"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.acf7663386fe.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Characters",
+                                "href": "/characters/",
+                                "label": "Characters"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.6d1f0f3a3f14.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Stories",
+                                "href": "/stories/",
+                                "label": "Stories"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.7e1b8433b971.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Roadmap",
+                                "href": "/roadmap/",
+                                "label": "Roadmap"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.b7e20d8f0a6b.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feast Pass",
+                                "href": "/feast-pass/",
+                                "label": "Feast Pass"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.coming-soon.rich-text.9d147007e32a.gated-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "gated-grid",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "No release promise is implied",
+                    "mode": "inherit",
+                    "collection": true,
+                    "children": [
+                      {
+                        "id": "component.coming-soon.rich-text.d935c4938e63.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "No release promise is implied",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.95da1c2b54ad.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "NO FAKE DATE",
+                                "text": "NO FAKE DATE"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.72677571e6f3.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No release promise is implied",
+                                "text": "No release promise is implied"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.1cc08431d178.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "This reusable page intentionally contains no placeholder countdown, laun",
+                                "text": "This reusable page intentionally contains no placeholder countdown, launch date, or invented availability estimate."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.coming-soon.rich-text.ea84273ac05b.gated-card",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "gated-card",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Use the current site",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.0e6ce61f3cd0.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FOLLOW THE REAL STATE",
+                                "text": "FOLLOW THE REAL STATE"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.b3c63466bb45.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Use the current site",
+                                "text": "Use the current site"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.a25ee8ff7345.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Public future-state communication should contain only owner-approved ite",
+                                "text": "Public future-state communication should contain only owner-approved items and statuses. Internal work orders are not automatically public roadmap content."
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.68324b9a3764.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Return Home",
+                                "href": "/",
+                                "label": "Return Home"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.coming-soon.rich-text.ac077a6786b4.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSThis feature is not public yet. Use the working Feast areas i",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.coming-soon.rich-text.03cf5180e6c1.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.5936fc84b2cc.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.318de62858a5.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "This feature is not public yet. Use the working Feast areas instead of h",
+                                "text": "This feature is not public yet. Use the working Feast areas instead of hitting a dead end."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.coming-soon.rich-text.0a4943daa2ad.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.coming-soon.rich-text.b3b08ac22f7a.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.coming-soon.rich-text.d521e8117b71.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

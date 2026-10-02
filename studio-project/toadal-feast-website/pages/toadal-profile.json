@@ -8,10 +8,2044 @@
   "components": [
     {
       "id": "component.toadal-profile.rich-text",
-      "type": "core.rich-text",
+      "type": "layout.container",
       "props": {
         "variant": "toadal-profile",
-        "html": "<article class='character-family-page toadal-profile-page' data-companion-context='toadal-profile' data-companion-copy='Toadal has a dedicated canonical profile preview; unsupported biography and relationship details remain unpublished.' data-companion-reaction='proud'>\n<nav class='detail-breadcrumb' aria-label='Breadcrumb'><a href='/'>Home</a><span aria-hidden='true'>/</span><a href='/characters/'>Characters</a><span aria-hidden='true'>/</span><span>Toadal</span></nav>\n<section class='profile-hero'>\n  <div class='profile-hero-bg' aria-hidden='true'></div>\n  <div class='profile-hero-copy'><p class='section-kicker'>CHARACTER PROFILE</p><span class='chip preview'>CANONICAL PREVIEW</span><h1>Toadal</h1><h2>King of Feasts</h2>\n  <p>Toadal is the crowned golden hero at the center of TOADAL FEAST. His canonical red scarf, crown, and golden character design are preserved here; longer biography and story claims remain unpublished until approved source material exists.</p>\n  <div class='profile-hero-actions'><a class='button-link button-link--primary' href='/play/'>Explore Play</a><a class='button-link button-link--secondary' href='/world/'>Explore the World</a></div></div>\n  <img class='profile-hero-toadal' src='/assets/images/characters/toadal-victory.webp' alt='Toadal, the crowned golden Feast hero wearing a red scarf' width='611' height='640' decoding='async'>\n</section>\n<nav class='profile-anchor-nav' aria-label='Toadal profile sections'>\n<a href='#biography'>Biography</a><a href='#personality'>Personality</a><a href='#history'>History</a><a href='#abilities'>Abilities</a><a href='#friends'>Friends</a><a href='#locations'>Locations</a><a href='#games'>Games</a><a href='#stories'>Stories</a><a href='#gallery'>Gallery</a><a href='#collectibles'>Collectibles</a>\n</nav>\n<section class='profile-grid'>\n<article id='biography' class='profile-panel profile-panel--wide'><p class='section-kicker'>BIOGRAPHY</p><h2>Canonical identity</h2><p>Published facts on this site identify Toadal as the crowned golden Feast hero and mascot. Additional biography text from visual mockups is not treated as canon.</p><dl class='profile-facts'><div><dt>Name</dt><dd>Toadal</dd></div><div><dt>Role</dt><dd>Feast hero</dd></div><div><dt>Canonical title</dt><dd>King of Feasts</dd></div><div><dt>Signature look</dt><dd>Golden crown and red scarf</dd></div></dl></article>\n<article id='personality' class='profile-panel'><p class='section-kicker'>PERSONALITY</p><h2>Awaiting approved copy</h2><p>Personality traits shown in generated concept mockups are not promoted to canon without an approved source.</p><span class='status-chip'>PREVIEW</span></article>\n<article id='history' class='profile-panel'><p class='section-kicker'>HISTORY</p><h2>Story history not published</h2><p>No long-form canonical history is published on this staging site yet.</p><a href='/stories/'>Stories status <span aria-hidden='true'>&rarr;</span></a></article>\n<article id='abilities' class='profile-panel'><p class='section-kicker'>ABILITIES</p><h2>Gameplay evidence stays separate</h2><p>Gameplay move sets may differ by mode and build. This profile does not turn held Arcade preview mechanics into universal character canon.</p><a href='/play/'>Current game previews <span aria-hidden='true'>&rarr;</span></a></article>\n<article id='friends' class='profile-panel'><p class='section-kicker'>FRIENDS & RELATIONSHIPS</p><h2>Not canonized from mockups</h2><p>Relationship labels remain unpublished until the character registry receives approved relationship data.</p><a href='/characters/'>Back to Characters <span aria-hidden='true'>&rarr;</span></a></article>\n<article id='locations' class='profile-panel'><p class='section-kicker'>LOCATIONS</p><h2>World discovery preview</h2><p>The current World page shows canonical environment art; a character-location history is not yet published.</p><a href='/world/'>Explore World <span aria-hidden='true'>&rarr;</span></a></article>\n<article id='games' class='profile-panel'><p class='section-kicker'>GAMES</p><h2>See current browser listings</h2><p>The Play directory is the authority for which browser experiences are PREVIEW, held, or unavailable.</p><a href='/play/'>Open Play <span aria-hidden='true'>&rarr;</span></a></article>\n<article id='stories' class='profile-panel'><p class='section-kicker'>STORIES</p><h2>Publication pending</h2><p>No Toadal story/chapter list is published yet.</p><a href='/stories/'>Stories status <span aria-hidden='true'>&rarr;</span></a></article>\n<article id='gallery' class='profile-panel profile-panel--gallery'><p class='section-kicker'>GALLERY</p><h2>Canonical Toadal art</h2><div class='profile-gallery'><img src='/assets/images/characters/toadal-victory.webp' alt='Toadal victory artwork' loading='lazy'><img src='/assets/images/characters/toadal-portrait.webp' alt='Toadal portrait artwork' loading='lazy'></div><a href='/media/'>Media preview <span aria-hidden='true'>&rarr;</span></a></article>\n<article id='collectibles' class='profile-panel'><p class='section-kicker'>COLLECTIBLES</p><h2>Guest collection status</h2><p>Browser-local progression is active. Character-specific collectible records are not configured, so this profile does not invent unlock counts or entitlements.</p><a href='/feast-pass/'>Feast Pass status <span aria-hidden='true'>&rarr;</span></a></article>\n</section>\n<aside class='toadal-companion' data-companion data-zone='hero' aria-label='Toadal contextual helper'><div class='companion-panel' id='toadal-companion-panel' data-companion-panel><p class='companion-label'>TOADAL SAYS</p><p class='companion-message' data-companion-speech aria-live='polite' aria-atomic='true'>My profile uses canonical art and only approved facts.</p></div><button class='companion-toggle' type='button' data-companion-toggle aria-controls='toadal-companion-panel' aria-expanded='true' aria-label='Minimize Toadal helper'><img class='companion-image' data-companion-image src='/assets/images/characters/toadal-victory.png' alt='' width='611' height='640' loading='lazy' decoding='async'><span class='sr-only'>Minimize Toadal helper</span></button></aside>\n</article>"
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Toadal - Character Profile - TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.toadal-profile.rich-text.298d07737b4f.character-family-page-to",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "article",
+              "className": "character-family-page toadal-profile-page",
+              "attributes": {
+                "data-companion-context": "toadal-profile",
+                "data-companion-copy": "Toadal has a dedicated canonical profile preview; unsupported biography and relationship details remain unpublished.",
+                "data-companion-reaction": "proud"
+              },
+              "style": "",
+              "layerName": "Toadal",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.toadal-profile.rich-text.71711d593e11.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.c51183cd2df5.detail-breadcrumb",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "detail-breadcrumb",
+                    "attributes": {
+                      "aria-label": "Breadcrumb"
+                    },
+                    "style": "",
+                    "layerName": "Home/Characters/Toadal",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.toadal-profile.rich-text.002e0df5801c.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Home",
+                          "href": "/",
+                          "label": "Home"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.36b8f08a2dea.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.762a053bde6a.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Characters",
+                          "href": "/characters/",
+                          "label": "Characters"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.e10b7184e132.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "/",
+                          "text": "/"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.30798bc052a9.span",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Toadal",
+                          "text": "Toadal"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.01ed82b4a443.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.e39179efee13.profile-hero",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "profile-hero",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Toadal",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.toadal-profile.rich-text.72b3865eb691.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.7274391d4464.profile-hero-bg",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "profile-hero-bg",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "div profile-hero-bg",
+                          "text": ""
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.e334c307ccfd.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.5dca8c1934be.profile-hero-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "profile-hero-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Toadal",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.372040d4e46d.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CHARACTER PROFILE",
+                                "text": "CHARACTER PROFILE"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.7ab1b65ec208.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "CANONICAL PREVIEW",
+                                "text": "CANONICAL PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.91326a0c5681.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Toadal",
+                                "text": "Toadal"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.b561685e9207.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "King of Feasts",
+                                "text": "King of Feasts"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.470f23028c9c.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.6313f0136c06.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Toadal is the crowned golden hero at the center of TOADAL FEAST. His can",
+                                "text": "Toadal is the crowned golden hero at the center of TOADAL FEAST. His canonical red scarf, crown, and golden character design are preserved here; longer biography and story claims remain unpublished until approved source material exists."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.d909f4d05797.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.68f9e4667a4f.profile-hero-actions",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "profile-hero-actions",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore PlayExplore the World",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.fac32025860a.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--primary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore Play",
+                                      "href": "/play/",
+                                      "label": "Explore Play"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.dad31d8949d2.button-link-button-link-",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore the World",
+                                      "href": "/world/",
+                                      "label": "Explore the World"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.d833324479be.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.68be57d8cc15.profile-hero-toadal",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "profile-hero-toadal",
+                          "attributes": {
+                            "width": "611",
+                            "height": "640",
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "Toadal, the crowned golden Feast hero wearing a red scarf",
+                          "asset": "asset.home.character.toadal-victory-web",
+                          "alt": "Toadal, the crowned golden Feast hero wearing a red scarf"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.f93e3d1201eb.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.09442524bbb1.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.28c38ca0e2ac.profile-anchor-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "profile-anchor-nav",
+                    "attributes": {
+                      "aria-label": "Toadal profile sections"
+                    },
+                    "style": "",
+                    "layerName": "BiographyPersonalityHistoryAbilitiesFriendsLocationsGamesStoriesGalleryC",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.toadal-profile.rich-text.90fb5d0b7fce.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.51c44506e07c.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Biography",
+                          "href": "#biography",
+                          "label": "Biography"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.2ca09feab252.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Personality",
+                          "href": "#personality",
+                          "label": "Personality"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.7122d3300ca0.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "History",
+                          "href": "#history",
+                          "label": "History"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.ae0828f878e6.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Abilities",
+                          "href": "#abilities",
+                          "label": "Abilities"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.2942169024f8.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Friends",
+                          "href": "#friends",
+                          "label": "Friends"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.d5256d89d387.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Locations",
+                          "href": "#locations",
+                          "label": "Locations"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.5fdc9916a145.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Games",
+                          "href": "#games",
+                          "label": "Games"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.f9591fc787ff.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Stories",
+                          "href": "#stories",
+                          "label": "Stories"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.a0b603d9f62c.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Gallery",
+                          "href": "#gallery",
+                          "label": "Gallery"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.23fc0306c82e.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Collectibles",
+                          "href": "#collectibles",
+                          "label": "Collectibles"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.13fd102f1d5a.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.b836909a8c8d.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.0aaf13522a62.profile-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "profile-grid",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Canonical identity",
+                    "mode": "inherit",
+                    "collection": true,
+                    "children": [
+                      {
+                        "id": "component.toadal-profile.rich-text.17a79c129273.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.0ee9b34a0668.biography",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel profile-panel--wide",
+                          "attributes": {
+                            "id": "biography"
+                          },
+                          "style": "",
+                          "layerName": "biography",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.2aacbf075287.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "BIOGRAPHY",
+                                "text": "BIOGRAPHY"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.fac000fed909.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Canonical identity",
+                                "text": "Canonical identity"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.72dedce8f36b.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Published facts on this site identify Toadal as the crowned golden Feast",
+                                "text": "Published facts on this site identify Toadal as the crowned golden Feast hero and mascot. Additional biography text from visual mockups is not treated as canon."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.84aaf4ac034e.profile-facts",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "dl",
+                                "className": "profile-facts",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "NameToadalRoleFeast heroCanonical titleKing of FeastsSignature lookGolde",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.3129eeaeb9a7.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "NameToadal",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.toadal-profile.rich-text.ee0c002904d6.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Name",
+                                            "text": "Name"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.toadal-profile.rich-text.0f2ec49bd58b.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Toadal",
+                                            "text": "Toadal"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.1560ea819591.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "RoleFeast hero",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.toadal-profile.rich-text.6c66a09c1720.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Role",
+                                            "text": "Role"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.toadal-profile.rich-text.8e9d27e24cf5.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Feast hero",
+                                            "text": "Feast hero"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.6df33bf37e91.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Canonical titleKing of Feasts",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.toadal-profile.rich-text.31541617053d.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Canonical title",
+                                            "text": "Canonical title"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.toadal-profile.rich-text.01d8105a5b1f.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "King of Feasts",
+                                            "text": "King of Feasts"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.5826e6abfbc6.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Signature lookGolden crown and red scarf",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.toadal-profile.rich-text.4e286f30e9d4.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Signature look",
+                                            "text": "Signature look"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.toadal-profile.rich-text.ae615f4a1b60.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Golden crown and red scarf",
+                                            "text": "Golden crown and red scarf"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.c659ba09ed49.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.3b68ac1a91cf.personality",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "personality"
+                          },
+                          "style": "",
+                          "layerName": "personality",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.6771b5097572.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PERSONALITY",
+                                "text": "PERSONALITY"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.09ab702eebe2.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Awaiting approved copy",
+                                "text": "Awaiting approved copy"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.59030cfbe1af.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Personality traits shown in generated concept mockups are not promoted t",
+                                "text": "Personality traits shown in generated concept mockups are not promoted to canon without an approved source."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.e3f9ca75e3be.status-chip",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "status-chip",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PREVIEW",
+                                "text": "PREVIEW"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.9cdc8bec375a.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.9673506a6729.history",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "history"
+                          },
+                          "style": "",
+                          "layerName": "history",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.97fa07641803.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "HISTORY",
+                                "text": "HISTORY"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.d66210d468b6.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Story history not published",
+                                "text": "Story history not published"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.1570c71792b9.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No long-form canonical history is published on this staging site yet.",
+                                "text": "No long-form canonical history is published on this staging site yet."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.04bfffea3d77.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Stories status →",
+                                "href": "/stories/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.23e3ad7da2a9.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Stories status ",
+                                      "layerName": "Text: Stories status"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.810de379b938.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.d3a2b2f85bef.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.778b2b0c61de.abilities",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "abilities"
+                          },
+                          "style": "",
+                          "layerName": "abilities",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.085b1de3f138.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "ABILITIES",
+                                "text": "ABILITIES"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.af97a40edc84.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Gameplay evidence stays separate",
+                                "text": "Gameplay evidence stays separate"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.f3c977661b3f.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Gameplay move sets may differ by mode and build. This profile does not t",
+                                "text": "Gameplay move sets may differ by mode and build. This profile does not turn held Arcade preview mechanics into universal character canon."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.241f8af8cf13.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Current game previews →",
+                                "href": "/play/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.ca0dd4e85df6.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Current game previews ",
+                                      "layerName": "Text: Current game previews"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.6292a4b60212.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.27912fdbee06.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.09f6c204ca45.friends",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "friends"
+                          },
+                          "style": "",
+                          "layerName": "friends",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.676d68333334.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "FRIENDS & RELATIONSHIPS",
+                                "text": "FRIENDS & RELATIONSHIPS"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.861a2c9c050f.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Not canonized from mockups",
+                                "text": "Not canonized from mockups"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.1b658f626c45.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Relationship labels remain unpublished until the character registry rece",
+                                "text": "Relationship labels remain unpublished until the character registry receives approved relationship data."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.a57a56b2a077.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Back to Characters →",
+                                "href": "/characters/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.b3b62fca2dc3.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Back to Characters ",
+                                      "layerName": "Text: Back to Characters"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.46abc2219e8c.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.beaba4bc3110.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.afcb1049f65f.locations",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "locations"
+                          },
+                          "style": "",
+                          "layerName": "locations",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.036d563883c2.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "LOCATIONS",
+                                "text": "LOCATIONS"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.46edebb607d3.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "World discovery preview",
+                                "text": "World discovery preview"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.9eda1aab8ddf.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The current World page shows canonical environment art; a character-loca",
+                                "text": "The current World page shows canonical environment art; a character-location history is not yet published."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.27461a16ba5e.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore World →",
+                                "href": "/world/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.de2a8f0235da.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Explore World ",
+                                      "layerName": "Text: Explore World"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.4c017d2a4757.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.e7af628939d8.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.42830f46dfbb.games",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "games"
+                          },
+                          "style": "",
+                          "layerName": "games",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.03f8289d3ec2.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "GAMES",
+                                "text": "GAMES"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.9d704e7c0ed1.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "See current browser listings",
+                                "text": "See current browser listings"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.9e56731f7cb1.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The Play directory is the authority for which browser experiences are PR",
+                                "text": "The Play directory is the authority for which browser experiences are PREVIEW, held, or unavailable."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.088ab9ce0819.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Open Play →",
+                                "href": "/play/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.afeb7f0053a6.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Open Play ",
+                                      "layerName": "Text: Open Play"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.33524a23cdb8.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.09018d26a01e.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.c2400ea52bb8.stories",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "stories"
+                          },
+                          "style": "",
+                          "layerName": "stories",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.3a76450228c1.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "STORIES",
+                                "text": "STORIES"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.0ee9200255d1.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Publication pending",
+                                "text": "Publication pending"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.6a5132a12790.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No Toadal story/chapter list is published yet.",
+                                "text": "No Toadal story/chapter list is published yet."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.aa051180e5ad.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Stories status →",
+                                "href": "/stories/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.e2e41101cd2e.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Stories status ",
+                                      "layerName": "Text: Stories status"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.acf1abccfe05.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.dd02cacb90ca.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.d6b2263a1d1a.gallery",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel profile-panel--gallery",
+                          "attributes": {
+                            "id": "gallery"
+                          },
+                          "style": "",
+                          "layerName": "gallery",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.c4aa713d89e4.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "GALLERY",
+                                "text": "GALLERY"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.5c701a4d5160.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Canonical Toadal art",
+                                "text": "Canonical Toadal art"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.08dcce7d9c07.profile-gallery",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "profile-gallery",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "div profile-gallery",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.3d58f2636a25.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Toadal victory artwork",
+                                      "asset": "asset.home.character.toadal-victory-web",
+                                      "alt": "Toadal victory artwork"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.4faac1c1ddfd.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Toadal portrait artwork",
+                                      "asset": "asset.home.character.toadal",
+                                      "alt": "Toadal portrait artwork"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.2da2b54db1b3.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Media preview →",
+                                "href": "/media/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.37e3568bfa2f.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Media preview ",
+                                      "layerName": "Text: Media preview"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.356d99be92db.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.1e7d8c7df7ae.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.2abd192de891.collectibles",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "profile-panel",
+                          "attributes": {
+                            "id": "collectibles"
+                          },
+                          "style": "",
+                          "layerName": "collectibles",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.f7062761a5b5.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "COLLECTIBLES",
+                                "text": "COLLECTIBLES"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.5ae490703f31.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest collection status",
+                                "text": "Guest collection status"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.03799d6c1730.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Browser-local progression is active. Character-specific collectible reco",
+                                "text": "Browser-local progression is active. Character-specific collectible records are not configured, so this profile does not invent unlock counts or entitlements."
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.70ce33a6c77c.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Feast Pass status →",
+                                "href": "/feast-pass/",
+                                "children": [
+                                  {
+                                    "id": "component.toadal-profile.rich-text.14afc9ff63ce.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Feast Pass status ",
+                                      "layerName": "Text: Feast Pass status"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.toadal-profile.rich-text.1b5a9d8d90bd.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.862ae999347e.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.5e047468c815.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.aa32ab21a64e.toadal-companion",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "aside",
+                    "className": "toadal-companion",
+                    "attributes": {
+                      "data-companion": "",
+                      "data-zone": "hero",
+                      "aria-label": "Toadal contextual helper"
+                    },
+                    "style": "",
+                    "layerName": "TOADAL SAYSMy profile uses canonical art and only approved facts.Minimiz",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.toadal-profile.rich-text.1eaabd446587.toadal-companion-panel",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "companion-panel",
+                          "attributes": {
+                            "id": "toadal-companion-panel",
+                            "data-companion-panel": ""
+                          },
+                          "style": "",
+                          "layerName": "toadal companion panel",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.711fd56cb0ca.companion-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-label",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL SAYS",
+                                "text": "TOADAL SAYS"
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.af1baf3ba575.companion-message",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "companion-message",
+                                "attributes": {
+                                  "data-companion-speech": "",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
+                                "style": "",
+                                "layerName": "My profile uses canonical art and only approved facts.",
+                                "text": "My profile uses canonical art and only approved facts."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.toadal-profile.rich-text.1e5bf2b55151.companion-toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "companion-toggle",
+                          "attributes": {
+                            "type": "button",
+                            "data-companion-toggle": "",
+                            "aria-controls": "toadal-companion-panel",
+                            "aria-expanded": "true",
+                            "aria-label": "Minimize Toadal helper"
+                          },
+                          "style": "",
+                          "layerName": "Minimize Toadal helper",
+                          "children": [
+                            {
+                              "id": "component.toadal-profile.rich-text.40b28ec5b8ee.companion-image",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "companion-image",
+                                "attributes": {
+                                  "data-companion-image": "",
+                                  "width": "611",
+                                  "height": "640",
+                                  "loading": "lazy",
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "img companion-image",
+                                "asset": "asset.home.character.toadal-victory",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.toadal-profile.rich-text.0cc901da5a0b.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Minimize Toadal helper",
+                                "text": "Minimize Toadal helper"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.toadal-profile.rich-text.17b9b3d8bd18.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

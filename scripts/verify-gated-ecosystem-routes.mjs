@@ -1,10 +1,12 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const root=process.cwd();
 const pagesDir=path.join(root,'studio-project','toadal-feast-website','pages');
 const index=JSON.parse(fs.readFileSync(path.join(pagesDir,'index.json'),'utf8'));
 const errors=[];
+const projector=await createOwnerNativeProjector();
 const expected=[
   ['account','/account/'],
   ['community','/community/'],
@@ -31,7 +33,8 @@ for(const [slug,route] of expected){
 }
 
 function source(slug){
-  return JSON.parse(fs.readFileSync(path.join(pagesDir,slug+'.json'),'utf8')).components[0].props.html;
+  const page=JSON.parse(fs.readFileSync(path.join(pagesDir,slug+'.json'),'utf8'));
+  return projector.projectComponentHtml(path.dirname(pagesDir),page.components[0]);
 }
 
 const account=source('account');
@@ -68,7 +71,8 @@ if((legal.match(/NOT PUBLISHED/g)||[]).length<2) errors.push('Legal must mark bo
 if(!/does not substitute generated copy for a legal Privacy Policy/.test(legal)) errors.push('Legal must refuse generated legal copy.');
 if(!/not a replacement for a privacy policy/.test(legal)) errors.push('Product facts must be distinguished from legal policy.');
 
-const support=JSON.parse(fs.readFileSync(path.join(pagesDir,'support.json'),'utf8')).components[0].props.html;
+const supportPage=JSON.parse(fs.readFileSync(path.join(pagesDir,'support.json'),'utf8'));
+const support=projector.projectComponentHtml(path.dirname(pagesDir),supportPage.components[0]);
 if(/does not offer account sync or saved progression/.test(support)) errors.push('Support still contains stale no-saved-progression claim.');
 if(!/Feast Pass progress can persist locally on this browser/.test(support)) errors.push('Support must explain current browser-local progress.');
 if(!/href='\/contact\/'/.test(support) || !/href='\/legal\/'/.test(support)) errors.push('Support must route to Contact and Legal previews.');

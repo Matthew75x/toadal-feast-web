@@ -1,13 +1,20 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const require = createRequire(import.meta.url);
 const site = '../studio-project/toadal-feast-website/';
 const progression = require(site + 'reference/assets/js/guest-progression.js');
 const definitions = require(site + 'reference/assets/js/progression-definitions.js');
 const adapter = require(site + 'reference/assets/js/website-score-adapter.js');
+const scriptsDir = path.dirname(fileURLToPath(import.meta.url));
+const projectRoot = path.resolve(scriptsDir, '..', 'studio-project', 'toadal-feast-website');
+const studioRoot = process.env.TOADAL_STUDIO_ROOT;
+const projectPage = await createOwnerNativeProjector(studioRoot);
 
 function storageFixture() {
   const values = new Map();
@@ -86,8 +93,14 @@ test('runtime-generated quest and score links retain root/project hosting and qu
 
 test('authored sibling HUD receives validated lifecycle messages, timer and completed local score', () => {
   const record = JSON.parse(fs.readFileSync(new URL(site + 'pages/player-wicked-bites.json', import.meta.url), 'utf8'));
-  const hostMarkup = record.components.find(component => component.props.html.includes('data-player-shell')).props.html;
-  const hudMarkup = record.components.find(component => component.props.html.includes('data-score-session')).props.html;
+  const componentMarkup = record.components
+    .filter(component => component.props?.authoringVersion || typeof component.props?.html === 'string')
+    .map(component => ({
+    component,
+    html: projectPage(projectRoot, { ...record, components: [component] }),
+    }));
+  const hostMarkup = componentMarkup.find(({ html }) => html.includes('data-player-shell'))?.html;
+  const hudMarkup = componentMarkup.find(({ html }) => html.includes('data-score-session'))?.html;
   const hudId = hostMarkup.match(/data-player-hud='([^']+)'/)?.[1];
   assert.ok(hudId, 'host explicitly associates its sibling HUD');
   assert.ok(hudMarkup.includes("id='" + hudId + "'"));

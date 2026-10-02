@@ -2,6 +2,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
+import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const repo = path.resolve(process.argv[2] || '.');
 const project = path.join(repo, 'studio-project', 'toadal-feast-website');
@@ -17,10 +18,15 @@ const sha256File = (abs) => crypto.createHash('sha256').update(fs.readFileSync(a
 const gameIndex = JSON.parse(read(path.join('games', 'index.json')));
 const pagesIndex = JSON.parse(read(path.join('pages', 'index.json')));
 const css = read(path.join('reference', 'assets', 'css', 'site.css'));
-const html = home.components?.map(c => c?.props?.html || '').join('\n') || '';
+const projector = await createOwnerNativeProjector();
+const projectedHomeComponents = projector.projectPageComponents(project, home);
+const html = projectedHomeComponents.map(({ html }) => html).join('\n');
 const byId = new Map((home.components || []).map(component => [component.id, component]));
 const component = (id) => byId.get(id);
-const componentHtml = (id) => component(id)?.props?.html || '';
+const componentHtml = (id) => {
+  const selected = component(id);
+  return selected ? projector.projectComponentHtml(project, selected) : '';
+};
 const plainText = (value) => value.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 
 const checks = [];
@@ -109,7 +115,7 @@ check('home-feast-pass-runtime', /data-progression-page/.test(componentHtml('com
   /Guest progress is stored only in this browser/i.test(componentHtml('component.home.feast-pass')) &&
   /toadal:web:v1:feast-pass/.test(guestRuntime) && /data-progression-stat/.test(guestRuntime),
   'The Home Feast Pass summary is bound to the existing browser-local progression runtime and its persisted state.');
-const homePassStats = [...componentHtml('component.home.feast-pass').matchAll(/<dd data-progression-stat=["']([^"']+)["']>(.*?)<\/dd>/g)];
+const homePassStats = [...componentHtml('component.home.feast-pass').matchAll(/<dd\b[^>]*\bdata-progression-stat=["']([^"']+)["'][^>]*>(.*?)<\/dd>/g)];
 check('home-feast-pass-no-fake-values', homePassStats.length === 4 && homePassStats.every(([, , value]) => value === '—'),
   'Progress numbers remain placeholders until the real local runtime hydrates them.');
 check('home-daily-checkin-runtime', /data-progression-page/.test(componentHtml('component.home.today')) &&
@@ -157,7 +163,7 @@ const previewOnly = indexedGames.length === 4 && gameRecords.every(game =>
   registeredPlayerRoutes.has('/player/wicked-bites/') &&
   gameRecords.filter(game => game !== stagingGame).every(game => game.web?.enabled === false);
 check('preview-truth', previewOnly && component('component.home.games')?.props?.children?.length === 4 &&
-  /Public games[\s\S]*?<span>0<\/span>/i.test(componentHtml('component.home.games-intro')) &&
+  /Public games[\s\S]*?<span\b[^>]*>0<\/span>/i.test(componentHtml('component.home.games-intro')) &&
   /Wicked Bites runs as a session-only staging preview/i.test(componentHtml('component.home.games-intro')),
   'All four listings stay PREVIEW with zero public games; exactly one isolated Wicked Bites staging route is distinguished from held/concept entries.');
 check('preview-headline-truth', previewOnly
