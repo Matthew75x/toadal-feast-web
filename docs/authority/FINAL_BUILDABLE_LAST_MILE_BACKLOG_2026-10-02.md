@@ -74,16 +74,15 @@ Add:
 - no fake screenshot required if no approved capture exists
 - retain truthful disabled store controls
 
-### P0.5 Construction asset truth
+### P0.5 Construction companion provenance — resolved
+
 Manifest row 28 / cross-cutting companion.
 
-Current `/coming-soon/` uses `maintenance.webp` but describes it as a dedicated construction outfit.
+Recheck of `manifests/companion-runtime-v2.json` proves that `runtime-v2/maintenance.webp` is derived from the approved Master V2 source `TOADAL_MAINTENANCE_UNDER_CONSTRUCTION_WORKER_v01.png`.
 
-Fix one of:
-- use a genuinely approved construction asset if found, or
-- use canonical/maintenance Toadal with truthful alt/copy that does not overclaim the image
+The current `/coming-soon/` route is explicitly an under-construction destination and already uses `data-companion-reaction="construction"`.
 
-Keep semantic reaction = `construction`.
+Keep this asset/context pairing. The restriction is that maintenance/construction art must not become the generic image for unrelated unavailable states.
 
 ## Priority 1 — progression / player journey closure
 
