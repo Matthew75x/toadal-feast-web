@@ -396,7 +396,8 @@ test('strict score normalization rejects fractional, negative, unsafe, and paylo
   assert.equal(runtime.normalizeScore(123), 123);
   assert.equal(runtime.normalizeScore('123'), 123);
   assert.equal(runtime.normalizeScore(' 123 '), 123);
-  for (const value of [-1, 1.5, Infinity, NaN, Number.MAX_SAFE_INTEGER + 1, '123.5', '-1', '12px', '', '9007199254740992', { score: 123 }]) {
+  assert.equal(runtime.normalizeScore('00000000000000001'), 1);
+  for (const value of [-1, 1.5, Infinity, NaN, Number.MAX_SAFE_INTEGER + 1, '123.5', '-1', '12px', '1e3', '', '9007199254740992', '0'.repeat(65), { score: 123 }]) {
     assert.equal(runtime.normalizeScore(value), null, String(value));
   }
 });

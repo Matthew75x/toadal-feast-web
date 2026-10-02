@@ -95,8 +95,10 @@
     if (typeof value === 'number') return Number.isSafeInteger(value) && value >= 0 ? value : null;
     if (typeof value !== 'string') return null;
     const text = value.trim();
-    if (!/^\d+$/.test(text)) return null;
-    const score = Number(text);
+    if (text.length > 64 || !/^\d+$/.test(text)) return null;
+    const decimal = text.replace(/^0+(?=\d)/, '');
+    if (decimal.length > 16) return null;
+    const score = Number(decimal);
     return Number.isSafeInteger(score) && score >= 0 ? score : null;
   }
   function validGameId(value) { return typeof value === 'string' && /^[a-z0-9][a-z0-9-]{0,47}$/.test(value) && value !== 'constructor' && value !== 'prototype'; }
@@ -136,6 +138,7 @@
       const normalized = new Map();
       for (const item of value) {
         if (!item || typeof item !== 'object' || Array.isArray(item) || !validToken(item.id, 64) || !Number.isSafeInteger(item.count) || item.count < 0) return null;
+        if (Object.keys(item).some(key => key !== 'id' && key !== 'count')) return null;
         const treat = treatsById.has(item.id);
         const count = treat ? Math.min(1, item.count) : item.count;
         normalized.set(item.id, Math.max(normalized.get(item.id) || 0, count));
@@ -150,12 +153,14 @@
       for (const gameId of gameIds) {
         const entry = value[gameId];
         if (!validGameId(gameId) || !entry || typeof entry !== 'object' || Array.isArray(entry) ||
-            !Number.isSafeInteger(entry.best) || entry.best < 0 || !Array.isArray(entry.runs) || entry.runs.length > SCORE_HISTORY_LIMIT) return null;
+            !Number.isSafeInteger(entry.best) || entry.best < 0 || !Array.isArray(entry.runs) || entry.runs.length < 1 || entry.runs.length > SCORE_HISTORY_LIMIT) return null;
+        if (Object.keys(entry).some(key => key !== 'best' && key !== 'runs')) return null;
         const seenCompletionIds = new Set();
         const runs = [];
         for (const run of entry.runs) {
           if (!run || typeof run !== 'object' || Array.isArray(run) || !Number.isSafeInteger(run.score) || run.score < 0 ||
               !validIsoTimestamp(run.completedAt) || !validToken(run.completionId, 80) || seenCompletionIds.has(run.completionId)) return null;
+          if (Object.keys(run).some(key => !['score', 'completedAt', 'mode', 'ruleset', 'characterId', 'completionId'].includes(key))) return null;
           seenCompletionIds.add(run.completionId);
           for (const field of ['mode', 'ruleset', 'characterId']) {
             if (run[field] !== null && !validToken(run[field], 64)) return null;
@@ -334,8 +339,10 @@
     }
     function grant(reward) {
       reward = reward || {};
-      records.pass.xp += Number.isFinite(reward.xp) && reward.xp > 0 ? Math.floor(reward.xp) : 0;
-      records.pass.sparks += Number.isFinite(reward.sparks) && reward.sparks > 0 ? Math.floor(reward.sparks) : 0;
+      const xp = Number.isFinite(reward.xp) && reward.xp > 0 ? Math.floor(reward.xp) : 0;
+      const sparks = Number.isFinite(reward.sparks) && reward.sparks > 0 ? Math.floor(reward.sparks) : 0;
+      records.pass.xp = Math.min(Number.MAX_SAFE_INTEGER, records.pass.xp + xp);
+      records.pass.sparks = Math.min(Number.MAX_SAFE_INTEGER, records.pass.sparks + sparks);
       const configuredThreshold = Number.isFinite(definitions.xpPerLevel) && definitions.xpPerLevel > 0 ? Math.floor(definitions.xpPerLevel) : null;
       if (configuredThreshold) records.pass.level = 1 + Math.floor(records.pass.xp / configuredThreshold);
     }
@@ -553,7 +560,7 @@
       const priorDate = prior ? new Date(prior + 'T00:00:00.000Z') : null;
       const thisDate = new Date(period + 'T00:00:00.000Z');
       const difference = priorDate && !Number.isNaN(priorDate.getTime()) ? Math.round((thisDate - priorDate) / 86400000) : null;
-      records.pass.streak.count = difference === 1 ? records.pass.streak.count + 1 : (difference === 0 ? Math.max(1, records.pass.streak.count) : 1);
+      records.pass.streak.count = difference === 1 ? Math.min(Number.MAX_SAFE_INTEGER, records.pass.streak.count + 1) : (difference === 0 ? Math.max(1, records.pass.streak.count) : 1);
       records.pass.streak.lastQualifiedPeriod = period;
       records.quests.dailyClaimedPeriod = period;
       grant(config);
