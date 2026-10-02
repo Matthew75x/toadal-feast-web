@@ -1,5 +1,19 @@
 # TOADAL Studio / Website Live State — 2026-10-02
 
+## Final closure status (supersedes the earlier snapshot below)
+
+- Website branch: `work/owner-native-authoring-20261002`; qualified source/export commit: `3aec0ce2ce70fd0a9e5b1f13822a86d5b1fc0f87`, tree `99c04cb65de1ea99298ee126e853dfb6fe5d60ea`. A documentation/evidence follow-up commit may advance the branch tip.
+- Studio branch: `work/owner-native-authoring-20261002`; commit `c504b8e247640f097d85c86ae9da8c9b20c20762`, tree `8adfe0a97e7f9341b5fd1769a010e2244148637e`.
+- Studio exact version: 1.4.2. The existing local Studio service remains at `http://127.0.0.1:4320/`, served by Node PID 113708; HTTP probe returned 200. Do not stop it.
+- `TOADAL_PROJECT`: `C:\Users\Metarator\Documents\Codex\2026-09-29\t-3\work\toadal-feast-web-owner-native-authoring-20261002\studio-project\toadal-feast-website\project.json`.
+- Studio qualification: **183/183 PASS**, including validation and `ai:doctor`; report `D:\Codex-TOADAL-Owner-QA-8b9080b3491b414fadb09ccb022b838e\studio-suite-output-20261002\studio-qualification-final-183.json`. This ran from an isolated D: clone with TEMP/TMP/cache and test scratch redirected to D:, plus the existing ignored Vault pack copied into that clone.
+- Owner-preview qualification: **PASS, 16/16 groups**, integrated Node suite 48/48, browser matrix **83/83**, inputs unchanged. Includes Home visual contract, navigation, character registry, gated routes, manifest, Search/Discovery, non-Home truth, visual asset authority, layout closure, cartridge isolation, render freshness, Pages base path, static links, and staging robots. Full evidence is committed under `docs/authoring/qualification/owner-preview-final-closure/`.
+- The final gate uncovered only a Windows checkout line-ending mismatch for the pinned `asset.brand.crown` source/reference SVG. `.gitattributes` now pins LF for the renderer and both authoritative crown copies; a fresh D: checkout confirmed all pinned crown hashes and the full gate passed. No website design/source content was altered to obtain the pass.
+- Canonical Studio static export remains coherent with tracked `dist/` at 138 files; the existing export evidence and ZIP hash are recorded below. No deployment, merge, staging promotion, production change, or `main` change occurred.
+- Owner-native acceptance remains **PARTIAL**. Existing hands-on evidence supports image replacement/framing, text/copy editing, route selection, save/reopen, and deterministic repeated exports. It does not yet directly prove (a) editing an actual dialogue field through Studio, (b) that each representative edit is reflected in exported output, or (c) clicking the edited destination in the exported site. Do not claim full non-coding owner acceptance until these are tested.
+- Website working tree was clean before adding this closure note and the owner-preview evidence above; these documentation/evidence files should be committed together as the final handoff. Studio worktree has only modified `AI/AUDIT/mcp-tools.jsonl` (88 appended tool-call audit records); preserve it as a generated audit log and do not commit or discard it without owner direction.
+- Safe resume: Studio source and website/project state are preserved in their checkpoint commits; the qualification reports and isolated test data remain on D:. The exact Studio restart command and all paths are recorded below. Do not merge or deploy as part of this closure.
+
 ## Active workspace and service
 
 - Website repository/worktree: `C:\Users\Metarator\Documents\Codex\2026-09-29\t-3\work\toadal-feast-web-owner-native-authoring-20261002`
