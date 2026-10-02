@@ -121,24 +121,33 @@
     },
     {
       "id": "asset.home.character.gully",
-      "name": "Gully — canonical victory-art derivative",
+      "name": "Gully — owner-approved happy portrait derivative",
       "kind": "image",
       "category": "character",
       "source": "reference/assets/images/characters/gully.webp",
       "extension": "webp",
-      "bytes": 20526,
-      "sha256": "ac54751c16f55ff6f96e5d103d326dd311f39c0886a4a2a889b2a0ee81013be8",
-      "referenceSha256": "ac54751c16f55ff6f96e5d103d326dd311f39c0886a4a2a889b2a0ee81013be8",
+      "bytes": 15798,
+      "sha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
+      "referenceSha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
       "referenceSource": "reference/assets/images/characters/gully.webp",
-      "width": 256,
-      "height": 256,
+      "authoritySource": "owner-upload:happy-gully-portrait@2026-10-01",
+      "authoritySha256": "5c06144b728acb893eca1996c83d92e771e73b27be466f2acf5aec0ffff96388",
+      "width": 319,
+      "height": 319,
       "renderTargets": [
-        "website-home"
+        "website-home",
+        "website-characters",
+        "website-world",
+        "website-media"
       ],
       "replaceable": true,
       "tags": [
         "website-home",
         "canonical",
+        "owner-approved-2026-10-01",
+        "neutral-profile",
+        "happy-gully",
+        "background-cleaned",
         "transparent-web-derivative"
       ]
     },
