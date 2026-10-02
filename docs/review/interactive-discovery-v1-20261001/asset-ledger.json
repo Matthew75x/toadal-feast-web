@@ -1,0 +1,276 @@
+{
+  "schema": "toadal.website.interactive-discovery.asset-ledger.v1",
+  "baselineCommit": "fbcc41a7e5ac36ca8362f503557968090119e5f1",
+  "archiveSha256": "605e16399d21210228a9c784fb413c6d886e75b0bf0fa277b25ef0a2dbcf4ecb",
+  "verifiedManifestAssetCount": 59,
+  "outputs": [
+    {
+      "key": "gully",
+      "path": "reference/assets/images/characters/gully.webp",
+      "bytes": 11604,
+      "sha256": "f9009fbe628b912518347a9bfb1f5cf5c817e10bb1168bc73d8121cbdd4c6612",
+      "width": 320,
+      "height": 320,
+      "previousBytes": 20526,
+      "previousSha256": "ac54751c16f55ff6f96e5d103d326dd311f39c0886a4a2a889b2a0ee81013be8",
+      "sourceAssets": [
+        {
+          "path": "characters/gully/gully-happy-canonical.png",
+          "sha256": "5c06144b728acb893eca1996c83d92e771e73b27be466f2acf5aec0ffff96388",
+          "bytes": 97847
+        }
+      ],
+      "processing": "canonical transparent identity, resized to 320px"
+    },
+    {
+      "key": "candyShooter",
+      "path": "reference/assets/images/characters/candy-shooter-fruity-bash.webp",
+      "bytes": 80618,
+      "sha256": "4dd67ff42a1ec2dfdf727184f5e98e31aea36788c7f05853d6b281204a7b1f1c",
+      "width": 512,
+      "height": 512,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "characters/candy-shooter/candy-shooter-primary-source.png",
+          "sha256": "8c21bed5293bdea6f1db71683b73e4405410ae5e7ebe426c649a6cc361829513",
+          "bytes": 1835568
+        }
+      ],
+      "processing": "edge-connected black matte removed; concept-art crop"
+    },
+    {
+      "key": "portal",
+      "path": "reference/assets/images/interactive/portal-discovery.webp",
+      "bytes": 81950,
+      "sha256": "87fd48bbe1ab25b8633917f0e9455ad284b452769d971e6b7a42ede0d6e8dc0e",
+      "width": 512,
+      "height": 512,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "interactive/portal/portal-static-source.png",
+          "sha256": "7e9edaefaa0353593d27742546c405f301dbead3bd80f02564e3e6e8854f7da6",
+          "bytes": 2449257
+        }
+      ],
+      "processing": "approved transparent static portal; motion is CSS-only"
+    },
+    {
+      "key": "candyBlue",
+      "path": "reference/assets/images/interactive/candy-blue.webp",
+      "bytes": 14540,
+      "sha256": "06ecbf35e4f5f72151e5283421d56e628cf435334b32a0c497db7a834e62d392",
+      "width": 256,
+      "height": 256,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "collectibles/gem-candy-blue-source.png",
+          "sha256": "38a97353f62e7d8bb352db98b8e4457b6b00b762ec9d7dc80df3303c85104a40",
+          "bytes": 983039
+        }
+      ],
+      "processing": "edge-connected black matte removed"
+    },
+    {
+      "key": "candyGreen",
+      "path": "reference/assets/images/interactive/candy-green.webp",
+      "bytes": 13016,
+      "sha256": "be5351a1abb26ecc0fe6a7ee62c7131fc65434d5b35f320d7bbde70b78217357",
+      "width": 256,
+      "height": 256,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "collectibles/gem-candy-green-source.png",
+          "sha256": "a5330bbd3c6d9df7d3d8649cf84828d4f1bd7dd08b55c0cc3c2830b02d758be2",
+          "bytes": 956625
+        }
+      ],
+      "processing": "edge-connected black matte removed"
+    },
+    {
+      "key": "candyPurple",
+      "path": "reference/assets/images/interactive/candy-purple.webp",
+      "bytes": 13676,
+      "sha256": "49934f70a0f26ed2de548a6a9aff30ed4d35bfdfa4ae6d1fd5e01fe3ba7c184d",
+      "width": 256,
+      "height": 256,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "collectibles/gem-candy-purple-source.png",
+          "sha256": "4dc3cdf9e8ad4261ed9e33b37054b6d7bb45cd90bcd200204352324248fcefd8",
+          "bytes": 1032167
+        }
+      ],
+      "processing": "edge-connected black matte removed"
+    },
+    {
+      "key": "dailyChest",
+      "path": "reference/assets/images/interactive/daily-chest-sprite.webp",
+      "bytes": 146948,
+      "sha256": "3ef565b477aa37ee266525d33dcc71373ebc5cc58a06cfb6eb5ff85ffdbd03bd",
+      "width": 256,
+      "height": 1792,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "interactive/daily-chest/source/frame-47c616d4-401a-495e-a33a-7b3e609ce701-322aac7cfad41750b492de58921f652d-001.png",
+          "sha256": "bef30f78719b975454bc959c830c275d5322b1f282044db6450ec1f5fa45131a",
+          "bytes": 718677
+        },
+        {
+          "path": "interactive/daily-chest/source/frame-47c616d4-401a-495e-a33a-7b3e609ce701-322aac7cfad41750b492de58921f652d-002.png",
+          "sha256": "a45d0cd4004bcea423c4466ea4a87f6cd0586cf1c55c38f1f3545d75f35653e0",
+          "bytes": 763857
+        },
+        {
+          "path": "interactive/daily-chest/source/frame-47c616d4-401a-495e-a33a-7b3e609ce701-322aac7cfad41750b492de58921f652d-005.png",
+          "sha256": "77ab594ce4313e4d45e6e403bd554988af2add18208dec84e8570f6a4ef73aa6",
+          "bytes": 734959
+        },
+        {
+          "path": "interactive/daily-chest/source/frame-47c616d4-401a-495e-a33a-7b3e609ce701-322aac7cfad41750b492de58921f652d-004.png",
+          "sha256": "33da6079edb08f425c4ece1c6e47a1ff9f72bab19c7c15d9e818cbdce7566624",
+          "bytes": 904226
+        },
+        {
+          "path": "interactive/daily-chest/source/frame-11fb7e0f-be64-4e2f-95bc-8b682676e77c-2441ca7a94e638ad91fbb5233830a388-006.png",
+          "sha256": "094c5d87d34dd4b0d2872a9b00bde5bcf92aac5b5e55639b026a254048a62d87",
+          "bytes": 822453
+        },
+        {
+          "path": "interactive/daily-chest/source/frame-11fb7e0f-be64-4e2f-95bc-8b682676e77c-2441ca7a94e638ad91fbb5233830a388-007.png",
+          "sha256": "30f78a3a002f60d258ed6099c65f3645f310e1f70f9c764fa7e03fe6978ed3d0",
+          "bytes": 835454
+        },
+        {
+          "path": "interactive/daily-chest/source/frame-11fb7e0f-be64-4e2f-95bc-8b682676e77c-2441ca7a94e638ad91fbb5233830a388-008.png",
+          "sha256": "96e47737ff4156e2e6e35361817bfab09d1a64b28108bfb40ed3b1c942678db8",
+          "bytes": 796627
+        }
+      ],
+      "processing": "7 approved frames; closed-to-open visual order; white matte removed; fixed 256px cells"
+    },
+    {
+      "key": "dailyBurst",
+      "path": "reference/assets/images/interactive/daily-fruit-burst-sprite.webp",
+      "bytes": 214678,
+      "sha256": "f3086e671d2898352e397b27a35f88c8c74b6b729fb720b778b93e3fd234f4d0",
+      "width": 256,
+      "height": 2048,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-01.png",
+          "sha256": "3ce7757559b0d3890e768f55b8485b8e05a7f70db7a1bc3e7aa0fd26adce174a",
+          "bytes": 645934
+        },
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-02.png",
+          "sha256": "a89fae91a357139d6d03e20330219c7c0dee7cca5da79b7e50ee191d5a43b01b",
+          "bytes": 698444
+        },
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-03.png",
+          "sha256": "71c7572e4c43de177bf8548496d200b57c9e64ab44f5e4de928047d2334a2a13",
+          "bytes": 724623
+        },
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-04.png",
+          "sha256": "b7477fb549292d640f8e35cd3c06f6c443b2997875a471c78b47ac5694f7b7ef",
+          "bytes": 838507
+        },
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-05.png",
+          "sha256": "373611cc08512c2fc7410e14423f1cab0e51b4d0e6d6b301c21a92c54399a8fc",
+          "bytes": 856790
+        },
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-06.png",
+          "sha256": "5875c5a84a53c453633e7b2e5636bf7a45b574c233903c2c07cfe34b304739de",
+          "bytes": 748610
+        },
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-07.png",
+          "sha256": "1b7eb3e84bbc5a6bd950d7ee59364cb5d5af55435fd088da3b477e3c49125be2",
+          "bytes": 695703
+        },
+        {
+          "path": "interactive/daily-chest/fruit-burst-source/fruit-burst-08.png",
+          "sha256": "eb204e6d43a1d26ad98a5a7fb5dbea15bc781d850b2fb358e614540c0009c84a",
+          "bytes": 687367
+        }
+      ],
+      "processing": "8 approved frames; white matte removed; fixed 256px cells"
+    },
+    {
+      "key": "goldenBlock",
+      "path": "reference/assets/images/interactive/golden-block-sprite.webp",
+      "bytes": 424910,
+      "sha256": "ac1ef741a2e91859e31b03b42ae5360b2c558e32c4d29e92b6eb1a80cf7b9c4e",
+      "width": 256,
+      "height": 6400,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "puzzle/golden-block/golden-block-destruction-source-sheet.png",
+          "sha256": "ac8192d1b5d9ee9d9171532bf6bbaaf3de056b4ea8555bd42c9e3de22422a708",
+          "bytes": 2586291
+        }
+      ],
+      "processing": "25 ordered 5x5 cells; near-black edge matte removed; 256px vertical sprite strip"
+    },
+    {
+      "key": "toadalPush",
+      "path": "reference/assets/images/puzzle/toadal-push-golden-block.webp",
+      "bytes": 27550,
+      "sha256": "79e2917f46233620886247ed678db8a4874ce33cd64018dbd58e594d2e89300d",
+      "width": 384,
+      "height": 384,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "puzzle/golden-block/toadal-push-golden-block.png",
+          "sha256": "01111156bd40d15f5ccc566fe5e14c3e8e00c84f3323e02f5dbb30c572c6248b",
+          "bytes": 1399073
+        }
+      ],
+      "processing": "approved transparent ability art, optimized to 384px"
+    },
+    {
+      "key": "toadalMagic",
+      "path": "reference/assets/images/puzzle/toadal-magic-golden-block.webp",
+      "bytes": 36504,
+      "sha256": "40796e8ed221dfacc94d98a391ae6adaf50ab7f812d770fc5676d9573a8f722b",
+      "width": 384,
+      "height": 384,
+      "previousBytes": 0,
+      "previousSha256": null,
+      "sourceAssets": [
+        {
+          "path": "puzzle/golden-block/toadal-magic-golden-block.png",
+          "sha256": "e89f2142902b77f87ac8b16a488b15d28aa3951f0f0f2b7835a4467d75a399d5",
+          "bytes": 1631628
+        }
+      ],
+      "processing": "approved transparent ability art, optimized to 384px"
+    }
+  ],
+  "baselineRuntimeBytesReplaced": 20526,
+  "finalRuntimeBytesGenerated": 1065994,
+  "netRuntimeAssetDeltaBytes": 1045468,
+  "sourceArchiveShipped": false,
+  "rawSourceSequencesShipped": false
+}

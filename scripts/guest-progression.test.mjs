@@ -190,6 +190,56 @@ test('refreshes quest and daily state across stale stores before granting claims
   assert.equal(runtime.createStore({ storage: shared.storage, now: shared.now, definitions }).getSnapshot().pass.xp, 15);
 });
 
+test('Home discoveries use the existing discoveries key and persist exactly three gated candies', () => {
+  const first = fixture();
+  const { store, storage, writes } = first;
+  assert.deepEqual(store.getHomeInteractionState().candies, []);
+  assert.deepEqual(store.collectHomeCandy('golden-block-candy').reason, 'locked');
+  assert.equal(store.collectHomeCandy('portal-candy').ok, true);
+  assert.equal(store.collectHomeCandy('portal-candy').reason, 'already-collected');
+  assert.equal(store.collectHomeCandy('lower-page-candy').ok, true);
+  assert.equal(store.collectHomeCandy('not-a-v1-candy').reason, 'unknown-candy');
+
+  for (let hit = 1; hit <= 4; hit += 1) {
+    const result = store.hitGoldenBlock();
+    assert.equal(result.ok, true);
+    assert.equal(result.state.goldenBlock.hits, hit);
+    assert.equal(result.state.goldenBlock.complete, hit === 4);
+    assert.equal(result.state.candies.includes('golden-block-candy'), false);
+  }
+  assert.equal(store.hitGoldenBlock().reason, 'already-broken');
+  assert.equal(store.collectHomeCandy('golden-block-candy').ok, true);
+  assert.equal(store.collectHomeCandy('golden-block-candy').reason, 'already-collected');
+  assert.deepEqual(store.getHomeInteractionState().candies, ['portal-candy', 'lower-page-candy', 'golden-block-candy']);
+  assert.deepEqual([...new Set(writes)], [runtime.KEYS.discoveries]);
+  assert.equal(storage.getItem('toadal:web:v1:home-interaction'), null);
+
+  const reloaded = runtime.createStore({ storage, now: first.now, definitions });
+  assert.deepEqual(reloaded.getHomeInteractionState().candies, ['portal-candy', 'lower-page-candy', 'golden-block-candy']);
+  assert.equal(reloaded.getHomeInteractionState().goldenBlock.hits, 4);
+});
+
+test('a future Home-interaction schema is readable but cannot be overwritten', () => {
+  const raw = JSON.stringify({ schemaVersion: 1, items: [], homeInteraction: { schemaVersion: 9, marker: 'preserve' } });
+  const { store, storage, writes } = fixture({ [runtime.KEYS.discoveries]: raw });
+  assert.equal(store.getHomeInteractionState().readOnly, true);
+  assert.deepEqual(store.collectHomeCandy('portal-candy').reason, 'future-schema-read-only');
+  assert.deepEqual(store.hitGoldenBlock().reason, 'future-schema-read-only');
+  assert.equal(storage.getItem(runtime.KEYS.discoveries), raw);
+  assert.deepEqual(writes, []);
+});
+
+test('malformed Home-interaction data is preserved and read-only until a safe migration exists', () => {
+  const malformed = { schemaVersion: 1, candies: ['portal-candy', 'unknown-future-candy'], goldenBlock: { hits: 2, complete: false } };
+  const raw = JSON.stringify({ schemaVersion: 1, items: [], homeInteraction: malformed });
+  const { store, storage, writes } = fixture({ [runtime.KEYS.discoveries]: raw });
+  assert.equal(store.getHomeInteractionState().readOnly, true);
+  assert.equal(store.collectHomeCandy('lower-page-candy').reason, 'invalid-stored-data-read-only');
+  assert.equal(store.hitGoldenBlock().reason, 'invalid-stored-data-read-only');
+  assert.equal(storage.getItem(runtime.KEYS.discoveries), raw);
+  assert.deepEqual(writes, []);
+});
+
 test('runtime list rendering uses div role=list/listitem semantics', () => {
   class Element {
     constructor(tagName) { this.tagName = tagName; this.children = []; this.attributes = {}; this.firstChild = null; this.textContent = ''; }

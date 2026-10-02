@@ -6,11 +6,37 @@
   const api = factory(definitions);
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (root) root.ToadalGuestProgression = api;
-  if (root && root.document) api.boot(root.document, root);
+  if (root && root.document) {
+    api.boot(root.document, root);
+    const discovery = root.document.querySelector('[data-home-discovery]');
+    if (discovery && !root.__toadalHomeDiscoveryLoading && !root.__toadalHomeDiscoveryLoaded) {
+      root.__toadalHomeDiscoveryLoading = true;
+      const brand = root.document.querySelector('.site-brand');
+      let baseRoot = '';
+      try {
+        const homePath = brand ? new root.URL(brand.href, root.location.href).pathname : '/';
+        baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+      } catch (_) { /* The root-mounted path remains the safe default. */ }
+      const script = root.document.createElement('script');
+      script.src = baseRoot + '/assets/js/home-interactive-discovery.js';
+      script.onload = () => { root.__toadalHomeDiscoveryLoading = false; root.__toadalHomeDiscoveryLoaded = true; };
+      script.onerror = () => {
+        root.__toadalHomeDiscoveryLoading = false;
+        discovery.dataset.interactionUnavailable = 'true';
+        const status = discovery.querySelector('[data-portal-status]');
+        if (status) status.textContent = 'Interactive discoveries could not load. Site navigation remains available.';
+        discovery.querySelectorAll('[data-home-candy], [data-golden-block-hit]').forEach(button => { button.disabled = true; });
+      };
+      root.document.head.appendChild(script);
+    }
+    if (root.dispatchEvent && root.CustomEvent) root.dispatchEvent(new root.CustomEvent('toadal:guest-progression-ready'));
+  }
 })(typeof globalThis !== 'undefined' ? globalThis : this, function (defaultDefinitions) {
   'use strict';
 
   const VERSION = 1;
+  const HOME_INTERACTION_VERSION = 1;
+  const HOME_CANDY_IDS = Object.freeze(['portal-candy', 'lower-page-candy', 'golden-block-candy']);
   const KEYS = Object.freeze({
     pass: 'toadal:web:v1:feast-pass',
     quests: 'toadal:web:v1:quests',
@@ -24,11 +50,34 @@
     return Number.isNaN(date.getTime()) ? new Date().toISOString() : date.toISOString();
   }
   function utcDay(iso) { return iso.slice(0, 10); }
+  function emptyHomeInteraction() {
+    return { schemaVersion: HOME_INTERACTION_VERSION, candies: [], goldenBlock: { hits: 0, complete: false } };
+  }
+  function normalizeHomeInteraction(value) {
+    if (value === undefined) return emptyHomeInteraction();
+    const readOnly = reason => Object.assign(emptyHomeInteraction(), { readOnly: true, readOnlyReason: reason });
+    const source = value && typeof value === 'object' && !Array.isArray(value) ? value : {};
+    if (!value || typeof value !== 'object' || Array.isArray(value)) return readOnly('invalid-stored-data-read-only');
+    if (Number.isInteger(source.schemaVersion) && source.schemaVersion > HOME_INTERACTION_VERSION) return readOnly('future-schema-read-only');
+    if (source.schemaVersion !== HOME_INTERACTION_VERSION) return readOnly('invalid-stored-data-read-only');
+    const block = source.goldenBlock && typeof source.goldenBlock === 'object' ? source.goldenBlock : {};
+    const hits = block.hits;
+    const complete = block.complete;
+    if (!Array.isArray(source.candies) || source.candies.some(id => !HOME_CANDY_IDS.includes(id)) ||
+        new Set(source.candies).size !== source.candies.length || !Number.isInteger(hits) || hits < 0 || hits > 4 ||
+        typeof complete !== 'boolean' || complete !== (hits === 4)) return readOnly('invalid-stored-data-read-only');
+    if (source.candies.includes('golden-block-candy') && !complete) return readOnly('invalid-stored-data-read-only');
+    const candies = HOME_CANDY_IDS.filter(id => source.candies.includes(id));
+    return Object.assign({}, source, {
+      candies,
+      goldenBlock: { hits, complete }
+    });
+  }
   function emptyRecords(timestamp) {
     return {
       pass: { schemaVersion: VERSION, updatedAt: timestamp, level: 1, xp: 0, sparks: 0, treats: 0, streak: { count: 0, lastQualifiedPeriod: null }, badges: [], collectibles: [] },
       quests: { schemaVersion: VERSION, updatedAt: timestamp, items: {}, processedEventIds: [], dailyClaimedPeriod: null },
-      discoveries: { schemaVersion: VERSION, updatedAt: timestamp, items: [] },
+      discoveries: { schemaVersion: VERSION, updatedAt: timestamp, items: [], homeInteraction: emptyHomeInteraction() },
       profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null }
     };
   }
@@ -89,7 +138,10 @@
         merged.items = merged.items && typeof merged.items === 'object' && !Array.isArray(merged.items) ? merged.items : {};
         merged.processedEventIds = Array.isArray(merged.processedEventIds) ? merged.processedEventIds : [];
         merged.dailyClaimedPeriod = typeof merged.dailyClaimedPeriod === 'string' ? merged.dailyClaimedPeriod : null;
-      } else if (name === 'discoveries') merged.items = Array.isArray(merged.items) ? merged.items : [];
+      } else if (name === 'discoveries') {
+        merged.items = Array.isArray(merged.items) ? merged.items : [];
+        if (!Object.prototype.hasOwnProperty.call(data, 'homeInteraction')) merged.homeInteraction = emptyHomeInteraction();
+      }
       return merged;
     }
     function structuredCopy(value) { return JSON.parse(JSON.stringify(value)); }
@@ -242,6 +294,45 @@
       }
       return { ok: true, period };
     }
+    function getHomeInteractionState() {
+      refresh(['discoveries']);
+      const state = normalizeHomeInteraction(records.discoveries.homeInteraction);
+      if (blocked.has('discoveries')) state.readOnly = true;
+      return structuredCopy(state);
+    }
+    function writeHomeInteraction(next) {
+      if (blocked.has('discoveries') || next.readOnly) return false;
+      const previous = structuredCopy(records.discoveries);
+      records.discoveries.homeInteraction = next;
+      if (save('discoveries')) return true;
+      records.discoveries = previous;
+      return false;
+    }
+    function collectHomeCandy(id) {
+      refresh(['discoveries']);
+      const state = normalizeHomeInteraction(records.discoveries.homeInteraction);
+      if (blocked.has('discoveries') || state.readOnly) return { ok: false, reason: state.readOnlyReason || 'future-schema-read-only', state };
+      if (!HOME_CANDY_IDS.includes(id)) return { ok: false, reason: 'unknown-candy', state };
+      if (id === 'golden-block-candy' && !state.goldenBlock.complete) return { ok: false, reason: 'locked', state };
+      if (state.candies.includes(id)) return { ok: false, reason: 'already-collected', state };
+      state.candies.push(id);
+      return writeHomeInteraction(state)
+        ? { ok: true, state: getHomeInteractionState() }
+        : { ok: false, reason: 'storage-unavailable', state: getHomeInteractionState() };
+    }
+    function hitGoldenBlock() {
+      refresh(['discoveries']);
+      const state = normalizeHomeInteraction(records.discoveries.homeInteraction);
+      if (blocked.has('discoveries') || state.readOnly) return { ok: false, reason: state.readOnlyReason || 'future-schema-read-only', state };
+      if (state.goldenBlock.complete) return { ok: false, reason: 'already-broken', state };
+      state.goldenBlock.hits += 1;
+      if (state.goldenBlock.hits === 4) {
+        state.goldenBlock.complete = true;
+      }
+      return writeHomeInteraction(state)
+        ? { ok: true, state: getHomeInteractionState() }
+        : { ok: false, reason: 'storage-unavailable', state: getHomeInteractionState() };
+    }
     function clear() {
       for (const name of Object.keys(KEYS)) {
         try { storage.removeItem(KEYS[name]); }
@@ -252,7 +343,7 @@
       blocked.clear();
       return getSnapshot();
     }
-      return { getSnapshot, recordEvent, claimDaily, claimQuest, clear };
+      return { getSnapshot, recordEvent, claimDaily, claimQuest, getHomeInteractionState, collectHomeCandy, hitGoldenBlock, clear };
   }
 
   function boot(document, root) {
@@ -290,8 +381,18 @@
           const disabled = !state.daily.enabled || state.daily.claimed;
           dailyButton.disabled = disabled;
           dailyButton.setAttribute('aria-disabled', String(disabled));
-          dailyButton.textContent = !state.daily.enabled ? 'Daily check-in unavailable' : state.daily.claimed ? 'Already claimed today' : 'Claim daily check-in';
-          dailyButton.onclick = () => { const result = store.claimDaily(); setStatus(result.ok ? 'UTC-day check-in claimed on this browser.' : result.reason === 'already-claimed' ? 'Today’s check-in was already claimed.' : 'Check-in is unavailable.'); render(); };
+          const label = !state.daily.enabled ? 'Daily check-in unavailable' : state.daily.claimed ? 'Already claimed today' : 'Claim daily check-in';
+          const labelNode = dailyButton.querySelector && dailyButton.querySelector('[data-daily-claim-label]');
+          if (labelNode) labelNode.textContent = label;
+          else dailyButton.textContent = label;
+          dailyButton.onclick = () => {
+            const result = store.claimDaily();
+            setStatus(result.ok ? 'UTC-day check-in claimed on this browser.' : result.reason === 'already-claimed' ? 'Today’s check-in was already claimed.' : 'Check-in is unavailable.');
+            if (result.ok && root && root.dispatchEvent && root.CustomEvent) {
+              root.dispatchEvent(new root.CustomEvent('toadal:daily-checkin-claimed', { detail: { period: result.period } }));
+            }
+            render();
+          };
         }
         if (!state.storage.persistent) setStatus('Browser storage is unavailable; progress may not persist after leaving this page.');
         else if (state.storage.diagnostics.length) setStatus('Guest progress is using safe local defaults; stored data could not be read or was outdated.');
