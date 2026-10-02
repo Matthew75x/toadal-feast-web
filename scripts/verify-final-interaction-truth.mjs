@@ -104,8 +104,10 @@ if (construction) {
   }
   const internalExits = interactives(construction.html).filter((item) => item.kind === 'a' && /^\/(?!\/)/.test(item.href));
   if (internalExits.length < 3) failures.push('/coming-soon/: must provide at least 3 useful internal escape routes.');
-  if (/maintenance\.webp/i.test(construction.html) && /construction outfit|hard\s*hat|hardhat|tools/i.test(construction.html)) {
-    failures.push('/coming-soon/: maintenance.webp is being described as dedicated construction/hard-hat art; catalog authority does not support that claim.');
+  if (/maintenance\.webp/i.test(construction.html) &&
+      !/data-companion-context\s*=\s*["']under-construction["']/i.test(construction.html) &&
+      !/data-companion-reaction\s*=\s*["']construction["']/i.test(construction.html)) {
+    failures.push('/coming-soon/: maintenance.webp may only be used in a genuine under-construction/maintenance context.');
   }
 }
 
