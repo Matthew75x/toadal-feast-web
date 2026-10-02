@@ -174,8 +174,8 @@
     },
     {
       "id": "page:page.media",
-      "title": "Media — TOADAL FEAST",
-      "summary": "Canonical character and world artwork previews from TOADAL FEAST.",
+      "title": "Media · TOADAL FEAST",
+      "summary": "Browse selected canonical TOADAL FEAST art and genuine gameplay stills. Video, press, and downloadable media are not published here.",
       "route": "/media/",
       "group": "Media",
       "kind": "page",
@@ -195,6 +195,15 @@
       "title": "News · TOADAL FEAST",
       "summary": "TOADAL FEAST news status: no public announcements are posted on this staging site.",
       "route": "/news/",
+      "group": "News",
+      "kind": "page",
+      "publicationState": "SURFACE"
+    },
+    {
+      "id": "page:page.news-article",
+      "title": "News & devlog · TOADAL FEAST",
+      "summary": "Published TOADAL FEAST news and development notes, when approved editorial is available.",
+      "route": "/news/devlog/",
       "group": "News",
       "kind": "page",
       "publicationState": "SURFACE"
@@ -256,7 +265,7 @@
     {
       "id": "page:page.contact",
       "title": "Contact & feedback - TOADAL FEAST",
-      "summary": "Non-submitting contact and feedback form preview for TOADAL FEAST.",
+      "summary": "Contact and feedback fields are shown as disabled until an approved destination exists.",
       "route": "/contact/",
       "group": "Pages",
       "kind": "page",
@@ -285,6 +294,15 @@
       "title": "Guest profile · TOADAL FEAST",
       "summary": "A guest-local profile for website progression. This is not a connected account or identity.",
       "route": "/profile/",
+      "group": "Pages",
+      "kind": "page",
+      "publicationState": "SURFACE"
+    },
+    {
+      "id": "page:page.leaderboards",
+      "title": "Leaderboards · TOADAL FEAST",
+      "summary": "View supported local game scores and connected leaderboard availability for TOADAL FEAST browser games.",
+      "route": "/leaderboards/",
       "group": "Pages",
       "kind": "page",
       "publicationState": "SURFACE"
@@ -446,6 +464,15 @@
       "kind": "roadmap",
       "publicationState": "PREVIEW",
       "status": "COMING_SOON"
+    },
+    {
+      "id": "page:page.roadmap",
+      "title": "What's next · TOADAL FEAST",
+      "summary": "A reuse-first status view of currently documented TOADAL FEAST preview, coming-soon, and planned areas.",
+      "route": "/roadmap/",
+      "group": "Roadmap",
+      "kind": "page",
+      "publicationState": "SURFACE"
     }
   ]
 }

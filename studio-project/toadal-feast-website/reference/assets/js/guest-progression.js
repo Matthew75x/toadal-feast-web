@@ -75,10 +75,10 @@
   }
   function emptyRecords(timestamp) {
     return {
-      pass: { schemaVersion: VERSION, updatedAt: timestamp, level: 1, xp: 0, sparks: 0, treats: 0, streak: { count: 0, lastQualifiedPeriod: null }, badges: [], collectibles: [] },
+      pass: { schemaVersion: VERSION, updatedAt: timestamp, level: 1, xp: 0, sparks: 0, treats: 0, streak: { count: 0, lastQualifiedPeriod: null }, badges: [], collectibles: [], claimedRewardIds: [] },
       quests: { schemaVersion: VERSION, updatedAt: timestamp, items: {}, processedEventIds: [], dailyClaimedPeriod: null },
       discoveries: { schemaVersion: VERSION, updatedAt: timestamp, items: [], homeInteraction: emptyHomeInteraction() },
-      profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null }
+      profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null, selectedTitle: null, badges: [], titles: [], collectibles: [], rewardClaims: {}, localHighScores: [] }
     };
   }
   function makeMemoryStorage() {
@@ -134,6 +134,7 @@
         };
         merged.badges = Array.isArray(merged.badges) ? merged.badges : [];
         merged.collectibles = Array.isArray(merged.collectibles) ? merged.collectibles : [];
+        merged.claimedRewardIds = Array.isArray(merged.claimedRewardIds) ? merged.claimedRewardIds.filter(id => typeof id === 'string') : [];
       } else if (name === 'quests') {
         merged.items = merged.items && typeof merged.items === 'object' && !Array.isArray(merged.items) ? merged.items : {};
         merged.processedEventIds = Array.isArray(merged.processedEventIds) ? merged.processedEventIds : [];
@@ -141,6 +142,16 @@
       } else if (name === 'discoveries') {
         merged.items = Array.isArray(merged.items) ? merged.items : [];
         if (!Object.prototype.hasOwnProperty.call(data, 'homeInteraction')) merged.homeInteraction = emptyHomeInteraction();
+      } else if (name === 'profile') {
+        merged.badges = Array.isArray(merged.badges) ? merged.badges.filter(id => typeof id === 'string') : [];
+        merged.titles = Array.isArray(merged.titles) ? merged.titles.filter(id => typeof id === 'string') : [];
+        merged.collectibles = Array.isArray(merged.collectibles) ? merged.collectibles.filter(id => typeof id === 'string') : [];
+        merged.selectedTitle = typeof merged.selectedTitle === 'string' ? merged.selectedTitle : null;
+        merged.rewardClaims = merged.rewardClaims && typeof merged.rewardClaims === 'object' && !Array.isArray(merged.rewardClaims) ? merged.rewardClaims : {};
+        merged.localHighScores = Array.isArray(merged.localHighScores) ? merged.localHighScores.filter(item =>
+          item && item.gameId === 'wicked-bites' && Number.isSafeInteger(item.score) && item.score >= 0 &&
+          typeof item.updatedAt === 'string'
+        ).slice(0, 50) : [];
       }
       return merged;
     }
@@ -206,18 +217,44 @@
         const definition = discoveryDefinitions.find(item => item.id === id);
         return definition ? { id, title: definition.title, description: definition.description || '' } : { id, title: 'Previously recorded discovery', description: '' };
       });
-      const milestones = (definitions.levelMilestones || []).map(milestone => Object.assign({}, milestone, { unlocked: milestone.level <= records.pass.level, entitlement: false }));
+      const pass = structuredCopy(records.pass);
+      const treatIds = new Set((definitions.treats || []).map(treat => treat.id));
+      const treats = (records.discoveries.homeInteraction && records.discoveries.homeInteraction.candies || [])
+        .filter(id => treatIds.has(id))
+        .map(id => Object.assign({}, definitions.treats.find(treat => treat.id === id), { collected: true, localOnly: true }));
+      pass.treats = Math.max(pass.treats, treats.length);
+      const milestones = (definitions.levelMilestones || []).map(milestone => Object.assign({}, milestone, { unlocked: milestone.level <= pass.level, entitlement: false }));
+      const rewards = (definitions.rewards || []).map(reward => Object.assign({}, reward, {
+        unlocked: Number.isInteger(reward.level) && reward.level <= pass.level,
+        claimed: pass.claimedRewardIds.includes(reward.id),
+        claimedAt: records.profile.rewardClaims[reward.id] || null,
+        entitlement: false,
+        localOnly: true
+      }));
       const configuredThreshold = Number.isFinite(definitions.xpPerLevel) && definitions.xpPerLevel > 0 ? Math.floor(definitions.xpPerLevel) : null;
+      const daily = {
+        enabled: Boolean(definitions.dailyCheckIn && definitions.dailyCheckIn.enabled && definitions.dailyCheckIn.period === 'UTC-day'),
+        period: currentPeriod, claimed: records.quests.dailyClaimedPeriod === currentPeriod,
+        configStatus: definitions.configStatus || 'unverified-config'
+      };
+      const lastPeriod = records.pass.streak.lastQualifiedPeriod;
+      const yesterday = new Date(Date.parse(currentPeriod + 'T00:00:00.000Z') - 86400000).toISOString().slice(0, 10);
+      const nextDayNumber = daily.claimed ? records.pass.streak.count : (lastPeriod === yesterday ? records.pass.streak.count + 1 : 1);
+      daily.streakDay = records.pass.streak.count > 0 && daily.claimed ? ((records.pass.streak.count - 1) % 7) + 1 : 0;
+      daily.nextStreakDay = ((Math.max(1, nextDayNumber) - 1) % 7) + 1;
+      quests.push({
+        id: 'daily-check-in', group: 'daily', title: 'Daily check-in',
+        description: 'The existing UTC-day guest check-in; its configured starter values are editable.',
+        progress: daily.claimed ? 1 : 0, target: 1, complete: daily.claimed,
+        claimedAt: daily.claimed ? records.quests.dailyClaimedPeriod : null,
+        href: '/feast-pass/#daily-reward-title', dailyCheckIn: true
+      });
       return {
-        pass: structuredCopy(records.pass), quests,
-        discoveries, profile: structuredCopy(records.profile),
-        rewards: structuredCopy(definitions.rewards || []), milestones,
+        pass, quests,
+        discoveries, treats, profile: structuredCopy(records.profile), localHighScores: structuredCopy(records.profile.localHighScores || []),
+        rewards, milestones,
         xpToNext: configuredThreshold ? configuredThreshold - records.pass.xp % configuredThreshold : null,
-        daily: {
-          enabled: Boolean(definitions.dailyCheckIn && definitions.dailyCheckIn.enabled && definitions.dailyCheckIn.period === 'UTC-day'),
-          period: currentPeriod, claimed: records.quests.dailyClaimedPeriod === currentPeriod,
-          configStatus: definitions.configStatus || 'unverified-config'
-        },
+        daily,
         questsComplete: quests.filter(q => q.complete).length,
         storage: { local: persistent, persistent, available: persistent, diagnostics: diagnostics.slice(), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]) }
       };
@@ -270,6 +307,43 @@
       }
       return { ok: true };
     }
+    function claimReward(id) {
+      refresh(['pass', 'profile']);
+      const definition = (definitions.rewards || []).find(reward => reward.id === id);
+      if (!definition) return { ok: false, reason: 'unknown-reward' };
+      if (records.pass.claimedRewardIds.includes(id)) return { ok: false, reason: 'already-claimed' };
+      if (!Number.isInteger(definition.level) || records.pass.level < definition.level) return { ok: false, reason: 'locked' };
+      if (!['badge', 'title', 'collectible'].includes(definition.type) || typeof definition.awardId !== 'string' || !definition.awardId) return { ok: false, reason: 'invalid-reward-definition' };
+      if (blocked.has('pass') || blocked.has('profile')) return { ok: false, reason: 'future-schema-read-only' };
+      const priorPassState = structuredCopy(records.pass);
+      const priorProfileState = structuredCopy(records.profile);
+      records.pass.claimedRewardIds.push(id);
+      records.profile.rewardClaims[id] = timestamp();
+      const collection = definition.type === 'badge' ? 'badges' : definition.type === 'title' ? 'titles' : 'collectibles';
+      if (!records.pass[collection]) records.pass[collection] = [];
+      if (!records.profile[collection].includes(definition.awardId)) records.profile[collection].push(definition.awardId);
+      if (definition.type === 'badge' && !records.pass.badges.includes(definition.awardId)) records.pass.badges.push(definition.awardId);
+      if (definition.type === 'collectible' && !records.pass.collectibles.includes(definition.awardId)) records.pass.collectibles.push(definition.awardId);
+      if (definition.type === 'title' && !records.profile.selectedTitle) records.profile.selectedTitle = definition.awardId;
+      if (!saveMany(['pass', 'profile'])) {
+        records.pass = priorPassState;
+        records.profile = priorProfileState;
+        return { ok: false, reason: 'storage-unavailable' };
+      }
+      return { ok: true, id };
+    }
+    function recordLocalHighScore(input) {
+      refresh(['profile']);
+      if (!input || input.gameId !== 'wicked-bites' || !Number.isSafeInteger(input.score) || input.score < 0) return { ok: false, reason: 'invalid-score-record' };
+      if (blocked.has('profile')) return { ok: false, reason: 'future-schema-read-only' };
+      const previous = (records.profile.localHighScores || []).find(item => item.gameId === input.gameId);
+      if (previous && previous.score >= input.score) return { ok: false, reason: 'not-a-personal-best' };
+      const before = structuredCopy(records.profile);
+      records.profile.localHighScores = (records.profile.localHighScores || []).filter(item => item.gameId !== input.gameId);
+      records.profile.localHighScores.unshift({ gameId: input.gameId, score: input.score, updatedAt: timestamp() });
+      if (!save('profile')) { records.profile = before; return { ok: false, reason: 'storage-unavailable' }; }
+      return { ok: true, gameId: input.gameId, score: input.score };
+    }
     function claimDaily() {
       refresh(['quests', 'pass']);
       const config = definitions.dailyCheckIn;
@@ -309,16 +383,40 @@
       return false;
     }
     function collectHomeCandy(id) {
-      refresh(['discoveries']);
+      refresh(['discoveries', 'pass', 'quests']);
       const state = normalizeHomeInteraction(records.discoveries.homeInteraction);
       if (blocked.has('discoveries') || state.readOnly) return { ok: false, reason: state.readOnlyReason || 'future-schema-read-only', state };
       if (!HOME_CANDY_IDS.includes(id)) return { ok: false, reason: 'unknown-candy', state };
+      if (!(definitions.treats || []).some(treat => treat.id === id)) return { ok: false, reason: 'treat-not-configured', state };
       if (id === 'golden-block-candy' && !state.goldenBlock.complete) return { ok: false, reason: 'locked', state };
       if (state.candies.includes(id)) return { ok: false, reason: 'already-collected', state };
+      if (blocked.has('pass') || blocked.has('quests')) return { ok: false, reason: 'future-schema-read-only', state };
+      const priorDiscoveryState = structuredCopy(records.discoveries);
+      const priorPassState = structuredCopy(records.pass);
+      const priorQuestState = structuredCopy(records.quests);
       state.candies.push(id);
-      return writeHomeInteraction(state)
-        ? { ok: true, state: getHomeInteractionState() }
-        : { ok: false, reason: 'storage-unavailable', state: getHomeInteractionState() };
+      records.discoveries.homeInteraction = state;
+      const collectedTreatCount = state.candies.filter(candyId => (definitions.treats || []).some(treat => treat.id === candyId)).length;
+      records.pass.treats = Math.max(records.pass.treats, collectedTreatCount);
+      const eventId = 'treat:' + id;
+      if (!records.quests.processedEventIds.includes(eventId)) {
+        records.quests.processedEventIds.push(eventId);
+        for (const quest of (definitions.quests || []).filter(item => item.event === 'treat-collect')) {
+          const before = progressFor(quest);
+          if (before.complete) continue;
+          const progress = Math.min(before.target, before.progress + 1);
+          records.quests.items[quest.id] = Object.assign({}, records.quests.items[quest.id], {
+            progress,
+            completedAt: progress >= before.target ? timestamp() : null,
+            claimedAt: records.quests.items[quest.id] && records.quests.items[quest.id].claimedAt || null
+          });
+        }
+      }
+      if (saveMany(['discoveries', 'pass', 'quests'])) return { ok: true, state: getHomeInteractionState() };
+      records.discoveries = priorDiscoveryState;
+      records.pass = priorPassState;
+      records.quests = priorQuestState;
+      return { ok: false, reason: 'storage-unavailable', state: getHomeInteractionState() };
     }
     function hitGoldenBlock() {
       refresh(['discoveries']);
@@ -343,7 +441,7 @@
       blocked.clear();
       return getSnapshot();
     }
-      return { getSnapshot, recordEvent, claimDaily, claimQuest, getHomeInteractionState, collectHomeCandy, hitGoldenBlock, clear };
+      return { getSnapshot, recordEvent, claimDaily, claimQuest, claimReward, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, hitGoldenBlock, clear };
   }
 
   function boot(document, root) {
@@ -363,17 +461,48 @@
         const state = store.getSnapshot();
       const values = { level: state.pass.level, xp: state.pass.xp, 'xp-to-next': state.xpToNext == null ? '—' : state.xpToNext, sparks: state.pass.sparks, treats: state.pass.treats, streak: state.pass.streak.count, discoveries: state.discoveries.length, 'quests-complete': state.questsComplete };
         page.querySelectorAll('[data-progression-stat]').forEach(el => { const key = el.getAttribute('data-progression-stat'); if (Object.prototype.hasOwnProperty.call(values, key)) el.textContent = String(values[key]); });
-        renderList(page, '[data-progression-quest-list]', state.quests.map(q => {
+        const questGroups = { daily: 'Daily', weekly: 'Weekly', exploration: 'Exploration', game: 'Game', story: 'Story' };
+        const questEmpty = {
+          weekly: 'No weekly quests are configured. This preview has no weekly timer or reset.',
+          game: 'No browser game quests are configured from published gameplay results.',
+          story: 'No story quests are configured; unpublished chapters are not counted.'
+        };
+        const questItems = state.quests.map(q => {
           const reward = [];
           if (Number.isFinite(q.reward && q.reward.xp) && q.reward.xp > 0) reward.push(q.reward.xp + ' XP');
           if (Number.isFinite(q.reward && q.reward.sparks) && q.reward.sparks > 0) reward.push(q.reward.sparks + ' Sparks');
           const rewardText = reward.length ? ' · Reward: ' + reward.join(', ') : '';
-          return { title: q.title, detail: q.description + ' ' + q.progress + '/' + q.target + rewardText + (q.complete ? (q.claimedAt ? ' · Reward claimed' : ' · Complete') : ''), id: q.id, button: q.complete && !q.claimedAt ? 'Claim quest reward' : null };
-        }), id => { const result = store.claimQuest(id); setStatus(result.ok ? 'Quest reward claimed.' : result.reason === 'already-claimed' ? 'This quest reward was already claimed.' : 'Quest reward is not available yet.'); render(); });
-        const rewards = state.rewards.map(r => ({ title: r.title || r.name || r.id, detail: r.description || 'Configured reward' }));
+          return { group: q.group || (q.dailyCheckIn ? 'daily' : 'exploration'), title: q.title, detail: q.description + ' ' + q.progress + '/' + q.target + rewardText + (q.complete ? (q.dailyCheckIn ? ' · Claimed today' : (q.claimedAt ? ' · Reward claimed' : ' · Complete')) : ''), id: q.id, href: q.href, button: q.complete && !q.claimedAt && !q.dailyCheckIn ? 'Claim quest reward' : (q.dailyCheckIn && !q.complete ? 'Open daily check-in' : null) };
+        });
+        Object.keys(questGroups).forEach(group => {
+          if (!questItems.some(item => item.group === group) && questEmpty[group]) questItems.push({ group, title: 'No active quests', detail: questEmpty[group], empty: true });
+        });
+        questItems.sort((a, b) => Object.keys(questGroups).indexOf(a.group) - Object.keys(questGroups).indexOf(b.group));
+        renderList(page, '[data-progression-quest-list]', questItems, id => {
+          if (id === 'daily-check-in') { if (root && root.location) root.location.href = '/feast-pass/#daily-reward-title'; return; }
+          const result = store.claimQuest(id); setStatus(result.ok ? 'Quest reward claimed.' : result.reason === 'already-claimed' ? 'This quest reward was already claimed.' : 'Quest reward is not available yet.'); render();
+        });
+        const rewards = state.rewards.map(r => ({ id: r.id, title: r.title || r.name || r.id, detail: (r.description || 'Configured reward') + ' · Level ' + r.level + ' · Website-local, non-transferable · ' + (r.claimed ? 'Claimed' : r.unlocked ? 'Ready to claim' : 'Locked'), button: r.claimed ? null : r.unlocked ? 'Claim locally' : null }));
         const milestones = state.milestones.map(m => ({ title: m.title, detail: 'Level ' + m.level + ' milestone · ' + (m.unlocked ? 'Reached' : 'Not reached yet') + ' · No item, entitlement, or transfer is included.' }));
-        renderList(page, '[data-progression-reward-list]', rewards.concat(milestones));
-        renderList(page, '[data-progression-discovery-list]', state.discoveries.map(item => ({ title: item.title, detail: item.description || 'A visit to a site preview; no lore or food item is implied.' })));
+        renderList(page, '[data-progression-reward-list]', rewards.concat(milestones), id => {
+          const result = store.claimReward(id); setStatus(result.ok ? 'A website-local reward was added to this guest profile.' : result.reason === 'already-claimed' ? 'This reward was already claimed in this browser.' : 'This reward is not available yet.'); render();
+        });
+        const discoveryItems = state.discoveries.map(item => ({ title: item.title, detail: item.description || 'A visit to a site preview; no lore or food item is implied.' }));
+        const treatItems = state.treats.map(item => ({ title: item.title, detail: item.description + ' · Found · Saved in this browser' }));
+        renderList(page, '[data-progression-discovery-list]', discoveryItems.concat(treatItems));
+        const profileItems = [];
+        state.treats.forEach(item => profileItems.push({ title: item.title, detail: item.description + ' · Treat · Website-local' }));
+        ['badges', 'titles', 'collectibles'].forEach(type => (state.profile[type] || []).forEach(id => {
+          const reward = state.rewards.find(item => item.awardId === id);
+          profileItems.push({ title: reward ? reward.title : id, detail: type.slice(0, -1) + ' · Website-local, non-transferable' });
+        }));
+        renderList(page, '[data-progression-collection-list]', profileItems);
+        const scoreItems = (state.localHighScores || []).map(item => ({
+          title: item.gameId === 'wicked-bites' ? 'Wicked Bites personal best' : 'Local game personal best',
+          detail: Number(item.score).toLocaleString() + ' points · saved in this browser · not a global rank or progression reward',
+          href: '/leaderboards/?game=' + encodeURIComponent(item.gameId), button: 'View local leaderboard'
+        }));
+        renderList(page, '[data-progression-score-list]', scoreItems);
         const dailyStatus = page.querySelector('[data-daily-reward-status]');
         if (dailyStatus) dailyStatus.textContent = state.daily.enabled ? (state.daily.claimed ? 'Today’s UTC check-in is already claimed.' : 'A starter-config UTC-day check-in is available. Progress is local to this browser.') : 'No daily check-in is configured.';
         const dailyButton = page.querySelector('[data-claim-daily]');
@@ -394,6 +523,13 @@
             render();
           };
         }
+        page.querySelectorAll('[data-daily-track-day]').forEach(day => {
+          const number = Number(day.getAttribute('data-daily-track-day'));
+          const completed = state.daily.claimed ? number <= state.daily.streakDay : number < state.daily.nextStreakDay;
+          day.setAttribute('data-completed', String(completed));
+          if (number === state.daily.nextStreakDay) day.setAttribute('aria-current', 'step');
+          else day.removeAttribute('aria-current');
+        });
         if (!state.storage.persistent) setStatus('Browser storage is unavailable; progress may not persist after leaving this page.');
         else if (state.storage.diagnostics.length) setStatus('Guest progress is using safe local defaults; stored data could not be read or was outdated.');
         else if (status && !status.textContent) setStatus('Guest progress is stored only in this browser.');
@@ -428,14 +564,36 @@
       container.appendChild(empty);
       return;
     }
-    items.forEach(item => {
+    function appendItem(list, item) {
       const entry = page.ownerDocument.createElement('div');
       entry.setAttribute('role', 'listitem');
       const title = page.ownerDocument.createElement('strong'); title.textContent = item.title; entry.appendChild(title);
       const detail = page.ownerDocument.createElement('p'); detail.textContent = item.detail || ''; entry.appendChild(detail);
-      if (item.button && onClaim) { const button = page.ownerDocument.createElement('button'); button.type = 'button'; button.textContent = item.button; button.addEventListener('click', () => onClaim(item.id)); entry.appendChild(button); }
-      container.appendChild(entry);
-    });
+      if (item.href) { const link = page.ownerDocument.createElement('a'); link.href = item.href; link.textContent = item.button || 'Open'; entry.appendChild(link); }
+      else if (item.button && onClaim) { const button = page.ownerDocument.createElement('button'); button.type = 'button'; button.textContent = item.button; button.addEventListener('click', () => onClaim(item.id)); entry.appendChild(button); }
+      list.appendChild(entry);
+    }
+    if (items.some(item => item.group)) {
+      const groups = new Map();
+      items.forEach(item => {
+        const group = item.group || 'other';
+        if (!groups.has(group)) groups.set(group, []);
+        groups.get(group).push(item);
+      });
+      groups.forEach((groupItems, group) => {
+        const section = page.ownerDocument.createElement('section');
+        section.setAttribute('role', 'group');
+        section.setAttribute('aria-label', group.charAt(0).toUpperCase() + group.slice(1) + ' quests');
+        const heading = page.ownerDocument.createElement('h3');
+        heading.textContent = group.charAt(0).toUpperCase() + group.slice(1);
+        section.appendChild(heading);
+        const list = page.ownerDocument.createElement('div');
+        list.setAttribute('role', 'list');
+        groupItems.forEach(item => appendItem(list, item));
+        section.appendChild(list);
+        container.appendChild(section);
+      });
+    } else items.forEach(item => appendItem(container, item));
   }
   return { KEYS, createStore, boot, normalizePath, renderList };
 });

@@ -29,10 +29,11 @@ test('uses the exact four scoped keys and safe guest defaults', () => {
   assert.equal(state.pass.xp, 0);
   assert.equal(state.pass.sparks, 0);
   assert.equal(state.pass.treats, 0);
-  assert.equal(state.quests.length, 2);
-  assert.deepEqual(definitions.treats, []);
+  assert.equal(state.quests.length, 4);
+  assert.equal(definitions.treats.length, 3);
+  assert.deepEqual(definitions.treats.map(item => item.id), ['portal-candy', 'lower-page-candy', 'golden-block-candy']);
   assert.deepEqual(definitions.discoveries.map(item => item.route), ['/world/', '/stories/']);
-  assert.equal(state.rewards.length, 0);
+  assert.equal(state.rewards.length, 3);
   assert.equal(definitions.configStatus, 'starter-config-editable-not-canonical');
 });
 
@@ -89,6 +90,17 @@ test('quest rewards require completion and are claimed once without direct score
   assert.equal(store.getSnapshot().pass.treats, 0);
 });
 
+test('Wicked Bites personal best persists locally only from the validated website adapter contract', () => {
+  const { store, storage, now } = fixture();
+  assert.deepEqual(store.recordLocalHighScore({ gameId: 'other-game', score: 80 }), { ok: false, reason: 'invalid-score-record' });
+  assert.deepEqual(store.recordLocalHighScore({ gameId: 'wicked-bites', score: -1 }), { ok: false, reason: 'invalid-score-record' });
+  assert.deepEqual(store.recordLocalHighScore({ gameId: 'wicked-bites', score: 120 }), { ok: true, gameId: 'wicked-bites', score: 120 });
+  assert.deepEqual(store.recordLocalHighScore({ gameId: 'wicked-bites', score: 99 }), { ok: false, reason: 'not-a-personal-best' });
+  assert.equal(store.getSnapshot().pass.xp, 0, 'scores never grant progression currency');
+  const reloaded = runtime.createStore({ storage, now, definitions });
+  assert.deepEqual(reloaded.getSnapshot().localHighScores.map(({ gameId, score }) => [gameId, score]), [['wicked-bites', 120]]);
+});
+
 test('UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days', () => {
   const first = fixture({}, '2026-10-01T23:59:00.000Z');
   assert.equal(first.store.claimDaily().ok, true);
@@ -117,7 +129,10 @@ test('reset removes only the four guest progression keys and leaves unrelated da
 test('milestones are surfaced as truthful locked/unlocked non-entitlement rewards', () => {
   const { store } = fixture();
   const snapshot = store.getSnapshot();
-  assert.equal(snapshot.rewards.length, 0);
+  assert.equal(snapshot.rewards.length, 3);
+  assert.deepEqual(snapshot.rewards.map(item => [item.level, item.unlocked, item.entitlement]), [
+    [1, true, false], [2, false, false], [3, false, false]
+  ]);
   assert.deepEqual(snapshot.milestones.map(item => [item.level, item.unlocked, item.entitlement]), [
     [1, true, false], [2, false, false], [5, false, false]
   ]);
@@ -211,7 +226,7 @@ test('Home discoveries use the existing discoveries key and persist exactly thre
   assert.equal(store.collectHomeCandy('golden-block-candy').ok, true);
   assert.equal(store.collectHomeCandy('golden-block-candy').reason, 'already-collected');
   assert.deepEqual(store.getHomeInteractionState().candies, ['portal-candy', 'lower-page-candy', 'golden-block-candy']);
-  assert.deepEqual([...new Set(writes)], [runtime.KEYS.discoveries]);
+  assert.deepEqual([...new Set(writes)].sort(), [runtime.KEYS.discoveries, runtime.KEYS.pass, runtime.KEYS.quests].sort());
   assert.equal(storage.getItem('toadal:web:v1:home-interaction'), null);
 
   const reloaded = runtime.createStore({ storage, now: first.now, definitions });

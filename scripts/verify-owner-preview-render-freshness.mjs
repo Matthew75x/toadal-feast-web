@@ -62,7 +62,7 @@ inspect('/characters/toadal/', {
   forbidden: ['Guest collection coming later', 'will connect to browser-local progression', 'before that system exists']
 });
 inspect('/news/', {
-  sourceExpected: ['Stories, Manga, and Reader preview surfaces are available'],
+  sourceExpected: ['Only approved, published editorial appears here', 'No public news updates have been published yet'],
   forbidden: ['Story updates unavailable', 'A story archive and publishing schedule have not been made available']
 });
 inspect('/media/', {

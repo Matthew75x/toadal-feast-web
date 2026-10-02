@@ -1,0 +1,287 @@
+(function (root, factory) {
+  'use strict';
+
+  var api = factory();
+  if (typeof module === 'object' && module.exports) module.exports = api;
+  if (root && root.document) api.start(root.document, root);
+})(typeof window !== 'undefined' ? window : null, function () {
+  'use strict';
+
+  var NEWS_TAXONOMY = [
+    { id: 'announcements', label: 'Announcements' },
+    { id: 'development', label: 'Development notes' },
+    { id: 'games', label: 'Games' },
+    { id: 'world-stories', label: 'World & stories' }
+  ];
+  var ROADMAP_STATUSES = [
+    { id: 'available-now', label: 'Available Now' },
+    { id: 'in-development', label: 'In Development' },
+    { id: 'coming-soon', label: 'Coming Soon' },
+    { id: 'exploring', label: 'Exploring' }
+  ];
+
+  // Static defaults are empty; runtime rendering fetches the registry projection.
+  var NEWS_RECORDS = [];
+  var ROADMAP_RECORDS = [];
+
+  function normalize(value) {
+    return String(value || '').toLowerCase().normalize('NFKD').replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+
+  function isObject(value) {
+    return !!value && typeof value === 'object' && !Array.isArray(value);
+  }
+
+  function validSlug(value) {
+    return typeof value === 'string' && /^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(value);
+  }
+
+  function validDate(value) {
+    return typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) &&
+      !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+  }
+
+  function projectPublishedNews(records) {
+    var categories = new Set(NEWS_TAXONOMY.map(function (item) { return item.id; }));
+    return (Array.isArray(records) ? records : []).filter(function (record) {
+      return isObject(record) && record.publicationState === 'PUBLISHED' && validSlug(record.slug) &&
+        typeof record.title === 'string' && record.title.trim() &&
+        typeof record.summary === 'string' && record.summary.trim() &&
+        categories.has(record.category) && validDate(record.publishedAt);
+    }).map(function (record) {
+      return {
+        slug: record.slug,
+        title: record.title.trim(),
+        summary: record.summary.trim(),
+        category: record.category,
+        publishedAt: record.publishedAt,
+        tags: Array.isArray(record.tags) ? record.tags.filter(function (tag) { return typeof tag === 'string'; }) : [],
+        body: Array.isArray(record.body) ? record.body.filter(function (paragraph) { return typeof paragraph === 'string' && paragraph.trim(); }) : [],
+        image: typeof record.image === 'string' && /^\/assets\/[a-zA-Z0-9_./-]+$/.test(record.image) && !record.image.includes('..') ? record.image : '',
+        imageAlt: typeof record.imageAlt === 'string' ? record.imageAlt : ''
+      };
+    }).sort(function (a, b) { return b.publishedAt.localeCompare(a.publishedAt) || a.slug.localeCompare(b.slug); });
+  }
+
+  function filterNews(records, options) {
+    var settings = options || {};
+    var category = settings.category || 'all';
+    var query = normalize(settings.query);
+    var tokens = query ? query.split(/\s+/).filter(Boolean) : [];
+    return projectPublishedNews(records).filter(function (record) {
+      if (category !== 'all' && record.category !== category) return false;
+      var haystack = normalize([record.title, record.summary, record.category, record.tags.join(' '), record.body.join(' ')].join(' '));
+      return tokens.every(function (token) { return haystack.includes(token); });
+    });
+  }
+
+  function projectRoadmap(records) {
+    var statuses = new Set(ROADMAP_STATUSES.map(function (item) { return item.id; }));
+    return (Array.isArray(records) ? records : []).filter(function (record) {
+      return isObject(record) && record.publicationState === 'PUBLISHED' && statuses.has(record.status) &&
+        validSlug(record.slug) && typeof record.title === 'string' && record.title.trim() &&
+        typeof record.summary === 'string' && record.summary.trim();
+    }).map(function (record) {
+      return { slug: record.slug, title: record.title.trim(), summary: record.summary.trim(), status: record.status };
+    });
+  }
+
+  function baseRoot(document) {
+    var brand = document.querySelector('.site-brand');
+    if (!brand) return '';
+    var path = new URL(brand.href, document.location.href).pathname;
+    return path === '/' ? '' : path.replace(/\/+$/, '');
+  }
+
+  function element(document, tag, className, text) {
+    var node = document.createElement(tag);
+    if (className) node.className = className;
+    if (text !== undefined) node.textContent = text;
+    return node;
+  }
+
+  function renderNews(document, records, options) {
+    var root = document.querySelector('[data-editorial-news]');
+    if (!root) return;
+    var filters = root.querySelector('[data-news-filters]');
+    var query = root.querySelector('[data-news-query]');
+    var list = root.querySelector('[data-news-list]');
+    var status = root.querySelector('[data-news-status]');
+    if (!filters || !query || !list || !status) return;
+    var base = baseRoot(document);
+    var selected = options && options.category || 'all';
+    var taxonomy = [{ id: 'all', label: 'All updates' }].concat(NEWS_TAXONOMY);
+    filters.replaceChildren();
+    taxonomy.forEach(function (item) {
+      var button = element(document, 'button', 'button-link button-link--secondary', item.label);
+      button.type = 'button';
+      button.setAttribute('aria-pressed', item.id === selected ? 'true' : 'false');
+      button.addEventListener('click', function () {
+        selected = item.id;
+        renderList();
+      });
+      filters.appendChild(button);
+    });
+    function renderList() {
+      var results = filterNews(records, { category: selected, query: query.value });
+      list.replaceChildren();
+      results.forEach(function (record) {
+        var card = element(document, 'article', 'detail-fact news-card');
+        var category = NEWS_TAXONOMY.find(function (item) { return item.id === record.category; });
+        card.appendChild(element(document, 'p', 'section-kicker', (category ? category.label : 'Update') + ' · ' + record.publishedAt));
+        var heading = element(document, 'h2');
+        var link = element(document, 'a', '', record.title);
+        link.href = base + '/news/devlog/?article=' + encodeURIComponent(record.slug);
+        heading.appendChild(link);
+        card.append(heading, element(document, 'p', '', record.summary));
+        list.appendChild(card);
+      });
+      var empty = root.querySelector('[data-news-empty]');
+      if (empty) empty.hidden = results.length > 0;
+      status.textContent = results.length ? results.length + ' published update' + (results.length === 1 ? '' : 's') + ' shown.' :
+        (query.value.trim() || selected !== 'all' ? 'No published updates match these filters.' : 'No public news updates have been published yet.');
+      filters.querySelectorAll('button').forEach(function (button, index) {
+        button.setAttribute('aria-pressed', taxonomy[index].id === selected ? 'true' : 'false');
+      });
+    }
+    query.addEventListener('input', renderList);
+    renderList();
+  }
+
+  function renderArticle(document, records) {
+    var root = document.querySelector('[data-editorial-article]');
+    if (!root) return;
+    var items = projectPublishedNews(records);
+    var slug = new URL(document.location.href).searchParams.get('article') || '';
+    var record = items.find(function (item) { return item.slug === slug; });
+    var content = root.querySelector('[data-article-content]');
+    var title = root.querySelector('[data-article-title]');
+    var date = root.querySelector('[data-article-date]');
+    var state = root.querySelector('[data-article-state]');
+    if (!content || !title || !date || !state) return;
+    content.replaceChildren();
+    if (!record) {
+      title.textContent = 'News & devlog';
+      date.textContent = '';
+      state.textContent = 'AWAITING PUBLICATION';
+      content.appendChild(element(document, 'p', '', 'There are no published articles available here yet. Drafts stay private until an approved article is published.'));
+      return;
+    }
+    title.textContent = record.title;
+    date.textContent = record.publishedAt;
+    state.textContent = 'PUBLISHED';
+    record.body.forEach(function (paragraph) { content.appendChild(element(document, 'p', '', paragraph)); });
+    if (!record.body.length) content.appendChild(element(document, 'p', '', record.summary));
+    if (record.image) {
+      var figure = element(document, 'figure');
+      var image = element(document, 'img');
+      image.src = baseRoot(document) + record.image;
+      image.alt = record.imageAlt;
+      image.loading = 'lazy';
+      figure.appendChild(image);
+      content.appendChild(figure);
+    }
+    var index = items.indexOf(record);
+    var navigation = root.querySelector('[data-article-neighbors]');
+    if (navigation) {
+      navigation.replaceChildren();
+      [items[index + 1], items[index - 1]].forEach(function (neighbor, position) {
+        if (!neighbor) return;
+        var link = element(document, 'a', 'button-link button-link--secondary', (position === 0 ? 'Previous: ' : 'Next: ') + neighbor.title);
+        link.href = '?article=' + encodeURIComponent(neighbor.slug);
+        navigation.appendChild(link);
+      });
+    }
+  }
+
+  function renderRoadmap(document, records) {
+    var root = document.querySelector('[data-editorial-roadmap]');
+    if (!root) return;
+    var items = projectRoadmap(records);
+    ROADMAP_STATUSES.forEach(function (status) {
+      var column = root.querySelector('[data-roadmap-status="' + status.id + '"]');
+      if (!column) return;
+      var list = column.querySelector('[data-roadmap-items]');
+      if (!list) return;
+      list.replaceChildren();
+      var matching = items.filter(function (item) { return item.status === status.id; });
+      matching.forEach(function (item) {
+        var card = element(document, 'article', 'detail-fact');
+        card.append(element(document, 'h3', '', item.title), element(document, 'p', '', item.summary));
+        list.appendChild(card);
+      });
+      var empty = column.querySelector('[data-roadmap-empty]');
+      if (empty) empty.hidden = matching.length > 0;
+    });
+  }
+
+  function renderMediaFilters(document) {
+    var page = document.querySelector('.discovery-media');
+    if (!page || page.querySelector('[data-media-filters]')) return;
+    var gameplay = document.getElementById('gameplay');
+    var world = document.getElementById('world-art');
+    var characters = document.getElementById('character-art');
+    var videoHeading = document.getElementById('media-video-title');
+    var video = videoHeading && videoHeading.closest('section');
+    var groups = [
+      { id: 'all', label: 'All media', section: null },
+      { id: 'video', label: 'Video', section: video },
+      { id: 'gameplay', label: 'Gameplay', section: gameplay },
+      { id: 'world-art', label: 'World art', section: world },
+      { id: 'character-art', label: 'Character art', section: characters }
+    ].filter(function (item) { return item.id === 'all' || !!item.section; });
+    var controls = element(document, 'nav', 'media-filter-controls');
+    controls.setAttribute('data-media-filters', '');
+    controls.setAttribute('aria-label', 'Filter media previews');
+    groups.forEach(function (group) {
+      var button = element(document, 'button', 'button-link button-link--secondary', group.label);
+      button.type = 'button';
+      button.setAttribute('aria-pressed', group.id === 'all' ? 'true' : 'false');
+      button.addEventListener('click', function () {
+        groups.slice(1).forEach(function (candidate) {
+          candidate.section.hidden = group.id !== 'all' && candidate.id !== group.id;
+        });
+        controls.querySelectorAll('button').forEach(function (control) {
+          control.setAttribute('aria-pressed', control === button ? 'true' : 'false');
+        });
+      });
+      controls.appendChild(button);
+    });
+    var heading = page.querySelector('.wo002-detail-hero');
+    if (heading) heading.insertAdjacentElement('afterend', controls);
+  }
+
+  function start(document, root) {
+    var brand = document.querySelector('.site-brand');
+    var source = (brand ? baseRoot(document) : '') + '/assets/data/manifest-public-content.json';
+    var fetcher = root && typeof root.fetch === 'function' ? root.fetch.bind(root) : null;
+    function render(data) {
+      var news = data && Array.isArray(data.news) ? data.news : NEWS_RECORDS;
+      var roadmap = data && Array.isArray(data.roadmap) ? data.roadmap : ROADMAP_RECORDS;
+      if (document.querySelector('[data-editorial-news]')) renderNews(document, news);
+      if (document.querySelector('[data-editorial-article]')) renderArticle(document, news);
+      if (document.querySelector('[data-editorial-roadmap]')) renderRoadmap(document, roadmap);
+      renderMediaFilters(document);
+    }
+    if (!fetcher) { render(null); return; }
+    fetcher(source, { credentials: 'same-origin' }).then(function (response) {
+      if (!response.ok) throw new Error('Public content registry projection unavailable.');
+      return response.json();
+    }).then(render).catch(function () { render(null); });
+  }
+
+  return {
+    NEWS_RECORDS: NEWS_RECORDS,
+    NEWS_TAXONOMY: NEWS_TAXONOMY,
+    ROADMAP_RECORDS: ROADMAP_RECORDS,
+    ROADMAP_STATUSES: ROADMAP_STATUSES,
+    filterNews: filterNews,
+    projectPublishedNews: projectPublishedNews,
+    projectRoadmap: projectRoadmap,
+    renderArticle: renderArticle,
+    renderMediaFilters: renderMediaFilters,
+    renderNews: renderNews,
+    renderRoadmap: renderRoadmap,
+    start: start
+  };
+});

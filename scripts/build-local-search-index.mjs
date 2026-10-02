@@ -43,9 +43,8 @@ for(const x of registry.news||[]) if(allowed(x)) add({id:'news:'+x.id,title:x.ti
 
 entries.sort((a,b)=>a.group.localeCompare(b.group)||a.title.localeCompare(b.title));
 const output={schema:'toadal-feast.local-search.v1',generatedFrom:['pages/index.json','content/registry.json'],entries};
-for(const target of [path.join(site,'reference','assets','data','local-search-index.json'),path.join(root,'dist','assets','data','local-search-index.json')]){
-  fs.mkdirSync(path.dirname(target),{recursive:true});
-  fs.writeFileSync(target,JSON.stringify(output,null,2)+'\n');
-}
+const target=path.join(site,'reference','assets','data','local-search-index.json');
+fs.mkdirSync(path.dirname(target),{recursive:true});
+fs.writeFileSync(target,JSON.stringify(output,null,2)+'\n');
 console.log(`LOCAL SEARCH INDEX: ${entries.length} entries`);
 console.log(JSON.stringify(entries.reduce((m,x)=>(m[x.group]=(m[x.group]||0)+1,m),{})));

@@ -12,6 +12,14 @@
 
 ## Explicit unresolved decisions
 
+## Manifest closure mandate — 2026-10-02
+
+The owner instruction `FINAL MANIFEST COMPLETION / REUSE-FIRST CLOSURE` (attachment `c23ea9be-46a8-4bb4-b971-202ff54b33f3`) starts from frozen release `6e543f2abebe66ef46ca6ecaa6da20e3196a5c43`, tree `b48efb7b20c72c11acc017a4807bc545aa81f17a`, on `work/manifest-complete-v1-20261002`. The original 30-page manifest and locked cross-cutting requirements remain the denominator. Existing systems must be reused before new implementation.
+
+This explicit mandate distinguishes website engineering completion from future content/service activation: polished, navigable, truthful unavailable states satisfy the V1 presentation requirement where the real source/service does not exist. It does not publish invented stories, dates, lore, users, scores, legal text or services, authorize a new redesign, approve Home LOCK_VISUAL, or erase future content requirements. Safe, configurable, website-local non-entitlement starter progression definitions are authorized. The older ledger's empty starter configuration is historical evidence, not a permanent requirement that collection remain empty.
+
+Production hosting remains separate. The qualified release/tag and rollback stay unchanged; only a fully qualified integrated closure candidate may advance GitHub Pages staging. See the 2026-10-02 manifest closure evidence and the regenerated manifest ledger for exact current source identity and per-section reconciliation.
+
 - Restored companion archive has no per-file approval manifest, release README or animation map. The owner calls it a production-ready-only pack and requests appropriate runtime selections; this inventory records that claim and each use-context decision separately from independent approval evidence.
 - Original design references include approved Batch 1 imagery and additional concepts/compositions. Only explicit owner approval and the visual ledger determine what is locked.
 - Search, app store destinations, approved final web wordmark, public support/contact/legal copy, editorial content and guest-local progression remain evidence/content gates.

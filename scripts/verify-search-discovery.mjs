@@ -11,6 +11,9 @@ const pagesIndex = readJson(path.join(site, 'pages', 'index.json'));
 const routes = new Map((pagesIndex.pages || []).map((p) => [p.route, p]));
 
 ok(routes.has('/search/'), 'search route is not registered');
+ok(routes.has('/roadmap/'), 'manifest Roadmap route is not registered');
+ok(routes.has('/leaderboards/'), 'manifest Leaderboards route is not registered');
+ok(routes.has('/news/devlog/'), 'manifest News Article / Devlog route is not registered');
 const searchRecord = routes.get('/search/');
 const searchPage = searchRecord ? readJson(path.join(site, searchRecord.file)) : null;
 const searchHtml = searchPage?.components?.map((x) => x?.props?.html || '').join('\n') || '';
@@ -22,7 +25,7 @@ ok(searchPage?.publicationState === 'noindex', 'search page must remain noindex 
 const support = readJson(path.join(site, 'pages', 'support.json'));
 const supportHtml = support.components.map((x) => x?.props?.html || '').join('\n');
 ok(supportHtml.includes('data-support-search'), 'support search control missing');
-for (const id of ['preview-states','guest-progress','contact-status']) {
+for (const id of ['preview-states','guest-progress','app-status','contact-status','legal-status']) {
   ok(supportHtml.includes(`id='${id}'`) || supportHtml.includes(`id="${id}"`), `support anchor missing: ${id}`);
 }
 
@@ -51,7 +54,6 @@ const ids = new Set();
 for (const entry of index.entries || []) {
   ok(!ids.has(entry.id), `duplicate search id: ${entry.id}`);
   ids.add(entry.id);
-  ok(!String(entry.route || '').startsWith('/roadmap/'), `nonexistent roadmap route leaked: ${entry.route}`);
   const [routePath, fragment = ''] = String(entry.route || '').split('#');
   const normalized = routePath || '/';
   ok(routes.has(normalized) || normalized === '/', `search target route missing: ${entry.route}`);

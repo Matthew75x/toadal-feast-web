@@ -36,14 +36,18 @@ const acceptedRouteEvidence = new Map([
   [8,['/stories/']],
   [11,['/media/']],
   [12,['/news/']],
+  [13,['/news/devlog/']],
   [14,['/feast-pass/']],
   [15,['/feast-pass/quests/']],
   [16,['/feast-pass/rewards/']],
+  [17,['/leaderboards/']],
   [18,['/app/']],
   [19,['/account/']],
   [20,['/profile/']],
   [21,['/community/']],
   [22,['/store/']],
+  [23,['/search/']],
+  [24,['/roadmap/']],
   [25,['/support/']],
   [26,['/contact/']],
   [27,['/about/']],
@@ -86,6 +90,9 @@ for (const rel of requiredEvidence) {
 }
 if ((ledger.visualEvidence?.batch1 || []).length !== 9) errors.push(`Expected 9 individually preserved Batch-1 mockups for pages 2-10; found ${ledger.visualEvidence?.batch1?.length ?? 0}.`);
 if (!Array.isArray(ledger.executionPriorities) || ledger.executionPriorities.length < 5) errors.push('Manifest-first execution priorities are missing or incomplete.');
+if (ledger.latestManifestV1Closure?.originalManifestFamilies !== 30) errors.push('Latest manifest v1 closure metadata is missing the original 30-family denominator.');
+if (ledger.latestManifestV1Closure?.routeRecords !== implementedRoutes.size) errors.push('Latest manifest v1 closure route count does not match the registered route index.');
+if (ledger.pages.some(page => !page.manifestV1Action || !page.manifestV1Evidence)) errors.push('One or more manifest rows lack a current action/evidence reconciliation.');
 
 console.log(`Manifest rows: ${ledger.pages.length}`);
 console.log(`Implemented route records: ${implementedRoutes.size}`);

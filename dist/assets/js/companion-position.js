@@ -346,3 +346,23 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
 })();
+
+/* Website-only manifest adapters. The Studio inline code and cartridge bytes stay frozen. */
+(function () {
+  'use strict';
+  if (window.self !== window.top) return;
+  function loadManifestShell() {
+    var brand = document.querySelector('.site-brand');
+    if (!brand || document.querySelector('[data-manifest-shell-loader]')) return;
+    var home = new URL(brand.href, window.location.href);
+    if (home.origin !== window.location.origin) return;
+    var base = home.pathname === '/' ? '' : home.pathname.replace(/\/+$/, '');
+    var script = document.createElement('script');
+    script.src = base + '/assets/js/manifest-shell.js';
+    script.setAttribute('data-manifest-shell-loader', '');
+    script.async = false;
+    document.head.appendChild(script);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', loadManifestShell, { once: true });
+  else loadManifestShell();
+})();

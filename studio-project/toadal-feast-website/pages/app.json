@@ -22,6 +22,14 @@
         "variant": "app-puzzle-abilities",
         "html": "<section class='app-puzzle-abilities' aria-labelledby='puzzle-abilities-title' data-companion-context='app' data-companion-copy='These Golden Block illustrations are mobile Puzzle ability concepts, not Tower Defense or browser gameplay.' data-companion-reaction='curious'><p class='section-kicker'>MOBILE PUZZLE · CONCEPT ART</p><h2 id='puzzle-abilities-title'>Golden Block abilities</h2><p>Owner-supplied illustrations for the mobile Puzzle abilities. They are concept presentation art, not a playable website feature; store links remain unavailable.</p><div class='app-puzzle-ability-grid'><figure><img src='/assets/images/puzzle/toadal-push-golden-block.webp' alt='Toadal pushing a Golden Block, mobile Puzzle ability concept art.' width='384' height='384' loading='lazy' decoding='async'><figcaption>Push · mobile Puzzle ability concept</figcaption></figure><figure><img src='/assets/images/puzzle/toadal-magic-golden-block.webp' alt='Toadal using magic on a Golden Block, mobile Puzzle ability concept art.' width='384' height='384' loading='lazy' decoding='async'><figcaption>Magic · mobile Puzzle ability concept</figcaption></figure></div></section>"
       }
+    },
+    {
+      "id": "component.app.infinite-mode",
+      "type": "core.rich-text",
+      "props": {
+        "variant": "app-infinite-mode",
+        "html": "<section class='app-gameplay-section' aria-labelledby='infinite-mode-title' data-companion-context='app' data-companion-copy='Infinite is one of the four TOADAL FEAST mobile modes. An approved gameplay capture is not available for this mode yet.' data-companion-reaction='curious'><div class='app-gameplay-heading'><p class='section-kicker'>FULL MOBILE APP · MODE OVERVIEW</p><h2 id='infinite-mode-title'>Infinite</h2><p>Infinite Feasts is part of the full TOADAL FEAST mobile experience. This page has no approved Infinite gameplay capture yet, so it is represented here by name and mode status only.</p><span class='status-chip status-chip--coming'>GAMEPLAY CAPTURE NOT AVAILABLE</span></div><div class='app-product-actions'><a class='button-link button-link--secondary' href='/coming-soon/' data-companion-context='under-construction' data-companion-action data-companion-action-copy='No approved Infinite gameplay capture is available yet. Explore the Feast while the capture is prepared.'>Why the mode preview is unavailable</a><a class='button-link button-link--secondary' href='/coming-soon/' data-companion-context='under-construction' data-companion-action data-companion-action-copy='Official App Store and Google Play destinations are not configured yet. Explore the available browser previews.'>Why official downloads are unavailable</a><a class='button-link button-link--secondary' href='/play/'>Explore available browser previews</a></div></section>"
+      }
     }
   ],
   "referenceFile": "app/index.html",
