@@ -1,0 +1,26 @@
+{
+  "id": "asset.characters.gully.card-fit",
+  "authorityAssetId": "asset.home.character.gully",
+  "authoritySource": "reference/assets/images/characters/gully.webp",
+  "authoritySha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
+  "purpose": "Responsive character-card presentation without destructive cropping",
+  "mappings": [
+    {
+      "media": "(max-width: 680px)",
+      "source": "reference/assets/images/characters/card-fit/gully/gully-card-fit-mobile-3x2-900x600.png",
+      "fit": "contain",
+      "focalX": 50,
+      "focalY": 51,
+      "zoom": 1
+    },
+    {
+      "media": "default",
+      "source": "reference/assets/images/characters/card-fit/gully/gully-card-fit-desktop-7x4-1050x600.png",
+      "fit": "contain",
+      "focalX": 50,
+      "focalY": 51,
+      "zoom": 1
+    }
+  ],
+  "sourcePolicy": "Derivatives only: proportional scaling + transparent padding. Approved source stays untouched."
+}
