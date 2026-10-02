@@ -57,6 +57,7 @@ def main() -> int:
             "scripts/guest-progression.test.mjs"
         ]),
         ("cartridge-storage-isolation", [node, "scripts/verify-cartridge-storage-isolation.mjs", "."]),
+        ("wicked-score-bridge", [node, "scripts/verify-wicked-bites-score-bridge.mjs", "."]),
         ("canonical-gully-authority", [node, "scripts/verify-canonical-gully-gameplay-authority.mjs", "."])
     ]
 
