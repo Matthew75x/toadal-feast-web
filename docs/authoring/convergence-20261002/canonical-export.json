@@ -1,0 +1,97 @@
+{
+  "schema": "toadal.convergence-canonical.v1",
+  "provenance": {
+    "studioCommit": "d18c692268eb88dbbc14f23c94dd9c0a95f379ee",
+    "studioGitTree": "0d197aac219e6925b2552e971e384722b3b0446c",
+    "canonicalProjectManifestSha256": "e175531b79f16825f51dd560a213b2616dbf60e7b1076a5058ce8b8c48bdf37f",
+    "matchesExpected": true
+  },
+  "scope": {
+    "studioRoot": "C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/studio-owner-authoring-20261002/TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER",
+    "manifest": "C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/toadal-feast-web-owner-native-authoring-20261002/studio-project/toadal-feast-website/project.json",
+    "websiteDist": "C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/toadal-feast-web-owner-native-authoring-20261002/dist",
+    "freshUncompressedExport": "D:/Codex-TOADAL-Owner-QA-8b9080b3491b414fadb09ccb022b838e/studio-export-tmp/fresh-canonical",
+    "temp": "D:/Codex-TOADAL-Owner-QA-8b9080b3491b414fadb09ccb022b838e/studio-export-tmp"
+  },
+  "commands": [
+    "$env:TEMP=$env:TMP=D:\\Codex-TOADAL-Owner-QA-8b9080b3491b414fadb09ccb022b838e\\studio-export-tmp; $env:TOADAL_PROJECT=<canonical project.json>; node --no-warnings --experimental-strip-types scripts/validate.ts",
+    "node --no-warnings --experimental-strip-types scripts/render.ts",
+    "node --no-warnings --experimental-strip-types --input-type=module -e \"import {exportStaticSite} from ./packages/export-manager/src/index.ts; exportStaticSite(process.env.TOADAL_PROJECT)\"",
+    "node --no-warnings --experimental-strip-types scripts/ai-checkpoint.ts --project <canonical project.json> --mode verify --label convergence-canonical",
+    "Expand-Archive <generated static-site.zip> <D: temp fresh-canonical>",
+    "node scripts/verify-wo001-home.mjs <fresh-canonical> /toadal-feast-web/"
+  ],
+  "results": {
+    "validation": {
+      "ok": true,
+      "errors": 0,
+      "warnings": 0
+    },
+    "render": {
+      "ok": true,
+      "files": 140
+    },
+    "staticExport": {
+      "ok": true,
+      "zipBytes": 39790713,
+      "zipSha256": "658edcf1bd488d08307ad5064d4d120b35700673f40ff521529d4b723fe1d0ff",
+      "basePath": "/toadal-feast-web/",
+      "staging": true
+    },
+    "checkpoint": {
+      "ok": true,
+      "mode": "verify",
+      "validationErrors": 0,
+      "validationWarnings": 0,
+      "referenceGraph": {
+        "nodes": 182,
+        "edges": 218,
+        "dangling": 0
+      },
+      "files": [
+        "AI/HANDOFFS/2026-10-03T03-15-26-091Z-convergence-canonical.md",
+        "AI/HANDOFFS/2026-10-03T03-15-26-091Z-convergence-canonical.json"
+      ]
+    },
+    "focusedVerifier": {
+      "ok": false,
+      "failedChecks": 2,
+      "failures": [
+        "Every game card visibly says PREVIEW and is non-playable — game card 1 (game.wicked-bites): 1 launch link(s); game card 2 (game.toadal-tower-defense): 1 launch link(s); game card 3 (game.froggy-fruity-bash): 1 launch link(s); game card 4 (game.claw-feed-gulper): 1 launch link(s)",
+        "Search input and button are present — found 0 search input(s); no associated Search button"
+      ]
+    },
+    "rootFiles": {
+      "index": true,
+      "notFound": true
+    }
+  },
+  "ledger": {
+    "freshCount": 140,
+    "distCount": 140,
+    "differences": {
+      "freshOnly": [],
+      "distOnly": [],
+      "contentOrSize": []
+    },
+    "coherent": true
+  },
+  "inspect": {
+    "valid": true,
+    "errors": 0,
+    "warnings": 0,
+    "pages": 33,
+    "games": 4,
+    "assets": 70,
+    "graphNodes": 182,
+    "graphEdges": 218,
+    "dangling": 0
+  },
+  "currentAuthorityChecks": {
+    "pagesBasepath": "PASS:34 HTML",
+    "staticLinks": "PASS:34 HTML",
+    "renderFreshness": "PASS:33 registered routes",
+    "homeContract": "38/38 PASS"
+  },
+  "obsoleteWo001DiagnosticConclusion": "Two obsolete Home expectations fail: non-linked preview cards and retired Home search form. Current Home contract explicitly requires the isolated preview route and header Search utility; current verifiers pass. No tests were weakened."
+}

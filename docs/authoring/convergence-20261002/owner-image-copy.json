@@ -1,0 +1,80 @@
+{
+  "schema": "toadal.owner-pilot.v1",
+  "verified": {
+    "pass": true,
+    "restored": {
+      "characters": true,
+      "copy": true,
+      "catalog": true
+    },
+    "imageOutputValues": true,
+    "structuredNarrativeOutput": true,
+    "dialogueCapability": "No dedicated dialogue authoring type was asserted; real structured Toadal biography paragraph tested.",
+    "repeatExportFiles": 140,
+    "repeatExportSha256": "1994b86dfaf9bc6f760078b5bd5f1a4bc7d8114054f9012310feaa2c97dda36c",
+    "checks": {
+      "noSilentSave": true,
+      "keepEditing": true,
+      "cancelNoMutation": true,
+      "invalidFocalNoMutation": true,
+      "invalidRouteNoMutation": true,
+      "ctrlSSavesDraft": true,
+      "imageReopen": true,
+      "imagePreview": true,
+      "copyReopenAndPageTitle": true,
+      "copyPreview": true
+    },
+    "diagnostic": "The earlier script checked restoration before the final Undo response completed; all three original hashes subsequently match. Original diagnostic retained."
+  },
+  "originalHashes": {
+    "characters": "1710d448a42a556c0e07ba59ee12ec635d3bbd93d69e7bdb7574c38841dcf932",
+    "copy": "8e4828b044307f8dd6bf0d10847a3eb9647334cf8a8d029e6d48663585fa0312",
+    "catalog": "3fdc7fc6b4288a07c25c1bfbc4ca4f582a5ca7fdb866671bca9b2d302ad6188d"
+  },
+  "imageFields": {
+    "asset": "asset.import.gully-card-fit-desktop-7x4-1050x600.481ad8dc",
+    "alt": "Owner pilot full-body Gully image",
+    "fit": "contain",
+    "focalX": "42",
+    "focalY": "58",
+    "imageHeight": "150",
+    "imageMaxWidth": "",
+    "aspectRatio": "7/4",
+    "padding": "0",
+    "background": "",
+    "zoom": "1.02",
+    "href": "",
+    "target": "_self",
+    "attributes.id": "",
+    "attributes.aria-label": "",
+    "responsive.mobile.asset": "asset.import.gully-card-fit-mobile-3x2.a6e8afa4",
+    "responsive.mobile.maxWidth": "680",
+    "responsive.mobile.fit": "cover",
+    "responsive.mobile.imageHeight": "115",
+    "responsive.mobile.imageMaxWidth": "172.5",
+    "responsive.mobile.focalX": "50",
+    "responsive.mobile.focalY": "50",
+    "responsive.tablet.fit": "",
+    "responsive.tablet.imageHeight": "",
+    "responsive.tablet.imageMaxWidth": "",
+    "responsive.tablet.focalX": "",
+    "responsive.tablet.focalY": ""
+  },
+  "imagePreview": {
+    "src": "http://127.0.0.1:4324/assets/studio/asset-import-gully-card-fit-desktop-7x4-1050x600-481ad8dc.481ad8dc37.png",
+    "fit": "contain",
+    "focal": "42% 58%",
+    "height": 153,
+    "transform": "matrix(1.02, 0, 0, 1.02, 0, 0)"
+  },
+  "structuredCopy": {
+    "componentId": "component.toadal-profile.rich-text.6313f0136c06.p",
+    "file": "pages/toadal-profile.json",
+    "field": "text",
+    "original": "Toadal is the crowned golden hero at the center of TOADAL FEAST. His canonical red scarf, crown, and golden character design are preserved here; longer biography and story claims remain unpublished until approved source material exists.",
+    "edited": "Toadal is the crowned golden hero at the center of TOADAL FEAST. His canonical red scarf, crown, and golden character design are preserved here; longer biography and story claims remain unpublished until approved source material exists. Owner pilot copy only — not published."
+  },
+  "restorationDiagnostic": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert.ok(Object.values(report.restored).every(Boolean))\n\n    at file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/convergence-owner-after.mjs:49:192",
+  "canonicalUnchanged": true,
+  "dedicatedDialogueTypeClaimed": false
+}
