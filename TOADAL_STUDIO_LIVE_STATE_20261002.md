@@ -1,5 +1,20 @@
 # TOADAL Studio / Website Live State — 2026-10-02
 
+## Owner self-service foundation — 2026-10-03 (supersedes local capability/status sections below)
+
+- RESULT: PASS for the bounded ordinary-page owner-authoring foundation. See docs/authoring/OWNER_SELF_SERVICE_CLOSURE_20261003.md and self-service-20261003/acceptance.json; this is not all-manifest or LOCK_VISUAL acceptance.
+- Website implementation checkpoint: 89566dca408c360b4c2ccd4f51d35860cb22f948 / b5979e35f3956843aaf7de98ec8d0539bb80cde3. Final receipt SHA/tree are the commit containing this update; exact post-commit values are in C:\Users\Metarator\Documents\Codex\TOADAL_OWNER_SELF_SERVICE_RECEIPT_20261003.md.
+- Studio 1.4.2 checkpoint: e06eb5f14c210fc22b9f39dd11b9b51ee6847faa / b6818ee8e0a5184e45630f6ebea871fb568a1bb2. Both existing branches remain work/owner-native-authoring-20261002.
+- Active canonical editor http://127.0.0.1:4328/ and preview /preview/, PID 41644. Studio installation C:\Users\Metarator\Documents\Codex\2026-09-29\t-3\work\studio-owner-authoring-20261002\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER; TOADAL_PROJECT C:\Users\Metarator\Documents\Codex\2026-09-29\t-3\work\toadal-feast-web-owner-native-authoring-20261002\studio-project\toadal-feast-website\project.json. Original 4323/4324 and pilot 4326/4327 services preserved. 4327 now serves the independent restored pilot, not canonical content.
+- TEMP/TMP are D:\TOADAL_BACKUPS\studio-owner-authoring-20261002\owner-self-service-runtime-20261003, OUTSIDE the project. Editing/render/export are entirely local; GitHub is for source preservation only.
+- Delivered: explicit component/settings/navigation/page-creation drafts and guards, recursive safe copies/routes, Blank/Template/Existing pages, TOADAL Media/Article/Information starters, local draft preview/public-output exclusion, published-only navigation, section editing/Undo, export feedback and proven independent backup restoration.
+- Qualification: 71/71 affected tests; 31 bounded real-UI checks; canonical validation/inspect/render/export/verify PASS, zero errors/warnings/dangling; ai:doctor 26/26; export equals 140 tracked dist files; freshness/static links/Pages PASS. No broad 183/16/48/83 rerun; prior results remain historical.
+- Canonical accepted project pages/assets/navigation and all dist bytes unchanged; only patterns.json adds three starter descriptors. No pilot values escaped into the accepted project and no dist-only fixes.
+- Studio bundle D:\TOADAL_BACKUPS\studio-owner-authoring-20261002\studio-owner-self-service-foundation-20261003.bundle, SHA256 CD3F2766FC4A210BB36A08FEB04DD9676F25B68A58E9B6AE55C89BBB576FE705; verified and reconstructed at the exact SHA/tree. No Studio remote exists; off-machine ASSIGNATOR transfer remains pending.
+- Studio's only dirty source-control path remains generated AI/AUDIT/mcp-tools.jsonl (separately retained on D:). Raw ZIPs/logs/history/pilot projects are generated/QA state, not committed product content.
+- Remaining: owner walkthrough/visual decisions; structured registry Stories/Reader publishing and game-cartridge onboarding are separate milestones; comprehensive incoming-link migration on route rename is not implemented. Stop at this checkpoint; no merge, staging/main/production change or deployment.
+
+
 ## Current convergence checkpoint (supersedes every older section)
 
 - Website: this documentation/evidence-only follow-up on `work/owner-native-authoring-20261002`; approved content/project/dist remain exactly from `1ceccb84b5722d2cdf292a9ba9d330299fb29c97` / tree `ec9fa0364b9af4e36bc3c8d2b30987d5cbeeb767`. The final receipt SHA/tree are the commit containing this update (`git rev-parse HEAD` / `git rev-parse 'HEAD^{tree}'`), also recorded in the external handoff after push.

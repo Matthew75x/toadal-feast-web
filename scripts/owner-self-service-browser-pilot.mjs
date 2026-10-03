@@ -1,0 +1,41 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import {createRequire} from 'node:module';
+const require=createRequire('C:/Users/Metarator/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/package.json');
+const {chromium}=require('playwright');
+const root=process.env.OWNER_PILOT_ROOT||'D:/TOADAL_BACKUPS/studio-owner-authoring-20261002/owner-self-service-pilot-20261003';
+const out=process.env.OWNER_PILOT_EVIDENCE||'D:/TOADAL_BACKUPS/studio-owner-authoring-20261002/owner-self-service-evidence-20261003';
+const url=process.env.OWNER_PILOT_URL||'http://127.0.0.1:4327/';
+fs.mkdirSync(out,{recursive:true});
+const hash=file=>crypto.createHash('sha256').update(fs.readFileSync(root+'/'+file)).digest('hex');
+const report={checks:{},errors:[],before:{media:hash('pages/media.json'),nav:hash('collections/navigation.json')}};
+const browser=await chromium.launch({executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',headless:true});
+const page=await browser.newPage({viewport:{width:1680,height:1000},acceptDownloads:true});
+page.setDefaultTimeout(15000);page.on('pageerror',error=>report.errors.push(error.message));
+const saved=async id=>page.waitForFunction(key=>document.querySelector(key)?.textContent.startsWith('Saved'),id);
+const reload=async()=>{await page.goto(url);await page.locator('#bootOverlay').waitFor({state:'hidden'});};
+const request=async(endpoint,action)=>{const reply=page.waitForResponse(r=>r.url().endsWith(endpoint)&&r.request().method()!=='GET');await action();return await reply;};
+try{
+ await reload();const projects=await (await page.request.get(url+'api/projects')).json();assert.equal(path.resolve(path.dirname(projects.items.find(x=>x.id===projects.current).path)),path.resolve(root));assert.match(root,/owner-self-service-pilot|owner-pilot-qa-/i);await page.locator('#projectQuick').click();await page.locator('[data-page="page.media"]').click();await page.locator('[data-tab="nav"]').click();await page.locator('#navigationEditor').waitFor();
+ const firstLabel=page.locator('#navigationEditor [data-key="label"]').first(),firstHref=page.locator('#navigationEditor [data-key="href"]').first(),label=await firstLabel.inputValue();
+ await firstLabel.fill('Unsaved navigation pilot');assert.equal(hash('collections/navigation.json'),report.before.nav);
+ await page.locator('#projectQuick').click();await page.getByRole('dialog',{name:'Unsaved changes'}).getByRole('button',{name:'Keep editing'}).click();assert.equal(await firstLabel.inputValue(),'Unsaved navigation pilot');
+ await page.locator('#cancelNavigation').click();await saved('#navigationDraftState');assert.equal(await page.locator('#navigationEditor [data-key="label"]').first().inputValue(),label);assert.equal(hash('collections/navigation.json'),report.before.nav);report.checks.navigationCancelAndKeep=true;
+ await page.locator('#navigationEditor [data-key="href"]').first().fill('/missing-owner-route/');await page.locator('#saveNav').click();await page.waitForFunction(()=>document.querySelector('#navigationDraftState')?.textContent.startsWith('Not saved'));assert.equal(hash('collections/navigation.json'),report.before.nav);report.checks.invalidNavigationNoWrite=true;await page.locator('#cancelNavigation').click();await saved('#navigationDraftState');
+ await page.locator('.page-settings summary').click();const title=await page.locator('[data-key="__title"]').inputValue();
+ await page.locator('[data-key="__title"]').fill('Unsaved metadata pilot');await page.locator('#projectQuick').click();await page.getByRole('dialog',{name:'Unsaved changes'}).getByRole('button',{name:'Keep editing'}).click();assert.equal(hash('pages/media.json'),report.before.media);
+ await page.locator('#cancelPageSettings').click();await saved('#pageSettingsDraftState');assert.equal(await page.locator('[data-key="__title"]').inputValue(),title);report.checks.settingsCancelAndKeep=true;
+ await page.locator('[data-key="__route"]').fill('/../unsafe/');await page.locator('#saveMeta').click();await page.waitForFunction(()=>document.querySelector('#pageSettingsDraftState')?.textContent.startsWith('Not saved'));assert.equal(hash('pages/media.json'),report.before.media);await page.locator('#cancelPageSettings').click();report.checks.invalidPageRouteNoWrite=true;
+ await page.locator('#projectQuick').click();await page.locator('[data-key="newTitle"]').fill('Owner Media Pilot');await page.locator('#newPageKind').selectOption('template');await page.locator('#newPageTemplate').selectOption('template.toadal-media');
+ const response=await request('/api/pages/template',()=>page.locator('#createPage').click());assert.equal(response.status(),200,await response.text());report.created=await response.json();await page.waitForFunction(id=>document.querySelector('#rightPanel')?.innerText.includes(id),report.created.components[0].id);
+ assert.equal(report.created.publicationState,'draft');assert.equal(hash('pages/media.json'),report.before.media);report.checks.independentTemplateDraft=true;
+ await reload();await page.locator('[data-page="'+report.created.id+'"]').click();assert.equal(await page.locator('[data-key="__title"]').inputValue(),'Owner Media Pilot');assert.equal(await page.locator('[data-key="__publication"]').inputValue(),'draft');report.checks.creationReopen=true;
+ const preview=await page.request.get(url+'preview/owner-media-pilot/');assert.equal(preview.status(),200);const previewHtml=await preview.text();assert.match(previewHtml,/noindex,nofollow/);report.checks.localDraftPreview=true;
+ const health=await (await page.request.get(url+'api/health')).json();assert.equal(health.valid,true,JSON.stringify(health.errors));report.checks.deepCloneValidation=true;
+ await page.locator('.page-settings summary').click();await page.locator('[data-key="__publication"]').selectOption('published');assert.equal((await request('/api/page/meta',()=>page.locator('#saveMeta').click())).status(),200);await saved('#pageSettingsDraftState');
+ await page.locator('#addPageNavigation').click();await page.waitForFunction(()=>document.querySelector('#saveState')?.textContent.includes('Added to shared'));report.checks.explicitNavigation=true;
+ await page.screenshot({path:out+'/created-media-page.png'});report.pass=true;
+}catch(error){report.pass=false;report.error=error.stack;await page.screenshot({path:out+'/failure.png'}).catch(()=>{});process.exitCode=1;}
+finally{fs.writeFileSync(out+'/pilot-foundation.json',JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({pass:report.pass,checks:report.checks,errors:report.errors,error:report.error,createdId:report.created?.id},null,2));await browser.close();}

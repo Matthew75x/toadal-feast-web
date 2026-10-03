@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-03",
+  "studioSource": "e06eb5f14c210fc22b9f39dd11b9b51ee6847faa",
+  "websiteStarterSource": "89566dca408c360b4c2ccd4f51d35860cb22f948",
+  "canonical": {
+    "studioVersion": "1.4.2",
+    "project": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\studio-project\\toadal-feast-website\\project.json",
+    "inspect": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0
+    },
+    "quickQA": {
+      "validation": {
+        "valid": true,
+        "errors": [],
+        "warnings": []
+      },
+      "graph": {
+        "dangling": []
+      },
+      "accessibility": {
+        "checks": {
+          "altText": true,
+          "iframeTitles": true,
+          "controlNames": true,
+          "headingHierarchy": true,
+          "focusVisibility": true,
+          "keyboardOperation": true,
+          "reducedMotion": true,
+          "touchTargets": true,
+          "contrastHeuristics": true
+        },
+        "issues": [],
+        "errors": 0,
+        "warnings": 0
+      }
+    },
+    "export": {
+      "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
+      "bytes": 39790713,
+      "profile": {
+        "schemaVersion": 1,
+        "basePath": "/toadal-feast-web/",
+        "staging": true
+      }
+    },
+    "checkpoint": {
+      "ok": true,
+      "validation": true,
+      "handoff": "AI/HANDOFFS/2026-10-03T04-35-58-526Z-owner-self-service-source-freeze.json"
+    }
+  },
+  "foundation": {
+    "pass": true,
+    "checks": {
+      "navigationCancelAndKeep": true,
+      "invalidNavigationNoWrite": true,
+      "settingsCancelAndKeep": true,
+      "invalidPageRouteNoWrite": true,
+      "independentTemplateDraft": true,
+      "creationReopen": true,
+      "localDraftPreview": true,
+      "deepCloneValidation": true,
+      "explicitNavigation": true
+    },
+    "errors": [],
+    "createdId": "page.owner-media-pilot"
+  },
+  "roundtrip": {
+    "rawReportPass": false,
+    "checks": {
+      "imageSaveReopen": true,
+      "structureHideDeleteUndo": true,
+      "copyAndLinkReopen": true,
+      "editedProjectValid": true,
+      "deterministicExports": true,
+      "exportedAuthoredValues": true,
+      "exportedNavigationAndLinkClicked": true,
+      "mobileNoOverflow": true
+    },
+    "errors": [],
+    "imageFields": {
+      "authoringVersion": 1,
+      "tag": "img",
+      "className": "",
+      "attributes": {
+        "decoding": "async"
+      },
+      "style": "",
+      "layerName": "Candy Kingdom environment artwork.",
+      "asset": "asset.import.gully-card-fit-desktop-7x4-1050x600.481ad8dc",
+      "alt": "Owner uploaded image pilot",
+      "fit": "contain",
+      "focalX": 45,
+      "focalY": 55,
+      "imageHeight": 180,
+      "imageMaxWidth": "",
+      "aspectRatio": "4/3",
+      "padding": "",
+      "background": "",
+      "zoom": 1.05,
+      "href": "",
+      "target": "_self",
+      "responsive": {
+        "mobile": {
+          "asset": "",
+          "maxWidth": 600,
+          "fit": "",
+          "imageHeight": "",
+          "imageMaxWidth": "",
+          "focalX": "",
+          "focalY": ""
+        },
+        "tablet": {
+          "fit": "",
+          "imageHeight": "",
+          "imageMaxWidth": "",
+          "focalX": "",
+          "focalY": ""
+        }
+      }
+    },
+    "copyField": "OWNER_AUTHORED_MEDIA_COPY — only in the independent pilot.",
+    "linkField": "/about/",
+    "renderedImage": {
+      "src": "http://127.0.0.1:55391/toadal-feast-web/assets/studio/asset-import-gully-card-fit-desktop-7x4-1050x600-481ad8dc.481ad8dc37.png",
+      "fit": "contain",
+      "focal": "45% 55%",
+      "complete": true,
+      "width": 1050
+    },
+    "exportFiles": 142,
+    "rawFailure": "page.waitForEvent: Timeout 120000ms exceeded while waiting for event \"download\"\n=========================== logs ===========================\nwaiting for event \"download\"\n============================================================\n    at download (C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\toadal-feast-web-owner-native-authoring-20261002\\scripts\\owner-self-service-roundtrip-pilot.mjs:12:98)\n    at async file:///C:/Users/Metarator/Documents/Codex/2026-09-29/t-3/work/toadal-feast-web-owner-native-authoring-20261002/scripts/owner-self-service-roundtrip-pilot.mjs:39:16",
+    "rawFailureConclusion": "All eight content/structure/export/browser checks passed before backup. Backup failed because the QA launcher set TEMP/TMP inside its own project; corrected sibling D: runtime storage and supplemental recovery prove the same saved authored state. Earlier raw diagnostics remain preserved."
+  },
+  "recovery": {
+    "checks": {
+      "independentSaveAs": true,
+      "backupDownload": true,
+      "restoredSourceIntegrity": true,
+      "restoredReopenAndPreview": true,
+      "invalidBackupDoesNotMutate": true,
+      "originalPilotSourceUnchanged": true
+    },
+    "errors": [],
+    "url": "http://127.0.0.1:4327/",
+    "copy": {
+      "id": "owner-pilot-qa-self-service-20261003",
+      "name": "owner-pilot-qa-self-service-20261003",
+      "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\studio-owner-authoring-20261002\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\projects\\owner-pilot-qa-self-service-20261003\\project.json"
+    },
+    "backup": "D:/TOADAL_BACKUPS/studio-owner-authoring-20261002/owner-self-service-evidence-20261003/restorable-owner-project.zip",
+    "backupSHA256": "42a0be06bb4eb0b63f456521ac87c206fd41565f8b99f02d4fc8c3eaa93aff79",
+    "backupBytes": 39911518,
+    "restored": {
+      "id": "owner-pilot-qa-self-service-20261003-import-2",
+      "name": "owner-pilot-qa-self-service-20261003",
+      "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-09-29\\t-3\\work\\studio-owner-authoring-20261002\\TOADAL_STUDIO_1.4.2_AUDITED_WEB_BUILDER\\projects\\owner-pilot-qa-self-service-20261003-import-2\\project.json"
+    },
+    "sourceFiles": 168,
+    "pass": true
+  },
+  "starters": {
+    "checks": {
+      "ArticleCreateReopenPreview": true,
+      "InformationCreateReopenPreview": true,
+      "ExistingCreateReopenPreview": true,
+      "BlankCreateReopenPreview": true,
+      "addImageSaveCancel": true,
+      "donorPagesUnchanged": true,
+      "projectValid": true,
+      "draftsExcludedFromPublicExport": true
+    },
+    "errors": [],
+    "created": [
+      {
+        "id": "page.owner-article-pilot",
+        "route": "/owner-article-pilot/",
+        "name": "Article",
+        "source": "template.article-story"
+      },
+      {
+        "id": "page.owner-information-pilot",
+        "route": "/owner-information-pilot/",
+        "name": "Information",
+        "source": "template.information"
+      },
+      {
+        "id": "page.owner-existing-pilot",
+        "route": "/owner-existing-pilot/",
+        "name": "Existing",
+        "source": "page.about"
+      },
+      {
+        "id": "page.owner-blank-pilot",
+        "route": "/owner-blank-pilot/",
+        "name": "Blank",
+        "source": null
+      }
+    ],
+    "export": "D:/TOADAL_BACKUPS/studio-owner-authoring-20261002/owner-self-service-evidence-20261003/starter-draft-boundary.zip",
+    "pass": true
+  },
+  "overallFoundation": "PASS",
+  "focusedTests": {
+    "passed": 71,
+    "failed": 0,
+    "sets": [
+      40,
+      31
+    ],
+    "fullSuiteRerun": false
+  },
+  "canonicalOutput": {
+    "trackedDistFiles": 140,
+    "exportFiles": 140,
+    "missing": 0,
+    "extra": 0,
+    "hashDifferences": 0,
+    "renderFreshness": "PASS",
+    "staticLinks": "PASS",
+    "pagesBasePath": "PASS",
+    "basePath": "/toadal-feast-web/"
+  },
+  "aiDoctor": {
+    "ok": true,
+    "checks": 26
+  },
+  "localhost": {
+    "canonical": "http://127.0.0.1:4328/",
+    "canonicalPid": 41644,
+    "pilot": "http://127.0.0.1:4327/",
+    "pilotPid": 29312
+  },
+  "deployed": false,
+  "evidenceRoot": "D:\\TOADAL_BACKUPS\\studio-owner-authoring-20261002\\owner-self-service-evidence-20261003"
+}

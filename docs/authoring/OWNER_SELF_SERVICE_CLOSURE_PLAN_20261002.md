@@ -1,6 +1,6 @@
 # TOADAL owner self-service closure plan
 
-Date: 2026-10-02. Status: PROPOSED; planning only, not implementation or release approval.
+Date: 2026-10-02. User approved implementation; bounded FOUNDATION engineering acceptance closed on 2026-10-03. See [closure evidence](OWNER_SELF_SERVICE_CLOSURE_20261003.md). Subsequent publishing/cartridge milestones and owner/off-machine dependencies remain separate; no release/deployment approval is implied. Starting-state findings below are historical, preserved for provenance.
 
 ## Outcome
 

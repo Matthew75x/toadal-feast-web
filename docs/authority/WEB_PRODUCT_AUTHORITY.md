@@ -21,6 +21,8 @@ Work-order PASS, automated QA PASS, route presence, branch cleanliness, or visua
 
 ## Current operational authority
 
+Local authoring supplement (2026-10-03): [owner self-service foundation closure](../authoring/OWNER_SELF_SERVICE_CLOSURE_20261003.md) records Studio 1.4.2 source `e06eb5f14c210fc22b9f39dd11b9b51ee6847faa`, safe ordinary-page UI qualification and the current local editor. It does not modify product/creative requirements, upgrade manifest visual acceptance, integrate Stories/Reader or cartridges, or authorize deployment. The operational SHA list below is the preserved 2026-10-01 consolidation snapshot, not a claim about the latest local authoring tip or a newly verified deployment; see `TOADAL_STUDIO_LIVE_STATE_20261002.md` for current local provenance.
+
 - Current public visual staging lineage: `staging/live-visual` at verified SHA `270940dee30b7aafb70af941c520c6d4d223e288`.
 - Authority consolidation baseline: `ops/web-authority-consolidation-20261001` at `92decef6cef31622833458e2a98dd9e577ca79c2`.
 - Current integrated review candidate: `integration/manifest-home-characters-progression-20261001` at `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da`. It combines the Home `LOCK_VISUAL` candidate, Characters Hub + Toadal Profile, and guest-local progression. It is **not** owner-approved, staged, or deployed.
