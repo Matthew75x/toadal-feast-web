@@ -14,11 +14,12 @@ export function validateOwnerProps(x    ){
   if(x.href&&!/^(\/[^/]|\/$|#|https?:\/\/|mailto:|tel:)/i.test(x.href))errors.push('invalid link scheme');
   if(x.target&&!['_self','_blank'].includes(x.target))errors.push('invalid link target');
   for(const key of ['focalX','focalY'])if(x[key]!==''&&x[key]!==undefined&&(!Number.isFinite(Number(x[key]))||Number(x[key])<0||Number(x[key])>100))errors.push(`${key} must be 0–100`);
-  for(const key of ['frameHeight','imageHeight','padding','zoom','gap','columns'])if(x[key]!==''&&x[key]!==undefined&&(!Number.isFinite(Number(x[key]))||Number(x[key])<0))errors.push(`${key} must be nonnegative`);
+  for(const key of ['frameHeight','imageHeight','imageMaxWidth','padding','zoom','gap','columns'])if(x[key]!==''&&x[key]!==undefined&&(!Number.isFinite(Number(x[key]))||Number(x[key])<0))errors.push(`${key} must be nonnegative`);
   if(x.fit&&!['contain','cover','fill','none','scale-down'].includes(x.fit))errors.push('invalid image fit');
   if(x.backgroundFit&&!['contain','cover','auto'].includes(x.backgroundFit))errors.push('invalid background fit');
   for(const key of ['backgroundFocalX','backgroundFocalY'])if(x[key]!==''&&x[key]!==undefined&&(!Number.isFinite(Number(x[key]))||Number(x[key])<0||Number(x[key])>100))errors.push(`${key} must be 0–100`);
   if(x.mode&&!['inherit','stack','row','grid'].includes(x.mode))errors.push('invalid responsive layout');
+  if(x.responsive?.mobile?.maxWidth!==undefined&&x.responsive.mobile.maxWidth!==''&&(!Number.isFinite(Number(x.responsive.mobile.maxWidth))||Number(x.responsive.mobile.maxWidth)<1||Number(x.responsive.mobile.maxWidth)>10000))errors.push('mobile maxWidth must be between 1 and 10000');
   if(x.aspectRatio&&!/^\d+(\.\d+)?\s*(\/\s*\d+(\.\d+)?)?$/.test(x.aspectRatio))errors.push('invalid aspect ratio');
   if(x.background&&/[;{}<>]|expression\s*\(|javascript\s*:|url\s*\(/i.test(x.background))errors.push('unsafe background treatment');
   if(x.href&&/[\x00-\x20\\]/.test(x.href))errors.push('invalid characters in link');
@@ -32,6 +33,7 @@ export function ownerStyle(x    ){
  if(x.fit)parts.push(`object-fit:${x.fit}`);
  if(x.focalX!==undefined&&x.focalX!==''||x.focalY!==undefined&&x.focalY!=='')parts.push(`object-position:${x.focalX===''||x.focalX==null?50:x.focalX}% ${x.focalY===''||x.focalY==null?50:x.focalY}%`);
  if(x.imageHeight)parts.push(`height:${Number(x.imageHeight)}px`);
+ if(x.imageMaxWidth!==undefined&&x.imageMaxWidth!=='')parts.push(`max-width:${Number(x.imageMaxWidth)}px`);
  if(x.zoom&&Number(x.zoom)!==1)parts.push(`transform:scale(${Number(x.zoom)});transform-origin:${x.focalX??50}% ${x.focalY??50}%`);
  if(x.frameHeight)parts.push(`height:${Number(x.frameHeight)}px;min-height:0`);
  if(x.aspectRatio)parts.push(`aspect-ratio:${String(x.aspectRatio).replace(/[^\d./ ]/g,'')}`);
@@ -67,7 +69,10 @@ export function renderOwnerComponent(c    ,assetUrl                         ,chi
  const serialized=Object.entries(attrs).filter(([,v])=>v!==false&&v!==null&&v!==undefined).map(([k,v])=>v===true?` ${k}`:` ${k}='${esc(v)}'`).join('');
  const children=(x.children||[]).map(childRender||((child    )=>renderOwnerComponent(child,assetUrl,undefined,animationFallback))).join('');
  const html=`<${tag}${serialized}>${voidTags.has(tag)?'':`${children||esc(x.text??x.label??'')}</${tag}>`}`;
- return x.tag==='img'&&x.href?`<a href='${esc(x.href)}'${x.target?` target='${esc(x.target)}'`:''}${x.target==='_blank'?" rel='noopener noreferrer'":''}>${html}</a>`:html;
+ const mobileAsset=x.tag==='img'?x.responsive?.mobile?.asset:'';
+ let image=html;
+ if(mobileAsset){const mobileUrl=assetUrl(mobileAsset);if(!mobileUrl)throw new Error(`Missing native mobile image asset: ${mobileAsset}`);const maxWidth=Number(x.responsive?.mobile?.maxWidth)||600;image=`<picture style='display:contents'><source media='(max-width: ${maxWidth}px)' srcset='${esc(mobileUrl)}'>${html}</picture>`;}
+ return x.tag==='img'&&x.href?`<a href='${esc(x.href)}'${x.target?` target='${esc(x.target)}'`:''}${x.target==='_blank'?" rel='noopener noreferrer'":''}>${image}</a>`:image;
 }
 function importantDeclarations(css       ){
  const declarations         =[],push=(part       )=>{if(part.trim())declarations.push(part.trim().replace(/\s*!important\s*$/i,'')+'!important')};
@@ -77,5 +82,6 @@ function importantDeclarations(css       ){
 }
 export function ownerResponsiveCss(c    ){
  const x=c.props||{},selector=`[data-studio-component="${String(c.id).replace(/["\\]/g,'')}" ]`.replace('" ]','"]');
- return Object.entries(x.responsive||{}).map(([bp,props]    )=>{const css=importantDeclarations(ownerStyle({...props,mode:props.mode||'inherit'}));return css?`@media ${bp==='mobile'?'(max-width:600px)':bp==='tablet'?'(min-width:601px) and (max-width:1024px)':'(min-width:1025px)'}{${selector}{${css}}}`:''}).join('');
+ const mobileMax=Math.max(1,Math.min(10000,Number(x.responsive?.mobile?.maxWidth)||600));
+ return Object.entries(x.responsive||{}).map(([bp,props]    )=>{const css=importantDeclarations(ownerStyle({...props,mode:props.mode||'inherit'}));const query=bp==='mobile'?`(max-width:${mobileMax}px)`:bp==='tablet'?`(min-width:${mobileMax+1}px) and (max-width:1024px)`:'(min-width:1025px)';return css?`@media ${query}{${selector}{${css}}}`:''}).join('');
 }

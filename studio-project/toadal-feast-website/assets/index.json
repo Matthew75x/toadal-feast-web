@@ -1802,6 +1802,86 @@
         "owner-native-conversion",
         "route:/legal/"
       ]
+    },
+    {
+      "id": "asset.import.gully-card-fit-desktop-7x4.431513d3",
+      "name": "gully card fit desktop 7x4",
+      "kind": "image",
+      "category": "characters/card-fit",
+      "source": "assets/imported/asset-import-gully-card-fit-desktop-7x4-431513d3.431513d3b1.webp",
+      "extension": "webp",
+      "bytes": 29794,
+      "sha256": "431513d3b1ea642582412819b4e37be91b517f011a29ef8dd7bf63bd6030c48d",
+      "referenceSha256": "431513d3b1ea642582412819b4e37be91b517f011a29ef8dd7bf63bd6030c48d",
+      "referenceSource": "assets/imported/asset-import-gully-card-fit-desktop-7x4-431513d3.431513d3b1.webp",
+      "width": 1050,
+      "height": 600,
+      "renderTargets": [
+        "website:/characters/"
+      ],
+      "replaceable": true,
+      "tags": [
+        "imported",
+        "owner-approved",
+        "gully-card-fit",
+        "responsive"
+      ],
+      "authorityAssetId": "asset.home.character.gully",
+      "authoritySource": "reference/assets/images/characters/gully.webp",
+      "authoritySha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
+      "handoffCommit": "012877ab7058f8de3c1802d2a572834a57ae2666",
+      "handoffMasterSha256": "481ad8dc37e26180319314452644e73c4743d2e2c0240640fc5ef661902ad499",
+      "provenance": {
+        "method": "Pillow WebP quality 90 method 6",
+        "master": "gully-card-fit-desktop-7x4-1050x600.png",
+        "alphaPreserved": true,
+        "alphaBounds": [
+          326,
+          36,
+          711,
+          566
+        ]
+      }
+    },
+    {
+      "id": "asset.import.gully-card-fit-mobile-3x2.a6e8afa4",
+      "name": "gully card fit mobile 3x2",
+      "kind": "image",
+      "category": "characters/card-fit",
+      "source": "assets/imported/asset-import-gully-card-fit-mobile-3x2-a6e8afa4.a6e8afa445.webp",
+      "extension": "webp",
+      "bytes": 29570,
+      "sha256": "a6e8afa445bde0c16837784850da3622de7705ae23ad11d2db1fdf0994fac8bd",
+      "referenceSha256": "a6e8afa445bde0c16837784850da3622de7705ae23ad11d2db1fdf0994fac8bd",
+      "referenceSource": "assets/imported/asset-import-gully-card-fit-mobile-3x2-a6e8afa4.a6e8afa445.webp",
+      "width": 900,
+      "height": 600,
+      "renderTargets": [
+        "website:/characters/"
+      ],
+      "replaceable": true,
+      "tags": [
+        "imported",
+        "owner-approved",
+        "gully-card-fit",
+        "responsive"
+      ],
+      "authorityAssetId": "asset.home.character.gully",
+      "authoritySource": "reference/assets/images/characters/gully.webp",
+      "authoritySha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
+      "handoffCommit": "012877ab7058f8de3c1802d2a572834a57ae2666",
+      "handoffMasterSha256": "a2f72ce4b16429ddac86a4f38291ed2ad3e6d5073e3d79e1add037dfcb241265",
+      "provenance": {
+        "method": "Pillow WebP quality 90 method 6",
+        "master": "gully-card-fit-mobile-3x2-900x600.png",
+        "alphaPreserved": true,
+        "alphaBounds": [
+          251,
+          36,
+          636,
+          566
+        ]
+      }
     }
   ]
 }

@@ -74,6 +74,20 @@
   ],
   "registeredAssetSnapshot": [
     {
+      "id": "asset.import.gully-card-fit-desktop-7x4.431513d3",
+      "source": "assets/imported/asset-import-gully-card-fit-desktop-7x4-431513d3.431513d3b1.webp",
+      "sha256": "431513d3b1ea642582412819b4e37be91b517f011a29ef8dd7bf63bd6030c48d",
+      "bytes": 29794,
+      "category": "characters/card-fit"
+    },
+    {
+      "id": "asset.import.gully-card-fit-mobile-3x2.a6e8afa4",
+      "source": "assets/imported/asset-import-gully-card-fit-mobile-3x2-a6e8afa4.a6e8afa445.webp",
+      "sha256": "a6e8afa445bde0c16837784850da3622de7705ae23ad11d2db1fdf0994fac8bd",
+      "bytes": 29570,
+      "category": "characters/card-fit"
+    },
+    {
       "id": "asset.home.world.desktop",
       "source": "reference/assets/images/world/candy-kingdom.webp",
       "sha256": "da8261fa30f6535f5288f52841dc2123d21a3251340e5d7888d576b7531809b4",
@@ -715,6 +729,15 @@
     "sha256": "fb614e1f5293b226d38b47265b88f3ae65d775158ab2c3d85f62ad739f427482",
     "approvalScope": "local owner-preview only; not blanket public-marketing approval",
     "note": "Only selected raw QA captures/result proof listed in the capture ledger are represented. Source ZIP and diagnostic-footer captures are not shipped."
+  },
+  "gullyCardFitRegistration": {
+    "date": "2026-10-02",
+    "handoffCommit": "012877ab7058f8de3c1802d2a572834a57ae2666",
+    "authorityAssetId": "asset.home.character.gully",
+    "authoritySha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea",
+    "previousRegisteredCount": 68,
+    "registeredCount": 70,
+    "scope": "Two quality-90 WebP card-fit derivatives; canonical square and gameplay sources unchanged"
   },
   "ownerAuthoringRegistration": {
     "date": "2026-10-02",
