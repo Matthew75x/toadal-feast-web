@@ -276,6 +276,24 @@
           }
         }
       ]
+    },
+    {
+      "id": "template.toadal-media",
+      "name": "TOADAL Media",
+      "description": "Start from the canonical Media page and reuse its TOADAL layout. Edit its headings, copy, images and alt text, captions, and related links; review each section before publishing. This is a page starter, not a downloadable media library.",
+      "sourcePageId": "page.media"
+    },
+    {
+      "id": "template.article-story",
+      "name": "Article / Story-style Page",
+      "description": "Start from the canonical Devlog page structure. Edit the article heading, narrative, images and alt text, captions, and related links, and reuse or arrange its sections. This creates an ordinary page; it is not a reader or story catalogue entry.",
+      "sourcePageId": "page.news-article"
+    },
+    {
+      "id": "template.information",
+      "name": "Information Page",
+      "description": "Start from the canonical About page structure. Edit headings, explanatory copy, images and alt text, links, and reusable information sections to suit the page.",
+      "sourcePageId": "page.about"
     }
   ],
   "sectionPatterns": [
