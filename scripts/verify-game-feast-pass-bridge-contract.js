@@ -11,6 +11,7 @@ const json = rel => JSON.parse(read(rel));
 const bridge = json('docs/implementation/game-feast-pass-bridge.schema.json');
 const progression = json('docs/implementation/progression-state.schema.json');
 const guest = read('dist/assets/js/guest-progression.js');
+const guestAuthority = read('studio-project/toadal-feast-website/reference/assets/js/guest-progression.js');
 const definitions = read('dist/assets/js/progression-definitions.js');
 const contract = read('docs/implementation/GAME_FEAST_PASS_BRIDGE_CONTRACT.md');
 
@@ -34,7 +35,9 @@ assert.ok(profileProps.selectedBadge, 'existing selectedBadge field must remain'
 assert.ok(profileProps.selectedTitle, 'selectedTitle must have its own profile field');
 assert.deepEqual(profileProps.selectedTitle.type, ['string','null']);
 assert.match(guest, /selectedBadge:\s*null,\s*selectedTitle:\s*null/,
-  'guest profile defaults must keep Badge and Title separate');
+  'generated guest profile defaults must keep Badge and Title separate');
+assert.match(guestAuthority, /selectedBadge:\s*null,\s*selectedTitle:\s*null/,
+  'Studio guest profile authority must keep Badge and Title separate');
 
 assert.match(definitions, /starter-config-editable-not-canonical/,
   'website reward configuration must remain explicitly non-canonical');
@@ -42,6 +45,10 @@ assert.equal(guest.includes('game:feat:'), false,
   'guest runtime must not silently ingest game accomplishments yet');
 assert.equal(guest.includes('game:title:'), false,
   'guest runtime must not silently ingest game Titles yet');
+assert.equal(guestAuthority.includes('game:feat:'), false,
+  'Studio guest authority must not silently ingest game accomplishments yet');
+assert.equal(guestAuthority.includes('game:title:'), false,
+  'Studio guest authority must not silently ingest game Titles yet');
 
 assert.match(contract, /does\s+(?:\*\*)?not(?:\*\*)?\s+read the game save/i);
 assert.match(contract, /must not turn a bridge accomplishment directly into/i);
