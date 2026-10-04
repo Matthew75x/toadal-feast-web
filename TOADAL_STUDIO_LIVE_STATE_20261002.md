@@ -1,4 +1,4 @@
-# TOADAL Studio / Website Live State — 2026-10-02
+> **Historical chronology notice (2026-10-03):** This file preserves successive Studio/website checkpoints and intentionally contains superseded sections. It is not the concise current authority. Use [docs/authority/CURRENT_STATE_20261003.md](docs/authority/CURRENT_STATE_20261003.md) for current website-lane status, and use the separate current Studio V5.1 checkpoint record for Studio engineering authority.\n\n# TOADAL Studio / Website Live State — 2026-10-02
 
 ## Owner self-service foundation — 2026-10-03 (supersedes local capability/status sections below)
 
