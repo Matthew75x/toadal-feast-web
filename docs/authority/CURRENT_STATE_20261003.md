@@ -65,3 +65,6 @@ Use:
 - `archive/` for intentionally preserved historical heads.
 
 Close and archive finished lanes. Do not leave old drafts open indefinitely.
+## Cleanup record
+
+See [CLEANUP_RECEIPT_20261003.md](CLEANUP_RECEIPT_20261003.md) for the executed PR/branch cleanup and current branch count.
