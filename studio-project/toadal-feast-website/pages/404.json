@@ -8,18 +8,57 @@
   "components": [
     {
       "id": "component.404.main",
-      "type": "core.content-section",
+      "type": "layout.container",
       "props": {
-        "heading": "That path wandered off.",
-        "headingLevel": 1,
-        "body": "This page is not part of the current website preview. Head Home, browse playable previews, explore the World, read Stories, or search the Feast at /search/."
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-content-section shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "404 recovery content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.404.main.heading",
+            "type": "core.text",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "h1",
+              "className": "",
+              "attributes": {},
+              "style": "",
+              "layerName": "That path wandered off.",
+              "text": "That path wandered off."
+            }
+          },
+          {
+            "id": "component.404.main.body",
+            "type": "core.text",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "p",
+              "className": "",
+              "attributes": {},
+              "style": "",
+              "layerName": "Recovery guidance",
+              "text": "This page is not part of the current website preview. Head Home, browse playable previews, explore the World, read Stories, or search the Feast at /search/."
+            }
+          }
+        ]
       }
     },
     {
       "id": "component.404.recovery",
-      "type": "layout.grid",
+      "type": "layout.container",
       "props": {
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-layout studio-layout-grid",
+        "attributes": {},
+        "style": "",
+        "layerName": "404 recovery links",
         "anchorId": "404-recovery",
+        "mode": "grid",
         "columns": 2,
         "gap": 12,
         "children": [
@@ -27,9 +66,14 @@
             "id": "component.404.home",
             "type": "core.button",
             "props": {
-              "symbolId": "symbol.site.primary-button",
-              "label": "Go Home",
+              "authoringVersion": 1,
+              "tag": "a",
+              "className": "btn primary",
+              "attributes": {},
+              "style": "",
+              "layerName": "Go Home",
               "href": "/",
+              "label": "Go Home",
               "kind": "primary"
             }
           },
@@ -37,9 +81,14 @@
             "id": "component.404.play",
             "type": "core.button",
             "props": {
-              "symbolId": "symbol.site.secondary-button",
-              "label": "Browse previews",
+              "authoringVersion": 1,
+              "tag": "a",
+              "className": "btn secondary",
+              "attributes": {},
+              "style": "",
+              "layerName": "Browse previews",
               "href": "/play/",
+              "label": "Browse previews",
               "kind": "secondary"
             }
           },
@@ -47,9 +96,14 @@
             "id": "component.404.world",
             "type": "core.button",
             "props": {
-              "symbolId": "symbol.site.secondary-button",
-              "label": "Explore the World",
+              "authoringVersion": 1,
+              "tag": "a",
+              "className": "btn secondary",
+              "attributes": {},
+              "style": "",
+              "layerName": "Explore the World",
               "href": "/world/",
+              "label": "Explore the World",
               "kind": "secondary"
             }
           },
@@ -57,9 +111,14 @@
             "id": "component.404.stories",
             "type": "core.button",
             "props": {
-              "symbolId": "symbol.site.secondary-button",
-              "label": "Stories & Media",
+              "authoringVersion": 1,
+              "tag": "a",
+              "className": "btn secondary",
+              "attributes": {},
+              "style": "",
+              "layerName": "Stories & Media",
               "href": "/stories/",
+              "label": "Stories & Media",
               "kind": "secondary"
             }
           },
@@ -67,9 +126,14 @@
             "id": "component.404.search",
             "type": "core.button",
             "props": {
-              "symbolId": "symbol.site.secondary-button",
-              "label": "Search the Feast",
+              "authoringVersion": 1,
+              "tag": "a",
+              "className": "btn secondary",
+              "attributes": {},
+              "style": "",
+              "layerName": "Search the Feast",
               "href": "/search/",
+              "label": "Search the Feast",
               "kind": "secondary"
             }
           }

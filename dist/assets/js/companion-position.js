@@ -61,14 +61,14 @@
       };
     }
 
-    function clampPosition(nextX, nextY) {
+    function clampPosition(nextX, nextY, width, height) {
       var view = viewport();
-      var width = root.offsetWidth || button.offsetWidth;
-      var height = root.offsetHeight || button.offsetHeight;
-      var minX = view.left + readSafeInset('left') + EDGE_GAP;
-      var minY = view.top + readSafeInset('top') + EDGE_GAP;
-      var maxX = Math.max(minX, view.left + view.width - readSafeInset('right') - EDGE_GAP - width);
-      var maxY = Math.max(minY, view.top + view.height - readSafeInset('bottom') - EDGE_GAP - height);
+      width = width || root.offsetWidth || button.offsetWidth;
+      height = height || root.offsetHeight || button.offsetHeight;
+      var minX = Math.ceil(view.left + readSafeInset('left') + EDGE_GAP);
+      var minY = Math.ceil(view.top + readSafeInset('top') + EDGE_GAP);
+      var maxX = Math.max(minX, Math.floor(view.left + view.width - readSafeInset('right') - EDGE_GAP - width));
+      var maxY = Math.max(minY, Math.floor(view.top + view.height - readSafeInset('bottom') - EDGE_GAP - height));
       return {
         x: Math.round(Math.max(minX, Math.min(maxX, nextX))),
         y: Math.round(Math.max(minY, Math.min(maxY, nextY)))
@@ -122,16 +122,25 @@
       var left = side === 'right' ? anchor.right + EDGE_GAP : anchor.left - panelWidth - EDGE_GAP;
       left = Math.max(view.left + safeLeft, Math.min(viewRight - panelWidth, left));
 
-      panel.style.setProperty('left', Math.round(left) + 'px', 'important');
-      panel.style.setProperty('top', Math.round(top) + 'px', 'important');
-      panel.setAttribute('data-bubble-placement', vertical + '-' + side);
+      // The visible bubble, not just its character anchor, must leave navigation usable.
+      var preferred = { x: Math.round(left), y: Math.round(top) };
+      var next = avoidControls(preferred, panelWidth, panelHeight, controlRects(true).concat([anchor]));
+      panel.style.setProperty('left', next.x + 'px', 'important');
+      panel.style.setProperty('top', next.y + 'px', 'important');
+      panel.setAttribute('data-bubble-placement', vertical + '-' + side +
+        (next.x !== preferred.x || next.y !== preferred.y ? '-safe' : ''));
     }
 
     function applyPosition(nextX, nextY, persist) {
       var dock = !drag || !drag.moved ? mobileDock() : null;
       setDock(dock);
       var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
-      if (!dock && !manualPosition && !drag) next = avoidControls(next);
+      var safe = avoidControls(next);
+      if (dock && (safe.x !== next.x || safe.y !== next.y)) {
+        setDock(null);
+        safe = avoidControls(clampPosition(safe.x, safe.y));
+      }
+      next = safe;
       x = next.x;
       y = next.y;
       root.style.setProperty('--toadal-companion-x', x + 'px');
@@ -144,41 +153,55 @@
       if (persist) persistPosition();
     }
 
-    function avoidControls(preferred) {
+    function controlRects(includeNavigation) {
       var view = viewport();
-      var width = root.offsetWidth || button.offsetWidth;
-      var height = root.offsetHeight || button.offsetHeight;
-      var header = document.querySelector('.site-header');
-      var contentTop = header ? Math.max(view.top, header.getBoundingClientRect().bottom) : view.top;
-      var controls = Array.from(document.querySelectorAll('a[href], button, input, select, textarea, [role="button"]')).filter(function (control) {
+      var selectors = 'a[href], button, input, select, textarea, [role="button"], .detail-breadcrumb, dialog[open], [role="dialog"]';
+      if (includeNavigation) selectors += ', .site-header, [role="navigation"]';
+      return Array.from(document.querySelectorAll(selectors)).filter(function (control) {
         if (root.contains(control)) return false;
         var style = getComputedStyle(control);
         var rect = control.getBoundingClientRect();
         return style.visibility !== 'hidden' && style.display !== 'none' && style.opacity !== '0' &&
-          rect.width > 0 && rect.height > 0 && rect.bottom > contentTop && rect.top < view.top + view.height &&
+          rect.width > 0 && rect.height > 0 && rect.bottom > view.top && rect.top < view.top + view.height &&
           rect.right > view.left && rect.left < view.left + view.width;
       }).map(function (control) { return control.getBoundingClientRect(); });
+    }
+
+    function avoidControls(preferred, width, height, controls) {
+      var view = viewport();
+      width = width || root.offsetWidth || button.offsetWidth;
+      height = height || root.offsetHeight || button.offsetHeight;
+      controls = controls || controlRects(false);
       function collisionArea(position) {
         return controls.reduce(function (area, rect) {
-          var overlapWidth = Math.max(0, Math.min(position.x + width + 8, rect.right) - Math.max(position.x - 8, rect.left));
-          var overlapHeight = Math.max(0, Math.min(position.y + height + 8, rect.bottom) - Math.max(position.y - 8, rect.top, contentTop));
+          var overlapWidth = Math.max(0, Math.min(position.x + width + EDGE_GAP, rect.right) - Math.max(position.x - EDGE_GAP, rect.left));
+          var overlapHeight = Math.max(0, Math.min(position.y + height + EDGE_GAP, rect.bottom) - Math.max(position.y - EDGE_GAP, rect.top));
           return area + overlapWidth * overlapHeight;
         }, 0);
       }
       if (collisionArea(preferred) === 0) return preferred;
-      var right = view.left + view.width - width - EDGE_GAP;
-      var left = view.left + EDGE_GAP;
-      var bottom = view.top + view.height - height - EDGE_GAP;
-      var top = contentTop + EDGE_GAP;
-      var candidates = [preferred, { x: right, y: bottom }, { x: left, y: bottom }, { x: right, y: top }, { x: left, y: top }];
+      // Rectangle edges enumerate free regions without a screenshot-specific offset.
+      var xs = [preferred.x, view.left + EDGE_GAP, view.left + view.width - width - EDGE_GAP];
+      var ys = [preferred.y, view.top + EDGE_GAP, view.top + view.height - height - EDGE_GAP];
+      controls.forEach(function (rect) {
+        xs.push(Math.floor(rect.left - width - EDGE_GAP), Math.ceil(rect.right + EDGE_GAP));
+        ys.push(Math.floor(rect.top - height - EDGE_GAP), Math.ceil(rect.bottom + EDGE_GAP));
+      });
       var best = preferred;
       var bestArea = collisionArea(preferred);
-      for (var i = 1; i < candidates.length; i += 1) {
-        var candidate = clampPosition(candidates[i].x, candidates[i].y);
-        var area = collisionArea(candidate);
-        if (area < bestArea) { best = candidate; bestArea = area; }
-        if (bestArea === 0) break;
-      }
+      var bestDistance = Infinity;
+      Array.from(new Set(xs)).forEach(function (left) {
+        Array.from(new Set(ys)).forEach(function (top) {
+          var candidate = clampPosition(left, top, width, height);
+          var area = collisionArea(candidate);
+          var distance = Math.pow(candidate.x - preferred.x, 2) + Math.pow(candidate.y - preferred.y, 2);
+          if (area < bestArea || (area === bestArea && distance < bestDistance)) {
+            best = candidate;
+            bestArea = area;
+            bestDistance = distance;
+          }
+        });
+      });
       return best;
     }
 
@@ -316,14 +339,14 @@
     window.addEventListener('resize', clampAfterViewportChange, { passive: true });
     window.addEventListener('orientationchange', clampAfterViewportChange, { passive: true });
     window.addEventListener('scroll', function () {
-      if (!manualPosition && !drag) schedulePosition(x, y, false);
+      if (!drag) schedulePosition(x, y, false);
     }, { passive: true });
     window.addEventListener('load', function () {
       if (!manualPosition && !drag) schedulePosition(x, y, false);
     }, { once: true });
     if (window.ResizeObserver) {
       var layoutObserver = new ResizeObserver(function () {
-        if (!manualPosition && !drag) schedulePosition(x, y, false);
+        if (!drag) schedulePosition(x, y, false);
       });
       var main = document.querySelector('main');
       if (main) layoutObserver.observe(main);
@@ -332,7 +355,21 @@
       window.visualViewport.addEventListener('resize', clampAfterViewportChange, { passive: true });
       window.visualViewport.addEventListener('scroll', clampAfterViewportChange, { passive: true });
     }
-    var panelObserver = new MutationObserver(placePanel);
+    var panelWasVisible = panelVisible();
+    var panelObserver = new MutationObserver(function () {
+      var visible = panelVisible();
+      if (visible !== panelWasVisible) {
+        panelWasVisible = visible;
+        if (!drag) {
+          // Opening the bubble scales the companion. Re-evaluate its hit area
+          // against the current page controls after the expanded state lands.
+          // Preserve deliberate owner placement; use the default anchor again
+          // when a non-manual companion is minimized.
+          var preferred = !visible && !manualPosition ? defaultPosition() : { x: x, y: y };
+          applyPosition(preferred.x, preferred.y, false);
+        } else placePanel();
+      } else placePanel();
+    });
     panelObserver.observe(panel, { attributes: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
 
     var initial = loadPosition();

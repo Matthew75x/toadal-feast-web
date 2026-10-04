@@ -1,0 +1,932 @@
+TAP version 13
+# (node:66940) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: canonical Gully authority, derivative handoff hashes, and six frozen gameplay files pass end to end
+ok 1 - canonical Gully authority, derivative handoff hashes, and six frozen gameplay files pass end to end
+  ---
+  duration_ms: 694.4241
+  type: 'test'
+  ...
+# Subtest: accepts imported Gully derivatives with either approved desktop or mobile master pin
+ok 2 - accepts imported Gully derivatives with either approved desktop or mobile master pin
+  ---
+  duration_ms: 8.9352
+  type: 'test'
+  ...
+# Subtest: rejects a derivative registry hash that does not match its source bytes
+ok 3 - rejects a derivative registry hash that does not match its source bytes
+  ---
+  duration_ms: 2.9639
+  type: 'test'
+  ...
+# Subtest: rejects a broken canonical authority link or unapproved authority asset
+ok 4 - rejects a broken canonical authority link or unapproved authority asset
+  ---
+  duration_ms: 3.3049
+  type: 'test'
+  ...
+# Subtest: rejects a missing imported derivative source file
+ok 5 - rejects a missing imported derivative source file
+  ---
+  duration_ms: 1.82
+  type: 'test'
+  ...
+# Subtest: strict nesting, quoted delimiters, HTML void tags and deterministic bounded IDs
+ok 6 - strict nesting, quoted delimiters, HTML void tags and deterministic bounded IDs
+  ---
+  duration_ms: 15.3265
+  type: 'test'
+  ...
+# Subtest: named and numeric entities decode once; nonbreaking and multicodepoint values survive
+ok 7 - named and numeric entities decode once; nonbreaking and multicodepoint values survive
+  ---
+  duration_ms: 1.2737
+  type: 'test'
+  ...
+# Subtest: leading, trailing and inter-element whitespace stays in original flow order
+ok 8 - leading, trailing and inter-element whitespace stays in original flow order
+  ---
+  duration_ms: 0.625
+  type: 'test'
+  ...
+# Subtest: nested linked images preserve the source tree and use the actual asset/href/target fields
+ok 9 - nested linked images preserve the source tree and use the actual asset/href/target fields
+  ---
+  duration_ms: 0.6139
+  type: 'test'
+  ...
+# Subtest: href and target are separate typed props for images and visual containers
+ok 10 - href and target are separate typed props for images and visual containers
+  ---
+  duration_ms: 0.7176
+  type: 'test'
+  ...
+# Subtest: forms retain field semantics, exact nesting, booleans, values and raw textarea content
+ok 11 - forms retain field semantics, exact nesting, booleans, values and raw textarea content
+  ---
+  duration_ms: 1.1791
+  type: 'test'
+  ...
+# Subtest: responsive image source and srcset attributes remain static and complete
+ok 12 - responsive image source and srcset attributes remain static and complete
+  ---
+  duration_ms: 0.9102
+  type: 'test'
+  ...
+# Subtest: runtime iframe/script and non-native content are classified and never silently stripped
+ok 13 - runtime iframe/script and non-native content are classified and never silently stripped
+  ---
+  duration_ms: 1.8038
+  type: 'test'
+  ...
+# Subtest: inert SVG keeps namespace attribute case; active/reference SVG remains runtime-only
+ok 14 - inert SVG keeps namespace attribute case; active/reference SVG remains runtime-only
+  ---
+  duration_ms: 1.1047
+  type: 'test'
+  ...
+# Subtest: current owner tag gaps are explicit and can be resolved by the actual validator contract
+ok 15 - current owner tag gaps are explicit and can be resolved by the actual validator contract
+  ---
+  duration_ms: 1.4787
+  type: 'test'
+  ...
+# Subtest: registered CSS background URLs gain typed identity while canonical CSS stays intact
+ok 16 - registered CSS background URLs gain typed identity while canonical CSS stays intact
+  ---
+  duration_ms: 0.9846
+  type: 'test'
+  ...
+# Subtest: only the three qualified runtime fragments remain as read-only specialized runtime blocks
+ok 17 - only the three qualified runtime fragments remain as read-only specialized runtime blocks
+  ---
+  duration_ms: 2.5156
+  type: 'test'
+  ...
+# Subtest: collection classification is general and direct-sibling based
+ok 18 - collection classification is general and direct-sibling based
+  ---
+  duration_ms: 2.2044
+  type: 'test'
+  ...
+# Subtest: Toadal whole-card href survives profile mutation and deep heading names stay approved
+ok 19 - Toadal whole-card href survives profile mutation and deep heading names stay approved
+  ---
+  duration_ms: 2.2107
+  type: 'test'
+  ...
+# Subtest: all route families retain page/component metadata, siblings, slots and variants
+ok 20 - all route families retain page/component metadata, siblings, slots and variants
+  ---
+  duration_ms: 0.7406
+  type: 'test'
+  ...
+# Subtest: route and asset resolution preserve exact source destinations and reject basename guessing
+ok 21 - route and asset resolution preserve exact source destinations and reject basename guessing
+  ---
+  duration_ms: 1.0369
+  type: 'test'
+  ...
+# Subtest: write CLI requires explicit scope and the qualified pilot flag
+ok 22 - write CLI requires explicit scope and the qualified pilot flag
+  ---
+  duration_ms: 228.4977
+  type: 'test'
+  ...
+# (node:54564) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Editorial publication, featured/latest/trending slots, quote/related projection, and roadmap checks passed.
+# Subtest: scripts\\editorial-manifest.test.mjs
+ok 3 - scripts\\editorial-manifest.test.mjs
+  ---
+  duration_ms: 217.1137
+  type: 'test'
+  ...
+# Subtest: uses the exact four scoped keys and safe guest defaults
+ok 24 - uses the exact four scoped keys and safe guest defaults
+  ---
+  duration_ms: 6.6378
+  type: 'test'
+  ...
+# Subtest: persists events and state across store reloads; route event is idempotent
+ok 25 - persists events and state across store reloads; route event is idempotent
+  ---
+  duration_ms: 1.7032
+  type: 'test'
+  ...
+# Subtest: malformed JSON falls back safely with diagnostics and is not overwritten just by reading
+ok 26 - malformed JSON falls back safely with diagnostics and is not overwritten just by reading
+  ---
+  duration_ms: 0.4573
+  type: 'test'
+  ...
+# Subtest: migrates missing legacy fields and preserves unknown fields on the same schema version
+ok 27 - migrates missing legacy fields and preserves unknown fields on the same schema version
+  ---
+  duration_ms: 1.136
+  type: 'test'
+  ...
+# Subtest: future schema is safe to read and never overwritten by progression writes
+ok 28 - future schema is safe to read and never overwritten by progression writes
+  ---
+  duration_ms: 0.639
+  type: 'test'
+  ...
+# Subtest: quest rewards require completion and are claimed once without direct score writes
+ok 29 - quest rewards require completion and are claimed once without direct score writes
+  ---
+  duration_ms: 0.7083
+  type: 'test'
+  ...
+# Subtest: Wicked Bites personal best persists locally only from the validated website adapter contract
+ok 30 - Wicked Bites personal best persists locally only from the validated website adapter contract
+  ---
+  duration_ms: 1.5909
+  type: 'test'
+  ...
+# Subtest: completed score runs accept equal later runs, reject unsafe values, and cap history at fifty
+ok 31 - completed score runs accept equal later runs, reject unsafe values, and cap history at fifty
+  ---
+  duration_ms: 20.7667
+  type: 'test'
+  ...
+# Subtest: legacy local high score is migrated to a bounded completed run without adding storage keys
+ok 32 - legacy local high score is migrated to a bounded completed run without adding storage keys
+  ---
+  duration_ms: 0.7753
+  type: 'test'
+  ...
+# Subtest: corrupt local score records are read-only and preserved instead of normalized into writes
+ok 33 - corrupt local score records are read-only and preserved instead of normalized into writes
+  ---
+  duration_ms: 1.0269
+  type: 'test'
+  ...
+# Subtest: UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days
+ok 34 - UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days
+  ---
+  duration_ms: 0.7971
+  type: 'test'
+  ...
+# Subtest: reset removes only the four guest progression keys and leaves unrelated data intact
+ok 35 - reset removes only the four guest progression keys and leaves unrelated data intact
+  ---
+  duration_ms: 0.6651
+  type: 'test'
+  ...
+# Subtest: milestones are surfaced as truthful locked/unlocked non-entitlement rewards
+ok 36 - milestones are surfaced as truthful locked/unlocked non-entitlement rewards
+  ---
+  duration_ms: 0.3502
+  type: 'test'
+  ...
+# Subtest: route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes
+ok 37 - route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes
+  ---
+  duration_ms: 0.5149
+  type: 'test'
+  ...
+# Subtest: configured route events count only the exact normalized event route
+ok 38 - configured route events count only the exact normalized event route
+  ---
+  duration_ms: 0.696
+  type: 'test'
+  ...
+# Subtest: boot persists configured route activity even when the page has no progression root
+ok 39 - boot persists configured route activity even when the page has no progression root
+  ---
+  duration_ms: 1.0574
+  type: 'test'
+  ...
+# Subtest: daily snapshot computes claimed status against one UTC period value
+ok 40 - daily snapshot computes claimed status against one UTC period value
+  ---
+  duration_ms: 0.4189
+  type: 'test'
+  ...
+# Subtest: missing browser storage reports non-persistent memory mode and has no economy fallback
+ok 41 - missing browser storage reports non-persistent memory mode and has no economy fallback
+  ---
+  duration_ms: 0.3882
+  type: 'test'
+  ...
+# Subtest: refreshes quest and daily state across stale stores before granting claims
+ok 42 - refreshes quest and daily state across stale stores before granting claims
+  ---
+  duration_ms: 0.8069
+  type: 'test'
+  ...
+# Subtest: Home discoveries use the existing discoveries key and persist exactly three gated candies
+ok 43 - Home discoveries use the existing discoveries key and persist exactly three gated candies
+  ---
+  duration_ms: 2.1131
+  type: 'test'
+  ...
+# Subtest: all six Home candy collection orders yield one mapped schema collectible and one quest event per treat
+ok 44 - all six Home candy collection orders yield one mapped schema collectible and one quest event per treat
+  ---
+  duration_ms: 20.7272
+  type: 'test'
+  ...
+# Subtest: existing users migrate all already-recorded candies at boot exactly once
+ok 45 - existing users migrate all already-recorded candies at boot exactly once
+  ---
+  duration_ms: 1.2389
+  type: 'test'
+  ...
+# Subtest: boot reconciliation runs before Feast Pass, Rewards, and Profile render without requiring Home
+ok 46 - boot reconciliation runs before Feast Pass, Rewards, and Profile render without requiring Home
+  ---
+  duration_ms: 3.3922
+  type: 'test'
+  ...
+# Subtest: all three legacy candy discoveries migrate to exactly three local Treat records
+ok 47 - all three legacy candy discoveries migrate to exactly three local Treat records
+  ---
+  duration_ms: 0.9837
+  type: 'test'
+  ...
+# Subtest: Golden Block hits are discovery-only until hit four and the candy is collected
+ok 48 - Golden Block hits are discovery-only until hit four and the candy is collected
+  ---
+  duration_ms: 0.954
+  type: 'test'
+  ...
+# Subtest: Home reconciliation preserves future pass, quest, and malformed records without partial writes
+ok 49 - Home reconciliation preserves future pass, quest, and malformed records without partial writes
+  ---
+  duration_ms: 0.3575
+  type: 'test'
+  ...
+# Subtest: Home candy transaction restores all three in-memory records if a later storage write fails
+ok 50 - Home candy transaction restores all three in-memory records if a later storage write fails
+  ---
+  duration_ms: 0.8383
+  type: 'test'
+  ...
+# Subtest: Home candy transaction rolls back the discovery write when the second pass write fails
+ok 51 - Home candy transaction rolls back the discovery write when the second pass write fails
+  ---
+  duration_ms: 0.9659
+  type: 'test'
+  ...
+# Subtest: a future Home-interaction schema is readable but cannot be overwritten
+ok 52 - a future Home-interaction schema is readable but cannot be overwritten
+  ---
+  duration_ms: 0.4093
+  type: 'test'
+  ...
+# Subtest: malformed Home-interaction data is preserved and read-only until a safe migration exists
+ok 53 - malformed Home-interaction data is preserved and read-only until a safe migration exists
+  ---
+  duration_ms: 0.419
+  type: 'test'
+  ...
+# Subtest: runtime list rendering uses div role=list/listitem semantics
+ok 54 - runtime list rendering uses div role=list/listitem semantics
+  ---
+  duration_ms: 0.5427
+  type: 'test'
+  ...
+# Subtest: daily button label and aria-disabled track claim state; quest entries show configured reward metadata
+ok 55 - daily button label and aria-disabled track claim state; quest entries show configured reward metadata
+  ---
+  duration_ms: 3.2202
+  type: 'test'
+  ...
+# (node:44672) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Community exposes feed and guidelines previews without fabricated social activity
+ok 56 - Community exposes feed and guidelines previews without fabricated social activity
+  ---
+  duration_ms: 15.7103
+  type: 'test'
+  ...
+# Subtest: Store updates lead to News and Roadmap without implying a subscription
+ok 57 - Store updates lead to News and Roadmap without implying a subscription
+  ---
+  duration_ms: 7.6191
+  type: 'test'
+  ...
+# Subtest: About supplies required page structure while leaving mission and philosophy unpublished
+ok 58 - About supplies required page structure while leaving mission and philosophy unpublished
+  ---
+  duration_ms: 8.7052
+  type: 'test'
+  ...
+# Subtest: Legal includes a last-updated slot without inventing a policy date or text
+ok 59 - Legal includes a last-updated slot without inventing a policy date or text
+  ---
+  duration_ms: 6.2437
+  type: 'test'
+  ...
+# Subtest: App retains real gameplay, distinguishes web and app, and uses the approved app icon only as app art
+ok 60 - App retains real gameplay, distinguishes web and app, and uses the approved app icon only as app art
+  ---
+  duration_ms: 12.8679
+  type: 'test'
+  ...
+# Manifest family matrix: 30/30 distinct families have registered source-backed route records.
+# (node:60452) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: all 30 original manifest families have distinct, source-backed route records
+ok 61 - all 30 original manifest families have distinct, source-backed route records
+  ---
+  duration_ms: 28.8959
+  type: 'test'
+  ...
+# Subtest: thin editorial, leaderboard, roadmap, and support experiences use real current data states
+ok 62 - thin editorial, leaderboard, roadmap, and support experiences use real current data states
+  ---
+  duration_ms: 41.7506
+  type: 'test'
+  ...
+# Subtest: Media uses genuine stills, truthful empty categories, optimized assets, and working product routes
+ok 63 - Media uses genuine stills, truthful empty categories, optimized assets, and working product routes
+  ---
+  duration_ms: 9.4062
+  type: 'test'
+  ...
+# Subtest: Player HUD labels host-measured time and does not imply an active challenge
+ok 64 - Player HUD labels host-measured time and does not imply an active challenge
+  ---
+  duration_ms: 8.4687
+  type: 'test'
+  ...
+# Subtest: guest progression and connected-service boundaries stay within existing contracts
+ok 65 - guest progression and connected-service boundaries stay within existing contracts
+  ---
+  duration_ms: 28.0776
+  type: 'test'
+  ...
+# (node:32664) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: all lane-owned manifest pages have valid route records and authored content
+ok 66 - all lane-owned manifest pages have valid route records and authored content
+  ---
+  duration_ms: 70.377
+  type: 'test'
+  ...
+# Subtest: App shows all four genuine mobile modes without inventing an Infinite capture
+ok 67 - App shows all four genuine mobile modes without inventing an Infinite capture
+  ---
+  duration_ms: 14.169
+  type: 'test'
+  ...
+# Subtest: Account keeps auth gated and reads live browser-local guest status
+ok 68 - Account keeps auth gated and reads live browser-local guest status
+  ---
+  duration_ms: 5.1787
+  type: 'test'
+  ...
+# Subtest: Community and Store keep real actions disabled and offer working guide links
+ok 69 - Community and Store keep real actions disabled and offer working guide links
+  ---
+  duration_ms: 13.2085
+  type: 'test'
+  ...
+# Subtest: Contact presents all manifest fields but every data-entry and submit control is disabled
+ok 70 - Contact presents all manifest fields but every data-entry and submit control is disabled
+  ---
+  duration_ms: 10.2247
+  type: 'test'
+  ...
+# Subtest: About, construction, legal and 404 remain truthful and useful
+ok 71 - About, construction, legal and 404 remain truthful and useful
+  ---
+  duration_ms: 16.7279
+  type: 'test'
+  ...
+# Subtest: enabled unavailable-action guides use the shared construction semantics
+ok 72 - enabled unavailable-action guides use the shared construction semantics
+  ---
+  duration_ms: 34.4612
+  type: 'test'
+  ...
+# (node:63800) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Profile exposes guest identity, current local title, route visits, achievements, and collection hooks
+ok 73 - Profile exposes guest identity, current local title, route visits, achievements, and collection hooks
+  ---
+  duration_ms: 17.5258
+  type: 'test'
+  ...
+# Subtest: Characters provides one accessible artwork-view discovery control and status per approved record
+ok 74 - Characters provides one accessible artwork-view discovery control and status per approved record
+  ---
+  duration_ms: 20.0058
+  type: 'test'
+  ...
+# (node:42704) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: all-time best survives eviction from the latest 50 runs and remains writable
+ok 75 - all-time best survives eviction from the latest 50 runs and remains writable
+  ---
+  duration_ms: 26.3937
+  type: 'test'
+  ...
+# Subtest: best below retained run maximum is still invalid and never overwritten
+ok 76 - best below retained run maximum is still invalid and never overwritten
+  ---
+  duration_ms: 1.3485
+  type: 'test'
+  ...
+# Subtest: runtime-generated quest and score links retain root/project hosting and query/fragments
+ok 77 - runtime-generated quest and score links retain root/project hosting and query/fragments
+  ---
+  duration_ms: 0.9991
+  type: 'test'
+  ...
+# Subtest: authored sibling HUD receives validated lifecycle messages, timer and completed local score
+ok 78 - authored sibling HUD receives validated lifecycle messages, timer and completed local score
+  ---
+  duration_ms: 55.8052
+  type: 'test'
+  ...
+# Subtest: character artwork discovery persists idempotently without inventing progression rewards
+ok 79 - character artwork discovery persists idempotently without inventing progression rewards
+  ---
+  duration_ms: 4.9356
+  type: 'test'
+  ...
+# Subtest: character discovery respects future record and storage failures
+ok 80 - character discovery respects future record and storage failures
+  ---
+  duration_ms: 1.1253
+  type: 'test'
+  ...
+# Subtest: role-button character cards discover by click, touch, Enter, and Space with visible state
+ok 81 - role-button character cards discover by click, touch, Enter, and Space with visible state
+  ---
+  duration_ms: 13.8379
+  type: 'test'
+  ...
+# Subtest: profile anchors discover without suppressing navigation or changing their content
+ok 82 - profile anchors discover without suppressing navigation or changing their content
+  ---
+  duration_ms: 1.02
+  type: 'test'
+  ...
+# Subtest: nested secondary controls do not trigger the enclosing card discovery
+ok 83 - nested secondary controls do not trigger the enclosing card discovery
+  ---
+  duration_ms: 0.6312
+  type: 'test'
+  ...
+# Subtest: legacy discovery buttons still disable and retain the established action label
+ok 84 - legacy discovery buttons still disable and retain the established action label
+  ---
+  duration_ms: 0.7472
+  type: 'test'
+  ...
+# Subtest: actual Home project closes exactly four game cards as native whole-card links
+ok 85 - actual Home project closes exactly four game cards as native whole-card links
+  ---
+  duration_ms: 23.0284
+  type: 'test'
+  ...
+# Subtest: Home rejects unknown games, mismatched IDs, missing art, and invalid routes
+ok 86 - Home rejects unknown games, mismatched IDs, missing art, and invalid routes
+  ---
+  duration_ms: 7.277
+  type: 'test'
+  ...
+# Subtest: actual World project wraps only the three environment cards and preserves locked slots
+ok 87 - actual World project wraps only the three environment cards and preserves locked slots
+  ---
+  duration_ms: 7.8035
+  type: 'test'
+  ...
+# Subtest: World rejects cards with multiple secondary links or malformed discovery structure
+ok 88 - World rejects cards with multiple secondary links or malformed discovery structure
+  ---
+  duration_ms: 3.0523
+  type: 'test'
+  ...
+# Subtest: object closure is idempotent and preserves subsequent owner copy edits
+ok 89 - object closure is idempotent and preserves subsequent owner copy edits
+  ---
+  duration_ms: 10.3198
+  type: 'test'
+  ...
+# Subtest: combined transformation returns only Home and World copies
+ok 90 - combined transformation returns only Home and World copies
+  ---
+  duration_ms: 13.0399
+  type: 'test'
+  ...
+# (node:51212) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: pinned vendored SDK works portably and checks live Studio provenance when configured
+ok 91 - pinned vendored SDK works portably and checks live Studio provenance when configured
+  ---
+  duration_ms: 98.444
+  type: 'test'
+  ...
+# Subtest: Characters projection preserves semantic targets and cross-checks live Studio when configured
+ok 92 - Characters projection preserves semantic targets and cross-checks live Studio when configured
+  ---
+  duration_ms: 1134.2915
+  type: 'test'
+  ...
+# Subtest: native asset URLs use the hash-qualified Studio URL when reference bytes no longer match
+ok 93 - native asset URLs use the hash-qualified Studio URL when reference bytes no longer match
+  ---
+  duration_ms: 4.317
+  type: 'test'
+  ...
+# Subtest: background asset replacement preserves retained gradients and shorthand CSS
+ok 94 - background asset replacement preserves retained gradients and shorthand CSS
+  ---
+  duration_ms: 1.1129
+  type: 'test'
+  ...
+# Subtest: mixed native and legacy components share one projection without shadow HTML
+ok 95 - mixed native and legacy components share one projection without shadow HTML
+  ---
+  duration_ms: 2.8705
+  type: 'test'
+  ...
+# Subtest: explicit renderer injection stays available for isolated tests
+ok 96 - explicit renderer injection stays available for isolated tests
+  ---
+  duration_ms: 1.1326
+  type: 'test'
+  ...
+# Subtest: all pages retain exactly the three registered, locked runtime leaves with original fragments and exact resource policies
+ok 97 - all pages retain exactly the three registered, locked runtime leaves with original fragments and exact resource policies
+  ---
+  duration_ms: 67.9482
+  type: 'test'
+  ...
+# Subtest: exact registered fragments convert while preserving their runtime leaf data and Studio tag set
+ok 98 - exact registered fragments convert while preserving their runtime leaf data and Studio tag set
+  ---
+  duration_ms: 53.1582
+  type: 'test'
+  ...
+# Subtest: unregistered, wrong-route, wrong-parent, altered-fragment, and altered-version inputs fail closed
+ok 99 - unregistered, wrong-route, wrong-parent, altered-fragment, and altered-version inputs fail closed
+  ---
+  duration_ms: 48.0988
+  type: 'test'
+  ...
+# Subtest: the owner tag allowlist covers the actual Studio caption, progress, and tfoot capabilities
+ok 100 - the owner tag allowlist covers the actual Studio caption, progress, and tfoot capabilities
+  ---
+  duration_ms: 0.415
+  type: 'test'
+  ...
+# (node:61988) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: exact accepted public projection preserves author values and replaces only editor identities
+ok 101 - exact accepted public projection preserves author values and replaces only editor identities
+  ---
+  duration_ms: 94.3512
+  type: 'test'
+  ...
+# Subtest: static freshness accepts canonical public output and rejects changed copy, missing recovery link and missing search data
+ok 102 - static freshness accepts canonical public output and rejects changed copy, missing recovery link and missing search data
+  ---
+  duration_ms: 2903.3516
+  type: 'test'
+  ...
+# (node:24608) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: reviewed owner renderer closes presentation dependency deterministically and portably
+ok 103 - reviewed owner renderer closes presentation dependency deterministically and portably
+  ---
+  duration_ms: 104.298
+  type: 'test'
+  ...
+# Subtest: modified native presentation source cannot pass the renderer provenance gate
+ok 104 - modified native presentation source cannot pass the renderer provenance gate
+  ---
+  duration_ms: 33.3735
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier accepts exact accounted HTML and CSS bytes
+ok 105 - protected game artifact verifier accepts exact accounted HTML and CSS bytes
+  ---
+  duration_ms: 29.6682
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects missing published payloads
+ok 106 - protected game artifact verifier rejects missing published payloads
+  ---
+  duration_ms: 14.1477
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects tampered published payload bytes
+ok 107 - protected game artifact verifier rejects tampered published payload bytes
+  ---
+  duration_ms: 16.2533
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects unaccounted protected output
+ok 108 - protected game artifact verifier rejects unaccounted protected output
+  ---
+  duration_ms: 24.4613
+  type: 'test'
+  ...
+# (node:57668) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: publishing routes have static preview shells and do not invent a published catalogue
+ok 109 - publishing routes have static preview shells and do not invent a published catalogue
+  ---
+  duration_ms: 31.723
+  type: 'test'
+  ...
+# Subtest: reader resolves only public series, chapter, and an explicit ordered page manifest
+ok 110 - reader resolves only public series, chapter, and an explicit ordered page manifest
+  ---
+  duration_ms: 1.772
+  type: 'test'
+  ...
+# Subtest: keyboard, swipe, and chapter order obey the content manifest
+ok 111 - keyboard, swipe, and chapter order obey the content manifest
+  ---
+  duration_ms: 0.5282
+  type: 'test'
+  ...
+# Subtest: reader progress persists stable IDs in its own namespace and preserves corrupt data
+ok 112 - reader progress persists stable IDs in its own namespace and preserves corrupt data
+  ---
+  duration_ms: 0.6677
+  type: 'test'
+  ...
+# Subtest: excludes DRAFT and ARCHIVED records and only includes referenced assets
+ok 113 - excludes DRAFT and ARCHIVED records and only includes referenced assets
+  ---
+  duration_ms: 32.7488
+  type: 'test'
+  ...
+# Subtest: removes draft and archived IDs from all projected records and relationships
+ok 114 - removes draft and archived IDs from all projected records and relationships
+  ---
+  duration_ms: 7.7437
+  type: 'test'
+  ...
+# Subtest: includes deliberate PREVIEW series visibly labeled but no preview chapters
+ok 115 - includes deliberate PREVIEW series visibly labeled but no preview chapters
+  ---
+  duration_ms: 6.1355
+  type: 'test'
+  ...
+# Subtest: does not reader-project a PUBLISHED chapter under a PREVIEW series
+ok 116 - does not reader-project a PUBLISHED chapter under a PREVIEW series
+  ---
+  duration_ms: 9.8698
+  type: 'test'
+  ...
+# Subtest: rejects asset traversal, invalid slug requirement, and inconsistent arc ownership/order metadata
+ok 117 - rejects asset traversal, invalid slug requirement, and inconsistent arc ownership/order metadata
+  ---
+  duration_ms: 8.432
+  type: 'test'
+  ...
+# Subtest: projects a PUBLISHED ordered reader manifest deterministically
+ok 118 - projects a PUBLISHED ordered reader manifest deterministically
+  ---
+  duration_ms: 37.9617
+  type: 'test'
+  ...
+# Subtest: public projection allowlists schema fields and excludes private/editorial metadata
+ok 119 - public projection allowlists schema fields and excludes private/editorial metadata
+  ---
+  duration_ms: 10.7752
+  type: 'test'
+  ...
+# Subtest: rejects missing assets, empty/duplicate page order, and unsafe published chapter links
+ok 120 - rejects missing assets, empty/duplicate page order, and unsafe published chapter links
+  ---
+  duration_ms: 8.7895
+  type: 'test'
+  ...
+# Subtest: rejects asset paths that escape the approved root through a symlink
+ok 121 - rejects asset paths that escape the approved root through a symlink
+  ---
+  duration_ms: 9.4694
+  type: 'test'
+  ...
+# Subtest: Pages base-path verification catches HTML-escaped inline CSS and CSS files, while protecting cartridge CSS
+ok 122 - Pages base-path verification catches HTML-escaped inline CSS and CSS files, while protecting cartridge CSS
+  ---
+  duration_ms: 303.3472
+  type: 'test'
+  ...
+# Subtest: accepts safe integers and the real cartridge strictly grouped score format only
+ok 123 - accepts safe integers and the real cartridge strictly grouped score format only
+  ---
+  duration_ms: 2.6189
+  type: 'test'
+  ...
+# Subtest: formats elapsed play time as minutes and seconds
+ok 124 - formats elapsed play time as minutes and seconds
+  ---
+  duration_ms: 0.2251
+  type: 'test'
+  ...
+# Subtest: accepts the exact opaque-origin iframe and rejects sibling or synthetic messages
+ok 125 - accepts the exact opaque-origin iframe and rejects sibling or synthetic messages
+  ---
+  duration_ms: 0.7262
+  type: 'test'
+  ...
+# Subtest: tracks in-memory session best and excludes paused time from play duration
+ok 126 - tracks in-memory session best and excludes paused time from play duration
+  ---
+  duration_ms: 0.6727
+  type: 'test'
+  ...
+# Subtest: does not accept score or completion outside an active run
+ok 127 - does not accept score or completion outside an active run
+  ---
+  duration_ms: 1.106
+  type: 'test'
+  ...
+# Subtest: error and exit stop host-measured session time; a retry starts a fresh run
+ok 128 - error and exit stop host-measured session time; a retry starts a fresh run
+  ---
+  duration_ms: 0.3682
+  type: 'test'
+  ...
+# Subtest: resolveBasePath rewrites only unprefixed root-absolute same-origin URLs
+ok 129 - resolveBasePath rewrites only unprefixed root-absolute same-origin URLs
+  ---
+  duration_ms: 1.9597
+  type: 'test'
+  ...
+# Subtest: resolveBasePath rejects invalid base paths
+ok 130 - resolveBasePath rejects invalid base paths
+  ---
+  duration_ms: 1.2832
+  type: 'test'
+  ...
+# Subtest: CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idempotent
+ok 131 - CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idempotent
+  ---
+  duration_ms: 302.4704
+  type: 'test'
+  ...
+# Subtest: CLI rejects invalid arguments without touching the export
+ok 132 - CLI rejects invalid arguments without touching the export
+  ---
+  duration_ms: 66.4192
+  type: 'test'
+  ...
+# Subtest: staging robots opt-in applies website policy and preserves protected game HTML/CSS bytes exactly
+ok 133 - staging robots opt-in applies website policy and preserves protected game HTML/CSS bytes exactly
+  ---
+  duration_ms: 244.0865
+  type: 'test'
+  ...
+# Subtest: verifier shares strict base-path validation and rejects traversal-like paths
+ok 134 - verifier shares strict base-path validation and rejects traversal-like paths
+  ---
+  duration_ms: 512.9031
+  type: 'test'
+  ...
+# Subtest: verifier rejects javascript URLs and checks nested HTML plus CSS references in deployed context
+ok 135 - verifier rejects javascript URLs and checks nested HTML plus CSS references in deployed context
+  ---
+  duration_ms: 89.0244
+  type: 'test'
+  ...
+# Subtest: verifier requires the exact four PUBLIC_FEATURE_STATE preview cards and excludes Arcade candidate
+ok 136 - verifier requires the exact four PUBLIC_FEATURE_STATE preview cards and excludes Arcade candidate
+  ---
+  duration_ms: 218.0213
+  type: 'test'
+  ...
+# Subtest: verifier recognizes Studio variant markers, intro filters, search explanation, and disabled store-links control
+ok 137 - verifier recognizes Studio variant markers, intro filters, search explanation, and disabled store-links control
+  ---
+  duration_ms: 76.1753
+  type: 'test'
+  ...
+# (node:55376) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route
+ok 138 - page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route
+  ---
+  duration_ms: 2.1597
+  type: 'test'
+  ...
+# Subtest: all four registered games and every Play card remain PREVIEW
+ok 139 - all four registered games and every Play card remain PREVIEW
+  ---
+  duration_ms: 10.6936
+  type: 'test'
+  ...
+# Subtest: Home preserves approved hero, truthful game states, live guest-local Feast Pass, and disabled store links
+ok 140 - Home preserves approved hero, truthful game states, live guest-local Feast Pass, and disabled store links
+  ---
+  duration_ms: 34.2987
+  type: 'test'
+  ...
+# Subtest: Home companion is present and each context has its own copy
+ok 141 - Home companion is present and each context has its own copy
+  ---
+  duration_ms: 19.0244
+  type: 'test'
+  ...
+# Subtest: launch gating exposes only the Wicked Bites preview and keeps CLAW held
+ok 142 - launch gating exposes only the Wicked Bites preview and keeps CLAW held
+  ---
+  duration_ms: 11.0784
+  type: 'test'
+  ...
+# Subtest: player host enforces opaque-origin identity and does not echo ready/init
+ok 143 - player host enforces opaque-origin identity and does not echo ready/init
+  ---
+  duration_ms: 1.0041
+  type: 'test'
+  ...
+# Subtest: Wicked Bites cartridge conforms to the schema and preserves qualified provenance
+ok 144 - Wicked Bites cartridge conforms to the schema and preserves qualified provenance
+  ---
+  duration_ms: 23.5182
+  type: 'test'
+  ...
+# Subtest: primary and footer navigation both route to Play
+ok 145 - primary and footer navigation both route to Play
+  ---
+  duration_ms: 0.213
+  type: 'test'
+  ...
+# Subtest: static link verifier scans markup attributes without mistaking runtime JavaScript for missing files
+ok 146 - static link verifier scans markup attributes without mistaking runtime JavaScript for missing files
+  ---
+  duration_ms: 108.8208
+  type: 'test'
+  ...
+# (node:33764) ExperimentalWarning: stripTypeScriptTypes is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: world atlas uses approved environment records, locks unknown slots, and surfaces real route discovery
+ok 147 - world atlas uses approved environment records, locks unknown slots, and surfaces real route discovery
+  ---
+  duration_ms: 17.7808
+  type: 'test'
+  ...
+# Subtest: characters and Toadal keep registry-backed cast, filters, and explicit unpublished canon slots
+ok 148 - characters and Toadal keep registry-backed cast, filters, and explicit unpublished canon slots
+  ---
+  duration_ms: 15.2779
+  type: 'test'
+  ...
+# Subtest: Stories, Manga, and Reader retain the publication gate and useful related routes
+ok 149 - Stories, Manga, and Reader retain the publication gate and useful related routes
+  ---
+  duration_ms: 16.87
+  type: 'test'
+  ...
+1..149
+# tests 149
+# suites 0
+# pass 149
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3227.2895

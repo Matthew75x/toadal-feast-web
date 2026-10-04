@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { rewriteHtml, normalizeBasePath } from './wo001-pages-basepath.mjs';
 import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
+import { createPublicProjector } from './lib/owner-public-projection.mjs';
 
 const root = path.resolve(process.argv[2] || '.');
 const dist = path.resolve(root, process.argv[3] || 'dist');
@@ -15,6 +16,7 @@ const normalizeText = value => value.replaceAll('\r\n', '\n');
 const escapeHtmlAttribute = value => String(value).replaceAll('&', '&amp;').replaceAll('<', '&lt;')
   .replaceAll('>', '&gt;').replaceAll("'", '&#39;');
 const projector = await createOwnerNativeProjector();
+const publicProjection = await createPublicProjector();
 // Match Studio 1.4.2's safeRich boundary: scripts are loaded by the shared
 // runtime, never emitted from authored rich text. No Studio source is changed.
 const studioRichText = value => String(value)
@@ -144,9 +146,10 @@ for (const record of pageIndex) {
         }
       }
     }
-    const expected = normalizeHtmlAttributeSerialization(normalizeText(rewriteHtml(projected, basePath).value));
+    const expected = normalizeHtmlAttributeSerialization(normalizeText(rewriteHtml(publicProjection(projected), basePath).value));
     const emptyNativeComponentAbsent = !expected && !rendered.includes(`data-studio-component='${component.id}'`)
-      && !rendered.includes(`data-studio-component="${component.id}"`);
+      && !rendered.includes(`data-studio-component="${component.id}"`)
+      && !rendered.includes(`data-toadal-node='${component.id}'`) && !rendered.includes(`data-toadal-node="${component.id}"`);
     if ((expected && !renderedForSubtrees.includes(expected)) || (!expected && isNative && !emptyNativeComponentAbsent)) {
       staleErrors.push(`${record.route} ${isNative ? 'native' : 'rich-text'} component stale: ${component.id}`);
     }
@@ -161,7 +164,7 @@ for (const name of ['guest-progression.js', 'progression-definitions.js', 'websi
 }
 
 inspect('/404.html', {
-  sourceExpected: ['Search the Feast', '"href": "/search/"'],
+  sourceExpected: ['Search the Feast', "href='/search/'"],
   renderExpected: ['Search the Feast', '/search/'],
   forbidden: ['Search is coming soon']
 });
@@ -203,11 +206,11 @@ inspect('/profile/', {
 });
 
 const searchIndex = path.join(dist, 'assets', 'data', 'local-search-index.json');
-if (!fs.existsSync(searchIndex)) errors.push('rendered local-search-index.json missing');
+if (!fs.existsSync(searchIndex)) staleErrors.push('rendered local-search-index.json missing');
 else {
   const data = JSON.parse(fs.readFileSync(searchIndex, 'utf8'));
   if (!Array.isArray(data.entries) || data.entries.length < 48) {
-    errors.push(`rendered search index unexpectedly small: ${Array.isArray(data.entries) ? data.entries.length : 'invalid'}`);
+    staleErrors.push(`rendered search index unexpectedly small: ${Array.isArray(data.entries) ? data.entries.length : 'invalid'}`);
   }
 }
 

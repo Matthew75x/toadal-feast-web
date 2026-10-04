@@ -355,7 +355,21 @@
       window.visualViewport.addEventListener('resize', clampAfterViewportChange, { passive: true });
       window.visualViewport.addEventListener('scroll', clampAfterViewportChange, { passive: true });
     }
-    var panelObserver = new MutationObserver(placePanel);
+    var panelWasVisible = panelVisible();
+    var panelObserver = new MutationObserver(function () {
+      var visible = panelVisible();
+      if (visible !== panelWasVisible) {
+        panelWasVisible = visible;
+        if (!drag) {
+          // Opening the bubble scales the companion. Re-evaluate its hit area
+          // against the current page controls after the expanded state lands.
+          // Preserve deliberate owner placement; use the default anchor again
+          // when a non-manual companion is minimized.
+          var preferred = !visible && !manualPosition ? defaultPosition() : { x: x, y: y };
+          applyPosition(preferred.x, preferred.y, false);
+        } else placePanel();
+      } else placePanel();
+    });
     panelObserver.observe(panel, { attributes: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
 
     var initial = loadPosition();

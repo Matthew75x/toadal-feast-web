@@ -117,9 +117,7 @@ test('background asset replacement preserves retained gradients and shorthand CS
   assert.equal(vendored, "<div style='background:linear-gradient(135deg, #f00, #00f), url(&#39;/assets/studio/asset-fixture-background.0123456789.png&#39;) center/cover no-repeat, url(&#39;/texture.png&#39;); background-size:cover' data-studio-component='background-fixture'></div>");
 
   if (studioRoot) {
-    const ownerSource = fs.readFileSync(path.join(studioRoot, 'packages', 'owner-authoring', 'src', 'index.ts'), 'utf8');
-    const stripped = stripTypeScriptTypes(ownerSource, { mode: 'strip' });
-    const liveStudio = await import(`data:text/javascript;base64,${Buffer.from(stripped).toString('base64')}`);
+    const liveStudio = await import(pathToFileURL(path.join(studioRoot, 'packages', 'owner-authoring', 'src', 'index.ts')).href);
     assert.equal(liveStudio.renderOwnerComponent(component, assetUrl), vendored, 'live Studio and SDK preserve identical background declarations');
   }
 });

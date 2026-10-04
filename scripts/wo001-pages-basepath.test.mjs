@@ -62,6 +62,7 @@ test('CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idem
 <a href="/toadal-feast-web/already.svg">prefixed</a>
 <img srcset="/small.webp 1x, /large.webp 2x, data:image/png;base64,AAAA 3x">
 <div style="background:url('/inline-attribute.svg')"></div>
+<section style="background-image:url(&#39;/assets/images/world/candy-kingdom.webp&#39;)"></section>
 <style>/* url(/comment.svg) */ .hero { background: url('/assets/hero.webp'); mask: url(../mask.svg); }</style>
 <script>const example = "url('/script-string.svg')";</script>
 `;
@@ -76,14 +77,15 @@ test('CLI recursively rewrites HTML attributes, srcset and CSS URLs, and is idem
   const run = (basePath = BASE) => spawnSync(process.execPath, [SCRIPT, exportRoot, basePath], { encoding: 'utf8' });
   const first = run();
   assert.equal(first.status, 0, first.stderr);
-  assert.match(first.stdout, /Files scanned: 4\r?\nFiles rewritten: 3\r?\nURLs rewritten: 9\r?\n/u);
+  assert.match(first.stdout, /Files scanned: 4\r?\nFiles rewritten: 3\r?\nURLs rewritten: 10\r?\n/u);
 
   const rewrittenHtml = await readFile(path.join(exportRoot, 'index.html'), 'utf8');
   assert.match(rewrittenHtml, /href="\/toadal-feast-web\/"/u);
   assert.match(rewrittenHtml, /href='\/toadal-feast-web\/assets\/logo\.svg\?x=1&amp;y=2'/u);
   assert.match(rewrittenHtml, /srcset="\/toadal-feast-web\/small\.webp 1x, \/toadal-feast-web\/large\.webp 2x, data:image\/png;base64,AAAA 3x"/u);
   assert.match(rewrittenHtml, /background: url\('\/toadal-feast-web\/assets\/hero\.webp'\)/u);
-  assert.match(rewrittenHtml, /style="background:url\('\/toadal-feast-web\/inline-attribute\.svg'\)"/u);
+  assert.match(rewrittenHtml, /style="background:url\(&#39;\/toadal-feast-web\/inline-attribute\.svg&#39;\)"/u);
+  assert.match(rewrittenHtml, /background-image:url\(&#39;\/toadal-feast-web\/assets\/images\/world\/candy-kingdom\.webp&#39;\)/u);
   assert.match(rewrittenHtml, /\/\* url\(\/comment\.svg\) \*\//u);
   assert.match(rewrittenHtml, /url\('\/script-string\.svg'\)/u);
   assert.match(rewrittenHtml, /href="\/toadal-feast-web\/already\.svg"/u);
@@ -113,36 +115,63 @@ test('CLI rejects invalid arguments without touching the export', async (t) => {
   assert.equal(await readFile(markerPath, 'utf8'), original);
 });
 
-test('staging robots opt-in changes only the generated Wicked Bites HTML and is idempotent', async (t) => {
+test('staging robots opt-in applies website policy and preserves protected game HTML/CSS bytes exactly', async (t) => {
   const tempRoot = await mkdtemp(path.join(os.tmpdir(), 'wo001-pages-staging-robots-'));
   t.after(() => rm(tempRoot, { recursive: true, force: true }));
   const exportRoot = path.join(tempRoot, 'dist');
   const targetDirectory = path.join(exportRoot, 'public', 'games', 'wicked-bites');
+  const nestedWebsiteDirectory = path.join(exportRoot, 'about');
+  const assetsDirectory = path.join(exportRoot, 'assets');
   await mkdir(targetDirectory, { recursive: true });
+  await mkdir(nestedWebsiteDirectory, { recursive: true });
+  await mkdir(assetsDirectory, { recursive: true });
   const targetPath = path.join(targetDirectory, 'index.html');
+  const targetCssPath = path.join(targetDirectory, 'game.css');
   const otherPath = path.join(exportRoot, 'index.html');
-  const cartridgeHtml = '<!doctype html><html><head><title>Wicked Bites</title></head><body>game</body></html>';
+  const nestedWebsitePath = path.join(nestedWebsiteDirectory, 'index.html');
+  const websiteCssPath = path.join(assetsDirectory, 'site.css');
+  const robotsPath = path.join(exportRoot, 'robots.txt');
+  const cartridgeHtml = Buffer.from('<!doctype html><html><head><title>Wicked Bites</title></head><body>game</body></html>');
+  const cartridgeCss = Buffer.from('/* immutable game stylesheet */\n.game { background: url("/game.png"); }');
   const otherHtml = '<!doctype html><html><head><title>Home</title></head><body>home</body></html>';
-  await writeFile(targetPath, cartridgeHtml, 'utf8');
+  const nestedHtml = '<!doctype html><html><head><title>About</title></head><body>about</body></html>';
+  const websiteCss = '.site { color: green; }';
+  await writeFile(targetPath, cartridgeHtml);
+  await writeFile(targetCssPath, cartridgeCss);
   await writeFile(otherPath, otherHtml, 'utf8');
+  await writeFile(nestedWebsitePath, nestedHtml, 'utf8');
+  await writeFile(websiteCssPath, websiteCss, 'utf8');
 
   const run = (...args) => spawnSync(process.execPath, [SCRIPT, exportRoot, '/', ...args], { encoding: 'utf8' });
   const defaultRun = run();
   assert.equal(defaultRun.status, 0, defaultRun.stderr);
-  assert.equal(await readFile(targetPath, 'utf8'), cartridgeHtml, 'default behavior must not add staging policy');
+  assert.deepEqual(await readFile(targetPath), cartridgeHtml, 'default behavior must preserve protected game HTML bytes');
+  assert.deepEqual(await readFile(targetCssPath), cartridgeCss, 'default behavior must preserve protected game CSS bytes');
   assert.equal(await readFile(otherPath, 'utf8'), otherHtml);
+  assert.equal(await readFile(nestedWebsitePath, 'utf8'), nestedHtml);
+  await assert.rejects(readFile(robotsPath), { code: 'ENOENT' }, 'default behavior must not add staging policy');
 
   const stagingRun = run('--staging-robots');
   assert.equal(stagingRun.status, 0, stagingRun.stderr);
   assert.match(stagingRun.stdout, /Staging robots policy: added/u);
-  const transformed = await readFile(targetPath, 'utf8');
-  assert.equal(transformed, cartridgeHtml.replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow">'));
-  assert.equal(await readFile(otherPath, 'utf8'), otherHtml, 'other generated HTML remains byte-for-byte unchanged');
+  const homeWithPolicy = otherHtml.replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow">');
+  const aboutWithPolicy = nestedHtml.replace('<head>', '<head>\n<meta name="robots" content="noindex,nofollow">');
+  assert.deepEqual(await readFile(targetPath), cartridgeHtml, 'staging policy must never edit protected game HTML bytes');
+  assert.deepEqual(await readFile(targetCssPath), cartridgeCss, 'staging policy must never edit protected game CSS bytes');
+  assert.equal(await readFile(otherPath, 'utf8'), homeWithPolicy, 'website HTML receives noindex,nofollow');
+  assert.equal(await readFile(nestedWebsitePath, 'utf8'), aboutWithPolicy, 'nested website HTML receives noindex,nofollow');
+  assert.equal(await readFile(websiteCssPath, 'utf8'), websiteCss, 'website CSS remains unchanged');
+  const robotsText = await readFile(robotsPath, 'utf8');
+  assert.match(robotsText, /^User-agent:\s*\*\s*\r?\nDisallow:\s*\/\s*$/u);
 
   const repeatRun = run('--staging-robots');
   assert.equal(repeatRun.status, 0, repeatRun.stderr);
   assert.match(repeatRun.stdout, /Staging robots policy: already present/u);
-  assert.equal(await readFile(targetPath, 'utf8'), transformed, 'repeat runs must be byte-for-byte idempotent');
+  assert.deepEqual(await readFile(targetPath), cartridgeHtml, 'repeat runs preserve protected game HTML bytes');
+  assert.deepEqual(await readFile(targetCssPath), cartridgeCss, 'repeat runs preserve protected game CSS bytes');
+  assert.equal(await readFile(otherPath, 'utf8'), homeWithPolicy, 'repeat website HTML policy is byte-for-byte idempotent');
+  assert.equal(await readFile(nestedWebsitePath, 'utf8'), aboutWithPolicy, 'repeat nested website policy is byte-for-byte idempotent');
+  assert.equal(await readFile(robotsPath, 'utf8'), robotsText, 'repeat robots.txt policy is byte-for-byte idempotent');
 });
 
 test('verifier shares strict base-path validation and rejects traversal-like paths', async (t) => {

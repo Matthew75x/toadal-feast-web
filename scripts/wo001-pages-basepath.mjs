@@ -3,11 +3,13 @@
 import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { isProtectedGameArtifact } from './lib/protected-game-artifacts.mjs';
 
 const URL_ATTRIBUTES = new Set(['href', 'src', 'action', 'poster']);
 const RAW_TEXT_TAGS = new Set(['script', 'textarea', 'title', 'xmp', 'iframe', 'noembed', 'noframes', 'plaintext']);
-const STAGING_ROBOTS_TARGET = 'public/games/wicked-bites/index.html';
+const STAGING_ROBOTS_FILE = 'robots.txt';
 const STAGING_ROBOTS_META = '<meta name="robots" content="noindex,nofollow">';
+const STAGING_ROBOTS_TEXT = 'User-agent: *\nDisallow: /\n';
 
 export function normalizeBasePath(basePath) {
   if (typeof basePath !== 'string' || basePath.length === 0) {
@@ -172,7 +174,11 @@ function rewriteStartTag(tag, basePath) {
       rewrittenValue = result.value;
       rewrites += result.rewrites;
     } else if (normalizedName === 'style') {
-      const result = rewriteCss(originalValue, basePath);
+      const cssValue = originalValue
+        .replace(/&(?:#39|#x27|apos);/giu, "'")
+        .replace(/&(?:#34|#x22|quot);/giu, '"');
+      const result = rewriteCss(cssValue, basePath);
+      result.value = result.value.replaceAll('"', '&quot;').replaceAll("'", '&#39;');
       rewrittenValue = result.value;
       rewrites += result.rewrites;
     } else if (URL_ATTRIBUTES.has(normalizedName)) {
@@ -200,7 +206,7 @@ function findHtmlTagEnd(html, start) {
   return end === -1 ? html.length : end + 1;
 }
 
-function rewriteCss(css, basePath) {
+export function rewriteCss(css, basePath) {
   let output = '';
   let index = 0;
   let rewrites = 0;
@@ -410,6 +416,8 @@ async function transformExport(exportDirectory, basePath) {
   let rewrittenUrls = 0;
 
   for (const file of files) {
+    // Cartridge payloads are immutable artifacts, not website page templates.
+    if (isProtectedGameArtifact(path.relative(root,file))) continue;
     const original = await readFile(file, 'utf8');
     const extension = path.extname(file).toLowerCase();
     const result = extension === '.html' ? rewriteHtml(original, basePath) : rewriteCss(original, basePath);
@@ -432,18 +440,40 @@ function addStagingRobotsPolicy(html) {
   }
 
   const head = /<head\b[^>]*>/iu.exec(html);
-  if (!head) throw new Error('Staging robots target has no <head> element.');
+  if (!head) throw new Error('Staging website HTML has no <head> element.');
   const insertAt = head.index + head[0].length;
   return `${html.slice(0, insertAt)}\n${STAGING_ROBOTS_META}${html.slice(insertAt)}`;
 }
 
 async function applyStagingRobotsPolicy(exportDirectory) {
   const root = path.resolve(exportDirectory);
-  const target = path.join(root, STAGING_ROBOTS_TARGET);
-  const original = await readFile(target, 'utf8');
-  const transformed = addStagingRobotsPolicy(original);
-  if (transformed !== original) await writeFile(target, transformed, 'utf8');
-  return transformed !== original;
+  let changed = false;
+  for (const file of await collectStaticFiles(root)) {
+    if (path.extname(file).toLowerCase() !== '.html' || isProtectedGameArtifact(path.relative(root, file))) continue;
+    const original = await readFile(file, 'utf8');
+    const transformed = addStagingRobotsPolicy(original);
+    if (transformed !== original) {
+      await writeFile(file, transformed, 'utf8');
+      changed = true;
+    }
+  }
+
+  const robotsPath = path.join(root, STAGING_ROBOTS_FILE);
+  let robotsOriginal = '';
+  try {
+    robotsOriginal = await readFile(robotsPath, 'utf8');
+  } catch (error) {
+    if (error.code !== 'ENOENT') throw error;
+  }
+  const hasGlobalDisallow = /^User-agent:\s*\*(?:\r?\n(?!User-agent:)[^\r\n]*)*\r?\nDisallow:\s*\/\s*(?:\r?\n|$)/imu.test(robotsOriginal);
+  const robotsUpdated = hasGlobalDisallow
+    ? robotsOriginal
+    : `${robotsOriginal}${robotsOriginal && !robotsOriginal.endsWith('\n') ? '\n' : ''}${STAGING_ROBOTS_TEXT}`;
+  if (robotsUpdated !== robotsOriginal) {
+    await writeFile(robotsPath, robotsUpdated, 'utf8');
+    changed = true;
+  }
+  return changed;
 }
 
 async function runCli(args) {

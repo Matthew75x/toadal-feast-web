@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 import fs from 'node:fs';
 import path from 'node:path';
+import { isProtectedGameArtifact } from './lib/protected-game-artifacts.mjs';
+import { rewriteCss, rewriteHtml } from './wo001-pages-basepath.mjs';
 
 const dist = path.resolve(process.argv[2] || 'dist');
 const base = process.argv[3] || '/toadal-feast-web/';
@@ -23,12 +25,16 @@ function walk(dir) {
 if (!fs.existsSync(path.join(dist,'index.html'))) fail('missing dist/index.html');
 if (!fs.existsSync(path.join(dist,'404.html'))) fail('missing dist/404.html');
 
-const htmlFiles = walk(dist).filter(p => p.endsWith('.html'));
+const allFiles = walk(dist);
+const htmlFiles = allFiles.filter(p => p.endsWith('.html'));
 const rootAbs = [];
 const attrRe = /\b(?:href|src)\s*=\s*["']([^"']+)["']/gi;
 
 for (const file of htmlFiles) {
+  if (isProtectedGameArtifact(path.relative(dist,file))) continue;
   const html = fs.readFileSync(file,'utf8');
+  const htmlResult = rewriteHtml(html, base);
+  if (htmlResult.rewrites) rootAbs.push({file:path.relative(dist,file),url:`${htmlResult.rewrites} unprefixed HTML/style URL(s)`});
   let m;
   while ((m = attrRe.exec(html))) {
     const u = m[1].trim();
@@ -37,6 +43,11 @@ for (const file of htmlFiles) {
     if (u === base || u.startsWith(base)) continue;
     rootAbs.push({file:path.relative(dist,file),url:u});
   }
+}
+
+for (const file of allFiles.filter(p => p.endsWith('.css') && !isProtectedGameArtifact(path.relative(dist,p)))) {
+  const result = rewriteCss(fs.readFileSync(file,'utf8'), base);
+  if (result.rewrites) rootAbs.push({file:path.relative(dist,file),url:`${result.rewrites} unprefixed CSS URL(s)`});
 }
 
 if (rootAbs.length) {

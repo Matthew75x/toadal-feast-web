@@ -1,0 +1,26 @@
+import assert from 'node:assert/strict';
+import {spawnSync} from 'node:child_process';
+import {mkdtemp,mkdir,readFile,rm,writeFile} from 'node:fs/promises';
+import os from 'node:os';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import test from 'node:test';
+const root=path.resolve(import.meta.dirname,'..');
+const verify=path.join(root,'scripts/verify-pages-basepath.mjs');
+const transform=path.join(root,'scripts/wo001-pages-basepath.mjs');
+test('Pages base-path verification catches HTML-escaped inline CSS and CSS files, while protecting cartridge CSS',async t=>{
+ const tmp=await mkdtemp(path.join(os.tmpdir(),'toadal-basepath-verify-'));t.after(()=>rm(tmp,{recursive:true,force:true}));
+ const dist=path.join(tmp,'dist');await mkdir(path.join(dist,'assets'),{recursive:true});await mkdir(path.join(dist,'public/games/wicked-bites'),{recursive:true});
+ await writeFile(path.join(dist,'index.html'),`<html><head><link rel="stylesheet" href="/toadal-feast-web/assets/site.css"></head><body><section style="background-image:url(&#39;/assets/images/world/candy-kingdom.webp&#39;)"></section></body></html>`);
+ await writeFile(path.join(dist,'404.html'),'<html><head></head><body>Not found</body></html>');
+ await writeFile(path.join(dist,'assets/site.css'),`.page { background:url('/assets/page.webp'); }`);
+ const cartridgeCss=Buffer.from(`.game { background:url('/runtime/game.webp'); }`);
+ await writeFile(path.join(dist,'public/games/wicked-bites/game.css'),cartridgeCss);
+ const check=()=>spawnSync(process.execPath,[verify,dist,'/toadal-feast-web/'],{encoding:'utf8'});
+ const before=check();assert.notEqual(before.status,0);assert.match(before.stderr,/root-absolute internal URLs/);
+ const applied=spawnSync(process.execPath,[transform,dist,'/toadal-feast-web/'],{encoding:'utf8'});assert.equal(applied.status,0,applied.stderr);
+ const after=check();assert.equal(after.status,0,after.stderr);
+ assert.match(await readFile(path.join(dist,'index.html'),'utf8'),/\/toadal-feast-web\/assets\/images\/world\/candy-kingdom\.webp/u);
+ assert.match(await readFile(path.join(dist,'assets/site.css'),'utf8'),/\/toadal-feast-web\/assets\/page\.webp/u);
+ assert.deepEqual(await readFile(path.join(dist,'public/games/wicked-bites/game.css')),cartridgeCss);
+});

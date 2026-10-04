@@ -3,6 +3,7 @@ import crypto from 'node:crypto';
 import { stripTypeScriptTypes } from 'node:module';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { buildReviewedOwnerRenderer } from './owner-renderer-build.mjs';
 
 const vendorDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'vendor');
 const rendererPath = path.join(vendorDir, 'owner-authoring-renderer.mjs');
@@ -32,7 +33,11 @@ export function verifyOwnerRendererProvenance(studioRoot) {
   if (sha256(source) !== provenance.sourceSha256) {
     throw new Error(`Studio owner renderer source drift at ${sourcePath}; review and regenerate scripts/vendor/owner-authoring-renderer.mjs, then update provenance pins`);
   }
-  const generatedFromSource = stripTypeScriptTypes(source.toString('utf8'), { mode: 'strip' });
+  const build = buildReviewedOwnerRenderer(root);
+  if (JSON.stringify(build.dependencies) !== JSON.stringify(provenance.dependencies)) {
+    throw new Error('Studio owner renderer dependency source drift; review and regenerate the pinned SDK');
+  }
+  const generatedFromSource = build.generated;
   if (!generated.equals(Buffer.from(generatedFromSource))) {
     throw new Error('Vendored owner renderer diverges from the pinned Studio source after TypeScript stripping; regenerate the SDK and update provenance pins');
   }
@@ -162,14 +167,9 @@ export async function createOwnerNativeProjector(studioRoot = process.env.TOADAL
   const injected = runtime.renderOwnerComponent;
   if (injected) return createProjector({ renderOwnerComponent: injected, renderLegacyComponent: runtime.renderLegacyComponent });
   verifyOwnerRendererProvenance(studioRoot);
-  let ownerModule;
-  if (studioRoot) {
-    const ownerModulePath = path.resolve(studioRoot, 'packages', 'owner-authoring', 'src', 'index.ts');
-    const strippedSource = stripTypeScriptTypes(fs.readFileSync(ownerModulePath, 'utf8'), { mode: 'strip' });
-    ownerModule = await import(`data:text/javascript;base64,${Buffer.from(strippedSource).toString('base64')}`);
-  } else {
-    ownerModule = await import(pathToFileURL(rendererPath).href);
-  }
+  // The exact reviewed source/dependency closure was verified above. Load the
+  // self-contained pinned build, so relative imports never escape a data URL.
+  const ownerModule = await import(pathToFileURL(rendererPath).href);
   return createProjector({
     renderOwnerComponent: ownerModule.renderOwnerComponent,
     renderLegacyComponent: runtime.renderLegacyComponent,

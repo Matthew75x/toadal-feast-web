@@ -2,9 +2,15 @@
   "schema": "toadal-studio.owner-authoring-renderer-provenance.v1",
   "studioVersion": "1.4.2",
   "source": "packages/owner-authoring/src/index.ts",
-  "sourceSha256": "e5b2b5b227fcb41a7375a4d1f807932e27a2efb8163e2bdc3eff837524abe804",
+  "sourceSha256": "50bc8aee684e26b807b6c3c7bbe91f0e816d5b27b9908ee1ae188633ec71c9b4",
+  "dependencies": [
+    {
+      "source": "packages/owner-authoring/src/presentation.ts",
+      "sourceSha256": "c71a2cf78246b134e8a0442014eeeed52a76b586e3d2d5b5fe3aa1a2dce1862b"
+    }
+  ],
   "generated": "scripts/vendor/owner-authoring-renderer.mjs",
-  "generatedSha256": "68dd6e2343c658c1c7a20876c331fa32442e91bfdb86fb1cb5a34245bc8e538a",
-  "transformation": "node:module.stripTypeScriptTypes(mode=strip)",
+  "generatedSha256": "67dbc1189d531620f3b4618e6df507defbcfd67ecc581cb322c9e81fe1c84989",
+  "transformation": "reviewed presentation dependency + node:module.stripTypeScriptTypes(mode=strip); no external imports",
   "nodeMajor": 22
 }

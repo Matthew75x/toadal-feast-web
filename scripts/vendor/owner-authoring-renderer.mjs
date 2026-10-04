@@ -1,4 +1,45 @@
+// Additive Owner Builder presentation values; legacy native style is retained.
+export const TYPOGRAPHY_FIELDS=['textFontSize','textFontWeight','textFontFamily','textLineHeight','textLetterSpacing','textAlign','textColor'];
+export const LAYOUT_FIELDS=['mode','gap','columns','layoutWidth','layoutMaxWidth','blockAlign','alignItems','justifyContent','flexWrap','marginTop','marginBottom','padding','frameHeight','aspectRatio','background'];
+export const TEXT_TAGS=new Set('p h1 h2 h3 h4 h5 h6 span strong em b i small a button label li blockquote figcaption summary'.split(' '));
+const ADDITIVE_LAYOUT=['layoutWidth','layoutMaxWidth','blockAlign','alignItems','justifyContent','flexWrap','marginTop','marginBottom'];
+export function responsivePresentationProps(base    ,scope    ){
+ const current={...scope,mode:scope.mode||'inherit'};
+ const builder=base.presentationVersion===1||ADDITIVE_LAYOUT.some(key=>filled(base[key]));
+ if(builder&&['mode','gap','columns'].some(key=>filled(scope[key]))){
+  current.mode=scope.mode&&scope.mode!=='inherit'?scope.mode:base.mode||'inherit';
+  if(!filled(scope.gap))current.gap=base.gap;
+  if(!filled(scope.columns))current.columns=base.columns;
+ }
+ return current;
+}
+const filled=(v    )=>v!==undefined&&v!==null&&v!=='';
+const ranges                        ={textFontSize:[8,256],textLineHeight:[.5,4],textLetterSpacing:[-5,20],layoutWidth:[1,4096],layoutMaxWidth:[1,4096],marginTop:[0,4096],marginBottom:[0,4096]};
+const enums                        ={textFontWeight:['normal','bold',...Array.from({length:9},(_,i)=>String((i+1)*100))],textFontFamily:['system','serif','monospace'],textAlign:['left','center','right','justify'],blockAlign:['left','center','right'],alignItems:['stretch','start','center','end'],justifyContent:['start','center','end','space-between','space-around','space-evenly'],flexWrap:['nowrap','wrap']};
+export function validatePresentationValues(x    ,strictLayout=false){
+ const errors         =[];
+ for(const [key,[min,max]]of Object.entries(ranges))if(filled(x[key])&&(!['number','string'].includes(typeof x[key])||!Number.isFinite(Number(x[key]))||Number(x[key])<min||Number(x[key])>max))errors.push(`${key} must be ${min}–${max}`);
+ for(const [key,values]of Object.entries(enums))if(filled(x[key])&&!values.includes(String(x[key])))errors.push(`invalid ${key}`);
+ if(filled(x.textColor)&&!/^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(String(x.textColor)))errors.push('textColor must be a hex color');
+ if(strictLayout){for(const key of ['gap','padding'])if(filled(x[key])&&(!Number.isFinite(Number(x[key]))||Number(x[key])<0||Number(x[key])>4096))errors.push(`${key} must be 0–4096`);if(filled(x.columns)&&(!Number.isInteger(Number(x.columns))||Number(x.columns)<1||Number(x.columns)>12))errors.push('columns must be an integer 1–12');}
+ return errors;
+}
+export function presentationStyle(x    ){
+ const parts         =[];
+ const px={textFontSize:'font-size',textLetterSpacing:'letter-spacing',layoutWidth:'width',layoutMaxWidth:'max-width',marginTop:'margin-top',marginBottom:'margin-bottom'};
+ for(const [key,css]of Object.entries(px))if(filled(x[key]))parts.push(`${css}:${Number(x[key])}px`);
+ if(filled(x.layoutWidth)||filled(x.layoutMaxWidth))parts.push('box-sizing:border-box');
+ if(filled(x.textLineHeight))parts.push(`line-height:${Number(x.textLineHeight)}`);
+ if(filled(x.textFontWeight))parts.push(`font-weight:${x.textFontWeight}`);
+ if(filled(x.textFontFamily))parts.push('font-family:'+({system:'system-ui,sans-serif',serif:'Georgia,serif',monospace:'ui-monospace,monospace'}       )[x.textFontFamily]);
+ if(filled(x.textAlign))parts.push(`text-align:${x.textAlign}`);if(filled(x.textColor))parts.push(`color:${x.textColor}`);
+ for(const [key,css]of [['alignItems','align-items'],['justifyContent','justify-content'],['flexWrap','flex-wrap']])if(filled(x[key]))parts.push(`${css}:${x[key]}`);
+ if(filled(x.blockAlign)){const margins={left:'0 auto',center:'auto auto',right:'auto 0'};parts.push('margin-inline:'+(margins       )[x.blockAlign]);}
+ return parts.join(';');
+}
+
 // Versioned semantic presentation extension. Existing v1 projects remain valid.
+
 export const OWNER_AUTHORING_VERSION=1;
 const tags=new Set('section article div nav aside header footer main p h1 h2 h3 h4 h5 h6 span strong em b i small a button img input label select option textarea form fieldset legend ul ol li dl dt dd figure figcaption blockquote cite time details summary br hr table caption thead tbody tfoot tr th td progress video source picture audio svg path circle rect line polyline polygon g title #text'.split(' '));
 const voidTags=new Set(['img','input','br','hr','source']);
@@ -25,6 +66,7 @@ export function validateOwnerProps(x    ){
   if(x.href&&/[\x00-\x20\\]/.test(x.href))errors.push('invalid characters in link');
   if(x.responsive){if(typeof x.responsive!=='object'||Array.isArray(x.responsive))errors.push('responsive must be an object');else for(const [bp,props]of Object.entries(x.responsive)){if(!['mobile','tablet','desktop'].includes(bp)||!props||typeof props!=='object'||Array.isArray(props)){errors.push('invalid responsive breakpoint');continue;}errors.push(...validateOwnerProps({...props,authoringVersion:1,tag:x.tag}).errors.map(e=>`${bp}: ${e}`));}}
   if(/(?:expression\s*\(|javascript\s*:|@import)/i.test(x.style||''))errors.push('unsafe native style');
+  errors.push(...validatePresentationValues(x));
  }
  return{valid:errors.length===0,errors};
 }
@@ -42,6 +84,7 @@ export function ownerStyle(x    ){
  if(x.backgroundFit)parts.push(`background-size:${x.backgroundFit}`);
  if(x.backgroundFocalX!==undefined&&x.backgroundFocalX!==''||x.backgroundFocalY!==undefined&&x.backgroundFocalY!=='')parts.push(`background-position:${x.backgroundFocalX??50}% ${x.backgroundFocalY??50}%`);
  if(x.mode&&x.mode!=='inherit')parts.push(x.mode==='grid'?`display:grid;grid-template-columns:repeat(${Math.max(1,Number(x.columns)||2)},minmax(0,1fr));gap:${Number(x.gap)||0}px`:`display:flex;flex-direction:${x.mode==='row'?'row':'column'};gap:${Number(x.gap)||0}px`);
+ parts.push(presentationStyle(x));
  return parts.filter(Boolean).join(';');
 }
 export function renderOwnerComponent(c    ,assetUrl                         ,childRender                 ,animationFallback                    =()=> 'none')       {
@@ -83,5 +126,5 @@ function importantDeclarations(css       ){
 export function ownerResponsiveCss(c    ){
  const x=c.props||{},selector=`[data-studio-component="${String(c.id).replace(/["\\]/g,'')}" ]`.replace('" ]','"]');
  const mobileMax=Math.max(1,Math.min(10000,Number(x.responsive?.mobile?.maxWidth)||600));
- return Object.entries(x.responsive||{}).map(([bp,props]    )=>{const css=importantDeclarations(ownerStyle({...props,mode:props.mode||'inherit'}));const query=bp==='mobile'?`(max-width:${mobileMax}px)`:bp==='tablet'?`(min-width:${mobileMax+1}px) and (max-width:1024px)`:'(min-width:1025px)';return css?`@media ${query}{${selector}{${css}}}`:''}).join('');
+ return Object.entries(x.responsive||{}).map(([bp,props]    )=>{const css=importantDeclarations(ownerStyle(responsivePresentationProps(x,props)));const query=bp==='mobile'?`(max-width:${mobileMax}px)`:bp==='tablet'?`(min-width:${mobileMax+1}px) and (max-width:1024px)`:'(min-width:1025px)';return css?`@media ${query}{${selector}{${css}}}`:''}).join('');
 }

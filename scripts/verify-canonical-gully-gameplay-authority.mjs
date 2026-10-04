@@ -127,9 +127,15 @@ const gameplayFiles = [
 ];
 const runtimeResults = [];
 for (const gameplayPath of gameplayFiles) {
+  // The old dist baseline contains injected website runtime/robots decoration.
+  // The accepted Studio protected export restores immutable source artifacts;
+  // compare both source and published payload to the original SOURCE Git blob.
+  const frozenSourcePath=gameplayPath.startsWith('dist/')
+    ? 'studio-project/toadal-feast-website/reference/'+gameplayPath.slice('dist/'.length)
+    : gameplayPath;
   let baselineBlob;
   try {
-    baselineBlob = execFileSync('git', ['rev-parse', `${baseline}:${gameplayPath}`], { cwd: repo, encoding: 'utf8' }).trim();
+    baselineBlob = execFileSync('git', ['rev-parse', `${baseline}:${frozenSourcePath}`], { cwd: repo, encoding: 'utf8' }).trim();
   } catch {
     errors.push(`Cannot read frozen gameplay baseline ${baseline}:${gameplayPath}.`);
     continue;
@@ -147,7 +153,7 @@ for (const gameplayPath of gameplayFiles) {
     continue;
   }
   const unchanged = baselineBlob === workingBlob;
-  runtimeResults.push({ path: gameplayPath, rawSha256: currentHash, baselineBlob, workingTreeBlob: workingBlob, unchanged });
+  runtimeResults.push({ path: gameplayPath, frozenSourcePath, rawSha256: currentHash, baselineBlob, workingTreeBlob: workingBlob, unchanged });
   if (!unchanged) errors.push(`Gameplay source/output blob differs from frozen baseline: ${gameplayPath}`);
 }
 
