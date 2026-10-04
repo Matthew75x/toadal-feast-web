@@ -7,7 +7,8 @@ Keep:
 - `staging/live-visual`
 - `work/owner-native-authoring-20261002`
 - `archive/owner-native-authority-20261003`
-- `docs/web-control-lean-20261003`
+- `archive/qr-routing-scaffold-3371afa-20261003`
+- `archive/web-arcade-profile-c7a4632-20261003`
 
 Do not delete active owner-authoring, staging, or archive authority branches merely to reduce branch count.
 
@@ -43,10 +44,11 @@ Use `docs/authority/CURRENT_STATE_20261003.md` for current lane status.
 
 ## Measured cleanup result
 
-After the first cleanup wave:
+After the cleanup and authority-document merges:
 
-- remote branches: **57**;
-- open PRs: **1** (the current authority-doc consolidation PR).
+- informational remote-branch snapshot: **58**;
+- open PRs: **0**;
+- merged documentation heads `docs/web-control-lean-20261003` and `docs/main-readme-authority-pointer-20261003` are delete-safe, not active authorities.
 
 Removed:
 - 2 stale planning head branches after explicit archive pointers were created;
