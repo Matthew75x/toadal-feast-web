@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://toadalfeast.com/schemas/game-feast-pass-bridge-v1.json",
+  "title": "TOADAL FEAST Game to Feast Pass Projection",
+  "type": "object",
+  "required": ["schemaVersion", "source", "authority", "syncStatus", "book", "identity", "accomplishments"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "source": { "const": "toadal-feast-game" },
+    "authority": { "const": "local-game-projection" },
+    "syncStatus": { "const": "not-synced" },
+    "book": {
+      "type": "object",
+      "required": ["manifestId", "earnedFeatIds", "earnedSetIds", "main", "mastery"],
+      "properties": {
+        "manifestId": { "type": "string" },
+        "earnedFeatIds": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "earnedSetIds": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "main": { "$ref": "#/$defs/progress" },
+        "mastery": { "$ref": "#/$defs/progress" }
+      },
+      "additionalProperties": false
+    },
+    "identity": {
+      "type": "object",
+      "required": ["manifestId", "earnedTitleIds", "selectedTitleId", "effectiveTitleId", "automaticTitle"],
+      "properties": {
+        "manifestId": { "type": "string" },
+        "earnedTitleIds": { "type": "array", "uniqueItems": true, "items": { "type": "string" } },
+        "selectedTitleId": { "type": ["string", "null"] },
+        "effectiveTitleId": { "type": ["string", "null"] },
+        "automaticTitle": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "accomplishments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "kind", "subjectId"],
+        "properties": {
+          "id": { "type": "string", "maxLength": 80, "pattern": "^[a-z0-9][a-z0-9._:-]{0,79}$" },
+          "kind": { "enum": ["feat-earned", "title-earned"] },
+          "subjectId": { "type": "string" },
+          "mode": { "type": "string" },
+          "track": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "progress": {
+      "type": "object",
+      "required": ["completed", "total"],
+      "properties": {
+        "completed": { "type": "integer", "minimum": 0 },
+        "total": { "type": "integer", "minimum": 0 }
+      },
+      "additionalProperties": false
+    }
+  }
+}
