@@ -14,6 +14,12 @@ Original draft head branches were deleted after the archive pointers were create
 
 Current open web PR count: **0**.
 
+Merged authority-document PRs:
+- #12 — current website authority consolidation
+- #13 — default-branch README authority pointer
+
+Their merged documentation head refs are delete-safe once the normal branch-deletion path is available; they are not active website authority.
+
 ## Current website authority archive
 
 Created:
@@ -40,11 +46,11 @@ No active owner-native, staging, main, archive, or backup branch was deleted.
 
 ## Current branch count
 
-Current remote branch count after completed cleanup:
+Later informational branch snapshot after authority-doc merges:
 
-**57**
+**58**
 
-This is still larger than ideal, but substantially lower than before the cleanup pass.
+This count is informational and can move as active work/merged documentation refs change. It remains substantially lower than before the cleanup pass.
 
 Remaining branches are intentionally left for a second disposition pass because some are divergent historical design/planning/QA lines rather than simple ancestors of current authority.
 
