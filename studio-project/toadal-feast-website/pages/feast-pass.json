@@ -170,6 +170,76 @@
                           "layerName": "Starter XP, Sparks, and rewards are editable website configuration, not ",
                           "text": "Starter XP, Sparks, and rewards are editable website configuration, not permanent economy decisions. Treats are the three existing Home discovery candies. All starter progress and rewards stay in this browser and do not transfer to the mobile game. Site previews and visits are not published lore."
                         }
+                      },
+                      {
+                        "id": "component.mutf2mm7.6klamu",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "feast-quest-prompt",
+                          "layerName": "Local journey next action",
+                          "attributes": {},
+                          "text": "Explore the World, discover Home Treats, then open Quests to claim your completed journey rewards."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.mutf2ljo.1s5e5m",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "feast-journey-links",
+                    "layerName": "Feast journey links",
+                    "attributes": {
+                      "aria-label": "Continue your local Feast journey"
+                    },
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.feast.pass.journey.quests",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "attributes": {},
+                          "style": "",
+                          "tag": "a",
+                          "label": "Quests",
+                          "href": "/feast-pass/quests/",
+                          "layerName": "Quests",
+                          "className": "button-link button-link--secondary"
+                        }
+                      },
+                      {
+                        "id": "component.feast.pass.journey.rewards",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "attributes": {},
+                          "style": "",
+                          "tag": "a",
+                          "label": "Rewards & Treats",
+                          "href": "/feast-pass/rewards/",
+                          "layerName": "Rewards & Treats",
+                          "className": "button-link button-link--secondary"
+                        }
+                      },
+                      {
+                        "id": "component.feast.pass.journey.profile",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "attributes": {},
+                          "style": "",
+                          "tag": "a",
+                          "label": "Guest profile",
+                          "href": "/profile/",
+                          "layerName": "Guest profile",
+                          "className": "button-link button-link--secondary"
+                        }
                       }
                     ]
                   }
@@ -1189,7 +1259,11 @@
               ]
             }
           }
-        ]
+        ],
+        "backgroundAsset": "asset.home.world.desktop",
+        "backgroundFit": "cover",
+        "backgroundFocalX": 50,
+        "backgroundFocalY": 50
       }
     }
   ],

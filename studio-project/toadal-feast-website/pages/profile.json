@@ -25,7 +25,7 @@
             "props": {
               "authoringVersion": 1,
               "tag": "div",
-              "className": "progression-page",
+              "className": "progression-page feast-journey-page",
               "attributes": {
                 "data-progression-page": "profile",
                 "data-companion-context": "guest-profile",
@@ -155,7 +155,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "This is a browser-local view of website progression, not a connected ide",
-                          "text": "This is a browser-local view of website progression, not a connected identity. There is no sign-in, account, backend profile, or sync across devices."
+                          "text": "Your local Feast journey: check-ins, discoveries and collected markers, all recorded on this device."
                         }
                       },
                       {
@@ -254,7 +254,123 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "No biography, score, title, character, world, or story history is fabric",
-                          "text": "No biography, score, title, character, world, or story history is fabricated. The profile can show only state that is actually available in this browser."
+                          "text": "This is a view of this browser’s saved guest progress, not an editable account or public identity. No sign-in, cloud sync, game achievements or invented story history is included."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-profile.rich-text.d13b7db00c20.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav feast-journey-links",
+                    "attributes": {
+                      "aria-label": "Feast Pass pages"
+                    },
+                    "style": "",
+                    "layerName": "Feast PassQuestsRewardsLeaderboardsGuest profile (current page)",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-profile.rich-text.771f8731488a.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.9fcabd7a5afc.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Quests",
+                          "href": "/feast-pass/quests/",
+                          "label": "Quests"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.4044dc942d9b.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Rewards",
+                          "href": "/feast-pass/rewards/",
+                          "label": "Rewards"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.bb4774fbc0b5.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Leaderboards",
+                          "href": "/leaderboards/",
+                          "label": "Leaderboards"
+                        }
+                      },
+                      {
+                        "id": "component.guest-profile.rich-text.bdb3890f503d.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Guest profile (current page)",
+                          "href": "/profile/",
+                          "children": [
+                            {
+                              "id": "component.guest-profile.rich-text.257413412610.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Guest profile ",
+                                "layerName": "Text: Guest profile"
+                              }
+                            },
+                            {
+                              "id": "component.guest-profile.rich-text.64a0ab0d5516.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "(current page)",
+                                "text": "(current page)"
+                              }
+                            }
+                          ]
                         }
                       }
                     ]
@@ -266,7 +382,7 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "section",
-                    "className": "progression-section",
+                    "className": "progression-section feast-profile-summary",
                     "attributes": {
                       "aria-labelledby": "profile-status-title"
                     },
@@ -1494,122 +1610,6 @@
                   }
                 },
                 {
-                  "id": "component.guest-profile.rich-text.d13b7db00c20.progression-nav",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "nav",
-                    "className": "progression-nav",
-                    "attributes": {
-                      "aria-label": "Feast Pass pages"
-                    },
-                    "style": "",
-                    "layerName": "Feast PassQuestsRewardsLeaderboardsGuest profile (current page)",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.guest-profile.rich-text.771f8731488a.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Feast Pass",
-                          "href": "/feast-pass/",
-                          "label": "Feast Pass"
-                        }
-                      },
-                      {
-                        "id": "component.guest-profile.rich-text.9fcabd7a5afc.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Quests",
-                          "href": "/feast-pass/quests/",
-                          "label": "Quests"
-                        }
-                      },
-                      {
-                        "id": "component.guest-profile.rich-text.4044dc942d9b.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Rewards",
-                          "href": "/feast-pass/rewards/",
-                          "label": "Rewards"
-                        }
-                      },
-                      {
-                        "id": "component.guest-profile.rich-text.bb4774fbc0b5.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Leaderboards",
-                          "href": "/leaderboards/",
-                          "label": "Leaderboards"
-                        }
-                      },
-                      {
-                        "id": "component.guest-profile.rich-text.bdb3890f503d.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {
-                            "aria-current": "page"
-                          },
-                          "style": "",
-                          "layerName": "Guest profile (current page)",
-                          "href": "/profile/",
-                          "children": [
-                            {
-                              "id": "component.guest-profile.rich-text.257413412610.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "Guest profile ",
-                                "layerName": "Text: Guest profile"
-                              }
-                            },
-                            {
-                              "id": "component.guest-profile.rich-text.64a0ab0d5516.sr-only",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "sr-only",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "(current page)",
-                                "text": "(current page)"
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
                   "id": "component.guest-profile.rich-text.46d3fbd063ed.progression-controls",
                   "type": "layout.container",
                   "props": {
@@ -1688,7 +1688,11 @@
               ]
             }
           }
-        ]
+        ],
+        "backgroundAsset": "asset.home.world.desktop",
+        "backgroundFit": "cover",
+        "backgroundFocalX": 50,
+        "backgroundFocalY": 50
       }
     }
   ],

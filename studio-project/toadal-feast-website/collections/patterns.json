@@ -340,6 +340,71 @@
           }
         }
       ]
+    },
+    {
+      "id": "pattern.owner.852522f0-0ef2-4333-91be-32256808a5da",
+      "name": "Feast journey links — local-first",
+      "ownerPatternVersion": 1,
+      "components": [
+        {
+          "id": "component.owner.03d3bd9c-28e9-403b-977c-a5048ce97d1d",
+          "type": "layout.container",
+          "props": {
+            "authoringVersion": 1,
+            "tag": "nav",
+            "className": "feast-journey-links",
+            "layerName": "Feast journey links",
+            "attributes": {
+              "aria-label": "Continue your local Feast journey"
+            },
+            "mode": "inherit",
+            "children": [
+              {
+                "id": "component.owner.252a1958-a720-414f-9836-ad224f3a5d9a",
+                "type": "core.button",
+                "props": {
+                  "authoringVersion": 1,
+                  "attributes": {},
+                  "style": "",
+                  "tag": "a",
+                  "label": "Quests",
+                  "href": "/feast-pass/quests/",
+                  "layerName": "Quests",
+                  "className": "button-link button-link--secondary"
+                }
+              },
+              {
+                "id": "component.owner.ef72570c-ba54-47ef-bf01-7390e4a4fe2f",
+                "type": "core.button",
+                "props": {
+                  "authoringVersion": 1,
+                  "attributes": {},
+                  "style": "",
+                  "tag": "a",
+                  "label": "Rewards & Treats",
+                  "href": "/feast-pass/rewards/",
+                  "layerName": "Rewards & Treats",
+                  "className": "button-link button-link--secondary"
+                }
+              },
+              {
+                "id": "component.owner.797c9735-3327-4aba-8f5d-7cb0ef64ee9b",
+                "type": "core.button",
+                "props": {
+                  "authoringVersion": 1,
+                  "attributes": {},
+                  "style": "",
+                  "tag": "a",
+                  "label": "Guest profile",
+                  "href": "/profile/",
+                  "layerName": "Guest profile",
+                  "className": "button-link button-link--secondary"
+                }
+              }
+            ]
+          }
+        }
+      ]
     }
   ],
   "favorites": [],

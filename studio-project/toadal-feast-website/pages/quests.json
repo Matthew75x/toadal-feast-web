@@ -25,7 +25,7 @@
             "props": {
               "authoringVersion": 1,
               "tag": "div",
-              "className": "progression-page",
+              "className": "progression-page feast-journey-page",
               "attributes": {
                 "data-progression-page": "quests",
                 "data-companion-context": "feast-pass-quests",
@@ -184,7 +184,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "Follow configured guest activities across daily check-in, exploration, g",
-                          "text": "Follow configured guest activities across daily check-in, exploration, games, and stories. Definitions and browser-local progress are separate. Starter XP and Sparks settings are editable, not permanent promises."
+                          "text": "Pick a small adventure: check in, explore the Feast World, or find the Home Treats. Return here to claim completed quest rewards."
                         }
                       },
                       {
@@ -197,7 +197,109 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "Only the existing UTC-day check-in, site route visits, and Home Treat co",
-                          "text": "Only the existing UTC-day check-in, site route visits, and Home Treat collection are active. There is no weekly timer; game and story goals appear only when supported by published, configured activities."
+                          "text": "These starter quests stay in this browser. No weekly timer, mobile-game reward, or unverified gameplay or reading progress is counted."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-quests.rich-text.07717575de84.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav feast-journey-links",
+                    "attributes": {
+                      "aria-label": "Feast Pass pages"
+                    },
+                    "style": "",
+                    "layerName": "Feast PassQuests (current page)RewardsGuest profile",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-quests.rich-text.2ab11a332a5e.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.fe11702a0891.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Quests (current page)",
+                          "href": "/feast-pass/quests/",
+                          "children": [
+                            {
+                              "id": "component.guest-quests.rich-text.b7e2b4d740ed.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Quests ",
+                                "layerName": "Text: Quests"
+                              }
+                            },
+                            {
+                              "id": "component.guest-quests.rich-text.861150608b83.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "(current page)",
+                                "text": "(current page)"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.5764f588fd14.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Rewards",
+                          "href": "/feast-pass/rewards/",
+                          "label": "Rewards"
+                        }
+                      },
+                      {
+                        "id": "component.guest-quests.rich-text.cac90f8360a3.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest profile",
+                          "href": "/profile/",
+                          "label": "Guest profile"
                         }
                       }
                     ]
@@ -340,108 +442,6 @@
                   }
                 },
                 {
-                  "id": "component.guest-quests.rich-text.07717575de84.progression-nav",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "nav",
-                    "className": "progression-nav",
-                    "attributes": {
-                      "aria-label": "Feast Pass pages"
-                    },
-                    "style": "",
-                    "layerName": "Feast PassQuests (current page)RewardsGuest profile",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.guest-quests.rich-text.2ab11a332a5e.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Feast Pass",
-                          "href": "/feast-pass/",
-                          "label": "Feast Pass"
-                        }
-                      },
-                      {
-                        "id": "component.guest-quests.rich-text.fe11702a0891.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {
-                            "aria-current": "page"
-                          },
-                          "style": "",
-                          "layerName": "Quests (current page)",
-                          "href": "/feast-pass/quests/",
-                          "children": [
-                            {
-                              "id": "component.guest-quests.rich-text.b7e2b4d740ed.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "Quests ",
-                                "layerName": "Text: Quests"
-                              }
-                            },
-                            {
-                              "id": "component.guest-quests.rich-text.861150608b83.sr-only",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "sr-only",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "(current page)",
-                                "text": "(current page)"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.guest-quests.rich-text.5764f588fd14.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Rewards",
-                          "href": "/feast-pass/rewards/",
-                          "label": "Rewards"
-                        }
-                      },
-                      {
-                        "id": "component.guest-quests.rich-text.cac90f8360a3.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Guest profile",
-                          "href": "/profile/",
-                          "label": "Guest profile"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
                   "id": "component.guest-quests.rich-text.877cfc2fba56.progression-controls",
                   "type": "layout.container",
                   "props": {
@@ -520,7 +520,11 @@
               ]
             }
           }
-        ]
+        ],
+        "backgroundAsset": "asset.home.world.desktop",
+        "backgroundFit": "cover",
+        "backgroundFocalX": 50,
+        "backgroundFocalY": 50
       }
     }
   ],

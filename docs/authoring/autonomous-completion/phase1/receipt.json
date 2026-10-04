@@ -1,0 +1,1716 @@
+{
+  "result": "PASS",
+  "evidence": "D:/TOADAL_BACKUPS/studio-v51-source-admission-20261003/evidence/autonomous-phase1-2026-10-04T08-09-11-300Z",
+  "target": "D:/TOADAL_BACKUPS/website-autonomous-completion-20261004/studio-project/toadal-feast-website",
+  "qualified": "D:/TOADAL_BACKUPS/studio-v51-source-admission-20261003/studio/projects/toadal-feast-website-owner-working",
+  "operations": [
+    {
+      "page": "page.home",
+      "component": "component.home.hero",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.home",
+      "component": "component.home.games-intro",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.home",
+      "component": "component.home.feast-pass",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.home",
+      "component": "component.home.today",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.home",
+      "component": "component.home.interactive-discovery",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.home",
+      "component": "component.home.discovery",
+      "action": "restore qualified order"
+    },
+    {
+      "page": "page.home",
+      "component": "component.home.discovery",
+      "action": "restore qualified order"
+    },
+    {
+      "page": "page.feast-pass",
+      "component": "component.guest-feast-pass.rich-text",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.quests",
+      "component": "component.guest-quests.rich-text",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.rewards",
+      "component": "component.guest-rewards.rich-text",
+      "action": "qualified native props"
+    },
+    {
+      "page": "page.profile",
+      "component": "component.guest-profile.rich-text",
+      "action": "qualified native props"
+    },
+    {
+      "collection": "advancedCode",
+      "action": "qualified CSS/two reviewed JS hunks"
+    },
+    {
+      "pattern": "pattern.owner.852522f0-0ef2-4333-91be-32256808a5da",
+      "action": "add only journey pattern"
+    }
+  ],
+  "deployed": false,
+  "mainChanged": false,
+  "before": [
+    {
+      "file": "animations/index.json",
+      "sha256": "8c2ee3f9629d183222aff236e55a119acee1d274791c4b561b7c975608cc82a2"
+    },
+    {
+      "file": "assets/imported/asset-import-gully-card-fit-desktop-7x4-431513d3.431513d3b1.webp",
+      "sha256": "431513d3b1ea642582412819b4e37be91b517f011a29ef8dd7bf63bd6030c48d"
+    },
+    {
+      "file": "assets/imported/asset-import-gully-card-fit-mobile-3x2-a6e8afa4.a6e8afa445.webp",
+      "sha256": "a6e8afa445bde0c16837784850da3622de7705ae23ad11d2db1fdf0994fac8bd"
+    },
+    {
+      "file": "assets/index.json",
+      "sha256": "76d9866a5641aff0c480d78db143e0fa3ca20768f810f51775d169eb94545dae"
+    },
+    {
+      "file": "collections/advanced-code.json",
+      "sha256": "f25e418d410898390b56a3c86ce7556e35fe8c28cbdbd056d6eb0d8ee8b04a27"
+    },
+    {
+      "file": "collections/behavior-presets.json",
+      "sha256": "30b8d4f2cc37a9c3399aba84c8fdf5a3c34705dcc37f6eca8e26da79db84bde7"
+    },
+    {
+      "file": "collections/cms.json",
+      "sha256": "a4ae408bc2ad477fc3401c42cc345f3eac56389334dc794f96de70c56dd16dbf"
+    },
+    {
+      "file": "collections/integrations.json",
+      "sha256": "5b08ae184ecf98d6dfdfa5459433ccb2578d0937bf671f675f6869fad06e05a5"
+    },
+    {
+      "file": "collections/navigation.json",
+      "sha256": "598451511dc133fbf4d9981722d9da184bc14a0e4085a2f9c94d4e00bb308324"
+    },
+    {
+      "file": "collections/patterns.json",
+      "sha256": "546a9e23e99186ca473754cbb3e69bd38eaa761e32c44febc5594caada0b39d5"
+    },
+    {
+      "file": "collections/presets.json",
+      "sha256": "cb4897da621c9f4e78b87ff55f56a6ce4723e40eac61c7e0a785e5af9e59bbf4"
+    },
+    {
+      "file": "collections/publishing.json",
+      "sha256": "93935cd033290332db65c2b205c84c38c6e275a8ba0ab2d0dc5d97a31a22d4e3"
+    },
+    {
+      "file": "collections/site.json",
+      "sha256": "6574945b62b3dc9f961b0f45be75a64912f7f4f43d31ec7aeee1e54af65d2f7c"
+    },
+    {
+      "file": "collections/status.json",
+      "sha256": "8ab7fcdbb61fd302fc5d4c3a4ee1596e9500d23bc4f4d2f629703dd1dd6b974b"
+    },
+    {
+      "file": "collections/symbols.json",
+      "sha256": "24b10954faf1b1ad72631af8ee51138d2f54077770c8ec89beafe1b59fb882c5"
+    },
+    {
+      "file": "collections/updates.json",
+      "sha256": "30b8d4f2cc37a9c3399aba84c8fdf5a3c34705dcc37f6eca8e26da79db84bde7"
+    },
+    {
+      "file": "content/registry.json",
+      "sha256": "c4bf490dd3ff61b3c5c6564db64d0510db9cbde76661c076008472576f3ca89f"
+    },
+    {
+      "file": "games/claw-feed-gulper.json",
+      "sha256": "810d68201a58ff12ad1344dce7ab23431054d38d078d7d74164059a0186fd877"
+    },
+    {
+      "file": "games/froggy-fruity-bash.json",
+      "sha256": "f4ffba54af193e2dec00948ebda24071565d6de4b5618bc4d9da87e82ace691a"
+    },
+    {
+      "file": "games/index.json",
+      "sha256": "fd939eb677fd090efe5d7037b5974488a390856c567162d87001e5d05a2afb65"
+    },
+    {
+      "file": "games/toadal-feast-arcade-preview.json",
+      "sha256": "efdc95a71d89ec2df113788e8c46ad37dcf0a48fee4f225a04c929c336bc20aa"
+    },
+    {
+      "file": "games/toadal-tower-defense.json",
+      "sha256": "3efe9515df41ceb9f2e27e7199eb0f20bf28605a9ea5129d8ef3bd2a6fde8844"
+    },
+    {
+      "file": "games/wicked-bites.json",
+      "sha256": "bff14d62cc45589f290deb689632b7c3d720507ab942e302fc5037ef089041ea"
+    },
+    {
+      "file": "mechanics/core.json",
+      "sha256": "2851282051a1e9f696a08b6bd8e1024deb07ba3c3da2c9735dbf78550bf0bdef"
+    },
+    {
+      "file": "pages/404.json",
+      "sha256": "54ada77ce4fcb761cbb98c01a381b84fcd21eaf7df4b978c08fc8f0a599e7590"
+    },
+    {
+      "file": "pages/about.json",
+      "sha256": "5c6b8dc3919ec916e6989916a28a960e17ff72b273eb4fceb1ca696c81b308c1"
+    },
+    {
+      "file": "pages/account.json",
+      "sha256": "0fc169ba50040e075f250f7d58c791187a4ca8a1bb1640e0bb659af65aed8e46"
+    },
+    {
+      "file": "pages/app.json",
+      "sha256": "3a79db36163794e24507871cf8e8ec5e9900c9b648ca230c11b61c438cc73d68"
+    },
+    {
+      "file": "pages/characters.json",
+      "sha256": "049710f778c462137006894156234fd514edec45f47498564c8baf504bb3d7c2"
+    },
+    {
+      "file": "pages/comic-reader.json",
+      "sha256": "3dd2fadf7259fc411f521f5973e30011ed70d6c1317d1060ad0bd3a0f7056a4c"
+    },
+    {
+      "file": "pages/coming-soon.json",
+      "sha256": "ddacad66c04da9e6c23f85c722a671f5f774a46da89bd412d7735b41f0480f08"
+    },
+    {
+      "file": "pages/community.json",
+      "sha256": "0a20dab0e27bca3d1ec95c31399a9c6ef0060a723b27792ea19fb3f8af3a1fbc"
+    },
+    {
+      "file": "pages/contact.json",
+      "sha256": "442d522d7e0035609f455c5ebae7eb2e99e5309a43f1a4ba4aad63ed243087fd"
+    },
+    {
+      "file": "pages/feast-pass.json",
+      "sha256": "d09a58f87b6c7ae53b8222a4b5f2a4f80c5e109eb34da52eeeaf8df66ba2d68b"
+    },
+    {
+      "file": "pages/game-claw-feed-gulper.json",
+      "sha256": "c482448a7963b7cdb2eba4fdc4458252ed171b86560a1f0a82c21d7fa312dbd0"
+    },
+    {
+      "file": "pages/game-froggy-fruity-bash.json",
+      "sha256": "e26d8493e02feadfba74a3ca6ea47d1f4c26b4039e5a0858df8d64096df7948c"
+    },
+    {
+      "file": "pages/game-toadal-tower-defense.json",
+      "sha256": "3b6304a0fb699328878c2f58307f836908827d7ed2e12f5ab1872340265805ac"
+    },
+    {
+      "file": "pages/game-wicked-bites.json",
+      "sha256": "b611739e5441e74cd669248261be6ef4f535ceb45891966224c31ed1066527b6"
+    },
+    {
+      "file": "pages/home.json",
+      "sha256": "0ebba411a4253c64bfc6b08602cc9b063ce27ab185eb30ba941832dd97852ffe"
+    },
+    {
+      "file": "pages/index.json",
+      "sha256": "49f061d089d4c1f5dbc7392f3581cda1dc3d432b752c25cf86fa489d7f672bc6"
+    },
+    {
+      "file": "pages/leaderboards.json",
+      "sha256": "5de19873b7ff8268c1bf55e1ba140390430722d2acf88ace2b3b93fd0bc3773b"
+    },
+    {
+      "file": "pages/legal.json",
+      "sha256": "0b9d3ec6660994cd2caf93dd4d58854578febfb46a3d4e74b1995b0a295cba88"
+    },
+    {
+      "file": "pages/manga-series.json",
+      "sha256": "44dbe5e48cfac6143ed1d219c4569fd02d28d0dd9c5d8d6cf4eba63e8104b1dc"
+    },
+    {
+      "file": "pages/media.json",
+      "sha256": "82ddcfa83bf3c3d00c3ba637473b8ec4db8877e79e7951921e756050ac9650fe"
+    },
+    {
+      "file": "pages/news-article.json",
+      "sha256": "13a5f84632937efde315244f5a9829094dea4a825d3f2291add2aa73e5545e84"
+    },
+    {
+      "file": "pages/news.json",
+      "sha256": "a807d63c2b9c53d280ac4335a43a8c0a03d23a308ab29e0f53f4e603acd9e34a"
+    },
+    {
+      "file": "pages/play.json",
+      "sha256": "c21f145fcae9cd0ed69ad21a8956f6e4f393ce1cb59bfe1200d5f36e1e104791"
+    },
+    {
+      "file": "pages/player-wicked-bites.json",
+      "sha256": "732e2565464bea97a6e15ec7bfe1fe93c9ecf7c9da45e0ea4bb15db5f7ac23f0"
+    },
+    {
+      "file": "pages/profile.json",
+      "sha256": "859e21e3636b7a971f7d0f9e3753f6d0027c53c6dd461e5a0e8017b9acd34c96"
+    },
+    {
+      "file": "pages/quests.json",
+      "sha256": "d86200471beaa214f0dab8040ee2f999218717be8f3145545910cff1ac46d6b9"
+    },
+    {
+      "file": "pages/rewards.json",
+      "sha256": "1a765e52e1b788b891413f631bc4bc5933f8cffc26f213fa661f711602394b59"
+    },
+    {
+      "file": "pages/roadmap.json",
+      "sha256": "5fc9a44f493ed7f4ef7562e09585249a4a9160a8183b9a75320a3175b3a2c348"
+    },
+    {
+      "file": "pages/search.json",
+      "sha256": "2464ce952382742ae353d4e5b9189cd6ebcfe9d3a13f6ee7a60895338afc8bf2"
+    },
+    {
+      "file": "pages/store.json",
+      "sha256": "eb3e34c62c57dc6725872cc3a91dd008516c55882cbdb141c5b1be95ea1a374a"
+    },
+    {
+      "file": "pages/stories.json",
+      "sha256": "5f4b3fa1147ca8e2cc5af7f18b14e17e09588fbf0b5d3c84265f24b0345f323d"
+    },
+    {
+      "file": "pages/support.json",
+      "sha256": "917c22807e5689afb3140c2a82a314af80e693c8b17117247c951cb8fb6e8504"
+    },
+    {
+      "file": "pages/toadal-profile.json",
+      "sha256": "9a9e40526cfe940f7bb17715db6f0bb8577ee851fd7583a9a409126653e2fa37"
+    },
+    {
+      "file": "pages/world.json",
+      "sha256": "49b9761ecc8979788da820d55f8390be522c0b00645b2cb3da361c8454c56179"
+    },
+    {
+      "file": "project.json",
+      "sha256": "dbd2c090f89decde71d95a27eb2b8a0c0ed2c663279750c7a981f64f2854788b"
+    },
+    {
+      "file": "reference/.nojekyll",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "reference/assets/brand/brand-crown.svg",
+      "sha256": "6fcbfd6dc4193ae86f9ffd42f999d2057fa12d4360bb35ef5d4d2b41a718ee4d"
+    },
+    {
+      "file": "reference/assets/css/site.css",
+      "sha256": "a07384f5aa2dca461c5dec2b3f14385d3d7cee14fd6fc5b1b815f0e54c0d67bd"
+    },
+    {
+      "file": "reference/assets/data/local-search-index.json",
+      "sha256": "b16c3d4ffbbf9ac6dd94e14ea2ea4a1d7c2b7e4c6fd0e11269406c1764f250b0"
+    },
+    {
+      "file": "reference/assets/data/manifest-public-content.json",
+      "sha256": "ffde73df1cdc30569713a36b5aa7ae8345a13f1f28147f2fbb2845892a6bf906"
+    },
+    {
+      "file": "reference/assets/data/story-content.json",
+      "sha256": "c921242f3c003f8b352d402c77dd403e46221f5ea754df7a26402fc87cc951c4"
+    },
+    {
+      "file": "reference/assets/images/app/approved-app-icon.webp",
+      "sha256": "7c1ba16ae5ab67c2ab2297c3ca84ad9f313b82627d17673efc578e45ee201a44"
+    },
+    {
+      "file": "reference/assets/images/app/arcade-real-gameplay.webp",
+      "sha256": "c141021348f5937d9ff6de7358aee0b038cab9fddf65c5141780a44291598ef9"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/arcade-active-gameplay.webp",
+      "sha256": "62f91010e5dd81a4ffd91506593b3a8d89e6446208c29325a366c183cd5237c4"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/feastfall-entry-onboarding-overlay.webp",
+      "sha256": "d310a96b383a81fc693f447ba6d44a4bb790349f9771aff6642d16d041f76ecf"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/menu-onboarding-overlay.webp",
+      "sha256": "74e68ba251e731462051158af2f4c96ffc209fde1ee84cbde84ffc061eb283a4"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/puzzle-entry.webp",
+      "sha256": "de5beb0ebfd4e58d7b76902b9c19e330cde1275d6221b0bfbaa34961fcff9f53"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/puzzle-result-proof.webp",
+      "sha256": "7078593d7481c9b2ff7cdb730f15d927db98a5f3fec33b05b3c0a50cfaf09e51"
+    },
+    {
+      "file": "reference/assets/images/app/feastfall-real-gameplay.webp",
+      "sha256": "362d3d36bf3f8faf19f9db7bf63d0a8abeb1883662210fc4f992e05c5fd56afa"
+    },
+    {
+      "file": "reference/assets/images/app/puzzle-real-gameplay.webp",
+      "sha256": "c52dfa60185ac2fca83f2cc97b6c3baf369bcd0ff1389ee106135062016d6dfa"
+    },
+    {
+      "file": "reference/assets/images/characters/candy-shooter-fruity-bash.webp",
+      "sha256": "4dd67ff42a1ec2dfdf727184f5e98e31aea36788c7f05853d6b281204a7b1f1c"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/account.png",
+      "sha256": "99a93fb2d13b57509d3fab660086c8933a962dc3b5f62f249f482b4ddda755b9"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+      "sha256": "c551977d1b662033b338e8adcf1e36a1dc3fef674c9518a5082816b66b70870b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/community.png",
+      "sha256": "f0704505918f7abcb2a333e0652fa4d807e9a3d9ab595e4ad9567d1ee613855e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/contact.png",
+      "sha256": "b30e8c7244ea15da91637330a0465f47186d1aad9afdf4b8bea7591cdb7916d9"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/delete-account.png",
+      "sha256": "59f8d89f8e60842e90c15aa3d6b99aa988e1e6d47dd2844514a9a94b01ace0d1"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/download.png",
+      "sha256": "4b7d7cc04dea4daed39f98dbb0ea0396b5e24ae6f002183efab807eb476fe048"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/maintenance.png",
+      "sha256": "1f924f45a5d48c6a5645fe542f216efb710599d8d41441ed38adba3f5b0a12a5"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/merch.png",
+      "sha256": "fe6cdc82d6994a34f2b8da924ba6d87427c85169c66dd566ead7272ad1385e11"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/mute.png",
+      "sha256": "e61350e427a79c25b116be9d2f8ea4e72abb61b73e731838a029e8eff2ce39bb"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/news.png",
+      "sha256": "0cacffdc6f76e7b0cdd510b37f67c2ac3f72d7ef8ef385c55a43ef3058ce7f69"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/notifications.png",
+      "sha256": "e6355637e8b76104d46e653f2fd9fd180e1eef8d59a3d4f565d8961bcc5eb3a5"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/partnership.png",
+      "sha256": "7a9fd47e5ae440eadfdc787960682e8f804a2db5fb8280cff5a32b018a64ec7a"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/privacy.png",
+      "sha256": "d7bcec0ee917ee65b8791e4181acd3542701190fdb6cd56abdd7ceb5d0c79593"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/rating.png",
+      "sha256": "bfdb6945ccdc49a626b7a761133232dce6e5441055b168479a0abfc0fe03c05b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/register.png",
+      "sha256": "fff416affed012e3f7c894d1ebce76b98aab6fa93800575d1a4ac563d4c993c0"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/reward.png",
+      "sha256": "40e38a8ca57ac9c6638a994dadfc40c89b985a1edf1df49d1ca0400434f7ae12"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/search.png",
+      "sha256": "d3703099c0b79764716138793caea2f41b7fb9cf24e2ceece74be4fcb4eb78ea"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/settings.png",
+      "sha256": "5767d9a62f637c85fcdf245b88116a2f814ad9f058e9484d18cf76bdee76ca6e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/survey.png",
+      "sha256": "2008b88c660523fba8e98bb2bc2d4565e16b3fe7468160e39272f14e29002cd1"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/thumbs-down.png",
+      "sha256": "9b8bfdf14fce1c96ff469fb9ab23942e385caf3a62ca79d07de50a175b89725a"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/thumbs-up.png",
+      "sha256": "97bc30ade575e056e0f7a2bced153267d2ba27c2e4eefde4526965169f9e653f"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+      "sha256": "e3340631b8be301952bfad18c4aa02e73845c6cf3777b36510a3c14f48f8dc2e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+      "sha256": "70d793feb54ece0f1604fa48771abf28d4d64923d8e410b3a9dae0a4b0bdf194"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+      "sha256": "ffed40339cd16b938686f0c4f911561b9cbb318b367ce676dc0f40ed84a1a6c2"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+      "sha256": "700cde7cd4b28c1704430ef0e387cb4cdd5f8388b977527a13c8f939786285e1"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/app-mobile.webp",
+      "sha256": "456099feff0dad0b45672b534c41478e343806e3e88fecf56bc701ec94390816"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+      "sha256": "bc36ea3be807b6aa1656d33db27dfd4fd98d35a655015affa8dd900bcca02c34"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/support-help.webp",
+      "sha256": "a926e1d2c2b282842494258fd98eb7e69539ae1533eabd41d6a375cde80a201c"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/world-map.webp",
+      "sha256": "aa00d745e5ac64b1af309bcdeca8939068f46fef2eabbd071249330ef1a37d5b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/account.webp",
+      "sha256": "de14b8b83880203ecce6527ac7d33b58e0c557328283a0266c9951eaf872d174"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/ai-disclosure.webp",
+      "sha256": "2fd915b5d8c6ccaee5957531ec5e622c29e16cd5313616c02c23c62510875fc2"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/community.webp",
+      "sha256": "5256b25a308e73eeb8bf9c85ce9c2a10685f7ea4a9e7650fc0e986de392617cf"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/contact.webp",
+      "sha256": "1c85ae2af6084c952c4e5d62d387ba92146793c1216f9da9c97011fffda5b556"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/delete-account.webp",
+      "sha256": "6f181ed2d97a70911aac5efa0f3e74beda82db54a350ae8557b7e89bddcb6e2b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/download.webp",
+      "sha256": "da8708250a5938ec3b63dbe809f65493f5fbd64bf52be87f24d7eb435359470d"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/maintenance.webp",
+      "sha256": "714ff43763afcada9e1384ed86dee52157fb9ed43c329f44a87581c1e622762c"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/merch.webp",
+      "sha256": "169f74f99a5f3e708b7efac0178dee0981e912e2b44fa3eddc105a915dd0e5c6"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/mute.webp",
+      "sha256": "6d6d4f63d1ba664e0e82fed9b5fba07b6f72a403aa9c378895abe4cce1dcd317"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/news.webp",
+      "sha256": "c8db75dd1a35514861660b9f704ee0d6bf6eb2857e662f085be9d310ab045cdb"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/notifications.webp",
+      "sha256": "02c3c9c66cc1c321f464142ddbe766e35e11c4b33c032adea7786e0034f5b194"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/partnership.webp",
+      "sha256": "548906f1f3312f369eda22c270d7f1f0531e41de01ea4c40aa9eb8294bfebc06"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/privacy.webp",
+      "sha256": "dd905d87fcff6b4c57f9530fcacfb8ad0bb3aaa35a6bc23ab2df88496436a114"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/rating.webp",
+      "sha256": "bd3feca61632328679c2edd0c225c867330b1b701c22aceb53d361e07d61226e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/register.webp",
+      "sha256": "34c889cad2492b24c7ca7066b15e774cb2a2996237a170ba7a79a5857f3643b6"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/reward.webp",
+      "sha256": "f9f006db747c5761df2e250ecf36d278d13e0e4439fce41b3aef243da18f3011"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/search.webp",
+      "sha256": "9ed0f62bc0775554df18b0494089c175a4bc1c38b25a93828f3f80b1a2cda866"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/settings.webp",
+      "sha256": "8776fd9a4d81a27a8a7a9fb524360533d0ab28cc12c4dc8f110269baf7c65236"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/survey.webp",
+      "sha256": "e4541799a0f9a6f813463a3afd45c6946208c4d8aeb5cb12b91a8f2f6ec8816a"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/thumbs-down.webp",
+      "sha256": "cd81bf98af96a48b45aa1bede1215721cfd94b648861c148bc31af1e5e734ccd"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/thumbs-up.webp",
+      "sha256": "5277f73c701ea14936c87660cc7d30c602947bf629d03a4051d89baa1f529e68"
+    },
+    {
+      "file": "reference/assets/images/characters/genie-fruity.webp",
+      "sha256": "e5a0a5bd1b21159dde94287320b99c511053b713bd1a1cfdfe010d62acc207ee"
+    },
+    {
+      "file": "reference/assets/images/characters/genie-savoury.webp",
+      "sha256": "33ae9026ecac0ac43911dc5bd7c7523ebc99aa302aed06c312dadc05526c8dc0"
+    },
+    {
+      "file": "reference/assets/images/characters/genie-sweet.webp",
+      "sha256": "9f39d2ee4a9f2a735e67b3e9b2fe389f5baaf1805e292a47e581550c64116ca5"
+    },
+    {
+      "file": "reference/assets/images/characters/gully.webp",
+      "sha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea"
+    },
+    {
+      "file": "reference/assets/images/characters/gulper.webp",
+      "sha256": "4a5fb5f27d8d89441b4ce87f409eea0a8153a7a67421b92f5321212dd4649e64"
+    },
+    {
+      "file": "reference/assets/images/characters/princess-lily.webp",
+      "sha256": "3da9e9365230816f8cc07e0375549fd8e62651336f4c986dbf7beda77d1c8256"
+    },
+    {
+      "file": "reference/assets/images/characters/toadal-portrait.webp",
+      "sha256": "b44601a13ec88ef529c17dad6be4bbabcfce8dc49a4e337a3a6af442056d5512"
+    },
+    {
+      "file": "reference/assets/images/characters/toadal-victory.png",
+      "sha256": "8af7dfef69ffc8d0484845453ba462776376e4d1fc574459f2c8e9d1d138e026"
+    },
+    {
+      "file": "reference/assets/images/characters/toadal-victory.webp",
+      "sha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+    },
+    {
+      "file": "reference/assets/images/games/claw-feed-gulper-v2.5.1-preview.webp",
+      "sha256": "a2c11d58bc7c05ef0cfe7aea01c57c27ae71bfb86c99e590420c0045d5fbca4f"
+    },
+    {
+      "file": "reference/assets/images/games/wicked-bites-v5.5-preview.webp",
+      "sha256": "02468719f59c1f891a750435d261cf8aab1e42609cea3343e70fbd08b472c4d0"
+    },
+    {
+      "file": "reference/assets/images/interactive/candy-blue.webp",
+      "sha256": "06ecbf35e4f5f72151e5283421d56e628cf435334b32a0c497db7a834e62d392"
+    },
+    {
+      "file": "reference/assets/images/interactive/candy-green.webp",
+      "sha256": "be5351a1abb26ecc0fe6a7ee62c7131fc65434d5b35f320d7bbde70b78217357"
+    },
+    {
+      "file": "reference/assets/images/interactive/candy-purple.webp",
+      "sha256": "49934f70a0f26ed2de548a6a9aff30ed4d35bfdfa4ae6d1fd5e01fe3ba7c184d"
+    },
+    {
+      "file": "reference/assets/images/interactive/daily-chest-sprite.webp",
+      "sha256": "3ef565b477aa37ee266525d33dcc71373ebc5cc58a06cfb6eb5ff85ffdbd03bd"
+    },
+    {
+      "file": "reference/assets/images/interactive/daily-fruit-burst-sprite.webp",
+      "sha256": "f3086e671d2898352e397b27a35f88c8c74b6b729fb720b778b93e3fd234f4d0"
+    },
+    {
+      "file": "reference/assets/images/interactive/golden-block-sprite.webp",
+      "sha256": "ac1ef741a2e91859e31b03b42ae5360b2c558e32c4d29e92b6eb1a80cf7b9c4e"
+    },
+    {
+      "file": "reference/assets/images/interactive/portal-discovery.webp",
+      "sha256": "87fd48bbe1ab25b8633917f0e9455ad284b452769d971e6b7a42ede0d6e8dc0e"
+    },
+    {
+      "file": "reference/assets/images/puzzle/toadal-magic-golden-block.webp",
+      "sha256": "40796e8ed221dfacc94d98a391ae6adaf50ab7f812d770fc5676d9573a8f722b"
+    },
+    {
+      "file": "reference/assets/images/puzzle/toadal-push-golden-block.webp",
+      "sha256": "79e2917f46233620886247ed678db8a4874ce33cd64018dbd58e594d2e89300d"
+    },
+    {
+      "file": "reference/assets/images/world/candy-kingdom-mobile.webp",
+      "sha256": "24e862c188192f77173141f69ed6b82b973384556f0c8bdd224e705c8b1e66f4"
+    },
+    {
+      "file": "reference/assets/images/world/candy-kingdom.webp",
+      "sha256": "da8261fa30f6535f5288f52841dc2123d21a3251340e5d7888d576b7531809b4"
+    },
+    {
+      "file": "reference/assets/images/world/candyland-calm.webp",
+      "sha256": "217403d6e20a2c22211ed8dfeff7f2b7b8a22acfd2404abe9689867bd0047a85"
+    },
+    {
+      "file": "reference/assets/images/world/forest-portal.webp",
+      "sha256": "dd9de34d884c376ef67e4b7b9ce7809b4ab92ee9f2118a8242223f1f708e5980"
+    },
+    {
+      "file": "reference/assets/js/companion-position.js",
+      "sha256": "e4e0876334417ed33962f2a898d26ab83248bb09b6e3e16ea30012953e7e4fe7"
+    },
+    {
+      "file": "reference/assets/js/editorial-manifest.js",
+      "sha256": "93f11647f95d91c9c31fb01bf6dd87768caf918e6d90f72e202cc0176d8e069e"
+    },
+    {
+      "file": "reference/assets/js/guest-progression.js",
+      "sha256": "69984c7ce7b1ff79413b9275e345715a92badc131b4657fd26f4ae98e7c1cee2"
+    },
+    {
+      "file": "reference/assets/js/home-interactive-discovery.js",
+      "sha256": "4a516b712dc3e1b276f81b5fe5b2a4cc45bfd978d145a8b13cc8739959686840"
+    },
+    {
+      "file": "reference/assets/js/manifest-shell.js",
+      "sha256": "b5997ed5df1d715039835560c7b84a8373fd348b7ca28f9cffa29992ed51802e"
+    },
+    {
+      "file": "reference/assets/js/progression-definitions.js",
+      "sha256": "5af065fb36ac8c1b50c1bf1e8dd7778a8593143b5720c2f05e15f2f6ca3c903c"
+    },
+    {
+      "file": "reference/assets/js/site-search.js",
+      "sha256": "2c497185c39d293c71aa2a680ae1f15be17a64980c4d697b2d07359092fa52ed"
+    },
+    {
+      "file": "reference/assets/js/stories-publishing.js",
+      "sha256": "ab17e0ec3c363a0391740cfa605e5a5be69a027bbd837d624ae0462aa288c504"
+    },
+    {
+      "file": "reference/assets/js/website-score-adapter.js",
+      "sha256": "66d17d727dfce88d1cf814a2592d425db617077e561d524b2375028b8a3f1ca6"
+    },
+    {
+      "file": "reference/assets/js/world-discovery.js",
+      "sha256": "43237c04dcd8505700523bbf10422eec6867915d80b990e2b0fcb951f03aa59a"
+    },
+    {
+      "file": "reference/public/games/wicked-bites/cartridge.json",
+      "sha256": "00f58f9c98c4b0d079f0f8645d76403c56407dd816a87cac6660074447f5a6db"
+    },
+    {
+      "file": "reference/public/games/wicked-bites/index.html",
+      "sha256": "26a8e1f0cc717560f30a786fa9705f4b538f01c742fa120eb1bf7544705f4fec"
+    },
+    {
+      "file": "reference/public/games/wicked-bites/toadal-bridge.js",
+      "sha256": "4b81cb831c93dc60c8fdf4211f5b552de67ed36a42b66556417411782c56bbec"
+    },
+    {
+      "file": "themes/registry.json",
+      "sha256": "89a810078a385dd120b299cd05b81fe062045b6b807213475f19289abfb86ae8"
+    },
+    {
+      "file": "themes/theme.modern.json",
+      "sha256": "0f49d6d0556d9a99c3368e85eb21e17b9a512f4d247b7f9c635b85079f3bc07b"
+    },
+    {
+      "file": "variables/core.json",
+      "sha256": "6a7d36713bf8ccded8607c61fe9c99a9bb689490213f24c73248409d5a9d9147"
+    }
+  ],
+  "authority": {
+    "main": "9ce82e1188eb1c28fb79f3b4cef5bfdab1cbf75a",
+    "staging": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "owner": "164491d847fd4c21d737e86ae5bba2aa5abf8283"
+  },
+  "inspectBefore": {
+    "server": {
+      "name": "toadal-studio",
+      "version": "1.4.2"
+    },
+    "project": {
+      "id": "toadal-feast-website",
+      "name": "TOADAL FEAST Website",
+      "manifest": "D:\\TOADAL_BACKUPS\\website-autonomous-completion-20261004\\studio-project\\toadal-feast-website\\project.json",
+      "schemaVersion": 1
+    },
+    "counts": {
+      "pages": 33,
+      "games": 4,
+      "assets": 70,
+      "components": 62
+    },
+    "validation": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0
+    },
+    "graph": {
+      "nodes": 182,
+      "edges": 218,
+      "dangling": 0
+    },
+    "history": {
+      "canUndo": false,
+      "canRedo": false,
+      "cursor": 0,
+      "total": 0,
+      "undoLabel": null,
+      "redoLabel": null
+    },
+    "referenceAuthority": null,
+    "activeTheme": "theme.modern",
+    "previewDir": "D:\\TOADAL_BACKUPS\\website-autonomous-completion-20261004\\studio-project\\toadal-feast-website\\build\\ai-preview"
+  },
+  "backup": {
+    "path": "D:\\TOADAL_BACKUPS\\website-autonomous-completion-20261004\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-project-package.zip",
+    "bytes": 39561084
+  },
+  "preflight": {
+    "mode": "preflight",
+    "label": "Autonomous selective qualified five-page carry-forward",
+    "startedAt": "2026-10-04T08:09:16.631Z",
+    "handoff": {
+      "markdown": "AI/HANDOFFS/2026-10-04T08-09-16-678Z-Autonomous-selective-qualified-five-page-carry-forward.md",
+      "json": "AI/HANDOFFS/2026-10-04T08-09-16-678Z-Autonomous-selective-qualified-five-page-carry-forward.json",
+      "state": {
+        "schemaVersion": 1,
+        "createdAt": "2026-10-04T08:09:16.678Z",
+        "label": "Autonomous selective qualified five-page carry-forward",
+        "task": "Retain fresh owner authority and exclude unrelated pilot fixtures",
+        "notes": "",
+        "studio": {
+          "name": "toadal-studio",
+          "version": "1.4.2"
+        },
+        "project": {
+          "id": "toadal-feast-website",
+          "name": "TOADAL FEAST Website",
+          "manifest": "../../website-autonomous-completion-20261004/studio-project/toadal-feast-website/project.json",
+          "treeSha256": "0ee8124a3a95dfc1af99789625c014a82780b5c9db77c736b51ef2cbf7702ab2"
+        },
+        "authority": {
+          "visualBaseline": null,
+          "operatingContract": "AI/OPERATING_CONTRACT.md",
+          "agents": "AGENTS.md"
+        },
+        "quality": {
+          "validation": {
+            "valid": true,
+            "errors": 0,
+            "warnings": 0
+          },
+          "graph": {
+            "nodes": 182,
+            "edges": 218,
+            "dangling": 0
+          },
+          "history": {
+            "canUndo": false,
+            "canRedo": false,
+            "cursor": 0,
+            "total": 0,
+            "undoLabel": null,
+            "redoLabel": null
+          }
+        },
+        "capabilityLedger": {
+          "release": "1.2.0",
+          "scope": "Foundation + Tier 1 + Tier 2 + Tier 3 + Tier 4",
+          "implemented": 175,
+          "deferred": 23,
+          "total": 198
+        },
+        "aiSurface": {
+          "tools": 19,
+          "resources": 12,
+          "resourceTemplates": 3,
+          "prompts": 5,
+          "manifest": "AI/AI_MANIFEST.json"
+        },
+        "recentStudioCommands": [],
+        "nextAgentStartup": [
+          "Read AGENTS.md and AI/OPERATING_CONTRACT.md.",
+          "Call toadal.inspect(scope=\"workspace\").",
+          "Read the relevant entity with toadal.inspect before mutating it.",
+          "Use typed TOADAL MCP tools; avoid direct JSON edits unless the tool surface genuinely lacks the operation.",
+          "After changes, call toadal.qa(level=\"full\") and toadal.checkpoint(mode=\"full\")."
+        ]
+      }
+    },
+    "finishedAt": "2026-10-04T08:09:16.747Z",
+    "ok": true
+  },
+  "changed": [
+    {
+      "file": "collections/advanced-code.json",
+      "sha256": "fa631ecb3d873483061c03076140bc193c7706eacc914be7b0ab8f3b612dec3a"
+    },
+    {
+      "file": "collections/patterns.json",
+      "sha256": "27cc65efee44bcb5ba7a1f1fb636262863bd3b43e7441541c55a06e6d876b33a"
+    },
+    {
+      "file": "pages/feast-pass.json",
+      "sha256": "54b804e7c4b76e60e9c6dfb76cba80e2eee2d875f800604940203bef5606da34"
+    },
+    {
+      "file": "pages/home.json",
+      "sha256": "3304c68d75463a38d369fc0f39d8d76bd8c3a445cd4be4ca8cba01dd3b1eab7c"
+    },
+    {
+      "file": "pages/profile.json",
+      "sha256": "57f650109344c1fbc60c47a94c4690b017603e965f004a30cc96ddea0e0795e9"
+    },
+    {
+      "file": "pages/quests.json",
+      "sha256": "c4cf1b7fe48e5e1dff6cc8ce500ca0d74c5eefc1dbb0b89364061bdce318ed3f"
+    },
+    {
+      "file": "pages/rewards.json",
+      "sha256": "64a8011d0fbe3683d74580b8106da5e6bc82d8826127d4d8bf87332efd44da3e"
+    }
+  ],
+  "inspectAfter": {
+    "server": {
+      "name": "toadal-studio",
+      "version": "1.4.2"
+    },
+    "project": {
+      "id": "toadal-feast-website",
+      "name": "TOADAL FEAST Website",
+      "manifest": "D:\\TOADAL_BACKUPS\\website-autonomous-completion-20261004\\studio-project\\toadal-feast-website\\project.json",
+      "schemaVersion": 1
+    },
+    "counts": {
+      "pages": 33,
+      "games": 4,
+      "assets": 70,
+      "components": 62
+    },
+    "validation": {
+      "valid": true,
+      "errors": 0,
+      "warnings": 0
+    },
+    "graph": {
+      "nodes": 182,
+      "edges": 222,
+      "dangling": 0
+    },
+    "history": {
+      "canUndo": true,
+      "canRedo": false,
+      "cursor": 13,
+      "total": 13,
+      "undoLabel": "AI: update collection patterns",
+      "redoLabel": null
+    },
+    "referenceAuthority": null,
+    "activeTheme": "theme.modern",
+    "previewDir": "D:\\TOADAL_BACKUPS\\website-autonomous-completion-20261004\\studio-project\\toadal-feast-website\\build\\ai-preview"
+  },
+  "qa": {
+    "level": "quick",
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "graph": {
+      "dangling": []
+    },
+    "accessibility": {
+      "checks": {
+        "altText": true,
+        "iframeTitles": true,
+        "controlNames": true,
+        "headingHierarchy": true,
+        "focusVisibility": true,
+        "keyboardOperation": true,
+        "reducedMotion": true,
+        "touchTargets": true,
+        "contrastHeuristics": true
+      },
+      "issues": [],
+      "errors": 0,
+      "warnings": 0
+    },
+    "performance": {
+      "files": 140,
+      "totalBytes": 43299061,
+      "htmlBytes": 4218513,
+      "largest": [
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/reward.png",
+          "bytes": 1733730
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/maintenance.png",
+          "bytes": 1663323
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+          "bytes": 1577938
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "bytes": 1530925
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+          "bytes": 1528531
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/news.png",
+          "bytes": 1527629
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/community.png",
+          "bytes": 1480074
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/merch.png",
+          "bytes": 1457991
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+          "bytes": 1410487
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/settings.png",
+          "bytes": 1393918
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/privacy.png",
+          "bytes": 1338522
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/search.png",
+          "bytes": 1335024
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/rating.png",
+          "bytes": 1333728
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/register.png",
+          "bytes": 1321069
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+          "bytes": 1320726
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/contact.png",
+          "bytes": 1313872
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/survey.png",
+          "bytes": 1300901
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/delete-account.png",
+          "bytes": 1300325
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/notifications.png",
+          "bytes": 1299116
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+          "bytes": 1279993
+        }
+      ],
+      "largeFileWarnings": 20
+    },
+    "referenceFiles": 103,
+    "previewFiles": 140
+  },
+  "after": [
+    {
+      "file": "animations/index.json",
+      "sha256": "8c2ee3f9629d183222aff236e55a119acee1d274791c4b561b7c975608cc82a2"
+    },
+    {
+      "file": "assets/imported/asset-import-gully-card-fit-desktop-7x4-431513d3.431513d3b1.webp",
+      "sha256": "431513d3b1ea642582412819b4e37be91b517f011a29ef8dd7bf63bd6030c48d"
+    },
+    {
+      "file": "assets/imported/asset-import-gully-card-fit-mobile-3x2-a6e8afa4.a6e8afa445.webp",
+      "sha256": "a6e8afa445bde0c16837784850da3622de7705ae23ad11d2db1fdf0994fac8bd"
+    },
+    {
+      "file": "assets/index.json",
+      "sha256": "76d9866a5641aff0c480d78db143e0fa3ca20768f810f51775d169eb94545dae"
+    },
+    {
+      "file": "collections/advanced-code.json",
+      "sha256": "fa631ecb3d873483061c03076140bc193c7706eacc914be7b0ab8f3b612dec3a"
+    },
+    {
+      "file": "collections/behavior-presets.json",
+      "sha256": "30b8d4f2cc37a9c3399aba84c8fdf5a3c34705dcc37f6eca8e26da79db84bde7"
+    },
+    {
+      "file": "collections/cms.json",
+      "sha256": "a4ae408bc2ad477fc3401c42cc345f3eac56389334dc794f96de70c56dd16dbf"
+    },
+    {
+      "file": "collections/integrations.json",
+      "sha256": "5b08ae184ecf98d6dfdfa5459433ccb2578d0937bf671f675f6869fad06e05a5"
+    },
+    {
+      "file": "collections/navigation.json",
+      "sha256": "598451511dc133fbf4d9981722d9da184bc14a0e4085a2f9c94d4e00bb308324"
+    },
+    {
+      "file": "collections/patterns.json",
+      "sha256": "27cc65efee44bcb5ba7a1f1fb636262863bd3b43e7441541c55a06e6d876b33a"
+    },
+    {
+      "file": "collections/presets.json",
+      "sha256": "cb4897da621c9f4e78b87ff55f56a6ce4723e40eac61c7e0a785e5af9e59bbf4"
+    },
+    {
+      "file": "collections/publishing.json",
+      "sha256": "93935cd033290332db65c2b205c84c38c6e275a8ba0ab2d0dc5d97a31a22d4e3"
+    },
+    {
+      "file": "collections/site.json",
+      "sha256": "6574945b62b3dc9f961b0f45be75a64912f7f4f43d31ec7aeee1e54af65d2f7c"
+    },
+    {
+      "file": "collections/status.json",
+      "sha256": "8ab7fcdbb61fd302fc5d4c3a4ee1596e9500d23bc4f4d2f629703dd1dd6b974b"
+    },
+    {
+      "file": "collections/symbols.json",
+      "sha256": "24b10954faf1b1ad72631af8ee51138d2f54077770c8ec89beafe1b59fb882c5"
+    },
+    {
+      "file": "collections/updates.json",
+      "sha256": "30b8d4f2cc37a9c3399aba84c8fdf5a3c34705dcc37f6eca8e26da79db84bde7"
+    },
+    {
+      "file": "content/registry.json",
+      "sha256": "c4bf490dd3ff61b3c5c6564db64d0510db9cbde76661c076008472576f3ca89f"
+    },
+    {
+      "file": "games/claw-feed-gulper.json",
+      "sha256": "810d68201a58ff12ad1344dce7ab23431054d38d078d7d74164059a0186fd877"
+    },
+    {
+      "file": "games/froggy-fruity-bash.json",
+      "sha256": "f4ffba54af193e2dec00948ebda24071565d6de4b5618bc4d9da87e82ace691a"
+    },
+    {
+      "file": "games/index.json",
+      "sha256": "fd939eb677fd090efe5d7037b5974488a390856c567162d87001e5d05a2afb65"
+    },
+    {
+      "file": "games/toadal-feast-arcade-preview.json",
+      "sha256": "efdc95a71d89ec2df113788e8c46ad37dcf0a48fee4f225a04c929c336bc20aa"
+    },
+    {
+      "file": "games/toadal-tower-defense.json",
+      "sha256": "3efe9515df41ceb9f2e27e7199eb0f20bf28605a9ea5129d8ef3bd2a6fde8844"
+    },
+    {
+      "file": "games/wicked-bites.json",
+      "sha256": "bff14d62cc45589f290deb689632b7c3d720507ab942e302fc5037ef089041ea"
+    },
+    {
+      "file": "mechanics/core.json",
+      "sha256": "2851282051a1e9f696a08b6bd8e1024deb07ba3c3da2c9735dbf78550bf0bdef"
+    },
+    {
+      "file": "pages/404.json",
+      "sha256": "54ada77ce4fcb761cbb98c01a381b84fcd21eaf7df4b978c08fc8f0a599e7590"
+    },
+    {
+      "file": "pages/about.json",
+      "sha256": "5c6b8dc3919ec916e6989916a28a960e17ff72b273eb4fceb1ca696c81b308c1"
+    },
+    {
+      "file": "pages/account.json",
+      "sha256": "0fc169ba50040e075f250f7d58c791187a4ca8a1bb1640e0bb659af65aed8e46"
+    },
+    {
+      "file": "pages/app.json",
+      "sha256": "3a79db36163794e24507871cf8e8ec5e9900c9b648ca230c11b61c438cc73d68"
+    },
+    {
+      "file": "pages/characters.json",
+      "sha256": "049710f778c462137006894156234fd514edec45f47498564c8baf504bb3d7c2"
+    },
+    {
+      "file": "pages/comic-reader.json",
+      "sha256": "3dd2fadf7259fc411f521f5973e30011ed70d6c1317d1060ad0bd3a0f7056a4c"
+    },
+    {
+      "file": "pages/coming-soon.json",
+      "sha256": "ddacad66c04da9e6c23f85c722a671f5f774a46da89bd412d7735b41f0480f08"
+    },
+    {
+      "file": "pages/community.json",
+      "sha256": "0a20dab0e27bca3d1ec95c31399a9c6ef0060a723b27792ea19fb3f8af3a1fbc"
+    },
+    {
+      "file": "pages/contact.json",
+      "sha256": "442d522d7e0035609f455c5ebae7eb2e99e5309a43f1a4ba4aad63ed243087fd"
+    },
+    {
+      "file": "pages/feast-pass.json",
+      "sha256": "54b804e7c4b76e60e9c6dfb76cba80e2eee2d875f800604940203bef5606da34"
+    },
+    {
+      "file": "pages/game-claw-feed-gulper.json",
+      "sha256": "c482448a7963b7cdb2eba4fdc4458252ed171b86560a1f0a82c21d7fa312dbd0"
+    },
+    {
+      "file": "pages/game-froggy-fruity-bash.json",
+      "sha256": "e26d8493e02feadfba74a3ca6ea47d1f4c26b4039e5a0858df8d64096df7948c"
+    },
+    {
+      "file": "pages/game-toadal-tower-defense.json",
+      "sha256": "3b6304a0fb699328878c2f58307f836908827d7ed2e12f5ab1872340265805ac"
+    },
+    {
+      "file": "pages/game-wicked-bites.json",
+      "sha256": "b611739e5441e74cd669248261be6ef4f535ceb45891966224c31ed1066527b6"
+    },
+    {
+      "file": "pages/home.json",
+      "sha256": "3304c68d75463a38d369fc0f39d8d76bd8c3a445cd4be4ca8cba01dd3b1eab7c"
+    },
+    {
+      "file": "pages/index.json",
+      "sha256": "49f061d089d4c1f5dbc7392f3581cda1dc3d432b752c25cf86fa489d7f672bc6"
+    },
+    {
+      "file": "pages/leaderboards.json",
+      "sha256": "5de19873b7ff8268c1bf55e1ba140390430722d2acf88ace2b3b93fd0bc3773b"
+    },
+    {
+      "file": "pages/legal.json",
+      "sha256": "0b9d3ec6660994cd2caf93dd4d58854578febfb46a3d4e74b1995b0a295cba88"
+    },
+    {
+      "file": "pages/manga-series.json",
+      "sha256": "44dbe5e48cfac6143ed1d219c4569fd02d28d0dd9c5d8d6cf4eba63e8104b1dc"
+    },
+    {
+      "file": "pages/media.json",
+      "sha256": "82ddcfa83bf3c3d00c3ba637473b8ec4db8877e79e7951921e756050ac9650fe"
+    },
+    {
+      "file": "pages/news-article.json",
+      "sha256": "13a5f84632937efde315244f5a9829094dea4a825d3f2291add2aa73e5545e84"
+    },
+    {
+      "file": "pages/news.json",
+      "sha256": "a807d63c2b9c53d280ac4335a43a8c0a03d23a308ab29e0f53f4e603acd9e34a"
+    },
+    {
+      "file": "pages/play.json",
+      "sha256": "c21f145fcae9cd0ed69ad21a8956f6e4f393ce1cb59bfe1200d5f36e1e104791"
+    },
+    {
+      "file": "pages/player-wicked-bites.json",
+      "sha256": "732e2565464bea97a6e15ec7bfe1fe93c9ecf7c9da45e0ea4bb15db5f7ac23f0"
+    },
+    {
+      "file": "pages/profile.json",
+      "sha256": "57f650109344c1fbc60c47a94c4690b017603e965f004a30cc96ddea0e0795e9"
+    },
+    {
+      "file": "pages/quests.json",
+      "sha256": "c4cf1b7fe48e5e1dff6cc8ce500ca0d74c5eefc1dbb0b89364061bdce318ed3f"
+    },
+    {
+      "file": "pages/rewards.json",
+      "sha256": "64a8011d0fbe3683d74580b8106da5e6bc82d8826127d4d8bf87332efd44da3e"
+    },
+    {
+      "file": "pages/roadmap.json",
+      "sha256": "5fc9a44f493ed7f4ef7562e09585249a4a9160a8183b9a75320a3175b3a2c348"
+    },
+    {
+      "file": "pages/search.json",
+      "sha256": "2464ce952382742ae353d4e5b9189cd6ebcfe9d3a13f6ee7a60895338afc8bf2"
+    },
+    {
+      "file": "pages/store.json",
+      "sha256": "eb3e34c62c57dc6725872cc3a91dd008516c55882cbdb141c5b1be95ea1a374a"
+    },
+    {
+      "file": "pages/stories.json",
+      "sha256": "5f4b3fa1147ca8e2cc5af7f18b14e17e09588fbf0b5d3c84265f24b0345f323d"
+    },
+    {
+      "file": "pages/support.json",
+      "sha256": "917c22807e5689afb3140c2a82a314af80e693c8b17117247c951cb8fb6e8504"
+    },
+    {
+      "file": "pages/toadal-profile.json",
+      "sha256": "9a9e40526cfe940f7bb17715db6f0bb8577ee851fd7583a9a409126653e2fa37"
+    },
+    {
+      "file": "pages/world.json",
+      "sha256": "49b9761ecc8979788da820d55f8390be522c0b00645b2cb3da361c8454c56179"
+    },
+    {
+      "file": "project.json",
+      "sha256": "dbd2c090f89decde71d95a27eb2b8a0c0ed2c663279750c7a981f64f2854788b"
+    },
+    {
+      "file": "reference/.nojekyll",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6"
+    },
+    {
+      "file": "reference/assets/brand/brand-crown.svg",
+      "sha256": "6fcbfd6dc4193ae86f9ffd42f999d2057fa12d4360bb35ef5d4d2b41a718ee4d"
+    },
+    {
+      "file": "reference/assets/css/site.css",
+      "sha256": "a07384f5aa2dca461c5dec2b3f14385d3d7cee14fd6fc5b1b815f0e54c0d67bd"
+    },
+    {
+      "file": "reference/assets/data/local-search-index.json",
+      "sha256": "b16c3d4ffbbf9ac6dd94e14ea2ea4a1d7c2b7e4c6fd0e11269406c1764f250b0"
+    },
+    {
+      "file": "reference/assets/data/manifest-public-content.json",
+      "sha256": "ffde73df1cdc30569713a36b5aa7ae8345a13f1f28147f2fbb2845892a6bf906"
+    },
+    {
+      "file": "reference/assets/data/story-content.json",
+      "sha256": "c921242f3c003f8b352d402c77dd403e46221f5ea754df7a26402fc87cc951c4"
+    },
+    {
+      "file": "reference/assets/images/app/approved-app-icon.webp",
+      "sha256": "7c1ba16ae5ab67c2ab2297c3ca84ad9f313b82627d17673efc578e45ee201a44"
+    },
+    {
+      "file": "reference/assets/images/app/arcade-real-gameplay.webp",
+      "sha256": "c141021348f5937d9ff6de7358aee0b038cab9fddf65c5141780a44291598ef9"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/arcade-active-gameplay.webp",
+      "sha256": "62f91010e5dd81a4ffd91506593b3a8d89e6446208c29325a366c183cd5237c4"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/feastfall-entry-onboarding-overlay.webp",
+      "sha256": "d310a96b383a81fc693f447ba6d44a4bb790349f9771aff6642d16d041f76ecf"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/menu-onboarding-overlay.webp",
+      "sha256": "74e68ba251e731462051158af2f4c96ffc209fde1ee84cbde84ffc061eb283a4"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/puzzle-entry.webp",
+      "sha256": "de5beb0ebfd4e58d7b76902b9c19e330cde1275d6221b0bfbaa34961fcff9f53"
+    },
+    {
+      "file": "reference/assets/images/app/convergence-20261001/puzzle-result-proof.webp",
+      "sha256": "7078593d7481c9b2ff7cdb730f15d927db98a5f3fec33b05b3c0a50cfaf09e51"
+    },
+    {
+      "file": "reference/assets/images/app/feastfall-real-gameplay.webp",
+      "sha256": "362d3d36bf3f8faf19f9db7bf63d0a8abeb1883662210fc4f992e05c5fd56afa"
+    },
+    {
+      "file": "reference/assets/images/app/puzzle-real-gameplay.webp",
+      "sha256": "c52dfa60185ac2fca83f2cc97b6c3baf369bcd0ff1389ee106135062016d6dfa"
+    },
+    {
+      "file": "reference/assets/images/characters/candy-shooter-fruity-bash.webp",
+      "sha256": "4dd67ff42a1ec2dfdf727184f5e98e31aea36788c7f05853d6b281204a7b1f1c"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/account.png",
+      "sha256": "99a93fb2d13b57509d3fab660086c8933a962dc3b5f62f249f482b4ddda755b9"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+      "sha256": "c551977d1b662033b338e8adcf1e36a1dc3fef674c9518a5082816b66b70870b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/community.png",
+      "sha256": "f0704505918f7abcb2a333e0652fa4d807e9a3d9ab595e4ad9567d1ee613855e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/contact.png",
+      "sha256": "b30e8c7244ea15da91637330a0465f47186d1aad9afdf4b8bea7591cdb7916d9"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/delete-account.png",
+      "sha256": "59f8d89f8e60842e90c15aa3d6b99aa988e1e6d47dd2844514a9a94b01ace0d1"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/download.png",
+      "sha256": "4b7d7cc04dea4daed39f98dbb0ea0396b5e24ae6f002183efab807eb476fe048"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/maintenance.png",
+      "sha256": "1f924f45a5d48c6a5645fe542f216efb710599d8d41441ed38adba3f5b0a12a5"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/merch.png",
+      "sha256": "fe6cdc82d6994a34f2b8da924ba6d87427c85169c66dd566ead7272ad1385e11"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/mute.png",
+      "sha256": "e61350e427a79c25b116be9d2f8ea4e72abb61b73e731838a029e8eff2ce39bb"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/news.png",
+      "sha256": "0cacffdc6f76e7b0cdd510b37f67c2ac3f72d7ef8ef385c55a43ef3058ce7f69"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/notifications.png",
+      "sha256": "e6355637e8b76104d46e653f2fd9fd180e1eef8d59a3d4f565d8961bcc5eb3a5"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/partnership.png",
+      "sha256": "7a9fd47e5ae440eadfdc787960682e8f804a2db5fb8280cff5a32b018a64ec7a"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/privacy.png",
+      "sha256": "d7bcec0ee917ee65b8791e4181acd3542701190fdb6cd56abdd7ceb5d0c79593"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/rating.png",
+      "sha256": "bfdb6945ccdc49a626b7a761133232dce6e5441055b168479a0abfc0fe03c05b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/register.png",
+      "sha256": "fff416affed012e3f7c894d1ebce76b98aab6fa93800575d1a4ac563d4c993c0"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/reward.png",
+      "sha256": "40e38a8ca57ac9c6638a994dadfc40c89b985a1edf1df49d1ca0400434f7ae12"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/search.png",
+      "sha256": "d3703099c0b79764716138793caea2f41b7fb9cf24e2ceece74be4fcb4eb78ea"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/settings.png",
+      "sha256": "5767d9a62f637c85fcdf245b88116a2f814ad9f058e9484d18cf76bdee76ca6e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/survey.png",
+      "sha256": "2008b88c660523fba8e98bb2bc2d4565e16b3fe7468160e39272f14e29002cd1"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/thumbs-down.png",
+      "sha256": "9b8bfdf14fce1c96ff469fb9ab23942e385caf3a62ca79d07de50a175b89725a"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/master-v2-selected/thumbs-up.png",
+      "sha256": "97bc30ade575e056e0f7a2bced153267d2ba27c2e4eefde4526965169f9e653f"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+      "sha256": "e3340631b8be301952bfad18c4aa02e73845c6cf3777b36510a3c14f48f8dc2e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-mobile-app.png",
+      "sha256": "70d793feb54ece0f1604fa48771abf28d4d64923d8e410b3a9dae0a4b0bdf194"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+      "sha256": "ffed40339cd16b938686f0c4f911561b9cbb318b367ce676dc0f40ed84a1a6c2"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+      "sha256": "700cde7cd4b28c1704430ef0e387cb4cdd5f8388b977527a13c8f939786285e1"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/app-mobile.webp",
+      "sha256": "456099feff0dad0b45672b534c41478e343806e3e88fecf56bc701ec94390816"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/stories-media-thinking.webp",
+      "sha256": "bc36ea3be807b6aa1656d33db27dfd4fd98d35a655015affa8dd900bcca02c34"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/support-help.webp",
+      "sha256": "a926e1d2c2b282842494258fd98eb7e69539ae1533eabd41d6a375cde80a201c"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v1/world-map.webp",
+      "sha256": "aa00d745e5ac64b1af309bcdeca8939068f46fef2eabbd071249330ef1a37d5b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/account.webp",
+      "sha256": "de14b8b83880203ecce6527ac7d33b58e0c557328283a0266c9951eaf872d174"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/ai-disclosure.webp",
+      "sha256": "2fd915b5d8c6ccaee5957531ec5e622c29e16cd5313616c02c23c62510875fc2"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/community.webp",
+      "sha256": "5256b25a308e73eeb8bf9c85ce9c2a10685f7ea4a9e7650fc0e986de392617cf"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/contact.webp",
+      "sha256": "1c85ae2af6084c952c4e5d62d387ba92146793c1216f9da9c97011fffda5b556"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/delete-account.webp",
+      "sha256": "6f181ed2d97a70911aac5efa0f3e74beda82db54a350ae8557b7e89bddcb6e2b"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/download.webp",
+      "sha256": "da8708250a5938ec3b63dbe809f65493f5fbd64bf52be87f24d7eb435359470d"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/maintenance.webp",
+      "sha256": "714ff43763afcada9e1384ed86dee52157fb9ed43c329f44a87581c1e622762c"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/merch.webp",
+      "sha256": "169f74f99a5f3e708b7efac0178dee0981e912e2b44fa3eddc105a915dd0e5c6"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/mute.webp",
+      "sha256": "6d6d4f63d1ba664e0e82fed9b5fba07b6f72a403aa9c378895abe4cce1dcd317"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/news.webp",
+      "sha256": "c8db75dd1a35514861660b9f704ee0d6bf6eb2857e662f085be9d310ab045cdb"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/notifications.webp",
+      "sha256": "02c3c9c66cc1c321f464142ddbe766e35e11c4b33c032adea7786e0034f5b194"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/partnership.webp",
+      "sha256": "548906f1f3312f369eda22c270d7f1f0531e41de01ea4c40aa9eb8294bfebc06"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/privacy.webp",
+      "sha256": "dd905d87fcff6b4c57f9530fcacfb8ad0bb3aaa35a6bc23ab2df88496436a114"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/rating.webp",
+      "sha256": "bd3feca61632328679c2edd0c225c867330b1b701c22aceb53d361e07d61226e"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/register.webp",
+      "sha256": "34c889cad2492b24c7ca7066b15e774cb2a2996237a170ba7a79a5857f3643b6"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/reward.webp",
+      "sha256": "f9f006db747c5761df2e250ecf36d278d13e0e4439fce41b3aef243da18f3011"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/search.webp",
+      "sha256": "9ed0f62bc0775554df18b0494089c175a4bc1c38b25a93828f3f80b1a2cda866"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/settings.webp",
+      "sha256": "8776fd9a4d81a27a8a7a9fb524360533d0ab28cc12c4dc8f110269baf7c65236"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/survey.webp",
+      "sha256": "e4541799a0f9a6f813463a3afd45c6946208c4d8aeb5cb12b91a8f2f6ec8816a"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/thumbs-down.webp",
+      "sha256": "cd81bf98af96a48b45aa1bede1215721cfd94b648861c148bc31af1e5e734ccd"
+    },
+    {
+      "file": "reference/assets/images/characters/companion/runtime-v2/thumbs-up.webp",
+      "sha256": "5277f73c701ea14936c87660cc7d30c602947bf629d03a4051d89baa1f529e68"
+    },
+    {
+      "file": "reference/assets/images/characters/genie-fruity.webp",
+      "sha256": "e5a0a5bd1b21159dde94287320b99c511053b713bd1a1cfdfe010d62acc207ee"
+    },
+    {
+      "file": "reference/assets/images/characters/genie-savoury.webp",
+      "sha256": "33ae9026ecac0ac43911dc5bd7c7523ebc99aa302aed06c312dadc05526c8dc0"
+    },
+    {
+      "file": "reference/assets/images/characters/genie-sweet.webp",
+      "sha256": "9f39d2ee4a9f2a735e67b3e9b2fe389f5baaf1805e292a47e581550c64116ca5"
+    },
+    {
+      "file": "reference/assets/images/characters/gully.webp",
+      "sha256": "177f30acff9a2a782ba3e80aa3e05f19860dddeb513f7de0955fadc0b8585cea"
+    },
+    {
+      "file": "reference/assets/images/characters/gulper.webp",
+      "sha256": "4a5fb5f27d8d89441b4ce87f409eea0a8153a7a67421b92f5321212dd4649e64"
+    },
+    {
+      "file": "reference/assets/images/characters/princess-lily.webp",
+      "sha256": "3da9e9365230816f8cc07e0375549fd8e62651336f4c986dbf7beda77d1c8256"
+    },
+    {
+      "file": "reference/assets/images/characters/toadal-portrait.webp",
+      "sha256": "b44601a13ec88ef529c17dad6be4bbabcfce8dc49a4e337a3a6af442056d5512"
+    },
+    {
+      "file": "reference/assets/images/characters/toadal-victory.png",
+      "sha256": "8af7dfef69ffc8d0484845453ba462776376e4d1fc574459f2c8e9d1d138e026"
+    },
+    {
+      "file": "reference/assets/images/characters/toadal-victory.webp",
+      "sha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+    },
+    {
+      "file": "reference/assets/images/games/claw-feed-gulper-v2.5.1-preview.webp",
+      "sha256": "a2c11d58bc7c05ef0cfe7aea01c57c27ae71bfb86c99e590420c0045d5fbca4f"
+    },
+    {
+      "file": "reference/assets/images/games/wicked-bites-v5.5-preview.webp",
+      "sha256": "02468719f59c1f891a750435d261cf8aab1e42609cea3343e70fbd08b472c4d0"
+    },
+    {
+      "file": "reference/assets/images/interactive/candy-blue.webp",
+      "sha256": "06ecbf35e4f5f72151e5283421d56e628cf435334b32a0c497db7a834e62d392"
+    },
+    {
+      "file": "reference/assets/images/interactive/candy-green.webp",
+      "sha256": "be5351a1abb26ecc0fe6a7ee62c7131fc65434d5b35f320d7bbde70b78217357"
+    },
+    {
+      "file": "reference/assets/images/interactive/candy-purple.webp",
+      "sha256": "49934f70a0f26ed2de548a6a9aff30ed4d35bfdfa4ae6d1fd5e01fe3ba7c184d"
+    },
+    {
+      "file": "reference/assets/images/interactive/daily-chest-sprite.webp",
+      "sha256": "3ef565b477aa37ee266525d33dcc71373ebc5cc58a06cfb6eb5ff85ffdbd03bd"
+    },
+    {
+      "file": "reference/assets/images/interactive/daily-fruit-burst-sprite.webp",
+      "sha256": "f3086e671d2898352e397b27a35f88c8c74b6b729fb720b778b93e3fd234f4d0"
+    },
+    {
+      "file": "reference/assets/images/interactive/golden-block-sprite.webp",
+      "sha256": "ac1ef741a2e91859e31b03b42ae5360b2c558e32c4d29e92b6eb1a80cf7b9c4e"
+    },
+    {
+      "file": "reference/assets/images/interactive/portal-discovery.webp",
+      "sha256": "87fd48bbe1ab25b8633917f0e9455ad284b452769d971e6b7a42ede0d6e8dc0e"
+    },
+    {
+      "file": "reference/assets/images/puzzle/toadal-magic-golden-block.webp",
+      "sha256": "40796e8ed221dfacc94d98a391ae6adaf50ab7f812d770fc5676d9573a8f722b"
+    },
+    {
+      "file": "reference/assets/images/puzzle/toadal-push-golden-block.webp",
+      "sha256": "79e2917f46233620886247ed678db8a4874ce33cd64018dbd58e594d2e89300d"
+    },
+    {
+      "file": "reference/assets/images/world/candy-kingdom-mobile.webp",
+      "sha256": "24e862c188192f77173141f69ed6b82b973384556f0c8bdd224e705c8b1e66f4"
+    },
+    {
+      "file": "reference/assets/images/world/candy-kingdom.webp",
+      "sha256": "da8261fa30f6535f5288f52841dc2123d21a3251340e5d7888d576b7531809b4"
+    },
+    {
+      "file": "reference/assets/images/world/candyland-calm.webp",
+      "sha256": "217403d6e20a2c22211ed8dfeff7f2b7b8a22acfd2404abe9689867bd0047a85"
+    },
+    {
+      "file": "reference/assets/images/world/forest-portal.webp",
+      "sha256": "dd9de34d884c376ef67e4b7b9ce7809b4ab92ee9f2118a8242223f1f708e5980"
+    },
+    {
+      "file": "reference/assets/js/companion-position.js",
+      "sha256": "e4e0876334417ed33962f2a898d26ab83248bb09b6e3e16ea30012953e7e4fe7"
+    },
+    {
+      "file": "reference/assets/js/editorial-manifest.js",
+      "sha256": "93f11647f95d91c9c31fb01bf6dd87768caf918e6d90f72e202cc0176d8e069e"
+    },
+    {
+      "file": "reference/assets/js/guest-progression.js",
+      "sha256": "69984c7ce7b1ff79413b9275e345715a92badc131b4657fd26f4ae98e7c1cee2"
+    },
+    {
+      "file": "reference/assets/js/home-interactive-discovery.js",
+      "sha256": "4a516b712dc3e1b276f81b5fe5b2a4cc45bfd978d145a8b13cc8739959686840"
+    },
+    {
+      "file": "reference/assets/js/manifest-shell.js",
+      "sha256": "b5997ed5df1d715039835560c7b84a8373fd348b7ca28f9cffa29992ed51802e"
+    },
+    {
+      "file": "reference/assets/js/progression-definitions.js",
+      "sha256": "5af065fb36ac8c1b50c1bf1e8dd7778a8593143b5720c2f05e15f2f6ca3c903c"
+    },
+    {
+      "file": "reference/assets/js/site-search.js",
+      "sha256": "2c497185c39d293c71aa2a680ae1f15be17a64980c4d697b2d07359092fa52ed"
+    },
+    {
+      "file": "reference/assets/js/stories-publishing.js",
+      "sha256": "ab17e0ec3c363a0391740cfa605e5a5be69a027bbd837d624ae0462aa288c504"
+    },
+    {
+      "file": "reference/assets/js/website-score-adapter.js",
+      "sha256": "66d17d727dfce88d1cf814a2592d425db617077e561d524b2375028b8a3f1ca6"
+    },
+    {
+      "file": "reference/assets/js/world-discovery.js",
+      "sha256": "43237c04dcd8505700523bbf10422eec6867915d80b990e2b0fcb951f03aa59a"
+    },
+    {
+      "file": "reference/public/games/wicked-bites/cartridge.json",
+      "sha256": "00f58f9c98c4b0d079f0f8645d76403c56407dd816a87cac6660074447f5a6db"
+    },
+    {
+      "file": "reference/public/games/wicked-bites/index.html",
+      "sha256": "26a8e1f0cc717560f30a786fa9705f4b538f01c742fa120eb1bf7544705f4fec"
+    },
+    {
+      "file": "reference/public/games/wicked-bites/toadal-bridge.js",
+      "sha256": "4b81cb831c93dc60c8fdf4211f5b552de67ed36a42b66556417411782c56bbec"
+    },
+    {
+      "file": "themes/registry.json",
+      "sha256": "89a810078a385dd120b299cd05b81fe062045b6b807213475f19289abfb86ae8"
+    },
+    {
+      "file": "themes/theme.modern.json",
+      "sha256": "0f49d6d0556d9a99c3368e85eb21e17b9a512f4d247b7f9c635b85079f3bc07b"
+    },
+    {
+      "file": "variables/core.json",
+      "sha256": "6a7d36713bf8ccded8607c61fe9c99a9bb689490213f24c73248409d5a9d9147"
+    }
+  ],
+  "history": {
+    "canUndo": true,
+    "canRedo": false,
+    "cursor": 13,
+    "total": 13,
+    "undoLabel": "AI: update collection patterns",
+    "redoLabel": null
+  },
+  "sourcePreserved": true,
+  "excludedPilots": true
+}

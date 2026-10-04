@@ -25,7 +25,7 @@
             "props": {
               "authoringVersion": 1,
               "tag": "div",
-              "className": "progression-page",
+              "className": "progression-page feast-journey-page",
               "attributes": {
                 "data-progression-page": "rewards",
                 "data-companion-context": "feast-pass-rewards",
@@ -184,7 +184,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "Starter XP/Sparks settings and three local, non-entitlement level milest",
-                          "text": "Starter XP/Sparks settings and three local, non-entitlement level milestones are configured and editable. No claimable cosmetics, merchandise, premium items, or mobile-game transfer catalog is available."
+                          "text": "See which guest markers you can add to your browser-local Feast collection. Your journey starts with a small welcome badge."
                         }
                       },
                       {
@@ -197,7 +197,109 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "The level milestones are local progress markers, not entitlements. The c",
-                          "text": "The level milestones are local progress markers, not entitlements. The claimable cosmetics, merchandise, premium, and mobile-transfer catalog is empty."
+                          "text": "First Feast is a welcome marker, not an earned game achievement. Higher-level markers unlock only at their configured levels. No transferable items, premium benefits or mobile-game rewards are available."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.guest-rewards.rich-text.4f2eb5071ece.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav feast-journey-links",
+                    "attributes": {
+                      "aria-label": "Feast Pass pages"
+                    },
+                    "style": "",
+                    "layerName": "Feast PassQuestsRewards (current page)Guest profile",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-rewards.rich-text.b194bddf98c5.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.11b851f5bcaf.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Quests",
+                          "href": "/feast-pass/quests/",
+                          "label": "Quests"
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.c3c6976bb378.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "aria-current": "page"
+                          },
+                          "style": "",
+                          "layerName": "Rewards (current page)",
+                          "href": "/feast-pass/rewards/",
+                          "children": [
+                            {
+                              "id": "component.guest-rewards.rich-text.c403ba14486f.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "Rewards ",
+                                "layerName": "Text: Rewards"
+                              }
+                            },
+                            {
+                              "id": "component.guest-rewards.rich-text.322c1eb4ade0.sr-only",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "sr-only",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "(current page)",
+                                "text": "(current page)"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-rewards.rich-text.9b1fec02af7b.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest profile",
+                          "href": "/profile/",
+                          "label": "Guest profile"
                         }
                       }
                     ]
@@ -353,108 +455,6 @@
                   }
                 },
                 {
-                  "id": "component.guest-rewards.rich-text.4f2eb5071ece.progression-nav",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "nav",
-                    "className": "progression-nav",
-                    "attributes": {
-                      "aria-label": "Feast Pass pages"
-                    },
-                    "style": "",
-                    "layerName": "Feast PassQuestsRewards (current page)Guest profile",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.guest-rewards.rich-text.b194bddf98c5.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Feast Pass",
-                          "href": "/feast-pass/",
-                          "label": "Feast Pass"
-                        }
-                      },
-                      {
-                        "id": "component.guest-rewards.rich-text.11b851f5bcaf.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Quests",
-                          "href": "/feast-pass/quests/",
-                          "label": "Quests"
-                        }
-                      },
-                      {
-                        "id": "component.guest-rewards.rich-text.c3c6976bb378.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {
-                            "aria-current": "page"
-                          },
-                          "style": "",
-                          "layerName": "Rewards (current page)",
-                          "href": "/feast-pass/rewards/",
-                          "children": [
-                            {
-                              "id": "component.guest-rewards.rich-text.c403ba14486f.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "Rewards ",
-                                "layerName": "Text: Rewards"
-                              }
-                            },
-                            {
-                              "id": "component.guest-rewards.rich-text.322c1eb4ade0.sr-only",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "sr-only",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "(current page)",
-                                "text": "(current page)"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.guest-rewards.rich-text.9b1fec02af7b.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Guest profile",
-                          "href": "/profile/",
-                          "label": "Guest profile"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
                   "id": "component.guest-rewards.rich-text.5dcee26efc9e.progression-controls",
                   "type": "layout.container",
                   "props": {
@@ -533,7 +533,11 @@
               ]
             }
           }
-        ]
+        ],
+        "backgroundAsset": "asset.home.world.desktop",
+        "backgroundFit": "cover",
+        "backgroundFocalX": 50,
+        "backgroundFocalY": 50
       }
     }
   ],

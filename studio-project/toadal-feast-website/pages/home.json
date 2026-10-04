@@ -311,9 +311,9 @@
                                         "data-companion-action-copy": "The mobile app is the flagship adventure; verified store links are not available here yet."
                                       },
                                       "style": "",
-                                      "layerName": "Discover the full adventure",
+                                      "layerName": "Explore the App",
                                       "href": "/app/",
-                                      "label": "Discover the full adventure"
+                                      "label": "Explore the App"
                                     }
                                   }
                                 ]
@@ -498,10 +498,53 @@
                                 "style": "",
                                 "layerName": "Toadal, the golden-yellow crowned Feast hero wearing his red scarf",
                                 "asset": "asset.home.character.toadal-victory",
-                                "alt": "Toadal, the golden-yellow crowned Feast hero wearing his red scarf"
+                                "alt": "Toadal, the golden-yellow crowned Feast hero wearing his red scarf",
+                                "focalX": 50,
+                                "focalY": 50,
+                                "zoom": 1,
+                                "responsive": {
+                                  "mobile": {
+                                    "asset": "",
+                                    "maxWidth": 600,
+                                    "fit": "",
+                                    "imageHeight": "",
+                                    "imageMaxWidth": "",
+                                    "focalX": "",
+                                    "focalY": "",
+                                    "frameHeight": "",
+                                    "zoom": ""
+                                  },
+                                  "tablet": {
+                                    "fit": "",
+                                    "imageHeight": "",
+                                    "imageMaxWidth": "",
+                                    "focalX": "",
+                                    "focalY": "",
+                                    "frameHeight": "",
+                                    "zoom": ""
+                                  },
+                                  "desktop": {
+                                    "fit": "",
+                                    "imageHeight": 340,
+                                    "imageMaxWidth": "",
+                                    "focalX": "",
+                                    "focalY": "",
+                                    "frameHeight": "",
+                                    "zoom": ""
+                                  }
+                                }
                               }
                             }
-                          ]
+                          ],
+                          "responsive": {
+                            "desktop": {
+                              "marginBottom": 42
+                            },
+                            "tablet": {
+                              "marginBottom": 24
+                            }
+                          },
+                          "presentationVersion": 1
                         }
                       }
                     ]
@@ -566,7 +609,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "Browser game discovery",
-                    "text": "Browser game discovery"
+                    "text": "Play browser games"
                   }
                 },
                 {
@@ -1409,6 +1452,61 @@
                               }
                             },
                             {
+                              "id": "component.mutf2h96.fvymuj",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "feast-progress-note",
+                                "layerName": "Live progress to next level",
+                                "attributes": {},
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.feast.home.next.label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "attributes": {},
+                                      "style": "",
+                                      "tag": "#text",
+                                      "text": "Next level in ",
+                                      "layerName": "Next level in ",
+                                      "className": ""
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast.home.next.value",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "attributes": {
+                                        "data-progression-stat": "xp-to-next"
+                                      },
+                                      "style": "",
+                                      "tag": "strong",
+                                      "text": "100",
+                                      "layerName": "100",
+                                      "className": ""
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast.home.next.suffix",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "attributes": {},
+                                      "style": "",
+                                      "tag": "#text",
+                                      "text": " XP · starter configuration",
+                                      "layerName": " XP · starter configuration",
+                                      "className": ""
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
                               "id": "component.home.feast-pass.f959ef3a21ea.home-pass-storage-status",
                               "type": "core.text",
                               "props": {
@@ -1466,6 +1564,76 @@
                                     }
                                   }
                                 ]
+                              }
+                            },
+                            {
+                              "id": "component.mutf2ic8.rccp8o",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "nav",
+                                "className": "feast-journey-links",
+                                "layerName": "Feast journey links",
+                                "attributes": {
+                                  "aria-label": "Continue your local Feast journey"
+                                },
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.feast.home.journey.quests",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "attributes": {},
+                                      "style": "",
+                                      "tag": "a",
+                                      "label": "Quests",
+                                      "href": "/feast-pass/quests/",
+                                      "layerName": "Quests",
+                                      "className": "button-link button-link--secondary"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast.home.journey.rewards",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "attributes": {},
+                                      "style": "",
+                                      "tag": "a",
+                                      "label": "Rewards & Treats",
+                                      "href": "/feast-pass/rewards/",
+                                      "layerName": "Rewards & Treats",
+                                      "className": "button-link button-link--secondary"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast.home.journey.profile",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "attributes": {},
+                                      "style": "",
+                                      "tag": "a",
+                                      "label": "Guest profile",
+                                      "href": "/profile/",
+                                      "layerName": "Guest profile",
+                                      "className": "button-link button-link--secondary"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.mutf2je0.4jafst",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "feast-quest-prompt",
+                                "layerName": "Next journey prompt",
+                                "attributes": {},
+                                "text": "Collect Home Treats. Explore World. Claim completed quests."
                               }
                             }
                           ]
@@ -1528,849 +1696,6 @@
                         }
                       }
                     ]
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "component.home.today",
-      "type": "layout.container",
-      "props": {
-        "anchorId": "today",
-        "variant": "today",
-        "authoringVersion": 1,
-        "tag": "section",
-        "className": "studio-rich-text shell section",
-        "attributes": {},
-        "style": "",
-        "layerName": "TOADAL FEAST — Play the Feast World for Free content",
-        "mode": "inherit",
-        "children": [
-          {
-            "id": "component.home.today.5715ef2fcfb6.home-section-inner",
-            "type": "layout.container",
-            "props": {
-              "authoringVersion": 1,
-              "tag": "div",
-              "className": "home-section-inner",
-              "attributes": {},
-              "style": "",
-              "layerName": "Check in at the Feast",
-              "mode": "inherit",
-              "children": [
-                {
-                  "id": "component.home.today.d225fb8212d0.today-panel-discovery-da",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "today-panel discovery-daily",
-                    "attributes": {
-                      "data-progression-page": "",
-                      "data-companion-context": "today",
-                      "data-companion-copy": "The optional once-per-UTC-day check-in uses only this browser. It is separate from the mobile game.",
-                      "data-companion-reaction": "curious"
-                    },
-                    "style": "",
-                    "layerName": "Check in at the Feast",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.home.today.ca832603f17c.today-copy",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "div",
-                          "className": "today-copy",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Check in at the Feast",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.home.today.59ef58bc3801.section-kicker",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "A LITTLE DAILY RITUAL",
-                                "text": "A LITTLE DAILY RITUAL"
-                              }
-                            },
-                            {
-                              "id": "component.home.today.034ad7aa3224.section-heading",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "section-heading",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Check in at the Feast",
-                                "text": "Check in at the Feast"
-                              }
-                            },
-                            {
-                              "id": "component.home.today.15a8d0a97032.section-lede",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-lede",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "An optional starter-config check-in can add guest progress once per UTC ",
-                                "text": "An optional starter-config check-in can add guest progress once per UTC day. It is stored in this browser and does not connect to the mobile game."
-                              }
-                            },
-                            {
-                              "id": "component.home.today.0a8a93e5014f.today-checkin-status",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "today-checkin-status",
-                                "attributes": {
-                                  "data-daily-reward-status": "",
-                                  "role": "status",
-                                  "aria-live": "polite"
-                                },
-                                "style": "",
-                                "layerName": "Checking this browser for today’s check-in…",
-                                "text": "Checking this browser for today’s check-in…"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.home.today.fead13b5a467.today-actions-daily-ches",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "div",
-                          "className": "today-actions daily-chest-actions",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Claim check-inThe chest presents the existing check-in; it adds no secon",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.home.today.33c1cb5e3839.button-link-button-link-",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "button",
-                                "className": "button-link button-link--primary daily-chest-button",
-                                "attributes": {
-                                  "type": "button",
-                                  "data-claim-daily": "",
-                                  "data-companion-action": "true",
-                                  "data-companion-action-copy": "Today’s check-in uses the existing browser-local UTC-day claim.",
-                                  "aria-describedby": "daily-chest-help"
-                                },
-                                "style": "",
-                                "layerName": "Claim check-in",
-                                "children": [
-                                  {
-                                    "id": "component.home.today.d3bcca0ce21d.daily-chest-scene",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "daily-chest-scene",
-                                      "attributes": {
-                                        "aria-hidden": "true"
-                                      },
-                                      "style": "",
-                                      "layerName": "span daily-chest-scene",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.home.today.80addb53388a.daily-chest-sprite",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "daily-chest-sprite",
-                                            "attributes": {
-                                              "data-lazy-sprite": "interactive/daily-chest-sprite.webp",
-                                              "data-sprite-kind": "chest",
-                                              "data-sprite-frames": "7",
-                                              "data-daily-chest-art": ""
-                                            },
-                                            "style": "",
-                                            "layerName": "span daily-chest-sprite",
-                                            "text": ""
-                                          }
-                                        },
-                                        {
-                                          "id": "component.home.today.0c5be38218bb.daily-burst-sprite",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "daily-burst-sprite",
-                                            "attributes": {
-                                              "data-lazy-sprite": "interactive/daily-fruit-burst-sprite.webp",
-                                              "data-sprite-kind": "burst",
-                                              "data-sprite-frames": "8",
-                                              "data-daily-burst-art": "",
-                                              "hidden": true
-                                            },
-                                            "style": "",
-                                            "layerName": "span daily-burst-sprite",
-                                            "text": ""
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.today.9ac06129b0b1.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-daily-claim-label": ""
-                                      },
-                                      "style": "",
-                                      "layerName": "Claim check-in",
-                                      "text": "Claim check-in"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.home.today.1b7a1733b43a.daily-chest-help",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "daily-chest-help",
-                                "attributes": {
-                                  "id": "daily-chest-help"
-                                },
-                                "style": "",
-                                "layerName": "daily chest help",
-                                "text": "The chest presents the existing check-in; it adds no second reward or account-backed benefit."
-                              }
-                            },
-                            {
-                              "id": "component.home.today.0674a7f99085.button-link-button-link-",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "button-link button-link--secondary",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Explore visit quests →",
-                                "href": "/feast-pass/quests/",
-                                "children": [
-                                  {
-                                    "id": "component.home.today.8fe46ff55013.text",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "#text",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "text": "Explore visit quests ",
-                                      "layerName": "Text: Explore visit quests"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.today.af14e9067847.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {
-                                        "aria-hidden": "true"
-                                      },
-                                      "style": "",
-                                      "layerName": "→",
-                                      "text": "→"
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "component.home.interactive-discovery",
-      "type": "layout.container",
-      "props": {
-        "anchorId": "interactive-discovery",
-        "variant": "home-interactive-discovery",
-        "authoringVersion": 1,
-        "tag": "section",
-        "className": "studio-rich-text shell section",
-        "attributes": {},
-        "style": "",
-        "layerName": "TOADAL FEAST — Play the Feast World for Free content",
-        "mode": "inherit",
-        "children": [
-          {
-            "id": "component.home.interactive-discovery.6ae5ff4fd8e0.home-section-inner-home-",
-            "type": "layout.container",
-            "props": {
-              "authoringVersion": 1,
-              "tag": "div",
-              "className": "home-section-inner home-discovery-section",
-              "attributes": {
-                "data-home-discovery": "",
-                "data-companion-context": "discovery",
-                "data-companion-copy": "A few small discoveries live on this Home page. They stay in this browser and do not affect game scores.",
-                "data-companion-reaction": "excited"
-              },
-              "style": "",
-              "layerName": "Follow a little wonder",
-              "mode": "inherit",
-              "children": [
-                {
-                  "id": "component.home.interactive-discovery.85245120b619.home-discovery-heading",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "home-discovery-heading",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Follow a little wonder",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.home.interactive-discovery.c7e49df4317e.section-kicker",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "section-kicker",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "LITTLE FEAST DISCOVERIES",
-                          "text": "LITTLE FEAST DISCOVERIES"
-                        }
-                      },
-                      {
-                        "id": "component.home.interactive-discovery.e6030f144fa8.section-heading",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "h2",
-                          "className": "section-heading",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Follow a little wonder",
-                          "text": "Follow a little wonder"
-                        }
-                      },
-                      {
-                        "id": "component.home.interactive-discovery.5430686514fe.section-lede",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "section-lede",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "A curated portal, two small candy finds, and one Golden Block. These loc",
-                          "text": "A curated portal, two small candy finds, and one Golden Block. These local discoveries never change a game score or your companion’s position."
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "component.home.interactive-discovery.44a9499cbbd9.home-discovery-grid",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "home-discovery-grid",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Step through a portal",
-                    "mode": "inherit",
-                    "collection": true,
-                    "children": [
-                      {
-                        "id": "component.home.interactive-discovery.bb921c34d12c.home-discovery-card-home",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "home-discovery-card home-discovery-card--portal",
-                          "attributes": {
-                            "data-companion-context": "discovery",
-                            "data-companion-copy": "The Surprise Me portal visits a curated site page; it is not the browser Back button.",
-                            "data-companion-reaction": "curious"
-                          },
-                          "style": "",
-                          "layerName": "Step through a portal",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.home.interactive-discovery.5892a684cd46.home-discovery-card-head",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "home-discovery-card__heading",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Step through a portal",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.home.interactive-discovery.0e44e701c225.section-kicker",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "p",
-                                      "className": "section-kicker",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "SURPRISE ME",
-                                      "text": "SURPRISE ME"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.interactive-discovery.f2d4775147f0.h3",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "h3",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Step through a portal",
-                                      "text": "Step through a portal"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.e59bb15eeba1.portal-discovery-art",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "portal-discovery-art",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "div portal-discovery-art",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.home.interactive-discovery.f2a9358dba27.img",
-                                    "type": "core.image",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "img",
-                                      "className": "",
-                                      "attributes": {
-                                        "width": "180",
-                                        "height": "180",
-                                        "loading": "lazy",
-                                        "decoding": "async",
-                                        "aria-hidden": "true"
-                                      },
-                                      "style": "",
-                                      "layerName": "img",
-                                      "asset": "asset.home.interaction.portal",
-                                      "alt": ""
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.ff7159e8c51f.button-link-button-link-",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "button",
-                                "className": "button-link button-link--primary portal-discovery-button",
-                                "attributes": {
-                                  "type": "button",
-                                  "data-home-portal": "",
-                                  "data-companion-action": "true",
-                                  "data-companion-action-copy": "Choose a curated Feast destination."
-                                },
-                                "style": "",
-                                "layerName": "Surprise me↗",
-                                "children": [
-                                  {
-                                    "id": "component.home.interactive-discovery.06cc72ff357d.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Surprise me",
-                                      "text": "Surprise me"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.interactive-discovery.95bbf4816ec5.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {
-                                        "aria-hidden": "true"
-                                      },
-                                      "style": "",
-                                      "layerName": "↗",
-                                      "text": "↗"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.ee1dff27f700.discovery-action-status",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "discovery-action-status",
-                                "attributes": {
-                                  "data-portal-status": "",
-                                  "role": "status",
-                                  "aria-live": "polite"
-                                },
-                                "style": "",
-                                "layerName": "Opens one of four implemented Feast pages. Your browser Back button is u",
-                                "text": "Opens one of four implemented Feast pages. Your browser Back button is unchanged."
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.3e0ea6e94856.home-candy-button",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "button",
-                                "className": "home-candy-button",
-                                "attributes": {
-                                  "type": "button",
-                                  "data-home-candy": "portal-candy",
-                                  "data-prompt": "Find the blue candy",
-                                  "aria-pressed": "false",
-                                  "data-companion-action": "true",
-                                  "data-companion-action-copy": "There may be a little blue candy nearby."
-                                },
-                                "style": "",
-                                "layerName": "Find the blue candy",
-                                "children": [
-                                  {
-                                    "id": "component.home.interactive-discovery.ac316f7a6bad.img",
-                                    "type": "core.image",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "img",
-                                      "className": "",
-                                      "attributes": {
-                                        "width": "44",
-                                        "height": "44",
-                                        "loading": "lazy",
-                                        "decoding": "async"
-                                      },
-                                      "style": "",
-                                      "layerName": "img",
-                                      "asset": "asset.home.interaction.candy-blue",
-                                      "alt": ""
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.interactive-discovery.eb7057899d05.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-home-candy-label": ""
-                                      },
-                                      "style": "",
-                                      "layerName": "Find the blue candy",
-                                      "text": "Find the blue candy"
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.home.interactive-discovery.e3a8b166d892.home-discovery-card-home",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "home-discovery-card home-discovery-card--block",
-                          "attributes": {
-                            "data-companion-context": "discovery",
-                            "data-companion-copy": "The Golden Block takes four deliberate taps and reveals one local candy.",
-                            "data-companion-reaction": "excited"
-                          },
-                          "style": "",
-                          "layerName": "Give it four deliberate taps",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.home.interactive-discovery.e6be5fc07dfa.home-discovery-card-head",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "home-discovery-card__heading",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Give it four deliberate taps",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.home.interactive-discovery.45a7b1ffb21e.section-kicker",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "p",
-                                      "className": "section-kicker",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "ONE GOLDEN BLOCK",
-                                      "text": "ONE GOLDEN BLOCK"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.interactive-discovery.b918d8dfaf5e.h3",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "h3",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Give it four deliberate taps",
-                                      "text": "Give it four deliberate taps"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.bdca7dbab6d1.golden-block-art",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "golden-block-art",
-                                "attributes": {
-                                  "data-golden-block-art": "",
-                                  "data-lazy-sprite": "interactive/golden-block-sprite.webp",
-                                  "data-sprite-kind": "golden-block",
-                                  "data-sprite-frames": "25",
-                                  "aria-hidden": "true",
-                                  "role": "presentation"
-                                },
-                                "style": "",
-                                "layerName": "div golden-block-art",
-                                "text": ""
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.5aa85d23bd34.button-link-button-link-",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "button",
-                                "className": "button-link button-link--secondary golden-block-hit-button",
-                                "attributes": {
-                                  "type": "button",
-                                  "data-golden-block-hit": "",
-                                  "data-companion-action": "true",
-                                  "data-companion-action-copy": "Tap once to crack the Golden Block.",
-                                  "aria-label": "Hit the Golden Block, 0 of 4"
-                                },
-                                "style": "",
-                                "layerName": "Tap to crack · 0 of 4 hits",
-                                "children": [
-                                  {
-                                    "id": "component.home.interactive-discovery.d6c1928a070f.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-golden-block-label": ""
-                                      },
-                                      "style": "",
-                                      "layerName": "Tap to crack · 0 of 4 hits",
-                                      "text": "Tap to crack · 0 of 4 hits"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.e99dfa0701b0.discovery-action-status",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "discovery-action-status",
-                                "attributes": {
-                                  "data-golden-block-status": "",
-                                  "role": "status",
-                                  "aria-live": "polite"
-                                },
-                                "style": "",
-                                "layerName": "Four hits reveal one candy. No score or economy value is awarded.",
-                                "text": "Four hits reveal one candy. No score or economy value is awarded."
-                              }
-                            },
-                            {
-                              "id": "component.home.interactive-discovery.a76c6af03907.home-candy-reveal",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "home-candy-reveal",
-                                "attributes": {
-                                  "data-home-candy-reveal": "",
-                                  "hidden": true
-                                },
-                                "style": "",
-                                "layerName": "Collect the purple candy",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.home.interactive-discovery.15c71a17b20c.home-candy-button",
-                                    "type": "core.button",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "button",
-                                      "className": "home-candy-button",
-                                      "attributes": {
-                                        "type": "button",
-                                        "data-home-candy": "golden-block-candy",
-                                        "data-prompt": "Collect the purple candy",
-                                        "aria-pressed": "false",
-                                        "data-companion-action": "true",
-                                        "data-companion-action-copy": "The Golden Block has revealed the final local candy."
-                                      },
-                                      "style": "",
-                                      "layerName": "Collect the purple candy",
-                                      "children": [
-                                        {
-                                          "id": "component.home.interactive-discovery.bf56227bc546.img",
-                                          "type": "core.image",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "img",
-                                            "className": "",
-                                            "attributes": {
-                                              "width": "44",
-                                              "height": "44",
-                                              "loading": "lazy",
-                                              "decoding": "async"
-                                            },
-                                            "style": "",
-                                            "layerName": "img",
-                                            "asset": "asset.home.interaction.candy-purple",
-                                            "alt": ""
-                                          }
-                                        },
-                                        {
-                                          "id": "component.home.interactive-discovery.3ae90510f927.span",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
-                                            "attributes": {
-                                              "data-home-candy-label": ""
-                                            },
-                                            "style": "",
-                                            "layerName": "Collect the purple candy",
-                                            "text": "Collect the purple candy"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "component.home.interactive-discovery.742f9e5d1458.external-script",
-                  "type": "core.rich-text",
-                  "props": {
-                    "html": "<script src='assets/js/home-interactive-discovery.js' defer></script>",
-                    "runtimeOnly": true,
-                    "readOnly": true,
-                    "locked": true,
-                    "runtimeVersion": 1,
-                    "runtimeKind": "external-script",
-                    "runtimeSha256": "0d984f9a346818a9aafcd4b441b39b8e9a98fad08420dc661c356feab91b89cf",
-                    "runtimeCodeResources": [
-                      {
-                        "url": "/assets/js/home-interactive-discovery.js",
-                        "sha256": "4a516b712dc3e1b276f81b5fe5b2a4cc45bfd978d145a8b13cc8739959686840"
-                      },
-                      {
-                        "url": "/assets/js/guest-progression.js",
-                        "sha256": "69984c7ce7b1ff79413b9275e345715a92badc131b4657fd26f4ae98e7c1cee2"
-                      },
-                      {
-                        "url": "/assets/js/manifest-shell.js",
-                        "sha256": "b5997ed5df1d715039835560c7b84a8373fd348b7ca28f9cffa29992ed51802e"
-                      }
-                    ],
-                    "runtimePolicy": {
-                      "id": "site-global-home-discovery-loader-v1",
-                      "mode": "global-loader"
-                    },
-                    "layerName": "Read-only runtime: external-script"
                   }
                 }
               ]
@@ -3223,6 +2548,780 @@
                         }
                       }
                     ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "component.home.today",
+      "type": "layout.container",
+      "props": {
+        "anchorId": "today",
+        "variant": "today",
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "TOADAL FEAST — Play the Feast World for Free content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.home.today.5715ef2fcfb6.home-section-inner",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "div",
+              "className": "home-section-inner",
+              "attributes": {},
+              "style": "",
+              "layerName": "Check in at the Feast",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.home.today.d225fb8212d0.today-panel-discovery-da",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "today-panel discovery-daily",
+                    "attributes": {
+                      "data-progression-page": "",
+                      "data-companion-context": "today",
+                      "data-companion-copy": "The optional once-per-UTC-day check-in uses only this browser. It is separate from the mobile game.",
+                      "data-companion-reaction": "curious"
+                    },
+                    "style": "",
+                    "layerName": "Check in at the Feast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.home.today.ca832603f17c.today-copy",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "today-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Check in at the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.home.today.59ef58bc3801.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A LITTLE DAILY RITUAL",
+                                "text": "A LITTLE DAILY RITUAL"
+                              }
+                            },
+                            {
+                              "id": "component.home.today.034ad7aa3224.section-heading",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "section-heading",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Check in at the Feast",
+                                "text": "Check in at the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.home.today.15a8d0a97032.section-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "An optional starter-config check-in can add guest progress once per UTC ",
+                                "text": "An optional starter-config check-in can add guest progress once per UTC day. It is stored in this browser and does not connect to the mobile game."
+                              }
+                            },
+                            {
+                              "id": "component.home.today.0a8a93e5014f.today-checkin-status",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "today-checkin-status",
+                                "attributes": {
+                                  "data-daily-reward-status": "",
+                                  "role": "status",
+                                  "aria-live": "polite"
+                                },
+                                "style": "",
+                                "layerName": "Checking this browser for today’s check-in…",
+                                "text": "Checking this browser for today’s check-in…"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.home.today.fead13b5a467.today-actions-daily-ches",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "today-actions daily-chest-actions",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Claim check-inThe chest presents the existing check-in; it adds no secon",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.home.today.33c1cb5e3839.button-link-button-link-",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "daily-chest-button feast-art-control",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-claim-daily": "",
+                                  "data-companion-action": "true",
+                                  "data-companion-action-copy": "Today’s check-in uses the existing browser-local UTC-day claim.",
+                                  "aria-describedby": "daily-chest-help"
+                                },
+                                "style": "",
+                                "layerName": "Daily chest — tap artwork to claim",
+                                "children": [
+                                  {
+                                    "id": "component.home.today.d3bcca0ce21d.daily-chest-scene",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "daily-chest-scene",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "span daily-chest-scene",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.home.today.80addb53388a.daily-chest-sprite",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "daily-chest-sprite",
+                                            "attributes": {
+                                              "data-lazy-sprite": "interactive/daily-chest-sprite.webp",
+                                              "data-sprite-kind": "chest",
+                                              "data-sprite-frames": "7",
+                                              "data-daily-chest-art": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "span daily-chest-sprite",
+                                            "text": ""
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.today.0c5be38218bb.daily-burst-sprite",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "daily-burst-sprite",
+                                            "attributes": {
+                                              "data-lazy-sprite": "interactive/daily-fruit-burst-sprite.webp",
+                                              "data-sprite-kind": "burst",
+                                              "data-sprite-frames": "8",
+                                              "data-daily-burst-art": "",
+                                              "hidden": true
+                                            },
+                                            "style": "",
+                                            "layerName": "span daily-burst-sprite",
+                                            "text": ""
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.today.9ac06129b0b1.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "feast-control-label",
+                                      "attributes": {
+                                        "data-daily-claim-label": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Claim check-in",
+                                      "text": "Claim check-in"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.home.today.1b7a1733b43a.daily-chest-help",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "daily-chest-help",
+                                "attributes": {
+                                  "id": "daily-chest-help"
+                                },
+                                "style": "",
+                                "layerName": "daily chest help",
+                                "text": "Tap the chest for today’s browser-local check-in. Once per UTC day; not a mobile-game reward."
+                              }
+                            },
+                            {
+                              "id": "component.home.today.0674a7f99085.button-link-button-link-",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore visit quests →",
+                                "href": "/feast-pass/quests/",
+                                "children": [
+                                  {
+                                    "id": "component.home.today.8fe46ff55013.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Explore visit quests ",
+                                      "layerName": "Text: Explore visit quests"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.today.af14e9067847.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "component.home.interactive-discovery",
+      "type": "layout.container",
+      "props": {
+        "anchorId": "interactive-discovery",
+        "variant": "home-interactive-discovery",
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "TOADAL FEAST — Play the Feast World for Free content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.home.interactive-discovery.6ae5ff4fd8e0.home-section-inner-home-",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "div",
+              "className": "home-section-inner home-discovery-section",
+              "attributes": {
+                "data-home-discovery": "",
+                "data-companion-context": "discovery",
+                "data-companion-copy": "A few small discoveries live on this Home page. They stay in this browser and do not affect game scores.",
+                "data-companion-reaction": "excited"
+              },
+              "style": "",
+              "layerName": "Follow a little wonder",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.home.interactive-discovery.85245120b619.home-discovery-heading",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "home-discovery-heading",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Follow a little wonder",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.home.interactive-discovery.c7e49df4317e.section-kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "LITTLE FEAST DISCOVERIES",
+                          "text": "LITTLE FEAST DISCOVERIES"
+                        }
+                      },
+                      {
+                        "id": "component.home.interactive-discovery.e6030f144fa8.section-heading",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Follow a little wonder",
+                          "text": "Follow a little wonder"
+                        }
+                      },
+                      {
+                        "id": "component.home.interactive-discovery.5430686514fe.section-lede",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-lede",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "A curated portal, two small candy finds, and one Golden Block. These loc",
+                          "text": "A curated portal, two small candy finds, and one Golden Block. These local discoveries never change a game score or your companion’s position."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.home.interactive-discovery.44a9499cbbd9.home-discovery-grid",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "home-discovery-grid",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Step through a portal",
+                    "mode": "inherit",
+                    "collection": true,
+                    "children": [
+                      {
+                        "id": "component.home.interactive-discovery.bb921c34d12c.home-discovery-card-home",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "home-discovery-card home-discovery-card--portal",
+                          "attributes": {
+                            "data-companion-context": "discovery",
+                            "data-companion-copy": "Tap the portal itself to visit a curated Feast destination.",
+                            "data-companion-reaction": "curious"
+                          },
+                          "style": "",
+                          "layerName": "Step through a portal",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.home.interactive-discovery.5892a684cd46.home-discovery-card-head",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "home-discovery-card__heading",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Step through a portal",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.home.interactive-discovery.0e44e701c225.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "SURPRISE ME",
+                                      "text": "SURPRISE ME"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.interactive-discovery.f2d4775147f0.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Step through a portal",
+                                      "text": "Step through a portal"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.home.interactive-discovery.e59bb15eeba1.portal-discovery-art",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "portal-discovery-art portal-discovery-button feast-art-control",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-home-portal": "",
+                                  "data-companion-action": "true",
+                                  "data-companion-action-copy": "Choose a curated Feast destination.",
+                                  "aria-label": "Enter the portal — discover a Feast destination",
+                                  "aria-describedby": "home-portal-status"
+                                },
+                                "style": "",
+                                "layerName": "Portal — tap artwork to travel",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.home.interactive-discovery.f2a9358dba27.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "width": "180",
+                                        "height": "180",
+                                        "loading": "lazy",
+                                        "decoding": "async",
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "img",
+                                      "asset": "asset.home.interaction.portal",
+                                      "alt": ""
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.home.interactive-discovery.ee1dff27f700.discovery-action-status",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "discovery-action-status",
+                                "attributes": {
+                                  "data-portal-status": "",
+                                  "role": "status",
+                                  "aria-live": "polite",
+                                  "id": "home-portal-status"
+                                },
+                                "style": "",
+                                "layerName": "Opens one of four implemented Feast pages. Your browser Back button is u",
+                                "text": "Tap the portal to travel to a curated Feast destination."
+                              }
+                            },
+                            {
+                              "id": "component.home.interactive-discovery.3e0ea6e94856.home-candy-button",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "home-candy-button",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-home-candy": "portal-candy",
+                                  "data-prompt": "Find the blue candy",
+                                  "aria-pressed": "false",
+                                  "data-companion-action": "true",
+                                  "data-companion-action-copy": "There may be a little blue candy nearby."
+                                },
+                                "style": "",
+                                "layerName": "Find the blue candy",
+                                "children": [
+                                  {
+                                    "id": "component.home.interactive-discovery.ac316f7a6bad.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "width": "44",
+                                        "height": "44",
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "img",
+                                      "asset": "asset.home.interaction.candy-blue",
+                                      "alt": ""
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.interactive-discovery.eb7057899d05.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-home-candy-label": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Find the blue candy",
+                                      "text": "Find the blue candy"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.home.interactive-discovery.e3a8b166d892.home-discovery-card-home",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "home-discovery-card home-discovery-card--block",
+                          "attributes": {
+                            "data-companion-context": "discovery",
+                            "data-companion-copy": "The Golden Block takes four deliberate taps and reveals one local candy.",
+                            "data-companion-reaction": "excited"
+                          },
+                          "style": "",
+                          "layerName": "Give it four deliberate taps",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.home.interactive-discovery.e6be5fc07dfa.home-discovery-card-head",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "home-discovery-card__heading",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Give it four deliberate taps",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.home.interactive-discovery.45a7b1ffb21e.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "ONE GOLDEN BLOCK",
+                                      "text": "ONE GOLDEN BLOCK"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.interactive-discovery.b918d8dfaf5e.h3",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Give it four deliberate taps",
+                                      "text": "Give it four deliberate taps"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.home.interactive-discovery.bdca7dbab6d1.golden-block-art",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "golden-block-art golden-block-hit-button feast-art-control",
+                                "attributes": {
+                                  "data-golden-block-art": "",
+                                  "data-lazy-sprite": "interactive/golden-block-sprite.webp",
+                                  "data-sprite-kind": "golden-block",
+                                  "data-sprite-frames": "25",
+                                  "type": "button",
+                                  "data-golden-block-hit": "",
+                                  "data-companion-action": "true",
+                                  "data-companion-action-copy": "Tap once to crack the Golden Block.",
+                                  "aria-label": "Hit the Golden Block, 0 of 4",
+                                  "aria-describedby": "home-golden-block-status"
+                                },
+                                "style": "",
+                                "layerName": "Golden Block — tap artwork to crack",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.home.interactive-discovery.e99dfa0701b0.discovery-action-status",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "discovery-action-status",
+                                "attributes": {
+                                  "data-golden-block-status": "",
+                                  "role": "status",
+                                  "aria-live": "polite",
+                                  "id": "home-golden-block-status"
+                                },
+                                "style": "",
+                                "layerName": "Four hits reveal one candy. No score or economy value is awarded.",
+                                "text": "Tap the brick to crack it. Four hits reveal a Feast Treat."
+                              }
+                            },
+                            {
+                              "id": "component.home.interactive-discovery.a76c6af03907.home-candy-reveal",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "home-candy-reveal",
+                                "attributes": {
+                                  "data-home-candy-reveal": "",
+                                  "hidden": true
+                                },
+                                "style": "",
+                                "layerName": "Collect the purple candy",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.home.interactive-discovery.15c71a17b20c.home-candy-button",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "home-candy-button",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-home-candy": "golden-block-candy",
+                                        "data-prompt": "Collect the purple candy",
+                                        "aria-pressed": "false",
+                                        "data-companion-action": "true",
+                                        "data-companion-action-copy": "The Golden Block has revealed the final local candy."
+                                      },
+                                      "style": "",
+                                      "layerName": "Collect the purple candy",
+                                      "children": [
+                                        {
+                                          "id": "component.home.interactive-discovery.bf56227bc546.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "width": "44",
+                                              "height": "44",
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "img",
+                                            "asset": "asset.home.interaction.candy-purple",
+                                            "alt": ""
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.interactive-discovery.3ae90510f927.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-home-candy-label": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "Collect the purple candy",
+                                            "text": "Collect the purple candy"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.home.interactive-discovery.742f9e5d1458.external-script",
+                  "type": "core.rich-text",
+                  "props": {
+                    "html": "<script src='assets/js/home-interactive-discovery.js' defer></script>",
+                    "runtimeOnly": true,
+                    "readOnly": true,
+                    "locked": true,
+                    "runtimeVersion": 1,
+                    "runtimeKind": "external-script",
+                    "runtimeSha256": "0d984f9a346818a9aafcd4b441b39b8e9a98fad08420dc661c356feab91b89cf",
+                    "runtimeCodeResources": [
+                      {
+                        "url": "/assets/js/home-interactive-discovery.js",
+                        "sha256": "4a516b712dc3e1b276f81b5fe5b2a4cc45bfd978d145a8b13cc8739959686840"
+                      },
+                      {
+                        "url": "/assets/js/guest-progression.js",
+                        "sha256": "69984c7ce7b1ff79413b9275e345715a92badc131b4657fd26f4ae98e7c1cee2"
+                      },
+                      {
+                        "url": "/assets/js/manifest-shell.js",
+                        "sha256": "b5997ed5df1d715039835560c7b84a8373fd348b7ca28f9cffa29992ed51802e"
+                      }
+                    ],
+                    "runtimePolicy": {
+                      "id": "site-global-home-discovery-loader-v1",
+                      "mode": "global-loader"
+                    },
+                    "layerName": "Read-only runtime: external-script"
                   }
                 }
               ]
