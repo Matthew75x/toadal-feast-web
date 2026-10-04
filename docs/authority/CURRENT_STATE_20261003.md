@@ -22,7 +22,7 @@ Refs were freshly checked after the work-branch push:
 
 - `main`: `9ce82e1188eb1c28fb79f3b4cef5bfdab1cbf75a` (untouched)
 - `staging/live-visual`: `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6` (refreshed baseline before this candidate's staging promotion)
-- work branch: `0132cb22cfbf821ec597d32a97f60d556ead7e97`
+- qualified work-branch website payload: `0132cb22cfbf821ec597d32a97f60d556ead7e97`; later work-branch commits in this operation update authority documentation only.
 
 The refreshed staging ref is an ancestor of the candidate. The candidate preserves the staging baseline; no force-push, destructive reset, merge, or whole-project replacement was used. The sole changed-file overlap against newer main history since the merge base was `README.md`; it is reconciled as documentation and no implementation overlap was found.
 
