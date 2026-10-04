@@ -81,7 +81,7 @@
       pass: { schemaVersion: VERSION, updatedAt: timestamp, level: 1, xp: 0, sparks: 0, treats: 0, streak: { count: 0, lastQualifiedPeriod: null }, badges: [], collectibles: [] },
       quests: { schemaVersion: VERSION, updatedAt: timestamp, items: {}, processedEventIds: [], dailyClaimedPeriod: null },
       discoveries: { schemaVersion: VERSION, updatedAt: timestamp, items: [], homeInteraction: emptyHomeInteraction() },
-      profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null, localScores: {} }
+      profile: { schemaVersion: VERSION, updatedAt: timestamp, displayName: null, selectedBadge: null, selectedTitle: null, localScores: {} }
     };
   }
   function makeMemoryStorage() {
