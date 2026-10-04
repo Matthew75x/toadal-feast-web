@@ -54,9 +54,14 @@ All 33 registered routes render and their navigation resolves. Existing game lis
 
 The story/manga/reader publishing registries are genuinely empty; the pages show truthful empty/catalogue states. No story chapters or fake user data were invented. Normal content can be added through the Studio collection/page workflows when owner-approved text and artwork exist. Other optional external/owner inputs include approved app-store URLs, owner-approved legal copy, and a real contact-submission service. Accounts/cloud/Passport, payments/entitlements, production telemetry, app-store availability, and TCS cartridge admission remain future/external systems—not falsely simulated as live features.
 
-### Promotion state
+### Promotion and live verification
 
-This candidate is durably pushed to its work branch and technically qualified. At the time of this record, `staging/live-visual` is still at the baseline SHA above. The next authorized operation is a normal fast-forward of `staging/live-visual` to the qualified work candidate, followed by GitHub Pages deployment and live route verification. Do not update `main` or touch `toadalfeast.com`.
+- `staging/live-visual` was fast-forwarded from `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6` to the qualified website payload `0132cb22cfbf821ec597d32a97f60d556ead7e97` (tree `0ee1e5e54d77e5a59d84c7c8a557c14cc098d0b8`).
+- GitHub Actions **Deploy GitHub Pages** run `37200911048` completed successfully with `head_sha=0132cb22cfbf821ec597d32a97f60d556ead7e97`: https://github.com/Matthew75x/toadal-feast-web/actions/runs/37200911048
+- Public owner-preview URL: https://matthew75x.github.io/toadal-feast-web/
+- Live read-only smoke: Home, Play, Stories, App, Support, World, Characters, Feast Pass, and `robots.txt` all returned HTTP 200. Each response body was SHA-256 compared against the corresponding local `dist/` file; all nine matched byte-for-byte. Pages base-path and staging no-index markers were present.
+- The work branch subsequently received documentation-only authority updates; no source or `dist/` bytes changed after qualification. The staging branch remains pinned to the exact qualified payload SHA above.
+- `main` remains `9ce82e1188eb1c28fb79f3b4cef5bfdab1cbf75a`; it was not modified. Production/`toadalfeast.com`, DNS, and native TOADAL FEAST release authority were not touched.
 
 ## Repository authority
 
