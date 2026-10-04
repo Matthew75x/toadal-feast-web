@@ -1,4 +1,4 @@
-# TOADAL FEAST website product authority
+> **Current-state pointer (2026-10-03):** For day-to-day website lane status, start with [CURRENT_STATE_20261003.md](CURRENT_STATE_20261003.md). This file remains the product-requirements authority and historical consolidation record; operational snapshots below may be superseded by the current-state pointer.\n\n# TOADAL FEAST website product authority
 
 Consolidated 2026-10-01. Repository: `Matthew75x/toadal-feast-web`.
 
