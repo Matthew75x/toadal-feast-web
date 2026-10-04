@@ -39,3 +39,17 @@ Do not delete:
 Use `docs/authority/CURRENT_STATE_20261003.md` for current lane status.
 
 `TOADAL_STUDIO_LIVE_STATE_20261002.md` is a historical chronological log and should not be used as a one-page current-state authority.
+
+
+## Measured cleanup result
+
+After the first cleanup wave:
+
+- remote branches: **57**;
+- open PRs: **1** (the current authority-doc consolidation PR).
+
+Removed:
+- 2 stale planning head branches after explicit archive pointers were created;
+- 31 additional remote branches whose heads were proven ancestors of the preserved owner-native authority.
+
+The remaining branches are not all assumed safe to delete. Divergent design, asset, QA, work-order and proposal branches require archive/bundle review before pointer deletion.
