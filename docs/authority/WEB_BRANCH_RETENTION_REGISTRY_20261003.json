@@ -1,13 +1,14 @@
 {
   "generated": "2026-10-03",
   "repository": "Matthew75x/toadal-feast-web",
-  "note": "Inventory is organizational metadata, not permission to delete. LEGACY_REVIEW_BEFORE_DELETE requires archive/reachability proof.",
-  "branch_count": 57,
+  "note": "Snapshot captured after the website cleanup and authority-doc merges. branch_count is informational and may change. Organizational metadata only: no branch may be deleted without reachability/archive proof.",
+  "branch_count": 58,
   "counts": {
-    "KEEP_CURRENT_OR_INTENTIONAL": 14,
+    "KEEP_CURRENT_OR_INTENTIONAL": 13,
     "KEEP_ARCHIVE": 4,
     "LEGACY_REVIEW_BEFORE_DELETE": 29,
-    "REVIEW_RECENT": 10
+    "REVIEW_RECENT": 10,
+    "DELETE_SAFE_MERGED_DOC_HEAD": 2
   },
   "branches": [
     {
@@ -75,8 +76,12 @@
       "classification": "LEGACY_REVIEW_BEFORE_DELETE"
     },
     {
+      "branch": "docs/main-readme-authority-pointer-20261003",
+      "classification": "DELETE_SAFE_MERGED_DOC_HEAD"
+    },
+    {
       "branch": "docs/web-control-lean-20261003",
-      "classification": "KEEP_CURRENT_OR_INTENTIONAL"
+      "classification": "DELETE_SAFE_MERGED_DOC_HEAD"
     },
     {
       "branch": "fix/persistent-toadal-companion-20261001",
