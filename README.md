@@ -1,19 +1,41 @@
 # TOADAL FEAST Web
 
-Authoritative source repository for the new TOADAL FEAST website.
+Authoritative source repository for the TOADAL FEAST website program.
 
-## Current purpose
+## Current authority
 
-This repository is the isolated website-development and GitHub Pages staging workspace.
+The default `main` branch is a stable repository baseline, **not the active owner-authoring lane and not the deployment lane**.
 
-- Production website remains untouched until explicit approval.
-- TOADAL Studio project source belongs under `studio-project/`.
-- Exported static website goes to `dist/`.
-- GitHub Pages deploys `dist/` from `main`.
-- Large comics/video/media will live outside normal Git history.
+Current owner-authoring source:
 
-## Authority
+`work/owner-native-authoring-20261002`
 
-Game/runtime assets come from the current TOADAL FEAST game repository.
-Website visual authority comes from approved mockups/design decisions.
-Do not substitute retired or generic assets for canonical TOADAL assets.
+Preserved current authority:
+
+`archive/owner-native-authority-20261003`
+
+Deployment lane:
+
+`staging/live-visual`
+
+For current status, read on the owner-authoring branch:
+
+- `docs/authority/CURRENT_STATE_20261003.md`
+- `docs/authority/WEB_PRODUCT_AUTHORITY.md`
+- `docs/authority/CLEANUP_RECEIPT_20261003.md`
+
+## Repository model
+
+- Studio/project source belongs under `studio-project/`.
+- Public static export belongs under `dist/`.
+- Do not hand-edit generated `dist/` as the ordinary authoring workflow.
+- Production/DNS changes require separate explicit approval.
+- Website source is not the native TOADAL FEAST game source.
+- Studio components/packages are not TCS cartridges.
+- Passport / live Feast Book and TCS authority remain separate until their own gates pass.
+
+## Branch discipline
+
+Use short-lived `work/`, `fix/`, `qa/`, or `docs/` branches for active tasks, and `archive/` / `backup/` only for deliberate preservation.
+
+Finished lanes should be merged, archived, or deleted rather than left as indefinite zombie branches.
