@@ -43,7 +43,7 @@ assert.equal(guest.includes('game:feat:'), false,
 assert.equal(guest.includes('game:title:'), false,
   'guest runtime must not silently ingest game Titles yet');
 
-assert.match(contract, /does not read the game save/i);
+assert.match(contract, /does\s+(?:\*\*)?not(?:\*\*)?\s+read the game save/i);
 assert.match(contract, /must not turn a bridge accomplishment directly into/i);
 assert.match(contract, /currencies:\s*\*\*outside this bridge\*\*/i);
 assert.match(contract, /must not say game progress is currently synchronized/i);
