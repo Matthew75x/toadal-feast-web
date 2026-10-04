@@ -32,6 +32,7 @@ The refreshed staging ref is an ancestor of the candidate. The candidate preserv
 - Owner-preview gate: **16/16 PASS**; machine report and summary are under `docs/review/owner-preview-gate-20261004/`.
 - Browser matrix: **83/83 PASS**, 33 routes, desktop/tablet/mobile/small-mobile cases, zero reported issues.
 - Route/navigation: 33 routes, 31 navigation targets checked, zero unresolved targets.
+- Manifest ledger: 29 rows are `DONE_PROVEN`; the sole `PARTIAL` row is Home. Its `engineeringStatus` is `QUALIFIED`; the remaining item is the owner's `LOCK_VISUAL` acceptance, and the existing verifier correctly forbids recording that owner decision without it. This operation does not claim `LOCK_VISUAL`; no engineering blocker remains.
 - Owner-preview render freshness, Pages base path, static links, staging robots, asset authority, protected-cartridge isolation, non-Home layout, manifest, search, route truth and gameplay authority checks passed.
 - Studio project validation: PASS, zero warnings/errors. Studio inspect/render/export/verify checkpoint passed; static output contained 140 files and was checked against the Pages base path.
 - Staging robots policy is no-index; production remains outside this operation.
