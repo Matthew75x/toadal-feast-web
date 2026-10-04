@@ -69,6 +69,21 @@ If a record cannot be parsed:
 ## Reset
 A future privacy/settings control must be able to clear website-local guest progression independently of unrelated game/mobile data.
 
+## Profile identity
+Profile identity keeps badge and Title concepts separate:
+- `selectedBadge` — website badge selection;
+- `selectedTitle` — future cross-ecosystem Title selection.
+
+A Title must never be silently aliased into the badge field.
+
+## Game accomplishment bridge
+The website may later accept a validated TOADAL FEAST game projection conforming
+to `game-feast-pass-bridge.schema.json`. That projection is semantic input only:
+it carries earned Feat/Title identities and explicitly says `not-synced`.
+
+The current guest runtime does not ingest that projection and does not assign XP,
+Sparks, Treats or other rewards from it.
+
 ## Online future
 The local schema must not imply server authority.
 Connected-account sync is a separate future capability.
