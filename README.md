@@ -1,23 +1,50 @@
 # TOADAL FEAST Web
 
-Authoritative source repository for the new TOADAL FEAST website.
+Authoritative website-development repository for TOADAL FEAST.
 
-## Current purpose
+## Start here
 
-This repository is the isolated website-development and GitHub Pages staging workspace.
+Current website-lane status:
 
-- Production website remains untouched until explicit approval.
-- TOADAL Studio project source belongs under `studio-project/`.
-- The public GitHub Pages staging site is <https://matthew75x.github.io/toadal-feast-web/>.
-- `staging/live-visual` is the only branch that can deploy the site; `main` and production are not deployment targets.
-- Exported static website goes to `dist/` and must be committed on `staging/live-visual` after each Studio export.
-- Before committing an export, validate/render with TOADAL Studio and apply/verify `/toadal-feast-web/` using `scripts/wo001-pages-basepath.mjs` and `scripts/verify-pages-basepath.mjs` (see `docs/STAGING_STATUS.md` for the exact routine). The Pages workflow uploads the committed `dist/`; it does not build the Studio project.
-- Large comics/video/media will live outside normal Git history.
+**[docs/authority/CURRENT_STATE_20261003.md](docs/authority/CURRENT_STATE_20261003.md)**
 
-## Authority
+Product/creative authority:
 
-Start with [the consolidated product authority](docs/authority/WEB_PRODUCT_AUTHORITY.md). It records the owner-approved requirements, precedence rules, source inventories, preserved branch history, and [current staging gaps](docs/authority/STAGING_AUTHORITY_GAP_REPORT.md). Older work-order status documents are retained as history; their phase labels do not override the accepted staging lineage.
+**[docs/authority/WEB_PRODUCT_AUTHORITY.md](docs/authority/WEB_PRODUCT_AUTHORITY.md)**
 
-Game/runtime assets come from the current TOADAL FEAST game repository.
-Website visual authority comes from approved mockups/design decisions.
-Do not substitute retired or generic assets for canonical TOADAL assets.
+Executed cleanup record:
+
+**[docs/authority/CLEANUP_RECEIPT_20261003.md](docs/authority/CLEANUP_RECEIPT_20261003.md)**
+
+## Current operating model
+
+- Active owner-authoring source: `work/owner-native-authoring-20261002`
+- Preserved current authority: `archive/owner-native-authority-20261003`
+- Deployment lane: `staging/live-visual`
+- `main` is not the deployment target.
+- Production/DNS changes require separate explicit authorization.
+- Studio project source lives under `studio-project/`.
+- Public export lives under `dist/` and must remain free of editor metadata.
+- Large media should remain outside ordinary Git history unless deliberately managed.
+
+## Authority boundaries
+
+Website source is not native game source.
+
+Website Studio packages are not TCS cartridges.
+
+Historical Studio 1.4.2 logs are not the same authority as the separate current Studio V5.1 engineering checkpoint.
+
+Passport / Feast Book future account systems and TCS security must not be simulated as live website authority before their own gates pass.
+
+## Branch discipline
+
+Completed work should not remain as indefinite open PRs or zombie branches.
+
+Use:
+- `work/` for active engineering
+- `qa/` for bounded QA
+- `docs/` for documentation
+- `archive/` for preserved historical heads
+
+See [CONTRIBUTING.md](CONTRIBUTING.md).
