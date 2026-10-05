@@ -142,7 +142,7 @@ def fullscreen_case(page, _context, base, result):
       return {exit:box('[data-player-fullscreen-exit]'),rail:box('[data-player-fullscreen-rail]'),frame:box('[data-player-frame]'),label:exit.getAttribute('aria-label'),hit:hit === exit || exit.contains(hit), viewport:{width:innerWidth,height:innerHeight}};
     }""")
     result["geometry"] = geometry
-    assert geometry["exit"]["height"] <= 40, "Exit control must be discreet"
+    assert geometry["exit"]["height"] == 44 and geometry["exit"]["width"] == 44, "Compact Exit icon must retain a 44px touch target"
     assert geometry["exit"]["bottom"] <= geometry["frame"]["top"] + 1, "Exit control must sit outside gameplay"
     assert geometry["rail"]["bottom"] <= geometry["frame"]["top"] + 1
     assert geometry["frame"]["bottom"] <= geometry["viewport"]["height"] + 1

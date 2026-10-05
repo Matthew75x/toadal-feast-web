@@ -453,6 +453,8 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
       hideButton.type = 'button';
       hideButton.className = 'companion-hide';
       hideButton.setAttribute('data-companion-hide', '');
+      hideButton.setAttribute('aria-label', 'Hide Toadal companion');
+      hideButton.setAttribute('title', 'Hide Toadal');
       hideButton.textContent = 'Hide Toadal';
       panel.appendChild(hideButton);
     }
@@ -661,12 +663,20 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
       var panelVisible = !companionHidden && (!minimized || (!hasStoredPreference && transientContext));
       root.hidden = companionHidden;
       root.setAttribute('data-companion-hidden', companionHidden ? 'true' : 'false');
+      root.setAttribute('data-hidden', companionHidden ? 'true' : 'false');
+      if (companionHidden) {
+        root.setAttribute('aria-hidden', 'true');
+        root.setAttribute('inert', '');
+      } else {
+        root.removeAttribute('aria-hidden');
+        root.removeAttribute('inert');
+      }
       restoreButton.hidden = !companionHidden;
       speech.setAttribute('aria-live', announce && panelVisible ? 'polite' : 'off');
       root.setAttribute('data-minimized', minimized ? 'true' : 'false');
       root.setAttribute('data-panel-visible', panelVisible ? 'true' : 'false');
       toggle.setAttribute('aria-expanded', panelVisible ? 'true' : 'false');
-      toggle.setAttribute('aria-label', minimized ? 'Show Toadal companion' : 'Hide Toadal companion');
+      toggle.setAttribute('aria-label', minimized ? 'Expand Toadal companion' : 'Minimize Toadal companion');
       panel.hidden = !panelVisible;
 
       var value = action || contextValue(focused) || contextValue(hovered) ||
@@ -692,7 +702,11 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
       root.dispatchEvent(new CustomEvent('toadal:companion-visibility', { detail: { hidden: companionHidden } }));
       if (returnFocus) (companionHidden ? restoreButton : toggle).focus({ preventScroll: true });
     }
-    hideButton.addEventListener('click', function (event) { setHidden(true, event.detail === 0); });
+    hideButton.addEventListener('click', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      setHidden(true, event.detail === 0);
+    });
     restoreButton.addEventListener('click', function () { setHidden(false, true); });
     root.addEventListener('toadal:companion-hide-request', function () { setHidden(true, false); });
     toggle.addEventListener('dblclick', function (event) {
@@ -909,6 +923,10 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
     var soundButton = shell.querySelector('[data-player-sound]');
     var fullButton = shell.querySelector('[data-player-fullscreen]');
     var fullscreenExit = shell.querySelector('[data-player-fullscreen-exit]');
+    if (fullscreenExit) {
+      fullscreenExit.setAttribute('aria-label', 'Exit full screen');
+      fullscreenExit.setAttribute('title', 'Exit full screen');
+    }
     var fullscreenRail = shell.querySelector('[data-player-fullscreen-rail]');
     var exitLink = shell.querySelector('[data-player-exit]');
     var gameId = shell.getAttribute('data-game-id') || '';

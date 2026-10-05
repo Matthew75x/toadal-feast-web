@@ -26,41 +26,41 @@
       },
       "hiddenPreference": "true persisted then restored",
       "status": "PASS",
-      "elapsedSeconds": 2.86
+      "elapsedSeconds": 2.922
     },
     {
       "name": "explicit-hide-and-restore",
       "keyboardHide": true,
       "keyboardRestore": true,
       "status": "PASS",
-      "elapsedSeconds": 0.125
+      "elapsedSeconds": 0.141
     },
     {
       "name": "fullscreen-rail",
       "geometry": {
         "exit": {
-          "left": 333.328125,
+          "left": 338,
           "top": 4,
           "right": 382,
-          "bottom": 40,
-          "width": 48.671875,
-          "height": 36
+          "bottom": 48,
+          "width": 44,
+          "height": 44
         },
         "rail": {
           "left": 0,
           "top": 0,
           "right": 390,
-          "bottom": 44,
+          "bottom": 52,
           "width": 390,
-          "height": 44
+          "height": 52
         },
         "frame": {
           "left": 0,
-          "top": 44,
+          "top": 52,
           "right": 390,
           "bottom": 844,
           "width": 390,
-          "height": 800
+          "height": 792
         },
         "label": "Exit full screen",
         "hit": true,
@@ -71,7 +71,7 @@
       },
       "exited": true,
       "status": "PASS",
-      "elapsedSeconds": 0.39
+      "elapsedSeconds": 0.281
     },
     {
       "name": "default-news-scroll-dock",
@@ -184,7 +184,7 @@
         "overlaps": []
       },
       "status": "PASS",
-      "elapsedSeconds": 0.5
+      "elapsedSeconds": 0.516
     },
     {
       "name": "default-news-scroll-dock-320",
@@ -301,7 +301,7 @@
         "height": 800
       },
       "status": "PASS",
-      "elapsedSeconds": 0.641
+      "elapsedSeconds": 0.672
     }
   ],
   "summary": {
