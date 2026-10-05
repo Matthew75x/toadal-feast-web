@@ -315,7 +315,7 @@
                                 },
                                 "style": "",
                                 "layerName": "Canonical TOADAL FEAST environment artwork, shown as a world preview.",
-                                "asset": "asset.home.world.desktop",
+                                "asset": "asset.home.world.portal",
                                 "alt": "Canonical TOADAL FEAST environment artwork, shown as a world preview."
                               }
                             },
@@ -327,13 +327,13 @@
                                 "tag": "img",
                                 "className": "stories-toadal-art",
                                 "attributes": {
-                                  "width": "256",
-                                  "height": "256"
+                                  "width": "1079",
+                                  "height": "1458"
                                 },
                                 "style": "",
                                 "layerName": "Canonical portrait of Toadal, shown as character art rather than a story illustration.",
-                                "asset": "asset.home.character.toadal",
-                                "alt": "Canonical portrait of Toadal, shown as character art rather than a story illustration."
+                                "asset": "asset.companion.context.story",
+                                "alt": "Toadal seated and thinking beside the story shelves."
                               }
                             },
                             {
@@ -350,6 +350,93 @@
                               }
                             }
                           ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.stories.6",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "portal-section-nav",
+                    "attributes": {
+                      "aria-label": "Explore the story library"
+                    },
+                    "style": "",
+                    "layerName": "Explore the story library",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.stories.1",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Featured shelves",
+                          "label": "Featured shelves",
+                          "href": "#stories-featured-heading"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.stories.2",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Latest chapter",
+                          "label": "Latest chapter",
+                          "href": "#stories-latest-heading"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.stories.3",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Comics & manga",
+                          "label": "Comics & manga",
+                          "href": "#story-categories-heading"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.stories.4",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Reading progress",
+                          "label": "Reading progress",
+                          "href": "#stories-progress-heading"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.stories.5",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "The Feast World",
+                          "label": "The Feast World",
+                          "href": "/world/"
                         }
                       }
                     ]
@@ -1397,8 +1484,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Explore what is already here",
-                                "text": "Explore what is already here"
+                                "layerName": "Meet the world behind the stories",
+                                "text": "Meet the world behind the stories"
                               }
                             },
                             {
@@ -1423,40 +1510,313 @@
                         "props": {
                           "authoringVersion": 1,
                           "tag": "div",
-                          "className": "story-actions",
+                          "className": "portal-journey-grid",
                           "attributes": {},
                           "style": "",
                           "layerName": "Meet the charactersExplore the world",
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.stories.publishing-hub.37e5a4146073.story-button-story-butto",
+                              "id": "component.production-core.stories.13",
                               "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
                                 "tag": "a",
-                                "className": "story-button story-button-secondary",
-                                "attributes": {},
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Meet the characters — Explore canonical portraits and the current character collection."
+                                },
                                 "style": "",
                                 "layerName": "Meet the characters",
                                 "href": "/characters/",
-                                "label": "Meet the characters",
-                                "minHeight": 44
+                                "children": [
+                                  {
+                                    "id": "component.production-core.stories.7",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Canonical crowned Toadal with red scarf.",
+                                      "asset": "asset.home.character.toadal-victory-web",
+                                      "alt": "Canonical crowned Toadal with red scarf."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.stories.12",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Meet the characters",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.stories.8",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "THE CAST",
+                                            "text": "THE CAST"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.9",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Meet the characters",
+                                            "text": "Meet the characters"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.10",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore canonical portraits and the current character collection.",
+                                            "text": "Explore canonical portraits and the current character collection."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.11",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.stories.publishing-hub.299f641912ff.story-button-story-butto",
+                              "id": "component.production-core.stories.20",
                               "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
                                 "tag": "a",
-                                "className": "story-button story-button-secondary",
-                                "attributes": {},
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Follow the scenery — Discover approved environment art and your local World-page visit."
+                                },
                                 "style": "",
-                                "layerName": "Explore the world",
+                                "layerName": "Follow the scenery",
                                 "href": "/world/",
-                                "label": "Explore the world",
-                                "minHeight": 44
+                                "children": [
+                                  {
+                                    "id": "component.production-core.stories.14",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Canonical candy-land scenery.",
+                                      "asset": "asset.home.world.calm",
+                                      "alt": "Canonical candy-land scenery."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.stories.19",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Follow the scenery",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.stories.15",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "THE WORLD",
+                                            "text": "THE WORLD"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.16",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Follow the scenery",
+                                            "text": "Follow the scenery"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.17",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Discover approved environment art and your local World-page visit.",
+                                            "text": "Discover approved environment art and your local World-page visit."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.18",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.production-core.stories.27",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Browse the media — See real gameplay stills and the artwork already used across the website."
+                                },
+                                "style": "",
+                                "layerName": "Browse the media",
+                                "href": "/media/",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.stories.21",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Genuine TOADAL FEAST Arcade gameplay still.",
+                                      "asset": "asset.app.gameplay.arcade",
+                                      "alt": "Genuine TOADAL FEAST Arcade gameplay still."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.stories.26",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Browse the media",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.stories.22",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "ART & GAMEPLAY",
+                                            "text": "ART & GAMEPLAY"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.23",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Browse the media",
+                                            "text": "Browse the media"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.24",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "See real gameplay stills and the artwork already used across the website.",
+                                            "text": "See real gameplay stills and the artwork already used across the website."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.stories.25",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]

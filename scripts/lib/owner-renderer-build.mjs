@@ -18,14 +18,14 @@ export function buildReviewedOwnerRenderer(studioRoot) {
   if (/^\s*import\s/m.test(body)) throw new Error('Unreviewed owner renderer dependency');
   const presentation = stripTypeScriptTypes(dependency.toString('utf8'), {mode: 'strip'});
   if (/^\s*import\s/m.test(presentation)) throw new Error('Unreviewed presentation dependency');
-  const generated = presentation + '\n' + body;
+  const generated = (presentation + '\n' + body).replaceAll('\r\n', '\n');
   return {generated, sourceSha256: hash(source), dependencies: [{source: dependencyName, sourceSha256: hash(dependency)}], generatedSha256: hash(generated)};
 }
 
 export function buildReviewedPublicExportProjection(studioRoot) {
   const sourceName='packages/export-manager/src/public-runtime.ts';
   const source=fs.readFileSync(path.join(studioRoot,sourceName));
-  const generated=stripTypeScriptTypes(source.toString('utf8'),{mode:'strip'})+'\nexport {rewriteHtml as projectPublicHtml};\n';
+  const generated=(stripTypeScriptTypes(source.toString('utf8'),{mode:'strip'})+'\nexport {rewriteHtml as projectPublicHtml};\n').replaceAll('\r\n','\n');
   if(!/function rewriteHtml\(html/.test(generated))throw new Error('Review public export projection topology');
   const imports=[...generated.matchAll(/from\s*['"]([^'"]+)['"]/g)].map(m=>m[1]);
   if(JSON.stringify(imports)!==JSON.stringify(['node:fs','node:path','node:crypto']))throw new Error('Unreviewed public export dependency');

@@ -8,6 +8,7 @@ import { fileURLToPath } from 'node:url';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const projectRoot = path.join(root, 'studio-project', 'toadal-feast-website');
 const advanced = JSON.parse(fs.readFileSync(path.join(projectRoot, 'collections', 'advanced-code.json'), 'utf8'));
+const positionSource = fs.readFileSync(path.join(projectRoot, 'reference', 'assets', 'js', 'companion-position.js'), 'utf8');
 const referenceCssPath = path.join(projectRoot, 'reference', 'assets', 'css', 'site.css');
 const distCssPath = path.join(root, 'dist', 'assets', 'css', 'site.css');
 const referenceCss = fs.readFileSync(referenceCssPath, 'utf8');
@@ -28,7 +29,12 @@ test('companion source exposes persistent hide, explicit restore, and double-tap
   assert.match(advanced.javascript, /toadal:site:companion:hidden:v1/);
   assert.match(advanced.javascript, /data-companion-hide/);
   assert.match(advanced.javascript, /data-companion-restore/);
-  assert.match(advanced.javascript, /DOUBLE_TAP_WINDOW = 360/);
+  assert.doesNotThrow(() => new vm.Script(positionSource));
+  assert.match(positionSource, /button\.addEventListener\('pointerup'/);
+  assert.match(positionSource, /toadal:companion-hide-request/);
+  assert.match(positionSource, /ended\.moved/);
+  assert.match(positionSource, /event\.timeStamp - ended\.startedAt <= TAP_MAX_DURATION/);
+  assert.doesNotMatch(advanced.javascript, /lastToggleClickAt|DOUBLE_TAP_WINDOW/, 'global click handling must not duplicate the pointer gesture recognizer');
   assert.match(advanced.javascript, /setHidden\(true, false\)/);
   assert.match(advanced.javascript, /aria-label', 'Hide Toadal companion'/);
   assert.match(advanced.javascript, /'Expand Toadal companion' : 'Minimize Toadal companion'/);
@@ -42,6 +48,9 @@ test('fullscreen exit remains a 44px accessible target with a compact visual tre
   assert.match(referenceCss, /\.player-fullscreen-exit::before/);
   assert.match(referenceCss, /env\(safe-area-inset-top, 0px\)/);
   assert.match(referenceCss, /env\(safe-area-inset-right, 0px\)/);
+  assert.match(referenceCss, /\.wo002-player-frame-wrap:fullscreen \.player-fullscreen-rail/);
+  assert.match(referenceCss, /\.wo002-player-frame-wrap:fullscreen \.player-fullscreen-exit \{[^}]*position: static;[^}]*font-size: 0;/);
+  assert.match(advanced.javascript, /fullscreenRail\.hidden = !active/);
 });
 
 test('Studio reference CSS and public CSS are byte-identical', () => {

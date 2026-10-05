@@ -337,7 +337,9 @@
 
   function renderMediaFilters(document) {
     var page = document.querySelector('.discovery-media');
-    if (!page || page.querySelector('[data-media-filters]')) return;
+    if (!page) return;
+    var controls = page.querySelector('[data-media-filters]');
+    if (controls && controls.__toadalMediaFiltersBound) return;
     var gameplay = document.getElementById('gameplay');
     var world = document.getElementById('world-art');
     var characters = document.getElementById('character-art');
@@ -350,25 +352,35 @@
       { id: 'world-art', label: 'World art', section: world },
       { id: 'character-art', label: 'Character art', section: characters }
     ].filter(function (item) { return item.id === 'all' || !!item.section; });
-    var controls = element(document, 'nav', 'media-filter-controls');
-    controls.setAttribute('data-media-filters', '');
-    controls.setAttribute('aria-label', 'Filter media previews');
+    var needsInsertion = !controls;
+    if (!controls) {
+      controls = element(document, 'nav', 'media-filter-controls');
+      controls.setAttribute('data-media-filters', '');
+      controls.setAttribute('aria-label', 'Filter media previews');
+    }
+    controls.__toadalMediaFiltersBound = true;
     groups.forEach(function (group) {
-      var button = element(document, 'button', 'button-link button-link--secondary', group.label);
-      button.type = 'button';
+      var button = controls.querySelector('[data-media-filter="' + group.id + '"]');
+      if (!button) {
+        button = element(document, 'button', 'button-link button-link--secondary', group.label);
+        button.type = 'button';
+        button.setAttribute('data-media-filter', group.id);
+        controls.appendChild(button);
+      }
       button.setAttribute('aria-pressed', group.id === 'all' ? 'true' : 'false');
       button.addEventListener('click', function () {
         groups.slice(1).forEach(function (candidate) {
           candidate.section.hidden = group.id !== 'all' && candidate.id !== group.id;
         });
-        controls.querySelectorAll('button').forEach(function (control) {
+        controls.querySelectorAll('[data-media-filter]').forEach(function (control) {
           control.setAttribute('aria-pressed', control === button ? 'true' : 'false');
         });
       });
-      controls.appendChild(button);
     });
-    var heading = page.querySelector('.wo002-detail-hero');
-    if (heading) heading.insertAdjacentElement('afterend', controls);
+    if (needsInsertion) {
+      var heading = page.querySelector('.wo002-detail-hero');
+      if (heading) heading.insertAdjacentElement('afterend', controls);
+    }
   }
 
   function start(document, root) {

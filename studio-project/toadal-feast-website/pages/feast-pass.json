@@ -100,87 +100,197 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "header",
-                    "className": "progression-hero",
+                    "className": "progression-hero portal-pass-hero",
                     "attributes": {},
                     "style": "",
                     "layerName": "Your Feast Pass",
                     "mode": "inherit",
                     "children": [
                       {
-                        "id": "component.guest-feast-pass.rich-text.867918033719.section-kicker",
-                        "type": "core.text",
+                        "id": "component.production-core.feast-pass.1",
+                        "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "section-kicker",
+                          "tag": "div",
+                          "className": "portal-pass-copy",
                           "attributes": {},
                           "style": "",
-                          "layerName": "TOADAL FEAST · GUEST JOURNEY",
-                          "text": "TOADAL FEAST · GUEST JOURNEY"
+                          "layerName": "Your guest Feast Pass",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-feast-pass.rich-text.867918033719.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL FEAST · GUEST JOURNEY",
+                                "text": "TOADAL FEAST · GUEST JOURNEY"
+                              }
+                            },
+                            {
+                              "id": "component.guest-feast-pass.rich-text.7a9d5a3fbd58.progression-eyebrow",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "progression-eyebrow",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "BROWSER-LOCAL PREVIEW",
+                                "text": "BROWSER-LOCAL PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.guest-feast-pass.rich-text.61505cec3320.h1",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Your Feast Pass",
+                                "text": "Your Feast Pass"
+                              }
+                            },
+                            {
+                              "id": "component.guest-feast-pass.rich-text.e36c8a87800b.progression-lede",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "progression-lede",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore, collect Treats and complete website quests. Your guest journey stays on this browser and device.",
+                                "text": "Explore, collect Treats and complete website quests. Your guest journey stays on this browser and device."
+                              }
+                            },
+                            {
+                              "id": "component.guest-feast-pass.rich-text.f3abb5dee18f.progression-truth-note",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "progression-truth-note",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Guest XP, Sparks and rewards belong to this website. Treats are the three discovery candies on Home; they do not transfer to the mobile game. Sign-in and cross-device sync are not available.",
+                                "text": "Guest XP, Sparks and rewards belong to this website. Treats are the three discovery candies on Home; they do not transfer to the mobile game. Sign-in and cross-device sync are not available."
+                              }
+                            },
+                            {
+                              "id": "component.mutf2mm7.6klamu",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "feast-quest-prompt",
+                                "layerName": "Local journey next action",
+                                "attributes": {},
+                                "text": "Explore the World, discover Home Treats, then open Quests to claim your completed journey rewards."
+                              }
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "component.guest-feast-pass.rich-text.7a9d5a3fbd58.progression-eyebrow",
-                        "type": "core.text",
+                        "id": "component.production-core.feast-pass.7",
+                        "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "progression-eyebrow",
+                          "tag": "figure",
+                          "className": "portal-pass-art",
                           "attributes": {},
                           "style": "",
-                          "layerName": "BROWSER-LOCAL PREVIEW",
-                          "text": "BROWSER-LOCAL PREVIEW"
-                        }
-                      },
-                      {
-                        "id": "component.guest-feast-pass.rich-text.61505cec3320.h1",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "h1",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Your Feast Pass",
-                          "text": "Your Feast Pass"
-                        }
-                      },
-                      {
-                        "id": "component.guest-feast-pass.rich-text.e36c8a87800b.progression-lede",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "progression-lede",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "A small record of your website journey. Any progress belongs to this bro",
-                          "text": "A small record of your website journey. Any progress belongs to this browser and device only; there is no account, backend, or cross-device sync."
-                        }
-                      },
-                      {
-                        "id": "component.guest-feast-pass.rich-text.f3abb5dee18f.progression-truth-note",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "progression-truth-note",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Starter XP, Sparks, and rewards are editable website configuration, not ",
-                          "text": "Starter XP, Sparks, and rewards are editable website configuration, not permanent economy decisions. Treats are the three existing Home discovery candies. All starter progress and rewards stay in this browser and do not transfer to the mobile game. Site previews and visits are not published lore."
-                        }
-                      },
-                      {
-                        "id": "component.mutf2mm7.6klamu",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "feast-quest-prompt",
-                          "layerName": "Local journey next action",
-                          "attributes": {},
-                          "text": "Explore the World, discover Home Treats, then open Quests to claim your completed journey rewards."
+                          "layerName": "Toadal and the Home discovery Treats",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.feast-pass.2",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "portal-pass-character",
+                                "attributes": {
+                                  "decoding": "async"
+                                },
+                                "style": "",
+                                "layerName": "Canonical Toadal welcoming your guest journey.",
+                                "asset": "asset.home.character.toadal-victory-web",
+                                "alt": "Canonical Toadal welcoming your guest journey."
+                              }
+                            },
+                            {
+                              "id": "component.production-core.feast-pass.3",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "portal-pass-candy portal-pass-candy--blue",
+                                "attributes": {
+                                  "decoding": "async",
+                                  "loading": "lazy"
+                                },
+                                "style": "",
+                                "layerName": "Decorative Feast artwork",
+                                "asset": "asset.home.interaction.candy-blue",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.production-core.feast-pass.4",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "portal-pass-candy portal-pass-candy--green",
+                                "attributes": {
+                                  "decoding": "async",
+                                  "loading": "lazy"
+                                },
+                                "style": "",
+                                "layerName": "Decorative Feast artwork",
+                                "asset": "asset.home.interaction.candy-green",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.production-core.feast-pass.5",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "portal-pass-candy portal-pass-candy--purple",
+                                "attributes": {
+                                  "decoding": "async",
+                                  "loading": "lazy"
+                                },
+                                "style": "",
+                                "layerName": "Decorative Feast artwork",
+                                "asset": "asset.home.interaction.candy-purple",
+                                "alt": ""
+                              }
+                            },
+                            {
+                              "id": "component.production-core.feast-pass.6",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore. Discover. Make it a Feast.",
+                                "text": "Explore. Discover. Make it a Feast."
+                              }
+                            }
+                          ]
                         }
                       }
                     ]
@@ -742,6 +852,38 @@
                           "layerName": "Daily check-in",
                           "mode": "inherit",
                           "children": [
+                            {
+                              "id": "component.production-core.feast-pass.9",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "portal-daily-art",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Daily check-in chest",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.feast-pass.8",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Home daily check-in chest.",
+                                      "asset": "asset.home.interaction.daily-chest",
+                                      "alt": "Home daily check-in chest."
+                                    }
+                                  }
+                                ]
+                              }
+                            },
                             {
                               "id": "component.guest-feast-pass.rich-text.7203328863ad.section-kicker",
                               "type": "core.text",

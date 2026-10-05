@@ -478,20 +478,42 @@
                         }
                       },
                       {
-                        "id": "component.muogc5wx.80e0fg.222dba69cf28.player-fullscreen-exit",
-                        "type": "core.button",
+                        "id": "component.player-wicked-bites.fullscreen-rail",
+                        "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "button",
-                          "className": "player-fullscreen-exit",
+                          "tag": "div",
+                          "className": "player-fullscreen-rail",
                           "attributes": {
-                            "type": "button",
-                            "data-player-fullscreen-exit": "",
+                            "data-player-fullscreen-rail": "",
+                            "role": "toolbar",
+                            "aria-label": "Fullscreen controls",
                             "hidden": true
                           },
                           "style": "",
-                          "layerName": "Exit full screen",
-                          "label": "Exit full screen"
+                          "layerName": "Fullscreen control rail",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.muogc5wx.80e0fg.222dba69cf28.player-fullscreen-exit",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "player-fullscreen-exit",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-player-fullscreen-exit": "",
+                                  "hidden": true,
+                                  "aria-label": "Exit full screen",
+                                  "title": "Exit full screen"
+                                },
+                                "style": "",
+                                "layerName": "Exit full screen",
+                                "label": "Exit"
+                              }
+                            }
+                          ]
                         }
                       },
                       {

@@ -66,7 +66,7 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "section",
-                    "className": "wo002-play-hero",
+                    "className": "wo002-play-hero portal-play-hero",
                     "attributes": {
                       "aria-labelledby": "play-title"
                     },
@@ -74,6 +74,38 @@
                     "layerName": "Play a little Feast.",
                     "mode": "inherit",
                     "children": [
+                      {
+                        "id": "component.production-core.play.1",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "portal-play-environment",
+                          "attributes": {
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "Decorative Feast artwork",
+                          "asset": "asset.home.world.desktop",
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.2",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "portal-play-character",
+                          "attributes": {
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "Decorative Feast artwork",
+                          "asset": "asset.home.character.toadal-victory-web",
+                          "alt": ""
+                        }
+                      },
                       {
                         "id": "component.muogc2on.jbosap.90f67d097284.text",
                         "type": "core.text",
@@ -149,8 +181,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Explore four browser-game listings. One staging build opens in the websi",
-                                "text": "Explore four browser-game listings. One staging build opens in the website player; the CLAW candidate is held for origin-safety work, and two concepts have no playable website package."
+                                "layerName": "Step into a bite-sized browser adventure. Try the Wicked Bites preview, or explore the games and concepts taking shape across the Feast.",
+                                "text": "Step into a bite-sized browser adventure. Try the Wicked Bites preview, or explore the games and concepts taking shape across the Feast."
                               }
                             },
                             {
@@ -287,8 +319,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "staging build open in player",
-                                "text": "staging build open in player"
+                                "layerName": "playable browser preview",
+                                "text": "playable browser preview"
                               }
                             },
                             {
@@ -300,8 +332,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "CLAW is held pending origin-safe integration. No account or cross-device",
-                                "text": "CLAW is held pending origin-safe integration. No account or cross-device save is offered."
+                                "layerName": "Wicked Bites is ready to try. Other listings are held or concept previews. Guest progress stays on this browser.",
+                                "text": "Wicked Bites is ready to try. Other listings are held or concept previews. Guest progress stays on this browser."
                               }
                             }
                           ]
@@ -318,6 +350,93 @@
                           "style": "",
                           "text": "\n  ",
                           "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.play.8",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "portal-section-nav",
+                    "attributes": {
+                      "aria-label": "Explore browser play"
+                    },
+                    "style": "",
+                    "layerName": "Explore browser play",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.play.3",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browser games",
+                          "label": "Browser games",
+                          "href": "#browser-games"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.4",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Website quests",
+                          "label": "Website quests",
+                          "href": "/feast-pass/quests/"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.5",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Local scores",
+                          "label": "Local scores",
+                          "href": "/leaderboards/?game=wicked-bites"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.6",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest Feast Pass",
+                          "label": "Guest Feast Pass",
+                          "href": "/feast-pass/"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.7",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Mobile adventure",
+                          "label": "Mobile adventure",
+                          "href": "#mobile-adventure-play"
                         }
                       }
                     ]
@@ -1207,8 +1326,8 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "layerName": "A versioned staging package exists, but website launch is held: its save",
-                                            "text": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification."
+                                            "layerName": "A browser preview is being prepared. Website launch is on hold while save and offline behavior are checked.",
+                                            "text": "A browser preview is being prepared. Website launch is on hold while save and offline behavior are checked."
                                           }
                                         },
                                         {
@@ -2101,7 +2220,7 @@
             "props": {
               "authoringVersion": 1,
               "tag": "section",
-              "className": "wo002-detail-facts",
+              "className": "wo002-detail-facts portal-journey-grid",
               "attributes": {
                 "aria-label": "Play and progression links"
               },
@@ -2115,12 +2234,29 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "article",
-                    "className": "detail-fact",
+                    "className": "detail-fact portal-journey-card",
                     "attributes": {},
                     "style": "",
                     "layerName": "Website quests",
                     "mode": "inherit",
                     "children": [
+                      {
+                        "id": "component.production-core.play.9",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "portal-journey-icon",
+                          "attributes": {
+                            "decoding": "async",
+                            "loading": "lazy"
+                          },
+                          "style": "",
+                          "layerName": "Decorative Feast artwork",
+                          "asset": "asset.home.interaction.candy-green",
+                          "alt": ""
+                        }
+                      },
                       {
                         "id": "component.play.manifest-links.a6e1a6efaef1.section-kicker",
                         "type": "core.text",
@@ -2156,8 +2292,8 @@
                           "className": "",
                           "attributes": {},
                           "style": "",
-                          "layerName": "Browse the current guest-local quest definitions. No Wicked Bites score ",
-                          "text": "Browse the current guest-local quest definitions. No Wicked Bites score challenge is configured."
+                          "layerName": "Explore, check in and claim completed website quests. Wicked Bites score challenges are not configured.",
+                          "text": "Explore, check in and claim completed website quests. Wicked Bites score challenges are not configured."
                         }
                       },
                       {
@@ -2183,12 +2319,29 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "article",
-                    "className": "detail-fact",
+                    "className": "detail-fact portal-journey-card",
                     "attributes": {},
                     "style": "",
                     "layerName": "Leaderboard preview",
                     "mode": "inherit",
                     "children": [
+                      {
+                        "id": "component.production-core.play.10",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "portal-journey-icon",
+                          "attributes": {
+                            "decoding": "async",
+                            "loading": "lazy"
+                          },
+                          "style": "",
+                          "layerName": "Decorative Feast artwork",
+                          "asset": "asset.home.character.toadal",
+                          "alt": ""
+                        }
+                      },
                       {
                         "id": "component.play.manifest-links.36424b1cb2c9.section-kicker",
                         "type": "core.text",
@@ -2224,8 +2377,8 @@
                           "className": "",
                           "attributes": {},
                           "style": "",
-                          "layerName": "See supported local score references and the connected leaderboard statu",
-                          "text": "See supported local score references and the connected leaderboard status."
+                          "layerName": "See your saved Wicked Bites personal best. Connected global rankings are not available.",
+                          "text": "See your saved Wicked Bites personal best. Connected global rankings are not available."
                         }
                       },
                       {
@@ -2251,12 +2404,29 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "article",
-                    "className": "detail-fact",
+                    "className": "detail-fact portal-journey-card",
                     "attributes": {},
                     "style": "",
                     "layerName": "Guest progress",
                     "mode": "inherit",
                     "children": [
+                      {
+                        "id": "component.production-core.play.11",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "portal-journey-icon",
+                          "attributes": {
+                            "decoding": "async",
+                            "loading": "lazy"
+                          },
+                          "style": "",
+                          "layerName": "Decorative Feast artwork",
+                          "asset": "asset.home.interaction.candy-blue",
+                          "alt": ""
+                        }
+                      },
                       {
                         "id": "component.play.manifest-links.ebc4b382a787.section-kicker",
                         "type": "core.text",
@@ -2292,8 +2462,8 @@
                           "className": "",
                           "attributes": {},
                           "style": "",
-                          "layerName": "Website-local progression is separate from the isolated browser game ses",
-                          "text": "Website-local progression is separate from the isolated browser game session."
+                          "layerName": "Keep track of website discoveries, Treats and quest rewards on this browser.",
+                          "text": "Keep track of website discoveries, Treats and quest rewards on this browser."
                         }
                       },
                       {
@@ -2308,6 +2478,153 @@
                           "layerName": "Open Feast Pass",
                           "href": "/feast-pass/",
                           "label": "Open Feast Pass"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "component.production-core.play.21",
+      "type": "layout.container",
+      "props": {
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "Mobile adventure from browser play",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.production-core.play.20",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "portal-app-feature",
+              "attributes": {
+                "id": "mobile-adventure-play",
+                "data-companion-context": "app",
+                "data-companion-copy": "The mobile app is the flagship adventure. Its page shows genuine gameplay and the current store-link status."
+              },
+              "style": "",
+              "layerName": "Explore the full mobile adventure",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.production-core.play.14",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "figure",
+                    "className": "portal-app-art",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Genuine mobile Puzzle gameplay",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.play.12",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "",
+                          "attributes": {
+                            "decoding": "async",
+                            "loading": "lazy"
+                          },
+                          "style": "",
+                          "layerName": "Genuine TOADAL FEAST Puzzle gameplay capture.",
+                          "asset": "asset.app.gameplay.puzzle",
+                          "alt": "Genuine TOADAL FEAST Puzzle gameplay capture."
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.13",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figcaption",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Captured from the mobile game",
+                          "text": "Captured from the mobile game"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.play.19",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "portal-app-copy",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "The mobile adventure",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.play.15",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "THE FULL MOBILE ADVENTURE",
+                          "text": "THE FULL MOBILE ADVENTURE"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.16",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "A bigger Feast on mobile",
+                          "text": "A bigger Feast on mobile"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.17",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Discover the flagship TOADAL FEAST adventure through real Arcade, Puzzle and Feastfall gameplay. Visit the App page for the current download status.",
+                          "text": "Discover the flagship TOADAL FEAST adventure through real Arcade, Puzzle and Feastfall gameplay. Visit the App page for the current download status."
+                        }
+                      },
+                      {
+                        "id": "component.production-core.play.18",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--primary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore the mobile app →",
+                          "label": "Explore the mobile app →",
+                          "href": "/app/"
                         }
                       }
                     ]

@@ -918,7 +918,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "Wicked Bites description",
-                    "text": "A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release."
+                    "text": "Try the isolated Wicked Bites browser preview. Session-only play; this build is not a public release."
                   }
                 },
                 {
@@ -932,6 +932,21 @@
                     "style": "",
                     "layerName": "Wicked Bites status",
                     "text": "PREVIEW"
+                  }
+                },
+                {
+                  "id": "component.home.game.wicked-bites.action",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "span",
+                    "className": "home-game-action",
+                    "attributes": {
+                      "aria-hidden": "true"
+                    },
+                    "style": "",
+                    "layerName": "Game card action",
+                    "text": "Explore preview →"
                   }
                 }
               ]
@@ -994,7 +1009,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "TOADAL Tower Defense description",
-                    "text": "A preview concept only. No runnable browser package is connected, and the shared world artwork is not gameplay footage."
+                    "text": "A world-inspired concept preview. No playable browser package is connected yet."
                   }
                 },
                 {
@@ -1008,6 +1023,21 @@
                     "style": "",
                     "layerName": "TOADAL Tower Defense status",
                     "text": "PREVIEW"
+                  }
+                },
+                {
+                  "id": "component.home.game.toadal-tower-defense.action",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "span",
+                    "className": "home-game-action",
+                    "attributes": {
+                      "aria-hidden": "true"
+                    },
+                    "style": "",
+                    "layerName": "Game card action",
+                    "text": "View game details →"
                   }
                 }
               ]
@@ -1070,7 +1100,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "Froggy Fruity Bash description",
-                    "text": "A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage."
+                    "text": "A colourful concept preview. No playable browser package is connected yet."
                   }
                 },
                 {
@@ -1084,6 +1114,21 @@
                     "style": "",
                     "layerName": "Froggy Fruity Bash status",
                     "text": "PREVIEW"
+                  }
+                },
+                {
+                  "id": "component.home.game.froggy-fruity-bash.action",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "span",
+                    "className": "home-game-action",
+                    "attributes": {
+                      "aria-hidden": "true"
+                    },
+                    "style": "",
+                    "layerName": "Game card action",
+                    "text": "View game details →"
                   }
                 }
               ]
@@ -1146,7 +1191,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "CLAW: Feed Gulper description",
-                    "text": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification."
+                    "text": "A real staging capture. Browser launch is held while the existing package is qualified."
                   }
                 },
                 {
@@ -1160,6 +1205,21 @@
                     "style": "",
                     "layerName": "CLAW: Feed Gulper status",
                     "text": "PREVIEW"
+                  }
+                },
+                {
+                  "id": "component.home.game.claw-feed-gulper.action",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "span",
+                    "className": "home-game-action",
+                    "attributes": {
+                      "aria-hidden": "true"
+                    },
+                    "style": "",
+                    "layerName": "Game card action",
+                    "text": "View game details →"
                   }
                 }
               ]
