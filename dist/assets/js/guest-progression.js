@@ -159,10 +159,11 @@
     const timestamp = () => isoNow(now);
     const defaults = emptyRecords(timestamp());
     const records = {};
+    let lastReset = null;
 
-    function read(name) {
+    function read(name, observed) {
       let raw;
-      try { raw = storage.getItem(KEYS[name]); }
+      try { raw = observed ? observed.raw : storage.getItem(KEYS[name]); }
       catch (error) { persistent = false; unwritable.add(name); diagnostics.push({ key: KEYS[name], kind: 'read-failed', message: String(error && error.message || error) }); return structuredCopy(defaults[name]); }
       if (raw == null || raw === '') { blocked.delete(name); unwritable.delete(name); return structuredCopy(defaults[name]); }
       let data;
@@ -354,7 +355,7 @@
         xpToNext: configuredThreshold ? configuredThreshold - records.pass.xp % configuredThreshold : null,
         daily,
         questsComplete: quests.filter(q => q.complete).length,
-        storage: { local: persistent, persistent, available: persistent, diagnostics: diagnostics.slice(), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]) }
+        storage: { local: persistent, persistent, available: persistent, diagnostics: diagnostics.slice(), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]), lastReset: lastReset ? structuredCopy(lastReset) : null }
       };
     }
     function recordEvent(eventId) {
@@ -585,14 +586,45 @@
         : { ok: false, reason: 'storage-unavailable', state: getHomeInteractionState() };
     }
     function clear() {
-      for (const name of Object.keys(KEYS)) {
+      // localStorage has no multi-key transaction. Report what was actually
+      // observed, not an invented all-or-nothing reset or a blank fallback.
+      const names = Object.keys(KEYS);
+      const failedKeys = [], clearedKeys = [], retainedKeys = [], unverifiedKeys = [];
+      for (const name of names) {
         try { storage.removeItem(KEYS[name]); }
-        catch (error) { diagnostics.push({ key: KEYS[name], kind: 'clear-failed', message: String(error && error.message || error) }); }
+        catch (error) {
+          failedKeys.push(KEYS[name]);
+          diagnostics.push({ key: KEYS[name], kind: 'clear-failed', message: String(error && error.message || error) });
+        }
       }
       const fresh = emptyRecords(timestamp());
-      for (const name of Object.keys(KEYS)) records[name] = fresh[name];
-      blocked.clear();
-      unwritable.clear();
+      for (const name of names) {
+        let raw;
+        try { raw = storage.getItem(KEYS[name]); }
+        catch (error) {
+          // Keep the last-readable in-memory value, explicitly unverified and
+          // unwritable. A failed read must not impersonate empty saved data.
+          unverifiedKeys.push(KEYS[name]);
+          unwritable.add(name);
+          diagnostics.push({ key: KEYS[name], kind: 'clear-readback-failed', message: String(error && error.message || error) });
+          continue;
+        }
+        blocked.delete(name);
+        unwritable.delete(name);
+        if (raw === null) {
+          clearedKeys.push(KEYS[name]);
+          records[name] = fresh[name];
+        } else {
+          retainedKeys.push(KEYS[name]);
+          // Normalize the exact observed value without a second storage read;
+          // retained future/corrupt records keep their normal read-only guards.
+          records[name] = read(name, { raw });
+          diagnostics.push({ key: KEYS[name], kind: 'clear-not-removed' });
+        }
+      }
+      const ok = failedKeys.length === 0 && retainedKeys.length === 0 && unverifiedKeys.length === 0;
+      lastReset = { ok, scope: suppliedStorage ? 'browser' : 'page-only', clearedKeys, retainedKeys, unverifiedKeys, failedKeys };
+      persistent = suppliedStorage && ok;
       return getSnapshot();
     }
       return { getSnapshot, recordEvent, discoverCharacter, claimDaily, claimQuest, claimReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
@@ -714,7 +746,16 @@
         else if (state.storage.diagnostics.length) setStatus('Guest progress is using safe local defaults; stored data could not be read or was outdated.');
         else if (status && !status.textContent) setStatus('Guest progress is stored only in this browser.');
       }
-      page.querySelectorAll('[data-clear-progression]').forEach(button => button.addEventListener('click', () => { store.clear(); setStatus('Website guest progression was cleared from this browser. Other game and mobile data was not changed.'); render(); }));
+      page.querySelectorAll('[data-clear-progression]').forEach(button => button.addEventListener('click', () => {
+        const state = store.clear();
+        render();
+        // Set the operation result after rendering so a generic storage notice
+        // cannot hide an incomplete reset or claim a browser reset in memory mode.
+        const reset = state.storage.lastReset;
+        if (!reset.ok) setStatus('Reset could not be completed and verified. Some website progress may remain; displayed values are the last readable state. You can retry when browser storage is available. Other game and mobile data was not changed.');
+        else if (reset.scope === 'page-only') setStatus('Only temporary progress in this tab was reset. Saved browser progress could not be verified because browser storage is unavailable. Other game and mobile data was not changed.');
+        else setStatus('Website guest progression was cleared from this browser. Other game and mobile data was not changed.');
+      }));
       function isNestedInteractiveTarget(target, control) {
         let current = target;
         while (current && current !== control) {
