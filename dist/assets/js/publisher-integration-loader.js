@@ -1,0 +1,13 @@
+(function(){'use strict';
+  if(window.self!==window.top||window.__toadalPublisherIntegrationLoading||window.__toadalPublisherIntegrationBooted)return;
+  window.__toadalPublisherIntegrationLoading=true;
+  var brand=document.querySelector('.site-brand');
+  var homePath=brand?new URL(brand.href,window.location.href).pathname:'/';
+  var baseRoot=homePath==='/'?'':homePath.replace(/\/+$/,'');
+  function load(src){return new Promise(function(resolve,reject){var s=document.createElement('script');s.src=baseRoot+src;s.async=false;s.onload=resolve;s.onerror=function(){reject(new Error('Failed to load '+src));};document.head.appendChild(s);});}
+  function getConfig(){var url=window.__TOADAL_PUBLIC_CONFIG_URL__||'/__toadal/runtime-config.json';return fetch(url,{headers:{accept:'application/json'},credentials:'same-origin',cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('runtime config HTTP '+r.status);return r.json();});}
+  /* Local adapters boot independently of publisher configuration. */
+  Promise.resolve().then(function(){return load('/assets/js/manifest-shell.js');}).then(getConfig).then(function(config){window.__TOADAL_RUNTIME_CONFIG__=config;return load('/assets/js/publisher-integration/toadal-runtime-config.js');}).then(function(){return load('/assets/js/publisher-integration/froggy-client.js');}).then(function(){return load('/assets/js/publisher-integration/local-progression-adapter.js');}).then(function(){return load('/assets/js/publisher-integration/cloud-sync.js');}).then(function(){return load('/assets/js/publisher-integration/telemetry-guard.js');}).then(function(){return load('/assets/js/publisher-integration/leaderboard-adapter.js');}).then(function(){return load('/assets/js/publisher-integration/integration-controller.js');}).then(function(){return load('/assets/js/publisher-integration/game-services.js');}).then(function(){return load('/assets/js/publisher-integration/account-ui.js');}).then(function(){return load('/assets/js/publisher-integration/profile-ui.js');}).then(function(){return load('/assets/js/publisher-integration/leaderboard-ui.js');}).then(function(){return load('/assets/js/publisher-integration/game-result-bridge.js');}).then(function(){return load('/assets/js/publisher-integration/support-contact.js');}).then(function(){return load('/assets/js/publisher-integration/integration-bootstrap.js');}).catch(function(error){
+    window.__toadalPublisherIntegrationLoading=false;window.__toadalPublisherIntegrationError=error;/* Fail closed and leave the qualified local/truthful UI untouched when integration config/services are absent. */
+  });
+})();

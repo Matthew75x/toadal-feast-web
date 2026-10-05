@@ -163,6 +163,7 @@
     if (elapsedLabel) elapsedLabel.textContent = 'Session time';
     const session = createSession(() => root.performance && root.performance.now ? root.performance.now() : Date.now());
     let completionRecorded = false;
+    let completionSequence = 0;
     const exitLink = shell.querySelector('[data-player-exit]');
 
     function paint() {
@@ -187,17 +188,27 @@
       session.accept(message.type, message.payload);
       if (message.type === 'game:complete' && !completionRecorded) {
         completionRecorded = true;
+        completionSequence++;
         const score = normalizeScore(message.payload.score);
         const progressionPage = hud.matches && hud.matches('[data-progression-page="game-session"]')
           ? hud : hud.querySelector('[data-progression-page="game-session"]');
         const store = progressionPage && progressionPage.__toadalProgressionStore;
+        let localResult = null;
         if (score !== null && store && typeof store.recordLocalScore === 'function') {
           const result = store.recordLocalScore({ gameId: GAME_ID, score, source: 'website-preview-session' });
+          localResult = result;
           if (statusNode) statusNode.textContent = result.ok
             ? 'Completed score saved in this browser only. No XP, Sparks, or global ranking is granted.'
             : 'Run complete; the local score could not be saved. The current score remains visible in this tab.';
         } else if (statusNode) {
           statusNode.textContent = 'Run complete; browser-local score storage is unavailable. The score is visible in this tab only.';
+        }
+        if (root.CustomEvent && typeof root.dispatchEvent === 'function') {
+          root.dispatchEvent(new root.CustomEvent('toadal:validated-game-complete', { detail: {
+            gameId: GAME_ID, score, durationMs: Math.floor(session.snapshot().elapsedMs),
+            completionId: 'website-run-' + completionSequence, localResult, frame,
+            source: 'website-preview-session'
+          } }));
         }
       }
       paint();

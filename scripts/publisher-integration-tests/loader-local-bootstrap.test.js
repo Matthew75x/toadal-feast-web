@@ -1,0 +1,6 @@
+const test=require('node:test');const assert=require('node:assert/strict');const fs=require('node:fs');const vm=require('node:vm');
+const source=fs.readFileSync(require.resolve('../../dist/assets/js/publisher-integration-loader.js'),'utf8');
+test('qualified local shell loads before missing publisher config and connected modules remain inert',async()=>{
+ const order=[],root={location:{href:'https://example.test/toadal-feast-web/player/wicked-bites/'},URL,Promise,document:{querySelector:()=>({href:'https://example.test/toadal-feast-web/'}),createElement:()=>({}),head:{appendChild:s=>{order.push(s.src);setImmediate(()=>s.onload());}}}};root.self=root;root.top=root;root.window=root;root.fetch=async()=>{order.push('config');return{ok:false,status:404}};vm.runInNewContext(source,root);await new Promise(r=>setTimeout(r,30));assert.deepEqual(order,['/toadal-feast-web/assets/js/manifest-shell.js','config']);assert.equal(root.__toadalPublisherIntegrationLoading,false);assert.ok(root.__toadalPublisherIntegrationError);
+});
+test('opaque game documents do not execute website publisher bootstrap',()=>{let used=false;const root={self:{},top:{},document:{querySelector:()=>{used=true;}}};root.window=root;vm.runInNewContext(source,root);assert.equal(used,false);});

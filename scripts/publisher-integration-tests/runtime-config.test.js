@@ -1,0 +1,5 @@
+const test=require('node:test'),assert=require('node:assert/strict');
+const cfg=require('../../studio-project/toadal-feast-website/reference/assets/js/publisher-integration/toadal-runtime-config.js');
+test('runtime config rejects secret-like keys',()=>assert.throws(()=>cfg.normalize({enabled:true,DATABASE_URL:'postgres://x'}),/Forbidden/));
+test('runtime config is public and fail closed by feature defaults',()=>{const c=cfg.normalize({enabled:true,environment:'staging',apiBaseUrl:'/api',leaderboardModes:{'wicked-bites':'preview'}});assert.equal(c.gameId,'froggy_feast');assert.equal(c.features.accounts,false);assert.equal(c.features.accountRegistration,false);assert.equal(c.features.cloudSync,false);assert.equal(c.features.telemetry,false);assert.equal(c.features.globalLeaderboardsRead,false);assert.equal(c.features.commerce,false);assert.equal(c.leaderboardModes['wicked-bites'],'preview');});
+test('support cannot be enabled without endpoint',()=>assert.throws(()=>cfg.normalize({enabled:true,features:{support:true}}),/Support cannot/));
