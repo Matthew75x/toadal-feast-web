@@ -12,10 +12,10 @@
   'use strict';
   const AGE_BANDS = ['under_13','13_15','16_17','18_plus'];
   function registrationDocuments(value) {
-    const documents=Array.isArray(value?.documents)?value.documents:[];
-    const required=documents.filter(d=>['terms','privacy','eula'].includes(d?.key)||d?.requiredForAccounts===true);
-    if(!['terms','privacy','eula'].every(key=>required.some(d=>d.key===key)))return null;
-    if(required.length>20||required.some(d=>!/^[-a-z0-9_]{1,64}$/i.test(d.key)||d.approved!==true||typeof d.version!=='string'||!d.version||d.version.length>128||/draft/i.test(d.version)||typeof d.path!=='string'||!d.path||d.path.length>2048||d.path.startsWith('//')||d.path.includes('\\')||(!d.path.startsWith('/')&&!/^https:\/\//i.test(d.path))))return null;
+    const documents=value?.documents;
+    if(!Array.isArray(documents)||!documents.length||documents.some(d=>!d||typeof d!=='object'||Array.isArray(d)||typeof d.requiredForAccounts!=='boolean'))return null;
+    const required=documents.filter(d=>d.requiredForAccounts===true);
+    if(!required.length||required.length>20||new Set(required.map(d=>d.key)).size!==required.length||required.some(d=>typeof d.key!=='string'||!/^[-a-z0-9_]{1,64}$/i.test(d.key)||d.approved!==true||typeof d.version!=='string'||!d.version||d.version.length>128||/draft/i.test(d.version)||typeof d.path!=='string'||!d.path||d.path.length>2048||d.path.startsWith('//')||d.path.includes('\\')||(!d.path.startsWith('/')&&!/^https:\/\//i.test(d.path))))return null;
     for(const d of required){try{const url=new URL(d.path,'https://legal.invalid');if(url.protocol!=='https:'||url.username||url.password)return null;}catch(_){return null;}}
     return required.map(d=>({key:d.key,version:d.version,path:d.path,title:typeof d.title==='string'?d.title:d.key}));
   }
