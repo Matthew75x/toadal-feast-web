@@ -165,8 +165,8 @@
                                 "className": "wo002-detail-lede",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "A public support contact, inbox, and contact form have not been configur",
-                                "text": "A public support contact, inbox, and contact form have not been configured on this preview."
+                                "layerName": "Find help with browser previews, your local Feast Pass and the mobile adventure. Choose a topic below; a public support inbox is still being prepared.",
+                                "text": "Find help with browser previews, your local Feast Pass and the mobile adventure. Choose a topic below; a public support inbox is still being prepared."
                               }
                             },
                             {
@@ -250,7 +250,7 @@
                         "props": {
                           "authoringVersion": 1,
                           "tag": "figure",
-                          "className": "wo002-detail-art",
+                          "className": "wo002-detail-art portal-context-art portal-support-art",
                           "attributes": {},
                           "style": "",
                           "layerName": "Toadal character artwork.",
@@ -264,14 +264,14 @@
                                 "tag": "img",
                                 "className": "",
                                 "attributes": {
-                                  "width": "256",
-                                  "height": "256",
+                                  "width": "1199",
+                                  "height": "1312",
                                   "decoding": "async"
                                 },
                                 "style": "",
                                 "layerName": "Toadal, the crowned golden-yellow hero of TOADAL FEAST.",
-                                "asset": "asset.home.character.toadal",
-                                "alt": "Toadal, the crowned golden-yellow hero of TOADAL FEAST."
+                                "asset": "asset.companion.context.support",
+                                "alt": "Toadal wearing a support headset."
                               }
                             },
                             {
@@ -283,11 +283,98 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Toadal character artwork.",
-                                "text": "Toadal character artwork."
+                                "layerName": "A little help from Toadal.",
+                                "text": "A little help from Toadal."
                               }
                             }
                           ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.support.6",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "portal-section-nav",
+                    "attributes": {
+                      "aria-label": "Choose a help topic"
+                    },
+                    "style": "",
+                    "layerName": "Choose a help topic",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.support.1",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Game previews",
+                          "label": "Game previews",
+                          "href": "#preview-states"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.support.2",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest progress",
+                          "label": "Guest progress",
+                          "href": "#guest-progress"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.support.3",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "The mobile app",
+                          "label": "The mobile app",
+                          "href": "#app-status"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.support.4",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Toadal helper",
+                          "label": "Toadal helper",
+                          "href": "#toadal-helper"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.support.5",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Contact",
+                          "label": "Contact",
+                          "href": "#contact-status"
                         }
                       }
                     ]
@@ -383,8 +470,8 @@
                             "aria-live": "polite"
                           },
                           "style": "",
-                          "layerName": "5 help topics shown.",
-                          "text": "5 help topics shown."
+                          "layerName": "6 help topics shown.",
+                          "text": "6 help topics shown."
                         }
                       }
                     ]
@@ -819,6 +906,79 @@
                                 "layerName": "Legal status",
                                 "href": "/legal/",
                                 "label": "Legal status"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.production-core.support.11",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "article",
+                          "className": "detail-fact",
+                          "attributes": {
+                            "id": "toadal-helper",
+                            "data-support-article": "",
+                            "data-support-text": "toadal helper companion mascot drag move hide show minimize tip keyboard touch double tap footer",
+                            "data-companion-context": "settings",
+                            "data-companion-copy": "You can move or hide my helper, then bring me back with Show Toadal in the footer."
+                          },
+                          "style": "",
+                          "layerName": "Using the Toadal helper",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.support.7",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "TOADAL HELPER",
+                                "text": "TOADAL HELPER"
+                              }
+                            },
+                            {
+                              "id": "component.production-core.support.8",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "How do I move or hide Toadal?",
+                                "text": "How do I move or hide Toadal?"
+                              }
+                            },
+                            {
+                              "id": "component.production-core.support.9",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Tap Toadal to open or minimize his tip. Drag him to move; double-tap to hide him. You can also choose Hide Toadal in his tip, then use Show Toadal in the footer to bring him back.",
+                                "text": "Tap Toadal to open or minimize his tip. Drag him to move; double-tap to hide him. You can also choose Hide Toadal in his tip, then use Show Toadal in the footer to bring him back."
+                              }
+                            },
+                            {
+                              "id": "component.production-core.support.10",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "With a keyboard, focus Toadal and press Enter or Space to open his tip. Use the arrow keys to move him, and Tab to reach the Hide Toadal control. Your choice stays on this browser.",
+                                "text": "With a keyboard, focus Toadal and press Enter or Space to open his tip. Use the arrow keys to move him, and Tab to reach the Hide Toadal control. Your choice stays on this browser."
                               }
                             }
                           ]

@@ -293,6 +293,774 @@
                   }
                 },
                 {
+                  "id": "component.production-core.world.6",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "portal-section-nav",
+                    "attributes": {
+                      "aria-label": "Explore the Feast World"
+                    },
+                    "style": "",
+                    "layerName": "Explore the Feast World",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.world.1",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "World art",
+                          "label": "World art",
+                          "href": "#world-map-heading"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.world.2",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Meet the cast",
+                          "label": "Meet the cast",
+                          "href": "#world-cast-title"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.world.3",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Guest discovery",
+                          "label": "Guest discovery",
+                          "href": "#world-visit-title"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.world.4",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Stories & media",
+                          "label": "Stories & media",
+                          "href": "#world-more-title"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.world.5",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Mobile adventure",
+                          "label": "Mobile adventure",
+                          "href": "#mobile-adventure-world"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.world.map-discovery.a3c84c810181.discovery-band-world-map",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band world-map-preview",
+                    "attributes": {
+                      "data-world-map": "",
+                      "aria-labelledby": "world-map-heading"
+                    },
+                    "style": "",
+                    "layerName": "Explore approved environment art",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.world.map-discovery.bbc5eb89fe5f.discovery-band-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Explore approved environment art",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.world.map-discovery.c80a382850ae.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "WORLD ATLAS PREVIEW",
+                                "text": "WORLD ATLAS PREVIEW"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.10e501c85f5e.world-map-heading",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "world-map-heading"
+                                },
+                                "style": "",
+                                "layerName": "Glimpses of the Feast",
+                                "text": "Glimpses of the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.c600d7a84e63.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore three approved environment previews. A complete published world map and location guide are still being prepared.",
+                                "text": "Explore three approved environment previews. A complete published world map and location guide are still being prepared."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.world.map-discovery.bdd73088f428.discovery-scene-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-scene-grid",
+                          "attributes": {
+                            "role": "group",
+                            "aria-label": "Approved Feast World environment previews"
+                          },
+                          "style": "",
+                          "layerName": "Candy Kingdom environment artPreview · View in MediaCandy-land scenic ar",
+                          "mode": "inherit",
+                          "collection": true,
+                          "children": [
+                            {
+                              "id": "component.world.map-discovery.747bebb2e5c7.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Candy Kingdom environment artPreview · View in Media",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.world.map-discovery.e29cf5df2235.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Candy Kingdom environment artwork.",
+                                      "asset": "asset.home.world.desktop",
+                                      "alt": "Candy Kingdom environment artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.world.map-discovery.e6d23e3d847d.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Candy Kingdom environment artPreview · View in Media",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.world.map-discovery.108f90aebbbe.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Candy Kingdom environment art",
+                                            "text": "Candy Kingdom environment art"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.world.map-discovery.674c575af55c.span",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Preview · View in Media",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.world.map-discovery.5825b8eeb2d8.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "Preview · ",
+                                                  "layerName": "Text: Preview ·"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.world.map-discovery.387ddd9f1623.a",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "View in Media",
+                                                  "text": "View in Media"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "href": "/media/#world-art"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.73de4262222d.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Candy-land scenic artPreview · View in Media",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.world.map-discovery.cc8ecf0ebe03.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Candy-land scenic environment artwork.",
+                                      "asset": "asset.home.world.calm",
+                                      "alt": "Candy-land scenic environment artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.world.map-discovery.d33addf3de0e.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Candy-land scenic artPreview · View in Media",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.world.map-discovery.5106054772f7.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Candy-land scenic art",
+                                            "text": "Candy-land scenic art"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.world.map-discovery.202a3cfe1b15.span",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Preview · View in Media",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.world.map-discovery.feac6cb51ec2.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "Preview · ",
+                                                  "layerName": "Text: Preview ·"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.world.map-discovery.766b4300454b.a",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "View in Media",
+                                                  "text": "View in Media"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "href": "/media/#world-art"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.6633b9d71027.discovery-scene-card",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Forest portal environment artPreview · View in Media",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.world.map-discovery.c2832abf2557.img",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "",
+                                      "attributes": {
+                                        "loading": "lazy",
+                                        "decoding": "async"
+                                      },
+                                      "style": "",
+                                      "layerName": "Forest portal environment artwork.",
+                                      "asset": "asset.home.world.portal",
+                                      "alt": "Forest portal environment artwork."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.world.map-discovery.184106c19e06.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Forest portal environment artPreview · View in Media",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.world.map-discovery.c79e10bb397a.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Forest portal environment art",
+                                            "text": "Forest portal environment art"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.world.map-discovery.79113b5a2c54.span",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Preview · View in Media",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.world.map-discovery.3b27393113c1.text",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "#text",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "text": "Preview · ",
+                                                  "layerName": "Text: Preview ·"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.world.map-discovery.3dbae31c788b.a",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "span",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "View in Media",
+                                                  "text": "View in Media"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "href": "/media/#world-art"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.70588044ff3f.discovery-scene-card-wor",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "discovery-scene-card world-map-locked",
+                                "attributes": {
+                                  "role": "listitem",
+                                  "aria-label": "Future location slot, locked until approved content is published"
+                                },
+                                "style": "",
+                                "layerName": "?Uncharted placeLOCKED · awaiting approved location record",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.world.map-discovery.31a76f8220de.future-character-mark",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "future-character-mark",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "?",
+                                      "text": "?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.world.map-discovery.6853a91aece4.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Uncharted placeLOCKED · awaiting approved location record",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.world.map-discovery.3ed53a80a9a8.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Uncharted place",
+                                            "text": "Uncharted place"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.world.map-discovery.e01ea767436a.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "LOCKED · awaiting approved location record",
+                                            "text": "LOCKED · awaiting approved location record"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.0fb8e5a104cf.discovery-scene-card-wor",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "discovery-scene-card world-map-locked",
+                                "attributes": {
+                                  "role": "listitem",
+                                  "aria-label": "Future location slot, locked until approved content is published"
+                                },
+                                "style": "",
+                                "layerName": "?Uncharted placeLOCKED · awaiting approved location record",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.world.map-discovery.905e9ea160be.future-character-mark",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "future-character-mark",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "?",
+                                      "text": "?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.world.map-discovery.a75f0532d7af.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Uncharted placeLOCKED · awaiting approved location record",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.world.map-discovery.e17f72f78a6a.strong",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "strong",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Uncharted place",
+                                            "text": "Uncharted place"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.world.map-discovery.c540d1b4033a.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "LOCKED · awaiting approved location record",
+                                            "text": "LOCKED · awaiting approved location record"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.world.map-discovery.17e3ee44990b.character-info-panel-wor",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "character-info-panel world-visit-progress",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "World visit",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.world.map-discovery.907ae74ef32f.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "GUEST DISCOVERY",
+                                "text": "GUEST DISCOVERY"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.90798ad97a85.h3",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h3",
+                                "className": "",
+                                "attributes": {
+                                  "id": "world-visit-title"
+                                },
+                                "style": "",
+                                "layerName": "World visit",
+                                "text": "World visit"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.43fd02af703d.progress",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "progress",
+                                "className": "",
+                                "attributes": {
+                                  "data-world-visit-meter": "",
+                                  "max": "1",
+                                  "value": "0",
+                                  "aria-label": "World site-discovery progress"
+                                },
+                                "style": "",
+                                "layerName": "progress",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.af5d72ac29d0.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-world-visit-status": "",
+                                  "role": "status",
+                                  "aria-live": "polite"
+                                },
+                                "style": "",
+                                "layerName": "Checking this browser’s saved World discovery…",
+                                "text": "Checking this browser’s saved World discovery…"
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.7f8f9cdfa693.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Only the existing World-page discovery is counted. Map art does not unlo",
+                                "text": "Only the existing World-page discovery is counted. Map art does not unlock a location or add game progress."
+                              }
+                            },
+                            {
+                              "id": "component.world.map-discovery.fd8ac55e4c64.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "View Feast Pass →",
+                                "href": "/feast-pass/",
+                                "children": [
+                                  {
+                                    "id": "component.world.map-discovery.330f8318ced6.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "View Feast Pass ",
+                                      "layerName": "Text: View Feast Pass"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.world.map-discovery.98104b7c7d96.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "→",
+                                      "text": "→"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
                   "id": "component.live-world.rich-text.1bd309360d4a.discovery-band",
                   "type": "layout.container",
                   "props": {
@@ -338,10 +1106,12 @@
                                 "authoringVersion": 1,
                                 "tag": "h2",
                                 "className": "",
-                                "attributes": {},
+                                "attributes": {
+                                  "id": "world-cast-title"
+                                },
                                 "style": "",
-                                "layerName": "Places and faces from the Feast World",
-                                "text": "Places and faces from the Feast World"
+                                "layerName": "Meet the Feast cast",
+                                "text": "Meet the Feast cast"
                               }
                             },
                             {
@@ -353,176 +1123,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Canonical environment and character art offer a closer look without pres",
-                                "text": "Canonical environment and character art offer a closer look without presenting an unpublished map or invented location guide."
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.live-world.rich-text.d57b0581566f.discovery-scene-grid",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "div",
-                          "className": "discovery-scene-grid",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Candy-land glimpseCanonical environment preview.Forest portalCanonical e",
-                          "mode": "inherit",
-                          "collection": true,
-                          "children": [
-                            {
-                              "id": "component.live-world.rich-text.5a2bbb8346a3.discovery-scene-card",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "figure",
-                                "className": "discovery-scene-card",
-                                "attributes": {
-                                  "data-companion-context": "world-places",
-                                  "data-companion-copy": "These are canonical environment previews, not a complete location directory."
-                                },
-                                "style": "",
-                                "layerName": "Candy-land glimpseCanonical environment preview.",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.live-world.rich-text.8d5ae756c3c4.img",
-                                    "type": "core.image",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "img",
-                                      "className": "",
-                                      "attributes": {
-                                        "loading": "lazy",
-                                        "decoding": "async"
-                                      },
-                                      "style": "",
-                                      "layerName": "A calm candy-land environment from the TOADAL FEAST world.",
-                                      "asset": "asset.home.world.calm",
-                                      "alt": "A calm candy-land environment from the TOADAL FEAST world."
-                                    }
-                                  },
-                                  {
-                                    "id": "component.live-world.rich-text.726a2b677b0d.figcaption",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Candy-land glimpseCanonical environment preview.",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.live-world.rich-text.fa52d1db131d.strong",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "strong",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "Candy-land glimpse",
-                                            "text": "Candy-land glimpse"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.live-world.rich-text.e99990838b76.span",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "Canonical environment preview.",
-                                            "text": "Canonical environment preview."
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.live-world.rich-text.8d03edfaf172.discovery-scene-card",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "figure",
-                                "className": "discovery-scene-card",
-                                "attributes": {
-                                  "data-companion-context": "world-places",
-                                  "data-companion-copy": "The forest portal is a visual world preview; no destination details are being invented."
-                                },
-                                "style": "",
-                                "layerName": "Forest portalCanonical environment preview.",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.live-world.rich-text.6bf4c72442e4.img",
-                                    "type": "core.image",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "img",
-                                      "className": "",
-                                      "attributes": {
-                                        "loading": "lazy",
-                                        "decoding": "async"
-                                      },
-                                      "style": "",
-                                      "layerName": "A lush forest portal environment from the TOADAL FEAST world.",
-                                      "asset": "asset.home.world.portal",
-                                      "alt": "A lush forest portal environment from the TOADAL FEAST world."
-                                    }
-                                  },
-                                  {
-                                    "id": "component.live-world.rich-text.1de82192fab8.figcaption",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Forest portalCanonical environment preview.",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.live-world.rich-text.178ca1753b42.strong",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "strong",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "Forest portal",
-                                            "text": "Forest portal"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.live-world.rich-text.1734a3126a8f.span",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "Canonical environment preview.",
-                                            "text": "Canonical environment preview."
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
+                                "layerName": "Get a closer look at the canonical cast. Open a portrait to explore the Characters collection.",
+                                "text": "Get a closer look at the canonical cast. Open a portrait to explore the Characters collection."
                               }
                             }
                           ]
@@ -545,15 +1147,16 @@
                           "children": [
                             {
                               "id": "component.live-world.rich-text.1b710a0dc651.discovery-cast-tile",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "discovery-cast-tile",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-cast-tile owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Toadal’s character profile"
+                                },
                                 "style": "",
                                 "layerName": "Toadal",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-world.rich-text.cb1a55e9010d.img",
@@ -587,20 +1190,22 @@
                                       "text": "Toadal"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/toadal/"
                               }
                             },
                             {
                               "id": "component.live-world.rich-text.a68cad83be46.discovery-cast-tile",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "discovery-cast-tile",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-cast-tile owner-object-link",
+                                "attributes": {
+                                  "aria-label": "View Princess Lily in the Characters collection"
+                                },
                                 "style": "",
                                 "layerName": "Princess Lily",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-world.rich-text.9767a2eb3032.img",
@@ -634,20 +1239,22 @@
                                       "text": "Princess Lily"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             },
                             {
                               "id": "component.live-world.rich-text.cec139f9ef9d.discovery-cast-tile",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "discovery-cast-tile",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-cast-tile owner-object-link",
+                                "attributes": {
+                                  "aria-label": "View Gully in the Characters collection"
+                                },
                                 "style": "",
                                 "layerName": "Gully",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-world.rich-text.5e6016a4cbdd.img",
@@ -681,20 +1288,22 @@
                                       "text": "Gully"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             },
                             {
                               "id": "component.live-world.rich-text.5bac6f719783.discovery-cast-tile",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "discovery-cast-tile",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-cast-tile owner-object-link",
+                                "attributes": {
+                                  "aria-label": "View Gulper in the Characters collection"
+                                },
                                 "style": "",
                                 "layerName": "Gulper",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-world.rich-text.71aae7426298.img",
@@ -726,7 +1335,8 @@
                                       "text": "Gulper"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             }
                           ]
@@ -812,7 +1422,7 @@
                           "className": "detail-fact",
                           "attributes": {
                             "data-companion-context": "world-cast",
-                            "data-companion-copy": "Character portraits are previews; published character biographies are not available here."
+                            "data-companion-copy": "Explore canonical character art and save artwork discoveries in this browser. Unpublished character lore remains clearly marked."
                           },
                           "style": "",
                           "layerName": "Meet the cast",
@@ -867,10 +1477,10 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "View media previews →",
-                                "href": "/media/",
+                                "href": "/characters/",
                                 "children": [
                                   {
-                                    "id": "component.live-world.rich-text.afba726f1540.text",
+                                    "id": "component.production-core.world.7",
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
@@ -878,23 +1488,8 @@
                                       "className": "",
                                       "attributes": {},
                                       "style": "",
-                                      "text": "View media previews ",
-                                      "layerName": "Text: View media previews"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.live-world.rich-text.978c180ff3c3.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {
-                                        "aria-hidden": "true"
-                                      },
-                                      "style": "",
-                                      "layerName": "→",
-                                      "text": "→"
+                                      "layerName": "Explore Characters →",
+                                      "text": "Explore Characters →"
                                     }
                                   }
                                 ]
@@ -950,8 +1545,415 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "No interactive map, story archive, or unreleased destination is presente",
-                                "text": "No interactive map, story archive, or unreleased destination is presented as live."
+                                "layerName": "Save website discoveries in your guest Feast Pass while the complete published world guide is being prepared.",
+                                "text": "Save website discoveries in your guest Feast Pass while the complete published world guide is being prepared."
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.world.26",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band portal-discovery-links",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Stories and media discovery",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.world.10",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "More of the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.world.8",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "KEEP EXPLORING",
+                                "text": "KEEP EXPLORING"
+                              }
+                            },
+                            {
+                              "id": "component.production-core.world.9",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "world-more-title"
+                                },
+                                "style": "",
+                                "layerName": "More of the Feast",
+                                "text": "More of the Feast"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.production-core.world.25",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "portal-journey-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "World discovery destinations",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.world.17",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "A world of stories — Explore the story shelves while approved chapters are being prepared."
+                                },
+                                "style": "",
+                                "layerName": "A world of stories",
+                                "href": "/stories/",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.world.11",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Toadal seated and thinking.",
+                                      "asset": "asset.companion.context.story",
+                                      "alt": "Toadal seated and thinking."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.world.16",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "A world of stories",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.world.12",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "STORIES & COMICS",
+                                            "text": "STORIES & COMICS"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.world.13",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "A world of stories",
+                                            "text": "A world of stories"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.world.14",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore the story shelves while approved chapters are being prepared.",
+                                            "text": "Explore the story shelves while approved chapters are being prepared."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.world.15",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.production-core.world.24",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Look closer at the Feast — Browse canonical scenery, character art and genuine gameplay stills."
+                                },
+                                "style": "",
+                                "layerName": "Look closer at the Feast",
+                                "href": "/media/",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.world.18",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Canonical forest portal environment.",
+                                      "asset": "asset.home.world.portal",
+                                      "alt": "Canonical forest portal environment."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.world.23",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Look closer at the Feast",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.world.19",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "ART & GAMEPLAY",
+                                            "text": "ART & GAMEPLAY"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.world.20",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Look closer at the Feast",
+                                            "text": "Look closer at the Feast"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.world.21",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Browse canonical scenery, character art and genuine gameplay stills.",
+                                            "text": "Browse canonical scenery, character art and genuine gameplay stills."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.world.22",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.world.35",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "portal-app-feature",
+                    "attributes": {
+                      "id": "mobile-adventure-world",
+                      "data-companion-context": "app",
+                      "data-companion-copy": "The mobile app is the flagship adventure. Its page shows genuine gameplay and the current store-link status."
+                    },
+                    "style": "",
+                    "layerName": "Explore the full mobile adventure",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.world.29",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "figure",
+                          "className": "portal-app-art",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Genuine mobile Puzzle gameplay",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.world.27",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "decoding": "async",
+                                  "loading": "lazy"
+                                },
+                                "style": "",
+                                "layerName": "Genuine TOADAL FEAST Puzzle gameplay capture.",
+                                "asset": "asset.app.gameplay.puzzle",
+                                "alt": "Genuine TOADAL FEAST Puzzle gameplay capture."
+                              }
+                            },
+                            {
+                              "id": "component.production-core.world.28",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figcaption",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Captured from the mobile game",
+                                "text": "Captured from the mobile game"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.production-core.world.34",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "portal-app-copy",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "The mobile adventure",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.world.30",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "THE FULL MOBILE ADVENTURE",
+                                "text": "THE FULL MOBILE ADVENTURE"
+                              }
+                            },
+                            {
+                              "id": "component.production-core.world.31",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A bigger Feast on mobile",
+                                "text": "A bigger Feast on mobile"
+                              }
+                            },
+                            {
+                              "id": "component.production-core.world.32",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Discover the flagship TOADAL FEAST adventure through real Arcade, Puzzle and Feastfall gameplay. Visit the App page for the current download status.",
+                                "text": "Discover the flagship TOADAL FEAST adventure through real Arcade, Puzzle and Feastfall gameplay. Visit the App page for the current download status."
+                              }
+                            },
+                            {
+                              "id": "component.production-core.world.33",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "button-link button-link--primary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore the mobile app →",
+                                "label": "Explore the mobile app →",
+                                "href": "/app/"
                               }
                             }
                           ]
@@ -1072,701 +2074,6 @@
                                 "style": "",
                                 "layerName": "Minimize Toadal helper",
                                 "text": "Minimize Toadal helper"
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "component.world.map-discovery",
-      "type": "layout.container",
-      "props": {
-        "variant": "world-map-discovery",
-        "authoringVersion": 1,
-        "tag": "section",
-        "className": "studio-rich-text shell section",
-        "attributes": {},
-        "style": "",
-        "layerName": "The Feast World — TOADAL FEAST content",
-        "mode": "inherit",
-        "children": [
-          {
-            "id": "component.world.map-discovery.a3c84c810181.discovery-band-world-map",
-            "type": "layout.container",
-            "props": {
-              "authoringVersion": 1,
-              "tag": "section",
-              "className": "discovery-band world-map-preview",
-              "attributes": {
-                "data-world-map": "",
-                "aria-labelledby": "world-map-heading"
-              },
-              "style": "",
-              "layerName": "Explore approved environment art",
-              "mode": "inherit",
-              "children": [
-                {
-                  "id": "component.world.map-discovery.bbc5eb89fe5f.discovery-band-heading",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "discovery-band-heading",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Explore approved environment art",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.world.map-discovery.c80a382850ae.section-kicker",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "section-kicker",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "WORLD ATLAS PREVIEW",
-                          "text": "WORLD ATLAS PREVIEW"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.10e501c85f5e.world-map-heading",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "h2",
-                          "className": "",
-                          "attributes": {
-                            "id": "world-map-heading"
-                          },
-                          "style": "",
-                          "layerName": "world map heading",
-                          "text": "Explore approved environment art"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.c600d7a84e63.p",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "The content registry has no published location records yet. These three ",
-                          "text": "The content registry has no published location records yet. These three canonical environment-art entries are previews, not confirmed map destinations."
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "component.world.map-discovery.bdd73088f428.discovery-scene-grid",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "discovery-scene-grid",
-                    "attributes": {
-                      "role": "group",
-                      "aria-label": "Approved Feast World environment previews"
-                    },
-                    "style": "",
-                    "layerName": "Candy Kingdom environment artPreview · View in MediaCandy-land scenic ar",
-                    "mode": "inherit",
-                    "collection": true,
-                    "children": [
-                      {
-                        "id": "component.world.map-discovery.747bebb2e5c7.discovery-scene-card",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "discovery-scene-card owner-object-link",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Candy Kingdom environment artPreview · View in Media",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.world.map-discovery.e29cf5df2235.img",
-                              "type": "core.image",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "img",
-                                "className": "",
-                                "attributes": {
-                                  "loading": "lazy",
-                                  "decoding": "async"
-                                },
-                                "style": "",
-                                "layerName": "Candy Kingdom environment artwork.",
-                                "asset": "asset.home.world.desktop",
-                                "alt": "Candy Kingdom environment artwork."
-                              }
-                            },
-                            {
-                              "id": "component.world.map-discovery.e6d23e3d847d.div",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Candy Kingdom environment artPreview · View in Media",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.world.map-discovery.108f90aebbbe.strong",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "strong",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Candy Kingdom environment art",
-                                      "text": "Candy Kingdom environment art"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.world.map-discovery.674c575af55c.span",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Preview · View in Media",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.world.map-discovery.5825b8eeb2d8.text",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "#text",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "text": "Preview · ",
-                                            "layerName": "Text: Preview ·"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.world.map-discovery.387ddd9f1623.a",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "View in Media",
-                                            "text": "View in Media"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "href": "/media/#world-art"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.73de4262222d.discovery-scene-card",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "discovery-scene-card owner-object-link",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Candy-land scenic artPreview · View in Media",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.world.map-discovery.cc8ecf0ebe03.img",
-                              "type": "core.image",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "img",
-                                "className": "",
-                                "attributes": {
-                                  "loading": "lazy",
-                                  "decoding": "async"
-                                },
-                                "style": "",
-                                "layerName": "Candy-land scenic environment artwork.",
-                                "asset": "asset.home.world.calm",
-                                "alt": "Candy-land scenic environment artwork."
-                              }
-                            },
-                            {
-                              "id": "component.world.map-discovery.d33addf3de0e.div",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Candy-land scenic artPreview · View in Media",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.world.map-discovery.5106054772f7.strong",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "strong",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Candy-land scenic art",
-                                      "text": "Candy-land scenic art"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.world.map-discovery.202a3cfe1b15.span",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Preview · View in Media",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.world.map-discovery.feac6cb51ec2.text",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "#text",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "text": "Preview · ",
-                                            "layerName": "Text: Preview ·"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.world.map-discovery.766b4300454b.a",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "View in Media",
-                                            "text": "View in Media"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "href": "/media/#world-art"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.6633b9d71027.discovery-scene-card",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "discovery-scene-card owner-object-link",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Forest portal environment artPreview · View in Media",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.world.map-discovery.c2832abf2557.img",
-                              "type": "core.image",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "img",
-                                "className": "",
-                                "attributes": {
-                                  "loading": "lazy",
-                                  "decoding": "async"
-                                },
-                                "style": "",
-                                "layerName": "Forest portal environment artwork.",
-                                "asset": "asset.home.world.portal",
-                                "alt": "Forest portal environment artwork."
-                              }
-                            },
-                            {
-                              "id": "component.world.map-discovery.184106c19e06.div",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Forest portal environment artPreview · View in Media",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.world.map-discovery.c79e10bb397a.strong",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "strong",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Forest portal environment art",
-                                      "text": "Forest portal environment art"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.world.map-discovery.79113b5a2c54.span",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Preview · View in Media",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.world.map-discovery.3b27393113c1.text",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "#text",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "text": "Preview · ",
-                                            "layerName": "Text: Preview ·"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.world.map-discovery.3dbae31c788b.a",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "View in Media",
-                                            "text": "View in Media"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "href": "/media/#world-art"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.70588044ff3f.discovery-scene-card-wor",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "discovery-scene-card world-map-locked",
-                          "attributes": {
-                            "role": "listitem",
-                            "aria-label": "Future location slot, locked until approved content is published"
-                          },
-                          "style": "",
-                          "layerName": "?Uncharted placeLOCKED · awaiting approved location record",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.world.map-discovery.31a76f8220de.future-character-mark",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "future-character-mark",
-                                "attributes": {
-                                  "aria-hidden": "true"
-                                },
-                                "style": "",
-                                "layerName": "?",
-                                "text": "?"
-                              }
-                            },
-                            {
-                              "id": "component.world.map-discovery.6853a91aece4.div",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Uncharted placeLOCKED · awaiting approved location record",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.world.map-discovery.3ed53a80a9a8.strong",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "strong",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Uncharted place",
-                                      "text": "Uncharted place"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.world.map-discovery.e01ea767436a.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "LOCKED · awaiting approved location record",
-                                      "text": "LOCKED · awaiting approved location record"
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.0fb8e5a104cf.discovery-scene-card-wor",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "discovery-scene-card world-map-locked",
-                          "attributes": {
-                            "role": "listitem",
-                            "aria-label": "Future location slot, locked until approved content is published"
-                          },
-                          "style": "",
-                          "layerName": "?Uncharted placeLOCKED · awaiting approved location record",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.world.map-discovery.905e9ea160be.future-character-mark",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "future-character-mark",
-                                "attributes": {
-                                  "aria-hidden": "true"
-                                },
-                                "style": "",
-                                "layerName": "?",
-                                "text": "?"
-                              }
-                            },
-                            {
-                              "id": "component.world.map-discovery.a75f0532d7af.div",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Uncharted placeLOCKED · awaiting approved location record",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.world.map-discovery.e17f72f78a6a.strong",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "strong",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Uncharted place",
-                                      "text": "Uncharted place"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.world.map-discovery.c540d1b4033a.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "LOCKED · awaiting approved location record",
-                                      "text": "LOCKED · awaiting approved location record"
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "component.world.map-discovery.17e3ee44990b.character-info-panel-wor",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "character-info-panel world-visit-progress",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "World visit",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.world.map-discovery.907ae74ef32f.section-kicker",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "section-kicker",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "GUEST DISCOVERY",
-                          "text": "GUEST DISCOVERY"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.90798ad97a85.h3",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "h3",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "World visit",
-                          "text": "World visit"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.43fd02af703d.progress",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "progress",
-                          "className": "",
-                          "attributes": {
-                            "data-world-visit-meter": "",
-                            "max": "1",
-                            "value": "0",
-                            "aria-label": "World site-discovery progress"
-                          },
-                          "style": "",
-                          "layerName": "progress",
-                          "text": ""
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.af5d72ac29d0.p",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "",
-                          "attributes": {
-                            "data-world-visit-status": "",
-                            "role": "status",
-                            "aria-live": "polite"
-                          },
-                          "style": "",
-                          "layerName": "Checking this browser’s saved World discovery…",
-                          "text": "Checking this browser’s saved World discovery…"
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.7f8f9cdfa693.p",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Only the existing World-page discovery is counted. Map art does not unlo",
-                          "text": "Only the existing World-page discovery is counted. Map art does not unlock a location or add game progress."
-                        }
-                      },
-                      {
-                        "id": "component.world.map-discovery.fd8ac55e4c64.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "View Feast Pass →",
-                          "href": "/feast-pass/",
-                          "children": [
-                            {
-                              "id": "component.world.map-discovery.330f8318ced6.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "View Feast Pass ",
-                                "layerName": "Text: View Feast Pass"
-                              }
-                            },
-                            {
-                              "id": "component.world.map-discovery.98104b7c7d96.span",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "",
-                                "attributes": {
-                                  "aria-hidden": "true"
-                                },
-                                "style": "",
-                                "layerName": "→",
-                                "text": "→"
                               }
                             }
                           ]

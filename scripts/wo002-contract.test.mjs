@@ -306,7 +306,7 @@ test('launch gating exposes only the Wicked Bites preview and keeps CLAW held', 
   assert.ok(toolbarTag, 'player toolbar must exist');
   assert.equal(htmlAttribute(toolbarTag, 'role'), 'group');
   assert.equal(htmlAttribute(toolbarTag, 'aria-label'), 'Browser player controls');
-  assert.match(playerHtml, /<button\b[^>]*\bdata-player-fullscreen-exit\b[^>]*>Exit full screen<\/button>/i);
+  assert.match(playerHtml, /<div\b[^>]*\bdata-player-fullscreen-rail\b[^>]*>\s*<button\b[^>]*\bdata-player-fullscreen-exit\b[^>]*aria-label=['"']Exit full screen['"'][^>]*>Exit<\/button>\s*<\/div>/i);
   assert.doesNotMatch(playerHtml, /claw-feed-gulper/i, 'the player must not mention or load CLAW');
 });
 

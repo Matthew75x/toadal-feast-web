@@ -1,0 +1,57 @@
+{
+  "schema": "toadal-feast.staging-completion.v1",
+  "status": "PASS",
+  "date": "2026-10-05",
+  "sourceBranch": "work/website-staging-completion-20261005",
+  "ownerBase": "164491d847fd4c21d737e86ae5bba2aa5abf8283",
+  "stagingBase": "0132cb22cfbf821ec597d32a97f60d556ead7e97",
+  "studioCommit": "4676c955668d4d357ab28c0e0c26ec8c6f0da11b",
+  "studioVersion": "1.4.2",
+  "source": {
+    "sha256": "91c834005656afac772077e16ea07100b65279b04e43579e7f00c12984f2b697",
+    "files": 165
+  },
+  "sourceUnchanged": true,
+  "studioValidation": {
+    "valid": true,
+    "warnings": []
+  },
+  "staticExportProfile": {
+    "schemaVersion": 1,
+    "basePath": "/toadal-feast-web/",
+    "staging": true
+  },
+  "protectedArtifacts": {
+    "count": 3,
+    "valid": true
+  },
+  "checks": [
+    {
+      "script": "wo001-pages-basepath.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "verify-owner-preview-render-freshness.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "verify-pages-basepath.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "verify-static-links.mjs",
+      "exitCode": 0
+    },
+    {
+      "script": "verify-staging-robots.mjs",
+      "exitCode": 0
+    }
+  ],
+  "qualification": {
+    "existingFocusedTests": 65,
+    "affectedTests": 16,
+    "coreDesktopPhoneCases": 18,
+    "mobileControlCases": 5,
+    "finalTargeted": "PASS"
+  }
+}

@@ -5,6 +5,9 @@
 
   var POSITION_KEY = 'toadal:site:companion:position:v1';
   var DRAG_THRESHOLD = 8;
+  var DOUBLE_TAP_WINDOW = 320;
+  var DOUBLE_TAP_DISTANCE = 24;
+  var TAP_MAX_DURATION = 350;
   var EDGE_GAP = 12;
   var DEFAULT_BOTTOM_GAP = 180;
 
@@ -29,6 +32,7 @@
     var moveFrame = 0;
     var queuedPosition = null;
     var manualPosition = false;
+    var lastTouchTap = null;
 
     function mobileDock() {
       if (manualPosition || window.innerWidth > 600) return null;
@@ -38,10 +42,12 @@
       if (!brand || !menu || getComputedStyle(menu).display === 'none') return null;
       var a = brand.getBoundingClientRect();
       var b = menu.getBoundingClientRect();
-      var gap = b.left - a.right - 16;
+      // Use the same exclusion margin as collision checks, plus rounding slack.
+      var dockGap = EDGE_GAP + 1;
+      var gap = b.left - a.right - 2 * dockGap;
       if (gap < 52) return null;
       var width = Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
-      return { x: a.right + 8 + (gap - width) / 2, y: Math.max(4, a.top + (a.height - 52) / 2), width: width };
+      return { x: a.right + dockGap + (gap - width) / 2, y: Math.max(4, a.top + (a.height - 52) / 2), width: width };
     }
 
     function setDock(dock) {
@@ -132,10 +138,14 @@
     }
 
     function applyPosition(nextX, nextY, persist) {
+      // A hidden character has no measurable box. Keep its saved placement intact.
+      if (root.hidden) return;
       var dock = !drag || !drag.moved ? mobileDock() : null;
       setDock(dock);
       var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
-      var safe = avoidControls(next);
+      // Main controls can scroll behind the opaque sticky header. They must
+      // not dislodge its automatic dock into the visible page content.
+      var safe = dock ? avoidControls(next, dock.width, 52, controlRects(false, true)) : avoidControls(next);
       if (dock && (safe.x !== next.x || safe.y !== next.y)) {
         setDock(null);
         safe = avoidControls(clampPosition(safe.x, safe.y));
@@ -153,12 +163,14 @@
       if (persist) persistPosition();
     }
 
-    function controlRects(includeNavigation) {
+    function controlRects(includeNavigation, headerOnly) {
+      var header = headerOnly ? document.querySelector('.site-header') : null;
       var view = viewport();
-      var selectors = 'a[href], button, input, select, textarea, [role="button"], .detail-breadcrumb, dialog[open], [role="dialog"]';
+      var selectors = 'a[href], button, input, select, textarea, [role="button"], iframe, [data-player-frame-wrap], .detail-breadcrumb, dialog[open], [role="dialog"]';
       if (includeNavigation) selectors += ', .site-header, [role="navigation"]';
       return Array.from(document.querySelectorAll(selectors)).filter(function (control) {
         if (root.contains(control)) return false;
+        if (headerOnly && (!header || !header.contains(control))) return false;
         var style = getComputedStyle(control);
         var rect = control.getBoundingClientRect();
         return style.visibility !== 'hidden' && style.display !== 'none' && style.opacity !== '0' &&
@@ -244,6 +256,8 @@
       var rect = root.getBoundingClientRect();
       drag = {
         pointerId: event.pointerId,
+        pointerType: event.pointerType,
+        startedAt: event.timeStamp,
         startX: event.clientX,
         startY: event.clientY,
         originX: rect.left,
@@ -262,6 +276,7 @@
       var dy = event.clientY - drag.startY;
       if (!drag.moved && Math.hypot(dx, dy) < DRAG_THRESHOLD) return;
       if (!drag.moved) {
+        lastTouchTap = null;
         manualPosition = true;
         setDock(null);
       }
@@ -277,6 +292,7 @@
       drag = null;
       root.removeAttribute('data-dragging');
       if (cancelled) {
+        lastTouchTap = null;
         manualPosition = ended.manual;
         if (moveFrame) window.cancelAnimationFrame(moveFrame);
         moveFrame = 0;
@@ -289,6 +305,7 @@
         return;
       }
       if (ended.moved) {
+        lastTouchTap = null;
         if (moveFrame) window.cancelAnimationFrame(moveFrame);
         moveFrame = 0;
         var finalPosition = queuedPosition || { x: x, y: y };
@@ -296,7 +313,20 @@
         applyPosition(finalPosition.x, finalPosition.y, true);
         suppressClick = true;
         suppressTimer = window.setTimeout(function () { suppressClick = false; suppressTimer = null; }, 500);
-      }
+      } else if (ended.pointerType === 'touch' && event && event.timeStamp - ended.startedAt <= TAP_MAX_DURATION) {
+        var now = event.timeStamp;
+        var previous = lastTouchTap;
+        var closeEnough = previous && Math.hypot(event.clientX - previous.x, event.clientY - previous.y) <= DOUBLE_TAP_DISTANCE;
+        if (previous && now - previous.at <= DOUBLE_TAP_WINDOW && closeEnough) {
+          lastTouchTap = null;
+          // Hide on pointerup and consume the following compatibility click.
+          // A single tap still toggles immediately; a drag never counts as a tap.
+          suppressClick = true;
+          suppressTimer = window.setTimeout(function () { suppressClick = false; suppressTimer = null; }, 500);
+          if (event.cancelable) event.preventDefault();
+          root.dispatchEvent(new CustomEvent('toadal:companion-hide-request', { detail: { input: 'touch-double-tap' } }));
+        } else lastTouchTap = { at: now, x: event.clientX, y: event.clientY };
+      } else lastTouchTap = null;
     }
 
     button.addEventListener('pointerdown', onPointerDown);
@@ -331,6 +361,7 @@
     }, { passive: true });
 
     function clampAfterViewportChange() {
+      if (root.hidden) return;
       // Automatic mobile header coordinates must not become a desktop preference.
       setDock(mobileDock());
       var next = manualPosition ? { x: x, y: y } : defaultPosition();
@@ -338,6 +369,10 @@
     }
     window.addEventListener('resize', clampAfterViewportChange, { passive: true });
     window.addEventListener('orientationchange', clampAfterViewportChange, { passive: true });
+    root.addEventListener('toadal:companion-visibility', function (event) {
+      lastTouchTap = null;
+      if (!event.detail || !event.detail.hidden) clampAfterViewportChange();
+    });
     window.addEventListener('scroll', function () {
       if (!drag) schedulePosition(x, y, false);
     }, { passive: true });
@@ -373,6 +408,8 @@
     panelObserver.observe(panel, { attributes: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
 
     var initial = loadPosition();
+    x = initial.x;
+    y = initial.y;
     applyPosition(initial.x, initial.y, true);
     root.setAttribute('data-position-ready', 'true');
     button.setAttribute('aria-keyshortcuts', 'ArrowUp ArrowDown ArrowLeft ArrowRight Shift+ArrowUp Shift+ArrowDown Shift+ArrowLeft Shift+ArrowRight');

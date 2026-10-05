@@ -293,86 +293,131 @@
                   }
                 },
                 {
-                  "id": "component.live-media.rich-text.6e5ea3b872c6.discovery-band",
+                  "id": "component.production-core.media.6",
                   "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "section",
-                    "className": "discovery-band",
+                    "tag": "nav",
+                    "className": "portal-section-nav media-filter-controls",
                     "attributes": {
-                      "aria-labelledby": "media-video-title"
+                      "data-media-filters": "",
+                      "aria-label": "Filter media previews"
                     },
                     "style": "",
-                    "layerName": "Watch the Feast",
+                    "layerName": "Filter media previews",
                     "mode": "inherit",
                     "children": [
                       {
-                        "id": "component.live-media.rich-text.c079f3183fa1.discovery-band-heading",
-                        "type": "layout.container",
+                        "id": "component.production-core.media.101",
+                        "type": "core.button",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "div",
-                          "className": "discovery-band-heading",
-                          "attributes": {},
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "aria-pressed": "true",
+                            "data-media-filter": "all"
+                          },
                           "style": "",
-                          "layerName": "Watch the Feast",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.live-media.rich-text.2920a1b836ea.section-kicker",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "VIDEO",
-                                "text": "VIDEO"
-                              }
-                            },
-                            {
-                              "id": "component.live-media.rich-text.239ec68366d5.media-video-title",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "",
-                                "attributes": {
-                                  "id": "media-video-title"
-                                },
-                                "style": "",
-                                "layerName": "media video title",
-                                "text": "Watch the Feast"
-                              }
-                            },
-                            {
-                              "id": "component.live-media.rich-text.48dfc9865dfc.p",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "No public trailer, video, or short is available on this site yet.",
-                                "text": "No public trailer, video, or short is available on this site yet."
-                              }
-                            }
-                          ]
+                          "layerName": "All media",
+                          "label": "All media"
                         }
                       },
                       {
-                        "id": "component.live-media.rich-text.ae4038782ff7.detail-fact",
-                        "type": "core.text",
+                        "id": "component.production-core.media.102",
+                        "type": "core.button",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "detail-fact",
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "aria-pressed": "false",
+                            "data-media-filter": "video"
+                          },
+                          "style": "",
+                          "layerName": "Video",
+                          "label": "Video"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.media.103",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "aria-pressed": "false",
+                            "data-media-filter": "gameplay"
+                          },
+                          "style": "",
+                          "layerName": "Gameplay",
+                          "label": "Gameplay"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.media.104",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "aria-pressed": "false",
+                            "data-media-filter": "world-art"
+                          },
+                          "style": "",
+                          "layerName": "World art",
+                          "label": "World art"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.media.105",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {
+                            "type": "button",
+                            "aria-pressed": "false",
+                            "data-media-filter": "character-art"
+                          },
+                          "style": "",
+                          "layerName": "Character art",
+                          "label": "Character art"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.media.106",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
                           "attributes": {},
                           "style": "",
-                          "layerName": "Video shelf · awaiting an approved published video.",
-                          "text": "Video shelf · awaiting an approved published video."
+                          "layerName": "Downloads",
+                          "label": "Downloads",
+                          "href": "#downloads"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.media.107",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Press",
+                          "label": "Press",
+                          "href": "#press"
                         }
                       }
                     ]
@@ -464,15 +509,16 @@
                           "children": [
                             {
                               "id": "component.live-media.rich-text.5dd6613b5bd0.discovery-scene-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
-                                "className": "discovery-scene-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Arcade in the mobile app"
+                                },
                                 "style": "",
                                 "layerName": "ArcadeGenuine gameplay still.",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.501cdb4ebe27.img",
@@ -496,8 +542,8 @@
                                     "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "div",
+                                      "className": "portal-art-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "ArcadeGenuine gameplay still.",
@@ -508,8 +554,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "strong",
-                                            "className": "",
+                                            "tag": "h3",
+                                            "className": "portal-media-caption-title",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Arcade",
@@ -521,8 +567,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
+                                            "tag": "p",
+                                            "className": "portal-media-caption-text",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Genuine gameplay still.",
@@ -532,20 +578,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/app/#mode-arcade"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.036834fb7bed.discovery-scene-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
-                                "className": "discovery-scene-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Puzzle in the mobile app"
+                                },
                                 "style": "",
                                 "layerName": "PuzzleGenuine gameplay still.",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.b94b509eaee1.img",
@@ -569,8 +617,8 @@
                                     "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "div",
+                                      "className": "portal-art-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "PuzzleGenuine gameplay still.",
@@ -581,8 +629,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "strong",
-                                            "className": "",
+                                            "tag": "h3",
+                                            "className": "portal-media-caption-title",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Puzzle",
@@ -594,8 +642,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
+                                            "tag": "p",
+                                            "className": "portal-media-caption-text",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Genuine gameplay still.",
@@ -605,20 +653,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/app/#mode-puzzle"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.7136396906da.discovery-scene-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
-                                "className": "discovery-scene-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Feastfall in the mobile app"
+                                },
                                 "style": "",
                                 "layerName": "FeastfallGenuine gameplay still.",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.07712d28ad97.img",
@@ -642,8 +692,8 @@
                                     "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "div",
+                                      "className": "portal-art-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "FeastfallGenuine gameplay still.",
@@ -654,8 +704,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "strong",
-                                            "className": "",
+                                            "tag": "h3",
+                                            "className": "portal-media-caption-title",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Feastfall",
@@ -667,8 +717,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
+                                            "tag": "p",
+                                            "className": "portal-media-caption-text",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Genuine gameplay still.",
@@ -678,7 +728,8 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/app/#mode-feastfall"
                               }
                             }
                           ]
@@ -771,15 +822,16 @@
                           "children": [
                             {
                               "id": "component.live-media.rich-text.7dac9dce8d7e.discovery-scene-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
-                                "className": "discovery-scene-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Candy-land in World"
+                                },
                                 "style": "",
                                 "layerName": "Candy-landEnvironment preview.",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.7ea05f809369.img",
@@ -803,8 +855,8 @@
                                     "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "div",
+                                      "className": "portal-art-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "Candy-landEnvironment preview.",
@@ -815,8 +867,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "strong",
-                                            "className": "",
+                                            "tag": "h3",
+                                            "className": "portal-media-caption-title",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Candy-land",
@@ -828,8 +880,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
+                                            "tag": "p",
+                                            "className": "portal-media-caption-text",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Environment preview.",
@@ -839,20 +891,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/world/#world-map-heading"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.8c21bc8937e5.discovery-scene-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
-                                "className": "discovery-scene-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "discovery-scene-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Forest portal in World"
+                                },
                                 "style": "",
                                 "layerName": "Forest portalEnvironment preview.",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.fec8a02b1c63.img",
@@ -876,8 +930,8 @@
                                     "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "div",
+                                      "className": "portal-art-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "Forest portalEnvironment preview.",
@@ -888,8 +942,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "strong",
-                                            "className": "",
+                                            "tag": "h3",
+                                            "className": "portal-media-caption-title",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Forest portal",
@@ -901,8 +955,8 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "",
+                                            "tag": "p",
+                                            "className": "portal-media-caption-text",
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Environment preview.",
@@ -912,7 +966,8 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/world/#world-map-heading"
                               }
                             }
                           ]
@@ -1005,15 +1060,16 @@
                           "children": [
                             {
                               "id": "component.live-media.rich-text.4f74ed3eeca6.media-character-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "media-character-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "media-character-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Toadal character art"
+                                },
                                 "style": "",
                                 "layerName": "Toadal",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.50ae655f4ad3.img",
@@ -1062,7 +1118,7 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "h2",
+                                            "tag": "h3",
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
@@ -1073,20 +1129,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/toadal/"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.4fa17fd4dd51.media-character-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "media-character-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "media-character-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Princess Lily character art"
+                                },
                                 "style": "",
                                 "layerName": "Princess Lily",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.8666746eed07.img",
@@ -1135,7 +1193,7 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "h2",
+                                            "tag": "h3",
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
@@ -1146,20 +1204,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.b5bd3b635ec0.media-character-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "media-character-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "media-character-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Gully character art"
+                                },
                                 "style": "",
                                 "layerName": "Gully",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.d80aa2fa77a8.img",
@@ -1208,7 +1268,7 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "h2",
+                                            "tag": "h3",
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
@@ -1219,20 +1279,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.324ec27035b7.media-character-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "media-character-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "media-character-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Gulper character art"
+                                },
                                 "style": "",
                                 "layerName": "Gulper",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.3e759bfb17b4.img",
@@ -1281,7 +1343,7 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "h2",
+                                            "tag": "h3",
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
@@ -1292,20 +1354,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.c14caa495ac4.media-character-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "media-character-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "media-character-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Fruity character art"
+                                },
                                 "style": "",
                                 "layerName": "Fruity",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.63b741b66541.img",
@@ -1354,7 +1418,7 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "h2",
+                                            "tag": "h3",
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
@@ -1365,20 +1429,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.3ae4fb61b11a.media-character-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "media-character-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "media-character-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Sweet character art"
+                                },
                                 "style": "",
                                 "layerName": "Sweet",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.7b98d2adc6b1.img",
@@ -1427,7 +1493,7 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "h2",
+                                            "tag": "h3",
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
@@ -1438,20 +1504,22 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             },
                             {
                               "id": "component.live-media.rich-text.289b848e9e21.media-character-card",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
-                                "className": "media-character-card",
-                                "attributes": {},
+                                "tag": "a",
+                                "className": "media-character-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore Savoury character art"
+                                },
                                 "style": "",
                                 "layerName": "Savoury",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-media.rich-text.fe92461dc19e.img",
@@ -1500,7 +1568,7 @@
                                           "type": "core.text",
                                           "props": {
                                             "authoringVersion": 1,
-                                            "tag": "h2",
+                                            "tag": "h3",
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
@@ -1511,10 +1579,97 @@
                                       ]
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/characters/"
                               }
                             }
                           ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.live-media.rich-text.6e5ea3b872c6.discovery-band",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band",
+                    "attributes": {
+                      "aria-labelledby": "media-video-title"
+                    },
+                    "style": "",
+                    "layerName": "Watch the Feast",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.live-media.rich-text.c079f3183fa1.discovery-band-heading",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Watch the Feast",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.live-media.rich-text.2920a1b836ea.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "VIDEO",
+                                "text": "VIDEO"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.239ec68366d5.media-video-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "media-video-title"
+                                },
+                                "style": "",
+                                "layerName": "media video title",
+                                "text": "Watch the Feast"
+                              }
+                            },
+                            {
+                              "id": "component.live-media.rich-text.48dfc9865dfc.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No public trailer, video, or short is available on this site yet.",
+                                "text": "No public trailer, video, or short is available on this site yet."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.live-media.rich-text.ae4038782ff7.detail-fact",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "detail-fact",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Video shelf · awaiting an approved published video.",
+                          "text": "Video shelf · awaiting an approved published video."
                         }
                       }
                     ]

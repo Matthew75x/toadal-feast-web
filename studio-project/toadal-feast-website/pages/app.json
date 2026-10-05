@@ -468,15 +468,16 @@
                           "children": [
                             {
                               "id": "component.live-app.rich-text.7bbc10829c36.app-product-phone",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
+                                "tag": "a",
                                 "className": "app-product-phone",
-                                "attributes": {},
+                                "attributes": {
+                                  "aria-label": "Explore the Arcade mobile mode"
+                                },
                                 "style": "",
                                 "layerName": "REAL GAMEPLAYArcade",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-app.rich-text.b8e2c6a343df.app-shot-label",
@@ -514,28 +515,30 @@
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "span",
+                                      "className": "portal-app-stage-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "Arcade",
                                       "text": "Arcade"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "#mode-arcade"
                               }
                             },
                             {
                               "id": "component.live-app.rich-text.96cacf66b78a.app-product-stage-card-a",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
+                                "tag": "a",
                                 "className": "app-product-stage-card app-product-stage-card--puzzle",
-                                "attributes": {},
+                                "attributes": {
+                                  "aria-label": "Explore the Puzzle mobile mode"
+                                },
                                 "style": "",
                                 "layerName": "Puzzle",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-app.rich-text.acf4d62d141c.img",
@@ -560,28 +563,30 @@
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "span",
+                                      "className": "portal-app-stage-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "Puzzle",
                                       "text": "Puzzle"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "#mode-puzzle"
                               }
                             },
                             {
                               "id": "component.live-app.rich-text.ea2fe8e70054.app-product-stage-card-a",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figure",
+                                "tag": "a",
                                 "className": "app-product-stage-card app-product-stage-card--feastfall",
-                                "attributes": {},
+                                "attributes": {
+                                  "aria-label": "Explore the Feastfall mobile mode"
+                                },
                                 "style": "",
                                 "layerName": "Feastfall",
-                                "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-app.rich-text.426ebe76b5fd.img",
@@ -606,18 +611,106 @@
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "figcaption",
-                                      "className": "",
+                                      "tag": "span",
+                                      "className": "portal-app-stage-caption",
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "Feastfall",
                                       "text": "Feastfall"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "#mode-feastfall"
                               }
                             }
                           ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.app.6",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "portal-section-nav",
+                    "attributes": {
+                      "aria-label": "Explore the mobile adventure"
+                    },
+                    "style": "",
+                    "layerName": "Explore the mobile adventure",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.app.1",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Arcade",
+                          "label": "Arcade",
+                          "href": "#mode-arcade"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.app.2",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Puzzle",
+                          "label": "Puzzle",
+                          "href": "#mode-puzzle"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.app.3",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feastfall",
+                          "label": "Feastfall",
+                          "href": "#mode-feastfall"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.app.4",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Infinite",
+                          "label": "Infinite",
+                          "href": "#infinite-mode-title"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.app.5",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Download status",
+                          "label": "Download status",
+                          "href": "#app-download-status"
                         }
                       }
                     ]
@@ -713,22 +806,25 @@
                                 "authoringVersion": 1,
                                 "tag": "article",
                                 "className": "app-gameplay-card app-gameplay-card--arcade",
-                                "attributes": {},
+                                "attributes": {
+                                  "id": "mode-arcade"
+                                },
                                 "style": "",
                                 "layerName": "Arcade",
                                 "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-app.rich-text.73c4b4e6ed03.app-gameplay-card-art",
-                                    "type": "layout.container",
+                                    "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "div",
+                                      "tag": "a",
                                       "className": "app-gameplay-card-art",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "aria-label": "View Arcade gameplay in Media"
+                                      },
                                       "style": "",
                                       "layerName": "div app-gameplay-card-art",
-                                      "mode": "inherit",
                                       "children": [
                                         {
                                           "id": "component.live-app.rich-text.080b660b60fb.img",
@@ -749,7 +845,8 @@
                                             "alt": ""
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "href": "/media/#gameplay"
                                     }
                                   },
                                   {
@@ -802,6 +899,20 @@
                                             "layerName": "Catch falling food, protect your lives, and keep the feast going.",
                                             "text": "Catch falling food, protect your lives, and keep the feast going."
                                           }
+                                        },
+                                        {
+                                          "id": "component.production-core.app.7",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "See more gameplay →",
+                                            "label": "See more gameplay →",
+                                            "href": "/media/#gameplay"
+                                          }
                                         }
                                       ]
                                     }
@@ -816,22 +927,25 @@
                                 "authoringVersion": 1,
                                 "tag": "article",
                                 "className": "app-gameplay-card",
-                                "attributes": {},
+                                "attributes": {
+                                  "id": "mode-puzzle"
+                                },
                                 "style": "",
                                 "layerName": "Puzzle",
                                 "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-app.rich-text.8b16a7b907f9.app-gameplay-card-art",
-                                    "type": "layout.container",
+                                    "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "div",
+                                      "tag": "a",
                                       "className": "app-gameplay-card-art",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "aria-label": "View Puzzle gameplay in Media"
+                                      },
                                       "style": "",
                                       "layerName": "div app-gameplay-card-art",
-                                      "mode": "inherit",
                                       "children": [
                                         {
                                           "id": "component.live-app.rich-text.4521ab8072fc.img",
@@ -852,7 +966,8 @@
                                             "alt": ""
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "href": "/media/#gameplay"
                                     }
                                   },
                                   {
@@ -905,6 +1020,20 @@
                                             "layerName": "First Feast turns movement, energy, hearts, and food placement into a ta",
                                             "text": "First Feast turns movement, energy, hearts, and food placement into a tactical challenge."
                                           }
+                                        },
+                                        {
+                                          "id": "component.production-core.app.8",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "See more gameplay →",
+                                            "label": "See more gameplay →",
+                                            "href": "/media/#gameplay"
+                                          }
                                         }
                                       ]
                                     }
@@ -919,22 +1048,25 @@
                                 "authoringVersion": 1,
                                 "tag": "article",
                                 "className": "app-gameplay-card",
-                                "attributes": {},
+                                "attributes": {
+                                  "id": "mode-feastfall"
+                                },
                                 "style": "",
                                 "layerName": "Feastfall",
                                 "mode": "inherit",
                                 "children": [
                                   {
                                     "id": "component.live-app.rich-text.f8ea42f84004.app-gameplay-card-art",
-                                    "type": "layout.container",
+                                    "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "div",
+                                      "tag": "a",
                                       "className": "app-gameplay-card-art",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "aria-label": "View Feastfall gameplay in Media"
+                                      },
                                       "style": "",
                                       "layerName": "div app-gameplay-card-art",
-                                      "mode": "inherit",
                                       "children": [
                                         {
                                           "id": "component.live-app.rich-text.6ad1d9ec1a72.img",
@@ -955,7 +1087,8 @@
                                             "alt": ""
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "href": "/media/#gameplay"
                                     }
                                   },
                                   {
@@ -1007,6 +1140,20 @@
                                             "style": "",
                                             "layerName": "Build the right food pattern for each visitor and plan around the pantry",
                                             "text": "Build the right food pattern for each visitor and plan around the pantry."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.app.9",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "See more gameplay →",
+                                            "label": "See more gameplay →",
+                                            "href": "/media/#gameplay"
                                           }
                                         }
                                       ]

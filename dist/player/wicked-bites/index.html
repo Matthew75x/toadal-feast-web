@@ -251,7 +251,7 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
   <p class='player-status' data-player-status='' role='status' aria-live='polite' data-toadal-node='component.muogc5wx.80e0fg.eb30c4a556e7.player-status'>Loading the verified preview package…</p>
   <div class='wo002-player-frame-wrap' data-player-frame-wrap='' data-toadal-node='component.muogc5wx.80e0fg.0d5ab02a22b7.wo002-player-frame-wrap'>
     <iframe class="wo002-player-frame" data-player-frame src="/toadal-feast-web/public/games/wicked-bites/index.html" title="Wicked Bites browser preview" loading="eager" referrerpolicy="origin" sandbox="allow-scripts allow-pointer-lock" allow="fullscreen" allowfullscreen></iframe>
-    <button class='player-fullscreen-exit' type='button' data-player-fullscreen-exit='' hidden data-toadal-node='component.muogc5wx.80e0fg.222dba69cf28.player-fullscreen-exit'>Exit full screen</button>
+    <div class='player-fullscreen-rail' data-player-fullscreen-rail='' role='toolbar' aria-label='Fullscreen controls' hidden data-toadal-node='component.player-wicked-bites.fullscreen-rail'><button class='player-fullscreen-exit' type='button' data-player-fullscreen-exit='' hidden aria-label='Exit full screen' title='Exit full screen' data-toadal-node='component.muogc5wx.80e0fg.222dba69cf28.player-fullscreen-exit'>Exit</button></div>
     <div class='player-error' data-player-error='' hidden role='alert' data-toadal-node='component.muogc5wx.80e0fg.b21f92ebe638.player-error'><span class='chip preview' data-toadal-node='component.muogc5wx.80e0fg.bd7ce468f96a.chip-preview'>PREVIEW UNAVAILABLE</span><h2 data-toadal-node='component.muogc5wx.80e0fg.146b689b4378.h2'>The game did not load.</h2>
       <p data-player-error-copy='' data-toadal-node='component.muogc5wx.80e0fg.6b92c7a44935.p'>Check your connection and retry, or return to the game details.</p><button class='btn primary' type='button' data-player-retry='' data-toadal-node='component.muogc5wx.80e0fg.255ebc8c774b.btn-primary'>Retry preview</button><a class='btn secondary' href='/toadal-feast-web/games/wicked-bites/' data-toadal-node='component.muogc5wx.80e0fg.045584a55398.btn-secondary'>Return to details</a>
     </div>
@@ -455,6 +455,31 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
     if (!image || !speech || !toggle || !panel) return;
 
     var storageKey = 'toadal:site:companion:minimized:v1';
+    var hiddenKey = 'toadal:site:companion:hidden:v1';
+    var companionHidden = false;
+    try { companionHidden = window.localStorage.getItem(hiddenKey) === 'true'; } catch (error) {}
+    if (!root.id) root.id = 'toadal-companion-global';
+    var hideButton = root.querySelector('[data-companion-hide]');
+    if (!hideButton) {
+      hideButton = document.createElement('button');
+      hideButton.type = 'button';
+      hideButton.className = 'companion-hide';
+      hideButton.setAttribute('data-companion-hide', '');
+      hideButton.textContent = 'Hide Toadal';
+      panel.appendChild(hideButton);
+    }
+    var restoreButton = document.querySelector('[data-companion-restore]');
+    if (!restoreButton) {
+      restoreButton = document.createElement('button');
+      restoreButton.type = 'button';
+      restoreButton.className = 'companion-restore';
+      restoreButton.setAttribute('data-companion-restore', '');
+      restoreButton.setAttribute('aria-controls', root.id);
+      restoreButton.textContent = 'Show Toadal';
+      var restoreContainer = document.querySelector('.site-footer-inner') || document.querySelector('.site-footer') || document.body;
+      restoreContainer.appendChild(restoreButton);
+    }
+    toggle.setAttribute('title', 'Tap to show or minimize. Double-tap to hide; Show Toadal in the footer restores me.');
     var defaultCopy = speech.textContent || '';
     var media = window.matchMedia ? window.matchMedia('(max-width: 960px)') : null;
     var stored = null;
@@ -645,7 +670,10 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
     }
     function render(announce) {
       var transientContext = !!(action || focused || hovered || touched);
-      var panelVisible = !minimized || (!hasStoredPreference && transientContext);
+      var panelVisible = !companionHidden && (!minimized || (!hasStoredPreference && transientContext));
+      root.hidden = companionHidden;
+      root.setAttribute('data-companion-hidden', companionHidden ? 'true' : 'false');
+      restoreButton.hidden = !companionHidden;
       speech.setAttribute('aria-live', announce && panelVisible ? 'polite' : 'off');
       root.setAttribute('data-minimized', minimized ? 'true' : 'false');
       root.setAttribute('data-panel-visible', panelVisible ? 'true' : 'false');
@@ -669,6 +697,20 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
       try { window.localStorage.setItem(storageKey, minimized ? 'true' : 'false'); } catch (error) {}
     }
 
+    function setHidden(value, returnFocus) {
+      companionHidden = !!value;
+      try { window.localStorage.setItem(hiddenKey, companionHidden ? 'true' : 'false'); } catch (error) {}
+      render(false);
+      root.dispatchEvent(new CustomEvent('toadal:companion-visibility', { detail: { hidden: companionHidden } }));
+      if (returnFocus) (companionHidden ? restoreButton : toggle).focus({ preventScroll: true });
+    }
+    hideButton.addEventListener('click', function (event) { setHidden(true, event.detail === 0); });
+    restoreButton.addEventListener('click', function () { setHidden(false, true); });
+    root.addEventListener('toadal:companion-hide-request', function () { setHidden(true, false); });
+    toggle.addEventListener('dblclick', function (event) {
+      event.preventDefault();
+      setHidden(true, false);
+    });
     toggle.addEventListener('click', function () {
       minimized = !minimized;
       hasStoredPreference = true;
@@ -879,6 +921,7 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
     var soundButton = shell.querySelector('[data-player-sound]');
     var fullButton = shell.querySelector('[data-player-fullscreen]');
     var fullscreenExit = shell.querySelector('[data-player-fullscreen-exit]');
+    var fullscreenRail = shell.querySelector('[data-player-fullscreen-rail]');
     var exitLink = shell.querySelector('[data-player-exit]');
     var gameId = shell.getAttribute('data-game-id') || '';
     var protocol = 'toadal.game.v1';
@@ -1050,6 +1093,8 @@ body:has(.home-hero) #today .daily-chest-button .feast-control-label {
       var active = document.fullscreenElement === wrap;
       if (fullButton) fullButton.textContent = active ? 'Exit full screen' : 'Full screen';
       if (fullscreenExit) fullscreenExit.hidden = !active;
+      if (fullscreenRail) fullscreenRail.hidden = !active;
+      if (fullButton) fullButton.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
   }
 

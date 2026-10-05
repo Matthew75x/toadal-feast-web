@@ -251,7 +251,7 @@
                         "props": {
                           "authoringVersion": 1,
                           "tag": "figure",
-                          "className": "wo002-detail-art",
+                          "className": "wo002-detail-art portal-context-art portal-news-art",
                           "attributes": {},
                           "style": "",
                           "layerName": "World artwork; not a news or event announcement.",
@@ -269,8 +269,8 @@
                                 },
                                 "style": "",
                                 "layerName": "Candy Kingdom artwork used as a visual preview of the Feast World.",
-                                "asset": "asset.home.world.desktop",
-                                "alt": "Candy Kingdom artwork used as a visual preview of the Feast World."
+                                "asset": "asset.companion.master-v2.news",
+                                "alt": "Toadal writing an update."
                               }
                             },
                             {
@@ -282,11 +282,84 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "World artwork; not a news or event announcement.",
-                                "text": "World artwork; not a news or event announcement."
+                                "layerName": "Toadal is getting the next update ready.",
+                                "text": "Toadal is getting the next update ready."
                               }
                             }
                           ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.news.5",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "portal-section-nav",
+                    "attributes": {
+                      "aria-label": "Explore news and updates"
+                    },
+                    "style": "",
+                    "layerName": "Explore news and updates",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.news.1",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Featured",
+                          "label": "Featured",
+                          "href": "#news-featured-title"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.news.2",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Latest updates",
+                          "label": "Latest updates",
+                          "href": "#news-latest-title"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.news.3",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Devlog",
+                          "label": "Devlog",
+                          "href": "/news/devlog/"
+                        }
+                      },
+                      {
+                        "id": "component.production-core.news.4",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "What’s next",
+                          "label": "What’s next",
+                          "href": "/roadmap/"
                         }
                       }
                     ]
@@ -636,6 +709,393 @@
                           "layerName": "Roadmap",
                           "href": "/roadmap/",
                           "label": "Roadmap"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.production-core.news.32",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "discovery-band portal-discovery-links",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Explore while updates are being prepared",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.production-core.news.9",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "discovery-band-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Already here to explore",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.news.6",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "ALREADY HERE TO EXPLORE",
+                                "text": "ALREADY HERE TO EXPLORE"
+                              }
+                            },
+                            {
+                              "id": "component.production-core.news.7",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "A little Feast while you wait",
+                                "text": "A little Feast while you wait"
+                              }
+                            },
+                            {
+                              "id": "component.production-core.news.8",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "No public posts are available yet. Explore the playable preview, approved world art and real mobile gameplay already on the website.",
+                                "text": "No public posts are available yet. Explore the playable preview, approved world art and real mobile gameplay already on the website."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.production-core.news.31",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "portal-journey-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Current website destinations",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.production-core.news.16",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Try Wicked Bites — Open the isolated preview and read its current release status."
+                                },
+                                "style": "",
+                                "layerName": "Try Wicked Bites",
+                                "href": "/games/wicked-bites/",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.news.10",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Genuine Wicked Bites preview gameplay.",
+                                      "asset": "asset.home.game.wicked-bites-preview",
+                                      "alt": "Genuine Wicked Bites preview gameplay."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.news.15",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Try Wicked Bites",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.news.11",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "BROWSER PREVIEW",
+                                            "text": "BROWSER PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.12",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Try Wicked Bites",
+                                            "text": "Try Wicked Bites"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.13",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Open the isolated preview and read its current release status.",
+                                            "text": "Open the isolated preview and read its current release status."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.14",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.production-core.news.23",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "Explore the Feast World — Discover canonical environment previews and the Feast cast."
+                                },
+                                "style": "",
+                                "layerName": "Explore the Feast World",
+                                "href": "/world/",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.news.17",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Canonical Candy Kingdom environment.",
+                                      "asset": "asset.home.world.desktop",
+                                      "alt": "Canonical Candy Kingdom environment."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.news.22",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore the Feast World",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.news.18",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "WORLD ART",
+                                            "text": "WORLD ART"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.19",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore the Feast World",
+                                            "text": "Explore the Feast World"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.20",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Discover canonical environment previews and the Feast cast.",
+                                            "text": "Discover canonical environment previews and the Feast cast."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.21",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.production-core.news.30",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "portal-journey-card owner-object-link",
+                                "attributes": {
+                                  "aria-label": "See the flagship app — Browse genuine gameplay captures and current download availability."
+                                },
+                                "style": "",
+                                "layerName": "See the flagship app",
+                                "href": "/app/",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.news.24",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-journey-card-art",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Genuine TOADAL FEAST Puzzle gameplay.",
+                                      "asset": "asset.app.gameplay.puzzle",
+                                      "alt": "Genuine TOADAL FEAST Puzzle gameplay."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.news.29",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "portal-journey-card-copy",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "See the flagship app",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.production-core.news.25",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "MOBILE ADVENTURE",
+                                            "text": "MOBILE ADVENTURE"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.26",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "See the flagship app",
+                                            "text": "See the flagship app"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.27",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Browse genuine gameplay captures and current download availability.",
+                                            "text": "Browse genuine gameplay captures and current download availability."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.production-core.news.28",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "portal-journey-card-cta",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Explore →",
+                                            "text": "Explore →"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
                         }
                       }
                     ]
