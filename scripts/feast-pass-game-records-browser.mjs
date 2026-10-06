@@ -59,6 +59,21 @@ try {
       const waitState=value=>a.waitForFunction(v=>document.querySelector('[data-game-record="wicked-bites"]')?.getAttribute('data-game-record-state')===v,value);
       await waitState('not-recorded');
       assert.equal(await a.locator('[data-game-record]').count(),4);
+      assert.equal(await card.getAttribute('data-game-progress-state'),'no-data');
+      assert.equal(await card.getAttribute('data-game-progress-connection'),'local');
+      assert.equal(await card.getAttribute('data-game-progress-persistence'),'browser-local');
+      assert.equal(await card.getAttribute('data-game-progress-confidence'),'source-reported-local');
+      assert.match(await field('source').innerText(),/Wicked Bites browser preview/);
+      assert.match(await field('connection').innerText(),/Local browser source/);
+      assert.match(await field('persistence').innerText(),/Saved in this browser/);
+      assert.match(await field('confidence').innerText(),/Source-reported \/ local/);
+      assert.equal(await a.locator('[data-game-progress-state="not-linked"]').count(),3);
+      for (const id of ['claw-feed-gulper','froggy-fruity-bash','toadal-tower-defense']) {
+        const other=a.locator('[data-game-record="'+id+'"]');
+        assert.equal(await other.getAttribute('data-game-progress-connection'),'not-linked');
+        assert.match(await other.locator('[data-game-record-field="source"]').innerText(),/No connected progress source/);
+        assert.match(await other.locator('[data-game-record-field="confidence"]').innerText(),/No gameplay claim/);
+      }
       assert.equal(await field('best').innerText(),'—');
       assert.equal(await a.locator('[data-game-record-state="unsupported"]').count(),3);
       for(const href of await a.locator('[data-game-record] a').evaluateAll(nodes=>nodes.map(n=>n.href))){
@@ -71,9 +86,12 @@ try {
       await b.goto(origin+prefix+'profile/',{waitUntil:'load'});
       const record=async value=>b.evaluate(value=>document.querySelector('[data-progression-page]').__toadalProgressionStore.recordLocalScore({gameId:'wicked-bites',score:value}),value);
       assert.equal((await record(0)).ok,true);await waitState('recorded');
+      assert.equal(await card.getAttribute('data-game-progress-state'),'zero');
+      assert.match(await field('state').innerText(),/Saved zero result/);
       assert.equal(await field('best').innerText(),'0');assert.equal(await field('recent-count').innerText(),'1');
       await record(1200);await record(5);
       await a.waitForFunction(()=>document.querySelector('[data-game-record-field="recent-count"]')?.textContent==='3');
+      assert.equal(await card.getAttribute('data-game-progress-state'),'recorded');
       assert.equal(await field('best').innerText(),'1,200');assert.equal(await field('latest').innerText(),'5');
       assert.match(await field('recorded-at').getAttribute('datetime'),/^\d{4}-\d{2}-\d{2}T/);
       assert.equal(await a.evaluate(()=>document.querySelector('[data-progression-page]').__toadalProgressionStore.getSnapshot().pass.xp),0);
@@ -97,6 +115,7 @@ try {
       await a.evaluate(()=>{window.__originalGameCard=document.querySelector('[data-game-record="wicked-bites"]');window.__originalGameLink=window.__originalGameCard.querySelector('a');});
       await a.evaluate(key=>{window.__gameRecordsTest.denied=key;window.dispatchEvent(new Event('focus'));},KEYS.profile);
       await waitState('unavailable');assert.equal(await field('best').innerText(),'—');
+      assert.equal(await card.getAttribute('data-game-progress-state'),'unavailable');
       await region.screenshot({path:path.join(output,row.name+'-unavailable.png')});
       await a.evaluate(()=>{window.__gameRecordsTest.denied=null;window.dispatchEvent(new Event('focus'));});
       await waitState('recorded');assert.equal(await field('best').innerText(),'1,200');
@@ -104,11 +123,13 @@ try {
       const future=JSON.stringify({schemaVersion:99,localScores:{'wicked-bites':{best:99999,runs:[]}},marker:'future-keep'});
       await b.evaluate(({key,raw})=>localStorage.setItem(key,raw),{key:KEYS.profile,raw:future});
       await waitState('unavailable');assert.equal(await field('best').innerText(),'—');
+      assert.equal(await card.getAttribute('data-game-progress-state'),'unavailable');
       assert.equal(await b.evaluate(key=>localStorage.getItem(key),KEYS.profile),future);
       await b.evaluate(({key,raw})=>localStorage.setItem(key,raw),{key:KEYS.profile,raw});
       await waitState('recorded');
       row.checks.push('denied/future score storage is unavailable, not zero or phantom progress; stored future bytes preserved and recovery restores the real score');
       await b.locator('[data-clear-progression]').first().click();await waitState('not-recorded');
+      assert.equal(await card.getAttribute('data-game-progress-state'),'no-data');
       assert.equal(await field('best').innerText(),'—');
       assert.equal(await a.evaluate(()=>window.__gameRecordsTest.writes),afterReloadWrites);
       assert.equal(await a.evaluate(()=>window.__originalGameCard===document.querySelector('[data-game-record="wicked-bites"]')&&window.__originalGameLink===window.__originalGameCard.querySelector('a')),true);

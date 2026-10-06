@@ -38,6 +38,29 @@
   const HOME_INTERACTION_VERSION = 1;
   const HOME_CANDY_IDS = Object.freeze(['portal-candy', 'lower-page-candy', 'golden-block-candy']);
   const MAX_LOCAL_RUNS = 50;
+  const GAME_PROGRESS_CONTRACT_VERSION = 1;
+  // Read-model registrations only. These do not authorize execution,
+  // qualify packages, verify accomplishments, or grant website rewards.
+  const GAME_PROGRESS_REGISTRATIONS = Object.freeze({
+    'wicked-bites': Object.freeze({
+      gameId: 'wicked-bites', title: 'Wicked Bites', route: '/games/wicked-bites/',
+      availability: 'playable-preview', capability: 'local-personal-progress',
+      progressAdapter: 'wicked-bites-local-score-v1',
+      source: Object.freeze({ id: 'website-preview-session', label: 'Wicked Bites browser preview', kind: 'host-projection', version: '5.5' })
+    }),
+    'claw-feed-gulper': Object.freeze({
+      gameId: 'claw-feed-gulper', title: 'CLAW: Feed Gulper', route: '/games/claw-feed-gulper/',
+      availability: 'launch-held', capability: 'launch-only', progressAdapter: null, source: null
+    }),
+    'froggy-fruity-bash': Object.freeze({
+      gameId: 'froggy-fruity-bash', title: 'Froggy Fruity Bash', route: '/games/froggy-fruity-bash/',
+      availability: 'concept', capability: 'launch-only', progressAdapter: null, source: null
+    }),
+    'toadal-tower-defense': Object.freeze({
+      gameId: 'toadal-tower-defense', title: 'TOADAL Tower Defense', route: '/games/toadal-tower-defense/',
+      availability: 'concept', capability: 'launch-only', progressAdapter: null, source: null
+    })
+  });
   const KEYS = Object.freeze({
     pass: 'toadal:web:v1:feast-pass',
     quests: 'toadal:web:v1:quests',
@@ -146,6 +169,156 @@
         state.best >= state.runs.reduce((best, run) => Math.max(best, run.score), 0);
     });
   }
+  function gameProgressRegistration(gameId) {
+    return typeof gameId === 'string' && Object.prototype.hasOwnProperty.call(GAME_PROGRESS_REGISTRATIONS, gameId)
+      ? GAME_PROGRESS_REGISTRATIONS[gameId] : null;
+  }
+  function validIsoTimestamp(value) {
+    return typeof value === 'string' && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString() === value;
+  }
+  function gameProgressBase(registration) {
+    return {
+      schemaVersion: GAME_PROGRESS_CONTRACT_VERSION,
+      gameId: registration.gameId, title: registration.title,
+      availability: registration.availability, capability: registration.capability, route: registration.route,
+      source: registration.source ? Object.assign({}, registration.source) : null,
+      connection: registration.progressAdapter ? 'local' : 'not-linked',
+      dataState: registration.progressAdapter ? 'no-data' : 'not-linked',
+      confidence: registration.progressAdapter ? 'source-reported-local' : 'none',
+      persistence: registration.progressAdapter ? 'browser-local' : 'none',
+      observedAt: null, metric: null, readOnly: true
+    };
+  }
+  function normalizeProjectionMetric(metric) {
+    if (!metric || typeof metric !== 'object' || Array.isArray(metric)) return null;
+    if (metric.kind === 'score') {
+      const best = normalizeScore(metric.best), latest = normalizeScore(metric.latest);
+      if (best === null || latest === null || !Number.isSafeInteger(metric.recentCount) || metric.recentCount < 1 ||
+          !validIsoTimestamp(metric.recordedAt) || best < latest) return null;
+      return { kind: 'score', best, latest, recentCount: metric.recentCount, recordedAt: metric.recordedAt };
+    }
+    if (metric.kind === 'count') {
+      if (!Number.isSafeInteger(metric.current) || metric.current < 0 ||
+          !(metric.total === null || Number.isSafeInteger(metric.total) && metric.total >= metric.current) ||
+          typeof metric.label !== 'string' || !metric.label.trim()) return null;
+      return { kind: 'count', current: metric.current, total: metric.total, label: metric.label.trim() };
+    }
+    return null;
+  }
+  function normalizeExternalGameProjection(input) {
+    const fail = reason => ({ ok: false, reason, projection: null });
+    if (!input || typeof input !== 'object' || Array.isArray(input) || input.schemaVersion !== GAME_PROGRESS_CONTRACT_VERSION) return fail('invalid-envelope');
+    const registration = gameProgressRegistration(input.gameId);
+    if (!registration) return fail('unknown-game');
+    const source = input.source;
+    if (!source || typeof source !== 'object' || Array.isArray(source) ||
+        typeof source.id !== 'string' || !source.id.trim() || typeof source.label !== 'string' || !source.label.trim() ||
+        !['host-projection', 'account-projection', 'native-projection'].includes(source.kind)) return fail('invalid-source');
+    if (!['launch-only', 'local-personal-progress', 'account-linked-personal-progress'].includes(input.capability)) return fail('invalid-capability');
+    if (!['local', 'host-linked', 'account-linked'].includes(input.connection)) return fail('invalid-connection');
+    if (!['no-data', 'zero', 'recorded', 'pending', 'stale', 'unavailable', 'synchronized'].includes(input.dataState)) return fail('invalid-data-state');
+    if (!['source-reported-local', 'policy-accepted-personal', 'independently-verified'].includes(input.confidence)) return fail('invalid-confidence');
+    if (!['session-only', 'browser-local', 'awaiting-delivery', 'account-synced'].includes(input.persistence)) return fail('invalid-persistence');
+    if (input.observedAt !== null && !validIsoTimestamp(input.observedAt)) return fail('invalid-observed-at');
+    if (['zero', 'recorded', 'stale', 'synchronized'].includes(input.dataState) && !validIsoTimestamp(input.observedAt)) return fail('observed-at-required');
+    const metric = input.metric == null ? null : normalizeProjectionMetric(input.metric);
+    if (input.metric != null && !metric) return fail('invalid-metric');
+    if (['zero', 'recorded', 'stale', 'synchronized'].includes(input.dataState) && !metric) return fail('metric-required');
+    if (['no-data', 'pending', 'unavailable'].includes(input.dataState) && metric) return fail('metric-not-allowed');
+    if (input.dataState === 'zero') {
+      const zero = metric.kind === 'score' ? metric.best === 0 && metric.latest === 0 : metric.current === 0;
+      if (!zero) return fail('zero-state-mismatch');
+    }
+    if (input.dataState === 'pending' && input.persistence !== 'awaiting-delivery') return fail('pending-persistence-mismatch');
+    if (input.dataState === 'synchronized' &&
+        (input.connection !== 'account-linked' || input.persistence !== 'account-synced' ||
+         !['policy-accepted-personal', 'independently-verified'].includes(input.confidence))) return fail('synchronized-state-mismatch');
+    const projection = gameProgressBase(registration);
+    projection.capability = input.capability;
+    projection.source = { id: source.id.trim(), label: source.label.trim(), kind: source.kind, version: typeof source.version === 'string' && source.version ? source.version : null };
+    projection.connection = input.connection; projection.dataState = input.dataState;
+    projection.confidence = input.confidence; projection.persistence = input.persistence;
+    projection.observedAt = input.observedAt; projection.metric = metric; projection.external = true;
+    return { ok: true, reason: null, projection };
+  }
+  function gameProgressProjection(snapshot, gameId, externalProjection) {
+    const registration = gameProgressRegistration(gameId);
+    if (!registration) return {
+      schemaVersion: GAME_PROGRESS_CONTRACT_VERSION, gameId: typeof gameId === 'string' ? gameId : null, title: null,
+      availability: 'unknown', capability: 'none', route: null, source: null, connection: 'not-linked',
+      dataState: 'unavailable', confidence: 'none', persistence: 'none', observedAt: null, metric: null,
+      readOnly: true, reason: 'unknown-game'
+    };
+    if (externalProjection !== undefined) {
+      const normalized = normalizeExternalGameProjection(externalProjection);
+      if (normalized.ok) return normalized.projection;
+      const failed = gameProgressBase(registration);
+      failed.dataState = 'unavailable'; failed.persistence = 'none'; failed.confidence = 'none'; failed.reason = normalized.reason;
+      return failed;
+    }
+    const projection = gameProgressBase(registration);
+    if (!registration.progressAdapter) return projection;
+    const storage = snapshot && snapshot.storage;
+    if (!storage || !['browser', 'page-only'].includes(storage.scope) || !Array.isArray(storage.readOnlyKeys)) {
+      projection.dataState = 'unavailable'; projection.persistence = 'none'; projection.reason = 'storage-unavailable'; return projection;
+    }
+    projection.persistence = storage.scope === 'page-only' ? 'session-only' : 'browser-local';
+    if (storage.readOnlyKeys.includes(KEYS.profile)) {
+      projection.dataState = 'unavailable'; projection.reason = 'profile-read-only'; return projection;
+    }
+    const scores = snapshot.localScores;
+    if (!scores || typeof scores !== 'object' || Array.isArray(scores)) {
+      projection.dataState = 'unavailable'; projection.reason = 'score-state-unavailable'; return projection;
+    }
+    const own = Object.prototype.hasOwnProperty.call(scores, gameId);
+    const record = own ? scores[gameId] : null;
+    if (own && (!record || !validLocalScores({ 'wicked-bites': record }))) {
+      projection.dataState = 'unavailable'; projection.reason = 'score-state-invalid'; return projection;
+    }
+    if (!record || !record.runs.length) {
+      projection.dataState = 'no-data'; projection.reason = null; return projection;
+    }
+    const latest = record.runs[record.runs.length - 1];
+    const metric = normalizeProjectionMetric({ kind: 'score', best: record.best, latest: latest.score, recentCount: record.runs.length, recordedAt: latest.completedAt });
+    if (!metric) {
+      projection.dataState = 'unavailable'; projection.reason = 'score-state-invalid'; return projection;
+    }
+    projection.metric = metric; projection.observedAt = metric.recordedAt;
+    projection.dataState = metric.best === 0 && metric.latest === 0 ? 'zero' : 'recorded';
+    projection.reason = null;
+    return projection;
+  }
+  function gameProgressLabels(projection) {
+    const availability = { 'playable-preview': 'Existing browser preview', 'launch-held': 'Launch held', 'concept': 'Preview listing only', 'unknown': 'Availability unconfirmed' };
+    const connection = { 'local': 'Local browser source', 'host-linked': 'Host linked', 'account-linked': 'Account linked', 'not-linked': 'Not linked' };
+    const persistence = { 'browser-local': 'Saved in this browser', 'session-only': 'This tab only', 'awaiting-delivery': 'Awaiting delivery', 'account-synced': 'Saved to account', 'none': 'No progress source' };
+    const confidence = { 'source-reported-local': 'Source-reported / local', 'policy-accepted-personal': 'Policy-accepted personal data', 'independently-verified': 'Independently verified', 'none': 'No gameplay claim' };
+    const state = {
+      'not-linked': 'Progress not linked', 'no-data': 'No progress data received', 'zero': 'Saved zero result',
+      'recorded': 'Recorded personal progress', 'pending': 'Progress update pending', 'stale': 'Saved progress is stale',
+      'unavailable': 'Progress unavailable', 'synchronized': 'Synchronized progress'
+    };
+    const details = {
+      'not-linked': 'No progress adapter is connected. Missing data is not 0% completion.',
+      'no-data': 'A progress source is available, but it has not recorded a result here. Missing data is not a zero score or 0% completion.',
+      'zero': 'A real saved result of zero was recorded by this source. Zero is shown because the source reported it, not because data was missing.',
+      'recorded': 'Personal progress was reported by the named source. It does not grant website XP, rewards, global rank, or independent gameplay verification.',
+      'pending': 'A source explicitly reports that this update is awaiting delivery. It is not shown as synchronized.',
+      'stale': 'A source explicitly reports this saved value as stale. It remains visible with that limitation instead of being treated as current.',
+      'unavailable': 'The source cannot be read safely right now. No empty or zero progress is inferred and stored data is not overwritten.',
+      'synchronized': 'The accepted source explicitly reports this personal progress at an account-synced revision. This does not by itself mean anti-cheat verification.'
+    };
+    return {
+      availability: availability[projection.availability] || availability.unknown,
+      connection: connection[projection.connection] || 'Connection unavailable',
+      persistence: persistence[projection.persistence] || 'Persistence unavailable',
+      confidence: confidence[projection.confidence] || 'Confidence unavailable',
+      state: state[projection.dataState] || 'Progress unavailable',
+      detail: details[projection.dataState] || details.unavailable,
+      source: projection.source ? projection.source.label : 'No connected progress source'
+    };
+  }
+
   function createStore(options) {
     options = options || {};
     const suppliedStorage = Boolean(options.storage);
@@ -1255,23 +1428,17 @@
   // A saved result is not a verified accomplishment, a build approval or a reward.
   function gameRecordView(snapshot, gameId) {
     const empty = { state: 'unavailable', best: null, latest: null, recentCount: null, recordedAt: null };
-    if (gameId !== 'wicked-bites') return Object.assign({}, empty, { state: 'unsupported' });
-    if (!snapshot || !snapshot.storage || !['browser', 'page-only'].includes(snapshot.storage.scope)) return empty;
-    const storage = snapshot.storage;
-    if (!Array.isArray(storage.readOnlyKeys) || storage.readOnlyKeys.includes(KEYS.profile)) return empty;
-    const scores = snapshot.localScores;
-    if (!scores || typeof scores !== 'object' || Array.isArray(scores)) return empty;
-    const own = Object.prototype.hasOwnProperty.call(scores, gameId);
-    const record = own ? scores[gameId] : null;
-    if (own && (!record || !validLocalScores({ 'wicked-bites': record }))) return empty;
-    if (!record || !record.runs.length) {
-      return Object.assign({}, empty, { state: storage.scope === 'page-only' ? 'temporary' : 'not-recorded' });
-    }
-    const latest = record.runs[record.runs.length - 1];
+    if (!gameProgressRegistration(gameId)) return Object.assign({}, empty, { state: 'unsupported' });
+    const projection = gameProgressProjection(snapshot, gameId);
+    const metric = projection.metric && projection.metric.kind === 'score' ? projection.metric : null;
+    let state = 'unavailable';
+    if (projection.dataState === 'not-linked') state = 'unsupported';
+    else if (projection.dataState === 'no-data') state = projection.persistence === 'session-only' ? 'temporary' : 'not-recorded';
+    else if (projection.dataState === 'zero' || projection.dataState === 'recorded') state = projection.persistence === 'session-only' ? 'temporary' : 'recorded';
     return {
-      state: storage.scope === 'page-only' ? 'temporary' : 'recorded',
-      best: normalizeScore(record.best), latest: normalizeScore(latest.score),
-      recentCount: record.runs.length, recordedAt: latest.completedAt
+      state,
+      best: metric ? metric.best : null, latest: metric ? metric.latest : null,
+      recentCount: metric ? metric.recentCount : null, recordedAt: metric ? metric.recordedAt : null
     };
   }
   function renderGameRecords(page, snapshot) {
@@ -1290,13 +1457,24 @@
       'temporary': 'Temporary tab data only. Browser persistence and account synchronization are unavailable.'
     };
     page.querySelectorAll('[data-game-record]').forEach(card => {
-      const view = gameRecordView(snapshot, card.getAttribute('data-game-record'));
+      const gameId = card.getAttribute('data-game-record');
+      const view = gameRecordView(snapshot, gameId);
+      const projection = gameProgressProjection(snapshot, gameId);
+      const projectionLabels = gameProgressLabels(projection);
       card.setAttribute('data-game-record-state', view.state);
+      card.setAttribute('data-game-progress-state', projection.dataState);
+      card.setAttribute('data-game-progress-connection', projection.connection);
+      card.setAttribute('data-game-progress-persistence', projection.persistence);
+      card.setAttribute('data-game-progress-confidence', projection.confidence);
+      card.setAttribute('data-game-progress-availability', projection.availability);
       const values = {
-        'state': labels[view.state], 'detail': details[view.state],
-        'best': view.best === null ? '—' : view.best.toLocaleString('en-US'),
-        'latest': view.latest === null ? '—' : view.latest.toLocaleString('en-US'),
-        'recent-count': view.recentCount === null ? '—' : String(view.recentCount),
+        'state': projectionLabels.state, 'detail': projectionLabels.detail,
+        'source': 'Source: ' + projectionLabels.source, 'connection': 'Connection: ' + projectionLabels.connection,
+        'persistence': 'Save: ' + projectionLabels.persistence, 'confidence': 'Confidence: ' + projectionLabels.confidence,
+        'availability': projectionLabels.availability,
+        'best': view.best === null ? '\u2014' : view.best.toLocaleString('en-US'),
+        'latest': view.latest === null ? '\u2014' : view.latest.toLocaleString('en-US'),
+        'recent-count': view.recentCount === null ? '\u2014' : String(view.recentCount),
         'recorded-at': view.recordedAt ? view.recordedAt.slice(0, 10) + ' ' + view.recordedAt.slice(11, 16) + ' UTC' : 'Not available'
       };
       card.querySelectorAll('[data-game-record-field]').forEach(node => {
@@ -1376,5 +1554,5 @@
       });
     } else items.forEach(item => appendItem(container, item));
   }
-  return { KEYS, createStore, boot, profileShowcaseView, renderProfileShowcase, showcaseResultMessage, normalizePath, siteHref, renderList, gameRecordView, renderGameRecords, questDestination, questJourneyView, renderQuestJourney };
+  return { KEYS, GAME_PROGRESS_CONTRACT_VERSION, GAME_PROGRESS_REGISTRATIONS, createStore, boot, profileShowcaseView, renderProfileShowcase, showcaseResultMessage, normalizePath, siteHref, renderList, gameProgressRegistration, normalizeExternalGameProjection, gameProgressProjection, gameProgressLabels, gameRecordView, renderGameRecords, questDestination, questJourneyView, renderQuestJourney };
 });

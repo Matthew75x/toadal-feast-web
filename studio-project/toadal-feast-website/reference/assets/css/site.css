@@ -7695,3 +7695,26 @@ label[for='site-motion-toggle'] input { flex:0 0 auto; width:18px; height:18px; 
 @media (max-width: 960px) {
   .site-links .companion-nav-visibility { min-height: 44px; padding-inline: 10px; font-size: .86rem; }
 }
+/* Source-labelled per-game progress: three independent trust dimensions. */
+[data-game-record] .game-progress-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 6px;
+  margin-block: 8px 10px;
+}
+[data-game-record] .game-progress-trust-grid > p {
+  min-width: 0;
+  margin: 0;
+  padding: 7px 8px;
+  border: 1px solid var(--gold-400);
+  border-radius: 9px;
+  background: var(--cream-50);
+  overflow-wrap: anywhere;
+}
+[data-game-progress-state="unavailable"] .game-progress-trust-grid,
+[data-game-progress-state="stale"] .game-progress-trust-grid {
+  opacity: .82;
+}
+@media (max-width: 760px) {
+  [data-game-record] .game-progress-trust-grid { grid-template-columns: 1fr; }
+}
