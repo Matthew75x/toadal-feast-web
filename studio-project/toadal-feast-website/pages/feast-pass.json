@@ -932,7 +932,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "Your games source and next actions",
-                          "text": "Game results are separate from website XP. Open a listing or local history; account sync is not connected."
+                          "text": "Game results are separate from website XP. Each card shows its progress source, save state and confidence. Account sync is not connected."
                         }
                       },
                       {
@@ -984,7 +984,9 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "section-kicker",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "availability"
+                                      },
                                       "style": "",
                                       "layerName": "Existing browser preview",
                                       "text": "Existing browser preview"
@@ -1216,10 +1218,74 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "progression-muted",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "source"
+                                      },
                                       "style": "",
-                                      "layerName": "Source: browser-local preview scores. Not verified accomplishments, rewards or global rankings.",
-                                      "text": "Source: browser-local preview scores. Not verified accomplishments, rewards or global rankings."
+                                      "layerName": "Source: Wicked Bites browser preview",
+                                      "text": "Source: Wicked Bites browser preview"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-trust",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "game-progress-trust-grid",
+                                      "attributes": {
+                                        "data-game-progress-trust": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Progress source, persistence and confidence",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-trust-connection",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "connection"
+                                            },
+                                            "style": "",
+                                            "layerName": "Connection: Local browser source",
+                                            "text": "Connection: Local browser source"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-trust-persistence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "persistence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Save: Saved in this browser",
+                                            "text": "Save: Saved in this browser"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-trust-confidence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "confidence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Confidence: Source-reported / local",
+                                            "text": "Confidence: Source-reported / local"
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
@@ -1305,7 +1371,9 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "section-kicker",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "availability"
+                                      },
                                       "style": "",
                                       "layerName": "Launch held",
                                       "text": "Launch held"
@@ -1350,10 +1418,74 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "progression-muted",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "source"
+                                      },
                                       "style": "",
-                                      "layerName": "Source: the website game listing. No score feed or connected progression is enabled.",
-                                      "text": "Source: the website game listing. No score feed or connected progression is enabled."
+                                      "layerName": "Source: No connected progress source",
+                                      "text": "Source: No connected progress source"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.claw-feed-gulper-trust",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "game-progress-trust-grid",
+                                      "attributes": {
+                                        "data-game-progress-trust": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Progress source, persistence and confidence",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.claw-feed-gulper-trust-connection",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "connection"
+                                            },
+                                            "style": "",
+                                            "layerName": "Connection: Not linked",
+                                            "text": "Connection: Not linked"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.claw-feed-gulper-trust-persistence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "persistence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Save: No progress source",
+                                            "text": "Save: No progress source"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.claw-feed-gulper-trust-confidence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "confidence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Confidence: No gameplay claim",
+                                            "text": "Confidence: No gameplay claim"
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
@@ -1425,7 +1557,9 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "section-kicker",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "availability"
+                                      },
                                       "style": "",
                                       "layerName": "Preview listing only",
                                       "text": "Preview listing only"
@@ -1470,10 +1604,74 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "progression-muted",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "source"
+                                      },
                                       "style": "",
-                                      "layerName": "Source: the website game listing. No score feed or connected progression is enabled.",
-                                      "text": "Source: the website game listing. No score feed or connected progression is enabled."
+                                      "layerName": "Source: No connected progress source",
+                                      "text": "Source: No connected progress source"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.froggy-fruity-bash-trust",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "game-progress-trust-grid",
+                                      "attributes": {
+                                        "data-game-progress-trust": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Progress source, persistence and confidence",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.froggy-fruity-bash-trust-connection",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "connection"
+                                            },
+                                            "style": "",
+                                            "layerName": "Connection: Not linked",
+                                            "text": "Connection: Not linked"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.froggy-fruity-bash-trust-persistence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "persistence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Save: No progress source",
+                                            "text": "Save: No progress source"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.froggy-fruity-bash-trust-confidence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "confidence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Confidence: No gameplay claim",
+                                            "text": "Confidence: No gameplay claim"
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
@@ -1545,7 +1743,9 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "section-kicker",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "availability"
+                                      },
                                       "style": "",
                                       "layerName": "Preview listing only",
                                       "text": "Preview listing only"
@@ -1590,10 +1790,74 @@
                                       "authoringVersion": 1,
                                       "tag": "p",
                                       "className": "progression-muted",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "data-game-record-field": "source"
+                                      },
                                       "style": "",
-                                      "layerName": "Source: the website game listing. No score feed or connected progression is enabled.",
-                                      "text": "Source: the website game listing. No score feed or connected progression is enabled."
+                                      "layerName": "Source: No connected progress source",
+                                      "text": "Source: No connected progress source"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.toadal-tower-defense-trust",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "game-progress-trust-grid",
+                                      "attributes": {
+                                        "data-game-progress-trust": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Progress source, persistence and confidence",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.toadal-tower-defense-trust-connection",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "connection"
+                                            },
+                                            "style": "",
+                                            "layerName": "Connection: Not linked",
+                                            "text": "Connection: Not linked"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.toadal-tower-defense-trust-persistence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "persistence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Save: No progress source",
+                                            "text": "Save: No progress source"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.toadal-tower-defense-trust-confidence",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "progression-muted",
+                                            "attributes": {
+                                              "data-game-record-field": "confidence"
+                                            },
+                                            "style": "",
+                                            "layerName": "Confidence: No gameplay claim",
+                                            "text": "Confidence: No gameplay claim"
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
