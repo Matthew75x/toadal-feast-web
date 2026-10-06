@@ -69,6 +69,21 @@ def scan_html(entry:Path, profile:dict[str,Any]):
     if 'toadal:web:v1:' in body: findings.append(('FAIL','website-storage','Website-owned storage namespace referenced by game'))
     return findings
 
+def validate_tcs_manifest(game:dict[str,Any], manifest:dict[str,Any]):
+    if not isinstance(manifest,dict): return False,'tcsManifest must be an object'
+    checks=[
+      (manifest.get('schemaVersion')=='1.0.0','schemaVersion must be 1.0.0'),
+      (manifest.get('id')==game.get('id'),'id must match game id'),
+      (manifest.get('version')==game.get('version'),'version must match game version'),
+      (manifest.get('title')==game.get('displayName'),'title must match displayName'),
+      (manifest.get('entrypoint')=='index.html','entrypoint must be index.html'),
+      (manifest.get('bridge',{}).get('protocol')=='tcs.bridge/1','bridge.protocol must be tcs.bridge/1'),
+      (isinstance(manifest.get('runtime',{}).get('externalConnectOrigins'),list),'runtime.externalConnectOrigins must be an array'),
+    ]
+    for ok,msg in checks:
+        if not ok:return False,msg
+    return True,'identity and bounded intake fields consistent'
+
 def ledger(files:list[Path],root:Path):
     rows=[]
     for p in sorted(files,key=lambda x:str(x.relative_to(root)).replace('\\','/')):
@@ -116,6 +131,13 @@ def harden(args):
     add('G5 real-build poster evidence',True,str(poster.relative_to(source)))
     add('G5 real-build screenshot evidence',True,str(shot.relative_to(source)))
     payload=[runtime/'index.html',runtime/'poster.webp',runtime/'screenshot.webp']
+    tcs_manifest=profile.get('tcsManifest')
+    if tcs_manifest is not None:
+        tcs_ok,tcs_detail=validate_tcs_manifest(game,tcs_manifest)
+        add('G7 TCS manifest identity',tcs_ok,tcs_detail)
+        if tcs_ok:
+            (runtime/'tcs1.json').write_text(json.dumps(tcs_manifest,indent=2)+'\n')
+            payload.append(runtime/'tcs1.json')
     rows,pkg_hash=ledger(payload,runtime);pkg_bytes=sum(x[2] for x in rows)
     integrity={'schemaVersion':1,'hashMethod':'SHA-256 of sorted path<TAB>sha256 ledger; cartridge.json and integrity file excluded from runtime package hash to avoid self-reference.','runtimeLedgerSha256':pkg_hash,'files':[{'path':r,'sha256':h,'bytes':b} for r,h,b in rows]}
     (runtime/'cartridge.integrity.json').write_text(json.dumps(integrity,indent=2)+'\n')

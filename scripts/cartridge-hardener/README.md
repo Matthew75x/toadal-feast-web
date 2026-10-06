@@ -44,3 +44,7 @@ python3 -m py_compile cartridge_hardener.py host_harness.py
 A successful local hardening run is not PUBLIC release authorization. CHL-4 is the intended local automation ceiling; real website-player and physical-device acceptance are later gates.
 
 The bundled schema is a portability copy of the canonical repository schema. The test suite checks equality when run inside this repository.
+
+## Optional TCS intake manifest
+
+A profile may include `tcsManifest`. The hardener writes it as root `tcs1.json` only after checking game ID, version, title, entrypoint and TCS bridge protocol consistency. It remains separate from website `cartridge.json` and does not grant TCS approval.

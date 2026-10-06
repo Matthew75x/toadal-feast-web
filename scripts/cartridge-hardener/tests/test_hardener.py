@@ -57,6 +57,20 @@ class HardenerStaticScanTests(unittest.TestCase):
         findings = self.scan(f'<!doctype html><script>/* {body} */</script>')
         self.assertTrue(any(code == 'protocol-token' and missing in detail for _, code, detail in findings), findings)
 
+    def test_tcs_manifest_identity_validation(self):
+        game = {'id': 'test-game', 'version': '1.2.3', 'displayName': 'Test Game'}
+        good = {
+            'schemaVersion': '1.0.0', 'id': 'test-game', 'version': '1.2.3',
+            'title': 'Test Game', 'entrypoint': 'index.html',
+            'runtime': {'externalConnectOrigins': []},
+            'bridge': {'protocol': 'tcs.bridge/1', 'features': []},
+        }
+        self.assertTrue(hardener.validate_tcs_manifest(game, good)[0])
+        bad = dict(good); bad['id'] = 'other-game'
+        self.assertFalse(hardener.validate_tcs_manifest(game, bad)[0])
+        bad = dict(good); bad['schemaVersion'] = 1
+        self.assertFalse(hardener.validate_tcs_manifest(game, bad)[0])
+
     def test_bundled_schema_matches_repo_canonical_when_available(self):
         canonical = HERE.parents[1] / 'docs' / 'implementation' / 'game-cartridge.schema.json'
         if not canonical.exists():

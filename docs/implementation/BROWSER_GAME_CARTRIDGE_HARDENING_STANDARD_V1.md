@@ -136,6 +136,8 @@ For `<game-id>`, a successful hardening run creates:
 
 The runtime `package.sha256` is SHA-256 of a sorted `path<TAB>sha256` ledger over runtime payload files, excluding `cartridge.json` and the integrity file to avoid self-reference. The integrity file records every runtime payload hash.
 
+When a game also enters the Publisher/TCS admission path, the hardener may emit a separate root `tcs1.json`. Website `cartridge.json` and TCS `tcs1.json` are different contracts: both remain immutable payload, both identities must agree, and generation of `tcs1.json` is **not** TCS qualification. TCS bridge/runtime/security gates and trusted positive authority remain external.
+
 ## 7. Promotion rule
 
 - CHL-0–3: not ready for website preview admission.
