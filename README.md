@@ -6,7 +6,7 @@ Authoritative website-development repository for TOADAL FEAST.
 
 Current website-lane status:
 
-**[docs/authority/CURRENT_STATE_20261003.md](docs/authority/CURRENT_STATE_20261003.md)**
+**[docs/authority/CURRENT_STATE_20261006.md](docs/authority/CURRENT_STATE_20261006.md)**
 
 Product/creative authority:
 
@@ -18,9 +18,9 @@ Executed cleanup record:
 
 ## Current operating model
 
-- Active owner-authoring source: `work/owner-native-authoring-20261002`
-- Preserved current authority: `archive/owner-native-authority-20261003`
-- Deployment lane: `staging/live-visual`
+- Current deployed staging authority: `staging/live-visual`
+- Preserved owner-native authoring source: `work/owner-native-authoring-20261002`
+- Preserved authority archive: `archive/owner-native-authority-20261003`
 - `main` is not the deployment target.
 - Production/DNS changes require separate explicit authorization.
 - Studio project source lives under `studio-project/`.
