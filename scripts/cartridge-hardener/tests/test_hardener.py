@@ -2,6 +2,7 @@
 from pathlib import Path
 from tempfile import TemporaryDirectory
 import importlib.util
+import json
 import unittest
 
 HERE = Path(__file__).resolve().parents[1]
@@ -61,8 +62,8 @@ class HardenerStaticScanTests(unittest.TestCase):
         if not canonical.exists():
             self.skipTest('canonical repository schema not available in standalone tool checkout')
         self.assertEqual(
-            canonical.read_text(encoding='utf-8').strip(),
-            (HERE / 'schemas' / 'game-cartridge.schema.json').read_text(encoding='utf-8').strip(),
+            json.loads(canonical.read_text(encoding='utf-8')),
+            json.loads((HERE / 'schemas' / 'game-cartridge.schema.json').read_text(encoding='utf-8')),
         )
 
 
