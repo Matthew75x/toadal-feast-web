@@ -186,12 +186,19 @@
         diagnostics.push({ key: KEYS[name], kind: 'future-version', schemaVersion: data.schemaVersion });
         return structuredCopy(defaults[name]);
       }
+      const invalidMarkers = (name === 'profile' && !validProfileMarkerShape(data)) ||
+        (name === 'pass' && Object.prototype.hasOwnProperty.call(data, 'claimedRewardIds') &&
+          (!Array.isArray(data.claimedRewardIds) || data.claimedRewardIds.some(id => typeof id !== 'string' || !id)));
+      if (invalidMarkers) {
+        unwritable.add(name);
+        diagnostics.push({ key: KEYS[name], kind: 'invalid-showcase-state-read-only' });
+      }
       if (name === 'profile' && Object.prototype.hasOwnProperty.call(data, 'localScores') && !validLocalScores(data.localScores)) {
         unwritable.add(name);
         diagnostics.push({ key: KEYS[name], kind: 'invalid-score-state-read-only' });
       }
       blocked.delete(name);
-      if (!(name === 'profile' && Object.prototype.hasOwnProperty.call(data, 'localScores') && !validLocalScores(data.localScores))) unwritable.delete(name);
+      if (!invalidMarkers && !(name === 'profile' && Object.prototype.hasOwnProperty.call(data, 'localScores') && !validLocalScores(data.localScores))) unwritable.delete(name);
       const merged = Object.assign({}, defaults[name], data, { schemaVersion: VERSION });
       if (name === 'pass') {
         merged.level = safeInt(merged.level, 1, 1);
@@ -485,6 +492,59 @@
       }
       return { ok: true, id };
     }
+    function selectProfileReward(type, awardId) {
+      // Cosmetic selection only. Read current ownership and mutate one profile
+      // field; never call grant(), claimReward(), saveMany() or another store.
+      if (!['badge', 'title'].includes(type) || (awardId !== null && (typeof awardId !== 'string' || !awardId))) {
+        return { ok: false, reason: 'invalid-selection' };
+      }
+      if (!suppliedStorage) return { ok: false, reason: 'browser-storage-required' };
+      const observed = {};
+      for (const name of ['pass', 'profile']) {
+        try { observed[name] = storage.getItem(KEYS[name]); }
+        catch (_) { unwritable.add(name); persistent = false; return { ok: false, reason: 'stored-data-read-only' }; }
+        const next = read(name, { raw: observed[name] });
+        if (!blocked.has(name) && !unwritable.has(name)) records[name] = next;
+      }
+      const view = profileShowcaseView(getSnapshot(), definitions);
+      if (!view.available) return { ok: false, reason: 'stored-data-read-only' };
+      const group = view.groups[type];
+      if (awardId !== null && !group.earned.some(item => item.awardId === awardId)) return { ok: false, reason: 'not-earned' };
+      let original;
+      try { original = observed.profile == null || observed.profile === '' ? null : JSON.parse(observed.profile); }
+      catch (_) { return { ok: false, reason: 'stored-data-read-only' }; }
+      if (original && original.schemaVersion !== VERSION) return { ok: false, reason: 'stored-data-read-only' };
+      const field = type === 'badge' ? 'selectedBadge' : 'selectedTitle';
+      const previous = original && original[field] != null ? original[field] : null;
+      if (previous === awardId) return { ok: true, changed: false, type, awardId };
+      // An absent/reset profile cannot acquire an earned marker from stale memory.
+      if (!original) return { ok: false, reason: 'not-earned' };
+      const next = structuredCopy(original);
+      next[field] = awardId;
+      next.updatedAt = timestamp();
+      const encoded = JSON.stringify(next);
+      try {
+        // Best-effort stale-read guard, not a claim of cross-tab transactions.
+        if (storage.getItem(KEYS.pass) !== observed.pass || storage.getItem(KEYS.profile) !== observed.profile) {
+          refreshFromStorage();
+          return { ok: false, reason: 'state-changed' };
+        }
+        storage.setItem(KEYS.profile, encoded);
+        if (storage.getItem(KEYS.profile) !== encoded) {
+          // Never roll back over a newer tab's write or recreate a reset record.
+          refreshFromStorage();
+          return { ok: false, reason: 'save-unverified' };
+        }
+      } catch (_) {
+        persistent = false;
+        diagnostics.push({ key: KEYS.profile, kind: 'showcase-save-failed' });
+        return { ok: false, reason: 'storage-unavailable' };
+      }
+      records.profile = read('profile', { raw: encoded });
+      persistent = suppliedStorage && !blocked.size && !unwritable.size;
+      lastReset = null;
+      return { ok: true, changed: true, type, awardId };
+    }
     function recordLocalScore(input) {
       refresh(['profile']);
       const score = normalizeScore(input && input.score);
@@ -669,7 +729,121 @@
       refreshReadFailed = false;
       return getSnapshot();
     }
-      return { getSnapshot, refreshFromStorage, recordEvent, discoverCharacter, claimDaily, claimQuest, claimReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
+      return { getSnapshot, refreshFromStorage, recordEvent, discoverCharacter, claimDaily, claimQuest, claimReward, selectProfileReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
+  }
+
+  function validProfileMarkerShape(value) {
+    const object = v => v && typeof v === 'object' && !Array.isArray(v);
+    const list = v => Array.isArray(v) && v.every(id => typeof id === 'string' && id.length > 0);
+    if (!object(value)) return false;
+    for (const key of ['badges', 'titles']) if (Object.prototype.hasOwnProperty.call(value, key) && !list(value[key])) return false;
+    for (const key of ['selectedBadge', 'selectedTitle']) {
+      if (Object.prototype.hasOwnProperty.call(value, key) && value[key] !== null && typeof value[key] !== 'string') return false;
+    }
+    return !Object.prototype.hasOwnProperty.call(value, 'rewardClaims') || object(value.rewardClaims);
+  }
+  function profileShowcaseView(snapshot, definitions = defaultDefinitions) {
+    const unavailable = reason => ({ available: false, reason, groups: {},
+      message: reason === 'temporary' ? 'Saved showcase is unavailable in this tab. Browser storage is required; no saved badge or title is inferred.' :
+        'Saved showcase is unavailable or inconsistent. Its records are not overwritten, and no earned or selected marker is inferred.' });
+    const state = snapshot, storage = state && state.storage;
+    if (!storage || storage.scope !== 'browser') return unavailable('temporary');
+    if (!Array.isArray(storage.readOnlyKeys) || [KEYS.profile, KEYS.pass].some(key => storage.readOnlyKeys.includes(key))) return unavailable('read-only');
+    if (!state.pass || !validProfileMarkerShape(state.profile) || !Array.isArray(state.pass.claimedRewardIds) || !Array.isArray(state.rewards)) return unavailable('invalid');
+    const groups = {};
+    const ids = new Set(), awards = new Set();
+    const configured = Array.isArray(definitions && definitions.rewards) ? definitions.rewards : [];
+    for (const reward of configured) {
+      if (!reward || !['badge', 'title'].includes(reward.type)) continue;
+      const key = reward.type + ':' + reward.awardId;
+      if (typeof reward.id !== 'string' || !reward.id || typeof reward.awardId !== 'string' || !reward.awardId ||
+          ids.has(reward.id) || awards.has(key)) return unavailable('configuration');
+      ids.add(reward.id); awards.add(key);
+    }
+    for (const type of ['badge', 'title']) {
+      const list = type === 'badge' ? 'badges' : 'titles';
+      const field = type === 'badge' ? 'selectedBadge' : 'selectedTitle';
+      const owned = state.profile[list] || [], earned = [];
+      for (const definition of configured.filter(item => item && item.type === type)) {
+        const reward = state.rewards.find(item => item.id === definition.id);
+        if (!reward || reward.type !== type || reward.awardId !== definition.awardId) return unavailable('configuration');
+        const claimed = state.pass.claimedRewardIds.includes(definition.id);
+        const hasMarker = owned.includes(definition.awardId);
+        const claim = state.profile.rewardClaims && state.profile.rewardClaims[definition.id];
+        const timestamp = typeof claim === 'string' && !Number.isNaN(Date.parse(claim)) && new Date(claim).toISOString() === claim;
+        if (claimed || hasMarker || claim != null) {
+          if (!claimed || !hasMarker || !timestamp || reward.claimed !== true) return unavailable('inconsistent-claim');
+          if (reward.unlocked && Number.isInteger(definition.level) && definition.level <= state.pass.level) {
+            earned.push({ awardId: definition.awardId, rewardId: definition.id, title: definition.title || definition.awardId });
+          }
+        }
+      }
+      const rawSelected = state.profile[field] == null || state.profile[field] === '' ? null : state.profile[field];
+      const selected = earned.find(item => item.awardId === rawSelected) || null;
+      groups[type] = { type, earned, selected, rawSelected, invalidSelection: rawSelected !== null && !selected,
+        display: selected ? selected.title : rawSelected !== null ? 'Saved selection is not an earned configured ' + type : 'No ' + type + ' displayed' };
+    }
+    return { available: true, reason: null, groups, message: 'Choose a claimed website-local marker. Saving or hiding it does not grant, spend or remove rewards.' };
+  }
+  function showcaseResultMessage(result) {
+    if (result.ok) return result.changed
+      ? result.awardId === null ? 'Displayed ' + result.type + ' removed. Your earned rewards are unchanged.' : 'Your ' + result.type + ' selection was saved in this browser.'
+      : 'That selection is already saved. No progress or rewards changed.';
+    if (result.reason === 'not-earned') return 'This marker is not currently an earned, claimed website reward. Nothing was selected.';
+    if (result.reason === 'state-changed') return 'Saved progress changed in another tab. Review the current showcase and try again; no stale selection was written.';
+    if (result.reason === 'save-unverified') return 'The selection could not be verified after saving. Current readable data is shown; a newer change or reset was not overwritten.';
+    if (result.reason === 'stored-data-read-only' || result.reason === 'browser-storage-required') return 'Saved profile or reward data cannot be read safely. No selection was saved; restore browser storage access and retry.';
+    return 'Your selection could not be saved. The previous selection is retained; check browser storage and retry.';
+  }
+  function renderProfileShowcase(page, snapshot, onSelect) {
+    const panel = page.querySelector('[data-profile-showcase]');
+    if (!panel) return;
+    const view = profileShowcaseView(snapshot);
+    panel.setAttribute('data-showcase-state', view.available ? 'available' : 'unavailable');
+    const feedback = panel.querySelector('[data-showcase-status]');
+    const fingerprint = JSON.stringify(view);
+    if (feedback && panel.__showcaseFingerprint !== fingerprint) feedback.textContent = view.message;
+    panel.__showcaseFingerprint = fingerprint;
+    for (const type of ['badge', 'title']) {
+      const group = panel.querySelector('[data-showcase-group="' + type + '"]');
+      if (!group) continue;
+      const current = group.querySelector('[data-showcase-current]');
+      const select = group.querySelector('[data-showcase-select]');
+      const button = group.querySelector('[data-showcase-save]');
+      const note = group.querySelector('[data-showcase-note]');
+      if (!select || !button) continue;
+      const value = view.available ? view.groups[type] : null;
+      if (current) current.textContent = value ? value.display : 'Unavailable';
+      if (note) note.textContent = !value ? 'Saved ownership cannot be checked. No empty collection is assumed.' : value.invalidSelection
+        ? 'The saved selection is not displayed. Choose an earned marker or save No ' + type + ' displayed to remove this selection only.'
+        : value.earned.length ? value.earned.length + ' claimed ' + (type === 'badge' ? 'badge' : 'title') + (value.earned.length === 1 ? '' : 's') + ' available here.'
+        : 'No claimed ' + (type === 'badge' ? 'badges' : 'titles') + ' yet. Visit Rewards to see the existing unlock and claim requirements.';
+      const oldDraft = select.value;
+      const options = value ? value.earned : [];
+      const signature = JSON.stringify(options);
+      if (select.__showcaseOptions !== signature) {
+        select.textContent = '';
+        const none = page.ownerDocument.createElement('option'); none.value = ''; none.textContent = 'No ' + type + ' displayed'; select.appendChild(none);
+        for (const item of options) {
+          const option = page.ownerDocument.createElement('option'); option.value = item.awardId; option.textContent = item.title; select.appendChild(option);
+        }
+        select.__showcaseOptions = signature;
+      }
+      const stored = value && value.rawSelected || '';
+      const validDraft = oldDraft === '' || options.some(item => item.awardId === oldDraft);
+      const unchangedStored = select.__showcaseStored === stored && select.__showcaseAvailable === view.available;
+      select.value = unchangedStored && validDraft ? oldDraft : value && value.selected ? value.selected.awardId : '';
+      select.__showcaseStored = stored;
+      select.__showcaseAvailable = view.available;
+      select.disabled = !view.available;
+      const updateButton = () => {
+        button.disabled = !view.available || select.value === stored;
+        button.setAttribute('aria-disabled', String(button.disabled));
+      };
+      select.onchange = updateButton;
+      updateButton();
+      button.onclick = () => onSelect(type, select.value || null);
+    }
   }
 
   function boot(document, root) {
@@ -693,11 +867,18 @@
       function render() {
         const state = store.getSnapshot();
         renderedPeriod = state.daily.period;
-        const title = state.rewards.find(item => item.type === 'title' && item.awardId === state.profile.selectedTitle);
+        const showcase = profileShowcaseView(state);
+        const title = showcase.available && showcase.groups.title.selected;
         const values = { level: state.pass.level, xp: state.pass.xp, 'xp-to-next': state.xpToNext == null ? '—' : state.xpToNext, sparks: state.pass.sparks, treats: state.pass.treats, streak: state.pass.streak.count, discoveries: state.discoveries.length, 'quests-complete': state.questsComplete,
           'route-visits': state.discoveries.filter(item => item.routeVisit).length,
-          'character-discoveries': state.characterDiscoveries.length, 'selected-title': title ? title.title : (state.profile.selectedTitle || 'No title selected') };
+          'character-discoveries': state.characterDiscoveries.length, 'selected-title': !showcase.available ? 'Unavailable' : title ? title.title : showcase.groups.title.rawSelected ? 'Unavailable saved title' : 'No title selected' };
         page.querySelectorAll('[data-progression-stat]').forEach(el => { const key = el.getAttribute('data-progression-stat'); if (Object.prototype.hasOwnProperty.call(values, key)) el.textContent = String(values[key]); });
+        renderProfileShowcase(page, state, (type, awardId) => {
+          const result = store.selectProfileReward(type, awardId);
+          render();
+          const message = page.querySelector('[data-showcase-status]');
+          if (message) message.textContent = showcaseResultMessage(result);
+        });
         renderQuestJourney(page, state, id => {
           const result = store.claimQuest(id);
           render();
@@ -711,7 +892,11 @@
         const rewards = state.rewards.map(r => ({ id: r.id, title: r.title || r.name || r.id, detail: (r.description || 'Configured reward') + ' · Level ' + r.level + ' · Website-local, non-transferable · ' + (r.claimed ? 'Claimed' : r.unlocked ? 'Ready to claim' : 'Locked'), button: r.claimed ? null : r.unlocked ? 'Claim locally' : null }));
         const milestones = state.milestones.map(m => ({ title: m.title, detail: 'Level ' + m.level + ' milestone · ' + (m.unlocked ? 'Reached' : 'Not reached yet') + ' · No item, entitlement, or transfer is included.' }));
         renderList(page, '[data-progression-reward-list]', rewards.concat(milestones), id => {
-          const result = store.claimReward(id); setStatus(result.ok ? 'A website-local reward was added to this guest profile.' : result.reason === 'already-claimed' ? 'This reward was already claimed in this browser.' : 'This reward is not available yet.'); render();
+          const result = store.claimReward(id);
+          render();
+          setStatus(result.ok ? 'A website-local reward was added to this guest profile. Claimed badges and titles can be displayed in Your showcase.' :
+            result.reason === 'already-claimed' ? 'This reward was already claimed in this browser.' : result.reason === 'locked' ? 'This reward is not available yet.' :
+            'The reward could not be saved. No successful claim is being reported; check browser storage and retry.');
         });
         const discoveryItems = state.discoveries.filter(item => !item.characterId).map(item => ({ title: item.title, detail: item.description || 'A visit to a site preview; no lore or food item is implied.' }));
         const treatItems = state.treats.map(item => ({ title: item.title, detail: item.description + ' · Found · Saved in this browser' }));
@@ -1191,5 +1376,5 @@
       });
     } else items.forEach(item => appendItem(container, item));
   }
-  return { KEYS, createStore, boot, normalizePath, siteHref, renderList, gameRecordView, renderGameRecords, questDestination, questJourneyView, renderQuestJourney };
+  return { KEYS, createStore, boot, profileShowcaseView, renderProfileShowcase, showcaseResultMessage, normalizePath, siteHref, renderList, gameRecordView, renderGameRecords, questDestination, questJourneyView, renderQuestJourney };
 });

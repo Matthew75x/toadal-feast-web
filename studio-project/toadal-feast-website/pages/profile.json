@@ -377,6 +377,378 @@
                   }
                 },
                 {
+                  "id": "component.guest-showcase.profile.section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section guest-showcase",
+                    "attributes": {
+                      "data-profile-showcase": "",
+                      "data-showcase-state": "loading",
+                      "aria-labelledby": "guest-showcase-title"
+                    },
+                    "style": "",
+                    "layerName": "section",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.guest-showcase.profile.kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "YOUR LOCAL REWARDS",
+                          "text": "YOUR LOCAL REWARDS"
+                        }
+                      },
+                      {
+                        "id": "component.guest-showcase.profile.heading",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "guest-showcase-title"
+                          },
+                          "style": "",
+                          "layerName": "Your showcase",
+                          "text": "Your showcase"
+                        }
+                      },
+                      {
+                        "id": "component.guest-showcase.profile.intro",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Display a badge and title you have already claimed. Hiding a marker keeps it in your earned collection. These choices stay in this browser; they are not a public profile or mobile-game title.",
+                          "text": "Display a badge and title you have already claimed. Hiding a marker keeps it in your earned collection. These choices stay in this browser; they are not a public profile or mobile-game title."
+                        }
+                      },
+                      {
+                        "id": "component.guest-showcase.profile.groups",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "showcase-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "groups",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.guest-showcase.profile.badge",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "showcase-group",
+                                "attributes": {
+                                  "data-showcase-group": "badge",
+                                  "aria-labelledby": "showcase-profile-badge-heading"
+                                },
+                                "style": "",
+                                "layerName": "badge",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-showcase.profile.badge-heading",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "showcase-profile-badge-heading"
+                                      },
+                                      "style": "",
+                                      "layerName": "Badge",
+                                      "text": "Badge"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.badge-current",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "showcase-current",
+                                      "attributes": {
+                                        "data-showcase-current": "",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Loading saved badge…",
+                                      "text": "Loading saved badge…"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.badge-label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "label",
+                                      "className": "",
+                                      "attributes": {
+                                        "for": "showcase-profile-badge-select"
+                                      },
+                                      "style": "",
+                                      "layerName": "Choose a claimed badge",
+                                      "text": "Choose a claimed badge"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.badge-select",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "select",
+                                      "className": "showcase-select",
+                                      "attributes": {
+                                        "id": "showcase-profile-badge-select",
+                                        "data-showcase-select": "",
+                                        "aria-describedby": "showcase-profile-badge-note",
+                                        "disabled": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "badge select",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-showcase.profile.badge-none",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "No badge displayed",
+                                            "text": "No badge displayed"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.badge-save",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {
+                                        "data-showcase-save": "",
+                                        "type": "button",
+                                        "disabled": "",
+                                        "aria-disabled": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "badge save",
+                                      "label": "Save badge"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.badge-note",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {
+                                        "id": "showcase-profile-badge-note",
+                                        "data-showcase-note": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Only your claimed website-local markers can be selected.",
+                                      "text": "Only your claimed website-local markers can be selected."
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.guest-showcase.profile.title",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "showcase-group",
+                                "attributes": {
+                                  "data-showcase-group": "title",
+                                  "aria-labelledby": "showcase-profile-title-heading"
+                                },
+                                "style": "",
+                                "layerName": "title",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-showcase.profile.title-heading",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "showcase-profile-title-heading"
+                                      },
+                                      "style": "",
+                                      "layerName": "Title",
+                                      "text": "Title"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.title-current",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "showcase-current",
+                                      "attributes": {
+                                        "data-showcase-current": "",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Loading saved title…",
+                                      "text": "Loading saved title…"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.title-label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "label",
+                                      "className": "",
+                                      "attributes": {
+                                        "for": "showcase-profile-title-select"
+                                      },
+                                      "style": "",
+                                      "layerName": "Choose a claimed title",
+                                      "text": "Choose a claimed title"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.title-select",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "select",
+                                      "className": "showcase-select",
+                                      "attributes": {
+                                        "id": "showcase-profile-title-select",
+                                        "data-showcase-select": "",
+                                        "aria-describedby": "showcase-profile-title-note",
+                                        "disabled": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "title select",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-showcase.profile.title-none",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "No title displayed",
+                                            "text": "No title displayed"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.title-save",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {
+                                        "data-showcase-save": "",
+                                        "type": "button",
+                                        "disabled": "",
+                                        "aria-disabled": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "title save",
+                                      "label": "Save title"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-showcase.profile.title-note",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {
+                                        "id": "showcase-profile-title-note",
+                                        "data-showcase-note": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Only your claimed website-local markers can be selected.",
+                                      "text": "Only your claimed website-local markers can be selected."
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.guest-showcase.profile.status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "showcase-status",
+                          "attributes": {
+                            "data-showcase-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Saved showcase is loading.",
+                          "text": "Saved showcase is loading."
+                        }
+                      },
+                      {
+                        "id": "component.guest-showcase.profile.next",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "button-link button-link--secondary",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "next",
+                          "label": "View reward requirements",
+                          "href": "/feast-pass/rewards/"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
                   "id": "component.guest-profile.rich-text.1616bd41d3aa.progression-section",
                   "type": "layout.container",
                   "props": {
