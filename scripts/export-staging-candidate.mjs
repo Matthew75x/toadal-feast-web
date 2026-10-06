@@ -11,6 +11,7 @@ import { verifyPublicProjection } from './lib/owner-public-projection.mjs';
 import { verifyProtectedGameArtifacts } from './lib/protected-game-artifacts.mjs';
 import { verifyExportGamePins } from './lib/staging-artifact.mjs';
 import { externalizeAdvancedRuntime } from './lib/externalize-advanced-runtime.mjs';
+import { addIntrinsicImageDimensions } from './lib/intrinsic-image-dimensions.mjs';
 import { fingerprintFiles } from './fingerprint-site-inputs.mjs';
 import { synchronize as verifyPlayCatalogue } from './sync-play-catalogue.mjs';
 
@@ -93,6 +94,7 @@ for (const [script, parameters] of [
   checks.push({ script, status: result.status, stdout: result.stdout, stderr: result.stderr });
   if (result.status !== 0) throw new Error(script + ' failed: ' + (result.stderr || result.stdout || result.error?.message));
 }
+const intrinsicImages = addIntrinsicImageDimensions(exportedDir, basePath);
 const after = fingerprintFiles(project, sourceEntries);
 if (JSON.stringify(before) !== JSON.stringify(after)) throw new Error('Studio export changed authored source; dist was preserved.');
 
@@ -122,6 +124,7 @@ const receipt = {
   zipSha256: crypto.createHash('sha256').update(fs.readFileSync(exported.path)).digest('hex'),
   protectedArtifacts: { count: protectedArtifacts.files.length, valid: protectedArtifacts.valid },
   advancedRuntime,
+  intrinsicImages,
   checks,
 };
 const receiptPath = path.join(run, 'receipt.json');
