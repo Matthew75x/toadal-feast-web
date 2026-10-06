@@ -395,7 +395,7 @@
         xpToNext: configuredThreshold ? configuredThreshold - records.pass.xp % configuredThreshold : null,
         daily,
         questsComplete: quests.filter(q => q.complete).length,
-        storage: { local: persistent && !refreshReadFailed, persistent: persistent && !refreshReadFailed, available: persistent && !refreshReadFailed, diagnostics: diagnostics.slice(), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]), lastReset: lastReset ? structuredCopy(lastReset) : null, lastRefresh: lastRefresh ? structuredCopy(lastRefresh) : null }
+        storage: { local: persistent && !refreshReadFailed, persistent: persistent && !refreshReadFailed, available: persistent && !refreshReadFailed, diagnostics: diagnostics.slice(), scope: suppliedStorage ? 'browser' : 'page-only', readOnlyKeys: Array.from(new Set([...blocked, ...unwritable])).map(name => KEYS[name]), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]), lastReset: lastReset ? structuredCopy(lastReset) : null, lastRefresh: lastRefresh ? structuredCopy(lastRefresh) : null }
       };
     }
     function recordEvent(eventId) {
@@ -762,6 +762,7 @@
           href: '/leaderboards/?game=' + encodeURIComponent(item.gameId), button: 'View local leaderboard'
         }));
         renderList(page, '[data-progression-score-list]', scoreItems);
+        renderGameRecords(page, state);
         const dailyStatus = page.querySelector('[data-daily-reward-status]');
         if (dailyStatus) dailyStatus.textContent = state.daily.enabled ? (state.daily.claimed ? 'Today’s UTC check-in is already claimed.' : 'A starter-config UTC-day check-in is available. Progress is local to this browser.') : 'No daily check-in is configured.';
         const dailyButton = page.querySelector('[data-claim-daily]');
@@ -886,6 +887,67 @@
       }
     }
   }
+
+  // Read model only: the existing host/store owns score admission and persistence.
+  // A saved result is not a verified accomplishment, a build approval or a reward.
+  function gameRecordView(snapshot, gameId) {
+    const empty = { state: 'unavailable', best: null, latest: null, recentCount: null, recordedAt: null };
+    if (gameId !== 'wicked-bites') return Object.assign({}, empty, { state: 'unsupported' });
+    if (!snapshot || !snapshot.storage || !['browser', 'page-only'].includes(snapshot.storage.scope)) return empty;
+    const storage = snapshot.storage;
+    if (!Array.isArray(storage.readOnlyKeys) || storage.readOnlyKeys.includes(KEYS.profile)) return empty;
+    const scores = snapshot.localScores;
+    if (!scores || typeof scores !== 'object' || Array.isArray(scores)) return empty;
+    const own = Object.prototype.hasOwnProperty.call(scores, gameId);
+    const record = own ? scores[gameId] : null;
+    if (own && (!record || !validLocalScores({ 'wicked-bites': record }))) return empty;
+    if (!record || !record.runs.length) {
+      return Object.assign({}, empty, { state: storage.scope === 'page-only' ? 'temporary' : 'not-recorded' });
+    }
+    const latest = record.runs[record.runs.length - 1];
+    return {
+      state: storage.scope === 'page-only' ? 'temporary' : 'recorded',
+      best: normalizeScore(record.best), latest: normalizeScore(latest.score),
+      recentCount: record.runs.length, recordedAt: latest.completedAt
+    };
+  }
+  function renderGameRecords(page, snapshot) {
+    const labels = {
+      'recorded': 'Saved results in this browser',
+      'not-recorded': 'No saved results yet',
+      'unsupported': 'Website score feed not connected',
+      'unavailable': 'Saved results unavailable',
+      'temporary': 'Temporary tab only; saved browser results unavailable'
+    };
+    const details = {
+      'recorded': 'Best is from the saved record in this browser. Up to 50 recent results are kept, not a lifetime play count.',
+      'not-recorded': 'No result saved here yet. Missing results are not zero scores or 0% completion.',
+      'unsupported': 'No connected score or completion data. Check the listing for availability and controls.',
+      'unavailable': 'Saved scores cannot be read safely. No zero is substituted; stored data is untouched.',
+      'temporary': 'Temporary tab data only. Browser persistence and account synchronization are unavailable.'
+    };
+    page.querySelectorAll('[data-game-record]').forEach(card => {
+      const view = gameRecordView(snapshot, card.getAttribute('data-game-record'));
+      card.setAttribute('data-game-record-state', view.state);
+      const values = {
+        'state': labels[view.state], 'detail': details[view.state],
+        'best': view.best === null ? '—' : view.best.toLocaleString('en-US'),
+        'latest': view.latest === null ? '—' : view.latest.toLocaleString('en-US'),
+        'recent-count': view.recentCount === null ? '—' : String(view.recentCount),
+        'recorded-at': view.recordedAt ? view.recordedAt.slice(0, 10) + ' ' + view.recordedAt.slice(11, 16) + ' UTC' : 'Not available'
+      };
+      card.querySelectorAll('[data-game-record-field]').forEach(node => {
+        const field = node.getAttribute('data-game-record-field');
+        if (!Object.prototype.hasOwnProperty.call(values, field)) return;
+        if (node.textContent !== values[field]) node.textContent = values[field];
+        if (field === 'recorded-at') {
+          if (view.recordedAt) node.setAttribute('datetime', view.recordedAt);
+          else node.removeAttribute('datetime');
+        }
+      });
+    });
+  }
+
   function definitionsForRuntime() { return defaultDefinitions || {}; }
   function normalizePath(path, definitions) {
     let clean = String(path == null ? '/' : path).split(/[?#]/, 1)[0].replace(/\\/g, '/');
@@ -951,5 +1013,5 @@
       });
     } else items.forEach(item => appendItem(container, item));
   }
-  return { KEYS, createStore, boot, normalizePath, siteHref, renderList };
+  return { KEYS, createStore, boot, normalizePath, siteHref, renderList, gameRecordView, renderGameRecords };
 });
