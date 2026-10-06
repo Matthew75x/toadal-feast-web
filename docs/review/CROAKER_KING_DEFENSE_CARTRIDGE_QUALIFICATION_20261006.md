@@ -28,8 +28,8 @@ Result:
 - disposition: **PREVIEW_CANDIDATE**
 - hardening level: **CHL-4 / QA-QUALIFIED**
 - mandatory failures: **0**
-- runtime ledger SHA-256: `37ffde4c9701c110e4195cf16ddd64a97373c16913fded6d14817eda61a901e8`
-- deterministic cartridge ZIP SHA-256: `0eecab75504b1656147775adbdb0978a2b368e3fbc042497f711461bf12d74a3`
+- runtime ledger SHA-256: `dd44c1dbd822e1f6d722838b2e77e450866ea964d8fb0534084462e0276a2afc`
+- deterministic cartridge ZIP SHA-256: `488f8b66e204b7d2a725a3a43040b3de0b2fd2b4a132a01ff9f0a6ee39f42933`
 
 The deterministic ZIP check was repeated twice from unchanged source and produced identical archive bytes.
 
@@ -45,7 +45,10 @@ The deterministic ZIP check was repeated twice from unchanged source and produce
   - multi-viewport presentation: 35 passed / 0 failed
 - real-build poster and screenshot: PASS
 - cartridge schema v1: PASS
+- separate TCS `tcs1.json` identity check: PASS
 - output ZIP CRC/integrity: PASS
+
+The hardened runtime now contains both the website `cartridge.json` and a separate `tcs1.json`. The latter is TCS intake metadata only. It does not claim `tcs.bridge/1` runtime qualification, restricted-browser isolation, egress proof, or trusted positive TCS authority.
 
 ## External gates
 
