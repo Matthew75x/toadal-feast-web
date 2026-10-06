@@ -33,6 +33,10 @@ const server = http.createServer((req, res) => {
 });
 await new Promise((resolve,reject) => { server.once('error',reject); server.listen(0,'127.0.0.1',resolve); });
 const origin = `http://127.0.0.1:${server.address().port}`;
+// Functional checks are not a page-load performance benchmark. Keep a bounded
+// opt-in allowance for a busy shared runner; assertions and journeys are unchanged.
+const operationTimeout = Number(process.env.QUEST_TEST_TIMEOUT_MS || 20000);
+if (!Number.isInteger(operationTimeout) || operationTimeout < 20000 || operationTimeout > 60000) throw new Error('QUEST_TEST_TIMEOUT_MS must be 20000..60000');
 const cases = [];
 let browser;
 try {
@@ -84,7 +88,7 @@ try {
     for(const viewport of [{width:1280,height:900},{width:390,height:844},{width:320,height:700}]) {
       const row={name:'actual-quest-journey-'+viewport.width,status:'FAIL',checks:[]};const context=await contextFor(viewport);const errors=[];
       try {
-        const a=await context.newPage(),b=await context.newPage();for(const page of [a,b]){page.setDefaultTimeout(20000);page.on('pageerror',e=>errors.push(e.message));}
+        const a=await context.newPage(),b=await context.newPage();for(const page of [a,b]){page.setDefaultTimeout(operationTimeout);page.on('pageerror',e=>errors.push(e.message));}
         const [response]=await Promise.all([a.waitForResponse(r=>r.url()===pageRoute('assets/js/guest-progression.js')),a.goto(pageRoute('feast-pass/'),{waitUntil:'load'})]);
         assert.equal(hash(await response.body()),runtimeHash);await waitNext(a,'active','Explore the World');
         await assertNoTipOverlap(a, '.quest-next');
@@ -137,7 +141,7 @@ try {
     for(const scenario of ['write-failure','future-quests','denied-read']) {
       const row={name:scenario,status:'FAIL'};const context=await contextFor({width:390,height:844});
       try {
-        const page=await context.newPage();page.setDefaultTimeout(15000);
+        const page=await context.newPage();page.setDefaultTimeout(operationTimeout);
         await page.goto(pageRoute('world/'),{waitUntil:'load'});await page.goto(pageRoute('feast-pass/quests/?view=ready'),{waitUntil:'load'});
         if(scenario==='write-failure'){
           await page.evaluate(key=>window.__questTest.denyWrite=key,KEYS.pass);
@@ -161,5 +165,5 @@ try {
     }
   }
 }finally{if(browser)await browser.close();await new Promise(resolve=>server.close(resolve));}
-const report={schema:'toadal.quest-journey.browser.v1',runtimeSha256:runtimeHash,cases,passed:cases.filter(c=>c.status==='PASS').length,total:cases.length,evidence:process.argv.includes('--baseline')?'Baseline probe of absent activity links/status filters/next card; no gameplay or claim journey exercised.':'Actual exported-page navigation, quest claims, Home candy/block controls, daily claim, cross-tab reset and reload. Failure inputs are controlled. Phone widths are Chromium emulation, not physical-device acceptance. No native/cartridge execution, new rewards or account sync.'};
+const report={schema:'toadal.quest-journey.browser.v1',operationTimeout,runtimeSha256:runtimeHash,cases,passed:cases.filter(c=>c.status==='PASS').length,total:cases.length,evidence:process.argv.includes('--baseline')?'Baseline probe of absent activity links/status filters/next card; no gameplay or claim journey exercised.':'Actual exported-page navigation, quest claims, Home candy/block controls, daily claim, cross-tab reset and reload. Failure inputs are controlled. Phone widths are Chromium emulation, not physical-device acceptance. No native/cartridge execution, new rewards or account sync.'};
 fs.writeFileSync(path.join(output,'report.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify({passed:report.passed,total:report.total}));process.exitCode=process.argv.includes('--baseline')?0:report.passed===report.total?0:1;

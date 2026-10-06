@@ -31,3 +31,9 @@ node --no-warnings --experimental-strip-types scripts/export-staging-candidate.m
 `PLAYWRIGHT_MODULE` and `CHROME_PATH` can select existing installed browser tooling. The runner owns temporary contexts and an ephemeral loopback server, and closes both. It covers desktop/390px/320px actual page journeys, reward claims, all Home Treat controls, reload, filters, keyboard focus, companion intersection, cross-tab reset and controlled persistence failures. Phone dimensions are Chromium emulation, not physical-device acceptance. No native or cartridge game is launched.
 
 Delivery target is established GitHub Pages staging only. A merged PR or passing test is not by itself a deployment claim; exact live readback belongs in the separate closure receipt.
+
+### Shared-runner resource limit
+
+Final application head `d92cf707...` passed all source/export checks. Its first full browser attempt had three acquisition/capture timeouts and three passing failure-control cases; one unmodified retry had five passing cases and one desktop load timeout. Both reports are retained without changing their results. A read-only machine check measured 100% CPU and 625 MB free memory, so no inference of a game/application failure or physical performance result is made. No unrelated browser or worker was killed.
+
+The browser runner now permits an explicit bounded `QUEST_TEST_TIMEOUT_MS` from 20000 to 60000 for functional operations on a busy shared host. Default remains 20000. The assertion set, journeys, screenshots, exact-source checks and negative controls are unchanged. A final complete run must pass before staging delivery; the selected timeout and source are recorded in its report. This is not a website responsiveness benchmark.
