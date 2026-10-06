@@ -1,0 +1,76 @@
+{
+  "baseURL": "http://127.0.0.1:8156/toadal-feast-web/",
+  "status": "PASS",
+  "rows": [
+    {
+      "name": "manga",
+      "width": 320,
+      "artAndCaptionContainment": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "manga",
+      "width": 390,
+      "artAndCaptionContainment": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "leaderboards",
+      "width": 320,
+      "nativeFields": 3,
+      "filters": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "leaderboards",
+      "width": 390,
+      "nativeFields": 3,
+      "filters": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "play",
+      "width": 320,
+      "tabs": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "reader",
+      "width": 320,
+      "emptyReaderAndTouchControl": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "characters",
+      "width": 320,
+      "filters": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "profile",
+      "width": 320,
+      "tabLocalSetting": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "account",
+      "width": 390,
+      "storageStatus": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "search-unavailable",
+      "width": 390,
+      "failedIndexStatus": "PASS",
+      "status": "PASS"
+    },
+    {
+      "name": "search-ready",
+      "width": 390,
+      "healthyResultsAndEmpty": "PASS",
+      "status": "PASS"
+    }
+  ],
+  "cases": 11,
+  "passed": 11
+}

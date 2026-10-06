@@ -1,0 +1,30 @@
+{
+  "baseURL": "http://127.0.0.1:8156/toadal-feast-web/",
+  "status": "PASS",
+  "cases": 5,
+  "rows": [
+    {
+      "action": "other-tab-save",
+      "score": 321,
+      "status": "PASS"
+    },
+    {
+      "action": "other-tab-reset",
+      "status": "PASS"
+    },
+    {
+      "action": "other-tab-save",
+      "score": 789,
+      "status": "PASS"
+    },
+    {
+      "action": "connected-scope-remains-unavailable",
+      "status": "PASS"
+    },
+    {
+      "action": "local-scope-current-score",
+      "status": "PASS"
+    }
+  ],
+  "runtimeErrors": []
+}
