@@ -184,7 +184,7 @@
       var header = headerOnly ? document.querySelector('.site-header') : null;
       var view = viewport();
       var selectors = 'a[href], button, input, select, textarea, summary, [role="button"], iframe, [data-player-frame-wrap], .detail-breadcrumb, dialog[open], [role="dialog"]';
-      if (includeNavigation) selectors += ', .site-header, [role="navigation"]';
+      if (includeNavigation) selectors += ', .site-header, [role="navigation"], main .catalogue-controls';
       // An automatic header tip must leave the hero title, explanation and actions readable.
       if (includeNavigation && root.getAttribute('data-mobile-docked') === 'true') selectors += ', main h1, main .wo002-detail-copy, main .quest-board, main .quest-next';
       return Array.from(document.querySelectorAll(selectors)).filter(function (control) {

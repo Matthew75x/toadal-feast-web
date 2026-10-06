@@ -71,6 +71,15 @@
     });
   });
 
+  if (route === '/play/' && document.querySelector('[data-catalogue-root]')) {
+    load('play-catalogue.js').catch(function () {
+      var status = document.querySelector('[data-catalogue-status]');
+      if (status) status.textContent = 'Catalogue filters could not load. All existing listings, labels and game-detail links remain available below.';
+      var area = document.querySelector('[data-catalogue-root]');
+      if (area) area.setAttribute('data-catalogue-state', 'unavailable');
+    });
+  }
+
   // These are website-local bridges; untouched iframe games never receive these modules.
   var needsProgress = document.querySelector('[data-progression-page]') ||
     ['/', '/world/', '/characters/', '/characters/toadal/', '/stories/', '/play/', '/games/wicked-bites/', '/player/wicked-bites/', '/leaderboards/', '/account/'].includes(route);

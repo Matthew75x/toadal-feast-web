@@ -7638,3 +7638,22 @@ label[for='site-motion-toggle'] input { flex:0 0 auto; width:18px; height:18px; 
 .showcase-group :focus-visible { outline: 3px solid var(--pink, #f60062); outline-offset: 3px; }
 .showcase-status { margin-block: .75rem; }
 @media (max-width: 620px) { .showcase-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* Availability-aware native Play catalogue. Existing cards/launch boundaries remain unchanged. */
+[data-catalogue-root] .catalogue-controls{padding:20px;margin:0 0 22px;border:1px solid var(--gold-400);border-radius:18px;background:var(--cream-100,#fffaf0);color:var(--navy-900);scroll-margin-top:110px}
+[data-catalogue-root] .catalogue-help{margin:0 0 16px;max-width:76ch;line-height:1.6}
+[data-catalogue-root] .catalogue-search-row,[data-catalogue-root] .catalogue-options-row{display:flex;align-items:end;gap:12px;flex-wrap:wrap}
+[data-catalogue-root] .catalogue-field{display:flex;flex-direction:column;gap:7px;min-width:0;flex:1 1 240px}
+[data-catalogue-root] label{font-weight:750}
+[data-catalogue-root] input,[data-catalogue-root] select{font:inherit;width:100%;min-width:0;min-height:46px;padding:10px 12px;border:1px solid var(--navy-900);border-radius:10px;background:#fffdf6;color:var(--navy-900);box-sizing:border-box}
+[data-catalogue-root] .catalogue-filters{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0}
+[data-catalogue-root] .game-tab{min-height:44px;white-space:normal;font:inherit;font-weight:750}
+[data-catalogue-root] .game-tab .catalogue-filter-label{display:inline;min-width:0;min-height:0;margin:0;border-radius:0;background:transparent;color:inherit;font-size:inherit}
+[data-catalogue-root] .catalogue-filter-count{font-variant-numeric:tabular-nums}
+[data-catalogue-root] [disabled]{opacity:.6;cursor:not-allowed}
+[data-catalogue-root] :is(input,select,button):focus-visible{outline:3px solid var(--pink-500,#c43b75);outline-offset:3px}
+[data-catalogue-root] .catalogue-status{margin:16px 0 0;font-weight:750;overflow-wrap:anywhere}
+[data-catalogue-root] .catalogue-url-status{padding:10px;border:1px solid currentColor;border-radius:8px}
+[data-catalogue-root] .catalogue-availability{margin:8px 0;padding:6px 10px;border:1px solid currentColor;border-radius:8px;align-self:flex-start;font-size:.9rem;font-weight:800}
+[data-catalogue-root] [hidden]{display:none!important}
+@media(max-width:600px){[data-catalogue-root] .catalogue-controls{padding:14px}[data-catalogue-root] .catalogue-search-row .catalogue-field,[data-catalogue-root] .catalogue-options-row .catalogue-field{flex-basis:100%}[data-catalogue-root] .catalogue-filters .game-tab{flex:1 1 125px;padding:9px 10px}}

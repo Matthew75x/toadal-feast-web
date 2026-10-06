@@ -101,7 +101,7 @@ def run() -> int:
         "CHROME_PATH", r"C:\Program Files\Google\Chrome\Application\chrome.exe"
     )
     specs = [
-        ("play-desktop", "play/", 1440, 900, False, '[data-game-tab="public"]'),
+        ("play-desktop", "play/", 1440, 900, False, '[data-catalogue-filter="held"], [data-game-tab="public"]'),
         ("search-tablet", "search/", 768, 1024, True, 'form[data-site-search] button[type="submit"]'),
     ]
 
@@ -122,6 +122,9 @@ def run() -> int:
                     page.set_default_timeout(5000)
                     page.goto(base + route, wait_until="domcontentloaded", timeout=10000)
                     page.wait_for_load_state("load", timeout=remaining_ms(started))
+                    modern_catalogue = name == "play-desktop" and page.locator("[data-catalogue-root]").count() > 0
+                    if modern_catalogue:
+                        page.wait_for_function("() => document.querySelector('[data-catalogue-root]')?.getAttribute('data-catalogue-state')==='ready'", timeout=remaining_ms(started))
                     target = page.locator(selector).first
                     target.wait_for(state="visible", timeout=remaining_ms(started))
                     if name == "search-tablet":
@@ -131,6 +134,7 @@ def run() -> int:
                             timeout=remaining_ms(started),
                         )
 
+                    target.scroll_into_view_if_needed(timeout=remaining_ms(started))
                     item["beforeClick"] = page.evaluate(GEOMETRY_JS, selector)
                     item["beforeClickScreenshot"] = str(report_dir / f"{name}.png")
                     page.screenshot(path=item["beforeClickScreenshot"], full_page=False, timeout=remaining_ms(started))
@@ -145,15 +149,22 @@ def run() -> int:
                         raise AssertionError("target control has no rendered box")
                     page.mouse.click(target_box["x"] + target_box["width"] / 2, target_box["y"] + target_box["height"] / 2)
                     if name == "play-desktop":
+                        # Keep the current-dist smoke usable after the availability UI
+                        # replaced ambiguous release-only buttons. Old snapshots retain
+                        # their Public-filter witness; current source witnesses Held.
+                        selected = '[data-catalogue-filter="held"]' if modern_catalogue else '[data-game-tab="public"]'
+                        expected = 1 if modern_catalogue else 0
                         page.wait_for_function(
-                            "() => document.querySelector('[data-game-tab=public]')?.getAttribute('aria-pressed')==='true' && [...document.querySelectorAll('[data-game-id]')].every(e=>e.hidden||getComputedStyle(e).display==='none')",
-                            timeout=remaining_ms(started),
+                            "({selector,expected}) => document.querySelector(selector)?.getAttribute('aria-pressed')==='true' && [...document.querySelectorAll('#browser-games .studio-game-card')].filter(e=>!e.hidden&&getComputedStyle(e).display!=='none').length===expected",
+                            arg={"selector": selected, "expected": expected}, timeout=remaining_ms(started),
                         )
                         item["actionAfterClick"] = page.evaluate(
-                            "() => ({pressed:document.querySelector('[data-game-tab=public]')?.getAttribute('aria-pressed'),visibleGames:[...document.querySelectorAll('[data-game-id]')].filter(e=>!e.hidden&&getComputedStyle(e).display!=='none').length,emptyVisible:!document.querySelector('[data-game-empty]')?.hidden})"
+                            "selector => ({pressed:document.querySelector(selector)?.getAttribute('aria-pressed'),visibleGames:[...document.querySelectorAll('#browser-games .studio-game-card')].filter(e=>!e.hidden&&getComputedStyle(e).display!=='none').length,emptyVisible:!document.querySelector('[data-game-empty]')?.hidden})", selected
                         )
-                        if item["actionAfterClick"] != {"pressed": "true", "visibleGames": 0, "emptyVisible": True}:
-                            failures.append("play-desktop: Public filter did not enter the expected zero-games state")
+                        if item["actionAfterClick"] != {"pressed": "true", "visibleGames": expected, "emptyVisible": expected == 0}:
+                            failures.append("play-desktop: selected catalogue filter did not show its expected population")
+                        if modern_catalogue and page.locator('#browser-games .studio-game-card:not([hidden])').get_attribute("data-game-id") != "claw-feed-gulper":
+                            failures.append("play-desktop: Held filter did not isolate the existing held listing")
                     else:
                         page.wait_for_function(
                             "() => new URLSearchParams(location.search).get('q')==='Toadal' && /\\d+ local results for/.test(document.querySelector('[data-search-status]')?.innerText||'') && document.querySelectorAll('.search-result-card').length>0",

@@ -10,6 +10,7 @@ import { verifyOwnerRendererProvenance } from './lib/owner-native-projection.mjs
 import { verifyPublicProjection } from './lib/owner-public-projection.mjs';
 import { verifyProtectedGameArtifacts } from './lib/protected-game-artifacts.mjs';
 import { fingerprintFiles } from './fingerprint-site-inputs.mjs';
+import { synchronize as verifyPlayCatalogue } from './sync-play-catalogue.mjs';
 
 const args = process.argv.slice(2);
 const studioInput = args.find(value => !value.startsWith('--'));
@@ -37,6 +38,8 @@ assertLocalPath(dist);
 assertLocalPath(scratchRoot);
 verifyOwnerRendererProvenance(studio);
 verifyPublicProjection(studio);
+// Refuse stale availability labels before exporting; do not silently edit owner source.
+verifyPlayCatalogue(project, true);
 
 const publishing = JSON.parse(fs.readFileSync(path.join(project, 'collections', 'publishing.json'), 'utf8'));
 if (publishing.staticExport?.basePath !== basePath || publishing.staticExport?.staging !== true) {
