@@ -1,0 +1,64 @@
+{
+  "baseURL": "http://127.0.0.1:8156/toadal-feast-web/",
+  "rows": [
+    {
+      "route": "support",
+      "width": 320,
+      "nativeTopics": 6,
+      "filterAndQuicklink": "PASS",
+      "keyboardToggle": "PASS",
+      "status": "PASS"
+    },
+    {
+      "route": "support",
+      "width": 390,
+      "nativeTopics": 6,
+      "filterAndQuicklink": "PASS",
+      "keyboardToggle": "PASS",
+      "status": "PASS"
+    },
+    {
+      "route": "support",
+      "width": 1440,
+      "nativeTopics": 6,
+      "filterAndQuicklink": "PASS",
+      "keyboardToggle": "PASS",
+      "status": "PASS"
+    },
+    {
+      "route": "news",
+      "width": 390,
+      "oneEmptyState": "PASS",
+      "nativeFilters": 5,
+      "status": "PASS"
+    },
+    {
+      "route": "news",
+      "width": 1440,
+      "oneEmptyState": "PASS",
+      "nativeFilters": 5,
+      "status": "PASS"
+    },
+    {
+      "route": "play",
+      "width": 390,
+      "displayHeadings": 3,
+      "status": "PASS"
+    },
+    {
+      "route": "app",
+      "width": 390,
+      "displayHeadings": 5,
+      "status": "PASS"
+    },
+    {
+      "route": "media",
+      "width": 390,
+      "filters": "PASS",
+      "status": "PASS"
+    }
+  ],
+  "passed": 8,
+  "cases": 8,
+  "status": "PASS"
+}

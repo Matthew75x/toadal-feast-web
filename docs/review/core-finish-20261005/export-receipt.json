@@ -1,0 +1,63 @@
+{
+  "schema": "toadal-feast.staging-studio-export.v1",
+  "status": "PASS",
+  "studio": "D:\\TOADAL_BACKUPS\\studio-v51-source-admission-20261003\\studio",
+  "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-05\\files-pasted-by-the-user-toadal\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\project.json",
+  "verifyOnly": false,
+  "output": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-05\\files-pasted-by-the-user-toadal\\work\\toadal-feast-web\\dist",
+  "previousDist": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-05\\files-pasted-by-the-user-toadal\\work\\toadal-feast-web\\.tmp\\staging-export-jaUbjd\\previous-dist",
+  "source": {
+    "sha256": "021d6681650f920e18bc4b524937463d2de24e7f575ba6404b376fb24122243c",
+    "files": 165
+  },
+  "validation": {
+    "valid": true,
+    "warnings": []
+  },
+  "staticExport": {
+    "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-05\\files-pasted-by-the-user-toadal\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
+    "bytes": 39976626,
+    "profile": {
+      "schemaVersion": 1,
+      "basePath": "/toadal-feast-web/",
+      "staging": true
+    }
+  },
+  "zipSha256": "776d0f9b56522ddec3cd834b73b8b4d664aa08eef4931fc924012c1131ce221d",
+  "protectedArtifacts": {
+    "count": 3,
+    "valid": true
+  },
+  "checks": [
+    {
+      "script": "wo001-pages-basepath.mjs",
+      "status": 0,
+      "stdout": "Files scanned: 35\nFiles rewritten: 4\nURLs rewritten: 4\nStaging robots policy: added\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify-owner-preview-render-freshness.mjs",
+      "status": 0,
+      "stdout": "OWNER PREVIEW RENDER FRESHNESS: PASS\n{\n  \"registeredRoutes\": 33,\n  \"dist\": \"C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-10-05\\\\files-pasted-by-the-user-toadal\\\\work\\\\toadal-feast-web\\\\.tmp\\\\staging-export-jaUbjd\\\\site\",\n  \"searchEntriesMinimum\": 48\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify-pages-basepath.mjs",
+      "status": 0,
+      "stdout": "PAGES BASEPATH CHECK PASS\nHTML files: 34\nBase: /toadal-feast-web/\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify-static-links.mjs",
+      "status": 0,
+      "stdout": "STATIC LINK CHECK PASS\nHTML files: 34\nBase: /toadal-feast-web/\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify-staging-robots.mjs",
+      "status": 0,
+      "stdout": "ROBOTS CHECK PASS\nMode: staging\nHTML files: 34\n",
+      "stderr": ""
+    }
+  ]
+}

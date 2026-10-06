@@ -1,0 +1,312 @@
+{
+  "schema": "toadal-feast.mobile-controls-qa.v1",
+  "dist": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-05\\files-pasted-by-the-user-toadal\\work\\toadal-feast-web\\dist",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "cases": [
+    {
+      "name": "touch-hide-persistence-and-drag",
+      "doubleTapCoordinates": {
+        "x": 228.0,
+        "y": 32.0
+      },
+      "savedManual": {
+        "version": 1,
+        "x": 97,
+        "y": 136,
+        "manual": true
+      },
+      "reloadedManual": {
+        "version": 1,
+        "x": 97,
+        "y": 136,
+        "manual": true
+      },
+      "hiddenPreference": "true persisted then restored",
+      "status": "PASS",
+      "elapsedSeconds": 2.844
+    },
+    {
+      "name": "explicit-hide-and-restore",
+      "keyboardHide": true,
+      "keyboardRestore": true,
+      "status": "PASS",
+      "elapsedSeconds": 0.109
+    },
+    {
+      "name": "fullscreen-rail",
+      "geometry": {
+        "exit": {
+          "left": 338,
+          "top": 4,
+          "right": 382,
+          "bottom": 48,
+          "width": 44,
+          "height": 44
+        },
+        "rail": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 52,
+          "width": 390,
+          "height": 52
+        },
+        "frame": {
+          "left": 0,
+          "top": 52,
+          "right": 390,
+          "bottom": 844,
+          "width": 390,
+          "height": 792
+        },
+        "label": "Exit full screen",
+        "hit": true,
+        "viewport": {
+          "width": 390,
+          "height": 844
+        }
+      },
+      "exited": true,
+      "status": "PASS",
+      "elapsedSeconds": 0.172
+    },
+    {
+      "name": "default-news-scroll-dock",
+      "initial": {
+        "scrollY": 0,
+        "docked": "true",
+        "root": {
+          "left": 176,
+          "top": 6,
+          "right": 278,
+          "bottom": 58,
+          "width": 102,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 66,
+          "width": 390,
+          "height": 66
+        },
+        "saved": {
+          "version": 1,
+          "x": 176,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "afterQueryScroll": {
+        "scrollY": 791,
+        "docked": "true",
+        "root": {
+          "left": 176,
+          "top": 6,
+          "right": 278,
+          "bottom": 58,
+          "width": 102,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 66,
+          "width": 390,
+          "height": 66
+        },
+        "saved": {
+          "version": 1,
+          "x": 176,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "afterMenuOpen": {
+        "scrollY": 477,
+        "docked": "true",
+        "root": {
+          "left": 176,
+          "top": 6,
+          "right": 278,
+          "bottom": 58,
+          "width": 102,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 179,
+          "width": 390,
+          "height": 179
+        },
+        "saved": {
+          "version": 1,
+          "x": 176,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "afterMenuClose": {
+        "scrollY": 0,
+        "docked": "true",
+        "root": {
+          "left": 176,
+          "top": 6,
+          "right": 278,
+          "bottom": 58,
+          "width": 102,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 390,
+          "bottom": 66,
+          "width": 390,
+          "height": 66
+        },
+        "saved": {
+          "version": 1,
+          "x": 176,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "status": "PASS",
+      "elapsedSeconds": 0.485
+    },
+    {
+      "name": "default-news-scroll-dock-320",
+      "initial": {
+        "scrollY": 0,
+        "docked": "true",
+        "root": {
+          "left": 160,
+          "top": 6,
+          "right": 225.40625,
+          "bottom": 58,
+          "width": 65.40625,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 320,
+          "bottom": 66,
+          "width": 320,
+          "height": 66
+        },
+        "saved": {
+          "version": 1,
+          "x": 160,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "afterQueryScroll": {
+        "scrollY": 848,
+        "docked": "true",
+        "root": {
+          "left": 160,
+          "top": 6,
+          "right": 225.40625,
+          "bottom": 58,
+          "width": 65.40625,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 320,
+          "bottom": 66,
+          "width": 320,
+          "height": 66
+        },
+        "saved": {
+          "version": 1,
+          "x": 160,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "afterMenuOpen": {
+        "scrollY": 602,
+        "docked": "true",
+        "root": {
+          "left": 160,
+          "top": 6,
+          "right": 225.40625,
+          "bottom": 58,
+          "width": 65.40625,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 320,
+          "bottom": 225,
+          "width": 320,
+          "height": 225
+        },
+        "saved": {
+          "version": 1,
+          "x": 160,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "afterMenuClose": {
+        "scrollY": 38,
+        "docked": "true",
+        "root": {
+          "left": 160,
+          "top": 6,
+          "right": 225.40625,
+          "bottom": 58,
+          "width": 65.40625,
+          "height": 52
+        },
+        "header": {
+          "left": 0,
+          "top": 0,
+          "right": 320,
+          "bottom": 66,
+          "width": 320,
+          "height": 66
+        },
+        "saved": {
+          "version": 1,
+          "x": 160,
+          "y": 6,
+          "manual": false
+        },
+        "overlaps": []
+      },
+      "viewport": {
+        "width": 320,
+        "height": 800
+      },
+      "status": "PASS",
+      "elapsedSeconds": 0.64
+    }
+  ],
+  "summary": {
+    "status": "PASS",
+    "passed": 5,
+    "cases": 5
+  }
+}

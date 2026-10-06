@@ -25,7 +25,7 @@
             "props": {
               "authoringVersion": 1,
               "tag": "section",
-              "className": "wo002-detail-page live-visual-page",
+              "className": "wo002-detail-page live-visual-page support-help-page",
               "attributes": {
                 "data-companion-context": "support",
                 "data-companion-copy": "This page explains the current preview state. Guest website progress can persist locally, but account sync and a public support endpoint are not configured."
@@ -483,7 +483,7 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "section",
-                    "className": "wo002-detail-facts",
+                    "className": "wo002-detail-facts support-faq-grid",
                     "attributes": {
                       "aria-label": "Frequently asked questions"
                     },
@@ -496,8 +496,8 @@
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "detail-fact",
+                          "tag": "details",
+                          "className": "detail-fact support-faq",
                           "attributes": {
                             "id": "preview-states",
                             "data-support-article": "",
@@ -510,82 +510,127 @@
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.manifest-support.aa0322729f66.section-kicker",
-                              "type": "core.text",
+                              "id": "component.manifest-support.4e8cfc13e807.preview-states.summary",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
+                                "tag": "summary",
+                                "className": "support-faq-summary",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "GAMES",
-                                "text": "GAMES"
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.e4a2c488cb76.h2",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "What does PREVIEW mean?",
-                                "text": "What does PREVIEW mean?"
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.23c37c83bd4e.p",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "PREVIEW identifies an evaluation build or concept. It is not a public-re",
-                                "text": "PREVIEW identifies an evaluation build or concept. It is not a public-release label. The Play directory describes which entries can open and which remain held or concept-only."
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.cb53089af3d2.a",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Visit Play →",
-                                "href": "/play/",
+                                "layerName": "support-faq-summary",
+                                "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.manifest-support.c093164ee524.text",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "#text",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "text": "Visit Play ",
-                                      "layerName": "Text: Visit Play"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.manifest-support.033cbea57776.span",
+                                    "id": "component.manifest-support.aa0322729f66.section-kicker",
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
                                       "tag": "span",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "GAMES",
+                                      "text": "GAMES"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.e4a2c488cb76.h2",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
                                       "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "What does PREVIEW mean?",
+                                      "text": "What does PREVIEW mean?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.4e8cfc13e807.preview-states.toggle-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "support-faq-icon",
                                       "attributes": {
                                         "aria-hidden": "true"
                                       },
                                       "style": "",
-                                      "layerName": "→",
-                                      "text": "→"
+                                      "layerName": "FAQ disclosure icon",
+                                      "text": ""
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.4e8cfc13e807.preview-states.answer",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "support-faq-answer",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "support-faq-answer",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.23c37c83bd4e.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "PREVIEW identifies an evaluation build or concept. It is not a public-re",
+                                      "text": "PREVIEW identifies an evaluation build or concept. It is not a public-release label. The Play directory describes which entries can open and which remain held or concept-only."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.cb53089af3d2.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Visit Play →",
+                                      "href": "/play/",
+                                      "children": [
+                                        {
+                                          "id": "component.manifest-support.c093164ee524.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Visit Play ",
+                                            "layerName": "Text: Visit Play"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.manifest-support.033cbea57776.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -599,8 +644,8 @@
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "detail-fact",
+                          "tag": "details",
+                          "className": "detail-fact support-faq",
                           "attributes": {
                             "id": "guest-progress",
                             "data-support-article": "",
@@ -611,82 +656,127 @@
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.manifest-support.c3f1b2e96149.section-kicker",
-                              "type": "core.text",
+                              "id": "component.manifest-support.3cde7a71a97e.guest-progress.summary",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
+                                "tag": "summary",
+                                "className": "support-faq-summary",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "PROGRESS",
-                                "text": "PROGRESS"
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.cec331d899dc.h2",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Where is guest progress saved?",
-                                "text": "Where is guest progress saved?"
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.2eb74de5f566.p",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Feast Pass progress can persist locally on this browser. Sign-in and cro",
-                                "text": "Feast Pass progress can persist locally on this browser. Sign-in and cross-device sync are not available."
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.6077e85ef434.a",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Feast Pass status →",
-                                "href": "/feast-pass/",
+                                "layerName": "support-faq-summary",
+                                "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.manifest-support.26e5f5ddd0e1.text",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "#text",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "text": "Feast Pass status ",
-                                      "layerName": "Text: Feast Pass status"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.manifest-support.a64ee2200863.span",
+                                    "id": "component.manifest-support.c3f1b2e96149.section-kicker",
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
                                       "tag": "span",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "PROGRESS",
+                                      "text": "PROGRESS"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.cec331d899dc.h2",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
                                       "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Where is guest progress saved?",
+                                      "text": "Where is guest progress saved?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.3cde7a71a97e.guest-progress.toggle-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "support-faq-icon",
                                       "attributes": {
                                         "aria-hidden": "true"
                                       },
                                       "style": "",
-                                      "layerName": "→",
-                                      "text": "→"
+                                      "layerName": "FAQ disclosure icon",
+                                      "text": ""
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.manifest-support.3cde7a71a97e.guest-progress.answer",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "support-faq-answer",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "support-faq-answer",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.2eb74de5f566.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Feast Pass progress can persist locally on this browser. Sign-in and cro",
+                                      "text": "Feast Pass progress can persist locally on this browser. Sign-in and cross-device sync are not available."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.6077e85ef434.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Feast Pass status →",
+                                      "href": "/feast-pass/",
+                                      "children": [
+                                        {
+                                          "id": "component.manifest-support.26e5f5ddd0e1.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Feast Pass status ",
+                                            "layerName": "Text: Feast Pass status"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.manifest-support.a64ee2200863.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -700,8 +790,8 @@
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "detail-fact",
+                          "tag": "details",
+                          "className": "detail-fact support-faq",
                           "attributes": {
                             "id": "app-status",
                             "data-support-article": "",
@@ -712,56 +802,101 @@
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.manifest-support.b190229aed7a.section-kicker",
-                              "type": "core.text",
+                              "id": "component.manifest-support.31cfb754b89b.app-status.summary",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
+                                "tag": "summary",
+                                "className": "support-faq-summary",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "APP",
-                                "text": "APP"
+                                "layerName": "support-faq-summary",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.b190229aed7a.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "APP",
+                                      "text": "APP"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.a3795fc95921.h2",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Where can I get the mobile app?",
+                                      "text": "Where can I get the mobile app?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.31cfb754b89b.app-status.toggle-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "support-faq-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "FAQ disclosure icon",
+                                      "text": ""
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.manifest-support.a3795fc95921.h2",
-                              "type": "core.text",
+                              "id": "component.manifest-support.31cfb754b89b.app-status.answer",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "",
+                                "tag": "div",
+                                "className": "support-faq-answer",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Where can I get the mobile app?",
-                                "text": "Where can I get the mobile app?"
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.896db622d665.p",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "The App page explains current availability. Verified App Store and Googl",
-                                "text": "The App page explains current availability. Verified App Store and Google Play destinations are not configured on this preview."
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.2a919297a877.a",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "App availability",
-                                "href": "/app/",
-                                "label": "App availability"
+                                "layerName": "support-faq-answer",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.896db622d665.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "The App page explains current availability. Verified App Store and Googl",
+                                      "text": "The App page explains current availability. Verified App Store and Google Play destinations are not configured on this preview."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.2a919297a877.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "App availability",
+                                      "href": "/app/",
+                                      "label": "App availability"
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -772,8 +907,8 @@
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "detail-fact",
+                          "tag": "details",
+                          "className": "detail-fact support-faq",
                           "attributes": {
                             "id": "contact-status",
                             "data-support-article": "",
@@ -784,56 +919,101 @@
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.manifest-support.8b31cc52540a.section-kicker",
-                              "type": "core.text",
+                              "id": "component.manifest-support.27580cf735d5.contact-status.summary",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
+                                "tag": "summary",
+                                "className": "support-faq-summary",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "CONTACT",
-                                "text": "CONTACT"
+                                "layerName": "support-faq-summary",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.8b31cc52540a.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "CONTACT",
+                                      "text": "CONTACT"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.d29cb61aa84d.h2",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "How do I contact support?",
+                                      "text": "How do I contact support?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.27580cf735d5.contact-status.toggle-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "support-faq-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "FAQ disclosure icon",
+                                      "text": ""
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.manifest-support.d29cb61aa84d.h2",
-                              "type": "core.text",
+                              "id": "component.manifest-support.27580cf735d5.contact-status.answer",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "",
+                                "tag": "div",
+                                "className": "support-faq-answer",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "How do I contact support?",
-                                "text": "How do I contact support?"
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.1eec92b12881.p",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "The Contact page is a non-submitting preview until a verified public mai",
-                                "text": "The Contact page is a non-submitting preview until a verified public mailbox or endpoint is configured."
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.23c6c93319c0.a",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Contact & feedback preview",
-                                "href": "/contact/",
-                                "label": "Contact & feedback preview"
+                                "layerName": "support-faq-answer",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.1eec92b12881.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "The Contact page is a non-submitting preview until a verified public mai",
+                                      "text": "The Contact page is a non-submitting preview until a verified public mailbox or endpoint is configured."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.23c6c93319c0.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Contact & feedback preview",
+                                      "href": "/contact/",
+                                      "label": "Contact & feedback preview"
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -844,8 +1024,8 @@
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "detail-fact",
+                          "tag": "details",
+                          "className": "detail-fact support-faq",
                           "attributes": {
                             "id": "legal-status",
                             "data-support-article": "",
@@ -856,56 +1036,101 @@
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.manifest-support.a06e44df4f29.section-kicker",
-                              "type": "core.text",
+                              "id": "component.manifest-support.36b4b62c3ddb.legal-status.summary",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
+                                "tag": "summary",
+                                "className": "support-faq-summary",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "LEGAL",
-                                "text": "LEGAL"
+                                "layerName": "support-faq-summary",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.a06e44df4f29.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "LEGAL",
+                                      "text": "LEGAL"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.f3c627473b4d.h2",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Where are Privacy Policy and Terms?",
+                                      "text": "Where are Privacy Policy and Terms?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.36b4b62c3ddb.legal-status.toggle-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "support-faq-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "FAQ disclosure icon",
+                                      "text": ""
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.manifest-support.f3c627473b4d.h2",
-                              "type": "core.text",
+                              "id": "component.manifest-support.36b4b62c3ddb.legal-status.answer",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "",
+                                "tag": "div",
+                                "className": "support-faq-answer",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Where are Privacy Policy and Terms?",
-                                "text": "Where are Privacy Policy and Terms?"
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.4d490a9d8294.p",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "The Legal page records publication status. Approved Privacy Policy and T",
-                                "text": "The Legal page records publication status. Approved Privacy Policy and Terms text is not published yet."
-                              }
-                            },
-                            {
-                              "id": "component.manifest-support.6108d0230980.a",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Legal status",
-                                "href": "/legal/",
-                                "label": "Legal status"
+                                "layerName": "support-faq-answer",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.manifest-support.4d490a9d8294.p",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "The Legal page records publication status. Approved Privacy Policy and T",
+                                      "text": "The Legal page records publication status. Approved Privacy Policy and Terms text is not published yet."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.manifest-support.6108d0230980.a",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Legal status",
+                                      "href": "/legal/",
+                                      "label": "Legal status"
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -916,8 +1141,8 @@
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "article",
-                          "className": "detail-fact",
+                          "tag": "details",
+                          "className": "detail-fact support-faq",
                           "attributes": {
                             "id": "toadal-helper",
                             "data-support-article": "",
@@ -930,55 +1155,100 @@
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.production-core.support.7",
-                              "type": "core.text",
+                              "id": "component.production-core.support.11.summary",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
+                                "tag": "summary",
+                                "className": "support-faq-summary",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "TOADAL HELPER",
-                                "text": "TOADAL HELPER"
+                                "layerName": "support-faq-summary",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.support.7",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "TOADAL HELPER",
+                                      "text": "TOADAL HELPER"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.support.8",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "How do I move or hide Toadal?",
+                                      "text": "How do I move or hide Toadal?"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.support.11.toggle-icon",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "support-faq-icon",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "FAQ disclosure icon",
+                                      "text": ""
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.production-core.support.8",
-                              "type": "core.text",
+                              "id": "component.production-core.support.11.answer",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "",
+                                "tag": "div",
+                                "className": "support-faq-answer",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "How do I move or hide Toadal?",
-                                "text": "How do I move or hide Toadal?"
-                              }
-                            },
-                            {
-                              "id": "component.production-core.support.9",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Tap Toadal to open or minimize his tip. Drag him to move; double-tap to hide him. You can also choose Hide Toadal in his tip, then use Show Toadal in the footer to bring him back.",
-                                "text": "Tap Toadal to open or minimize his tip. Drag him to move; double-tap to hide him. You can also choose Hide Toadal in his tip, then use Show Toadal in the footer to bring him back."
-                              }
-                            },
-                            {
-                              "id": "component.production-core.support.10",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "With a keyboard, focus Toadal and press Enter or Space to open his tip. Use the arrow keys to move him, and Tab to reach the Hide Toadal control. Your choice stays on this browser.",
-                                "text": "With a keyboard, focus Toadal and press Enter or Space to open his tip. Use the arrow keys to move him, and Tab to reach the Hide Toadal control. Your choice stays on this browser."
+                                "layerName": "support-faq-answer",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.support.9",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Tap Toadal to open or minimize his tip. Drag him to move; double-tap to hide him. You can also choose Hide Toadal in his tip, then use Show Toadal in the footer to bring him back.",
+                                      "text": "Tap Toadal to open or minimize his tip. Drag him to move; double-tap to hide him. You can also choose Hide Toadal in his tip, then use Show Toadal in the footer to bring him back."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.support.10",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "With a keyboard, focus Toadal and press Enter or Space to open his tip. Use the arrow keys to move him, and Tab to reach the Hide Toadal control. Your choice stays on this browser.",
+                                      "text": "With a keyboard, focus Toadal and press Enter or Space to open his tip. Use the arrow keys to move him, and Tab to reach the Hide Toadal control. Your choice stays on this browser."
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
