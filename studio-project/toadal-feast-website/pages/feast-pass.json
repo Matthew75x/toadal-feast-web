@@ -827,6 +827,747 @@
                   }
                 },
                 {
+                  "id": "component.feast-pass.game-records.section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "pass-games-title"
+                    },
+                    "style": "scroll-margin-top:100px;",
+                    "layerName": "section",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.feast-pass.game-records.heading",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h2",
+                          "className": "",
+                          "attributes": {
+                            "id": "pass-games-title"
+                          },
+                          "style": "",
+                          "layerName": "Your games",
+                          "text": "Your games"
+                        }
+                      },
+                      {
+                        "id": "component.feast-pass.game-records.intro",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Your games source and next actions",
+                          "text": "Game results are separate from website XP. Open a listing or local history; account sync is not connected."
+                        }
+                      },
+                      {
+                        "id": "component.feast-pass.game-records.cards",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr));gap:16px;align-items:start;",
+                          "layerName": "cards",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.feast-pass.game-records.wicked-bites",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "progression-section",
+                                "attributes": {
+                                  "data-game-record": "wicked-bites",
+                                  "aria-labelledby": "pass-game-wicked-bites"
+                                },
+                                "style": "min-width:0;margin:0;overflow-wrap:anywhere;scroll-margin-top:100px;",
+                                "layerName": "wicked bites",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-name",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "pass-game-wicked-bites"
+                                      },
+                                      "style": "",
+                                      "layerName": "Wicked Bites",
+                                      "text": "Wicked Bites"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-availability",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Existing browser preview",
+                                      "text": "Existing browser preview"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-state",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "state",
+                                        "role": "status",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Loading local record…",
+                                      "text": "Loading local record…"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-metrics",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dl",
+                                      "className": "progression-stat-grid",
+                                      "attributes": {},
+                                      "style": "grid-template-columns:repeat(2,minmax(0,1fr));",
+                                      "layerName": "wicked bites metrics",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-best",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "progression-stat",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "wicked bites best",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.feast-pass.game-records.wicked-bites-best-label",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dt",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Personal best",
+                                                  "text": "Personal best"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.feast-pass.game-records.wicked-bites-best-value",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dd",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-game-record-field": "best"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "—",
+                                                  "text": "—"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-latest",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "progression-stat",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "wicked bites latest",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.feast-pass.game-records.wicked-bites-latest-label",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dt",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Latest result",
+                                                  "text": "Latest result"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.feast-pass.game-records.wicked-bites-latest-value",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dd",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-game-record-field": "latest"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "—",
+                                                  "text": "—"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-recent-count",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "progression-stat",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "wicked bites recent count",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.feast-pass.game-records.wicked-bites-recent-count-label",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dt",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Recent saved results",
+                                                  "text": "Recent saved results"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.feast-pass.game-records.wicked-bites-recent-count-value",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dd",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-game-record-field": "recent-count"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "—",
+                                                  "text": "—"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-recorded",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "wicked bites recorded",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-recorded-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Last recorded: ",
+                                            "text": "Last recorded: "
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-time",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "time",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-game-record-field": "recorded-at"
+                                            },
+                                            "style": "",
+                                            "layerName": "Not available",
+                                            "text": "Not available"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-detail",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "detail"
+                                      },
+                                      "style": "",
+                                      "layerName": "No score or completion percentage is inferred.",
+                                      "text": "No score or completion percentage is inferred."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-source",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Source: browser-local preview scores. Not verified accomplishments, rewards or global rankings.",
+                                      "text": "Source: browser-local preview scores. Not verified accomplishments, rewards or global rankings."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.wicked-bites-actions",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "feast-journey-links",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "wicked bites actions",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-listing",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "min-height:44px;",
+                                            "layerName": "wicked bites listing",
+                                            "label": "Open preview details",
+                                            "href": "/games/wicked-bites/"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast-pass.game-records.wicked-bites-scores",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "min-height:44px;",
+                                            "layerName": "wicked bites scores",
+                                            "label": "View local score history",
+                                            "href": "/leaderboards/?game=wicked-bites"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.feast-pass.game-records.claw-feed-gulper",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "progression-section",
+                                "attributes": {
+                                  "data-game-record": "claw-feed-gulper",
+                                  "aria-labelledby": "pass-game-claw-feed-gulper"
+                                },
+                                "style": "min-width:0;margin:0;overflow-wrap:anywhere;scroll-margin-top:100px;",
+                                "layerName": "claw feed gulper",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.feast-pass.game-records.claw-feed-gulper-name",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "pass-game-claw-feed-gulper"
+                                      },
+                                      "style": "",
+                                      "layerName": "CLAW: Feed Gulper",
+                                      "text": "CLAW: Feed Gulper"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.claw-feed-gulper-availability",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Launch held",
+                                      "text": "Launch held"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.claw-feed-gulper-state",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "state",
+                                        "role": "status",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Website score feed not connected",
+                                      "text": "Website score feed not connected"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.claw-feed-gulper-detail",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "detail"
+                                      },
+                                      "style": "",
+                                      "layerName": "No score or completion percentage is inferred.",
+                                      "text": "No score or completion percentage is inferred."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.claw-feed-gulper-source",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Source: the website game listing. No score feed or connected progression is enabled.",
+                                      "text": "Source: the website game listing. No score feed or connected progression is enabled."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.claw-feed-gulper-actions",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "feast-journey-links",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "claw feed gulper actions",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.claw-feed-gulper-listing",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "min-height:44px;",
+                                            "layerName": "claw feed gulper listing",
+                                            "label": "View game status",
+                                            "href": "/games/claw-feed-gulper/"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.feast-pass.game-records.froggy-fruity-bash",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "progression-section",
+                                "attributes": {
+                                  "data-game-record": "froggy-fruity-bash",
+                                  "aria-labelledby": "pass-game-froggy-fruity-bash"
+                                },
+                                "style": "min-width:0;margin:0;overflow-wrap:anywhere;scroll-margin-top:100px;",
+                                "layerName": "froggy fruity bash",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.feast-pass.game-records.froggy-fruity-bash-name",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "pass-game-froggy-fruity-bash"
+                                      },
+                                      "style": "",
+                                      "layerName": "Froggy Fruity Bash",
+                                      "text": "Froggy Fruity Bash"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.froggy-fruity-bash-availability",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Preview listing only",
+                                      "text": "Preview listing only"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.froggy-fruity-bash-state",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "state",
+                                        "role": "status",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Website score feed not connected",
+                                      "text": "Website score feed not connected"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.froggy-fruity-bash-detail",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "detail"
+                                      },
+                                      "style": "",
+                                      "layerName": "No score or completion percentage is inferred.",
+                                      "text": "No score or completion percentage is inferred."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.froggy-fruity-bash-source",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Source: the website game listing. No score feed or connected progression is enabled.",
+                                      "text": "Source: the website game listing. No score feed or connected progression is enabled."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.froggy-fruity-bash-actions",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "feast-journey-links",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "froggy fruity bash actions",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.froggy-fruity-bash-listing",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "min-height:44px;",
+                                            "layerName": "froggy fruity bash listing",
+                                            "label": "View game status",
+                                            "href": "/games/froggy-fruity-bash/"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.feast-pass.game-records.toadal-tower-defense",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "article",
+                                "className": "progression-section",
+                                "attributes": {
+                                  "data-game-record": "toadal-tower-defense",
+                                  "aria-labelledby": "pass-game-toadal-tower-defense"
+                                },
+                                "style": "min-width:0;margin:0;overflow-wrap:anywhere;scroll-margin-top:100px;",
+                                "layerName": "toadal tower defense",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.feast-pass.game-records.toadal-tower-defense-name",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "pass-game-toadal-tower-defense"
+                                      },
+                                      "style": "",
+                                      "layerName": "TOADAL Tower Defense",
+                                      "text": "TOADAL Tower Defense"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.toadal-tower-defense-availability",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Preview listing only",
+                                      "text": "Preview listing only"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.toadal-tower-defense-state",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "state",
+                                        "role": "status",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Website score feed not connected",
+                                      "text": "Website score feed not connected"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.toadal-tower-defense-detail",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-record-field": "detail"
+                                      },
+                                      "style": "",
+                                      "layerName": "No score or completion percentage is inferred.",
+                                      "text": "No score or completion percentage is inferred."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.toadal-tower-defense-source",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Source: the website game listing. No score feed or connected progression is enabled.",
+                                      "text": "Source: the website game listing. No score feed or connected progression is enabled."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.feast-pass.game-records.toadal-tower-defense-actions",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "feast-journey-links",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "toadal tower defense actions",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast-pass.game-records.toadal-tower-defense-listing",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary",
+                                            "attributes": {},
+                                            "style": "min-height:44px;",
+                                            "layerName": "toadal tower defense listing",
+                                            "label": "View game status",
+                                            "href": "/games/toadal-tower-defense/"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
                   "id": "component.guest-feast-pass.rich-text.4c8066fa3069.progression-section-prog",
                   "type": "layout.container",
                   "props": {
