@@ -144,6 +144,30 @@
     }
     gameSelect.addEventListener('change', render);
     scopeSelect.addEventListener('change', render);
+    // Guest progression owns storage rehydration. Paint after its lifecycle
+    // handlers have read current storage, including when this tab is restored.
+    let renderQueued = false;
+    function scheduleRender() {
+      if (renderQueued) return;
+      renderQueued = true;
+      Promise.resolve().then(() => { renderQueued = false; render(); });
+    }
+    if (typeof root.addEventListener === 'function') {
+      let browserStorage;
+      try { browserStorage = root.localStorage; } catch (_) { browserStorage = undefined; }
+      const profileKey = root.ToadalGuestProgression && root.ToadalGuestProgression.KEYS && root.ToadalGuestProgression.KEYS.profile;
+      root.addEventListener('storage', event => {
+        if (browserStorage && event.storageArea === browserStorage &&
+            (event.key === null || (profileKey && event.key === profileKey))) scheduleRender();
+      });
+      root.addEventListener('focus', scheduleRender);
+      root.addEventListener('pageshow', event => { if (event.persisted) scheduleRender(); });
+      if (typeof page.ownerDocument.addEventListener === 'function') {
+        page.ownerDocument.addEventListener('visibilitychange', () => {
+          if (page.ownerDocument.visibilityState === 'visible') scheduleRender();
+        });
+      }
+    }
     render();
   }
 

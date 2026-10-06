@@ -32,11 +32,13 @@
     var status=document.querySelector('[data-search-status]');
     var suggestions=Array.prototype.slice.call(document.querySelectorAll('[data-search-suggestion]'));
     if(!input||!category||!results||!status) return;
-    var index=[];
+    var index=[], indexState='loading';
     function routeLink(route){var a=document.createElement('a');a.href=absoluteRoute(route);return a;}
     function render(){
       var q=input.value.trim(), group=category.value;
       results.replaceChildren();
+      if(indexState==='loading'){status.textContent='Loading the local search index…';return;}
+      if(indexState==='unavailable'){status.textContent='Local search index is unavailable. Use the navigation or Support page instead.';return;}
       if(!q){status.textContent='Type a word or choose a suggestion. Suggestions are editorial shortcuts, not popularity rankings.';return;}
       var matches=index.map(function(e){return {e:e,s:score(e,q)};}).filter(function(x){return x.s>0&&(group==='All'||x.e.group===group);}).sort(function(a,b){return b.s-a.s||a.e.title.localeCompare(b.e.title);}).slice(0,40);
       status.textContent=matches.length?matches.length+' local result'+(matches.length===1?'':'s')+' for “'+q+'”.':'No local results for “'+q+'”.';
@@ -54,7 +56,7 @@
     category.addEventListener('change',function(){syncUrl();render();});
     suggestions.forEach(function(button){button.addEventListener('click',function(){input.value=button.getAttribute('data-search-suggestion')||'';category.value='All';syncUrl();render();input.focus();});});
     var params=new URLSearchParams(location.search); input.value=params.get('q')||''; var requested=params.get('category'); if(requested&&Array.from(category.options).some(function(o){return o.value===requested;}))category.value=requested;
-    fetch(baseRoot()+'/assets/data/local-search-index.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('search-index-'+r.status);return r.json();}).then(function(data){index=Array.isArray(data.entries)?data.entries:[];render();}).catch(function(){status.textContent='Local search index is unavailable. Use the navigation or Support page instead.';});
+    fetch(baseRoot()+'/assets/data/local-search-index.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error('search-index-'+r.status);return r.json();}).then(function(data){index=Array.isArray(data.entries)?data.entries:[];indexState='ready';render();}).catch(function(){indexState='unavailable';render();});
   }
   function initSupportSearch(){
     var input=document.querySelector('[data-support-search]');if(!input)return;
