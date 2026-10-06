@@ -698,27 +698,16 @@
           'route-visits': state.discoveries.filter(item => item.routeVisit).length,
           'character-discoveries': state.characterDiscoveries.length, 'selected-title': title ? title.title : (state.profile.selectedTitle || 'No title selected') };
         page.querySelectorAll('[data-progression-stat]').forEach(el => { const key = el.getAttribute('data-progression-stat'); if (Object.prototype.hasOwnProperty.call(values, key)) el.textContent = String(values[key]); });
-        const questGroups = { daily: 'Daily', weekly: 'Weekly', exploration: 'Exploration', game: 'Game', story: 'Story' };
-        const questEmpty = {
-          weekly: 'No weekly quests are configured. This preview has no weekly timer or reset.',
-          game: 'No browser game quests are configured from published gameplay results.',
-          story: 'No story quests are configured; unpublished chapters are not counted.'
-        };
-        const questItems = state.quests.map(q => {
-          const reward = [];
-          if (Number.isFinite(q.reward && q.reward.xp) && q.reward.xp > 0) reward.push(q.reward.xp + ' XP');
-          if (Number.isFinite(q.reward && q.reward.sparks) && q.reward.sparks > 0) reward.push(q.reward.sparks + ' Sparks');
-          const rewardText = reward.length ? ' · Reward: ' + reward.join(', ') : '';
-          return { group: q.group || (q.dailyCheckIn ? 'daily' : 'exploration'), title: q.title, detail: q.description + ' ' + q.progress + '/' + q.target + rewardText + (q.complete ? (q.dailyCheckIn ? ' · Claimed today' : (q.claimedAt ? ' · Reward claimed' : ' · Complete')) : ''), id: q.id, href: q.href, button: q.complete && !q.claimedAt && !q.dailyCheckIn ? 'Claim quest reward' : (q.dailyCheckIn && !q.complete ? 'Open daily check-in' : null) };
-        });
-        Object.keys(questGroups).forEach(group => {
-          if (!questItems.some(item => item.group === group) && questEmpty[group]) questItems.push({ group, title: 'No active quests', detail: questEmpty[group], empty: true });
-        });
-        questItems.sort((a, b) => Object.keys(questGroups).indexOf(a.group) - Object.keys(questGroups).indexOf(b.group));
-        renderList(page, '[data-progression-quest-list]', questItems, id => {
-          if (id === 'daily-check-in') { if (root && root.location) root.location.href = siteHref(document, '/feast-pass/#daily-reward-title'); return; }
-          const result = store.claimQuest(id); setStatus(result.ok ? 'Quest reward claimed.' : result.reason === 'already-claimed' ? 'This quest reward was already claimed.' : 'Quest reward is not available yet.'); render();
-        });
+        renderQuestJourney(page, state, id => {
+          const result = store.claimQuest(id);
+          render();
+          // The operation result follows rendering so a storage warning cannot
+          // turn an unsuccessful claim into an apparent success.
+          setStatus(result.ok ? 'Quest reward claimed in this browser.' :
+            result.reason === 'already-claimed' ? 'This quest reward was already claimed. No additional reward was granted.' :
+            result.reason === 'incomplete' ? 'This activity is not complete yet. No reward was claimed.' :
+            'Quest reward could not be saved. Check browser storage and retry; no successful claim is being reported.');
+        }, root);
         const rewards = state.rewards.map(r => ({ id: r.id, title: r.title || r.name || r.id, detail: (r.description || 'Configured reward') + ' · Level ' + r.level + ' · Website-local, non-transferable · ' + (r.claimed ? 'Claimed' : r.unlocked ? 'Ready to claim' : 'Locked'), button: r.claimed ? null : r.unlocked ? 'Claim locally' : null }));
         const milestones = state.milestones.map(m => ({ title: m.title, detail: 'Level ' + m.level + ' milestone · ' + (m.unlocked ? 'Reached' : 'Not reached yet') + ' · No item, entitlement, or transfer is included.' }));
         renderList(page, '[data-progression-reward-list]', rewards.concat(milestones), id => {
@@ -888,6 +877,195 @@
     }
   }
 
+  // Presentation only. The existing store remains the sole quest/claim authority.
+  const QUEST_FILTERS = Object.freeze(['all', 'active', 'ready', 'claimed']);
+  function questDestination(quest, definitions) {
+    const href = quest && (quest.href || quest.route);
+    if (typeof href !== 'string' || !/^\/(?!\/)/.test(href) || /[\\\s%?]/.test(href)) return null;
+    const parts = href.split('#');
+    if (parts.length > 2 || (parts.length === 2 && !/^[A-Za-z][A-Za-z0-9_.:-]*$/.test(parts[1]))) return null;
+    const routes = ['/', ...((definitions && definitions.knownSiteRoutes) || [])];
+    return routes.includes(parts[0]) ? href : null;
+  }
+  function questJourneyView(snapshot, definitions = defaultDefinitions) {
+    const storage = snapshot && snapshot.storage;
+    const unavailable = reason => ({
+      available: false, reason, rows: [], counts: { all: null, active: null, ready: null, claimed: null },
+      next: { kind: 'unavailable', title: 'Quest progress is unavailable',
+        description: reason === 'temporary'
+          ? 'This tab cannot read saved browser progress. A multi-page quest journey cannot be retained here.'
+          : 'Quest progress cannot be read safely. No empty or completed state is substituted, and stored records are left untouched.',
+        label: 'Open Support', href: '/support/' }
+    });
+    if (!storage || !Array.isArray(storage.readOnlyKeys) || !Array.isArray(snapshot.quests)) return unavailable('invalid');
+    if (storage.scope !== 'browser') return unavailable('temporary');
+    if ([KEYS.quests, KEYS.pass].some(key => storage.readOnlyKeys.includes(key))) return unavailable('read-only');
+    const rows = [];
+    const ids = new Set();
+    for (const quest of snapshot.quests) {
+      if (!quest || typeof quest.id !== 'string' || !/^[a-z][a-z0-9-]{0,79}$/.test(quest.id) || ids.has(quest.id)) return unavailable('invalid');
+      ids.add(quest.id);
+      const daily = quest.dailyCheckIn === true;
+      if (daily && !snapshot.daily?.enabled) continue;
+      if (!Number.isSafeInteger(quest.progress) || quest.progress < 0 || !Number.isSafeInteger(quest.target) || quest.target <= 0 ||
+          typeof quest.complete !== 'boolean' || quest.complete !== (quest.progress >= quest.target)) return unavailable('invalid');
+      if (!daily && quest.claimedAt && (typeof quest.claimedAt !== 'string' || Number.isNaN(Date.parse(quest.claimedAt)) || new Date(quest.claimedAt).toISOString() !== quest.claimedAt)) return unavailable('invalid');
+      if (daily && snapshot.daily.claimed !== quest.complete) return unavailable('invalid');
+      const claimed = daily ? snapshot.daily.claimed === true : Boolean(quest.claimedAt);
+      if (claimed && !quest.complete) return unavailable('invalid');
+      const state = claimed ? 'claimed' : quest.complete ? 'ready' : 'active';
+      const rewards = [];
+      for (const [key, label] of [['xp', 'XP'], ['sparks', 'Sparks']]) {
+        if (Number.isFinite(quest.reward?.[key]) && quest.reward[key] > 0) rewards.push(Math.floor(quest.reward[key]) + ' ' + label);
+      }
+      rows.push({ id: quest.id, title: quest.title || quest.id, description: quest.description || '',
+        group: quest.group || 'exploration', state, daily, progress: quest.progress, target: quest.target,
+        href: questDestination(quest, definitions), rewardText: rewards.length ? rewards.join(', ') : '',
+        claimable: !daily && state === 'ready' });
+    }
+    const counts = { all: rows.length, active: 0, ready: 0, claimed: 0 };
+    rows.forEach(row => counts[row.state]++);
+    const ready = rows.find(row => row.claimable);
+    const active = rows.find(row => row.state === 'active' && !row.daily && row.href);
+    const daily = rows.find(row => row.state === 'active' && row.daily && row.href);
+    let next;
+    if (ready) next = { kind: 'ready', questId: ready.id, title: ready.title,
+      description: 'Activity complete. Open the quest board to claim its configured website-local reward.',
+      label: 'Review ready rewards', href: '/feast-pass/quests/?view=ready' };
+    else if (active) next = { kind: 'active', questId: active.id, title: active.title,
+      description: active.description + ' Return to Quests when it is complete; opening a link does not claim a reward.',
+      label: active.group === 'exploration' ? 'Open activity' : 'View activity', href: active.href };
+    else if (daily) next = { kind: 'daily', questId: daily.id, title: 'Daily check-in',
+      description: 'The current UTC-day check-in is available. Open its existing claim control in Feast Pass.',
+      label: 'Open daily check-in', href: daily.href };
+    else if (counts.active || counts.ready) next = { kind: 'no-destination', title: 'An activity has no available destination',
+      description: 'Your existing quest state is retained. No unavailable game or unpublished story is opened.',
+      label: 'View quest board', href: '/feast-pass/quests/' };
+    else next = { kind: 'complete', title: rows.length ? 'All current quest rewards claimed' : 'No quests are configured',
+      description: rows.length ? 'Your configured website activities are claimed for this period. There is no extra completion reward. Explore the current game listings next.' : 'No new activities or rewards are invented. Existing game listings remain available.',
+      label: 'Browse game listings', href: '/play/' };
+    return { available: true, reason: null, rows, counts, next };
+  }
+  function renderQuestJourney(page, snapshot, onClaim, root) {
+    const list = page.querySelector('[data-progression-quest-list]');
+    const nextCard = page.querySelector('[data-quest-next]');
+    if (!list && !nextCard) return;
+    const view = questJourneyView(snapshot);
+    if (nextCard) {
+      nextCard.setAttribute('data-quest-next-state', view.next.kind);
+      for (const key of ['title', 'description']) {
+        const node = nextCard.querySelector('[data-quest-next-' + key + ']');
+        if (node && node.textContent !== view.next[key]) node.textContent = view.next[key];
+      }
+      const link = nextCard.querySelector('[data-quest-next-link]');
+      if (link) {
+        link.textContent = view.next.label;
+        link.setAttribute('href', siteHref(page.ownerDocument, view.next.href));
+      }
+    }
+    if (!list) return;
+    const document = page.ownerDocument;
+    const priorFocus = document.activeElement;
+    const filterFromLocation = () => {
+      try { const value = new URL(root.location.href).searchParams.get('view'); return QUEST_FILTERS.includes(value) ? value : 'all'; }
+      catch (_) { return 'all'; }
+    };
+    if (!page.__questJourneyUI) {
+      while (list.firstChild) list.removeChild(list.firstChild);
+      list.setAttribute('role', 'list');
+      const ui = page.__questJourneyUI = { rows: new Map(), filter: filterFromLocation(), snapshot, onClaim };
+      page.querySelectorAll('[data-quest-filter]').forEach(button => {
+        const filter = button.getAttribute('data-quest-filter');
+        if (!QUEST_FILTERS.includes(filter)) return;
+        button.addEventListener('click', () => {
+          ui.filter = filter;
+          try { const url = new URL(root.location.href); url.searchParams.set('view', filter); root.history.replaceState(root.history.state, '', url.href); }
+          catch (_) { /* Filtering remains usable when URL history is unavailable. */ }
+          renderQuestJourney(page, ui.snapshot, ui.onClaim, root);
+        });
+      });
+      if (root && typeof root.addEventListener === 'function') root.addEventListener('popstate', () => {
+        ui.filter = filterFromLocation(); renderQuestJourney(page, ui.snapshot, ui.onClaim, root);
+      });
+    }
+    const ui = page.__questJourneyUI;
+    ui.snapshot = snapshot; ui.onClaim = onClaim;
+    const filterLabels = { all: 'All quests', active: 'Active', ready: 'Ready to claim', claimed: 'Claimed' };
+    page.querySelectorAll('[data-quest-filter]').forEach(button => {
+      const filter = button.getAttribute('data-quest-filter');
+      if (!QUEST_FILTERS.includes(filter)) return;
+      button.setAttribute('aria-pressed', String(ui.filter === filter));
+      if (!button.__questLabel) button.__questLabel = button.textContent;
+      const count = view.available ? String(view.counts[filter]) : '—';
+      button.setAttribute('data-quest-count', count);
+      button.textContent = button.__questLabel + ' (' + count + ')';
+    });
+    const empty = page.querySelector('[data-quest-empty]');
+    const summary = page.querySelector('[data-quest-summary]');
+    const shown = view.rows.filter(row => ui.filter === 'all' || row.state === ui.filter);
+    if (summary) {
+      const message = view.available ? filterLabels[ui.filter] + ': ' + shown.length + ' of ' + view.counts.all + ' configured activities.' : 'Quest status unavailable; stored progress is not treated as empty.';
+      if (summary.textContent !== message) summary.textContent = message;
+    }
+    if (empty) {
+      empty.hidden = view.available && shown.length > 0;
+      const message = !view.available ? view.next.description : {
+        all: 'No quests are configured. No gameplay or story completion is inferred.',
+        active: 'No active quests. Check Ready to claim for completed activities.',
+        ready: 'No quest rewards are ready to claim. Open an active activity to continue.',
+        claimed: 'No quest rewards claimed in this view yet. Completed activities become claimable first.'
+      }[ui.filter];
+      if (empty.textContent !== message) empty.textContent = message;
+    }
+    const stateLabels = { active: 'Active', ready: 'Ready to claim', claimed: 'Claimed' };
+    const groupLabels = { daily: 'Daily', weekly: 'Weekly', exploration: 'Exploration', game: 'Game', story: 'Story' };
+    const visible = new Set(shown.map(row => row.id));
+    const valid = new Set(view.rows.map(row => row.id));
+    for (const row of view.rows) {
+      let item = ui.rows.get(row.id);
+      if (!item) {
+        const node = document.createElement('article');
+        node.className = 'quest-card'; node.setAttribute('role', 'listitem'); node.setAttribute('data-quest-id', row.id);
+        const make = (tag, cls) => { const el = document.createElement(tag); el.className = cls; node.appendChild(el); return el; };
+        item = { node, title: make('h3','quest-card__title'), state: make('p','quest-card__state'),
+          description: make('p','quest-card__description'), progress: make('p','quest-card__progress'),
+          reward: make('p','quest-card__reward'), actions: make('div','quest-card__actions') };
+        item.link = document.createElement('a'); item.link.className = 'button-link button-link--secondary';
+        item.link.textContent = 'Open activity'; item.actions.appendChild(item.link);
+        item.claim = document.createElement('button'); item.claim.type = 'button';
+        item.claim.className = 'button-link button-link--primary'; item.claim.textContent = 'Claim quest reward';
+        item.claim.setAttribute('data-quest-claim',row.id);
+        item.claim.addEventListener('click', () => ui.onClaim(row.id)); item.actions.appendChild(item.claim);
+        list.appendChild(node); ui.rows.set(row.id,item);
+      }
+      item.node.setAttribute('data-quest-state',row.state);
+      item.title.textContent = row.title;
+      item.state.textContent = (groupLabels[row.group] || 'Website') + ' · ' + stateLabels[row.state];
+      item.description.textContent = row.daily ? 'One configured browser-local check-in per UTC day.' : row.description;
+      item.progress.textContent = 'Progress: ' + row.progress + ' / ' + row.target;
+      item.reward.textContent = row.daily ? 'Use the daily check-in control in Feast Pass; there is no second quest payout.' : row.rewardText ? 'Reward: ' + row.rewardText + ' · Website-local' : 'No additional reward is configured.';
+      item.link.hidden = !row.href || row.state === 'claimed';
+      item.link.textContent = row.daily ? 'Open daily check-in' : 'Open activity';
+      if (row.href) item.link.setAttribute('href',siteHref(document,row.href));
+      else item.link.removeAttribute('href');
+      item.claim.hidden = !row.claimable;
+      item.claim.disabled = !row.claimable;
+      item.claim.setAttribute('aria-label','Claim quest reward: ' + row.title);
+      item.node.hidden = !visible.has(row.id);
+    }
+    for (const [id,item] of ui.rows) {
+      if (!valid.has(id)) { item.node.hidden = true; item.claim.disabled = true; item.claim.hidden = true; }
+    }
+    // A claimed row can leave the selected filter. Keep keyboard users in the
+    // quest controls instead of leaving focus in a hidden/disabled subtree.
+    const focused = priorFocus;
+    if (focused && typeof focused.closest === 'function' &&
+        (focused.closest('[data-quest-id][hidden]') || (focused.hasAttribute('data-quest-claim') && focused.disabled))) {
+      const button = page.querySelector('[data-quest-filter="' + ui.filter + '"]');
+      if (button && typeof button.focus === 'function') button.focus({ preventScroll: true });
+    }
+  }
+
   // Read model only: the existing host/store owns score admission and persistence.
   // A saved result is not a verified accomplishment, a build approval or a reward.
   function gameRecordView(snapshot, gameId) {
@@ -1013,5 +1191,5 @@
       });
     } else items.forEach(item => appendItem(container, item));
   }
-  return { KEYS, createStore, boot, normalizePath, siteHref, renderList, gameRecordView, renderGameRecords };
+  return { KEYS, createStore, boot, normalizePath, siteHref, renderList, gameRecordView, renderGameRecords, questDestination, questJourneyView, renderQuestJourney };
 });

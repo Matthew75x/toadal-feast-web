@@ -44,6 +44,7 @@
         title: 'Find the Feast Treats',
         description: 'Collect the three Treats already hidden in the Home discovery interaction.',
         event: 'treat-collect',
+        href: '/#interactive-discovery',
         target: 3,
         reward: { xp: 15, sparks: 2 }
       }

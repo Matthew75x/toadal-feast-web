@@ -184,15 +184,82 @@
                               }
                             },
                             {
-                              "id": "component.mutf2mm7.6klamu",
-                              "type": "core.text",
+                              "id": "component.quest-journey.next",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "feast-quest-prompt",
-                                "layerName": "Local journey next action",
-                                "attributes": {},
-                                "text": "Explore the World, discover Home Treats, then open Quests to claim your completed journey rewards."
+                                "tag": "section",
+                                "className": "quest-next",
+                                "attributes": {
+                                  "data-quest-next": "",
+                                  "aria-labelledby": "pass-next-title"
+                                },
+                                "style": "",
+                                "layerName": "next",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.quest-journey.next-heading",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "pass-next-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "Your next step",
+                                      "text": "Your next step"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.quest-journey.next-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h3",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-quest-next-title": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Open your quest board",
+                                      "text": "Open your quest board"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.quest-journey.next-description",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-quest-next-description": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Follow an existing website activity, then return to claim its configured local reward. No game or account synchronization is implied.",
+                                      "text": "Follow an existing website activity, then return to claim its configured local reward. No game or account synchronization is implied."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.quest-journey.next-link",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
+                                      "attributes": {
+                                        "data-quest-next-link": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Open Quests",
+                                      "label": "Open Quests",
+                                      "href": "/feast-pass/quests/"
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]

@@ -7609,3 +7609,19 @@ label[for='site-motion-toggle'] input { flex:0 0 auto; width:18px; height:18px; 
  .wo002-game-library .game-tab,.reader-control,.reader-controls .reader-control,.character-filter-controls label { min-height:44px; }
  .character-filter-controls label { min-width:44px; justify-content:center; }
 }
+
+/* Quest journey: existing website-local data, native owner-editable containers. */
+[data-progression-page] .quest-next { margin-top:14px; padding:14px; border:1px solid var(--gold-400); border-radius:12px; background:var(--cream-50); }
+[data-progression-page] .quest-next h2 { margin:0 0 6px; font-size:1.05rem; }
+[data-progression-page] .quest-next h3 { margin:0 0 6px; font-size:1.2rem; }
+[data-progression-page] .quest-next p { margin:0 0 10px; font-size:.9rem; line-height:1.45; }
+[data-progression-page] .quest-filters { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0; }
+[data-progression-page] .quest-filters [aria-pressed='true'] { outline:2px solid var(--pink-700); outline-offset:2px; font-weight:700; }
+[data-progression-page] .quest-list { display:grid; gap:12px; }
+[data-progression-page] .quest-card { min-width:0; padding:16px; border:1px solid var(--gold-400); border-radius:12px; background:var(--cream-50); overflow-wrap:anywhere; }
+[data-progression-page] .quest-card h3 { margin:0 0 6px; }
+[data-progression-page] .quest-card p { margin:6px 0; }
+[data-progression-page] .quest-card__state { font-size:.82rem; font-weight:700; }
+[data-progression-page] .quest-card__actions { display:flex; flex-wrap:wrap; gap:8px; margin-top:12px; }
+[data-progression-page] :is(.quest-next,.quest-filters,.quest-card__actions) .button-link { min-height:44px; max-width:100%; white-space:normal; text-align:center; }
+[data-progression-page] :is(.quest-card,.quest-card__actions > *,[data-quest-empty])[hidden] { display:none !important; }
