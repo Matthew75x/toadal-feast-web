@@ -182,7 +182,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Step into a bite-sized browser adventure. Try the Wicked Bites preview, or explore the games and concepts taking shape across the Feast.",
-                                "text": "Step into a bite-sized browser adventure. Try the Wicked Bites preview, or explore the games and concepts taking shape across the Feast."
+                                "text": "Find a bite-sized browser preview to try, check a held launch, or explore the concepts taking shape across the Feast."
                               }
                             },
                             {
@@ -304,7 +304,9 @@
                                 "authoringVersion": 1,
                                 "tag": "strong",
                                 "className": "",
-                                "attributes": {},
+                                "attributes": {
+                                  "data-catalogue-playable-total": ""
+                                },
                                 "style": "",
                                 "layerName": "1",
                                 "text": "1"
@@ -333,7 +335,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Wicked Bites is ready to try. Other listings are held or concept previews. Guest progress stays on this browser.",
-                                "text": "Wicked Bites is ready to try. Other listings are held or concept previews. Guest progress stays on this browser."
+                                "text": "Other listings can be launch-held or concepts. Check the catalogue below; PREVIEW is not a public release."
                               }
                             }
                           ]
@@ -463,7 +465,10 @@
                     "tag": "section",
                     "className": "wo002-game-library",
                     "attributes": {
-                      "aria-labelledby": "game-library-title"
+                      "aria-labelledby": "game-library-title",
+                      "data-catalogue-root": "",
+                      "data-catalogue-version": "1",
+                      "data-catalogue-state": "loading"
                     },
                     "style": "",
                     "layerName": "Browser games",
@@ -597,205 +602,618 @@
                         }
                       },
                       {
-                        "id": "component.muogc2on.jbosap.bac77dc79fa7.game-tabs",
+                        "id": "component.play.catalogue.controls",
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "div",
-                          "className": "game-tabs",
+                          "tag": "form",
+                          "className": "catalogue-controls",
                           "attributes": {
-                            "role": "group",
-                            "aria-label": "Filter browser games"
+                            "data-catalogue-form": "",
+                            "role": "search",
+                            "aria-label": "Find a browser game",
+                            "aria-describedby": "catalogue-help"
                           },
                           "style": "",
-                          "layerName": "All games 4 Preview 4 Public 0",
+                          "layerName": "controls",
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.muogc2on.jbosap.936a91d7b11d.text",
+                              "id": "component.play.catalogue.help",
                               "type": "core.text",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
+                                "tag": "p",
+                                "className": "catalogue-help",
+                                "attributes": {
+                                  "id": "catalogue-help"
+                                },
                                 "style": "",
-                                "text": "\n      ",
-                                "layerName": "Text: whitespace"
+                                "layerName": "help",
+                                "text": "Find a title, then choose what is playable, on hold or still a concept. Availability and release status are separate; these labels describe this website configuration, not a new live health check."
                               }
                             },
                             {
-                              "id": "component.muogc2on.jbosap.f420423b5279.game-tab",
-                              "type": "core.button",
+                              "id": "component.play.catalogue.search-row",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "button",
-                                "className": "game-tab",
-                                "attributes": {
-                                  "type": "button",
-                                  "aria-pressed": "true",
-                                  "data-game-tab": "all"
-                                },
+                                "tag": "div",
+                                "className": "catalogue-search-row",
+                                "attributes": {},
                                 "style": "",
-                                "layerName": "All games 4",
+                                "layerName": "search row",
+                                "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.muogc2on.jbosap.7bd2c1760b53.text",
-                                    "type": "core.text",
+                                    "id": "component.play.catalogue.search-field",
+                                    "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "#text",
-                                      "className": "",
+                                      "tag": "div",
+                                      "className": "catalogue-field",
                                       "attributes": {},
                                       "style": "",
-                                      "text": "All games ",
-                                      "layerName": "Text: All games"
+                                      "layerName": "search field",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.search-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "label",
+                                            "className": "",
+                                            "attributes": {
+                                              "for": "catalogue-query"
+                                            },
+                                            "style": "",
+                                            "layerName": "search label",
+                                            "text": "Search game titles"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.search-input",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "input",
+                                            "className": "",
+                                            "attributes": {
+                                              "id": "catalogue-query",
+                                              "name": "q",
+                                              "type": "search",
+                                              "maxlength": 120,
+                                              "autocomplete": "off",
+                                              "placeholder": "Search by game title",
+                                              "data-catalogue-query": "",
+                                              "data-catalogue-control": "",
+                                              "aria-controls": "browser-games",
+                                              "disabled": true
+                                            },
+                                            "style": "",
+                                            "layerName": "search input",
+                                            "mode": "inherit",
+                                            "children": []
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
-                                    "id": "component.muogc2on.jbosap.c6daaf0564c4.span",
-                                    "type": "core.text",
+                                    "id": "component.play.catalogue.search-submit",
+                                    "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
+                                      "tag": "button",
+                                      "className": "game-tab",
+                                      "attributes": {
+                                        "type": "submit",
+                                        "data-catalogue-control": "",
+                                        "disabled": true,
+                                        "aria-controls": "browser-games"
+                                      },
                                       "style": "",
-                                      "layerName": "4",
-                                      "text": "4"
+                                      "layerName": "search submit",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.search-submit-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "search submit label",
+                                            "text": "Search"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
-                                ],
-                                "minHeight": 44
+                                ]
                               }
                             },
                             {
-                              "id": "component.muogc2on.jbosap.fd66463729c2.text",
-                              "type": "core.text",
+                              "id": "component.play.catalogue.availability",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "\n      ",
-                                "layerName": "Text: whitespace"
-                              }
-                            },
-                            {
-                              "id": "component.muogc2on.jbosap.fd8f811d1710.game-tab",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "button",
-                                "className": "game-tab",
+                                "tag": "div",
+                                "className": "catalogue-filters",
                                 "attributes": {
-                                  "type": "button",
-                                  "aria-pressed": "false",
-                                  "data-game-tab": "preview"
+                                  "role": "group",
+                                  "aria-label": "Filter by availability"
                                 },
                                 "style": "",
-                                "layerName": "Preview 4",
+                                "layerName": "availability",
+                                "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.muogc2on.jbosap.97188d55619e.text",
-                                    "type": "core.text",
+                                    "id": "component.play.catalogue.filter-all",
+                                    "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "#text",
-                                      "className": "",
-                                      "attributes": {},
+                                      "tag": "button",
+                                      "className": "game-tab",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-catalogue-control": "",
+                                        "disabled": true,
+                                        "data-catalogue-filter": "all",
+                                        "aria-pressed": "true",
+                                        "aria-controls": "browser-games"
+                                      },
                                       "style": "",
-                                      "text": "Preview ",
-                                      "layerName": "Text: Preview"
+                                      "layerName": "filter all",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.filter-all-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "filter all label",
+                                            "text": "All listings"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.filter-all-count",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-count",
+                                            "attributes": {
+                                              "data-catalogue-count": "all"
+                                            },
+                                            "style": "",
+                                            "layerName": "filter all count",
+                                            "text": "4"
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
-                                    "id": "component.muogc2on.jbosap.f30f34466cb4.span",
-                                    "type": "core.text",
+                                    "id": "component.play.catalogue.filter-playable",
+                                    "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
+                                      "tag": "button",
+                                      "className": "game-tab",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-catalogue-control": "",
+                                        "disabled": true,
+                                        "data-catalogue-filter": "playable",
+                                        "aria-pressed": "false",
+                                        "aria-controls": "browser-games"
+                                      },
                                       "style": "",
-                                      "layerName": "4",
-                                      "text": "4"
-                                    }
-                                  }
-                                ],
-                                "minHeight": 44
-                              }
-                            },
-                            {
-                              "id": "component.muogc2on.jbosap.895c6f0f3410.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "\n      ",
-                                "layerName": "Text: whitespace"
-                              }
-                            },
-                            {
-                              "id": "component.muogc2on.jbosap.7b812c22bcfb.game-tab",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "button",
-                                "className": "game-tab",
-                                "attributes": {
-                                  "type": "button",
-                                  "aria-pressed": "false",
-                                  "data-game-tab": "public"
-                                },
-                                "style": "",
-                                "layerName": "Public 0",
-                                "children": [
-                                  {
-                                    "id": "component.muogc2on.jbosap.c170c29ce9f3.text",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "#text",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "text": "Public ",
-                                      "layerName": "Text: Public"
+                                      "layerName": "filter playable",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.filter-playable-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "filter playable label",
+                                            "text": "Playable"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.filter-playable-count",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-count",
+                                            "attributes": {
+                                              "data-catalogue-count": "playable"
+                                            },
+                                            "style": "",
+                                            "layerName": "filter playable count",
+                                            "text": "1"
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
-                                    "id": "component.muogc2on.jbosap.6d8e90bb095f.span",
-                                    "type": "core.text",
+                                    "id": "component.play.catalogue.filter-held",
+                                    "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {},
+                                      "tag": "button",
+                                      "className": "game-tab",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-catalogue-control": "",
+                                        "disabled": true,
+                                        "data-catalogue-filter": "held",
+                                        "aria-pressed": "false",
+                                        "aria-controls": "browser-games"
+                                      },
                                       "style": "",
-                                      "layerName": "0",
-                                      "text": "0"
+                                      "layerName": "filter held",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.filter-held-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "filter held label",
+                                            "text": "Launch held"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.filter-held-count",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-count",
+                                            "attributes": {
+                                              "data-catalogue-count": "held"
+                                            },
+                                            "style": "",
+                                            "layerName": "filter held count",
+                                            "text": "1"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.play.catalogue.filter-concept",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "game-tab",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-catalogue-control": "",
+                                        "disabled": true,
+                                        "data-catalogue-filter": "concept",
+                                        "aria-pressed": "false",
+                                        "aria-controls": "browser-games"
+                                      },
+                                      "style": "",
+                                      "layerName": "filter concept",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.filter-concept-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "filter concept label",
+                                            "text": "Concepts"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.filter-concept-count",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-count",
+                                            "attributes": {
+                                              "data-catalogue-count": "concept"
+                                            },
+                                            "style": "",
+                                            "layerName": "filter concept count",
+                                            "text": "2"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.play.catalogue.filter-unavailable",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "game-tab",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-catalogue-control": "",
+                                        "disabled": true,
+                                        "data-catalogue-filter": "unavailable",
+                                        "aria-pressed": "false",
+                                        "aria-controls": "browser-games",
+                                        "hidden": true
+                                      },
+                                      "style": "",
+                                      "layerName": "filter unavailable",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.filter-unavailable-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "filter unavailable label",
+                                            "text": "Unconfirmed"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.filter-unavailable-count",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-count",
+                                            "attributes": {
+                                              "data-catalogue-count": "unavailable"
+                                            },
+                                            "style": "",
+                                            "layerName": "filter unavailable count",
+                                            "text": "0"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
-                                ],
-                                "minHeight": 44
+                                ]
                               }
                             },
                             {
-                              "id": "component.muogc2on.jbosap.7738fa4a55ad.text",
+                              "id": "component.play.catalogue.options-row",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "catalogue-options-row",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "options row",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.play.catalogue.release-field",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "catalogue-field",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "release field",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.release-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "label",
+                                            "className": "",
+                                            "attributes": {
+                                              "for": "catalogue-release"
+                                            },
+                                            "style": "",
+                                            "layerName": "release label",
+                                            "text": "Release status"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.release-select",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "select",
+                                            "className": "",
+                                            "attributes": {
+                                              "id": "catalogue-release",
+                                              "name": "release",
+                                              "data-catalogue-release-filter": "",
+                                              "data-catalogue-control": "",
+                                              "aria-controls": "browser-games",
+                                              "disabled": true
+                                            },
+                                            "style": "",
+                                            "layerName": "release select",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.play.catalogue.release-all",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "option",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "value": "all"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "release all",
+                                                  "text": "All release states"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.play.catalogue.release-preview",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "option",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "value": "preview"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "release preview",
+                                                  "text": "Preview"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.play.catalogue.release-public",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "option",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "value": "public"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "release public",
+                                                  "text": "Public release"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.play.catalogue.reset",
+                                    "type": "core.button",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "button",
+                                      "className": "game-tab",
+                                      "attributes": {
+                                        "type": "button",
+                                        "data-catalogue-control": "",
+                                        "disabled": true,
+                                        "data-catalogue-reset": "",
+                                        "aria-controls": "browser-games"
+                                      },
+                                      "style": "",
+                                      "layerName": "reset",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.play.catalogue.reset-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "catalogue-filter-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "reset label",
+                                            "text": "Clear filters"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.play.catalogue.status",
                               "type": "core.text",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
+                                "tag": "p",
+                                "className": "catalogue-status",
+                                "attributes": {
+                                  "data-catalogue-status": "",
+                                  "role": "status",
+                                  "aria-live": "polite",
+                                  "aria-atomic": "true"
+                                },
                                 "style": "",
-                                "text": "\n    ",
-                                "layerName": "Text: whitespace"
+                                "layerName": "status",
+                                "text": "Search and filters will be available when the page tools load. All listings and their detail links remain available below."
+                              }
+                            },
+                            {
+                              "id": "component.play.catalogue.url-status",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "catalogue-url-status",
+                                "attributes": {
+                                  "data-catalogue-url-status": "",
+                                  "role": "status",
+                                  "hidden": true
+                                },
+                                "style": "",
+                                "layerName": "url status",
+                                "text": ""
+                              }
+                            },
+                            {
+                              "id": "component.play.catalogue.no-js",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "data-catalogue-fallback": ""
+                                },
+                                "style": "",
+                                "layerName": "no js",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.play.catalogue.no-js-copy",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "no js copy",
+                                      "text": "Without JavaScript, or if the page tools cannot load, search and filters are unavailable. Every listing, availability label and game-detail link remains readable below."
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -882,7 +1300,10 @@
                                 "className": "module studio-game-card play-card",
                                 "attributes": {
                                   "data-game-id": "wicked-bites",
-                                  "data-game-status": "preview"
+                                  "data-game-status": "preview",
+                                  "data-catalogue-title": "Wicked Bites",
+                                  "data-catalogue-availability": "playable",
+                                  "data-catalogue-source-sha256": "2f2a66bfbfe7822df11efc962f67fce275e0dc0d9d799382e6b8c2b2707f4e91"
                                 },
                                 "style": "",
                                 "layerName": "Wicked Bites",
@@ -1010,6 +1431,21 @@
                                             "style": "",
                                             "layerName": "STAGING BUILD · 5.5",
                                             "text": "STAGING BUILD · 5.5"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.availability-wicked-bites",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "catalogue-availability",
+                                            "attributes": {
+                                              "data-catalogue-availability-label": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "availability wicked bites",
+                                            "text": "Playable preview"
                                           }
                                         },
                                         {
@@ -1161,7 +1597,10 @@
                                 "className": "module studio-game-card play-card",
                                 "attributes": {
                                   "data-game-id": "claw-feed-gulper",
-                                  "data-game-status": "preview"
+                                  "data-game-status": "preview",
+                                  "data-catalogue-title": "CLAW: Feed Gulper",
+                                  "data-catalogue-availability": "held",
+                                  "data-catalogue-source-sha256": "6e4527a76f043072f717f43f995052bda57452ce2a6f71083f849321186a8f84"
                                 },
                                 "style": "",
                                 "layerName": "CLAW: Feed Gulper",
@@ -1289,6 +1728,21 @@
                                             "style": "",
                                             "layerName": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1",
                                             "text": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.availability-claw-feed-gulper",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "catalogue-availability",
+                                            "attributes": {
+                                              "data-catalogue-availability-label": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "availability claw feed gulper",
+                                            "text": "Launch held"
                                           }
                                         },
                                         {
@@ -1440,7 +1894,10 @@
                                 "className": "module studio-game-card play-card",
                                 "attributes": {
                                   "data-game-id": "toadal-tower-defense",
-                                  "data-game-status": "preview"
+                                  "data-game-status": "preview",
+                                  "data-catalogue-title": "TOADAL Tower Defense",
+                                  "data-catalogue-availability": "concept",
+                                  "data-catalogue-source-sha256": "5eee15ba9caaff47c07c045edfe032970aad4d553ddd90d3780ffaa3b5b0a196"
                                 },
                                 "style": "",
                                 "layerName": "TOADAL Tower Defense",
@@ -1568,6 +2025,21 @@
                                             "style": "",
                                             "layerName": "CONCEPT PREVIEW",
                                             "text": "CONCEPT PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.availability-toadal-tower-defense",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "catalogue-availability",
+                                            "attributes": {
+                                              "data-catalogue-availability-label": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "availability toadal tower defense",
+                                            "text": "Concept"
                                           }
                                         },
                                         {
@@ -1719,7 +2191,10 @@
                                 "className": "module studio-game-card play-card",
                                 "attributes": {
                                   "data-game-id": "froggy-fruity-bash",
-                                  "data-game-status": "preview"
+                                  "data-game-status": "preview",
+                                  "data-catalogue-title": "Froggy Fruity Bash",
+                                  "data-catalogue-availability": "concept",
+                                  "data-catalogue-source-sha256": "f15c676330b7aab671541592706d1892ef65487fe9cefe417516495fed234e4d"
                                 },
                                 "style": "",
                                 "layerName": "Froggy Fruity Bash",
@@ -1847,6 +2322,21 @@
                                             "style": "",
                                             "layerName": "CONCEPT PREVIEW",
                                             "text": "CONCEPT PREVIEW"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.availability-froggy-fruity-bash",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "catalogue-availability",
+                                            "attributes": {
+                                              "data-catalogue-availability-label": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "availability froggy fruity bash",
+                                            "text": "Concept"
                                           }
                                         },
                                         {

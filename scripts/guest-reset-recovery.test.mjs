@@ -178,8 +178,8 @@ function resourcePins(value) {
 const pins = ['home.json', 'comic-reader.json', 'player-wicked-bites.json'].flatMap(file =>
   resourcePins(JSON.parse(fs.readFileSync(path.join(project, 'pages', file), 'utf8'))));
 
-test('all six affected runtime fragment pins match exact authored and exported bytes', () => {
-  assert.equal(pins.length, 6);
+test('all seven affected runtime fragment pins match exact authored and exported bytes', () => {
+  assert.deepEqual(pins.map(pin => pin.url).sort(), ["/assets/js/guest-progression.js", "/assets/js/home-interactive-discovery.js", "/assets/js/manifest-shell.js", "/assets/js/manifest-shell.js", "/assets/js/play-catalogue.js", "/assets/js/stories-publishing.js", "/public/games/wicked-bites/index.html"].sort());
   for (const pin of pins) {
     for (const root of [path.join(project, 'reference'), path.join(repo, 'dist')]) {
       const bytes = fs.readFileSync(path.join(root, pin.url.slice(1)));
