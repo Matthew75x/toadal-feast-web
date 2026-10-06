@@ -14,7 +14,7 @@ Quest cards use stable DOM nodes so normal refresh preserves controls; a claim t
 
 Starting staging: `c45db8167a85d71f49c6f29dea7ffc0907c5e2c5`, including website PRs 15?20. No other worker checkout, game source, TCS/Publisher, DNS or production toadalfeast.com state is edited. The final static output is generated through the existing pinned Studio export command, not hand-edited.
 
-Visual inspection of the first browser pass caught an automatic mobile companion tip over a new quest heading. A one-selector compatibility extension includes `.quest-card` and `.quest-next` in the existing automatic mobile tip avoidance/suppression path. Manual positioning, minimized/drag persistence, artwork and other placement logic are unchanged.
+Visual inspection of the first browser pass caught an automatic mobile companion tip over a new quest heading. A one-selector compatibility extension includes the complete `.quest-board` (including its explanatory note) and `.quest-next` in the existing automatic mobile tip avoidance/suppression path. Manual positioning, minimized/drag persistence, artwork and other placement logic are unchanged.
 
 ## Before/after evidence and reproduction
 

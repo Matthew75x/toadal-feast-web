@@ -98,7 +98,7 @@ try {
         assert.equal(await xp(b),0);await filter(b,'active').click();assert.equal(await quest(b,'visit-world').isVisible(),false);
         await filter(b,'ready').click();assert.equal(await b.locator('[data-quest-id]:visible').count(),1);
         await b.locator('.quest-filters').evaluate(el=>el.scrollIntoView({block:'start',behavior:'instant'}));
-        await assertNoTipOverlap(b, '.quest-card:not([hidden])');
+        await assertNoTipOverlap(b, '.quest-board');
         await b.screenshot({path:path.join(output,row.name+'-board.png')});
         row.checks.push('fresh next step opens real World route; visit creates ready status in other tab without rewarding; filters/counts match');
         await a.goto(pageRoute('feast-pass/'),{waitUntil:'load'});await waitNext(a,'ready','Explore the World');
