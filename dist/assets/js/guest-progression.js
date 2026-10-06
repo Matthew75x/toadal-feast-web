@@ -160,6 +160,8 @@
     const defaults = emptyRecords(timestamp());
     const records = {};
     let lastReset = null;
+    let lastRefresh = null;
+    let refreshReadFailed = false;
 
     function read(name, observed) {
       let raw;
@@ -264,6 +266,44 @@
         records[name] = read(name);
       }
     }
+    function refreshFromStorage() {
+      // Rehydrate only. Never replay route events, migration writes or rewards
+      // when another tab changes storage or this document returns from cache.
+      if (!suppliedStorage) {
+        lastRefresh = { ok: true, changed: false, scope: 'page-only', unreadableKeys: [] };
+        return getSnapshot();
+      }
+      const fingerprint = () => JSON.stringify([records, Array.from(blocked).sort(), Array.from(unwritable).sort(), refreshReadFailed]);
+      const before = fingerprint();
+      const unreadableKeys = [];
+      for (const name of Object.keys(KEYS)) {
+        let raw;
+        try { raw = storage.getItem(KEYS[name]); }
+        catch (_) {
+          // Last-readable progress is not empty progress. Keep it visible with
+          // an explicit refresh warning and prevent writes through this state.
+          unwritable.add(name);
+          unreadableKeys.push(KEYS[name]);
+          continue;
+        }
+        blocked.delete(name);
+        unwritable.delete(name);
+        const next = read(name, { raw });
+        if (blocked.has(name) || unwritable.has(name)) {
+          unreadableKeys.push(KEYS[name]);
+          continue;
+        }
+        // Missing keys have no timestamp; don't spuriously rerender after an
+        // explicit reset merely because its empty defaults were created later.
+        if (raw == null || raw === '') next.updatedAt = records[name].updatedAt;
+        records[name] = next;
+      }
+      refreshReadFailed = unreadableKeys.length > 0;
+      const changed = before !== fingerprint();
+      if (changed) lastReset = null;
+      lastRefresh = { ok: !refreshReadFailed, changed, scope: 'browser', unreadableKeys };
+      return getSnapshot();
+    }
     function progressFor(definition) {
       const item = records.quests.items[definition.id] || {};
       const progress = Number.isFinite(item.progress) ? Math.max(0, item.progress) : 0;
@@ -355,7 +395,7 @@
         xpToNext: configuredThreshold ? configuredThreshold - records.pass.xp % configuredThreshold : null,
         daily,
         questsComplete: quests.filter(q => q.complete).length,
-        storage: { local: persistent, persistent, available: persistent, diagnostics: diagnostics.slice(), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]), lastReset: lastReset ? structuredCopy(lastReset) : null }
+        storage: { local: persistent && !refreshReadFailed, persistent: persistent && !refreshReadFailed, available: persistent && !refreshReadFailed, diagnostics: diagnostics.slice(), futureVersionKeys: Array.from(blocked).map(name => KEYS[name]), lastReset: lastReset ? structuredCopy(lastReset) : null, lastRefresh: lastRefresh ? structuredCopy(lastRefresh) : null }
       };
     }
     function recordEvent(eventId) {
@@ -625,27 +665,34 @@
       const ok = failedKeys.length === 0 && retainedKeys.length === 0 && unverifiedKeys.length === 0;
       lastReset = { ok, scope: suppliedStorage ? 'browser' : 'page-only', clearedKeys, retainedKeys, unverifiedKeys, failedKeys };
       persistent = suppliedStorage && ok;
+      lastRefresh = null;
+      refreshReadFailed = false;
       return getSnapshot();
     }
-      return { getSnapshot, recordEvent, discoverCharacter, claimDaily, claimQuest, claimReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
+      return { getSnapshot, refreshFromStorage, recordEvent, discoverCharacter, claimDaily, claimQuest, claimReward, recordLocalScore, recordLocalHighScore, getHomeInteractionState, collectHomeCandy, reconcileHomeTreats, hitGoldenBlock, clear };
   }
 
   function boot(document, root) {
     if (!document || !document.querySelectorAll) return;
+    const roots = document.querySelectorAll('[data-progression-page]');
+    // A repeated script/boot must not replay writes or install duplicate listeners.
+    if (roots.length && Array.from(roots).every(page => page.__toadalProgressionBooted)) return;
+    const refreshRenderers = [];
     let browserStorage;
     try { browserStorage = root && root.localStorage; } catch (_) { browserStorage = undefined; }
     const store = createStore({ storage: browserStorage });
     store.reconcileHomeTreats();
     const path = normalizePath(root && root.location && root.location.pathname || '/', definitionsForRuntime());
     store.recordEvent('route:' + path);
-    const roots = document.querySelectorAll('[data-progression-page]');
     roots.forEach(page => {
       if (page.__toadalProgressionBooted) return;
       page.__toadalProgressionBooted = true;
       const status = page.querySelector('[data-progression-storage-status]');
       const setStatus = text => { if (status) status.textContent = text; };
+      let renderedPeriod = null;
       function render() {
         const state = store.getSnapshot();
+        renderedPeriod = state.daily.period;
         const title = state.rewards.find(item => item.type === 'title' && item.awardId === state.profile.selectedTitle);
         const values = { level: state.pass.level, xp: state.pass.xp, 'xp-to-next': state.xpToNext == null ? '—' : state.xpToNext, sparks: state.pass.sparks, treats: state.pass.treats, streak: state.pass.streak.count, discoveries: state.discoveries.length, 'quests-complete': state.questsComplete,
           'route-visits': state.discoveries.filter(item => item.routeVisit).length,
@@ -742,7 +789,8 @@
           if (number === state.daily.nextStreakDay) day.setAttribute('aria-current', 'step');
           else day.removeAttribute('aria-current');
         });
-        if (!state.storage.persistent) setStatus('Browser storage is unavailable; progress may not persist after leaving this page.');
+        if (state.storage.lastRefresh && !state.storage.lastRefresh.ok) setStatus('Saved website progress could not be fully refreshed. Showing the last readable values; unreadable or newer data was not overwritten.');
+        else if (!state.storage.persistent) setStatus('Browser storage is unavailable; progress may not persist after leaving this page.');
         else if (state.storage.diagnostics.length) setStatus('Guest progress is using safe local defaults; stored data could not be read or was outdated.');
         else if (status && !status.textContent) setStatus('Guest progress is stored only in this browser.');
       }
@@ -804,7 +852,39 @@
       });
       render();
       page.__toadalProgressionStore = store;
+      refreshRenderers.push(state => {
+        const refreshed = state.storage.lastRefresh;
+        // Keep focus/list nodes and operation messages intact on no-op focus.
+        if (!refreshed.changed && renderedPeriod === state.daily.period) return;
+        render();
+        if (!refreshed.ok) return; // render keeps the refresh warning above.
+        if (refreshed.scope === 'browser' && refreshed.changed) {
+          setStatus(state.storage.persistent
+            ? 'Saved website progress refreshed from this browser. Progress remains browser-local, not account-synced.'
+            : 'Saved website progress was refreshed, but browser writes may still be unavailable. No account synchronization is implied.');
+        }
+      });
     });
+    if (refreshRenderers.length && root && typeof root.addEventListener === 'function') {
+      const refreshViews = () => {
+        const state = store.refreshFromStorage();
+        refreshRenderers.forEach(render => render(state));
+      };
+      root.addEventListener('storage', event => {
+        // Ignore other games/preferences, sessionStorage and unbound events.
+        // Read current storage instead of trusting a delayed event.newValue.
+        if (!browserStorage || event.storageArea !== browserStorage ||
+            (event.key !== null && !Object.values(KEYS).includes(event.key))) return;
+        refreshViews();
+      });
+      root.addEventListener('pageshow', event => { if (event.persisted) refreshViews(); });
+      root.addEventListener('focus', refreshViews);
+      if (typeof document.addEventListener === 'function') {
+        document.addEventListener('visibilitychange', () => {
+          if (document.visibilityState === 'visible') refreshViews();
+        });
+      }
+    }
   }
   function definitionsForRuntime() { return defaultDefinitions || {}; }
   function normalizePath(path, definitions) {
