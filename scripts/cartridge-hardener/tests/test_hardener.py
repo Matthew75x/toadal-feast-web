@@ -58,6 +58,41 @@ class HardenerStaticScanTests(unittest.TestCase):
         findings = self.scan(f'<!doctype html><script>/* {body} */</script>')
         self.assertTrue(any(code == 'protocol-token' and missing in detail for _, code, detail in findings), findings)
 
+    def test_optional_exit_request_requires_confirmation_pair(self):
+        body = '<!doctype html><script>/* ' + REQUIRED + ' game:request-exit */</script>'
+        findings = self.scan(body)
+        self.assertTrue(
+            any(code == 'protocol-conditional' and sev == 'FAIL' for sev, code, _ in findings),
+            findings,
+        )
+        findings = self.scan(
+            '<!doctype html><script>/* ' + REQUIRED + ' game:request-exit host:exit-confirmed */</script>'
+        )
+        self.assertFalse(
+            any(code == 'protocol-conditional' and sev == 'FAIL' for sev, code, _ in findings),
+            findings,
+        )
+
+    def test_fullscreen_request_conflicts_with_manifest_false(self):
+        with TemporaryDirectory() as td:
+            path = Path(td) / 'index.html'
+            path.write_text(
+                '<!doctype html><script>/* ' + REQUIRED + ' game:request-fullscreen */</script>',
+                encoding='utf-8',
+            )
+            profile = {
+                'game': {
+                    'protocol': {'name': 'toadal.game', 'version': 1},
+                    'storage': {'namespace': 'toadal:game:test:v1:', 'persistence': 'local'},
+                    'fullscreen': False,
+                }
+            }
+            findings = hardener.scan_runtime(path, profile, path.parent)
+            self.assertTrue(
+                any(code == 'fullscreen-contract' and sev == 'FAIL' for sev, code, _ in findings),
+                findings,
+            )
+
     def test_tcs_manifest_identity_validation(self):
         game = {'id': 'test-game', 'version': '1.2.3', 'displayName': 'Test Game'}
         good = {
@@ -117,6 +152,63 @@ class HardenerStaticScanTests(unittest.TestCase):
             self.assertEqual(web['id'], tcs['id'])
             self.assertEqual(web['version'], tcs['version'])
             self.assertIn('tcs1.json', [row['path'] for row in integrity['files']])
+
+    def test_tree_runtime_packages_and_scans_separate_bridge(self):
+        from PIL import Image
+        with TemporaryDirectory() as td:
+            root = Path(td)
+            source = root / 'source'
+            runtime_source = source / 'runtime'
+            runtime_source.mkdir(parents=True)
+            (runtime_source / 'index.html').write_text(
+                '<!doctype html><script src="bridge.js"></script>', encoding='utf-8'
+            )
+            (runtime_source / 'bridge.js').write_text(
+                '/* ' + REQUIRED + ' */', encoding='utf-8'
+            )
+            Image.new('RGB', (16, 16), 'white').save(source / 'poster.png')
+            Image.new('RGB', (16, 16), 'white').save(source / 'shot.png')
+            profile = {
+                'game': {
+                    'id': 'test-game', 'displayName': 'Test Game', 'version': '1.2.3',
+                    'publicState': 'PREVIEW', 'entrySource': 'runtime/index.html', 'orientation': 'any',
+                    'inputs': {'touch': True, 'keyboard': True, 'mouse': True, 'gamepad': False},
+                    'storage': {'namespace': 'toadal:game:test:v1:', 'persistence': 'local', 'accountSync': 'none'},
+                    'protocol': {'name': 'toadal.game', 'version': 1},
+                    'source': {'repository': 'TEST_ONLY', 'ref': 'fixture'},
+                },
+                'runtimePackage': {'mode': 'tree', 'root': 'runtime'},
+                'evidence': {'poster': 'poster.png', 'screenshot': 'shot.png'},
+            }
+            profile_path = root / 'profile.json'
+            profile_path.write_text(json.dumps(profile), encoding='utf-8')
+            out = root / 'out'
+            code = hardener.harden(types.SimpleNamespace(
+                source=str(source), output=str(out), profile=str(profile_path), run_commands=False
+            ))
+            self.assertEqual(code, 0)
+            runtime = out / 'public' / 'games' / 'test-game'
+            self.assertEqual((runtime / 'bridge.js').read_text(encoding='utf-8'), '/* ' + REQUIRED + ' */')
+            integrity = json.loads((runtime / 'cartridge.integrity.json').read_text(encoding='utf-8'))
+            self.assertIn('bridge.js', [row['path'] for row in integrity['files']])
+
+    def test_tree_runtime_missing_local_reference_fails_closed(self):
+        with TemporaryDirectory() as td:
+            root = Path(td)
+            (root / 'index.html').write_text(
+                '<!doctype html><script src="missing.js"></script>', encoding='utf-8'
+            )
+            profile = {
+                'game': {
+                    'protocol': {'name': 'toadal.game', 'version': 1},
+                    'storage': {'namespace': 'toadal:game:test:v1:', 'persistence': 'none'},
+                }
+            }
+            findings = hardener.scan_runtime(root / 'index.html', profile, root)
+            self.assertTrue(
+                any(code == 'nonclosed-entry' and sev == 'FAIL' for sev, code, _ in findings),
+                findings,
+            )
 
     def test_bundled_schema_matches_repo_canonical_when_available(self):
         canonical = HERE.parents[1] / 'docs' / 'implementation' / 'game-cartridge.schema.json'

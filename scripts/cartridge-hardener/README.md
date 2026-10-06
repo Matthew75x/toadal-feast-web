@@ -48,3 +48,17 @@ The bundled schema is a portability copy of the canonical repository schema. The
 ## Optional TCS intake manifest
 
 A profile may include `tcsManifest`. The hardener writes it as root `tcs1.json` only after checking game ID, version, title, entrypoint and TCS bridge protocol consistency. It remains separate from website `cartridge.json` and does not grant TCS approval.
+
+
+## Multi-file runtime packages
+
+The default profile mode is `single`. For a package whose authored runtime already consists of multiple local files, add:
+
+```json
+"runtimePackage": {
+  "mode": "tree",
+  "root": "path/to/runtime"
+}
+```
+
+`entrySource` must resolve to that root's `index.html`. Tree mode copies only that explicit runtime tree, rejects symlinks, excludes source-only directories, verifies package-local HTML/CSS references, and scans protocol/storage behavior across all runtime text files.

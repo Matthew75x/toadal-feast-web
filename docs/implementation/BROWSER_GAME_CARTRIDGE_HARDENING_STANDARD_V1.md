@@ -53,11 +53,15 @@ CHL is monotonic only for a **specific immutable runtime ledger hash**. Any runt
 ### G3 — Host lifecycle
 Required protocol: `toadal.game.v1`.
 
-Cartridge → host:
-`game:ready`, `game:started`, `game:paused`, `game:resumed`, `game:score`, `game:complete`, `game:error`, `game:request-exit`, `game:request-fullscreen`.
+Core cartridge → host:
+`game:ready`, `game:started`, `game:paused`, `game:resumed`, `game:score`, `game:complete`, `game:error`.
 
-Host → cartridge:
-`host:init`, `host:pause`, `host:resume`, `host:mute`, `host:unmute`, `host:exit-confirmed`, `host:visibility`.
+Core host → cartridge:
+`host:init`, `host:pause`, `host:resume`, `host:mute`, `host:unmute`, `host:visibility`.
+
+Conditional request vocabulary:
+- `game:request-exit` is optional unless the cartridge exposes its own host-exit affordance; when implemented, `host:exit-confirmed` is required.
+- `game:request-fullscreen` is optional when fullscreen is host-shell-only; if emitted, the manifest must declare fullscreen support.
 
 Required behaviors:
 - Validate parent/source/origin as applicable.
@@ -116,6 +120,12 @@ Those remain explicit external gates.
 
 Each game supplies a small JSON profile containing identity, entry point, capabilities, storage, provenance, known limitations, evidence images, and project-specific regression commands. This is the only game-specific configuration required by the generic hardener.
 
+Runtime packaging modes:
+- `single` (default): one self-contained authored entry is copied to runtime `index.html`;
+- `tree`: an explicit source-owned runtime directory is copied byte-for-byte (except hardener-generated metadata/evidence names) and package-wide protocol/reference checks are applied.
+
+Tree mode exists for legitimate multi-file cartridges such as an authored `index.html` plus compatibility bridge/scripts/styles. It must not be used to copy whole repositories, `.git`, `node_modules`, or source-only directories.
+
 ## 6. Standard output
 
 For `<game-id>`, a successful hardening run creates:
@@ -124,6 +134,7 @@ For `<game-id>`, a successful hardening run creates:
 <output>/
   public/games/<game-id>/
     index.html
+    [package-local runtime files/directories]
     cartridge.json
     poster.webp
     screenshot.webp
