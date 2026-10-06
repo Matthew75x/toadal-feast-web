@@ -21,3 +21,19 @@ Relevant October 6 retained work heads observed at that checkpoint included:
 No branch in this list is authorized for deletion merely because its corresponding change reached staging. A later hygiene pass should classify each branch as MERGED, SUPERSEDED, ARCHIVED, or RETAINED, verify unique commits/evidence, and only then delete safe refs.
 
 The current docs/tooling branch is temporary and should be deleted after merge or otherwise explicitly disposed.
+
+
+## Ancestry-verified merged candidates
+
+A direct compare against staging `939f0d8a751d8fc1b1362796a0204c23c9eb7a09` shows each branch below is fully reachable from staging: staging is ahead and the branch is **0 commits ahead of staging**.
+
+| Branch | Staging commits ahead | Branch commits ahead |
+|---|---:|---:|
+| `work/feast-pass-game-records-20261006` | 18 | 0 |
+| `work/guest-showcase-20261006` | 8 | 0 |
+| `work/play-catalogue-20261006` | 6 | 0 |
+| `work/quest-journey-20261006` | 10 | 0 |
+| `work/staging-artifact-closure-20261006` | 3 | 0 |
+| `work/toadal-nav-visibility-20261006` | 1 | 0 |
+
+These are **merge-safe deletion candidates by ancestry only**. They are not deleted in this lane because an active progression-contract operation is still in flight and may reference one of these names/worktrees operationally. Delete only after confirming the active lane no longer depends on them.
