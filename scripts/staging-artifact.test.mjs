@@ -148,9 +148,16 @@ test('an existing custom-domain CNAME is not silently carried into staging',t=>{
   const f=fixture(t);put(f.dist,'CNAME','production.example.invalid');const source=f.commit();assert.throws(()=>exactSource(f.repo,source),/Custom-domain/);
 });
 test('nonempty hidden source marker cannot be silently dropped by the uploader',t=>{
-  const f=fixture(t);put(f.dist,'.nojekyll','unexpected content');const source=f.commit();assert.throws(()=>make(f,{revision:source}),/empty .nojekyll/);
+  const f=fixture(t);put(f.dist,'.nojekyll','unexpected content');const source=f.commit();assert.throws(()=>make(f,{revision:source}),/empty or single-LF .nojekyll/);
 });
 test('missing legacy files and duplicate policy records cannot weaken the exact allowlist',t=>{
   const f=fixture(t);const pins=structuredClone(f.policy);pins.files[1]=pins.files[0];assert.throws(()=>validatePolicy(pins),/Invalid exact legacy/);
   assert.throws(()=>enforceGamePolicy([f.policy.files[0],f.policy.files[0],f.policy.files[0]],f.policy),/Duplicate/);
+});
+
+test('the actual one-LF source marker is an explicit recorded omission, not public content',t=>{
+  const f=fixture(t);put(f.dist,'.nojekyll','\n');const source=f.commit();const result=make(f,{revision:source});check(f,result,{revision:source});
+  const manifest=JSON.parse(fs.readFileSync(path.join(f.output,'manifest.json')));
+  assert.equal(manifest.sourceTotalBytes-manifest.totalBytes,1);assert.equal(manifest.omittedSourceMarkers[0].bytes,1);
+  assert.equal(manifest.omittedSourceMarkers[0].sha256,sha256(Buffer.from('\n')));assert.equal(fs.existsSync(path.join(f.output,'site','.nojekyll')),false);
 });

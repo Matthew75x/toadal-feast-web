@@ -40,7 +40,7 @@ A new build after any source/content/asset change receives:
 
 ## Enforced staging artifact handoff
 
-The normal Studio exporter and Pages workflow now enforce the shared [exact staging artifact handoff](STAGING_ARTIFACT_HANDOFF.md). The uploader receives only a new checked package bound to its full source commit, tree, complete file ledger and current game-preservation policy. The empty `.nojekyll` marker is the one recorded omission already made by the Pages uploader; no application bytes are changed.
+The normal Studio exporter and Pages workflow now enforce the shared [exact staging artifact handoff](STAGING_ARTIFACT_HANDOFF.md). The uploader receives only a new checked package bound to its full source commit, tree, complete file ledger and current game-preservation policy. The blank `.nojekyll` marker is the one recorded omission already made by the Pages uploader; no application bytes are changed.
 
 An exact legacy-preview policy is separate from mutable reference/output equality. No new cartridge is admitted by copying it into both source and export. New TCS/Publisher qualification, owner release acceptance, production authorization and out-of-band administrator controls remain distinct.
 

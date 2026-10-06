@@ -183,15 +183,15 @@ export function expectedManifest(repo, revision) {
     requireThat(robotTags.some(tag=>/\bname\s*=\s*['" ]robots['" ]/i.test(tag) && /\bcontent\s*=\s*['"][^'"]*\bnoindex\b[^'"]*['"]/i.test(tag) && /\bcontent\s*=\s*['"][^'"]*\bnofollow\b[^'"]*['"]/i.test(tag)), 'Source HTML is not a noindex/nofollow staging page: '+file.path);
   }
   const marker=rows.find(f=>f.path==='.nojekyll');
-  requireThat(marker.bytes===0 && marker.sha256===sha256(Buffer.alloc(0)), 'Only an empty .nojekyll source marker may be omitted');
-  // upload-pages-artifact@v4 already drops dotfiles. Make that one known, empty
+  requireThat((marker.bytes===0 && marker.sha256===sha256(Buffer.alloc(0))) || (marker.bytes===1 && marker.sha256===sha256(Buffer.from('\n'))), 'Only an empty or single-LF .nojekyll source marker may be omitted');
+  // upload-pages-artifact@v4 already drops dotfiles. Make that one known, blank
   // control-marker omission explicit BEFORE sealing, so the uploaded tar is exact.
   const publishedRows=rows.filter(f=>f.path!=='.nojekyll');
   const manifest = { schema:'toadal.staging-release-artifact.v1', environment:ENVIRONMENT, repository:'Matthew75x/toadal-feast-web',
     sourceCommit:revision, sourceTree:source.sourceTree, distTree:source.distTree, basePath:'/toadal-feast-web/',
     site:'https://matthew75x.github.io/toadal-feast-web/', gamePolicySha256:policySha256, legacyGameClassification:policy.classification,
-    sourceFileCount:rows.length, omittedSourceMarkers:[{...marker,reason:'Empty Jekyll marker; existing Pages Actions uploader excludes dotfiles'}],
-    fileCount:publishedRows.length, totalBytes:source.totalBytes, files:publishedRows };
+    sourceFileCount:rows.length, omittedSourceMarkers:[{...marker,reason:'Blank Jekyll marker (empty or one LF); existing Pages Actions uploader excludes dotfiles'}],
+    fileCount:publishedRows.length, sourceTotalBytes:source.totalBytes, totalBytes:source.totalBytes-marker.bytes, files:publishedRows };
   return { source, policy, manifest, manifestBytes:canonicalBytes(manifest) };
 }
 export function comparePayload(root, expected) {
@@ -225,7 +225,7 @@ export function preparePackage({repo=REPO,revision,input,output,fromGit=false}) 
   const hash=sha256(data.manifestBytes);
   fs.writeFileSync(path.join(output,'manifest.sha256'),hash+'\n',{flag:'wx'});
   const receipt={status:'EXACT_STAGING_PACKAGE_PREPARED',sourceCommit:revision,sourceTree:data.source.sourceTree,distTree:data.source.distTree,
-    manifestSha256:hash,payload,manifest:path.join(output,'manifest.json'),fileCount:data.manifest.fileCount,sourceFileCount:data.manifest.sourceFileCount,totalBytes:data.manifest.totalBytes,
+    manifestSha256:hash,payload,manifest:path.join(output,'manifest.json'),fileCount:data.manifest.fileCount,sourceFileCount:data.manifest.sourceFileCount,sourceTotalBytes:data.manifest.sourceTotalBytes,totalBytes:data.manifest.totalBytes,
     mode:fromGit?'SOURCE_ONLY_RECOVERY_NO_DEPLOYMENT':'CHECKED_WORKING_PAYLOAD_COPY',environment:ENVIRONMENT,tcsQualified:false,deployPerformed:false};
   fs.writeFileSync(path.join(output,'receipt.json'),canonicalBytes({...receipt,payload:'site',manifest:'manifest.json'}),{flag:'wx'});
   return receipt;
@@ -238,9 +238,9 @@ export function verifyPackage({repo=REPO,revision,output,manifestSha256}) {
   requireThat(sha256(bytes)===manifestSha256 && bytes.equals(expected.manifestBytes),'Manifest/source/policy identity mismatch');
   requireThat(readRegular(output,'manifest.sha256').toString()===manifestSha256+'\n','Manifest digest record changed');
   const receipt=JSON.parse(readRegular(output,'receipt.json').toString('utf8'));
-  requireThat(receipt.status==='EXACT_STAGING_PACKAGE_PREPARED' && receipt.sourceCommit===revision && receipt.sourceTree===expected.source.sourceTree && receipt.distTree===expected.source.distTree && receipt.manifestSha256===manifestSha256 && receipt.fileCount===expected.manifest.fileCount && receipt.sourceFileCount===expected.manifest.sourceFileCount && receipt.totalBytes===expected.manifest.totalBytes && receipt.environment===ENVIRONMENT && receipt.payload==='site' && receipt.manifest==='manifest.json' && receipt.deployPerformed===false && receipt.tcsQualified===false && ['SOURCE_ONLY_RECOVERY_NO_DEPLOYMENT','CHECKED_WORKING_PAYLOAD_COPY'].includes(receipt.mode), 'Package receipt contradicts exact source/scope');
+  requireThat(receipt.status==='EXACT_STAGING_PACKAGE_PREPARED' && receipt.sourceCommit===revision && receipt.sourceTree===expected.source.sourceTree && receipt.distTree===expected.source.distTree && receipt.manifestSha256===manifestSha256 && receipt.fileCount===expected.manifest.fileCount && receipt.sourceFileCount===expected.manifest.sourceFileCount && receipt.sourceTotalBytes===expected.manifest.sourceTotalBytes && receipt.totalBytes===expected.manifest.totalBytes && receipt.environment===ENVIRONMENT && receipt.payload==='site' && receipt.manifest==='manifest.json' && receipt.deployPerformed===false && receipt.tcsQualified===false && ['SOURCE_ONLY_RECOVERY_NO_DEPLOYMENT','CHECKED_WORKING_PAYLOAD_COPY'].includes(receipt.mode), 'Package receipt contradicts exact source/scope');
   comparePayload(path.join(output,'site'),expected.manifest.files);
   return {status:'EXACT_STAGING_PACKAGE_VERIFIED',sourceCommit:revision,sourceTree:expected.source.sourceTree,distTree:expected.source.distTree,
-    manifestSha256,fileCount:expected.manifest.fileCount,sourceFileCount:expected.manifest.sourceFileCount,totalBytes:expected.manifest.totalBytes,environment:ENVIRONMENT,
+    manifestSha256,fileCount:expected.manifest.fileCount,sourceFileCount:expected.manifest.sourceFileCount,sourceTotalBytes:expected.manifest.sourceTotalBytes,totalBytes:expected.manifest.totalBytes,environment:ENVIRONMENT,
     legacyGameFiles:expected.policy.files.length,tcsQualified:false,deployPerformed:false};
 }
