@@ -4,6 +4,8 @@ import path from 'node:path';
 import vm from 'node:vm';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
+import crypto from 'node:crypto';
+import { rewriteCss } from './wo001-pages-basepath.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const project=path.join(root,'studio-project','toadal-feast-website');
@@ -48,19 +50,28 @@ test('existing double tap, footer recovery, minimized preference and position co
   assert.match(position,/touch-double-tap/);
   assert.match(position,/toadal:site:companion:position:v1/);
 });
-test('generated site pages project the updated advanced runtime and CSS after export',()=>{
+test('generated site pages project one cacheable advanced runtime and CSS after export',()=>{
   const distCss=fs.readFileSync(path.join(root,'dist','assets','css','site.css'),'utf8');
   assert.equal(distCss,css);
-  const open='<script data-toadal-advanced-code>'; let count=0;
+  const sha=value=>crypto.createHash('sha256').update(value).digest('hex');
+  const derivedCss=rewriteCss(advanced.css,'/toadal-feast-web/').value;
+  const cssName='advanced-code.'+sha(derivedCss).slice(0,12)+'.css';
+  const jsName='advanced-code.'+sha(advanced.javascript).slice(0,12)+'.js';
+  assert.equal(fs.readFileSync(path.join(root,'dist','assets','css',cssName),'utf8'),derivedCss);
+  assert.equal(fs.readFileSync(path.join(root,'dist','assets','js',jsName),'utf8'),advanced.javascript);
+  let count=0;
   function walk(dir){
     for(const e of fs.readdirSync(dir,{withFileTypes:true})){
       const p=path.join(dir,e.name);
       if(e.isDirectory()) walk(p);
       else if(e.isFile()&&e.name.endsWith('.html')){
-        const html=fs.readFileSync(p,'utf8'),i=html.indexOf(open);
-        if(i<0) continue;
-        const a=i+open.length,b=html.indexOf('</script>',a);
-        assert.equal(html.slice(a,b).replaceAll('\r\n','\n'),advanced.javascript.replaceAll('\r\n','\n'),path.relative(root,p));
+        const rel=path.relative(path.join(root,'dist'),p).replaceAll('\\','/');
+        if(rel.startsWith('public/games/')) return;
+        const html=fs.readFileSync(p,'utf8');
+        assert.equal(html.includes('<style data-toadal-advanced-code>'),false,rel);
+        assert.equal(html.includes('<script data-toadal-advanced-code>'),false,rel);
+        assert.equal(html.includes('/toadal-feast-web/assets/css/'+cssName),true,rel);
+        assert.equal(html.includes('/toadal-feast-web/assets/js/'+jsName),true,rel);
         count++;
       }
     }

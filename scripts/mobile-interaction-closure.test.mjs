@@ -4,6 +4,8 @@ import path from 'node:path';
 import vm from 'node:vm';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
+import crypto from 'node:crypto';
+import { rewriteCss } from './wo001-pages-basepath.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const projectRoot = path.join(root, 'studio-project', 'toadal-feast-website');
@@ -57,22 +59,23 @@ test('Studio reference CSS and public CSS are byte-identical', () => {
   assert.equal(distCss, referenceCss);
 });
 
-test('all generated site pages project the exact Studio advanced runtime', () => {
-  const open = '<script data-toadal-advanced-code>';
+test('all generated site pages reference one exact cacheable Studio advanced runtime', () => {
+  const sha=value=>crypto.createHash('sha256').update(value).digest('hex');
+  const derivedCss=rewriteCss(advanced.css,'/toadal-feast-web/').value;
+  const cssName='advanced-code.'+sha(derivedCss).slice(0,12)+'.css';
+  const jsName='advanced-code.'+sha(advanced.javascript).slice(0,12)+'.js';
+  assert.equal(fs.readFileSync(path.join(root,'dist','assets','css',cssName),'utf8'),derivedCss);
+  assert.equal(fs.readFileSync(path.join(root,'dist','assets','js',jsName),'utf8'),advanced.javascript);
   const files = htmlFiles(path.join(root, 'dist'));
   let projected = 0;
   for (const file of files) {
+    const rel=path.relative(path.join(root,'dist'),file).replaceAll('\\','/');
+    if(rel.startsWith('public/games/')) continue;
     const html = fs.readFileSync(file, 'utf8');
-    const start = html.indexOf(open);
-    if (start < 0) continue;
-    const bodyStart = start + open.length;
-    const end = html.indexOf('</script>', bodyStart);
-    assert.notEqual(end, -1, `advanced-code script must close in ${path.relative(root, file)}`);
-    assert.equal(
-      html.slice(bodyStart, end).replaceAll('\r\n', '\n'),
-      advanced.javascript.replaceAll('\r\n', '\n'),
-      `advanced runtime drift in ${path.relative(root, file)}`,
-    );
+    assert.equal(html.includes('<script data-toadal-advanced-code>'), false, rel);
+    assert.equal(html.includes('<style data-toadal-advanced-code>'), false, rel);
+    assert.equal(html.includes('/toadal-feast-web/assets/js/'+jsName), true, rel);
+    assert.equal(html.includes('/toadal-feast-web/assets/css/'+cssName), true, rel);
     projected += 1;
   }
   assert.equal(projected, 33);
@@ -82,6 +85,6 @@ test('protected game payloads do not receive the website advanced runtime', () =
   const protectedRoot = path.join(root, 'dist', 'public', 'games');
   for (const file of htmlFiles(protectedRoot)) {
     const html = fs.readFileSync(file, 'utf8');
-    assert.equal(html.includes('<script data-toadal-advanced-code>'), false);
+    assert.equal(html.includes('data-toadal-advanced-code'), false);
   }
 });
