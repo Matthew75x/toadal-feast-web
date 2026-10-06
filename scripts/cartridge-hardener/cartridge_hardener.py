@@ -8,8 +8,10 @@ import jsonschema
 
 HERE=Path(__file__).resolve().parent
 SCHEMA=json.loads((HERE/'schemas/game-cartridge.schema.json').read_text())
-REQ_OUTBOUND=['game:ready','game:started','game:paused','game:resumed','game:score','game:complete','game:error','game:request-exit','game:request-fullscreen']
-REQ_INBOUND=['host:init','host:pause','host:resume','host:mute','host:unmute','host:exit-confirmed','host:visibility']
+REQ_OUTBOUND=['game:ready','game:started','game:paused','game:resumed','game:score','game:complete','game:error']
+REQ_INBOUND=['host:init','host:pause','host:resume','host:mute','host:unmute','host:visibility']
+OPTIONAL_OUTBOUND=['game:request-exit','game:request-fullscreen']
+CONDITIONAL_INBOUND={'game:request-exit':'host:exit-confirmed'}
 NETWORK_PATTERNS=[r'\bfetch\s*\(',r'\bXMLHttpRequest\b',r'\bWebSocket\s*\(',r'\bEventSource\s*\(',r'\bnavigator\.sendBeacon\s*\(']
 DANGEROUS_PATTERNS=[r'\bdocument\.domain\b',r'\beval\s*\(',r'\bnew\s+Function\s*\(']
 ABS_URL=re.compile(r'(?:(?:src|href)\s*=\s*["\']|url\(\s*["\']?)(https?://|//)',re.I)
@@ -42,32 +44,68 @@ def run_command(source:Path, item:dict[str,Any]):
         return {'name':name,'passed':r.returncode==0,'returncode':r.returncode,'stdout':r.stdout[-12000:],'stderr':r.stderr[-12000:]}
     except Exception as e:return {'name':name,'passed':False,'error':str(e)}
 
-def scan_html(entry:Path, profile:dict[str,Any]):
-    txt=entry.read_text(errors='replace'); p=RefParser();p.feed(txt)
+TEXT_EXT={'.html','.htm','.js','.mjs','.cjs','.css','.json','.webmanifest','.txt','.md'}
+IGNORED_URI_PREFIXES=('data:','#','blob:','mailto:','tel:','javascript:')
+GENERATED_RUNTIME_NAMES={'cartridge.json','cartridge.integrity.json','poster.webp','screenshot.webp'}
+
+def _safe_runtime_ref(base:Path,root:Path,uri:str):
+    clean=re.sub(r'[?#].*$','',str(uri or '').strip()).replace('\\','/')
+    if not clean or clean.startswith(IGNORED_URI_PREFIXES): return None
+    if re.match(r'^(https?:)?//',clean,re.I) or clean.startswith('/'): return False
+    target=(base/clean).resolve()
+    try: target.relative_to(root)
+    except ValueError: return False
+    return target.is_file()
+
+def scan_runtime(entry:Path,profile:dict[str,Any],runtime_root:Path|None=None):
+    root=(runtime_root or entry.parent).resolve();entry=entry.resolve()
+    texts={}
+    for file in sorted(root.rglob('*')):
+        if file.is_file() and file.suffix.lower() in TEXT_EXT:
+            try:texts[file]=file.read_text(errors='replace')
+            except Exception:pass
+    txt=texts.get(entry,entry.read_text(errors='replace'));parser=RefParser();parser.feed(txt)
     findings=[]
-    if len(p.ids)!=len(set(p.ids)): findings.append(('FAIL','duplicate-html-ids','Duplicate DOM ids in entry HTML'))
-    if ABS_URL.search(txt): findings.append(('FAIL','external-url','Absolute external URL reference detected in entry'))
-    if ROOT_URL.search(txt): findings.append(('FAIL','root-path','Root-absolute runtime reference detected'))
-    for pat in NETWORK_PATTERNS:
-        if re.search(pat,txt): findings.append(('FAIL','network-api',f'Runtime network API pattern detected: {pat}'))
-    for pat in DANGEROUS_PATTERNS:
-        if re.search(pat,txt): findings.append(('WARN','dangerous-pattern',f'Review dynamic-code/coupling pattern: {pat}'))
+    if len(parser.ids)!=len(set(parser.ids)): findings.append(('FAIL','duplicate-html-ids','Duplicate DOM ids in entry HTML'))
     unresolved=[]
-    for tag,key,uri in p.refs:
-        if not uri or uri.startswith(('data:','#','blob:','mailto:','tel:','javascript:')):continue
-        if re.match(r'^(https?:)?//',uri): unresolved.append(uri);continue
-        unresolved.append(uri)
-    if unresolved: findings.append(('FAIL','nonclosed-entry',f'Entry still references package-external files: {sorted(set(unresolved))[:20]}'))
-    body=txt
+    for file,body in texts.items():
+        rel=file.relative_to(root).as_posix()
+        if ABS_URL.search(body): findings.append(('FAIL','external-url',f'Absolute external URL reference detected in {rel}'))
+        if ROOT_URL.search(body): findings.append(('FAIL','root-path',f'Root-absolute runtime reference detected in {rel}'))
+        for pat in NETWORK_PATTERNS:
+            if re.search(pat,body): findings.append(('FAIL','network-api',f'Runtime network API pattern detected in {rel}: {pat}'))
+        for pat in DANGEROUS_PATTERNS:
+            if re.search(pat,body): findings.append(('WARN','dangerous-pattern',f'Review dynamic-code/coupling pattern in {rel}: {pat}'))
+        if file.suffix.lower() in {'.html','.htm'}:
+            hp=RefParser();hp.feed(body)
+            for _tag,_key,uri in hp.refs:
+                ok=_safe_runtime_ref(file.parent,root,uri)
+                if ok is False: unresolved.append(f'{rel} -> {uri}')
+        if file.suffix.lower()=='.css':
+            for uri in re.findall(r"url\(\s*([^)]+?)\s*\)",body,re.I):
+                uri=uri.strip().strip('"').strip("'")
+                ok=_safe_runtime_ref(file.parent,root,uri)
+                if ok is False: unresolved.append(f'{rel} -> {uri}')
+    if unresolved: findings.append(('FAIL','nonclosed-entry',f'Package-local HTML/CSS reference missing or escaping root: {sorted(set(unresolved))[:20]}'))
+    body='\n'.join(texts.values())
     for token in REQ_OUTBOUND+REQ_INBOUND:
         if token not in body: findings.append(('FAIL','protocol-token',f'Missing required protocol token: {token}'))
-    protocol=profile['game']['protocol']
-    proto_string=f"{protocol['name']}.v{protocol['version']}"
+    for request,response in CONDITIONAL_INBOUND.items():
+        if request in body and response not in body:
+            findings.append(('FAIL','protocol-conditional',f'{response} is required when {request} is implemented'))
+    if 'game:request-fullscreen' in body and profile['game'].get('fullscreen') is False:
+        findings.append(('FAIL','fullscreen-contract','Runtime requests fullscreen while manifest declares fullscreen false'))
+    protocol=profile['game']['protocol'];proto_string=f"{protocol['name']}.v{protocol['version']}"
     if proto_string not in body: findings.append(('FAIL','protocol-id',f'Missing protocol identifier {proto_string}'))
-    namespace=profile['game']['storage']['namespace']
-    if namespace not in body: findings.append(('FAIL','storage-namespace',f'Manifest namespace not found in runtime: {namespace}'))
+    storage=profile['game']['storage'];namespace=storage['namespace']
+    if storage.get('persistence')!='none' and namespace not in body: findings.append(('FAIL','storage-namespace',f'Manifest namespace not found in runtime: {namespace}'))
+    if storage.get('persistence')=='none' and ('localStorage' in body or 'indexedDB' in body):
+        findings.append(('WARN','storage-runtime-mismatch','Runtime references browser storage while manifest declares persistence none; verify opaque/session fallback behavior'))
     if 'toadal:web:v1:' in body: findings.append(('FAIL','website-storage','Website-owned storage namespace referenced by game'))
     return findings
+
+def scan_html(entry:Path,profile:dict[str,Any]):
+    return scan_runtime(entry,profile,None)
 
 def validate_tcs_manifest(game:dict[str,Any], manifest:dict[str,Any]):
     if not isinstance(manifest,dict): return False,'tcsManifest must be an object'
@@ -84,6 +122,19 @@ def validate_tcs_manifest(game:dict[str,Any], manifest:dict[str,Any]):
         if not ok:return False,msg
     return True,'identity and bounded intake fields consistent'
 
+def copy_runtime_tree(package_root:Path,runtime:Path,tcs_supplied:bool):
+    copied=[]
+    for src in sorted(package_root.rglob('*')):
+        if src.is_symlink(): raise SystemExit(f'Symlink forbidden in runtime package: {src}')
+        if not src.is_file(): continue
+        rel=src.relative_to(package_root)
+        if any(part.lower() in {'.git','node_modules','__pycache__'} for part in rel.parts): continue
+        relposix=rel.as_posix()
+        if relposix in GENERATED_RUNTIME_NAMES: continue
+        if tcs_supplied and relposix in {'tcs1.json','manifest.tcs1.json'}: continue
+        dst=runtime/rel;dst.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(src,dst);copied.append(dst)
+    return copied
+
 def ledger(files:list[Path],root:Path):
     rows=[]
     for p in sorted(files,key=lambda x:str(x.relative_to(root)).replace('\\','/')):
@@ -96,6 +147,14 @@ def harden(args):
     game=profile['game'];entry=(source/game['entrySource']).resolve()
     if not entry.is_file(): raise SystemExit(f'Entry not found: {entry}')
     if not entry.is_relative_to(source): raise SystemExit('Entry escapes source root')
+    runtime_cfg=profile.get('runtimePackage',{});runtime_mode=runtime_cfg.get('mode','single')
+    if runtime_mode not in {'single','tree'}: raise SystemExit('runtimePackage.mode must be single or tree')
+    package_root=entry.parent
+    if runtime_mode=='tree':
+        package_root=(source/runtime_cfg.get('root','')).resolve()
+        if not package_root.is_dir() or not package_root.is_relative_to(source): raise SystemExit('runtimePackage.root must be a source-owned directory')
+        if not entry.is_relative_to(package_root) or entry.relative_to(package_root).as_posix()!='index.html':
+            raise SystemExit('Tree runtime entrySource must resolve to root index.html')
     out.mkdir(parents=True,exist_ok=True);runtime=out/'public'/'games'/game['id'];shutil.rmtree(runtime,ignore_errors=True);runtime.mkdir(parents=True)
     checks=[]
     def add(name,passed,detail='',severity='mandatory'): checks.append({'name':name,'passed':bool(passed),'detail':detail,'severity':severity})
@@ -105,9 +164,9 @@ def harden(args):
     expected_hash=profile.get('checks',{}).get('expectedEntrySha256')
     if expected_hash:
         add('G0 immutable entry hash',entry_hash==expected_hash,f'expected {expected_hash}; actual {entry_hash}')
-    findings=scan_html(entry,profile)
+    findings=scan_runtime(entry,profile,package_root if runtime_mode=='tree' else None)
     for sev,code,detail in findings:add(f'{sev} {code}',sev!='FAIL',detail,'mandatory' if sev=='FAIL' else 'advisory')
-    add('G1 normalized entry self-contained',not any(c['name'].startswith('FAIL nonclosed-entry') for c in checks),'single-file cartridge entry')
+    add('G1 runtime dependency closure',not any(c['name'].startswith('FAIL nonclosed-entry') for c in checks),f'{runtime_mode} runtime package')
     command_results=[]
     if args.run_commands:
         for item in profile.get('checks',{}).get('commands',[]):
@@ -123,15 +182,18 @@ def harden(args):
             er={'name':name,'path':item['path'],'passed':ok,'passedCount':passed,'failedCount':failed};evidence_results.append(er);add('G4 evidence '+name,ok,f'{passed} passed / {failed} failed')
         except Exception as e:
             er={'name':name,'path':item.get('path'),'passed':False,'error':str(e)};evidence_results.append(er);add('G4 evidence '+name,False,str(e))
-    shutil.copy2(entry,runtime/'index.html')
+    tcs_manifest=profile.get('tcsManifest')
+    if runtime_mode=='tree':
+        payload=copy_runtime_tree(package_root,runtime,tcs_manifest is not None)
+    else:
+        shutil.copy2(entry,runtime/'index.html');payload=[runtime/'index.html']
     evidence=profile.get('evidence',{})
     poster=(source/evidence['poster']).resolve();shot=(source/evidence['screenshot']).resolve()
     if not poster.is_file() or not shot.is_file(): raise SystemExit('Evidence poster/screenshot missing')
     write_webp(poster,runtime/'poster.webp');write_webp(shot,runtime/'screenshot.webp')
     add('G5 real-build poster evidence',True,str(poster.relative_to(source)))
     add('G5 real-build screenshot evidence',True,str(shot.relative_to(source)))
-    payload=[runtime/'index.html',runtime/'poster.webp',runtime/'screenshot.webp']
-    tcs_manifest=profile.get('tcsManifest')
+    payload=[p for p in payload if p.name not in {'poster.webp','screenshot.webp'}]+[runtime/'poster.webp',runtime/'screenshot.webp']
     if tcs_manifest is not None:
         tcs_ok,tcs_detail=validate_tcs_manifest(game,tcs_manifest)
         add('G7 TCS manifest identity',tcs_ok,tcs_detail)

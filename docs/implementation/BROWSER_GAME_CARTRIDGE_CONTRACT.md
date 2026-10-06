@@ -78,6 +78,13 @@ Host → cartridge:
 
 Unknown messages must be ignored.
 
+The list above defines the protocol vocabulary. Core lifecycle messages are required where applicable to normal play. The host shell remains responsible for route exit and fullscreen UI.
+
+Conditional request semantics:
+- `game:request-exit` is optional when the cartridge has no internal host-exit affordance. If a cartridge emits it, it must also accept `host:exit-confirmed`.
+- `game:request-fullscreen` is optional when fullscreen is exposed only by the host shell. If a cartridge emits it, its manifest must declare fullscreen support.
+- A cartridge must not invent dummy exit/fullscreen controls merely to satisfy protocol-token checks.
+
 ## Saving
 Each cartridge owns its internal save namespace.
 
