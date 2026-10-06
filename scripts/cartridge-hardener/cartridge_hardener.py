@@ -160,7 +160,7 @@ def harden(args):
     add('G7 ZIP integrity',bad is None,'PASS' if bad is None else str(bad))
     report['checks']=checks;report['zip']={'path':zip_path.name,'sha256':sha(zip_path),'bytes':zip_path.stat().st_size,'crcPass':bad is None}
     (out/'HARDENING_REPORT.json').write_text(json.dumps(report,indent=2)+'\n')
-    md=[f"# Cartridge hardening report — {game['displayName']} {game['version']}",'',f"**Disposition:** \`{disposition}\`  ",f"**Cartridge Hardening Level:** CHL-{level}  ",f"**Declared public state:** \`{manifest['publicState']}\`  ",f"**Runtime ledger SHA-256:** \`{pkg_hash}\`",'', '## Automated checks','']
+    md=[f"# Cartridge hardening report — {game['displayName']} {game['version']}",'',f"**Disposition:** `{disposition}`  ",f"**Cartridge Hardening Level:** CHL-{level}  ",f"**Declared public state:** `{manifest['publicState']}`  ",f"**Runtime ledger SHA-256:** `{pkg_hash}`",'', '## Automated checks','']
     for c in checks:md.append(f"- {'PASS' if c['passed'] else ('NOT RUN' if c['severity']=='external' else 'FAIL')}: **{c['name']}** — {c['detail']}")
     md += ['', '## External gates still required','', '- Real TOADAL website player/iframe lifecycle: **NOT RUN by this hardener invocation**.', '- Physical-device acceptance/performance: **NOT RUN**.', '- PUBLIC promotion: **not authorized by local hardening alone**.','']
     (out/'HARDENING_REPORT.md').write_text('\n'.join(md))
