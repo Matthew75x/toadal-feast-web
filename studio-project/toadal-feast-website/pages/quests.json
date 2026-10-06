@@ -311,7 +311,7 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "section",
-                    "className": "progression-section",
+                    "className": "progression-section quest-board",
                     "attributes": {
                       "aria-labelledby": "quests-status-title"
                     },
@@ -408,22 +408,145 @@
                         }
                       },
                       {
+                        "id": "component.quest-journey.filters",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "quest-filters",
+                          "attributes": {
+                            "role": "group",
+                            "aria-label": "Filter quests by status"
+                          },
+                          "style": "",
+                          "layerName": "filters",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.quest-journey.filter-all",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-quest-filter": "all",
+                                  "aria-pressed": "true",
+                                  "aria-controls": "quest-board-list"
+                                },
+                                "style": "",
+                                "layerName": "All quests",
+                                "label": "All quests"
+                              }
+                            },
+                            {
+                              "id": "component.quest-journey.filter-active",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-quest-filter": "active",
+                                  "aria-pressed": "false",
+                                  "aria-controls": "quest-board-list"
+                                },
+                                "style": "",
+                                "layerName": "Active",
+                                "label": "Active"
+                              }
+                            },
+                            {
+                              "id": "component.quest-journey.filter-ready",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-quest-filter": "ready",
+                                  "aria-pressed": "false",
+                                  "aria-controls": "quest-board-list"
+                                },
+                                "style": "",
+                                "layerName": "Ready to claim",
+                                "label": "Ready to claim"
+                              }
+                            },
+                            {
+                              "id": "component.quest-journey.filter-claimed",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-quest-filter": "claimed",
+                                  "aria-pressed": "false",
+                                  "aria-controls": "quest-board-list"
+                                },
+                                "style": "",
+                                "layerName": "Claimed",
+                                "label": "Claimed"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.quest-journey.summary",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {
+                            "data-quest-summary": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Checking configured quests…",
+                          "text": "Checking configured quests…"
+                        }
+                      },
+                      {
+                        "id": "component.quest-journey.empty",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {
+                            "data-quest-empty": "",
+                            "hidden": ""
+                          },
+                          "style": "",
+                          "layerName": "No activity is selected.",
+                          "text": "No activity is selected."
+                        }
+                      },
+                      {
                         "id": "component.guest-quests.rich-text.4aa25bbb38af.progression-empty",
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
                           "tag": "div",
-                          "className": "progression-empty",
+                          "className": "quest-list",
                           "attributes": {
                             "data-progression-quest-list": "",
-                            "aria-live": "polite"
+                            "id": "quest-board-list"
                           },
                           "style": "",
-                          "layerName": "Daily, weekly, exploration, game, and story quest groups appear here. Un",
+                          "layerName": "Runtime quest cards from existing definitions",
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.guest-quests.rich-text.2104f25d65f4.p",
+                              "id": "component.quest-journey.loading",
                               "type": "core.text",
                               "props": {
                                 "authoringVersion": 1,
@@ -431,11 +554,24 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Daily, weekly, exploration, game, and story quest groups appear here. Un",
-                                "text": "Daily, weekly, exploration, game, and story quest groups appear here. Unpublished content and unsupported gameplay are never counted."
+                                "layerName": "Quest details require the website runtime. Use Feast Pass and the navigation above to explore.",
+                                "text": "Quest details require the website runtime. Use Feast Pass and the navigation above to explore."
                               }
                             }
                           ]
+                        }
+                      },
+                      {
+                        "id": "component.quest-journey.scope-note",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-muted",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Only configured website activities are shown. Weekly rotations, gameplay quests and chapter-reading quests are not connected. Visiting Stories does not mean reading or completing a chapter.",
+                          "text": "Only configured website activities are shown. Weekly rotations, gameplay quests and chapter-reading quests are not connected. Visiting Stories does not mean reading or completing a chapter."
                         }
                       }
                     ]
