@@ -1,0 +1,322 @@
+TAP version 13
+# Subtest: protected game artifact verifier accepts exact accounted HTML and CSS bytes
+ok 1 - protected game artifact verifier accepts exact accounted HTML and CSS bytes
+  ---
+  duration_ms: 17.5077
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects missing published payloads
+ok 2 - protected game artifact verifier rejects missing published payloads
+  ---
+  duration_ms: 10.4144
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects tampered published payload bytes
+ok 3 - protected game artifact verifier rejects tampered published payload bytes
+  ---
+  duration_ms: 10.3433
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects unaccounted protected output
+ok 4 - protected game artifact verifier rejects unaccounted protected output
+  ---
+  duration_ms: 10.7509
+  type: 'test'
+  ...
+# Subtest: exact source produces a portable checked payload and manifest outside the public site
+ok 5 - exact source produces a portable checked payload and manifest outside the public site
+  ---
+  duration_ms: 1171.2905
+  type: 'test'
+  ...
+# Subtest: source-only reconstruction ignores a dirty working payload and reproduces the declared Git source
+ok 6 - source-only reconstruction ignores a dirty working payload and reproduces the declared Git source
+  ---
+  duration_ms: 841.6378
+  type: 'test'
+  ...
+# Subtest: historical package preparation uses the explicit older source and CURRENT policy
+ok 7 - historical package preparation uses the explicit older source and CURRENT policy
+  ---
+  duration_ms: 1008.3949
+  type: 'test'
+  ...
+# Subtest: manifest bytes are deterministic for the same exact source and policy
+ok 8 - manifest bytes are deterministic for the same exact source and policy
+  ---
+  duration_ms: 916.4419
+  type: 'test'
+  ...
+# Subtest: changing source reference and exported game together passed the old comparator but fails the independent pin
+ok 9 - changing source reference and exported game together passed the old comparator but fails the independent pin
+  ---
+  duration_ms: 617.2657
+  type: 'test'
+  ...
+# Subtest: new unqualified game in source AND export passes the old comparator but is denied by the fixed legacy policy
+ok 10 - new unqualified game in source AND export passes the old comparator but is denied by the fixed legacy policy
+  ---
+  duration_ms: 310.813
+  type: 'test'
+  ...
+# Subtest: committing a changed game still cannot pass the independent legacy policy
+ok 11 - committing a changed game still cannot pass the independent legacy policy
+  ---
+  duration_ms: 703.9806
+  type: 'test'
+  ...
+# Subtest: adding a hidden-from-catalogue cartridge is denied even when committed
+ok 12 - adding a hidden-from-catalogue cartridge is denied even when committed
+  ---
+  duration_ms: 695.1633
+  type: 'test'
+  ...
+# Subtest: revocation blocks old source recovery without changing historical bytes
+ok 13 - revocation blocks old source recovery without changing historical bytes
+  ---
+  duration_ms: 664.4989
+  type: 'test'
+  ...
+# Subtest: uncommitted candidate policy cannot self-authorize publication
+ok 14 - uncommitted candidate policy cannot self-authorize publication
+  ---
+  duration_ms: 583.2509
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.environment='production'
+ok 15 - legacy scope cannot be raised by metadata: p=>p.environment='production'
+  ---
+  duration_ms: 284.1976
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.tcsQualified=true
+ok 16 - legacy scope cannot be raised by metadata: p=>p.tcsQualified=true
+  ---
+  duration_ms: 303.5124
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.publicState='PUBLIC'
+ok 17 - legacy scope cannot be raised by metadata: p=>p.publicState='PUBLIC'
+  ---
+  duration_ms: 281.3796
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.newCartridgeAdmission='ENABLED'
+ok 18 - legacy scope cannot be raised by metadata: p=>p.newCartridgeAdmission='ENABLED'
+  ---
+  duration_ms: 295.1849
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.unknownGamePayloads='ALLOW'
+ok 19 - legacy scope cannot be raised by metadata: p=>p.unknownGamePayloads='ALLOW'
+  ---
+  duration_ms: 288.6361
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.gameId='croaker-king-defense'
+ok 20 - legacy scope cannot be raised by metadata: p=>p.gameId='croaker-king-defense'
+  ---
+  duration_ms: 294.7021
+  type: 'test'
+  ...
+# Subtest: extra arbitrary payload path outside game directories is rejected at final handoff
+ok 21 - extra arbitrary payload path outside game directories is rejected at final handoff
+  ---
+  duration_ms: 598.199
+  type: 'test'
+  ...
+# Subtest: missing final file is rejected
+ok 22 - missing final file is rejected
+  ---
+  duration_ms: 596.0426
+  type: 'test'
+  ...
+# Subtest: same-size changed website script is rejected
+ok 23 - same-size changed website script is rejected
+  ---
+  duration_ms: 594.5062
+  type: 'test'
+  ...
+# Subtest: tampering with a sealed payload is detected before upload
+ok 24 - tampering with a sealed payload is detected before upload
+  ---
+  duration_ms: 869.4529
+  type: 'test'
+  ...
+# Subtest: a payload and self-rehashed manifest cannot override the independently selected source
+ok 25 - a payload and self-rehashed manifest cannot override the independently selected source
+  ---
+  duration_ms: 866.9398
+  type: 'test'
+  ...
+# Subtest: wrong separately recorded digest is rejected
+ok 26 - wrong separately recorded digest is rejected
+  ---
+  duration_ms: 863.7104
+  type: 'test'
+  ...
+# Subtest: receipt cannot mislabel a package as deployed or TCS approved
+ok 27 - receipt cannot mislabel a package as deployed or TCS approved
+  ---
+  duration_ms: 849.7245
+  type: 'test'
+  ...
+# Subtest: unexpected package sidecars are rejected and never included in site
+ok 28 - unexpected package sidecars are rejected and never included in site
+  ---
+  duration_ms: 629.8665
+  type: 'test'
+  ...
+# Subtest: exact full source SHA is required; no branch/HEAD/latest aliases
+ok 29 - exact full source SHA is required; no branch/HEAD/latest aliases
+  ---
+  duration_ms: 298.1486
+  type: 'test'
+  ...
+# Subtest: existing output and sentinel remain unchanged on refusal
+ok 30 - existing output and sentinel remain unchanged on refusal
+  ---
+  duration_ms: 605.3899
+  type: 'test'
+  ...
+# Subtest: output cannot overwrite or live inside the source/dist tree
+ok 31 - output cannot overwrite or live inside the source/dist tree
+  ---
+  duration_ms: 899.3775
+  type: 'test'
+  ...
+# Subtest: untracked private file cannot enter final payload
+ok 32 - untracked private file cannot enter final payload
+  ---
+  duration_ms: 638.5726
+  type: 'test'
+  ...
+# Subtest: an empty untracked directory is not silently omitted from the sealed inventory
+ok 33 - an empty untracked directory is not silently omitted from the sealed inventory
+  ---
+  duration_ms: 594.1085
+  type: 'test'
+  ...
+# Subtest: payload hardlinks are refused rather than dereferenced into an upload
+ok 34 - payload hardlinks are refused rather than dereferenced into an upload
+  ---
+  duration_ms: 585.2972
+  type: 'test'
+  ...
+# Subtest: directory symlink or Windows junction is rejected before reading outside the payload
+ok 35 - directory symlink or Windows junction is rejected before reading outside the payload
+  ---
+  duration_ms: 651.7621
+  type: 'test'
+  ...
+# Subtest: linked output parent is refused
+ok 36 - linked output parent is refused
+  ---
+  duration_ms: 603.7103
+  type: 'test'
+  ...
+# Subtest: Git symlink mode is rejected even on systems that cannot create native file symlinks
+ok 37 - Git symlink mode is rejected even on systems that cannot create native file symlinks
+  ---
+  duration_ms: 595.5695
+  type: 'test'
+  ...
+# Subtest: case-colliding Git names cannot produce different Windows/Unix payloads
+ok 38 - case-colliding Git names cannot produce different Windows/Unix payloads
+  ---
+  duration_ms: 617.434
+  type: 'test'
+  ...
+# Subtest: unsafe paths are never normalized into a different accepted file
+ok 39 - unsafe paths are never normalized into a different accepted file
+  ---
+  duration_ms: 0.7409
+  type: 'test'
+  ...
+# Subtest: current independent legacy pins match the three exact historical source files, not the donor hash
+ok 40 - current independent legacy pins match the three exact historical source files, not the donor hash
+  ---
+  duration_ms: 2.0878
+  type: 'test'
+  ...
+# Subtest: normal exporter and Pages upload both pass through the shared gate, with no runtime edits or extra deployment workflow
+ok 41 - normal exporter and Pages upload both pass through the shared gate, with no runtime edits or extra deployment workflow
+  ---
+  duration_ms: 0.5895
+  type: 'test'
+  ...
+# Subtest: an indexable Git source cannot be labelled a staging recovery artifact
+ok 42 - an indexable Git source cannot be labelled a staging recovery artifact
+  ---
+  duration_ms: 709.3968
+  type: 'test'
+  ...
+# Subtest: an existing custom-domain CNAME is not silently carried into staging
+ok 43 - an existing custom-domain CNAME is not silently carried into staging
+  ---
+  duration_ms: 639.3001
+  type: 'test'
+  ...
+# Subtest: nonempty hidden source marker cannot be silently dropped by the uploader
+ok 44 - nonempty hidden source marker cannot be silently dropped by the uploader
+  ---
+  duration_ms: 753.8236
+  type: 'test'
+  ...
+# Subtest: missing legacy files and duplicate policy records cannot weaken the exact allowlist
+ok 45 - missing legacy files and duplicate policy records cannot weaken the exact allowlist
+  ---
+  duration_ms: 320.863
+  type: 'test'
+  ...
+# Subtest: the actual one-LF source marker is an explicit recorded omission, not public content
+ok 46 - the actual one-LF source marker is an explicit recorded omission, not public content
+  ---
+  duration_ms: 1034.8329
+  type: 'test'
+  ...
+# Subtest: accepts safe integers and the real cartridge strictly grouped score format only
+ok 47 - accepts safe integers and the real cartridge strictly grouped score format only
+  ---
+  duration_ms: 1.7323
+  type: 'test'
+  ...
+# Subtest: formats elapsed play time as minutes and seconds
+ok 48 - formats elapsed play time as minutes and seconds
+  ---
+  duration_ms: 0.1447
+  type: 'test'
+  ...
+# Subtest: accepts the exact opaque-origin iframe and rejects sibling or synthetic messages
+ok 49 - accepts the exact opaque-origin iframe and rejects sibling or synthetic messages
+  ---
+  duration_ms: 0.4524
+  type: 'test'
+  ...
+# Subtest: tracks in-memory session best and excludes paused time from play duration
+ok 50 - tracks in-memory session best and excludes paused time from play duration
+  ---
+  duration_ms: 0.268
+  type: 'test'
+  ...
+# Subtest: does not accept score or completion outside an active run
+ok 51 - does not accept score or completion outside an active run
+  ---
+  duration_ms: 0.1976
+  type: 'test'
+  ...
+# Subtest: error and exit stop host-measured session time; a retry starts a fresh run
+ok 52 - error and exit stop host-measured session time; a retry starts a fresh run
+  ---
+  duration_ms: 0.219
+  type: 'test'
+  ...
+1..52
+# tests 52
+# suites 0
+# pass 52
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24783.7123

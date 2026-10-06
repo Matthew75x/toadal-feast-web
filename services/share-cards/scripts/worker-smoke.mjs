@@ -1,0 +1,16 @@
+import assert from 'node:assert/strict';
+const base=process.env.SHARE_TEST_ORIGIN || 'http://127.0.0.1:8788';
+const payload={schemaVersion:1,kind:'invite',theme:'astro',gameId:'toadal-feast'};
+const key=[...crypto.getRandomValues(new Uint8Array(32))].map(b=>b.toString(16).padStart(2,'0')).join('');
+const headers={Origin:base,'Content-Type':'application/json','Idempotency-Key':key};
+const config=await fetch(base+'/api/config');assert.equal(config.status,200);
+const created=await fetch(base+'/api/shares',{method:'POST',headers,body:JSON.stringify(payload)});
+assert.equal(created.status,201,await created.clone().text());const card=await created.json();
+const html=await fetch(card.url);assert.equal(html.status,200);assert.match(await html.text(),/og:image/);
+const image=await fetch(card.imageUrl);assert.equal(image.status,200);assert.equal(image.headers.get('content-type'),'image/png');
+const png=new Uint8Array(await image.arrayBuffer());assert.deepEqual([...png.slice(0,8)],[137,80,78,71,13,10,26,10]);
+const view=new DataView(png.buffer);assert.equal(view.getUint32(16),1200);assert.equal(view.getUint32(20),630);
+const retry=await fetch(base+'/api/shares',{method:'POST',headers,body:JSON.stringify(payload)});assert.equal(retry.status,200);assert.equal((await retry.json()).url,card.url);
+const removed=await fetch(base+'/api/shares/'+card.id,{method:'DELETE',headers:{Origin:base,Authorization:'Bearer '+card.manageToken}});
+assert.equal(removed.status,204);assert.equal((await fetch(card.url)).status,410);assert.equal((await fetch(card.imageUrl,{method:'HEAD'})).status,410);
+console.log('PASS: real Worker/R2 local create → PNG + metadata → retry → remove → direct-image 410. PNG bytes '+png.length);

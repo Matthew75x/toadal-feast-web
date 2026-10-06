@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 1,
+  "sourceArchives": [
+    {
+      "name": "files (19).zip",
+      "bytes": 17566997,
+      "sha256": "b7e4fd0bab03b9d6cf5febad15cab8c2892cfba0793a81fea1c102bf19728924"
+    },
+    {
+      "name": "files (20).zip",
+      "bytes": 8169348,
+      "sha256": "9f1355a652b30f7b6cce2ede76cbee8b1cde0c56cf4693f602fcc2db22d23998"
+    }
+  ],
+  "letteringEngine": {
+    "version": "2.0.0",
+    "sha256": "7188d0199bcb2c4e37d46254059f1d7b759b183e2088f7df83bc5bd44eb4721b",
+    "runtime": "build-time only",
+    "networkRequestsDuringHeaderRendering": 0
+  },
+  "assets": [
+    {
+      "path": "astro-score-frame.png",
+      "bytes": 221516,
+      "sha256": "84cb0565ba3f0fc62b06774164e07c119e44be610d3db5d6fb1694cdd472352b",
+      "source": "files (19).zip → astro-hud-implementation-package.zip → assets/images/ui/arcade-astro/v2/score-frame.png"
+    },
+    {
+      "path": "toadal-feast-header.png",
+      "bytes": 233209,
+      "sha256": "317c282528cda26c36a60db05e8157d13daf5720ed81f4735f01827a055995a2",
+      "source": "files (20).zip → audited toadal-lettering.js v2.0.0; isolated Canvas rendering, 1000×180 transparent"
+    },
+    {
+      "path": "LilitaOne-Latin.ttf",
+      "bytes": 24368,
+      "sha256": "a0647ac7b2655e45d5cf14e4d6bb8eadc9d8b8444bcd7fe42e2de496a59b3f2b",
+      "source": "files (20).zip embedded Lilita One Latin WOFF2 → outline-preserving TTF decode; SIL OFL1.1"
+    },
+    {
+      "path": "LilitaOne-OFL.txt",
+      "bytes": 4397,
+      "sha256": "2db08f46f614cf63e96dc99390112b2a1d2c4171370443f510e2163fd4ad40eb",
+      "source": "files (20).zip → TOADAL_Lettering_v2.0.0.zip → licenses/LilitaOne-OFL.txt"
+    },
+    {
+      "path": "NOTICE.md",
+      "bytes": 526,
+      "sha256": "291ef338a0e8ab8a2ba5c25c8bb839e97582d1016e45f130ca6d9a24f6b84dda",
+      "source": "files (20).zip → TOADAL_Lettering_v2.0.0.zip → NOTICE.md"
+    },
+    {
+      "path": "toadal-victory-source.png",
+      "bytes": 335410,
+      "sha256": "8af7dfef69ffc8d0484845453ba462776376e4d1fc574459f2c8e9d1d138e026",
+      "source": "Matthew75x/toadal-feast-web@f53176f0c90e6e23c179d7c541e16de69b4e34d5:studio-project/toadal-feast-website/reference/assets/images/characters/toadal-victory.png"
+    },
+    {
+      "path": "toadal-victory.png",
+      "bytes": 227446,
+      "sha256": "983a564cf2677c94b939d881cb099008280dcc7dc5e107341fb304050f56478e",
+      "source": "Deterministic 512px contain resize of toadal-victory-source.png using Pillow; PNG transparency preserved"
+    }
+  ]
+}
