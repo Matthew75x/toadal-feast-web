@@ -9,6 +9,7 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { verifyOwnerRendererProvenance } from './lib/owner-native-projection.mjs';
 import { verifyPublicProjection } from './lib/owner-public-projection.mjs';
 import { verifyProtectedGameArtifacts } from './lib/protected-game-artifacts.mjs';
+import { verifyExportGamePins } from './lib/staging-artifact.mjs';
 import { fingerprintFiles } from './fingerprint-site-inputs.mjs';
 import { synchronize as verifyPlayCatalogue } from './sync-play-catalogue.mjs';
 
@@ -75,6 +76,7 @@ if (extraction.status !== 0) throw new Error('Studio ZIP extraction failed: ' + 
 
 const protectedArtifacts = verifyProtectedGameArtifacts(exportedDir, project);
 if (!protectedArtifacts.valid) throw new Error('Protected game bytes changed: ' + protectedArtifacts.errors.join('; '));
+verifyExportGamePins(exportedDir, project, repo);
 const checks = [];
 for (const [script, parameters] of [
   ['wo001-pages-basepath.mjs', [exportedDir, basePath, '--staging-robots']],

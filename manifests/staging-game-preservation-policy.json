@@ -1,0 +1,37 @@
+{
+  "schema": "toadal.staging-game-preservation.v1",
+  "environment": "github-pages-staging",
+  "basePath": "/toadal-feast-web/",
+  "classification": "LEGACY_PREVIEW_PRESERVATION_NOT_TCS_QUALIFICATION",
+  "gameId": "wicked-bites",
+  "version": "5.5",
+  "publicState": "PREVIEW",
+  "tcsQualified": false,
+  "unknownGamePayloads": "DENY",
+  "newCartridgeAdmission": "NOT_ENABLED",
+  "baseline": {
+    "sourceCommit": "670f1967ddd49805ca937aa941808fd4de30dc91",
+    "sourceTree": "db6703f0cb27869eb5ab2690570e76b857a7a366",
+    "receipt": "https://github.com/Matthew75x/toadal-feast-web/pull/23#issuecomment-6017498673",
+    "scope": "Exact already-delivered legacy GitHub Pages preview only, not current TCS 5.5.1 or native game qualification. Do not regenerate this policy from a candidate to pass a failed check."
+  },
+  "files": [
+    {
+      "path": "public/games/wicked-bites/cartridge.json",
+      "bytes": 1804,
+      "sha256": "9487519b9e9d5b49e692b15f389e4d1c148d89e7a8508ff9e5ea511274847a03"
+    },
+    {
+      "path": "public/games/wicked-bites/index.html",
+      "bytes": 1462088,
+      "sha256": "783dfe877c931a6d142a1453eaddace6776d4852d4dae074a20b40975b47036c"
+    },
+    {
+      "path": "public/games/wicked-bites/toadal-bridge.js",
+      "bytes": 5117,
+      "sha256": "4f11aefb6aa0cb11c614c9a59de8c7cd753f6e5501cd269bb7f493097852ec8c"
+    }
+  ],
+  "revokedSha256": [],
+  "newCartridgeRule": "Use existing TCS/Publisher qualification and separately reviewed website admission; this preservation policy grants no new signing, game or production authority."
+}
