@@ -9,7 +9,8 @@
 - the only branch that triggers deployment; manual workflow dispatch is also guarded to this ref
 - commit the validated Studio source and its rendered, base-path-adjusted `dist/` export here
 - staging URL: <https://matthew75x.github.io/toadal-feast-web/>
-- the workflow uploads committed `dist/`; it does not build/render Studio
+- the workflow verifies committed `dist/` against the exact `GITHUB_SHA`, seals a separate payload, and uploads only that checked payload; it does not build/render Studio
+- final handoff and historical source-only recovery use [STAGING_ARTIFACT_HANDOFF.md](STAGING_ARTIFACT_HANDOFF.md); this does not authorize new cartridges or production
 
 ## work branches
 Format:

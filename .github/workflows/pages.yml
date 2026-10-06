@@ -26,15 +26,22 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/configure-pages@v5
       - name: Verify guest progression and exact runtime resource pins
-        run: node --test scripts/guest-progression.test.mjs scripts/guest-reset-recovery.test.mjs scripts/guest-progress-refresh.test.mjs scripts/feast-pass-game-records.test.mjs scripts/quest-journey.test.mjs scripts/guest-showcase.test.mjs scripts/play-catalogue.test.mjs
+        run: node --test scripts/guest-progression.test.mjs scripts/guest-reset-recovery.test.mjs scripts/guest-progress-refresh.test.mjs scripts/feast-pass-game-records.test.mjs scripts/quest-journey.test.mjs scripts/guest-showcase.test.mjs scripts/play-catalogue.test.mjs scripts/protected-game-artifacts.test.mjs scripts/staging-artifact.test.mjs
       - name: Apply and verify staging-only Pages policy
         run: |
           node scripts/wo001-pages-basepath.mjs dist /toadal-feast-web/ --staging-robots
           node scripts/verify-pages-basepath.mjs dist /toadal-feast-web/
           node scripts/verify-static-links.mjs dist /toadal-feast-web/
           node scripts/verify-staging-robots.mjs dist staging
+      - name: Seal and verify exact staging payload
+        id: seal
+        run: >-
+          node scripts/staging-artifact.mjs prepare
+          --source "$GITHUB_SHA" --input dist
+          --output "$RUNNER_TEMP/toadal-staging-$GITHUB_RUN_ID-$GITHUB_RUN_ATTEMPT"
+          --github-output
       - uses: actions/upload-pages-artifact@v4
         with:
-          path: dist
+          path: ${{ steps.seal.outputs.payload }}
       - id: deployment
         uses: actions/deploy-pages@v4
