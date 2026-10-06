@@ -231,7 +231,7 @@
         var chapter = latestPublishedChapter(registry, series);
         return chapter ? { series: series, chapter: chapter } : null;
       }).filter(Boolean);
-      if (!chapters.length) latest.appendChild(create('p', 'story-empty-copy', 'No chapter is marked PUBLISHED, so there is no latest chapter to show.'));
+      if (!chapters.length) latest.appendChild(create('p', 'story-empty-copy', 'No chapters are available to read yet.'));
       else chapters.forEach(function (entry) {
         var card = create('div', 'story-latest-card');
         card.append(create('p', 'story-kicker', entry.series.title || 'TOADAL FEAST Manga'), create('h3', '', entry.chapter.title || entry.chapter.displayLabel || 'Published chapter'));

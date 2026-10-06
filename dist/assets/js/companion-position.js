@@ -92,7 +92,12 @@
     }
 
     function placePanel() {
-      if (!panelVisible()) return;
+      if (!panelVisible()) {
+        panel.style.removeProperty('visibility');
+        panel.removeAttribute('aria-hidden');
+        root.removeAttribute('data-bubble-suppressed');
+        return;
+      }
       var view = viewport();
       var safeLeft = readSafeInset('left') + EDGE_GAP;
       var safeRight = readSafeInset('right') + EDGE_GAP;
@@ -130,7 +135,19 @@
 
       // The visible bubble, not just its character anchor, must leave navigation usable.
       var preferred = { x: Math.round(left), y: Math.round(top) };
-      var next = avoidControls(preferred, panelWidth, panelHeight, controlRects(true).concat([anchor]));
+      var controls = controlRects(true).concat([anchor]);
+      var next = avoidControls(preferred, panelWidth, panelHeight, controls);
+      // A passive tip can wait for free space; the character and reader's preferences remain intact.
+      var suppressed = root.getAttribute('data-mobile-docked') === 'true' &&
+        root.getAttribute('data-minimized') === 'true' && controls.some(function (rect) {
+          return next.x + panelWidth + EDGE_GAP > rect.left && next.x - EDGE_GAP < rect.right &&
+            next.y + panelHeight + EDGE_GAP > rect.top && next.y - EDGE_GAP < rect.bottom;
+        });
+      panel.style.setProperty('visibility', suppressed ? 'hidden' : 'visible', 'important');
+      if (suppressed) panel.setAttribute('aria-hidden', 'true');
+      else panel.removeAttribute('aria-hidden');
+      root.setAttribute('data-bubble-suppressed', suppressed ? 'true' : 'false');
+      button.setAttribute('aria-expanded', suppressed ? 'false' : 'true');
       panel.style.setProperty('left', next.x + 'px', 'important');
       panel.style.setProperty('top', next.y + 'px', 'important');
       panel.setAttribute('data-bubble-placement', vertical + '-' + side +
@@ -166,8 +183,10 @@
     function controlRects(includeNavigation, headerOnly) {
       var header = headerOnly ? document.querySelector('.site-header') : null;
       var view = viewport();
-      var selectors = 'a[href], button, input, select, textarea, [role="button"], iframe, [data-player-frame-wrap], .detail-breadcrumb, dialog[open], [role="dialog"]';
+      var selectors = 'a[href], button, input, select, textarea, summary, [role="button"], iframe, [data-player-frame-wrap], .detail-breadcrumb, dialog[open], [role="dialog"]';
       if (includeNavigation) selectors += ', .site-header, [role="navigation"]';
+      // An automatic header tip must leave the hero title, explanation and actions readable.
+      if (includeNavigation && root.getAttribute('data-mobile-docked') === 'true') selectors += ', main h1, main .wo002-detail-copy';
       return Array.from(document.querySelectorAll(selectors)).filter(function (control) {
         if (root.contains(control)) return false;
         if (headerOnly && (!header || !header.contains(control))) return false;
@@ -406,6 +425,7 @@
       } else placePanel();
     });
     panelObserver.observe(panel, { attributes: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
+    panelObserver.observe(root, { attributes: true, attributeFilter: ['data-minimized', 'data-panel-visible'] });
 
     var initial = loadPosition();
     x = initial.x;

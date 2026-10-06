@@ -304,221 +304,266 @@
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.leaderboards.main.931da37a2526.label",
-                              "type": "core.text",
+                              "id": "component.leaderboards.main.66ba7a87f24d.leaderboard-filters.field-0",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "label",
-                                "className": "",
-                                "attributes": {
-                                  "for": "leaderboard-game"
-                                },
+                                "tag": "div",
+                                "className": "leaderboard-filter-field",
+                                "attributes": {},
                                 "style": "",
                                 "layerName": "Game",
-                                "text": "Game"
-                              }
-                            },
-                            {
-                              "id": "component.leaderboards.main.a3cb3136d8e3.leaderboard-game",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "select",
-                                "className": "",
-                                "attributes": {
-                                  "id": "leaderboard-game",
-                                  "data-leaderboard-game": ""
-                                },
-                                "style": "",
-                                "layerName": "leaderboard game",
                                 "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.leaderboards.main.5b2d1819ba0d.option",
+                                    "id": "component.leaderboards.main.931da37a2526.label",
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "option",
+                                      "tag": "label",
                                       "className": "",
                                       "attributes": {
-                                        "value": "wicked-bites"
+                                        "for": "leaderboard-game"
                                       },
                                       "style": "",
-                                      "layerName": "Wicked Bites",
-                                      "text": "Wicked Bites"
+                                      "layerName": "Game",
+                                      "text": "Game"
                                     }
                                   },
                                   {
-                                    "id": "component.leaderboards.main.2f9be9dba664.option",
-                                    "type": "core.text",
+                                    "id": "component.leaderboards.main.a3cb3136d8e3.leaderboard-game",
+                                    "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "option",
+                                      "tag": "select",
                                       "className": "",
                                       "attributes": {
-                                        "value": "claw-feed-gulper"
+                                        "id": "leaderboard-game",
+                                        "data-leaderboard-game": ""
                                       },
                                       "style": "",
-                                      "layerName": "CLAW: Feed Gulper",
-                                      "text": "CLAW: Feed Gulper"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.leaderboards.main.0a1f9c751d31.option",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "option",
-                                      "className": "",
-                                      "attributes": {
-                                        "value": "toadal-tower-defense"
-                                      },
-                                      "style": "",
-                                      "layerName": "TOADAL Tower Defense",
-                                      "text": "TOADAL Tower Defense"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.leaderboards.main.a1494365d8fa.option",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "option",
-                                      "className": "",
-                                      "attributes": {
-                                        "value": "froggy-fruity-bash"
-                                      },
-                                      "style": "",
-                                      "layerName": "Froggy Fruity Bash",
-                                      "text": "Froggy Fruity Bash"
+                                      "layerName": "leaderboard game",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.leaderboards.main.5b2d1819ba0d.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": "wicked-bites"
+                                            },
+                                            "style": "",
+                                            "layerName": "Wicked Bites",
+                                            "text": "Wicked Bites"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.leaderboards.main.2f9be9dba664.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": "claw-feed-gulper"
+                                            },
+                                            "style": "",
+                                            "layerName": "CLAW: Feed Gulper",
+                                            "text": "CLAW: Feed Gulper"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.leaderboards.main.0a1f9c751d31.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": "toadal-tower-defense"
+                                            },
+                                            "style": "",
+                                            "layerName": "TOADAL Tower Defense",
+                                            "text": "TOADAL Tower Defense"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.leaderboards.main.a1494365d8fa.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": "froggy-fruity-bash"
+                                            },
+                                            "style": "",
+                                            "layerName": "Froggy Fruity Bash",
+                                            "text": "Froggy Fruity Bash"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
                               }
                             },
                             {
-                              "id": "component.leaderboards.main.bd64779d820d.label",
-                              "type": "core.text",
+                              "id": "component.leaderboards.main.66ba7a87f24d.leaderboard-filters.field-1",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "label",
-                                "className": "",
-                                "attributes": {
-                                  "for": "leaderboard-scope"
-                                },
+                                "tag": "div",
+                                "className": "leaderboard-filter-field",
+                                "attributes": {},
                                 "style": "",
                                 "layerName": "Scope",
-                                "text": "Scope"
-                              }
-                            },
-                            {
-                              "id": "component.leaderboards.main.d67570f9cb33.leaderboard-scope",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "select",
-                                "className": "",
-                                "attributes": {
-                                  "id": "leaderboard-scope",
-                                  "data-leaderboard-scope": ""
-                                },
-                                "style": "",
-                                "layerName": "leaderboard scope",
                                 "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.leaderboards.main.836adb150242.option",
+                                    "id": "component.leaderboards.main.bd64779d820d.label",
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "option",
+                                      "tag": "label",
                                       "className": "",
                                       "attributes": {
-                                        "value": "local"
+                                        "for": "leaderboard-scope"
                                       },
                                       "style": "",
-                                      "layerName": "Local scores",
-                                      "text": "Local scores"
+                                      "layerName": "Scope",
+                                      "text": "Scope"
                                     }
                                   },
                                   {
-                                    "id": "component.leaderboards.main.f37e9032cb4a.option",
-                                    "type": "core.text",
+                                    "id": "component.leaderboards.main.d67570f9cb33.leaderboard-scope",
+                                    "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "option",
+                                      "tag": "select",
                                       "className": "",
                                       "attributes": {
-                                        "value": "connected"
+                                        "id": "leaderboard-scope",
+                                        "data-leaderboard-scope": ""
                                       },
                                       "style": "",
-                                      "layerName": "Connected / global",
-                                      "text": "Connected / global"
+                                      "layerName": "leaderboard scope",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.leaderboards.main.836adb150242.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": "local"
+                                            },
+                                            "style": "",
+                                            "layerName": "Local scores",
+                                            "text": "Local scores"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.leaderboards.main.f37e9032cb4a.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {
+                                              "value": "connected"
+                                            },
+                                            "style": "",
+                                            "layerName": "Connected / global",
+                                            "text": "Connected / global"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
                               }
                             },
                             {
-                              "id": "component.leaderboards.main.7b172a3ad902.label",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "label",
-                                "className": "",
-                                "attributes": {
-                                  "for": "leaderboard-mode"
-                                },
-                                "style": "",
-                                "layerName": "Mode / ruleset",
-                                "text": "Mode / ruleset"
-                              }
-                            },
-                            {
-                              "id": "component.leaderboards.main.75ccbb63973b.leaderboard-mode",
+                              "id": "component.leaderboards.main.66ba7a87f24d.leaderboard-filters.field-2",
                               "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "select",
-                                "className": "",
-                                "attributes": {
-                                  "id": "leaderboard-mode",
-                                  "disabled": true,
-                                  "aria-describedby": "leaderboard-mode-note"
-                                },
+                                "tag": "div",
+                                "className": "leaderboard-filter-field",
+                                "attributes": {},
                                 "style": "",
-                                "layerName": "leaderboard mode",
+                                "layerName": "Mode / ruleset",
                                 "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.leaderboards.main.b08d3c85419e.option",
+                                    "id": "component.leaderboards.main.7b172a3ad902.label",
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "option",
+                                      "tag": "label",
                                       "className": "",
-                                      "attributes": {},
+                                      "attributes": {
+                                        "for": "leaderboard-mode"
+                                      },
                                       "style": "",
-                                      "layerName": "Not exposed by current browser score bridge",
-                                      "text": "Not exposed by current browser score bridge"
+                                      "layerName": "Mode / ruleset",
+                                      "text": "Mode / ruleset"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.leaderboards.main.75ccbb63973b.leaderboard-mode",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "select",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "leaderboard-mode",
+                                        "disabled": true,
+                                        "aria-describedby": "leaderboard-mode-note"
+                                      },
+                                      "style": "",
+                                      "layerName": "leaderboard mode",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.leaderboards.main.b08d3c85419e.option",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "option",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Not reported by this preview",
+                                            "text": "Not reported by this preview"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.leaderboards.main.d047a9e9b5a2.leaderboard-mode-note",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-muted",
+                                      "attributes": {
+                                        "id": "leaderboard-mode-note"
+                                      },
+                                      "style": "",
+                                      "layerName": "This preview does not report a game mode or ruleset.",
+                                      "text": "This preview does not report a game mode or ruleset."
                                     }
                                   }
                                 ]
-                              }
-                            },
-                            {
-                              "id": "component.leaderboards.main.d047a9e9b5a2.leaderboard-mode-note",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "progression-muted",
-                                "attributes": {
-                                  "id": "leaderboard-mode-note"
-                                },
-                                "style": "",
-                                "layerName": "leaderboard mode note",
-                                "text": "Mode and ruleset are not included in the validated Wicked Bites host messages."
                               }
                             }
                           ]
