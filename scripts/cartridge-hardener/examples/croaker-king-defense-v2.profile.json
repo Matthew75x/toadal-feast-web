@@ -1,0 +1,160 @@
+{
+  "profileVersion": 1,
+  "game": {
+    "id": "croaker-king-defense",
+    "displayName": "Croaker King Defense",
+    "version": "2.0.0",
+    "publicState": "PREVIEW",
+    "entrySource": "dist/Croaker_King_Defense_v2_0_0.html",
+    "orientation": "any",
+    "inputs": {
+      "touch": true,
+      "keyboard": true,
+      "mouse": true,
+      "gamepad": false
+    },
+    "storage": {
+      "namespace": "toadal:game:croaker-king-defense:v1:",
+      "persistence": "local",
+      "accountSync": "none"
+    },
+    "fullscreen": true,
+    "mobileSupport": true,
+    "protocol": {
+      "name": "toadal.game",
+      "version": 1
+    },
+    "source": {
+      "repository": "local-restored-source/Croaker_King_Defense_v2_0_0",
+      "ref": "RESTORED-2.0.0-20261006"
+    },
+    "knownLimitations": [
+      "PREVIEW candidate only; the exact package has not yet completed the real TOADAL website-player acceptance gate.",
+      "Physical-device acceptance/performance for this exact combined two-mode package remains required before PUBLIC consideration.",
+      "Cannon Horde competitive result submission is suppressed when the outer website host does not explicitly negotiate mode-aware results.",
+      "This v2.0.0 source was restored from preserved execution records and donor sources; it is not claimed byte-identical to any later unpublished v2.0.1 workspace.",
+      "The bundled tcs1.json is intake metadata only; it does not claim TCS bridge/security qualification or positive TCS authority."
+    ]
+  },
+  "evidence": {
+    "poster": "qa/public-desktop-menu.png",
+    "screenshot": "qa/public-desktop-fortress.png"
+  },
+  "checks": {
+    "commands": [
+      {
+        "name": "Combined package verify",
+        "argv": [
+          "npm",
+          "run",
+          "verify"
+        ],
+        "timeoutSeconds": 180
+      },
+      {
+        "name": "Cannon Horde rules and replay regression",
+        "argv": [
+          "npm",
+          "run",
+          "test:rules"
+        ],
+        "timeoutSeconds": 180
+      },
+      {
+        "name": "Two-mode clean lifecycle smoke",
+        "argv": [
+          "npm",
+          "run",
+          "test:smoke"
+        ],
+        "timeoutSeconds": 180
+      }
+    ],
+    "expectedEntrySha256": "f09be56a38792beae7ac435762b80e38bc345dcfa8c3f3272f7b955254cf53cd",
+    "evidenceReports": [
+      {
+        "name": "Combined package verification",
+        "path": "qa/package-verification.json",
+        "minPassed": 5
+      },
+      {
+        "name": "Two-mode browser integration",
+        "path": "qa/browser-integration.json",
+        "minPassed": 25
+      },
+      {
+        "name": "Cannon Horde rules and replay regression",
+        "path": "qa/horde-rules.json",
+        "minPassed": 21
+      },
+      {
+        "name": "Multi-viewport presentation qualification",
+        "path": "qa/presentation.json",
+        "minPassed": 35
+      }
+    ]
+  },
+  "hostHarness": {
+    "modeStartSelectors": [
+      {
+        "name": "Fortress Defense",
+        "modeId": "fortress",
+        "selector": "[data-play=\"fortress\"]"
+      },
+      {
+        "name": "Cannon Horde",
+        "modeId": "horde",
+        "selector": "[data-play=\"horde\"]"
+      }
+    ],
+    "fullscreenSelector": "#lobby-header [data-action=\"fullscreen\"]",
+    "exitSelector": "#exit-host"
+  },
+  "tcsManifest": {
+    "schemaVersion": "1.0.0",
+    "id": "croaker-king-defense",
+    "version": "2.0.0",
+    "title": "Croaker King Defense",
+    "entrypoint": "index.html",
+    "catalog": {
+      "description": "Defend a whimsical food fortress in two distinct Cooking Cannon modes.",
+      "category": "arcade",
+      "tags": [
+        "firstparty",
+        "arcade",
+        "defense",
+        "cannon"
+      ]
+    },
+    "display": {
+      "orientation": "any",
+      "aspectRatio": 1.7777777777777777
+    },
+    "input": [
+      "keyboard",
+      "pointer",
+      "touch"
+    ],
+    "performance": "standard",
+    "save": {
+      "schema": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {}
+      },
+      "maxBytes": 0
+    },
+    "runtime": {
+      "capabilities": [
+        "canvas",
+        "fullscreen",
+        "webAudio"
+      ],
+      "externalConnectOrigins": []
+    },
+    "bridge": {
+      "protocol": "tcs.bridge/1",
+      "features": []
+    }
+  }
+}

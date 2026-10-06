@@ -1,0 +1,37 @@
+name: Cartridge Hardener Self-Test
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cartridge-hardener/**'
+      - 'docs/implementation/BROWSER_GAME_CARTRIDGE_HARDENING_STANDARD_V1.md'
+      - 'docs/implementation/game-cartridge.schema.json'
+  push:
+    branches:
+      - staging/live-visual
+    paths:
+      - 'scripts/cartridge-hardener/**'
+      - 'docs/implementation/BROWSER_GAME_CARTRIDGE_HARDENING_STANDARD_V1.md'
+      - 'docs/implementation/game-cartridge.schema.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cartridge-hardener-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  self-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Install bounded test dependencies
+        run: python3 -m pip install --disable-pip-version-check Pillow==12.3.0 jsonschema==4.26.0
+      - name: Compile hardener scripts
+        run: python3 -m py_compile scripts/cartridge-hardener/cartridge_hardener.py scripts/cartridge-hardener/host_harness.py
+      - name: Validate example intake profile JSON
+        run: python3 -m json.tool scripts/cartridge-hardener/examples/croaker-king-defense-v2.profile.json > /dev/null
+      - name: Run hardener self-tests
+        run: python3 -m unittest discover -s scripts/cartridge-hardener/tests -v
