@@ -59,9 +59,46 @@
   function initSupportSearch(){
     var input=document.querySelector('[data-support-search]');if(!input)return;
     var cards=Array.prototype.slice.call(document.querySelectorAll('[data-support-article]'));
+    var details=cards.filter(function(card){return card.tagName==='DETAILS';});
     var count=document.querySelector('[data-support-count]');
-    function render(){var q=norm(input.value);var visible=0;cards.forEach(function(card){var hay=norm(card.getAttribute('data-support-text')+' '+card.textContent);var show=!q||hay.includes(q)||q.split(/\s+/).every(function(t){return !t||hay.includes(t);});card.hidden=!show;if(show)visible+=1;});if(count)count.textContent=visible+' help topic'+(visible===1?'':'s')+' shown.';}
+    var filtering=false, beforeFilter=new Map(), expectedOpen=new Map();
+    function setOpen(card,open){expectedOpen.set(card,open);card.open=open;}
+    function rememberUserOpen(card){
+      if(filtering&&card.open!==expectedOpen.get(card))beforeFilter.set(card,card.open);
+      expectedOpen.set(card,card.open);
+    }
+    details.forEach(function(card){expectedOpen.set(card,card.open);card.addEventListener('toggle',function(){rememberUserOpen(card);});});
+    function render(){
+      var q=norm(input.value), visible=0;
+      details.forEach(rememberUserOpen);
+      // Search temporarily opens matching answers; clearing restores prior or reader-chosen states.
+      if(q&&!filtering){details.forEach(function(card){beforeFilter.set(card,card.open);});filtering=true;}
+      else if(!q&&filtering){filtering=false;details.forEach(function(card){setOpen(card,beforeFilter.get(card));});beforeFilter.clear();}
+      cards.forEach(function(card){
+        var hay=norm(card.getAttribute('data-support-text')+' '+card.textContent);
+        var show=!q||hay.includes(q)||q.split(/\s+/).every(function(t){return !t||hay.includes(t);});
+        card.hidden=!show;if(show){visible+=1;if(q&&card.tagName==='DETAILS')setOpen(card,true);}
+      });
+      if(count)count.textContent=visible+' help topic'+(visible===1?'':'s')+' shown.';
+    }
+    function revealTopic(hash,focus){
+      var id;try{id=decodeURIComponent(hash.replace(/^#/,''));}catch(error){return;}
+      var card=cards.find(function(topic){return topic.id===id;});if(!card)return;
+      input.value='';render();
+      if(card.tagName==='DETAILS')setOpen(card,true);
+      var summary=card.querySelector('summary');
+      if(focus&&summary)window.requestAnimationFrame(function(){if(!card.hidden)summary.focus({preventScroll:true});});
+    }
+    Array.prototype.slice.call(document.querySelectorAll('a[href]')).forEach(function(link){
+      link.addEventListener('click',function(event){
+        if(event.defaultPrevented||event.button>0||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+        var target=new URL(link.href,location.href), current=new URL(location.href);
+        if(target.origin===current.origin&&target.pathname===current.pathname&&target.search===current.search)revealTopic(target.hash,event.detail===0);
+      });
+    });
     input.addEventListener('input',render);render();
+    if(location.hash)revealTopic(location.hash,false);
+    window.addEventListener('hashchange',function(){revealTopic(location.hash,false);});
   }
   function start(){initSiteSearch();initSupportSearch();}
   if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',start,{once:true});else start();

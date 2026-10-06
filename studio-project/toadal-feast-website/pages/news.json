@@ -140,8 +140,8 @@
                                 "className": "chip preview",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "NO POSTS PUBLISHED",
-                                "text": "NO POSTS PUBLISHED"
+                                "layerName": "PUBLICATION PREVIEW",
+                                "text": "PUBLICATION PREVIEW"
                               }
                             },
                             {
@@ -518,18 +518,106 @@
                       },
                       {
                         "id": "component.manifest-news.285d6b1ce25e.div",
-                        "type": "core.text",
+                        "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
                           "tag": "div",
-                          "className": "",
+                          "className": "news-category-filters",
                           "attributes": {
                             "data-news-filters": "",
-                            "aria-label": "Filter by category"
+                            "aria-label": "Filter by category",
+                            "role": "group"
                           },
                           "style": "",
-                          "layerName": "div",
-                          "text": ""
+                          "layerName": "News category filters",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.news-native.category.all",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-news-category": "all",
+                                  "aria-pressed": "true"
+                                },
+                                "style": "",
+                                "layerName": "All updates",
+                                "label": "All updates"
+                              }
+                            },
+                            {
+                              "id": "component.news-native.category.announcements",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-news-category": "announcements",
+                                  "aria-pressed": "false"
+                                },
+                                "style": "",
+                                "layerName": "Announcements",
+                                "label": "Announcements"
+                              }
+                            },
+                            {
+                              "id": "component.news-native.category.development",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-news-category": "development",
+                                  "aria-pressed": "false"
+                                },
+                                "style": "",
+                                "layerName": "Development notes",
+                                "label": "Development notes"
+                              }
+                            },
+                            {
+                              "id": "component.news-native.category.games",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-news-category": "games",
+                                  "aria-pressed": "false"
+                                },
+                                "style": "",
+                                "layerName": "Games",
+                                "label": "Games"
+                              }
+                            },
+                            {
+                              "id": "component.news-native.category.world-stories",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-news-category": "world-stories",
+                                  "aria-pressed": "false"
+                                },
+                                "style": "",
+                                "layerName": "World & stories",
+                                "label": "World & stories"
+                              }
+                            }
+                          ]
                         }
                       },
                       {
@@ -542,7 +630,8 @@
                           "attributes": {
                             "data-news-status": "",
                             "role": "status",
-                            "aria-live": "polite"
+                            "aria-live": "polite",
+                            "hidden": true
                           },
                           "style": "",
                           "layerName": "Checking published updates…",
@@ -572,7 +661,10 @@
                           "tag": "p",
                           "className": "",
                           "attributes": {
-                            "data-news-empty": ""
+                            "data-news-empty": "",
+                            "role": "status",
+                            "aria-live": "polite",
+                            "aria-atomic": "true"
                           },
                           "style": "",
                           "layerName": "No public news updates have been published yet.",
@@ -773,8 +865,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "No public posts are available yet. Explore the playable preview, approved world art and real mobile gameplay already on the website.",
-                                "text": "No public posts are available yet. Explore the playable preview, approved world art and real mobile gameplay already on the website."
+                                "layerName": "Explore the playable preview, approved world art and real mobile gameplay already on the website.",
+                                "text": "Explore the playable preview, approved world art and real mobile gameplay already on the website."
                               }
                             }
                           ]

@@ -176,16 +176,32 @@
     featuredEmpty.hidden = featured.length > 0;
     var selected = options && options.category || 'all';
     var taxonomy = [{ id: 'all', label: 'All updates' }].concat(NEWS_TAXONOMY);
-    filters.replaceChildren();
-    taxonomy.forEach(function (item) {
-      var button = element(document, 'button', 'button-link button-link--secondary', item.label);
-      button.type = 'button';
-      button.setAttribute('aria-pressed', item.id === selected ? 'true' : 'false');
-      button.addEventListener('click', function () {
-        selected = item.id;
-        renderList();
+    if (!taxonomy.some(function (item) { return item.id === selected; })) selected = 'all';
+    var empty = root.querySelector('[data-news-empty]');
+    if (empty && !empty.__toadalUnpublishedCopy) {
+      empty.__toadalUnpublishedCopy = empty.textContent.trim() || 'No public news updates have been published yet.';
+    }
+    var controls = Array.from(filters.querySelectorAll('[data-news-category]'));
+    // Native category objects retain their authored labels and order. Legacy pages get a fallback.
+    if (!controls.length) {
+      filters.replaceChildren();
+      taxonomy.forEach(function (item) {
+        var button = element(document, 'button', 'button-link button-link--secondary', item.label);
+        button.type = 'button';
+        button.setAttribute('data-news-category', item.id);
+        filters.appendChild(button);
+        controls.push(button);
       });
-      filters.appendChild(button);
+    }
+    controls.forEach(function (button) {
+      if (button.__toadalNewsCategoryHandler) button.removeEventListener('click', button.__toadalNewsCategoryHandler);
+      button.__toadalNewsCategoryHandler = function () {
+        var category = button.getAttribute('data-news-category');
+        if (!taxonomy.some(function (item) { return item.id === category; })) return;
+        selected = category;
+        renderList();
+      };
+      button.addEventListener('click', button.__toadalNewsCategoryHandler);
     });
     function renderList() {
       var results = filterNews(records, { category: selected, query: query.value });
@@ -193,14 +209,22 @@
       results.forEach(function (record) {
         list.appendChild(newsCard(document, record, base, false));
       });
-      var empty = root.querySelector('[data-news-empty]');
-      if (empty) empty.hidden = results.length > 0;
-      status.textContent = results.length ? results.length + ' published update' + (results.length === 1 ? '' : 's') + ' shown.' :
-        (query.value.trim() || selected !== 'all' ? 'No published updates match these filters.' : 'No public news updates have been published yet.');
-      filters.querySelectorAll('button').forEach(function (button, index) {
-        button.setAttribute('aria-pressed', taxonomy[index].id === selected ? 'true' : 'false');
+      var emptyCopy = published.length && (query.value.trim() || selected !== 'all') ?
+        'No published updates match these filters. Clear the search or choose All updates.' :
+        (empty && empty.__toadalUnpublishedCopy || 'No public news updates have been published yet.');
+      if (empty) {
+        empty.textContent = emptyCopy;
+        empty.hidden = results.length > 0;
+      }
+      // Exactly one status is visible and announced: either the empty state or the result count.
+      status.hidden = !!empty && results.length === 0;
+      status.textContent = results.length ? results.length + ' published update' + (results.length === 1 ? '' : 's') + ' shown.' : emptyCopy;
+      controls.forEach(function (button) {
+        button.setAttribute('aria-pressed', button.getAttribute('data-news-category') === selected ? 'true' : 'false');
       });
     }
+    if (query.__toadalNewsQueryHandler) query.removeEventListener('input', query.__toadalNewsQueryHandler);
+    query.__toadalNewsQueryHandler = renderList;
     query.addEventListener('input', renderList);
     renderList();
   }
