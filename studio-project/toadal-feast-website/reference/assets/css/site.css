@@ -7657,3 +7657,41 @@ label[for='site-motion-toggle'] input { flex:0 0 auto; width:18px; height:18px; 
 [data-catalogue-root] .catalogue-availability{margin:8px 0;padding:6px 10px;border:1px solid currentColor;border-radius:8px;align-self:flex-start;font-size:.9rem;font-weight:800}
 [data-catalogue-root] [hidden]{display:none!important}
 @media(max-width:600px){[data-catalogue-root] .catalogue-controls{padding:14px}[data-catalogue-root] .catalogue-search-row .catalogue-field,[data-catalogue-root] .catalogue-options-row .catalogue-field{flex-basis:100%}[data-catalogue-root] .catalogue-filters .game-tab{flex:1 1 125px;padding:9px 10px}}
+/* Toadal visibility is a real navigation/menu preference, not a floating-only gesture. */
+.site-links .companion-nav-visibility {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 7px clamp(7px, .72vw, 11px);
+  border: 1px solid rgb(255 212 91 / 46%);
+  border-radius: var(--radius-pill);
+  color: var(--cream-100);
+  background: transparent;
+  font: 800 .9rem/1.2 var(--font-body);
+  cursor: pointer;
+  touch-action: manipulation;
+  transition: color 140ms ease, background-color 140ms ease, border-color 140ms ease, transform 140ms ease;
+}
+.site-links .companion-nav-visibility:hover,
+.site-links .companion-nav-visibility:focus-visible {
+  border-color: rgb(255 212 91 / 78%);
+  color: var(--gold-400);
+  background: rgb(255 253 246 / 8%);
+  transform: translateY(-1px);
+}
+.site-links .companion-nav-visibility[aria-pressed="false"] {
+  border-color: var(--gold-400);
+  color: #35180f;
+  background: var(--gold-400);
+}
+.site-links .companion-nav-visibility:focus-visible {
+  outline: 3px solid var(--gold-400);
+  outline-offset: 3px;
+}
+@media (min-width: 961px) and (max-width: 1099px) {
+  .site-links .companion-nav-visibility { padding-inline: 5px; font-size: .78rem; }
+}
+@media (max-width: 960px) {
+  .site-links .companion-nav-visibility { min-height: 44px; padding-inline: 10px; font-size: .86rem; }
+}
