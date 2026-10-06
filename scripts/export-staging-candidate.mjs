@@ -10,6 +10,7 @@ import { verifyOwnerRendererProvenance } from './lib/owner-native-projection.mjs
 import { verifyPublicProjection } from './lib/owner-public-projection.mjs';
 import { verifyProtectedGameArtifacts } from './lib/protected-game-artifacts.mjs';
 import { verifyExportGamePins } from './lib/staging-artifact.mjs';
+import { externalizeAdvancedRuntime } from './lib/externalize-advanced-runtime.mjs';
 import { fingerprintFiles } from './fingerprint-site-inputs.mjs';
 import { synchronize as verifyPlayCatalogue } from './sync-play-catalogue.mjs';
 
@@ -74,6 +75,7 @@ const extraction = spawnSync('powershell.exe', ['-NoProfile', '-NonInteractive',
 });
 if (extraction.status !== 0) throw new Error('Studio ZIP extraction failed: ' + (extraction.stderr || extraction.error?.message));
 
+const advancedRuntime = externalizeAdvancedRuntime(exportedDir, project, basePath);
 const protectedArtifacts = verifyProtectedGameArtifacts(exportedDir, project);
 if (!protectedArtifacts.valid) throw new Error('Protected game bytes changed: ' + protectedArtifacts.errors.join('; '));
 verifyExportGamePins(exportedDir, project, repo);
@@ -119,6 +121,7 @@ const receipt = {
   staticExport: exported,
   zipSha256: crypto.createHash('sha256').update(fs.readFileSync(exported.path)).digest('hex'),
   protectedArtifacts: { count: protectedArtifacts.files.length, valid: protectedArtifacts.valid },
+  advancedRuntime,
   checks,
 };
 const receiptPath = path.join(run, 'receipt.json');
