@@ -107,6 +107,8 @@ The first implementation stores only bounded website audio preference. It is not
 
 The website owns `assets/data/audio-registry.json`.
 
+Authored sample paths are website-owned relative paths beneath `/assets/audio/`; cartridge messages never choose those paths.
+
 The registry separates:
 - profiles: semantic game event → cue;
 - cues: playback policy and authored-sample/procedural-fallback definition.
