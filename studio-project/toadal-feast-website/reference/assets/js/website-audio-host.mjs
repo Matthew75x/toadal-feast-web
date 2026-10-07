@@ -233,8 +233,9 @@ export class WebsiteAudioHost {
     await Promise.all(jobs.filter(Boolean));
   }
   sampleUrl(sample) {
-    const url = new URL(sample.url, this.registryUrl);
-    assert(url.origin === location.origin && !url.username && !url.password && !url.search && !url.hash, 'sample URL must be clean same-origin');
+    const base = new URL(siteRoot() + '/assets/audio/', location.href);
+    const url = new URL(sample.url, base);
+    assert(url.origin === location.origin && url.pathname.startsWith(base.pathname) && !url.username && !url.password && !url.search && !url.hash, 'sample URL must stay inside site audio assets');
     return url;
   }
   async loadSample(cueId) {
