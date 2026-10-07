@@ -1,6 +1,6 @@
 # TOADAL FEAST sharing-card handoff
 
-This folder consolidates the current work, supplied original source ZIPs, assets, concepts and review evidence on the same branch as PR #30. Design work stopped at the owner's explicit request on 2026-10-07.
+This folder consolidates the current work, supplied original source ZIPs, assets, concepts and review evidence on the same branch as PR #30. Share-card composition remains stopped at the owner's explicit request on 2026-10-07; a separate mascot walk-cycle package was added later at the owner's request.
 
 ## Current design snapshot
 
@@ -8,7 +8,7 @@ This folder consolidates the current work, supplied original source ZIPs, assets
 - Current local concept uses 14 existing native repository food types in 37 fixed placements per card. The strawberry is normalized by its visible alpha bounds to match the surrounding foods.
 - Original Froggy is the default. The two supplied crowned-adventurer and burger-feast pictures are selectable mascot choices through the concept's Mascot artwork design control.
 - Preview changes are local design work. The existing production service in services/share-cards does not yet implement the new game-specific device, gameplay-capture, dense-food or mascot-selection concepts.
-- No new image generation is authorized. The two generated food background experiments were rejected and are preserved only under explorations/rejected-generated-backgrounds; neither is used in the current card.
+- The card-background concept uses no newly generated background art. The two earlier generated food-background experiments were rejected and remain under explorations/rejected-generated-backgrounds. The separately requested mascot walk-cycle generation is an animation asset, not a card background.
 
 ## Entry points
 
@@ -22,6 +22,7 @@ This folder consolidates the current work, supplied original source ZIPs, assets
 - [Source-pack sizes and hashes](source-pack-index.json)
 - [Asset/candidate provenance](assets/decorations/)
 - [Supplied mascot originals](assets/mascot-originals/)
+- [Mascot walk-cycle animation](assets/animations/toadal-walk-cycle-v1/README.md)
 - [Astro/font resources](assets/astro-and-lettering/)
 
 ## Preferred packs at the stop point
@@ -43,3 +44,7 @@ upload-manifest.json records every consolidated file's size and SHA256, excludin
 ## Additional supplied asset library
 
 [TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip](assets/TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip) was added to this same assets folder on 2026-10-07. Its original ZIP bytes are preserved and its size/hash are recorded in source-pack-index.json and upload-manifest.json.
+
+## Additional mascot animation
+
+The owner-requested Toadal walk-cycle package is at [assets/animations/toadal-walk-cycle-v1](assets/animations/toadal-walk-cycle-v1/). It includes the transparent animated WebP, eight extracted PNG frames, the 4×2 source sheet, and a local HTML preview. The still share-link image remains the appropriate Open Graph preview for platforms that do not animate link cards.
