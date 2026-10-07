@@ -84,8 +84,10 @@ test('same global cue can be referenced by more than one game profile', () => {
 
 test('sample definitions require a digest and clean relative path', () => {
   const sampled = structuredClone(registry);
-  sampled.cues['global.confirm'].sample = { url: '../audio/ui-confirm.wav', sha256: 'a'.repeat(64) };
+  sampled.cues['global.confirm'].sample = { url: 'ui-confirm.wav', sha256: 'a'.repeat(64) };
   validateRegistry(sampled);
+  sampled.cues['global.confirm'].sample.url = '../escape.wav';
+  assert.throws(() => validateRegistry(sampled), /relative path/);
   sampled.cues['global.confirm'].sample.url = 'https://game.invalid/sound.wav';
   assert.throws(() => validateRegistry(sampled), /relative path/);
 });
