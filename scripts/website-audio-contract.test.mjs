@@ -116,6 +116,14 @@ test('player advanced code loads shared audio module only on player pages', () =
   const advanced = JSON.parse(fs.readFileSync(advancedPath, 'utf8')).javascript;
   assert.match(advanced, /function initWebsiteAudioHostLoader\(\)/);
   assert.match(advanced, /document\.querySelector\('\[data-player-shell\]'\)/);
-  assert.match(advanced, /\/assets\/js\/website-audio-host\.mjs/);
+  assert.match(advanced, /\/assets\/js\/website-audio-loader\.mjs/);
   assert.match(advanced, /try \{ initWebsiteAudioHostLoader\(\); \} catch \(error\) \{\}/);
+});
+
+
+test('tiny loader gates the full audio runtime behind manifest opt-in', () => {
+  const loader = fs.readFileSync(path.join(root, 'studio-project', 'toadal-feast-website', 'reference', 'assets', 'js', 'website-audio-loader.mjs'), 'utf8');
+  assert.match(loader, /manifest\.audio\.mode !== 'host'/);
+  assert.match(loader, /import\(moduleUrl\.href\)/);
+  assert.doesNotMatch(loader, /new \(globalThis\.AudioContext/);
 });
