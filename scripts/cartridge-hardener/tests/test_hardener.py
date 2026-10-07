@@ -220,5 +220,70 @@ class HardenerStaticScanTests(unittest.TestCase):
         )
 
 
+    def test_host_audio_runtime_requires_audio_message_vocabulary(self):
+        with TemporaryDirectory() as td:
+            root = Path(td)
+            path = root / 'index.html'
+            profile = {
+                'game': {
+                    'protocol': {'name': 'toadal.game', 'version': 1},
+                    'storage': {'namespace': 'toadal:game:test:v1:', 'persistence': 'none'},
+                    'audio': {
+                        'mode': 'host', 'contractVersion': 1, 'profile': 'fixture-game',
+                        'profileVersion': 1, 'eventMessage': 'game:audio',
+                        'hostMessage': 'host:audio', 'fallback': 'local-before-active',
+                    },
+                }
+            }
+            path.write_text('<!doctype html><script>/* ' + REQUIRED + ' */</script>', encoding='utf-8')
+            findings = hardener.scan_runtime(path, profile, root)
+            self.assertTrue(any(code == 'audio-protocol-token' and sev == 'FAIL' for sev, code, _ in findings), findings)
+            path.write_text('<!doctype html><script>/* ' + REQUIRED + ' game:audio host:audio */</script>', encoding='utf-8')
+            findings = hardener.scan_runtime(path, profile, root)
+            self.assertFalse([f for f in findings if f[0] == 'FAIL'], findings)
+
+    def test_host_audio_declaration_rejects_invalid_profile_and_fallback(self):
+        with TemporaryDirectory() as td:
+            root = Path(td)
+            path = root / 'index.html'
+            body = '<!doctype html><script>/* ' + REQUIRED + ' game:audio host:audio */</script>'
+            path.write_text(body, encoding='utf-8')
+            base = {
+                'protocol': {'name': 'toadal.game', 'version': 1},
+                'storage': {'namespace': 'toadal:game:test:v1:', 'persistence': 'none'},
+                'audio': {
+                    'mode': 'host', 'contractVersion': 1, 'profile': 'fixture-game',
+                    'profileVersion': 1, 'eventMessage': 'game:audio',
+                    'hostMessage': 'host:audio', 'fallback': 'local-before-active',
+                },
+            }
+            bad_profile = json.loads(json.dumps(base)); bad_profile['audio']['profile'] = '../escape'
+            findings = hardener.scan_runtime(path, {'game': bad_profile}, root)
+            self.assertTrue(any(code == 'audio-contract' and sev == 'FAIL' for sev, code, _ in findings), findings)
+            bad_fallback = json.loads(json.dumps(base)); bad_fallback['audio']['fallback'] = 'always-local'
+            findings = hardener.scan_runtime(path, {'game': bad_fallback}, root)
+            self.assertTrue(any(code == 'audio-contract' and sev == 'FAIL' for sev, code, _ in findings), findings)
+
+    def test_schema_host_audio_is_opt_in_and_strict(self):
+        valid = {
+            'schemaVersion': 1, 'id': 'fixture-game', 'displayName': 'Fixture', 'version': '1.0.0',
+            'publicState': 'PREVIEW', 'entry': 'index.html', 'orientation': 'any',
+            'inputs': {'touch': True, 'keyboard': True, 'mouse': True, 'gamepad': False},
+            'storage': {'namespace': 'toadal:game:fixture-game:v1:', 'persistence': 'local', 'accountSync': 'none'},
+            'protocol': {'name': 'toadal.game', 'version': 1},
+            'source': {'repository': 'TEST_ONLY', 'ref': 'fixture', 'entrySource': 'index.html'},
+            'audio': {
+                'mode': 'host', 'contractVersion': 1, 'profile': 'fixture-game', 'profileVersion': 1,
+                'eventMessage': 'game:audio', 'hostMessage': 'host:audio', 'fallback': 'local-before-active',
+            },
+        }
+        hardener.jsonschema.validate(valid, hardener.SCHEMA)
+        invalid = json.loads(json.dumps(valid)); invalid['audio']['assetUrl'] = 'game-controlled.wav'
+        with self.assertRaises(hardener.jsonschema.ValidationError):
+            hardener.jsonschema.validate(invalid, hardener.SCHEMA)
+        legacy = json.loads(json.dumps(valid)); legacy.pop('audio')
+        hardener.jsonschema.validate(legacy, hardener.SCHEMA)
+
+
 if __name__ == '__main__':
     unittest.main()

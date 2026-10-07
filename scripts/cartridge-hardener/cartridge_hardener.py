@@ -11,6 +11,8 @@ SCHEMA=json.loads((HERE/'schemas/game-cartridge.schema.json').read_text())
 REQ_OUTBOUND=['game:ready','game:started','game:paused','game:resumed','game:score','game:complete','game:error']
 REQ_INBOUND=['host:init','host:pause','host:resume','host:mute','host:unmute','host:visibility']
 OPTIONAL_OUTBOUND=['game:request-exit','game:request-fullscreen']
+AUDIO_OUTBOUND='game:audio'
+AUDIO_INBOUND='host:audio'
 CONDITIONAL_INBOUND={'game:request-exit':'host:exit-confirmed'}
 NETWORK_PATTERNS=[r'\bfetch\s*\(',r'\bXMLHttpRequest\b',r'\bWebSocket\s*\(',r'\bEventSource\s*\(',r'\bnavigator\.sendBeacon\s*\(']
 DANGEROUS_PATTERNS=[r'\bdocument\.domain\b',r'\beval\s*\(',r'\bnew\s+Function\s*\(']
@@ -97,6 +99,22 @@ def scan_runtime(entry:Path,profile:dict[str,Any],runtime_root:Path|None=None):
         findings.append(('FAIL','fullscreen-contract','Runtime requests fullscreen while manifest declares fullscreen false'))
     protocol=profile['game']['protocol'];proto_string=f"{protocol['name']}.v{protocol['version']}"
     if proto_string not in body: findings.append(('FAIL','protocol-id',f'Missing protocol identifier {proto_string}'))
+    audio=profile['game'].get('audio')
+    if audio is not None:
+        if not isinstance(audio,dict) or audio.get('mode') not in {'game','host'}:
+            findings.append(('FAIL','audio-contract','game.audio must declare mode game or host'))
+        elif audio.get('mode')=='host':
+            required={'contractVersion':1,'eventMessage':AUDIO_OUTBOUND,'hostMessage':AUDIO_INBOUND}
+            for key,value in required.items():
+                if audio.get(key)!=value: findings.append(('FAIL','audio-contract',f'Host audio {key} must be {value!r}'))
+            if not re.fullmatch(r'[A-Za-z][A-Za-z0-9_.:-]{0,95}',str(audio.get('profile',''))):
+                findings.append(('FAIL','audio-contract','Host audio profile id is invalid'))
+            if not isinstance(audio.get('profileVersion'),int) or not 1<=audio['profileVersion']<=9999:
+                findings.append(('FAIL','audio-contract','Host audio profileVersion must be an integer 1..9999'))
+            if audio.get('fallback') not in {'local-before-active','silent-before-active'}:
+                findings.append(('FAIL','audio-contract','Host audio fallback is unsupported'))
+            for token in [AUDIO_OUTBOUND,AUDIO_INBOUND]:
+                if token not in body: findings.append(('FAIL','audio-protocol-token',f'Missing host-audio protocol token: {token}'))
     storage=profile['game']['storage'];namespace=storage['namespace']
     if storage.get('persistence')!='none' and namespace not in body: findings.append(('FAIL','storage-namespace',f'Manifest namespace not found in runtime: {namespace}'))
     if storage.get('persistence')=='none' and ('localStorage' in body or 'indexedDB' in body):
@@ -208,6 +226,7 @@ def harden(args):
       'source':{'repository':game['source']['repository'],'ref':game['source']['ref'],'entrySource':game['entrySource'],'sourceHash':entry_hash},
       'knownLimitations':game.get('knownLimitations',[]),'package':{'files':len(rows),'bytes':pkg_bytes,'sha256':pkg_hash},'packageHashMethod':integrity['hashMethod']
     }
+    if game.get('audio') is not None: manifest['audio']=game['audio']
     try:jsonschema.validate(manifest,SCHEMA);schema_ok=True;schema_error=''
     except Exception as e:schema_ok=False;schema_error=str(e)
     add('G7 cartridge.json schema',schema_ok,schema_error or 'schema v1 valid')

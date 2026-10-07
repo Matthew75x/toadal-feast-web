@@ -71,6 +71,16 @@ Required behaviors:
 - Exit/fullscreen remain host-owned.
 - Loading failure is recoverable; never strand a blank iframe.
 
+### Optional host-audio gate
+When the intake profile declares `game.audio.mode = "host"`:
+- the generated website manifest must carry the same bounded declaration;
+- the runtime package must contain the `game:audio` and `host:audio` vocabulary;
+- profile ID/version and fallback policy must validate;
+- gameplay must retain a reversible single-owner handoff until real-site/device qualification;
+- local hardening does not approve website registry cues or production sound assets.
+
+Cartridges with no host-audio declaration remain valid and are not silently migrated.
+
 ### G4 — Gameplay/input regression
 - Existing game-specific tests still pass after cartridge adaptation.
 - Mouse/touch/keyboard paths promised in the manifest are exercised.
@@ -161,3 +171,19 @@ A prior PASS never transfers to changed bytes automatically.
 ## 8. Relationship to existing tooling
 
 `scripts/audit-cartridge-source.mjs` remains a useful lightweight source-closure audit. The hardener is the stronger profile-driven qualification and packaging lane; neither tool substitutes for the real site/player or device gates.
+
+## 9. Optional website-hosted audio extension
+
+Shared audio is an **opt-in extension of this hardening path**, not another cartridge pipeline. The authoritative contract is [WEBSITE_SHARED_AUDIO_RUNTIME_V1.md](WEBSITE_SHARED_AUDIO_RUNTIME_V1.md).
+
+When an intake profile declares `game.audio.mode = "host"`, the hardener must additionally:
+- validate the host-audio manifest fields;
+- require both `game:audio` and `host:audio` vocabulary in the runtime tree;
+- preserve the exact declaration in generated `cartridge.json`;
+- keep sound URLs/recipes out of gameplay messages;
+- leave website profile/asset admission and listening approval external.
+
+The hardener does not inject a sound engine or rewrite unknown gameplay boundaries. A compatibility bridge remains a small source-owned adaptation because only the game knows when a jump, hit, reward, menu action, or other semantic event actually occurred.
+
+CHL-3 host safety for an opted-in cartridge includes the audio ownership contract, but does not prove final sound quality. CHL-5/6 still require the real website player and target devices. Existing cartridges without `audio.mode = "host"` remain valid under the previous game-owned path.
+

@@ -1,0 +1,77 @@
+{
+  "schema": "toadal.website.shared-audio.qualification.v1",
+  "date": "2026-10-07",
+  "disposition": "REVIEW_CANDIDATE_NOT_DEPLOYED",
+  "baseSha": "839fe227e36526e9e8fbb75e5421a217bcaa72c8",
+  "studioAuthority": "ffebf68559c0866e8e68b3de1470fa89ee654013",
+  "tests": {
+    "hardener": {
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0
+    },
+    "focusedNode": {
+      "passed": 36,
+      "failed": 0,
+      "skipped": 0
+    },
+    "parentPlayCatalogue": {
+      "passed": 38,
+      "failed": 2,
+      "classification": "PRE_EXISTING_STALE_PROJECTION"
+    },
+    "branchPlayCatalogue": {
+      "passed": 38,
+      "failed": 2,
+      "classification": "MATCHES_PARENT"
+    }
+  },
+  "export": {
+    "protectedGameFiles": {
+      "passed": true,
+      "count": 3
+    },
+    "files": {
+      "assets/js/website-audio-loader.mjs": {
+        "bytes": 1620,
+        "sha256": "8d35aef38905871fd01e1a81147627fcb26fdb1498cc5cfa36faa143c2d7d7e7"
+      },
+      "assets/js/website-audio-host.mjs": {
+        "bytes": 21514,
+        "sha256": "39df0116393793f7caa24b4f353e4a5ce0ef382165e12338051e5b0c0575766c"
+      },
+      "assets/data/audio-registry.json": {
+        "bytes": 304,
+        "sha256": "508f6aff4c79851b73f26328508ba8cdc301a03292b54be3f5f54898bed4467c"
+      },
+      "assets/js/advanced-code.696ecde0ccc9.js": {
+        "sha256": "696ecde0ccc993e3794944332ce247c8b218a560f4ae1040485aa38af25f7d4a"
+      }
+    }
+  },
+  "browser": {
+    "chromeFileVersion": "154.0.8037.93",
+    "nonOptIn": {
+      "status": "PASS",
+      "loaderRequests": 1,
+      "manifestRequests": 1,
+      "fullHostRequests": 0,
+      "registryRequests": 0,
+      "errors": 0
+    },
+    "scratchOptIn": {
+      "status": "PASS",
+      "contextBeforeGesture": 0,
+      "contextsAfterGesture": 1,
+      "proceduralFallbackPlays": 1,
+      "mutePreventedSecondPlay": true,
+      "preferenceKey": "toadal:web:v1:audio",
+      "errors": 0
+    }
+  },
+  "committedRegistryProfiles": 0,
+  "committedRegistryCues": 0,
+  "currentWickedBitesOptIn": false,
+  "productionDeployment": false,
+  "physicalDeviceQualified": false
+}
