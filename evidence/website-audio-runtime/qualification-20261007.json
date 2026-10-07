@@ -9,7 +9,7 @@
   "studioAuthority": "ffebf68559c0866e8e68b3de1470fa89ee654013",
   "studioProvenanceNote": "Existing owner-renderer and public-projection source pins use CRLF Windows checkout representation; presentation.ts uses LF. Exact ffebf685 code was checked out and only those two line-ending representations normalized to reproduce existing pins. Vendored generated-byte pins passed unchanged; no Studio authority or provenance pin changed.",
   "authoredSourceFingerprint": {
-    "sha256": "305d144c907290fbecc5f5c88c09f59bf1ddb4c2058db61bb0a3c91269c5fd82",
+    "sha256": "27cfe9c83d5662cc77c61fc7e0bcdfad8f768333ba77bfb3c76626ee444c90db",
     "files": 169
   },
   "ciFailureDisposition": {
@@ -38,7 +38,7 @@
       "negativeSchemaSubcases": 9
     },
     "focusedNode": {
-      "passed": 50,
+      "passed": 56,
       "failed": 0,
       "skipped": 0
     },
@@ -53,8 +53,13 @@
       "skipped": 0
     },
     "chrome": {
-      "passed": 20,
+      "passed": 30,
       "failed": 0
+    },
+    "audioSubset": {
+      "passed": 31,
+      "failed": 0,
+      "skipped": 0
     }
   },
   "export": {
@@ -106,6 +111,14 @@
     ]
   },
   "measurements": {
+    "css": {
+      "path": "assets/css/site.css",
+      "bytes": 238991,
+      "gzipBytes": 43971,
+      "sha256": "eea651c96d1ee3caaf0d5396b6d157b11fd2ada79cc512426c2c30d2fb32cab7",
+      "incrementalBytes": 828,
+      "incrementalGzipBytes": 182
+    },
     "schema": "toadal.web.audio-size.v1",
     "gzipMethod": "Sum of individually gzip level-9 compressed files; not an archive or a claimed network transfer saving",
     "baseSha": "839fe227e36526e9e8fbb75e5421a217bcaa72c8",
@@ -116,9 +129,9 @@
         "sha256": "fc7c912bf51309617c98bb04ca99e2c0f554c2dcdc79c71664ef6f0f9b960599"
       },
       "assets/js/website-audio-host.mjs": {
-        "bytes": 24134,
-        "gzipBytes": 6821,
-        "sha256": "c983034a686f824496efc990e78a3d11b7406f65656f622f7d26a65f0aba2bd3"
+        "bytes": 28992,
+        "gzipBytes": 8064,
+        "sha256": "5a241c997ceb1c95e51486a2f56b5060c7597c0891f6fe0198facd360f688876"
       },
       "assets/data/audio-registry.json": {
         "bytes": 292,
@@ -138,13 +151,13 @@
     },
     "candidate": {
       "files": 146,
-      "bytes": 41249094,
-      "gzipBytes": 39522115
+      "bytes": 41254780,
+      "gzipBytes": 39523540
     },
     "incremental": {
       "files": 3,
-      "bytes": 26978,
-      "gzipBytes": 7765
+      "bytes": 32664,
+      "gzipBytes": 9190
     },
     "added": [
       {
@@ -161,9 +174,9 @@
       },
       {
         "path": "assets/js/website-audio-host.mjs",
-        "bytes": 24134,
-        "gzipBytes": 6821,
-        "sha256": "c983034a686f824496efc990e78a3d11b7406f65656f622f7d26a65f0aba2bd3"
+        "bytes": 28992,
+        "gzipBytes": 8064,
+        "sha256": "5a241c997ceb1c95e51486a2f56b5060c7597c0891f6fe0198facd360f688876"
       },
       {
         "path": "assets/js/website-audio-loader.mjs",
@@ -200,7 +213,7 @@
       "hostRequests": 1,
       "registryRequests": 1,
       "errors": [],
-      "totalRequests": 19
+      "totalRequests": 20
     },
     "contextBeforeGesture": 0,
     "contextsAfterGesture": 1,
@@ -233,6 +246,114 @@
     "Owner/integration review; PR remains draft",
     "Owner listening",
     "Real phone/Safari and physical latency",
-    "Real cartridge/profile migration and approved cue admission are separate operations"
-  ]
+    "Real cartridge/profile migration and approved cue admission are separate operations",
+    "Actual headphone/speaker cue and sustained game mix listening; digital tests do not certify acoustic exposure"
+  ],
+  "priorQualifiedInfrastructureHead": "f453cd082a841d65fdd40aeb21470bf14e9a84cf",
+  "headphoneComfort": {
+    "status": "DIGITAL_ENGINEERING_CHECKS_PASS_LISTENING_HELD",
+    "storageKey": "toadal:web:v1:audio",
+    "newPreferenceMaster": 0.25,
+    "postCompressorHeadroomFactor": 0.5,
+    "gentleStereoDefault": true,
+    "gentlePanSpan": 0.6,
+    "attackSeconds": 0.005,
+    "releaseSeconds": 0.01,
+    "physicalVoiceCapIncludesFadingSources": true,
+    "deviceDetection": false,
+    "acousticSoundPressureMeasured": false,
+    "hearingSafetyCertified": false,
+    "digitalRenders": [
+      {
+        "name": "sample-default",
+        "master": 0.25,
+        "voices": 1,
+        "sample": true,
+        "peak": 0.06863973289728165,
+        "rms": 0.022047438564139158,
+        "maxAdjacentStep": 0.0001454148587072268,
+        "firstNonzero": 289,
+        "lastNonzero": 5087,
+        "plays": 1
+      },
+      {
+        "name": "sample-maximum",
+        "master": 1,
+        "voices": 1,
+        "sample": true,
+        "peak": 0.2745589315891266,
+        "rms": 0.08818975425655663,
+        "maxAdjacentStep": 0.0005816594348289073,
+        "firstNonzero": 289,
+        "lastNonzero": 5087,
+        "plays": 1
+      },
+      {
+        "name": "dense-default",
+        "master": 0.25,
+        "voices": 16,
+        "sample": true,
+        "peak": 0.14496394991874695,
+        "rms": 0.05909900764288499,
+        "maxAdjacentStep": 0.0006316591752693057,
+        "firstNonzero": 289,
+        "lastNonzero": 5087,
+        "plays": 16
+      },
+      {
+        "name": "dense-maximum",
+        "master": 1,
+        "voices": 16,
+        "sample": true,
+        "peak": 0.5798557996749878,
+        "rms": 0.23639603057153996,
+        "maxAdjacentStep": 0.002526636701077223,
+        "firstNonzero": 289,
+        "lastNonzero": 5087,
+        "plays": 16
+      },
+      {
+        "name": "tone-default",
+        "master": 0.25,
+        "voices": 1,
+        "peak": 0.020650481805205345,
+        "rms": 0.0020601188441552883,
+        "maxAdjacentStep": 0.0011547704634722322,
+        "firstNonzero": 289,
+        "lastNonzero": 5085,
+        "plays": 1
+      },
+      {
+        "name": "zero-volume",
+        "master": 0,
+        "voices": 16,
+        "sample": true,
+        "peak": 0,
+        "rms": 0,
+        "maxAdjacentStep": 0,
+        "firstNonzero": null,
+        "lastNonzero": null,
+        "plays": 0
+      },
+      {
+        "name": "zero-intensity",
+        "master": 1,
+        "voices": 1,
+        "intensity": 0,
+        "peak": 0,
+        "rms": 0,
+        "maxAdjacentStep": 0,
+        "firstNonzero": null,
+        "lastNonzero": null,
+        "plays": 0
+      }
+    ],
+    "mobileEmulation": true,
+    "physicalPhoneTest": false,
+    "references": [
+      "https://www.itu.int/dms_pub/itu-t/opb/joint/T-JOINT-WHO-2025-1-PDF-E.pdf",
+      "https://www.who.int/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening",
+      "https://www.w3.org/TR/webaudio-1.0/#computing-the-makeup-gain"
+    ]
+  }
 }

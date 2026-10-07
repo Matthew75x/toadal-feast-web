@@ -7,6 +7,9 @@ const ID = /^[A-Za-z][A-Za-z0-9_.:-]{0,95}$/;
 const PARAMS = Object.freeze({ power: [0, 1], combo: [0, 999], pan: [-1, 1], intensity: [0, 1] });
 const MAX = Object.freeze({ messageBytes: 2048, encodedBytes: 4 * 1024 * 1024, decodedBytes: 16 * 1024 * 1024, voices: 16 });
 
+// Digital comfort defaults; these do not measure or certify sound pressure at the ear.
+const COMFORT = Object.freeze({ master: 0.25, headroom: 0.5, panSpan: 0.6, attack: 0.005, release: 0.01 });
+
 const own = (o, k) => Object.prototype.hasOwnProperty.call(o, k);
 const record = value => value !== null && typeof value === 'object' && !Array.isArray(value);
 const finite = (value, min, max) => typeof value === 'number' && Number.isFinite(value) && value >= min && value <= max;
@@ -115,12 +118,13 @@ function readPreference(storage) {
     const parsed = JSON.parse(storage.getItem(STORAGE_KEY) || '{}');
     return {
       muted: parsed.muted === true,
-      master: finite(parsed.master, 0, 1) ? parsed.master : 0.65,
+      master: finite(parsed.master, 0, 1) ? parsed.master : COMFORT.master,
       sfx: finite(parsed.sfx, 0, 1) ? parsed.sfx : 1,
-      menu: finite(parsed.menu, 0, 1) ? parsed.menu : 1
+      menu: finite(parsed.menu, 0, 1) ? parsed.menu : 1,
+      gentleStereo: parsed.gentleStereo !== false
     };
   } catch (_) {
-    return { muted: false, master: 0.65, sfx: 1, menu: 1 };
+    return { muted: false, master: COMFORT.master, sfx: 1, menu: 1, gentleStereo: true };
   }
 }
 function writePreference(pref, storage) {
@@ -147,7 +151,7 @@ export class WebsiteAudioHost {
     this.boundVisibility = () => { if (this.doc.hidden) this.stopAll('page-hidden'); };
     this.boundPageHide = event => {
       if (!event.persisted) { this.dispose(); return; }
-      this.stopAll('pagehide');
+      this.stopAll('pagehide', true);
       if (this.context) Promise.resolve(this.context.suspend()).catch(() => {});
     };
     this.boundPageShow = event => {
@@ -184,8 +188,52 @@ export class WebsiteAudioHost {
       this.soundButton.setAttribute('aria-pressed', this.pref.muted ? 'true' : 'false');
       this.soundButton.setAttribute('title', 'Use TOADAL shared audio for this game');
     }
+    this.mountSettings();
     this.sendState(this.currentState(), { fallback: this.declaration.fallback });
     this.record('available');
+  }
+  mountSettings() {
+    const parent = this.soundButton?.parentElement;
+    if (!parent || this.settings || !this.doc.createElement) return;
+    const group = this.doc.createElement('div');
+    group.setAttribute('data-player-audio-settings', '');
+    const label = this.doc.createElement('label');
+    label.textContent = 'Site sound volume ';
+    const output = this.doc.createElement('output');
+    const volume = this.doc.createElement('input');
+    volume.type = 'range'; volume.min = '0'; volume.max = '100'; volume.step = '1';
+    volume.setAttribute('aria-label', 'Site sound volume');
+    label.append(output, volume);
+    const stereoLabel = this.doc.createElement('label');
+    const stereo = this.doc.createElement('input'); stereo.type = 'checkbox';
+    stereoLabel.append(stereo, ' Gentler stereo');
+    const note = this.doc.createElement('p');
+    note.textContent = 'Start with low device volume, especially with headphones. Adjust for comfort and take listening breaks.';
+    group.append(label, stereoLabel, note); parent.append(group);
+    this.settings = { group, volume, output, stereo };
+    this.boundVolume = () => this.setVolume(Number(volume.value) / 100);
+    this.boundStereo = () => this.setGentleStereo(stereo.checked);
+    volume.addEventListener('input', this.boundVolume);
+    stereo.addEventListener('change', this.boundStereo);
+    this.syncSettings();
+  }
+  syncSettings() {
+    if (!this.settings) return;
+    const percent = String(Math.round(this.pref.master * 100));
+    this.settings.volume.value = percent; this.settings.output.textContent = percent + '%';
+    this.settings.volume.setAttribute('aria-valuetext', percent + '%');
+    this.settings.stereo.checked = this.pref.gentleStereo;
+  }
+  setVolume(value) {
+    if (this.closed || !finite(value, 0, 1)) return false;
+    this.pref.master = value; writePreference(this.pref); this.applyLevels(); this.syncSettings();
+    return true;
+  }
+  setGentleStereo(value) {
+    if (this.closed || typeof value !== 'boolean') return false;
+    this.pref.gentleStereo = value; writePreference(this.pref); this.syncSettings();
+    for (const voice of this.voices) if (voice.panner) voice.panner.pan.setTargetAtTime(voice.requestedPan * (value ? COMFORT.panSpan : 1), this.context.currentTime, 0.01);
+    return true;
   }
   async onSoundControl(event) {
     if (this.closed) return;
@@ -221,12 +269,14 @@ export class WebsiteAudioHost {
     if (!this.context) {
       this.context = this.contextFactory();
       this.master = this.context.createGain();
+      this.master.gain.value = this.pref.muted ? 0 : this.pref.master * COMFORT.headroom;
       const compressor = this.context.createDynamicsCompressor();
       compressor.threshold.value = -4; compressor.knee.value = 6; compressor.ratio.value = 12;
       compressor.attack.value = 0.002; compressor.release.value = 0.1;
-      this.master.connect(compressor); compressor.connect(this.context.destination);
+      // User volume is last: compressor makeup gain cannot undo attenuation.
+      compressor.connect(this.master); this.master.connect(this.context.destination);
       this.buses = { sfx: this.context.createGain(), menu: this.context.createGain() };
-      this.buses.sfx.connect(this.master); this.buses.menu.connect(this.master);
+      this.buses.sfx.connect(compressor); this.buses.menu.connect(compressor);
     }
     if (this.context.state !== 'running') await this.context.resume();
     assert(!this.closed, 'audio host disposed');
@@ -238,7 +288,7 @@ export class WebsiteAudioHost {
   applyLevels() {
     if (!this.master || !this.buses) return;
     const now = this.context.currentTime;
-    this.master.gain.setTargetAtTime(this.pref.muted ? 0 : this.pref.master, now, 0.01);
+    this.master.gain.setTargetAtTime(this.pref.muted ? 0 : this.pref.master * COMFORT.headroom, now, 0.01);
     this.buses.sfx.gain.setTargetAtTime(this.pref.sfx, now, 0.01);
     this.buses.menu.gain.setTargetAtTime(this.pref.menu, now, 0.01);
   }
@@ -327,51 +377,92 @@ export class WebsiteAudioHost {
     // Admission happens after loading: concurrent events cannot reserve the same
     // cooldown/voice slot, and a mute, visibility change or disposal cancels it.
     if (this.closed || epoch !== this.playEpoch || !this.active || this.pref.muted || this.doc.hidden || this.context?.state !== 'running') return;
-    const nowMs = performance.now();
-    if (nowMs - (this.lastAt.get(cueId) ?? -Infinity) < cue.cooldownMs) { this.record('cooldown', { cue: cueId }); return; }
-    const same = [...this.voices].filter(v => v.cueId === cueId);
+    const level = clamp(cue.gain * (params.intensity ?? 1) * (0.6 + 0.4 * (params.power ?? 1)), 0, 1);
+    if (level === 0 || this.pref.master === 0 || this.pref[cue.bus] === 0) { this.record('silent-event', { cue: cueId }); return; }
+    const admit = () => {
+      if (this.closed || epoch !== this.playEpoch || !this.active || this.pref.muted || this.doc.hidden || this.context?.state !== 'running') return false;
+      if (this.pref.master === 0 || this.pref[cue.bus] === 0) { this.record('silent-event', { cue: cueId }); return false; }
+      if (performance.now() - (this.lastAt.get(cueId) ?? -Infinity) < cue.cooldownMs) { this.record('cooldown', { cue: cueId }); return false; }
+      return true;
+    };
+    if (!admit()) return;
+    let same = [...this.voices].filter(v => v.cueId === cueId);
     if (same.length >= cue.maxVoices || this.voices.size >= MAX.voices) {
       if (cue.voicePolicy === 'drop') { this.record('voice-drop', { cue: cueId }); return; }
       const victim = (same.length >= cue.maxVoices ? same : [...this.voices]).sort((a,b) => a.started - b.started)[0];
-      victim?.stop('voice-steal');
+      // A fading voice still consumes a physical slot. Concurrent steals must
+      // wait for its ended event and recheck admission before creating a node.
+      if (victim) await victim.stop('voice-steal');
+      if (!admit()) return;
+      same = [...this.voices].filter(v => v.cueId === cueId);
+      if (same.length >= cue.maxVoices || this.voices.size >= MAX.voices) { this.record('voice-drop', { cue: cueId }); return; }
     }
+    const fallback = buffer ? null : validateFallback(cue.fallback);
+    if (!buffer && !fallback) { this.record('no-fallback', { cue: cueId }); return; }
     const bus = this.buses[cue.bus], gain = this.context.createGain();
     const panner = this.context.createStereoPanner ? this.context.createStereoPanner() : null;
-    const intensity = params.intensity ?? 1, power = params.power ?? 1;
-    gain.gain.value = clamp(cue.gain * intensity * (0.6 + 0.4 * power), 0, 1);
-    if (panner) { panner.pan.value = params.pan ?? 0; gain.connect(panner); panner.connect(bus); } else gain.connect(bus);
-    let node, done;
-    if (buffer) {
-      node = this.context.createBufferSource(); node.buffer = buffer; node.connect(gain);
-      done = new Promise(resolve => node.addEventListener('ended', resolve, { once: true })); node.start();
-    } else {
-      const fallback = validateFallback(cue.fallback);
-      if (!fallback) { gain.disconnect(); panner?.disconnect(); this.record('no-fallback', { cue: cueId }); return; }
-      node = this.context.createOscillator(); node.type = fallback.wave; node.connect(gain);
-      const t = this.context.currentTime, seconds = fallback.durationMs / 1000;
+    const pan = (params.pan ?? 0) * (this.pref.gentleStereo ? COMFORT.panSpan : 1);
+    if (panner) { panner.pan.value = pan; gain.connect(panner); panner.connect(bus); } else gain.connect(bus);
+    const t = this.context.currentTime, seconds = buffer ? buffer.duration : fallback.durationMs / 1000;
+    const attack = Math.min(COMFORT.attack, seconds / 4), release = Math.min(COMFORT.release, seconds / 4);
+    gain.gain.setValueAtTime(0, t);
+    gain.gain.linearRampToValueAtTime(level, t + attack);
+    if (buffer) gain.gain.setValueAtTime(level, t + seconds - release);
+    else gain.gain.exponentialRampToValueAtTime(Math.min(0.0001, level), t + seconds - release);
+    gain.gain.linearRampToValueAtTime(0, t + seconds);
+    const node = buffer ? this.context.createBufferSource() : this.context.createOscillator();
+    if (buffer) node.buffer = buffer;
+    else {
+      node.type = fallback.wave;
       node.frequency.setValueAtTime(fallback.startHz, t);
-      if (fallback.startHz > 0 && fallback.endHz > 0) node.frequency.exponentialRampToValueAtTime(fallback.endHz, t + seconds);
-      gain.gain.setValueAtTime(Math.max(0.0001, gain.gain.value), t);
-      gain.gain.exponentialRampToValueAtTime(0.0001, t + seconds);
-      done = new Promise(resolve => node.addEventListener('ended', resolve, { once: true })); node.start(); node.stop(t + seconds + 0.01);
+      node.frequency.exponentialRampToValueAtTime(fallback.endHz, t + seconds);
     }
-    let released = false;
+    node.connect(gain);
+    let finish;
+    const done = new Promise(resolve => { finish = resolve; });
+    let released = false, stopping = false;
     const voice = {
-      cueId, started: nowMs,
-      stop: reason => { if (released) return; released = true; try { node.stop(); } catch (_) {} this.voices.delete(voice); this.record('stopped', { cue: cueId, reason }); }
+      cueId, started: performance.now(), panner, requestedPan: params.pan ?? 0,
+      stop: (reason, immediate = false) => {
+        if (released || (stopping && !immediate)) return done;
+        stopping = true;
+        const now = this.context.currentTime, end = immediate ? now : now + COMFORT.release;
+        try {
+          if (gain.gain.cancelAndHoldAtTime) gain.gain.cancelAndHoldAtTime(now);
+          else { const held = gain.gain.value; gain.gain.cancelScheduledValues(now); gain.gain.setValueAtTime(held, now); }
+          if (immediate) gain.gain.setValueAtTime(0, now);
+          else gain.gain.linearRampToValueAtTime(0, end);
+          node.stop(end);
+        } catch (_) { cleanup(); }
+        this.record('stopped', { cue: cueId, reason });
+        return done;
+      }
     };
-    this.voices.add(voice); this.lastAt.set(cueId, nowMs);
-    this.record('play', { cue: cueId, source: buffer ? 'sample' : 'procedural-fallback' });
-    done.finally(() => { if (!released) { released = true; this.voices.delete(voice); } try { gain.disconnect(); panner?.disconnect(); } catch (_) {} });
+    const cleanup = () => {
+      if (released) return; released = true; this.voices.delete(voice);
+      try { node.disconnect(); gain.disconnect(); panner?.disconnect(); } catch (_) {}
+      finish();
+    };
+    node.addEventListener('ended', cleanup, { once: true });
+    this.voices.add(voice); this.lastAt.set(cueId, voice.started);
+    try { node.start(t); node.stop(t + seconds); }
+    catch (error) { cleanup(); throw error; }
+    this.record('play', { cue: cueId, source: buffer ? 'sample' : 'procedural-fallback', pan });
   }
-  stopAll(reason = 'stop-all') { this.playEpoch += 1; for (const voice of [...this.voices]) voice.stop(reason); }
+  stopAll(reason = 'stop-all', immediate = false) { this.playEpoch += 1; for (const voice of [...this.voices]) voice.stop(reason, immediate); }
+
   dispose() {
-    if (this.closed) return; this.closed = true; this.stopAll('dispose');
+    if (this.closed) return; this.closed = true; this.stopAll('dispose', true);
     window.removeEventListener('message', this.boundMessage);
     this.doc.removeEventListener('visibilitychange', this.boundVisibility);
     window.removeEventListener('pagehide', this.boundPageHide);
     window.removeEventListener('pageshow', this.boundPageShow);
     if (this.soundButton) this.soundButton.removeEventListener('click', this.boundClick, true);
+    if (this.settings) {
+      this.settings.volume.removeEventListener('input', this.boundVolume);
+      this.settings.stereo.removeEventListener('change', this.boundStereo);
+      this.settings.group.remove(); this.settings = null;
+    }
     this.cache.clear(); this.cacheBytes = 0; this.pending.clear();
     try { if (this.context) Promise.resolve(this.context.close()).catch(() => {}); } catch (_) {}
   }

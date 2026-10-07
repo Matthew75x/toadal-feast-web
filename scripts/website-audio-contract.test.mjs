@@ -150,17 +150,29 @@ function eventTarget() {
 }
 function deferred() { let resolve; const promise = new Promise(r => { resolve = r; }); return { promise, resolve }; }
 function fakeContext() {
-  const param = () => ({ value: 0, setTargetAtTime() {}, setValueAtTime() {}, exponentialRampToValueAtTime() {} });
-  const node = () => ({ ...eventTarget(), connect() {}, disconnect() {}, start() {}, stop() { this.dispatch('ended'); } });
-  return {
-    state: 'running', currentTime: 0, destination: {},
-    createGain: () => ({ ...node(), gain: param() }),
-    createDynamicsCompressor: () => ({ ...node(), threshold: param(), knee: param(), ratio: param(), attack: param(), release: param() }),
-    createStereoPanner: () => ({ ...node(), pan: param() }),
-    createBufferSource: node,
-    createOscillator: () => ({ ...node(), frequency: param() }),
-    async resume() { this.state = 'running'; }, async suspend() { this.state = 'suspended'; }, async close() { this.state = 'closed'; }
+  const sources = [], gains = [], panners = [], connections = [];
+  const param = () => ({ value: 0, calls: [],
+    setTargetAtTime(...args) { this.calls.push(['target', ...args]); },
+    setValueAtTime(...args) { this.calls.push(['set', ...args]); },
+    linearRampToValueAtTime(...args) { this.calls.push(['linear', ...args]); },
+    exponentialRampToValueAtTime(...args) { this.calls.push(['exponential', ...args]); },
+    cancelScheduledValues(...args) { this.calls.push(['cancel', ...args]); },
+    cancelAndHoldAtTime(...args) { this.calls.push(['hold', ...args]); }
+  });
+  const context = {
+    state: 'running', currentTime: 0, destination: {}, sources, gains, panners, connections,
+    async resume() { this.state = 'running'; }, async suspend() { this.state = 'suspended'; }, async close() { this.state = 'closed'; },
+    finishStops() { for (const source of sources) if (source.stopCalls.length) source.dispatch('ended'); }
   };
+  const node = () => ({ ...eventTarget(), stopCalls: [],
+    connect(to) { connections.push([this, to]); }, disconnect() {}, start() {},
+    stop(when) { this.stopCalls.push(when); if (when <= context.currentTime) this.dispatch('ended'); }
+  });
+  context.createGain = () => { const gain = { ...node(), gain: param() }; gains.push(gain); return gain; };
+  context.createDynamicsCompressor = () => ({ ...node(), threshold: param(), knee: param(), ratio: param(), attack: param(), release: param() });
+  context.createStereoPanner = () => { const panner = { ...node(), pan: param() }; panners.push(panner); return panner; };
+  context.createBufferSource = context.createOscillator = () => { const source = { ...node(), frequency: param() }; sources.push(source); return source; };
+  return context;
 }
 function hostFixture(t, preference = {}) {
   const prior = new Map();
@@ -206,18 +218,18 @@ test('delayed sample completion admits only one cooldown slot', async t => {
   const pending = deferred(); host.loadSample = () => pending.promise;
   const cue = { ...registry.cues['global.confirm'], sample: {}, cooldownMs: 1000, maxVoices: 8 };
   const plays = Array.from({ length: 20 }, () => host.play({ cueId: 'global.confirm', cue, params: {} }));
-  pending.resolve({}); await Promise.all(plays);
+  pending.resolve({ duration: 1 }); await Promise.all(plays);
   assert.equal(host.records.filter(r => r.type === 'play').length, 1); assert.equal(host.voices.size, 1);
   assert.equal(host.records.filter(r => r.type === 'cooldown').length, 19);
 });
 
 test('delayed sample completion respects per-cue and global voice caps', async t => {
-  const { host } = hostFixture(t); await host.unlock();
+  const { host, context } = hostFixture(t); await host.unlock();
   const pending = deferred(); host.loadSample = () => pending.promise;
   const cue = { ...registry.cues['global.confirm'], sample: {}, cooldownMs: 0, maxVoices: 1 };
   const plays = Array.from({ length: 20 }, () => host.play({ cueId: 'global.confirm', cue, params: {} }));
-  pending.resolve({}); await Promise.all(plays); assert.equal(host.voices.size, 1);
-  host.stopAll();
+  pending.resolve({ duration: 1 }); await Promise.all(plays); assert.equal(host.voices.size, 1);
+  host.stopAll(); context.finishStops();
   await Promise.all(Array.from({ length: 20 }, (_, i) => host.play({ cueId: 'cue-' + i, cue, params: {} })));
   assert.equal(host.voices.size, 16);
 });
@@ -249,7 +261,7 @@ test('activation creates one context and prewarm cannot undo a subsequent mute',
 
 test('stored website mute suppresses playback before any gesture and storage denial remains usable', async t => {
   const f = hostFixture(t, { muted: true, master: 5 }); f.host.arm();
-  assert.equal(f.states.at(-1), 'muted'); assert.equal(f.contexts, 0); assert.equal(f.host.pref.master, 0.65);
+  assert.equal(f.states.at(-1), 'muted'); assert.equal(f.contexts, 0); assert.equal(f.host.pref.master, 0.25);
   Object.defineProperty(globalThis, 'localStorage', { configurable: true, get() { throw Error('storage denied'); } });
   const second = new WebsiteAudioHost({ shell: f.shell, frame: f.frame, gameId: 'fixture-game', declaration, registry, registryUrl: 'http://localhost/audio-registry.json', contextFactory: () => f.context });
   assert.equal(second.pref.muted, false); await second.onSoundControl(click()); assert.equal(second.active, true); second.dispose();
@@ -270,7 +282,7 @@ test('malformed, foreign, or authority-bearing cartridge messages cannot select 
 test('visibility stops voices and BFCache restore reuses the same activated context', async t => {
   const f = hostFixture(t); f.host.arm(); await f.host.onSoundControl(click());
   await f.host.play({ cueId: 'global.confirm', cue: registry.cues['global.confirm'], params: {} });
-  f.doc.hidden = true; f.doc.dispatch('visibilitychange'); assert.equal(f.host.voices.size, 0); f.doc.hidden = false;
+  f.doc.hidden = true; f.doc.dispatch('visibilitychange'); assert.equal(f.host.voices.size, 1); f.context.finishStops(); assert.equal(f.host.voices.size, 0); f.doc.hidden = false;
   f.win.dispatch('pagehide', { persisted: true }); await flush(); assert.equal(f.host.closed, false); assert.equal(f.context.state, 'suspended');
   f.win.dispatch('pageshow', { persisted: true }); await flush(); assert.equal(f.context.state, 'running'); assert.equal(f.contexts, 1);
   await f.context.suspend(); await f.host.onSoundControl(click());
@@ -299,4 +311,79 @@ test('concurrent opted-in attachments share one host and registry request', asyn
   const options = { doc: f.doc, manifest: { id: 'fixture-game', audio: declaration } };
   const [a, b] = await Promise.all([attachWebsiteAudioHost(options), attachWebsiteAudioHost(options)]);
   assert.equal(a, b); assert.equal(requests, 1); assert.equal(a.context, null); a.dispose(); delete globalThis.__toadalWebsiteAudioHost;
+});
+
+
+test('volume and gentler stereo persist without activation or releasing muted ownership', async t => {
+  const f = hostFixture(t, { muted: true }); f.host.arm();
+  assert.equal(f.host.pref.master, 0.25); assert.equal(f.host.pref.gentleStereo, true);
+  assert.equal(f.host.setVolume(0.1), true); assert.equal(f.host.setGentleStereo(false), true);
+  for (const value of [-1, 2, NaN, '0.5']) assert.equal(f.host.setVolume(value), false);
+  assert.equal(f.host.setGentleStereo('false'), false);
+  assert.equal(f.contexts, 0); assert.equal(f.host.currentState(), 'muted');
+  assert.deepEqual(JSON.parse(f.stored.get('toadal:web:v1:audio')), { muted: true, master: 0.1, sfx: 1, menu: 1, gentleStereo: false });
+  assert.deepEqual([...f.stored.keys()], ['toadal:web:v1:audio']);
+});
+
+test('user volume sits after compression and zero volume emits no source', async t => {
+  const f = hostFixture(t); await f.host.unlock();
+  const output = f.context.connections.find(([from, to]) => to === f.context.destination);
+  assert.equal(output[0], f.host.master);
+  assert.ok(f.context.connections.some(([from, to]) => from.threshold && to === f.host.master));
+  assert.equal(f.host.master.gain.value, 0.125);
+  f.host.setVolume(0); assert.deepEqual(f.host.master.gain.calls.at(-1), ['target', 0, 0, 0.01]);
+  await f.host.play(resolveEvent(registry, 'fixture-game', 1, 'ui.confirm'));
+  assert.equal(f.context.sources.length, 0); assert.equal(f.host.records.at(-1).type, 'silent-event');
+});
+
+test('tone and sampled cues have zero edges, bounded panning and exact zero intensity', async t => {
+  const f = hostFixture(t); await f.host.unlock();
+  const cue = { ...registry.cues['global.confirm'], cooldownMs: 0 };
+  await f.host.play({ cueId: 'global.confirm', cue, params: { pan: 1 } });
+  assert.equal(f.context.panners.at(-1).pan.value, 0.6);
+  const toneGain = f.context.gains.at(-1).gain.calls;
+  assert.deepEqual(toneGain[0], ['set', 0, 0]); assert.deepEqual(toneGain[1], ['linear', 0.5, 0.005]);
+  assert.deepEqual(toneGain.at(-1), ['linear', 0, 0.08]);
+  f.host.setGentleStereo(false); f.host.loadSample = async () => ({ duration: 0.1 });
+  await f.host.play({ cueId: 'sample', cue: { ...cue, sample: {} }, params: { pan: -1 } });
+  assert.equal(f.context.panners.at(-1).pan.value, -1);
+  const sampleGain = f.context.gains.at(-1).gain.calls;
+  assert.deepEqual(sampleGain[0], ['set', 0, 0]); assert.deepEqual(sampleGain.at(-1), ['linear', 0, 0.1]);
+  const count = f.context.sources.length;
+  await f.host.play({ cueId: 'zero', cue, params: { intensity: 0 } }); assert.equal(f.context.sources.length, count);
+});
+
+test('fading steals retain physical voice slots and recheck cap after ended', async t => {
+  const f = hostFixture(t); await f.host.unlock();
+  const cue = { ...registry.cues['global.confirm'], cooldownMs: 0, maxVoices: 1, voicePolicy: 'steal-oldest' };
+  const event = { cueId: 'global.confirm', cue, params: {} };
+  await f.host.play(event);
+  const burst = Array.from({ length: 20 }, () => f.host.play(event));
+  assert.equal(f.context.sources.length, 1); assert.equal(f.host.voices.size, 1);
+  assert.equal(f.context.sources[0].stopCalls.at(-1), 0.01);
+  f.context.sources[0].dispatch('ended'); await Promise.all(burst);
+  assert.equal(f.context.sources.length, 2); assert.equal(f.host.voices.size, 1);
+  assert.equal(f.host.records.filter(r => r.type === 'voice-drop').length, 19);
+  const next = f.host.play(event); f.host.stopAll('mute'); f.host.pref.muted = true;
+  f.context.sources[1].dispatch('ended'); await next;
+  assert.equal(f.context.sources.length, 2); assert.equal(f.host.voices.size, 0);
+});
+
+
+test('zero volume during a faded steal cancels replacement without a new source', async t => {
+  const f = hostFixture(t); await f.host.unlock();
+  const cue = { ...registry.cues['global.confirm'], cooldownMs: 0, maxVoices: 1, voicePolicy: 'steal-oldest' };
+  const event = { cueId: 'global.confirm', cue, params: {} };
+  await f.host.play(event); const pending = f.host.play(event);
+  f.host.setVolume(0); f.context.sources[0].dispatch('ended'); await pending;
+  assert.equal(f.context.sources.length, 1); assert.equal(f.host.records.at(-1).type, 'silent-event');
+});
+
+test('gentler stereo adjusts currently playing panners with a short ramp', async t => {
+  const f = hostFixture(t); await f.host.unlock();
+  await f.host.play({ cueId: 'global.confirm', cue: registry.cues['global.confirm'], params: { pan: -1 } });
+  f.host.setGentleStereo(false);
+  assert.deepEqual(f.context.panners.at(-1).pan.calls.at(-1), ['target', -1, 0, 0.01]);
+  f.host.setGentleStereo(true);
+  assert.deepEqual(f.context.panners.at(-1).pan.calls.at(-1), ['target', -0.6, 0, 0.01]);
 });

@@ -73,6 +73,7 @@ try {
     check(scope + ': no host context before gesture', await page.evaluate(() => window.__hostContextCreations), 0);
     const sandbox = await page.locator('[data-player-frame]').getAttribute('sandbox'); check(scope + ': opaque iframe isolation', sandbox.includes('allow-same-origin'), false);
     if (!optIn) {
+      check('nonOptIn: no shared comfort controls', await page.locator('[data-player-audio-settings]').count(), 0);
       check('nonOptIn: no shared host', await page.evaluate(() => !!window.__toadalWebsiteAudioHost), false);
       const game = page.frames().find(f => f.url().includes('/public/games/wicked-bites/'));
       await page.locator('[data-player-sound]').click();
@@ -82,6 +83,15 @@ try {
       check('nonOptIn: original mute/unmute', await game.evaluate(() => window.__legacyMuteMessages), ['host:mute', 'host:unmute']);
     } else {
       await page.waitForFunction(() => !!window.__toadalWebsiteAudioHost);
+      check('scratchOptIn: comfort defaults visible', await page.evaluate(() => {
+        const group = document.querySelector('[data-player-audio-settings]');
+        return [group.querySelector('input[type=range]').value, group.querySelector('input[type=checkbox]').checked, group.querySelector('output').textContent];
+      }), ['25', true, '25%']);
+      const volume = page.getByRole('slider', { name: 'Site sound volume' });
+      await volume.fill('30'); await volume.focus(); await volume.press('ArrowRight');
+      await page.getByRole('checkbox', { name: 'Gentler stereo' }).uncheck();
+      check('scratchOptIn: controls before activation keep context dormant', await page.evaluate(() => [window.__hostContextCreations, window.__toadalWebsiteAudioHost.pref.master, window.__toadalWebsiteAudioHost.pref.gentleStereo]), [0, 0.31, false]);
+      check('scratchOptIn: volume output updates accessibly', await volume.getAttribute('aria-valuetext'), '31%');
       let game = page.frames().find(f => f.url().includes('/public/games/wicked-bites/'));
       await game.getByRole('button', { name: 'Emit semantic action' }).click();
       check('scratchOptIn: local owner before activation', await game.evaluate(() => window.__audioFixture.legacyCalls), 1);
@@ -109,6 +119,7 @@ try {
       check('scratchOptIn: explicit unavailable returns local ownership', await game.evaluate(() => window.__audioFixture.legacyCalls), 2);
       report[scope + 'RequestsBeforeReload'] = requests.slice();
       await page.reload({ waitUntil: 'networkidle' });
+      check('scratchOptIn: comfort settings persisted in existing preference', await page.evaluate(() => [window.__toadalWebsiteAudioHost.pref.master, window.__toadalWebsiteAudioHost.pref.gentleStereo, document.querySelector('[data-player-audio-settings] input[type=range]').value]), [0.31, false, '31']);
       check('scratchOptIn: reload preserves mute without creating context', await page.evaluate(() => [window.__hostContextCreations, window.__toadalWebsiteAudioHost.pref.muted, window.__toadalWebsiteAudioHost.currentState()]), [0, true, 'muted']);
       game = page.frames().find(f => f.url().includes('/public/games/wicked-bites/'));
       await game.waitForFunction(() => window.__audioFixture?.audio.hostOwnsPlayback);
@@ -122,6 +133,69 @@ try {
     check(scope + ': browser errors', errors, []);
     await context.close();
   }
+  scratch = true;
+  const mobileContext = await browser.newContext({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  const mobilePage = await mobileContext.newPage();
+  await mobilePage.goto(origin + prefix + 'player/wicked-bites/', { waitUntil: 'networkidle' });
+  const mobileLayout = await mobilePage.evaluate(() => {
+    const group = document.querySelector('[data-player-audio-settings]');
+    const box = group.getBoundingClientRect();
+    return { withinViewport: box.left >= 0 && box.right <= innerWidth, gridColumn: getComputedStyle(group).gridColumn, labelsHaveTouchHeight: [...group.querySelectorAll('label')].every(el => el.getBoundingClientRect().height >= 44) };
+  });
+  check('mobileEmulation: opt-in controls fit viewport and span player grid', mobileLayout, { withinViewport: true, gridColumn: '1 / -1', labelsHaveTouchHeight: true });
+  report.mobileEmulationOnly = true;
+  report.mobileScreenshot = path.join(path.dirname(output), 'website-audio-comfort-mobile.png');
+  await mobilePage.locator('.wo002-player-toolbar').screenshot({ path: report.mobileScreenshot });
+  await mobileContext.close();
+  // Actual browser digital renders; scratch PCM fixtures are not approved cues
+  // and cannot establish acoustic sound pressure or headphone listening quality.
+  const renderContext = await browser.newContext();
+  const renderPage = await renderContext.newPage();
+  await renderPage.goto(origin + prefix, { waitUntil: 'networkidle' });
+  report.digitalRenders = await renderPage.evaluate(async ({ moduleUrl, declaration, registry }) => {
+    const { WebsiteAudioHost } = await import(moduleUrl);
+    const results = [];
+    for (const scenario of [
+      { name: 'sample-default', master: 0.25, voices: 1, sample: true },
+      { name: 'sample-maximum', master: 1, voices: 1, sample: true },
+      { name: 'dense-default', master: 0.25, voices: 16, sample: true },
+      { name: 'dense-maximum', master: 1, voices: 16, sample: true },
+      { name: 'tone-default', master: 0.25, voices: 1 },
+      { name: 'zero-volume', master: 0, voices: 16, sample: true },
+      { name: 'zero-intensity', master: 1, voices: 1, intensity: 0 }
+    ]) {
+      const offline = new OfflineAudioContext(2, 24000, 48000);
+      const facade = new Proxy(offline, { get(target, key) {
+        if (key === 'state') return 'running';
+        const value = Reflect.get(target, key, target);
+        return typeof value === 'function' ? value.bind(target) : value;
+      } });
+      localStorage.setItem('toadal:web:v1:audio', JSON.stringify({ master: scenario.master }));
+      const host = new WebsiteAudioHost({ shell: { ownerDocument: document, querySelector: () => null }, frame: { contentWindow: { postMessage() {} } }, gameId: 'scratch', declaration, registry, registryUrl: location.origin + '/registry.json', contextFactory: () => facade });
+      await host.unlock();
+      const sample = offline.createBuffer(1, 4800, 48000); sample.getChannelData(0).fill(0.7);
+      host.loadSample = async () => sample;
+      const cue = { bus: 'sfx', gain: 1, cooldownMs: 0, maxVoices: 1, voicePolicy: 'drop', fallback: { kind: 'tone', wave: 'sine', startHz: 440, endHz: 440, durationMs: 100 }, ...(scenario.sample ? { sample: {} } : {}) };
+      for (let i = 0; i < scenario.voices; i++) await host.play({ cueId: 'digital-' + i, cue, params: { intensity: scenario.intensity ?? 1 } });
+      const buffer = await offline.startRendering();
+      let peak = 0, energy = 0, maxAdjacentStep = 0, firstNonzero = null, lastNonzero = null;
+      for (let ch = 0; ch < buffer.numberOfChannels; ch++) {
+        const values = buffer.getChannelData(ch);
+        for (let i = 0; i < values.length; i++) {
+          const v = values[i]; peak = Math.max(peak, Math.abs(v)); energy += v * v;
+          if (i) maxAdjacentStep = Math.max(maxAdjacentStep, Math.abs(v - values[i - 1]));
+          if (Math.abs(v) > 1e-8) { firstNonzero = firstNonzero === null ? i : Math.min(firstNonzero, i); lastNonzero = Math.max(lastNonzero ?? 0, i); }
+        }
+      }
+      results.push({ ...scenario, peak, rms: Math.sqrt(energy / (buffer.length * buffer.numberOfChannels)), maxAdjacentStep, firstNonzero, lastNonzero, plays: host.records.filter(r => r.type === 'play').length }); host.dispose();
+    }
+    return results;
+  }, { moduleUrl: origin + prefix + 'assets/js/website-audio-host.mjs', declaration, registry });
+  check('digitalRender: zero volume and zero intensity are exact silence', report.digitalRenders.filter(r => r.name.startsWith('zero-')).map(r => [r.peak, r.plays]), [[0, 0], [0, 0]]);
+  check('digitalRender: default volume attenuates after compressor', Math.abs(report.digitalRenders[0].peak / report.digitalRenders[1].peak - 0.25) < 0.001, true);
+  check('digitalRender: sampled edges are smooth in tested fixtures', report.digitalRenders.filter(r => r.sample).every(r => r.maxAdjacentStep < 0.01), true);
+  check('digitalRender: tested maximum dense fixture stays below PCM full scale', report.digitalRenders.every(r => r.peak < 1), true);
+  await renderContext.close();
   report.status = 'PASS'; report.passed = report.checks.length; report.failed = 0;
 } catch (error) { report.status = 'FAIL'; report.failed = 1; report.error = error.stack; process.exitCode = 1; }
 finally {

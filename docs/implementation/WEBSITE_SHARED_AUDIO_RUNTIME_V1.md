@@ -111,7 +111,7 @@ A persisted mute immediately reports `muted` without creating an AudioContext, s
 Website audio preference belongs only under the existing website namespace:
 `toadal:web:v1:audio`.
 
-The first implementation stores only bounded website audio preference. It is not game save data and does not create an account/cloud settings system.
+The first implementation stores bounded mute, master/sfx/menu gain and a boolean gentler-stereo preference. It is not game save data and does not create an account/cloud settings system.
 
 ## Central registry
 
@@ -155,3 +155,23 @@ The runtime is prepared as an opt-in website capability. Existing protected Wick
 - approved/rights-cleared sound masters.
 
 Do not weaken TCS, cartridge containment, or website release gates for audio.
+
+
+## Headphone comfort and cue admission
+
+An opted-in player exposes site volume beside its existing sound button, plus a manual **Gentler stereo** checkbox. Native keyboard/touch controls persist in `toadal:web:v1:audio`. Changing them does not activate audio or release muted host ownership. No device detection, microphone permission or additional settings store is used. Non-opted-in games keep their original controls and sound path.
+
+These are digital engineering defaults, not medically safe listening levels:
+
+- New website preferences start at 25% master gain; previously chosen bounded values are retained. A fixed 0.5 output factor provides additional digital headroom. User gain follows the compressor so makeup gain cannot undo the chosen attenuation.
+- Gentler stereo defaults on, mapping authored pan to 60% of its range, with short ramps when changed during a sound. This reduces extreme left/right placement; it cannot evaluate an authored stereo sample's contents.
+- Sample and procedural cue gain ramps from zero over up to 5 ms and returns to zero over up to 10 ms. Stops/steals fade over 10 ms. Fading sources remain in the existing voice budget until `ended`; replacement admission rechecks lifecycle, cooldown, mute and volume. BFCache exit/disposal stops immediately to prevent stale tails after suspension.
+- Zero volume/intensity and intentional host drops remain host-owned silence. They never trigger legacy fallback.
+
+WHO/ITU guidance addresses level, duration and frequency of exposure, adjustable volume and management of sudden/repeated loud sounds. The website does not know device volume, headphone sensitivity, amplifier output or fit. Its gain and PCM measurements cannot establish sound pressure at the ear. The Web Audio compressor is not a certified true-peak limiter or hearing-safety device.
+
+Every separately admitted game/profile still requires owner review of actual samples **and** procedural fallbacks: sharp transients, high or sustained ringing/squeals, fatigue from repeated actions, sudden rewards, stereo motion and simultaneous maximum allowed voices. Use lower device volume first, compare headphones and speakers, and include ordinary prolonged gameplay and mute/volume changes. Do not infer subjective comfort from automated fixtures. For `local-before-active`, a separate migration must also review its local preactivation sound path; site controls govern host playback after activation and cannot rewrite legacy audio.
+
+For content-mix review, WHO/ITU's gaming guidance gives a 30-minute mix example around -23 LUFS/LKFS (±2) with a maximum -1 dBTP true peak. That is a content-production reference, not an acoustic safety guarantee or a target for normalizing each isolated short cue. Actual masters, mix measurements, owner listening, physical phone/Safari and latency remain separate admission gates. The production registry remains empty until that admission.
+
+References: [WHO/ITU gaming guidance (2025)](https://www.itu.int/dms_pub/itu-t/opb/joint/T-JOINT-WHO-2025-1-PDF-E.pdf), [WHO safe listening](https://www.who.int/news-room/questions-and-answers/item/deafness-and-hearing-loss-safe-listening), [Web Audio compressor makeup gain](https://www.w3.org/TR/webaudio-1.0/#computing-the-makeup-gain).
