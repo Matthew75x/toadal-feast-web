@@ -47,7 +47,7 @@ function validateCue(id, cue) {
   assert(['drop','steal-oldest'].includes(cue.voicePolicy), 'cue voice policy');
   if (cue.sample !== undefined && cue.sample !== null) {
     assert(record(cue.sample) && typeof cue.sample.url === 'string' && cue.sample.url.length <= 512, 'sample url');
-    assert(!cue.sample.url.includes('..') && !cue.sample.url.includes('\\') && !/[?#]/.test(cue.sample.url), 'sample url must be clean relative path');
+    assert(!cue.sample.url.includes('..') && !cue.sample.url.includes('\\') && !/[?#]/.test(cue.sample.url) && !/^[a-z][a-z0-9+.-]*:/i.test(cue.sample.url) && !cue.sample.url.startsWith('/'), 'sample url must be clean relative path');
     assert(/^[a-f0-9]{64}$/.test(cue.sample.sha256 || ''), 'sample sha256');
   }
   validateFallback(cue.fallback);
