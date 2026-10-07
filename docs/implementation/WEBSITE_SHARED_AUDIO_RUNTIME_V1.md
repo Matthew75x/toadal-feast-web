@@ -87,7 +87,7 @@ A host-audio cartridge MUST keep exactly one owner for a supported event.
 For `fallback: local-before-active`:
 1. before `host:audio {state:"active"}`, the game may use its existing local sound;
 2. after host state becomes `active` or `muted`, supported events are handed to the host and must not also play locally;
-3. if the host explicitly becomes `unavailable`, local fallback may resume;
+3. only an explicit `unavailable` state returns ownership to local fallback; later `available` or `degraded` states retain host ownership;
 4. a host mute/drop/cooldown is an intentional host decision and must not trigger a second local copy.
 
 This is the same no-double-play rule proven in the local audio pilots.
@@ -105,6 +105,8 @@ If a future generic player swaps cartridges inside one page, the same host insta
 The iframe remains sandboxed. Do not add `allow-same-origin` merely to make audio easier.
 
 Because browser audio activation belongs to the top-level host context, an opted-in player uses the existing player sound control as the explicit user gesture that unlocks shared audio. Until that activation, `local-before-active` cartridges retain their local path.
+
+A persisted mute immediately reports `muted` without creating an AudioContext, so local fallback stays suppressed on reload. Hidden pages stop host voices and cancel pending playback. Normal page exit closes the host; a back/forward-cache visit suspends and restores the same context.
 
 Website audio preference belongs only under the existing website namespace:
 `toadal:web:v1:audio`.

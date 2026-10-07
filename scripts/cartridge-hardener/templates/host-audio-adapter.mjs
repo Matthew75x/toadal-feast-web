@@ -31,7 +31,7 @@ export function createToadalHostAudioAdapter({
   win = globalThis.window,
   parentOrigin = null
 } = {}) {
-  if (!ID.test(gameId || '')) throw new Error('valid gameId required');
+  if (typeof gameId !== 'string' || !ID.test(gameId)) throw new Error('valid gameId required');
   if (typeof legacy !== 'function') throw new Error('legacy sound function required');
   if (!['local-before-active', 'silent-before-active'].includes(fallback)) throw new Error('unsupported fallback');
   if (!win || win.parent === win) throw new Error('host audio requires an embedded cartridge');
@@ -43,6 +43,7 @@ export function createToadalHostAudioAdapter({
   if (!origin || origin === 'null') throw new Error('exact parent origin required');
 
   let state = 'unavailable';
+  let hostOwnsPlayback = false;
   let closed = false;
 
   const onMessage = event => {
@@ -52,19 +53,21 @@ export function createToadalHostAudioAdapter({
     const next = message.payload?.state;
     if (!OWNED_STATES.has(next) && !LOCAL_STATES.has(next)) return;
     state = next;
+    if (OWNED_STATES.has(next)) hostOwnsPlayback = true;
+    else if (next === 'unavailable') hostOwnsPlayback = false;
   };
   win.addEventListener('message', onMessage);
 
   function localAllowed() {
-    return fallback === 'local-before-active' && !OWNED_STATES.has(state);
+    return fallback === 'local-before-active' && !hostOwnsPlayback;
   }
 
   function emit(event, unsafeParams = {}) {
-    if (closed || !ID.test(event || '')) return false;
+    if (closed || typeof event !== 'string' || !ID.test(event)) return false;
     const params = cleanParams(unsafeParams);
     if (!params) return false;
 
-    if (OWNED_STATES.has(state)) {
+    if (hostOwnsPlayback) {
       try {
         win.parent.postMessage({
           protocol: PROTOCOL,
@@ -97,6 +100,6 @@ export function createToadalHostAudioAdapter({
     emit,
     dispose,
     get state() { return state; },
-    get hostOwnsPlayback() { return OWNED_STATES.has(state); }
+    get hostOwnsPlayback() { return hostOwnsPlayback; }
   });
 }

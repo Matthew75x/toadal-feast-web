@@ -1,0 +1,1722 @@
+TAP version 13
+# Subtest: externalizes exact authored CSS/JS once and leaves protected game HTML alone
+ok 1 - externalizes exact authored CSS/JS once and leaves protected game HTML alone
+  ---
+  duration_ms: 44.3504
+  type: 'test'
+  ...
+# Subtest: content hashes change when authored runtime changes
+ok 2 - content hashes change when authored runtime changes
+  ---
+  duration_ms: 39.9352
+  type: 'test'
+  ...
+# Subtest: mismatched page refuses before changing any HTML
+ok 3 - mismatched page refuses before changing any HTML
+  ---
+  duration_ms: 13.4085
+  type: 'test'
+  ...
+# Subtest: missing or duplicate inline runtime fails closed
+ok 4 - missing or duplicate inline runtime fails closed
+  ---
+  duration_ms: 12.9542
+  type: 'test'
+  ...
+# Subtest: stale derived runtime asset in raw export is refused
+ok 5 - stale derived runtime asset in raw export is refused
+  ---
+  duration_ms: 12.3009
+  type: 'test'
+  ...
+# Subtest: invalid base path is refused by the existing base-path authority
+ok 6 - invalid base path is refused by the existing base-path authority
+  ---
+  duration_ms: 11.7428
+  type: 'test'
+  ...
+# Subtest: navigation exposes one synchronized Show/Hide Toadal preference control
+ok 7 - navigation exposes one synchronized Show/Hide Toadal preference control
+  ---
+  duration_ms: 3.3771
+  type: 'test'
+  ...
+# Subtest: hidden helper is inert and skips companion-only reaction/render work
+ok 8 - hidden helper is inert and skips companion-only reaction/render work
+  ---
+  duration_ms: 1.6798
+  type: 'test'
+  ...
+# Subtest: visibility failures remain usable in memory and do not claim persistence
+ok 9 - visibility failures remain usable in memory and do not claim persistence
+  ---
+  duration_ms: 0.4058
+  type: 'test'
+  ...
+# Subtest: navigation control is keyboard/touch sized and support copy teaches both recovery paths
+ok 10 - navigation control is keyboard/touch sized and support copy teaches both recovery paths
+  ---
+  duration_ms: 0.6458
+  type: 'test'
+  ...
+# Subtest: existing double tap, footer recovery, minimized preference and position contract are retained
+ok 11 - existing double tap, footer recovery, minimized preference and position contract are retained
+  ---
+  duration_ms: 0.6176
+  type: 'test'
+  ...
+# Subtest: generated site pages project one cacheable advanced runtime and CSS after export
+not ok 12 - generated site pages project one cacheable advanced runtime and CSS after export
+  ---
+  duration_ms: 14.5114
+  type: 'test'
+  location: 'C:\\Users\\Metarator\\Documents\\Codex\\2026-10-07\\toadal-website-shared-audio-runtime-takeover\\work\\candidate-exact\\scripts\\companion-visibility.test.mjs:53:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open 'C:\\Users\\Metarator\\Documents\\Codex\\2026-10-07\\toadal-website-shared-audio-runtime-takeover\\work\\candidate-exact\\dist\\assets\\js\\advanced-code.696ecde0ccc9.js'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:440:20)
+    TestContext.<anonymous> (file:///<EXACT_CHECKOUT>/scripts/companion-visibility.test.mjs:61:19)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: missing result is not zero, completion, or a write
+ok 13 - missing result is not zero, completion, or a write
+  ---
+  duration_ms: 5.5644
+  type: 'test'
+  ...
+# Subtest: an actually saved zero score remains a valid result
+ok 14 - an actually saved zero score remains a valid result
+  ---
+  duration_ms: 1.222
+  type: 'test'
+  ...
+# Subtest: latest result and personal best remain distinct
+ok 15 - latest result and personal best remain distinct
+  ---
+  duration_ms: 1.495
+  type: 'test'
+  ...
+# Subtest: bounded recent count is not all-time count; all-time best survives eviction
+ok 16 - bounded recent count is not all-time count; all-time best survives eviction
+  ---
+  duration_ms: 21.1879
+  type: 'test'
+  ...
+# Subtest: source read model never changes snapshots, rewards, or stored bytes
+ok 17 - source read model never changes snapshots, rewards, or stored bytes
+  ---
+  duration_ms: 1.0119
+  type: 'test'
+  ...
+# Subtest: unsupported game cannot acquire score capability from a stored object: claw-feed-gulper
+ok 18 - unsupported game cannot acquire score capability from a stored object: claw-feed-gulper
+  ---
+  duration_ms: 0.6623
+  type: 'test'
+  ...
+# Subtest: unsupported game cannot acquire score capability from a stored object: froggy-fruity-bash
+ok 19 - unsupported game cannot acquire score capability from a stored object: froggy-fruity-bash
+  ---
+  duration_ms: 0.8007
+  type: 'test'
+  ...
+# Subtest: unsupported game cannot acquire score capability from a stored object: toadal-tower-defense
+ok 20 - unsupported game cannot acquire score capability from a stored object: toadal-tower-defense
+  ---
+  duration_ms: 0.4228
+  type: 'test'
+  ...
+# Subtest: unsupported game cannot acquire score capability from a stored object: croaker-king-defense
+ok 21 - unsupported game cannot acquire score capability from a stored object: croaker-king-defense
+  ---
+  duration_ms: 0.7447
+  type: 'test'
+  ...
+# Subtest: unsupported game cannot acquire score capability from a stored object: __proto__
+ok 22 - unsupported game cannot acquire score capability from a stored object: __proto__
+  ---
+  duration_ms: 0.8766
+  type: 'test'
+  ...
+# Subtest: unreadable score storage on boot is unavailable, not empty
+ok 23 - unreadable score storage on boot is unavailable, not empty
+  ---
+  duration_ms: 0.6659
+  type: 'test'
+  ...
+# Subtest: corrupt/future profile preserved; no invented zero or verified result: {broken
+ok 24 - corrupt/future profile preserved; no invented zero or verified result: {broken
+  ---
+  duration_ms: 0.5081
+  type: 'test'
+  ...
+# Subtest: corrupt/future profile preserved; no invented zero or verified result: {"schemaVersion":99,"localScores":{
+ok 25 - corrupt/future profile preserved; no invented zero or verified result: {"schemaVersion":99,"localScores":{
+  ---
+  duration_ms: 0.4388
+  type: 'test'
+  ...
+# Subtest: corrupt/future profile preserved; no invented zero or verified result: {"schemaVersion":1,"localScores":{"
+ok 26 - corrupt/future profile preserved; no invented zero or verified result: {"schemaVersion":1,"localScores":{"
+  ---
+  duration_ms: 0.9147
+  type: 'test'
+  ...
+# Subtest: read failure withholds unverified values and a valid read restores them without writes
+ok 27 - read failure withholds unverified values and a valid read restores them without writes
+  ---
+  duration_ms: 1.1413
+  type: 'test'
+  ...
+# Subtest: unrelated unreadable XP record does not misclassify a readable saved game score
+ok 28 - unrelated unreadable XP record does not misclassify a readable saved game score
+  ---
+  duration_ms: 0.6145
+  type: 'test'
+  ...
+# Subtest: page-only memory never claims a saved browser result
+ok 29 - page-only memory never claims a saved browser result
+  ---
+  duration_ms: 1.0771
+  type: 'test'
+  ...
+# Subtest: reset removes the game projection without recreating records or deleting other-game saves
+ok 30 - reset removes the game projection without recreating records or deleting other-game saves
+  ---
+  duration_ms: 0.959
+  type: 'test'
+  ...
+# Subtest: malformed/unbound read-model input fails closed
+ok 31 - malformed/unbound read-model input fails closed
+  ---
+  duration_ms: 0.419
+  type: 'test'
+  ...
+# Subtest: renderer updates only text/record state and preserves native card/link nodes
+ok 32 - renderer updates only text/record state and preserves native card/link nodes
+  ---
+  duration_ms: 25.5499
+  type: 'test'
+  ...
+# Subtest: four public native cards match existing catalogue titles/routes; no launch expansion
+ok 33 - four public native cards match existing catalogue titles/routes; no launch expansion
+  ---
+  duration_ms: 4.762
+  type: 'test'
+  ...
+# Subtest: registrations are an exact read-model projection of the four current public game records
+ok 34 - registrations are an exact read-model projection of the four current public game records
+  ---
+  duration_ms: 3.817
+  type: 'test'
+  ...
+# Subtest: unlinked catalogue games never become zero progress
+ok 35 - unlinked catalogue games never become zero progress
+  ---
+  duration_ms: 5.052
+  type: 'test'
+  ...
+# Subtest: connected local source with no data is distinct from a genuine saved zero
+ok 36 - connected local source with no data is distinct from a genuine saved zero
+  ---
+  duration_ms: 2.2793
+  type: 'test'
+  ...
+# Subtest: recorded local progress is source-labelled and never changes website rewards
+ok 37 - recorded local progress is source-labelled and never changes website rewards
+  ---
+  duration_ms: 1.2713
+  type: 'test'
+  ...
+# Subtest: page-only adapter is session-only and never claims browser persistence
+ok 38 - page-only adapter is session-only and never claims browser persistence
+  ---
+  duration_ms: 0.8398
+  type: 'test'
+  ...
+# Subtest: unreadable score state is unavailable rather than empty or zero
+ok 39 - unreadable score state is unavailable rather than empty or zero
+  ---
+  duration_ms: 2.4837
+  type: 'test'
+  ...
+# Subtest: explicit external fixture state is representable without activating a real source: pending
+ok 40 - explicit external fixture state is representable without activating a real source: pending
+  ---
+  duration_ms: 0.5311
+  type: 'test'
+  ...
+# Subtest: explicit external fixture state is representable without activating a real source: stale
+ok 41 - explicit external fixture state is representable without activating a real source: stale
+  ---
+  duration_ms: 0.2039
+  type: 'test'
+  ...
+# Subtest: explicit external fixture state is representable without activating a real source: unavailable
+ok 42 - explicit external fixture state is representable without activating a real source: unavailable
+  ---
+  duration_ms: 0.4497
+  type: 'test'
+  ...
+# Subtest: explicit external fixture state is representable without activating a real source: synchronized
+ok 43 - explicit external fixture state is representable without activating a real source: synchronized
+  ---
+  duration_ms: 0.5653
+  type: 'test'
+  ...
+# Subtest: external zero requires an actual zero metric
+ok 44 - external zero requires an actual zero metric
+  ---
+  duration_ms: 0.4455
+  type: 'test'
+  ...
+# Subtest: data-bearing external states require an exact observation timestamp
+ok 45 - data-bearing external states require an exact observation timestamp
+  ---
+  duration_ms: 0.2797
+  type: 'test'
+  ...
+# Subtest: pending cannot impersonate synchronized persistence
+ok 46 - pending cannot impersonate synchronized persistence
+  ---
+  duration_ms: 0.1636
+  type: 'test'
+  ...
+# Subtest: synchronized requires account linkage and accepted-or-better confidence
+ok 47 - synchronized requires account linkage and accepted-or-better confidence
+  ---
+  duration_ms: 0.1819
+  type: 'test'
+  ...
+# Subtest: missing-data and unavailable states cannot smuggle a metric
+ok 48 - missing-data and unavailable states cannot smuggle a metric
+  ---
+  duration_ms: 0.2073
+  type: 'test'
+  ...
+# Subtest: unknown games, future schemas and malformed source timestamps fail closed
+ok 49 - unknown games, future schemas and malformed source timestamps fail closed
+  ---
+  duration_ms: 0.1745
+  type: 'test'
+  ...
+# Subtest: count metrics support future personal accomplishment projections without creating a universal percentage
+ok 50 - count metrics support future personal accomplishment projections without creating a universal percentage
+  ---
+  duration_ms: 0.2523
+  type: 'test'
+  ...
+# Subtest: projection calls are read-only over the existing store snapshot
+ok 51 - projection calls are read-only over the existing store snapshot
+  ---
+  duration_ms: 0.743
+  type: 'test'
+  ...
+# Subtest: Feast Pass cards expose source, connection, persistence and confidence with existing actions intact
+ok 52 - Feast Pass cards expose source, connection, persistence and confidence with existing actions intact
+  ---
+  duration_ms: 5.1672
+  type: 'test'
+  ...
+# Subtest: another tab claim updates the already-open view without writes or reload
+ok 53 - another tab claim updates the already-open view without writes or reload
+  ---
+  duration_ms: 10.7657
+  type: 'test'
+  ...
+# Subtest: refresh adopts all four owned records and never grants or writes anything
+ok 54 - refresh adopts all four owned records and never grants or writes anything
+  ---
+  duration_ms: 4.0131
+  type: 'test'
+  ...
+# Subtest: unrelated keys, sessionStorage and unbound storage events are ignored
+ok 55 - unrelated keys, sessionStorage and unbound storage events are ignored
+  ---
+  duration_ms: 2.1205
+  type: 'test'
+  ...
+# Subtest: notification payload is never treated as a saved progress record
+ok 56 - notification payload is never treated as a saved progress record
+  ---
+  duration_ms: 3.4101
+  type: 'test'
+  ...
+# Subtest: reset in another tab clears old display without re-recording route visits
+ok 57 - reset in another tab clears old display without re-recording route visits
+  ---
+  duration_ms: 1.6257
+  type: 'test'
+  ...
+# Subtest: failed refresh preserves last-readable XP, reports uncertainty, and recovers
+ok 58 - failed refresh preserves last-readable XP, reports uncertainty, and recovers
+  ---
+  duration_ms: 1.9983
+  type: 'test'
+  ...
+# Subtest: future or malformed external data retains the last-readable view without overwriting storage
+ok 59 - future or malformed external data retains the last-readable view without overwriting storage
+  ---
+  duration_ms: 2.1901
+  type: 'test'
+  ...
+# Subtest: persisted page restore refreshes; ordinary initial pageshow is not a replay
+ok 60 - persisted page restore refreshes; ordinary initial pageshow is not a replay
+  ---
+  duration_ms: 0.9513
+  type: 'test'
+  ...
+# Subtest: visibility return refreshes once visible, not while hidden
+ok 61 - visibility return refreshes once visible, not while hidden
+  ---
+  duration_ms: 1.3961
+  type: 'test'
+  ...
+# Subtest: unchanged focus does not rerender lists or erase the reset operation message
+ok 62 - unchanged focus does not rerender lists or erase the reset operation message
+  ---
+  duration_ms: 2.2928
+  type: 'test'
+  ...
+# Subtest: new external progress supersedes a stale reset result
+ok 63 - new external progress supersedes a stale reset result
+  ---
+  duration_ms: 1.6305
+  type: 'test'
+  ...
+# Subtest: repeated boot does not add duplicate refresh listeners or replay writes
+ok 64 - repeated boot does not add duplicate refresh listeners or replay writes
+  ---
+  duration_ms: 0.9186
+  type: 'test'
+  ...
+# Subtest: page-memory mode survives lifecycle refresh without claiming browser/account synchronization
+ok 65 - page-memory mode survives lifecycle refresh without claiming browser/account synchronization
+  ---
+  duration_ms: 1.3948
+  type: 'test'
+  ...
+# Subtest: refresh report is defensive and repeated unchanged refresh is a no-op
+ok 66 - refresh report is defensive and repeated unchanged refresh is a no-op
+  ---
+  duration_ms: 0.568
+  type: 'test'
+  ...
+# Subtest: uses the exact four scoped keys and safe guest defaults
+ok 67 - uses the exact four scoped keys and safe guest defaults
+  ---
+  duration_ms: 7.0497
+  type: 'test'
+  ...
+# Subtest: persists events and state across store reloads; route event is idempotent
+ok 68 - persists events and state across store reloads; route event is idempotent
+  ---
+  duration_ms: 2.5967
+  type: 'test'
+  ...
+# Subtest: malformed JSON falls back safely with diagnostics and is not overwritten just by reading
+ok 69 - malformed JSON falls back safely with diagnostics and is not overwritten just by reading
+  ---
+  duration_ms: 2.0647
+  type: 'test'
+  ...
+# Subtest: migrates missing legacy fields and preserves unknown fields on the same schema version
+ok 70 - migrates missing legacy fields and preserves unknown fields on the same schema version
+  ---
+  duration_ms: 1.3505
+  type: 'test'
+  ...
+# Subtest: future schema is safe to read and never overwritten by progression writes
+ok 71 - future schema is safe to read and never overwritten by progression writes
+  ---
+  duration_ms: 0.6703
+  type: 'test'
+  ...
+# Subtest: quest rewards require completion and are claimed once without direct score writes
+ok 72 - quest rewards require completion and are claimed once without direct score writes
+  ---
+  duration_ms: 0.8133
+  type: 'test'
+  ...
+# Subtest: Wicked Bites personal best persists locally only from the validated website adapter contract
+ok 73 - Wicked Bites personal best persists locally only from the validated website adapter contract
+  ---
+  duration_ms: 1.9718
+  type: 'test'
+  ...
+# Subtest: completed score runs accept equal later runs, reject unsafe values, and cap history at fifty
+ok 74 - completed score runs accept equal later runs, reject unsafe values, and cap history at fifty
+  ---
+  duration_ms: 20.9539
+  type: 'test'
+  ...
+# Subtest: legacy local high score is migrated to a bounded completed run without adding storage keys
+ok 75 - legacy local high score is migrated to a bounded completed run without adding storage keys
+  ---
+  duration_ms: 1.4158
+  type: 'test'
+  ...
+# Subtest: corrupt local score records are read-only and preserved instead of normalized into writes
+ok 76 - corrupt local score records are read-only and preserved instead of normalized into writes
+  ---
+  duration_ms: 1.2327
+  type: 'test'
+  ...
+# Subtest: UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days
+ok 77 - UTC daily claim cannot repeat in a day and increments streak only on adjacent UTC days
+  ---
+  duration_ms: 1.0292
+  type: 'test'
+  ...
+# Subtest: reset removes only the four guest progression keys and leaves unrelated data intact
+ok 78 - reset removes only the four guest progression keys and leaves unrelated data intact
+  ---
+  duration_ms: 0.6757
+  type: 'test'
+  ...
+# Subtest: milestones are surfaced as truthful locked/unlocked non-entitlement rewards
+ok 79 - milestones are surfaced as truthful locked/unlocked non-entitlement rewards
+  ---
+  duration_ms: 0.4036
+  type: 'test'
+  ...
+# Subtest: route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes
+ok 80 - route normalization handles root, query/hash, trailing slashes, and GitHub Pages prefixes
+  ---
+  duration_ms: 0.4736
+  type: 'test'
+  ...
+# Subtest: configured route events count only the exact normalized event route
+ok 81 - configured route events count only the exact normalized event route
+  ---
+  duration_ms: 0.4108
+  type: 'test'
+  ...
+# Subtest: boot persists configured route activity even when the page has no progression root
+ok 82 - boot persists configured route activity even when the page has no progression root
+  ---
+  duration_ms: 1.0086
+  type: 'test'
+  ...
+# Subtest: daily snapshot computes claimed status against one UTC period value
+ok 83 - daily snapshot computes claimed status against one UTC period value
+  ---
+  duration_ms: 0.3343
+  type: 'test'
+  ...
+# Subtest: missing browser storage reports non-persistent memory mode and has no economy fallback
+ok 84 - missing browser storage reports non-persistent memory mode and has no economy fallback
+  ---
+  duration_ms: 0.356
+  type: 'test'
+  ...
+# Subtest: refreshes quest and daily state across stale stores before granting claims
+ok 85 - refreshes quest and daily state across stale stores before granting claims
+  ---
+  duration_ms: 0.8641
+  type: 'test'
+  ...
+# Subtest: Home discoveries use the existing discoveries key and persist exactly three gated candies
+ok 86 - Home discoveries use the existing discoveries key and persist exactly three gated candies
+  ---
+  duration_ms: 2.2929
+  type: 'test'
+  ...
+# Subtest: all six Home candy collection orders yield one mapped schema collectible and one quest event per treat
+ok 87 - all six Home candy collection orders yield one mapped schema collectible and one quest event per treat
+  ---
+  duration_ms: 18.0751
+  type: 'test'
+  ...
+# Subtest: existing users migrate all already-recorded candies at boot exactly once
+ok 88 - existing users migrate all already-recorded candies at boot exactly once
+  ---
+  duration_ms: 1.1035
+  type: 'test'
+  ...
+# Subtest: boot reconciliation runs before Feast Pass, Rewards, and Profile render without requiring Home
+ok 89 - boot reconciliation runs before Feast Pass, Rewards, and Profile render without requiring Home
+  ---
+  duration_ms: 3.0813
+  type: 'test'
+  ...
+# Subtest: all three legacy candy discoveries migrate to exactly three local Treat records
+ok 90 - all three legacy candy discoveries migrate to exactly three local Treat records
+  ---
+  duration_ms: 0.9067
+  type: 'test'
+  ...
+# Subtest: Golden Block hits are discovery-only until hit four and the candy is collected
+ok 91 - Golden Block hits are discovery-only until hit four and the candy is collected
+  ---
+  duration_ms: 1.0396
+  type: 'test'
+  ...
+# Subtest: Home reconciliation preserves future pass, quest, and malformed records without partial writes
+ok 92 - Home reconciliation preserves future pass, quest, and malformed records without partial writes
+  ---
+  duration_ms: 0.4622
+  type: 'test'
+  ...
+# Subtest: Home candy transaction restores all three in-memory records if a later storage write fails
+ok 93 - Home candy transaction restores all three in-memory records if a later storage write fails
+  ---
+  duration_ms: 0.8054
+  type: 'test'
+  ...
+# Subtest: Home candy transaction rolls back the discovery write when the second pass write fails
+ok 94 - Home candy transaction rolls back the discovery write when the second pass write fails
+  ---
+  duration_ms: 0.622
+  type: 'test'
+  ...
+# Subtest: a future Home-interaction schema is readable but cannot be overwritten
+ok 95 - a future Home-interaction schema is readable but cannot be overwritten
+  ---
+  duration_ms: 0.3817
+  type: 'test'
+  ...
+# Subtest: malformed Home-interaction data is preserved and read-only until a safe migration exists
+ok 96 - malformed Home-interaction data is preserved and read-only until a safe migration exists
+  ---
+  duration_ms: 0.3144
+  type: 'test'
+  ...
+# Subtest: runtime list rendering uses div role=list/listitem semantics
+ok 97 - runtime list rendering uses div role=list/listitem semantics
+  ---
+  duration_ms: 0.5473
+  type: 'test'
+  ...
+# Subtest: daily button label and aria-disabled track claim state; quest entries show configured reward metadata
+ok 98 - daily button label and aria-disabled track claim state; quest entries show configured reward metadata
+  ---
+  duration_ms: 3.9568
+  type: 'test'
+  ...
+# Subtest: denied reset retains the progress actually left in browser storage
+ok 99 - denied reset retains the progress actually left in browser storage
+  ---
+  duration_ms: 6.7882
+  type: 'test'
+  ...
+# Subtest: silent removal failure is caught by actual readback
+ok 100 - silent removal failure is caught by actual readback
+  ---
+  duration_ms: 1.7638
+  type: 'test'
+  ...
+# Subtest: unreadable reset outcome preserves last-readable values and reports them unverified
+ok 101 - unreadable reset outcome preserves last-readable values and reports them unverified
+  ---
+  duration_ms: 0.9606
+  type: 'test'
+  ...
+# Subtest: reset refusal does not remove future-schema protection from retained data
+ok 102 - reset refusal does not remove future-schema protection from retained data
+  ---
+  duration_ms: 1.1879
+  type: 'test'
+  ...
+# Subtest: malformed retained data stays read-only and is never replaced with safe defaults
+ok 103 - malformed retained data stays read-only and is never replaced with safe defaults
+  ---
+  duration_ms: 0.8193
+  type: 'test'
+  ...
+# Subtest: retry can complete a partial reset without touching game saves or preferences
+ok 104 - retry can complete a partial reset without touching game saves or preferences
+  ---
+  duration_ms: 1.1696
+  type: 'test'
+  ...
+# Subtest: snapshot reset details cannot mutate the store report
+ok 105 - snapshot reset details cannot mutate the store report
+  ---
+  duration_ms: 0.6228
+  type: 'test'
+  ...
+# Subtest: page-memory reset is explicitly distinct from confirmed browser-storage reset
+ok 106 - page-memory reset is explicitly distinct from confirmed browser-storage reset
+  ---
+  duration_ms: 0.5534
+  type: 'test'
+  ...
+# Subtest: reset button reports failure after render, preserves visible retained XP, and supports retry
+ok 107 - reset button reports failure after render, preserves visible retained XP, and supports retry
+  ---
+  duration_ms: 30.1259
+  type: 'test'
+  ...
+# Subtest: inaccessible localStorage never displays browser-wide reset success
+ok 108 - inaccessible localStorage never displays browser-wide reset success
+  ---
+  duration_ms: 1.4819
+  type: 'test'
+  ...
+# Subtest: all seven affected runtime fragment pins match exact authored and exported bytes
+ok 109 - all seven affected runtime fragment pins match exact authored and exported bytes
+  ---
+  duration_ms: 7.7718
+  type: 'test'
+  ...
+# Subtest: pinned runtime resources have exact-path LF checkout rules
+ok 110 - pinned runtime resources have exact-path LF checkout rules
+  ---
+  duration_ms: 0.7104
+  type: 'test'
+  ...
+# Subtest: an unclaimed starter reward is not a showcase marker; reads do not grant or write
+ok 111 - an unclaimed starter reward is not a showcase marker; reads do not grant or write
+  ---
+  duration_ms: 7.1766
+  type: 'test'
+  ...
+# Subtest: actual existing badge claim can be displayed, removed and displayed again
+ok 112 - actual existing badge claim can be displayed, removed and displayed again
+  ---
+  duration_ms: 5.2419
+  type: 'test'
+  ...
+# Subtest: claim, display and reload do not replay rewards
+ok 113 - claim, display and reload do not replay rewards
+  ---
+  duration_ms: 1.0119
+  type: 'test'
+  ...
+# Subtest: selection preserves unknown fields, score history and the other three exact saved records
+ok 114 - selection preserves unknown fields, score history and the other three exact saved records
+  ---
+  duration_ms: 2.2182
+  type: 'test'
+  ...
+# Subtest: already-selected and already-hidden actions are idempotent without timestamp writes
+ok 115 - already-selected and already-hidden actions are idempotent without timestamp writes
+  ---
+  duration_ms: 0.8004
+  type: 'test'
+  ...
+# Subtest: existing level-two title auto-selection remains, and owner can hide and restore it
+ok 116 - existing level-two title auto-selection remains, and owner can hide and restore it
+  ---
+  duration_ms: 2.062
+  type: 'test'
+  ...
+# Subtest: two configured earned badges can be switched without granting anything
+ok 117 - two configured earned badges can be switched without granting anything
+  ---
+  duration_ms: 1.0963
+  type: 'test'
+  ...
+# Subtest: reject unknown, unearned, mismatched or unsupported selection ["collectible","feast-pass-sticker"]
+ok 118 - reject unknown, unearned, mismatched or unsupported selection ["collectible","feast-pass-sticker"]
+  ---
+  duration_ms: 0.4412
+  type: 'test'
+  ...
+# Subtest: reject unknown, unearned, mismatched or unsupported selection ["__proto__","first-feast"]
+ok 119 - reject unknown, unearned, mismatched or unsupported selection ["__proto__","first-feast"]
+  ---
+  duration_ms: 0.573
+  type: 'test'
+  ...
+# Subtest: reject unknown, unearned, mismatched or unsupported selection ["badge",{}]
+ok 120 - reject unknown, unearned, mismatched or unsupported selection ["badge",{}]
+  ---
+  duration_ms: 1.5002
+  type: 'test'
+  ...
+# Subtest: reject unknown, unearned, mismatched or unsupported selection ["badge",""]
+ok 121 - reject unknown, unearned, mismatched or unsupported selection ["badge",""]
+  ---
+  duration_ms: 0.3419
+  type: 'test'
+  ...
+# Subtest: reject unknown, unearned, mismatched or unsupported selection ["title","first-feast"]
+ok 122 - reject unknown, unearned, mismatched or unsupported selection ["title","first-feast"]
+  ---
+  duration_ms: 0.3481
+  type: 'test'
+  ...
+# Subtest: reject unknown, unearned, mismatched or unsupported selection ["badge","curious-feaster"]
+ok 123 - reject unknown, unearned, mismatched or unsupported selection ["badge","curious-feaster"]
+  ---
+  duration_ms: 0.2978
+  type: 'test'
+  ...
+# Subtest: reject unknown, unearned, mismatched or unsupported selection ["badge","unknown"]
+ok 124 - reject unknown, unearned, mismatched or unsupported selection ["badge","unknown"]
+  ---
+  duration_ms: 0.31
+  type: 'test'
+  ...
+# Subtest: profile raw value never becomes an earned public/display title just because it is selected
+ok 125 - profile raw value never becomes an earned public/display title just because it is selected
+  ---
+  duration_ms: 1.0673
+  type: 'test'
+  ...
+# Subtest: write failure retains selection and permits a successful retry
+ok 126 - write failure retains selection and permits a successful retry
+  ---
+  duration_ms: 0.5585
+  type: 'test'
+  ...
+# Subtest: silent storage refusal is not successful persistence
+ok 127 - silent storage refusal is not successful persistence
+  ---
+  duration_ms: 1.0168
+  type: 'test'
+  ...
+# Subtest: pass read refusal never writes selection or invents empty ownership
+ok 128 - pass read refusal never writes selection or invents empty ownership
+  ---
+  duration_ms: 1.0032
+  type: 'test'
+  ...
+# Subtest: pass malformed/future storage is preserved: {broken
+ok 129 - pass malformed/future storage is preserved: {broken
+  ---
+  duration_ms: 0.5787
+  type: 'test'
+  ...
+# Subtest: pass malformed/future storage is preserved: {"schemaVersion":99,"marker":"retained future"}
+ok 130 - pass malformed/future storage is preserved: {"schemaVersion":99,"marker":"retained future"}
+  ---
+  duration_ms: 0.5478
+  type: 'test'
+  ...
+# Subtest: profile read refusal never writes selection or invents empty ownership
+ok 131 - profile read refusal never writes selection or invents empty ownership
+  ---
+  duration_ms: 0.503
+  type: 'test'
+  ...
+# Subtest: profile malformed/future storage is preserved: {broken
+ok 132 - profile malformed/future storage is preserved: {broken
+  ---
+  duration_ms: 0.3826
+  type: 'test'
+  ...
+# Subtest: profile malformed/future storage is preserved: {"schemaVersion":99,"marker":"retained future"}
+ok 133 - profile malformed/future storage is preserved: {"schemaVersion":99,"marker":"retained future"}
+  ---
+  duration_ms: 0.325
+  type: 'test'
+  ...
+# Subtest: malformed marker state is unavailable, not silently overwritten: p=>p.badges='first-feast'
+ok 134 - malformed marker state is unavailable, not silently overwritten: p=>p.badges='first-feast'
+  ---
+  duration_ms: 0.6986
+  type: 'test'
+  ...
+# Subtest: malformed marker state is unavailable, not silently overwritten: p=>p.selectedBadge=42
+ok 135 - malformed marker state is unavailable, not silently overwritten: p=>p.selectedBadge=42
+  ---
+  duration_ms: 0.5578
+  type: 'test'
+  ...
+# Subtest: malformed marker state is unavailable, not silently overwritten: p=>p.rewardClaims=[]
+ok 136 - malformed marker state is unavailable, not silently overwritten: p=>p.rewardClaims=[]
+  ---
+  duration_ms: 0.5118
+  type: 'test'
+  ...
+# Subtest: malformed marker state is unavailable, not silently overwritten: p=>p.rewardClaims['starter-feaster-badge']='not-a-date'
+ok 137 - malformed marker state is unavailable, not silently overwritten: p=>p.rewardClaims['starter-feaster-badge']='not-a-date'
+  ---
+  duration_ms: 0.6692
+  type: 'test'
+  ...
+# Subtest: a partial reset cannot promote remaining profile markers into earned authority
+ok 138 - a partial reset cannot promote remaining profile markers into earned authority
+  ---
+  duration_ms: 0.583
+  type: 'test'
+  ...
+# Subtest: external reset is read fresh before save and stale tab cannot resurrect it
+ok 139 - external reset is read fresh before save and stale tab cannot resurrect it
+  ---
+  duration_ms: 0.9067
+  type: 'test'
+  ...
+# Subtest: stale profile save rereads new scores and preserves another tab selection
+ok 140 - stale profile save rereads new scores and preserves another tab selection
+  ---
+  duration_ms: 1.0689
+  type: 'test'
+  ...
+# Subtest: change during final prewrite read refuses without overwriting a reset
+ok 141 - change during final prewrite read refuses without overwriting a reset
+  ---
+  duration_ms: 0.578
+  type: 'test'
+  ...
+# Subtest: another tab refresh is read-only and shows selected/cleared state
+ok 142 - another tab refresh is read-only and shows selected/cleared state
+  ---
+  duration_ms: 0.8945
+  type: 'test'
+  ...
+# Subtest: no-storage tab refuses saved-profile claims
+ok 143 - no-storage tab refuses saved-profile claims
+  ---
+  duration_ms: 0.355
+  type: 'test'
+  ...
+# Subtest: duplicate configured award identity fails closed
+ok 144 - duplicate configured award identity fails closed
+  ---
+  duration_ms: 0.3242
+  type: 'test'
+  ...
+# Subtest: native Profile and Rewards supply editable section, labels, controls and links
+ok 145 - native Profile and Rewards supply editable section, labels, controls and links
+  ---
+  duration_ms: 3.8451
+  type: 'test'
+  ...
+# Subtest: dimension parser reads PNG, WebP VP8X and JPEG headers without decoding images
+ok 146 - dimension parser reads PNG, WebP VP8X and JPEG headers without decoding images
+  ---
+  duration_ms: 2.9956
+  type: 'test'
+  ...
+# Subtest: adds natural dimensions and preserves authored size ratio
+ok 147 - adds natural dimensions and preserves authored size ratio
+  ---
+  duration_ms: 33.799
+  type: 'test'
+  ...
+# Subtest: protected game HTML and dynamic reader image remain untouched
+ok 148 - protected game HTML and dynamic reader image remain untouched
+  ---
+  duration_ms: 12.7999
+  type: 'test'
+  ...
+# Subtest: existing complete authored dimensions are preserved verbatim
+ok 149 - existing complete authored dimensions are preserved verbatim
+  ---
+  duration_ms: 14.7871
+  type: 'test'
+  ...
+# Subtest: unknown no-src images fail closed before writes
+ok 150 - unknown no-src images fail closed before writes
+  ---
+  duration_ms: 14.0719
+  type: 'test'
+  ...
+# Subtest: external, query-bearing, unsupported and missing sources fail closed
+ok 151 - external, query-bearing, unsupported and missing sources fail closed
+  ---
+  duration_ms: 43.6906
+  type: 'test'
+  ...
+# Subtest: invalid image header refuses instead of inventing dimensions
+ok 152 - invalid image header refuses instead of inventing dimensions
+  ---
+  duration_ms: 9.8865
+  type: 'test'
+  ...
+# Subtest: companion source exposes persistent hide, explicit restore, and double-tap shortcut
+ok 153 - companion source exposes persistent hide, explicit restore, and double-tap shortcut
+  ---
+  duration_ms: 3.5605
+  type: 'test'
+  ...
+# Subtest: fullscreen exit remains a 44px accessible target with a compact visual treatment
+ok 154 - fullscreen exit remains a 44px accessible target with a compact visual treatment
+  ---
+  duration_ms: 0.6412
+  type: 'test'
+  ...
+# Subtest: Studio reference CSS and public CSS are byte-identical
+ok 155 - Studio reference CSS and public CSS are byte-identical
+  ---
+  duration_ms: 0.2445
+  type: 'test'
+  ...
+# Subtest: all generated site pages reference one exact cacheable Studio advanced runtime
+not ok 156 - all generated site pages reference one exact cacheable Studio advanced runtime
+  ---
+  duration_ms: 13.8648
+  type: 'test'
+  location: 'C:\\Users\\Metarator\\Documents\\Codex\\2026-10-07\\toadal-website-shared-audio-runtime-takeover\\work\\candidate-exact\\scripts\\mobile-interaction-closure.test.mjs:62:1'
+  failureType: 'testCodeFailure'
+  error: "ENOENT: no such file or directory, open 'C:\\Users\\Metarator\\Documents\\Codex\\2026-10-07\\toadal-website-shared-audio-runtime-takeover\\work\\candidate-exact\\dist\\assets\\js\\advanced-code.696ecde0ccc9.js'"
+  code: 'ENOENT'
+  stack: |-
+    Object.readFileSync (node:fs:440:20)
+    TestContext.<anonymous> (file:///<EXACT_CHECKOUT>/scripts/mobile-interaction-closure.test.mjs:68:19)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: protected game payloads do not receive the website advanced runtime
+ok 157 - protected game payloads do not receive the website advanced runtime
+  ---
+  duration_ms: 9.8918
+  type: 'test'
+  ...
+# Subtest: owner preview matrix waits for the companion position lifecycle before geometry sampling
+ok 158 - owner preview matrix waits for the companion position lifecycle before geometry sampling
+  ---
+  duration_ms: 1.2097
+  type: 'test'
+  ...
+# Subtest: actual registry separates one playable preview, one hold and two concepts
+ok 159 - actual registry separates one playable preview, one hold and two concepts
+  ---
+  duration_ms: 2.9494
+  type: 'test'
+  ...
+# Subtest: release state and playability are independent
+ok 160 - release state and playability are independent
+  ---
+  duration_ms: 0.4546
+  type: 'test'
+  ...
+# Subtest: explicit hold wins even over enabled and runnable flags
+ok 161 - explicit hold wins even over enabled and runnable flags
+  ---
+  duration_ms: 0.3598
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: disabled enabled flag
+ok 162 - incomplete/contradictory source cannot become playable: disabled enabled flag
+  ---
+  duration_ms: 0.2506
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: string enabled flag
+ok 163 - incomplete/contradictory source cannot become playable: string enabled flag
+  ---
+  duration_ms: 0.1987
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: future schema
+ok 164 - incomplete/contradictory source cannot become playable: future schema
+  ---
+  duration_ms: 0.2027
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: wrong identity
+ok 165 - incomplete/contradictory source cannot become playable: wrong identity
+  ---
+  duration_ms: 0.1445
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: invalid slug
+ok 166 - incomplete/contradictory source cannot become playable: invalid slug
+  ---
+  duration_ms: 0.3416
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: non-public status
+ok 167 - incomplete/contradictory source cannot become playable: non-public status
+  ---
+  duration_ms: 0.5296
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: release mismatch
+ok 168 - incomplete/contradictory source cannot become playable: release mismatch
+  ---
+  duration_ms: 0.5114
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: runnable false
+ok 169 - incomplete/contradictory source cannot become playable: runnable false
+  ---
+  duration_ms: 0.2834
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: string runnable
+ok 170 - incomplete/contradictory source cannot become playable: string runnable
+  ---
+  duration_ms: 0.1676
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: string hold
+ok 171 - incomplete/contradictory source cannot become playable: string hold
+  ---
+  duration_ms: 0.15
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: missing entry
+ok 172 - incomplete/contradictory source cannot become playable: missing entry
+  ---
+  duration_ms: 0.234
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: external entry
+ok 173 - incomplete/contradictory source cannot become playable: external entry
+  ---
+  duration_ms: 0.1471
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: other-game entry
+ok 174 - incomplete/contradictory source cannot become playable: other-game entry
+  ---
+  duration_ms: 0.1546
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: query entry
+ok 175 - incomplete/contradictory source cannot become playable: query entry
+  ---
+  duration_ms: 0.1492
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: missing version
+ok 176 - incomplete/contradictory source cannot become playable: missing version
+  ---
+  duration_ms: 0.1475
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: wrong protocol
+ok 177 - incomplete/contradictory source cannot become playable: wrong protocol
+  ---
+  duration_ms: 0.1726
+  type: 'test'
+  ...
+# Subtest: incomplete/contradictory source cannot become playable: missing web config
+ok 178 - incomplete/contradictory source cannot become playable: missing web config
+  ---
+  duration_ms: 0.1707
+  type: 'test'
+  ...
+# Subtest: concept requires explicit disconnected/no-package state, not missing metadata
+ok 179 - concept requires explicit disconnected/no-package state, not missing metadata
+  ---
+  duration_ms: 0.3465
+  type: 'test'
+  ...
+# Subtest: query filtering is case/accent-insensitive title token matching, not arbitrary page-text search
+ok 180 - query filtering is case/accent-insensitive title token matching, not arbitrary page-text search
+  ---
+  duration_ms: 2.4067
+  type: 'test'
+  ...
+# Subtest: availability facets compose with search and release status
+ok 181 - availability facets compose with search and release status
+  ---
+  duration_ms: 0.4898
+  type: 'test'
+  ...
+# Subtest: unavailable is its own classification and never gets pooled into concepts
+ok 182 - unavailable is its own classification and never gets pooled into concepts
+  ---
+  duration_ms: 0.2425
+  type: 'test'
+  ...
+# Subtest: empty catalogue and malformed projection remain distinct
+ok 183 - empty catalogue and malformed projection remain distinct
+  ---
+  duration_ms: 0.4743
+  type: 'test'
+  ...
+# Subtest: displayed owner-authored title also participates without changing canonical identity
+ok 184 - displayed owner-authored title also participates without changing canonical identity
+  ---
+  duration_ms: 0.1579
+  type: 'test'
+  ...
+# Subtest: URL state roundtrip works under root and Pages hosting and keeps unrelated parameters/fragments
+ok 185 - URL state roundtrip works under root and Pages hosting and keeps unrelated parameters/fragments
+  ---
+  duration_ms: 1.0295
+  type: 'test'
+  ...
+# Subtest: unknown and duplicate owned URL parameters normalize without changing other state
+ok 186 - unknown and duplicate owned URL parameters normalize without changing other state
+  ---
+  duration_ms: 0.3139
+  type: 'test'
+  ...
+# Subtest: query text is bounded, strips controls, preserves Unicode and treats markup as plain search
+ok 187 - query text is bounded, strips controls, preserves Unicode and treats markup as plain search
+  ---
+  duration_ms: 0.2242
+  type: 'test'
+  ...
+# Subtest: current native projection matches exact game records, not manually repeated availability
+ok 188 - current native projection matches exact game records, not manually repeated availability
+  ---
+  duration_ms: 18.6076
+  type: 'test'
+  ...
+# Subtest: stale source projection blocks export and deliberate sync changes only native metadata
+ok 189 - stale source projection blocks export and deliberate sync changes only native metadata
+  ---
+  duration_ms: 35.2207
+  type: 'test'
+  ...
+# Subtest: unlisted private/hidden catalogue records cannot leak into the published card inventory
+ok 190 - unlisted private/hidden catalogue records cannot leak into the published card inventory
+  ---
+  duration_ms: 22.8056
+  type: 'test'
+  ...
+# Subtest: duplicate or escaping native game IDs refuse projection
+ok 191 - duplicate or escaping native game IDs refuse projection
+  ---
+  duration_ms: 19.5369
+  type: 'test'
+  ...
+# Subtest: missing connected artifact refuses a playable label rather than trusting historical evidence
+ok 192 - missing connected artifact refuses a playable label rather than trusting historical evidence
+  ---
+  duration_ms: 15.6402
+  type: 'test'
+  ...
+# Subtest: unknown publication source requires explicit review, not silent admission
+ok 193 - unknown publication source requires explicit review, not silent admission
+  ---
+  duration_ms: 20.7744
+  type: 'test'
+  ...
+# Subtest: native authoring retains detail destinations, has no extra game launch or injected raw HTML UI
+ok 194 - native authoring retains detail destinations, has no extra game launch or injected raw HTML UI
+  ---
+  duration_ms: 2.1886
+  type: 'test'
+  ...
+# Subtest: Home loader pins the exact catalogue and adapter source; exporter performs read-only projection check
+ok 195 - Home loader pins the exact catalogue and adapter source; exporter performs read-only projection check
+  ---
+  duration_ms: 4.4306
+  type: 'test'
+  ...
+# Subtest: new controls retain labelled native inputs, disabled fallback and unstyled label spans
+ok 196 - new controls retain labelled native inputs, disabled fallback and unstyled label spans
+  ---
+  duration_ms: 2.7446
+  type: 'test'
+  ...
+# Subtest: unsupported release metadata does not silently enter the available catalogue
+ok 197 - unsupported release metadata does not silently enter the available catalogue
+  ---
+  duration_ms: 0.3586
+  type: 'test'
+  ...
+# Subtest: companion bubble placement protects the full catalogue on desktop and mobile
+ok 198 - companion bubble placement protects the full catalogue on desktop and mobile
+  ---
+  duration_ms: 0.3347
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier accepts exact accounted HTML and CSS bytes
+ok 199 - protected game artifact verifier accepts exact accounted HTML and CSS bytes
+  ---
+  duration_ms: 27.7612
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects missing published payloads
+ok 200 - protected game artifact verifier rejects missing published payloads
+  ---
+  duration_ms: 16.6257
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects tampered published payload bytes
+ok 201 - protected game artifact verifier rejects tampered published payload bytes
+  ---
+  duration_ms: 18.3492
+  type: 'test'
+  ...
+# Subtest: protected game artifact verifier rejects unaccounted protected output
+ok 202 - protected game artifact verifier rejects unaccounted protected output
+  ---
+  duration_ms: 17.6253
+  type: 'test'
+  ...
+# Subtest: new guest sees actual active quests and World as the first reachable activity
+ok 203 - new guest sees actual active quests and World as the first reachable activity
+  ---
+  duration_ms: 7.2189
+  type: 'test'
+  ...
+# Subtest: visiting World creates a ready quest but does not claim or mint a reward
+ok 204 - visiting World creates a ready quest but does not claim or mint a reward
+  ---
+  duration_ms: 2.509
+  type: 'test'
+  ...
+# Subtest: claim uses existing reward once and advances to Stories
+ok 205 - claim uses existing reward once and advances to Stories
+  ---
+  duration_ms: 2.9462
+  type: 'test'
+  ...
+# Subtest: saved claim and next activity survive opening a new store
+ok 206 - saved claim and next activity survive opening a new store
+  ---
+  duration_ms: 0.9348
+  type: 'test'
+  ...
+# Subtest: Treat progress and Golden Block lock stay source-owned
+ok 207 - Treat progress and Golden Block lock stay source-owned
+  ---
+  duration_ms: 1.7748
+  type: 'test'
+  ...
+# Subtest: all three real exploration activities lead to the existing daily control
+ok 208 - all three real exploration activities lead to the existing daily control
+  ---
+  duration_ms: 2.3453
+  type: 'test'
+  ...
+# Subtest: daily has one payout and the complete view offers only game listings
+ok 209 - daily has one payout and the complete view offers only game listings
+  ---
+  duration_ms: 2.0258
+  type: 'test'
+  ...
+# Subtest: UTC-day rollover reopens daily only, without rotating exploration or rewarding a read
+ok 210 - UTC-day rollover reopens daily only, without rotating exploration or rewarding a read
+  ---
+  duration_ms: 1.8853
+  type: 'test'
+  ...
+# Subtest: disabled daily is not an available activity
+ok 211 - disabled daily is not an available activity
+  ---
+  duration_ms: 3.1513
+  type: 'test'
+  ...
+# Subtest: read model is pure and never grants rewards
+ok 212 - read model is pure and never grants rewards
+  ---
+  duration_ms: 1.2258
+  type: 'test'
+  ...
+# Subtest: unsafe quests storage suppresses status/claims rather than inventing zero: {bad
+ok 213 - unsafe quests storage suppresses status/claims rather than inventing zero: {bad
+  ---
+  duration_ms: 0.6909
+  type: 'test'
+  ...
+# Subtest: unsafe quests storage suppresses status/claims rather than inventing zero: {"schemaVersion":99,"marker":"preserve"}
+ok 214 - unsafe quests storage suppresses status/claims rather than inventing zero: {"schemaVersion":99,"marker":"preserve"}
+  ---
+  duration_ms: 0.3301
+  type: 'test'
+  ...
+# Subtest: unsafe pass storage suppresses status/claims rather than inventing zero: {bad
+ok 215 - unsafe pass storage suppresses status/claims rather than inventing zero: {bad
+  ---
+  duration_ms: 0.2889
+  type: 'test'
+  ...
+# Subtest: unsafe pass storage suppresses status/claims rather than inventing zero: {"schemaVersion":99,"marker":"preserve"}
+ok 216 - unsafe pass storage suppresses status/claims rather than inventing zero: {"schemaVersion":99,"marker":"preserve"}
+  ---
+  duration_ms: 0.2005
+  type: 'test'
+  ...
+# Subtest: temporary memory cannot impersonate a persistent multi-page journey
+ok 217 - temporary memory cannot impersonate a persistent multi-page journey
+  ---
+  duration_ms: 0.3593
+  type: 'test'
+  ...
+# Subtest: unreadable profile alone does not disable independent quest records
+ok 218 - unreadable profile alone does not disable independent quest records
+  ---
+  duration_ms: 0.2754
+  type: 'test'
+  ...
+# Subtest: failed claim remains ready with unchanged reward; retry can succeed
+ok 219 - failed claim remains ready with unchanged reward; retry can succeed
+  ---
+  duration_ms: 0.7009
+  type: 'test'
+  ...
+# Subtest: reset returns the initial journey without rewriting unrelated storage
+ok 220 - reset returns the initial journey without rewriting unrelated storage
+  ---
+  duration_ms: 1.4929
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "https://evil.test/"
+ok 221 - activity destination rejects unconfigured/unsafe link "https://evil.test/"
+  ---
+  duration_ms: 0.1565
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "//evil.test/"
+ok 222 - activity destination rejects unconfigured/unsafe link "//evil.test/"
+  ---
+  duration_ms: 0.1011
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "javascript:alert(1)"
+ok 223 - activity destination rejects unconfigured/unsafe link "javascript:alert(1)"
+  ---
+  duration_ms: 0.1228
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "/world/\\n"
+ok 224 - activity destination rejects unconfigured/unsafe link "/world/\\n"
+  ---
+  duration_ms: 0.0733
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "/world/?award=100"
+ok 225 - activity destination rejects unconfigured/unsafe link "/world/?award=100"
+  ---
+  duration_ms: 0.0597
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "/%2e%2e/"
+ok 226 - activity destination rejects unconfigured/unsafe link "/%2e%2e/"
+  ---
+  duration_ms: 0.0518
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "/world/\\\\x"
+ok 227 - activity destination rejects unconfigured/unsafe link "/world/\\\\x"
+  ---
+  duration_ms: 0.0601
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "/unknown/"
+ok 228 - activity destination rejects unconfigured/unsafe link "/unknown/"
+  ---
+  duration_ms: 0.1009
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "/\#bad fragment"
+ok 229 - activity destination rejects unconfigured/unsafe link "/\#bad fragment"
+  ---
+  duration_ms: 0.0928
+  type: 'test'
+  ...
+# Subtest: activity destination rejects unconfigured/unsafe link "/\#a\#b"
+ok 230 - activity destination rejects unconfigured/unsafe link "/\#a\#b"
+  ---
+  duration_ms: 0.0919
+  type: 'test'
+  ...
+# Subtest: missing destination never fabricates a route or enables a held game
+ok 231 - missing destination never fabricates a route or enables a held game
+  ---
+  duration_ms: 0.7452
+  type: 'test'
+  ...
+# Subtest: no configured activities are described as empty configuration, not earned completion
+ok 232 - no configured activities are described as empty configuration, not earned completion
+  ---
+  duration_ms: 0.4881
+  type: 'test'
+  ...
+# Subtest: contradictory projected quest state is unavailable: s=>s.quests.push(s.quests[0])
+ok 233 - contradictory projected quest state is unavailable: s=>s.quests.push(s.quests[0])
+  ---
+  duration_ms: 0.2692
+  type: 'test'
+  ...
+# Subtest: contradictory projected quest state is unavailable: s=>s.quests[0].progress=-1
+ok 234 - contradictory projected quest state is unavailable: s=>s.quests[0].progress=-1
+  ---
+  duration_ms: 0.2231
+  type: 'test'
+  ...
+# Subtest: contradictory projected quest state is unavailable: s=>s.quests[0].target=0
+ok 235 - contradictory projected quest state is unavailable: s=>s.quests[0].target=0
+  ---
+  duration_ms: 0.2094
+  type: 'test'
+  ...
+# Subtest: contradictory projected quest state is unavailable: s=>s.quests[0].claimedAt='not-a-date'
+ok 236 - contradictory projected quest state is unavailable: s=>s.quests[0].claimedAt='not-a-date'
+  ---
+  duration_ms: 0.1966
+  type: 'test'
+  ...
+# Subtest: contradictory projected quest state is unavailable: s=>s.quests[0].complete=true
+ok 237 - contradictory projected quest state is unavailable: s=>s.quests[0].complete=true
+  ---
+  duration_ms: 0.279
+  type: 'test'
+  ...
+# Subtest: native source includes editable next card and all status controls, with no new economy values
+ok 238 - native source includes editable next card and all status controls, with no new economy values
+  ---
+  duration_ms: 1.6614
+  type: 'test'
+  ...
+# Subtest: exact source produces a portable checked payload and manifest outside the public site
+ok 239 - exact source produces a portable checked payload and manifest outside the public site
+  ---
+  duration_ms: 1291.631
+  type: 'test'
+  ...
+# Subtest: source-only reconstruction ignores a dirty working payload and reproduces the declared Git source
+ok 240 - source-only reconstruction ignores a dirty working payload and reproduces the declared Git source
+  ---
+  duration_ms: 933.5877
+  type: 'test'
+  ...
+# Subtest: historical package preparation uses the explicit older source and CURRENT policy
+ok 241 - historical package preparation uses the explicit older source and CURRENT policy
+  ---
+  duration_ms: 1000.0458
+  type: 'test'
+  ...
+# Subtest: manifest bytes are deterministic for the same exact source and policy
+ok 242 - manifest bytes are deterministic for the same exact source and policy
+  ---
+  duration_ms: 917.4752
+  type: 'test'
+  ...
+# Subtest: changing source reference and exported game together passed the old comparator but fails the independent pin
+ok 243 - changing source reference and exported game together passed the old comparator but fails the independent pin
+  ---
+  duration_ms: 617.8256
+  type: 'test'
+  ...
+# Subtest: new unqualified game in source AND export passes the old comparator but is denied by the fixed legacy policy
+ok 244 - new unqualified game in source AND export passes the old comparator but is denied by the fixed legacy policy
+  ---
+  duration_ms: 385.398
+  type: 'test'
+  ...
+# Subtest: committing a changed game still cannot pass the independent legacy policy
+ok 245 - committing a changed game still cannot pass the independent legacy policy
+  ---
+  duration_ms: 745.9832
+  type: 'test'
+  ...
+# Subtest: adding a hidden-from-catalogue cartridge is denied even when committed
+ok 246 - adding a hidden-from-catalogue cartridge is denied even when committed
+  ---
+  duration_ms: 703.5517
+  type: 'test'
+  ...
+# Subtest: revocation blocks old source recovery without changing historical bytes
+ok 247 - revocation blocks old source recovery without changing historical bytes
+  ---
+  duration_ms: 687.8908
+  type: 'test'
+  ...
+# Subtest: uncommitted candidate policy cannot self-authorize publication
+ok 248 - uncommitted candidate policy cannot self-authorize publication
+  ---
+  duration_ms: 576.6632
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.environment='production'
+ok 249 - legacy scope cannot be raised by metadata: p=>p.environment='production'
+  ---
+  duration_ms: 339.0618
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.tcsQualified=true
+ok 250 - legacy scope cannot be raised by metadata: p=>p.tcsQualified=true
+  ---
+  duration_ms: 357.5683
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.publicState='PUBLIC'
+ok 251 - legacy scope cannot be raised by metadata: p=>p.publicState='PUBLIC'
+  ---
+  duration_ms: 344.9417
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.newCartridgeAdmission='ENABLED'
+ok 252 - legacy scope cannot be raised by metadata: p=>p.newCartridgeAdmission='ENABLED'
+  ---
+  duration_ms: 346.6263
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.unknownGamePayloads='ALLOW'
+ok 253 - legacy scope cannot be raised by metadata: p=>p.unknownGamePayloads='ALLOW'
+  ---
+  duration_ms: 401.3415
+  type: 'test'
+  ...
+# Subtest: legacy scope cannot be raised by metadata: p=>p.gameId='croaker-king-defense'
+ok 254 - legacy scope cannot be raised by metadata: p=>p.gameId='croaker-king-defense'
+  ---
+  duration_ms: 326.1274
+  type: 'test'
+  ...
+# Subtest: extra arbitrary payload path outside game directories is rejected at final handoff
+ok 255 - extra arbitrary payload path outside game directories is rejected at final handoff
+  ---
+  duration_ms: 587.6961
+  type: 'test'
+  ...
+# Subtest: missing final file is rejected
+ok 256 - missing final file is rejected
+  ---
+  duration_ms: 600.0091
+  type: 'test'
+  ...
+# Subtest: same-size changed website script is rejected
+ok 257 - same-size changed website script is rejected
+  ---
+  duration_ms: 606.3999
+  type: 'test'
+  ...
+# Subtest: tampering with a sealed payload is detected before upload
+ok 258 - tampering with a sealed payload is detected before upload
+  ---
+  duration_ms: 892.6263
+  type: 'test'
+  ...
+# Subtest: a payload and self-rehashed manifest cannot override the independently selected source
+ok 259 - a payload and self-rehashed manifest cannot override the independently selected source
+  ---
+  duration_ms: 882.334
+  type: 'test'
+  ...
+# Subtest: wrong separately recorded digest is rejected
+ok 260 - wrong separately recorded digest is rejected
+  ---
+  duration_ms: 868.8346
+  type: 'test'
+  ...
+# Subtest: receipt cannot mislabel a package as deployed or TCS approved
+ok 261 - receipt cannot mislabel a package as deployed or TCS approved
+  ---
+  duration_ms: 863.1446
+  type: 'test'
+  ...
+# Subtest: unexpected package sidecars are rejected and never included in site
+ok 262 - unexpected package sidecars are rejected and never included in site
+  ---
+  duration_ms: 621.2906
+  type: 'test'
+  ...
+# Subtest: exact full source SHA is required; no branch/HEAD/latest aliases
+ok 263 - exact full source SHA is required; no branch/HEAD/latest aliases
+  ---
+  duration_ms: 331.7771
+  type: 'test'
+  ...
+# Subtest: existing output and sentinel remain unchanged on refusal
+ok 264 - existing output and sentinel remain unchanged on refusal
+  ---
+  duration_ms: 591.3252
+  type: 'test'
+  ...
+# Subtest: output cannot overwrite or live inside the source/dist tree
+ok 265 - output cannot overwrite or live inside the source/dist tree
+  ---
+  duration_ms: 847.5676
+  type: 'test'
+  ...
+# Subtest: untracked private file cannot enter final payload
+ok 266 - untracked private file cannot enter final payload
+  ---
+  duration_ms: 582.4011
+  type: 'test'
+  ...
+# Subtest: an empty untracked directory is not silently omitted from the sealed inventory
+ok 267 - an empty untracked directory is not silently omitted from the sealed inventory
+  ---
+  duration_ms: 633.3563
+  type: 'test'
+  ...
+# Subtest: payload hardlinks are refused rather than dereferenced into an upload
+ok 268 - payload hardlinks are refused rather than dereferenced into an upload
+  ---
+  duration_ms: 620.1754
+  type: 'test'
+  ...
+# Subtest: directory symlink or Windows junction is rejected before reading outside the payload
+ok 269 - directory symlink or Windows junction is rejected before reading outside the payload
+  ---
+  duration_ms: 594.4888
+  type: 'test'
+  ...
+# Subtest: linked output parent is refused
+ok 270 - linked output parent is refused
+  ---
+  duration_ms: 626.0622
+  type: 'test'
+  ...
+# Subtest: Git symlink mode is rejected even on systems that cannot create native file symlinks
+ok 271 - Git symlink mode is rejected even on systems that cannot create native file symlinks
+  ---
+  duration_ms: 610.7128
+  type: 'test'
+  ...
+# Subtest: case-colliding Git names cannot produce different Windows/Unix payloads
+ok 272 - case-colliding Git names cannot produce different Windows/Unix payloads
+  ---
+  duration_ms: 634.6866
+  type: 'test'
+  ...
+# Subtest: unsafe paths are never normalized into a different accepted file
+ok 273 - unsafe paths are never normalized into a different accepted file
+  ---
+  duration_ms: 0.4851
+  type: 'test'
+  ...
+# Subtest: current independent legacy pins match the three exact historical source files, not the donor hash
+ok 274 - current independent legacy pins match the three exact historical source files, not the donor hash
+  ---
+  duration_ms: 1.9413
+  type: 'test'
+  ...
+# Subtest: normal exporter and Pages upload both pass through the shared gate, with no runtime edits or extra deployment workflow
+ok 275 - normal exporter and Pages upload both pass through the shared gate, with no runtime edits or extra deployment workflow
+  ---
+  duration_ms: 0.44
+  type: 'test'
+  ...
+# Subtest: an indexable Git source cannot be labelled a staging recovery artifact
+ok 276 - an indexable Git source cannot be labelled a staging recovery artifact
+  ---
+  duration_ms: 705.6976
+  type: 'test'
+  ...
+# Subtest: a source with conflicting root Allow cannot be labelled a staging artifact
+ok 277 - a source with conflicting root Allow cannot be labelled a staging artifact
+  ---
+  duration_ms: 701.4626
+  type: 'test'
+  ...
+# Subtest: an existing custom-domain CNAME is not silently carried into staging
+ok 278 - an existing custom-domain CNAME is not silently carried into staging
+  ---
+  duration_ms: 575.5603
+  type: 'test'
+  ...
+# Subtest: nonempty hidden source marker cannot be silently dropped by the uploader
+ok 279 - nonempty hidden source marker cannot be silently dropped by the uploader
+  ---
+  duration_ms: 696.8598
+  type: 'test'
+  ...
+# Subtest: missing legacy files and duplicate policy records cannot weaken the exact allowlist
+ok 280 - missing legacy files and duplicate policy records cannot weaken the exact allowlist
+  ---
+  duration_ms: 334.7566
+  type: 'test'
+  ...
+# Subtest: the actual one-LF source marker is an explicit recorded omission, not public content
+ok 281 - the actual one-LF source marker is an explicit recorded omission, not public content
+  ---
+  duration_ms: 1000.8503
+  type: 'test'
+  ...
+1..281
+# tests 281
+# suites 0
+# pass 279
+# fail 2
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 26261.019

@@ -1,81 +1,47 @@
-# Website shared audio runtime v1 — qualification checkpoint
+# Website shared audio runtime qualification — 2026-10-07
 
-**Date:** 2026-10-07
-**Disposition:** REVIEW CANDIDATE / NOT DEPLOYED
+Disposition: infrastructure review candidate; not deployed. PR #35 remains draft.
 
-## Exact scope
+## CI failure disposition
 
-Base website staging commit: `839fe227e36526e9e8fbb75e5421a217bcaa72c8`.
+Exact base `839fe227e36526e9e8fbb75e5421a217bcaa72c8` passed the unchanged staging command **281/281**, zero skips. Exact original candidate `ce2d8ec6ef81a96cd886f4211e11ea236749215c` (tree `38214da72bb6fabec8efd0a580bf820aed0e84ad`) reproduced **279/281** and exactly the two `ENOENT dist/assets/js/advanced-code.696ecde0ccc9.js` failures in hosted run **37581973332**, job **112663477088**.
 
-This candidate extends the existing Browser Game Cartridge Contract and Cartridge Hardener. It does not create a second cartridgeifier. The website owns an optional shared playback runtime; cartridges opt in through `cartridge.json.audio` and use a thin semantic-event adapter.
+The audio loader changed Studio advanced JavaScript, but committed dist retained `advanced-code.8c9ede2cbb6a.js`. This was a branch-induced export-coherence failure. The fix uses the existing pinned Studio exporter and advanced-runtime externalizer to regenerate dist. All 33 website pages now reference the exact derived `696ecde0ccc9` resource. No resource test or integrity pin was weakened or replaced arbitrarily.
 
-Current protected Wicked Bites remains game-audio-owned. Its cartridge manifest has no host-audio declaration and its protected bytes are unchanged.
+The earlier qualification's claim about two inherited catalogue failures is withdrawn. Windows CRLF checkout conversion altered raw hashes in preliminary local runs; clean Git-blob checkouts produced the exact results above. Canonical-byte base and original-candidate TAP logs are in this evidence directory.
 
-The central website registry is intentionally empty until a real game/profile and production sounds are explicitly admitted.
+## Focused fixes
 
-## What was proven
+The adapter retains host ownership after active/muted through available/degraded and transport failures. Only explicit unavailable returns local ownership. Host playback checks lifecycle, cooldown and voice limits after sample loading, preventing concurrent admission and delayed playback after mute/hide/disposal. Persisted mute suppresses local fallback before any AudioContext exists. Activation is serialized, sample prewarm is sequential, denied storage and malformed messages fail safely, and concurrent attachment shares one host. Hidden pages stop/cancel host playback; normal exit closes the context/cache, while back/forward-cache navigation suspends/restores the same context.
 
-- Hardener understands optional `game.audio.mode = "host"`, validates its bounded contract, requires `game:audio` / `host:audio` vocabulary and emits the declaration into generated `cartridge.json`.
-- Existing cartridges without `audio` remain valid.
-- A reusable cartridge-side adapter keeps local audio before host activation and prevents local double-play after host ownership becomes active/muted.
-- The player loads only a tiny manifest probe on player pages. The full runtime and registry are dynamically loaded only when a cartridge opts in.
-- The website host keeps one current-page AudioContext, website-global mute/volume preference under `toadal:web:v1:audio`, bounded voices/cache, same-origin hash-checked samples and procedural tone fallback.
-- The current multi-page site is not converted to an SPA, service worker, SharedWorker or hidden persistent audio frame. HTTP cache/settings can persist across pages; decoded buffers/context do not.
+The existing hardener validates/emits bounded declarations and requires conditional protocol vocabulary. Coverage now includes nine negative schema mutations, missing protocol tokens, no-audio behavior, opt-in manifest emission, exact input/output game bytes, and no runtime injection.
 
-## Final focused verification
+## Verification
 
-### Automated
+- Hardener: **16/16**, including nine negative schema subcases; Python 3.11.6, Pillow 12.3.0, jsonschema 4.26.0.
+- Focused audio + existing player/manifest/protected/score checks: **50/50**; audio subset **25/25** (including three lifecycle subtests).
+- Unchanged staging suite: **281/281**; policy regressions: **25/25**. Zero skips.
+- Existing Studio export at `ffebf68559c0866e8e68b3de1470fa89ee654013`: PASS, authored source unchanged; Pages/basepath, static links, crawler and freshness checks pass.
+- Existing Studio source provenance uses two CRLF Windows representations and an LF presentation dependency. These representations reproduce existing byte pins; Studio code and provenance pins were not changed.
+- Protected Wicked Bites: **3/3** files match exact base, Studio reference and preservation policy. No migration.
+- Real installed Chrome **154.0.8037.98**: **20/20** checks, zero browser errors. Scratch manifests/registry/gameplay responses are test-only HTTP overlays; protected files are never edited.
 
-- Cartridge Hardener: **16/16 PASS** on Windows / Python 3.13.15.
-- Website/player focused Node tests: **36/36 PASS**, zero skips, Node v22.23.2.
-- The focused Node set includes the shared-audio contract plus existing WO-002 player contract, manifest runtime, protected-game artifact and website-score adapter checks.
+Non-opted-in Wicked Bites requests loader + manifest once each; host and registry zero times; no feature-created context; original host:mute/unmute remains. Scratch opt-in requests loader, manifest, host and registry once each; no context before sound gesture; one running context afterward; semantic action plays procedural fallback. Mute suppresses shared and legacy playback, survives reload without context creation, and only explicit unavailable returns local ownership.
 
-### Staging-parent baseline distinction
+## Exact bytes
 
-The broader Play-catalogue suite reports **38/40 PASS** on the exact parent `efd5280...` and the same two failures on the audio branch. Both are stale catalogue projection metadata failures. This candidate does not rewrite that unrelated metadata and does not claim those baseline failures as audio PASS.
+| Exported asset | Raw bytes | gzip bytes (level 9) |
+| --- | ---: | ---: |
+| website-audio-loader.mjs | 1,584 | 689 |
+| website-audio-host.mjs | 24,134 | 6,821 |
+| audio-registry.json | 292 | 219 |
 
-### Exact Studio export
+Incremental dist versus exact base: **26,978 raw bytes**, **7,765 gzip bytes**, net **3 files**. Gzip impact is the difference between sums of individually compressed files, not a ZIP size or download-saving claim. The common advanced runtime grows 968 raw bytes / 34 gzip bytes; generated HTML changes only its exact runtime references. Production registry remains **0 cues / 0 profiles**.
 
-Using Studio authority `ffebf68559c0866e8e68b3de1470fa89ee654013`, a scratch static export succeeded.
+## Final Git binding and held gates
 
-After advanced-runtime externalization:
-- protected game verification: **PASS**, 3 protected files;
-- player references the newly hashed advanced runtime;
-- advanced runtime includes the player-only audio loader;
-- current Wicked Bites manifest has **no audio opt-in**.
+The committed JSON receipt binds the authored-source fingerprint and exact dist hashes. After the finish commit, qualification is rerun from clean final HEAD, and its full HEAD/tree, hosted check run IDs and final browser receipt are recorded in the PR body and exported final-head receipt. A commit cannot contain its own SHA. No earlier dirty-working-tree browser run is presented as final-HEAD proof.
 
-Exported shared-audio files:
-- `assets/js/website-audio-loader.mjs`: 1,620 bytes; SHA-256 `8d35aef38905871fd01e1a81147627fcb26fdb1498cc5cfa36faa143c2d7d7e7`
-- `assets/js/website-audio-host.mjs`: 21,514 bytes; SHA-256 `39df0116393793f7caa24b4f353e4a5ce0ef382165e12338051e5b0c0575766c`
-- `assets/data/audio-registry.json`: 304 bytes; SHA-256 `508f6aff4c79851b73f26328508ba8cdc301a03292b54be3f5f54898bed4467c`
-- generated advanced runtime: `advanced-code.696ecde0ccc9.js`; SHA-256 `696ecde0ccc993e3794944332ce247c8b218a560f4ae1040485aa38af25f7d4a`
+Owner/integration review, owner listening, physical phone/Safari and latency acceptance remain held. No production cue admission, actual game migration, native/TCS change, merge, DNS change or deployment was performed.
 
-### Real Chrome checks
-
-Chrome file version: 154.0.8037.93.
-
-**Current non-opted-in Wicked Bites:** PASS.
-- tiny loader requested once;
-- cartridge manifest requested once;
-- full audio host requested zero times;
-- audio registry requested zero times;
-- existing Request mute behavior remains;
-- zero page/console errors.
-
-**Scratch host-audio opt-in:** PASS.
-- full host and registry loaded once after manifest opt-in;
-- before explicit user action there is no AudioContext;
-- clicking the existing sound control unlocks one running host context;
-- a bounded `game:audio` event resolved to the central cue and played procedural fallback;
-- muting stores `toadal:web:v1:audio` and a second event does not create another playback;
-- zero page/console errors.
-
-The opt-in manifest/registry mutation existed only in the extracted scratch export and is not committed to the protected cartridge.
-
-## Deliberate limits
-
-This does **not** mean the whole audio roadmap is complete. No real website cartridge is migrated yet, no production cue/profile is admitted, no production sound master is approved, and no physical phone/Safari listening or latency pass has occurred.
-
-The reusable adapter is a template, not an unsafe automatic source rewriter. The cartridgeifier can validate/package the contract, but the real gameplay action → semantic event mapping remains a reviewed per-game integration step.
-
-No live Pages deployment, production DNS, native game, TCS authority or player account/settings system was changed.
+One possible next operation: a separately reviewed Global Food Launcher game/profile migration, drawing on its development pilot semantic boundaries only after its ordinary cartridge and website admission gates. That pilot is not current public website authority.
