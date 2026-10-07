@@ -171,6 +171,72 @@
           ]
         }
       }
+    },
+    "audio": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "game",
+            "host"
+          ]
+        },
+        "contractVersion": {
+          "type": "integer",
+          "const": 1
+        },
+        "profile": {
+          "type": "string",
+          "pattern": "^[A-Za-z][A-Za-z0-9_.:-]{0,95}$"
+        },
+        "profileVersion": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9999
+        },
+        "eventMessage": {
+          "type": "string",
+          "const": "game:audio"
+        },
+        "hostMessage": {
+          "type": "string",
+          "const": "host:audio"
+        },
+        "fallback": {
+          "enum": [
+            "local-before-active",
+            "silent-before-active"
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "mode": {
+                "const": "host"
+              }
+            },
+            "required": [
+              "mode"
+            ]
+          },
+          "then": {
+            "required": [
+              "contractVersion",
+              "profile",
+              "profileVersion",
+              "eventMessage",
+              "hostMessage",
+              "fallback"
+            ]
+          }
+        }
+      ]
     }
   },
   "additionalProperties": true

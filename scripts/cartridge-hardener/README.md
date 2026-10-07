@@ -62,3 +62,9 @@ The default profile mode is `single`. For a package whose authored runtime alrea
 ```
 
 `entrySource` must resolve to that root's `index.html`. Tree mode copies only that explicit runtime tree, rejects symlinks, excludes source-only directories, verifies package-local HTML/CSS references, and scans protocol/storage behavior across all runtime text files.
+
+## Optional website-host audio
+
+The existing hardener also understands the optional shared-audio declaration from `WEBSITE_SHARED_AUDIO_RUNTIME_V1.md`. Add `game.audio` to the intake profile only when the runtime has a reviewed thin bridge for real gameplay actions. Host mode requires `game:audio` and `host:audio` tokens and copies the validated declaration into generated `cartridge.json`.
+
+This does not inject an audio engine into a cartridge, approve a central website profile, or migrate legacy cartridges. The website player owns the shared runtime after a cartridge opts in.

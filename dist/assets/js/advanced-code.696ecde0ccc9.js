@@ -711,6 +711,26 @@
     wrappers.forEach(removeEmptyRichText);
   }
 
+  function initWebsiteAudioHostLoader() {
+    var shell = document.querySelector('[data-player-shell]');
+    if (!shell || window.__toadalWebsiteAudioHostLoading || window.__toadalWebsiteAudioHostLoaded) return;
+    var brand = document.querySelector('.site-brand');
+    var homePath = brand ? new URL(brand.href, window.location.href).pathname : '/';
+    var baseRoot = homePath === '/' ? '' : homePath.replace(/\/+$/, '');
+    window.__toadalWebsiteAudioHostLoading = true;
+    var script = document.createElement('script');
+    script.type = 'module';
+    script.src = baseRoot + '/assets/js/website-audio-loader.mjs';
+    script.onload = function () {
+      window.__toadalWebsiteAudioHostLoading = false;
+      window.__toadalWebsiteAudioHostLoaded = true;
+    };
+    script.onerror = function () {
+      window.__toadalWebsiteAudioHostLoading = false;
+    };
+    document.head.appendChild(script);
+  }
+
   function initBrowserPlayer() {
     var shell = document.querySelector('[data-player-shell]');
     if (!shell) return;
@@ -1001,6 +1021,7 @@
     try { initSkipLink(); } catch (error) {}
     try { initNavigation(); } catch (error) {}
     try { initGameFilters(); } catch (error) {}
+    try { initWebsiteAudioHostLoader(); } catch (error) {}
     try { initBrowserPlayer(); } catch (error) {}
     try { initCompanion(); } catch (error) {}
     try { initFooterIdentity(); } catch (error) {}

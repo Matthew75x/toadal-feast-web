@@ -7718,3 +7718,12 @@ label[for='site-motion-toggle'] input { flex:0 0 auto; width:18px; height:18px; 
 @media (max-width: 760px) {
   [data-game-record] .game-progress-trust-grid { grid-template-columns: 1fr; }
 }
+
+/* Shared audio controls mount only for an opted-in player. */
+[data-player-audio-settings]{grid-column:1 / -1;flex-basis:100%;display:flex;flex-wrap:wrap;align-items:center;gap:8px 20px;min-width:0}
+[data-player-audio-settings] label{display:flex;align-items:center;gap:8px;min-height:44px;font-weight:700;flex-wrap:wrap}
+[data-player-audio-settings] input[type="range"]{width:160px;min-height:44px;max-width:100%;accent-color:var(--gold-400)}
+[data-player-audio-settings] input[type="checkbox"]{width:22px;height:22px;accent-color:var(--gold-400)}
+[data-player-audio-settings] input:focus-visible{outline:3px solid var(--gold-400);outline-offset:3px}
+[data-player-audio-settings] output{min-width:4ch;font-variant-numeric:tabular-nums}
+[data-player-audio-settings] p{flex-basis:100%;margin:0;font-size:.9rem;line-height:1.5}

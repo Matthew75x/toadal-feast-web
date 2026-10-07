@@ -3,7 +3,7 @@ import path from 'node:path';
 import http from 'node:http';
 const root = path.resolve(process.argv[2] || 'dist');
 const base = '/toadal-feast-web/';
-const mime = { '.html': 'text/html; charset=utf-8', '.js': 'application/javascript', '.css': 'text/css',
+const mime = { '.html': 'text/html; charset=utf-8', '.js': 'application/javascript', '.mjs': 'application/javascript', '.css': 'text/css',
   '.json': 'application/json', '.webp': 'image/webp', '.png': 'image/png', '.svg': 'image/svg+xml' };
 const server = http.createServer((request, response) => {
   let file;
