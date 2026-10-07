@@ -1,3 +1,5 @@
+> **Navigation clarification (2026-10-07):** This document preserves the October 6 observations below; its dated SHA values are historical evidence. Operational deployment authority is `Matthew75x/toadal-feast-web` / `staging/live-visual`, resolved live before consequential operations. The [machine ledger](../../manifests/manifest-compliance-ledger.json) records separate dated readbacks. This navigation note does not update or replace the preserved qualification, closure or status facts.
+
 # TOADAL Website — Current Authority
 
 **Date:** 2026-10-06

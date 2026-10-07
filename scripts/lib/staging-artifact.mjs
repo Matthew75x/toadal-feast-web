@@ -5,6 +5,7 @@ import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { isProtectedGameArtifact } from './protected-game-artifacts.mjs';
+import { stagingRobotsErrors } from './staging-robots.mjs';
 
 export const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 export const POLICY_PATH = 'manifests/staging-game-preservation-policy.json';
@@ -176,7 +177,8 @@ export function expectedManifest(repo, revision) {
   const rows = source.files.map(({path,bytes,sha256}) => ({path,bytes,sha256})); enforceGamePolicy(rows,policy);
   requireThat(rows.some(f => f.path === 'index.html') && rows.some(f => f.path === '404.html') && rows.some(f => f.path === '.nojekyll'), 'Missing required static website entry points');
   const robots = source.files.find(f => f.path === 'robots.txt')?.content.toString('utf8') || '';
-  requireThat(/^Disallow:\s*\/$/mi.test(robots), 'Source is not the disallowed staging robots profile');
+  const robotsErrors = stagingRobotsErrors(robots);
+  requireThat(!robotsErrors.length, 'Source is not the disallowed staging robots profile: ' + robotsErrors.join('; '));
   for(const file of source.files.filter(f=>/\.html$/i.test(f.path) && !isProtectedGameArtifact(f.path))) {
     const text=file.content.toString('utf8');
     const robotTags=text.match(/<meta\b[^>]*>/gi) || [];

@@ -6,10 +6,12 @@ import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { normalizeBasePath, resolveBasePath } from './wo001-pages-basepath.mjs';
+import { stagingRobotsErrors, STAGING_ROBOTS_TEXT } from './lib/staging-robots.mjs';
 
 const BASE = '/toadal-feast-web/';
 const SCRIPT = fileURLToPath(new URL('./wo001-pages-basepath.mjs', import.meta.url));
 const VERIFY_SCRIPT = fileURLToPath(new URL('./verify-wo001-home.mjs', import.meta.url));
+const ROBOTS_VERIFY_SCRIPT = fileURLToPath(new URL('./verify-staging-robots.mjs', import.meta.url));
 
 test('resolveBasePath rewrites only unprefixed root-absolute same-origin URLs', () => {
   assert.equal(resolveBasePath(BASE, '/'), BASE);
@@ -151,6 +153,7 @@ test('staging robots opt-in applies website policy and preserves protected game 
   assert.equal(await readFile(nestedWebsitePath, 'utf8'), nestedHtml);
   await assert.rejects(readFile(robotsPath), { code: 'ENOENT' }, 'default behavior must not add staging policy');
 
+  await writeFile(robotsPath, 'User-agent: *\nAllow: /\nUser-agent: *\nDisallow: /\n');
   const stagingRun = run('--staging-robots');
   assert.equal(stagingRun.status, 0, stagingRun.stderr);
   assert.match(stagingRun.stdout, /Staging robots policy: added/u);
@@ -162,7 +165,7 @@ test('staging robots opt-in applies website policy and preserves protected game 
   assert.equal(await readFile(nestedWebsitePath, 'utf8'), aboutWithPolicy, 'nested website HTML receives noindex,nofollow');
   assert.equal(await readFile(websiteCssPath, 'utf8'), websiteCss, 'website CSS remains unchanged');
   const robotsText = await readFile(robotsPath, 'utf8');
-  assert.match(robotsText, /^User-agent:\s*\*\s*\r?\nDisallow:\s*\/\s*$/u);
+  assert.equal(robotsText, STAGING_ROBOTS_TEXT);
 
   const repeatRun = run('--staging-robots');
   assert.equal(repeatRun.status, 0, repeatRun.stderr);
@@ -172,6 +175,40 @@ test('staging robots opt-in applies website policy and preserves protected game 
   assert.equal(await readFile(otherPath, 'utf8'), homeWithPolicy, 'repeat website HTML policy is byte-for-byte idempotent');
   assert.equal(await readFile(nestedWebsitePath, 'utf8'), aboutWithPolicy, 'repeat nested website policy is byte-for-byte idempotent');
   assert.equal(await readFile(robotsPath, 'utf8'), robotsText, 'repeat robots.txt policy is byte-for-byte idempotent');
+});
+
+test('staging robots verification rejects equally applicable root Allow rules', () => {
+  for (const text of [
+    'User-agent: *\nAllow: /\nDisallow: /\n',
+    'User-agent: *\nDisallow: /\nUser-agent: *\nAllow: /\n',
+    'USER-AGENT: *\r\nDISALLOW: /\r\nALLOW: / # conflicting tie\r\n',
+  ]) assert.match(stagingRobotsErrors(text).join('; '), /conflicting root Allow/);
+  assert.deepEqual(stagingRobotsErrors(STAGING_ROBOTS_TEXT), []);
+  assert.deepEqual(stagingRobotsErrors('# staging\r\nUser-Agent: *\r\nDisallow: /\r\n'), []);
+  assert.ok(stagingRobotsErrors('User-agent: *\nDisallow: /\nAllow: /assets/\n').length);
+  assert.ok(stagingRobotsErrors('User-agent: *\nDisallow: /\nUser-agent: crawler\nAllow: /\n').length);
+});
+
+test('the staging robots CLI rejects the original conflict and still enforces website noindex/nofollow', async t => {
+  const exportRoot = await mkdtemp(path.join(os.tmpdir(), 'toadal-robots-cli-negative-'));
+  t.after(() => rm(exportRoot, {recursive:true, force:true}));
+  const game = 'public/games/wicked-bites';
+  await mkdir(path.join(exportRoot, game), {recursive:true});
+  for (const name of ['index.html', 'cartridge.json', 'toadal-bridge.js']) {
+    const source = new URL(`../studio-project/toadal-feast-website/reference/${game}/${name}`, import.meta.url);
+    await writeFile(path.join(exportRoot, game, name), await readFile(source));
+  }
+  const index = path.join(exportRoot, 'index.html');
+  await writeFile(index, '<meta name="robots" content="noindex,nofollow"><p>Synthetic website</p>');
+  const robots = path.join(exportRoot, 'robots.txt');
+  const run = () => spawnSync(process.execPath, [ROBOTS_VERIFY_SCRIPT, exportRoot, 'staging'], {encoding:'utf8'});
+  await writeFile(robots, 'User-agent: *\nAllow: /\nUser-agent: *\nDisallow: /\n');
+  const conflict = run();
+  assert.notEqual(conflict.status, 0); assert.match(conflict.stderr, /conflicting root Allow/u);
+  await writeFile(robots, STAGING_ROBOTS_TEXT);
+  const repaired = run(); assert.equal(repaired.status, 0, repaired.stderr);
+  await writeFile(index, '<p>Indexable synthetic website</p>');
+  const indexable = run(); assert.notEqual(indexable.status, 0); assert.match(indexable.stderr, /missing staging noindex,nofollow/u);
 });
 
 test('verifier shares strict base-path validation and rejects traversal-like paths', async (t) => {
