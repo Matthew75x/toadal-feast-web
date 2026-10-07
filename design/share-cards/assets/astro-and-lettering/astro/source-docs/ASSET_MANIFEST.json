@@ -1,0 +1,249 @@
+{
+  "schemaVersion": 2,
+  "purpose": "Minimal source asset set for the TOADAL FEAST arcade HUD implementation (v2: adds the runtime derivatives that were built from these sources)",
+  "reference": {
+    "path": "reference/primary-arcade-reference.png",
+    "source": "FroggyFeast_Arcade_Mode_UI_Pack/mockups/enchanted_sunset_frog_adventure.png",
+    "sha256": "138e567fd75cc15115db9ef02c880b1e6e24292b5479960dfaa49e85e777f786",
+    "width": 941,
+    "height": 1672,
+    "format": "PNG RGB",
+    "authority": "primary composition reference"
+  },
+  "assets": [
+    {
+      "path": "assets/source/scoreboard-frame.png",
+      "source": "FroggyFeast_Arcade_Mode_UI_Pack/assets/neon_fantasy_scoreboard_hud.png",
+      "sha256": "6d827da75e9186ccbbe21cb6e3b1c91bc18de0b0f9143d3df6308e53f8085c38",
+      "width": 2172,
+      "height": 724,
+      "format": "PNG RGBA",
+      "use": "decorative score/status frame; live score and objective text overlay",
+      "feedsRuntimeDerivatives": [
+        "assets/images/ui/arcade-astro/v2/score-frame.png"
+      ]
+    },
+    {
+      "path": "assets/source/health-frame.png",
+      "source": "FroggyFeast_Arcade_Mode_UI_Pack/assets/neon_glossy_hearts_health_bar.png",
+      "sha256": "96299d8e4d9b78598f16bcc01145d890b8e1a6c8dd2f683b2bd7e94125099a1c",
+      "width": 2172,
+      "height": 724,
+      "format": "PNG RGBA",
+      "use": "decorative health frame; live hearts/health state overlay",
+      "feedsRuntimeDerivatives": [
+        "assets/images/ui/arcade-astro/v2/health-frame.png"
+      ]
+    },
+    {
+      "path": "assets/source/button-set.png",
+      "source": "FroggyFeast_Arcade_Mode_UI_Pack/assets/neon_glass_game_ui_button_set.png",
+      "sha256": "caf3587571994d3c10a3b80e2bde6899c4976a90621b1d66152c4d860c1e51e7",
+      "width": 1448,
+      "height": 1086,
+      "format": "PNG RGBA",
+      "use": "pause glyph and action-ring decoration; remove baked labels when live HTML supplies them",
+      "feedsRuntimeDerivatives": [
+        "assets/images/ui/arcade-astro/v2/pause.png",
+        "assets/images/ui/arcade-astro/v2/action-ring.png"
+      ]
+    }
+  ],
+  "excludedByDesign": [
+    "navigation tabs",
+    "account-level HUD",
+    "reward sticker sheet",
+    "badge collection",
+    "Yummy Meter",
+    "Feastfall frames and banners",
+    "secondary mockups"
+  ],
+  "derivatives": [
+    {
+      "path": "assets/images/ui/arcade-astro/v2/score-frame.png",
+      "sha256": "84cb0565ba3f0fc62b06774164e07c119e44be610d3db5d6fb1694cdd472352b",
+      "width": 796,
+      "height": 254,
+      "format": "PNG RGBA",
+      "sourceSheetSha256": "6d827da75e9186ccbbe21cb6e3b1c91bc18de0b0f9143d3df6308e53f8085c38",
+      "sourceSheet": "FroggyFeast_Arcade_Mode_UI_Pack/assets/neon_fantasy_scoreboard_hud.png",
+      "role": "live score frame (label + digits are live DOM)",
+      "scaleFromSource": 0.5,
+      "cropBoxInSourcePx": [
+        289,
+        61,
+        1882,
+        570
+      ],
+      "removedFromSource": {
+        "labelBand": [
+          600,
+          114,
+          1575,
+          205
+        ],
+        "digitBand": [
+          548,
+          200,
+          1628,
+          462
+        ],
+        "commaBand": [
+          980,
+          440,
+          1200,
+          486
+        ],
+        "interiorRows": [
+          110,
+          497
+        ],
+        "screenedFill": {
+          "decayPx": 110,
+          "baseRgb": [
+            17.3,
+            21.0,
+            48.0
+          ]
+        },
+        "rewardChip": {
+          "columns": [
+            690,
+            1480
+          ],
+          "rimRebuiltRows": [
+            455,
+            576
+          ]
+        }
+      },
+      "alpha": "RGBA; opaque frame, transparent exterior, no rectangular cut-outs"
+    },
+    {
+      "path": "assets/images/ui/arcade-astro/v2/health-frame.png",
+      "sha256": "ed03781d6a6ca880dfac0d8ac596605a8e7f5c5ca2d2ff7ba386f54065737bfc",
+      "width": 991,
+      "height": 227,
+      "format": "PNG RGBA",
+      "sourceSheetSha256": "96299d8e4d9b78598f16bcc01145d890b8e1a6c8dd2f683b2bd7e94125099a1c",
+      "sourceSheet": "FroggyFeast_Arcade_Mode_UI_Pack/assets/neon_glossy_hearts_health_bar.png",
+      "role": "live health frame (hearts are live DOM)",
+      "scaleFromSource": 0.5,
+      "cropBoxInSourcePx": [
+        95,
+        108,
+        2077,
+        562
+      ],
+      "removedFromSource": {
+        "heartColumns": [
+          228,
+          1948
+        ],
+        "rimProtectPx": 6,
+        "method": "whole interior between hearts' halo extents"
+      },
+      "alpha": "RGBA; opaque frame, transparent exterior, no rectangular cut-outs"
+    },
+    {
+      "path": "assets/images/ui/arcade-astro/v2/pause.png",
+      "sha256": "13347049c762f9715dde398f49c25d7d8e78830280d73b6a5c90cc977c564cb2",
+      "width": 206,
+      "height": 206,
+      "format": "PNG RGBA",
+      "sourceSheetSha256": "caf3587571994d3c10a3b80e2bde6899c4976a90621b1d66152c4d860c1e51e7",
+      "sourceSheet": "FroggyFeast_Arcade_Mode_UI_Pack/assets/neon_glass_game_ui_button_set.png",
+      "role": "pause control; baked pause glyph kept",
+      "scaleFromSource": 0.62,
+      "cropBoxInSourcePx": [
+        36,
+        681,
+        368,
+        1013
+      ],
+      "removedFromSource": {},
+      "alpha": "RGBA; opaque frame, transparent exterior, no rectangular cut-outs"
+    },
+    {
+      "path": "assets/images/ui/arcade-astro/v2/action-ring.png",
+      "sha256": "44731a8ed696055508c1dbedccc10f6766adc85ad8d7d4de1421191502aefdf4",
+      "width": 334,
+      "height": 334,
+      "format": "PNG RGBA",
+      "sourceSheetSha256": "caf3587571994d3c10a3b80e2bde6899c4976a90621b1d66152c4d860c1e51e7",
+      "sourceSheet": "FroggyFeast_Arcade_Mode_UI_Pack/assets/neon_glass_game_ui_button_set.png",
+      "role": "action ring + analog cue ring; baked chevrons/ACTION removed",
+      "scaleFromSource": 0.54,
+      "cropBoxInSourcePx": [
+        65,
+        50,
+        683,
+        668
+      ],
+      "removedFromSource": {
+        "method": "glyph-shaped mask (luma>150 within r<=185, dilated 36px)",
+        "maskRadius": 210,
+        "evidenceRadius": 236,
+        "discCentre": [
+          374.0,
+          359.0
+        ],
+        "maskedPixels": 78251
+      },
+      "alpha": "RGBA; opaque frame, transparent exterior, no rectangular cut-outs"
+    }
+  ],
+  "derivativeMetrics": {
+    "pause.png": "visible glass disc is .871 of the image width (CSS insets the art -7.4% so the disc matches the hit box)",
+    "action-ring.png": "visible glass disc is .861 of the image width (CSS scales the art x1.162 so the disc matches the hit box / joystick ring)",
+    "score-frame.png": "9-sliced in CSS: 160px end caps of a 796x254 image (cap = .63 of the capsule height)",
+    "health-frame.png": "9-sliced in CSS: 113px end caps of a 991x227 image (cap = .5 of the capsule height)"
+  },
+  "build": {
+    "script": "tools/arcade-hud-assets/build_arcade_hud_assets.py",
+    "command": "python3 tools/arcade-hud-assets/build_arcade_hud_assets.py --sources <FroggyFeast_Arcade_Mode_UI_Pack/assets> --out assets/images/ui/arcade-astro/v2",
+    "verifiesSourceSha256": true,
+    "deterministic": "two consecutive builds were byte-identical (SHA-256 compared for all four PNGs)",
+    "generatedMap": "assets/images/ui/arcade-astro/v2/asset-map.json",
+    "requires": [
+      "python3",
+      "Pillow",
+      "numpy",
+      "scipy",
+      "opencv-python"
+    ]
+  },
+  "verification": {
+    "enclosedAlphaHoles": 0,
+    "artTouchesCropEdge": false,
+    "inspectedOver": [
+      "white",
+      "light grey",
+      "black",
+      "game scene (stand-in)"
+    ],
+    "bakedTextRemoved": [
+      "SCORE label",
+      "sample score digits and comma",
+      "+1,250 reward chip (rim rebuilt)",
+      "sample hearts",
+      "ACTION label and double chevron"
+    ],
+    "keptByPlan": [
+      "pause glyph baked into pause.png"
+    ],
+    "note": "Visual inspection plus automated checks only; not yet reviewed on a physical device."
+  },
+  "versioning": {
+    "folder": "assets/images/ui/arcade-astro/v2/",
+    "why": "The previous attempt already shipped different images under the same names one level up (full 2172x724 / 720x620 sheets with rectangular holes). New URLs avoid a git collision and keep browsers from serving the cached old art under the new 9-slice CSS.",
+    "supersedes": [
+      "assets/images/ui/arcade-astro/score-frame.png",
+      "assets/images/ui/arcade-astro/health-frame.png",
+      "assets/images/ui/arcade-astro/pause.png",
+      "assets/images/ui/arcade-astro/action-ring.png"
+    ],
+    "oldFilesLeftInPlace": true,
+    "safeToDeleteOnceVerifiedOnDevice": true
+  }
+}

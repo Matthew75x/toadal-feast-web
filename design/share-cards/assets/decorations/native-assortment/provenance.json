@@ -1,0 +1,508 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Exact copies of existing native repository food art for share-card decoration review",
+  "retrievedAt": "2026-10-07T06:35:50.136748+00:00",
+  "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+  "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+  "observedMainCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+  "selection": "Fourteen distinct native foods from one pinned runtime pack; no generation or transformation",
+  "sourceAuthorityNotes": [
+    "The v1 runtime folder name does not indicate old master art; current presentation registry maps much of this pack to approved glossy-sticker-food-v2 masters.",
+    "Some foods are approved runtime derivatives. Owner repository presence is provenance, not an independent public licensing declaration.",
+    "See content/generated/food-presentation-registry.js and glossy-sticker batch manifests at the same commit for per-food authority."
+  ],
+  "alphaBoundsConvention": "[left, top, right-exclusive, bottom-exclusive]; threshold16 defines visible-size normalization excluding faint fringe pixels",
+  "normalization": "CSS square box size = target apparent longest edge / visibleLongestDimensionFraction; preserve original aspect ratio and alpha margins",
+  "assets": [
+    {
+      "name": "apple",
+      "filename": "food_apple.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_apple.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_apple.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_apple.png",
+      "gitBlobSha1": "9531c49c59f1269555fe2d644a812f29999f3cfd",
+      "sha256": "916ebda1bf88474cc591449edc514eb831385d0f706668a8d16de67a8c02869f",
+      "bytes": 59935,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        37,
+        35,
+        218,
+        221
+      ],
+      "alphaBounds16Px": [
+        40,
+        38,
+        216,
+        218
+      ],
+      "visibleLongestDimensionPx": 180,
+      "visibleLongestDimensionFraction": 0.703125,
+      "boxSizeFor100PxApparent": 142.222,
+      "boxScaleRelativeToApple": 1.0
+    },
+    {
+      "name": "banana",
+      "filename": "food_banana.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_banana.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_banana.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_banana.png",
+      "gitBlobSha1": "a4741e820088f4be0740d892e8262df229260d50",
+      "sha256": "a3175e21cb8e0fc446e494ab3043ed166fb5f198204bdbdae05ef3072c926556",
+      "bytes": 44718,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        43,
+        35,
+        213,
+        224
+      ],
+      "alphaBounds16Px": [
+        46,
+        38,
+        210,
+        221
+      ],
+      "visibleLongestDimensionPx": 183,
+      "visibleLongestDimensionFraction": 0.71484375,
+      "boxSizeFor100PxApparent": 139.891,
+      "boxScaleRelativeToApple": 0.983607
+    },
+    {
+      "name": "orange",
+      "filename": "food_orange.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_orange.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_orange.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_orange.png",
+      "gitBlobSha1": "5a0d9a6dc71b65d48cc8da084799ea12c9bb7ab7",
+      "sha256": "03fd368ceaa4254d046dfd080db35003f77d7967a6a841f48ba44c5160a0ece5",
+      "bytes": 69085,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        42,
+        35,
+        214,
+        226
+      ],
+      "alphaBounds16Px": [
+        44,
+        38,
+        212,
+        224
+      ],
+      "visibleLongestDimensionPx": 186,
+      "visibleLongestDimensionFraction": 0.7265625,
+      "boxSizeFor100PxApparent": 137.634,
+      "boxScaleRelativeToApple": 0.967742
+    },
+    {
+      "name": "strawberry",
+      "filename": "food_strawberry.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_strawberry.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_strawberry.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_strawberry.png",
+      "gitBlobSha1": "3243339a1d2dc5a5ca825a8087009167db47b354",
+      "sha256": "7bb3853b289355f9b561115972e9f51f6df23814784db55b2f2fd29d38a2cdc5",
+      "bytes": 73944,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        24,
+        10,
+        231,
+        246
+      ],
+      "alphaBounds16Px": [
+        26,
+        12,
+        229,
+        244
+      ],
+      "visibleLongestDimensionPx": 232,
+      "visibleLongestDimensionFraction": 0.90625,
+      "boxSizeFor100PxApparent": 110.345,
+      "boxScaleRelativeToApple": 0.775862
+    },
+    {
+      "name": "cookie",
+      "filename": "food_cookie.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_cookie.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cookie.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cookie.png",
+      "gitBlobSha1": "37983e09e2c8416f7a7c5977370f6e9bf832293b",
+      "sha256": "577102d9185f1537d4e477f6a8151f32b1f5665b3ef017fc9e5b2974f51e8de7",
+      "bytes": 56658,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        47,
+        50,
+        212,
+        211
+      ],
+      "alphaBounds16Px": [
+        50,
+        52,
+        209,
+        206
+      ],
+      "visibleLongestDimensionPx": 159,
+      "visibleLongestDimensionFraction": 0.62109375,
+      "boxSizeFor100PxApparent": 161.006,
+      "boxScaleRelativeToApple": 1.132075
+    },
+    {
+      "name": "grapes",
+      "filename": "food_grapes.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_grapes.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_grapes.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_grapes.png",
+      "gitBlobSha1": "4a041a524de6e3ccc9ab5a23291415e2672049a4",
+      "sha256": "1f8cb5ff5a0d23583a7c22732bff473b5aedb65b6bc283bb6ae916e6ccf8581b",
+      "bytes": 66107,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        41,
+        35,
+        215,
+        226
+      ],
+      "alphaBounds16Px": [
+        43,
+        37,
+        213,
+        224
+      ],
+      "visibleLongestDimensionPx": 187,
+      "visibleLongestDimensionFraction": 0.73046875,
+      "boxSizeFor100PxApparent": 136.898,
+      "boxScaleRelativeToApple": 0.962567
+    },
+    {
+      "name": "blueberry",
+      "filename": "food_blueberry.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_blueberry.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_blueberry.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_blueberry.png",
+      "gitBlobSha1": "590e7f98265b3ee2a40c0d5b537920c428b53d6c",
+      "sha256": "c77e25df3e86b9b4d29ed7439c32e9779b0f3215755341008c330b3d44769dc1",
+      "bytes": 35914,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        66,
+        59,
+        193,
+        200
+      ],
+      "alphaBounds16Px": [
+        68,
+        61,
+        191,
+        196
+      ],
+      "visibleLongestDimensionPx": 135,
+      "visibleLongestDimensionFraction": 0.52734375,
+      "boxSizeFor100PxApparent": 189.63,
+      "boxScaleRelativeToApple": 1.333333
+    },
+    {
+      "name": "donut",
+      "filename": "food_donut.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_donut.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_donut.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_donut.png",
+      "gitBlobSha1": "01bf8423f1c33de0b38d170b94119de6724b583f",
+      "sha256": "7dbf3968bd211c708445416da8cd96c3ad6aee5679c102c24cf80e82ab575e9e",
+      "bytes": 62723,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        15,
+        33,
+        241,
+        226
+      ],
+      "alphaBounds16Px": [
+        17,
+        35,
+        239,
+        224
+      ],
+      "visibleLongestDimensionPx": 222,
+      "visibleLongestDimensionFraction": 0.8671875,
+      "boxSizeFor100PxApparent": 115.315,
+      "boxScaleRelativeToApple": 0.810811
+    },
+    {
+      "name": "cupcake",
+      "filename": "food_cupcake.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_cupcake.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cupcake.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_cupcake.png",
+      "gitBlobSha1": "7ec09a214b781a57de1df40d55db15d0144e4b03",
+      "sha256": "8836449eb7878a620d8d63f23e5dd59458cb7dafe826725f1d80e3764b020034",
+      "bytes": 69359,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        32,
+        10,
+        224,
+        243
+      ],
+      "alphaBounds16Px": [
+        34,
+        12,
+        222,
+        241
+      ],
+      "visibleLongestDimensionPx": 229,
+      "visibleLongestDimensionFraction": 0.89453125,
+      "boxSizeFor100PxApparent": 111.79,
+      "boxScaleRelativeToApple": 0.786026
+    },
+    {
+      "name": "macaron",
+      "filename": "food_macaron.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_macaron.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_macaron.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_macaron.png",
+      "gitBlobSha1": "fd316b094a4b88f35a9f6d9ed063f18ac74e14c3",
+      "sha256": "853aa4a4dc175b1b677e8244ae05bfb405ef1af79015cd84475f30a7e2e10cee",
+      "bytes": 59350,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        24,
+        32,
+        232,
+        225
+      ],
+      "alphaBounds16Px": [
+        26,
+        34,
+        230,
+        222
+      ],
+      "visibleLongestDimensionPx": 204,
+      "visibleLongestDimensionFraction": 0.796875,
+      "boxSizeFor100PxApparent": 125.49,
+      "boxScaleRelativeToApple": 0.882353
+    },
+    {
+      "name": "burger",
+      "filename": "food_burger.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_burger.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_burger.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_burger.png",
+      "gitBlobSha1": "ce31c7621ce345c31cbceea7b698adafbee6cdb5",
+      "sha256": "88779cba969af79489c15cc2778aa0e8c28ee2a8ac0b49ff4c9ccb408232c85e",
+      "bytes": 94512,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        10,
+        15,
+        246,
+        240
+      ],
+      "alphaBounds16Px": [
+        10,
+        15,
+        246,
+        240
+      ],
+      "visibleLongestDimensionPx": 236,
+      "visibleLongestDimensionFraction": 0.921875,
+      "boxSizeFor100PxApparent": 108.475,
+      "boxScaleRelativeToApple": 0.762712
+    },
+    {
+      "name": "pizza",
+      "filename": "food_pizza.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_pizza.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pizza.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_pizza.png",
+      "gitBlobSha1": "db4799cbb2225e66fe53d662ac2fff0fd42f11c0",
+      "sha256": "263c06439ff53ed8baeb31c6041da1911abffe441007503bf4f9398281b78a1a",
+      "bytes": 76421,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        13,
+        10,
+        243,
+        246
+      ],
+      "alphaBounds16Px": [
+        13,
+        10,
+        243,
+        246
+      ],
+      "visibleLongestDimensionPx": 236,
+      "visibleLongestDimensionFraction": 0.921875,
+      "boxSizeFor100PxApparent": 108.475,
+      "boxScaleRelativeToApple": 0.762712
+    },
+    {
+      "name": "fries",
+      "filename": "food_fries.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_fries.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fries.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_fries.png",
+      "gitBlobSha1": "e6cc4cb60f60141b8da957d2b8c0fa8f03f02fc9",
+      "sha256": "5f38a619e080a05c1282fc01090fc0780b038b53aac80564d834846d6f324bf1",
+      "bytes": 85347,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        18,
+        10,
+        238,
+        246
+      ],
+      "alphaBounds16Px": [
+        18,
+        10,
+        238,
+        246
+      ],
+      "visibleLongestDimensionPx": 236,
+      "visibleLongestDimensionFraction": 0.921875,
+      "boxSizeFor100PxApparent": 108.475,
+      "boxScaleRelativeToApple": 0.762712
+    },
+    {
+      "name": "hot dog",
+      "filename": "food_hot_dog.png",
+      "localPath": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\work\\share-decoration-assets\\native-assortment\\food_hot_dog.png",
+      "sourceRepository": "Matthew75x/Toadal-Feast-Development",
+      "sourceCommit": "c7ba1f978a89f5976cd6f02af4beb1e7dba2f372",
+      "sourcePath": "assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_hot_dog.png",
+      "sourceUrl": "https://github.com/Matthew75x/Toadal-Feast-Development/blob/c7ba1f978a89f5976cd6f02af4beb1e7dba2f372/assets/themes/froggy-feast/arcade-runtime-food-v1/max-256/food_hot_dog.png",
+      "gitBlobSha1": "13a947a741334e2a3a2ad10c6cee555837970b53",
+      "sha256": "f3654547743b9c6aaa335ceb9f75e39841a47a5c9fa70f61ff4a4b2367286552",
+      "bytes": 78041,
+      "width": 256,
+      "height": 256,
+      "mode": "RGBA",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "alphaBoundsNonzeroPx": [
+        10,
+        27,
+        246,
+        229
+      ],
+      "alphaBounds16Px": [
+        10,
+        27,
+        246,
+        229
+      ],
+      "visibleLongestDimensionPx": 236,
+      "visibleLongestDimensionFraction": 0.921875,
+      "boxSizeFor100PxApparent": 108.475,
+      "boxScaleRelativeToApple": 0.762712
+    }
+  ]
+}

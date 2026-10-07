@@ -1,0 +1,55 @@
+{
+  "engineVersion": "2.0.0",
+  "header": {
+    "width": 1000,
+    "height": 180,
+    "transparent": true,
+    "segments": [
+      {
+        "text": "TOADAL",
+        "width": 430,
+        "paletteMode": "single"
+      },
+      {
+        "text": "FEAST!",
+        "width": 570,
+        "paletteMode": "rainbow"
+      }
+    ],
+    "settings": {
+      "h": 180,
+      "tightness": 100,
+      "endBoost": 8,
+      "lineScale": 80,
+      "outlineWidth": 9,
+      "shine": 90,
+      "bounce": 0,
+      "glossOn": true,
+      "glow": false
+    }
+  },
+  "lockup": {
+    "width": 640,
+    "height": 330,
+    "transparent": true,
+    "settings": {
+      "h": 330,
+      "tightness": 100,
+      "endBoost": 12,
+      "lineScale": 82,
+      "outlineWidth": 9,
+      "shine": 90,
+      "bounce": 0,
+      "glossOn": true,
+      "glow": false,
+      "w": 640,
+      "letterText": "TOADAL|FEAST!",
+      "paletteMode": "lockup",
+      "accent": "#fee822",
+      "accent2": "#fda80a"
+    }
+  },
+  "attemptedNetworkRequests": [],
+  "pageErrors": [],
+  "renderer": "Bundled Playwright Chromium; network requests blocked; data font only; supplied standalone Canvas engine executed after I/O inspection"
+}
