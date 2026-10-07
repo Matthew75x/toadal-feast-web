@@ -260,11 +260,20 @@ export class WebsiteAudioHost {
     })().finally(() => this.pending.delete(cueId));
     this.pending.set(cueId, task); return task;
   }
+  currentState() {
+    if (!this.active) return 'available';
+    return this.pref.muted ? 'muted' : 'active';
+  }
   onMessage(event) {
     if (this.closed || event.source !== this.frame.contentWindow || event.origin !== 'null') return;
     const message = event.data;
-    if (!record(message) || message.protocol !== PROTOCOL || message.gameId !== this.gameId || message.type !== AUDIO_EVENT) return;
+    if (!record(message) || message.protocol !== PROTOCOL || message.gameId !== this.gameId) return;
     if (encodedLength(message) > MAX.messageBytes) return;
+    if (message.type === 'game:ready') {
+      this.sendState(this.currentState(), { fallback: this.declaration.fallback });
+      return;
+    }
+    if (message.type !== AUDIO_EVENT) return;
     const payload = record(message.payload) ? message.payload : {};
     if (!ID.test(payload.event || '')) return;
     let params; try { params = validateParams(payload.params || {}); } catch (_) { return; }
@@ -336,15 +345,16 @@ function siteRoot() {
   return path === '/' ? '' : path.replace(/\/+$/, '');
 }
 
-export async function attachWebsiteAudioHost({ doc = document } = {}) {
+export async function attachWebsiteAudioHost({ doc = document, manifest = null } = {}) {
   const shell = doc.querySelector('[data-player-shell]'); if (!shell) return null;
   const frame = shell.querySelector('[data-player-frame]'); const gameId = shell.getAttribute('data-game-id') || '';
   if (!frame || !gameId) return null;
-  let manifest;
-  try {
-    const response = await fetch(cartridgeManifestUrl(frame), { credentials: 'same-origin', redirect: 'error', cache: 'no-cache' });
-    if (!response.ok) return null; manifest = await response.json();
-  } catch (_) { return null; }
+  if (!manifest) {
+    try {
+      const response = await fetch(cartridgeManifestUrl(frame), { credentials: 'same-origin', redirect: 'error', cache: 'no-cache' });
+      if (!response.ok) return null; manifest = await response.json();
+    } catch (_) { return null; }
+  }
   if (!manifest.audio || manifest.audio.mode !== 'host') return null;
   let declaration; try { declaration = validateCartridgeAudio(manifest.audio); } catch (_) { return null; }
   const registryUrl = new URL(siteRoot() + '/assets/data/audio-registry.json', location.href);
@@ -368,6 +378,3 @@ export async function attachWebsiteAudioHost({ doc = document } = {}) {
   return host;
 }
 
-if (typeof window !== 'undefined' && typeof document !== 'undefined' && window.self === window.top) {
-  attachWebsiteAudioHost().catch(() => {});
-}
