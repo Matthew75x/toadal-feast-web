@@ -39,3 +39,7 @@ Use an allowlisted art ID (original, crowned-adventurer, burger-feast), keeping 
 Outputs and review logs preserve their original timing/scope. Earlier service validation does not certify later visual concepts or unfinished preferred-asset selections. No new implementation tests, merge, deployment or production configuration change was performed for this archival upload.
 
 upload-manifest.json records every consolidated file's size and SHA256, excluding its own recursive entry. Original images/ZIP bytes are preserved. Snapshot scripts may retain local execution paths. Installed dependency caches, browser profiles and unrelated checkouts are outside this task handoff; the service's dependency declarations are already in the same branch.
+
+## Additional supplied asset library
+
+[TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip](assets/TOADAL_ASSET_LIBRARY_V2_PRODUCTION_READY_ONLY.zip) was added to this same assets folder on 2026-10-07. Its original ZIP bytes are preserved and its size/hash are recorded in source-pack-index.json and upload-manifest.json.
