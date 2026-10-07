@@ -1,0 +1,59 @@
+{
+  "schema": "toadal.website-audio.browser-qa.v1",
+  "status": "PASS",
+  "generatedAt": "2026-10-07T07:22:21.575Z",
+  "origin": "http://127.0.0.1:63947",
+  "autoplayPolicyOverridden": false,
+  "checks": [
+    {
+      "name": "Opt-in cartridge loads tiny loader and full host only after manifest declaration",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Before activation local-before-active uses the cartridge legacy path",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "After activation the same semantic event is played by the shared host with no local duplicate",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Real browser host uses one running AudioContext",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Persisted website mute takes ownership before AudioContext unlock",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Persisted mute suppresses the action without leaking to legacy audio",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Non-opt-in cartridge never imports the full shared audio runtime",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "Non-opt-in cartridge has no website audio host instance",
+      "passed": true,
+      "detail": null
+    },
+    {
+      "name": "No uncaught browser errors",
+      "passed": true,
+      "detail": []
+    }
+  ],
+  "errors": [],
+  "requests": {
+    "total": 21,
+    "fullHostLoads": 2
+  }
+}

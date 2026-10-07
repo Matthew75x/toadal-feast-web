@@ -5,7 +5,14 @@ on:
     paths:
       - 'scripts/cartridge-hardener/**'
       - 'docs/implementation/BROWSER_GAME_CARTRIDGE_HARDENING_STANDARD_V1.md'
+      - 'docs/implementation/BROWSER_GAME_CARTRIDGE_CONTRACT.md'
       - 'docs/implementation/game-cartridge.schema.json'
+      - 'docs/implementation/WEBSITE_SHARED_AUDIO_RUNTIME_V1.md'
+      - 'scripts/website-audio-contract.test.mjs'
+      - 'studio-project/toadal-feast-website/reference/assets/js/website-audio-host.mjs'
+      - 'studio-project/toadal-feast-website/reference/assets/js/website-audio-loader.mjs'
+      - 'studio-project/toadal-feast-website/reference/assets/data/audio-registry.json'
+      - 'studio-project/toadal-feast-website/collections/advanced-code.json'
   push:
     branches:
       - staging/live-visual
@@ -13,6 +20,12 @@ on:
       - 'scripts/cartridge-hardener/**'
       - 'docs/implementation/BROWSER_GAME_CARTRIDGE_HARDENING_STANDARD_V1.md'
       - 'docs/implementation/game-cartridge.schema.json'
+      - 'docs/implementation/WEBSITE_SHARED_AUDIO_RUNTIME_V1.md'
+      - 'scripts/website-audio-contract.test.mjs'
+      - 'studio-project/toadal-feast-website/reference/assets/js/website-audio-host.mjs'
+      - 'studio-project/toadal-feast-website/reference/assets/js/website-audio-loader.mjs'
+      - 'studio-project/toadal-feast-website/reference/assets/data/audio-registry.json'
+      - 'studio-project/toadal-feast-website/collections/advanced-code.json'
   workflow_dispatch:
 
 permissions:
@@ -35,3 +48,5 @@ jobs:
         run: python3 -m json.tool scripts/cartridge-hardener/examples/croaker-king-defense-v2.profile.json > /dev/null
       - name: Run hardener self-tests
         run: python3 -m unittest discover -s scripts/cartridge-hardener/tests -v
+      - name: Verify shared audio contract
+        run: node --test scripts/website-audio-contract.test.mjs
