@@ -7,7 +7,8 @@ import {
   validateCartridgeAudio,
   validateRegistry,
   validateParams,
-  resolveEvent
+  resolveEvent,
+  WebsiteAudioHost
 } from '../studio-project/toadal-feast-website/reference/assets/js/website-audio-host.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
@@ -128,4 +129,40 @@ test('tiny loader gates the full audio runtime behind manifest opt-in', () => {
   assert.match(loader, /manifest\.audio\.mode !== 'host'/);
   assert.match(loader, /import\(moduleUrl\.href\)/);
   assert.doesNotMatch(loader, /new \(globalThis\.AudioContext/);
+});
+
+test('persisted site mute owns playback before AudioContext unlock and is resent on game ready', () => {
+  const hadLocation = Object.prototype.hasOwnProperty.call(globalThis, 'location');
+  const hadStorage = Object.prototype.hasOwnProperty.call(globalThis, 'localStorage');
+  const oldLocation = globalThis.location;
+  const oldStorage = globalThis.localStorage;
+  const sent = [];
+  try {
+    Object.defineProperty(globalThis, 'location', { configurable: true, value: { href: 'https://site.example/player/fixture-game/', origin: 'https://site.example' } });
+    Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: {
+      getItem: key => key === 'toadal:web:v1:audio' ? JSON.stringify({ muted: true }) : null,
+      setItem() {}
+    } });
+    const contentWindow = { postMessage: message => sent.push(message) };
+    const host = new WebsiteAudioHost({
+      shell: { querySelector: () => null },
+      frame: { contentWindow },
+      gameId: 'fixture-game',
+      declaration,
+      registry,
+      registryUrl: 'https://site.example/assets/data/audio-registry.json',
+      contextFactory: () => { throw new Error('must not unlock during mute ownership test'); }
+    });
+    assert.equal(host.active, false);
+    assert.equal(host.currentState(), 'muted');
+    host.onMessage({ source: contentWindow, origin: 'null', data: {
+      protocol: 'toadal.game.v1', gameId: 'fixture-game', type: 'game:ready', payload: {}
+    } });
+    assert.equal(sent.length, 1);
+    assert.equal(sent[0].type, 'host:audio');
+    assert.equal(sent[0].payload.state, 'muted');
+  } finally {
+    if (hadLocation) Object.defineProperty(globalThis, 'location', { configurable: true, value: oldLocation }); else delete globalThis.location;
+    if (hadStorage) Object.defineProperty(globalThis, 'localStorage', { configurable: true, value: oldStorage }); else delete globalThis.localStorage;
+  }
 });

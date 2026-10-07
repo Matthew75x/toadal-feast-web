@@ -166,8 +166,9 @@ export class WebsiteAudioHost {
       this.soundButton.setAttribute('aria-pressed', this.pref.muted ? 'true' : 'false');
       this.soundButton.setAttribute('title', 'Use TOADAL shared audio for this game');
     }
-    this.sendState('available', { fallback: this.declaration.fallback });
-    this.record('available');
+    const initialState = this.currentState();
+    this.sendState(initialState, { fallback: this.declaration.fallback });
+    this.record(initialState);
   }
   async onSoundControl(event) {
     if (this.closed) return;
@@ -262,8 +263,8 @@ export class WebsiteAudioHost {
     this.pending.set(cueId, task); return task;
   }
   currentState() {
-    if (!this.active) return 'available';
-    return this.pref.muted ? 'muted' : 'active';
+    if (this.pref.muted) return 'muted';
+    return this.active ? 'active' : 'available';
   }
   onMessage(event) {
     if (this.closed || event.source !== this.frame.contentWindow || event.origin !== 'null') return;
