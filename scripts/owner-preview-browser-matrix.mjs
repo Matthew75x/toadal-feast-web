@@ -53,6 +53,15 @@ await new Promise((r,j)=>{ws.onopen=r;ws.onerror=j});
 const call=(method,params={})=>new Promise((r,j)=>{const id=++seq;pending.set(id,m=>m.error?j(new Error(JSON.stringify(m.error))):r(m));ws.send(JSON.stringify({id,method,params}));});
 await call('Page.enable');await call('Runtime.enable');await call('Network.enable');await call('Network.setCacheDisabled',{cacheDisabled:true});
 async function evaluate(expression){const r=await call('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});return r.result.result.value;}
+async function waitForCompanionReady(timeoutMs=1500){
+  const deadline=Date.now()+timeoutMs;
+  while(Date.now()<deadline){
+    const ready=await evaluate("(()=>{const e=document.querySelector('[data-companion]');return e?e.getAttribute('data-position-ready')==='true':false})()");
+    if(ready)return true;
+    await sleep(25);
+  }
+  return false;
+}
 
 const inspectExpr=[
 "(async()=>{",
@@ -100,7 +109,8 @@ for(const c of casesToRun){
   events=[];
   await call('Emulation.setDeviceMetricsOverride',{width:c.w,height:c.h,deviceScaleFactor:1,mobile:c.w<=768});
   const url=origin+basePath+(c.route==='/'?'':c.route.replace(/^\//,''));
-  await call('Page.navigate',{url});await sleep(260);
+  await call('Page.navigate',{url});await sleep(120);
+  const companionReady=await waitForCompanionReady();
   let doc={};try{doc=await evaluate(inspectExpr);}catch(e){doc={error:String(e)}}
   const sh=doc.scrollHeight||c.h;
   const positions=[0,Math.max(0,Math.floor(sh/2-c.h/2)),Math.max(0,sh-c.h)];
@@ -119,12 +129,13 @@ for(const c of casesToRun){
   if(doc.brokenImages?.length)issues.push('broken-images');if(doc.missingAlt?.length)issues.push('missing-alt');
   if(doc.duplicateIds?.length)issues.push('duplicate-ids');if(doc.unnamedControls?.length)issues.push('unnamed-controls');
   if(doc.brokenFragments?.length)issues.push('broken-fragments');if(httpErrors.length||loadErrors.length)issues.push('network-errors');
+  if(!companionReady)issues.push('companion-position-not-ready');
   if(runtimeErrors.length||consoleErrors)issues.push('runtime-errors');if(clipped.length)issues.push('clipped-controls');
   const primaryRequired=c.route==='/'||c.route==='/feast-pass/quests/';
   const primaryOverlaps=samples[0]?.primaryOverlaps||[];
   if(primaryRequired&&primaryOverlaps.length)issues.push('companion-primary-action-overlap');if(companionBad.length)issues.push('companion-out-of-bounds');
   const status=issues.length?'FAIL':'PASS';
-  results.push({...c,status,issues,doc,httpErrors,loadErrors,runtimeErrors,consoleErrors,clipped,samples,overlaps,primaryOverlaps,companionBad});
+  results.push({...c,status,issues,companionReady,doc,httpErrors,loadErrors,runtimeErrors,consoleErrors,clipped,samples,overlaps,primaryOverlaps,companionBad});
   process.stdout.write(status+'|'+c.label+'|'+c.route+'|'+issues.join(',')+'\n');
 }
 
