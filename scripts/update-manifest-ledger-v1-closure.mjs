@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { execFileSync } from 'node:child_process';
 import { siteFingerprint } from './fingerprint-site-inputs.mjs';
+import { closureReportPath } from './lib/manifest-compliance-contract.mjs';
 
 const root = process.cwd();
 const args = process.argv.slice(2);
@@ -42,6 +43,7 @@ if (qualifiedSha) {
 if (deployedSha && (deployedSha !== qualifiedSha || staging !== deployedSha)) throw new Error('Deployment identity does not match exact qualified commit');
 const qualified = Boolean(qualifiedSha);
 const phase = deployedSha ? 'STAGING_VERIFIED' : qualified ? 'QUALIFIED' : 'QUALIFICATION_PENDING';
+const reportPath = qualified ? closureReportPath(root, evidenceDir, Boolean(deployedSha)) : null;
 const rows = [
  ['KEEP / POLISH','Existing Home composition, games/Pass/discovery/App hierarchy and companion preserved; no redesign.','Owner Home LOCK_VISUAL acceptance remains pending.'],
  ['KEEP / INTEGRATE','Existing catalog/filtering, truthful preview states, challenges/rewards/leaderboard links and App path.','Additional game availability requires qualification.'],
@@ -77,6 +79,8 @@ const rows = [
 if (rows.length !== 30 || ledger.pages.length !== 30) throw new Error('Manifest denominator changed');
 ledger.date = '2026-10-02';
 ledger.authority = {
+  classification: 'HISTORICAL_QUALIFICATION_SNAPSHOT',
+  observedDate: new Date().toISOString().slice(0, 10),
   main: git('ls-remote', 'origin', 'refs/heads/main').split(/\s+/)[0],
   liveStaging: staging, currentReviewBranch: branch,
   currentReviewCandidate: qualifiedSha || 'UNCOMMITTED_REMEDIATION_WORKTREE',
@@ -85,6 +89,11 @@ ledger.authority = {
   remediationBase: '60c4d8bee7edd818fcc794e3f87232058585b9d8',
   frozenRelease: '6e543f2abebe66ef46ca6ecaa6da20e3196a5c43',
   previousLedger: '60c4d8bee7edd818fcc794e3f87232058585b9d8:manifests/manifest-compliance-ledger.json'
+};
+ledger.operationalAuthority = {
+  repository: 'Matthew75x/toadal-feast-web', ref: 'staging/live-visual',
+  resolve: 'LIVE_REF_BEFORE_CONSEQUENTIAL_OPERATIONS',
+  latestReadback: { sha: staging, observedDate: new Date().toISOString().slice(0, 10), classification: 'DATED_READBACK_NOT_LIVE_HEAD' }
 };
 for (const page of ledger.pages) {
   const [action, evidence, gap] = rows[page.n - 1];
@@ -123,7 +132,8 @@ ledger.historicalEvidence = {
 };
 ledger.latestManifestV1Closure = {
   status: qualified ? 'MANIFEST V1 ENGINEERING COMPLETE — ONLY EXTERNAL ACTIVATION/CONTENT DEPENDENCIES REMAIN' : 'QUALIFICATION PENDING — NOT COMPLETE',
-  phase, report: evidenceDir + '/AUDIT_REMEDIATION_CLOSURE.md', branch,
+  phase, report: reportPath, qualificationReport: evidenceDir + '/qualification-summary.json', branch,
+  classification: 'HISTORICAL_QUALIFICATION_SNAPSHOT', observedDate: qualification?.date || ledger.date,
   qualifiedSha: qualifiedSha || null, qualifiedTree: ledger.authority.qualifiedTree,
   routeRecords: pages.length, originalManifestFamilies: 30,
   inputFingerprint: fingerprint,

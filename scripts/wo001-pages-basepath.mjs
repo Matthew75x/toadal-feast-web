@@ -4,12 +4,12 @@ import { readdir, readFile, stat, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { isProtectedGameArtifact } from './lib/protected-game-artifacts.mjs';
+import { STAGING_ROBOTS_TEXT } from './lib/staging-robots.mjs';
 
 const URL_ATTRIBUTES = new Set(['href', 'src', 'action', 'poster']);
 const RAW_TEXT_TAGS = new Set(['script', 'textarea', 'title', 'xmp', 'iframe', 'noembed', 'noframes', 'plaintext']);
 const STAGING_ROBOTS_FILE = 'robots.txt';
 const STAGING_ROBOTS_META = '<meta name="robots" content="noindex,nofollow">';
-const STAGING_ROBOTS_TEXT = 'User-agent: *\nDisallow: /\n';
 
 export function normalizeBasePath(basePath) {
   if (typeof basePath !== 'string' || basePath.length === 0) {
@@ -465,10 +465,9 @@ async function applyStagingRobotsPolicy(exportDirectory) {
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
   }
-  const hasGlobalDisallow = /^User-agent:\s*\*(?:\r?\n(?!User-agent:)[^\r\n]*)*\r?\nDisallow:\s*\/\s*(?:\r?\n|$)/imu.test(robotsOriginal);
-  const robotsUpdated = hasGlobalDisallow
-    ? robotsOriginal
-    : `${robotsOriginal}${robotsOriginal && !robotsOriginal.endsWith('\n') ? '\n' : ''}${STAGING_ROBOTS_TEXT}`;
+  // This explicit staging opt-in replaces public/exception rules rather than
+  // appending a wildcard group whose Allow ties can defeat the crawl block.
+  const robotsUpdated = STAGING_ROBOTS_TEXT;
   if (robotsUpdated !== robotsOriginal) {
     await writeFile(robotsPath, robotsUpdated, 'utf8');
     changed = true;

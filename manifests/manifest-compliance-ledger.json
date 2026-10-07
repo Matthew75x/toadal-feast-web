@@ -11,7 +11,9 @@
     "approvedHomeSha256": "4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608",
     "remediationBase": "60c4d8bee7edd818fcc794e3f87232058585b9d8",
     "frozenRelease": "6e543f2abebe66ef46ca6ecaa6da20e3196a5c43",
-    "previousLedger": "60c4d8bee7edd818fcc794e3f87232058585b9d8:manifests/manifest-compliance-ledger.json"
+    "previousLedger": "60c4d8bee7edd818fcc794e3f87232058585b9d8:manifests/manifest-compliance-ledger.json",
+    "classification": "HISTORICAL_QUALIFICATION_SNAPSHOT",
+    "observedDate": "2026-10-02"
   },
   "statusDefinitions": {
     "DONE_PROVEN": "Requirement exists and has direct implementation/evidence.",
@@ -574,32 +576,44 @@
       {
         "source": "staging/live-visual",
         "sha": "270940dee30b7aafb70af941c520c6d4d223e288",
-        "role": "Current public GitHub Pages implementation."
+        "role": "Historical public GitHub Pages implementation.",
+        "observedDate": "2026-10-01",
+        "classification": "HISTORICAL_OBSERVATION"
       },
       {
         "source": "integration/manifest-home-characters-progression-20261001",
         "sha": "945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da",
-        "role": "Current manifest-core review candidate: Home + Characters/Toadal + guest progression; not approved or deployed."
+        "role": "Historical manifest-core review candidate: Home + Characters/Toadal + guest progression; not approved or deployed.",
+        "observedDate": "2026-10-01",
+        "classification": "HISTORICAL_OBSERVATION"
       },
       {
         "source": "work/gated-ecosystem-manifest-20261001",
         "sha": "61023edf34f14fc9131ebfe258000cffbea49520",
-        "role": "Parallel candidate for Account, Community, Store, Contact, About, Coming Soon and Legal manifest rows; verified, not deployed."
+        "role": "Parallel candidate for Account, Community, Store, Contact, About, Coming Soon and Legal manifest rows; verified, not deployed.",
+        "observedDate": "2026-10-01",
+        "classification": "HISTORICAL_OBSERVATION"
       },
       {
         "source": "integration/visual-convergence-combined-20261001",
         "sha": "58a7121e363d3480c122623b1de5cd0d5ac1778e",
-        "role": "Older visual-only convergence candidate retained as implementation history/donor."
+        "role": "Older visual-only convergence candidate retained as implementation history/donor.",
+        "observedDate": "2026-10-01",
+        "classification": "HISTORICAL_DONOR"
       },
       {
         "source": "integration/master-asset-authority-20261001",
         "sha": "62717951f4ffba0e8dd779116cc192d70f94d534",
-        "role": "Recovered Master V2 companion/asset authority."
+        "role": "Recovered Master V2 companion/asset authority.",
+        "observedDate": "2026-10-01",
+        "classification": "HISTORICAL_DONOR"
       },
       {
         "source": "archive/production-ready-asset-pack-20261001",
         "sha": "5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba",
-        "role": "Remote preservation of complete 71-image production-ready pack."
+        "role": "Remote preservation of complete 71-image production-ready pack.",
+        "observedDate": "2026-10-01",
+        "classification": "HISTORICAL_DONOR"
       }
     ],
     "historical_or_donor_only": [
@@ -763,8 +777,9 @@
       "rule": "Current website staging remains GitHub Pages."
     },
     "githubPages": {
-      "status": "CURRENT_STAGING",
-      "sha": "270940dee30b7aafb70af941c520c6d4d223e288"
+      "status": "HISTORICAL_STAGING_OBSERVATION",
+      "sha": "270940dee30b7aafb70af941c520c6d4d223e288",
+      "observedDate": "2026-10-01"
     }
   },
   "executionPriorities": [
@@ -800,7 +815,7 @@
         9,
         10
       ],
-      "impact": "Rows 9 and 10 are absent and row 8 is only a preview; Batch-1 references already exist.",
+      "impact": "Rows 8, 9 and 10 have qualified reusable publishing structures, including the Manga Series and Reader shell, bookmarks and progress. Retain this proven engineering; approved published story/series/chapter/page content remains pending.",
       "resources": [
         "08_STORIES_COMICS_HUB.png",
         "09_MANGA_SERIES.png",
@@ -810,7 +825,9 @@
       "parallelSafeWith": [
         "editorial/discovery utilities"
       ],
-      "doneWhen": "Truthful Manga Series and Reader shell/bookmark-resume plumbing exist without fabricated chapters."
+      "doneWhen": "Approved story, series, chapter and reader-page manifests pass publication rules; unavailable content remains truthfully unpublished.",
+      "engineeringStatus": "QUALIFIED_RETAIN_EXISTING_IMPLEMENTATION",
+      "remainingWork": "APPROVED_CONTENT_OR_EXTERNAL_DEPENDENCIES"
     },
     {
       "rank": 3,
@@ -823,7 +840,7 @@
         24,
         25
       ],
-      "impact": "Converts partial media/news/support and missing article/search/roadmap families into useful truthful pages.",
+      "impact": "Media, News, Article, local Search, Roadmap and Support structures are qualified. Retain these proven surfaces; approved media/editorial/devlogs and configured support services remain pending where recorded.",
       "resources": [
         "30-page contact sheet",
         "publication rules",
@@ -834,7 +851,9 @@
         "Stories publishing stack",
         "gated ecosystem routes"
       ],
-      "doneWhen": "Structured records/templates/local search/roadmap/support depth exist and publication states are enforced."
+      "doneWhen": "Approved media, articles and related devlogs pass publication rules; verified support/contact services may activate only when configured. Existing local Search needs no external activation.",
+      "engineeringStatus": "QUALIFIED_RETAIN_EXISTING_IMPLEMENTATION",
+      "remainingWork": "APPROVED_CONTENT_OR_EXTERNAL_DEPENDENCIES"
     },
     {
       "rank": 4,
@@ -873,7 +892,7 @@
   "latestManifestV1Closure": {
     "status": "MANIFEST V1 ENGINEERING COMPLETE — ONLY EXTERNAL ACTIVATION/CONTENT DEPENDENCIES REMAIN",
     "phase": "STAGING_VERIFIED",
-    "report": "docs/review/manifest-audit-remediation-20261002/AUDIT_REMEDIATION_CLOSURE.md",
+    "report": "docs/review/manifest-audit-remediation-20261002/DEPLOYMENT_CLOSURE.md",
     "branch": "work/manifest-complete-v1-20261002",
     "qualifiedSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
     "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
@@ -900,10 +919,23 @@
     "deploymentVerified": true,
     "homeLockVisual": "OWNER REVIEW PENDING; NOT CLAIMED",
     "rollback": "688e1c471fdc97207c5ebfeaa0ef313ab9c44e52",
-    "historicalRollback": "d6be86a9762370b66e79c1d5a36ab8066e421496"
+    "historicalRollback": "d6be86a9762370b66e79c1d5a36ab8066e421496",
+    "qualificationReport": "docs/review/manifest-audit-remediation-20261002/qualification-summary.json",
+    "classification": "HISTORICAL_QUALIFICATION_SNAPSHOT",
+    "observedDate": "2026-10-02"
   },
   "historicalEvidence": {
     "immutableLedger": "60c4d8bee7edd818fcc794e3f87232058585b9d8:manifests/manifest-compliance-ledger.json",
     "note": "Earlier integrated/gated/deployment snapshots remain recoverable from this Git object and are not current status."
+  },
+  "operationalAuthority": {
+    "repository": "Matthew75x/toadal-feast-web",
+    "ref": "staging/live-visual",
+    "resolve": "LIVE_REF_BEFORE_CONSEQUENTIAL_OPERATIONS",
+    "latestReadback": {
+      "sha": "efd528061ddf94fabe3fc3b886c0f66636e29f1a",
+      "observedDate": "2026-10-07",
+      "classification": "DATED_READBACK_NOT_LIVE_HEAD"
+    }
   }
 }

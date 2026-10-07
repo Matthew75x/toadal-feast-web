@@ -30,6 +30,10 @@ jobs:
           node scripts/verify-pages-basepath.mjs dist /toadal-feast-web/
           node scripts/verify-static-links.mjs dist /toadal-feast-web/
           node scripts/verify-staging-robots.mjs dist staging
+      - name: Verify control consistency and crawler-policy regressions
+        run: |
+          node scripts/verify-manifest-compliance-ledger.mjs
+          node --test scripts/manifest-compliance-consistency.test.mjs scripts/wo001-pages-basepath.test.mjs
       - name: Verify exact staging payload without publishing
         run: >-
           node scripts/staging-artifact.mjs prepare

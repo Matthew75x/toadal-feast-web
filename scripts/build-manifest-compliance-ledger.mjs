@@ -1,11 +1,17 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { controlConsistencyErrors, donorIdentity, DONOR_SOURCES } from './lib/manifest-compliance-contract.mjs';
 
 const root = process.cwd();
 const ledgerPath = path.join(root, 'manifests', 'manifest-compliance-ledger.json');
 const ledger = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
 const pageIndex = JSON.parse(fs.readFileSync(path.join(root, 'studio-project', 'toadal-feast-website', 'pages', 'index.json'), 'utf8'));
 const routeRecordCount = Array.isArray(pageIndex.pages) ? pageIndex.pages.length : 0;
+const consistencyErrors = controlConsistencyErrors(ledger, root);
+if (consistencyErrors.length) throw new Error(consistencyErrors.join('\n'));
+const visualDonor = donorIdentity(ledger, DONOR_SOURCES.visual);
+const assetDonor = donorIdentity(ledger, DONOR_SOURCES.assets);
+const operational = ledger.operationalAuthority;
 
 // Keep the local-only Home parity donor recoverable without making it authority.
 if (ledger.donorEvidence?.strictHomeParityWip) {
@@ -23,9 +29,11 @@ for (const p of ledger.pages) counts[p.status] = (counts[p.status] || 0) + 1;
 
 const md = [];
 md.push('# TOADAL FEAST Website - Manifest Compliance Ledger', '');
-md.push('**Date:** ' + ledger.date);
-md.push(`**Current public staging:** \`${ledger.authority.liveStaging}\``);
-md.push(`**Current integrated review candidate:** \`${ledger.authority.currentReviewCandidate || ledger.authority.integratedCandidate || ledger.authority.combinedVisualCandidate}\``);
+md.push('**Historical qualification date:** ' + ledger.date);
+md.push(`**Operational staging authority:** \`${operational.repository}\` / \`${operational.ref}\`. Resolve this live ref before consequential operations; a dated SHA below does not authorize promotion.`);
+md.push(`**Dated staging readback (${operational.latestReadback.observedDate}):** \`${operational.latestReadback.sha}\`; observation only, not a fixed current head.`);
+md.push(`**Historical public staging (${ledger.authority.observedDate}):** \`${ledger.authority.liveStaging}\``);
+md.push(`**Historical qualified review candidate (${ledger.authority.observedDate}):** \`${ledger.authority.currentReviewCandidate}\``);
 md.push('**Controlling denominator:** the original 30-page manifest plus locked cross-cutting product requirements.', '');
 md.push('## Why this exists', '');
 md.push('This ledger replaces work-order completion as the project-level progress measure. A green verifier, a clean branch, or a closed work order does **not** mean the website manifest is complete.', '');
@@ -40,7 +48,8 @@ md.push('- Guest progression starts without an account and is stored durably in-
 md.push('- Unavailable account/community/store/future destinations should be visible only through truthful polished states, never fake-live.');
 md.push('- The 30 page families remain requirements. Work orders are implementation slices, not replacements for the roadmap.', '');
 md.push('## Qualification and owner acceptance', '');
-md.push('**Phase:** ' + ledger.latestManifestV1Closure.phase + '. Current source/artifact qualification and owner visual acceptance are separate. Home remains PARTIAL because LOCK_VISUAL acceptance is owner-pending; this remediation does not redesign it or claim acceptance.', '');
+md.push('**Historical phase (' + ledger.latestManifestV1Closure.observedDate + '):** ' + ledger.latestManifestV1Closure.phase + '. Source/artifact qualification and owner visual acceptance are separate. Home remains PARTIAL because LOCK_VISUAL acceptance is owner-pending; this control repair does not redesign it or claim acceptance.', '');
+md.push(`Historical source-bound closure: [${ledger.latestManifestV1Closure.deploymentVerified ? 'deployment' : 'qualification'} record](${path.posix.relative('docs/authority', ledger.latestManifestV1Closure.report)}); qualification: \`${ledger.latestManifestV1Closure.qualificationReport}\`. These records bind the historical qualified SHA/tree, not later branch heads.`, '');
 md.push(`The approved Home remains \`${ledger.visualEvidence?.home?.path || 'docs/review/WO-002/evidence/approved-home-visual-authority.png'}\` (SHA-256 \`${ledger.authority.approvedHomeSha256}\`).`, '');
 md.push('## 30-page compliance', '');
 md.push('| # | Manifest page | Visual authority | Delivery | Status | Evidence / remaining gap |');
@@ -59,8 +68,8 @@ for (const x of ledger.visualEvidence.batch1 || []) md.push(`- Page ${x.n} ${x.p
 md.push(`- Pages 11-30 also appear in \`${ledger.visualEvidence.mixedReference.desktop30}\`, but that contact sheet is reference material and does not give every page the same approval level as Home/Batch 1.`, '');
 md.push('## Authority firewall', '', '### Active authority', '');
 for (const x of ledger.sourceMap.active_authority || []) md.push(`- **${x.source}** - ${x.rule}`);
-md.push('', '### Current implementation evidence', '');
-for (const x of ledger.sourceMap.implementation_evidence || []) md.push(`- **${x.source}** \`${x.sha}\` - ${x.role}`);
+md.push('', '### Dated implementation observations and donors', '');
+for (const x of ledger.sourceMap.implementation_evidence || []) md.push(`- **${x.source}** \`${x.sha}\` (${x.observedDate}; ${x.classification}) - ${x.role}`);
 md.push('', '### Historical / donor-only material', '');
 for (const x of ledger.sourceMap.historical_or_donor_only || []) md.push(`- **${x.path}** - ${x.reason}`);
 md.push('', 'This firewall matters because the local project folders contain older redesign documents that conflict with the later authority. Physical proximity or newer file timestamps do not make those documents current authority.', '');
@@ -74,21 +83,24 @@ md.push('- **ASSIGNATOR project folders:** active, preservation and historical w
 md.push('## Operating rules from this point forward', '');
 (ledger.operatingRules || []).forEach((r, i) => md.push(`${i + 1}. ${r}`));
 md.push('', '## Manifest-first execution order', '');
-for (const x of ledger.executionPriorities || []) md.push(`${x.rank}. **${x.lane}** (manifest rows ${x.manifestRows.join(', ')}) - ${x.impact}`);
+for (const x of ledger.executionPriorities || []) md.push(`${x.rank}. **${x.lane}** (manifest rows ${x.manifestRows.join(', ')}) - ${x.impact} **Remaining gate:** ${x.doneWhen}`);
 md.push('', 'Arcade remains a separate HOLD/evidence lane and is **not** allowed to consume the website roadmap unless a manifest-level browser-game integration task specifically requires it.', '');
 
 fs.writeFileSync(path.join(root, 'docs', 'authority', 'MANIFEST_COMPLIANCE_LEDGER_2026-10-01.md'), md.join('\n'));
 
 const sm = [];
-sm.push('# TOADAL FEAST Website - Project Source Map / Authority Firewall', '', '**Date:** 2026-10-01', '');
+sm.push('# TOADAL FEAST Website - Project Source Map / Authority Firewall', '', '**Historical inventory date:** 2026-10-01; current navigation regenerated from the machine ledger.', '');
 sm.push('## Purpose', '', 'ASSIGNATOR contains many historical TOADAL website worktrees and redesign packages. This document prevents a historical donor from silently becoming current product authority.', '');
-sm.push('## Active project folders', '');
-sm.push(`- \`C:/ReleaseOps/toadal-feast-web-live-staging\` - public staging lineage; remote staging SHA \`${ledger.authority.liveStaging}\`.`);
-sm.push(`- \`C:/ReleaseOps/toadal-feast-web-stories-stack-20261001\` - current integrated review candidate \`${ledger.authority.currentReviewCandidate || ledger.authority.integratedCandidate}\` on \`${ledger.authority.currentReviewBranch}\`.`);
+sm.push('## Operational staging authority', '');
+sm.push(`- Repository/ref: \`${operational.repository}\` / \`${operational.ref}\`. Resolve the live ref before consequential operations; candidate qualification is not deployment admission.`);
+sm.push(`- Dated readback (${operational.latestReadback.observedDate}): \`${operational.latestReadback.sha}\`; this is an observation, not a permanently current SHA.`, '');
+sm.push('## Historical project-folder inventory (2026-10-01 / qualification 2026-10-02)', '');
+sm.push(`- \`C:/ReleaseOps/toadal-feast-web-live-staging\` - historical public staging lineage; recorded staging SHA (${ledger.authority.observedDate}) \`${ledger.authority.liveStaging}\`.`);
+sm.push(`- \`C:/ReleaseOps/toadal-feast-web-stories-stack-20261001\` - historical qualified review candidate \`${ledger.authority.currentReviewCandidate}\` on \`${ledger.authority.currentReviewBranch}\`.`);
 sm.push('- `C:/ReleaseOps/toadal-feast-web-gated-ecosystem-20261001` - parallel gated-ecosystem candidate for manifest rows 19, 21, 22, 26, 27, 28, 29; not deployed.');
-sm.push(`- \`C:/ReleaseOps/toadal-feast-web-visual-combined-20261001\` - older visual-only convergence candidate \`${ledger.authority.combinedVisualCandidate}\`; implementation history/donor, not current review head.`);
+sm.push(`- \`C:/ReleaseOps/toadal-feast-web-visual-combined-20261001\` - older visual-only convergence candidate \`${visualDonor.sha}\`; historical implementation donor, not operational authority.`);
 sm.push('- `C:/ReleaseOps/toadal-feast-web-manifest-recalibration-20261001` - manifest-control baseline worktree.');
-sm.push(`- \`C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001\` - Master V2 asset authority \`${ledger.authority.assetAuthority}\`.`);
+sm.push(`- \`C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001\` - recovered Master V2 companion/asset authority \`${assetDonor.sha}\`; historical asset provenance donor, not operational authority.`);
 sm.push('- `C:/ReleaseOps/toadal-feast-web-discovery-visual-20261001` - World/Stories/Media candidate.');
 sm.push('- `C:/ReleaseOps/toadal-feast-web-home-header-convergence-review-20261001` - reviewed Home/header candidate.');
 sm.push('- `C:/ReleaseOps/toadal-feast-web-production-asset-archive-20261001` - complete production-ready asset-pack preservation.', '');

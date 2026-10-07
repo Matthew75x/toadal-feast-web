@@ -1,19 +1,24 @@
 # TOADAL FEAST Website - Project Source Map / Authority Firewall
 
-**Date:** 2026-10-01
+**Historical inventory date:** 2026-10-01; current navigation regenerated from the machine ledger.
 
 ## Purpose
 
 ASSIGNATOR contains many historical TOADAL website worktrees and redesign packages. This document prevents a historical donor from silently becoming current product authority.
 
-## Active project folders
+## Operational staging authority
 
-- `C:/ReleaseOps/toadal-feast-web-live-staging` - public staging lineage; remote staging SHA `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6`.
-- `C:/ReleaseOps/toadal-feast-web-stories-stack-20261001` - current integrated review candidate `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6` on `work/manifest-complete-v1-20261002`.
+- Repository/ref: `Matthew75x/toadal-feast-web` / `staging/live-visual`. Resolve the live ref before consequential operations; candidate qualification is not deployment admission.
+- Dated readback (2026-10-07): `efd528061ddf94fabe3fc3b886c0f66636e29f1a`; this is an observation, not a permanently current SHA.
+
+## Historical project-folder inventory (2026-10-01 / qualification 2026-10-02)
+
+- `C:/ReleaseOps/toadal-feast-web-live-staging` - historical public staging lineage; recorded staging SHA (2026-10-02) `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6`.
+- `C:/ReleaseOps/toadal-feast-web-stories-stack-20261001` - historical qualified review candidate `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6` on `work/manifest-complete-v1-20261002`.
 - `C:/ReleaseOps/toadal-feast-web-gated-ecosystem-20261001` - parallel gated-ecosystem candidate for manifest rows 19, 21, 22, 26, 27, 28, 29; not deployed.
-- `C:/ReleaseOps/toadal-feast-web-visual-combined-20261001` - older visual-only convergence candidate `undefined`; implementation history/donor, not current review head.
+- `C:/ReleaseOps/toadal-feast-web-visual-combined-20261001` - older visual-only convergence candidate `58a7121e363d3480c122623b1de5cd0d5ac1778e`; historical implementation donor, not operational authority.
 - `C:/ReleaseOps/toadal-feast-web-manifest-recalibration-20261001` - manifest-control baseline worktree.
-- `C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001` - Master V2 asset authority `undefined`.
+- `C:/ReleaseOps/toadal-feast-web-master-asset-integration-20261001` - recovered Master V2 companion/asset authority `62717951f4ffba0e8dd779116cc192d70f94d534`; historical asset provenance donor, not operational authority.
 - `C:/ReleaseOps/toadal-feast-web-discovery-visual-20261001` - World/Stories/Media candidate.
 - `C:/ReleaseOps/toadal-feast-web-home-header-convergence-review-20261001` - reviewed Home/header candidate.
 - `C:/ReleaseOps/toadal-feast-web-production-asset-archive-20261001` - complete production-ready asset-pack preservation.

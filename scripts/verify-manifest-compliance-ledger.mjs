@@ -1,16 +1,18 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
+import { controlConsistencyErrors } from './lib/manifest-compliance-contract.mjs';
 
-const root = process.cwd();
+export function verifyManifestCompliance(root = process.cwd(), suppliedLedger) {
 const ledgerPath = path.join(root, 'manifests', 'manifest-compliance-ledger.json');
 const pagesIndexPath = path.join(root, 'studio-project', 'toadal-feast-website', 'pages', 'index.json');
 const authorityPath = path.join(root, 'docs', 'authority', 'WEB_PRODUCT_AUTHORITY.md');
 
-const ledger = JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
+const ledger = suppliedLedger || JSON.parse(fs.readFileSync(ledgerPath, 'utf8'));
 const pagesIndex = JSON.parse(fs.readFileSync(pagesIndexPath, 'utf8'));
 const authority = fs.readFileSync(authorityPath, 'utf8');
 
-const errors = [];
+const errors = controlConsistencyErrors(ledger, root);
 const allowedStatuses = new Set(['DONE_PROVEN','PARTIAL','PARTIAL_CANDIDATE','NOT_STARTED','DEFERRED_SERVICE','BLOCKED_CONTENT_ENDPOINT','BLOCKED_APPROVED_COPY']);
 
 if (!Array.isArray(ledger.pages) || ledger.pages.length !== 30) errors.push(`Expected 30 manifest pages; found ${ledger.pages?.length ?? 'none'}.`);
@@ -35,6 +37,8 @@ const acceptedRouteEvidence = new Map([
   [6,['/characters/']],
   [7,['/characters/toadal/']],
   [8,['/stories/']],
+  [9,['/manga/']],
+  [10,['/reader/']],
   [11,['/media/']],
   [12,['/news/']],
   [13,['/news/devlog/']],
@@ -98,22 +102,28 @@ const closure = ledger.latestManifestV1Closure;
 if (closure?.status?.includes('ENGINEERING COMPLETE')) {
   if (!/^[a-f0-9]{40}$/.test(closure.qualifiedSha || '') || ledger.authority.currentReviewCandidate !== closure.qualifiedSha)
     errors.push('Engineering-complete ledger lacks an exact qualified review SHA.');
-  if (ledger.authority.liveStaging !== closure.stagingSha) errors.push('Current staging identities disagree.');
+  if (ledger.authority.liveStaging !== closure.stagingSha) errors.push('Historical staging qualification identities disagree.');
   if (ledger.pages.some(page => !Array.isArray(page.buildableGaps) || page.buildableGaps.length))
     errors.push('Engineering-complete ledger retains a buildable gap.');
 }
 if (ledger.authority.currentReviewCandidate === 'qualification-pending-commit') errors.push('Stale ambiguous pending-commit identity.');
 if (ledger.integration || ledger.gatedEcosystem) errors.push('Historical deployment snapshots must not remain unlabeled current state.');
 
-console.log(`Manifest rows: ${ledger.pages.length}`);
-console.log(`Implemented route records: ${implementedRoutes.size}`);
-console.log(`Cross-cutting requirements: ${ledger.crossCutting?.length ?? 0}`);
-console.log(`Page status counts: ${JSON.stringify(ledger.pageStatusCounts)}`);
+return { errors, rows: ledger.pages.length, routes: implementedRoutes.size, crossCutting: ledger.crossCutting?.length ?? 0, counts: ledger.pageStatusCounts };
+}
 
-if (errors.length) {
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+const result = verifyManifestCompliance();
+console.log(`Manifest rows: ${result.rows}`);
+console.log(`Implemented route records: ${result.routes}`);
+console.log(`Cross-cutting requirements: ${result.crossCutting}`);
+console.log(`Page status counts: ${JSON.stringify(result.counts)}`);
+
+if (result.errors.length) {
   console.error('MANIFEST COMPLIANCE VERIFY: FAIL');
-  for (const e of errors) console.error(`- ${e}`);
+  for (const e of result.errors) console.error(`- ${e}`);
   process.exit(1);
 }
 
 console.log('MANIFEST COMPLIANCE VERIFY: PASS');
+}

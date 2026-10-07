@@ -3,6 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { isProtectedGameArtifact, verifyProtectedGameArtifacts } from './lib/protected-game-artifacts.mjs';
+import { stagingRobotsErrors } from './lib/staging-robots.mjs';
 
 const dist=path.resolve(process.argv[2]||'dist');
 const mode=(process.argv[3]||'staging').toLowerCase();
@@ -31,9 +32,10 @@ for(const f of files){
                     /content=["'][^"']*nofollow[^"']*["'][^>]*name=["']robots["']/.test(s);
   if(mode==='staging' && (!hasNoindex || !hasNofollow)) errors.push(`${path.relative(dist,f)} missing staging noindex,nofollow`);
 }
-if(mode==='staging'&&protectedArtifacts.files.length){
+if(mode==='staging'){
   const robots=path.join(dist,'robots.txt');
-  if(!fs.existsSync(robots)||!/^Disallow:\s*\/$/mi.test(fs.readFileSync(robots,'utf8')))errors.push('Staging robots.txt must disallow the entire preview, including protected iframe payloads.');
+  if(!fs.existsSync(robots))errors.push('Staging robots.txt is missing.');
+  else errors.push(...stagingRobotsErrors(fs.readFileSync(robots,'utf8')));
 }
 if(errors.length){
   console.error('ROBOTS CHECK FAIL');
