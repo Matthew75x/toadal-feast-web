@@ -1,0 +1,29 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "toadal-share-cards",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-10-06",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": false,
+  "limits": { "cpu_ms": 1000 },
+  "preview_urls": false,
+  "assets": { "directory": "./public", "binding": "ASSETS", "run_worker_first": true },
+  "r2_buckets": [{ "binding": "CARDS", "bucket_name": "toadal-share-cards-review" }],
+  "triggers": { "crons": ["17 * * * *"] },
+  "rules": [
+    { "type": "Data", "globs": ["**/*.png", "**/*.ttf"], "fallthrough": true },
+    { "type": "CompiledWasm", "globs": ["**/*.wasm"], "fallthrough": true }
+  ],
+  "vars": {
+    "PUBLIC_ORIGIN": "https://share-preview.invalid",
+    "ALLOWED_ORIGINS": "https://share-preview.invalid",
+    "PLAY_BASE": "https://matthew75x.github.io/toadal-feast-web",
+    "CREATION_ENABLED": "false",
+    "ALLOW_PUBLIC_ALIAS": "false",
+    "RETENTION_DAYS": "7",
+    "MAX_DAILY_CREATES": "100",
+    "MAX_DAILY_RENDERS": "300"
+  },
+  // Application telemetry and request logs stay disabled for this review candidate.
+  "observability": { "enabled": false }
+}

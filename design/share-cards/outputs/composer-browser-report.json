@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "origin": "http://127.0.0.1:8787",
+  "browser": "Chromium (headless)",
+  "checks": [
+    "Desktop anonymous default, score availability, alias-off configuration, 1200x630 Feast preview, no horizontal overflow",
+    "Astro preview, durable invite/OG/image, copy payload, fresh-click native handoff, normal native cancellation",
+    "Prepared card downloads the durable PNG without adding a removal credential",
+    "UI revocation disables sharing; page/image GET and image HEAD return410",
+    "Wicked Bites zero score accepted, explicit entered/personal claim, no fabricated global rank, fixed eligible CTA",
+    "Maximum score render/preparation, immutable distinct snapshots, earlier-card removal access retained in tab memory",
+    "Out-of-range/negative scores prevented; switching to a non-score game restores invitation without stale score fields",
+    "390px mobile Feast and Astro/maximum-score previews render without horizontal overflow",
+    "Missing native Share and denied clipboard use selectable manual-copy fallback",
+    "Creation-disabled configuration leaves real previews available and durable creation visibly disabled",
+    "Known failed503 preparation uses a new key; pending409 retry preserves the same key",
+    "No unexpected browser runtime or CSP console errors"
+  ],
+  "screenshots": [
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\outputs\\share-composer-desktop-feast.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\outputs\\share-composer-desktop-astro.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\outputs\\share-composer-desktop-personal-score.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\outputs\\share-composer-mobile-feast.png",
+    "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-06\\using-all-the-resources-available-to\\outputs\\share-composer-mobile-astro-score.png"
+  ],
+  "limitations": [
+    "Native sharing and clipboard are browser stubs; no OS share sheet or recipient delivery was tested.",
+    "Configuration-disabled and503/409 cases use route fixtures; other previews, creation, landing, image and revocation checks use the actual local service.",
+    "No production URL or third-party platform preview was published or qualified."
+  ],
+  "createdCards": 4,
+  "cleanup": "All created local cards revoked; management tokens excluded from this report.",
+  "at": "2026-10-06T21:38:42.327Z"
+}

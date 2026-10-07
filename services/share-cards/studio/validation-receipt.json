@@ -1,0 +1,65 @@
+{
+  "disposition": "DESIGN_HANDOFF_SEEDS_ONLY",
+  "productionTemplateVersion": "1",
+  "serverConsumesSeeds": false,
+  "validationAuthority": {
+    "repository": "Matthew75x/toadal-studio",
+    "commit": "ffebf68559c0866e8e68b3de1470fa89ee654013",
+    "path": "packages/hud-authoring/src/index.ts",
+    "gitBlobSha": "f4f4a146b3a043dd858860e63b5d54aab2e89d90",
+    "sha256": "dde191d63834afb8ebbc49863430bbd5ed4200219a7b8583a44bc30b72a7341e",
+    "sourceBytes": 41813,
+    "compiler": "Node module.stripTypeScriptTypes (syntax stripping, not a new native package qualification)",
+    "node": "v22.23.2"
+  },
+  "embeddedAssets": {
+    "header": {
+      "file": "toadal-feast-header.png",
+      "sha256": "317c282528cda26c36a60db05e8157d13daf5720ed81f4735f01827a055995a2"
+    },
+    "toad": {
+      "file": "toadal-victory.png",
+      "sha256": "983a564cf2677c94b939d881cb099008280dcc7dc5e107341fb304050f56478e"
+    },
+    "frame": {
+      "file": "astro-score-frame.png",
+      "sha256": "84cb0565ba3f0fc62b06774164e07c119e44be610d3db5d6fb1694cdd472352b"
+    }
+  },
+  "canvas": {
+    "width": 1200,
+    "height": 630
+  },
+  "animation": "none",
+  "motionMode": "reduced",
+  "results": [
+    {
+      "file": "feast-invite.hud.json",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "elements": 17,
+      "editableTextLayers": 6,
+      "schema": "toadal-hud-authoring",
+      "schemaVersion": 2,
+      "sha256": "9c495e18acf0ef83c498d1c2f6d38a6c0c6856b02805ad9036891746facece79"
+    },
+    {
+      "file": "astro-personal-score.hud.json",
+      "valid": true,
+      "errors": [],
+      "warnings": [],
+      "elements": 18,
+      "editableTextLayers": 6,
+      "schema": "toadal-hud-authoring",
+      "schemaVersion": 2,
+      "sha256": "838c5073e7ae34e5f36e494403c805969570b2ca6ea2c09e25eb7265fbbe57a2"
+    }
+  ],
+  "limitations": [
+    "Passed native normalizeHudDocument and validateHudDocument, not native Designer browser import/export or owner visual acceptance.",
+    "Native rounded text is editable but does not reproduce the production Lilita One renderer or all production gradients/padding/alignment.",
+    "Header image preserves the actual file20 lettering treatment as a static asset; changing its text requires a new approved lettering raster.",
+    "No automatic synchronization, cartridge admission, progression, telemetry, runtime template upload or public publication."
+  ]
+}

@@ -1,0 +1,338 @@
+
+> @toadal/share-cards@0.1.0 test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: twenty independent limiter instances share exactly five atomic reservations
+ok 1 - twenty independent limiter instances share exactly five atomic reservations
+  ---
+  duration_ms: 4.6699
+  type: 'test'
+  ...
+# Subtest: a fresh wall-clock minute resets the shared pool without removing the prior minute
+ok 2 - a fresh wall-clock minute resets the shared pool without removing the prior minute
+  ---
+  duration_ms: 0.7313
+  type: 'test'
+  ...
+# Subtest: storage failures fail closed and a recovered limiter still has a bounded pool
+ok 3 - storage failures fail closed and a recovered limiter still has a bounded pool
+  ---
+  duration_ms: 2.2158
+  type: 'test'
+  ...
+# Subtest: reservations contain only anonymous quota metadata and a short expiry
+ok 4 - reservations contain only anonymous quota metadata and a short expiry
+  ---
+  duration_ms: 1.1559
+  type: 'test'
+  ...
+# Subtest: invalid configuration cannot widen or disable the global pool
+ok 5 - invalid configuration cannot widen or disable the global pool
+  ---
+  duration_ms: 0.3973
+  type: 'test'
+  ...
+# Subtest: an exhausted daily renderer budget refuses future burst claims without extra writes
+ok 6 - an exhausted daily renderer budget refuses future burst claims without extra writes
+  ---
+  duration_ms: 0.7059
+  type: 'test'
+  ...
+# Subtest: persisted bytes survive a new FileStore instance with isolated binary copies
+ok 7 - persisted bytes survive a new FileStore instance with isolated binary copies
+  ---
+  duration_ms: 18.676
+  type: 'test'
+  ...
+# Subtest: concurrent independent stores permit exactly one create winner without overwriting it
+ok 8 - concurrent independent stores permit exactly one create winner without overwriting it
+  ---
+  duration_ms: 16.4685
+  type: 'test'
+  ...
+# Subtest: atomic replacement only exposes complete old or new bytes to concurrent readers
+ok 9 - atomic replacement only exposes complete old or new bytes to concurrent readers
+  ---
+  duration_ms: 105.0486
+  type: 'test'
+  ...
+# Subtest: listing selects the namespace and idempotent deletion persists across restarts
+ok 10 - listing selects the namespace and idempotent deletion persists across restarts
+  ---
+  duration_ms: 9.9713
+  type: 'test'
+  ...
+# Subtest: unsafe keys cannot read, write, create, or delete outside the storage root
+ok 11 - unsafe keys cannot read, write, create, or delete outside the storage root
+  ---
+  duration_ms: 2.3178
+  type: 'test'
+  ...
+# Subtest: missing storage trees can be listed and legitimate nested keys create only their parents
+ok 12 - missing storage trees can be listed and legitimate nested keys create only their parents
+  ---
+  duration_ms: 5.0997
+  type: 'test'
+  ...
+# Subtest: R2 conditional create admits one writer across adapters without reading or overwriting
+ok 13 - R2 conditional create admits one writer across adapters without reading or overwriting
+  ---
+  duration_ms: 2.8339
+  type: 'test'
+  ...
+# Subtest: R2 create returns conditional failure but propagates storage errors
+ok 14 - R2 create returns conditional failure but propagates storage errors
+  ---
+  duration_ms: 0.5937
+  type: 'test'
+  ...
+# Subtest: quota key listing follows short R2 pages, stops at 500 and never downloads data
+ok 15 - quota key listing follows short R2 pages, stops at 500 and never downloads data
+  ---
+  duration_ms: 3.3587
+  type: 'test'
+  ...
+# Subtest: quota listing completes normally below cap and respects smaller explicit limits
+ok 16 - quota listing completes normally below cap and respects smaller explicit limits
+  ---
+  duration_ms: 0.4671
+  type: 'test'
+  ...
+# Subtest: cleanup pages remain bounded and resume across independent R2 adapters after deletion
+ok 17 - cleanup pages remain bounded and resume across independent R2 adapters after deletion
+  ---
+  duration_ms: 25.8452
+  type: 'test'
+  ...
+# Subtest: R2 cleanup handles shorter pages and an object disappearing after listing
+ok 18 - R2 cleanup handles shorter pages and an object disappearing after listing
+  ---
+  duration_ms: 0.6254
+  type: 'test'
+  ...
+# Subtest: invalid and non-advancing listing cursors fail instead of creating unbounded loops
+ok 19 - invalid and non-advancing listing cursors fail instead of creating unbounded loops
+  ---
+  duration_ms: 0.5733
+  type: 'test'
+  ...
+# Subtest: both stores validate listing limits and MemoryStore cursors survive deletion
+ok 20 - both stores validate listing limits and MemoryStore cursors survive deletion
+  ---
+  duration_ms: 1.6698
+  type: 'test'
+  ...
+# Subtest: durable creation supplies unique crawler metadata and a PNG without management secrets
+ok 21 - durable creation supplies unique crawler metadata and a PNG without management secrets
+  ---
+  duration_ms: 66.777
+  type: 'test'
+  ...
+# Subtest: the service assigns result trust and rejects unsupported claims and arbitrary URLs
+ok 22 - the service assigns result trust and rejects unsupported claims and arbitrary URLs
+  ---
+  duration_ms: 5.3
+  type: 'test'
+  ...
+# Subtest: invites cannot fabricate a score or accomplishment date
+ok 23 - invites cannot fabricate a score or accomplishment date
+  ---
+  duration_ms: 2.5448
+  type: 'test'
+  ...
+# Subtest: missing, unsafe, wrong-game, and future score inputs never render
+ok 24 - missing, unsafe, wrong-game, and future score inputs never render
+  ---
+  duration_ms: 3.9405
+  type: 'test'
+  ...
+# Subtest: an explicitly saved zero score remains shareable
+ok 25 - an explicitly saved zero score remains shareable
+  ---
+  duration_ms: 4.6565
+  type: 'test'
+  ...
+# Subtest: public aliases require configuration and player choice and are HTML escaped
+ok 26 - public aliases require configuration and player choice and are HTML escaped
+  ---
+  duration_ms: 4.0923
+  type: 'test'
+  ...
+# Subtest: large or malformed bodies fail before rendering
+ok 27 - large or malformed bodies fail before rendering
+  ---
+  duration_ms: 2.5449
+  type: 'test'
+  ...
+# Subtest: creation requires a private fixed-format idempotency key
+ok 28 - creation requires a private fixed-format idempotency key
+  ---
+  duration_ms: 1.7468
+  type: 'test'
+  ...
+# Subtest: durable retries preserve the exact link and token with one render
+ok 29 - durable retries preserve the exact link and token with one render
+  ---
+  duration_ms: 4.4863
+  type: 'test'
+  ...
+# Subtest: concurrent retries return pending and do not run a second render
+ok 30 - concurrent retries return pending and do not run a second render
+  ---
+  duration_ms: 5.2921
+  type: 'test'
+  ...
+# Subtest: scanner GET and HEAD requests have no render, write, or expiry-extension side effects
+ok 31 - scanner GET and HEAD requests have no render, write, or expiry-extension side effects
+  ---
+  duration_ms: 4.0865
+  type: 'test'
+  ...
+# Subtest: revocation needs management authority and invalidates page and direct image
+ok 32 - revocation needs management authority and invalidates page and direct image
+  ---
+  duration_ms: 3.4635
+  type: 'test'
+  ...
+# Subtest: expired links cannot serve their PNG and cleanup cannot restore them
+ok 33 - expired links cannot serve their PNG and cleanup cannot restore them
+  ---
+  duration_ms: 2.206
+  type: 'test'
+  ...
+# Subtest: untrusted origins cannot create or invoke the renderer
+ok 34 - untrusted origins cannot create or invoke the renderer
+  ---
+  duration_ms: 0.3197
+  type: 'test'
+  ...
+# Subtest: disabled creation exposes an honest capability and refuses new links
+ok 35 - disabled creation exposes an honest capability and refuses new links
+  ---
+  duration_ms: 0.4215
+  type: 'test'
+  ...
+# Subtest: preview returns PNG bytes and consumes no durable creation slot
+ok 36 - preview returns PNG bytes and consumes no durable creation slot
+  ---
+  duration_ms: 2.3811
+  type: 'test'
+  ...
+# Subtest: render failure keeps a private failed tombstone and a fresh key safely recovers
+ok 37 - render failure keeps a private failed tombstone and a fresh key safely recovers
+  ---
+  duration_ms: 2.6586
+  type: 'test'
+  ...
+# Subtest: storage errors are recoverable and private details stay out of responses
+ok 38 - storage errors are recoverable and private details stay out of responses
+  ---
+  duration_ms: 1.5942
+  type: 'test'
+  ...
+# Subtest: daily creation cap permits retries, blocks new keys, and resets next UTC day
+ok 39 - daily creation cap permits retries, blocks new keys, and resets next UTC day
+  ---
+  duration_ms: 2.2637
+  type: 'test'
+  ...
+# Subtest: previews cannot bypass the daily renderer cap
+ok 40 - previews cannot bypass the daily renderer cap
+  ---
+  duration_ms: 1.1629
+  type: 'test'
+  ...
+# Subtest: a global rate refusal blocks new preview and link work without affecting an existing durable retry
+ok 41 - a global rate refusal blocks new preview and link work without affecting an existing durable retry
+  ---
+  duration_ms: 2.8115
+  type: 'test'
+  ...
+# Subtest: daily creation cap is shared across concurrent service instances
+ok 42 - daily creation cap is shared across concurrent service instances
+  ---
+  duration_ms: 1.1249
+  type: 'test'
+  ...
+# Subtest: daily render cap is shared across concurrent preview and durable work
+ok 43 - daily render cap is shared across concurrent preview and durable work
+  ---
+  duration_ms: 0.9348
+  type: 'test'
+  ...
+# Subtest: an image-storage failure cannot publish a ready page or orphan PNG
+ok 44 - an image-storage failure cannot publish a ready page or orphan PNG
+  ---
+  duration_ms: 1.601
+  type: 'test'
+  ...
+# Subtest: public responses prohibit cache retention, MIME sniffing, and executable framing
+ok 45 - public responses prohibit cache retention, MIME sniffing, and executable framing
+  ---
+  duration_ms: 1.3186
+  type: 'test'
+  ...
+# Subtest: the mutation boundary rejects non-JSON and cannot be used to redirect public links
+ok 46 - the mutation boundary rejects non-JSON and cannot be used to redirect public links
+  ---
+  duration_ms: 1.3365
+  type: 'test'
+  ...
+# Subtest: cleanup of a stale preparation cannot be undone by a late renderer
+ok 47 - cleanup of a stale preparation cannot be undone by a late renderer
+  ---
+  duration_ms: 1.4761
+  type: 'test'
+  ...
+# Subtest: retention cleanup never allows the old private key to republish its old URL
+ok 48 - retention cleanup never allows the old private key to republish its old URL
+  ---
+  duration_ms: 2.6884
+  type: 'test'
+  ...
+# Subtest: score timestamps reject impossible calendar dates and even slightly future claims
+ok 49 - score timestamps reject impossible calendar dates and even slightly future claims
+  ---
+  duration_ms: 1.1337
+  type: 'test'
+  ...
+# Subtest: manual score submissions do not fabricate a game source, save, or achievement timestamp
+ok 50 - manual score submissions do not fabricate a game source, save, or achievement timestamp
+  ---
+  duration_ms: 1.4273
+  type: 'test'
+  ...
+# Subtest: failed renders consume their renderer budget and cannot be retried unlimitedly
+ok 51 - failed renders consume their renderer budget and cannot be retried unlimitedly
+  ---
+  duration_ms: 0.5289
+  type: 'test'
+  ...
+# Subtest: the real stream limit catches dishonest or absent content-length headers
+ok 52 - the real stream limit catches dishonest or absent content-length headers
+  ---
+  duration_ms: 0.2999
+  type: 'test'
+  ...
+# Subtest: cleanup resumes persisted cursors across service restarts and retires every page
+ok 53 - cleanup resumes persisted cursors across service restarts and retires every page
+  ---
+  duration_ms: 43.586
+  type: 'test'
+  ...
+# Subtest: a cleanup storage failure preserves the previous cursor and safely retries the unfinished page
+ok 54 - a cleanup storage failure preserves the previous cursor and safely retries the unfinished page
+  ---
+  duration_ms: 20.7183
+  type: 'test'
+  ...
+1..54
+# tests 54
+# suites 0
+# pass 54
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 315.5735

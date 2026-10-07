@@ -1,0 +1,23 @@
+
+> @toadal/share-cards@0.1.0 build:worker
+> wrangler deploy --dry-run --outdir build
+
+
+ ⛅️ wrangler 4.148.0
+────────────────────
+✨ Read 4 files from the assets directory C:\Users\Metarator\Documents\Codex\2026-10-06\using-all-the-resources-available-to\work\share-cards-checkout\services\share-cards\public
+Total Upload: 3159.03 KiB / gzip: 1629.88 KiB
+Your Worker has access to the following bindings:
+Binding                                                                  Resource                  
+env.CARDS (toadal-share-cards-review)                                    R2 Bucket                 
+env.ASSETS                                                               Assets                    
+env.PUBLIC_ORIGIN ("https://share-preview.invalid")                      Environment Variable      
+env.ALLOWED_ORIGINS ("https://share-preview.invalid")                    Environment Variable      
+env.PLAY_BASE ("https://matthew75x.github.io/toadal-f...")               Environment Variable      
+env.CREATION_ENABLED ("false")                                           Environment Variable      
+env.ALLOW_PUBLIC_ALIAS ("false")                                         Environment Variable      
+env.RETENTION_DAYS ("7")                                                 Environment Variable      
+env.MAX_DAILY_CREATES ("100")                                            Environment Variable      
+env.MAX_DAILY_RENDERS ("300")                                            Environment Variable      
+
+--dry-run: exiting now.

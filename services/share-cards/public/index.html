@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Create a Feast card · TOADAL FEAST</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script type="module" src="/composer.mjs"></script>
+</head>
+<body data-theme="feast">
+  <a class="skip-link" href="#composer">Skip to card creator</a>
+  <header class="masthead">
+    <a class="brand" href="/" aria-label="TOADAL FEAST card creator"><span class="brand-mark" aria-hidden="true">T</span><span>TOADAL <strong>FEAST</strong><small>Something good is worth sharing.</small></span></a>
+    <span class="privacy-pill"><span aria-hidden="true">●</span> Analytics off</span>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">Bring someone to the table</p>
+      <h1 id="page-title">Make a little <br><em>Feast of it.</em></h1>
+      <p class="intro-copy">Invite a friend. Celebrate a personal score. Give your next link a card worth opening.</p>
+    </section>
+    <div class="workspace">
+      <section id="composer" class="panel editor" aria-labelledby="editor-title">
+        <div class="panel-heading"><div><p class="step">01 / Make it yours</p><h2 id="editor-title">Your card</h2></div><span class="tiny-label">Static image · share link</span></div>
+        <form id="card-form">
+          <fieldset class="choice-field">
+            <legend>What are you sharing?</legend>
+            <div class="segmented">
+              <label class="segment"><input type="radio" name="kind" value="invite" checked><span><strong>A Feast invitation</strong><small>Come play with us</small></span></label>
+              <label class="segment"><input type="radio" name="kind" value="score" id="score-kind" aria-describedby="score-availability"><span><strong>A personal score</strong><small>Celebrate your result</small></span></label>
+            </div>
+            <p id="score-availability" class="help"></p>
+          </fieldset>
+          <div class="field"><label for="game">Choose a game</label><select id="game" name="gameId" disabled><option>Loading games…</option></select></div>
+          <fieldset class="choice-field">
+            <legend>Choose a look</legend>
+            <div class="theme-options">
+              <label class="theme-option feast-choice"><input type="radio" name="theme" value="feast" checked><span class="theme-swatch" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>Candy Feast</strong><small>Bright, warm & playful</small></span><span class="theme-check" aria-hidden="true">✓</span></label>
+              <label class="theme-option astro-choice"><input type="radio" name="theme" value="astro"><span class="theme-swatch" aria-hidden="true"><i></i><i></i><i></i></span><span><strong>Astro Arcade</strong><small>Neon after dark</small></span><span class="theme-check" aria-hidden="true">✓</span></label>
+            </div>
+          </fieldset>
+          <div id="score-fields" class="field" hidden>
+            <label for="score">Your score</label><input id="score" name="score" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" placeholder="Enter a completed score" aria-describedby="score-help">
+            <p id="score-help" class="help">Personal, player-submitted score. It is not a verified result or global ranking.</p>
+          </div>
+          <div id="alias-fields" class="alias-fields" hidden>
+            <div class="field"><label for="alias">Display name <span class="optional">optional</span></label><input id="alias" maxlength="24" autocomplete="off" placeholder="A name for your card" aria-describedby="alias-help"></div>
+            <label class="checkbox-row"><input id="alias-public" type="checkbox"><span>Include this name publicly on the card and link page.</span></label>
+            <p id="alias-help" class="help">Anyone with the link, including preview services, can see it.</p>
+          </div>
+          <div class="notice"><span class="notice-dot" aria-hidden="true"></span><p id="public-notice">The card is public to anyone with its link. Links expire after 7 days. This invitation opens a game page.</p></div>
+          <p id="form-error" class="error" role="alert" hidden></p>
+          <button id="prepare" class="button primary" type="submit" disabled><span>Prepare share link</span><span aria-hidden="true">↗</span></button>
+          <p class="prepare-help">Review your preview, then prepare a link before sharing.</p>
+        </form>
+      </section>
+      <section class="preview-column" aria-labelledby="preview-title">
+        <div class="preview-heading"><div><p class="step">02 / A first look</p><h2 id="preview-title">Ready for the group chat.</h2></div><span id="preview-state" class="preview-state">Loading</span></div>
+        <div class="preview-stage" id="preview-stage" aria-busy="true">
+          <div class="stage-orbit orbit-one" aria-hidden="true"></div><div class="stage-orbit orbit-two" aria-hidden="true"></div>
+          <div class="image-shell"><img id="card-preview" alt="Your share card preview" hidden><div id="preview-placeholder" class="preview-placeholder"><span class="placeholder-icon" aria-hidden="true">✦</span><strong>Your invitation is taking shape.</strong><span>Choose a look to preview your card.</span></div></div>
+          <p class="stage-caption">A real image for your link preview.<br>Messaging apps choose how to crop and display it.</p>
+        </div>
+        <p id="preview-error" class="error" role="alert" hidden></p>
+        <div class="preview-meta"><span><i aria-hidden="true"></i>Public link preview</span><button id="download-preview" type="button" class="text-button" disabled>Download preview <span aria-hidden="true">↓</span></button></div>
+        <section class="panel ready-panel" id="ready-panel" aria-labelledby="ready-title" hidden>
+          <p class="step">03 / Pass it around</p><h2 id="ready-title" tabindex="-1">Your link is ready.</h2>
+          <p class="ready-copy">This link keeps the card you just prepared. Editing the form creates a new card when you prepare again.</p>
+          <label for="share-url" class="sr-only">Prepared public share link</label><input id="share-url" type="url" readonly spellcheck="false">
+          <div class="share-actions"><button id="native-share" class="button primary" type="button">Share card <span aria-hidden="true">↗</span></button><button id="copy-link" class="button secondary" type="button">Copy link</button></div>
+          <div class="ready-details"><span id="expires"></span><button id="download-card" class="text-button" type="button">Download card ↓</button></div>
+          <p id="share-status" class="help" role="status" aria-live="polite"></p>
+          <details class="remove-details"><summary>Remove this public card</summary><p class="help">You can remove the page and image from this service. Copies already saved by other apps may remain.</p><button id="remove-card" class="button danger" type="button">Remove this card</button><p class="help">Removal access stays in this tab only. Keep this tab open until you are finished.</p></details>
+        </section>
+        <p class="source-note" id="source-note">Anonymous invitation · no recipient tracking</p>
+      </section>
+    </div>
+    <p id="app-status" class="sr-only" role="status" aria-live="polite"></p>
+  </main>
+  <footer><span>TOADAL FEAST</span><p>A small invitation to a big adventure.</p><span>Made to be shared.</span></footer>
+</body>
+</html>
