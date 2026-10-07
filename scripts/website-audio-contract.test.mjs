@@ -109,3 +109,13 @@ test('runtime source never accepts game-supplied URLs or recipes in game:audio',
   assert.match(source, /resolveEvent\(this\.registry/);
   assert.doesNotMatch(source, /payload\.(?:url|src|recipe)/);
 });
+
+
+test('player advanced code loads shared audio module only on player pages', () => {
+  const advancedPath = path.join(root, 'studio-project', 'toadal-feast-website', 'collections', 'advanced-code.json');
+  const advanced = JSON.parse(fs.readFileSync(advancedPath, 'utf8')).javascript;
+  assert.match(advanced, /function initWebsiteAudioHostLoader\(\)/);
+  assert.match(advanced, /document\.querySelector\('\[data-player-shell\]'\)/);
+  assert.match(advanced, /\/assets\/js\/website-audio-host\.mjs/);
+  assert.match(advanced, /try \{ initWebsiteAudioHostLoader\(\); \} catch \(error\) \{\}/);
+});
