@@ -1,8 +1,10 @@
 # TOADAL FEAST Website - Manifest Compliance Ledger
 
-**Date:** 2026-10-02
-**Current public staging:** `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6`
-**Current integrated review candidate:** `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6`
+**Historical qualification date:** 2026-10-02
+**Operational staging authority:** `Matthew75x/toadal-feast-web` / `staging/live-visual`. Resolve this live ref before consequential operations; a dated SHA below does not authorize promotion.
+**Dated staging readback (2026-10-07):** `efd528061ddf94fabe3fc3b886c0f66636e29f1a`; observation only, not a fixed current head.
+**Historical public staging (2026-10-02):** `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6`
+**Historical qualified review candidate (2026-10-02):** `485e5cee7fd9e8d74bde017e99a861ff7da3a2c6`
 **Controlling denominator:** the original 30-page manifest plus locked cross-cutting product requirements.
 
 ## Why this exists
@@ -24,7 +26,9 @@ Future work must map to this ledger. If a task does not advance a row below, a c
 
 ## Qualification and owner acceptance
 
-**Phase:** STAGING_VERIFIED. Current source/artifact qualification and owner visual acceptance are separate. Home remains PARTIAL because LOCK_VISUAL acceptance is owner-pending; this remediation does not redesign it or claim acceptance.
+**Historical phase (2026-10-02):** STAGING_VERIFIED. Source/artifact qualification and owner visual acceptance are separate. Home remains PARTIAL because LOCK_VISUAL acceptance is owner-pending; this control repair does not redesign it or claim acceptance.
+
+Historical source-bound closure: [deployment record](../review/manifest-audit-remediation-20261002/DEPLOYMENT_CLOSURE.md); qualification: `docs/review/manifest-audit-remediation-20261002/qualification-summary.json`. These records bind the historical qualified SHA/tree, not later branch heads.
 
 The approved Home remains `docs/review/WO-002/evidence/approved-home-visual-authority.png` (SHA-256 `4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608`).
 
@@ -125,14 +129,14 @@ Route presence is not the same as page completion. This candidate currently cont
 - **docs/authority/WEB_PRODUCT_AUTHORITY.md** - Authority hierarchy and current operational source of truth.
 - **docs/review/WO-002/evidence/approved-home-visual-authority.png** - Home LOCK_VISUAL north star; SHA-256 4154f582ed9e7ad8ee31010a3b6974bcd8aaae0cb72cacf1d6a953fa6bf79608.
 
-### Current implementation evidence
+### Dated implementation observations and donors
 
-- **staging/live-visual** `270940dee30b7aafb70af941c520c6d4d223e288` - Current public GitHub Pages implementation.
-- **integration/manifest-home-characters-progression-20261001** `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da` - Current manifest-core review candidate: Home + Characters/Toadal + guest progression; not approved or deployed.
-- **work/gated-ecosystem-manifest-20261001** `61023edf34f14fc9131ebfe258000cffbea49520` - Parallel candidate for Account, Community, Store, Contact, About, Coming Soon and Legal manifest rows; verified, not deployed.
-- **integration/visual-convergence-combined-20261001** `58a7121e363d3480c122623b1de5cd0d5ac1778e` - Older visual-only convergence candidate retained as implementation history/donor.
-- **integration/master-asset-authority-20261001** `62717951f4ffba0e8dd779116cc192d70f94d534` - Recovered Master V2 companion/asset authority.
-- **archive/production-ready-asset-pack-20261001** `5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba` - Remote preservation of complete 71-image production-ready pack.
+- **staging/live-visual** `270940dee30b7aafb70af941c520c6d4d223e288` (2026-10-01; HISTORICAL_OBSERVATION) - Historical public GitHub Pages implementation.
+- **integration/manifest-home-characters-progression-20261001** `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da` (2026-10-01; HISTORICAL_OBSERVATION) - Historical manifest-core review candidate: Home + Characters/Toadal + guest progression; not approved or deployed.
+- **work/gated-ecosystem-manifest-20261001** `61023edf34f14fc9131ebfe258000cffbea49520` (2026-10-01; HISTORICAL_OBSERVATION) - Parallel candidate for Account, Community, Store, Contact, About, Coming Soon and Legal manifest rows; verified, not deployed.
+- **integration/visual-convergence-combined-20261001** `58a7121e363d3480c122623b1de5cd0d5ac1778e` (2026-10-01; HISTORICAL_DONOR) - Older visual-only convergence candidate retained as implementation history/donor.
+- **integration/master-asset-authority-20261001** `62717951f4ffba0e8dd779116cc192d70f94d534` (2026-10-01; HISTORICAL_DONOR) - Recovered Master V2 companion/asset authority.
+- **archive/production-ready-asset-pack-20261001** `5820653d1e74f2b1ff6cb7f9f0c3adc02f9305ba` (2026-10-01; HISTORICAL_DONOR) - Remote preservation of complete 71-image production-ready pack.
 
 ### Historical / donor-only material
 
@@ -172,10 +176,10 @@ The correct progression strategy is **behavior salvage + current-schema rebuild*
 
 ## Manifest-first execution order
 
-1. **Integrated candidate visual acceptance / staging gate** (manifest rows 1, 6, 7, 14, 15, 16, 20) - Core candidate is implemented and verified; Home remains LOCK_VISUAL and must be reviewed before staging promotion.
-2. **Stories publishing stack** (manifest rows 8, 9, 10) - Rows 9 and 10 are absent and row 8 is only a preview; Batch-1 references already exist.
-3. **Editorial/discovery utilities** (manifest rows 11, 12, 13, 23, 24, 25) - Converts partial media/news/support and missing article/search/roadmap families into useful truthful pages.
-4. **App conversion evidence closure** (manifest rows 18) - Completes flagship conversion only when genuine evidence is available.
-5. **Play depth / additional browser-game integration** (manifest rows 2, 3, 4, 17) - Improves immediate-play depth after core structure is under control.
+1. **Integrated candidate visual acceptance / staging gate** (manifest rows 1, 6, 7, 14, 15, 16, 20) - Core candidate is implemented and verified; Home remains LOCK_VISUAL and must be reviewed before staging promotion. **Remaining gate:** Owner accepts Home direction and bounded integrated staging review passes.
+2. **Stories publishing stack** (manifest rows 8, 9, 10) - Rows 8, 9 and 10 have qualified reusable publishing structures, including the Manga Series and Reader shell, bookmarks and progress. Retain this proven engineering; approved published story/series/chapter/page content remains pending. **Remaining gate:** Approved story, series, chapter and reader-page manifests pass publication rules; unavailable content remains truthfully unpublished.
+3. **Editorial/discovery utilities** (manifest rows 11, 12, 13, 23, 24, 25) - Media, News, Article, local Search, Roadmap and Support structures are qualified. Retain these proven surfaces; approved media/editorial/devlogs and configured support services remain pending where recorded. **Remaining gate:** Approved media, articles and related devlogs pass publication rules; verified support/contact services may activate only when configured. Existing local Search needs no external activation.
+4. **App conversion evidence closure** (manifest rows 18) - Completes flagship conversion only when genuine evidence is available. **Remaining gate:** Approved screenshots and verified store URLs are wired; otherwise actions remain disabled.
+5. **Play depth / additional browser-game integration** (manifest rows 2, 3, 4, 17) - Improves immediate-play depth after core structure is under control. **Remaining gate:** Bounded integration checks pass; Arcade HOLD does not block unrelated website work.
 
 Arcade remains a separate HOLD/evidence lane and is **not** allowed to consume the website roadmap unless a manifest-level browser-game integration task specifically requires it.

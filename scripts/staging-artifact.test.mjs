@@ -144,6 +144,10 @@ test('an indexable Git source cannot be labelled a staging recovery artifact',t=
   const f=fixture(t);put(f.dist,'index.html','<!doctype html><p>Indexable</p>');const source=f.commit();
   assert.throws(()=>preparePackage({repo:f.repo,revision:source,fromGit:true,output:f.output}),/noindex\/nofollow/);assert.equal(fs.existsSync(f.output),false);
 });
+test('a source with conflicting root Allow cannot be labelled a staging artifact',t=>{
+  const f=fixture(t);put(f.dist,'robots.txt','User-agent: *\nAllow: /\nUser-agent: *\nDisallow: /\n');const source=f.commit();
+  assert.throws(()=>make(f,{revision:source}),/conflicting root Allow/);assert.equal(fs.existsSync(f.output),false);
+});
 test('an existing custom-domain CNAME is not silently carried into staging',t=>{
   const f=fixture(t);put(f.dist,'CNAME','production.example.invalid');const source=f.commit();assert.throws(()=>exactSource(f.repo,source),/Custom-domain/);
 });

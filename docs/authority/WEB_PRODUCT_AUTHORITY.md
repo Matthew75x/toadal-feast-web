@@ -1,4 +1,6 @@
-> **Current-state pointer (2026-10-06):** For day-to-day website lane status, start with [CURRENT_STATE_20261006.md](CURRENT_STATE_20261006.md). This file remains the product-requirements authority and historical consolidation record; operational snapshots below may be superseded by the current-state pointer.\n\n# TOADAL FEAST website product authority
+> **Operational navigation (2026-10-07):** Website deployment authority is `Matthew75x/toadal-feast-web` / `staging/live-visual`; resolve that live ref before consequential operations. [CURRENT_STATE_20261006.md](CURRENT_STATE_20261006.md) is a dated status snapshot. The [machine ledger](../../manifests/manifest-compliance-ledger.json) separates operational repo/ref authority from dated SHA observations. This file retains product requirements and historical consolidation evidence.
+
+# TOADAL FEAST website product authority
 
 Consolidated 2026-10-01. Repository: `Matthew75x/toadal-feast-web`.
 
@@ -19,16 +21,16 @@ The canonical project-level progress control is [MANIFEST_COMPLIANCE_LEDGER_2026
 
 Work-order PASS, automated QA PASS, route presence, branch cleanliness, or visual improvement do **not** upgrade a manifest row to complete. Future tasks must identify the manifest row(s), cross-cutting requirement(s), or release blocker they advance. Historical project folders are donor/evidence only unless the current authority explicitly cites them; see [PROJECT_SOURCE_MAP_2026-10-01.md](PROJECT_SOURCE_MAP_2026-10-01.md).
 
-## Current operational authority
+## Operational lane and preserved historical observations
 
 Local authoring supplement (2026-10-03): [owner self-service foundation closure](../authoring/OWNER_SELF_SERVICE_CLOSURE_20261003.md) records Studio 1.4.2 source `e06eb5f14c210fc22b9f39dd11b9b51ee6847faa`, safe ordinary-page UI qualification and the current local editor. It does not modify product/creative requirements, upgrade manifest visual acceptance, integrate Stories/Reader or cartridges, or authorize deployment. The operational SHA list below is the preserved 2026-10-01 consolidation snapshot, not a claim about the latest local authoring tip or a newly verified deployment; see `TOADAL_STUDIO_LIVE_STATE_20261002.md` for current local provenance.
 
-- Current public visual staging lineage: `staging/live-visual` at verified SHA `270940dee30b7aafb70af941c520c6d4d223e288`.
+- Historical public visual staging observation (2026-10-01): `staging/live-visual` at verified SHA `270940dee30b7aafb70af941c520c6d4d223e288`.
 - Authority consolidation baseline: `ops/web-authority-consolidation-20261001` at `92decef6cef31622833458e2a98dd9e577ca79c2`.
-- Current integrated review candidate: `integration/manifest-home-characters-progression-20261001` at `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da`. It combines the Home `LOCK_VISUAL` candidate, Characters Hub + Toadal Profile, and guest-local progression. It is **not** owner-approved, staged, or deployed.
+- Historical integrated review candidate (2026-10-01): `integration/manifest-home-characters-progression-20261001` at `945c7ea1b0bc417cbbf2b7b6b3ca3b366114a9da`. It combines the Home `LOCK_VISUAL` candidate, Characters Hub + Toadal Profile, and guest-local progression. It is **not** owner-approved, staged, or deployed.
 - Older visual-only convergence candidate: `integration/visual-convergence-combined-20261001` at `58a7121e363d3480c122623b1de5cd0d5ac1778e`; retain as implementation history/donor rather than the current review head.
 - Manifest-control baseline: `ops/manifest-recalibration-20261001` at `914a79f0e36c003583282ea7461cb9f8aba8d52a`.
-- Main snapshot remains `87050885331770ca3e30db7e463154aebd777512`.
+- Historical main snapshot (2026-10-01): `87050885331770ca3e30db7e463154aebd777512`.
 - Public visual staging: <https://matthew75x.github.io/toadal-feast-web/>.
 - Studio project: `studio-project/toadal-feast-website/project.json`; certified renderer: TOADAL Studio 1.4.2.
 - `staging/live-visual` is the deployment lane. Review, consolidation and archival branches do not deploy. Production and DNS require a separate explicit owner instruction.
@@ -48,8 +50,8 @@ Feast Pass is guest-local first, designed for later guest-to-account migration. 
 ## Recoverable source map
 
 - [Manifest compliance ledger](MANIFEST_COMPLIANCE_LEDGER_2026-10-01.md): canonical 30-page + cross-cutting project progress control.
-- [Manifest-first execution matrix](MANIFEST_EXECUTION_MATRIX_2026-10-01.md): priority order based on original-product impact and reusable resources.
-- [Project source map / authority firewall](PROJECT_SOURCE_MAP_2026-10-01.md): active worktrees, historical donors, and external-system roles.
+- [Manifest-first execution matrix](MANIFEST_EXECUTION_MATRIX_2026-10-01.md): preserved 2026-10-01 priority snapshot; reconciled execution priorities are in the machine ledger.
+- [Project source map / authority firewall](PROJECT_SOURCE_MAP_2026-10-01.md): operational repo/ref navigation, dated folder inventory, historical donors, and external-system roles.
 - [Feature salvage audit](FEATURE_SALVAGE_AUDIT_2026-10-01.md): KEEP / IMPROVE / MERGE / RETIRE decisions for older living-site behavior.
 - [Source and asset inventory](../../manifests/web-authority-inventory.json): provenance, approval, status, hashes, and exclusions.
 - [Visual authority](VISUAL_AUTHORITY.md): approved reference scope and identity rules.
