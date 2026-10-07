@@ -71,6 +71,16 @@ Required behaviors:
 - Exit/fullscreen remain host-owned.
 - Loading failure is recoverable; never strand a blank iframe.
 
+### Optional host-audio gate
+When the intake profile declares `game.audio.mode = "host"`:
+- the generated website manifest must carry the same bounded declaration;
+- the runtime package must contain the `game:audio` and `host:audio` vocabulary;
+- profile ID/version and fallback policy must validate;
+- gameplay must retain a reversible single-owner handoff until real-site/device qualification;
+- local hardening does not approve website registry cues or production sound assets.
+
+Cartridges with no host-audio declaration remain valid and are not silently migrated.
+
 ### G4 — Gameplay/input regression
 - Existing game-specific tests still pass after cartridge adaptation.
 - Mouse/touch/keyboard paths promised in the manifest are exercised.
