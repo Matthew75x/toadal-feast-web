@@ -149,3 +149,18 @@ If the game fails to initialize:
 - offer retry;
 - offer return to Play;
 - never leave a blank iframe as the final state.
+
+## Optional shared website audio
+
+A cartridge may opt in to website-hosted audio through the `audio` object defined in [WEBSITE_SHARED_AUDIO_RUNTIME_V1.md](WEBSITE_SHARED_AUDIO_RUNTIME_V1.md). Absence of that object preserves existing game-owned audio behavior.
+
+The audio extension reuses the `toadal.game.v1` envelope rather than creating a second cross-window transport:
+- cartridge → host: `game:audio`;
+- host → cartridge: `host:audio`.
+
+These messages are conditional vocabulary, not new mandatory tokens for cartridges that keep game-owned audio. Host-audio gameplay messages carry semantic event IDs and bounded numeric parameters only. They must never carry file URLs, recipes, executable data, settings writes, or arbitrary objects.
+
+For a host-audio cartridge, exactly one playback owner is allowed for a supported event. A host mute, cooldown, voice drop, or missing-event decision must not trigger a duplicate local sound. `local-before-active` fallback is permitted only until the website explicitly reports the shared audio state as active/muted; see the shared-audio contract for the rollback semantics.
+
+The website sound control remains host-owned for opted-in cartridges. The iframe sandbox must not be weakened with `allow-same-origin` merely to simplify audio.
+
