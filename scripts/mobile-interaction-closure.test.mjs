@@ -68,6 +68,7 @@ test('all generated site pages reference one exact cacheable Studio advanced run
   assert.equal(fs.readFileSync(path.join(root,'dist','assets','js',jsName),'utf8'),advanced.javascript);
   const files = htmlFiles(path.join(root, 'dist'));
   let projected = 0;
+  let previewProjected = 0;
   for (const file of files) {
     const rel=path.relative(path.join(root,'dist'),file).replaceAll('\\','/');
     if(rel.startsWith('public/games/')) continue;
@@ -76,9 +77,11 @@ test('all generated site pages reference one exact cacheable Studio advanced run
     assert.equal(html.includes('<style data-toadal-advanced-code>'), false, rel);
     assert.equal(html.includes('/toadal-feast-web/assets/js/'+jsName), true, rel);
     assert.equal(html.includes('/toadal-feast-web/assets/css/'+cssName), true, rel);
-    projected += 1;
+    if(rel.startsWith('previews/cards-phone-20261008/')) previewProjected += 1;
+    else projected += 1;
   }
   assert.equal(projected, 33);
+  assert.equal(previewProjected, 33);
 });
 
 test('protected game payloads do not receive the website advanced runtime', () => {

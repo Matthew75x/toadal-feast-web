@@ -60,6 +60,7 @@ test('generated site pages project one cacheable advanced runtime and CSS after 
   assert.equal(fs.readFileSync(path.join(root,'dist','assets','css',cssName),'utf8'),derivedCss);
   assert.equal(fs.readFileSync(path.join(root,'dist','assets','js',jsName),'utf8'),advanced.javascript);
   let count=0;
+  let previewCount=0;
   function walk(dir){
     for(const e of fs.readdirSync(dir,{withFileTypes:true})){
       const p=path.join(dir,e.name);
@@ -72,9 +73,11 @@ test('generated site pages project one cacheable advanced runtime and CSS after 
         assert.equal(html.includes('<script data-toadal-advanced-code>'),false,rel);
         assert.equal(html.includes('/toadal-feast-web/assets/css/'+cssName),true,rel);
         assert.equal(html.includes('/toadal-feast-web/assets/js/'+jsName),true,rel);
-        count++;
+        if(rel.startsWith('previews/cards-phone-20261008/')) previewCount++;
+        else count++;
       }
     }
   }
   walk(path.join(root,'dist')); assert.equal(count,33);
+  assert.equal(previewCount,33);
 });
