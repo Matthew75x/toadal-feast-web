@@ -1,0 +1,33 @@
+/* Bounded to the reusable native pattern. No ordinary-image selectors. */
+[data-game-preview] { position: relative; }
+[data-game-preview] [data-game-preview-stage] { position: relative; overflow: hidden; isolation: isolate; flex: none; }
+[data-game-preview] [data-game-preview-stage] img { position: absolute; inset: 0; display: block; width: 100%; height: 100%; max-height: none; margin: 0; transition: opacity 160ms ease; }
+[data-game-preview] [data-game-preview-gameplay] { opacity: 0; pointer-events: none; }
+[data-game-preview][data-game-preview-showing="gameplay"] [data-game-preview-gameplay] { opacity: 1; }
+[data-game-preview][data-game-preview-showing="gameplay"] [data-game-preview-cover],
+[data-game-preview][data-game-preview-cover-failed="true"] [data-game-preview-cover] { opacity: 0; }
+[data-game-preview] [data-game-preview-actions] { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: auto 13px 13px; padding-top: 12px; }
+[data-game-preview] [data-game-preview-toggle], [data-game-preview] [data-game-preview-link] { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 8px 12px; border-radius: 9px; font: inherit; font-size: .8rem; font-weight: 800; text-align: center; text-decoration: none; cursor: pointer; }
+[data-game-preview] [data-game-preview-toggle] { width: 10.5rem; max-width: 100%; border: 1px solid #b58b4d; background: #fff6dd; color: #38220e; }
+[data-game-preview] [data-game-preview-link] { border: 1px solid #421f35; background: #421f35; color: #fff6dd; }
+[data-game-preview] :is([data-game-preview-toggle], [data-game-preview-link]):focus-visible { outline: 3px solid #126f91; outline-offset: 3px; }
+[data-game-preview] [data-game-preview-status] { font-size: .75rem; }
+[data-game-preview] [data-game-preview-status]:empty { display: none; }
+[data-game-preview] [hidden] { display: none !important; }
+@media (prefers-reduced-motion: reduce) { [data-game-preview] [data-game-preview-stage] img { transition: none; } }
+
+[data-game-preview] [data-game-preview-toggle]:disabled { cursor: default; opacity: .65; }
+
+/* Native managed-image phone shell, adapted from the existing share-card concept.
+   The shell is visual only; no sharing service, sample score or baked-in content. */
+[data-native-phone-showcase] { box-sizing: border-box; border: 1px solid #9a989d; border-radius: 22px; background: #08090b; box-shadow: 0 0 0 1px #45434a, inset 0 0 0 1px #c7c2c8, inset 0 0 0 3px #141418, 0 18px 26px #08060d80; }
+[data-native-phone-showcase]::before, [data-native-phone-showcase]::after { content: none; }
+[data-native-phone-showcase] [data-native-phone-screen] { position: relative; width: 100%; height: 100%; overflow: hidden; border-radius: 16px; background: #090a0d; }
+[data-native-phone-showcase] [data-native-phone-screen]::before { content: ''; position: absolute; z-index: 2; top: 4px; left: 50%; width: 28%; height: 6px; border-radius: 12px; background: #08090b; transform: translateX(-50%); pointer-events: none; }
+[data-native-phone-showcase] [data-native-phone-screen]::after { content: ''; position: absolute; z-index: 2; bottom: 4px; left: 50%; width: 34%; height: 2px; border-radius: 4px; background: #f3eef5; opacity: .8; transform: translateX(-50%); pointer-events: none; }
+[data-native-phone-showcase] [data-native-phone-screen] img { display: block; width: 100%; height: 100%; margin: 0; }
+[data-native-phone-showcase]:focus-visible { outline: 3px solid #126f91; outline-offset: 4px; }
+@media(prefers-reduced-motion:reduce) { [data-native-phone-showcase] { transition: none; } }
+
+/* Approved market background scoped to the existing Home selector. */
+body:has(.home-hero) { background: linear-gradient(180deg, rgb(47 20 16 / 8%), rgb(47 20 16 / 40%)), url("/toadal-feast-web/previews/cards-phone-20261008/assets/images/world/owner-daylight-market-20261007.webp") center / cover fixed; }
