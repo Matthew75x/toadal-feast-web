@@ -81,3 +81,41 @@ test('generated site pages project one cacheable advanced runtime and CSS after 
   walk(path.join(root,'dist')); assert.equal(count,33);
   assert.equal(previewCount,33);
 });
+
+test('native preview Home image height outranks canonical card breakpoints',()=>{
+  const preview=path.join(root,'dist','previews','cards-phone-20261008');
+  const native=fs.readFileSync(path.join(preview,'assets/css/approved-native-card-phone.css'),'utf8');
+  const selector='body:has(.home-hero) #browser-games [data-game-preview] [data-game-preview-stage] img';
+  const rules=[...native.matchAll(/([^{}]+)\{([^{}]*)\}/g)];
+  const fixed=rules.filter(([,s])=>s.replace(/\/\*[\s\S]*?\*\//g,'').trim()===selector);
+  assert.equal(fixed.length,1);
+  assert.equal(fixed[0][2].trim(),'height: 100%;');
+  // :has adopts .home-hero specificity: repair (1,3,2) > legacy (1,2,2).
+  // Keep this declaration unconditional so every canonical width is covered.
+  assert.equal(native.slice(0,fixed[0].index).replace(/\/\*[\s\S]*?\*\//g,'').split('{').length,
+    native.slice(0,fixed[0].index).replace(/\/\*[\s\S]*?\*\//g,'').split('}').length);
+  const advanced=fs.readFileSync(path.join(preview,'assets/css/advanced-code.2df1f6e8de1a.css'),'utf8');
+  assert.match(advanced,/body:has\(\.home-hero\) #browser-games \.studio-game-card img\s*\{\s*height:120px;/);
+  assert.match(advanced,/body:has\(\.home-hero\) #browser-games \.studio-game-card img\s*\{\s*height:92px;/);
+  assert.match(native,/\[data-game-preview\] \[data-game-preview-stage\] img\s*\{[^}]*height:\s*100%;/);
+});
+
+test('native preview height repair preserves authored fitting and excludes Play and App',()=>{
+  const preview=path.join(root,'dist','previews','cards-phone-20261008');
+  const home=fs.readFileSync(path.join(preview,'index.html'),'utf8');
+  assert.match(home,/class=['"]home-hero['"]/);
+  assert.match(home,/id=['"]browser-games['"]/);
+  const images=[...home.matchAll(/<img\b[^>]*\bdata-game-preview-(?:cover|gameplay)(?:\s|=)[^>]*>/g)];
+  assert.equal(images.length,3);
+  for(const [image] of images){
+    assert.match(image,/object-fit:contain/);
+    assert.match(image,/object-position:50% 50%/);
+  }
+  const stages=[...home.matchAll(/<[^>]*\bdata-game-preview-stage(?:\s|=)[^>]*>/g)];
+  assert.equal(stages.length,2);
+  for(const [stage] of stages) assert.match(stage,/height:155px/);
+  for(const page of ['play/index.html','app/index.html']){
+    const html=fs.readFileSync(path.join(preview,page),'utf8');
+    assert.doesNotMatch(html,/class=['"][^'"]*\bhome-hero\b/);
+  }
+});
