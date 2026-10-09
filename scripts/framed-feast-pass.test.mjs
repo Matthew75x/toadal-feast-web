@@ -42,24 +42,72 @@ test('existing runtime metrics, show/hide and reset controls remain present',()=
  assert.doesNotMatch(code.css.slice(code.css.indexOf('/* Framed Feast Pass v1.')),/!important/,'Native inline editing remains authoritative');
 });
 function fixture({font='loaded',paint=true,text='Your Feast Pass',ready=true}={}){
- const classes=new Set(),callbacks=[],mutations=[],sizes=[],calls=[];
- const heading={textContent:text,isConnected:true,offsetLeft:17,offsetTop:22,getBoundingClientRect:()=>({width:250,height:35}),classList:{add:x=>classes.add(x),remove:x=>classes.delete(x)},after:c=>heading.canvas=c};
- const doc={readyState:'complete',fonts:[{family:"'Lilita One'",status:font}],querySelectorAll:()=>[heading],querySelector:()=>({href:'https://qa.invalid/toadal-feast-web/'}),createElement:tag=>({tag,style:{},setAttribute(k,v){this[k]=v;}}),head:{appendChild:s=>{calls.push(s.src);s.onload();}}};
- const runtime={whenReady:f=>ready?f():callbacks.push(f),paintSafe:(c,get)=>{assert.equal(typeof get,'function');calls.push(get());},paint:()=>paint};
- vm.runInNewContext(adapter,{document:doc,location:{href:'https://qa.invalid/toadal-feast-web/'},URL,TOADAL:runtime,window:{addEventListener(){}},requestAnimationFrame:f=>f(),MutationObserver:class{constructor(f){mutations.push(f);}observe(){}},ResizeObserver:class{constructor(f){sizes.push(f);}observe(){}}});
- return {heading,classes,callbacks,mutations,sizes,calls};
+ const classes=new Set(),callbacks=[],mutations=[],sizes=[],paints=[],scriptLoads=[],windowEvents={},fontEvents={};
+ const face={family:"'Lilita One'",status:font};
+ const fonts=[face];
+ fonts.addEventListener=(name,fn)=>{(fontEvents[name] ||= []).push(fn);};
+ const rect={width:250,height:35};
+ const heading={textContent:text,isConnected:true,offsetLeft:17,offsetTop:22,getBoundingClientRect:()=>rect,classList:{add:x=>classes.add(x),remove:x=>classes.delete(x)},after:c=>heading.canvas=c};
+ const doc={readyState:'complete',fonts,querySelectorAll:()=>[heading],querySelector:()=>({href:'https://qa.invalid/toadal-feast-web/'}),createElement:tag=>({tag,style:{},setAttribute(k,v){this[k]=v;}}),head:{appendChild:s=>{scriptLoads.push(s.src);s.onload();}}};
+ let paintResult=paint;
+ const runtime={whenReady:f=>ready?f():callbacks.push(f),paintSafe:()=>{throw new Error('paintSafe should not be used by the already-ready adapter');},paint:(canvas,settings)=>{paints.push({canvas,settings:{...settings}});return typeof paintResult==='function'?paintResult(canvas,settings):paintResult;}};
+ const window={devicePixelRatio:1,addEventListener:(name,fn)=>{(windowEvents[name] ||= []).push(fn);}};
+ vm.runInNewContext(adapter,{document:doc,location:{href:'https://qa.invalid/toadal-feast-web/'},URL,TOADAL:runtime,window,requestAnimationFrame:f=>f(),MutationObserver:class{constructor(f){mutations.push(f);}observe(){}},ResizeObserver:class{constructor(f){sizes.push(f);}observe(){}}});
+ const emitFont=(name,event={fontfaces:[face]})=>(fontEvents[name]||[]).forEach(f=>f(event));
+ const emitWindow=name=>(windowEvents[name]||[]).forEach(f=>f());
+ return {heading,classes,callbacks,mutations,sizes,paints,scriptLoads,face,fonts,rect,window,emitFont,emitWindow,setPaintResult:value=>{paintResult=value;}};
 }
-test('loaded font and successful paint alone enable the decorative canvas',()=>{
+test('loaded font paints once and enables the decorative canvas while native text stays intact',()=>{
  const f=fixture();assert.ok(f.classes.has('feast-pass-lettering-ready'));assert.equal(f.heading.canvas.hidden,false);
- assert.equal(f.heading.canvas['aria-hidden'],'true');assert.equal(f.heading.textContent,'Your Feast Pass');assert.equal(f.calls[0],'/toadal-feast-web/assets/js/toadal-lettering.js');
+ assert.equal(f.heading.canvas['aria-hidden'],'true');assert.equal(f.heading.textContent,'Your Feast Pass');assert.equal(f.scriptLoads[0],'/toadal-feast-web/assets/js/toadal-lettering.js');
+ assert.equal(f.paints.length,1,'ready callback must not synchronously paint twice');
 });
-test('resolved font failure, paint failure, hidden geometry and unsupported text retain visible semantic fallback',()=>{
+test('no-op observer notifications skip raster work but still update canvas placement',()=>{
+ const f=fixture();assert.equal(f.paints.length,1);
+ f.heading.offsetLeft=25;f.heading.offsetTop=34;
+ f.mutations[0]();f.sizes[0]();f.emitWindow('resize');
+ assert.equal(f.paints.length,1);assert.equal(f.heading.canvas.style.left,'25px');assert.equal(f.heading.canvas.style.top,'34px');
+ assert.equal(f.heading.canvas.hidden,false);assert.ok(f.classes.has('feast-pass-lettering-ready'));
+});
+test('raster signature covers every preset field, dimensions, DPR and font revision',()=>{
+ const start=adapter.indexOf('function rasterSignature('),end=adapter.indexOf('\n  function start()',start);
+ assert.ok(start>=0&&end>start);
+ const context={};vm.runInNewContext(adapter.slice(start,end)+'\nglobalThis.signature=rasterSignature;',context);
+ const base={w:250,h:35,letterText:'Your Feast Pass',paletteMode:'rainbow',tightness:100,outlineWidth:4};
+ const sig=context.signature(base,1,0,true);
+ assert.notEqual(context.signature({...base,outlineWidth:5},1,0,true),sig,'preset edits invalidate');
+ assert.notEqual(context.signature({...base,w:251},1,0,true),sig,'dimensions invalidate');
+ assert.notEqual(context.signature(base,2,0,true),'DPR invalidates');
+ assert.notEqual(context.signature(base,1,1,true),'font events invalidate');
+ assert.notEqual(context.signature(base,1,0,false),'font readiness is part of the key');
+});
+test('text, geometry, DPR and relevant font events invalidate; unrelated font events do not repaint',()=>{
+ const f=fixture();assert.equal(f.paints.length,1);
+ f.heading.textContent='My Feast Pass';f.mutations[0]();assert.equal(f.paints.length,2);assert.equal(f.paints.at(-1).settings.letterText,'My Feast Pass');
+ f.rect.width=275;f.sizes[0]();assert.equal(f.paints.length,3);assert.equal(f.paints.at(-1).settings.w,275);
+ f.window.devicePixelRatio=2;f.emitWindow('resize');assert.equal(f.paints.length,4);
+ f.emitFont('loadingdone',{fontfaces:[{family:'Arial',status:'loaded'}]});assert.equal(f.paints.length,4);
+ f.emitFont('loadingdone',{fontfaces:[f.face]});assert.equal(f.paints.length,5);
+});
+test('font loading races and later native text edits use current text after the face becomes ready',()=>{
+ const f=fixture({font:'loading',ready:false});f.heading.textContent='My Feast Pass';f.callbacks[0]();assert.equal(f.paints.length,0);
+ f.face.status='loaded';f.emitFont('loadingdone');assert.equal(f.paints.length,1);assert.equal(f.paints[0].settings.letterText,'My Feast Pass');
+ f.heading.textContent='Another Feast';f.mutations[0]();assert.equal(f.paints.at(-1).settings.letterText,'Another Feast');assert.equal(f.heading.textContent,'Another Feast');
+});
+test('paint failure clears the successful cache and preserves semantic fallback',()=>{
+ const f=fixture();assert.equal(f.paints.length,1);
+ f.setPaintResult(false);f.heading.textContent='A different pass';f.mutations[0]();
+ assert.equal(f.paints.length,2);assert.equal(f.heading.canvas.hidden,true);assert.equal(f.classes.has('feast-pass-lettering-ready'),false);
+ f.setPaintResult(true);f.heading.textContent='Your Feast Pass';f.mutations[0]();
+ assert.equal(f.paints.length,3,'failed raster must not leave a stale successful signature');
+ assert.equal(f.heading.canvas.hidden,false);assert.ok(f.classes.has('feast-pass-lettering-ready'));assert.equal(f.heading.textContent,'Your Feast Pass');
+});
+test('font failure, invalid geometry and unsupported text retain visible semantic fallback',()=>{
  for(const options of [{font:'error'},{font:'loading'},{paint:false},{text:'A'.repeat(33)},{text:'文字'}]){
   const f=fixture(options);assert.equal(f.heading.canvas.hidden,true);assert.equal(f.classes.has('feast-pass-lettering-ready'),false);
  }
- const f=fixture();f.heading.getBoundingClientRect=()=>({width:0,height:0});f.sizes[0]();assert.equal(f.heading.canvas.hidden,true);assert.equal(f.classes.has('feast-pass-lettering-ready'),false);
+ const f=fixture();f.rect.width=0;f.sizes[0]();assert.equal(f.heading.canvas.hidden,true);assert.equal(f.classes.has('feast-pass-lettering-ready'),false);
 });
-test('delayed font completion and later text edits paint current source text without replacing it',()=>{
- const f=fixture({ready:false});f.heading.textContent='My Feast Pass';f.callbacks[0]();assert.equal(f.calls.at(-1).letterText,'My Feast Pass');
- f.heading.textContent='Another Feast';f.mutations[0]();assert.equal(f.calls.at(-1).letterText,'Another Feast');assert.equal(f.heading.textContent,'Another Feast');
+test('delayed engine readiness paints latest native text exactly once',()=>{
+ const f=fixture({ready:false});f.heading.textContent='My Feast Pass';f.callbacks[0]();assert.equal(f.paints.length,1);assert.equal(f.paints[0].settings.letterText,'My Feast Pass');
 });
