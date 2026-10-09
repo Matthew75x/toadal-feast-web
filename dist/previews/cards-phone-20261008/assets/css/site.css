@@ -7947,3 +7947,30 @@ html body:has(.home-hero) .toadal-companion .companion-image {
   aspect-ratio: 16 / 9;
   object-fit: contain;
 }
+/* Give editorial routes the same wrapped, keyboard-friendly link rows. */
+.progression-nav--media,
+#about-stories-characters .progression-nav--about,
+.progression-nav--wicked-bites {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 12px;
+  margin-block-start: 14px;
+}
+.progression-nav--media > a,
+#about-stories-characters .progression-nav--about > a,
+.progression-nav--wicked-bites > a {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  padding: 8px 13px;
+  border: 1px solid rgb(217 0 85 / 17%);
+  border-radius: 999px;
+  background: var(--cream-50);
+}
+.progression-nav--media > a:focus-visible,
+#about-stories-characters .progression-nav--about > a:focus-visible,
+.progression-nav--wicked-bites > a:focus-visible {
+  outline: 3px solid var(--pink-700);
+  outline-offset: 3px;
+}
