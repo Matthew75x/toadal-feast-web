@@ -16,20 +16,21 @@ export const RUNTIME_EXCEPTIONS = Object.freeze([
   Object.freeze({ route: '/', componentId: 'component.home.interactive-discovery', kind: 'external-script', maxBytes: 2048, policy: freezePolicy({
     id: 'site-global-home-discovery-loader-v1', mode: 'global-loader',
     codeResources: [
-      { url: '/assets/js/home-interactive-discovery.js', source: 'assets/js/home-interactive-discovery.js', sha256: '4a516b712dc3e1b276f81b5fe5b2a4cc45bfd978d145a8b13cc8739959686840' },
-      { url: '/assets/js/guest-progression.js', source: 'assets/js/guest-progression.js', sha256: '69984c7ce7b1ff79413b9275e345715a92badc131b4657fd26f4ae98e7c1cee2' },
-      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: 'b5997ed5df1d715039835560c7b84a8373fd348b7ca28f9cffa29992ed51802e' },
+      { url: '/assets/js/home-interactive-discovery.js', source: 'assets/js/home-interactive-discovery.js', sha256: '6ad7d11a5a2f64c8c36023b4dba2c8d08551854971c01d7fa614ce61d053ad49' },
+      { url: '/assets/js/guest-progression.js', source: 'assets/js/guest-progression.js', sha256: '5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338' },
+      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: '43726f9cf37f0a4beaff81c969d3c304c9f54bec07af9bae88bfbc30b6df7f8c' },
+      { url: '/assets/js/play-catalogue.js', source: 'assets/js/play-catalogue.js', sha256: '347c0ee01761571ca583cb199d9ba989f169a7ff97fdaea874374c4054b92c39' },
     ],
   }) }),
   Object.freeze({ route: '/player/wicked-bites/', componentId: 'component.muogc5wx.80e0fg', kind: 'isolated-frame', maxBytes: 2048, policy: freezePolicy({
     id: 'isolated-wicked-bites-frame-v1', mode: 'sandboxed-iframe', sandbox: 'allow-scripts allow-pointer-lock', allow: 'fullscreen',
-    codeResources: [{ url: '/public/games/wicked-bites/index.html', source: 'public/games/wicked-bites/index.html', sha256: '26a8e1f0cc717560f30a786fa9705f4b538f01c742fa120eb1bf7544705f4fec' }],
+    codeResources: [{ url: '/public/games/wicked-bites/index.html', source: 'public/games/wicked-bites/index.html', sha256: '783dfe877c931a6d142a1453eaddace6776d4852d4dae074a20b40975b47036c' }],
   }) }),
   Object.freeze({ route: '/reader/', componentId: 'component.comic.reader-preview', kind: 'dynamic-image', maxBytes: 2048, policy: freezePolicy({
     id: 'stories-publishing-dynamic-image-v1', mode: 'dynamic-image-slot', selector: '[data-reader-page]', sourceMustBeAbsent: true,
     codeResources: [
-      { url: '/assets/js/stories-publishing.js', source: 'assets/js/stories-publishing.js', sha256: 'ab17e0ec3c363a0391740cfa605e5a5be69a027bbd837d624ae0462aa288c504' },
-      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: 'b5997ed5df1d715039835560c7b84a8373fd348b7ca28f9cffa29992ed51802e' },
+      { url: '/assets/js/stories-publishing.js', source: 'assets/js/stories-publishing.js', sha256: 'b8f1b2b960fdaafc4b29cb4919693e66dfe92f88dda9cc5fe33b8923579733f3' },
+      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: '43726f9cf37f0a4beaff81c969d3c304c9f54bec07af9bae88bfbc30b6df7f8c' },
     ],
   }) }),
 ]);

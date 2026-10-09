@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Read-only identity gate. Historical SDK provenance and patched engine stay separate.
+// Read-only selected-engine identity gate. Ordinary SDK verification stays hermetic.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -7,7 +7,7 @@ import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 
 export const WEBSITE_ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-export const EXPECTED_ENGINE=Object.freeze({commit:'5d022f5c3ea676458a63c8d2bb67ceb69c1a84d5',parent:'100629ad5edee57f8eb1358b4c7c3f0e09c6ec76',tree:'4ecd731114dd4fd0319bee9da3cada51402f5578'});
+export const EXPECTED_ENGINE=Object.freeze({"commit":"a88783bddb89e1f995964fe3606f27463de79ea4","parent":"46a1469298f2179e5977a77a082f9921fa53cd8a 5d022f5c3ea676458a63c8d2bb67ceb69c1a84d5","tree":"f898e7c870773857d33b158aae2383d05e578b4d"});
 export const ENTRYPOINTS=Object.freeze(['package.json','package-lock.json','packages/renderer/src/index.ts','packages/project-kernel/src/loader.ts','packages/project-kernel/src/validate.ts','packages/project-kernel/src/mutations.ts','packages/authoring-kernel/src/index.ts']);
 export const sha256=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 export function git(root,...args){const r=spawnSync('git',args,{cwd:root,encoding:'utf8',env:{...process.env,GIT_NO_LAZY_FETCH:'1'},maxBuffer:16*1024*1024});if(r.status!==0)throw Error(`Git identity unavailable: ${args.join(' ')}: ${r.stderr}`);return r.stdout.trim();}
@@ -50,14 +50,14 @@ export function inspectEngine(engineInput,expected=EXPECTED_ENGINE,entrypoints=E
  // Every installed package source is immutable; extra untracked modules cannot shadow imports.
  const extras=git(root,'ls-files','--others','--exclude-standard','--','packages','package.json','package-lock.json').split('\n').filter(Boolean);
  if(extras.length)throw Error(`Untracked engine source: ${extras.join(', ')}`);
- return{root,...identity,identityMatch:identity.commit===expected.commit?'exact-commit':'source-equivalent-tree-and-parent',workingFilesVerified:verified,missingTrackedFiles:missing.length,completeWorkingTree:missing.length===0,scope:missing.length?'bounded materialized subset, not complete Studio':'complete tracked working tree, not Studio certification'};
+ return{root,...identity,identityMatch:identity.commit===expected.commit?'exact-commit':'source-equivalent-tree-and-parent',workingFilesVerified:verified,missingTrackedFiles:missing.length,missingTrackedPaths:missing,completeWorkingTree:missing.length===0,scope:missing.length?'bounded materialized subset, not complete Studio':'complete tracked working tree, not Studio certification'};
 }
 export function verifyVendors(repo){
  return ['owner-authoring-renderer','public-export-projection'].map(name=>{const provenance=JSON.parse(fs.readFileSync(path.join(repo,'scripts/vendor',name+'.provenance.json'),'utf8'));const artifact=path.join(repo,provenance.generated);if(!artifact.startsWith(path.join(repo,'scripts/vendor')+path.sep))throw Error('Invalid vendor artifact path');noSymlinkPath(artifact);if(sha256(fs.readFileSync(artifact))!==provenance.generatedSha256)throw Error(`Vendor provenance mismatch: ${name}`);return{name,generatedSha256:provenance.generatedSha256,sourceSha256:provenance.sourceSha256,sourceChecked:false};});
 }
 export function preflight({engineRoot,websiteRoot=WEBSITE_ROOT,allowNode24=false,env=process.env,nodeVersion=process.versions.node}={}){
  if(!engineRoot)throw Error('Explicit Studio root required.');
- if(Object.hasOwn(env,'TOADAL_STUDIO_ROOT'))throw Error('Unset TOADAL_STUDIO_ROOT: the patched render engine is not the separately pinned historical SDK.');
+ if(Object.hasOwn(env,'TOADAL_STUDIO_ROOT'))throw Error('Unset TOADAL_STUDIO_ROOT: use explicit source qualification instead of ambiguous environment selection.');
  const runtime=runtimeIdentity(nodeVersion,allowNode24),repo=noSymlinkPath(websiteRoot),engine=inspectEngine(engineRoot);
  const npm=spawnSync('npm',['--version'],{encoding:'utf8'});
  return{schema:'toadal.local-design-preflight.v1',website:{root:repo,commit:git(repo,'rev-parse','HEAD'),tree:git(repo,'rev-parse','HEAD^{tree}'),workingTreeDirty:!!git(repo,'status','--porcelain')},engine,runtime:{...runtime,npm:npm.status===0?npm.stdout.trim():null},vendors:verifyVendors(repo),remoteWrites:false};

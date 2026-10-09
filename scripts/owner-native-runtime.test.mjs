@@ -57,6 +57,7 @@ function assertCurrentRuntimeLeaf(leaf, rule) {
   assert.equal(props.runtimeVersion, 1);
   assert.equal(props.runtimeKind, rule.kind);
   assert.equal(props.runtimeSha256, sha256(props.html), 'stored digest covers the original protected HTML fragment');
+  assert.equal(new Set(props.runtimeCodeResources.map(item => item.url)).size, props.runtimeCodeResources.length, 'no duplicate runtime resources');
   assert.deepEqual(props.runtimeCodeResources, rule.policy.codeResources.map(({ url, sha256: digest }) => ({ url, sha256: digest })));
   assert.deepEqual(props.runtimePolicy, {
     id: rule.policy.id,
@@ -148,5 +149,14 @@ test('unregistered, wrong-route, wrong-parent, altered-fragment, and altered-ver
 test('the owner tag allowlist covers the actual Studio caption, progress, and tfoot capabilities', () => {
   for (const tag of ['caption', 'progress', 'tfoot']) {
     assert.equal(inspectHtml(`<${tag}></${tag}>`, { ownerTags }).valid, true);
+  }
+});
+
+test('registered runtime code-resource pins match exact current native and canonical export bytes', async () => {
+  for (const rule of RUNTIME_EXCEPTIONS) for (const resource of rule.policy.codeResources) {
+    const source = await readFile(path.join(project, 'reference', resource.source));
+    const published = await readFile(path.resolve(here, '../dist', resource.source));
+    assert.equal(createHash('sha256').update(source).digest('hex'), resource.sha256, `${resource.source} native source pin`);
+    assert.equal(createHash('sha256').update(published).digest('hex'), resource.sha256, `${resource.source} canonical export pin`);
   }
 });

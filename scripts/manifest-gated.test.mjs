@@ -110,7 +110,7 @@ test('Contact presents all manifest fields but every data-entry and submit contr
   for (const tag of controls) assert.match(tag, /\bdisabled\b/i, `control is disabled: ${tag}`);
   assert.doesNotMatch(form, /<form\b[^>]*\baction\s*=/i);
   assert.doesNotMatch(content, /onsubmit\s*=|mailto:|https?:\/\/[^\s'\"]+/i);
-  assert.match(content, /Nothing is entered, stored, or sent/);
+  assert.match(content, /All fields are disabled; nothing is entered, stored, or sent here\./);
   assert.match(content, /data-companion-action-copy='Contact stays disabled/);
   assert.match(content, /href='\/support\/'/);
   assert.match(content, /href='\/about\/'/);

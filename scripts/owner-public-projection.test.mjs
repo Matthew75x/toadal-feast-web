@@ -19,6 +19,9 @@ test('static freshness accepts canonical public output and rejects changed copy,
   const run=()=>spawnSync(process.execPath,[path.join(repo,'scripts/verify-owner-preview-render-freshness.mjs'),repo,dist],{encoding:'utf8'});
   const initial=run();assert.equal(initial.status,0,initial.stderr);
   const home=path.join(dist,'index.html'),original=fs.readFileSync(home,'utf8');
+  const image=original.match(/<img\b[^>]*\bwidth=['"]\d+['"][^>]*>/i)?.[0];assert(image,'canonical image has dimensions');
+  const corrupted=image.replace(/\bwidth=(['"])\d+\1/i,"width='999999'");fs.writeFileSync(home,original.replace(image,corrupted));
+  const badDimensions=run();assert.notEqual(badDimensions.status,0,'wrong intrinsic dimensions must fail');assert.match(badDimensions.stderr,/native component stale/);fs.writeFileSync(home,original);
   assert(original.includes('Play the Feast World for Free'));fs.writeFileSync(home,original.replaceAll('Play the Feast World for Free','UNAUTHORED STALE CONTENT'));
   const stale=run();assert.notEqual(stale.status,0);assert.match(stale.stderr,/native component stale/);fs.writeFileSync(home,original);
   const missing=path.join(dist,'404.html'),recovery=fs.readFileSync(missing,'utf8');assert(recovery.includes('/toadal-feast-web/search/'));

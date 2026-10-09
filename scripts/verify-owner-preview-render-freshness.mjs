@@ -4,6 +4,7 @@ import path from 'node:path';
 import { rewriteHtml, normalizeBasePath } from './wo001-pages-basepath.mjs';
 import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 import { createPublicProjector } from './lib/owner-public-projection.mjs';
+import { projectIntrinsicImageDimensions } from './lib/intrinsic-image-dimensions.mjs';
 import { normalizeCssUrlQuoteEntities } from './lib/normalize-css-url-quotes.mjs';
 
 const root = path.resolve(process.argv[2] || '.');
@@ -148,11 +149,16 @@ for (const record of pageIndex) {
         }
       }
     }
-    const expected = normalizeHtmlAttributeSerialization(normalizeText(rewriteHtml(publicProjection(projected), basePath).value));
+    const publicHtml=normalizeText(rewriteHtml(publicProjection(projected), basePath).value);
+    const expected = normalizeHtmlAttributeSerialization(publicHtml);
+    // Accept either exact native output or its exact approved image-header transform.
+    // No attributes are removed; wrong dimensions and copy still fail.
+    const pageRel=path.relative(dist,distFileFor(record.route)).split(path.sep).join('/');
+    const expectedWithDimensions=normalizeHtmlAttributeSerialization(projectIntrinsicImageDimensions(publicHtml,dist,pageRel,basePath).html);
     const emptyNativeComponentAbsent = !expected && !rendered.includes(`data-studio-component='${component.id}'`)
       && !rendered.includes(`data-studio-component="${component.id}"`)
       && !rendered.includes(`data-toadal-node='${component.id}'`) && !rendered.includes(`data-toadal-node="${component.id}"`);
-    if ((expected && !renderedForSubtrees.includes(expected)) || (!expected && isNative && !emptyNativeComponentAbsent)) {
+    if ((expected && !renderedForSubtrees.includes(expected) && !renderedForSubtrees.includes(expectedWithDimensions)) || (!expected && isNative && !emptyNativeComponentAbsent)) {
       staleErrors.push(`${record.route} ${isNative ? 'native' : 'rich-text'} component stale: ${component.id}`);
     }
   }

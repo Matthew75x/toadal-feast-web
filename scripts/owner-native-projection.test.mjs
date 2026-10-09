@@ -114,7 +114,7 @@ test('background asset replacement preserves retained gradients and shorthand CS
   };
   const assetUrl = () => '/assets/studio/asset-fixture-background.0123456789.png';
   const vendored = renderVendoredOwnerComponent(component, assetUrl);
-  assert.equal(vendored, "<div style='background:linear-gradient(135deg, #f00, #00f), url(&#39;/assets/studio/asset-fixture-background.0123456789.png&#39;) center/cover no-repeat, url(&#39;/texture.png&#39;); background-size:cover' data-studio-component='background-fixture'></div>");
+  assert.equal(vendored, "<div style='background:linear-gradient(135deg, #f00, #00f), url(\"/assets/studio/asset-fixture-background.0123456789.png\") center/cover no-repeat, url(&#39;/texture.png&#39;); background-size:cover' data-studio-component='background-fixture'></div>");
 
   if (studioRoot) {
     const liveStudio = await import(pathToFileURL(path.join(studioRoot, 'packages', 'owner-authoring', 'src', 'index.ts')).href);

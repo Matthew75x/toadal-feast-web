@@ -4,14 +4,19 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {spawnSync} from 'node:child_process';
 import {pathToFileURL} from 'node:url';
+import {convergencePreflight} from './studio-convergence-preflight.mjs';
 import {preflight,safeNewDirectory,treeFingerprint} from './local-design-preflight.mjs';
 import {externalizeAdvancedRuntime} from './lib/externalize-advanced-runtime.mjs';
 import {addIntrinsicImageDimensions} from './lib/intrinsic-image-dimensions.mjs';
 import {verifyProtectedGameArtifacts} from './lib/protected-game-artifacts.mjs';
 const [engineInput,outputInput,...options]=process.argv.slice(2);
-if(!engineInput||!outputInput||options.some(x=>!['--sync-dist','--allow-node24-reproduction'].includes(x)))throw new Error('Usage: node --experimental-strip-types scripts/render-local-design-candidate.mjs <Studio root> <local output> [--sync-dist] [--allow-node24-reproduction]');
+if(!engineInput||!outputInput||options.some(x=>!['--sync-dist','--allow-node24-reproduction','--qualify-convergence','--allow-archival-docs'].includes(x)))throw new Error('Usage: node --experimental-strip-types scripts/render-local-design-candidate.mjs <Studio root> <local output> [--sync-dist] [--allow-node24-reproduction] [--qualify-convergence]');
 const repo=path.resolve(import.meta.dirname,'..'),project=path.join(repo,'studio-project/toadal-feast-website'),engine=path.resolve(engineInput),out=path.resolve(outputInput);
-const qualification=preflight({engineRoot:engine,websiteRoot:repo,allowNode24:options.includes('--allow-node24-reproduction')});
+const sourceBound=options.includes('--qualify-convergence');
+if(sourceBound&&options.includes('--allow-node24-reproduction'))throw Error('Convergence cannot use reproduction runtime');
+if(options.includes('--allow-archival-docs')&&!sourceBound)throw Error('Archive exclusions require explicit convergence mode');
+const qualification=preflightGate();
+function preflightGate(){return sourceBound?convergencePreflight({engineRoot:engine,websiteRoot:repo,allowArchivalDocs:options.includes('--allow-archival-docs')}):preflight({engineRoot:engine,websiteRoot:repo,allowNode24:options.includes('--allow-node24-reproduction')});}
 safeNewDirectory(out,[repo,engine]);
 treeFingerprint(project); // Reject symlinked native inputs before any render writes.
 const engineCommit=qualification.engine.commit;
@@ -24,7 +29,7 @@ if(!validation.valid)throw new Error('Native validation failed: '+JSON.stringify
 const rendered=renderProject(manifest,out);
 const projection=transformPublicExport(out,rendered.bundle.pages.map(p=>p.referenceFile),[path.join(project,'reference'),project]);
 const advanced=externalizeAdvancedRuntime(out,project,'/toadal-feast-web/');
-function run(script,...args){const r=spawnSync(process.execPath,[path.join(repo,'scripts',script),...args],{cwd:repo,encoding:'utf8'});if(r.status!==0)throw new Error(script+': '+r.stderr+r.stdout);return r.stdout.trim();}
+function run(script,...args){const r=spawnSync(process.execPath,[path.join(repo,'scripts',script),...args],{cwd:repo,encoding:'utf8',env:sourceBound?{...process.env,TOADAL_STUDIO_ROOT:engine}:process.env});if(r.status!==0)throw new Error(script+': '+r.stderr+r.stdout);return r.stdout.trim();}
 run('wo001-pages-basepath.mjs',out,'/toadal-feast-web/','--staging-robots');
 const freshness=run('verify-owner-preview-render-freshness.mjs',repo,out,'/toadal-feast-web/');
 const images=addIntrinsicImageDimensions(out,'/toadal-feast-web/');
