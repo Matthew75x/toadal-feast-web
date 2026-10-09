@@ -7984,3 +7984,9 @@ html body:has(.home-hero) .toadal-companion .companion-image {
     font-size: clamp(2rem, 9vw, 2.4rem);
   }
 }
+
+
+/* Keep Toadal fully inside the clipped profile hero. */
+.toadal-profile-page .profile-hero-toadal {
+  bottom: 0;
+}

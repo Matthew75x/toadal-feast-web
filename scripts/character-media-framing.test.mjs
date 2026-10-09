@@ -6,6 +6,7 @@ import test from 'node:test';
 const projectRoot = path.resolve('studio-project/toadal-feast-website');
 const characters = JSON.parse(fs.readFileSync(path.join(projectRoot, 'pages/characters.json'), 'utf8'));
 const media = JSON.parse(fs.readFileSync(path.join(projectRoot, 'pages/media.json'), 'utf8'));
+const toadalProfile = JSON.parse(fs.readFileSync(path.join(projectRoot, 'pages/toadal-profile.json'), 'utf8'));
 const css = fs.readFileSync(path.join(projectRoot, 'reference/assets/css/site.css'), 'utf8');
 
 function walk(node, visit) {
@@ -65,6 +66,14 @@ test('Characters Hub keeps its title readable at mobile widths', () => {
   assert.ok(rule, 'mobile heading adjustment stays scoped to the Characters page');
   assert.match(rule[1], /max-width:\s*100%\s*;/);
   assert.match(rule[1], /overflow-wrap:\s*normal\s*;/);
+});
+
+test('Toadal profile keeps the complete full-body figure inside its clipped hero', () => {
+  const image = allComponents(toadalProfile).find(node => node.id === 'component.toadal-profile.rich-text.68be57d8cc15.profile-hero-toadal');
+  assert.ok(image);
+  assert.equal(image.props.className, 'profile-hero-toadal');
+  assert.equal(image.props.asset, 'asset.home.character.toadal-victory-web');
+  assert.match(css, /\.toadal-profile-page \.profile-hero-toadal \{\s*bottom:\s*0;\s*\}/);
 });
 
 test('Gully keeps its dedicated full-body desktop and mobile card-fit assets', () => {
