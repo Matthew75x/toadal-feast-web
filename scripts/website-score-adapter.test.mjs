@@ -1,11 +1,9 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createRequire } from 'node:module';
 import { spawnSync } from 'node:child_process';
-import { readWickedBitesHudScore, SCORE_LOCALES, scoreLocaleEnvironment, assertScoreLocaleChild } from './lib/wicked-bites-score-fixture.mjs';
+import { readWickedBitesHudScore, SCORE_LOCALES, scoreLocaleEnvironment, assertScoreLocaleChild, scoreFixture, createScoreFixture } from './lib/wicked-bites-score-fixture.mjs';
 
-const require = createRequire(import.meta.url);
-const adapter = require('../studio-project/toadal-feast-website/reference/assets/js/website-score-adapter.js');
+const adapter = scoreFixture.adapter;
 
 test('accepts safe integers and the real cartridge default-locale score format only', () => {
   assert.equal(adapter.normalizeScore('1234'), 1234);
@@ -18,20 +16,27 @@ test('accepts safe integers and the real cartridge default-locale score format o
   }
 });
 
-// Each child starts with a real default locale; there is no formatter mock or
-// injected parser locale that could differ from the game's no-argument call.
+// Each child executes an explicitly locale-controlled VM fixture using native
+// Intl built-ins. Separate native-default coverage below has no override.
 for (const locale of SCORE_LOCALES) {
-  test(`actual default-locale score contract: ${locale}`, () => {
-    const child = spawnSync(process.execPath, ['--test', '--test-reporter=tap', '--test-name-pattern=^locale-default score boundary$', import.meta.filename], {
+  test(`controlled-locale score source fixture: ${locale}`, () => {
+    const child = spawnSync(process.execPath, ['--test', '--test-reporter=tap', '--test-name-pattern=^score representation boundary$', import.meta.filename], {
       encoding: 'utf8', env: scoreLocaleEnvironment(locale)
     });
     assertScoreLocaleChild(child);
   });
 }
 
-test('locale-default score boundary', () => {
-  const locale = new Intl.NumberFormat().resolvedOptions().locale;
-  if (process.env.TOADAL_SCORE_TEST_LOCALE) assert.equal(locale, process.env.TOADAL_SCORE_TEST_LOCALE);
+test('score representation boundary', t => {
+  const locale = scoreFixture.locale;
+  if (process.env.TOADAL_SCORE_TEST_LOCALE) {
+    assert.equal(scoreFixture.mode, 'controlled-locale');
+    assert.equal(locale, process.env.TOADAL_SCORE_TEST_LOCALE);
+  } else {
+    assert.equal(scoreFixture.mode, 'native-default');
+    assert.equal(locale, new Intl.NumberFormat().resolvedOptions().locale);
+  }
+  t.diagnostic(`${scoreFixture.mode} source contract; selected=${locale}; native=${new Intl.NumberFormat().resolvedOptions().locale}`);
   const frame = { src: 'https://site.example/public/games/wicked-bites/index.html', contentWindow: {} };
   const trusted = (score, type = 'game:complete', changes = {}) => adapter.isTrustedMessage({
     source: frame.contentWindow, origin: 'null',
@@ -55,10 +60,10 @@ test('locale-default score boundary', () => {
     '', ' ', '-1', '+1', '-0', '1.5', '1e3', '1E3', '0x10', '1_234', '1,2,3456',
     ',123', '123,', '0,123', '1234,567', '1,,234', '1 234', '1,234.567', '1.234,567',
     readWickedBitesHudScore(1234) + 'x', readWickedBitesHudScore(Number.MAX_SAFE_INTEGER + 1),
-    new Intl.NumberFormat(undefined, { minimumFractionDigits: 1 }).format(1234),
-    new Intl.NumberFormat(undefined, { signDisplay: 'always' }).format(1234),
-    new Intl.NumberFormat(undefined, { notation: 'scientific' }).format(1234),
-    new Intl.NumberFormat().format(-1234),
+    scoreFixture.format(1234, { minimumFractionDigits: 1 }),
+    scoreFixture.format(1234, { signDisplay: 'always' }),
+    scoreFixture.format(1234, { notation: 'scientific' }),
+    scoreFixture.format(-1234),
     Number.MAX_SAFE_INTEGER + 1, -1, 1.5, NaN, Infinity, null, undefined, {}, [], true
   ];
   // Foreign groups are invalid unless that exact text is also this locale's
@@ -80,6 +85,33 @@ test('locale-default score boundary', () => {
     assert.equal(adapter.normalizeScore(score), null, `${locale}: rejected ${String(score)}`);
     assert.equal(trusted(score), false, `${locale}: untrusted ${String(score)}`);
   }
+});
+
+test('controlled fixtures leave native-default formatting and intrinsics untouched', () => {
+  const childEnv = scoreLocaleEnvironment('de-DE');
+  assert.equal(childEnv.LANG, process.env.LANG);
+  assert.equal(childEnv.LC_ALL, process.env.LC_ALL);
+  assert.equal(childEnv.NODE_TEST_CONTEXT, undefined);
+  const originalNumberFormat = Intl.NumberFormat;
+  const originalToLocaleString = Number.prototype.toLocaleString;
+  const nativeLocale = new Intl.NumberFormat().resolvedOptions().locale;
+  const nativeText = (1234567).toLocaleString();
+  for (const locale of SCORE_LOCALES) {
+    const controlled = createScoreFixture(locale);
+    assert.equal(controlled.mode, 'controlled-locale');
+    assert.equal(controlled.locale, locale);
+    assert.equal(controlled.readHudScore(1234567), (1234567).toLocaleString(locale));
+    assert.equal(controlled.adapter.normalizeScore(controlled.readHudScore(1234567)), 1234567);
+  }
+  assert.equal(Intl.NumberFormat, originalNumberFormat);
+  assert.equal(Number.prototype.toLocaleString, originalToLocaleString);
+  assert.equal(new Intl.NumberFormat().resolvedOptions().locale, nativeLocale);
+  assert.equal((1234567).toLocaleString(), nativeText);
+  const native = createScoreFixture();
+  assert.equal(native.mode, 'native-default');
+  assert.equal(native.locale, nativeLocale);
+  assert.equal(native.readHudScore(1234567), nativeText);
+  assert.equal(native.adapter.normalizeScore(nativeText), 1234567);
 });
 
 test('formats elapsed play time as minutes and seconds', () => {

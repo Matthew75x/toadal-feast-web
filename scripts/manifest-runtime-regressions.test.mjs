@@ -5,14 +5,14 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import { spawnSync } from 'node:child_process';
-import { readWickedBitesHudScore, SCORE_LOCALES, scoreLocaleEnvironment, assertScoreLocaleChild } from './lib/wicked-bites-score-fixture.mjs';
+import { readWickedBitesHudScore, SCORE_LOCALES, scoreLocaleEnvironment, assertScoreLocaleChild, scoreFixture } from './lib/wicked-bites-score-fixture.mjs';
 import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const require = createRequire(import.meta.url);
 const site = '../studio-project/toadal-feast-website/';
 const progression = require(site + 'reference/assets/js/guest-progression.js');
 const definitions = require(site + 'reference/assets/js/progression-definitions.js');
-const adapter = require(site + 'reference/assets/js/website-score-adapter.js');
+const adapter = scoreFixture.adapter;
 const scriptsDir = path.dirname(fileURLToPath(import.meta.url));
 const projectRoot = path.resolve(scriptsDir, '..', 'studio-project', 'toadal-feast-website');
 const studioRoot = process.env.TOADAL_STUDIO_ROOT;
@@ -94,7 +94,7 @@ test('runtime-generated quest and score links retain root/project hosting and qu
 });
 
 for (const locale of SCORE_LOCALES) {
-  test(`localized adapter completion/store fixture (not gameplay): ${locale}`, () => {
+  test(`controlled-locale adapter completion/store fixture (not gameplay): ${locale}`, () => {
     const child = spawnSync(process.execPath, ['--test', '--test-reporter=tap', '--test-name-pattern=^authored sibling HUD', import.meta.filename], {
       encoding: 'utf8', env: scoreLocaleEnvironment(locale)
     });
@@ -102,8 +102,15 @@ for (const locale of SCORE_LOCALES) {
   });
 }
 
-test('authored sibling HUD receives validated lifecycle messages, timer and completed local score', () => {
-  if (process.env.TOADAL_SCORE_TEST_LOCALE) assert.equal(new Intl.NumberFormat().resolvedOptions().locale, process.env.TOADAL_SCORE_TEST_LOCALE);
+test('authored sibling HUD receives validated lifecycle messages, timer and completed local score', t => {
+  if (process.env.TOADAL_SCORE_TEST_LOCALE) {
+    assert.equal(scoreFixture.mode, 'controlled-locale');
+    assert.equal(scoreFixture.locale, process.env.TOADAL_SCORE_TEST_LOCALE);
+  } else {
+    assert.equal(scoreFixture.mode, 'native-default');
+    assert.equal(scoreFixture.locale, new Intl.NumberFormat().resolvedOptions().locale);
+  }
+  t.diagnostic(`${scoreFixture.mode} adapter/store fixture; selected=${scoreFixture.locale}; native=${new Intl.NumberFormat().resolvedOptions().locale}`);
   const record = JSON.parse(fs.readFileSync(new URL(site + 'pages/player-wicked-bites.json', import.meta.url), 'utf8'));
   const componentMarkup = record.components
     .filter(component => component.props?.authoringVersion || typeof component.props?.html === 'string')
@@ -153,7 +160,7 @@ test('authored sibling HUD receives validated lifecycle messages, timer and comp
   assert.match(status.textContent, /Current run is in memory/);
   clock = 65000;
   message('game:score', { score: readWickedBitesHudScore(207) });
-  assert.equal(score.textContent, (207).toLocaleString());
+  assert.equal(score.textContent, scoreFixture.format(207));
   assert.equal(elapsed.textContent, '1:05');
   assert.equal(label.textContent, 'Session time');
   message('game:complete', { score: 999 }, {});
@@ -175,7 +182,7 @@ test('authored sibling HUD receives validated lifecycle messages, timer and comp
   assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].best, 1234567, 'real UI-formatted result normalizes to a numeric personal best');
   assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].runs.at(-1).score, 1234567);
   assert.match(status.textContent, /Completed score saved in this browser only/);
-  assert.equal(score.textContent, (1234567).toLocaleString(), 'host displays the normalized completed result');
+  assert.equal(score.textContent, scoreFixture.format(1234567), 'host displays the normalized completed result');
   assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].runs.length, 2);
   // Rehydrate the real store, then complete a later lower run through the real
   // adapter. This remains a DOM/store fixture, not an actual gameplay witness.
