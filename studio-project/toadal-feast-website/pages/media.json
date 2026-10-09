@@ -540,7 +540,18 @@
                                       "focalY": 50,
                                       "aspectRatio": "16/9",
                                       "padding": 0,
-                                      "zoom": 1
+                                      "zoom": 1,
+                                      "responsive": {
+                                        "mobile": {
+                                          "maxWidth": 680,
+                                          "fit": "contain",
+                                          "aspectRatio": "3/5",
+                                          "focalX": 50,
+                                          "focalY": 50,
+                                          "padding": 0,
+                                          "zoom": 1
+                                        }
+                                      }
                                     }
                                   },
                                   {

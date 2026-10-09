@@ -55,6 +55,18 @@ test('Characters square card art is bounded to the native desktop and mobile fra
   }
 });
 
+test('Characters Hub keeps its title readable at mobile widths', () => {
+  const heading = allComponents(characters).find(node => node.id === 'component.characters.rich-text.cb052f26dae6.h1');
+  assert.ok(heading);
+  assert.equal(heading.type, 'core.text');
+  assert.equal(heading.props.tag, 'h1');
+  assert.equal(heading.props.text, 'Characters Hub');
+  const rule = css.match(/@media \(max-width: 680px\) \{[^}]*\.characters-page \.character-hero-copy h1 \{([^}]+)\}/);
+  assert.ok(rule, 'mobile heading adjustment stays scoped to the Characters page');
+  assert.match(rule[1], /max-width:\s*100%\s*;/);
+  assert.match(rule[1], /overflow-wrap:\s*normal\s*;/);
+});
+
 test('Gully keeps its dedicated full-body desktop and mobile card-fit assets', () => {
   const gully = allComponents(characters).find(node => node.type === 'core.image' && node.props?.asset === 'asset.import.gully-card-fit-desktop-7x4.431513d3');
   assert.ok(gully);
@@ -65,17 +77,29 @@ test('Gully keeps its dedicated full-body desktop and mobile card-fit assets', (
   assert.equal(gully.props.responsive.mobile.imageHeight, 115);
 });
 
-test('Media gameplay stills use full-content 16:9 native image frames only', () => {
+test('Media gameplay keeps desktop 16:9 frames and gives portrait Arcade a native mobile frame', () => {
   const components = allComponents(media);
   const images = components.filter(node => node.type === 'core.image' && gameplayAssets.has(node.props?.asset));
   assert.equal(images.length, gameplayAssets.size);
   assert.deepEqual(new Set(images.map(image => image.props.asset)), gameplayAssets);
-  for (const { props } of images) {
+  const byAsset = new Map(images.map(image => [image.props.asset, image.props]));
+  for (const props of byAsset.values()) {
     assert.equal(props.fit, 'contain');
     assert.equal(props.aspectRatio, '16/9');
     assert.equal(props.focalX, 50);
     assert.equal(props.focalY, 50);
     assert.equal(props.padding, 0);
+  }
+  const arcade = byAsset.get('asset.app.gameplay.arcade');
+  assert.equal(arcade.responsive.mobile.maxWidth, 680);
+  assert.equal(arcade.responsive.mobile.fit, 'contain');
+  assert.equal(arcade.responsive.mobile.aspectRatio, '3/5');
+  assert.equal(arcade.responsive.mobile.focalX, 50);
+  assert.equal(arcade.responsive.mobile.focalY, 50);
+  assert.equal(arcade.responsive.mobile.padding, 0);
+  assert.equal(arcade.responsive.mobile.zoom, 1);
+  for (const asset of ['asset.app.gameplay.puzzle', 'asset.app.gameplay.feastfall']) {
+    assert.equal(byAsset.get(asset).responsive?.mobile?.aspectRatio, undefined);
   }
   const gameplayCards = components.filter(node =>
     node.type === 'core.button' && node.props?.className?.split(/\s+/).includes('discovery-scene-card--gameplay'));

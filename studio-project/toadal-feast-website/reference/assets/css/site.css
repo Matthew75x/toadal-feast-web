@@ -7974,3 +7974,13 @@ html body:has(.home-hero) .toadal-companion .companion-image {
   outline: 3px solid var(--pink-700);
   outline-offset: 3px;
 }
+
+
+/* Keep the Characters Hub title intact on narrow screens. */
+@media (max-width: 680px) {
+  .characters-page .character-hero-copy h1 {
+    max-width: 100%;
+    overflow-wrap: normal;
+    font-size: clamp(2rem, 9vw, 2.4rem);
+  }
+}
