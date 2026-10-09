@@ -7939,3 +7939,11 @@ html body:has(.home-hero) .toadal-companion .companion-image {
   max-height: 52px !important;
   object-fit: contain;
 }
+
+/* Keep full gameplay screenshots visible inside a consistent landscape frame. */
+.discovery-media .discovery-scene-card--gameplay img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+}
