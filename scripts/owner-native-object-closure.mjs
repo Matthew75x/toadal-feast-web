@@ -143,9 +143,31 @@ export function closeHomeGameCards(page, games, assets) {
     throw new Error(`Could not find ${HOME_GAMES_ID} as a populated layout.grid`);
   }
   const sourceCards = childrenOf(originalRoot);
-  if(sourceCards.length===4&&sourceCards.every(card=>card?.props?.authoringVersion===1&&card.props.tag==='a')){
+  // Approved native preview cards have an independent button and one explicit
+  // details anchor. Never flatten them back into an anchor containing a button.
+  const nativeCard = card => card?.props?.authoringVersion === 1 &&
+    (card.props.tag === 'a' || card.props.tag === 'article' && card.props.attributes?.['data-game-preview'] === 'v1');
+  if(sourceCards.length===4&&sourceCards.every(nativeCard)){
     const byGame=recordsById(games),knownAssets=assetIds(assets);
-    for(const card of sourceCards)validateGameForCard(card,byGame.get(card.props.gameId),knownAssets);
+    const descendants = node => [node, ...(childrenOf(node) || []).flatMap(descendants)];
+    for(const card of sourceCards) {
+      const game = byGame.get(card.props.gameId);
+      validateGameForCard(card, game, knownAssets);
+      if (card.props.tag === 'article') {
+        const nodes = descendants(card), links = nodes.filter(node => node.props?.tag === 'a');
+        if (links.length !== 1 || links[0].props.href !== game.route ||
+            !Object.hasOwn(links[0].props.attributes || {}, 'data-game-preview-link')) {
+          throw new Error(`Native preview card ${card.id} must retain exactly one registered details link`);
+        }
+        if (descendants(links[0]).slice(1).some(node => ['a','button','input'].includes(node.props?.tag))) {
+          throw new Error(`Native preview card ${card.id} contains nested interactive controls`);
+        }
+        const images = nodes.filter(node => node.type === 'core.image');
+        if (!images.length || images.some(node => !knownAssets.has(node.props.asset))) {
+          throw new Error(`Unknown art asset in native preview card ${card.id}`);
+        }
+      }
+    }
     if(new Set(sourceCards.map(card=>card.props.gameId)).size!==4)throw new Error('Home game cards must resolve to four distinct registered games');
     return structuredClone(page);
   }

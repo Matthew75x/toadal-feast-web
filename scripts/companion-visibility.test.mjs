@@ -100,20 +100,20 @@ test('native preview Home image height outranks canonical card breakpoints',()=>
   assert.match(native,/\[data-game-preview\] \[data-game-preview-stage\] img\s*\{[^}]*height:\s*100%;/);
 });
 
-test('native preview height repair preserves authored fitting and excludes Play and App',()=>{
+test('native preview uses full-bleed covers, separate authentic captures, and excludes App',()=>{
   const preview=path.join(root,'dist','previews','cards-phone-20261008');
   const home=fs.readFileSync(path.join(preview,'index.html'),'utf8');
   assert.match(home,/class=['"]home-hero['"]/);
   assert.match(home,/id=['"]browser-games['"]/);
   const images=[...home.matchAll(/<img\b[^>]*\bdata-game-preview-(?:cover|gameplay)(?:\s|=)[^>]*>/g)];
-  assert.equal(images.length,3);
+  assert.equal(images.length,5);
   for(const [image] of images){
-    assert.match(image,/object-fit:contain/);
+    assert.match(image,image.includes('data-game-preview-gameplay')?/object-fit:contain/:/object-fit:cover/);
     assert.match(image,/object-position:50% 50%/);
   }
   const stages=[...home.matchAll(/<[^>]*\bdata-game-preview-stage(?:\s|=)[^>]*>/g)];
-  assert.equal(stages.length,2);
-  for(const [stage] of stages) assert.match(stage,/height:155px/);
+  assert.equal(stages.length,3);
+  for(const [stage] of stages) assert.match(stage,/aspect-ratio:16\/9/);
   for(const page of ['play/index.html','app/index.html']){
     const html=fs.readFileSync(path.join(preview,page),'utf8');
     assert.doesNotMatch(html,/class=['"][^'"]*\bhome-hero\b/);

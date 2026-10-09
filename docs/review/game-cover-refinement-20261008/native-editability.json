@@ -1,0 +1,39 @@
+{
+  "coverNode": "component.home.game.claw-feed-gulper.preview.cover",
+  "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
+  "framing": {
+    "authoringVersion": 1,
+    "tag": "img",
+    "className": "",
+    "attributes": {
+      "loading": "lazy",
+      "decoding": "async",
+      "data-game-preview-cover": "",
+      "aria-hidden": "false"
+    },
+    "style": "",
+    "layerName": "CLAW: Feed Gulper · generated promotional cover and editable framing",
+    "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
+    "alt": "CLAW: Feed Gulper promotional title illustration; not gameplay",
+    "fit": "cover",
+    "focalX": 50,
+    "focalY": 50,
+    "zoom": 1,
+    "aspectRatio": "16/9"
+  },
+  "stage": "component.home.game.claw-feed-gulper.preview.stage",
+  "stageAspectRatio": "16/9",
+  "inspectorPatchMapsTo": {
+    "type": "image.reframe",
+    "payload": {
+      "set": {
+        "fit": "contain",
+        "focalX": 40,
+        "focalY": 60
+      },
+      "reset": []
+    }
+  },
+  "sourceWasNotMutated": true,
+  "note": "Native inline image/frame properties override ordinary stylesheet defaults; no important forced cover-fit rule."
+}

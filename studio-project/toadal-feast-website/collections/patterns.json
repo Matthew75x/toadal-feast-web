@@ -405,6 +405,850 @@
           }
         }
       ]
+    },
+    {
+      "id": "pattern.owner.27e12fa7-e978-4744-bd84-854bee00a52c",
+      "name": "Game preview · cover + gameplay (independent image framing)",
+      "ownerPatternVersion": 1,
+      "components": [
+        {
+          "id": "component.owner.34aff171-5912-444d-9441-2e87955649fe",
+          "type": "layout.container",
+          "props": {
+            "gameId": "game.wicked-bites",
+            "authoringVersion": 1,
+            "tag": "article",
+            "className": "module studio-game-card",
+            "attributes": {
+              "data-game-preview": "v1",
+              "aria-label": "Wicked Bites preview card"
+            },
+            "style": "",
+            "layerName": "Wicked Bites · editable cover and gameplay preview",
+            "mode": "inherit",
+            "children": [
+              {
+                "id": "component.owner.0e934ab6-1c4c-420c-8c73-81740b350d1c",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-stage": ""
+                  },
+                  "style": "",
+                  "layerName": "Image window · fixed height; both frames stay aligned",
+                  "frameHeight": 155,
+                  "background": "#25162a",
+                  "children": [
+                    {
+                      "id": "component.owner.07a5634b-8f11-4870-a318-0e0cc04469d1",
+                      "type": "core.image",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "img",
+                        "className": "",
+                        "attributes": {
+                          "loading": "lazy",
+                          "decoding": "async",
+                          "data-game-preview-cover": "",
+                          "aria-hidden": "false"
+                        },
+                        "style": "",
+                        "layerName": "Wicked Bites · approved cover image and framing",
+                        "asset": "asset.import.wicked-bites-960.15bc9857",
+                        "alt": "Wicked Bites promotional title illustration; not gameplay",
+                        "fit": "contain",
+                        "focalX": 50,
+                        "focalY": 50,
+                        "zoom": 1,
+                        "responsive": {
+                          "mobile": {
+                            "asset": "asset.import.wicked-bites-480.a60da0ee",
+                            "maxWidth": 600,
+                            "fit": "contain"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "component.owner.0f002f2b-a770-4d61-a9d3-942fe31f47bd",
+                      "type": "core.image",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "img",
+                        "className": "",
+                        "attributes": {
+                          "loading": "lazy",
+                          "decoding": "async",
+                          "aria-hidden": "true",
+                          "data-game-preview-gameplay": ""
+                        },
+                        "style": "",
+                        "layerName": "Actual gameplay image · choose capture and framing",
+                        "asset": "asset.home.game.wicked-bites-preview",
+                        "alt": "Wicked Bites actual gameplay preview",
+                        "fit": "contain",
+                        "focalX": 50,
+                        "focalY": 50,
+                        "zoom": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "component.owner.f8603f0a-d3cd-4d9c-ae2a-4498e861f899",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "h3",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Wicked Bites",
+                  "text": "Wicked Bites"
+                }
+              },
+              {
+                "id": "component.owner.f5e64734-179e-4606-8a21-be67036c4163",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "p",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Wicked Bites description",
+                  "text": "Try the isolated Wicked Bites browser preview. Session-only play; this build is not a public release."
+                }
+              },
+              {
+                "id": "component.owner.7bb03fab-5d84-49cf-8010-0f8a9883571e",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "span",
+                  "className": "chip preview",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Wicked Bites status",
+                  "text": "PREVIEW"
+                }
+              },
+              {
+                "id": "component.owner.5f1ad0fc-2a8d-4e8d-b550-f7ae2fb4ccc1",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-actions": ""
+                  },
+                  "style": "",
+                  "layerName": "Separate preview toggle and game link",
+                  "children": [
+                    {
+                      "id": "component.owner.9f8b6ebf-5e9a-44cf-be8f-247f7325b047",
+                      "type": "core.button",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "button",
+                        "className": "",
+                        "attributes": {
+                          "type": "button",
+                          "data-game-preview-toggle": "",
+                          "aria-pressed": "false",
+                          "disabled": true
+                        },
+                        "style": "",
+                        "layerName": "Gameplay preview toggle",
+                        "children": [
+                          {
+                            "id": "component.owner.410df3c5-0bc5-4c81-bb33-48805450bc8a",
+                            "type": "core.text",
+                            "props": {
+                              "authoringVersion": 1,
+                              "tag": "span",
+                              "className": "",
+                              "attributes": {
+                                "data-game-preview-show-label": ""
+                              },
+                              "style": "",
+                              "layerName": "Preview button label",
+                              "text": "Preview gameplay"
+                            }
+                          },
+                          {
+                            "id": "component.owner.6220521a-f152-4c0e-8b87-9ccf4ab0e3c4",
+                            "type": "core.text",
+                            "props": {
+                              "authoringVersion": 1,
+                              "tag": "span",
+                              "className": "",
+                              "attributes": {
+                                "data-game-preview-hide-label": "",
+                                "hidden": true
+                              },
+                              "style": "",
+                              "layerName": "Cover button label",
+                              "text": "Show cover"
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "component.owner.12606bdb-7993-46a0-a173-dc0d0ea42888",
+                      "type": "core.button",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "a",
+                        "className": "",
+                        "attributes": {
+                          "data-game-preview-link": "",
+                          "aria-label": "Explore Wicked Bites preview"
+                        },
+                        "style": "",
+                        "layerName": "Game details link",
+                        "href": "/games/wicked-bites/",
+                        "label": "Explore preview →"
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "component.owner.7879e4e6-f166-4245-99c0-2d6c6dd23a56",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "p",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-status": "",
+                    "role": "status",
+                    "aria-live": "polite"
+                  },
+                  "style": "",
+                  "layerName": "Preview image availability",
+                  "text": ""
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.owner.9644d3c8-6078-4f50-9246-5f2b58ced2ac",
+      "name": "Froggie Fruity Bash · cover-only concept, gameplay slot pending",
+      "ownerPatternVersion": 1,
+      "components": [
+        {
+          "id": "component.owner.d0d7c6f5-b2d9-4a29-bc99-f661b7c70a8f",
+          "type": "layout.container",
+          "props": {
+            "gameId": "game.froggy-fruity-bash",
+            "authoringVersion": 1,
+            "tag": "article",
+            "className": "module studio-game-card",
+            "attributes": {
+              "data-game-preview": "v1",
+              "data-game-preview-availability": "no-gameplay",
+              "aria-label": "Froggie Fruity Bash concept details"
+            },
+            "style": "",
+            "layerName": "Froggie Fruity Bash · cover ready; gameplay capture pending",
+            "mode": "inherit",
+            "children": [
+              {
+                "id": "component.owner.f1982599-2dc0-43e9-bd50-67da5ff9da1f",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-stage": ""
+                  },
+                  "style": "",
+                  "layerName": "Image window · shared cover/gameplay frame",
+                  "frameHeight": 155,
+                  "background": "#25162a",
+                  "children": [
+                    {
+                      "id": "component.owner.4be7f50b-4ec7-4726-a502-7e0b06f26a21",
+                      "type": "core.image",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "img",
+                        "className": "",
+                        "attributes": {
+                          "loading": "lazy",
+                          "decoding": "async",
+                          "data-game-preview-cover": ""
+                        },
+                        "style": "",
+                        "layerName": "Froggie Fruity Bash · approved cover image and framing",
+                        "asset": "asset.import.foodio-fruity-bash-960.32f2d77b",
+                        "alt": "Froggie Fruity Bash promotional title illustration; not gameplay",
+                        "fit": "contain",
+                        "focalX": 50,
+                        "focalY": 50,
+                        "zoom": 1,
+                        "responsive": {
+                          "mobile": {
+                            "asset": "asset.import.foodio-fruity-bash-480.a48d00e6",
+                            "maxWidth": 600,
+                            "fit": "contain"
+                          }
+                        }
+                      }
+                    },
+                    {
+                      "id": "component.owner.1e70d415-7b35-498a-b7dd-72964577738f",
+                      "type": "layout.container",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "div",
+                        "className": "",
+                        "attributes": {
+                          "data-gameplay-asset-pending": ""
+                        },
+                        "style": "",
+                        "layerName": "Gameplay slot · empty until a verified capture is supplied",
+                        "hidden": true,
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "component.owner.4fee6b63-86e2-488c-832d-8a2ecbcfcc9a",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "h3",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Froggie Fruity Bash",
+                  "text": "Froggy Fruity Bash"
+                }
+              },
+              {
+                "id": "component.owner.9e30e325-b2b4-495b-8d89-8ce9eccdbae4",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "p",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Froggy Fruity Bash description",
+                  "text": "A colourful concept preview. No playable browser package is connected yet."
+                }
+              },
+              {
+                "id": "component.owner.b561d1db-08ce-489e-b01f-1d69b3419b6c",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "span",
+                  "className": "chip preview",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Froggy Fruity Bash status",
+                  "text": "PREVIEW"
+                }
+              },
+              {
+                "id": "component.owner.fdd14bc0-5470-4339-86c3-86add6425c48",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-actions": ""
+                  },
+                  "style": "",
+                  "layerName": "Details link · no gameplay preview available",
+                  "children": [
+                    {
+                      "id": "component.owner.ebd6ae0f-e0cd-4d25-ab4f-bc24de1dfcdc",
+                      "type": "core.button",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "a",
+                        "className": "",
+                        "attributes": {
+                          "data-game-preview-link": "",
+                          "aria-label": "View Froggie Fruity Bash details"
+                        },
+                        "style": "",
+                        "layerName": "Existing concept details route",
+                        "href": "/games/froggy-fruity-bash/",
+                        "label": "View game details →"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.owner.e743fff5-15e9-40b2-83b0-d4288fc6489b",
+      "name": "TOADAL Tower Defense · cover-only concept, gameplay slot pending",
+      "ownerPatternVersion": 1,
+      "components": [
+        {
+          "id": "component.owner.8c7ec1aa-d73e-49b8-8d58-62a779fc027d",
+          "type": "layout.container",
+          "props": {
+            "gameId": "game.toadal-tower-defense",
+            "authoringVersion": 1,
+            "tag": "article",
+            "className": "module studio-game-card",
+            "attributes": {
+              "data-game-preview": "v1",
+              "data-game-preview-availability": "no-gameplay",
+              "aria-label": "TOADAL Tower Defense concept details"
+            },
+            "style": "",
+            "layerName": "TOADAL Tower Defense · cover ready; gameplay capture pending",
+            "mode": "inherit",
+            "children": [
+              {
+                "id": "component.owner.93f93255-97f9-4473-9d4d-0efb98856265",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-stage": ""
+                  },
+                  "style": "",
+                  "layerName": "Image window · shared cover/gameplay frame",
+                  "frameHeight": 155,
+                  "background": "#25162a",
+                  "children": [
+                    {
+                      "id": "component.owner.b17fcb48-203a-4638-a4ab-da56af3c6775",
+                      "type": "core.image",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "img",
+                        "className": "",
+                        "attributes": {
+                          "loading": "lazy",
+                          "decoding": "async",
+                          "data-game-preview-cover": ""
+                        },
+                        "style": "",
+                        "layerName": "Existing concept cover · Croaker mapping unresolved",
+                        "asset": "asset.home.world.desktop",
+                        "alt": "TOADAL Tower Defense artwork",
+                        "fit": "contain",
+                        "focalX": 50,
+                        "focalY": 50,
+                        "zoom": 1
+                      }
+                    },
+                    {
+                      "id": "component.owner.5e63bf0b-a9d7-4323-823d-8b82043b26a9",
+                      "type": "layout.container",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "div",
+                        "className": "",
+                        "attributes": {
+                          "data-gameplay-asset-pending": ""
+                        },
+                        "style": "",
+                        "layerName": "Gameplay slot · empty until a verified capture is supplied",
+                        "hidden": true,
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "component.owner.08547826-af13-453a-9a72-dd43e7fc5b36",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "h3",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "TOADAL Tower Defense",
+                  "text": "TOADAL Tower Defense"
+                }
+              },
+              {
+                "id": "component.owner.e09de726-bc99-4df9-9c3d-be50e646cda0",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "p",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "TOADAL Tower Defense description",
+                  "text": "A world-inspired concept preview. No playable browser package is connected yet."
+                }
+              },
+              {
+                "id": "component.owner.20598204-40c3-4529-ba42-65592d881ce1",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "span",
+                  "className": "chip preview",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "TOADAL Tower Defense status",
+                  "text": "PREVIEW"
+                }
+              },
+              {
+                "id": "component.owner.41d2406e-e3d3-49e0-891a-6b6951a582b1",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-actions": ""
+                  },
+                  "style": "",
+                  "layerName": "Details link · no gameplay preview available",
+                  "children": [
+                    {
+                      "id": "component.owner.f8a165f3-9b11-433b-a406-1235bb02f8bb",
+                      "type": "core.button",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "a",
+                        "className": "",
+                        "attributes": {
+                          "data-game-preview-link": "",
+                          "aria-label": "View TOADAL Tower Defense details"
+                        },
+                        "style": "",
+                        "layerName": "Existing concept details route",
+                        "href": "/games/toadal-tower-defense/",
+                        "label": "View game details →"
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.owner.fc1d7a6e-f606-48c2-8c0d-43b35cc949ce",
+      "name": "Croaker’s Keep · approved promotional cover, placement pending",
+      "ownerPatternVersion": 1,
+      "components": [
+        {
+          "id": "component.owner.29841b5a-461c-41cc-96d0-b8086a5062be",
+          "type": "layout.container",
+          "props": {
+            "authoringVersion": 1,
+            "tag": "article",
+            "className": "module studio-game-card",
+            "attributes": {
+              "data-game-preview": "v1"
+            },
+            "style": "",
+            "layerName": "Croaker’s Keep · reusable promotional card; placement pending",
+            "children": [
+              {
+                "id": "component.owner.3f08044e-c901-40e0-b73a-93f76bb8654c",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "attributes": {
+                    "data-game-preview-stage": ""
+                  },
+                  "style": "",
+                  "layerName": "Image frame",
+                  "frameHeight": 155,
+                  "background": "#25162a",
+                  "children": [
+                    {
+                      "id": "component.owner.244b8651-eb1d-4e0a-bc76-802dff783c18",
+                      "type": "core.image",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "img",
+                        "className": "",
+                        "attributes": {
+                          "data-game-preview-cover": "",
+                          "loading": "lazy"
+                        },
+                        "style": "",
+                        "layerName": "Croaker’s Keep · approved cover image and framing",
+                        "asset": "asset.import.croakers-keep-960.64042283",
+                        "fit": "contain",
+                        "focalX": 50,
+                        "focalY": 50,
+                        "zoom": 1,
+                        "responsive": {
+                          "mobile": {
+                            "asset": "asset.import.croakers-keep-480.70211daa",
+                            "maxWidth": 600,
+                            "fit": "contain"
+                          }
+                        },
+                        "alt": "Croaker’s Keep promotional title illustration; not gameplay"
+                      }
+                    },
+                    {
+                      "id": "component.owner.c8141465-b11d-4464-9bda-751ad2de34e7",
+                      "type": "layout.container",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "div",
+                        "className": "",
+                        "attributes": {},
+                        "style": "",
+                        "layerName": "Gameplay slot · no verified capture assigned",
+                        "hidden": true,
+                        "children": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "component.owner.1aefc891-5d3c-4a91-9c9b-473d4632b6a7",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "h3",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Title",
+                  "text": "Croaker’s Keep"
+                }
+              },
+              {
+                "id": "component.owner.77aece57-7923-4f07-928c-fdb038b64f68",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "p",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Placement status",
+                  "text": "Promotional cover artwork. Website placement and gameplay preview are not connected."
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.owner.21016c27-1ed0-44c8-a5c1-9189b38f8eaf",
+      "name": "Phone showcase · compact managed-image frame",
+      "ownerPatternVersion": 1,
+      "components": [
+        {
+          "id": "component.owner.cf32e5ce-4777-4db8-b3e6-647e5b054972",
+          "type": "layout.container",
+          "props": {
+            "authoringVersion": 1,
+            "tag": "figure",
+            "className": "app-phone-frame",
+            "attributes": {
+              "data-native-phone-showcase": "v1"
+            },
+            "style": "",
+            "layerName": "Editable phone showcase · screenshot, framing, label and caption",
+            "mode": "inherit",
+            "children": [
+              {
+                "id": "component.owner.66e252db-bf55-4499-a625-3ba15b78cec7",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "span",
+                  "className": "app-shot-label",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "REAL GAMEPLAY",
+                  "text": "REAL GAMEPLAY"
+                }
+              },
+              {
+                "id": "component.owner.15c2ccf4-36b6-4d77-bb73-60bb587e6a4b",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "style": "",
+                  "layerName": "Phone screen · replace its image in Studio",
+                  "attributes": {
+                    "data-native-phone-screen": ""
+                  },
+                  "children": [
+                    {
+                      "id": "component.owner.2eeacc68-fa03-4eb3-9987-2b0cb18741f0",
+                      "type": "core.image",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "img",
+                        "className": "",
+                        "attributes": {
+                          "width": "360",
+                          "height": "600",
+                          "loading": "lazy",
+                          "decoding": "async",
+                          "data-native-phone-image": ""
+                        },
+                        "style": "",
+                        "layerName": "Phone screen content · managed image and independent framing",
+                        "asset": "asset.app.gameplay.arcade",
+                        "alt": "Real TOADAL FEAST Arcade gameplay showing Froggie beneath falling food in a lush waterfall world",
+                        "fit": "contain",
+                        "focalX": 50,
+                        "focalY": 50,
+                        "zoom": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "component.owner.7519ed4c-1d24-4d2c-8cca-9cf67eec7ba0",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "figcaption",
+                  "className": "",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Arcade",
+                  "text": "Arcade"
+                }
+              }
+            ],
+            "padding": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "pattern.owner.67b0ca15-045f-4656-bb03-2c6e3d2f546f",
+      "name": "Phone showcase · linked managed-image frame",
+      "ownerPatternVersion": 1,
+      "components": [
+        {
+          "id": "component.owner.18419e92-c483-48d5-a8bc-670d6dd255c6",
+          "type": "core.button",
+          "props": {
+            "authoringVersion": 1,
+            "tag": "a",
+            "className": "app-product-phone",
+            "attributes": {
+              "aria-label": "Explore the Arcade mobile mode",
+              "data-native-phone-showcase": "v1"
+            },
+            "style": "",
+            "layerName": "Editable phone showcase · screenshot, framing, label and caption",
+            "children": [
+              {
+                "id": "component.owner.c145e7e3-ede4-48ab-acb6-237960ccc252",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "span",
+                  "className": "app-shot-label",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "REAL GAMEPLAY",
+                  "text": "REAL GAMEPLAY"
+                }
+              },
+              {
+                "id": "component.owner.fbcb1337-4b85-465f-88ce-76ea5052928b",
+                "type": "layout.container",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "div",
+                  "className": "",
+                  "style": "",
+                  "layerName": "Phone screen · replace its image in Studio",
+                  "attributes": {
+                    "data-native-phone-screen": ""
+                  },
+                  "children": [
+                    {
+                      "id": "component.owner.edb8f728-ab9a-4c2a-9170-e2100138ffd3",
+                      "type": "core.image",
+                      "props": {
+                        "authoringVersion": 1,
+                        "tag": "img",
+                        "className": "",
+                        "attributes": {
+                          "width": "360",
+                          "height": "600",
+                          "decoding": "async",
+                          "data-native-phone-image": ""
+                        },
+                        "style": "",
+                        "layerName": "Phone screen content · managed image and independent framing",
+                        "asset": "asset.app.gameplay.arcade",
+                        "alt": "Real TOADAL FEAST Arcade gameplay showing Froggie and falling food in a lush waterfall world",
+                        "fit": "contain",
+                        "focalX": 50,
+                        "focalY": 50,
+                        "zoom": 1
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "component.owner.643722ed-8cb3-4b7b-bfe7-1d18ac084c97",
+                "type": "core.text",
+                "props": {
+                  "authoringVersion": 1,
+                  "tag": "span",
+                  "className": "portal-app-stage-caption",
+                  "attributes": {},
+                  "style": "",
+                  "layerName": "Arcade",
+                  "text": "Arcade"
+                }
+              }
+            ],
+            "href": "#mode-arcade",
+            "padding": 5
+          }
+        }
+      ]
     }
   ],
   "favorites": [],

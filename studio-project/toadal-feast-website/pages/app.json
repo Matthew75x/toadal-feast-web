@@ -474,10 +474,11 @@
                                 "tag": "a",
                                 "className": "app-product-phone",
                                 "attributes": {
-                                  "aria-label": "Explore the Arcade mobile mode"
+                                  "aria-label": "Explore the Arcade mobile mode",
+                                  "data-native-phone-showcase": "v1"
                                 },
                                 "style": "",
-                                "layerName": "REAL GAMEPLAYArcade",
+                                "layerName": "Editable phone showcase · screenshot, framing, label and caption",
                                 "children": [
                                   {
                                     "id": "component.live-app.rich-text.b8e2c6a343df.app-shot-label",
@@ -493,21 +494,42 @@
                                     }
                                   },
                                   {
-                                    "id": "component.live-app.rich-text.f39d67952b33.img",
-                                    "type": "core.image",
+                                    "id": "component.live-app.rich-text.7bbc10829c36.app-product-phone.editable-screen",
+                                    "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "img",
+                                      "tag": "div",
                                       "className": "",
-                                      "attributes": {
-                                        "width": "360",
-                                        "height": "600",
-                                        "decoding": "async"
-                                      },
                                       "style": "",
-                                      "layerName": "Real TOADAL FEAST Arcade gameplay showing Froggie and falling food in a lush waterfall world",
-                                      "asset": "asset.app.gameplay.arcade",
-                                      "alt": "Real TOADAL FEAST Arcade gameplay showing Froggie and falling food in a lush waterfall world"
+                                      "layerName": "Phone screen · replace its image in Studio",
+                                      "attributes": {
+                                        "data-native-phone-screen": ""
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "component.live-app.rich-text.f39d67952b33.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "width": "360",
+                                              "height": "600",
+                                              "decoding": "async",
+                                              "data-native-phone-image": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "Phone screen content · managed image and independent framing",
+                                            "asset": "asset.app.gameplay.arcade",
+                                            "alt": "Real TOADAL FEAST Arcade gameplay showing Froggie and falling food in a lush waterfall world",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "zoom": 1
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
@@ -524,7 +546,8 @@
                                     }
                                   }
                                 ],
-                                "href": "#mode-arcade"
+                                "href": "#mode-arcade",
+                                "padding": 5
                               }
                             },
                             {
@@ -1271,7 +1294,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Destinations pending",
-                                "text": "Destinations pending"
+                                "text": "Download links unavailable"
                               }
                             },
                             {
@@ -1284,7 +1307,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "No unverified store URL is exposed. Download controls stay disabled unti",
-                                "text": "No unverified store URL is exposed. Download controls stay disabled until official destinations are confirmed."
+                                "text": "Official App Store and Google Play links are not available here yet, so downloads are disabled."
                               }
                             }
                           ]
@@ -1338,7 +1361,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "The website remains the place to discover the world, characters, stories",
-                                "text": "The website remains the place to discover the world, characters, stories, and current browser-preview states."
+                                "text": "Discover the world, meet the characters, explore the story shelves, and check which browser previews you can try."
                               }
                             }
                           ]
@@ -1542,7 +1565,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "Owner-supplied illustrations for the mobile Puzzle abilities. They are c",
-                    "text": "Owner-supplied illustrations for the mobile Puzzle abilities. They are concept presentation art, not a playable website feature; store links remain unavailable."
+                    "text": "Illustrations of the mobile Puzzle abilities. These are concept art, not a playable website feature. Store links are not available yet."
                   }
                 },
                 {

@@ -197,17 +197,17 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
   );
 
   const gameIntro = componentHtml(homePage, 'games-intro');
-  assert.match(hero, /isolated, session-only browser preview/i);
-  assert.match(gameIntro, /Wicked Bites runs as a session-only staging preview/i);
-  assert.match(gameIntro, /CLAW is held for origin-safety requalification/i);
-  assert.match(gameIntro, /two entries are concepts/i);
-  assert.match(gameIntro, /Nothing is marked PUBLIC\./i);
+  assert.match(hero, /session-only browser preview/i);
+  assert.match(gameIntro, /Wicked Bites is a session-only browser preview/i);
+  assert.match(gameIntro, /CLAW is not playable yet/i);
+  assert.match(gameIntro, /two games are concepts/i);
+  assert.match(gameIntro, /No public releases yet\./i);
   assert.equal(homePage.document.seo.title, homePage.document.title,
     'Home SEO title should stay aligned with its visible title');
   assert.equal(homePage.document.seo.description, homePage.document.description,
     'Home SEO description should stay aligned with its route description');
   const publicEmptyState = pageHtml(homePage);
-  assert.match(publicEmptyState, /No PUBLIC browser games are available yet/,
+  assert.match(publicEmptyState, /No public browser releases are available yet/,
     'the empty public filter should explain the actual public-state gate');
   assert.doesNotMatch(publicEmptyState, /Qualified staging previews are being connected/,
     'the empty public filter must not claim the player integration is still pending');
@@ -241,8 +241,8 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
     storeButtons.every((tag) => /\sdisabled(?:\s|=|>)/i.test(tag) && htmlAttribute(tag, 'href') === null),
     'app-store badges must remain disabled buttons until verified store URLs exist',
   );
-  assert.match(appConversion, /store links remain unavailable until verified destinations exist/i);
-  assert.match(appConversion, /Verified store links are not configured/i);
+  assert.match(appConversion, /Store downloads are not available (?:here )?yet/i);
+  assert.match(appConversion, /Store downloads are not available yet/i);
 });
 
 test('Home companion is present and each context has its own copy', () => {

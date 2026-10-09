@@ -126,8 +126,8 @@ check('home-character-truth', /character hub is open/i.test(componentHtml('compo
   /profile preview for Toadal/i.test(componentHtml('component.home.discovery')) &&
   /href=["']\/characters\/toadal\/["']/.test(componentHtml('component.home.discovery')),
   'Home distinguishes the existing Character hub and Toadal profile preview from incomplete broader profile depth.');
-check('home-stories-truth', /public reading surfaces are here/i.test(componentHtml('component.home.discovery')) &&
-  /catalogue is still empty/i.test(componentHtml('component.home.discovery')) &&
+check('home-stories-truth', /No chapters have been published yet/i.test(componentHtml('component.home.discovery')) &&
+  /A new shelf of stories is taking shape/i.test(componentHtml('component.home.discovery')) &&
   ['/stories/', '/manga/', '/reader/'].every(route => componentHtml('component.home.discovery').includes(`href='${route}'`)) &&
   !/No stories or media library is published here/i.test(componentHtml('component.home.discovery')),
   'Home presents the existing Stories/Manga/Reader surfaces while clearly stating that no approved catalogue is published.');
@@ -164,7 +164,7 @@ const previewOnly = indexedGames.length === 4 && gameRecords.every(game =>
   gameRecords.filter(game => game !== stagingGame).every(game => game.web?.enabled === false);
 check('preview-truth', previewOnly && component('component.home.games')?.props?.children?.length === 4 &&
   /Public games[\s\S]*?<span\b[^>]*>0<\/span>/i.test(componentHtml('component.home.games-intro')) &&
-  /Wicked Bites runs as a session-only staging preview/i.test(componentHtml('component.home.games-intro')),
+  /Wicked Bites is a session-only browser preview/i.test(componentHtml('component.home.games-intro')),
   'All four listings stay PREVIEW with zero public games; exactly one isolated Wicked Bites staging route is distinguished from held/concept entries.');
 check('preview-headline-truth', previewOnly
   ? /Play the Feast World for Free\./.test(plainText(componentHtml('component.home.hero')))
@@ -176,7 +176,7 @@ check('home-play-funnel', /href=['"]\/play\/['"]/i.test(componentHtml('component
 check('arcade-withheld', !indexedGames.some(game => /arcade/i.test(game.slug || game.id)),
   'The unapproved Arcade candidate is not exposed as a public browser-game record.');
 check('store-link-truth', /type=["']button["'][^>]*disabled/i.test(componentHtml('component.home.app')) &&
-  /verified store links are not configured|store links are not available|no download link is configured/i.test(componentHtml('component.home.app')),
+  /verified store links are not configured|store links are not available|no download link is configured|Store downloads are not available yet/i.test(componentHtml('component.home.app')),
   'Store conversion is disabled and explains that no verified destination is configured.');
 
 const requiredNav = ['Home', 'Play', 'World', 'Stories', 'Media', 'Feast Pass', 'App'];
