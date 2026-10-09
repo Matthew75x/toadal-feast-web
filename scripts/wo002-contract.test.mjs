@@ -46,11 +46,20 @@ function semanticMarkup(markup) {
     tag.replace(/\sdata-studio-(?:component|edit-field)=(['"])[^'"]*\1/g, ''));
 }
 
+function findAuthoredComponent(nodes, variant) {
+  for (const entry of nodes || []) {
+    if ((entry.type === 'core.rich-text' || entry.props?.authoringVersion) && entry.props?.variant === variant) {
+      return entry;
+    }
+    const nested = findAuthoredComponent(entry.props?.children, variant);
+    if (nested) return nested;
+  }
+  return null;
+}
+
 function componentHtml(page, variant) {
-  const component = page.document.components.find((entry) =>
-    (entry.type === 'core.rich-text' || entry.props?.authoringVersion) && entry.props?.variant === variant,
-  );
-  assert.ok(component, `${page.route} must contain authored component variant ${variant}`);
+  const component = findAuthoredComponent(page.document.components, variant);
+  assert.ok(component, page.route + ' must contain authored component variant ' + variant);
   return semanticMarkup(projectPage(projectRoot, { ...page.document, components: [component] }));
 }
 
@@ -212,7 +221,7 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
   assert.doesNotMatch(publicEmptyState, /Qualified staging previews are being connected/,
     'the empty public filter must not claim the player integration is still pending');
 
-  const gameGrid = homePage.document.components.find((component) => component.props?.variant === 'home-game-grid');
+  const gameGrid = findAuthoredComponent(homePage.document.components, 'home-game-grid');
   assert.ok(gameGrid, 'Home must retain its structured game-card grid');
   assert.deepEqual(
     gameGrid.props.children.map((child) => child.props.gameId).sort(),

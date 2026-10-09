@@ -346,7 +346,13 @@ test('fractional header gap admits only automatic already-minimized Profile at t
       const { h } = headerHarness({ gap, brandRight: 160, route, manual, minimized });
       const dock = h.mobileDock();
       if (gap < threshold) assert.equal(dock, null, `${route}/${minimized}/${gap}`);
-      else { assert.ok(dock); assert.ok(Math.abs(dock.width - gap) < 1e-9); assert.ok(dock.width >= 48); }
+      else {
+        assert.ok(dock);
+        const expectedWidth = route === '.home-hero' ? 52 : gap;
+        assert.ok(Math.abs(dock.width - expectedWidth) < 1e-9, route + '/' + gap + ' keeps its intended hit-box width');
+        assert.ok(dock.width <= gap + 1e-9, route + '/' + gap + ' fits between the measured header controls');
+        assert.ok(dock.width >= 48);
+      }
     }
     const { h } = headerHarness({ gap, manual: true });
     assert.equal(h.mobileDock(), null, 'saved/deliberate manual placement always bypasses docking');

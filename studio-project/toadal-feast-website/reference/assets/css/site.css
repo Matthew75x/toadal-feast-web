@@ -1686,7 +1686,7 @@ main {
     grid-template-areas:
       "access access"
       "hero hero"
-      "browser-games pass"
+      ". ."
       "today today"
       "interactive interactive"
       "discovery discovery"
@@ -1698,8 +1698,6 @@ main {
 
   main:has(.home-hero) > [data-studio-variant="accessibility-tools"] { grid-area: access; }
   main:has(.home-hero) > [data-studio-variant="home-hero"] { grid-area: hero; }
-  main:has(.home-hero) > [data-studio-variant="browser-games-column"] { grid-area: browser-games; }
-  main:has(.home-hero) > [data-studio-variant="feast-pass"] { grid-area: pass; }
   main:has(.home-hero) > [data-studio-variant="today"] { grid-area: today; }
   main:has(.home-hero) > [data-studio-variant="home-interactive-discovery"] { grid-area: interactive; }
   main:has(.home-hero) > [data-studio-variant="discovery"] { grid-area: discovery; }
@@ -1707,12 +1705,7 @@ main {
   main:has(.home-hero) > [data-studio-variant="whats-next"] { grid-area: next; }
   main:has(.home-hero) > [data-studio-variant="companion"] { grid-area: companion; }
 
-  main:has(.home-hero) > [data-studio-variant="browser-games-column"] {
-    padding-inline-start: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
-  }
-
   main:has(.home-hero) > [data-studio-variant="feast-pass"] {
-    padding-inline-end: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
     background: var(--cream-100);
   }
 
@@ -3368,7 +3361,7 @@ body:has(.home-hero) .site-brand{position:relative;padding-left:30px;font-size:1
 body:has(.home-hero) .site-brand::before{content:"";position:absolute;left:0;top:50%;width:24px;height:24px;transform:translateY(-53%);background:url("../brand/brand-crown.svg") center / contain no-repeat;}
 body:has(.home-hero) .site-links{gap:clamp(2px,.55vw,8px);}
 body:has(.home-hero) .site-links a{min-height:34px;padding:5px 8px;font-size:.78rem;}
-main:has(.home-hero){width:min(100%,var(--content-max));margin-inline:auto;display:grid;grid-template-columns:minmax(0,3.15fr) minmax(310px,.95fr);grid-template-areas:"access access" "hero hero" "browser-games pass" "today today" "interactive interactive" "discovery discovery" "app next" "companion companion";column-gap:12px;align-items:stretch;background:var(--cream-100);}
+main:has(.home-hero){width:min(100%,var(--content-max));margin-inline:auto;display:grid;grid-template-columns:minmax(0,3.15fr) minmax(310px,.95fr);grid-template-areas:"access access" "hero hero" ". ." "today today" "interactive interactive" "discovery discovery" "app next" "companion companion";column-gap:12px;align-items:stretch;background:var(--cream-100);}
 main:has(.home-hero) > .section,main:has(.home-hero) > .studio-layout{width:100%;min-width:0;margin-inline:0;}
 main:has(.home-hero) > [data-studio-variant="accessibility-tools"]{position:absolute;width:auto;padding:0;}
 main:has(.home-hero) > #top{grid-area:hero;padding-block:0;}
@@ -7871,29 +7864,37 @@ html body:has(.home-hero) #feast-pass .framed-feast-pass {
 }
 
 /* The game introduction and card grid share one native desktop column. */
-.home-browser-games-column {
+html body:has(.home-hero) .home-browser-games-column {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: max-content max-content;
+  grid-auto-rows: max-content;
+  align-self: start;
   align-content: start;
   gap: 0;
   width: 100%;
   min-width: 0;
-  margin-inline: 0;
+  min-height: 0;
+  height: auto;
+  padding: 0;
 }
-.home-browser-games-column > #browser-games-intro,
-.home-browser-games-column > #browser-games {
-  width: 100%;
-  min-width: 0;
-  max-width: none;
-  margin: 0;
+html body:has(.home-hero) .home-browser-games-column > :is(#browser-games-intro, #browser-games) {
+  grid-area: auto;
+  grid-column: 1;
+  grid-row: auto;
   align-self: start;
+  min-width: 0;
+  min-height: 0;
+  height: auto;
+  margin: 0;
 }
-@media (min-width: 1100px) {
-  html body:has(.home-hero) main > [data-studio-variant="browser-games-column"] {
-    grid-area: browser-games;
+@media (min-width: 1080px) {
+  html body:has(.home-hero) main > #browser-games-column {
+    grid-area: 2 / 1 / 4 / 10;
     align-self: start;
     min-width: 0;
-    padding-inline-start: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+    min-height: 0;
+    padding: 0;
   }
   html body:has(.home-hero) #browser-games-intro .home-section-inner {
     height: auto;
@@ -7905,9 +7906,8 @@ html body:has(.home-hero) #feast-pass .framed-feast-pass {
     padding-block: 0 24px;
     padding-inline-end: 0;
   }
-  html body:has(.home-hero) #feast-pass {
-    grid-area: pass;
-    grid-row: auto;
+  html body:has(.home-hero) main > #feast-pass {
+    grid-area: 2 / 10 / 4 / -1;
     align-self: start;
     min-width: 0;
     min-height: 0;
@@ -7920,7 +7920,6 @@ html body:has(.home-hero) #feast-pass .framed-feast-pass {
     max-height: none;
   }
 }
-
 /* Home speech visibility never changes the avatar's compact hit box. */
 html body:has(.home-hero) .toadal-companion {
   width: 52px !important;
