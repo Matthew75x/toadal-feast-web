@@ -30,7 +30,19 @@ test('Devlog and Roadmap content roots use the native site shell gutters', () =>
   assert.match(css, /\.shell,\s*\.studio-layout\s*\{\s*width:\s*min\(calc\(100%\s*-\s*2\s*\*\s*var\(--page-gutter\)\),\s*var\(--content-max\)\);\s*min-width:\s*0;\s*margin-inline:\s*auto;/);
 });
 
-test('Media, About, and Wicked Bites keep native destination links in labelled wrapping navigation', () => {
+test('Devlog, Media, About, and Wicked Bites keep destination links in labelled wrapping navigation', () => {
+  const devlog = find(page('news-article'), node => node.id === 'component.manifest-news-article.8166d88b1f44.progression-page');
+  assert.ok(devlog);
+  const devlogNav = devlog.props.children.find(node => node.id === 'component.manifest-news-article.devlog-destinations');
+  assert.ok(devlogNav);
+  assert.equal(devlogNav.type, 'layout.container');
+  assert.equal(devlogNav.props.tag, 'nav');
+  assert.ok(classNames(devlogNav).includes('progression-nav--devlog'));
+  assert.equal(devlogNav.props.attributes['aria-label'], 'Devlog destinations');
+  assert.deepEqual(devlogNav.props.children.map(node => [node.id, node.props.href]), [
+    ['component.manifest-news-article.cc26e3094531.a', '/roadmap/'],
+    ['component.manifest-news-article.e7355eac985f.a', '/news/']
+  ]);
   const mediaNav = find(page('media'), node => node.id === 'component.media.related-routes.b6e4812d8a74.progression-nav');
   assert.ok(mediaNav);
   assert.ok(classNames(mediaNav).includes('progression-nav--media'));
@@ -56,11 +68,11 @@ test('Media, About, and Wicked Bites keep native destination links in labelled w
   assert.deepEqual(wickedNav.props.children.map(node => node.props.href), ['/play/', '/feast-pass/', '/leaderboards/?game=wicked-bites']);
 });
 
-test('the three destination rows have visible wrapping gaps, touch-sized links, and focus rings', () => {
+test('the editorial destination rows have visible wrapping gaps, touch-sized links, and focus rings', () => {
   const start = css.indexOf('/* Give editorial routes the same wrapped, keyboard-friendly link rows. */');
   assert.notEqual(start, -1);
   const rules = css.slice(start);
-  assert.match(rules, /\.progression-nav--media,\s*#about-stories-characters \.progression-nav--about,\s*\.progression-nav--wicked-bites\s*\{[^}]*display:\s*flex;[^}]*flex-wrap:\s*wrap;[^}]*gap:\s*10px 12px;/s);
-  assert.match(rules, /\.progression-nav--media > a,[\s\S]*?\{[^}]*display:\s*inline-flex;[^}]*min-height:\s*44px;[^}]*padding:\s*8px 13px;/);
+  assert.match(rules, /\.progression-nav--media,\s*#about-stories-characters \.progression-nav--about,\s*\.progression-nav--wicked-bites,\s*\.progression-nav--devlog\s*\{[^}]*display:\s*flex;[^}]*flex-wrap:\s*wrap;[^}]*gap:\s*10px 12px;/s);
+  assert.match(rules, /\.progression-nav--media > a,[\s\S]*?\.progression-nav--devlog > a\s*\{[^}]*display:\s*inline-flex;[^}]*min-height:\s*44px;[^}]*padding:\s*8px 13px;/);
   assert.match(rules, /:focus-visible,[\s\S]*?\{[^}]*outline:\s*3px solid var\(--pink-700\);[^}]*outline-offset:\s*3px;/);
 });

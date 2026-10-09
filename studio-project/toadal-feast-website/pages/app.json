@@ -1907,7 +1907,7 @@
               },
               "style": "",
               "layerName": "App icon",
-              "mode": "inherit",
+              "mode": "grid",
               "children": [
                 {
                   "id": "component.app.icon-trailer-availability.3e731fccbad2.app-gameplay-card-app-ic",
@@ -2052,7 +2052,17 @@
                     ]
                   }
                 }
-              ]
+              ],
+              "presentationVersion": 1,
+              "columns": 2,
+              "gap": 18,
+              "responsive": {
+                "mobile": {
+                  "maxWidth": 760,
+                  "mode": "stack",
+                  "gap": 12
+                }
+              }
             }
           }
         ]

@@ -7950,7 +7950,8 @@ html body:has(.home-hero) .toadal-companion .companion-image {
 /* Give editorial routes the same wrapped, keyboard-friendly link rows. */
 .progression-nav--media,
 #about-stories-characters .progression-nav--about,
-.progression-nav--wicked-bites {
+.progression-nav--wicked-bites,
+.progression-nav--devlog {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -7959,7 +7960,8 @@ html body:has(.home-hero) .toadal-companion .companion-image {
 }
 .progression-nav--media > a,
 #about-stories-characters .progression-nav--about > a,
-.progression-nav--wicked-bites > a {
+.progression-nav--wicked-bites > a,
+.progression-nav--devlog > a {
   display: inline-flex;
   min-height: 44px;
   align-items: center;
@@ -7970,7 +7972,8 @@ html body:has(.home-hero) .toadal-companion .companion-image {
 }
 .progression-nav--media > a:focus-visible,
 #about-stories-characters .progression-nav--about > a:focus-visible,
-.progression-nav--wicked-bites > a:focus-visible {
+.progression-nav--wicked-bites > a:focus-visible,
+.progression-nav--devlog > a:focus-visible {
   outline: 3px solid var(--pink-700);
   outline-offset: 3px;
 }
