@@ -153,7 +153,7 @@
       // The visible bubble, not just its character anchor, must leave navigation usable.
       var preferred = { x: Math.round(left), y: Math.round(top) };
       var controls = controlRects(true).concat([anchor]);
-      var next = avoidControls(preferred, panelWidth, panelHeight, controls);
+      var next = avoidProfileCopy(preferred, panelWidth, panelHeight, controls);
       // A passive tip can wait for free space; the character and reader's preferences remain intact.
       var suppressed = root.getAttribute('data-mobile-docked') === 'true' &&
         root.getAttribute('data-minimized') === 'true' && controls.some(function (rect) {
@@ -179,10 +179,10 @@
       var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
       // Main controls can scroll behind the opaque sticky header. They must
       // not dislodge its automatic dock into the visible page content.
-      var safe = dock ? avoidControls(next, dock.width, 52, controlRects(false, true)) : avoidControls(next);
+      var safe = dock ? avoidControls(next, dock.width, 52, controlRects(false, true)) : avoidProfileCopy(next);
       if (dock && (safe.x !== next.x || safe.y !== next.y)) {
         setDock(null);
-        safe = avoidControls(clampPosition(safe.x, safe.y));
+        safe = avoidProfileCopy(clampPosition(safe.x, safe.y));
       }
       next = safe;
       x = next.x;
@@ -263,6 +263,33 @@
         });
       });
       return best;
+    }
+
+    function avoidProfileCopy(preferred, width, height, controls) {
+      controls = controls || controlRects(false);
+      var baseline = avoidControls(preferred, width, height, controls);
+      if (manualPosition || !document.querySelector('[data-progression-page="profile"]')) return baseline;
+      var view = viewport();
+      var copy = Array.from(document.querySelectorAll('[data-progression-page="profile"] .progression-truth-note')).filter(function (note) {
+        if (root.contains(note)) return false;
+        var style = getComputedStyle(note);
+        var rect = note.getBoundingClientRect();
+        return style.visibility !== 'hidden' && style.display !== 'none' && style.opacity !== '0' &&
+          rect.width > 0 && rect.height > 0 && rect.bottom > view.top && rect.top < view.top + view.height &&
+          rect.right > view.left && rect.left < view.left + view.width;
+      }).map(function (note) { return note.getBoundingClientRect(); });
+      if (!copy.length) return baseline;
+      width = width || root.offsetWidth || button.offsetWidth;
+      height = height || root.offsetHeight || button.offsetHeight;
+      var combined = controls.concat(copy);
+      var candidate = avoidControls(preferred, width, height, combined);
+      // Explanatory copy is optional protection: never trade existing control safety
+      // for it. In a crowded viewport, retain the exact controls-only placement.
+      var blocked = combined.some(function (rect) {
+        return candidate.x + width + EDGE_GAP > rect.left && candidate.x - EDGE_GAP < rect.right &&
+          candidate.y + height + EDGE_GAP > rect.top && candidate.y - EDGE_GAP < rect.bottom;
+      });
+      return blocked ? baseline : candidate;
     }
 
     function defaultPosition() {
