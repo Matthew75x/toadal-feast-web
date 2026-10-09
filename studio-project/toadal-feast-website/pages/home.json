@@ -1601,7 +1601,7 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "div",
-                    "className": "feast-pass-panel home-feast-pass-panel",
+                    "className": "feast-pass-panel home-feast-pass-panel framed-feast-pass framed-feast-pass--home",
                     "attributes": {
                       "data-progression-page": "",
                       "data-companion-context": "feast-pass",
@@ -1639,16 +1639,55 @@
                               }
                             },
                             {
-                              "id": "component.home.feast-pass.538da1098817.section-heading",
-                              "type": "core.text",
+                              "id": "component.framed-pass.home.title",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "section-heading",
+                                "tag": "div",
+                                "className": "feast-pass-title-plate",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Your Feast Pass",
-                                "text": "Your Feast Pass"
+                                "layerName": "title",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.framed-pass.home.frame",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "feast-pass-title-frame",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "frame",
+                                      "asset": "asset.feast-pass.astro-frame",
+                                      "alt": "",
+                                      "fit": "fill"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.feast-pass.538da1098817.section-heading",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "section-heading feast-pass-lettering",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Your Feast Pass",
+                                      "text": "Your Feast Pass",
+                                      "textFontSize": 30,
+                                      "textLineHeight": 1.15,
+                                      "responsive": {
+                                        "mobile": {
+                                          "textFontSize": 26
+                                        }
+                                      }
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
