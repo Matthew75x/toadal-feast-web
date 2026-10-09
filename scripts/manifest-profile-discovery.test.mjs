@@ -64,8 +64,8 @@ test('Characters provides one accessible artwork-view discovery control and stat
   assert.match(html, /Browse character previews/);
   assert.match(html, /Filter character previews/);
   assert.match(html, /data-progression-stat='character-discoveries'/);
-  assert.match(html, /This records an artwork view only; it does not mean game, story, or canonical character completion/);
-  assert.ok(html.includes('Guest website progression is active on this browser'), 'existing rendered source freshness phrase is preserved exactly');
+  assert.match(html, /This records an artwork discovery only; it does not complete a game or story/);
+  assert.ok(html.includes('Mark character artwork as viewed to save a discovery in this browser'), 'reviewed browser-local discovery freshness phrase is present exactly');
 
   const cards = [...html.matchAll(/<(article|a) class='character-card(?: [^']*)?'[\s\S]*?<\/\1>/g)].map(match => match[0]);
   const authoredButtons = [...html.matchAll(/data-discover-character='([^']+)'/g)].map(match => match[1]);

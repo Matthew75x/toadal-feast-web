@@ -171,8 +171,8 @@ inspect('/404.html', {
   forbidden: ['Search is coming soon']
 });
 inspect('/characters/', {
-  sourceExpected: ['Guest website progression is active on this browser', "href='/characters/toadal/'"],
-  renderExpected: ['Guest website progression is active on this browser', '/characters/toadal/']
+  sourceExpected: ['Mark character artwork as viewed to save a discovery in this browser', "href='/characters/toadal/'"],
+  renderExpected: ['Mark character artwork as viewed to save a discovery in this browser', '/characters/toadal/']
 });
 inspect('/characters/toadal/', {
   sourceExpected: ['Browser-local progression is active', 'character-specific collectible records are not configured'],

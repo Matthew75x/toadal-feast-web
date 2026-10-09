@@ -79,7 +79,7 @@ test('App retains real gameplay, distinguishes web and app, and uses the approve
     assert.ok(content.includes(capture), `retains genuine ${capture}`);
   }
   assert.match(content, /<h2>The complete adventure<\/h2>[\s\S]*?mobile app/);
-  assert.match(content, /<h2>Explore while you wait<\/h2>[\s\S]*?website remains the place/);
+  assert.match(content, /<h2>Explore while you wait<\/h2>[\s\S]*?Discover the world, meet the characters/);
   assert.match(content, /<h2 id='infinite-mode-title'>Infinite<\/h2>/);
   assert.match(content, /<strong>Infinite Feasts:<\/strong> Food is overrunning the land\. Assign friends, reclaim plots, and expand carefully\./);
   assert.match(content, /its own Colony Coins/);

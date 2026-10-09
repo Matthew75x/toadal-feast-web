@@ -207,7 +207,7 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
   assert.equal(homePage.document.seo.description, homePage.document.description,
     'Home SEO description should stay aligned with its route description');
   const publicEmptyState = pageHtml(homePage);
-  assert.match(publicEmptyState, /No PUBLIC browser games are available yet/,
+  assert.match(publicEmptyState, /No public browser releases are available yet/,
     'the empty public filter should explain the actual public-state gate');
   assert.doesNotMatch(publicEmptyState, /Qualified staging previews are being connected/,
     'the empty public filter must not claim the player integration is still pending');

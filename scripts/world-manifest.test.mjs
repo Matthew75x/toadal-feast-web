@@ -38,7 +38,7 @@ test('world atlas uses approved environment records, locks unknown slots, and su
     assert.ok(registry.media.some((entry) => entry.title === title && entry.publicationState === 'PREVIEW'));
     assert.ok(markup.includes(title));
   }
-  assert.equal((markup.match(/LOCKED · awaiting approved location record/g) || []).length, 2);
+  assert.equal((markup.match(/LOCKED · location details unavailable/g) || []).length, 2);
   assert.match(markup, /data-world-visit-meter/);
   assert.match(markup, /data-world-visit-status/);
   const shell = fs.readFileSync(path.join(project, 'reference/assets/js/manifest-shell.js'), 'utf8');
@@ -75,11 +75,11 @@ test('characters and Toadal keep registry-backed cast, filters, and explicit unp
   assert.match(characters, /character-filter-genies/);
   assert.match(characters, /RELATIONSHIPS[\s\S]*NOT PUBLISHED/);
   assert.match(characters, /APPEARANCES/);
-  assert.match(characters, /Guest website progression is active on this browser/);
+  assert.match(characters, /Mark character artwork as viewed to save a discovery in this browser/);
   assert.match(characters, /data-progression-page='characters'/);
   assert.equal((characters.match(/data-discover-character='/g) || []).length, 7);
   assert.equal((characters.match(/data-character-discovery-status='/g) || []).length, 7);
-  assert.match(characters, /does not mean game, story, or canonical character completion/);
+  assert.match(characters, /does not complete a game or story/);
   assert.doesNotMatch(characters, /character-specific discovery tracking is not connected yet/);
   assert.match(toadal, /King of Feasts/);
   assert.match(toadal, /Browser-local progression is active/);

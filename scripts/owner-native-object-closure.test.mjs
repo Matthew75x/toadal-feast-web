@@ -143,7 +143,7 @@ test('current World atlas retains three canonical whole-card links, and historic
   const sourceGrid = byId(atlas.props.children, 'component.world.map-discovery.bdd73088f428.discovery-scene-grid');
   assert.ok(sourceGrid, 'the discovery collection is inside the moved atlas');
   assert.equal(sourceGrid.props.attributes.role, 'group');
-  assert.equal(sourceGrid.props.attributes['aria-label'], 'Approved Feast World environment previews');
+  assert.equal(sourceGrid.props.attributes['aria-label'], 'Feast World environment previews');
   assert.equal(sourceGrid.props.children.length, 5);
   assert.deepEqual(byType(sourceGrid.props.children.slice(0, 3), 'core.image').map(image => image.props.asset), ['asset.home.world.desktop', 'asset.home.world.calm', 'asset.home.world.portal']);
   assert.ok(byType(sourceGrid.props.children.slice(0, 3), 'core.image').every(image => assets.assets.some(asset => asset.id === image.props.asset)));
