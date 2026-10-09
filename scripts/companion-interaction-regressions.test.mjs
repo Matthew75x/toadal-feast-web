@@ -265,3 +265,136 @@ test('the newest contextual artwork wins when older preloads finish later', () =
   assert.equal(h.attrs['data-companion-artwork'], 'contextual');
   assert.equal(h.context.currentArtwork, 'C');
 });
+
+function extractAdvanced(name) {
+  const marker = '    function ' + name + '(';
+  const start = advancedSource.indexOf(marker);
+  const end = advancedSource.indexOf('\n    function ', start + marker.length);
+  assert.ok(start >= 0, 'actual Studio runtime function exists: ' + name);
+  assert.ok(end > start, 'actual Studio runtime function has an extraction boundary: ' + name);
+  return advancedSource.slice(start, end);
+}
+
+function contextHarness() {
+  const context = {
+    lastInput: 'keyboard', hovered: null, touched: { state: 'touch' }, touchTimer: null,
+    defaultCompanionImage: 'canonical-victory.png',
+    companionArtwork: {
+      world: 'runtime-v1/world-map.webp', support: 'runtime-v1/support-help.webp',
+      app: 'runtime-v1/app-mobile.webp', storiesMedia: 'runtime-v1/stories-media-thinking.webp',
+      survey: 'runtime-v2/survey.webp', thumbsUp: 'runtime-v2/thumbs-up.webp',
+      thumbsDown: 'runtime-v2/thumbs-down.webp', community: 'runtime-v2/community.webp'
+    },
+    window: { clearTimeout() {} }
+  };
+  vm.createContext(context);
+  const functions = ['companionSemantic', 'companionState', 'artworkForContext', 'reactionForContext',
+    'contextValue', 'selectContextValue', 'enterHoverContext', 'leaveHoverContext', 'clearTouchedContext'];
+  vm.runInContext(functions.map(extractAdvanced).join('\n') +
+    '\nthis.stateFor = companionState; this.artFor = artworkForContext; this.reactionFor = reactionForContext;' +
+    '\nthis.selectValue = selectContextValue; this.enterHover = enterHoverContext; this.leaveHover = leaveHoverContext;', context);
+  return context;
+}
+
+function semanticTarget(value) {
+  const attrs = { 'data-companion-context': value };
+  return {
+    getAttribute(name) { return Object.hasOwn(attrs, name) ? attrs[name] : null; },
+    hasAttribute(name) { return Object.hasOwn(attrs, name); },
+    textContent: ''
+  };
+}
+
+test('context selection keeps action and keyboard focus priority, then follows pointer hover', () => {
+  const h = contextHarness();
+  const action = { id: 'action' }, focus = { id: 'focus' }, hover = { id: 'hover' };
+  const touch = { id: 'touch' }, section = { id: 'section' }, hero = { id: 'hero' };
+  assert.equal(h.selectValue(action, focus, hover, touch, section, hero, 'pointer'), action);
+  assert.equal(h.selectValue(null, focus, hover, touch, section, hero, 'keyboard'), focus);
+  assert.equal(h.selectValue(null, focus, hover, touch, section, hero, 'pointer'), hover,
+    'actual pointer input must no longer be masked by stale keyboard focus');
+  assert.equal(h.selectValue(null, null, null, touch, section, hero, 'pointer'), touch);
+  assert.equal(h.selectValue(null, focus, hover, touch, section, hero, 'touch'), touch,
+    'active touch input cannot be masked by keyboard focus or a stale mouse hover');
+  assert.equal(h.selectValue(null, null, null, null, section, hero, 'pointer'), section);
+  assert.equal(h.selectValue(null, null, null, null, null, hero, 'pointer'), hero);
+});
+
+test('hover enter, rapid transitions, and leave ignore stale pointer-out events', () => {
+  const h = contextHarness();
+  const world = { id: 'world' }, app = { id: 'app' }, support = { id: 'support' };
+  h.hovered = world;
+  assert.equal(h.enterHover(app, 'mouse'), true, 'mouse hover switches away from keyboard focus');
+  assert.equal(h.lastInput, 'pointer');
+  assert.equal(h.hovered, app);
+  assert.equal(h.touched, null, 'pointer hover clears an expired touch context');
+  assert.equal(h.enterHover(support, 'mouse'), true, 'rapid hover picks the newest context');
+  assert.equal(h.hovered, support);
+  assert.equal(h.leaveHover(app, null, 'mouse'), false, 'late leave from prior target cannot clear current hover');
+  assert.equal(h.hovered, support);
+  assert.equal(h.leaveHover(support, null, 'mouse'), true);
+  assert.equal(h.hovered, null, 'leaving the active context restores section/hero fallback');
+});
+
+test('touch pointerover cannot replace the touch context or input modality', () => {
+  const h = contextHarness();
+  const touch = { id: 'touch' }, hovered = { id: 'hover' };
+  h.lastInput = 'pointer'; h.hovered = hovered; h.touched = touch;
+  assert.equal(h.enterHover({ id: 'ignored' }, 'touch'), false);
+  assert.equal(h.hovered, hovered);
+  assert.equal(h.touched, touch);
+  assert.equal(h.leaveHover(hovered, null, 'touch'), false);
+  assert.equal(h.hovered, hovered);
+  assert.match(advancedSource,/pointerdown', function \(event\) \{ lastInput = event\.pointerType === 'touch' \? 'touch' : 'pointer';/);
+  assert.match(advancedSource,/touchstart', function \(event\) \{\s*if \(companionHidden\) return;\s*lastInput = 'touch';/);
+});
+
+test('context matcher routes feedback and app adventure precisely and excludes unqualified art', () => {
+  const h = contextHarness();
+  assert.equal(h.stateFor(semanticTarget('positive feedback')), 'thumbs-up');
+  assert.equal(h.stateFor(semanticTarget('negative feedback')), 'thumbs-down');
+  assert.equal(h.stateFor(semanticTarget('survey feedback')), 'survey');
+  assert.equal(h.stateFor(semanticTarget('/app/ mobile adventure')), 'app');
+  assert.equal(h.stateFor(semanticTarget('/support/ help map')), 'support');
+  assert.equal(h.stateFor(semanticTarget('/stories/ media adventure')), 'stories-media');
+  assert.equal(h.stateFor(semanticTarget('/world/ adventure map')), 'world');
+  const world=semanticTarget('/world/ adventure map');
+  const app=semanticTarget('/app/ mobile adventure');
+  const stories=semanticTarget('/stories/ media adventure');
+  const positive=semanticTarget('positive feedback');
+  const negative=semanticTarget('negative feedback');
+  assert.equal(h.artFor(world),'runtime-v1/world-map.webp');
+  assert.equal(h.reactionFor(world),'curious');
+  assert.equal(h.artFor(app),'runtime-v1/app-mobile.webp');
+  assert.equal(h.reactionFor(app),'present');
+  assert.equal(h.artFor(stories),'runtime-v1/stories-media-thinking.webp');
+  assert.equal(h.reactionFor(stories),'thinking');
+  assert.equal(h.artFor(positive),'runtime-v2/thumbs-up.webp');
+  assert.equal(h.artFor(negative),'runtime-v2/thumbs-down.webp');
+  assert.equal(h.artFor(semanticTarget('survey feedback')),'runtime-v2/survey.webp');
+  const impact=semanticTarget('social impact community');
+  const rewards=semanticTarget('/feast-pass/rewards/ achievement');
+  assert.equal(h.stateFor(impact),'');
+  assert.equal(h.artFor(impact),'canonical-victory.png');
+  assert.equal(h.reactionFor(impact),null);
+  assert.equal(h.stateFor(rewards),'');
+  assert.equal(h.artFor(rewards),'canonical-victory.png');
+  assert.equal(h.reactionFor(rewards),null);
+});
+
+test('minimized companion continues contextual artwork while explicit hide suspends and invalidates it', () => {
+  const renderStart = advancedSource.indexOf('    function render(announce) {');
+  const renderEnd = advancedSource.indexOf('\n    function persistPreference()', renderStart);
+  const hiddenStart = advancedSource.indexOf('    function setHidden(value, returnFocus, focusTarget) {');
+  const hiddenEnd = advancedSource.indexOf('\n    hideButton.addEventListener', hiddenStart);
+  assert.ok(renderStart >= 0 && renderEnd > renderStart);
+  assert.ok(hiddenStart >= 0 && hiddenEnd > hiddenStart);
+  const renderSource = advancedSource.slice(renderStart, renderEnd);
+  const hideSource = advancedSource.slice(hiddenStart, hiddenEnd);
+  assert.match(renderSource, /root\.setAttribute\('data-minimized', minimized \? 'true' : 'false'\)/);
+  assert.ok(renderSource.indexOf('if (companionHidden) {') < renderSource.indexOf('applyArtwork(value && value.artwork'),
+    'artwork selection runs after the hidden-only early return, including while minimized');
+  assert.doesNotMatch(renderSource, /if \(minimized\)[\s\S]*?return;/);
+  assert.match(renderSource, /artworkRequest \+= 1;[\s\S]*?data-companion-current-reaction[\s\S]*?return;/);
+  assert.match(hideSource, /focused = null;[\s\S]*hovered = null;[\s\S]*action = null;/);
+});

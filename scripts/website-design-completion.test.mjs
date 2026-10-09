@@ -39,16 +39,20 @@ function companionHarness(){
  const start=code.javascript.indexOf('    function render(announce) {');
  const end=code.javascript.indexOf('\n    function ',start+10);
  const fn=code.javascript.slice(start,end);
+ const selectorStart=code.javascript.indexOf('    function selectContextValue(');
+ const selectorEnd=code.javascript.indexOf('\n    function enterHoverContext(',selectorStart);
+ assert.ok(selectorStart>=0&&selectorEnd>selectorStart,'actual modality-aware selector helper exists');
+ const selector=code.javascript.slice(selectorStart,selectorEnd);
  const source=fn.replace(/function render\(announce\)/,'function render(announce)');
  const attrs={};const root={hidden:false,setAttribute:(k,v)=>attrs[k]=v,removeAttribute:k=>delete attrs[k]};
  const panel={hidden:false};const toggle={setAttribute:(k,v)=>attrs['toggle:'+k]=v};
  const speech={textContent:'',setAttribute:(k,v)=>attrs['speech:'+k]=v};
- const ctx={root,panel,toggle,speech,attrs,companionHidden:false,minimized:true,action:null,focused:null,hovered:null,touched:null,currentSection:{copy:'Explore this world. Your progress stays in this browser.',artwork:'world.webp',reaction:'thinking'},hero:null,defaultCompanionImage:'default.webp',artworkRequest:0,syncVisibilityControls(){},contextValue:v=>v,applyArtwork:v=>{ctx.artwork=v;}};
- vm.createContext(ctx);vm.runInContext(source+'; globalThis.run=render;',ctx);return ctx;
+ const ctx={root,panel,toggle,speech,attrs,companionHidden:false,minimized:true,lastInput:'pointer',action:null,focused:null,hovered:null,touched:null,currentSection:{copy:'Explore this world. Your progress stays in this browser.',artwork:'world.webp',reaction:'thinking'},hero:null,defaultCompanionImage:'default.webp',artworkRequest:0,syncVisibilityControls(){},contextValue:v=>v,applyArtwork:v=>{ctx.artwork=v;}};
+ vm.createContext(ctx);vm.runInContext(selector+'\n'+source+'; globalThis.run=render;',ctx);return ctx;
 }
 test('minimized speech stays closed on hover/focus; expanded context retains artwork and two-sentence speech',()=>{
  const h=companionHarness();h.hovered={copy:'Meet the cast. Choose a character to explore.',artwork:'cast.webp',reaction:'friendly'};h.run(false);assert.equal(h.panel.hidden,true);assert.equal(h.artwork,'cast.webp');
- h.focused={copy:'Explore this world. Your progress stays in this browser.',artwork:'world.webp',reaction:'thinking'};h.run(false);assert.equal(h.panel.hidden,true);assert.equal(h.artwork,'world.webp');
+ h.lastInput='keyboard';h.focused={copy:'Explore this world. Your progress stays in this browser.',artwork:'world.webp',reaction:'thinking'};h.run(false);assert.equal(h.panel.hidden,true);assert.equal(h.artwork,'world.webp');
  h.minimized=false;h.run(true);assert.equal(h.panel.hidden,false);assert.equal(h.speech.textContent,'Explore this world. Your progress stays in this browser.');assert.equal(h.attrs['speech:aria-live'],'polite');
  h.companionHidden=true;h.run(true);assert.equal(h.panel.hidden,true);assert.equal(h.root.hidden,true);assert.ok(Object.hasOwn(h.attrs,'inert'));
  assert.match(code.javascript,/localStorage\.setItem\(hiddenKey, companionHidden \? 'true' : 'false'\)/);
