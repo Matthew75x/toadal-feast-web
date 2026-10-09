@@ -8,6 +8,7 @@ const repo = path.resolve(import.meta.dirname, '..');
 const sourcePath = 'studio-project/toadal-feast-website/reference/assets/js/companion-position.js';
 const source = fs.readFileSync(path.join(repo, sourcePath), 'utf8');
 const profileSelector = '[data-progression-page="profile"]';
+const characterHeroSelector = '.toadal-profile-page .profile-hero-copy';
 const noteSelector = profileSelector + ' :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)';
 const rect = (left, top, width, height) => ({ left, top, width, height, right: left + width, bottom: top + height });
 // Exact settled EA rectangles, 2026-10-09, Profile 320x844, scrollY=0.
@@ -15,6 +16,13 @@ const rect = (left, top, width, height) => ({ left, top, width, height, right: l
 // source-execution fixtures, not a replay of the rendered page or a browser gate.
 const observed = { x: 192, y: 556 };
 const noteBounds = rect(32.667, 582.354, 254.667, 118.438);
+// Visible hero-copy ink envelope measured from the actual fresh-context
+// 1440x900 capture toadal-profile-desktop-1440x900.png (SHA-256
+// 3ddcb13241b74e9dff6caf175f499276859048e0815048ecc284a5c036cc0972).
+// The rectangle spans the eyebrow through the hero actions, including the
+// heading pixels obscured by the companion; it is not a synthetic fixture.
+const characterHeroCopyBounds = rect(170, 157, 457, 353);
+const characterObserved = { x: 204, y: 118 };
 const area = (position, obstacle, width = 100, height = 96, gap = 0) =>
   Math.max(0, Math.min(position.x + width + gap, obstacle.right) - Math.max(position.x - gap, obstacle.left)) *
   Math.max(0, Math.min(position.y + height + gap, obstacle.bottom) - Math.max(position.y - gap, obstacle.top));
@@ -52,19 +60,21 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
     style: { setProperty: (name, value) => { style[name] = value; } }
   };
   const header = { contains: element => element.inHeader === true };
-  const queries = [];
+  const queries = [], lookups = [];
   const context = {
-    root, button: root, noteElement, copyElements, attrs, style, writes, queries, cancelledFrames, timers, manualPosition: manual, homePage: route === '.home-hero',
+    root, button: root, noteElement, copyElements, attrs, style, writes, queries, lookups, cancelledFrames, timers, manualPosition: manual, homePage: route === '.home-hero',
     x: 0, y: 0, drag: null, moveFrame: 0, queuedPosition: null, lastTouchTap: null, suppressClick: false, suppressTimer: null, EDGE_GAP: 12, DEFAULT_BOTTOM_GAP: 180,
     POSITION_KEY: 'toadal:site:companion:position:v1',
     window: { innerWidth: width, innerHeight: height, cancelAnimationFrame: id => cancelledFrames.push(id),
       setTimeout: (fn, ms) => { timers.push({ fn, ms }); return timers.length; }, clearTimeout: id => timers.push({ clear: id }), localStorage: { getItem: () => JSON.stringify(saved), setItem: (key, value) => writes.push({ key, value: JSON.parse(value) }) } },
     document: {
       documentElement: {},
-      querySelector: selector => selector === '.site-header' ? header : selector === route ? {} : null,
+      querySelector: selector => { lookups.push(selector); return selector === '.site-header' ? header : selector === route ? {} : null; },
       querySelectorAll: selector => {
         queries.push(selector);
-        return selector === noteSelector ? (route === profileSelector ? copyElements : []) : controlElements;
+        if (selector === noteSelector) return route === profileSelector ? copyElements : [];
+        if (selector === characterHeroSelector) return route === characterHeroSelector ? copyElements : [];
+        return controlElements;
       }
     },
     getComputedStyle: element => ({ display: 'block', visibility: 'visible', opacity: '1',
@@ -126,6 +136,28 @@ test('exact observed and source-default Profile geometry avoid the note with the
     assert.equal(h.attrs['data-mobile-docked'], undefined);
   }
   assert.equal(h.writes.length, 0, 'automatic repositioning does not rewrite preferences');
+});
+
+test('captured Toadal character-hero copy bounds are excluded for automatic avatar placement', () => {
+  const h = harness({ route: characterHeroSelector, width: 1440, height: 900,
+    note: characterHeroCopyBounds, copyBounds: [characterHeroCopyBounds] });
+  assert.ok(area(characterObserved, characterHeroCopyBounds, 100, 96) > 0,
+    'the captured avatar location overlaps the measured hero-copy envelope');
+  h.applyPosition(characterObserved.x, characterObserved.y, false);
+  const placed = { x: Number(h.attrs['data-position-x']), y: Number(h.attrs['data-position-y']) };
+  assert.notDeepEqual(placed, characterObserved, 'automatic character-profile placement moves away from copy');
+  assert.equal(area(placed, characterHeroCopyBounds, 100, 96, 12), 0,
+    'hero eyebrow, heading, body and actions retain the existing exclusion gap');
+  assert.ok(h.queries.includes(characterHeroSelector), 'the route-specific authored hero copy is collected');
+  assert.ok(!h.queries.includes(noteSelector), 'guest Profile notes remain route-specific');
+  assert.equal(h.writes.length, 0, 'automatic clearance leaves saved manual coordinates untouched');
+
+  const manual = harness({ route: characterHeroSelector, manual: true, width: 1440, height: 900,
+    note: characterHeroCopyBounds, copyBounds: [characterHeroCopyBounds] });
+  assert.deepEqual(plain(manual.avoidProfileCopy(characterObserved)),
+    plain(manual.avoidControls(characterObserved)), 'manual drag remains under the user’s control');
+  assert.ok(!manual.lookups.includes(characterHeroSelector), 'manual placement does not inspect the route-specific target');
+  assert.ok(!manual.queries.includes(characterHeroSelector), 'manual placement never queries hero-copy geometry');
 });
 
 test('representative controls stay clear when the nearest note-safe position would collide with a control', () => {

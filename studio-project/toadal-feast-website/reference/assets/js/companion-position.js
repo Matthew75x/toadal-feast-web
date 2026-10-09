@@ -461,9 +461,14 @@
     function avoidProfileCopy(preferred, width, height, controls) {
       controls = controls || controlRects(false);
       var baseline = avoidControls(preferred, width, height, controls);
-      if (manualPosition || !document.querySelector('[data-progression-page="profile"]')) return baseline;
+      if (manualPosition) return baseline;
+      var guestProfile = document.querySelector('[data-progression-page="profile"]');
+      var toadalHeroCopy = document.querySelector('.toadal-profile-page .profile-hero-copy');
+      if (!guestProfile && !toadalHeroCopy) return baseline;
       var view = viewport();
-      var copy = Array.from(document.querySelectorAll('[data-progression-page="profile"] :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)')).filter(function (note) {
+      var copySelector = guestProfile ? '[data-progression-page="profile"] :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)' : '';
+      if (toadalHeroCopy) copySelector += (copySelector ? ', ' : '') + '.toadal-profile-page .profile-hero-copy';
+      var copy = Array.from(document.querySelectorAll(copySelector)).filter(function (note) {
         if (root.contains(note)) return false;
         var style = getComputedStyle(note);
         var rect = note.getBoundingClientRect();
