@@ -9,7 +9,7 @@ const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const moduleSource = fs.readFileSync(path.join(repo,
   'studio-project/toadal-feast-website/reference/assets/js/home-brand-lettering.js'), 'utf8');
 
-function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResult, rendererEnabled = true } = {}) {
+function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResult, rendererEnabled = true, homeHero = true } = {}) {
   const frames = [];
   const mutations = [];
   const resizes = [];
@@ -86,7 +86,7 @@ function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResul
     readyState: 'complete',
     querySelector(selector) {
       if (selector === '.site-brand') return brand;
-      if (selector === '.home-hero') return {};
+      if (selector === '.home-hero') return homeHero ? {} : null;
       return null;
     },
     createElement: makeElement
@@ -157,6 +157,17 @@ test('Home lettering derives its two words from editable native brand text and r
     'a DOM text replacement cannot detach the decorative wordmark permanently');
 });
 
+test('inner routes use the same decorative wordmark while the shared anchor text and URL stay native', () => {
+  const h = harness({ homeHero: false });
+  h.flushFrames();
+  assert.deepEqual(h.paints.map(item => item.settings.letterText), ['TOADAL', 'FEAST']);
+  assert.equal(h.brand.tagName, 'a');
+  assert.equal(h.brand.href, 'https://example.test/toadal-feast-web/');
+  assert.equal(h.brand.textContent, 'TOADAL FEAST');
+  assert.equal(h.brand.classList.contains('site-brand--lettering-ready'), true);
+  assert.equal(h.brand.children[0].getAttribute('aria-hidden'), 'true');
+});
+
 test('Home lettering repaints after a size change', () => {
   const h = harness();
   h.flushFrames();
@@ -207,11 +218,38 @@ test('the native brand keeps the original crown clearance while lettering is una
   const rule = css.match(/html body:has\(\.home-hero\) \.site-brand\s*\{([^}]*)\}/);
   assert.ok(rule, 'Home brand rule exists');
   assert.match(rule[1], /padding-inline-start:\s*42px\s*;/);
+  const sharedWordmark = css.match(/html body \.site-brand__wordmark\s*\{([^}]*)\}/);
+  assert.ok(sharedWordmark, 'the decorative layer applies to shared navigation on every route');
+  assert.match(sharedWordmark[1], /inset-inline-start:\s*40px\s*;/,
+    'the lettering begins after the shared crown and its gap');
+  assert.match(css, /\.site-brand\s*\{\s*position:\s*relative;\s*gap:\s*9px\s*;/,
+    'non-Home navigation preserves the native flex crown clearance');
   assert.equal(harness({ fontStatus: 'error' }).brand.classList.contains('site-brand--lettering-ready'), false);
+});
+
+test('the shared nav loader runs on inner pages instead of requiring a Home hero', () => {
+  const advanced = JSON.parse(fs.readFileSync(path.join(repo,
+    'studio-project/toadal-feast-website/collections/advanced-code.json'), 'utf8')).javascript;
+  const marker = 'Shared navigation wordmark loader';
+  const offset = advanced.indexOf(marker);
+  assert.ok(offset >= 0, 'the native advanced-code collection retains the shared loader');
+  const loader = advanced.slice(offset);
+  assert.doesNotMatch(loader, /document\.querySelector\('\.home-hero'\)/);
+  assert.match(loader, /home-brand-lettering\.js/);
 });
 
 test('a failed renderer script leaves the native brand text readable', () => {
   const h = harness({ rendererEnabled: false });
+  const loader = h.head.children[0];
+  assert.equal(loader.src, '/toadal-feast-web/assets/js/toadal-lettering.js');
+  loader.emit('error');
+  assert.equal(h.brand.textContent, 'TOADAL FEAST');
+  assert.equal(h.brand.dataset.homeBrandLettering, 'fallback');
+  assert.equal(h.brand.classList.contains('site-brand--lettering-ready'), false);
+});
+
+test('a failed renderer script on an inner route also leaves the native brand readable', () => {
+  const h = harness({ rendererEnabled: false, homeHero: false });
   const loader = h.head.children[0];
   assert.equal(loader.src, '/toadal-feast-web/assets/js/toadal-lettering.js');
   loader.emit('error');

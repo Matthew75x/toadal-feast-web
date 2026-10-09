@@ -7738,7 +7738,7 @@ html body:has(.home-hero) .site-brand {
   padding-inline-start: 42px;
 }
 
-html body:has(.home-hero) .site-brand__wordmark {
+html body .site-brand__wordmark {
   position: absolute;
   inset-inline-start: 40px;
   inset-block-start: 50%;
@@ -7751,20 +7751,20 @@ html body:has(.home-hero) .site-brand__wordmark {
   pointer-events: none;
 }
 
-html body:has(.home-hero) .site-brand__lettering {
+html body .site-brand__lettering {
   display: block;
   width: 100%;
   height: 100%;
 }
 
-html body:has(.home-hero) .site-brand.site-brand--lettering-ready {
+html body .site-brand.site-brand--lettering-ready {
   color: transparent;
   font-size: 0;
   line-height: 0;
   text-shadow: none;
 }
 
-html body:has(.home-hero) .site-brand.site-brand--lettering-ready .site-brand__wordmark {
+html body .site-brand.site-brand--lettering-ready .site-brand__wordmark {
   visibility: visible;
 }
 
@@ -7857,7 +7857,7 @@ html body:has(.home-hero) #feast-pass .framed-feast-pass {
     background-attachment: scroll, scroll;
   }
 
-  html body:has(.home-hero) .site-brand__wordmark {
+  html body .site-brand__wordmark {
     width: 84px;
     height: 32px;
   }
