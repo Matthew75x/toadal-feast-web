@@ -1686,8 +1686,7 @@ main {
     grid-template-areas:
       "access access"
       "hero hero"
-      "games-intro pass"
-      "games pass"
+      "browser-games pass"
       "today today"
       "interactive interactive"
       "discovery discovery"
@@ -1699,8 +1698,7 @@ main {
 
   main:has(.home-hero) > [data-studio-variant="accessibility-tools"] { grid-area: access; }
   main:has(.home-hero) > [data-studio-variant="home-hero"] { grid-area: hero; }
-  main:has(.home-hero) > [data-studio-variant="games-intro"] { grid-area: games-intro; }
-  main:has(.home-hero) > [data-studio-variant="home-game-grid"] { grid-area: games; }
+  main:has(.home-hero) > [data-studio-variant="browser-games-column"] { grid-area: browser-games; }
   main:has(.home-hero) > [data-studio-variant="feast-pass"] { grid-area: pass; }
   main:has(.home-hero) > [data-studio-variant="today"] { grid-area: today; }
   main:has(.home-hero) > [data-studio-variant="home-interactive-discovery"] { grid-area: interactive; }
@@ -1709,8 +1707,7 @@ main {
   main:has(.home-hero) > [data-studio-variant="whats-next"] { grid-area: next; }
   main:has(.home-hero) > [data-studio-variant="companion"] { grid-area: companion; }
 
-  main:has(.home-hero) > [data-studio-variant="games-intro"],
-  main:has(.home-hero) > [data-studio-variant="home-game-grid"] {
+  main:has(.home-hero) > [data-studio-variant="browser-games-column"] {
     padding-inline-start: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
   }
 
@@ -1725,7 +1722,7 @@ main {
     padding: 24px 0 24px 0;
   }
 
-  main:has(.home-hero) > [data-studio-variant="home-game-grid"] {
+  main:has(.home-hero) #browser-games {
     width: 100%;
     max-width: none;
     margin: 0;
@@ -1733,7 +1730,7 @@ main {
     padding-inline-end: 0;
   }
 
-  main:has(.home-hero) > [data-studio-variant="games-intro"] .home-section-inner {
+  main:has(.home-hero) #browser-games-intro .home-section-inner {
     width: 100%;
     margin: 0;
     padding-inline-end: 0;
@@ -2436,7 +2433,7 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
     max-height: 368px;
   }
 
-  main:has(.home-hero) > [data-studio-variant="games-intro"] .home-section-inner {
+  main:has(.home-hero) #browser-games-intro .home-section-inner {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     grid-template-areas:
@@ -2450,20 +2447,20 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
     padding-block: 12px 8px;
   }
 
-  main:has(.home-hero) > [data-studio-variant="games-intro"] .section-kicker {
+  main:has(.home-hero) #browser-games-intro .section-kicker {
     grid-area: kicker;
     margin-block-end: 3px;
     font-size: .7rem;
   }
 
-  main:has(.home-hero) > [data-studio-variant="games-intro"] .section-heading {
+  main:has(.home-hero) #browser-games-intro .section-heading {
     grid-area: title;
     max-width: none;
     margin: 0;
     font-size: clamp(2rem, 2.6vw, 2.7rem);
   }
 
-  main:has(.home-hero) > [data-studio-variant="games-intro"] .section-lede {
+  main:has(.home-hero) #browser-games-intro .section-lede {
     grid-area: lede;
     max-width: none;
     margin: 5px 0 2px;
@@ -2754,7 +2751,7 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
     max-height: 205px;
   }
 
-  main:has(.home-hero) > [data-studio-variant="games-intro"] .home-section-inner {
+  main:has(.home-hero) #browser-games-intro .home-section-inner {
     padding-block: 18px 10px;
   }
 
@@ -3371,10 +3368,10 @@ body:has(.home-hero) .site-brand{position:relative;padding-left:30px;font-size:1
 body:has(.home-hero) .site-brand::before{content:"";position:absolute;left:0;top:50%;width:24px;height:24px;transform:translateY(-53%);background:url("../brand/brand-crown.svg") center / contain no-repeat;}
 body:has(.home-hero) .site-links{gap:clamp(2px,.55vw,8px);}
 body:has(.home-hero) .site-links a{min-height:34px;padding:5px 8px;font-size:.78rem;}
-main:has(.home-hero){width:min(100%,var(--content-max));margin-inline:auto;display:grid;grid-template-columns:minmax(0,3.15fr) minmax(310px,.95fr);grid-template-areas:"hero hero" "games-intro pass" "games pass" "today today" "interactive interactive" "discovery discovery" "app next" "companion companion";column-gap:12px;align-items:stretch;background:var(--cream-100);}
+main:has(.home-hero){width:min(100%,var(--content-max));margin-inline:auto;display:grid;grid-template-columns:minmax(0,3.15fr) minmax(310px,.95fr);grid-template-areas:"access access" "hero hero" "browser-games pass" "today today" "interactive interactive" "discovery discovery" "app next" "companion companion";column-gap:12px;align-items:stretch;background:var(--cream-100);}
 main:has(.home-hero) > .section,main:has(.home-hero) > .studio-layout{width:100%;min-width:0;margin-inline:0;}
 main:has(.home-hero) > [data-studio-variant="accessibility-tools"]{position:absolute;width:auto;padding:0;}
-main:has(.home-hero) > #top{grid-column:1 / -1;grid-row:1;padding-block:0;}
+main:has(.home-hero) > #top{grid-area:hero;padding-block:0;}
 body:has(.home-hero) .home-hero,body:has(.home-hero) .home-hero__layout{min-height:350px;height:350px;}
 body:has(.home-hero) .home-hero__layout{grid-template-columns:minmax(400px,.86fr) minmax(480px,1.14fr);padding:18px clamp(24px,3vw,46px) 12px;}
 body:has(.home-hero) .home-hero__copy{max-width:520px;}
@@ -3385,20 +3382,20 @@ body:has(.home-hero) .home-actions .button-link{min-height:40px;padding:8px 14px
 body:has(.home-hero) .hero-benefits{margin-block-start:8px;gap:10px;font-size:.68rem;}
 body:has(.home-hero) .home-hero__toadal{width:min(40vw,490px);transform:translate(-5%,9%);}
 body:has(.home-hero) .home-hero__toadal img,body:has(.home-hero) .home-hero__toadal > img{max-height:390px;}
-#browser-games-intro{grid-column:1;grid-row:2;padding:10px 0 0;}
+#browser-games-intro{padding:10px 0 0;}
 #browser-games-intro .home-section-inner{position:relative;min-height:64px;padding:0 6px 0 14px;}
 #browser-games-intro .section-kicker{margin:0 0 2px;font-size:.58rem;}
 #browser-games-intro .section-heading{margin:0 0 2px;font-size:1.45rem;}
 #browser-games-intro .section-lede{display:-webkit-box;max-width:760px;margin:0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:1;font-size:.72rem;line-height:1.3;}
 #browser-games-intro .game-tabs{display:none;}
 #browser-games-intro .home-play-directory-link{position:absolute;right:6px;top:9px;width:190px;min-height:30px;margin:0;padding:4px 9px;font-size:.68rem;white-space:nowrap;}
-body:has(.home-hero) #browser-games{grid-column:1;grid-row:3;grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:7px !important;min-height:0;padding:3px 6px 10px 14px;}
+body:has(.home-hero) #browser-games{grid-template-columns:repeat(4,minmax(0,1fr)) !important;gap:7px !important;min-height:0;padding:3px 6px 10px 14px;}
 body:has(.home-hero) #browser-games .studio-game-card{min-width:0;min-height:0;padding:7px;border-radius:12px;}
 body:has(.home-hero) #browser-games .studio-game-card img{width:100%;height:92px;object-fit:cover;border-radius:9px;}
 body:has(.home-hero) #browser-games .studio-game-card h3{margin:5px 0 2px;font-size:.82rem;line-height:1.05;}
 body:has(.home-hero) #browser-games .studio-game-card p{display:-webkit-box;margin:0 0 4px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.58rem;line-height:1.2;}
 body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero) #browser-games .status-chip{min-height:0;padding:3px 6px;font-size:.56rem;}
-#feast-pass{grid-column:2;grid-row:2 / 4;padding:10px 14px 10px 0;}
+#feast-pass{padding:10px 14px 10px 0;}
 #feast-pass .home-section-inner,#feast-pass .feast-pass-panel{height:100%;}
 #feast-pass .feast-pass-panel{min-height:0;max-height:296px;padding:15px;overflow:hidden;}
 #feast-pass .section-kicker{font-size:.57rem;}
@@ -3408,14 +3405,14 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #feast-pass .pass-state{padding:4px 7px;font-size:.57rem;}
 #feast-pass .button-link{min-height:32px;padding:5px 9px;font-size:.66rem;}
 #feast-pass .pass-emblem{width:42px;min-width:42px;}
-#today{grid-column:1 / -1;grid-row:4;padding:0 14px 7px;}
+#today{padding:0 14px 7px;}
 #today .today-panel{min-height:48px;padding:4px 10px;grid-template-columns:180px minmax(0,1fr) auto;column-gap:12px;align-items:center;}
 #today .today-panel > div{display:contents;}
 #today .section-kicker{margin:0;font-size:.53rem;}
 #today .section-heading{margin:0;font-size:1rem;}
 #today .section-lede{display:none;}
 #today .button-link{min-height:32px;padding:5px 10px;font-size:.68rem;}
-#discovery{grid-column:1 / -1;grid-row:6;padding:0 14px 9px;}
+#discovery{padding:0 14px 9px;}
 #discovery .discovery-heading{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);min-height:48px;margin-bottom:5px;column-gap:14px;align-items:end;}
 #discovery .discovery-heading .section-kicker{display:none;}
 #discovery .discovery-heading .section-heading{margin:0;font-size:1.35rem;}
@@ -3436,7 +3433,7 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #discovery .stories-art span{font-size:.48rem;}
 #discovery .stories-art strong{font-size:1rem;}
 #discovery .discovery-card--stories .status-chip,#discovery .discovery-card--stories .home-actions{display:none;}
-#app{grid-column:1;grid-row:7;padding:0 0 11px 14px;}
+#app{padding:0 0 11px 14px;}
 #app .app-conversion-panel{min-height:230px;max-height:none;height:auto;overflow:visible;padding:16px 18px;color:var(--cream-50);border-color:rgb(255 196 51 / 55%);background:linear-gradient(90deg,rgb(35 14 8 / 92%) 0%,rgb(35 14 8 / 79%) 48%,rgb(35 14 8 / 24%) 100%),url("../images/world/candy-kingdom.webp") 70% center / cover no-repeat;}
 #app .app-conversion-copy{max-width:57%;}
 #app .app-conversion-panel .section-heading,#app .app-conversion-panel .section-lede{color:var(--cream-50);}
@@ -3446,7 +3443,7 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #app .store-badge-row{gap:6px;}
 #app .store-badge{min-height:38px;padding:5px 9px;}
 #app .app-links-status{margin-top:4px;font-size:.56rem;}
-#whats-next{grid-column:2;grid-row:7;padding:0 14px 11px 0;}
+#whats-next{padding:0 14px 11px 0;}
 #whats-next .home-section-inner{min-height:230px;max-height:230px;height:100%;padding:10px;overflow:hidden;border:1px solid rgb(166 102 6 / 24%);border-radius:16px;background:#fffaf0;}
 #whats-next .whats-next-heading .section-kicker,#whats-next .section-lede{display:none;}
 #whats-next .section-heading{margin:0 0 5px;font-size:1.08rem;}
@@ -3456,7 +3453,7 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #whats-next .next-card p{display:-webkit-box;margin:0;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.53rem;line-height:1.2;}
 #whats-next .status-chip{padding:2px 4px;font-size:.48rem;}
 #whats-next .next-card .button-link{min-height:24px;padding:3px 5px;font-size:.5rem;}
-#companion{grid-column:1 / -1;grid-row:8;height:0;padding:0;}
+#companion{height:0;padding:0;}
 }
 @media (max-width:680px){body:has(.home-hero) main{padding-bottom:18px;}
 body:has(.home-hero) .home-hero,body:has(.home-hero) .home-hero__layout{min-height:455px;height:455px;}
@@ -7116,7 +7113,6 @@ body:has(.home-hero) .site-footer { margin-top: 18px; border-top: 1px solid rgb(
   body:has(.home-hero) .home-hero { margin-bottom: 2px; }
   body:has(.home-hero) #browser-games-intro {
     padding: 14px 0 0;
-    margin-bottom: -12px;
     border: 1px solid rgb(255 215 122 / 85%);
     border-bottom: 0;
     border-radius: 20px 20px 0 0;
@@ -7847,37 +7843,6 @@ html body:has(.home-hero) #browser-games-intro .section-heading::after {
   content: "";
 }
 
-@media (min-width: 1080px) {
-  html body:has(.home-hero) main {
-    grid-template-rows: auto min-content auto auto auto auto auto auto;
-  }
-
-  html body:has(.home-hero) main > #browser-games-intro {
-    align-self: start;
-    min-height: 0;
-    height: auto;
-  }
-
-  html body:has(.home-hero) main > #browser-games {
-    align-self: start;
-  }
-
-  html body:has(.home-hero) main > #feast-pass {
-    grid-area: 2 / 10 / 4 / -1;
-    align-self: start;
-    min-width: 0;
-    min-height: 0;
-    padding: 0;
-  }
-
-  html body:has(.home-hero) #feast-pass .home-section-inner,
-  html body:has(.home-hero) #feast-pass .home-feast-pass-panel {
-    height: auto;
-    min-height: 0;
-    max-height: none;
-  }
-}
-
 html body:has(.home-hero) #feast-pass .framed-feast-pass {
   border: 2px solid #d9ad56;
   border-radius: 20px;
@@ -7903,4 +7868,75 @@ html body:has(.home-hero) #feast-pass .framed-feast-pass {
     width: 84px;
     height: 32px;
   }
+}
+
+/* The game introduction and card grid share one native desktop column. */
+.home-browser-games-column {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  align-content: start;
+  gap: 0;
+  width: 100%;
+  min-width: 0;
+  margin-inline: 0;
+}
+.home-browser-games-column > #browser-games-intro,
+.home-browser-games-column > #browser-games {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  margin: 0;
+  align-self: start;
+}
+@media (min-width: 1100px) {
+  html body:has(.home-hero) main > [data-studio-variant="browser-games-column"] {
+    grid-area: browser-games;
+    align-self: start;
+    min-width: 0;
+    padding-inline-start: max(var(--page-gutter), calc((100vw - var(--content-max)) / 2));
+  }
+  html body:has(.home-hero) #browser-games-intro .home-section-inner {
+    height: auto;
+    min-height: 0;
+    max-width: none;
+    margin-inline: 0;
+  }
+  html body:has(.home-hero) #browser-games {
+    padding-block: 0 24px;
+    padding-inline-end: 0;
+  }
+  html body:has(.home-hero) #feast-pass {
+    grid-area: pass;
+    grid-row: auto;
+    align-self: start;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+  }
+  html body:has(.home-hero) #feast-pass .home-section-inner,
+  html body:has(.home-hero) #feast-pass .home-feast-pass-panel {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+/* Home speech visibility never changes the avatar's compact hit box. */
+html body:has(.home-hero) .toadal-companion {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  min-height: 52px !important;
+  max-width: 52px !important;
+  align-items: center;
+}
+html body:has(.home-hero) .toadal-companion .companion-toggle,
+html body:has(.home-hero) .toadal-companion .companion-image {
+  width: 52px !important;
+  height: 52px !important;
+  min-width: 52px !important;
+  min-height: 52px !important;
+  max-width: 52px !important;
+  max-height: 52px !important;
+  object-fit: contain;
 }

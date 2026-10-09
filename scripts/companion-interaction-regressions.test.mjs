@@ -10,6 +10,8 @@ const source = fs.readFileSync(path.join(repo,
   'studio-project/toadal-feast-website/reference/assets/js/companion-position.js'), 'utf8');
 const advancedSource = JSON.parse(fs.readFileSync(path.join(repo,
   'studio-project/toadal-feast-website/collections/advanced-code.json'), 'utf8')).javascript;
+const siteCss = fs.readFileSync(path.join(repo,
+  'studio-project/toadal-feast-website/reference/assets/css/site.css'), 'utf8');
 
 function extract(name, indent = '    ') {
   const start = source.indexOf(indent + 'function ' + name + '(');
@@ -149,28 +151,50 @@ test('optimized placement stays equivalent to the exact solver across determinis
   }
 });
 
-test('docked drag keeps the same artwork anchor through the one-time size change', () => {
+test('docked drag keeps the visible artwork anchor under the pointer through a size change', () => {
   const context = {};
   vm.createContext(context);
   vm.runInContext(extract('dragOffsetsAtScale', '  '), context);
   const cases = [
-    { beforeRoot: rect(180, 6, 49.77, 52), beforeButton: rect(180, 6, 49.77, 52),
-      afterRoot: rect(180, 6, 100, 96), afterButton: rect(188, 6, 92, 96), down: { x: 205, y: 32 } },
-    { beforeRoot: rect(800, 40, 52, 52), beforeButton: rect(800, 40, 52, 52),
-      afterRoot: rect(800, 40, 100, 110), afterButton: rect(800, 40, 100, 110), down: { x: 826, y: 66 } }
+    { beforeRoot: rect(180, 6, 102, 52), beforeArtwork: rect(205, 6, 52, 52),
+      afterRoot: rect(180, 6, 110, 106), afterArtwork: rect(184, 6, 102, 106), down: { x: 231, y: 32 } },
+    { beforeRoot: rect(800, 40, 52, 52), beforeArtwork: rect(800, 40, 52, 52),
+      afterRoot: rect(800, 40, 100, 110), afterArtwork: rect(800, 40, 100, 110), down: { x: 826, y: 66 } }
   ];
   for (const fixture of cases) {
-    const anchorX = (fixture.down.x - fixture.beforeButton.left) / fixture.beforeButton.width;
-    const anchorY = (fixture.down.y - fixture.beforeButton.top) / fixture.beforeButton.height;
-    const offset = context.dragOffsetsAtScale(anchorX, anchorY, fixture.afterRoot, fixture.afterButton);
+    const anchorX = (fixture.down.x - fixture.beforeArtwork.left) / fixture.beforeArtwork.width;
+    const anchorY = (fixture.down.y - fixture.beforeArtwork.top) / fixture.beforeArtwork.height;
+    const offset = context.dragOffsetsAtScale(anchorX, anchorY, fixture.afterRoot, fixture.afterArtwork);
     const movedPointer = { x: fixture.down.x + 9, y: fixture.down.y + 5 };
     const newRoot = { x: movedPointer.x - offset.x, y: movedPointer.y - offset.y };
-    const fractionX = (movedPointer.x - (newRoot.x + fixture.afterButton.left - fixture.afterRoot.left)) / fixture.afterButton.width;
-    const fractionY = (movedPointer.y - (newRoot.y + fixture.afterButton.top - fixture.afterRoot.top)) / fixture.afterButton.height;
+    const artworkLeft = newRoot.x + fixture.afterArtwork.left - fixture.afterRoot.left;
+    const artworkTop = newRoot.y + fixture.afterArtwork.top - fixture.afterRoot.top;
+    const fractionX = (movedPointer.x - artworkLeft) / fixture.afterArtwork.width;
+    const fractionY = (movedPointer.y - artworkTop) / fixture.afterArtwork.height;
     assert.ok(Math.abs(fractionX - anchorX) < 1e-9);
     assert.ok(Math.abs(fractionY - anchorY) < 1e-9);
   }
-  assert.match(source, /var wasDocked = root\.getAttribute\('data-mobile-docked'\) === 'true';[\s\S]*?if \(wasDocked\) \{[\s\S]*?dragOffsetsAtScale\(/);
+  assert.ok(source.includes('var artworkRect = image.getBoundingClientRect();'));
+  assert.ok(source.includes('anchorX: artworkRect.width > 0'));
+  assert.ok(source.includes('dragOffsetsAtScale(drag.anchorX, drag.anchorY,') &&
+    source.includes('root.getBoundingClientRect(), image.getBoundingClientRect());'));
+});
+
+test('Home speech visibility keeps the avatar anchor and compact size', () => {
+  const context = {};
+  vm.createContext(context);
+  vm.runInContext(extract('shouldRepositionOnPanelChange', '  '), context);
+  assert.equal(context.shouldRepositionOnPanelChange(true, false), false,
+    'Home panel visibility must leave the avatar position alone');
+  assert.equal(context.shouldRepositionOnPanelChange(false, false), true,
+    'Other routes retain their existing panel-transition placement');
+  assert.equal(context.shouldRepositionOnPanelChange(false, true), false,
+    'A live pointer drag keeps its current placement on every route');
+  assert.ok(source.includes("var homePage = !!document.querySelector('.home-hero');"));
+  assert.ok(source.includes('shouldRepositionOnPanelChange(homePage, !!drag)'));
+  assert.ok(source.includes("var width = document.querySelector('.home-hero') ? 52"));
+  assert.ok(siteCss.includes('html body:has(.home-hero) .toadal-companion {') &&
+    siteCss.includes('width: 52px !important;') && siteCss.includes('height: 52px !important;'));
 });
 
 test('unchanged minimized and hidden attributes do not trigger another panel measurement', () => {

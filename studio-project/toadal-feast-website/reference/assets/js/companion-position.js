@@ -11,11 +11,15 @@
   var EDGE_GAP = 12;
   var DEFAULT_BOTTOM_GAP = 180;
 
-  function dragOffsetsAtScale(anchorX, anchorY, rootRect, buttonRect) {
+  function dragOffsetsAtScale(anchorX, anchorY, rootRect, artworkRect) {
     return {
-      x: buttonRect.left - rootRect.left + anchorX * buttonRect.width,
-      y: buttonRect.top - rootRect.top + anchorY * buttonRect.height
+      x: artworkRect.left - rootRect.left + anchorX * artworkRect.width,
+      y: artworkRect.top - rootRect.top + anchorY * artworkRect.height
     };
+  }
+
+  function shouldRepositionOnPanelChange(isHomePage, isDragging) {
+    return !isHomePage && !isDragging;
   }
 
   function hasPanelLayoutMutation(records, panel, root) {
@@ -87,7 +91,7 @@
       var minimumGap = root.getAttribute('data-minimized') === 'true' &&
         document.querySelector('[data-progression-page="profile"]') ? 48 : 52;
       if (gap < minimumGap) return null;
-      var width = Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
+      var width = document.querySelector('.home-hero') ? 52 : Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
       return { x: a.right + dockGap + (gap - width) / 2, y: Math.max(4, a.top + (a.height - 52) / 2), width: width };
     }
 
@@ -517,7 +521,7 @@
       suppressTimer = null;
       suppressClick = false;
       var rect = root.getBoundingClientRect();
-      var buttonRect = button.getBoundingClientRect();
+      var artworkRect = image.getBoundingClientRect();
       drag = {
         pointerId: event.pointerId,
         pointerType: event.pointerType,
@@ -528,8 +532,8 @@
         originY: rect.top,
         offsetX: event.clientX - rect.left,
         offsetY: event.clientY - rect.top,
-        anchorX: buttonRect.width > 0 ? Math.max(0, Math.min(1, (event.clientX - buttonRect.left) / buttonRect.width)) : 0.5,
-        anchorY: buttonRect.height > 0 ? Math.max(0, Math.min(1, (event.clientY - buttonRect.top) / buttonRect.height)) : 0.5,
+        anchorX: artworkRect.width > 0 ? Math.max(0, Math.min(1, (event.clientX - artworkRect.left) / artworkRect.width)) : 0.5,
+        anchorY: artworkRect.height > 0 ? Math.max(0, Math.min(1, (event.clientY - artworkRect.top) / artworkRect.height)) : 0.5,
         manual: manualPosition,
         moved: false
       };
@@ -547,11 +551,10 @@
         manualPosition = true;
         setDock(null);
         if (wasDocked) {
-          // Leaving the narrow header target expands the normal helper. Rebase
-          // the drag at the same point in the artwork so it stays under the
-          // pointer through that one intentional size transition.
+          // Rebase from the visible artwork after leaving the measured header slot.
+          // The artwork anchor stays under the pointer even when the button is wider.
           var nextOffset = dragOffsetsAtScale(drag.anchorX, drag.anchorY,
-            root.getBoundingClientRect(), button.getBoundingClientRect());
+            root.getBoundingClientRect(), image.getBoundingClientRect());
           drag.offsetX = nextOffset.x;
           drag.offsetY = nextOffset.y;
         }
@@ -666,17 +669,14 @@
       window.visualViewport.addEventListener('resize', clampAfterViewportChange, { passive: true });
       window.visualViewport.addEventListener('scroll', clampAfterViewportChange, { passive: true });
     }
+    var homePage = !!document.querySelector('.home-hero');
     var panelWasVisible = panelVisible();
     var panelObserver = new MutationObserver(function (mutations) {
       if (!hasPanelLayoutMutation(mutations, panel, root)) return;
       var visible = panelVisible();
       if (visible !== panelWasVisible) {
         panelWasVisible = visible;
-        if (!drag) {
-          // Opening the bubble scales the companion. Re-evaluate its hit area
-          // against the current page controls after the expanded state lands.
-          // Preserve deliberate owner placement; use the default anchor again
-          // when a non-manual companion is minimized.
+        if (shouldRepositionOnPanelChange(homePage, !!drag)) {
           var preferred = !visible && !manualPosition ? defaultPosition() : { x: x, y: y };
           applyPosition(preferred.x, preferred.y, false);
         } else placePanel();
