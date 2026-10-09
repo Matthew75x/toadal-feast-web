@@ -180,7 +180,7 @@ test('docked drag keeps the visible artwork anchor under the pointer through a s
     source.includes('root.getBoundingClientRect(), image.getBoundingClientRect());'));
 });
 
-test('Home speech visibility keeps the avatar anchor and compact size', () => {
+test('Home speech visibility keeps the avatar anchor and the larger compact size', () => {
   const context = {};
   vm.createContext(context);
   vm.runInContext(extract('shouldRepositionOnPanelChange', '  '), context);
@@ -192,9 +192,64 @@ test('Home speech visibility keeps the avatar anchor and compact size', () => {
     'A live pointer drag keeps its current placement on every route');
   assert.ok(source.includes("var homePage = !!document.querySelector('.home-hero');"));
   assert.ok(source.includes('shouldRepositionOnPanelChange(homePage, !!drag)'));
-  assert.ok(source.includes("var width = document.querySelector('.home-hero') ? 52"));
+  assert.match(source, /var desktopSize = homeDock \? 64 : 52/);
+  assert.match(source, /var width = homeDock \? 64 :/);
   assert.ok(siteCss.includes('html body:has(.home-hero) .toadal-companion {') &&
-    siteCss.includes('width: 52px !important;') && siteCss.includes('height: 52px !important;'));
+    siteCss.includes('width: 64px !important;') && siteCss.includes('height: 64px !important;'));
+});
+
+function mobileDockHarness({ width = 390, home = false, gameLibrary = false, minimized = true, brandRight = 110, navEdge = 320 } = {}) {
+  const brand = { getBoundingClientRect: () => rect(8, 0, brandRight - 8, 52) };
+  const nav = {
+    querySelector(selector) {
+      if (selector === '.site-brand') return brand;
+      if (selector === '.site-links') return { getBoundingClientRect: () => rect(navEdge, 0, 400, 52) };
+      if (selector === '.nav-toggle') return { getBoundingClientRect: () => rect(navEdge, 0, 48, 52) };
+      return null;
+    }
+  };
+  const context = {
+    EDGE_GAP: 12,
+    manualPosition: false,
+    window: { innerWidth: width },
+    root: { getAttribute: name => name === 'data-minimized' && minimized ? 'true' : null },
+    document: {
+      querySelector(selector) {
+        if (selector === '.home-hero') return home ? {} : null;
+        if (selector === '.wo002-game-library') return gameLibrary ? {} : null;
+        if (selector === '.home-hero, .wo002-game-library') return home || gameLibrary ? {} : null;
+        if (selector === '.site-nav') return nav;
+        if (selector === '[data-progression-page="profile"]') return null;
+        return null;
+      }
+    },
+    getComputedStyle: () => ({ display: 'block' })
+  };
+  vm.createContext(context);
+  vm.runInContext(extract('mobileDock'), context);
+  return context.mobileDock;
+}
+
+test('Home nav docking uses a centered 64px square on desktop and mobile', () => {
+  const desktop = mobileDockHarness({ width: 1000, home: true, navEdge: 300 })();
+  assert.equal(desktop.width, 64);
+  assert.equal(desktop.height, 64);
+  assert.equal(desktop.kind, 'desktop');
+  const mobile = mobileDockHarness({ width: 390, home: true, navEdge: 320 })();
+  assert.equal(mobile.width, 64);
+  assert.equal(mobile.height, 64);
+  assert.equal(mobile.x, 183);
+});
+
+test('Home avoids a too-small mobile menu pocket while other routes keep their existing sizes', () => {
+  assert.equal(mobileDockHarness({ width: 390, home: true, brandRight: 110, navEdge: 199 })(), null,
+    'a 63px measured pocket is too small for the Home square');
+  const ordinaryMobile = mobileDockHarness({ width: 390, brandRight: 110, navEdge: 320 })();
+  assert.equal(ordinaryMobile.width, 102);
+  assert.equal(ordinaryMobile.height, 52);
+  const ordinaryDesktop = mobileDockHarness({ width: 1000, gameLibrary: true, navEdge: 300 })();
+  assert.equal(ordinaryDesktop.width, 52);
+  assert.equal(ordinaryDesktop.height, 52);
 });
 
 test('unchanged minimized and hidden attributes do not trigger another panel measurement', () => {

@@ -66,6 +66,7 @@
       // choices, persisted coordinates, other routes or the mobile path.
       if (window.innerWidth > 600) {
         if (!document.querySelector('.home-hero, .wo002-game-library') || root.getAttribute('data-minimized') !== 'true') return null;
+        var homeDock = !!document.querySelector('.home-hero');
         var desktopNav = document.querySelector('.site-nav');
         var desktopBrand = desktopNav && desktopNav.querySelector('.site-brand');
         var desktopLinks = desktopNav && desktopNav.querySelector('.site-links');
@@ -74,8 +75,9 @@
         var linksRect = desktopLinks.getBoundingClientRect();
         if (brandRect.bottom <= 0 || linksRect.bottom <= 0) return null;
         var desktopGap = linksRect.left - brandRect.right - 2 * (EDGE_GAP + 1);
-        if (desktopGap < 52) return null;
-        return { x: brandRect.right + EDGE_GAP + 1 + (desktopGap - 52) / 2, y: Math.max(4, brandRect.top + (brandRect.height - 52) / 2), width:52, kind:'desktop' };
+        var desktopSize = homeDock ? 64 : 52;
+        if (desktopGap < desktopSize) return null;
+        return { x: brandRect.right + EDGE_GAP + 1 + (desktopGap - desktopSize) / 2, y: Math.max(4, brandRect.top + (brandRect.height - desktopSize) / 2), width:desktopSize, height:desktopSize, kind:'desktop' };
       }
       var nav = document.querySelector('.site-nav');
       var brand = nav && nav.querySelector('.site-brand');
@@ -86,13 +88,15 @@
       // Use the same exclusion margin as collision checks, plus rounding slack.
       var dockGap = EDGE_GAP + 1;
       var gap = b.left - a.right - 2 * dockGap;
+      var homeDock = !!document.querySelector('.home-hero');
       // An already-minimized Profile can use the narrow existing header pocket.
       // Keep normal docking for other routes, manual placement and explicit expansion.
-      var minimumGap = root.getAttribute('data-minimized') === 'true' &&
+      var minimumGap = homeDock ? 64 : root.getAttribute('data-minimized') === 'true' &&
         document.querySelector('[data-progression-page="profile"]') ? 48 : 52;
       if (gap < minimumGap) return null;
-      var width = document.querySelector('.home-hero') ? 52 : Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
-      return { x: a.right + dockGap + (gap - width) / 2, y: Math.max(4, a.top + (a.height - 52) / 2), width: width };
+      var width = homeDock ? 64 : Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
+      var height = homeDock ? width : 52;
+      return { x: a.right + dockGap + (gap - width) / 2, y: Math.max(4, a.top + (a.height - height) / 2), width: width, height: height };
     }
 
     function setDock(dock) {
@@ -208,7 +212,7 @@
       var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
       // Main controls can scroll behind the opaque sticky header. They must
       // not dislodge its automatic dock into the visible page content.
-      var safe = dock ? avoidControls(next, dock.width, 52, controlRects(false, true)) :
+      var safe = dock ? avoidControls(next, dock.width, dock.height || 52, controlRects(false, true)) :
         (homePage && manualPosition ? next : avoidProfileCopy(next));
       if (dock && (safe.x !== next.x || safe.y !== next.y)) {
         setDock(null);

@@ -542,14 +542,14 @@ test('fractional header gap admits only automatic already-minimized Profile at t
   for (const gap of [47.999, 48, 48.001, 49.77, 51.999, 52, 52.001]) {
     for (const [route, manual, minimized, threshold] of [
       [profileSelector, false, true, 48], [profileSelector, false, false, 52],
-      ['.home-hero', false, true, 52], ['.app-page', false, true, 52], ['.wo002-game-library', false, true, 52]
+      ['.home-hero', false, true, 64], ['.app-page', false, true, 52], ['.wo002-game-library', false, true, 52]
     ]) {
       const { h } = headerHarness({ gap, brandRight: 160, route, manual, minimized });
       const dock = h.mobileDock();
       if (gap < threshold) assert.equal(dock, null, `${route}/${minimized}/${gap}`);
       else {
         assert.ok(dock);
-        const expectedWidth = route === '.home-hero' ? 52 : gap;
+        const expectedWidth = route === '.home-hero' ? 64 : gap;
         assert.ok(Math.abs(dock.width - expectedWidth) < 1e-9, route + '/' + gap + ' keeps its intended hit-box width');
         assert.ok(dock.width <= gap + 1e-9, route + '/' + gap + ' fits between the measured header controls');
         assert.ok(dock.width >= 48);
