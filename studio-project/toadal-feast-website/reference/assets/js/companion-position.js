@@ -61,7 +61,11 @@
       // Use the same exclusion margin as collision checks, plus rounding slack.
       var dockGap = EDGE_GAP + 1;
       var gap = b.left - a.right - 2 * dockGap;
-      if (gap < 52) return null;
+      // An already-minimized Profile can use the narrow existing header pocket.
+      // Keep normal docking for other routes, manual placement and explicit expansion.
+      var minimumGap = root.getAttribute('data-minimized') === 'true' &&
+        document.querySelector('[data-progression-page="profile"]') ? 48 : 52;
+      if (gap < minimumGap) return null;
       var width = Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
       return { x: a.right + dockGap + (gap - width) / 2, y: Math.max(4, a.top + (a.height - 52) / 2), width: width };
     }
@@ -270,7 +274,7 @@
       var baseline = avoidControls(preferred, width, height, controls);
       if (manualPosition || !document.querySelector('[data-progression-page="profile"]')) return baseline;
       var view = viewport();
-      var copy = Array.from(document.querySelectorAll('[data-progression-page="profile"] .progression-truth-note')).filter(function (note) {
+      var copy = Array.from(document.querySelectorAll('[data-progression-page="profile"] :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)')).filter(function (note) {
         if (root.contains(note)) return false;
         var style = getComputedStyle(note);
         var rect = note.getBoundingClientRect();

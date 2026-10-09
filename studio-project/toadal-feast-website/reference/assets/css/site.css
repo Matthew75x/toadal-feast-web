@@ -7256,6 +7256,10 @@ body:has(.home-hero) .site-footer { margin-top: 18px; border-top: 1px solid rgb(
     filter: drop-shadow(0 2px 3px rgb(0 0 0 / 28%));
     transform: none;
   }
+  /* Keep the Profile mascot artwork inside its measured, accessible header target. */
+  body:has([data-progression-page="profile"]) .toadal-companion[data-mobile-docked="true"][data-minimized="true"] .companion-image {
+    width: min(52px, var(--toadal-dock-width, 52px));
+  }
   body:has(.home-hero) .hero-scrim { background: linear-gradient(180deg, rgb(40 17 16 / 65%), rgb(40 17 16 / 34%) 63%, transparent); }
 }
 

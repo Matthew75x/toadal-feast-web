@@ -8,7 +8,7 @@ const repo = path.resolve(import.meta.dirname, '..');
 const sourcePath = 'studio-project/toadal-feast-website/reference/assets/js/companion-position.js';
 const source = fs.readFileSync(path.join(repo, sourcePath), 'utf8');
 const profileSelector = '[data-progression-page="profile"]';
-const noteSelector = profileSelector + ' .progression-truth-note';
+const noteSelector = profileSelector + ' :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)';
 const rect = (left, top, width, height) => ({ left, top, width, height, right: left + width, bottom: top + height });
 // Exact settled EA rectangles, 2026-10-09, Profile 320x844, scrollY=0.
 // The original witness's manual/default provenance is unproven. These are
@@ -29,10 +29,11 @@ function extract(name, indent = '    ') {
 }
 
 function harness({ route = profileSelector, manual = false, controls = [], note = noteBounds,
-  saved = null, width = 320, height = 844 } = {}) {
+  saved = null, width = 320, height = 844, copyBounds = null } = {}) {
   const attrs = {}, style = {}, writes = [];
   const makeElement = (bounds, extra = {}) => ({ getBoundingClientRect: () => bounds, ...extra });
-  const noteElement = makeElement(note);
+  const copyElements = (copyBounds || [note]).map(bounds => makeElement(bounds));
+  const noteElement = copyElements[0];
   const controlElements = controls.map(value => makeElement(value.bounds, value));
   const root = {
     hidden: false, offsetWidth: 100, offsetHeight: 96,
@@ -45,7 +46,7 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
   const header = { contains: element => element.inHeader === true };
   const queries = [];
   const context = {
-    root, button: root, noteElement, attrs, style, writes, queries, manualPosition: manual,
+    root, button: root, noteElement, copyElements, attrs, style, writes, queries, manualPosition: manual,
     x: 0, y: 0, drag: null, EDGE_GAP: 12, DEFAULT_BOTTOM_GAP: 180,
     POSITION_KEY: 'toadal:site:companion:position:v1',
     window: { innerWidth: width, innerHeight: height,
@@ -55,7 +56,7 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
       querySelector: selector => selector === '.site-header' ? header : selector === route ? {} : null,
       querySelectorAll: selector => {
         queries.push(selector);
-        return selector === noteSelector ? (route === profileSelector ? [noteElement] : []) : controlElements;
+        return selector === noteSelector ? (route === profileSelector ? copyElements : []) : controlElements;
       }
     },
     getComputedStyle: element => ({ display: 'block', visibility: 'visible', opacity: '1',
@@ -266,4 +267,145 @@ test('automatic measured header docking is unchanged even when Profile copy scro
   assert.equal(h.attrs['data-position-x'], String(Math.round(expected.x)));
   assert.equal(h.attrs['data-position-y'], String(Math.round(expected.y)));
   assert.ok(!h.queries.includes(noteSelector), 'header-only character path never requests Profile copy');
+});
+
+test('Profile semantic copy coverage includes every readable native text node and populated/empty runtime records', () => {
+  const profile = JSON.parse(fs.readFileSync(path.join(repo, 'studio-project/toadal-feast-website/pages/profile.json'), 'utf8'));
+  const textTags = new Set(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'label', 'dt', 'dd']);
+  const controls = new Set(['a', 'button', 'select', 'option']);
+  const covered = node => {
+    const props = node.props || {}, classes = (props.className || '').split(/\s+/);
+    return textTags.has(props.tag) || controls.has(props.tag) || ['listitem', 'status'].includes(props.attributes?.role) ||
+      classes.includes('progression-local-badge') || classes.includes('detail-breadcrumb');
+  };
+  let checked = 0;
+  function walk(value, ancestors = []) {
+    if (Array.isArray(value)) { value.forEach(child => walk(child, ancestors)); return; }
+    if (!value || typeof value !== 'object') return;
+    const next = value.props ? [...ancestors, value] : ancestors;
+    if (value.props && typeof value.props.text === 'string' && value.props.text.trim()) {
+      const hidden = next.some(node => node.props.attributes?.['aria-hidden'] === 'true' ||
+        (node.props.className || '').split(/\s+/).includes('sr-only'));
+      if (!hidden) { checked += 1; assert.ok(next.some(covered), value.id + ': ' + value.props.text); }
+    }
+    for (const child of Object.values(value)) if (child && typeof child === 'object') walk(child, next);
+  }
+  walk(profile);
+  assert.ok(checked >= 65, 'coverage is against the complete native Profile, not only failed paragraphs');
+  assert.ok(source.includes(noteSelector));
+  const progression = fs.readFileSync(path.join(repo, 'studio-project/toadal-feast-website/reference/assets/js/guest-progression.js'), 'utf8');
+  const render = progression.slice(progression.indexOf('  function renderList('), progression.indexOf('  function renderList(') + 4500);
+  assert.match(render, /empty\.setAttribute\('role', 'listitem'\)/);
+  assert.match(render, /entry\.setAttribute\('role', 'listitem'\)/);
+  assert.match(render, /createElement\('strong'\)/);
+  assert.ok(noteSelector.includes('[role="listitem"]'), 'runtime record title and empty div text stay inside protection');
+  assert.ok(noteSelector.includes('[role="status"]'), 'status protection survives an owner changing its semantic tag');
+});
+
+test('adjacent guest summary and route explanations share one semantic collision set', () => {
+  const topCopy = [
+    rect(32.67, 195.40, 254.67, 65.85), rect(32.67, 271.25, 254.67, 99.17),
+    rect(109.33, 400.42, 167.33, 35.44), rect(109.33, 439.85, 167.33, 27.83),
+    rect(109.33, 471.69, 167.33, 86), rect(32.67, 582.35, 254.67, 118.44)
+  ];
+  const h = harness({ copyBounds: topCopy });
+  const previousNoteOnly = { x: 192, y: 474 };
+  assert.ok(area(previousNoteOnly, topCopy[4]) > 7000, 'recorded candidate placement obscured guest summary');
+  const next = plain(h.avoidProfileCopy(previousNoteOnly));
+  for (const copy of topCopy) assert.equal(area(next, copy, 100, 96, 12), 0);
+  // All measured rectangles above are included, but unprovided page controls are
+  // not fabricated. Complete-page slot availability remains a browser-data gate.
+  const routeParagraph = rect(33, 200, 254, 180);
+  const middle = harness({ copyBounds: [routeParagraph, rect(33, 400, 254, 100)] });
+  const middleNext = plain(middle.avoidProfileCopy({ x: 192, y: 210 }));
+  assert.equal(area(middleNext, routeParagraph, 100, 96, 12), 0, 'representative route explanation uses same set');
+});
+
+function headerHarness({ width = 320, gap = 49.77, brandRight = 162.88,
+  route = profileSelector, manual = false, minimized = true } = {}) {
+  const brandBounds = rect(16, 8, brandRight - 16, 48);
+  const menuBounds = rect(brandRight + 26 + gap, 10, 65.35, 44);
+  const h = harness({ width, route, manual, controls: [
+    { bounds: brandBounds, inHeader: true }, { bounds: menuBounds, inHeader: true }
+  ] });
+  h.attrs['data-minimized'] = String(minimized);
+  const query = h.document.querySelector;
+  const brand = { getBoundingClientRect: () => brandBounds };
+  const menu = { getBoundingClientRect: () => menuBounds };
+  h.document.querySelector = selector => selector === '.site-nav' ?
+    { querySelector: selector => selector === '.site-brand' ? brand : menu } : query(selector);
+  return { h, brandBounds, menuBounds };
+}
+
+test('fractional header gap admits only automatic already-minimized Profile at the 48px boundary', () => {
+  for (const gap of [47.999, 48, 48.001, 49.77, 51.999, 52, 52.001]) {
+    for (const [route, manual, minimized, threshold] of [
+      [profileSelector, false, true, 48], [profileSelector, false, false, 52],
+      ['.home-hero', false, true, 52], ['.app-page', false, true, 52], ['.wo002-game-library', false, true, 52]
+    ]) {
+      const { h } = headerHarness({ gap, brandRight: 160, route, manual, minimized });
+      const dock = h.mobileDock();
+      if (gap < threshold) assert.equal(dock, null, `${route}/${minimized}/${gap}`);
+      else { assert.ok(dock); assert.ok(Math.abs(dock.width - gap) < 1e-9); assert.ok(dock.width >= 48); }
+    }
+    const { h } = headerHarness({ gap, manual: true });
+    assert.equal(h.mobileDock(), null, 'saved/deliberate manual placement always bypasses docking');
+  }
+});
+
+test('measured 320px Profile dock keeps its hit target and constrained artwork between brand and Menu', () => {
+  const { h, brandBounds, menuBounds } = headerHarness();
+  // Actual Chrome scrollbars narrow the visual viewport without changing innerWidth.
+  h.window.visualViewport = { offsetLeft: 0, offsetTop: 0, width: 304.67, height: 844 };
+  assert.ok(Math.abs(h.defaultPosition().x - 192.67) < 1e-9);
+  assert.equal(h.clampPosition(h.defaultPosition().x, 556).x, 192);
+  const dock = plain(h.mobileDock());
+  assert.ok(Math.abs(dock.width - 49.77) < 1e-9);
+  h.applyPosition(observed.x, observed.y, false);
+  assert.equal(h.attrs['data-mobile-docked'], 'true');
+  const position = { x: Number(h.attrs['data-position-x']), y: Number(h.attrs['data-position-y']) };
+  assert.deepEqual(position, { x: 176, y: 6 });
+  assert.ok(dock.width >= 48 && 52 >= 48, 'accessible measured hit target');
+  for (const obstacle of [brandBounds, menuBounds]) assert.equal(area(position, obstacle, dock.width, 52, 12), 0);
+  // CSS contracts below make the visible image no wider than this exact target;
+  // actual computed pixels remain part of the separate loaded-artwork browser gate.
+  const css = fs.readFileSync(path.join(repo, 'studio-project/toadal-feast-website/reference/assets/css/site.css'), 'utf8');
+  assert.match(css, /\.toadal-companion\[data-mobile-docked="true"\] \{\s*width: var\(--toadal-dock-width, 102px\);\s*height: 52px;/);
+  assert.match(css, /\.toadal-companion\[data-mobile-docked="true"\] \.companion-toggle \{\s*width: var\(--toadal-dock-width, 102px\);\s*min-width: 0;\s*height: 52px;\s*min-height: 52px;/);
+  assert.match(css, /body:has\(\[data-progression-page="profile"\]\) \.toadal-companion\[data-mobile-docked="true"\]\[data-minimized="true"\] \.companion-image \{\s*width: min\(52px, var\(--toadal-dock-width, 52px\)\);\s*\}/);
+  assert.match(css, /\.toadal-companion\[data-mobile-docked="true"\] \.companion-image \{[^}]*height: 52px;[^}]*transform: none;/);
+  assert.match(css, /\.toadal-companion \.companion-image \{[^}]*object-fit: contain;/);
+  assert.equal(h.writes.length, 0, 'the responsive decision writes no preference');
+});
+
+test('explicit expansion, collapse, resize and manual placement preserve the prior transition rules', () => {
+  const { h } = headerHarness();
+  h.applyPosition(observed.x, observed.y, false);
+  assert.equal(h.attrs['data-mobile-docked'], 'true');
+  h.attrs['data-minimized'] = 'false';
+  h.applyPosition(h.x, h.y, false);
+  assert.equal(h.attrs['data-mobile-docked'], undefined, 'explicit expansion exits exceptional narrow dock');
+  assert.equal(h.attrs['data-minimized'], 'false', 'placement never changes the requested expanded state');
+  h.attrs['data-minimized'] = 'true';
+  h.applyPosition(h.x, h.y, false);
+  assert.equal(h.attrs['data-mobile-docked'], 'true', 'deliberate minimization restores an available automatic dock');
+  h.window.innerWidth = 1180;
+  h.applyPosition(h.x, h.y, false);
+  assert.equal(h.attrs['data-mobile-docked'], undefined, 'existing desktop Profile behavior is retained');
+  h.window.innerWidth = 320;
+  h.applyPosition(h.x, h.y, false);
+  assert.equal(h.attrs['data-mobile-docked'], 'true');
+  h.manualPosition = true;
+  h.applyPosition(192, 474, false);
+  assert.equal(h.attrs['data-mobile-docked'], undefined);
+  assert.deepEqual({ x: h.x, y: h.y }, { x: 192, y: 474 });
+  assert.equal(h.writes.length, 0);
+  const normal = headerHarness({ width: 390, gap: 104.43 });
+  for (const minimized of ['true', 'false']) {
+    normal.h.attrs['data-minimized'] = minimized;
+    const dock = plain(normal.h.mobileDock());
+    assert.equal(dock.width, 102);
+    normal.h.applyPosition(observed.x, observed.y, false);
+    assert.deepEqual({ x: normal.h.x, y: normal.h.y }, { x: 177, y: 6 });
+  }
 });
