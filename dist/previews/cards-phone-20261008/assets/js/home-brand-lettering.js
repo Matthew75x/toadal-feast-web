@@ -1,10 +1,10 @@
-/* TOADAL FEAST Home wordmark: decorative canvas over the editable site brand text. */
+/* TOADAL FEAST shared navigation wordmark: decorative canvas over the editable site brand text. */
 (function () {
   'use strict';
   if (typeof document === 'undefined') return;
 
   var brand = document.querySelector('.site-brand');
-  if (!brand || !document.querySelector('.home-hero') || !brand.appendChild) return;
+  if (!brand || !brand.appendChild) return;
   if (['pending', 'ready', 'fallback'].indexOf(brand.dataset.homeBrandLettering) !== -1) return;
   brand.dataset.homeBrandLettering = 'pending';
 
