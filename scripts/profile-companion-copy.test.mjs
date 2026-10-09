@@ -117,7 +117,7 @@ test('existing collector stays unchanged; automatic Profile copy protection bypa
   h.queries.length = 0;
   assert.deepEqual(plain(h.avoidProfileCopy(observed)), observed);
   assert.ok(!h.queries.includes(noteSelector));
-  assert.match(source, /dock \? avoidControls\(next, dock.width, 52, controlRects\(false, true\)\) :\s*\(homePage && manualPosition \? next : avoidProfileCopy\(next\)\)/);
+  assert.match(source, /dock \? avoidControls\(next, dock\.width, dock\.height \|\| 52, controlRects\(false, true\)\) :\s*\(homePage && manualPosition \? next : avoidProfileCopy\(next\)\)/);
 });
 
 test('exact observed and source-default Profile geometry avoid the note with the existing measured-edge algorithm', () => {
