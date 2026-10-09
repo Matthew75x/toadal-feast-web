@@ -208,7 +208,8 @@
       var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
       // Main controls can scroll behind the opaque sticky header. They must
       // not dislodge its automatic dock into the visible page content.
-      var safe = dock ? avoidControls(next, dock.width, 52, controlRects(false, true)) : avoidProfileCopy(next);
+      var safe = dock ? avoidControls(next, dock.width, 52, controlRects(false, true)) :
+        (homePage && manualPosition ? next : avoidProfileCopy(next));
       if (dock && (safe.x !== next.x || safe.y !== next.y)) {
         setDock(null);
         safe = avoidProfileCopy(clampPosition(safe.x, safe.y));

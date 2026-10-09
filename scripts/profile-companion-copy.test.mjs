@@ -28,15 +28,23 @@ function extract(name, indent = '    ') {
   return source.slice(start, end);
 }
 
+function extractFinishPointer() {
+  const start = source.indexOf('    function finishPointer(');
+  assert.ok(start >= 0, 'actual source finishPointer function exists');
+  const end = source.indexOf("\n    button.addEventListener('pointerdown'", start);
+  assert.ok(end > start, 'finishPointer ends before its listener wiring');
+  return source.slice(start, end);
+}
+
 function harness({ route = profileSelector, manual = false, controls = [], note = noteBounds,
-  saved = null, width = 320, height = 844, copyBounds = null } = {}) {
-  const attrs = {}, style = {}, writes = [];
+  saved = null, width = 320, height = 844, copyBounds = null, rootWidth = 100, rootHeight = 96 } = {}) {
+  const attrs = {}, style = {}, writes = [], cancelledFrames = [], timers = [];
   const makeElement = (bounds, extra = {}) => ({ getBoundingClientRect: () => bounds, ...extra });
   const copyElements = (copyBounds || [note]).map(bounds => makeElement(bounds));
   const noteElement = copyElements[0];
   const controlElements = controls.map(value => makeElement(value.bounds, value));
   const root = {
-    hidden: false, offsetWidth: 100, offsetHeight: 96,
+    hidden: false, offsetWidth: rootWidth, offsetHeight: rootHeight,
     contains: element => element.inCompanion === true,
     getAttribute: name => attrs[name],
     setAttribute: (name, value) => { attrs[name] = value; },
@@ -46,11 +54,11 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
   const header = { contains: element => element.inHeader === true };
   const queries = [];
   const context = {
-    root, button: root, noteElement, copyElements, attrs, style, writes, queries, manualPosition: manual,
-    x: 0, y: 0, drag: null, EDGE_GAP: 12, DEFAULT_BOTTOM_GAP: 180,
+    root, button: root, noteElement, copyElements, attrs, style, writes, queries, cancelledFrames, timers, manualPosition: manual, homePage: route === '.home-hero',
+    x: 0, y: 0, drag: null, moveFrame: 0, queuedPosition: null, lastTouchTap: null, suppressClick: false, suppressTimer: null, EDGE_GAP: 12, DEFAULT_BOTTOM_GAP: 180,
     POSITION_KEY: 'toadal:site:companion:position:v1',
-    window: { innerWidth: width, innerHeight: height,
-      localStorage: { getItem: () => JSON.stringify(saved), setItem: (key, value) => writes.push({ key, value: JSON.parse(value) }) } },
+    window: { innerWidth: width, innerHeight: height, cancelAnimationFrame: id => cancelledFrames.push(id),
+      setTimeout: (fn, ms) => { timers.push({ fn, ms }); return timers.length; }, clearTimeout: id => timers.push({ clear: id }), localStorage: { getItem: () => JSON.stringify(saved), setItem: (key, value) => writes.push({ key, value: JSON.parse(value) }) } },
     document: {
       documentElement: {},
       querySelector: selector => selector === '.site-header' ? header : selector === route ? {} : null,
@@ -69,6 +77,7 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
   vm.runInContext(extract('readSafeInset', '  ') + '\n' +
     ['mobileDock', 'setDock', 'viewport', 'clampPosition', 'persistPosition',
       'applyPosition', 'controlRects', 'avoidControls', 'avoidProfileCopy', 'defaultPosition', 'loadPosition'].map(name => extract(name)).join('\n'), context);
+  vm.runInContext(extractFinishPointer(), context);
   return context;
 }
 
@@ -98,7 +107,7 @@ test('existing collector stays unchanged; automatic Profile copy protection bypa
   h.queries.length = 0;
   assert.deepEqual(plain(h.avoidProfileCopy(observed)), observed);
   assert.ok(!h.queries.includes(noteSelector));
-  assert.match(source, /dock \? avoidControls\(next, dock.width, 52, controlRects\(false, true\)\) : avoidProfileCopy\(next\)/);
+  assert.match(source, /dock \? avoidControls\(next, dock.width, 52, controlRects\(false, true\)\) :\s*\(homePage && manualPosition \? next : avoidProfileCopy\(next\)\)/);
 });
 
 test('exact observed and source-default Profile geometry avoid the note with the existing measured-edge algorithm', () => {
@@ -150,6 +159,166 @@ test('manual position loading, deliberate note overlap and existing interactive-
   h.applyPosition(20, 20, true);
   assert.deepEqual(h.style, oldStyle);
   assert.equal(h.writes.length, 1, 'hidden placement does not destroy saved coordinates');
+});
+
+test('manual Home drag release and reload preserve the clamped pointer position in the observed collision fixture', () => {
+  const obstacle = rect(980, 86, 400, 700);
+  const requested = { x: 1029, y: 74 };
+  const saved = { version: 1, x: 1600, y: 900, manual: false };
+  const h = harness({
+    route: '.home-hero',
+    saved,
+    controls: [{ bounds: obstacle }],
+    width: 2560,
+    height: 1223,
+    rootWidth: 52,
+    rootHeight: 52
+  });
+
+  const initial = plain(h.loadPosition());
+  assert.equal(h.manualPosition, false, 'the untouched saved default remains automatic');
+  h.x = initial.x;
+  h.y = initial.y;
+  h.applyPosition(initial.x, initial.y, false);
+  assert.deepEqual(plain(h.clampPosition(requested.x, requested.y)), requested);
+  assert.deepEqual(plain(h.avoidControls(requested, 52, 52, [obstacle])), { x: 1029, y: 22 },
+    'the exact collision fixture reproduces the unwanted 52px relocation');
+
+  h.drag = {
+    pointerId: 7,
+    pointerType: 'mouse',
+    manual: false,
+    originX: h.x,
+    originY: h.y,
+    moved: true
+  };
+  h.manualPosition = true;
+  h.applyPosition(requested.x, requested.y, false);
+  assert.deepEqual({ x: h.x, y: h.y }, requested,
+    'manual Home position follows the clamped request during the drag');
+  h.moveFrame = 31;
+  h.queuedPosition = requested;
+  h.finishPointer({ pointerId: 7 }, false);
+
+  assert.equal(h.drag, null);
+  assert.equal(h.manualPosition, true);
+  assert.deepEqual({ x: h.x, y: h.y }, requested,
+    'pointer-up applies the queued manual Home request without text avoidance');
+  assert.equal(h.attrs['data-position-x'], String(requested.x));
+  assert.equal(h.attrs['data-position-y'], String(requested.y));
+  assert.deepEqual(h.cancelledFrames, [31]);
+  assert.deepEqual(h.writes, [{
+    key: h.POSITION_KEY,
+    value: { version: 1, x: requested.x, y: requested.y, manual: true }
+  }], 'pointer-up persists the exact manually chosen coordinates');
+
+  const reloaded = harness({
+    route: '.home-hero',
+    saved: h.writes[0].value,
+    controls: [{ bounds: obstacle }],
+    width: 2560,
+    height: 1223,
+    rootWidth: 52,
+    rootHeight: 52
+  });
+  const restored = plain(reloaded.loadPosition());
+  assert.equal(reloaded.manualPosition, true);
+  reloaded.applyPosition(restored.x, restored.y, false);
+  assert.deepEqual({ x: reloaded.x, y: reloaded.y }, requested,
+    'reload restores the manually chosen Home coordinates');
+  reloaded.applyPosition(requested.x, -20, false);
+  assert.deepEqual({ x: reloaded.x, y: reloaded.y }, { x: 1029, y: 12 },
+    'manual Home placement still honors the 12px viewport clamp');
+});
+
+test('automatic Home and manual Profile avatar positions retain collision avoidance', () => {
+  const obstacle = rect(980, 86, 400, 700);
+  const requested = { x: 1029, y: 74 };
+  for (const options of [
+    { route: '.home-hero', manual: false, label: 'automatic Home' },
+    { route: profileSelector, manual: true, label: 'manual Profile' }
+  ]) {
+    const h = harness({
+      route: options.route,
+      manual: options.manual,
+      controls: [{ bounds: obstacle }],
+      width: 2560,
+      height: 1223,
+      rootWidth: 52,
+      rootHeight: 52
+    });
+    h.applyPosition(requested.x, requested.y, false);
+    assert.deepEqual({ x: h.x, y: h.y }, { x: 1029, y: 22 }, options.label);
+    assert.equal(area({ x: h.x, y: h.y }, obstacle, 52, 52, 12), 0,
+      options.label + ' still leaves the control exclusion margin clear');
+  }
+});
+
+test('manual Home speech panel still avoids the navigation and avatar anchor', () => {
+  const header = rect(0, 0, 2560, 64);
+  const avatar = rect(1029, 74, 52, 52);
+  const controls = [header, avatar];
+  const preferred = { x: 1000, y: 50 };
+  const h = harness({
+    route: '.home-hero',
+    manual: true,
+    width: 2560,
+    height: 1223,
+    rootWidth: 52,
+    rootHeight: 52
+  });
+  const panel = plain(h.avoidProfileCopy(preferred, 250, 120, controls));
+
+  assert.notDeepEqual(panel, preferred, 'panel placement remains collision-managed in manual Home mode');
+  for (const obstacle of controls) assert.equal(area(panel, obstacle, 250, 120, 12), 0);
+  assert.match(source,
+    /var controls = controlRects\(true\)\.concat\(\[anchor\]\);\s*var next = avoidProfileCopy\(preferred, panelWidth, panelHeight, controls\);/);
+});
+
+test('cancelled Home drags restore the prior position mode and coordinates without persisting', () => {
+  const obstacle = rect(980, 86, 400, 700);
+  const cases = [
+    { manualBefore: false, origin: { x: 1600, y: 900 }, saved: { version: 1, x: 1600, y: 900, manual: false } },
+    { manualBefore: true, origin: { x: 1029, y: 74 }, saved: { version: 1, x: 1029, y: 74, manual: true } }
+  ];
+
+  for (const fixture of cases) {
+    const h = harness({
+      route: '.home-hero',
+      manual: true,
+      saved: fixture.saved,
+      controls: [{ bounds: obstacle }],
+      width: 2560,
+      height: 1223,
+      rootWidth: 52,
+      rootHeight: 52
+    });
+    h.x = 1700;
+    h.y = 1000;
+    h.root.setAttribute('data-dragging', 'true');
+    h.drag = {
+      pointerId: 7,
+      manual: fixture.manualBefore,
+      originX: fixture.origin.x,
+      originY: fixture.origin.y,
+      moved: true
+    };
+    h.moveFrame = 31;
+    h.queuedPosition = { x: 1700, y: 1000 };
+
+    h.finishPointer({ pointerId: 7 }, true);
+
+    assert.equal(h.drag, null);
+    assert.equal(h.manualPosition, fixture.manualBefore);
+    assert.deepEqual({ x: h.x, y: h.y }, fixture.origin);
+    assert.equal(h.attrs['data-position-x'], String(fixture.origin.x));
+    assert.equal(h.attrs['data-position-y'], String(fixture.origin.y));
+    assert.equal(h.attrs['data-dragging'], undefined);
+    assert.equal(h.moveFrame, 0);
+    assert.equal(h.queuedPosition, null);
+    assert.deepEqual(h.cancelledFrames, [31]);
+    assert.equal(h.writes.length, 0, 'cancel restores the prior mode and position without saving the interrupted drag');
+  }
 });
 
 test('fresh, legacy and nonmanual positions use automatic defaults without changing the storage schema', () => {
