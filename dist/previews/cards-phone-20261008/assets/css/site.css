@@ -7736,3 +7736,171 @@ label[for='site-motion-toggle'] input { flex:0 0 auto; width:18px; height:18px; 
   /* A taller optional Pass must not split the adjacent cream games surface. */
   body:has([data-pass-display]) #browser-games-intro { align-self: stretch; }
 }
+
+/* Home owner-review polish: preserve the market scene, native copy, and existing card art. */
+html body:has(.home-hero) {
+  background:
+    linear-gradient(180deg, rgb(255 247 226 / 72%) 0%, rgb(255 247 226 / 91%) 440px, rgb(255 247 226 / 97%) 100%),
+    url("../images/world/owner-daylight-market-20261007.webp") center top / cover scroll;
+}
+
+html body:has(.home-hero) .site-brand {
+  min-width: 154px;
+  padding-inline-start: 42px;
+}
+
+html body:has(.home-hero) .site-brand__wordmark {
+  position: absolute;
+  inset-inline-start: 40px;
+  inset-block-start: 50%;
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  width: clamp(84px, 8vw, 108px);
+  height: 36px;
+  transform: translateY(-50%);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html body:has(.home-hero) .site-brand__lettering {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+html body:has(.home-hero) .site-brand.site-brand--lettering-ready {
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+}
+
+html body:has(.home-hero) .site-brand.site-brand--lettering-ready .site-brand__wordmark {
+  visibility: visible;
+}
+
+html body:has(.home-hero) .home-hero__title {
+  color: #fff6df;
+  font-family: var(--feast-display, Georgia, "Times New Roman", serif);
+  font-weight: 700;
+  letter-spacing: -.045em;
+  text-shadow: 0 3px 14px rgb(37 19 15 / 72%);
+}
+
+html body:has(.home-hero) #browser-games-intro .home-section-inner {
+  grid-template-areas: none;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-rows: auto auto auto auto;
+  grid-auto-rows: min-content;
+  align-content: start;
+  align-items: start;
+  min-height: 0;
+  height: auto;
+}
+
+html body:has(.home-hero) #browser-games-intro :is(.section-kicker, .section-heading, .section-lede, .game-tabs, .home-play-directory-link) {
+  grid-area: auto;
+}
+
+html body:has(.home-hero) #browser-games-intro .section-kicker {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+html body:has(.home-hero) #browser-games-intro .section-heading {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+html body:has(.home-hero) #browser-games-intro .section-lede {
+  grid-column: 1 / -1;
+  grid-row: 3;
+}
+
+html body:has(.home-hero) #browser-games-intro .game-tabs {
+  grid-column: 1 / -1;
+  grid-row: 4;
+}
+
+html body:has(.home-hero) #browser-games-intro .home-play-directory-link {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+}
+
+html body:has(.home-hero) #browser-games-intro .section-heading {
+  position: relative;
+  width: fit-content;
+  padding-block-end: .2em;
+  color: #17214e;
+  font-family: var(--feast-display, Georgia, "Times New Roman", serif);
+  font-weight: 700;
+  letter-spacing: -.035em;
+}
+
+html body:has(.home-hero) #browser-games-intro .section-heading::after {
+  display: block;
+  width: 2.7rem;
+  height: 3px;
+  margin-block-start: .16em;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #c98c20, #f4d88c);
+  content: "";
+}
+
+@media (min-width: 1080px) {
+  html body:has(.home-hero) main {
+    grid-template-rows: auto min-content auto auto auto auto auto auto;
+  }
+
+  html body:has(.home-hero) main > #browser-games-intro {
+    align-self: start;
+    min-height: 0;
+    height: auto;
+  }
+
+  html body:has(.home-hero) main > #browser-games {
+    align-self: start;
+  }
+
+  html body:has(.home-hero) main > #feast-pass {
+    grid-area: 2 / 10 / 4 / -1;
+    align-self: start;
+    min-width: 0;
+    min-height: 0;
+    padding: 0;
+  }
+
+  html body:has(.home-hero) #feast-pass .home-section-inner,
+  html body:has(.home-hero) #feast-pass .home-feast-pass-panel {
+    height: auto;
+    min-height: 0;
+    max-height: none;
+  }
+}
+
+html body:has(.home-hero) #feast-pass .framed-feast-pass {
+  border: 2px solid #d9ad56;
+  border-radius: 20px;
+  box-shadow: inset 0 0 0 2px #261827, inset 0 0 0 4px #d9ad56,
+    0 5px 0 #442838, 0 10px 20px rgb(16 23 44 / 24%);
+}
+
+@media (max-width: 1079px) {
+  html body:has(.home-hero) main > #feast-pass {
+    grid-area: auto;
+    grid-row: auto;
+    grid-column: 1 / -1;
+    align-self: start;
+  }
+}
+
+@media (max-width: 760px) {
+  html body:has(.home-hero) {
+    background-attachment: scroll, scroll;
+  }
+
+  html body:has(.home-hero) .site-brand__wordmark {
+    width: 84px;
+    height: 32px;
+  }
+}

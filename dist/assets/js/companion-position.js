@@ -11,6 +11,27 @@
   var EDGE_GAP = 12;
   var DEFAULT_BOTTOM_GAP = 180;
 
+  function dragOffsetsAtScale(anchorX, anchorY, rootRect, buttonRect) {
+    return {
+      x: buttonRect.left - rootRect.left + anchorX * buttonRect.width,
+      y: buttonRect.top - rootRect.top + anchorY * buttonRect.height
+    };
+  }
+
+  function hasPanelLayoutMutation(records, panel, root) {
+    return records.some(function (record) {
+      if (record.type !== 'attributes') return true;
+      if (record.target === panel && record.attributeName === 'hidden') {
+        return record.oldValue !== panel.getAttribute('hidden');
+      }
+      if (record.target === root &&
+        (record.attributeName === 'data-minimized' || record.attributeName === 'data-panel-visible')) {
+        return record.oldValue !== root.getAttribute(record.attributeName);
+      }
+      return false;
+    });
+  }
+
   function readSafeInset(name) {
     var value = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--toadal-safe-' + name));
     return Number.isFinite(value) ? value : 0;
@@ -236,33 +257,196 @@
       width = width || root.offsetWidth || button.offsetWidth;
       height = height || root.offsetHeight || button.offsetHeight;
       controls = controls || controlRects(false);
-      function collisionArea(position) {
-        return controls.reduce(function (area, rect) {
-          var overlapWidth = Math.max(0, Math.min(position.x + width + EDGE_GAP, rect.right) - Math.max(position.x - EDGE_GAP, rect.left));
-          var overlapHeight = Math.max(0, Math.min(position.y + height + EDGE_GAP, rect.bottom) - Math.max(position.y - EDGE_GAP, rect.top));
-          return area + overlapWidth * overlapHeight;
-        }, 0);
+      var obstacles = controls.map(function (rect) {
+        return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom };
+      });
+      var cellSize = Math.max(64, Math.min(192, Math.max(width, height) + EDGE_GAP * 2));
+      var columns = Math.max(1, Math.ceil(view.width / cellSize));
+      var rows = Math.max(1, Math.ceil(view.height / cellSize));
+      var cells = new Array(columns * rows);
+      function cellCoordinate(value, origin, count) {
+        return Math.max(0, Math.min(count - 1, Math.floor((value - origin) / cellSize)));
       }
-      if (collisionArea(preferred) === 0) return preferred;
+      obstacles.forEach(function (rect, index) {
+        var firstColumn = cellCoordinate(rect.left, view.left, columns);
+        var lastColumn = cellCoordinate(rect.right, view.left, columns);
+        var firstRow = cellCoordinate(rect.top, view.top, rows);
+        var lastRow = cellCoordinate(rect.bottom, view.top, rows);
+        for (var row = firstRow; row <= lastRow; row += 1) {
+          for (var column = firstColumn; column <= lastColumn; column += 1) {
+            var cellIndex = row * columns + column;
+            if (!cells[cellIndex]) cells[cellIndex] = [];
+            cells[cellIndex].push(index);
+          }
+        }
+      });
+      var seen = new Uint32Array(obstacles.length);
+      var generation = 0;
+      function collisionArea(position) {
+        generation = (generation + 1) >>> 0;
+        if (generation === 0) { seen.fill(0); generation = 1; }
+        var left = position.x - EDGE_GAP;
+        var right = position.x + width + EDGE_GAP;
+        var top = position.y - EDGE_GAP;
+        var bottom = position.y + height + EDGE_GAP;
+        var viewRight = view.left + view.width;
+        var viewBottom = view.top + view.height;
+        if (right < view.left || left > viewRight || bottom < view.top || top > viewBottom) return 0;
+        var firstColumn = cellCoordinate(left, view.left, columns);
+        var lastColumn = cellCoordinate(right, view.left, columns);
+        var firstRow = cellCoordinate(top, view.top, rows);
+        var lastRow = cellCoordinate(bottom, view.top, rows);
+        var area = 0;
+        for (var row = firstRow; row <= lastRow; row += 1) {
+          for (var column = firstColumn; column <= lastColumn; column += 1) {
+            var bucket = cells[row * columns + column];
+            if (!bucket) continue;
+            for (var item = 0; item < bucket.length; item += 1) {
+              var index = bucket[item];
+              if (seen[index] === generation) continue;
+              seen[index] = generation;
+              var rect = obstacles[index];
+              var overlapWidth = Math.max(0, Math.min(right, rect.right) - Math.max(left, rect.left));
+              if (overlapWidth === 0) continue;
+              var overlapHeight = Math.max(0, Math.min(bottom, rect.bottom) - Math.max(top, rect.top));
+              area += overlapWidth * overlapHeight;
+            }
+          }
+        }
+        return area;
+      }
+      var preferredArea = collisionArea(preferred);
+      if (preferredArea === 0) return preferred;
       // Rectangle edges enumerate free regions without a screenshot-specific offset.
       var xs = [preferred.x, view.left + EDGE_GAP, view.left + view.width - width - EDGE_GAP];
       var ys = [preferred.y, view.top + EDGE_GAP, view.top + view.height - height - EDGE_GAP];
-      controls.forEach(function (rect) {
+      obstacles.forEach(function (rect) {
         xs.push(Math.floor(rect.left - width - EDGE_GAP), Math.ceil(rect.right + EDGE_GAP));
         ys.push(Math.floor(rect.top - height - EDGE_GAP), Math.ceil(rect.bottom + EDGE_GAP));
       });
+      var xValues = Array.from(new Set(xs));
+      var yValues = Array.from(new Set(ys));
+      var minX = Math.ceil(view.left + readSafeInset('left') + EDGE_GAP);
+      var maxX = Math.max(minX, Math.floor(view.left + view.width - readSafeInset('right') - EDGE_GAP - width));
+      var minY = Math.ceil(view.top + readSafeInset('top') + EDGE_GAP);
+      var maxY = Math.max(minY, Math.floor(view.top + view.height - readSafeInset('bottom') - EDGE_GAP - height));
+      function axisCandidates(values, min, max, origin) {
+        var unique = new Map();
+        values.forEach(function (value, order) {
+          var clamped = Math.round(Math.max(min, Math.min(max, value)));
+          if (!unique.has(clamped)) unique.set(clamped, order);
+        });
+        return Array.from(unique, function (entry) {
+          return { value: entry[0], order: entry[1], distance: Math.pow(entry[0] - origin, 2) };
+        }).sort(function (a, b) { return a.distance - b.distance || a.order - b.order; });
+      }
+      var xCandidates = axisCandidates(xValues, minX, maxX, preferred.x);
+      var yCandidates = axisCandidates(yValues, minY, maxY, preferred.y);
+
+      // Dense routes can have many candidate edges. Search for the nearest
+      // collision-free pair with bitsets first; exact overlap scoring is only
+      // needed when every candidate pair is occupied.
+      if (obstacles.length >= 16) {
+        var words = Math.ceil(obstacles.length / 32);
+        function overlapMasks(candidates, horizontal) {
+          return candidates.map(function (candidate) {
+            var mask = new Uint32Array(words);
+            var start = candidate.value - EDGE_GAP;
+            var end = candidate.value + (horizontal ? width : height) + EDGE_GAP;
+            obstacles.forEach(function (rect, index) {
+              var overlaps = horizontal ? end > rect.left && start < rect.right : end > rect.top && start < rect.bottom;
+              if (overlaps) mask[index >>> 5] |= (1 << (index & 31));
+            });
+            return mask;
+          });
+        }
+        var xMasks = overlapMasks(xCandidates, true);
+        var yMasks = overlapMasks(yCandidates, false);
+        function clearPair(xIndex, yIndex) {
+          for (var word = 0; word < words; word += 1) {
+            if (xMasks[xIndex][word] & yMasks[yIndex][word]) return false;
+          }
+          return true;
+        }
+        var heap = [];
+        var visited = new Set();
+        var bestClear = null;
+        function before(a, b) { return a.distance < b.distance || (a.distance === b.distance && a.rank < b.rank); }
+        function pushPair(xIndex, yIndex) {
+          if (xIndex >= xCandidates.length || yIndex >= yCandidates.length) return;
+          var key = xIndex * yCandidates.length + yIndex;
+          if (visited.has(key)) return;
+          visited.add(key);
+          var xCandidate = xCandidates[xIndex];
+          var yCandidate = yCandidates[yIndex];
+          var item = {
+            xIndex: xIndex,
+            yIndex: yIndex,
+            distance: xCandidate.distance + yCandidate.distance,
+            rank: xCandidate.order * yValues.length + yCandidate.order
+          };
+          var index = heap.length;
+          heap.push(item);
+          while (index > 0) {
+            var parent = (index - 1) >>> 1;
+            if (!before(item, heap[parent])) break;
+            heap[index] = heap[parent];
+            index = parent;
+          }
+          heap[index] = item;
+        }
+        function popPair() {
+          var first = heap[0];
+          var last = heap.pop();
+          if (heap.length) {
+            var index = 0;
+            while (true) {
+              var left = index * 2 + 1;
+              if (left >= heap.length) break;
+              var right = left + 1;
+              var child = right < heap.length && before(heap[right], heap[left]) ? right : left;
+              if (!before(heap[child], last)) break;
+              heap[index] = heap[child];
+              index = child;
+            }
+            heap[index] = last;
+          }
+          return first;
+        }
+        pushPair(0, 0);
+        while (heap.length) {
+          var pair = popPair();
+          if (bestClear && pair.distance > bestClear.distance) break;
+          if (clearPair(pair.xIndex, pair.yIndex) &&
+            (!bestClear || pair.distance < bestClear.distance ||
+              (pair.distance === bestClear.distance && pair.rank < bestClear.rank))) bestClear = pair;
+          pushPair(pair.xIndex + 1, pair.yIndex);
+          pushPair(pair.xIndex, pair.yIndex + 1);
+        }
+        if (bestClear) return {
+          x: xCandidates[bestClear.xIndex].value,
+          y: yCandidates[bestClear.yIndex].value
+        };
+      }
+
+      var exactX = xCandidates.slice().sort(function (a, b) { return a.order - b.order; });
+      var exactY = yCandidates.slice().sort(function (a, b) { return a.order - b.order; });
       var best = preferred;
-      var bestArea = collisionArea(preferred);
+      var bestArea = preferredArea;
       var bestDistance = Infinity;
-      Array.from(new Set(xs)).forEach(function (left) {
-        Array.from(new Set(ys)).forEach(function (top) {
-          var candidate = clampPosition(left, top, width, height);
+      var bestRank = Infinity;
+      exactX.forEach(function (xCandidate) {
+        exactY.forEach(function (yCandidate) {
+          var candidate = { x: xCandidate.value, y: yCandidate.value };
           var area = collisionArea(candidate);
-          var distance = Math.pow(candidate.x - preferred.x, 2) + Math.pow(candidate.y - preferred.y, 2);
-          if (area < bestArea || (area === bestArea && distance < bestDistance)) {
+          var distance = xCandidate.distance + yCandidate.distance;
+          var rank = xCandidate.order * yValues.length + yCandidate.order;
+          if (area < bestArea || (area === bestArea &&
+            (distance < bestDistance || (distance === bestDistance && rank < bestRank)))) {
             best = candidate;
             bestArea = area;
             bestDistance = distance;
+            bestRank = rank;
           }
         });
       });
@@ -333,6 +517,7 @@
       suppressTimer = null;
       suppressClick = false;
       var rect = root.getBoundingClientRect();
+      var buttonRect = button.getBoundingClientRect();
       drag = {
         pointerId: event.pointerId,
         pointerType: event.pointerType,
@@ -343,6 +528,8 @@
         originY: rect.top,
         offsetX: event.clientX - rect.left,
         offsetY: event.clientY - rect.top,
+        anchorX: buttonRect.width > 0 ? Math.max(0, Math.min(1, (event.clientX - buttonRect.left) / buttonRect.width)) : 0.5,
+        anchorY: buttonRect.height > 0 ? Math.max(0, Math.min(1, (event.clientY - buttonRect.top) / buttonRect.height)) : 0.5,
         manual: manualPosition,
         moved: false
       };
@@ -356,8 +543,18 @@
       if (!drag.moved && Math.hypot(dx, dy) < DRAG_THRESHOLD) return;
       if (!drag.moved) {
         lastTouchTap = null;
+        var wasDocked = root.getAttribute('data-mobile-docked') === 'true';
         manualPosition = true;
         setDock(null);
+        if (wasDocked) {
+          // Leaving the narrow header target expands the normal helper. Rebase
+          // the drag at the same point in the artwork so it stays under the
+          // pointer through that one intentional size transition.
+          var nextOffset = dragOffsetsAtScale(drag.anchorX, drag.anchorY,
+            root.getBoundingClientRect(), button.getBoundingClientRect());
+          drag.offsetX = nextOffset.x;
+          drag.offsetY = nextOffset.y;
+        }
       }
       drag.moved = true;
       root.setAttribute('data-dragging', 'true');
@@ -470,7 +667,8 @@
       window.visualViewport.addEventListener('scroll', clampAfterViewportChange, { passive: true });
     }
     var panelWasVisible = panelVisible();
-    var panelObserver = new MutationObserver(function () {
+    var panelObserver = new MutationObserver(function (mutations) {
+      if (!hasPanelLayoutMutation(mutations, panel, root)) return;
       var visible = panelVisible();
       if (visible !== panelWasVisible) {
         panelWasVisible = visible;
@@ -484,8 +682,8 @@
         } else placePanel();
       } else placePanel();
     });
-    panelObserver.observe(panel, { attributes: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
-    panelObserver.observe(root, { attributes: true, attributeFilter: ['data-minimized', 'data-panel-visible'] });
+    panelObserver.observe(panel, { attributes: true, attributeOldValue: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
+    panelObserver.observe(root, { attributes: true, attributeOldValue: true, attributeFilter: ['data-minimized', 'data-panel-visible'] });
 
     var initial = loadPosition();
     x = initial.x;
