@@ -7718,3 +7718,17 @@ label[for='site-motion-toggle'] input { flex:0 0 auto; width:18px; height:18px; 
 @media (max-width: 760px) {
   [data-game-record] .game-progress-trust-grid { grid-template-columns: 1fr; }
 }
+
+/* Optional Home Pass summary: native in-flow content, no overlay or new authority. */
+#feast-pass [data-pass-display] { max-height: none; overflow: visible; }
+#feast-pass .pass-display-toggle { min-height: 44px; margin-block: 6px; white-space: normal; }
+#feast-pass .pass-display-toggle:focus-visible { outline: 3px solid #ffb823; outline-offset: 3px; }
+#feast-pass .pass-display-preference-status { color: var(--chocolate-800); font-size: .75rem; line-height: 1.45; margin: 0 0 8px; }
+#feast-pass .pass-display-content[hidden],
+#feast-pass [data-pass-display-hidden="true"] .pass-emblem { display: none !important; }
+#feast-pass .pass-display-content { min-width: 0; }
+#feast-pass .home-pass-metrics { overflow-wrap: anywhere; }
+@media (min-width: 1180px) {
+  /* A taller optional Pass must not split the adjacent cream games surface. */
+  body:has([data-pass-display]) #browser-games-intro { align-self: stretch; }
+}

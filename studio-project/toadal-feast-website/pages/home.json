@@ -90,7 +90,7 @@
                           "className": "",
                           "attributes": {
                             "media": "(max-width: 680px)",
-                            "srcset": "assets/images/world/candy-kingdom-mobile.webp"
+                            "srcset": "/assets/images/world/owner-daylight-market-20261007.webp"
                           },
                           "style": "",
                           "layerName": "source",
@@ -113,7 +113,7 @@
                           },
                           "style": "",
                           "layerName": "img",
-                          "asset": "asset.home.world.desktop",
+                          "asset": "asset.owner.world.daylight-market-web",
                           "alt": ""
                         }
                       }
@@ -238,7 +238,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Wicked Bites opens an isolated, session-only browser preview on staging.",
-                                "text": "Wicked Bites opens an isolated, session-only browser preview on staging. Other browser-game listings remain held or concepts; none is PUBLIC."
+                                "text": "Try Wicked Bites, a session-only browser preview. More games are on the way."
                               }
                             },
                             {
@@ -622,7 +622,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "Four browser listings lead to the Play directory. Wicked Bites runs as a",
-                    "text": "Four browser listings lead to the Play directory. Wicked Bites runs as a session-only staging preview, CLAW is held for origin-safety requalification, and two entries are concepts. Nothing is marked PUBLIC."
+                    "text": "Wicked Bites is a session-only browser preview. CLAW is not playable yet; two games are concepts. No public releases yet."
                   }
                 },
                 {
@@ -865,34 +865,88 @@
             "id": "component.home.game.wicked-bites",
             "type": "layout.container",
             "props": {
-              "symbolId": "symbol.home.game-card",
               "gameId": "game.wicked-bites",
               "authoringVersion": 1,
-              "tag": "a",
-              "className": "module studio-game-card owner-object-link",
+              "tag": "article",
+              "className": "module studio-game-card",
               "attributes": {
-                "aria-label": "View Wicked Bites details"
+                "data-game-preview": "v1",
+                "aria-label": "Wicked Bites preview card"
               },
               "style": "",
-              "layerName": "Wicked Bites",
-              "href": "/games/wicked-bites/",
+              "layerName": "Wicked Bites · editable cover and gameplay preview",
               "mode": "inherit",
               "children": [
                 {
-                  "id": "component.home.game.wicked-bites.art",
-                  "type": "core.image",
+                  "id": "component.home.game.wicked-bites.preview.stage",
+                  "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "img",
+                    "tag": "div",
                     "className": "",
                     "attributes": {
-                      "loading": "lazy",
-                      "decoding": "async"
+                      "data-game-preview-stage": ""
                     },
                     "style": "",
-                    "layerName": "Wicked Bites artwork",
-                    "asset": "asset.home.game.wicked-bites-preview",
-                    "alt": "Wicked Bites artwork"
+                    "layerName": "Cover window · responsive 16:9",
+                    "background": "#25162a",
+                    "children": [
+                      {
+                        "id": "component.home.game.wicked-bites.preview.cover",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "",
+                          "attributes": {
+                            "loading": "lazy",
+                            "decoding": "async",
+                            "data-game-preview-cover": "",
+                            "aria-hidden": "false"
+                          },
+                          "style": "",
+                          "layerName": "Wicked Bites · approved cover image and framing",
+                          "asset": "asset.import.wicked-bites-960.15bc9857",
+                          "alt": "Wicked Bites promotional title illustration; not gameplay",
+                          "fit": "cover",
+                          "focalX": 50,
+                          "focalY": 50,
+                          "zoom": 1,
+                          "responsive": {
+                            "mobile": {
+                              "asset": "asset.import.wicked-bites-480.a60da0ee",
+                              "maxWidth": 600,
+                              "fit": "cover"
+                            }
+                          },
+                          "aspectRatio": "16/9"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.wicked-bites.preview.gameplay",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "",
+                          "attributes": {
+                            "loading": "lazy",
+                            "decoding": "async",
+                            "aria-hidden": "true",
+                            "data-game-preview-gameplay": ""
+                          },
+                          "style": "",
+                          "layerName": "Actual gameplay image · choose capture and framing",
+                          "asset": "asset.home.game.wicked-bites-preview",
+                          "alt": "Wicked Bites actual gameplay preview",
+                          "fit": "contain",
+                          "focalX": 50,
+                          "focalY": 50,
+                          "zoom": 1
+                        }
+                      }
+                    ],
+                    "aspectRatio": "16/9"
                   }
                 },
                 {
@@ -918,7 +972,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "Wicked Bites description",
-                    "text": "Try the isolated Wicked Bites browser preview. Session-only play; this build is not a public release."
+                    "text": "A bite-sized browser preview. Play for this session; not a public release."
                   }
                 },
                 {
@@ -935,18 +989,103 @@
                   }
                 },
                 {
-                  "id": "component.home.game.wicked-bites.action",
+                  "id": "component.home.game.wicked-bites.preview.actions",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "",
+                    "attributes": {
+                      "data-game-preview-actions": ""
+                    },
+                    "style": "",
+                    "layerName": "Separate preview toggle and game link",
+                    "children": [
+                      {
+                        "id": "component.home.game.wicked-bites.preview.toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "",
+                          "attributes": {
+                            "type": "button",
+                            "data-game-preview-toggle": "",
+                            "aria-pressed": "false",
+                            "disabled": true
+                          },
+                          "style": "",
+                          "layerName": "Gameplay preview toggle",
+                          "children": [
+                            {
+                              "id": "component.home.game.wicked-bites.preview.show-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "data-game-preview-show-label": ""
+                                },
+                                "style": "",
+                                "layerName": "Preview button label",
+                                "text": "Preview gameplay"
+                              }
+                            },
+                            {
+                              "id": "component.home.game.wicked-bites.preview.hide-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "data-game-preview-hide-label": "",
+                                  "hidden": true
+                                },
+                                "style": "",
+                                "layerName": "Cover button label",
+                                "text": "Show cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.home.game.wicked-bites.preview.link",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-link": "",
+                            "aria-label": "Explore Wicked Bites preview"
+                          },
+                          "style": "",
+                          "layerName": "Game details link",
+                          "href": "/games/wicked-bites/",
+                          "label": "Explore preview →"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.home.game.wicked-bites.preview.status",
                   "type": "core.text",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "home-game-action",
+                    "tag": "p",
+                    "className": "",
                     "attributes": {
-                      "aria-hidden": "true"
+                      "data-game-preview-status": "",
+                      "role": "status",
+                      "aria-live": "polite"
                     },
                     "style": "",
-                    "layerName": "Game card action",
-                    "text": "Explore preview →"
+                    "layerName": "Preview image availability",
+                    "text": ""
                   }
                 }
               ]
@@ -983,7 +1122,12 @@
                     "style": "",
                     "layerName": "TOADAL Tower Defense artwork",
                     "asset": "asset.home.world.desktop",
-                    "alt": "TOADAL Tower Defense artwork"
+                    "alt": "TOADAL Tower Defense artwork",
+                    "fit": "cover",
+                    "aspectRatio": "16/9",
+                    "focalX": 50,
+                    "focalY": 50,
+                    "zoom": 1
                   }
                 },
                 {
@@ -1009,7 +1153,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "TOADAL Tower Defense description",
-                    "text": "A world-inspired concept preview. No playable browser package is connected yet."
+                    "text": "A world-inspired concept. Browser play is not available yet."
                   }
                 },
                 {
@@ -1047,34 +1191,81 @@
             "id": "component.home.game.froggy-fruity-bash",
             "type": "layout.container",
             "props": {
-              "symbolId": "symbol.home.game-card",
               "gameId": "game.froggy-fruity-bash",
               "authoringVersion": 1,
-              "tag": "a",
-              "className": "module studio-game-card owner-object-link",
+              "tag": "article",
+              "className": "module studio-game-card",
               "attributes": {
-                "aria-label": "View Froggy Fruity Bash details"
+                "data-game-preview": "v1",
+                "data-game-preview-availability": "no-gameplay",
+                "aria-label": "Froggie Fruity Bash concept details"
               },
               "style": "",
-              "layerName": "Froggy Fruity Bash",
-              "href": "/games/froggy-fruity-bash/",
+              "layerName": "Froggie Fruity Bash · cover ready; gameplay capture pending",
               "mode": "inherit",
               "children": [
                 {
-                  "id": "component.home.game.froggy-fruity-bash.art",
-                  "type": "core.image",
+                  "id": "component.home.game.froggy-fruity-bash.preview.stage",
+                  "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "img",
+                    "tag": "div",
                     "className": "",
                     "attributes": {
-                      "loading": "lazy",
-                      "decoding": "async"
+                      "data-game-preview-stage": ""
                     },
                     "style": "",
-                    "layerName": "Froggy Fruity Bash artwork",
-                    "asset": "asset.home.game.froggy-fruity-bash-concept",
-                    "alt": "Froggy Fruity Bash artwork"
+                    "layerName": "Cover window · responsive 16:9",
+                    "background": "#25162a",
+                    "children": [
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.preview.cover",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "",
+                          "attributes": {
+                            "loading": "lazy",
+                            "decoding": "async",
+                            "data-game-preview-cover": ""
+                          },
+                          "style": "",
+                          "layerName": "Froggie Fruity Bash · approved cover image and framing",
+                          "asset": "asset.import.foodio-fruity-bash-960.32f2d77b",
+                          "alt": "Froggie Fruity Bash promotional title illustration; not gameplay",
+                          "fit": "cover",
+                          "focalX": 50,
+                          "focalY": 50,
+                          "zoom": 1,
+                          "responsive": {
+                            "mobile": {
+                              "asset": "asset.import.foodio-fruity-bash-480.a48d00e6",
+                              "maxWidth": 600,
+                              "fit": "cover"
+                            }
+                          },
+                          "aspectRatio": "16/9"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.preview.gameplay-slot",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-gameplay-asset-pending": ""
+                          },
+                          "style": "",
+                          "layerName": "Gameplay slot · empty until a verified capture is supplied",
+                          "hidden": true,
+                          "children": []
+                        }
+                      }
+                    ],
+                    "aspectRatio": "16/9"
                   }
                 },
                 {
@@ -1086,7 +1277,7 @@
                     "className": "",
                     "attributes": {},
                     "style": "",
-                    "layerName": "Froggy Fruity Bash",
+                    "layerName": "Froggie Fruity Bash",
                     "text": "Froggy Fruity Bash"
                   }
                 },
@@ -1099,8 +1290,8 @@
                     "className": "",
                     "attributes": {},
                     "style": "",
-                    "layerName": "Froggy Fruity Bash description",
-                    "text": "A colourful concept preview. No playable browser package is connected yet."
+                    "layerName": "Froggie Fruity Bash description",
+                    "text": "A colourful concept. Browser play is not available yet."
                   }
                 },
                 {
@@ -1112,23 +1303,41 @@
                     "className": "chip preview",
                     "attributes": {},
                     "style": "",
-                    "layerName": "Froggy Fruity Bash status",
+                    "layerName": "Froggie Fruity Bash status",
                     "text": "PREVIEW"
                   }
                 },
                 {
-                  "id": "component.home.game.froggy-fruity-bash.action",
-                  "type": "core.text",
+                  "id": "component.home.game.froggy-fruity-bash.preview.actions",
+                  "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "home-game-action",
+                    "tag": "div",
+                    "className": "",
                     "attributes": {
-                      "aria-hidden": "true"
+                      "data-game-preview-actions": ""
                     },
                     "style": "",
-                    "layerName": "Game card action",
-                    "text": "View game details →"
+                    "layerName": "Details link · no gameplay preview available",
+                    "children": [
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.preview.link",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-link": "",
+                            "aria-label": "View Froggie Fruity Bash details"
+                          },
+                          "style": "",
+                          "layerName": "Existing concept details route",
+                          "href": "/games/froggy-fruity-bash/",
+                          "label": "View game details →"
+                        }
+                      }
+                    ]
                   }
                 }
               ]
@@ -1138,34 +1347,81 @@
             "id": "component.home.game.claw-feed-gulper",
             "type": "layout.container",
             "props": {
-              "symbolId": "symbol.home.game-card",
               "gameId": "game.claw-feed-gulper",
               "authoringVersion": 1,
-              "tag": "a",
-              "className": "module studio-game-card owner-object-link",
+              "tag": "article",
+              "className": "module studio-game-card",
               "attributes": {
-                "aria-label": "View CLAW: Feed Gulper details"
+                "data-game-preview": "v1",
+                "aria-label": "CLAW: Feed Gulper preview card"
               },
               "style": "",
-              "layerName": "CLAW: Feed Gulper",
-              "href": "/games/claw-feed-gulper/",
+              "layerName": "CLAW: Feed Gulper · cover and genuine gameplay capture",
               "mode": "inherit",
               "children": [
                 {
-                  "id": "component.home.game.claw-feed-gulper.art",
-                  "type": "core.image",
+                  "id": "component.home.game.claw-feed-gulper.preview.stage",
+                  "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "img",
+                    "tag": "div",
                     "className": "",
                     "attributes": {
-                      "loading": "lazy",
-                      "decoding": "async"
+                      "data-game-preview-stage": ""
                     },
                     "style": "",
-                    "layerName": "CLAW: Feed Gulper artwork",
-                    "asset": "asset.home.game.claw-feed-gulper-preview",
-                    "alt": "CLAW: Feed Gulper artwork"
+                    "layerName": "Cover window · responsive 16:9",
+                    "background": "#25162a",
+                    "children": [
+                      {
+                        "id": "component.home.game.claw-feed-gulper.preview.cover",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "",
+                          "attributes": {
+                            "loading": "lazy",
+                            "decoding": "async",
+                            "data-game-preview-cover": "",
+                            "aria-hidden": "false"
+                          },
+                          "style": "",
+                          "layerName": "CLAW: Feed Gulper · generated promotional cover and editable framing",
+                          "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
+                          "alt": "CLAW: Feed Gulper promotional title illustration; not gameplay",
+                          "fit": "cover",
+                          "focalX": 50,
+                          "focalY": 50,
+                          "zoom": 1,
+                          "aspectRatio": "16/9"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.claw-feed-gulper.preview.gameplay",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "",
+                          "attributes": {
+                            "loading": "lazy",
+                            "decoding": "async",
+                            "aria-hidden": "true",
+                            "data-game-preview-gameplay": ""
+                          },
+                          "style": "",
+                          "layerName": "Actual gameplay image · choose capture and framing",
+                          "asset": "asset.home.game.claw-feed-gulper-preview",
+                          "alt": "CLAW: Feed Gulper 2.5.1 genuine staging gameplay capture; browser launch remains held.",
+                          "fit": "contain",
+                          "focalX": 50,
+                          "focalY": 50,
+                          "zoom": 1
+                        }
+                      }
+                    ],
+                    "aspectRatio": "16/9"
                   }
                 },
                 {
@@ -1191,7 +1447,7 @@
                     "attributes": {},
                     "style": "",
                     "layerName": "CLAW: Feed Gulper description",
-                    "text": "A real staging capture. Browser launch is held while the existing package is qualified."
+                    "text": "Meet the hungry Gulper. Gameplay preview only; browser play is not available yet."
                   }
                 },
                 {
@@ -1208,18 +1464,103 @@
                   }
                 },
                 {
-                  "id": "component.home.game.claw-feed-gulper.action",
+                  "id": "component.home.game.claw-feed-gulper.preview.actions",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "",
+                    "attributes": {
+                      "data-game-preview-actions": ""
+                    },
+                    "style": "",
+                    "layerName": "Separate preview toggle and game link",
+                    "children": [
+                      {
+                        "id": "component.home.game.claw-feed-gulper.preview.toggle",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "button",
+                          "className": "",
+                          "attributes": {
+                            "type": "button",
+                            "data-game-preview-toggle": "",
+                            "aria-pressed": "false",
+                            "disabled": true
+                          },
+                          "style": "",
+                          "layerName": "Gameplay preview toggle",
+                          "children": [
+                            {
+                              "id": "component.home.game.claw-feed-gulper.preview.show-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "data-game-preview-show-label": ""
+                                },
+                                "style": "",
+                                "layerName": "Preview button label",
+                                "text": "Preview gameplay"
+                              }
+                            },
+                            {
+                              "id": "component.home.game.claw-feed-gulper.preview.hide-label",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "data-game-preview-hide-label": "",
+                                  "hidden": true
+                                },
+                                "style": "",
+                                "layerName": "Cover button label",
+                                "text": "Show cover"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.home.game.claw-feed-gulper.preview.link",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-link": "",
+                            "aria-label": "Explore CLAW: Feed Gulper preview"
+                          },
+                          "style": "",
+                          "layerName": "Game details link",
+                          "href": "/games/claw-feed-gulper/",
+                          "label": "View game details →"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.home.game.claw-feed-gulper.preview.status",
                   "type": "core.text",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "home-game-action",
+                    "tag": "p",
+                    "className": "",
                     "attributes": {
-                      "aria-hidden": "true"
+                      "data-game-preview-status": "",
+                      "role": "status",
+                      "aria-live": "polite"
                     },
                     "style": "",
-                    "layerName": "Game card action",
-                    "text": "View game details →"
+                    "layerName": "Preview image availability",
+                    "text": ""
                   }
                 }
               ]
@@ -1265,7 +1606,8 @@
                       "data-progression-page": "",
                       "data-companion-context": "feast-pass",
                       "data-companion-copy": "Feast Pass guest progress is local to this browser. Account sign-in and cross-device sync are not available.",
-                      "data-companion-reaction": "proud"
+                      "data-companion-reaction": "proud",
+                      "data-pass-display": ""
                     },
                     "style": "",
                     "layerName": "Your Feast Pass",
@@ -1310,390 +1652,446 @@
                               }
                             },
                             {
-                              "id": "component.home.feast-pass.99ce2558ddd4.section-lede",
-                              "type": "core.text",
+                              "id": "component.home.pass-display.toggle",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-lede",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Your progress is browser-local. Account sync is unavailable.",
-                                "text": "Your progress is browser-local. Account sync is unavailable."
-                              }
-                            },
-                            {
-                              "id": "component.home.feast-pass.582ecff1a690.home-pass-metrics",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "dl",
-                                "className": "home-pass-metrics",
+                                "tag": "button",
+                                "className": "button-link button-link--secondary pass-display-toggle",
                                 "attributes": {
-                                  "aria-label": "Your browser-local guest progress"
+                                  "type": "button",
+                                  "data-pass-display-toggle": "",
+                                  "aria-expanded": "true",
+                                  "aria-controls": "home-pass-display-content",
+                                  "disabled": "disabled",
+                                  "data-pass-show-label": "Show Feast Pass",
+                                  "data-pass-hide-label": "Hide Feast Pass"
                                 },
                                 "style": "",
-                                "layerName": "Level—XP—Sparks—Treats—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.home.feast-pass.294de686cc56.div",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "div",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Level—",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.home.feast-pass.daf7d638c94c.dt",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dt",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "Level",
-                                            "text": "Level"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.home.feast-pass.7fd885ab6c59.dd",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dd",
-                                            "className": "",
-                                            "attributes": {
-                                              "data-progression-stat": "level"
-                                            },
-                                            "style": "",
-                                            "layerName": "—",
-                                            "text": "—"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.feast-pass.21a717d6f297.div",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "div",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "XP—",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.home.feast-pass.68a74944fa14.dt",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dt",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "XP",
-                                            "text": "XP"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.home.feast-pass.c2dfb4d378c6.dd",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dd",
-                                            "className": "",
-                                            "attributes": {
-                                              "data-progression-stat": "xp"
-                                            },
-                                            "style": "",
-                                            "layerName": "—",
-                                            "text": "—"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.feast-pass.c35b3daf55d8.div",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "div",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Sparks—",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.home.feast-pass.b84986459b1d.dt",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dt",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "Sparks",
-                                            "text": "Sparks"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.home.feast-pass.f4a99833bc7f.dd",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dd",
-                                            "className": "",
-                                            "attributes": {
-                                              "data-progression-stat": "sparks"
-                                            },
-                                            "style": "",
-                                            "layerName": "—",
-                                            "text": "—"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.feast-pass.0da7151760f5.div",
-                                    "type": "layout.container",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "div",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Treats—",
-                                      "mode": "inherit",
-                                      "children": [
-                                        {
-                                          "id": "component.home.feast-pass.45418de571e7.dt",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dt",
-                                            "className": "",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "Treats",
-                                            "text": "Treats"
-                                          }
-                                        },
-                                        {
-                                          "id": "component.home.feast-pass.190ba4ad5845.dd",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "dd",
-                                            "className": "",
-                                            "attributes": {
-                                              "data-progression-stat": "treats"
-                                            },
-                                            "style": "",
-                                            "layerName": "—",
-                                            "text": "—"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ]
+                                "layerName": "toggle",
+                                "label": "Hide Feast Pass"
                               }
                             },
                             {
-                              "id": "component.mutf2h96.fvymuj",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "feast-progress-note",
-                                "layerName": "Live progress to next level",
-                                "attributes": {},
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.feast.home.next.label",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "attributes": {},
-                                      "style": "",
-                                      "tag": "#text",
-                                      "text": "Next level in ",
-                                      "layerName": "Next level in ",
-                                      "className": ""
-                                    }
-                                  },
-                                  {
-                                    "id": "component.feast.home.next.value",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "attributes": {
-                                        "data-progression-stat": "xp-to-next"
-                                      },
-                                      "style": "",
-                                      "tag": "strong",
-                                      "text": "100",
-                                      "layerName": "100",
-                                      "className": ""
-                                    }
-                                  },
-                                  {
-                                    "id": "component.feast.home.next.suffix",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "attributes": {},
-                                      "style": "",
-                                      "tag": "#text",
-                                      "text": " XP · starter configuration",
-                                      "layerName": " XP · starter configuration",
-                                      "className": ""
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.home.feast-pass.f959ef3a21ea.home-pass-storage-status",
+                              "id": "component.home.pass-display.preference-status",
                               "type": "core.text",
                               "props": {
                                 "authoringVersion": 1,
                                 "tag": "p",
-                                "className": "home-pass-storage-status",
+                                "className": "pass-display-preference-status",
                                 "attributes": {
-                                  "data-progression-storage-status": "",
+                                  "data-pass-display-preference-status": "",
                                   "role": "status",
                                   "aria-live": "polite"
                                 },
                                 "style": "",
-                                "layerName": "Guest progress is stored only in this browser.",
-                                "text": "Guest progress is stored only in this browser."
+                                "layerName": "preference-status",
+                                "text": "Progress stays local to this browser. Account sync is unavailable."
                               }
                             },
                             {
-                              "id": "component.home.feast-pass.41f6f68ae0e3.button-link-button-link-",
-                              "type": "core.button",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "button-link button-link--secondary",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Open Feast Pass →",
-                                "href": "/feast-pass/",
-                                "children": [
-                                  {
-                                    "id": "component.home.feast-pass.da68b82d6148.text",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "#text",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "text": "Open Feast Pass ",
-                                      "layerName": "Text: Open Feast Pass"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.feast-pass.ba0ea33e3886.span",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "span",
-                                      "className": "",
-                                      "attributes": {
-                                        "aria-hidden": "true"
-                                      },
-                                      "style": "",
-                                      "layerName": "→",
-                                      "text": "→"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.mutf2ic8.rccp8o",
+                              "id": "component.home.pass-display.content",
                               "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "nav",
-                                "className": "feast-journey-links",
-                                "layerName": "Feast journey links",
+                                "tag": "div",
+                                "className": "pass-display-content",
                                 "attributes": {
-                                  "aria-label": "Continue your local Feast journey"
+                                  "id": "home-pass-display-content",
+                                  "data-pass-display-content": ""
                                 },
+                                "style": "",
+                                "layerName": "content",
                                 "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.feast.home.journey.quests",
-                                    "type": "core.button",
+                                    "id": "component.home.feast-pass.99ce2558ddd4.section-lede",
+                                    "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-lede",
                                       "attributes": {},
                                       "style": "",
-                                      "tag": "a",
-                                      "label": "Quests",
-                                      "href": "/feast-pass/quests/",
-                                      "layerName": "Quests",
-                                      "className": "button-link button-link--secondary"
+                                      "layerName": "Your progress is browser-local. Account sync is unavailable.",
+                                      "text": "Your progress is browser-local. Account sync is unavailable."
                                     }
                                   },
                                   {
-                                    "id": "component.feast.home.journey.rewards",
-                                    "type": "core.button",
+                                    "id": "component.home.feast-pass.582ecff1a690.home-pass-metrics",
+                                    "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "attributes": {},
+                                      "tag": "dl",
+                                      "className": "home-pass-metrics",
+                                      "attributes": {
+                                        "aria-label": "Your browser-local guest progress"
+                                      },
                                       "style": "",
-                                      "tag": "a",
-                                      "label": "Rewards & Treats",
-                                      "href": "/feast-pass/rewards/",
-                                      "layerName": "Rewards & Treats",
-                                      "className": "button-link button-link--secondary"
+                                      "layerName": "Level—XP—Sparks—Treats—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.home.feast-pass.294de686cc56.div",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Level—",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.home.feast-pass.daf7d638c94c.dt",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dt",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Level",
+                                                  "text": "Level"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.home.feast-pass.7fd885ab6c59.dd",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dd",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-progression-stat": "level"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "—",
+                                                  "text": "—"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.feast-pass.21a717d6f297.div",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "XP—",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.home.feast-pass.68a74944fa14.dt",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dt",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "XP",
+                                                  "text": "XP"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.home.feast-pass.c2dfb4d378c6.dd",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dd",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-progression-stat": "xp"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "—",
+                                                  "text": "—"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.feast-pass.c35b3daf55d8.div",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Sparks—",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.home.feast-pass.b84986459b1d.dt",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dt",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Sparks",
+                                                  "text": "Sparks"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.home.feast-pass.f4a99833bc7f.dd",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dd",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-progression-stat": "sparks"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "—",
+                                                  "text": "—"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.feast-pass.0da7151760f5.div",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "div",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Treats—",
+                                            "mode": "inherit",
+                                            "children": [
+                                              {
+                                                "id": "component.home.feast-pass.45418de571e7.dt",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dt",
+                                                  "className": "",
+                                                  "attributes": {},
+                                                  "style": "",
+                                                  "layerName": "Treats",
+                                                  "text": "Treats"
+                                                }
+                                              },
+                                              {
+                                                "id": "component.home.feast-pass.190ba4ad5845.dd",
+                                                "type": "core.text",
+                                                "props": {
+                                                  "authoringVersion": 1,
+                                                  "tag": "dd",
+                                                  "className": "",
+                                                  "attributes": {
+                                                    "data-progression-stat": "treats"
+                                                  },
+                                                  "style": "",
+                                                  "layerName": "—",
+                                                  "text": "—"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
-                                    "id": "component.feast.home.journey.profile",
+                                    "id": "component.mutf2h96.fvymuj",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "feast-progress-note",
+                                      "layerName": "Live progress to next level",
+                                      "attributes": {},
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast.home.next.label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "attributes": {},
+                                            "style": "",
+                                            "tag": "#text",
+                                            "text": "Next level in ",
+                                            "layerName": "Next level in ",
+                                            "className": ""
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast.home.next.value",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "attributes": {
+                                              "data-progression-stat": "xp-to-next"
+                                            },
+                                            "style": "",
+                                            "tag": "strong",
+                                            "text": "100",
+                                            "layerName": "100",
+                                            "className": ""
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast.home.next.suffix",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "attributes": {},
+                                            "style": "",
+                                            "tag": "#text",
+                                            "text": " XP · starter configuration",
+                                            "layerName": " XP · starter configuration",
+                                            "className": ""
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.feast-pass.f959ef3a21ea.home-pass-storage-status",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "home-pass-storage-status",
+                                      "attributes": {
+                                        "data-progression-storage-status": "",
+                                        "role": "status",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Guest progress is stored only in this browser.",
+                                      "text": "Guest progress is stored only in this browser."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.feast-pass.41f6f68ae0e3.button-link-button-link-",
                                     "type": "core.button",
                                     "props": {
                                       "authoringVersion": 1,
+                                      "tag": "a",
+                                      "className": "button-link button-link--secondary",
                                       "attributes": {},
                                       "style": "",
-                                      "tag": "a",
-                                      "label": "Guest profile",
-                                      "href": "/profile/",
-                                      "layerName": "Guest profile",
-                                      "className": "button-link button-link--secondary"
+                                      "layerName": "Open Feast Pass →",
+                                      "href": "/feast-pass/",
+                                      "children": [
+                                        {
+                                          "id": "component.home.feast-pass.da68b82d6148.text",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "#text",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "text": "Open Feast Pass ",
+                                            "layerName": "Text: Open Feast Pass"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.feast-pass.ba0ea33e3886.span",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "→",
+                                            "text": "→"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.mutf2ic8.rccp8o",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "nav",
+                                      "className": "feast-journey-links",
+                                      "layerName": "Feast journey links",
+                                      "attributes": {
+                                        "aria-label": "Continue your local Feast journey"
+                                      },
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.feast.home.journey.quests",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "attributes": {},
+                                            "style": "",
+                                            "tag": "a",
+                                            "label": "Quests",
+                                            "href": "/feast-pass/quests/",
+                                            "layerName": "Quests",
+                                            "className": "button-link button-link--secondary"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast.home.journey.rewards",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "attributes": {},
+                                            "style": "",
+                                            "tag": "a",
+                                            "label": "Rewards & Treats",
+                                            "href": "/feast-pass/rewards/",
+                                            "layerName": "Rewards & Treats",
+                                            "className": "button-link button-link--secondary"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.feast.home.journey.profile",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "attributes": {},
+                                            "style": "",
+                                            "tag": "a",
+                                            "label": "Guest profile",
+                                            "href": "/profile/",
+                                            "layerName": "Guest profile",
+                                            "className": "button-link button-link--secondary"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.mutf2je0.4jafst",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "feast-quest-prompt",
+                                      "layerName": "Next journey prompt",
+                                      "attributes": {},
+                                      "text": "Collect Home Treats. Explore World. Claim completed quests."
                                     }
                                   }
                                 ]
-                              }
-                            },
-                            {
-                              "id": "component.mutf2je0.4jafst",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "feast-quest-prompt",
-                                "layerName": "Next journey prompt",
-                                "attributes": {},
-                                "text": "Collect Home Treats. Explore World. Claim completed quests."
                               }
                             }
                           ]
@@ -2467,7 +2865,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "The public reading surfaces are here; the approved series, chapters, and",
-                                "text": "The public reading surfaces are here; the approved series, chapters, and page catalogue is still empty."
+                                "text": "A new shelf of stories is taking shape. No chapters have been published yet."
                               }
                             },
                             {
@@ -2515,7 +2913,12 @@
                                       "style": "",
                                       "layerName": "img stories-art__toadal",
                                       "asset": "asset.home.character.toadal",
-                                      "alt": ""
+                                      "alt": "",
+                                      "imageHeight": 88,
+                                      "imageMaxWidth": 100,
+                                      "fit": "contain",
+                                      "focalX": 50,
+                                      "focalY": 50
                                     }
                                   },
                                   {
@@ -2707,7 +3110,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "An optional starter-config check-in can add guest progress once per UTC ",
-                                "text": "An optional starter-config check-in can add guest progress once per UTC day. It is stored in this browser and does not connect to the mobile game."
+                                "text": "Once per UTC day. Rewards stay in this browser, separate from the mobile game."
                               }
                             },
                             {
@@ -2720,7 +3123,9 @@
                                 "attributes": {
                                   "data-daily-reward-status": "",
                                   "role": "status",
-                                  "aria-live": "polite"
+                                  "aria-live": "polite",
+                                  "data-daily-ready-copy": "Today’s check-in is ready.",
+                                  "data-daily-claimed-copy": "You’ve checked in today."
                                 },
                                 "style": "",
                                 "layerName": "Checking this browser for today’s check-in…",
@@ -2843,7 +3248,7 @@
                                 },
                                 "style": "",
                                 "layerName": "daily chest help",
-                                "text": "Tap the chest for today’s browser-local check-in. Once per UTC day; not a mobile-game reward."
+                                "text": "Tap the chest to check in."
                               }
                             },
                             {
@@ -3370,7 +3775,7 @@
                       },
                       {
                         "url": "/assets/js/guest-progression.js",
-                        "sha256": "528d850fe7e6a3ef854ff2f4208b63bb3297c7590086a591b39ec596f0f8096b"
+                        "sha256": "5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338"
                       },
                       {
                         "url": "/assets/js/manifest-shell.js",
@@ -3484,7 +3889,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Arcade, Puzzle, and Feastfall are shown here with real captured gameplay",
-                                "text": "Arcade, Puzzle, and Feastfall are shown here with real captured gameplay from the mobile game. Store links remain unavailable until verified destinations exist."
+                                "text": "Explore Arcade, Puzzle and Feastfall through real mobile gameplay."
                               }
                             },
                             {
@@ -3780,7 +4185,7 @@
                                 },
                                 "style": "",
                                 "layerName": "app links status",
-                                "text": "Verified store links are not configured; these buttons are intentionally disabled until verified destinations exist."
+                                "text": "Store downloads are not available yet."
                               }
                             }
                           ]
@@ -3807,9 +4212,11 @@
                                 "authoringVersion": 1,
                                 "tag": "figure",
                                 "className": "app-phone-frame",
-                                "attributes": {},
+                                "attributes": {
+                                  "data-native-phone-showcase": "v1"
+                                },
                                 "style": "",
-                                "layerName": "REAL GAMEPLAYArcade",
+                                "layerName": "Editable phone showcase · screenshot, framing, label and caption",
                                 "mode": "inherit",
                                 "children": [
                                   {
@@ -3826,22 +4233,43 @@
                                     }
                                   },
                                   {
-                                    "id": "component.home.app.d9a149cd3486.img",
-                                    "type": "core.image",
+                                    "id": "component.home.app.668a07403a84.app-phone-frame.editable-screen",
+                                    "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "img",
+                                      "tag": "div",
                                       "className": "",
-                                      "attributes": {
-                                        "width": "360",
-                                        "height": "600",
-                                        "loading": "lazy",
-                                        "decoding": "async"
-                                      },
                                       "style": "",
-                                      "layerName": "Real TOADAL FEAST Arcade gameplay showing Froggie beneath falling food in a lush waterfall world",
-                                      "asset": "asset.app.gameplay.arcade",
-                                      "alt": "Real TOADAL FEAST Arcade gameplay showing Froggie beneath falling food in a lush waterfall world"
+                                      "layerName": "Phone screen · replace its image in Studio",
+                                      "attributes": {
+                                        "data-native-phone-screen": ""
+                                      },
+                                      "children": [
+                                        {
+                                          "id": "component.home.app.d9a149cd3486.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "",
+                                            "attributes": {
+                                              "width": "360",
+                                              "height": "600",
+                                              "loading": "lazy",
+                                              "decoding": "async",
+                                              "data-native-phone-image": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "Phone screen content · managed image and independent framing",
+                                            "asset": "asset.app.gameplay.arcade",
+                                            "alt": "Real TOADAL FEAST Arcade gameplay showing Froggie beneath falling food in a lush waterfall world",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "zoom": 1
+                                          }
+                                        }
+                                      ]
                                     }
                                   },
                                   {
@@ -3857,7 +4285,8 @@
                                       "text": "Arcade"
                                     }
                                   }
-                                ]
+                                ],
+                                "padding": 5
                               }
                             },
                             {
@@ -3996,7 +4425,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "A green Feast candy is waiting here, separate from the mobile game.",
-                                "text": "A green Feast candy is waiting here, separate from the mobile game."
+                                "text": "A browser-only green candy to discover."
                               }
                             },
                             {
@@ -4213,7 +4642,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Four listings remain PREVIEW. Wicked Bites opens only as an isolated sta",
-                                "text": "Four listings remain PREVIEW. Wicked Bites opens only as an isolated staging run, CLAW is launch-held, and two are concepts; none is PUBLIC."
+                                "text": "Wicked Bites is in preview. CLAW and concept games aren’t playable yet."
                               }
                             }
                           ]
@@ -4269,7 +4698,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Web Arcade preview unavailable on this staging site. Visit Play for brow",
-                                "text": "Web Arcade preview unavailable on this staging site. Visit Play for browser listings and their current availability."
+                                "text": "The Arcade web preview isn’t available yet."
                               }
                             },
                             {
@@ -4387,7 +4816,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Curated public content may arrive later. Posting and social features are",
-                                "text": "Curated public content may arrive later. Posting and social features are not live."
+                                "text": "Posting and social features aren’t live yet."
                               }
                             }
                           ]
@@ -4462,7 +4891,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "No public catalog or checkout is available on this website.",
-                                "text": "No public catalog or checkout is available on this website."
+                                "text": "Catalog and checkout aren’t available yet."
                               }
                             }
                           ]
@@ -4621,7 +5050,7 @@
                           },
                           "style": "",
                           "layerName": "The Play directory is ready. Wicked Bites opens an isolated staging prev",
-                          "text": "The Play directory is ready. Wicked Bites opens an isolated staging preview; nothing is marked PUBLIC."
+                          "text": "Try the Wicked Bites browser preview, or discover the world. More games are on the way."
                         }
                       }
                     ]

@@ -35,7 +35,23 @@
     var lastTouchTap = null;
 
     function mobileDock() {
-      if (manualPosition || window.innerWidth > 600) return null;
+      if (manualPosition) return null;
+      // A dense Home or Play catalogue may have no free body slot. Reuse the measured
+      // header gap for a minimized desktop helper, without changing user drag
+      // choices, persisted coordinates, other routes or the mobile path.
+      if (window.innerWidth > 600) {
+        if (!document.querySelector('.home-hero, .wo002-game-library') || root.getAttribute('data-minimized') !== 'true') return null;
+        var desktopNav = document.querySelector('.site-nav');
+        var desktopBrand = desktopNav && desktopNav.querySelector('.site-brand');
+        var desktopLinks = desktopNav && desktopNav.querySelector('.site-links');
+        if (!desktopBrand || !desktopLinks || getComputedStyle(desktopLinks).display === 'none') return null;
+        var brandRect = desktopBrand.getBoundingClientRect();
+        var linksRect = desktopLinks.getBoundingClientRect();
+        if (brandRect.bottom <= 0 || linksRect.bottom <= 0) return null;
+        var desktopGap = linksRect.left - brandRect.right - 2 * (EDGE_GAP + 1);
+        if (desktopGap < 52) return null;
+        return { x: brandRect.right + EDGE_GAP + 1 + (desktopGap - 52) / 2, y: Math.max(4, brandRect.top + (brandRect.height - 52) / 2), width:52, kind:'desktop' };
+      }
       var nav = document.querySelector('.site-nav');
       var brand = nav && nav.querySelector('.site-brand');
       var menu = nav && nav.querySelector('.nav-toggle');
@@ -53,8 +69,9 @@
     function setDock(dock) {
       if (dock) {
         root.setAttribute('data-mobile-docked', 'true');
+        root.setAttribute('data-dock-kind', dock.kind || 'mobile');
         root.style.setProperty('--toadal-dock-width', dock.width + 'px');
-      } else root.removeAttribute('data-mobile-docked');
+      } else { root.removeAttribute('data-mobile-docked'); root.removeAttribute('data-dock-kind'); }
     }
 
     function viewport() {
@@ -185,6 +202,18 @@
       var view = viewport();
       var selectors = 'a[href], button, input, select, textarea, summary, [role="button"], iframe, [data-player-frame-wrap], .detail-breadcrumb, dialog[open], [role="dialog"]';
       if (includeNavigation) selectors += ', .site-header, [role="navigation"], main .catalogue-controls';
+      // Home's compact illustrated lanes have valuable copy in otherwise empty
+      // control gaps. Keep automatic placement clear of these authored blocks.
+      // The existing drag, persisted position, viewport and collision rules stay.
+      if (!headerOnly && document.querySelector('.home-hero')) {
+        selectors += ', .home-hero__copy, .home-discovery-heading, .discovery-heading, .whats-next-heading, .today-copy, .feast-pass-copy, .home-discovery-card, .discovery-card, .next-card, .app-conversion-copy, .today-panel, .home-feast-pass-panel';
+      }
+      if (!headerOnly && document.querySelector('.wo002-game-library')) {
+        selectors += ', .play-card, .wo002-section-heading';
+      }
+      if (!headerOnly && document.querySelector('.comic-reader-page')) {
+        selectors += ', .reader-side-panel, .reader-page-heading';
+      }
       // An automatic header tip must leave the hero title, explanation and actions readable.
       if (includeNavigation && root.getAttribute('data-mobile-docked') === 'true') selectors += ', main h1, main .wo002-detail-copy, main .quest-board, main .quest-next';
       return Array.from(document.querySelectorAll(selectors)).filter(function (control) {

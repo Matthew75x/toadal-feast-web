@@ -4,6 +4,7 @@ import path from 'node:path';
 import { rewriteHtml, normalizeBasePath } from './wo001-pages-basepath.mjs';
 import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 import { createPublicProjector } from './lib/owner-public-projection.mjs';
+import { normalizeCssUrlQuoteEntities } from './lib/normalize-css-url-quotes.mjs';
 
 const root = path.resolve(process.argv[2] || '.');
 const dist = path.resolve(root, process.argv[3] || 'dist');
@@ -59,7 +60,8 @@ function normalizeHtmlAttributeSerialization(html) {
       } else {
         while (cursor < source.length && !/\s/.test(source[cursor])) cursor++;
       }
-      attributes.push([name, source.slice(valueStart, cursor)]);
+      const attributeValue = source.slice(valueStart, cursor);
+      attributes.push([name, name === 'style' ? normalizeCssUrlQuoteEntities(attributeValue) : attributeValue]);
       if (quote) cursor++;
     }
     attributes.sort((left, right) => left[0].localeCompare(right[0]));
