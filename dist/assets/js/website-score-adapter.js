@@ -17,15 +17,32 @@
     'froggy-fruity-bash': 'Froggy Fruity Bash'
   });
 
+  // Match the unchanged cartridge's no-argument Number#toLocaleString call.
+  // Resolve digits individually: numbering systems need not use ASCII or a
+  // contiguous range of Unicode code points.
+  const SCORE_FORMAT = new Intl.NumberFormat();
+  const SCORE_DIGITS = new Map(Array.from({ length: 10 }, (_, digit) => [SCORE_FORMAT.format(digit), String(digit)]));
+  const SCORE_GROUP = SCORE_FORMAT.formatToParts(1234567).find(part => part.type === 'group')?.value;
+
   function normalizeScore(value) {
-    if (typeof value !== 'string' && typeof value !== 'number') return null;
-    const text = String(value).trim();
-    // The unchanged compatibility bridge reads the real wbScore UI, whose
-    // en-US formatter uses grouped thousands above 999. Reject malformed
-    // grouping instead of permissively stripping arbitrary punctuation.
-    if (!/^(?:\d+|[1-9]\d{0,2}(?:,\d{3})+)$/.test(text)) return null;
-    const score = Number(text.replaceAll(',', ''));
-    return Number.isSafeInteger(score) && score >= 0 ? score : null;
+    if (typeof value === 'number') return Number.isSafeInteger(value) && value >= 0 ? value : null;
+    if (typeof value !== 'string') return null;
+    const text = value.trim();
+    // Keep the protocol's plain ASCII-integer representation locale-neutral.
+    if (/^\d+$/.test(text)) {
+      const score = Number(text);
+      return Number.isSafeInteger(score) ? score : null;
+    }
+    let digits = '';
+    for (const character of text) {
+      if (SCORE_DIGITS.has(character)) digits += SCORE_DIGITS.get(character);
+      else if (character !== SCORE_GROUP) return null;
+    }
+    const score = Number(digits);
+    // Only the exact default-locale formatter shape is accepted. In particular,
+    // a separator that groups in another locale must not turn a decimal into
+    // an integer; mixed digits, bad grouping, signs and fractions fail closed.
+    return digits && Number.isSafeInteger(score) && SCORE_FORMAT.format(score) === text ? score : null;
   }
 
   function formatElapsed(milliseconds) {

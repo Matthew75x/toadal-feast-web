@@ -4,6 +4,8 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
+import { spawnSync } from 'node:child_process';
+import { readWickedBitesHudScore, SCORE_LOCALES, scoreLocaleEnvironment, assertScoreLocaleChild } from './lib/wicked-bites-score-fixture.mjs';
 import { createOwnerNativeProjector } from './lib/owner-native-projection.mjs';
 
 const require = createRequire(import.meta.url);
@@ -91,7 +93,17 @@ test('runtime-generated quest and score links retain root/project hosting and qu
   }
 });
 
+for (const locale of SCORE_LOCALES) {
+  test(`localized adapter completion/store fixture (not gameplay): ${locale}`, () => {
+    const child = spawnSync(process.execPath, ['--test', '--test-reporter=tap', '--test-name-pattern=^authored sibling HUD', import.meta.filename], {
+      encoding: 'utf8', env: scoreLocaleEnvironment(locale)
+    });
+    assertScoreLocaleChild(child);
+  });
+}
+
 test('authored sibling HUD receives validated lifecycle messages, timer and completed local score', () => {
+  if (process.env.TOADAL_SCORE_TEST_LOCALE) assert.equal(new Intl.NumberFormat().resolvedOptions().locale, process.env.TOADAL_SCORE_TEST_LOCALE);
   const record = JSON.parse(fs.readFileSync(new URL(site + 'pages/player-wicked-bites.json', import.meta.url), 'utf8'));
   const componentMarkup = record.components
     .filter(component => component.props?.authoringVersion || typeof component.props?.html === 'string')
@@ -140,14 +152,14 @@ test('authored sibling HUD receives validated lifecycle messages, timer and comp
   message('game:started');
   assert.match(status.textContent, /Current run is in memory/);
   clock = 65000;
-  message('game:score', { score: 207 });
-  assert.equal(score.textContent, '207');
+  message('game:score', { score: readWickedBitesHudScore(207) });
+  assert.equal(score.textContent, (207).toLocaleString());
   assert.equal(elapsed.textContent, '1:05');
   assert.equal(label.textContent, 'Session time');
   message('game:complete', { score: 999 }, {});
   assert.equal(fixture.store.getSnapshot().localHighScores.length, 0, 'attacker source must not persist');
-  message('game:complete', { score: 207 });
-  message('game:complete', { score: 207 });
+  message('game:complete', { score: readWickedBitesHudScore(207) });
+  message('game:complete', { score: readWickedBitesHudScore(207) });
   assert.match(status.textContent, /Completed score saved in this browser only/);
   assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].best, 207);
   assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].runs.length, 1, 'duplicate completion is not a second run');
@@ -155,11 +167,25 @@ test('authored sibling HUD receives validated lifecycle messages, timer and comp
   assert.equal(elapsed.textContent, '1:05', 'completed timer is stopped');
   message('game:started');
   assert.match(status.textContent, /Current run is in memory/, 'a new run must not retain the previous saved-result message');
-  message('game:score', { score: '1,234' });
-  message('game:complete', { score: '1,489' });
-  assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].best, 1489, 'real UI-formatted result normalizes to a numeric personal best');
-  assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].runs.at(-1).score, 1489);
+  message('game:score', { score: readWickedBitesHudScore(1234) });
+  message('game:complete', { score: '1,234.567' });
+  assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].runs.length, 1, 'malformed completion never writes');
+  message('game:complete', { score: readWickedBitesHudScore(1234567) });
+  message('game:complete', { score: readWickedBitesHudScore(1234567) });
+  assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].best, 1234567, 'real UI-formatted result normalizes to a numeric personal best');
+  assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].runs.at(-1).score, 1234567);
   assert.match(status.textContent, /Completed score saved in this browser only/);
+  assert.equal(score.textContent, (1234567).toLocaleString(), 'host displays the normalized completed result');
+  assert.equal(fixture.create().getSnapshot().localScores['wicked-bites'].runs.length, 2);
+  // Rehydrate the real store, then complete a later lower run through the real
+  // adapter. This remains a DOM/store fixture, not an actual gameplay witness.
+  hud.__toadalProgressionStore = fixture.create();
+  message('game:started');
+  message('game:complete', { score: readWickedBitesHudScore(1234) });
+  message('game:complete', { score: readWickedBitesHudScore(1234) });
+  const saved = fixture.create().getSnapshot().localScores['wicked-bites'];
+  assert.equal(saved.best, 1234567, 'later lower run must not lower the saved best');
+  assert.deepEqual(saved.runs.map(run => run.score), [207, 1234567, 1234], 'one numeric record per genuine fixture completion');
 });
 
 test('character artwork discovery persists idempotently without inventing progression rewards', () => {
