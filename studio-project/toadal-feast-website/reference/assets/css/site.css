@@ -8057,3 +8057,20 @@ html body:has(.home-hero) .toadal-companion .companion-image {
     overflow-wrap: anywhere;
   }
 }
+
+/* The floating companion cannot dock beside navigation on the narrowest phones.
+   Keep the preview disclosure readable and preserve a 44px minimum control.
+   Source adaptation of the measured PR #38 QA candidate, 2026-10-10. */
+@media (max-width: 323px) {
+  body:has(.wo002-player-footnote) .wo002-player-footnote {
+    padding-inline-end: calc(84px + max(0px, 320px - 100vw)) !important;
+  }
+  body:has(.wo002-player-footnote) .toadal-companion .companion-toggle,
+  body:has(.wo002-player-footnote) .toadal-companion .companion-image {
+    width: 60px !important;
+    height: 64px !important;
+    min-width: 44px;
+    min-height: 44px;
+    max-height: 64px !important;
+  }
+}

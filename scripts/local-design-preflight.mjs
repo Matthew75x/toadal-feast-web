@@ -7,7 +7,7 @@ import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 
 export const WEBSITE_ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-export const EXPECTED_ENGINE=Object.freeze({"commit":"a88783bddb89e1f995964fe3606f27463de79ea4","parent":"46a1469298f2179e5977a77a082f9921fa53cd8a 5d022f5c3ea676458a63c8d2bb67ceb69c1a84d5","tree":"f898e7c870773857d33b158aae2383d05e578b4d"});
+export const EXPECTED_ENGINE=Object.freeze({"commit":"65b2814148300ec02616243e24773c1acaba1083","parent":"c4e14a755935338a5044d8fdec5b6f6a2e0bad48","tree":"d976884c15e86904744790113f1927504b6984f6"});
 export const ENTRYPOINTS=Object.freeze(['package.json','package-lock.json','packages/renderer/src/index.ts','packages/project-kernel/src/loader.ts','packages/project-kernel/src/validate.ts','packages/project-kernel/src/mutations.ts','packages/authoring-kernel/src/index.ts']);
 export const sha256=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 export function git(root,...args){const r=spawnSync('git',args,{cwd:root,encoding:'utf8',env:{...process.env,GIT_NO_LAZY_FETCH:'1'},maxBuffer:16*1024*1024});if(r.status!==0)throw Error(`Git identity unavailable: ${args.join(' ')}: ${r.stderr}`);return r.stdout.trim();}

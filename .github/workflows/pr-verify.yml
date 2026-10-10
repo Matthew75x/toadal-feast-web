@@ -20,9 +20,14 @@ jobs:
       - uses: actions/checkout@v6
         with:
           persist-credentials: false
+          fetch-depth: 0
       - uses: actions/setup-node@v6
         with:
           node-version: '22'
+      - name: Require approved cards for changed cartridges
+        env:
+          CARD_COMPARISON_BASE: ${{ github.event.pull_request.base.sha }}
+        run: node tools/verify-changed-game-cards.mjs "$CARD_COMPARISON_BASE" HEAD
       - name: Verify guest progression and exact runtime resource pins
         run: node --test scripts/guest-progression.test.mjs scripts/guest-reset-recovery.test.mjs scripts/guest-progress-refresh.test.mjs scripts/feast-pass-game-records.test.mjs scripts/game-progress-contract.test.mjs scripts/quest-journey.test.mjs scripts/guest-showcase.test.mjs scripts/play-catalogue.test.mjs scripts/protected-game-artifacts.test.mjs scripts/staging-artifact.test.mjs scripts/mobile-interaction-closure.test.mjs scripts/companion-visibility.test.mjs scripts/advanced-runtime-externalization.test.mjs scripts/intrinsic-image-dimensions.test.mjs scripts/owner-preview-browser-matrix-readiness.test.mjs
       - name: Verify staging-only Pages policy
