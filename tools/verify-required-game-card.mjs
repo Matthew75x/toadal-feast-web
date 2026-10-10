@@ -64,7 +64,8 @@ export function checkGameCard(root,sourceFile){
   return {status:'CARD_GATE_PASS',gameId:m.id,posterSha256:sha(image),sourceSha256:a.source.sha256,publicState:m.publicState,qualification:'NOT VERIFIED BY THIS CHECKER'};
 }
 const [arg,...rest]=process.argv.slice(2);
-if(arg){
+if(!arg){ console.error('CARD_GATE_FAIL: missing game directory; usage: node tools/verify-required-game-card.mjs GAME_DIRECTORY [--source ORIGINAL.png]'); process.exitCode=1; }
+else {
   try{
     assert(rest.length===0||(rest.length===2&&rest[0]==='--source'),'usage: node tools/verify-required-game-card.mjs GAME_DIRECTORY [--source ORIGINAL.png]');
     console.log(JSON.stringify(checkGameCard(arg,rest[1]),null,2));
