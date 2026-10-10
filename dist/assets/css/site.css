@@ -8242,16 +8242,19 @@ html body .site-brand__image {
   inset-inline-start: 0;
   inset-block-start: 50%;
   width: clamp(84px, 8vw, 108px);
-  height: 36px;
+  height: 54px;
   object-fit: contain;
   transform: translateY(-50%);
   visibility: hidden;
   pointer-events: none;
 }
 
+html body .site-brand__image[data-fit="cover"] { object-fit: cover; }
+
 html body .site-brand.site-brand--image-ready {
   position: relative;
   min-width: 108px;
+  min-height: 54px;
   color: transparent;
   font-size: 0;
   line-height: 0;
@@ -8267,6 +8270,6 @@ html body .site-brand.site-brand--image-ready .site-brand__wordmark {
 }
 
 @media (max-width: 760px) {
-  html body .site-brand__image { width: 84px; height: 32px; }
-  html body .site-brand.site-brand--image-ready { min-width: 84px; }
+  html body .site-brand__image { width: 84px; height: 42px; }
+  html body .site-brand.site-brand--image-ready { min-width: 84px; min-height: 44px; }
 }
