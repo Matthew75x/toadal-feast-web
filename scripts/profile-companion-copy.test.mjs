@@ -28,10 +28,10 @@ const area = (position, obstacle, width = 100, height = 96, gap = 0) =>
   Math.max(0, Math.min(position.y + height + gap, obstacle.bottom) - Math.max(position.y - gap, obstacle.top));
 const plain = value => JSON.parse(JSON.stringify(value));
 
-function extract(name, indent = '    ') {
+function extract(name, indent = '    ', boundary = '\n' + indent + 'function ') {
   const start = source.indexOf(indent + 'function ' + name + '(');
   assert.ok(start >= 0, 'actual source function exists: ' + name);
-  const end = source.indexOf('\n' + indent + 'function ', start + indent.length);
+  const end = source.indexOf(boundary, start + indent.length);
   assert.ok(end > start, 'actual source function has an extraction boundary: ' + name);
   return source.slice(start, end);
 }
@@ -46,7 +46,7 @@ function extractFinishPointer() {
 
 function harness({ route = profileSelector, manual = false, controls = [], note = noteBounds,
   saved = null, width = 320, height = 844, copyBounds = null, rootWidth = 100, rootHeight = 96 } = {}) {
-  const attrs = {}, style = {}, writes = [], cancelledFrames = [], timers = [];
+  const attrs = {}, style = {}, writes = [], cancelledFrames = [], timers = [], frames = [];
   const makeElement = (bounds, extra = {}) => ({ getBoundingClientRect: () => bounds, ...extra });
   const copyElements = (copyBounds || [note]).map(bounds => makeElement(bounds));
   const noteElement = copyElements[0];
@@ -64,8 +64,10 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
   const context = {
     root, button: root, noteElement, copyElements, attrs, style, writes, queries, lookups, cancelledFrames, timers, manualPosition: manual, homePage: route === '.home-hero',
     x: 0, y: 0, drag: null, moveFrame: 0, queuedPosition: null, lastTouchTap: null, suppressClick: false, suppressTimer: null, EDGE_GAP: 12, DEFAULT_BOTTOM_GAP: 180,
+    frames, flushFrame: () => { const frame = frames.shift(); if (frame) frame(); },
     POSITION_KEY: 'toadal:site:companion:position:v1',
-    window: { innerWidth: width, innerHeight: height, cancelAnimationFrame: id => cancelledFrames.push(id),
+    window: { innerWidth: width, innerHeight: height, scrollY: 0,
+      requestAnimationFrame: fn => { frames.push(fn); return frames.length; }, cancelAnimationFrame: id => cancelledFrames.push(id),
       setTimeout: (fn, ms) => { timers.push({ fn, ms }); return timers.length; }, clearTimeout: id => timers.push({ clear: id }), localStorage: { getItem: () => JSON.stringify(saved), setItem: (key, value) => writes.push({ key, value: JSON.parse(value) }) } },
     document: {
       documentElement: {},
@@ -86,7 +88,9 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
   vm.createContext(context);
   vm.runInContext(extract('readSafeInset', '  ') + '\n' +
     ['mobileDock', 'setDock', 'viewport', 'clampPosition', 'persistPosition',
-      'applyPosition', 'controlRects', 'avoidControls', 'avoidProfileCopy', 'defaultPosition', 'loadPosition'].map(name => extract(name)).join('\n'), context);
+      'applyPosition', 'controlRects', 'avoidControls', 'avoidProfileCopy', 'defaultPosition', 'loadPosition',
+      'schedulePosition', 'onScroll'].map(name => extract(name)).concat(
+        extract('clampAfterViewportChange', '    ', '\n    window.addEventListener')).join('\n'), context);
   vm.runInContext(extractFinishPointer(), context);
   return context;
 }
@@ -117,7 +121,50 @@ test('existing collector stays unchanged; automatic Profile copy protection bypa
   h.queries.length = 0;
   assert.deepEqual(plain(h.avoidProfileCopy(observed)), observed);
   assert.ok(!h.queries.includes(noteSelector));
-  assert.match(source, /dock \? avoidControls\(next, dock\.width, dock\.height \|\| 52, controlRects\(false, true\)\) :\s*\(homePage && manualPosition \? next : avoidProfileCopy\(next\)\)/);
+  assert.match(source, /dock \? avoidControls\(next, dock\.width, dock\.height \|\| 52, controlRects\(false, true\)\) :\s*\(manualPosition \? next : avoidProfileCopy\(next\)\)/);
+});
+
+test('manual Profile placement survives the measured scroll collision and viewport resize clamp', () => {
+  const linkBounds = rect(1500, 367.5, 90.6, 19);
+  const saved = { version: 1, x: 916, y: 261, manual: true };
+  const h = harness({ route: profileSelector, saved, width: 1440, height: 900,
+    rootWidth: 152, rootHeight: 142, controls: [{ bounds: linkBounds }] });
+
+  assert.deepEqual(plain(h.loadPosition()), { x: 916, y: 261 });
+  assert.equal(h.manualPosition, true, 'the stored manual flag is restored');
+  assert.deepEqual(plain(h.clampPosition(916, 261)), { x: 916, y: 261 },
+    'the measured desktop point is within the viewport clamp');
+  h.applyPosition(916, 261, true);
+  assert.deepEqual({ x: h.x, y: h.y }, { x: 916, y: 261 });
+  assert.deepEqual(h.writes, [{ key: h.POSITION_KEY, value: saved }]);
+
+  linkBounds.left = 1037.5;
+  linkBounds.right = 1128.1;
+  assert.deepEqual(plain(h.avoidControls({ x: 916, y: 261 }, 152, 142, [linkBounds])),
+    { x: 873, y: 261 }, 'the measured 12px control margin reproduces the observed unwanted move');
+
+  h.window.scrollY = 648;
+  h.onScroll();
+  assert.equal(h.frames.length, 1, 'scroll schedules the existing animation-frame reflow');
+  h.flushFrame();
+  assert.deepEqual({ x: h.x, y: h.y }, { x: 916, y: 261 },
+    'scroll reflow keeps the manual point despite the measured visible-link collision');
+  assert.equal(h.attrs['data-position-x'], '916');
+  assert.equal(h.attrs['data-position-y'], '261');
+  assert.equal(h.writes.length, 1, 'passive scroll reflow does not rewrite the saved preference');
+
+  h.window.scrollY = 758;
+  h.onScroll();
+  h.flushFrame();
+  assert.deepEqual({ x: h.x, y: h.y }, { x: 916, y: 261 },
+    'the repeated scroll reflow keeps the same manual position');
+
+  h.window.innerWidth = 1000;
+  h.clampAfterViewportChange();
+  assert.deepEqual({ x: h.x, y: h.y }, { x: 836, y: 261 },
+    'a narrower viewport still clamps the manual point into view');
+  assert.deepEqual(h.writes.at(-1), { key: h.POSITION_KEY,
+    value: { version: 1, x: 836, y: 261, manual: true } });
 });
 
 test('exact observed and source-default Profile geometry avoid the note with the existing measured-edge algorithm', () => {
@@ -263,27 +310,21 @@ test('manual Home drag release and reload preserve the clamped pointer position 
     'manual Home placement still honors the 12px viewport clamp');
 });
 
-test('automatic Home and manual Profile avatar positions retain collision avoidance', () => {
+test('automatic Home placement keeps control avoidance while manual Profile placement stays user-controlled', () => {
   const obstacle = rect(980, 86, 400, 700);
   const requested = { x: 1029, y: 74 };
-  for (const options of [
-    { route: '.home-hero', manual: false, label: 'automatic Home' },
-    { route: profileSelector, manual: true, label: 'manual Profile' }
-  ]) {
-    const h = harness({
-      route: options.route,
-      manual: options.manual,
-      controls: [{ bounds: obstacle }],
-      width: 2560,
-      height: 1223,
-      rootWidth: 52,
-      rootHeight: 52
-    });
-    h.applyPosition(requested.x, requested.y, false);
-    assert.deepEqual({ x: h.x, y: h.y }, { x: 1029, y: 22 }, options.label);
-    assert.equal(area({ x: h.x, y: h.y }, obstacle, 52, 52, 12), 0,
-      options.label + ' still leaves the control exclusion margin clear');
-  }
+  const automatic = harness({ route: '.home-hero', controls: [{ bounds: obstacle }],
+    width: 2560, height: 1223, rootWidth: 52, rootHeight: 52 });
+  automatic.applyPosition(requested.x, requested.y, false);
+  assert.deepEqual({ x: automatic.x, y: automatic.y }, { x: 1029, y: 22 }, 'automatic Home');
+  assert.equal(area({ x: automatic.x, y: automatic.y }, obstacle, 52, 52, 12), 0,
+    'automatic placement still leaves the control exclusion margin clear');
+
+  const manual = harness({ route: profileSelector, manual: true, controls: [{ bounds: obstacle }],
+    width: 2560, height: 1223, rootWidth: 52, rootHeight: 52 });
+  manual.applyPosition(requested.x, requested.y, false);
+  assert.deepEqual({ x: manual.x, y: manual.y }, requested,
+    'manual Profile placement follows the requested point despite a generic control collision');
 });
 
 test('manual Home speech panel still avoids the navigation and avatar anchor', () => {

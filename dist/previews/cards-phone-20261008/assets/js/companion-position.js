@@ -213,7 +213,7 @@
       // Main controls can scroll behind the opaque sticky header. They must
       // not dislodge its automatic dock into the visible page content.
       var safe = dock ? avoidControls(next, dock.width, dock.height || 52, controlRects(false, true)) :
-        (homePage && manualPosition ? next : avoidProfileCopy(next));
+        (manualPosition ? next : avoidProfileCopy(next));
       if (dock && (safe.x !== next.x || safe.y !== next.y)) {
         setDock(null);
         safe = avoidProfileCopy(clampPosition(safe.x, safe.y));
@@ -525,6 +525,10 @@
       });
     }
 
+    function onScroll() {
+      if (!drag) schedulePosition(x, y, false);
+    }
+
     function onPointerDown(event) {
       if (!event.isPrimary || event.button !== 0 || event.target.closest('[data-companion-panel]')) return;
       if (suppressTimer) window.clearTimeout(suppressTimer);
@@ -662,9 +666,7 @@
       lastTouchTap = null;
       if (!event.detail || !event.detail.hidden) clampAfterViewportChange();
     });
-    window.addEventListener('scroll', function () {
-      if (!drag) schedulePosition(x, y, false);
-    }, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('load', function () {
       if (!manualPosition && !drag) schedulePosition(x, y, false);
     }, { once: true });
