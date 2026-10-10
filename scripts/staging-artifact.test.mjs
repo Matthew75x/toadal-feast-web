@@ -126,10 +126,12 @@ test('case-colliding Git names cannot produce different Windows/Unix payloads',t
 test('unsafe paths are never normalized into a different accepted file',()=>{
   for(const name of ['../escape','a/../b','/absolute','a\\b','a//b','x%2f.html','bad?.js','C:stream','x:y','NUL.txt','COM1/file','trailing.','trailing ','a/.hidden','.git/config','workspaces/private.json','private-key.pem'])assert.throws(()=>safeRelative(name),undefined,name);
   assert.equal(safeRelative('.nojekyll'),'.nojekyll');assert.equal(safeRelative('assets/normal-file.webp'),'assets/normal-file.webp');
+  assert.equal(safeRelative('public/games/claw-feed-gulper/assets/foods/cookie.png'),'public/games/claw-feed-gulper/assets/foods/cookie.png');
+  assert.throws(()=>safeRelative('private/cookie.json'));
 });
 test('current independent legacy pins match the three exact historical source files, not the donor hash',()=>{
   const policy=JSON.parse(fs.readFileSync(path.join(REPO,POLICY_PATH)));validatePolicy(policy);
-  const source=path.join(REPO,'studio-project/toadal-feast-website/reference');for(const row of policy.files){const b=fs.readFileSync(path.join(source,row.path));assert.equal(b.length,row.bytes);assert.equal(sha256(b),row.sha256);}
+  const source=path.join(REPO,'studio-project/toadal-feast-website/reference');for(const row of policy.files){const raw=fs.readFileSync(path.join(source,row.path));const b=Buffer.from(raw.toString('utf8').replaceAll('\r\n','\n'));assert.equal(b.length,row.bytes);assert.equal(sha256(b),row.sha256);}
   assert.equal(policy.baseline.sourceCommit,'670f1967ddd49805ca937aa941808fd4de30dc91');
 });
 test('normal exporter and Pages upload both pass through the shared gate, with no runtime edits or extra deployment workflow',()=>{

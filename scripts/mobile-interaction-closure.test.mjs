@@ -80,8 +80,8 @@ test('all generated site pages reference one exact cacheable Studio advanced run
     if(rel.startsWith('previews/cards-phone-20261008/')) previewProjected += 1;
     else projected += 1;
   }
-  assert.equal(projected, 33);
-  assert.equal(previewProjected, 33);
+  assert.equal(projected, 34);
+  assert.equal(previewProjected, 34);
 });
 
 test('protected game payloads do not receive the website advanced runtime', () => {

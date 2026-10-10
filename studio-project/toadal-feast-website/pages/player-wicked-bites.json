@@ -783,6 +783,91 @@
                     "text": "\n",
                     "layerName": "Text: whitespace"
                   }
+                },
+                {
+                  "id": "component.player-wicked-bites.postplay.panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "style": "",
+                    "attributes": {
+                      "data-player-postplay": "",
+                      "hidden": true,
+                      "aria-labelledby": "postplay-app-title"
+                    },
+                    "tag": "aside",
+                    "className": "player-postplay",
+                    "layerName": "After your run — mobile app discovery",
+                    "children": [
+                      {
+                        "id": "component.player-wicked-bites.postplay.kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "text": "THE NEXT ADVENTURE · COMING SOON",
+                          "layerName": "Mobile app availability"
+                        }
+                      },
+                      {
+                        "id": "component.player-wicked-bites.postplay.title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {
+                            "id": "postplay-app-title"
+                          },
+                          "tag": "h2",
+                          "text": "There’s more Feast to discover.",
+                          "layerName": "Post-play heading"
+                        }
+                      },
+                      {
+                        "id": "component.player-wicked-bites.postplay.copy",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "p",
+                          "text": "Meet the world and explore real Arcade, Puzzle and Feastfall gameplay from the upcoming mobile app.",
+                          "layerName": "Post-play introduction"
+                        }
+                      },
+                      {
+                        "id": "component.player-wicked-bites.postplay.app",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "a",
+                          "className": "btn primary",
+                          "href": "/app/",
+                          "label": "Explore the mobile app",
+                          "layerName": "App discovery destination"
+                        }
+                      },
+                      {
+                        "id": "component.player-wicked-bites.postplay.browse",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "a",
+                          "className": "btn secondary",
+                          "href": "/play/",
+                          "label": "Browse browser games",
+                          "layerName": "Return to browser games"
+                        }
+                      }
+                    ]
+                  }
                 }
               ]
             }

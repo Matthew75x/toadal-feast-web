@@ -50,7 +50,7 @@
     }),
     'claw-feed-gulper': Object.freeze({
       gameId: 'claw-feed-gulper', title: 'CLAW: Feed Gulper', route: '/games/claw-feed-gulper/',
-      availability: 'launch-held', capability: 'launch-only', progressAdapter: null, source: null
+      availability: 'playable-preview', capability: 'launch-only', progressAdapter: null, source: null
     }),
     'froggy-fruity-bash': Object.freeze({
       gameId: 'froggy-fruity-bash', title: 'Froggy Fruity Bash', route: '/games/froggy-fruity-bash/',

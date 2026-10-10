@@ -1,0 +1,133 @@
+{
+  "schema": "toadal-feast.explorer-passport-browser-qa.v1",
+  "status": "PASS",
+  "observedDate": "2026-10-10",
+  "origin": "http://127.0.0.1:8185/toadal-feast-web/",
+  "checks": {
+    "Existing exploration activities load without an invented balance": {
+      "status": "PASS",
+      "details": {
+        "summary": "0 of 3 exploration activities claimed.",
+        "activities": [
+          {
+            "id": "visit-world",
+            "state": "active",
+            "text": "Explore the WorldActive · 0/1"
+          },
+          {
+            "id": "visit-stories",
+            "state": "active",
+            "text": "Visit StoriesActive · 0/1"
+          },
+          {
+            "id": "find-feast-treats",
+            "state": "active",
+            "text": "Find the Feast TreatsActive · 0/3"
+          }
+        ],
+        "link": "/toadal-feast-web/feast-pass/quests/",
+        "bounds": {
+          "x": 1094.984375,
+          "y": 1101.546875,
+          "width": 309.015625,
+          "height": 203.609375
+        }
+      }
+    },
+    "Passport links directly to the existing quest board": {
+      "status": "PASS",
+      "details": {
+        "href": "/toadal-feast-web/feast-pass/quests/"
+      }
+    },
+    "Passport fits a 390px phone without horizontal overflow": {
+      "status": "PASS",
+      "details": {
+        "width": 390,
+        "documentWidth": 390,
+        "passportWidth": 338
+      }
+    },
+    "Passport fits a 320px phone without horizontal overflow": {
+      "status": "PASS",
+      "details": {
+        "width": 320,
+        "documentWidth": 320,
+        "passportWidth": 268
+      }
+    },
+    "World visit updates the existing quest and surfaces its ready reward": {
+      "status": "PASS",
+      "details": {
+        "summary": "1 exploration reward is ready to claim.",
+        "world": "Explore the WorldReady to claim · 1/1",
+        "linkText": "Review ready rewards",
+        "link": "/toadal-feast-web/feast-pass/quests/?view=ready"
+      }
+    },
+    "Inner-route Home anchor stays visible after compact-phone resizing": {
+      "status": "PASS",
+      "details": {
+        "width": 108,
+        "height": 48,
+        "href": "/toadal-feast-web/"
+      }
+    },
+    "Existing quest claim provides explicit reward feedback": {
+      "status": "PASS",
+      "details": {
+        "text": "Quest reward claimed in this browser."
+      }
+    },
+    "Passport reflects the existing claimed quest after returning Home": {
+      "status": "PASS",
+      "details": {
+        "summary": "1 of 3 exploration activities claimed.",
+        "world": "Explore the WorldClaimed · 1/1"
+      }
+    },
+    "Passport reuses existing progression storage without a new namespace": {
+      "status": "PASS",
+      "details": {
+        "keys": [
+          "toadal:site:companion:position:v1",
+          "toadal:web:v1:discoveries",
+          "toadal:web:v1:feast-pass",
+          "toadal:web:v1:quests"
+        ]
+      }
+    },
+    "Journey pages report no browser errors": {
+      "status": "PASS",
+      "details": {
+        "pageErrors": []
+      }
+    }
+  },
+  "screenshots": [
+    {
+      "path": "docs/review/explorer-passport-qualification-20261010/screenshots/passport-home-desktop-initial.png",
+      "sha256": "09906278ec6068bb9a9b7ab25d6270164a51280a1cb214465602705ee41ea605"
+    },
+    {
+      "path": "docs/review/explorer-passport-qualification-20261010/screenshots/passport-home-mobile-390.png",
+      "sha256": "846c9c1d57ee45671aa8ccd1b6d421f149ebbd9517e4612f9b6ec7b3880d11f9"
+    },
+    {
+      "path": "docs/review/explorer-passport-qualification-20261010/screenshots/passport-home-mobile-320.png",
+      "sha256": "fab559fc655c52c13fa5f3747f270aa4af6c1d692ac7bcc1b4e602418ff9a735"
+    },
+    {
+      "path": "docs/review/explorer-passport-qualification-20261010/screenshots/passport-home-desktop-reward-ready.png",
+      "sha256": "ce8232da006dec396cbe47ed1d1364acaf2a48e3f6bc286d96ea575f6a5f1dd3"
+    }
+  ],
+  "storageKeys": [
+    "toadal:site:companion:position:v1",
+    "toadal:web:v1:discoveries",
+    "toadal:web:v1:feast-pass",
+    "toadal:web:v1:quests"
+  ],
+  "pageErrors": [],
+  "failures": []
+}

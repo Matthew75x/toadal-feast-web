@@ -177,9 +177,12 @@ const brandFiles = fs.existsSync(brandDir) ? fs.readdirSync(brandDir).filter(x =
 if (lock.brand?.finalFranchiseWordmark?.status === 'NOT_PRESENT_NOT_APPROVED') {
   for (const name of brandFiles) ok(!/(wordmark|logo)/i.test(name), `unapproved brand wordmark/logo appeared while authority status is pending: ${name}`);
 }
-ok(brandFiles.includes('brand-crown.svg'), 'canonical brand crown missing');
+ok(!brandFiles.includes('brand-crown.svg'), 'removed standalone crown icon remains in website brand assets');
 const siteCss = fs.readFileSync(path.join(referenceRoot,'assets','css','site.css'),'utf8');
-ok(siteCss.includes('brand-crown.svg'), 'shared site CSS no longer uses canonical brand crown');
+ok(!siteCss.includes('brand-crown.svg') && !/\.site-brand::before\b|\.feast-pass-panel::after\b|content\s*:\s*["'][♛♕♔♚👑]/i.test(siteCss), 'standalone crown decoration remains in shared website styling');
+const gulperUi = ['runtime.bundle.js','styles.css'].map(name => fs.readFileSync(path.join(referenceRoot,'public','games','claw-feed-gulper',name),'utf8')).join('\n');
+ok(!/[♛♕♔♚👑]/u.test(gulperUi) && !/class\s*=\s*["']crown["']|\.mastery-step\s+\.crown\b/i.test(gulperUi), 'standalone crown or queen icon remains in the embedded Gulper interface');
+ok(!indexed.has('asset.brand.crown'), 'removed standalone crown icon remains registered as a website asset');
 
 const externalRule = canonical.externalOwnerAsset?.rule || '';
 ok(/app\/icon source only/i.test(externalRule), 'external EASY BRANDING asset rule no longer says app/icon only');

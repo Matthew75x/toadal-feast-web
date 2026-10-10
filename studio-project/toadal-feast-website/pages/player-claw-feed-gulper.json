@@ -1,0 +1,1343 @@
+{
+  "schemaVersion": 1,
+  "id": "page.player-claw-feed-gulper",
+  "route": "/player/claw-feed-gulper/",
+  "title": "CLAW: Feed Gulper browser preview · TOADAL FEAST",
+  "description": "Sandboxed CLAW: Feed Gulper website preview. Saves stay in this browser; account sync and global rankings are off.",
+  "publicationState": "noindex",
+  "components": [
+    {
+      "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg",
+      "type": "layout.container",
+      "props": {
+        "variant": "wo002-browser-player",
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "CLAW: Feed Gulper browser preview · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.387f79a68add.text",
+            "type": "core.text",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "#text",
+              "className": "",
+              "attributes": {},
+              "style": "",
+              "text": "\n",
+              "layerName": "Text: whitespace"
+            }
+          },
+          {
+            "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.a7b82b84529f.wo002-player-page",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "wo002-player-page",
+              "attributes": {
+                "data-player-shell": "",
+                "data-player-hud": "claw-feed-gulper-session-hud",
+                "data-game-id": "claw-feed-gulper",
+                "aria-labelledby": "player-title"
+              },
+              "style": "",
+              "layerName": "CLAW: Feed Gulper",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.5cafba388bf0.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.96f7bd509809.wo002-player-heading",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "header",
+                    "className": "wo002-player-heading",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "CLAW: Feed Gulper",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.2c55938bed4a.player-back-link",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "player-back-link",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "← Game details",
+                          "href": "/games/claw-feed-gulper/",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.abbf979dba84.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "← ",
+                                "layerName": "Text: ←"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.33c80563a0f8.span",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Game details",
+                                "text": "Game details"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.0a4c89934c98.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.57da65c1b89f.div",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "CLAW: Feed Gulper",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.52c0407d0cbe.section-kicker",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "section-kicker",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PREVIEW SESSION · 2.5.1",
+                                "text": "PREVIEW SESSION · 2.5.1"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.47514bc4b5e4.player-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h1",
+                                "className": "",
+                                "attributes": {
+                                  "id": "player-title"
+                                },
+                                "style": "",
+                                "layerName": "player title",
+                                "text": "CLAW: Feed Gulper"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.53b6e5a2d286.chip-preview",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "chip preview",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "PREVIEW",
+                          "text": "PREVIEW"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.39d08d049ea2.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.8a63b9391dff.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.94a1559b318a.wo002-player-toolbar",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "wo002-player-toolbar",
+                    "attributes": {
+                      "role": "group",
+                      "aria-label": "Browser player controls"
+                    },
+                    "style": "",
+                    "layerName": "PauseResume Request muteFull screen Exit preview",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.5b15b41f46bb.player-toolbar-controls",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "player-toolbar__controls",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "PauseResume Request muteFull screen",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.05587e151b78.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.e2389c888376.btn-secondary",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "btn secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-player-pause": "",
+                                  "disabled": true
+                                },
+                                "style": "",
+                                "layerName": "Pause",
+                                "label": "Pause"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.d9584a9d0eec.btn-secondary",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "btn secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-player-resume": "",
+                                  "disabled": true
+                                },
+                                "style": "",
+                                "layerName": "Resume",
+                                "label": "Resume"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.2ae7daeeda93.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.8b7d03bc6aac.btn-secondary",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "btn secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-player-sound": "",
+                                  "aria-pressed": "false"
+                                },
+                                "style": "",
+                                "layerName": "Request mute",
+                                "label": "Request mute"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.b97eab045675.btn-secondary",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "btn secondary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-player-fullscreen": ""
+                                },
+                                "style": "",
+                                "layerName": "Full screen",
+                                "label": "Full screen"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.8ef95c87d704.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n  ",
+                                "layerName": "Text: whitespace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.298a6a23e988.btn-quiet",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "btn quiet",
+                          "attributes": {
+                            "data-player-exit": ""
+                          },
+                          "style": "",
+                          "layerName": "Exit preview",
+                          "href": "/games/claw-feed-gulper/",
+                          "label": "Exit preview"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.14e6f9e42997.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.eb30c4a556e7.player-status",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "player-status",
+                    "attributes": {
+                      "data-player-status": "",
+                      "role": "status",
+                      "aria-live": "polite"
+                    },
+                    "style": "",
+                    "layerName": "Loading the verified preview package…",
+                    "text": "Loading the verified preview package…"
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.a7eadcb6f523.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.0d5ab02a22b7.wo002-player-frame-wrap",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "wo002-player-frame-wrap",
+                    "attributes": {
+                      "data-player-frame-wrap": ""
+                    },
+                    "style": "",
+                    "layerName": "The game did not load.",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.ca980410c2bf.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.a6b9a7e442cf.isolated-frame",
+                        "type": "core.rich-text",
+                        "props": {
+                          "html": "<iframe class=\"wo002-player-frame\" data-player-frame src=\"/public/games/claw-feed-gulper/index.html\" title=\"CLAW: Feed Gulper browser preview\" loading=\"eager\" referrerpolicy=\"origin\" sandbox=\"allow-scripts allow-pointer-lock\" allow=\"fullscreen\" allowfullscreen></iframe>",
+                          "runtimeOnly": true,
+                          "readOnly": true,
+                          "locked": true,
+                          "runtimeVersion": 1,
+                          "runtimeKind": "isolated-frame",
+                          "runtimeSha256": "ea4debc6f2311f4843021af583f7dc9c3d779906d5b19d1efd4fa5f893fcf7c6",
+                          "runtimeCodeResources": [
+                            {
+                              "url": "/public/games/claw-feed-gulper/index.html",
+                              "sha256": "762afa5b995ea6cb06392a7a933773256885a989b88fc328a95cc94095656e16"
+                            }
+                          ],
+                          "runtimePolicy": {
+                            "id": "isolated-claw-feed-gulper-frame-v1",
+                            "mode": "sandboxed-iframe",
+                            "sandbox": "allow-scripts allow-pointer-lock",
+                            "allow": "fullscreen"
+                          },
+                          "layerName": "Read-only runtime: isolated-frame"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.6af70499f240.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.fullscreen-rail",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "player-fullscreen-rail",
+                          "attributes": {
+                            "data-player-fullscreen-rail": "",
+                            "role": "toolbar",
+                            "aria-label": "Fullscreen controls",
+                            "hidden": true
+                          },
+                          "style": "",
+                          "layerName": "Fullscreen control rail",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.222dba69cf28.player-fullscreen-exit",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "player-fullscreen-exit",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-player-fullscreen-exit": "",
+                                  "hidden": true,
+                                  "aria-label": "Exit full screen",
+                                  "title": "Exit full screen"
+                                },
+                                "style": "",
+                                "layerName": "Exit full screen",
+                                "label": "Exit"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.240c41528946.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n    ",
+                          "layerName": "Text: whitespace"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.b21f92ebe638.player-error",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "player-error",
+                          "attributes": {
+                            "data-player-error": "",
+                            "hidden": true,
+                            "role": "alert"
+                          },
+                          "style": "",
+                          "layerName": "The game did not load.",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.bd7ce468f96a.chip-preview",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "PREVIEW UNAVAILABLE",
+                                "text": "PREVIEW UNAVAILABLE"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.146b689b4378.h2",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "The game did not load.",
+                                "text": "The game did not load."
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.5afce7d3ea68.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n      ",
+                                "layerName": "Text: whitespace"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.6b92c7a44935.p",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-player-error-copy": ""
+                                },
+                                "style": "",
+                                "layerName": "Check your connection and retry, or return to the game details.",
+                                "text": "Check your connection and retry, or return to the game details."
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.255ebc8c774b.btn-primary",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "btn primary",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-player-retry": ""
+                                },
+                                "style": "",
+                                "layerName": "Retry preview",
+                                "label": "Retry preview"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.045584a55398.btn-secondary",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "btn secondary",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Return to details",
+                                "href": "/games/claw-feed-gulper/",
+                                "label": "Return to details"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.635e1b50a459.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "\n    ",
+                                "layerName": "Text: whitespace"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.6ff2e48d346c.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": "\n  ",
+                          "layerName": "Text: whitespace"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.c2f50a354ac4.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n  ",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.07c54efb2970.wo002-player-footnote",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "wo002-player-footnote",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Preview status: This staging build is not marked PUBLIC. Progress stays ",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.e1fd7dbeef3c.p",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Preview status: This staging build is not marked PUBLIC. Progress stays ",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.02d55b383fc5.strong",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "strong",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Preview status:",
+                                "text": "Preview status:"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.23e035288200.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": " This staging build is not marked PUBLIC. Progress stays in the isolated preview session and may not persist after reload; account sync is unavailable.",
+                                "layerName": "Text: This staging build is not marked PUBLIC. Progress st"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.5242c802292a.p",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Controls: Use the game menu and its keyboard or touch guidance. The host",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.2333a74d1b39.strong",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "strong",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Controls:",
+                                "text": "Controls:"
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.55410caeeb88.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": " Use the game menu and its keyboard or touch guidance. The host provides exit, fullscreen, sound requests, and pause/resume messages.",
+                                "layerName": "Text: Use the game menu and its keyboard or touch guidance"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.muogc5wx.80e0fg.1d58d5fc040b.text",
+                  "type": "core.text",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "#text",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "text": "\n",
+                    "layerName": "Text: whitespace"
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.postplay.panel",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "style": "",
+                    "attributes": {
+                      "data-player-postplay": "",
+                      "hidden": true,
+                      "aria-labelledby": "postplay-app-title"
+                    },
+                    "tag": "aside",
+                    "className": "player-postplay",
+                    "layerName": "After your run — mobile app discovery",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.postplay.kicker",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "p",
+                          "className": "section-kicker",
+                          "text": "THE NEXT ADVENTURE · COMING SOON",
+                          "layerName": "Mobile app availability"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.postplay.title",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {
+                            "id": "postplay-app-title"
+                          },
+                          "tag": "h2",
+                          "text": "There’s more Feast to discover.",
+                          "layerName": "Post-play heading"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.postplay.copy",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "p",
+                          "text": "Meet the world and explore real Arcade, Puzzle and Feastfall gameplay from the upcoming mobile app.",
+                          "layerName": "Post-play introduction"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.postplay.app",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "a",
+                          "className": "btn primary",
+                          "href": "/app/",
+                          "label": "Explore the mobile app",
+                          "layerName": "App discovery destination"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.postplay.browse",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "style": "",
+                          "attributes": {},
+                          "tag": "a",
+                          "className": "btn secondary",
+                          "href": "/play/",
+                          "label": "Browse browser games",
+                          "layerName": "Return to browser games"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session",
+      "type": "layout.container",
+      "props": {
+        "variant": "claw-feed-gulper-score-session",
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "CLAW: Feed Gulper browser preview · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.56b0a333ccfa.claw-feed-gulper-session-hud",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "progression-page",
+              "attributes": {
+                "data-progression-page": "game-session",
+                "id": "claw-feed-gulper-session-hud",
+                "data-score-session": "",
+                "aria-label": "CLAW: Feed Gulper session activity"
+              },
+              "style": "",
+              "layerName": "wicked bites session hud",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.ee803cc22111.progression-section",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "section",
+                    "className": "progression-section",
+                    "attributes": {
+                      "aria-labelledby": "session-score-title"
+                    },
+                    "style": "",
+                    "layerName": "Your current run",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.9103ebebd373.progression-section-head",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "progression-section-heading",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Your current run",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.2850f59c60f6.div",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Your current run",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.3a604e8e0553.section-kicker",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "section-kicker",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "PREVIEW SESSION · IN MEMORY",
+                                      "text": "PREVIEW SESSION · IN MEMORY"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.af27c27a4aee.session-score-title",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "",
+                                      "attributes": {
+                                        "id": "session-score-title"
+                                      },
+                                      "style": "",
+                                      "layerName": "session score title",
+                                      "text": "Your current run"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.34e7c981be6f.progression-local-badge",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "progression-local-badge",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "This tab only",
+                                "text": "This tab only"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.3a3975b1cc41.progression-stat-grid",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "dl",
+                          "className": "progression-stat-grid",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Current scoreWaiting for a runSession best—Elapsed play time0:00",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.89ce99ad0205.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Current scoreWaiting for a run",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.c85e3063234b.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Current score",
+                                      "text": "Current score"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.cb81a85bb523.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-score-current": "",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "Waiting for a run",
+                                      "text": "Waiting for a run"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.72fffbbeca17.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Session best—",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.017702ebd985.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Session best",
+                                      "text": "Session best"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.27e88ddfed26.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-score-session-best": "",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "—",
+                                      "text": "—"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.84c7ca11e25b.progression-stat",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "progression-stat",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Elapsed play time0:00",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.e7858e9eead1.dt",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dt",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Elapsed play time",
+                                      "text": "Elapsed play time"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.9fde5747df7c.dd",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "dd",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-score-elapsed": "",
+                                        "aria-live": "polite"
+                                      },
+                                      "style": "",
+                                      "layerName": "0:00",
+                                      "text": "0:00"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.9b1745db2103.progression-storage",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "progression-storage",
+                          "attributes": {
+                            "data-score-session-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "A completed run can save a browser-local personal best. Scores never gra",
+                          "text": "A completed run can save a browser-local personal best. Scores never grant XP or Sparks, and no global ranking is active."
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.ff632797f491.progression-nav",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "nav",
+                    "className": "progression-nav",
+                    "attributes": {
+                      "aria-label": "Player destinations"
+                    },
+                    "style": "",
+                    "layerName": "Browse website questsLeaderboard statusFeast Pass",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.ac2ae1a81f25.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Browse website quests",
+                          "href": "/feast-pass/quests/",
+                          "label": "Browse website quests"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.caa21479f050.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Leaderboard status",
+                          "href": "/leaderboards/?game=claw-feed-gulper",
+                          "label": "Leaderboard status"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.score-session.5620ea4072ea.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Feast Pass",
+                          "href": "/feast-pass/",
+                          "label": "Feast Pass"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status",
+      "type": "layout.container",
+      "props": {
+        "variant": "manifest-challenge-status",
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "attributes": {},
+        "style": "",
+        "layerName": "CLAW: Feed Gulper browser preview · TOADAL FEAST content",
+        "mode": "inherit",
+        "children": [
+          {
+            "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status.e1f10cc2062a.progression-truth-note",
+            "type": "layout.container",
+            "props": {
+              "authoringVersion": 1,
+              "tag": "section",
+              "className": "progression-truth-note",
+              "attributes": {
+                "aria-label": "Preview session disclosures"
+              },
+              "style": "",
+              "layerName": "Session time: Host-measured preview time; this is not an authoritative i",
+              "mode": "inherit",
+              "children": [
+                {
+                  "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status.d29960c70c89.p",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Session time: Host-measured preview time; this is not an authoritative i",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status.6eb364e193f5.strong",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "strong",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Session time:",
+                          "text": "Session time:"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status.5b701f5f8a23.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": " Host-measured preview time; this is not an authoritative in-game timer.",
+                          "layerName": "Text: Host-measured preview time; this is not an authorita"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status.f2e1738baaf8.p",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "p",
+                    "className": "",
+                    "attributes": {},
+                    "style": "",
+                    "layerName": "Active website challenge: No active website challenge for this preview.",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status.0f03d96837d0.strong",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "strong",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Active website challenge:",
+                          "text": "Active website challenge:"
+                        }
+                      },
+                      {
+                        "id": "component.player-claw-feed-gulper.player-claw-feed-gulper.challenge-status.ef41566228db.text",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "#text",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "text": " No active website challenge for this preview.",
+                          "layerName": "Text: No active website challenge for this preview."
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "referenceFile": "player/claw-feed-gulper/index.html",
+  "studioGenerated": true
+}

@@ -501,6 +501,50 @@ main {
   filter: drop-shadow(0 12px 14px rgb(30 16 13 / 30%));
 }
 
+.home-food-floats {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.home-food-float {
+  position: absolute;
+  display: block;
+  width: clamp(22px, 2.3vw, 34px);
+  height: auto;
+  object-fit: contain;
+  opacity: .55;
+  filter: drop-shadow(0 3px 4px rgb(30 16 13 / 28%));
+  animation: home-candy-float 13s ease-in-out infinite;
+}
+
+.home-food-float--blue {
+  top: 65%;
+  left: 47%;
+  animation-delay: -3s;
+}
+
+.home-food-float--green {
+  top: 21%;
+  left: 47%;
+  animation-delay: -8s;
+  animation-duration: 16s;
+}
+
+.home-food-float--purple {
+  top: 50%;
+  right: 2.5%;
+  animation-delay: -5s;
+  animation-duration: 14s;
+}
+
+@keyframes home-candy-float {
+  0%, 100% { transform: translateY(5px) rotate(-6deg); opacity: .45; }
+  50% { transform: translateY(-9px) rotate(4deg); opacity: .62; }
+}
+
 .home-search {
   width: min(100%, 620px);
   margin-block-start: var(--space-5);
@@ -806,6 +850,52 @@ main {
   width: 100%;
   max-height: clamp(112px, 12vw, 160px);
   object-fit: contain;
+}
+
+.genie-discovery-card {
+  display: grid;
+  min-width: 0;
+  justify-items: center;
+  gap: 3px;
+  padding: 6px 4px 7px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  color: var(--navy-900);
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.genie-discovery-card:hover,
+.genie-discovery-card:focus-visible {
+  border-color: rgb(166 102 6 / 30%);
+  background: rgb(255 255 255 / 70%);
+}
+
+.genie-discovery-card:focus-visible {
+  outline: 3px solid var(--gold-500);
+  outline-offset: 2px;
+}
+
+.genie-discovery-card[aria-disabled="true"] {
+  cursor: default;
+}
+
+.genie-discovery-card[aria-disabled="true"] .genie-discovery-name::after {
+  content: " ✓";
+  color: var(--gold-700);
+}
+
+.genie-discovery-name {
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.genie-discovery-status {
+  color: var(--navy-700);
+  font-size: .64rem;
+  line-height: 1.15;
 }
 
 .genie-row span {
@@ -1201,15 +1291,6 @@ main {
   text-shadow: 0 2px 0 rgb(117 52 9 / 55%);
 }
 
-.site-brand::before {
-  content: "";
-  width: 31px;
-  height: 24px;
-  flex: 0 0 31px;
-  background: url("../brand/brand-crown.svg") center / contain no-repeat;
-  filter: drop-shadow(0 2px 2px rgb(0 0 0 / 25%));
-}
-
 .site-links a {
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
@@ -1424,17 +1505,6 @@ main {
   background:
     radial-gradient(circle at 88% 18%, rgb(255 212 91 / 16%), transparent 32%),
     linear-gradient(145deg, #542815 0%, var(--chocolate-800) 62%, #29120c 100%);
-}
-
-.feast-pass-panel::after {
-  content: "♛";
-  position: absolute;
-  inset-inline-end: 18px;
-  inset-block-end: 5px;
-  color: rgb(255 212 91 / 14%);
-  font-size: clamp(5rem, 8vw, 8rem);
-  line-height: 1;
-  pointer-events: none;
 }
 
 .pass-signals {
@@ -1784,12 +1854,6 @@ main {
 }
 
 @media (max-width: 760px) {
-  .site-brand::before {
-    width: 26px;
-    height: 20px;
-    flex-basis: 26px;
-  }
-
   .home-hero {
     min-height: 0;
   }
@@ -2232,6 +2296,14 @@ main {
   .wo002-player-footnote { grid-template-columns: 1fr; gap: 9px; padding: 12px 14px; }
 }
 
+@media (max-width: 760px) {
+  .home-food-floats { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-food-float { animation: none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .wo002-play-page *, .wo002-detail-page *, .wo002-player-page * { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
@@ -2293,12 +2365,6 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
   text-shadow: 0 2px 0 rgb(117 52 9 / 55%);
 }
 
-.site-brand::before {
-  width: 34px;
-  height: 27px;
-  flex-basis: 34px;
-}
-
 .site-links {
   gap: clamp(2px, .45vw, 8px);
 }
@@ -2339,12 +2405,6 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
   .site-brand {
     gap: 5px;
     font-size: 1.05rem;
-  }
-
-  .site-brand::before {
-    width: 25px;
-    height: 20px;
-    flex-basis: 25px;
   }
 
   .site-links {
@@ -2669,12 +2729,6 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
   .site-brand {
     gap: 6px;
     font-size: .98rem;
-  }
-
-  .site-brand::before {
-    width: 25px;
-    height: 20px;
-    flex-basis: 25px;
   }
 
   .nav-toggle {
@@ -3357,8 +3411,7 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
 /* Home LOCK_VISUAL reconciliation - manifest controlled - 2026-10-01. */
 @media (min-width:1180px){body:has(.home-hero) .site-header{position:relative;z-index:30;box-shadow:0 2px 0 rgb(255 184 35 / 34%);}
 body:has(.home-hero) .site-nav{min-height:54px;padding:4px 18px;gap:clamp(16px,2vw,30px);}
-body:has(.home-hero) .site-brand{position:relative;padding-left:30px;font-size:1.36rem;font-weight:1000;letter-spacing:-.06em;text-shadow:0 1px 0 rgb(0 0 0 / 24%);}
-body:has(.home-hero) .site-brand::before{content:"";position:absolute;left:0;top:50%;width:24px;height:24px;transform:translateY(-53%);background:url("../brand/brand-crown.svg") center / contain no-repeat;}
+body:has(.home-hero) .site-brand{position:relative;font-size:1.36rem;font-weight:1000;letter-spacing:-.06em;text-shadow:0 1px 0 rgb(0 0 0 / 24%);}
 body:has(.home-hero) .site-links{gap:clamp(2px,.55vw,8px);}
 body:has(.home-hero) .site-links a{min-height:34px;padding:5px 8px;font-size:.78rem;}
 main:has(.home-hero){width:min(100%,var(--content-max));margin-inline:auto;display:grid;grid-template-columns:minmax(0,3.15fr) minmax(310px,.95fr);grid-template-areas:"access access" "hero hero" ". ." "today today" "interactive interactive" "discovery discovery" "app next" "companion companion";column-gap:12px;align-items:stretch;background:var(--cream-100);}
@@ -3418,7 +3471,11 @@ body:has(.home-hero) #browser-games .studio-game-card .chip,body:has(.home-hero)
 #discovery .character-row{gap:3px;margin-top:3px;}
 #discovery .character-figure img{max-height:58px;}
 #discovery .character-figure figcaption{font-size:.55rem;}
-#discovery .genie-row{display:none;}
+#discovery .genie-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin-top:3px;}
+#discovery .genie-discovery-card{gap:2px;padding:3px 2px 4px;}
+#discovery .genie-discovery-card img{height:42px;max-height:42px;}
+#discovery .genie-discovery-name{font-size:.57rem;}
+#discovery .genie-discovery-status{font-size:.48rem;}
 #discovery .world-art{height:76px;max-height:76px;object-fit:cover;}
 #discovery .status-chip{padding:3px 5px;font-size:.54rem;}
 #discovery .button-link{min-height:28px;padding:4px 7px;font-size:.59rem;}
@@ -3484,7 +3541,11 @@ body:has(.home-hero) #browser-games .studio-game-card p{display:-webkit-box;marg
 #discovery .discovery-card > p:not(.section-kicker){display:-webkit-box;margin:0 0 5px;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:2;font-size:.58rem;line-height:1.2;}
 #discovery .character-row{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;}
 #discovery .character-figure img{height:66px;max-height:66px;}
-#discovery .genie-row{display:none;}
+#discovery .genie-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin-top:3px;}
+#discovery .genie-discovery-card{gap:2px;padding:3px 2px 4px;}
+#discovery .genie-discovery-card img{height:50px;max-height:50px;}
+#discovery .genie-discovery-name{font-size:.61rem;}
+#discovery .genie-discovery-status{font-size:.52rem;}
 #discovery .world-art{height:84px;object-fit:cover;}
 #discovery .stories-art{min-height:82px;}
 #discovery .discovery-card--stories .home-actions{gap:3px;}
@@ -6850,11 +6911,6 @@ main:has(.home-hero) > [data-studio-variant="companion"] .toadal-companion {
     letter-spacing: -.055em;
   }
 
-  body:has(.home-hero) .site-brand::before {
-    width: 28px;
-    height: 28px;
-  }
-
   body:has(.home-hero) .site-links a {
     border: 1px solid transparent;
     border-radius: 999px;
@@ -7738,13 +7794,12 @@ html body:has(.home-hero) {
 }
 
 html body:has(.home-hero) .site-brand {
-  min-width: 154px;
-  padding-inline-start: 42px;
+  min-width: 108px;
 }
 
 html body .site-brand__wordmark {
   position: absolute;
-  inset-inline-start: 40px;
+  inset-inline-start: 0;
   inset-block-start: 50%;
   display: grid;
   grid-template-rows: repeat(2, minmax(0, 1fr));
@@ -7762,6 +7817,7 @@ html body .site-brand__lettering {
 }
 
 html body .site-brand.site-brand--lettering-ready {
+  min-width: 108px;
   color: transparent;
   font-size: 0;
   line-height: 0;
@@ -8096,4 +8152,86 @@ html body:has(.home-hero) .toadal-companion .companion-image {
     min-height: 44px;
     max-height: 64px !important;
   }
+}
+
+.player-postplay {
+  margin-block: 20px;
+  padding: 20px;
+  border: 1px solid var(--gold-400);
+  border-radius: 16px;
+  background: #fffaf0;
+  color: var(--chocolate-800);
+}
+.player-postplay[hidden] { display: none; }
+.player-postplay h2 { margin-block: 6px; color: var(--navy-900); }
+.player-postplay .btn { margin: 6px 8px 0 0; }
+
+/* Compact, read-only Home view of the existing exploration quests. */
+.home-explorer-passport {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border: 1px solid var(--gold-400);
+  border-radius: 12px;
+  background: linear-gradient(145deg, var(--cream-50), var(--cream-100));
+  color: var(--chocolate-800);
+}
+.home-explorer-passport__title {
+  margin: 0;
+  color: var(--navy-900);
+  font-size: 1rem;
+  line-height: 1.25;
+}
+.home-explorer-passport__summary {
+  margin: 4px 0 7px;
+  color: var(--chocolate-800);
+  font-size: .76rem;
+  line-height: 1.4;
+}
+.home-explorer-passport__activities {
+  display: grid;
+  gap: 4px;
+  margin: 0 0 8px;
+  padding: 0;
+  list-style: none;
+}
+.home-explorer-passport__activity {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 6px;
+  padding: 4px 0;
+  border-top: 1px solid rgb(145 101 47 / 18%);
+  font-size: .72rem;
+  line-height: 1.35;
+}
+.home-explorer-passport__activity-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.home-explorer-passport__activity-status {
+  flex: 0 0 auto;
+  color: var(--chocolate-900);
+  font-size: .68rem;
+  font-weight: 700;
+  text-align: end;
+  white-space: nowrap;
+}
+.home-explorer-passport__activity[data-passport-state="ready"] .home-explorer-passport__activity-status {
+  color: var(--pink-700);
+}
+.home-explorer-passport__activity[data-passport-state="claimed"] .home-explorer-passport__activity-status {
+  color: var(--green-800);
+}
+.home-explorer-passport__link {
+  width: 100%;
+  min-height: 44px;
+  justify-content: center;
+}
+@media (max-width: 360px) {
+  .home-explorer-passport__activity {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .home-explorer-passport__activity-status { text-align: start; }
 }

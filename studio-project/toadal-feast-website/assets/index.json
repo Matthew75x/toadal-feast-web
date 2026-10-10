@@ -375,29 +375,6 @@
       ]
     },
     {
-      "id": "asset.brand.crown",
-      "name": "TOADAL FEAST brand crown accent",
-      "kind": "image",
-      "category": "brand",
-      "source": "reference/assets/brand/brand-crown.svg",
-      "extension": "svg",
-      "width": 64,
-      "height": 40,
-      "renderTargets": [
-        "website-shell"
-      ],
-      "replaceable": false,
-      "tags": [
-        "website-shell",
-        "brand",
-        "canonical-game-ui"
-      ],
-      "bytes": 708,
-      "sha256": "6fcbfd6dc4193ae86f9ffd42f999d2057fa12d4360bb35ef5d4d2b41a718ee4d",
-      "referenceSha256": "6fcbfd6dc4193ae86f9ffd42f999d2057fa12d4360bb35ef5d4d2b41a718ee4d",
-      "referenceSource": "reference/assets/brand/brand-crown.svg"
-    },
-    {
       "id": "asset.companion.context.world",
       "name": "Toadal — adventure map guide pose",
       "kind": "image",
@@ -2131,6 +2108,238 @@
         "commit": "c912c44a7333e143761fc3a1617da64adb07e633",
         "source": "services/share-cards/assets/astro-score-frame.png",
         "scope": "Decorative frame only; no share service enabled"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.toadal",
+      "name": "toadal — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/01-toadal.webp",
+      "extension": "webp",
+      "bytes": 72122,
+      "sha256": "62387e1d6e90002c3240f6e892cde8a20f1976366a5e99c6b5ad352df878c65f",
+      "referenceSha256": "62387e1d6e90002c3240f6e892cde8a20f1976366a5e99c6b5ad352df878c65f",
+      "referenceSource": "reference/assets/images/characters/backgrounds/01-toadal.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "01-toadal.webp"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.princess-lily",
+      "name": "princess-lily — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/02-princess-lily.webp",
+      "extension": "webp",
+      "bytes": 87510,
+      "sha256": "df5dd7aa02ab42efd2ecc06de860940b2b37135e26f0c013eacd4934c52a77cd",
+      "referenceSha256": "df5dd7aa02ab42efd2ecc06de860940b2b37135e26f0c013eacd4934c52a77cd",
+      "referenceSource": "reference/assets/images/characters/backgrounds/02-princess-lily.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "02-princess-lily.webp"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.genie-sweet",
+      "name": "genie-sweet — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/03-sweet-genie.webp",
+      "extension": "webp",
+      "bytes": 79580,
+      "sha256": "5bad4e859ef223b69ff49bac7fef360fc559756a31284287c486f09adcb7c4b6",
+      "referenceSha256": "5bad4e859ef223b69ff49bac7fef360fc559756a31284287c486f09adcb7c4b6",
+      "referenceSource": "reference/assets/images/characters/backgrounds/03-sweet-genie.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "03-sweet-genie.webp"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.genie-fruity",
+      "name": "genie-fruity — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/04-fruity-genie.webp",
+      "extension": "webp",
+      "bytes": 94744,
+      "sha256": "1c8829b5f03b0362c9b0117287006809f993e91cdf06c8f3c9c8cc91add204db",
+      "referenceSha256": "1c8829b5f03b0362c9b0117287006809f993e91cdf06c8f3c9c8cc91add204db",
+      "referenceSource": "reference/assets/images/characters/backgrounds/04-fruity-genie.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "04-fruity-genie.webp"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.genie-savoury",
+      "name": "genie-savoury — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/05-savoury-genie.webp",
+      "extension": "webp",
+      "bytes": 89018,
+      "sha256": "042966a58376d6ea765710f946787e5db0e0f09df47b3fb939e15b2c133a449f",
+      "referenceSha256": "042966a58376d6ea765710f946787e5db0e0f09df47b3fb939e15b2c133a449f",
+      "referenceSource": "reference/assets/images/characters/backgrounds/05-savoury-genie.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "05-savoury-genie.webp"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.gulper",
+      "name": "gulper — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/06-gulper.webp",
+      "extension": "webp",
+      "bytes": 89920,
+      "sha256": "5cbbb0148a5311aa56c8b2af79eed463e064f5e082b0f031ed5dac3e2f68fc4f",
+      "referenceSha256": "5cbbb0148a5311aa56c8b2af79eed463e064f5e082b0f031ed5dac3e2f68fc4f",
+      "referenceSource": "reference/assets/images/characters/backgrounds/06-gulper.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "06-gulper.webp"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.gully",
+      "name": "gully — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/07-gully.webp",
+      "extension": "webp",
+      "bytes": 91170,
+      "sha256": "7f204a5c1311fc2c590addc54757dc070e0959c7ea74074fbe38f39e32f1f778",
+      "referenceSha256": "7f204a5c1311fc2c590addc54757dc070e0959c7ea74074fbe38f39e32f1f778",
+      "referenceSource": "reference/assets/images/characters/backgrounds/07-gully.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "07-gully.webp"
+      }
+    },
+    {
+      "id": "asset.owner.character-background.future",
+      "name": "future — owner supplied decorative environment",
+      "kind": "image",
+      "category": "environment",
+      "source": "reference/assets/images/characters/backgrounds/08-coming-soon.webp",
+      "extension": "webp",
+      "bytes": 36704,
+      "sha256": "783b2059d8bf9fd6a47bf68f803307ee4084323553b6c6d893300a2ba424d921",
+      "referenceSha256": "783b2059d8bf9fd6a47bf68f803307ee4084323553b6c6d893300a2ba424d921",
+      "referenceSource": "reference/assets/images/characters/backgrounds/08-coming-soon.webp",
+      "width": 1024,
+      "height": 640,
+      "renderTargets": [
+        "characters-gallery"
+      ],
+      "replaceable": true,
+      "tags": [
+        "owner-supplied",
+        "decorative-environment",
+        "not-gameplay",
+        "not-lore-authority"
+      ],
+      "provenance": {
+        "archive": "TOADAL_FEAST_Card_Backgrounds_Web_Ready(2).zip",
+        "archiveSha256": "d3bf6755480c43286c5c4594cbeeb012415bf6b0361339158300e2d47faad542",
+        "member": "08-coming-soon.webp"
       }
     }
   ]

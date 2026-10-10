@@ -26,7 +26,7 @@ test('framed headings and frame remain native editable nodes on both routes', ()
  assert.match(code.css,/\.framed-feast-pass--full \.portal-pass-hero \.feast-pass-lettering \{ color:#ffe49a;/,'Full native fallback overrides the inherited H1 skin');
 });
 test('approved standalone runtime and frame are exact and carry their notices', () => {
- assert.equal(sha(read('reference/assets/js/toadal-lettering.js')),'7188d0199bcb2c4e37d46254059f1d7b759b183e2088f7df83bc5bd44eb4721b');
+ assert.equal(sha(Buffer.from(read('reference/assets/js/toadal-lettering.js').toString('utf8').replaceAll('\r\n','\n'))),'7188d0199bcb2c4e37d46254059f1d7b759b183e2088f7df83bc5bd44eb4721b');
  for(const f of ['NOTICE.md','LilitaOne-OFL.txt'])assert.ok(read('reference/assets/licenses/toadal-lettering/'+f).length>50);
  const a=json('assets/index.json').assets.find(a=>a.id==='asset.feast-pass.astro-frame');
  const pixels=read(a.source);assert.equal(a.width,pixels.readUInt32BE(16));assert.equal(a.height,pixels.readUInt32BE(20));

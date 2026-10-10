@@ -12,8 +12,8 @@ const home=read('pages/home.json'),code=read('collections/advanced-code.json');
 const nodes=x=>Array.isArray(x)?x.flatMap(nodes):x&&typeof x==='object'?[...(x.props?[x]:[]),...Object.values(x).flatMap(nodes)]:[];
 const all=nodes(home),cards=all.find(n=>n.id==='component.home.games').props.children;
 
-test('approved original-design candidate keeps 33 editable routes and excludes unpublished Croaker draft',()=>{
- const index=read('pages/index.json');assert.equal(index.pages.length,33);
+test('approved original-design candidate keeps 34 editable routes and excludes unpublished Croaker draft',()=>{
+ const index=read('pages/index.json');assert.equal(index.pages.length,34);
  assert.ok(!index.pages.some(p=>/croaker/i.test(p.id+' '+p.route)));
  assert.equal(all.filter(n=>n.type==='core.image'&&n.props.asset==='asset.owner.world.daylight-market-web').length,1);
  assert.ok(all.some(n=>n.type==='core.text'&&n.props.tag==='h1'&&n.props.text==='Play the Feast World for Free.'));
@@ -108,7 +108,7 @@ test('concise Home daily labels preserve runtime states and do not rewrite unkno
  ctx.apply(status);assert.equal(status.textContent,'Today’s check-in is ready.');
  status.textContent='Today’s UTC check-in is already claimed.';ctx.apply(status);assert.equal(status.textContent,'You’ve checked in today.');
  for(const text of ['No daily check-in is configured.','Browser storage is unavailable.','Claim failed.']){status.textContent=text;ctx.apply(status);assert.equal(status.textContent,text);}
- const runtime=fs.readFileSync(path.join(project,'reference/assets/js/guest-progression.js'));assert.equal(crypto.createHash('sha256').update(runtime).digest('hex'),'5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338');
+ const runtime=fs.readFileSync(path.join(project,'reference/assets/js/guest-progression.js'));assert.equal(crypto.createHash('sha256').update(runtime).digest('hex'),'baa82c9aa41b024f9b6dff58beade76c9f6e3625e6dcfffd28b81443ecf9f352');
  const daily=all.find(n=>n.props?.className==='today-checkin-status');assert.equal(daily.props.attributes['data-daily-ready-copy'],'Today’s check-in is ready.');
 });
 

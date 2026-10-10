@@ -78,8 +78,8 @@ test('generated site pages project one cacheable advanced runtime and CSS after 
       }
     }
   }
-  walk(path.join(root,'dist')); assert.equal(count,33);
-  assert.equal(previewCount,33);
+  walk(path.join(root,'dist')); assert.equal(count,34);
+  assert.equal(previewCount,34);
 });
 
 test('native preview Home image height outranks canonical card breakpoints',()=>{

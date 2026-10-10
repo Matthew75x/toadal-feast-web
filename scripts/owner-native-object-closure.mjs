@@ -143,8 +143,8 @@ export function closeHomeGameCards(page, games, assets) {
     throw new Error(`Could not find ${HOME_GAMES_ID} as a populated layout.grid`);
   }
   const sourceCards = childrenOf(originalRoot);
-  // Approved native preview cards have an independent button and one explicit
-  // details anchor. Never flatten them back into an anchor containing a button.
+  // Approved native preview cards keep the toggle independent from navigation.
+  // A playable card may also have a direct player link, separately registered.
   const nativeCard = card => card?.props?.authoringVersion === 1 &&
     (card.props.tag === 'a' || card.props.tag === 'article' && card.props.attributes?.['data-game-preview'] === 'v1');
   if(sourceCards.length===4&&sourceCards.every(nativeCard)){
@@ -155,12 +155,18 @@ export function closeHomeGameCards(page, games, assets) {
       validateGameForCard(card, game, knownAssets);
       if (card.props.tag === 'article') {
         const nodes = descendants(card), links = nodes.filter(node => node.props?.tag === 'a');
-        if (links.length !== 1 || links[0].props.href !== game.route ||
-            !Object.hasOwn(links[0].props.attributes || {}, 'data-game-preview-link')) {
-          throw new Error(`Native preview card ${card.id} must retain exactly one registered details link`);
+        const has = (node, key) => Object.hasOwn(node.props.attributes || {}, key);
+        const details = links.filter(node => node.props.href === game.route &&
+          (has(node, 'data-game-preview-link') || has(node, 'data-game-preview-details')));
+        const expectedPlayerRoute = `/player/${game.slug}/`;
+        const launches = links.filter(node => node.props.href === expectedPlayerRoute && has(node, 'data-game-preview-link'));
+        if (details.length !== 1 || launches.length > 1 || details.length + launches.length !== links.length) {
+          throw new Error(`Native preview card ${card.id} must retain one registered details link and only registered player links`);
         }
-        if (descendants(links[0]).slice(1).some(node => ['a','button','input'].includes(node.props?.tag))) {
-          throw new Error(`Native preview card ${card.id} contains nested interactive controls`);
+        for (const link of [...details, ...launches]) {
+          if (descendants(link).slice(1).some(node => ['a','button','input'].includes(node.props?.tag))) {
+            throw new Error(`Native preview card ${card.id} contains nested interactive controls`);
+          }
         }
         const images = nodes.filter(node => node.type === 'core.image');
         if (!images.length || images.some(node => !knownAssets.has(node.props.asset))) {

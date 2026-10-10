@@ -1,0 +1,168 @@
+{
+  "export": {
+    "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
+    "bytes": 59847215,
+    "sha256": "fc3db2bba0532078bee6bb4e4f5ddcaca23c25fdd418ac8ef5c17da74355f5fd",
+    "profile": {
+      "schemaVersion": 1,
+      "basePath": "/toadal-feast-web/",
+      "staging": true
+    }
+  },
+  "schema": "toadal-feast.studio-edit-save-preview-export.v1",
+  "observedAt": "2026-10-10T18:57:57.231Z",
+  "status": "PASS",
+  "sourceIdentity": {
+    "websiteBranch": "work/takeover-20261010",
+    "websiteBaseCommit": "e392e82943a7c7edc83227c0cb6ca61210e53e9a",
+    "studioRendererCommit": "e859ee2725bb88b236cacf450a69dd304b2d74c9",
+    "projectManifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\project.json",
+    "projectId": "toadal-feast-website",
+    "sourceFingerprintBefore": {
+      "sha256": "732ed4ed02b8e1e2b28320bf38ce0d762a5b5185a167334452f49fa0d47e6fdb",
+      "files": 74
+    },
+    "sourceFingerprintAfter": {
+      "sha256": "732ed4ed02b8e1e2b28320bf38ce0d762a5b5185a167334452f49fa0d47e6fdb",
+      "files": 74
+    },
+    "sourceUnchanged": true
+  },
+  "checks": [
+    {
+      "name": "Exact Feast project opened through pinned Studio",
+      "status": "PASS",
+      "details": {
+        "project": {
+          "id": "toadal-feast-website",
+          "name": "TOADAL FEAST Website",
+          "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\project.json",
+          "schemaVersion": 1
+        },
+        "validation": {
+          "valid": true,
+          "errors": 0,
+          "warnings": 0
+        },
+        "counts": {
+          "pages": 34,
+          "games": 4,
+          "assets": 86,
+          "components": 64
+        },
+        "history": {
+          "canUndo": false,
+          "canRedo": true,
+          "cursor": 0,
+          "total": 1,
+          "undoLabel": null,
+          "redoLabel": "AI: update page page.home"
+        }
+      }
+    },
+    {
+      "name": "Studio quick QA before edit",
+      "status": "PASS",
+      "details": {
+        "validation": {
+          "valid": true,
+          "errors": [],
+          "warnings": []
+        },
+        "dangling": 0,
+        "accessibilityErrors": 0,
+        "previewFiles": 245
+      }
+    },
+    {
+      "name": "Home metadata read with revision",
+      "status": "PASS",
+      "details": {
+        "revision": "10eb85480e73849f9c2857eaa7b26757c453fdab3cf95ad5751f92621d3f1cd8",
+        "title": "TOADAL FEAST — Play the Feast World for Free"
+      }
+    },
+    {
+      "name": "Typed Studio save persisted in page and route index",
+      "status": "PASS",
+      "details": {
+        "title": "[Studio save verification 2026-10-10T18:57:49.142Z]",
+        "indexTitle": "[Studio save verification 2026-10-10T18:57:49.142Z]",
+        "updateRevision": null
+      }
+    },
+    {
+      "name": "Studio preview reflects saved edit",
+      "status": "PASS",
+      "details": {
+        "previewDir": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\build\\ai-preview",
+        "previewHtmlSha256": "7fb0d763e88be923c158472872de8286adfd738f9373d413ff6eb25378716a5a",
+        "previewHasSavedTitle": true
+      }
+    },
+    {
+      "name": "Edit is present in persistent Studio undo history",
+      "status": "PASS",
+      "details": {
+        "history": {
+          "canUndo": true,
+          "canRedo": false,
+          "cursor": 1,
+          "total": 1,
+          "undoLabel": "AI: update page page.home",
+          "redoLabel": null
+        }
+      }
+    },
+    {
+      "name": "Studio Undo restores exact original source bytes",
+      "status": "PASS",
+      "details": {
+        "homeSha256Before": "10eb85480e73849f9c2857eaa7b26757c453fdab3cf95ad5751f92621d3f1cd8",
+        "homeSha256After": "10eb85480e73849f9c2857eaa7b26757c453fdab3cf95ad5751f92621d3f1cd8",
+        "pageIndexSha256Before": "190fab378524f3772f639abce526b1029fe090f60000e330a6ab97570a30b666",
+        "pageIndexSha256After": "190fab378524f3772f639abce526b1029fe090f60000e330a6ab97570a30b666",
+        "undo": {
+          "canUndo": false,
+          "canRedo": true,
+          "cursor": 0,
+          "total": 1,
+          "undoLabel": null,
+          "redoLabel": "AI: update page page.home"
+        }
+      }
+    },
+    {
+      "name": "Studio preview returns to the original page after Undo",
+      "status": "PASS",
+      "details": {
+        "previewDir": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\build\\ai-preview",
+        "previewHtmlSha256": "f3d3bb3ae1d6496cf024acfcbb47256b80525f9fca0daaa536b3140c0cfa88c2"
+      }
+    },
+    {
+      "name": "Studio static export completes from restored source",
+      "status": "PASS",
+      "details": {
+        "path": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\build\\exports\\toadal-feast-website-static-site.zip",
+        "bytes": 59847215,
+        "sha256": "fc3db2bba0532078bee6bb4e4f5ddcaca23c25fdd418ac8ef5c17da74355f5fd",
+        "profile": {
+          "schemaVersion": 1,
+          "basePath": "/toadal-feast-web/",
+          "staging": true
+        }
+      }
+    },
+    {
+      "name": "Studio preview is regenerated after export",
+      "status": "PASS",
+      "details": {
+        "previewDir": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\build\\ai-preview",
+        "previewHtmlSha256": "f3d3bb3ae1d6496cf024acfcbb47256b80525f9fca0daaa536b3140c0cfa88c2"
+      }
+    }
+  ],
+  "titleForTest": "[Studio save verification 2026-10-10T18:57:49.142Z]",
+  "originalTitle": "TOADAL FEAST — Play the Feast World for Free"
+}

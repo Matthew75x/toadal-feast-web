@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#171426">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/ui/app-icon-180.png">
+<meta name="description" content="CLAW: Feed Gulper — a mobile-first arcade feeding game with Campaign, Challenge, REAL GAMER, LONG DROP, Daily, and Endless modes.">
+<title>CLAW: Feed Gulper</title>
+<!-- Website cartridge: host owns PWA installation and service-worker scope. -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app-shell" id="appShell">
+  <section id="menu" class="screen menu-screen">
+    <div class="menu-utility" aria-label="Menu utilities">
+      <button id="helpMenuBtn" class="round-icon" aria-label="How to play"><img src="assets/ui/icon-help.png" alt=""></button>
+      <button id="settingsBtn" class="round-icon" aria-label="Settings"><img src="assets/ui/icon-settings.png" alt=""></button>
+    </div>
+
+    <div class="menu-hero">
+      <div class="hero-halo" aria-hidden="true"></div>
+      <img id="menuGulper" class="menu-gulper" src="assets/gulper/stages/gulper_stage_0.png" alt="Gulper">
+      <div class="brand">
+        <span class="eyebrow">TOADAL ARCADE</span>
+        <h1>CLAW</h1>
+        <p>FEED GULPER</p>
+      </div>
+    </div>
+    <p class="hero-copy">Snatch the feast. Dodge the hazards. Feed Gulper. Master the timing.</p>
+
+    <section class="campaign-card" aria-label="Campaign progress">
+      <div class="campaign-card-top">
+        <div><span class="eyebrow warm">CAMPAIGN</span><strong id="menuCampaignTitle">FIRST FEAST</strong></div>
+        <span id="menuCampaignPct" class="progress-badge">0%</span>
+      </div>
+      <div class="campaign-meter"><i id="menuCampaignBar"></i></div>
+      <div class="progress-strip">
+        <span><b id="menuStars">0</b><small>STARS</small></span>
+        <span><b id="menuLevel">1</b><small>LEVEL</small></span>
+        <span><b id="menuChapter">1</b><small>CHAPTER</small></span>
+      </div>
+      <button id="continueBtn" class="primary hero-button">CONTINUE</button>
+      <button id="campaignBtn" class="secondary-button">LEVEL SELECT</button>
+    </section>
+
+    <button id="challengeBtn" class="challenge-hero-card" aria-label="Challenge Mode — six high-skill cabinets with speed, timers, bombs, shrink syringes, precision and the Grand Gauntlet">
+      <span class="challenge-hero-copy"><span class="mode-kicker">MASTERY I · MIXED SKILL</span><strong>CHALLENGE MODE</strong><small id="challengeStatus">6 TRIALS · MASTER THE BASE CABINET</small></span>
+      <span class="challenge-hero-art" aria-hidden="true"><img src="assets/specials/bomb.png" alt=""><img src="assets/specials/syringe.png" alt=""></span>
+    </button>
+
+
+    <div class="mastery-grid" aria-label="Endgame mastery modes">
+      <button id="realGamerBtn" class="gamer-hero-card" aria-label="REAL GAMER MODE — wide arena with moving Gulper and two-tap food delivery">
+        <span class="gamer-hero-copy"><span class="mode-kicker">MASTERY II · HORIZONTAL</span><strong>REAL GAMER</strong><small id="realGamerStatus">1080 WIDE · MOVING GULPER</small></span>
+        <span class="gamer-hero-map" aria-hidden="true"><i class="claw-dot"></i><b>1080</b><i class="gulper-dot"></i></span>
+      </button>
+      <button id="longDropBtn" class="long-drop-hero-card" aria-label="LONG DROP MODE — release food through a 620-unit drop and lead moving Gulper">
+        <span class="long-drop-copy"><span class="mode-kicker">MASTERY III · VERTICAL</span><strong>LONG DROP</strong><small id="longDropStatus">620 DROP · LEAD THE LANDING</small></span>
+        <span class="long-drop-gauge" aria-hidden="true"><i class="drop-food-dot"></i><b>620</b><i class="drop-gulper-dot"></i></span>
+      </button>
+    </div>
+
+    <div class="mode-grid" aria-label="Arcade modes">
+      <button id="dailyBtn" class="mode-card"><span class="mode-kicker">TODAY</span><strong>DAILY FEED</strong><small id="dailyStatus">NEW CHALLENGE</small></button>
+      <button id="endlessBtn" class="mode-card"><span class="mode-kicker">SURVIVAL</span><strong>ENDLESS</strong><small id="endlessStatus">BEST 0</small></button>
+    </div>
+
+    <div class="secondary-grid">
+      <button id="collectionBtn"><strong>PANTRY & TROPHIES</strong><small id="collectionMenuStatus">0 / 20 FOODS</small></button>
+      <button id="creditsBtn"><strong>CREDITS</strong><small>GAME INFO</small></button>
+    </div>
+    <div class="build-tag" aria-hidden="true">MASTERY EDITION · v2.5.1</div>
+  </section>
+
+  <section id="levelSelect" class="screen panel-screen" hidden>
+    <header class="topline">
+      <button id="backLevelBtn" class="round-icon" aria-label="Back to main menu"><img src="assets/ui/icon-back.png" alt=""></button>
+      <div class="topline-copy"><span class="eyebrow">CAMPAIGN</span><h2>Gulper's Grand Feast</h2><p id="campaignSummary" class="muted"></p></div>
+    </header>
+    <div class="campaign-overview">
+      <div><b id="campaignStarsBig">0</b><small>OF 90 STARS</small></div>
+      <div class="campaign-overview-track"><i id="campaignOverviewBar"></i></div>
+      <div><b id="campaignLevelsBig">1</b><small>OF 30 UNLOCKED</small></div>
+    </div>
+    <div id="levelButtons" class="level-list"></div>
+  </section>
+
+  <section id="challengeSelect" class="screen panel-screen challenge-screen" hidden>
+    <header class="topline">
+      <button id="backChallengeBtn" class="round-icon" aria-label="Back to main menu"><img src="assets/ui/icon-back.png" alt=""></button>
+      <div class="topline-copy"><span class="eyebrow danger-kicker">CHALLENGE MODE</span><h2>Gulper's Danger Cabinets</h2><p id="challengeSummary" class="muted">Mastery I: six advanced trials of speed, time, hazards, precision, and streak control.</p></div>
+    </header>
+    <div class="challenge-rules-callout"><img src="assets/specials/syringe.png" alt="Shrink syringe"><div><b>HAZARD RULE · SHRINK SYRINGE</b><span>Feed one to Gulper and he loses growth progress. Shield blocks it.</span></div></div>
+    <div id="challengeButtons" class="challenge-list"></div>
+  </section>
+
+  <section id="collection" class="screen panel-screen" hidden>
+    <header class="topline">
+      <button id="backCollectionBtn" class="round-icon" aria-label="Back to main menu"><img src="assets/ui/icon-back.png" alt=""></button>
+      <div class="topline-copy"><span class="eyebrow">PANTRY & TROPHIES</span><h2>Gulper's Vault</h2><p id="collectionSummary" class="muted"></p></div>
+    </header>
+    <h3 class="section-title">Mastery Path</h3>
+    <div id="masteryPath" class="mastery-path" aria-label="Mastery progression"></div>
+    <h3 class="section-title">Growth Gallery</h3>
+    <div id="growthGallery" class="growth-gallery"></div>
+    <h3 class="section-title">Achievements</h3>
+    <div id="achievementGrid" class="achievement-grid"></div>
+    <h3 class="section-title">Foods</h3>
+    <div id="foodCollection" class="collection-grid"></div>
+    <h3 class="section-title">Specials</h3>
+    <div id="specialCollection" class="collection-grid specials"></div>
+    <h3 class="section-title">Lifetime Stats</h3>
+    <div id="lifetimeStats" class="stat-grid"></div>
+  </section>
+
+  <section id="gameWrap" class="game-wrap" hidden>
+    <div id="hud" class="hud">
+      <div class="hud-left"><span id="levelName"></span><strong id="hudScore">0</strong></div>
+      <div class="hud-center"><span>STREAK <b id="hudCombo">x1</b></span></div>
+      <div class="hud-right"><span id="hudTimer">0s</span><span id="hudHearts" class="hearts">♥♥♥</span></div>
+    </div>
+    <div class="objective-bar"><span id="objectiveText"></span><div id="effectPills" class="effect-pills"></div></div>
+    <canvas id="gameCanvas" aria-label="CLAW Feed Gulper game. Tap or press Space to drop the claw."></canvas>
+    <div class="growth-hud" aria-label="Gulper growth progress">
+      <span id="growthStageLabel">GROWTH 1 / 8</span><div class="growth-track"><i id="growthBar"></i></div><span id="growthNext">2 MEALS</span>
+    </div>
+    <div class="game-controls"><button id="pauseBtn" class="round-icon" aria-label="Pause"><img src="assets/ui/icon-pause.png" alt=""></button><button id="dropActionBtn" class="drop-action" type="button" aria-label="Drop claw"><span id="dropHint">TAP TO DROP</span></button><button id="helpBtn" class="round-icon" aria-label="Help"><img src="assets/ui/icon-help.png" alt=""></button></div>
+  </section>
+
+  <section id="result" class="screen result-screen" hidden>
+    <span class="eyebrow" id="resultEyebrow">CAMPAIGN RESULT</span>
+    <h2 id="resultTitle">GULPER FED!</h2>
+    <div class="result-hero"><div id="resultBurst" class="result-burst" aria-hidden="true"></div><img id="resultGulper" class="result-gulper" src="assets/gulper/stages/gulper_stage_0.png" alt="Gulper after the run"></div>
+    <div id="resultGrowth" class="result-growth">GROWTH STAGE 1 / 8</div>
+    <div id="resultStars" class="star-row" aria-label="Star rating"></div>
+    <div id="resultScore" class="result-score">0</div>
+    <div id="resultBest" class="result-best"></div>
+    <div id="resultStats" class="result-stats"></div>
+    <div id="resultUnlock" class="unlock-callout" hidden></div>
+    <div class="result-actions"><button id="resultPrimary" class="primary hero-button">NEXT LEVEL</button><div class="menu-split"><button id="resultReplay">REPLAY</button><button id="resultMenu">MAIN MENU</button></div></div>
+  </section>
+
+  <dialog id="briefingDialog" class="modal-card briefing-card">
+    <span id="briefingKicker" class="eyebrow">LEVEL 1</span><h2 id="briefingTitle">First Bite</h2>
+    <p id="briefingDescription" class="briefing-description"></p>
+    <div class="briefing-favorite"><img id="briefingFavoriteImg" alt=""><div><small>GULPER'S FAVORITE</small><strong id="briefingFavoriteName">Strawberry</strong></div></div>
+    <div id="briefingGoals" class="briefing-goals"></div>
+    <div class="tip-callout"><b>TIP</b><span id="briefingTip"></span></div>
+    <button id="briefingStart" class="primary hero-button full">START FEEDING</button>
+    <button id="briefingBack" class="text-button full">BACK</button>
+  </dialog>
+
+  <dialog id="pauseDialog" class="modal-card">
+    <span class="eyebrow">PAUSED</span><h2>Claw on hold</h2><p id="pauseObjective" class="muted"></p>
+    <div class="dialog-actions"><button id="resumeBtn" class="primary">RESUME</button><button id="restartBtn">RESTART</button><button id="pauseSettingsBtn">SETTINGS</button><button id="quitBtn">QUIT TO MENU</button></div>
+  </dialog>
+
+  <dialog id="settingsDialog" class="modal-card">
+    <div class="settings-head"><span class="eyebrow">SETTINGS</span><button id="settingsClose" class="primary settings-done">DONE</button></div>
+    <h2>Game options</h2>
+    <label class="setting-row"><span><b>Music</b><small>Background soundtrack</small></span><input id="musicToggle" type="checkbox"></label>
+    <label class="slider-row"><span>Music volume</span><input id="musicVolume" type="range" min="0" max="100" step="1"></label>
+    <label class="setting-row"><span><b>Sound effects</b><small>Claw, food, powers, results</small></span><input id="sfxToggle" type="checkbox"></label>
+    <label class="slider-row"><span>SFX volume</span><input id="sfxVolume" type="range" min="0" max="100" step="1"></label>
+    <label class="setting-row"><span><b>Haptics</b><small>Touch vibration feedback</small></span><input id="hapticsToggle" type="checkbox"></label>
+    <label class="setting-row"><span><b>Reduced motion</b><small>Remove bobbing and celebration movement</small></span><input id="motionToggle" type="checkbox"></label>
+    <label class="setting-row"><span><b>High contrast HUD</b><small>Stronger gameplay readability</small></span><input id="contrastToggle" type="checkbox"></label>
+    <label class="setting-row"><span><b>Color assist</b><small>Add symbols to special-item feedback</small></span><input id="colorAssistToggle" type="checkbox"></label>
+    <label class="setting-row"><span><b>Campaign training assist</b><small>After repeated near-misses, gently widens early Campaign timing. Never active in mastery modes.</small></span><input id="campaignAssistToggle" type="checkbox"></label>
+    <div class="settings-data"><button id="exportSaveBtn">EXPORT SAVE</button><button id="importSaveBtn">IMPORT SAVE</button><input id="importSaveFile" type="file" accept="application/json" hidden><button id="resetProgressBtn" class="danger-button">RESET PROGRESS</button></div>
+  </dialog>
+
+  <dialog id="helpDialog" class="modal-card help-card">
+    <span class="eyebrow">HOW TO PLAY</span><h2>Feed Gulper</h2>
+    <div class="how-grid">
+      <div><b>1 · TIME THE CLAW</b><p>The claw sweeps automatically. Tap anywhere in the play area, or press Space/Enter, to act.</p></div>
+      <div><b>2 · FEED & GROW</b><p>Center grabs earn PERFECT. Food grows Gulper; favorites score more. A clean streak multiplies score.</p></div>
+      <div><b>3 · CLEAR VS MASTER</b><p>In Campaign, hit the meal goal to clear. PERFECT, streak, and favorite targets are star bonuses. Advanced modes require every listed goal.</p></div>
+      <div><b>4 · READ THE CABINET</b><p>Hearts heal. Bombs hurt. Shrink syringes erase growth. Jeweled Candies give temporary powers.</p></div>
+      <div><b>5 · MASTERY I · CHALLENGE</b><p>Prove the base one-tap cabinet under speed, clocks, hazards, precision, and gauntlet rules.</p></div>
+      <div><b>6 · MASTERY II · REAL GAMER</b><p>Track moving Gulper across a wide arena: first tap grabs, second tap releases. Hazards can be dumped safely.</p></div>
+      <div><b>7 · MASTERY III · LONG DROP</b><p>Lead moving Gulper through a 620-unit fall. Your first clear includes a subtle landing guide; after that, prediction is fully yours.</p></div>
+      <div><b>8 · LEARN FROM MISSES</b><p>Mastery runs briefly show timing error after a delivery so you can correct the next release instead of guessing.</p></div>
+    </div>
+    <div class="special-legend">
+      <span><img src="assets/specials/magnet.png" alt="">Magnet</span><span><img src="assets/specials/time.png" alt="">Time</span><span><img src="assets/specials/shield.png" alt="">Shield</span><span><img src="assets/specials/royal.png" alt="">Royal</span><span><img src="assets/specials/heart.png" alt="">Heart</span><span><img src="assets/specials/bomb.png" alt="">Bomb</span><span><img src="assets/specials/syringe.png" alt="">Shrink</span>
+    </div>
+    <button id="helpClose" class="primary full">GOT IT</button>
+  </dialog>
+
+  <dialog id="creditsDialog" class="modal-card">
+    <span class="eyebrow">CREDITS</span><h2>CLAW: Feed Gulper</h2>
+    <p class="muted">A TOADAL Arcade game built from the Froggie Fruity Bash production platform and owner-approved TOADAL FEAST character, food, UI, and audio assets.</p>
+    <div class="credit-list"><div><b>STAR</b><span>Gulper</span></div><div><b>GAME</b><span>CLAW feeding arcade</span></div><div><b>MODES</b><span>30-level Campaign · 6 Challenge trials · REAL GAMER · LONG DROP · Daily · Endless</span></div><div><b>BUILD</b><span>Mastery Edition 2.5.1 · source 91f9b600b5d0</span></div></div>
+    <button id="creditsClose" class="primary full">CLOSE</button>
+  </dialog>
+
+  <dialog id="confirmResetDialog" class="modal-card compact-dialog">
+    <span class="eyebrow danger-text">RESET PROGRESS</span><h2>Start over?</h2><p>This clears Campaign stars, Collection, records, achievements, Daily progress, and settings saved by CLAW on this browser.</p>
+    <div class="dialog-actions"><button id="confirmResetBtn" class="danger-button">RESET EVERYTHING</button><button id="cancelResetBtn" class="primary">CANCEL</button></div>
+  </dialog>
+
+  <div id="countdown" class="countdown" aria-live="polite"></div>
+  <div id="coachHint" class="coach-hint" role="status" aria-live="polite" hidden></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+</main>
+<script defer src="runtime.bundle.js"></script>
+</body>
+</html>

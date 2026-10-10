@@ -58,15 +58,27 @@
     } catch (_) { return false; }
   }
 
+  function messagePayload(message) {
+    if (message && message.gameId === 'claw-feed-gulper' && message.version === 1) {
+      return { score: message.score };
+    }
+    return message && message.payload;
+  }
+
   function isTrustedMessage(event, frame, gameId, initialSrc, pageHref) {
     if (!event || !frame || event.source !== frame.contentWindow || event.origin !== 'null') return false;
-    if (gameId !== GAME_ID || !expectedFrame(frame, initialSrc, pageHref)) return false;
+    if (!Object.prototype.hasOwnProperty.call(GAME_NAMES, gameId) || !expectedFrame(frame, initialSrc, pageHref)) return false;
     const message = event.data;
+    const clawVersioned = gameId === 'claw-feed-gulper' && message && message.version === 1;
+    const keysAllowed = clawVersioned
+      ? Object.keys(message).every(key => ['protocol', 'version', 'gameId', 'type', 'score'].includes(key))
+      : message && Object.keys(message).every(key => ['protocol', 'gameId', 'type', 'payload'].includes(key));
+    const payload = clawVersioned ? messagePayload(message) : message && message.payload;
     return Boolean(message && typeof message === 'object' && !Array.isArray(message) &&
-      message.protocol === PROTOCOL && message.gameId === GAME_ID && MESSAGE_TYPES.has(message.type) &&
-      Object.keys(message).every(key => ['protocol', 'gameId', 'type', 'payload'].includes(key)) &&
-      message.payload && typeof message.payload === 'object' && !Array.isArray(message.payload) &&
-      (message.type !== 'game:score' && message.type !== 'game:complete' || normalizeScore(message.payload.score) !== null));
+      message.protocol === PROTOCOL && message.gameId === gameId && MESSAGE_TYPES.has(message.type) &&
+      keysAllowed && payload && typeof payload === 'object' && !Array.isArray(payload) &&
+      (message.type !== 'game:score' && message.type !== 'game:complete' ||
+        (clawVersioned ? Number.isSafeInteger(payload.score) && payload.score >= 0 : normalizeScore(payload.score) !== null)));
   }
 
   function createSession(clock) {
@@ -195,11 +207,12 @@
     // explicitly rather than assuming the HUD is nested inside the host shell.
     const hudId = shell.getAttribute('data-player-hud');
     const hud = hudId ? root.document.getElementById(hudId) : shell;
+    const gameId = shell.getAttribute('data-game-id');
     const scoreNode = hud && hud.querySelector('[data-score-current]');
     const bestNode = hud && hud.querySelector('[data-score-session-best]');
     const elapsedNode = hud && hud.querySelector('[data-score-elapsed]');
     const statusNode = hud && hud.querySelector('[data-score-session-status]');
-    if (!frame || !initialSrc || !scoreNode || !elapsedNode) return;
+    if (!frame || !initialSrc || !Object.prototype.hasOwnProperty.call(GAME_NAMES, gameId) || !scoreNode || !elapsedNode) return;
     const elapsedLabel = elapsedNode.parentElement && elapsedNode.parentElement.querySelector('dt');
     if (elapsedLabel) elapsedLabel.textContent = 'Session time';
     const session = createSession(() => root.performance && root.performance.now ? root.performance.now() : Date.now());
@@ -221,19 +234,20 @@
       const message = event.data;
       const priorState = session.snapshot().state;
       if (message.type === 'game:complete' && priorState !== 'playing' && priorState !== 'paused') return;
+      const payload = messagePayload(message);
       if (message.type === 'game:started') {
         completionRecorded = false;
         if (statusNode) statusNode.textContent = 'Current run is in memory. A completed score can save in this browser only; no XP, Sparks, or global ranking is granted.';
       }
-      session.accept(message.type, message.payload);
+      session.accept(message.type, payload);
       if (message.type === 'game:complete' && !completionRecorded) {
         completionRecorded = true;
-        const score = normalizeScore(message.payload.score);
+        const score = normalizeScore(payload.score);
         const progressionPage = hud.matches && hud.matches('[data-progression-page="game-session"]')
           ? hud : hud.querySelector('[data-progression-page="game-session"]');
         const store = progressionPage && progressionPage.__toadalProgressionStore;
         if (score !== null && store && typeof store.recordLocalScore === 'function') {
-          const result = store.recordLocalScore({ gameId: GAME_ID, score, source: 'website-preview-session' });
+          const result = store.recordLocalScore({ gameId, score, source: 'website-preview-session' });
           if (statusNode) statusNode.textContent = result.ok
             ? 'Completed score saved in this browser only. No XP, Sparks, or global ranking is granted.'
             : 'Run complete; the local score could not be saved. The current score remains visible in this tab.';
@@ -252,5 +266,5 @@
     document.querySelectorAll('[data-player-shell]').forEach(shell => renderPlayer(root, shell));
   }
 
-  return { PROTOCOL, GAME_ID, GAME_NAMES, MESSAGE_TYPES, normalizeScore, formatElapsed, expectedFrame, isTrustedMessage, createSession, boot };
+  return { PROTOCOL, GAME_ID, GAME_NAMES, MESSAGE_TYPES, normalizeScore, formatElapsed, expectedFrame, messagePayload, isTrustedMessage, createSession, boot };
 });

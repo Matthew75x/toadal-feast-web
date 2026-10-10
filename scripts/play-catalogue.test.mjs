@@ -15,10 +15,10 @@ const copy = object => JSON.parse(JSON.stringify(object));
 const rows = games.map(g => ({ id: g.slug, title: g.name, release: g.status, availability: catalogue.classifyGame(g) }));
 const hash = b => createHash('sha256').update(b).digest('hex');
 
-test('actual registry separates one playable preview, one hold and two concepts', () => {
-  assert.deepEqual(rows.map(r => [r.id, r.availability, r.release]), ids.map((id,i) => [id, ['playable','held','concept','concept'][i], 'preview']));
-  assert.equal(games[1].evidence.state, 'QUALIFIED_STAGING_PREVIEW_AVAILABLE');
-  assert.equal(catalogue.classifyGame(games[1]), 'held', 'historical package evidence never defeats the explicit website hold');
+test('actual registry separates two playable previews from two concepts', () => {
+  assert.deepEqual(rows.map(r => [r.id, r.availability, r.release]), ids.map((id,i) => [id, ['playable','playable','concept','concept'][i], 'preview']));
+  assert.equal(games[1].evidence.state, 'STAGED_PREVIEW_PENDING_SITE_QA');
+  assert.equal(catalogue.classifyGame(games[1]), 'playable', 'the explicit website preview configuration is runnable while release status stays preview');
 });
 test('release state and playability are independent', () => {
   const g=copy(games[0]);g.status='public';g.web.browserCartridge.publicState='PUBLIC';
@@ -51,9 +51,9 @@ test('query filtering is case/accent-insensitive title token matching, not arbit
   assert.equal(catalogue.catalogueView(rows,{q:'non-transferable'}).rows.length,0);
 });
 test('availability facets compose with search and release status',()=>{
-  assert.deepEqual(catalogue.catalogueView(rows).counts,{all:4,playable:1,held:1,concept:2,unavailable:0});
+  assert.deepEqual(catalogue.catalogueView(rows).counts,{all:4,playable:2,held:0,concept:2,unavailable:0});
   assert.deepEqual(catalogue.catalogueView(rows,{q:'toadal'}).counts,{all:1,playable:0,held:0,concept:1,unavailable:0});
-  assert.equal(catalogue.catalogueView(rows,{availability:'held'}).rows[0].id,'claw-feed-gulper');
+  assert.equal(catalogue.catalogueView([{...rows[1],availability:'held'}],{availability:'held'}).rows[0].id,'claw-feed-gulper');
   assert.equal(catalogue.catalogueView(rows,{availability:'playable',release:'public'}).rows.length,0);
   assert.deepEqual(catalogue.catalogueView(rows,{availability:'concept'}).releaseCounts,{all:2,preview:2,public:0});
 });
@@ -95,7 +95,9 @@ test('current native projection matches exact game records, not manually repeate
 });
 function fixture(t){
   const root=fs.mkdtempSync(path.join(os.tmpdir(),'toadal-catalogue-test-'));
-  const files=['pages/play.json','pages/game-wicked-bites.json','pages/player-wicked-bites.json','reference/public/games/wicked-bites/index.html',...ids.map(id=>'games/'+id+'.json')];
+  const files=['pages/play.json',...ids.map(id=>'games/'+id+'.json'),...['wicked-bites','claw-feed-gulper'].flatMap(id=>[
+    'pages/game-'+id+'.json','pages/player-'+id+'.json','reference/public/games/'+id+'/index.html'
+  ])];
   for(const rel of files){fs.mkdirSync(path.dirname(path.join(root,rel)),{recursive:true});fs.copyFileSync(path.join(project,rel),path.join(root,rel));}
   t.after(()=>fs.rmSync(root,{recursive:true,force:true}));return root;
 }
@@ -118,7 +120,7 @@ test('missing connected artifact refuses a playable label rather than trusting h
 test('unknown publication source requires explicit review, not silent admission',t=>{
   const root=fixture(t),f=path.join(root,'games/claw-feed-gulper.json'),g=read(f);g.status='hidden';fs.writeFileSync(f,JSON.stringify(g));assert.throws(()=>synchronize(root,false),/publication state/);
 });
-test('native authoring retains detail destinations, has no extra game launch or injected raw HTML UI',()=>{
+test('native catalogue cards retain detail destinations without launching games directly',()=>{
   const page=read(path.join(project,'pages/play.json'));const list=[...components(page)];
   const controls=list.filter(n=>n.id.startsWith('component.play.catalogue.'));assert.ok(controls.length>30);assert.ok(controls.every(n=>n.props.authoringVersion===1&&n.type!=='core.rich-text'));
   const cards=list.filter(n=>n.props?.attributes?.['data-game-id']);

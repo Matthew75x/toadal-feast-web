@@ -13,6 +13,9 @@ const advanced = JSON.parse(read(path.join('collections', 'advanced-code.json'))
 const symbols = JSON.parse(read(path.join('collections', 'symbols.json')));
 const assets = JSON.parse(read(path.join('assets', 'index.json')));
 const guestRuntime = read(path.join('reference', 'assets', 'js', 'guest-progression.js'));
+const homeInteractionRuntime = read(path.join('reference', 'assets', 'js', 'home-interactive-discovery.js'));
+const gulperRuntime = read(path.join('reference', 'public', 'games', 'claw-feed-gulper', 'runtime.bundle.js'));
+const gulperCss = read(path.join('reference', 'public', 'games', 'claw-feed-gulper', 'styles.css'));
 const canonicalAssetManifest = JSON.parse(fs.readFileSync(path.join(repo, 'docs', 'implementation', 'CANONICAL_ASSET_SOURCE_MANIFEST.json'), 'utf8'));
 const sha256File = (abs) => crypto.createHash('sha256').update(fs.readFileSync(abs)).digest('hex');
 const gameIndex = JSON.parse(read(path.join('games', 'index.json')));
@@ -71,27 +74,23 @@ check('canonical-toadal', /assets\/images\/characters\/toadal-portrait\.webp/i.t
 check('hero-canonical-toadal-victory', /assets\/images\/characters\/toadal-victory\.png/i.test(componentHtml('component.home.hero')) &&
   assets.assets?.some(asset => asset.id === 'asset.home.character.toadal-victory' && asset.tags?.includes('canonical')),
   'The hero uses the canonical large Toadal victory pose rather than a generated mascot substitute.');
-check('branded-header-crown', /brand-crown\.svg/i.test(css) &&
-  assets.assets?.some(asset => asset.id === 'asset.brand.crown'),
-  'The shared shell has an explicit canonical brand-crown accent registered in the asset graph.');
+const websiteChromeCss = css + '\n' + (advanced.css || '');
+check('crown-free-website-shell', !/brand-crown\.svg|\.site-brand::before\b|\.feast-pass-panel::after\b|content\s*:\s*["'][♛♕♔♚👑]/i.test(websiteChromeCss) &&
+  !assets.assets?.some(asset => asset.id === 'asset.brand.crown'),
+  'The website header and shared page styling contain no standalone crown icon.');
+check('crown-free-interactive-ui', !/[♛♕♔♚👑]/u.test(websiteChromeCss + gulperRuntime + gulperCss) &&
+  !/class\s*=\s*["']crown["']|\.mastery-step\s+\.crown\b/i.test(gulperRuntime + gulperCss),
+  'Website and embedded-game interface code contain no standalone crown glyph or badge.');
 const assetById = new Map((assets.assets || []).map(asset => [asset.id, asset]));
 const canonicalByRole = new Map((canonicalAssetManifest.required || []).map(asset => [asset.role, asset]));
 const victoryAsset = assetById.get('asset.home.character.toadal-victory');
 const victoryAuthority = canonicalByRole.get('toadalVictory');
-const crownAsset = assetById.get('asset.brand.crown');
-const crownAuthority = canonicalByRole.get('brandCrown');
 const victoryActualSha = victoryAsset ? sha256File(path.join(project, victoryAsset.source)) : null;
-const crownActualSha = crownAsset ? sha256File(path.join(project, crownAsset.source)) : null;
 check('hero-toadal-hash-chain', !!victoryAsset && !!victoryAuthority &&
   victoryActualSha === victoryAsset.sha256 &&
   victoryActualSha === victoryAsset.referenceSha256 &&
   victoryActualSha === victoryAuthority.sha256,
   'Hero Toadal bytes match the website asset index and canonical game-asset authority.');
-check('brand-crown-hash-chain', !!crownAsset && !!crownAuthority &&
-  crownActualSha === crownAsset.sha256 &&
-  crownActualSha === crownAsset.referenceSha256 &&
-  crownActualSha === crownAuthority.sha256,
-  'Brand-crown bytes match the website asset index and canonical game-asset authority.');
 const homeAdvancedCss = advanced.css || '';
 const homeGridOverride = homeAdvancedCss.slice(homeAdvancedCss.indexOf('/* Home desktop grid: 12-column numeric placement. */'));
 const gameColumnPlacement = homeGridOverride.match(/main > #browser-games-column\s*\{([^}]*)\}/);
@@ -135,6 +134,13 @@ check('home-feast-pass-runtime', /data-progression-page/.test(componentHtml('com
 const homePassStats = [...componentHtml('component.home.feast-pass').matchAll(/<dd\b[^>]*\bdata-progression-stat=["']([^"']+)["'][^>]*>(.*?)<\/dd>/g)];
 check('home-feast-pass-no-fake-values', homePassStats.length === 4 && homePassStats.every(([, , value]) => value === '—'),
   'Progress numbers remain placeholders until the real local runtime hydrates them.');
+const explorerPassportHtml = componentHtml('component.home.explorer-passport');
+check('home-explorer-passport', /data-home-explorer-passport/.test(explorerPassportHtml) &&
+  /data-home-passport-summary/.test(explorerPassportHtml) && /data-home-passport-list/.test(explorerPassportHtml) &&
+  /data-home-passport-link/.test(explorerPassportHtml) && /feast-pass\/quests\//.test(explorerPassportHtml) &&
+  /getSnapshot\(\)/.test(homeInteractionRuntime) && /group === 'exploration'/.test(homeInteractionRuntime) &&
+  !/passport[^\n]{0,120}localStorage\.setItem/i.test(homeInteractionRuntime),
+  'The compact Home Explorer Passport reads the existing exploration quests and links to their current claim board without owning progression storage.');
 check('home-daily-checkin-runtime', /data-progression-page/.test(componentHtml('component.home.today')) &&
   /data-daily-reward-status/.test(componentHtml('component.home.today')) &&
   /data-claim-daily/.test(componentHtml('component.home.today')) && /claimDaily\(/.test(guestRuntime),
@@ -171,18 +177,22 @@ check('mobile-breakpoint', /@media\s*\(\s*max-width\s*:\s*(?:420|430)px\s*\)/i.t
 const indexedGames = gameIndex.games || [];
 const gameRecords = indexedGames.map(entry => JSON.parse(read(entry.file)));
 const stagingRoutes = gameRecords.filter(game => game.web?.enabled === true);
-const stagingGame = stagingRoutes.length === 1 ? stagingRoutes[0] : null;
 const registeredPlayerRoutes = new Set((pagesIndex.pages || []).map(page => page.route));
+const expectedStagingEntries = new Map([
+  ['wicked-bites', '/public/games/wicked-bites/index.html'],
+  ['claw-feed-gulper', '/public/games/claw-feed-gulper/index.html']
+]);
+const stagedGames = new Map(stagingRoutes.map(game => [game.slug, game]));
 const previewOnly = indexedGames.length === 4 && gameRecords.every(game =>
   game.status === 'preview' && game.web?.browserCartridge?.publicState === 'PREVIEW' && !game.web?.launchUrl && !game.web?.buildUrl) &&
-  stagingGame?.slug === 'wicked-bites' &&
-  stagingGame.web?.browserCartridge?.entry === '/public/games/wicked-bites/index.html' &&
-  registeredPlayerRoutes.has('/player/wicked-bites/') &&
-  gameRecords.filter(game => game !== stagingGame).every(game => game.web?.enabled === false);
+  stagingRoutes.length === expectedStagingEntries.size &&
+  [...expectedStagingEntries].every(([slug, entry]) => stagedGames.get(slug)?.web?.browserCartridge?.entry === entry &&
+    registeredPlayerRoutes.has(`/player/${slug}/`)) &&
+  gameRecords.filter(game => !expectedStagingEntries.has(game.slug)).every(game => game.web?.enabled === false);
 check('preview-truth', previewOnly && component('component.home.games')?.props?.children?.length === 4 &&
   /Public games[\s\S]*?<span\b[^>]*>0<\/span>/i.test(componentHtml('component.home.games-intro')) &&
-  /Wicked Bites is a session-only browser preview/i.test(componentHtml('component.home.games-intro')),
-  'All four listings stay PREVIEW with zero public games; exactly one isolated Wicked Bites staging route is distinguished from held/concept entries.');
+  /Wicked Bites and CLAW: Feed Gulper are sandboxed browser previews/i.test(componentHtml('component.home.games-intro')),
+  'All four listings stay PREVIEW with zero public games; Wicked Bites and CLAW: Feed Gulper have isolated staging routes while two listings remain concepts.');
 check('preview-headline-truth', previewOnly
   ? /Play the Feast World for Free\./.test(plainText(componentHtml('component.home.hero')))
   : /Explore the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),

@@ -60,7 +60,7 @@
               "className": "home-hero",
               "attributes": {
                 "data-companion-context": "hero",
-                "data-companion-copy": "The Play directory is ready. Wicked Bites opens an isolated staging preview; nothing is marked PUBLIC.",
+                "data-companion-copy": "The Play directory has isolated browser previews of Wicked Bites and CLAW: Feed Gulper. Neither is a public release.",
                 "data-companion-reaction": "welcome"
               },
               "style": "",
@@ -237,8 +237,8 @@
                                 "className": "home-hero__truth",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Wicked Bites opens an isolated, session-only browser preview on staging.",
-                                "text": "Try Wicked Bites, a session-only browser preview. More games are on the way."
+                                "layerName": "Wicked Bites and CLAW: Feed Gulper are isolated browser previews, not public releases.",
+                                "text": "Try Wicked Bites or CLAW: Feed Gulper in isolated browser previews. Neither is a public release."
                               }
                             },
                             {
@@ -262,7 +262,7 @@
                                       "className": "button-link button-link--primary",
                                       "attributes": {
                                         "data-companion-action": "true",
-                                        "data-companion-action-copy": "Wicked Bites opens an isolated staging preview. Other listings are clearly marked as held or concept-only; none is PUBLIC."
+                                        "data-companion-action-copy": "Wicked Bites and CLAW: Feed Gulper open as isolated previews. The other two listings are concepts; none is PUBLIC."
                                       },
                                       "style": "",
                                       "layerName": "Explore browser games →",
@@ -549,6 +549,80 @@
                       }
                     ]
                   }
+                },
+                {
+                  "id": "component.home.hero.home-food-floats",
+                  "type": "layout.container",
+                  "props": {
+                    "authoringVersion": 1,
+                    "tag": "div",
+                    "className": "home-food-floats",
+                    "attributes": {
+                      "aria-hidden": "true"
+                    },
+                    "style": "",
+                    "layerName": "Slow floating approved candy art; decorative only",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.home.hero.home-food-float-blue",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "home-food-float home-food-float--blue",
+                          "attributes": {
+                            "width": "40",
+                            "height": "40",
+                            "loading": "lazy",
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "Blue candy · decorative Home float",
+                          "asset": "asset.home.interaction.candy-blue",
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "id": "component.home.hero.home-food-float-green",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "home-food-float home-food-float--green",
+                          "attributes": {
+                            "width": "40",
+                            "height": "40",
+                            "loading": "lazy",
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "Green candy · decorative Home float",
+                          "asset": "asset.home.interaction.candy-green",
+                          "alt": ""
+                        }
+                      },
+                      {
+                        "id": "component.home.hero.home-food-float-purple",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "home-food-float home-food-float--purple",
+                          "attributes": {
+                            "width": "40",
+                            "height": "40",
+                            "loading": "lazy",
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "Purple candy · decorative Home float",
+                          "asset": "asset.home.interaction.candy-purple",
+                          "alt": ""
+                        }
+                      }
+                    ]
+                  }
                 }
               ]
             }
@@ -593,7 +667,7 @@
                     "className": "home-section-inner",
                     "attributes": {
                       "data-companion-context": "browser-games",
-                      "data-companion-copy": "Wicked Bites is an isolated staging preview. CLAW stays launch-held; the other listings are concepts.",
+                      "data-companion-copy": "Wicked Bites and CLAW: Feed Gulper are playable staging previews; the other two listings are concepts.",
                       "data-companion-reaction": "excited"
                     },
                     "style": "",
@@ -635,8 +709,8 @@
                           "className": "section-lede",
                           "attributes": {},
                           "style": "",
-                          "layerName": "Four browser listings lead to the Play directory. Wicked Bites runs as a",
-                          "text": "Wicked Bites is a session-only browser preview. CLAW is not playable yet; two games are concepts. No public releases yet."
+                          "layerName": "Wicked Bites and CLAW: Feed Gulper are sandboxed browser previews; two games are concepts.",
+                          "text": "Wicked Bites and CLAW: Feed Gulper are sandboxed browser previews; two games are concepts. No browser game is a public release yet."
                         }
                       },
                       {
@@ -804,7 +878,7 @@
                           "className": "button-link button-link--secondary home-play-directory-link",
                           "attributes": {
                             "data-companion-action": "true",
-                            "data-companion-action-copy": "The Play directory separates one staging run from launch-held and concept-only entries."
+                            "data-companion-action-copy": "The Play directory has two staging previews and two concept listings. No browser game has a public release."
                           },
                           "style": "",
                           "layerName": "See all browser previews →",
@@ -857,7 +931,7 @@
                           },
                           "style": "",
                           "layerName": "browser games empty",
-                          "text": "No public browser releases are available yet. Try the Wicked Bites preview, or explore other games that are not playable yet."
+                          "text": "Game listings are unavailable right now. You can still explore the Feast World."
                         }
                       }
                     ]
@@ -1436,7 +1510,7 @@
                                 "style": "",
                                 "layerName": "Actual gameplay image · choose capture and framing",
                                 "asset": "asset.home.game.claw-feed-gulper-preview",
-                                "alt": "CLAW: Feed Gulper 2.5.1 genuine staging gameplay capture; browser launch remains held.",
+                                "alt": "CLAW: Feed Gulper 2.5.1 gameplay capture from the isolated browser preview.",
                                 "fit": "contain",
                                 "focalX": 50,
                                 "focalY": 50,
@@ -1469,8 +1543,8 @@
                           "className": "",
                           "attributes": {},
                           "style": "",
-                          "layerName": "CLAW: Feed Gulper description",
-                          "text": "Meet the hungry Gulper. Gameplay preview only; browser play is not available yet."
+                          "layerName": "Try CLAW in a sandboxed browser preview. Saves stay in this browser; account sync and global ran",
+                          "text": "Try CLAW in a sandboxed browser preview. Saves stay in this browser; account sync and global rankings are off."
                         }
                       },
                       {
@@ -1509,8 +1583,7 @@
                                 "attributes": {
                                   "type": "button",
                                   "data-game-preview-toggle": "",
-                                  "aria-pressed": "false",
-                                  "disabled": true
+                                  "aria-pressed": "false"
                                 },
                                 "style": "",
                                 "layerName": "Gameplay preview toggle",
@@ -1526,8 +1599,8 @@
                                         "data-game-preview-show-label": ""
                                       },
                                       "style": "",
-                                      "layerName": "Preview button label",
-                                      "text": "Preview gameplay"
+                                      "layerName": "Gameplay screenshot",
+                                      "text": "Gameplay screenshot"
                                     }
                                   },
                                   {
@@ -1542,8 +1615,8 @@
                                         "hidden": true
                                       },
                                       "style": "",
-                                      "layerName": "Cover button label",
-                                      "text": "Show cover"
+                                      "layerName": "Show title card",
+                                      "text": "Show title card"
                                     }
                                   }
                                 ]
@@ -1555,15 +1628,32 @@
                               "props": {
                                 "authoringVersion": 1,
                                 "tag": "a",
-                                "className": "",
+                                "className": "button-link button-link--primary",
                                 "attributes": {
                                   "data-game-preview-link": "",
-                                  "aria-label": "Explore CLAW: Feed Gulper preview"
+                                  "aria-label": "Play CLAW: Feed Gulper browser preview"
                                 },
                                 "style": "",
-                                "layerName": "Game details link",
+                                "layerName": "Play browser preview →",
+                                "href": "/player/claw-feed-gulper/",
+                                "label": "Play browser preview →"
+                              }
+                            },
+                            {
+                              "id": "component.home.game.claw-feed-gulper.preview.details",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "aria-label": "View CLAW: Feed Gulper game details",
+                                  "data-game-preview-details": ""
+                                },
+                                "style": "",
+                                "layerName": "Game details →",
                                 "href": "/games/claw-feed-gulper/",
-                                "label": "View game details →"
+                                "label": "Game details →"
                               }
                             }
                           ]
@@ -1582,8 +1672,8 @@
                             "aria-live": "polite"
                           },
                           "style": "",
-                          "layerName": "Preview image availability",
-                          "text": ""
+                          "layerName": "Preview only · No account sync.",
+                          "text": "Preview only · No account sync."
                         }
                       }
                     ]
@@ -2145,6 +2235,87 @@
                                     }
                                   },
                                   {
+                                    "id": "component.home.explorer-passport",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "section",
+                                      "className": "home-explorer-passport",
+                                      "attributes": {
+                                        "data-home-explorer-passport": "",
+                                        "aria-labelledby": "home-explorer-passport-title"
+                                      },
+                                      "layerName": "Browser-local Explorer Passport",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.home.explorer-passport.heading",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h3",
+                                            "className": "home-explorer-passport__title",
+                                            "attributes": {
+                                              "id": "home-explorer-passport-title"
+                                            },
+                                            "style": "",
+                                            "layerName": "Explorer Passport",
+                                            "text": "Explorer Passport"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.explorer-passport.summary",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "home-explorer-passport__summary",
+                                            "attributes": {
+                                              "data-home-passport-summary": "",
+                                              "role": "status",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "Browser-local exploration status",
+                                            "text": "Explorer progress loads from this browser."
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.explorer-passport.activities",
+                                          "type": "layout.container",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "ol",
+                                            "className": "home-explorer-passport__activities",
+                                            "attributes": {
+                                              "data-home-passport-list": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "Existing exploration activities",
+                                            "mode": "inherit",
+                                            "children": []
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.explorer-passport.link",
+                                          "type": "core.button",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "a",
+                                            "className": "button-link button-link--secondary home-explorer-passport__link",
+                                            "attributes": {
+                                              "data-home-passport-link": ""
+                                            },
+                                            "style": "",
+                                            "layerName": "Open quest board",
+                                            "label": "Open quest board",
+                                            "href": "/feast-pass/quests/"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
                                     "id": "component.mutf2je0.4jafst",
                                     "type": "core.text",
                                     "props": {
@@ -2661,69 +2832,12 @@
                                 "tag": "div",
                                 "className": "genie-row",
                                 "attributes": {
-                                  "aria-label": "Feast Genie character artwork"
+                                  "aria-label": "Explore Feast Genies character artwork"
                                 },
                                 "style": "",
                                 "layerName": "Feast Genies",
                                 "mode": "inherit",
                                 "children": [
-                                  {
-                                    "id": "component.home.discovery.42f6259cf0b3.img",
-                                    "type": "core.image",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "img",
-                                      "className": "",
-                                      "attributes": {
-                                        "width": "256",
-                                        "height": "256",
-                                        "loading": "lazy",
-                                        "decoding": "async"
-                                      },
-                                      "style": "",
-                                      "layerName": "img",
-                                      "asset": "asset.home.genie.sweet-art",
-                                      "alt": ""
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.discovery.1b2bd77628b0.img",
-                                    "type": "core.image",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "img",
-                                      "className": "",
-                                      "attributes": {
-                                        "width": "256",
-                                        "height": "256",
-                                        "loading": "lazy",
-                                        "decoding": "async"
-                                      },
-                                      "style": "",
-                                      "layerName": "img",
-                                      "asset": "asset.home.genie.savoury-art",
-                                      "alt": ""
-                                    }
-                                  },
-                                  {
-                                    "id": "component.home.discovery.b56cb1fbcbdf.img",
-                                    "type": "core.image",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "img",
-                                      "className": "",
-                                      "attributes": {
-                                        "width": "256",
-                                        "height": "256",
-                                        "loading": "lazy",
-                                        "decoding": "async"
-                                      },
-                                      "style": "",
-                                      "layerName": "img",
-                                      "asset": "asset.home.genie.fruity-art",
-                                      "alt": ""
-                                    }
-                                  },
                                   {
                                     "id": "component.home.discovery.e56a3a4e9497.span",
                                     "type": "core.text",
@@ -2735,6 +2849,213 @@
                                       "style": "",
                                       "layerName": "Feast Genies",
                                       "text": "Feast Genies"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.discovery.genie-sweet-card",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "genie-discovery-card",
+                                      "attributes": {
+                                        "role": "button",
+                                        "tabindex": "0",
+                                        "data-discover-character": "genie-sweet",
+                                        "aria-label": "Discover Sweet Genie artwork",
+                                        "aria-describedby": "home-genie-sweet-discovery-status"
+                                      },
+                                      "style": "",
+                                      "layerName": "Sweet Genie artwork discovery",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.home.discovery.42f6259cf0b3.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "genie-discovery-art",
+                                            "attributes": {
+                                              "width": "256",
+                                              "height": "256",
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "img",
+                                            "asset": "asset.home.genie.sweet-art",
+                                            "alt": "Sweet Genie approved character artwork"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.discovery.genie-sweet-name",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "genie-discovery-name",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Sweet Genie",
+                                            "text": "Sweet Genie"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.discovery.genie-sweet-status",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "small",
+                                            "className": "genie-discovery-status",
+                                            "attributes": {
+                                              "id": "home-genie-sweet-discovery-status",
+                                              "data-character-discovery-status": "genie-sweet"
+                                            },
+                                            "style": "",
+                                            "layerName": "Sweet Genie discovery status",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.discovery.genie-savoury-card",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "genie-discovery-card",
+                                      "attributes": {
+                                        "role": "button",
+                                        "tabindex": "0",
+                                        "data-discover-character": "genie-savoury",
+                                        "aria-label": "Discover Savoury Genie artwork",
+                                        "aria-describedby": "home-genie-savoury-discovery-status"
+                                      },
+                                      "style": "",
+                                      "layerName": "Savoury Genie artwork discovery",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.home.discovery.1b2bd77628b0.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "genie-discovery-art",
+                                            "attributes": {
+                                              "width": "256",
+                                              "height": "256",
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "img",
+                                            "asset": "asset.home.genie.savoury-art",
+                                            "alt": "Savoury Genie approved character artwork"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.discovery.genie-savoury-name",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "genie-discovery-name",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Savoury Genie",
+                                            "text": "Savoury Genie"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.discovery.genie-savoury-status",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "small",
+                                            "className": "genie-discovery-status",
+                                            "attributes": {
+                                              "id": "home-genie-savoury-discovery-status",
+                                              "data-character-discovery-status": "genie-savoury"
+                                            },
+                                            "style": "",
+                                            "layerName": "Savoury Genie discovery status",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.discovery.genie-fruity-card",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "genie-discovery-card",
+                                      "attributes": {
+                                        "role": "button",
+                                        "tabindex": "0",
+                                        "data-discover-character": "genie-fruity",
+                                        "aria-label": "Discover Fruity Genie artwork",
+                                        "aria-describedby": "home-genie-fruity-discovery-status"
+                                      },
+                                      "style": "",
+                                      "layerName": "Fruity Genie artwork discovery",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.home.discovery.b56cb1fbcbdf.img",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "genie-discovery-art",
+                                            "attributes": {
+                                              "width": "256",
+                                              "height": "256",
+                                              "loading": "lazy",
+                                              "decoding": "async"
+                                            },
+                                            "style": "",
+                                            "layerName": "img",
+                                            "asset": "asset.home.genie.fruity-art",
+                                            "alt": "Fruity Genie approved character artwork"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.discovery.genie-fruity-name",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "genie-discovery-name",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Fruity Genie",
+                                            "text": "Fruity Genie"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.home.discovery.genie-fruity-status",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "small",
+                                            "className": "genie-discovery-status",
+                                            "attributes": {
+                                              "id": "home-genie-fruity-discovery-status",
+                                              "data-character-discovery-status": "genie-fruity"
+                                            },
+                                            "style": "",
+                                            "layerName": "Fruity Genie discovery status",
+                                            "text": "Not discovered in this browser"
+                                          }
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -3836,15 +4157,15 @@
                     "runtimeCodeResources": [
                       {
                         "url": "/assets/js/home-interactive-discovery.js",
-                        "sha256": "6ad7d11a5a2f64c8c36023b4dba2c8d08551854971c01d7fa614ce61d053ad49"
+                        "sha256": "1055e4942c7481ac0ee5dd97b60a8a56e4cf6aec7b1b5dbcf2362c5e921c8658"
                       },
                       {
                         "url": "/assets/js/guest-progression.js",
-                        "sha256": "5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338"
+                        "sha256": "baa82c9aa41b024f9b6dff58beade76c9f6e3625e6dcfffd28b81443ecf9f352"
                       },
                       {
                         "url": "/assets/js/manifest-shell.js",
-                        "sha256": "43726f9cf37f0a4beaff81c969d3c304c9f54bec07af9bae88bfbc30b6df7f8c"
+                        "sha256": "dcae91f1c6681ad29179ca56e2fa9d8b9d93126ff3445cfc348c00e1d5995280"
                       },
                       {
                         "url": "/assets/js/play-catalogue.js",
@@ -3928,7 +4249,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "THE FLAGSHIP ADVENTURE",
-                                "text": "THE FLAGSHIP ADVENTURE"
+                                "text": "THE FLAGSHIP ADVENTURE · COMING SOON"
                               }
                             },
                             {
@@ -4250,7 +4571,7 @@
                                 },
                                 "style": "",
                                 "layerName": "app links status",
-                                "text": "Store downloads are not available yet."
+                                "text": "Coming soon. Store downloads are not available yet."
                               }
                             }
                           ]
@@ -4706,8 +5027,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Four listings remain PREVIEW. Wicked Bites opens only as an isolated sta",
-                                "text": "Wicked Bites is in preview. CLAW and concept games aren’t playable yet."
+                                "layerName": "Four listings remain PREVIEW. Wicked Bites and CLAW: Feed Gulper are playable isolated browser previews.",
+                                "text": "Wicked Bites and CLAW: Feed Gulper are playable browser previews. The other two listings are concepts; no browser game is a public release."
                               }
                             }
                           ]
@@ -5070,7 +5391,7 @@
                 "aria-label": "Toadal contextual helper"
               },
               "style": "",
-              "layerName": "TOADAL SAYSThe Play directory is ready. Wicked Bites opens an isolated s",
+              "layerName": "TOADAL SAYS · Try Wicked Bites or CLAW: Feed Gulper in isolated browser previews.",
               "mode": "inherit",
               "children": [
                 {
@@ -5114,8 +5435,8 @@
                             "aria-atomic": "true"
                           },
                           "style": "",
-                          "layerName": "The Play directory is ready. Wicked Bites opens an isolated staging prev",
-                          "text": "Try the Wicked Bites browser preview, or discover the world. More games are on the way."
+                          "layerName": "The Play directory has isolated previews for Wicked Bites and CLAW: Feed Gulper.",
+                          "text": "Try Wicked Bites or CLAW: Feed Gulper in a browser preview, or discover the world."
                         }
                       }
                     ]

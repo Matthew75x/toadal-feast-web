@@ -1,0 +1,104 @@
+{
+  "schema": "toadal-feast.gulper-player-browser-qa.v1",
+  "status": "PASS",
+  "observedDate": "2026-10-10",
+  "origin": "http://127.0.0.1:8185/toadal-feast-web/",
+  "checks": {
+    "desktop": "PASS",
+    "mobile": "PASS",
+    "navigation": "PASS",
+    "buildIdentity": "PASS",
+    "crownAbsence": "PASS",
+    "canonicalCharacterArtwork": "PASS"
+  },
+  "details": {
+    "buildIdentity": {
+      "title": "CLAW: Feed Gulper",
+      "ready": "complete",
+      "crownGlyphInGame": false,
+      "buildTag": "MASTERY EDITION · v2.5.1",
+      "creditsBuild": "STAR Gulper GAME CLAW feeding arcade MODES 30-level Campaign · 6 Challenge trials · REAL GAMER · LONG DROP · Daily · Endless BUILD Mastery Edition 2.5.1 · source 91f9b600b5d0"
+    },
+    "desktop": {
+      "route": "/toadal-feast-web/player/claw-feed-gulper/",
+      "title": "CLAW: Feed Gulper browser preview · TOADAL FEAST",
+      "robots": "noindex,nofollow",
+      "iframeSrc": "/toadal-feast-web/public/games/claw-feed-gulper/index.html",
+      "sandbox": "allow-scripts allow-pointer-lock",
+      "iframeVisible": true,
+      "horizontalOverflow": false,
+      "crownGlyphInShell": false,
+      "hrefBack": "/toadal-feast-web/games/claw-feed-gulper/",
+      "gameResponses": [
+        200
+      ],
+      "gameFrameState": {
+        "title": "CLAW: Feed Gulper",
+        "ready": "complete",
+        "crownGlyphInGame": false,
+        "buildTag": "MASTERY EDITION · v2.5.1",
+        "creditsBuild": "STAR Gulper GAME CLAW feeding arcade MODES 30-level Campaign · 6 Challenge trials · REAL GAMER · LONG DROP · Daily · Endless BUILD Mastery Edition 2.5.1 · source 91f9b600b5d0"
+      },
+      "pageErrors": []
+    },
+    "navigation": {
+      "playToDetails": "/toadal-feast-web/games/claw-feed-gulper/",
+      "detailsToPlayer": "/toadal-feast-web/player/claw-feed-gulper/",
+      "playerBackToDetails": "/toadal-feast-web/games/claw-feed-gulper/"
+    },
+    "mobile": {
+      "viewport": 390,
+      "documentWidth": 390,
+      "iframeWidth": 366,
+      "iframeWithinViewport": true,
+      "title": "CLAW: Feed Gulper browser preview · TOADAL FEAST",
+      "iframeSrc": "/toadal-feast-web/public/games/claw-feed-gulper/index.html",
+      "crownGlyphInShell": false,
+      "compact": {
+        "viewport": 320,
+        "documentWidth": 320
+      },
+      "pageErrors": []
+    },
+    "crownAbsence": {
+      "standaloneCrownAssetAbsent": true,
+      "crownGlyphInPlayerShell": false,
+      "noCrownGlyphsInPlayerOrGame": true,
+      "GulperSourceGlyphMatches": [],
+      "gameFrame": {
+        "title": "CLAW: Feed Gulper",
+        "ready": "complete",
+        "crownGlyphInGame": false,
+        "buildTag": "MASTERY EDITION · v2.5.1",
+        "creditsBuild": "STAR Gulper GAME CLAW feeding arcade MODES 30-level Campaign · 6 Challenge trials · REAL GAMER · LONG DROP · Daily · Endless BUILD Mastery Edition 2.5.1 · source 91f9b600b5d0"
+      }
+    },
+    "canonicalCharacterArtwork": {
+      "selectedArtwork": {
+        "src": "http://127.0.0.1:8185/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+        "naturalWidth": 611,
+        "naturalHeight": 640,
+        "alt": "Toadal, the crowned golden Feast hero wearing a red scarf",
+        "visible": true
+      },
+      "authoritySource": "reference/assets/images/characters/toadal-victory.webp",
+      "authoritySha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
+      "sourceArtworkSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
+      "exportedArtworkSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+    }
+  },
+  "screenshots": [
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/desktop-gulper-player.png",
+      "sha256": "587b44895e7ccdb4d6b34497526fdeab589b3df40bcbe7bd08712828be60aa67"
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/mobile-gulper-player-390.png",
+      "sha256": "ece402e7467a7eb64fdaef78bffc0282c8adea03725a9bab71623d2d390651f5"
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/desktop-toadal-character-art.png",
+      "sha256": "717d4413ab67dc047e1146866fb3f9a8807ad354cae063827e6db490826a24bf"
+    }
+  ]
+}

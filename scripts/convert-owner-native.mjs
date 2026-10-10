@@ -16,9 +16,9 @@ export const RUNTIME_EXCEPTIONS = Object.freeze([
   Object.freeze({ route: '/', componentId: 'component.home.interactive-discovery', kind: 'external-script', maxBytes: 2048, policy: freezePolicy({
     id: 'site-global-home-discovery-loader-v1', mode: 'global-loader',
     codeResources: [
-      { url: '/assets/js/home-interactive-discovery.js', source: 'assets/js/home-interactive-discovery.js', sha256: '6ad7d11a5a2f64c8c36023b4dba2c8d08551854971c01d7fa614ce61d053ad49' },
-      { url: '/assets/js/guest-progression.js', source: 'assets/js/guest-progression.js', sha256: '5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338' },
-      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: '43726f9cf37f0a4beaff81c969d3c304c9f54bec07af9bae88bfbc30b6df7f8c' },
+      { url: '/assets/js/home-interactive-discovery.js', source: 'assets/js/home-interactive-discovery.js', sha256: '1055e4942c7481ac0ee5dd97b60a8a56e4cf6aec7b1b5dbcf2362c5e921c8658' },
+      { url: '/assets/js/guest-progression.js', source: 'assets/js/guest-progression.js', sha256: 'baa82c9aa41b024f9b6dff58beade76c9f6e3625e6dcfffd28b81443ecf9f352' },
+      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: 'dcae91f1c6681ad29179ca56e2fa9d8b9d93126ff3445cfc348c00e1d5995280' },
       { url: '/assets/js/play-catalogue.js', source: 'assets/js/play-catalogue.js', sha256: '347c0ee01761571ca583cb199d9ba989f169a7ff97fdaea874374c4054b92c39' },
     ],
   }) }),
@@ -30,8 +30,12 @@ export const RUNTIME_EXCEPTIONS = Object.freeze([
     id: 'stories-publishing-dynamic-image-v1', mode: 'dynamic-image-slot', selector: '[data-reader-page]', sourceMustBeAbsent: true,
     codeResources: [
       { url: '/assets/js/stories-publishing.js', source: 'assets/js/stories-publishing.js', sha256: 'b8f1b2b960fdaafc4b29cb4919693e66dfe92f88dda9cc5fe33b8923579733f3' },
-      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: '43726f9cf37f0a4beaff81c969d3c304c9f54bec07af9bae88bfbc30b6df7f8c' },
+      { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: 'dcae91f1c6681ad29179ca56e2fa9d8b9d93126ff3445cfc348c00e1d5995280' },
     ],
+  }) }),
+  Object.freeze({ route: '/player/claw-feed-gulper/', componentId: 'component.player-claw-feed-gulper.muogc5wx.80e0fg', kind: 'isolated-frame', maxBytes: 2048, policy: freezePolicy({
+    id: 'isolated-claw-feed-gulper-frame-v1', mode: 'sandboxed-iframe', sandbox: 'allow-scripts allow-pointer-lock', allow: 'fullscreen',
+    codeResources: [{ url: '/public/games/claw-feed-gulper/index.html', source: 'public/games/claw-feed-gulper/index.html', sha256: '762afa5b995ea6cb06392a7a933773256885a989b88fc328a95cc94095656e16' }],
   }) }),
 ]);
 const BOOLEAN_ATTRIBUTES = new Set('allowfullscreen async autofocus autoplay checked controls default defer disabled formnovalidate hidden inert ismap loop multiple muted nomodule novalidate open playsinline readonly required reversed selected'.split(' '));
@@ -210,7 +214,17 @@ function runtimeExceptionFor(node, options = {}) {
     if (rule.route !== options.route || rule.componentId !== options.componentId) return false;
     let matches = false;
     if (rule.kind === 'external-script') matches = node.tag === 'script' && hasExactAttributes(node, ['src', 'defer']) && node.attributes.src === 'assets/js/home-interactive-discovery.js' && node.attributes.defer === true && node.children.length === 0;
-    if (rule.kind === 'isolated-frame') matches = node.tag === 'iframe' && hasExactAttributes(node, ['class', 'data-player-frame', 'src', 'title', 'loading', 'referrerpolicy', 'sandbox', 'allow', 'allowfullscreen']) && node.attributes.class === 'wo002-player-frame' && node.attributes['data-player-frame'] === '' && node.attributes.src === '/public/games/wicked-bites/index.html' && node.attributes.title === 'Wicked Bites browser preview' && node.attributes.loading === 'eager' && node.attributes.referrerpolicy === 'origin' && node.attributes.sandbox === 'allow-scripts allow-pointer-lock' && node.attributes.allow === 'fullscreen' && node.attributes.allowfullscreen === true && node.children.length === 0;
+    if (rule.kind === 'isolated-frame') {
+      const frameTitles = {
+        '/player/wicked-bites/': 'Wicked Bites browser preview',
+        '/player/claw-feed-gulper/': 'CLAW: Feed Gulper browser preview',
+      };
+      matches = node.tag === 'iframe' && hasExactAttributes(node, ['class', 'data-player-frame', 'src', 'title', 'loading', 'referrerpolicy', 'sandbox', 'allow', 'allowfullscreen']) &&
+        node.attributes.class === 'wo002-player-frame' && node.attributes['data-player-frame'] === '' &&
+        node.attributes.src === rule.policy.codeResources[0]?.url && node.attributes.title === frameTitles[rule.route] &&
+        node.attributes.loading === 'eager' && node.attributes.referrerpolicy === 'origin' && node.attributes.sandbox === 'allow-scripts allow-pointer-lock' &&
+        node.attributes.allow === 'fullscreen' && node.attributes.allowfullscreen === true && node.children.length === 0;
+    }
     if (rule.kind === 'dynamic-image') matches = node.tag === 'img' && hasExactAttributes(node, ['data-reader-page', 'alt', 'decoding']) && node.attributes['data-reader-page'] === '' && node.attributes.alt === '' && node.attributes.decoding === 'async' && node.attributes.src === undefined;
     if (!matches || !Number.isInteger(node.endOffset) || !options.html) return false;
     return Buffer.byteLength(options.html.slice(node.offset, node.endOffset), 'utf8') <= rule.maxBytes;

@@ -144,9 +144,74 @@
     const chestButton = document.querySelector('[data-claim-daily]');
     const chestArt = document.querySelector('[data-daily-chest-art]');
     const burstArt = document.querySelector('[data-daily-burst-art]');
+    const genieCards = Array.from(document.querySelectorAll('.genie-row [data-discover-character]'));
+    const passport = document.querySelector('[data-home-explorer-passport]');
+
+    function renderExplorerPassport() {
+      if (!passport) return;
+      const summary = passport.querySelector('[data-home-passport-summary]');
+      const list = passport.querySelector('[data-home-passport-list]');
+      const link = passport.querySelector('[data-home-passport-link]');
+      if (!summary || !list || !link) return;
+      let snapshot;
+      try { snapshot = store.getSnapshot(); } catch (_) { snapshot = null; }
+      const storage = snapshot && snapshot.storage;
+      const readOnly = storage && Array.isArray(storage.readOnlyKeys) &&
+        (storage.readOnlyKeys.includes('toadal:web:v1:quests') || storage.readOnlyKeys.includes('toadal:web:v1:pass'));
+      const validStorage = storage && storage.scope === 'browser' && storage.persistent === true && !readOnly;
+      const rows = snapshot && Array.isArray(snapshot.quests)
+        ? snapshot.quests.filter(quest => quest && quest.group === 'exploration') : null;
+      const seen = new Set();
+      const validRows = Array.isArray(rows) && rows.every(quest => {
+        if (typeof quest.id !== 'string' || seen.has(quest.id) || typeof quest.title !== 'string' ||
+            !Number.isSafeInteger(quest.progress) || quest.progress < 0 ||
+            !Number.isSafeInteger(quest.target) || quest.target < 1 ||
+            typeof quest.complete !== 'boolean' || quest.complete !== (quest.progress >= quest.target) ||
+            (quest.claimedAt != null && typeof quest.claimedAt !== 'string') ||
+            (quest.claimedAt && !quest.complete)) return false;
+        seen.add(quest.id);
+        return true;
+      });
+      while (list.firstChild) list.removeChild(list.firstChild);
+      if (!validStorage || !validRows) {
+        passport.setAttribute('data-home-passport-state', 'unavailable');
+        summary.textContent = storage && storage.scope === 'browser'
+          ? 'Saved exploration progress is unavailable; no empty state is assumed.'
+          : 'This tab cannot confirm saved exploration progress.';
+        link.textContent = 'Open quest board';
+        link.setAttribute('href', (siteBase() || '') + '/feast-pass/quests/');
+        return;
+      }
+      const claimed = rows.filter(quest => Boolean(quest.claimedAt));
+      const ready = rows.filter(quest => quest.complete && !quest.claimedAt);
+      passport.setAttribute('data-home-passport-state', 'available');
+      summary.textContent = ready.length
+        ? ready.length + ' exploration ' + (ready.length === 1 ? 'reward is' : 'rewards are') + ' ready to claim.'
+        : rows.length ? claimed.length + ' of ' + rows.length + ' exploration activities claimed.'
+          : 'No exploration activities are configured.';
+      link.textContent = ready.length ? 'Review ready rewards' : 'Open quest board';
+      link.setAttribute('href', (siteBase() || '') + (ready.length ? '/feast-pass/quests/?view=ready' : '/feast-pass/quests/'));
+      rows.forEach(quest => {
+        const state = quest.claimedAt ? 'claimed' : quest.complete ? 'ready' : 'active';
+        const stateLabel = state === 'ready' ? 'Ready to claim' : state === 'claimed' ? 'Claimed' : 'Active';
+        const item = document.createElement('li');
+        item.className = 'home-explorer-passport__activity';
+        item.setAttribute('data-passport-activity', quest.id);
+        item.setAttribute('data-passport-state', state);
+        const title = document.createElement('span');
+        title.className = 'home-explorer-passport__activity-title';
+        title.textContent = quest.title;
+        const status = document.createElement('span');
+        status.className = 'home-explorer-passport__activity-status';
+        status.textContent = stateLabel + ' · ' + quest.progress + '/' + quest.target;
+        item.append(title, status);
+        list.appendChild(item);
+      });
+    }
 
     function render() {
       if (!store) return;
+      renderExplorerPassport();
       const state = store.getHomeInteractionState();
       document.querySelectorAll('[data-home-candy]').forEach(button => {
         const found = state.candies.includes(button.getAttribute('data-home-candy'));
@@ -170,6 +235,13 @@
       }
       if (thirdCandy) thirdCandy.hidden = !state.goldenBlock.complete;
       if (state.readOnly && blockStatus) blockStatus.textContent = 'Stored discovery data could not be safely read, so it was left untouched.';
+      const foundCharacters = new Set((store.getSnapshot().characterDiscoveries || []).map(item => item.characterId));
+      genieCards.forEach(card => {
+        const found = foundCharacters.has(card.getAttribute('data-discover-character'));
+        card.setAttribute('aria-disabled', String(found));
+        const status = card.querySelector('[data-character-discovery-status]');
+        if (status) status.textContent = found ? 'Discovered in this browser' : 'Not discovered in this browser';
+      });
       const daily = store.getSnapshot().daily;
       if (chestButton) chestButton.dataset.dailyClaimed = String(Boolean(daily.claimed));
       if (chestArt && daily.claimed) {
@@ -224,6 +296,26 @@
       render();
     }
 
+    function discoverGenie(event) {
+      const card = event.currentTarget;
+      if (!store || !card) return;
+      const characterId = card.getAttribute('data-discover-character');
+      const snapshot = store.getSnapshot();
+      if ((snapshot.characterDiscoveries || []).some(item => item.characterId === characterId)) {
+        render();
+        return;
+      }
+      const result = store.discoverCharacter(characterId);
+      const name = card.querySelector('.genie-discovery-name')?.textContent.trim() || 'Feast Genie';
+      actionCopy(card, result.ok
+        ? name + ' artwork discovery was saved in this browser. No reward or game completion is implied.'
+        : result.reason === 'already-discovered'
+          ? name + ' artwork is already discovered in this browser.'
+          : name + ' artwork could not be saved. Check browser storage and retry.');
+      if (result.ok) emit('toadal:character-artwork-discovered', { characterId });
+      render();
+    }
+
     async function hitGoldenBlock(event) {
       event.preventDefault();
       if (!store || !blockButton || blockButton.disabled || blockButton.dataset.animating === 'true') return;
@@ -268,7 +360,28 @@
 
     if (portalButton) portalButton.addEventListener('click', activatePortal);
     document.querySelectorAll('[data-home-candy]').forEach(button => button.addEventListener('click', collectCandy));
+    genieCards.forEach(card => {
+      card.addEventListener('click', discoverGenie);
+      card.addEventListener('touchend', discoverGenie, { passive: true });
+      card.addEventListener('keydown', event => {
+        if (event.key !== 'Enter' && event.key !== ' ' && event.key !== 'Spacebar') return;
+        if (event.preventDefault) event.preventDefault();
+        discoverGenie(event);
+      });
+    });
     if (blockButton) blockButton.addEventListener('click', hitGoldenBlock);
+    function refreshFromBrowser() {
+      try { if (typeof store.refreshFromStorage === 'function') store.refreshFromStorage(); } catch (_) {}
+      render();
+    }
+    root.addEventListener('storage', event => {
+      try { if (event.storageArea === root.localStorage) refreshFromBrowser(); } catch (_) {}
+    });
+    root.addEventListener('focus', refreshFromBrowser);
+    root.addEventListener('pageshow', event => { if (event.persisted) refreshFromBrowser(); });
+    document.addEventListener('visibilitychange', () => {
+      if (document.visibilityState === 'visible') refreshFromBrowser();
+    });
     root.addEventListener('toadal:discovery-sprite-ready', render);
     root.addEventListener('toadal:daily-checkin-claimed', openDailyChest);
     loadSpritesWhenVisible(scope);

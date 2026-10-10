@@ -65,6 +65,8 @@ export function externalizeAdvancedRuntime(exportRoot, projectRoot, basePath = '
   let pages = 0;
   let beforeHtmlBytes = 0;
   let afterHtmlBytes = 0;
+  let sourceCssEmbeds = 0;
+  let basePathCssEmbeds = 0;
   const updates = [];
   for (const file of walkHtml(root)) {
     const rel = path.relative(root, file).split(path.sep).join('/');
@@ -72,7 +74,13 @@ export function externalizeAdvancedRuntime(exportRoot, projectRoot, basePath = '
     const original = fs.readFileSync(file, 'utf8');
     const style = exactSingleMatch(original, STYLE_RE, 'CSS', rel);
     const script = exactSingleMatch(original, SCRIPT_RE, 'JavaScript', rel);
-    if (style[1] !== collection.css) throw new Error(rel + ' advanced CSS differs from Studio source.');
+    // The pinned Studio renderer may already have applied the approved static
+    // export base-path rewrite to CSS URLs. Accept only the exact source bytes
+    // or their deterministic base-path projection; arbitrary CSS drift still
+    // fails closed. The externalized asset is always the normalized projection.
+    if (style[1] === collection.css) sourceCssEmbeds += 1;
+    else if (style[1] === normalizedCss) basePathCssEmbeds += 1;
+    else throw new Error(rel + ' advanced CSS differs from Studio source and its base-path projection.');
     if (script[1] !== collection.javascript) throw new Error(rel + ' advanced JavaScript differs from Studio source.');
     if (style.index > script.index) throw new Error(rel + ' advanced CSS must remain before advanced JavaScript.');
     const transformed = original.replace(STYLE_RE, cssTag).replace(SCRIPT_RE, jsTag);
@@ -98,6 +106,7 @@ export function externalizeAdvancedRuntime(exportRoot, projectRoot, basePath = '
     source: {
       cssBytes: byteLength(collection.css),
       cssSha256: sha256(collection.css),
+      embeddedCssVariants: { source: sourceCssEmbeds, basePathProjected: basePathCssEmbeds },
       javascriptBytes: byteLength(collection.javascript),
       javascriptSha256: sha256(collection.javascript),
     },

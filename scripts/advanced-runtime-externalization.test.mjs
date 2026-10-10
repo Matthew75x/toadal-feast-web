@@ -45,6 +45,17 @@ test('externalizes exact authored CSS/JS once and leaves protected game HTML alo
   assert.equal(fs.readFileSync(path.join(f.site,'public/games/fixture/index.html'),'utf8'),'<script>game()</script>');
   assert.ok(result.duplicatedSourceBytesRemoved>0);
 });
+test('accepts only the exact deterministic Studio base-path projection of authored CSS',t=>{
+  const f=fixture(t),normalizedCss=rewriteCss(f.css,'/toadal-feast-web/').value;
+  for(const rel of ['index.html','world/index.html']){
+    const file=path.join(f.site,rel);
+    fs.writeFileSync(file,fs.readFileSync(file,'utf8').replace(f.css,normalizedCss));
+  }
+  const result=externalizeAdvancedRuntime(f.site,f.project,'/toadal-feast-web/');
+  assert.equal(result.source.embeddedCssVariants.source,0);
+  assert.equal(result.source.embeddedCssVariants.basePathProjected,2);
+  assert.equal(fs.readFileSync(path.join(f.site,result.derived.css.path),'utf8'),normalizedCss);
+});
 test('content hashes change when authored runtime changes',t=>{
   const f=fixture(t),a=externalizeAdvancedRuntime(f.site,f.project,'/toadal-feast-web/');
   const other=fixture(t);const p=path.join(other.project,'collections','advanced-code.json'),j=JSON.parse(fs.readFileSync(p));const before=j.javascript;j.javascript+='// next\n';fs.writeFileSync(p,JSON.stringify(j,null,2));

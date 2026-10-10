@@ -3,7 +3,7 @@
   "id": "page.game-claw-feed-gulper",
   "route": "/games/claw-feed-gulper/",
   "title": "CLAW: Feed Gulper · TOADAL FEAST",
-  "description": "A compact browser preview from the CLAW: Feed Gulper 2.5.1 staging build. The listing remains PREVIEW while its current player integration is evaluated.",
+  "description": "CLAW: Feed Gulper 2.5.1-web-preview.4 website preview. Runs in the sandboxed TOADAL FEAST player; local browser saves only. No account sync, purchases, trusted scores or public release.",
   "publicationState": "noindex",
   "components": [
     {
@@ -42,7 +42,7 @@
               "attributes": {
                 "data-game-detail": "claw-feed-gulper",
                 "data-companion-context": "claw-feed-gulper",
-                "data-companion-copy": "CLAW remains launch-held; this details page does not start the game."
+                "data-companion-copy": "The CLAW browser preview is ready. Your progress stays in this browser."
               },
               "style": "",
               "layerName": "CLAW: Feed Gulper",
@@ -166,8 +166,8 @@
                                 "className": "section-kicker",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1",
-                                "text": "PREVIEW · NOT PLAYABLE YET · 2.5.1"
+                                "layerName": "WEBSITE PREVIEW · 2.5.1-WEB-PREVIEW.2",
+                                "text": "WEBSITE PREVIEW · 2.5.1-WEB-PREVIEW.2"
                               }
                             },
                             {
@@ -218,8 +218,8 @@
                                 "className": "wo002-detail-lede",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "A versioned staging package exists, but website launch is held: its save",
-                                "text": "Browser play is not available on this website yet."
+                                "layerName": "Try a sandboxed CLAW browser preview. Saves stay in this browser; account sync and global rankin",
+                                "text": "Try a sandboxed CLAW browser preview. Saves stay in this browser; account sync and global rankings are off."
                               }
                             },
                             {
@@ -268,8 +268,8 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "layerName": "Website launch held.",
-                                            "text": "Browser play is not available yet."
+                                            "layerName": "Playable browser preview.",
+                                            "text": "Playable browser preview."
                                           }
                                         },
                                         {
@@ -281,8 +281,8 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "text": " Browser play is not available on this website yet.",
-                                            "layerName": "Text: The donor staging package is not connected to this p"
+                                            "text": "This adapted website preview has no account sync, store purchases, trusted scoring or public release approval.",
+                                            "layerName": "This adapted website preview has no account sync, store purchases, trusted scoring or public rel"
                                           }
                                         }
                                       ]
@@ -294,12 +294,12 @@
                                     "props": {
                                       "authoringVersion": 1,
                                       "tag": "a",
-                                      "className": "button-link button-link--secondary",
+                                      "className": "button-link button-link--primary",
                                       "attributes": {},
                                       "style": "",
-                                      "layerName": "All browser games",
-                                      "href": "/play/",
-                                      "label": "All browser games"
+                                      "layerName": "Play browser preview →",
+                                      "href": "/player/claw-feed-gulper/",
+                                      "label": "Play browser preview →"
                                     }
                                   }
                                 ]
@@ -345,8 +345,9 @@
                                 },
                                 "style": "",
                                 "layerName": "Gulper character artwork, not an in-game screenshot.",
-                                "asset": "asset.home.character.gulper",
-                                "alt": "Gulper character artwork, not an in-game screenshot."
+                                "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
+                                "alt": "CLAW: Feed Gulper promotional title-card illustration; not a gameplay screenshot.",
+                                "fit": "contain"
                               }
                             },
                             {
@@ -358,8 +359,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "World/character artwork — not a gameplay screenshot.",
-                                "text": "World/character artwork — not a gameplay screenshot."
+                                "layerName": "Owner-designated promotional title card; visual acceptance is pending.",
+                                "text": "Owner-designated promotional title card; visual acceptance is pending."
                               }
                             }
                           ]
@@ -455,8 +456,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "A staging package exists, but this site does not launch it while integra",
-                                "text": "This preview is not playable on the website yet."
+                                "layerName": "This website PREVIEW uses an isolated browser-local save; no account sync or remote leaderboard ",
+                                "text": "This website PREVIEW uses an isolated browser-local save; no account sync or remote leaderboard is active."
                               }
                             }
                           ]
@@ -522,8 +523,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "No launch is offered through the website player while host, storage, and",
-                                "text": "Controls are not available here while browser play is on hold."
+                                "layerName": "Mouse or touch, plus keyboard input. Follow the current control hints inside the game.",
+                                "text": "Mouse or touch, plus keyboard input. Follow the current control hints inside the game."
                               }
                             }
                           ]
@@ -576,8 +577,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "No save",
-                                "text": "No save"
+                                "layerName": "Browser-local save",
+                                "text": "Browser-local save"
                               }
                             },
                             {
@@ -589,8 +590,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "The donor uses a game-owned browser save key; website storage isolation ",
-                                "text": "No save is available through this website."
+                                "layerName": "This preview uses its own namespaced save in this browser. Account sync and cross-device saves a",
+                                "text": "This preview uses its own namespaced save in this browser. Account sync and cross-device saves are off."
                               }
                             }
                           ]
@@ -638,7 +639,7 @@
                       "aria-label": "Toadal contextual helper"
                     },
                     "style": "",
-                    "layerName": "TOADAL SAYSCLAW remains launch-held; this details page does not start th",
+                    "layerName": "TOADAL SAYS · The CLAW browser preview is ready; progress stays in this browser.",
                     "mode": "inherit",
                     "children": [
                       {
@@ -682,8 +683,8 @@
                                   "aria-atomic": "true"
                                 },
                                 "style": "",
-                                "layerName": "CLAW remains launch-held; this details page does not start the game.",
-                                "text": "CLAW is not playable here yet. You can explore its details while you wait."
+                                "layerName": "The CLAW browser preview is ready. Progress stays in this browser.",
+                                "text": "The CLAW browser preview is ready. Progress stays in this browser."
                               }
                             }
                           ]

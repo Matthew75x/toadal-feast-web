@@ -212,18 +212,31 @@ test('a failed second canvas paint clears partial lettering and restores native 
   assert.equal(h.brand.textContent, 'TOADAL FEAST');
 });
 
-test('the native brand keeps the original crown clearance while lettering is unavailable', () => {
+test('the native brand stays crown-free and keeps its fallback wordmark aligned', () => {
   const css = fs.readFileSync(path.join(repo,
     'studio-project/toadal-feast-website/reference/assets/css/site.css'), 'utf8');
   const rule = css.match(/html body:has\(\.home-hero\) \.site-brand\s*\{([^}]*)\}/);
   assert.ok(rule, 'Home brand rule exists');
-  assert.match(rule[1], /padding-inline-start:\s*42px\s*;/);
+  assert.doesNotMatch(rule[1], /padding-inline-start\s*:/);
   const sharedWordmark = css.match(/html body \.site-brand__wordmark\s*\{([^}]*)\}/);
   assert.ok(sharedWordmark, 'the decorative layer applies to shared navigation on every route');
-  assert.match(sharedWordmark[1], /inset-inline-start:\s*40px\s*;/,
-    'the lettering begins after the shared crown and its gap');
-  assert.match(css, /\.site-brand\s*\{\s*position:\s*relative;\s*gap:\s*9px\s*;/,
-    'non-Home navigation preserves the native flex crown clearance');
+  const readyWordmark = css.match(/html body \.site-brand\.site-brand--lettering-ready\s*\{([^}]*)\}/);
+  assert.ok(readyWordmark, 'the measured wordmark layout applies on Home and inner routes');
+  assert.match(readyWordmark[1], /min-width:\s*108px\s*;/,
+    'canvas lettering retains a visible, clickable home anchor when native text is visually hidden');
+  assert.match(sharedWordmark[1], /inset-inline-start:\s*0\s*;/,
+    'the lettering begins at the brand edge with no crown reservation');
+  const advancedCss = JSON.parse(fs.readFileSync(path.join(repo,
+    'studio-project/toadal-feast-website/collections/advanced-code.json'), 'utf8')).css;
+  assert.doesNotMatch(css + advancedCss, /brand-crown\.svg|\.site-brand::before\b|\.feast-pass-panel::after\b|content\s*:\s*["'][♛♕♔♚👑]/i);
+  const gulper = path.join(repo, 'studio-project/toadal-feast-website/reference/public/games/claw-feed-gulper');
+  const gameUi = fs.readFileSync(path.join(gulper, 'runtime.bundle.js'), 'utf8') +
+    fs.readFileSync(path.join(gulper, 'styles.css'), 'utf8');
+  assert.doesNotMatch(gameUi, /[♛♕♔♚👑]|class\s*=\s*["']crown["']|\.mastery-step\s+\.crown\b/u,
+    'the embedded game contains no standalone crown or queen icon');
+  const assets = JSON.parse(fs.readFileSync(path.join(repo,
+    'studio-project/toadal-feast-website/assets/index.json'), 'utf8'));
+  assert.ok(!assets.assets.some(asset => asset.id === 'asset.brand.crown'));
   assert.equal(harness({ fontStatus: 'error' }).brand.classList.contains('site-brand--lettering-ready'), false);
 });
 

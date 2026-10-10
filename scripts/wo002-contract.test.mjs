@@ -133,7 +133,7 @@ function assertSchemaValue(value, schema, label) {
   }
 }
 
-test('page registry retains core play/Stories routes, approved game details, and only the qualified Wicked Bites player route', () => {
+test('page registry retains core play/Stories routes, approved game details, and both qualified preview player routes', () => {
   const expectedGameRoutes = [
     '/games/wicked-bites/',
     '/games/claw-feed-gulper/',
@@ -144,7 +144,7 @@ test('page registry retains core play/Stories routes, approved game details, and
   assert.equal(new Set(routes).size, routes.length, 'page routes must be unique');
   const requiredRoutes = [
     '/', '/play/', '/stories/', '/manga/', '/reader/',
-    ...expectedGameRoutes, '/player/wicked-bites/',
+    ...expectedGameRoutes, '/player/wicked-bites/', '/player/claw-feed-gulper/',
   ];
   for (const route of requiredRoutes) {
     assert.ok(routes.includes(route), `page registry must retain required route ${route}`);
@@ -158,9 +158,9 @@ test('page registry retains core play/Stories routes, approved game details, and
     assert.equal(page.document.route, page.route, `${page.file} route must match the registry`);
   }
   assert.deepEqual(
-    routes.filter((route) => route.startsWith('/player/')),
-    ['/player/wicked-bites/'],
-    'only Wicked Bites may have a player route',
+    routes.filter((route) => route.startsWith('/player/')).sort(),
+    ['/player/wicked-bites/', '/player/claw-feed-gulper/'].sort(),
+    'only the two qualified PREVIEW builds may have player routes',
   );
 });
 
@@ -178,7 +178,7 @@ test('all four registered games and every Play card remain PREVIEW', () => {
   const playPage = pageByRoute.get('/play/');
   assert.ok(playPage, 'Play page must be registered');
   const html = componentHtml(playPage, 'wo002-play-hub');
-  const cards = [...html.matchAll(/<article\b[^>]*class=(['"])[^'"]*\bplay-card\b[^'"]*\1[^>]*>/g)]
+  const cards = [...html.matchAll(/<(?:article|a)\b[^>]*class=(['"])[^'"]*\bplay-card\b[^'"]*\1[^>]*>/g)]
     .map(([tag]) => ({
       id: htmlAttribute(tag, 'data-game-id'),
       status: htmlAttribute(tag, 'data-game-status'),
@@ -206,19 +206,18 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
   );
 
   const gameIntro = componentHtml(homePage, 'games-intro');
-  assert.match(hero, /session-only browser preview/i);
-  assert.match(gameIntro, /Wicked Bites is a session-only browser preview/i);
-  assert.match(gameIntro, /CLAW is not playable yet/i);
+  assert.match(hero, /Wicked Bites or CLAW: Feed Gulper in isolated browser previews/i);
+  assert.match(gameIntro, /Wicked Bites and CLAW: Feed Gulper are sandboxed browser previews/i);
   assert.match(gameIntro, /two games are concepts/i);
-  assert.match(gameIntro, /No public releases yet\./i);
+  assert.match(gameIntro, /No browser game is a public release yet\./i);
   assert.equal(homePage.document.seo.title, homePage.document.title,
     'Home SEO title should stay aligned with its visible title');
   assert.equal(homePage.document.seo.description, homePage.document.description,
     'Home SEO description should stay aligned with its route description');
-  const publicEmptyState = pageHtml(homePage);
-  assert.match(publicEmptyState, /No public browser releases are available yet/,
-    'the empty public filter should explain the actual public-state gate');
-  assert.doesNotMatch(publicEmptyState, /Qualified staging previews are being connected/,
+  const catalogueRuntime = fs.readFileSync(path.join(projectRoot, 'reference', 'assets', 'js', 'play-catalogue.js'), 'utf8');
+  assert.match(catalogueRuntime, /No public releases match these filters\. A playable preview is not a public release/,
+    'the active empty public filter explains the actual public-state gate');
+  assert.doesNotMatch(catalogueRuntime, /Qualified staging previews are being connected/,
     'the empty public filter must not claim the player integration is still pending');
 
   const gameGrid = findAuthoredComponent(homePage.document.components, 'home-game-grid');
@@ -268,7 +267,7 @@ test('Home companion is present and each context has its own copy', () => {
   );
 });
 
-test('launch gating exposes only the Wicked Bites preview and keeps CLAW held', () => {
+test('launch gating exposes only the two qualified browser previews and keeps public release disabled', () => {
   const wicked = gameBySlug.get('wicked-bites')?.document;
   const claw = gameBySlug.get('claw-feed-gulper')?.document;
   assert.ok(wicked && claw, 'Wicked Bites and CLAW must both be registered');
@@ -276,17 +275,21 @@ test('launch gating exposes only the Wicked Bites preview and keeps CLAW held', 
   assert.equal(wicked.web.browserCartridge.entry, '/public/games/wicked-bites/index.html');
   assert.equal(wicked.web.browserCartridge.publicState, 'PREVIEW');
 
-  assert.equal(claw.web.enabled, false, 'CLAW website launch must remain disabled');
-  assert.equal(claw.web.browserCartridge.runnable, false);
-  assert.equal(claw.web.browserCartridge.launchHeld, true);
-  assert.equal(claw.web.browserCartridge.entry, null);
-  assert.match(claw.web.browserCartridge.reason, /requalification/i);
+  assert.equal(claw.web.enabled, true, 'CLAW is available only as a website PREVIEW');
+  assert.equal(claw.web.browserCartridge.runnable, true);
+  assert.equal(claw.web.browserCartridge.launchHeld, false);
+  assert.equal(claw.web.browserCartridge.entry, '/public/games/claw-feed-gulper/index.html');
+  assert.equal(claw.web.browserCartridge.publicState, 'PREVIEW');
+  assert.match(claw.web.browserCartridge.reason, /PREVIEW only/i);
 
   const detailLaunches = pages
     .filter((page) => page.route.startsWith('/games/'))
     .flatMap((page) => [...componentHtml(page, 'wo002-game-detail').matchAll(/\bhref=(['"])(\/player\/[^'"]+)\1/g)]
       .map((match) => ({ route: page.route, href: match[2] })));
-  assert.deepEqual(detailLaunches, [{ route: '/games/wicked-bites/', href: '/player/wicked-bites/' }]);
+  assert.deepEqual(detailLaunches.sort((a,b) => a.route.localeCompare(b.route)), [
+    { route: '/games/claw-feed-gulper/', href: '/player/claw-feed-gulper/' },
+    { route: '/games/wicked-bites/', href: '/player/wicked-bites/' },
+  ].sort((a,b) => a.route.localeCompare(b.route)));
 
   const playerPage = pageByRoute.get('/player/wicked-bites/');
   assert.ok(playerPage, 'Wicked Bites player page must exist');
@@ -344,14 +347,17 @@ test('player host enforces opaque-origin identity and does not echo ready/init',
     'the host should communicate visibility changes to the isolated cartridge');
 });
 
-test('Wicked Bites cartridge conforms to the schema and preserves qualified provenance', () => {
+test('the qualified Wicked Bites and CLAW preview cartridges are both preserved', () => {
   const packageRoot = path.join(projectRoot, 'reference', 'public', 'games');
   assert.ok(fs.existsSync(packageRoot), 'public game package directory must exist');
   assert.deepEqual(
     fs.readdirSync(packageRoot).sort(),
-    ['wicked-bites'],
-    'only the Wicked Bites package may be present under public/games (no CLAW package or loose bundle)',
+    ['claw-feed-gulper', 'wicked-bites'],
+    'the qualified preview packages remain separate under public/games',
   );
+  const clawManifest = readJson(path.join(packageRoot, 'claw-feed-gulper', 'cartridge.json'));
+  assert.equal(clawManifest.publicState, 'PREVIEW');
+  assert.equal(clawManifest.version, '2.5.1-web-preview.4');
 
   const wickedRoot = path.join(packageRoot, 'wicked-bites');
   const manifestPath = path.join(wickedRoot, 'cartridge.json');

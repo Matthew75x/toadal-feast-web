@@ -7,7 +7,7 @@ import {spawnSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
 
 export const WEBSITE_ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
-export const EXPECTED_ENGINE=Object.freeze({"commit":"65b2814148300ec02616243e24773c1acaba1083","parent":"c4e14a755935338a5044d8fdec5b6f6a2e0bad48","tree":"d976884c15e86904744790113f1927504b6984f6"});
+export const EXPECTED_ENGINE=Object.freeze({"commit":"e859ee2725bb88b236cacf450a69dd304b2d74c9","parent":"65b2814148300ec02616243e24773c1acaba1083","tree":"22bb26a9281150b63db46c6e3b34ebc4fa3eb97e"});
 export const ENTRYPOINTS=Object.freeze(['package.json','package-lock.json','packages/renderer/src/index.ts','packages/project-kernel/src/loader.ts','packages/project-kernel/src/validate.ts','packages/project-kernel/src/mutations.ts','packages/authoring-kernel/src/index.ts']);
 export const sha256=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
 export function git(root,...args){const r=spawnSync('git',args,{cwd:root,encoding:'utf8',env:{...process.env,GIT_NO_LAZY_FETCH:'1'},maxBuffer:16*1024*1024});if(r.status!==0)throw Error(`Git identity unavailable: ${args.join(' ')}: ${r.stderr}`);return r.stdout.trim();}
@@ -40,7 +40,11 @@ export function runtimeIdentity(version=process.versions.node,allowNode24=false)
  return{node:version,requiredNode:'22.23.2',qualifiedRuntime:qualified,mode:qualified?'qualified-runtime-only':'reproduction-only',studioCertification:false};
 }
 export function inspectEngine(engineInput,expected=EXPECTED_ENGINE,entrypoints=ENTRYPOINTS){
- const root=noSymlinkPath(engineInput);if(path.resolve(git(root,'rev-parse','--show-toplevel'))!==root)throw Error('Engine must be the repository root.');
+ const requestedRoot=noSymlinkPath(engineInput),reportedRoot=path.resolve(git(requestedRoot,'rev-parse','--show-toplevel'));
+ const canonicalRequested=fs.realpathSync.native(requestedRoot),canonicalReported=fs.realpathSync.native(reportedRoot);
+ const sameRoot=process.platform==='win32'?canonicalRequested.toLowerCase()===canonicalReported.toLowerCase():canonicalRequested===canonicalReported;
+ if(!sameRoot)throw Error('Engine must be the repository root.');
+ const root=canonicalRequested;
  const identity={commit:git(root,'rev-parse','HEAD'),parent:git(root,'show','-s','--format=%P','HEAD'),tree:git(root,'rev-parse','HEAD^{tree}')};
  if(identity.tree!==expected.tree||identity.parent!==expected.parent)throw Error('Wrong engine tree or parent; matching two patched files is insufficient.');
  const rows=git(root,'ls-tree','-rz','HEAD').split('\0').filter(Boolean),missing=[],modified=[];let verified=0;

@@ -68,7 +68,7 @@ function assertCurrentRuntimeLeaf(leaf, rule) {
   return props.html;
 }
 
-test('all pages retain exactly the three registered, locked runtime leaves with original fragments and exact resource policies', async () => {
+test('all pages retain exactly the four registered, locked runtime leaves with original fragments and exact resource policies', async () => {
   const leaves = await getRuntimeLeaves();
   assert.equal(leaves.length, RUNTIME_EXCEPTIONS.length);
   const unmatched = [...RUNTIME_EXCEPTIONS];
@@ -81,7 +81,8 @@ test('all pages retain exactly the three registered, locked runtime leaves with 
     if (rule.kind === 'external-script') {
       assert.match(html, /^<script\s+src=['"]assets\/js\/home-interactive-discovery\.js['"]\s+defer\s*><\/script>$/i);
     } else if (rule.kind === 'isolated-frame') {
-      assert.match(html, /^<iframe\b[^>]*src=['"]\/public\/games\/wicked-bites\/index\.html['"]/i);
+      const frameSource = rule.policy.codeResources[0].url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      assert.match(html, new RegExp(`^<iframe\\b[^>]*src=['"]${frameSource}['"]`, 'i'));
       assert.match(html, /sandbox=['"]allow-scripts allow-pointer-lock['"]/i);
       assert.match(html, /allow=['"]fullscreen['"]/i);
       assert.match(html, /referrerpolicy=['"]origin['"]/i);

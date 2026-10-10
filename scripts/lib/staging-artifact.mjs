@@ -26,7 +26,8 @@ export function safeRelative(value) {
   requireThat(!parts.some(p => /^(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(p)), 'Reserved payload path: ' + value);
   requireThat(parts.every(p => !p.startsWith('.') || (value === '.nojekyll' && parts.length === 1)), 'Private/hidden payload path: ' + value);
   requireThat(!parts.some(p => /^(?:node_modules|workspaces|secrets|qualification|__pycache__)$/i.test(p)) &&
-    !/(?:^|\/)(?:owner-access-code|credentials?|cookies?|session|private-key)(?:[.-]|$)/i.test(value) &&
+    !/(?:^|\/)(?:owner-access-code|credentials?|session|private-key)(?:[.-]|$)/i.test(value) &&
+    !(/(?:^|\/)cookies?(?:[.-]|$)/i.test(value) && !/(?:^|\/)cookie\.(?:png|jpe?g|webp|gif|svg)$/i.test(value)) &&
     !/\.(?:pem|key|pfx|p12|sqlite3?|db|env|bundle|zip|har)$/i.test(value), 'Private/runtime/archive file in website payload: ' + value);
   requireThat(value.toLowerCase() !== 'cname', 'Custom-domain publication is outside the staging artifact scope');
   return value;

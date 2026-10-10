@@ -5,33 +5,56 @@
   "name": "CLAW: Feed Gulper",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification.",
-  "description": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification. No launch is offered through the website player while host, storage, and service-worker integration are requalified. The donor uses a game-owned browser save key; website storage isolation is not yet certified.",
+  "summary": "Play a sandboxed browser preview. Saves stay in this browser; account sync and global rankings are off.",
+  "description": "CLAW: Feed Gulper is available as a website PREVIEW from its exact 2.5.1 upstream build. The website player uses a separate browser-local save namespace; account sync, purchases, trusted scores and remote rankings are unavailable.",
   "route": "/games/claw-feed-gulper/",
   "artAsset": "asset.home.game.claw-feed-gulper-preview",
   "platforms": [],
   "studioGenerated": false,
   "web": {
-    "enabled": false,
-    "shortDescription": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification.",
-    "inputSupport": [],
+    "enabled": true,
+    "shortDescription": "Play a sandboxed browser preview. Saves stay in this browser; account sync and global rankings are off.",
+    "inputSupport": [
+      "touch",
+      "keyboard",
+      "mouse"
+    ],
     "browserCartridge": {
-      "entry": null,
-      "version": "2.5.1",
+      "entry": "/public/games/claw-feed-gulper/index.html",
+      "version": "2.5.1-web-preview.4",
       "publicState": "PREVIEW",
       "protocol": "toadal.game.v1",
-      "runnable": false,
-      "launchHeld": true,
-      "reason": "shared-origin storage and upstream service-worker cache behavior require requalification"
+      "runnable": true,
+      "launchHeld": false,
+      "packageSha256": "3c74c89742d01a6f6d8d777242d382c06bae60461cb6c59b25627473267cb810",
+      "reason": "Sandboxed preview only. Owner visual acceptance, real-device QA, rights and TCS/Publisher release approvals remain pending."
     }
   },
   "evidence": {
-    "state": "QUALIFIED_STAGING_PREVIEW_AVAILABLE",
+    "state": "STAGED_PREVIEW_PENDING_SITE_QA",
     "repository": "Matthew75x/claw-feed-gulper",
-    "commit": "7c49d1bf70ebf6503fde3b533a1acd356d12c77c",
+    "commit": "91f9b600b5d05c0b37ff49a9db615c9c1c38342e",
     "version": "2.5.1",
-    "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
-    "reverifiedAt": "2026-09-30",
-    "currentHomeLaunch": "LAUNCH_HELD_WO002"
+    "websitePreviewVersion": "2.5.1-web-preview.4",
+    "sourceEntrySha256": "895e236c65d1be2605dc44b903a0b549fa2ccfbf38adba8bfddf53d5e741e1b7",
+    "packageSha256": "3c74c89742d01a6f6d8d777242d382c06bae60461cb6c59b25627473267cb810",
+    "artwork": {
+      "ownerDecision": "OWNER_DESIGNATED",
+      "visualAcceptance": "PENDING",
+      "posterSha256": "90ee7b8e2d405bc045a910ea83b1ecd5f125038401597e6c23c90efeba19ded8",
+      "sourceSha256": "e8ca7e000f1d77cbdc272854e84ac6010ea29b422369d316c140bd7f6386c46a"
+    },
+    "qualification": {
+      "gameplay": "PREVIEW_ONLY",
+      "sitePlayer": "PENDING",
+      "physicalDevices": "NOT_RUN",
+      "tcsPublisher": "NOT_RUN",
+      "publication": "NOT_AUTHORIZED"
+    },
+    "priorHeldSource": {
+      "commit": "7c49d1bf70ebf6503fde3b533a1acd356d12c77c",
+      "entrySha256": "77815f0652a9a0899ec426534f339d9c26fde9cf71c215c553f305a132d69701",
+      "disposition": "preserved as prior held source; replaced for this local website preview"
+    }
   }
 }

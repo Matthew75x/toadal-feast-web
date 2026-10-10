@@ -158,9 +158,10 @@ try {
     await viewport(width, height, width <= 768);
     await navigate(origin + basePath);
     await waitFor("document.querySelector('[data-home-discovery]')?.dataset.interactionReady === 'true'");
-    const layout = await evaluate(`(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,discovery:!!document.querySelector('[data-home-discovery]'),portal:(()=>{const r=document.querySelector('[data-home-portal]')?.getBoundingClientRect();return r?{width:r.width,height:r.height}:null})(),daily:(()=>{const r=document.querySelector('[data-claim-daily]')?.getBoundingClientRect();return r?{width:r.width,height:r.height}:null})()}))()`);
+    const layout = await evaluate(`(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,discovery:!!document.querySelector('[data-home-discovery]'),genies:[...document.querySelectorAll('.genie-row [data-discover-character]')].map(e=>{const r=e.getBoundingClientRect();return {id:e.getAttribute('data-discover-character'),role:e.getAttribute('role'),tabIndex:e.tabIndex,visible:e.getClientRects().length>0,width:r.width,height:r.height}}),portal:(()=>{const r=document.querySelector('[data-home-portal]')?.getBoundingClientRect();return r?{width:r.width,height:r.height}:null})(),daily:(()=>{const r=document.querySelector('[data-claim-daily]')?.getBoundingClientRect();return r?{width:r.width,height:r.height}:null})()}))()`);
     check(`Home layout ${width}x${height} has no horizontal overflow`, layout.scrollWidth <= layout.width + 1, layout);
     check(`Home layout ${width}x${height} keeps portal and daily controls usable`, Boolean(layout.portal && layout.portal.width >= 44 && layout.portal.height >= 44 && layout.daily && layout.daily.width >= 44 && layout.daily.height >= 44), layout);
+    check(`Home layout ${width}x${height} shows three keyboard-ready Genie discoveries`, layout.genies.length === 3 && layout.genies.every(item => item.visible && item.role === 'button' && item.tabIndex === 0 && item.width >= 44 && item.height >= 44), layout.genies);
     await capture(`home-${width}x${height}`);
   }
   await viewport(390, 844, true);
@@ -178,6 +179,22 @@ try {
 
   const imageAudit = await evaluate(`(async()=>{const imgs=[...document.images];imgs.forEach(i=>i.loading='eager');const results=await Promise.all(imgs.map(async i=>{try{await i.decode();return i.naturalWidth>0?null:(i.currentSrc||i.src)}catch{return i.currentSrc||i.src}}));return results.filter(Boolean)})()`);
   check('Home image decode audit is clean', Array.isArray(imageAudit) && imageAudit.length === 0, imageAudit);
+  const sweetFocus = await evaluate("(()=>{const e=document.querySelector('[data-discover-character=genie-sweet]');e?.scrollIntoView({block:'center',behavior:'instant'});e?.focus();return document.activeElement===e})()");
+  check('Sweet Genie artwork discovery supports keyboard focus', sweetFocus);
+  await key('Enter');
+  check('Sweet Genie discovery saves through the existing browser-local collection', await waitFor("JSON.parse(localStorage.getItem('toadal:web:v1:discoveries')||'{}').items.includes('character-artwork-genie-sweet')"));
+  const savouryClick = await click('[data-discover-character=genie-savoury]');
+  check('Savoury Genie artwork discovery responds to pointer activation', savouryClick.ok, savouryClick);
+  check('Savoury Genie discovery saves through the existing browser-local collection', await waitFor("JSON.parse(localStorage.getItem('toadal:web:v1:discoveries')||'{}').items.includes('character-artwork-genie-savoury')"));
+  const fruityTap = await tap('[data-discover-character=genie-fruity]');
+  check('Fruity Genie artwork discovery responds to mobile touch', fruityTap.ok, fruityTap);
+  check('Fruity Genie discovery saves through the existing browser-local collection', await waitFor("JSON.parse(localStorage.getItem('toadal:web:v1:discoveries')||'{}').items.includes('character-artwork-genie-fruity')"));
+  const genieSaved = await evaluate(`(()=>({items:JSON.parse(localStorage.getItem('toadal:web:v1:discoveries')||'{}').items.filter(id=>id.startsWith('character-artwork-genie-')),statuses:[...document.querySelectorAll('.genie-row [data-character-discovery-status]')].map(e=>e.textContent.trim()),keys:Object.keys(localStorage).sort(),buttons:[...document.querySelectorAll('.genie-row [data-discover-character]')].map(e=>e.getAttribute('aria-disabled'))}))()`);
+  check('All three Genies report saved discoveries without adding another progression key', genieSaved.items.length === 3 && genieSaved.statuses.every(text => text === 'Discovered in this browser') && genieSaved.buttons.every(value => value === 'true') && !genieSaved.keys.some(key => key.includes('genie')), genieSaved);
+  await capture('home-genies-discovered');
+  await navigate(origin + basePath);
+  const geniesAfterReload = await evaluate(`(()=>({statuses:[...document.querySelectorAll('.genie-row [data-character-discovery-status]')].map(e=>e.textContent.trim()),disabled:[...document.querySelectorAll('.genie-row [data-discover-character]')].map(e=>e.getAttribute('aria-disabled'))}))()`);
+  check('Genie discoveries persist after reload in the existing guest collection', geniesAfterReload.statuses.length === 3 && geniesAfterReload.statuses.every(text => text === 'Discovered in this browser') && geniesAfterReload.disabled.every(value => value === 'true'), geniesAfterReload);
     await evaluate("document.querySelector('[data-home-discovery]').scrollIntoView({block:'start',behavior:'instant'})"); await sleep(250);
   check('Golden Block lazy sprite loaded', await waitFor("document.querySelector('[data-golden-block-art]')?.dataset.spriteLoaded === 'true'"));
   check('Daily chest lazy sprite loaded', await waitFor("document.querySelector('[data-daily-chest-art]')?.dataset.spriteLoaded === 'true'"));

@@ -220,9 +220,25 @@ test('current approved preview cards preserve separate toggle, registered detail
   for (const card of cards) {
     const game = games.find(item => item.id === card.props.gameId);
     const links = all([card]).filter(node => node.props?.tag === 'a');
-    assert.equal(links.length, 1);
-    assert.equal(links[0].props.href, game.route);
-    assert.equal(all(links[0].props.children).filter(node => ['a','button','input'].includes(node.props?.tag)).length, 0);
+    if (card.props.tag === 'a') {
+      assert.equal(links.length, 1, `${game.name} keeps its whole-card link`);
+      assert.equal(links[0].props.href, game.route);
+      assert.equal(all(links[0].props.children).filter(node => ['a','button','input'].includes(node.props?.tag)).length, 0);
+      assert.ok(byType([card], 'core.image').every(node => assets.assets.some(asset => asset.id === node.props.asset)));
+      assert.equal(byId(card.props.children,card.id+'.status').props.text,game.statusLabel);
+      continue;
+    }
+    const details = links.filter(node => node.props.href === game.route &&
+      (Object.hasOwn(node.props.attributes || {}, 'data-game-preview-link') ||
+        Object.hasOwn(node.props.attributes || {}, 'data-game-preview-details')));
+    const launches = links.filter(node => node.props.href === `/player/${game.slug}/` &&
+      Object.hasOwn(node.props.attributes || {}, 'data-game-preview-link'));
+    assert.equal(details.length, 1, `${game.name} retains one registered details destination`);
+    assert.ok(launches.length <= 1, `${game.name} has at most one registered launch destination`);
+    assert.equal(details.length + launches.length, links.length, `${game.name} has no unregistered links`);
+    for (const link of [...details, ...launches]) {
+      assert.equal(all(link.props.children).filter(node => ['a','button','input'].includes(node.props?.tag)).length, 0);
+    }
     assert.ok(byType([card], 'core.image').every(node => assets.assets.some(asset => asset.id === node.props.asset)));
     assert.equal(byId(card.props.children,card.id+'.status').props.text,game.statusLabel);
   }
@@ -231,6 +247,10 @@ test('current approved preview cards preserve separate toggle, registered detail
   assert.equal(all([wicked]).filter(node => Object.hasOwn(node.props?.attributes || {},'data-game-preview-toggle')).length,1);
   const froggy = cards.find(card => card.props.gameId === 'game.froggy-fruity-bash');
   assert.equal(all([froggy]).filter(node => Object.hasOwn(node.props?.attributes || {},'data-game-preview-gameplay')).length,0,'no fabricated Froggy gameplay');
+  const gulper = cards.find(card => card.props.gameId === 'game.claw-feed-gulper');
+  const gulperLinks = all([gulper]).filter(node => node.props?.tag === 'a');
+  assert.equal(gulperLinks.filter(node => node.props.href === '/games/claw-feed-gulper/' && Object.hasOwn(node.props.attributes || {}, 'data-game-preview-details')).length, 1);
+  assert.equal(gulperLinks.filter(node => node.props.href === '/player/claw-feed-gulper/' && Object.hasOwn(node.props.attributes || {}, 'data-game-preview-link')).length, 1);
 });
 
 test('native preview closure rejects extra links, off-registry destinations and unregistered covers', () => {

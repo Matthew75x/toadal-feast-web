@@ -135,6 +135,40 @@ test('accepts the exact opaque-origin iframe and rejects sibling or synthetic me
   assert.equal(adapter.isTrustedMessage({ ...valid, data: { protocol: 'toadal.game.v1', gameId: 'wicked-bites', type: 'game:error', payload: { message: 'failed' } } }, frame, 'wicked-bites', '/public/games/wicked-bites/index.html', 'https://site.example/player/wicked-bites/'), true);
 });
 
+test('validates an allowlisted game against its own frame identity', () => {
+  const frame = { src: 'https://site.example/public/games/claw-feed-gulper/index.html', contentWindow: {} };
+  const valid = { source: frame.contentWindow, origin: 'null', data: { protocol: adapter.PROTOCOL, gameId: 'claw-feed-gulper', type: 'game:complete', payload: { score: 42 } } };
+  assert.equal(adapter.isTrustedMessage(valid, frame, 'claw-feed-gulper', '/public/games/claw-feed-gulper/index.html', 'https://site.example/player/claw-feed-gulper/'), true);
+  assert.equal(adapter.isTrustedMessage({ ...valid, data: { ...valid.data, gameId: 'wicked-bites' } }, frame, 'claw-feed-gulper', '/public/games/claw-feed-gulper/index.html', 'https://site.example/player/claw-feed-gulper/'), false);
+  assert.equal(adapter.isTrustedMessage(valid, frame, 'unlisted-game', '/public/games/claw-feed-gulper/index.html', 'https://site.example/player/claw-feed-gulper/'), false);
+  assert.equal(adapter.isTrustedMessage(valid, frame, 'claw-feed-gulper', '/public/games/wicked-bites/index.html', 'https://site.example/player/claw-feed-gulper/'), false);
+});
+
+test('accepts CLAW v1 score messages from its registered opaque-origin frame', () => {
+  const frame = { src: 'https://site.example/public/games/claw-feed-gulper/index.html', contentWindow: {} };
+  const trust = data => adapter.isTrustedMessage({ source: frame.contentWindow, origin: 'null', data }, frame,
+    'claw-feed-gulper', '/public/games/claw-feed-gulper/index.html', 'https://site.example/player/claw-feed-gulper/');
+  const started = { protocol: adapter.PROTOCOL, version: 1, gameId: 'claw-feed-gulper', type: 'game:started' };
+  assert.equal(trust(started), true);
+  for (const score of [0, 42, 446, Number.MAX_SAFE_INTEGER]) {
+    const message = { protocol: adapter.PROTOCOL, version: 1, gameId: 'claw-feed-gulper', type: 'game:score', score };
+    assert.equal(trust(message), true);
+    assert.deepEqual(adapter.messagePayload(message), { score });
+    const session = adapter.createSession(() => 0);
+    session.accept('game:started');
+    assert.equal(session.accept('game:score', adapter.messagePayload(message)).score, score);
+  }
+  for (const score of [-1, 1.5, Number.MAX_SAFE_INTEGER + 1, '446', null]) {
+    assert.equal(trust({ ...started, type: 'game:score', score }), false);
+  }
+  assert.equal(trust({ ...started, version: 2, type: 'game:score', score: 446 }), false);
+  assert.equal(trust({ ...started, type: 'game:score', score: 446, extra: true }), false);
+  assert.equal(adapter.isTrustedMessage({ source: {}, origin: 'null', data: { ...started, type: 'game:score', score: 446 } }, frame,
+    'claw-feed-gulper', '/public/games/claw-feed-gulper/index.html', 'https://site.example/player/claw-feed-gulper/'), false);
+  assert.equal(adapter.isTrustedMessage({ source: frame.contentWindow, origin: 'https://site.example', data: { ...started, type: 'game:score', score: 446 } }, frame,
+    'claw-feed-gulper', '/public/games/claw-feed-gulper/index.html', 'https://site.example/player/claw-feed-gulper/'), false);
+});
+
 test('tracks in-memory session best and excludes paused time from play duration', () => {
   let now = 0;
   const session = adapter.createSession(() => now);
