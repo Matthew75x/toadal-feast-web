@@ -8010,3 +8010,46 @@ html body:has(.home-hero) .toadal-companion .companion-image {
 .toadal-profile-page .profile-hero-toadal {
   bottom: 0;
 }
+
+/* Screenshot-reviewed App, World, and Play polish. */
+.app-gameplay-section:has(#infinite-mode-title) .app-product-actions .button-link--secondary {
+  color: var(--navy-900);
+  border-color: var(--gold-600);
+  background: var(--cream-50);
+}
+
+.discovery-world .world-map-preview .discovery-scene-card > div:last-child {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 2px 8px;
+  padding: 8px 10px;
+}
+
+@media (max-width: 600px) {
+  :is(#mobile-adventure-world, #mobile-adventure-play).portal-app-feature {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  :is(#mobile-adventure-world, #mobile-adventure-play).portal-app-feature .portal-app-art {
+    box-sizing: border-box;
+    width: 100%;
+    height: auto;
+    min-width: 0;
+    padding: 8px;
+  }
+
+  :is(#mobile-adventure-world, #mobile-adventure-play).portal-app-feature .portal-app-art img {
+    display: block;
+    width: 100%;
+    height: 160px;
+  }
+
+  :is(#mobile-adventure-world, #mobile-adventure-play).portal-app-feature .portal-app-art figcaption {
+    display: block;
+    margin: 6px 2px 0;
+    line-height: 1.4;
+    overflow-wrap: anywhere;
+  }
+}
