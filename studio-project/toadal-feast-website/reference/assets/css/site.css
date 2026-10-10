@@ -7284,7 +7284,7 @@ body:has(.home-hero) .site-footer { margin-top: 18px; border-top: 1px solid rgb(
   body:has(.home-hero) #discovery { padding: 16px 0; }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   /* The automatic companion fits between the brand and Menu; content stays free. */
   .toadal-companion[data-mobile-docked="true"] {
     width: var(--toadal-dock-width, 102px);
@@ -8000,7 +8000,7 @@ html body:has(.home-hero) .toadal-companion .companion-image {
   object-fit: contain;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 960px) {
   /* The measured Home nav pocket is a square at the larger compact artwork size. */
   html body:has(.home-hero) .toadal-companion[data-mobile-docked="true"] {
     width: var(--toadal-dock-width, 64px) !important;
@@ -8234,4 +8234,39 @@ html body:has(.home-hero) .toadal-companion .companion-image {
     gap: 1px;
   }
   .home-explorer-passport__activity-status { text-align: start; }
+}
+
+/* Optional owner-approved managed header image; existing lettering is the fallback. */
+html body .site-brand__image {
+  position: absolute;
+  inset-inline-start: 0;
+  inset-block-start: 50%;
+  width: clamp(84px, 8vw, 108px);
+  height: 36px;
+  object-fit: contain;
+  transform: translateY(-50%);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html body .site-brand.site-brand--image-ready {
+  position: relative;
+  min-width: 108px;
+  color: transparent;
+  font-size: 0;
+  line-height: 0;
+  text-shadow: none;
+}
+
+html body .site-brand.site-brand--image-ready .site-brand__image {
+  visibility: visible;
+}
+
+html body .site-brand.site-brand--image-ready .site-brand__wordmark {
+  visibility: hidden;
+}
+
+@media (max-width: 760px) {
+  html body .site-brand__image { width: 84px; height: 32px; }
+  html body .site-brand.site-brand--image-ready { min-width: 84px; }
 }

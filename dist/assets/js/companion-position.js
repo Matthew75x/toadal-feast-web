@@ -64,7 +64,8 @@
       // A dense Home or Play catalogue may have no free body slot. Reuse the measured
       // header gap for a minimized desktop helper, without changing user drag
       // choices, persisted coordinates, other routes or the mobile path.
-      if (window.innerWidth > 600) {
+      var navToggle = document.querySelector('.site-nav .nav-toggle');
+      if (window.innerWidth > 600 && (!navToggle || getComputedStyle(navToggle).display === 'none')) {
         if (!document.querySelector('.home-hero, .wo002-game-library') || root.getAttribute('data-minimized') !== 'true') return null;
         var homeDock = !!document.querySelector('.home-hero');
         var desktopNav = document.querySelector('.site-nav');

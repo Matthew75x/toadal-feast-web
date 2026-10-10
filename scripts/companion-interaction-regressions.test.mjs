@@ -198,7 +198,7 @@ test('Home speech visibility keeps the avatar anchor and the larger compact size
     siteCss.includes('width: 64px !important;') && siteCss.includes('height: 64px !important;'));
 });
 
-function mobileDockHarness({ width = 390, home = false, gameLibrary = false, minimized = true, brandRight = 110, navEdge = 320 } = {}) {
+function mobileDockHarness({ width = 390, home = false, gameLibrary = false, minimized = true, brandRight = 110, navEdge = 320, menuVisible = width <= 960, manualPosition = false } = {}) {
   const brand = { getBoundingClientRect: () => rect(8, 0, brandRight - 8, 52) };
   const nav = {
     querySelector(selector) {
@@ -210,7 +210,7 @@ function mobileDockHarness({ width = 390, home = false, gameLibrary = false, min
   };
   const context = {
     EDGE_GAP: 12,
-    manualPosition: false,
+    manualPosition,
     window: { innerWidth: width },
     root: { getAttribute: name => name === 'data-minimized' && minimized ? 'true' : null },
     document: {
@@ -219,6 +219,7 @@ function mobileDockHarness({ width = 390, home = false, gameLibrary = false, min
         if (selector === '.wo002-game-library') return gameLibrary ? {} : null;
         if (selector === '.home-hero, .wo002-game-library') return home || gameLibrary ? {} : null;
         if (selector === '.site-nav') return nav;
+        if (selector === '.site-nav .nav-toggle') return menuVisible ? {} : null;
         if (selector === '[data-progression-page="profile"]') return null;
         return null;
       }
@@ -452,4 +453,17 @@ test('minimized companion continues contextual artwork while explicit hide suspe
   assert.doesNotMatch(renderSource, /if \(minimized\)[\s\S]*?return;/);
   assert.match(renderSource, /artworkRequest \+= 1;[\s\S]*?data-companion-current-reaction[\s\S]*?return;/);
   assert.match(hideSource, /focused = null;[\s\S]*hovered = null;[\s\S]*action = null;/);
+});
+
+
+test('tablet Menu navigation uses the header gap on Home and inner routes', () => {
+  for (const home of [true, false]) {
+    const dock = mobileDockHarness({ width: 768, home, brandRight: 132, navEdge: 678 })();
+    assert.ok(dock, 'tablet Menu has a usable header gap');
+    assert.equal(dock.kind, undefined, 'the Menu gap path also applies when its links are open');
+    assert.equal(dock.height, home ? 64 : 52);
+    assert.ok(dock.x > 132 && dock.x + dock.width < 678);
+    assert.equal(mobileDockHarness({ width: 768, home, manualPosition: true })(), null,
+      'a saved manual position bypasses automatic header docking');
+  }
 });

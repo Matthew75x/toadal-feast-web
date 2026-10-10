@@ -5,8 +5,47 @@
 
   var brand = document.querySelector('.site-brand');
   if (!brand || !brand.appendChild) return;
-  if (['pending', 'ready', 'fallback'].indexOf(brand.dataset.homeBrandLettering) !== -1) return;
+  if (['pending', 'ready', 'image-ready', 'fallback'].indexOf(brand.dataset.homeBrandLettering) !== -1) return;
   brand.dataset.homeBrandLettering = 'pending';
+  var image = brand.querySelector && brand.querySelector('.site-brand__image');
+  var imageReady = false;
+  var repaint = null;
+
+  function isManagedImage() {
+    if (!image || image.parentNode !== brand) return false;
+    try {
+      var source = new URL(image.getAttribute('src') || image.src, window.location.href);
+      var page = new URL(window.location.href);
+      var prefix = baseRoot() + '/assets/studio/';
+      return source.origin === page.origin && source.pathname.indexOf(prefix) === 0 &&
+        source.pathname.length > prefix.length;
+    } catch (error) {
+      return false;
+    }
+  }
+
+  function restoreImageFallback() {
+    imageReady = false;
+    brand.classList.remove('site-brand--image-ready');
+    if (repaint) repaint();
+  }
+
+  function showManagedImage() {
+    // Re-check the managed path on every load, including a later src change.
+    if (!isManagedImage() || !image.naturalWidth || !image.naturalHeight) {
+      restoreImageFallback();
+      return;
+    }
+    imageReady = true;
+    brand.classList.add('site-brand--image-ready');
+    brand.dataset.homeBrandLettering = 'image-ready';
+  }
+
+  if (image) {
+    image.addEventListener('load', showManagedImage);
+    image.addEventListener('error', restoreImageFallback);
+    if (image.complete) showManagedImage();
+  }
 
   var wordmark = document.createElement('span');
   wordmark.className = 'site-brand__wordmark';
@@ -71,7 +110,7 @@
     brand.classList.remove('site-brand--lettering-ready');
     clearCanvas(toadalCanvas);
     clearCanvas(feastCanvas);
-    brand.dataset.homeBrandLettering = 'fallback';
+    brand.dataset.homeBrandLettering = imageReady ? 'image-ready' : 'fallback';
     lastSignature = '';
   }
 
@@ -85,7 +124,7 @@
     var framePending = false;
     function paint() {
       framePending = false;
-      if (!brand.isConnected) return;
+      if (!brand.isConnected || imageReady) return;
       if (wordmark.parentNode !== brand) brand.appendChild(wordmark);
 
       var words = brandWords();
@@ -145,6 +184,8 @@
       framePending = true;
       window.requestAnimationFrame(paint);
     }
+
+    repaint = schedule;
 
     try {
       renderer.whenReady(schedule);

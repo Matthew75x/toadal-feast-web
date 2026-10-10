@@ -9,7 +9,7 @@ const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const moduleSource = fs.readFileSync(path.join(repo,
   'studio-project/toadal-feast-website/reference/assets/js/home-brand-lettering.js'), 'utf8');
 
-function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResult, rendererEnabled = true, homeHero = true } = {}) {
+function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResult, rendererEnabled = true, homeHero = true, imageSrc = null, imageComplete = false, naturalWidth = 108, naturalHeight = 36, homePath = '/toadal-feast-web/' } = {}) {
   const frames = [];
   const mutations = [];
   const resizes = [];
@@ -45,6 +45,7 @@ function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResul
       appendChild(child) { this.children.push(child); child.parentNode = this; return child; },
       setAttribute(name, value) { attrs[name] = String(value); },
       getAttribute(name) { return Object.hasOwn(attrs, name) ? attrs[name] : null; },
+      querySelector(selector) { return selector === '.site-brand__image' ? this.children.find(child => child.className === 'site-brand__image') || null : null; },
       classList: {
         add(name) { classes.add(name); },
         remove(name) { classes.delete(name); },
@@ -76,7 +77,18 @@ function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResul
       this.children = [];
     }
   });
-  brand.href = 'https://example.test/toadal-feast-web/';
+  brand.href = 'https://example.test' + homePath;
+  let image = null;
+  if (imageSrc !== null) {
+    image = makeElement('img');
+    image.className = 'site-brand__image';
+    image.src = imageSrc;
+    image.setAttribute('src', imageSrc);
+    image.complete = imageComplete;
+    image.naturalWidth = naturalWidth;
+    image.naturalHeight = naturalHeight;
+    brand.appendChild(image);
+  }
   const head = makeElement('head');
   const document = {
     scripts,
@@ -100,7 +112,7 @@ function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResul
     observe(target) { this.target = target; }
   }
   const window = {
-    location: { href: 'https://example.test/toadal-feast-web/' },
+    location: { href: 'https://example.test' + homePath },
     requestAnimationFrame(callback) { frames.push(callback); return frames.length; },
     addEventListener() {}
   };
@@ -121,6 +133,7 @@ function harness({ brandText = 'TOADAL FEAST', fontStatus = 'loaded', paintResul
   vm.runInContext(moduleSource, context);
   return {
     brand,
+    image,
     canvases,
     dimensions,
     fonts,
@@ -269,4 +282,73 @@ test('a failed renderer script on an inner route also leaves the native brand re
   assert.equal(h.brand.textContent, 'TOADAL FEAST');
   assert.equal(h.brand.dataset.homeBrandLettering, 'fallback');
   assert.equal(h.brand.classList.contains('site-brand--lettering-ready'), false);
+});
+
+
+test('a pending managed image retains the existing lettering until successful load', () => {
+  const h = harness({ imageSrc: '/toadal-feast-web/assets/studio/qa-image.0123456789.png' });
+  h.flushFrames();
+  assert.equal(h.brand.dataset.homeBrandLettering, 'ready');
+  assert.equal(h.brand.classList.contains('site-brand--image-ready'), false);
+  h.image.emit('load');
+  h.flushFrames();
+  assert.equal(h.brand.dataset.homeBrandLettering, 'image-ready');
+  assert.equal(h.brand.classList.contains('site-brand--image-ready'), true);
+  assert.equal(h.brand.textContent, 'TOADAL FEAST');
+});
+
+test('cached managed images work at root and nested export paths', () => {
+  for (const homePath of ['/', '/toadal-feast-web/']) {
+    const h = harness({ homePath, imageSrc: homePath + 'assets/studio/qa-image.0123456789.png', imageComplete: true });
+    h.flushFrames();
+    assert.equal(h.brand.dataset.homeBrandLettering, 'image-ready');
+    assert.equal(h.brand.classList.contains('site-brand--image-ready'), true);
+    assert.equal(h.paints.length, 0, 'the successful image suppresses decorative canvas painting');
+    assert.equal(h.brand.textContent, 'TOADAL FEAST');
+  }
+});
+
+test('image loading failure restores the current lettering and accessible text', () => {
+  const h = harness({ imageSrc: '/toadal-feast-web/assets/studio/qa-image.0123456789.png', imageComplete: true });
+  h.flushFrames();
+  h.image.emit('error');
+  h.flushFrames();
+  assert.equal(h.brand.classList.contains('site-brand--image-ready'), false);
+  assert.equal(h.brand.dataset.homeBrandLettering, 'ready');
+  assert.deepEqual(h.paints.map(item => item.settings.letterText), ['TOADAL', 'FEAST']);
+  assert.equal(h.brand.textContent, 'TOADAL FEAST');
+});
+
+test('external and unmanaged images never replace the current wordmark', () => {
+  for (const imageSrc of ['https://external.test/assets/studio/logo.png', '/toadal-feast-web/assets/images/icon.png', '/assets/studio/wrong-base.png']) {
+    const h = harness({ imageSrc, imageComplete: true });
+    h.flushFrames();
+    assert.equal(h.brand.classList.contains('site-brand--image-ready'), false);
+    assert.equal(h.brand.dataset.homeBrandLettering, 'ready');
+  }
+});
+
+test('a later source change is revalidated before an image can stay visible', () => {
+  const h = harness({ imageSrc: '/toadal-feast-web/assets/studio/qa-image.0123456789.png', imageComplete: true });
+  h.flushFrames();
+  h.image.setAttribute('src', 'https://external.test/assets/studio/logo.png');
+  h.image.emit('load');
+  h.flushFrames();
+  assert.equal(h.brand.classList.contains('site-brand--image-ready'), false);
+  assert.equal(h.brand.dataset.homeBrandLettering, 'ready');
+});
+
+test('an image with zero decoded dimensions leaves the current lettering usable', () => {
+  const h = harness({ imageSrc: '/toadal-feast-web/assets/studio/qa-image.0123456789.png', imageComplete: true, naturalWidth: 0, naturalHeight: 0 });
+  h.flushFrames();
+  assert.equal(h.brand.classList.contains('site-brand--image-ready'), false);
+  assert.equal(h.brand.dataset.homeBrandLettering, 'ready');
+});
+
+test('a valid managed image survives failure of the optional lettering script', () => {
+  const h = harness({ imageSrc: '/toadal-feast-web/assets/studio/qa-image.0123456789.png', imageComplete: true, rendererEnabled: false });
+  h.head.children[0].emit('error');
+  assert.equal(h.brand.dataset.homeBrandLettering, 'image-ready');
+  assert.equal(h.brand.classList.contains('site-brand--image-ready'), true);
+  assert.equal(h.brand.textContent, 'TOADAL FEAST');
 });
