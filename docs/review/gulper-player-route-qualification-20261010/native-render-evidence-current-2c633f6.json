@@ -1,0 +1,98 @@
+{
+  "schema": "toadal-feast.native-render-qualification.v1",
+  "status": "PASS",
+  "observedDate": "2026-10-10",
+  "candidateWebsiteCommit": "2c633f6c1a509ed3110341f13d97989a5efb12ca",
+  "candidateWebsiteTree": "306389444938149494a860091483800886e6d86f",
+  "renderer": {
+    "exitCode": 0,
+    "commit": "459b802f477a627c44802ad2e157101f5680bbdc",
+    "tree": "8cdf0f3d5f7a447cd89b41eb03df7eda837a0c18",
+    "websiteRoutes": 34,
+    "synchronizedDist": true,
+    "protectedGamesValid": true,
+    "protectedGameCount": 86,
+    "rawStudioZipSha256": "7661318931100c33f65eee4af466007a89b1805bf8f0ded85ab3fd62a241eeb6",
+    "actualIsolatedExport": true,
+    "validationValid": true,
+    "basepathCheck": "Files scanned: 40\nFiles rewritten: 0\nURLs rewritten: 0\nStaging robots policy: already present",
+    "advancedRuntime": {
+      "schema": "toadal-feast.advanced-runtime-externalization.v1",
+      "pages": 34,
+      "source": {
+        "cssBytes": 62206,
+        "cssSha256": "eecdb28f78fe5fdc5666a09f084938b5440835715068a4c3be17d810e6223b1b",
+        "embeddedCssVariants": {
+          "source": 0,
+          "basePathProjected": 34
+        },
+        "javascriptBytes": 62974,
+        "javascriptSha256": "9e787802292f4399114b76b1854042c4e7519cc37b95a89b977e2a99709d676f"
+      },
+      "derived": {
+        "css": {
+          "path": "assets/css/advanced-code.520de9a1db6d.css",
+          "url": "/toadal-feast-web/assets/css/advanced-code.520de9a1db6d.css",
+          "bytes": 62240,
+          "sha256": "520de9a1db6db33d05816e5e516446a610d5995bb4840d95290408ab6957966b"
+        },
+        "javascript": {
+          "path": "assets/js/advanced-code.9e787802292f.js",
+          "url": "/toadal-feast-web/assets/js/advanced-code.9e787802292f.js",
+          "bytes": 62974,
+          "sha256": "9e787802292f4399114b76b1854042c4e7519cc37b95a89b977e2a99709d676f"
+        }
+      },
+      "html": {
+        "beforeBytes": 4828303,
+        "afterBytes": 580207,
+        "reductionBytes": 4248096
+      },
+      "duplicatedSourceBytesRemoved": 4130906,
+      "executionOrder": "external parser-blocking script remains at the original end-of-body script position",
+      "cssOrder": "external stylesheet remains at the original advanced-style position"
+    },
+    "intrinsicImages": {
+      "pagesUpdated": 34,
+      "imagesUpdated": 108
+    }
+  },
+  "fingerprints": {
+    "before": {
+      "source": {
+        "sha256": "f8a1e77ad26734f402b4bc6ea9f103887954b583c0fa1f9393200e44dd2da0b3",
+        "files": 453
+      },
+      "dist": {
+        "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
+        "files": 429
+      }
+    },
+    "after": {
+      "source": {
+        "sha256": "f8a1e77ad26734f402b4bc6ea9f103887954b583c0fa1f9393200e44dd2da0b3",
+        "files": 453
+      },
+      "dist": {
+        "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
+        "files": 429
+      }
+    }
+  },
+  "authoredProjectFingerprint": {
+    "before": {
+      "sha256": "a228a9a98ea4e97d69bf846d27446f658c30ca63e63012434c80851a84f0181c",
+      "files": 274
+    },
+    "after": {
+      "sha256": "a228a9a98ea4e97d69bf846d27446f658c30ca63e63012434c80851a84f0181c",
+      "files": 274
+    }
+  },
+  "route": {
+    "path": "player/claw-feed-gulper/index.html",
+    "archivedHtmlPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-player-route-current-2c633f6.html",
+    "htmlSha256": "f77127112b4b852c348ffc272b6d7bccbecc0abc7b17704017be8afafa2b9fb2",
+    "distHtmlSha256": "f77127112b4b852c348ffc272b6d7bccbecc0abc7b17704017be8afafa2b9fb2"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schema": "toadal-feast.gulper-player-route-studio-export-evidence.v1",
+  "status": "PASS",
+  "nativeStudioExport": {
+    "status": "PASS",
+    "sourceCommit": "2c633f6c1a509ed3110341f13d97989a5efb12ca",
+    "sourceTree": "306389444938149494a860091483800886e6d86f",
+    "sourceFingerprintBefore": {
+      "source": {
+        "sha256": "f8a1e77ad26734f402b4bc6ea9f103887954b583c0fa1f9393200e44dd2da0b3",
+        "files": 453
+      },
+      "dist": {
+        "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
+        "files": 429
+      }
+    },
+    "sourceFingerprintAfter": {
+      "source": {
+        "sha256": "f8a1e77ad26734f402b4bc6ea9f103887954b583c0fa1f9393200e44dd2da0b3",
+        "files": 453
+      },
+      "dist": {
+        "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
+        "files": 429
+      }
+    },
+    "sourceUnchanged": true,
+    "nativeRenderEvidencePath": "docs/review/gulper-player-route-qualification-20261010/native-render-evidence-current-2c633f6.json",
+    "nativeRenderEvidenceSha256": "40dcf5c0f787be0e611412d1f76fa763fe793a6bcf1cb0daa70483432758cbd9",
+    "rendererCommit": "459b802f477a627c44802ad2e157101f5680bbdc",
+    "rendererTree": "8cdf0f3d5f7a447cd89b41eb03df7eda837a0c18",
+    "validationValid": true,
+    "routeRecords": 34,
+    "routeHtmlPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-player-route-current-2c633f6.html",
+    "routeHtmlSha256": "f77127112b4b852c348ffc272b6d7bccbecc0abc7b17704017be8afafa2b9fb2",
+    "routeHtmlMatchesDistAndArchive": true,
+    "protectedGameArtifactsValid": true,
+    "protectedGameArtifactCount": 86,
+    "rawStudioZipSha256": "7661318931100c33f65eee4af466007a89b1805bf8f0ded85ab3fd62a241eeb6"
+  },
+  "checks": [
+    {
+      "name": "Studio project validation and native static export",
+      "status": "PASS"
+    },
+    {
+      "name": "34-route owner preview render freshness",
+      "status": "PASS",
+      "registeredRoutes": 34
+    },
+    {
+      "name": "Base-path projected route and managed image",
+      "status": "PASS"
+    },
+    {
+      "name": "Protected cartridge source/export byte comparison",
+      "status": "PASS",
+      "files": 86
+    },
+    {
+      "name": "Studio source and rendered dist stable across isolated export",
+      "status": "PASS"
+    },
+    {
+      "name": "Native player HTML equals archived and synchronized dist",
+      "status": "PASS"
+    }
+  ],
+  "publicationGate": {
+    "status": "BLOCKED",
+    "gate": "verifyExportGamePins",
+    "policyPath": "manifests/staging-game-preservation-policy.json",
+    "policySha256": "e78bdc72d597389883d065f70224626c3963b5639db3da00800a231cae4fab2f",
+    "reason": "Unknown or missing protected game payload; new admission is held",
+    "scope": "The local website candidate is exported and browser-qualified; the staging publication artifact remains held because the committed legacy policy does not admit the Gulper cartridge."
+  }
+}
