@@ -8015,6 +8015,29 @@ html body:has(.home-hero) .toadal-companion .companion-image {
   bottom: 0;
 }
 
+/* Keep the Characters Hub's canonical full-body Toadal inside its clipped hero. */
+@media (min-width: 681px) {
+  .characters-page .character-hero {
+    min-height: clamp(330px, 40.8vw, 461px);
+  }
+
+  .characters-page .character-hero-toadal {
+    bottom: 0;
+  }
+}
+
+@media (min-width: 681px) and (max-width: 900px) {
+  .characters-page .character-hero-toadal {
+    width: 36%;
+  }
+}
+
+@media (max-width: 680px) {
+  .characters-page .character-hero-toadal {
+    bottom: 0;
+  }
+}
+
 /* Screenshot-reviewed App, World, and Play polish. */
 .app-gameplay-section:has(#infinite-mode-title) .app-product-actions .button-link--secondary {
   color: var(--navy-900);
