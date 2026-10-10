@@ -3920,6 +3920,10 @@ main:has(.home-hero) > [data-studio-variant="companion"] .companion-image{max-he
   padding: clamp(20px, 3vw, 40px) var(--page-gutter) clamp(44px, 6vw, 72px);
 }
 
+.studio-rich-text.shell.section[data-studio-variant="gated-about"] > .gated-page {
+  padding-block-end: clamp(16px, 2vw, 24px);
+}
+
 .gated-hero {
   position: relative;
   display: grid;

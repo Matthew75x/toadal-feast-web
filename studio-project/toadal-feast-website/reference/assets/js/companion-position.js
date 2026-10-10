@@ -468,10 +468,12 @@
       if (manualPosition) return baseline;
       var guestProfile = document.querySelector('[data-progression-page="profile"]');
       var toadalHeroCopy = document.querySelector('.toadal-profile-page .profile-hero-copy');
-      if (!guestProfile && !toadalHeroCopy) return baseline;
+      var accountPrivacyCopy = document.querySelector('.studio-rich-text.shell.section[data-studio-variant="gated-account"] [data-companion-context="privacy"]');
+      if (!guestProfile && !toadalHeroCopy && !accountPrivacyCopy) return baseline;
       var view = viewport();
       var copySelector = guestProfile ? '[data-progression-page="profile"] :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)' : '';
       if (toadalHeroCopy) copySelector += (copySelector ? ', ' : '') + '.toadal-profile-page .profile-hero-copy';
+      if (accountPrivacyCopy) copySelector += (copySelector ? ', ' : '') + '.studio-rich-text.shell.section[data-studio-variant="gated-account"] [data-companion-context="privacy"] :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)';
       var copy = Array.from(document.querySelectorAll(copySelector)).filter(function (note) {
         if (root.contains(note)) return false;
         var style = getComputedStyle(note);

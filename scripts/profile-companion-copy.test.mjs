@@ -10,6 +10,8 @@ const source = fs.readFileSync(path.join(repo, sourcePath), 'utf8');
 const profileSelector = '[data-progression-page="profile"]';
 const characterHeroSelector = '.toadal-profile-page .profile-hero-copy';
 const noteSelector = profileSelector + ' :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)';
+const accountPrivacySelector = '.studio-rich-text.shell.section[data-studio-variant="gated-account"] [data-companion-context="privacy"]';
+const accountPrivacyCopySelector = accountPrivacySelector + ' :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)';
 const rect = (left, top, width, height) => ({ left, top, width, height, right: left + width, bottom: top + height });
 // Exact settled EA rectangles, 2026-10-09, Profile 320x844, scrollY=0.
 // The original witness's manual/default provenance is unproven. These are
@@ -76,6 +78,7 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
         queries.push(selector);
         if (selector === noteSelector) return route === profileSelector ? copyElements : [];
         if (selector === characterHeroSelector) return route === characterHeroSelector ? copyElements : [];
+        if (selector === accountPrivacyCopySelector) return route === accountPrivacySelector ? copyElements : [];
         return controlElements;
       }
     },
@@ -205,6 +208,42 @@ test('captured Toadal character-hero copy bounds are excluded for automatic avat
     plain(manual.avoidControls(characterObserved)), 'manual drag remains under the user’s control');
   assert.ok(!manual.lookups.includes(characterHeroSelector), 'manual placement does not inspect the route-specific target');
   assert.ok(!manual.queries.includes(characterHeroSelector), 'manual placement never queries hero-copy geometry');
+});
+
+test('automatic Account placement clears Privacy copy while manual placement remains clamped and persistent', () => {
+  // Synthetic overlap fixture for the route-specific automatic exclusion; no Account screenshot
+  // was available to support a measured rectangle. The production selector comes from account.json.
+  const privacyCopy = rect(202, 550, 104, 72);
+  const automatic = harness({ route: accountPrivacySelector, note: privacyCopy,
+    copyBounds: [privacyCopy], width: 320, height: 844 });
+  const preferred = plain(automatic.defaultPosition());
+  assert.deepEqual(preferred, { x: 208, y: 556 });
+  assert.ok(area(preferred, privacyCopy) > 0, 'the synthetic Account default overlaps the privacy copy');
+  automatic.applyPosition(preferred.x, preferred.y, false);
+  const placed = { x: Number(automatic.attrs['data-position-x']), y: Number(automatic.attrs['data-position-y']) };
+  assert.notDeepEqual(placed, preferred, 'automatic placement leaves the Account copy');
+  assert.equal(area(placed, privacyCopy, 100, 96, 12), 0, 'the Privacy heading and text retain the existing exclusion gap');
+  assert.ok(automatic.queries.includes(accountPrivacyCopySelector));
+  assert.ok(!automatic.queries.includes(noteSelector), 'guest Profile protection remains route-specific');
+  assert.equal(automatic.writes.length, 0, 'automatic clearance does not persist a replacement preference');
+
+  const saved = { version: 1, x: 208, y: 556, manual: true };
+  const manual = harness({ route: accountPrivacySelector, manual: true, saved,
+    note: privacyCopy, copyBounds: [privacyCopy], width: 320, height: 844 });
+  assert.deepEqual(plain(manual.loadPosition()), { x: saved.x, y: saved.y });
+  manual.applyPosition(saved.x, saved.y, true);
+  assert.deepEqual({ x: manual.x, y: manual.y }, { x: saved.x, y: saved.y },
+    'a deliberate Account placement is not moved around its copy');
+  assert.ok(!manual.queries.includes(accountPrivacyCopySelector), 'manual placement bypasses route-specific copy measurement');
+  assert.deepEqual(manual.writes.at(-1), { key: manual.POSITION_KEY, value: saved });
+
+  manual.window.innerWidth = 140;
+  manual.clampAfterViewportChange();
+  assert.deepEqual({ x: manual.x, y: manual.y }, { x: 28, y: 556 },
+    'manual Account placement still clamps to the resized viewport');
+  assert.ok(manual.x >= 12 && manual.x + 100 <= 128);
+  assert.deepEqual(manual.writes.at(-1), { key: manual.POSITION_KEY,
+    value: { version: 1, x: 28, y: 556, manual: true } });
 });
 
 test('representative controls stay clear when the nearest note-safe position would collide with a control', () => {
