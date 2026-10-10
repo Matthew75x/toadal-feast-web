@@ -25,7 +25,7 @@
             "props": {
               "authoringVersion": 1,
               "tag": "section",
-              "className": "progression-page",
+              "className": "progression-page shell",
               "attributes": {
                 "data-editorial-article": ""
               },
@@ -353,31 +353,48 @@
                   }
                 },
                 {
-                  "id": "component.manifest-news-article.cc26e3094531.a",
-                  "type": "core.button",
+                  "id": "component.manifest-news-article.devlog-destinations",
+                  "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "a",
-                    "className": "",
-                    "attributes": {},
+                    "tag": "nav",
+                    "className": "progression-nav progression-nav--devlog",
+                    "attributes": {
+                      "aria-label": "Devlog destinations"
+                    },
                     "style": "",
-                    "layerName": "View Roadmap",
-                    "href": "/roadmap/",
-                    "label": "View Roadmap"
-                  }
-                },
-                {
-                  "id": "component.manifest-news-article.e7355eac985f.a",
-                  "type": "core.button",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "a",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Back to News",
-                    "href": "/news/",
-                    "label": "Back to News"
+                    "layerName": "Devlog destinations",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.manifest-news-article.cc26e3094531.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "View Roadmap",
+                          "href": "/roadmap/",
+                          "label": "View Roadmap"
+                        }
+                      },
+                      {
+                        "id": "component.manifest-news-article.e7355eac985f.a",
+                        "type": "core.button",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "a",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Back to News",
+                          "href": "/news/",
+                          "label": "Back to News"
+                        }
+                      }
+                    ]
                   }
                 }
               ]

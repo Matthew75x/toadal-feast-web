@@ -11,6 +11,31 @@
   var EDGE_GAP = 12;
   var DEFAULT_BOTTOM_GAP = 180;
 
+  function dragOffsetsAtScale(anchorX, anchorY, rootRect, artworkRect) {
+    return {
+      x: artworkRect.left - rootRect.left + anchorX * artworkRect.width,
+      y: artworkRect.top - rootRect.top + anchorY * artworkRect.height
+    };
+  }
+
+  function shouldRepositionOnPanelChange(isHomePage, isDragging) {
+    return !isHomePage && !isDragging;
+  }
+
+  function hasPanelLayoutMutation(records, panel, root) {
+    return records.some(function (record) {
+      if (record.type !== 'attributes') return true;
+      if (record.target === panel && record.attributeName === 'hidden') {
+        return record.oldValue !== panel.getAttribute('hidden');
+      }
+      if (record.target === root &&
+        (record.attributeName === 'data-minimized' || record.attributeName === 'data-panel-visible')) {
+        return record.oldValue !== root.getAttribute(record.attributeName);
+      }
+      return false;
+    });
+  }
+
   function readSafeInset(name) {
     var value = Number.parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--toadal-safe-' + name));
     return Number.isFinite(value) ? value : 0;
@@ -41,6 +66,7 @@
       // choices, persisted coordinates, other routes or the mobile path.
       if (window.innerWidth > 600) {
         if (!document.querySelector('.home-hero, .wo002-game-library') || root.getAttribute('data-minimized') !== 'true') return null;
+        var homeDock = !!document.querySelector('.home-hero');
         var desktopNav = document.querySelector('.site-nav');
         var desktopBrand = desktopNav && desktopNav.querySelector('.site-brand');
         var desktopLinks = desktopNav && desktopNav.querySelector('.site-links');
@@ -49,8 +75,9 @@
         var linksRect = desktopLinks.getBoundingClientRect();
         if (brandRect.bottom <= 0 || linksRect.bottom <= 0) return null;
         var desktopGap = linksRect.left - brandRect.right - 2 * (EDGE_GAP + 1);
-        if (desktopGap < 52) return null;
-        return { x: brandRect.right + EDGE_GAP + 1 + (desktopGap - 52) / 2, y: Math.max(4, brandRect.top + (brandRect.height - 52) / 2), width:52, kind:'desktop' };
+        var desktopSize = homeDock ? 64 : 52;
+        if (desktopGap < desktopSize) return null;
+        return { x: brandRect.right + EDGE_GAP + 1 + (desktopGap - desktopSize) / 2, y: Math.max(4, brandRect.top + (brandRect.height - desktopSize) / 2), width:desktopSize, height:desktopSize, kind:'desktop' };
       }
       var nav = document.querySelector('.site-nav');
       var brand = nav && nav.querySelector('.site-brand');
@@ -61,9 +88,15 @@
       // Use the same exclusion margin as collision checks, plus rounding slack.
       var dockGap = EDGE_GAP + 1;
       var gap = b.left - a.right - 2 * dockGap;
-      if (gap < 52) return null;
-      var width = Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
-      return { x: a.right + dockGap + (gap - width) / 2, y: Math.max(4, a.top + (a.height - 52) / 2), width: width };
+      var homeDock = !!document.querySelector('.home-hero');
+      // An already-minimized Profile can use the narrow existing header pocket.
+      // Keep normal docking for other routes, manual placement and explicit expansion.
+      var minimumGap = homeDock ? 64 : root.getAttribute('data-minimized') === 'true' &&
+        document.querySelector('[data-progression-page="profile"]') ? 48 : 52;
+      if (gap < minimumGap) return null;
+      var width = homeDock ? 64 : Math.min(window.innerWidth <= 360 ? 92 : 102, gap);
+      var height = homeDock ? width : 52;
+      return { x: a.right + dockGap + (gap - width) / 2, y: Math.max(4, a.top + (a.height - height) / 2), width: width, height: height };
     }
 
     function setDock(dock) {
@@ -153,7 +186,7 @@
       // The visible bubble, not just its character anchor, must leave navigation usable.
       var preferred = { x: Math.round(left), y: Math.round(top) };
       var controls = controlRects(true).concat([anchor]);
-      var next = avoidControls(preferred, panelWidth, panelHeight, controls);
+      var next = avoidProfileCopy(preferred, panelWidth, panelHeight, controls);
       // A passive tip can wait for free space; the character and reader's preferences remain intact.
       var suppressed = root.getAttribute('data-mobile-docked') === 'true' &&
         root.getAttribute('data-minimized') === 'true' && controls.some(function (rect) {
@@ -179,10 +212,11 @@
       var next = dock ? { x: Math.round(dock.x), y: Math.round(dock.y) } : clampPosition(nextX, nextY);
       // Main controls can scroll behind the opaque sticky header. They must
       // not dislodge its automatic dock into the visible page content.
-      var safe = dock ? avoidControls(next, dock.width, 52, controlRects(false, true)) : avoidControls(next);
+      var safe = dock ? avoidControls(next, dock.width, dock.height || 52, controlRects(false, true)) :
+        (manualPosition ? next : avoidProfileCopy(next));
       if (dock && (safe.x !== next.x || safe.y !== next.y)) {
         setDock(null);
-        safe = avoidControls(clampPosition(safe.x, safe.y));
+        safe = avoidProfileCopy(clampPosition(safe.x, safe.y));
       }
       next = safe;
       x = next.x;
@@ -232,37 +266,234 @@
       width = width || root.offsetWidth || button.offsetWidth;
       height = height || root.offsetHeight || button.offsetHeight;
       controls = controls || controlRects(false);
-      function collisionArea(position) {
-        return controls.reduce(function (area, rect) {
-          var overlapWidth = Math.max(0, Math.min(position.x + width + EDGE_GAP, rect.right) - Math.max(position.x - EDGE_GAP, rect.left));
-          var overlapHeight = Math.max(0, Math.min(position.y + height + EDGE_GAP, rect.bottom) - Math.max(position.y - EDGE_GAP, rect.top));
-          return area + overlapWidth * overlapHeight;
-        }, 0);
+      var obstacles = controls.map(function (rect) {
+        return { left: rect.left, top: rect.top, right: rect.right, bottom: rect.bottom };
+      });
+      var cellSize = Math.max(64, Math.min(192, Math.max(width, height) + EDGE_GAP * 2));
+      var columns = Math.max(1, Math.ceil(view.width / cellSize));
+      var rows = Math.max(1, Math.ceil(view.height / cellSize));
+      var cells = new Array(columns * rows);
+      function cellCoordinate(value, origin, count) {
+        return Math.max(0, Math.min(count - 1, Math.floor((value - origin) / cellSize)));
       }
-      if (collisionArea(preferred) === 0) return preferred;
+      obstacles.forEach(function (rect, index) {
+        var firstColumn = cellCoordinate(rect.left, view.left, columns);
+        var lastColumn = cellCoordinate(rect.right, view.left, columns);
+        var firstRow = cellCoordinate(rect.top, view.top, rows);
+        var lastRow = cellCoordinate(rect.bottom, view.top, rows);
+        for (var row = firstRow; row <= lastRow; row += 1) {
+          for (var column = firstColumn; column <= lastColumn; column += 1) {
+            var cellIndex = row * columns + column;
+            if (!cells[cellIndex]) cells[cellIndex] = [];
+            cells[cellIndex].push(index);
+          }
+        }
+      });
+      var seen = new Uint32Array(obstacles.length);
+      var generation = 0;
+      function collisionArea(position) {
+        generation = (generation + 1) >>> 0;
+        if (generation === 0) { seen.fill(0); generation = 1; }
+        var left = position.x - EDGE_GAP;
+        var right = position.x + width + EDGE_GAP;
+        var top = position.y - EDGE_GAP;
+        var bottom = position.y + height + EDGE_GAP;
+        var viewRight = view.left + view.width;
+        var viewBottom = view.top + view.height;
+        if (right < view.left || left > viewRight || bottom < view.top || top > viewBottom) return 0;
+        var firstColumn = cellCoordinate(left, view.left, columns);
+        var lastColumn = cellCoordinate(right, view.left, columns);
+        var firstRow = cellCoordinate(top, view.top, rows);
+        var lastRow = cellCoordinate(bottom, view.top, rows);
+        var area = 0;
+        for (var row = firstRow; row <= lastRow; row += 1) {
+          for (var column = firstColumn; column <= lastColumn; column += 1) {
+            var bucket = cells[row * columns + column];
+            if (!bucket) continue;
+            for (var item = 0; item < bucket.length; item += 1) {
+              var index = bucket[item];
+              if (seen[index] === generation) continue;
+              seen[index] = generation;
+              var rect = obstacles[index];
+              var overlapWidth = Math.max(0, Math.min(right, rect.right) - Math.max(left, rect.left));
+              if (overlapWidth === 0) continue;
+              var overlapHeight = Math.max(0, Math.min(bottom, rect.bottom) - Math.max(top, rect.top));
+              area += overlapWidth * overlapHeight;
+            }
+          }
+        }
+        return area;
+      }
+      var preferredArea = collisionArea(preferred);
+      if (preferredArea === 0) return preferred;
       // Rectangle edges enumerate free regions without a screenshot-specific offset.
       var xs = [preferred.x, view.left + EDGE_GAP, view.left + view.width - width - EDGE_GAP];
       var ys = [preferred.y, view.top + EDGE_GAP, view.top + view.height - height - EDGE_GAP];
-      controls.forEach(function (rect) {
+      obstacles.forEach(function (rect) {
         xs.push(Math.floor(rect.left - width - EDGE_GAP), Math.ceil(rect.right + EDGE_GAP));
         ys.push(Math.floor(rect.top - height - EDGE_GAP), Math.ceil(rect.bottom + EDGE_GAP));
       });
+      var xValues = Array.from(new Set(xs));
+      var yValues = Array.from(new Set(ys));
+      var minX = Math.ceil(view.left + readSafeInset('left') + EDGE_GAP);
+      var maxX = Math.max(minX, Math.floor(view.left + view.width - readSafeInset('right') - EDGE_GAP - width));
+      var minY = Math.ceil(view.top + readSafeInset('top') + EDGE_GAP);
+      var maxY = Math.max(minY, Math.floor(view.top + view.height - readSafeInset('bottom') - EDGE_GAP - height));
+      function axisCandidates(values, min, max, origin) {
+        var unique = new Map();
+        values.forEach(function (value, order) {
+          var clamped = Math.round(Math.max(min, Math.min(max, value)));
+          if (!unique.has(clamped)) unique.set(clamped, order);
+        });
+        return Array.from(unique, function (entry) {
+          return { value: entry[0], order: entry[1], distance: Math.pow(entry[0] - origin, 2) };
+        }).sort(function (a, b) { return a.distance - b.distance || a.order - b.order; });
+      }
+      var xCandidates = axisCandidates(xValues, minX, maxX, preferred.x);
+      var yCandidates = axisCandidates(yValues, minY, maxY, preferred.y);
+
+      // Dense routes can have many candidate edges. Search for the nearest
+      // collision-free pair with bitsets first; exact overlap scoring is only
+      // needed when every candidate pair is occupied.
+      if (obstacles.length >= 16) {
+        var words = Math.ceil(obstacles.length / 32);
+        function overlapMasks(candidates, horizontal) {
+          return candidates.map(function (candidate) {
+            var mask = new Uint32Array(words);
+            var start = candidate.value - EDGE_GAP;
+            var end = candidate.value + (horizontal ? width : height) + EDGE_GAP;
+            obstacles.forEach(function (rect, index) {
+              var overlaps = horizontal ? end > rect.left && start < rect.right : end > rect.top && start < rect.bottom;
+              if (overlaps) mask[index >>> 5] |= (1 << (index & 31));
+            });
+            return mask;
+          });
+        }
+        var xMasks = overlapMasks(xCandidates, true);
+        var yMasks = overlapMasks(yCandidates, false);
+        function clearPair(xIndex, yIndex) {
+          for (var word = 0; word < words; word += 1) {
+            if (xMasks[xIndex][word] & yMasks[yIndex][word]) return false;
+          }
+          return true;
+        }
+        var heap = [];
+        var visited = new Set();
+        var bestClear = null;
+        function before(a, b) { return a.distance < b.distance || (a.distance === b.distance && a.rank < b.rank); }
+        function pushPair(xIndex, yIndex) {
+          if (xIndex >= xCandidates.length || yIndex >= yCandidates.length) return;
+          var key = xIndex * yCandidates.length + yIndex;
+          if (visited.has(key)) return;
+          visited.add(key);
+          var xCandidate = xCandidates[xIndex];
+          var yCandidate = yCandidates[yIndex];
+          var item = {
+            xIndex: xIndex,
+            yIndex: yIndex,
+            distance: xCandidate.distance + yCandidate.distance,
+            rank: xCandidate.order * yValues.length + yCandidate.order
+          };
+          var index = heap.length;
+          heap.push(item);
+          while (index > 0) {
+            var parent = (index - 1) >>> 1;
+            if (!before(item, heap[parent])) break;
+            heap[index] = heap[parent];
+            index = parent;
+          }
+          heap[index] = item;
+        }
+        function popPair() {
+          var first = heap[0];
+          var last = heap.pop();
+          if (heap.length) {
+            var index = 0;
+            while (true) {
+              var left = index * 2 + 1;
+              if (left >= heap.length) break;
+              var right = left + 1;
+              var child = right < heap.length && before(heap[right], heap[left]) ? right : left;
+              if (!before(heap[child], last)) break;
+              heap[index] = heap[child];
+              index = child;
+            }
+            heap[index] = last;
+          }
+          return first;
+        }
+        pushPair(0, 0);
+        while (heap.length) {
+          var pair = popPair();
+          if (bestClear && pair.distance > bestClear.distance) break;
+          if (clearPair(pair.xIndex, pair.yIndex) &&
+            (!bestClear || pair.distance < bestClear.distance ||
+              (pair.distance === bestClear.distance && pair.rank < bestClear.rank))) bestClear = pair;
+          pushPair(pair.xIndex + 1, pair.yIndex);
+          pushPair(pair.xIndex, pair.yIndex + 1);
+        }
+        if (bestClear) return {
+          x: xCandidates[bestClear.xIndex].value,
+          y: yCandidates[bestClear.yIndex].value
+        };
+      }
+
+      var exactX = xCandidates.slice().sort(function (a, b) { return a.order - b.order; });
+      var exactY = yCandidates.slice().sort(function (a, b) { return a.order - b.order; });
       var best = preferred;
-      var bestArea = collisionArea(preferred);
+      var bestArea = preferredArea;
       var bestDistance = Infinity;
-      Array.from(new Set(xs)).forEach(function (left) {
-        Array.from(new Set(ys)).forEach(function (top) {
-          var candidate = clampPosition(left, top, width, height);
+      var bestRank = Infinity;
+      exactX.forEach(function (xCandidate) {
+        exactY.forEach(function (yCandidate) {
+          var candidate = { x: xCandidate.value, y: yCandidate.value };
           var area = collisionArea(candidate);
-          var distance = Math.pow(candidate.x - preferred.x, 2) + Math.pow(candidate.y - preferred.y, 2);
-          if (area < bestArea || (area === bestArea && distance < bestDistance)) {
+          var distance = xCandidate.distance + yCandidate.distance;
+          var rank = xCandidate.order * yValues.length + yCandidate.order;
+          if (area < bestArea || (area === bestArea &&
+            (distance < bestDistance || (distance === bestDistance && rank < bestRank)))) {
             best = candidate;
             bestArea = area;
             bestDistance = distance;
+            bestRank = rank;
           }
         });
       });
       return best;
+    }
+
+    function avoidProfileCopy(preferred, width, height, controls) {
+      controls = controls || controlRects(false);
+      var baseline = avoidControls(preferred, width, height, controls);
+      if (manualPosition) return baseline;
+      var guestProfile = document.querySelector('[data-progression-page="profile"]');
+      var toadalHeroCopy = document.querySelector('.toadal-profile-page .profile-hero-copy');
+      var accountPrivacyCopy = document.querySelector('.studio-rich-text.shell.section[data-studio-variant="gated-account"] [data-companion-context="privacy"]');
+      if (!guestProfile && !toadalHeroCopy && !accountPrivacyCopy) return baseline;
+      var view = viewport();
+      var copySelector = guestProfile ? '[data-progression-page="profile"] :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)' : '';
+      if (toadalHeroCopy) copySelector += (copySelector ? ', ' : '') + '.toadal-profile-page .profile-hero-copy';
+      if (accountPrivacyCopy) copySelector += (copySelector ? ', ' : '') + '.studio-rich-text.shell.section[data-studio-variant="gated-account"] [data-companion-context="privacy"] :is(h1, h2, h3, h4, h5, h6, p, label, dt, dd, [role="listitem"], [role="status"], .progression-local-badge)';
+      var copy = Array.from(document.querySelectorAll(copySelector)).filter(function (note) {
+        if (root.contains(note)) return false;
+        var style = getComputedStyle(note);
+        var rect = note.getBoundingClientRect();
+        return style.visibility !== 'hidden' && style.display !== 'none' && style.opacity !== '0' &&
+          rect.width > 0 && rect.height > 0 && rect.bottom > view.top && rect.top < view.top + view.height &&
+          rect.right > view.left && rect.left < view.left + view.width;
+      }).map(function (note) { return note.getBoundingClientRect(); });
+      if (!copy.length) return baseline;
+      width = width || root.offsetWidth || button.offsetWidth;
+      height = height || root.offsetHeight || button.offsetHeight;
+      var combined = controls.concat(copy);
+      var candidate = avoidControls(preferred, width, height, combined);
+      // Explanatory copy is optional protection: never trade existing control safety
+      // for it. In a crowded viewport, retain the exact controls-only placement.
+      var blocked = combined.some(function (rect) {
+        return candidate.x + width + EDGE_GAP > rect.left && candidate.x - EDGE_GAP < rect.right &&
+          candidate.y + height + EDGE_GAP > rect.top && candidate.y - EDGE_GAP < rect.bottom;
+      });
+      return blocked ? baseline : candidate;
     }
 
     function defaultPosition() {
@@ -296,12 +527,17 @@
       });
     }
 
+    function onScroll() {
+      if (!drag) schedulePosition(x, y, false);
+    }
+
     function onPointerDown(event) {
       if (!event.isPrimary || event.button !== 0 || event.target.closest('[data-companion-panel]')) return;
       if (suppressTimer) window.clearTimeout(suppressTimer);
       suppressTimer = null;
       suppressClick = false;
       var rect = root.getBoundingClientRect();
+      var artworkRect = image.getBoundingClientRect();
       drag = {
         pointerId: event.pointerId,
         pointerType: event.pointerType,
@@ -312,6 +548,8 @@
         originY: rect.top,
         offsetX: event.clientX - rect.left,
         offsetY: event.clientY - rect.top,
+        anchorX: artworkRect.width > 0 ? Math.max(0, Math.min(1, (event.clientX - artworkRect.left) / artworkRect.width)) : 0.5,
+        anchorY: artworkRect.height > 0 ? Math.max(0, Math.min(1, (event.clientY - artworkRect.top) / artworkRect.height)) : 0.5,
         manual: manualPosition,
         moved: false
       };
@@ -325,8 +563,17 @@
       if (!drag.moved && Math.hypot(dx, dy) < DRAG_THRESHOLD) return;
       if (!drag.moved) {
         lastTouchTap = null;
+        var wasDocked = root.getAttribute('data-mobile-docked') === 'true';
         manualPosition = true;
         setDock(null);
+        if (wasDocked) {
+          // Rebase from the visible artwork after leaving the measured header slot.
+          // The artwork anchor stays under the pointer even when the button is wider.
+          var nextOffset = dragOffsetsAtScale(drag.anchorX, drag.anchorY,
+            root.getBoundingClientRect(), image.getBoundingClientRect());
+          drag.offsetX = nextOffset.x;
+          drag.offsetY = nextOffset.y;
+        }
       }
       drag.moved = true;
       root.setAttribute('data-dragging', 'true');
@@ -421,9 +668,7 @@
       lastTouchTap = null;
       if (!event.detail || !event.detail.hidden) clampAfterViewportChange();
     });
-    window.addEventListener('scroll', function () {
-      if (!drag) schedulePosition(x, y, false);
-    }, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     window.addEventListener('load', function () {
       if (!manualPosition && !drag) schedulePosition(x, y, false);
     }, { once: true });
@@ -438,23 +683,21 @@
       window.visualViewport.addEventListener('resize', clampAfterViewportChange, { passive: true });
       window.visualViewport.addEventListener('scroll', clampAfterViewportChange, { passive: true });
     }
+    var homePage = !!document.querySelector('.home-hero');
     var panelWasVisible = panelVisible();
-    var panelObserver = new MutationObserver(function () {
+    var panelObserver = new MutationObserver(function (mutations) {
+      if (!hasPanelLayoutMutation(mutations, panel, root)) return;
       var visible = panelVisible();
       if (visible !== panelWasVisible) {
         panelWasVisible = visible;
-        if (!drag) {
-          // Opening the bubble scales the companion. Re-evaluate its hit area
-          // against the current page controls after the expanded state lands.
-          // Preserve deliberate owner placement; use the default anchor again
-          // when a non-manual companion is minimized.
+        if (shouldRepositionOnPanelChange(homePage, !!drag)) {
           var preferred = !visible && !manualPosition ? defaultPosition() : { x: x, y: y };
           applyPosition(preferred.x, preferred.y, false);
         } else placePanel();
       } else placePanel();
     });
-    panelObserver.observe(panel, { attributes: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
-    panelObserver.observe(root, { attributes: true, attributeFilter: ['data-minimized', 'data-panel-visible'] });
+    panelObserver.observe(panel, { attributes: true, attributeOldValue: true, attributeFilter: ['hidden'], childList: true, characterData: true, subtree: true });
+    panelObserver.observe(root, { attributes: true, attributeOldValue: true, attributeFilter: ['data-minimized', 'data-panel-visible'] });
 
     var initial = loadPosition();
     x = initial.x;

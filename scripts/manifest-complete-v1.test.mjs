@@ -62,7 +62,7 @@ test('thin editorial, leaderboard, roadmap, and support experiences use real cur
 
 test('Media uses genuine stills, truthful empty categories, optimized assets, and working product routes', () => {
   const media = html('/media/');
-  assert.match(media, /No public trailer, video, or short is available/);
+  assert.match(media, /No public trailer, video or story short is available here yet\./);
   assert.match(media, /genuine gameplay stills/i);
   assert.match(media, /no public wallpaper, logo, or other media downloads/i);
   assert.match(media, /No press kit is published/);

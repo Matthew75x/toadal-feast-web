@@ -557,1010 +557,1036 @@
       }
     },
     {
-      "id": "component.home.games-intro",
+      "id": "component.home.browser-games-column",
       "type": "layout.container",
       "props": {
-        "anchorId": "browser-games-intro",
-        "variant": "games-intro",
+        "anchorId": "browser-games-column",
+        "variant": "browser-games-column",
         "authoringVersion": 1,
-        "tag": "section",
-        "className": "studio-rich-text shell section",
+        "tag": "div",
+        "className": "home-browser-games-column",
         "attributes": {},
         "style": "",
-        "layerName": "TOADAL FEAST — Play the Feast World for Free content",
+        "layerName": "Browser games introduction and listings",
         "mode": "inherit",
         "children": [
           {
-            "id": "component.home.games-intro.8c65f6e94857.home-section-inner",
+            "id": "component.home.games-intro",
             "type": "layout.container",
             "props": {
+              "anchorId": "browser-games-intro",
+              "variant": "games-intro",
               "authoringVersion": 1,
-              "tag": "div",
-              "className": "home-section-inner",
-              "attributes": {
-                "data-companion-context": "browser-games",
-                "data-companion-copy": "Wicked Bites is an isolated staging preview. CLAW stays launch-held; the other listings are concepts.",
-                "data-companion-reaction": "excited"
-              },
+              "tag": "section",
+              "className": "studio-rich-text shell section",
+              "attributes": {},
               "style": "",
-              "layerName": "Browser game discovery",
+              "layerName": "TOADAL FEAST — Play the Feast World for Free content",
               "mode": "inherit",
               "children": [
                 {
-                  "id": "component.home.games-intro.97360ab2b937.section-kicker",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "section-kicker",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "YOUR NEXT LITTLE ADVENTURE",
-                    "text": "YOUR NEXT LITTLE ADVENTURE"
-                  }
-                },
-                {
-                  "id": "component.home.games-intro.36c6acc66fa2.section-heading",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "h2",
-                    "className": "section-heading",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Browser game discovery",
-                    "text": "Play browser games"
-                  }
-                },
-                {
-                  "id": "component.home.games-intro.7eae45160837.section-lede",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "section-lede",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Four browser listings lead to the Play directory. Wicked Bites runs as a",
-                    "text": "Wicked Bites is a session-only browser preview. CLAW is not playable yet; two games are concepts. No public releases yet."
-                  }
-                },
-                {
-                  "id": "component.home.games-intro.67dd86c559bd.game-tabs",
+                  "id": "component.home.games-intro.8c65f6e94857.home-section-inner",
                   "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
                     "tag": "div",
-                    "className": "game-tabs",
+                    "className": "home-section-inner",
                     "attributes": {
-                      "role": "group",
-                      "aria-label": "Filter browser game experiences"
+                      "data-companion-context": "browser-games",
+                      "data-companion-copy": "Wicked Bites is an isolated staging preview. CLAW stays launch-held; the other listings are concepts.",
+                      "data-companion-reaction": "excited"
                     },
                     "style": "",
-                    "layerName": "All experiences 4Previews 4Public games 0",
+                    "layerName": "Browser game discovery",
                     "mode": "inherit",
                     "children": [
                       {
-                        "id": "component.home.games-intro.afe3334feb6c.game-tab",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "button",
-                          "className": "game-tab",
-                          "attributes": {
-                            "type": "button",
-                            "aria-pressed": "true",
-                            "tabindex": "0",
-                            "aria-controls": "browser-games browser-games-empty",
-                            "data-game-tab": "all"
-                          },
-                          "style": "",
-                          "layerName": "All experiences 4",
-                          "children": [
-                            {
-                              "id": "component.home.games-intro.695d92950d0b.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "All experiences ",
-                                "layerName": "Text: All experiences"
-                              }
-                            },
-                            {
-                              "id": "component.home.games-intro.5e2116718463.span",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "4",
-                                "text": "4"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.home.games-intro.21409be7a649.game-tab",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "button",
-                          "className": "game-tab",
-                          "attributes": {
-                            "type": "button",
-                            "aria-pressed": "false",
-                            "tabindex": "0",
-                            "aria-controls": "browser-games browser-games-empty",
-                            "data-game-tab": "preview"
-                          },
-                          "style": "",
-                          "layerName": "Previews 4",
-                          "children": [
-                            {
-                              "id": "component.home.games-intro.ce134664c235.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "Previews ",
-                                "layerName": "Text: Previews"
-                              }
-                            },
-                            {
-                              "id": "component.home.games-intro.aa37d33c0618.span",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "4",
-                                "text": "4"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.home.games-intro.40e55002843d.game-tab",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "button",
-                          "className": "game-tab",
-                          "attributes": {
-                            "type": "button",
-                            "aria-pressed": "false",
-                            "tabindex": "0",
-                            "aria-controls": "browser-games browser-games-empty",
-                            "data-game-tab": "public"
-                          },
-                          "style": "",
-                          "layerName": "Public games 0",
-                          "children": [
-                            {
-                              "id": "component.home.games-intro.a7ba1c57cfa8.text",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "#text",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "text": "Public games ",
-                                "layerName": "Text: Public games"
-                              }
-                            },
-                            {
-                              "id": "component.home.games-intro.82e75746ea67.span",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "0",
-                                "text": "0"
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "component.home.games-intro.b8455cb12214.button-link-button-link-",
-                  "type": "core.button",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "a",
-                    "className": "button-link button-link--secondary home-play-directory-link",
-                    "attributes": {
-                      "data-companion-action": "true",
-                      "data-companion-action-copy": "The Play directory separates one staging run from launch-held and concept-only entries."
-                    },
-                    "style": "",
-                    "layerName": "See all browser previews →",
-                    "href": "/play/",
-                    "children": [
-                      {
-                        "id": "component.home.games-intro.701d29ac8a10.text",
+                        "id": "component.home.games-intro.97360ab2b937.section-kicker",
                         "type": "core.text",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "#text",
-                          "className": "",
+                          "tag": "p",
+                          "className": "section-kicker",
                           "attributes": {},
                           "style": "",
-                          "text": "See all browser previews ",
-                          "layerName": "Text: See all browser previews"
+                          "layerName": "YOUR NEXT LITTLE ADVENTURE",
+                          "text": "YOUR NEXT LITTLE ADVENTURE"
                         }
                       },
                       {
-                        "id": "component.home.games-intro.1a1284bde89e.span",
+                        "id": "component.home.games-intro.36c6acc66fa2.section-heading",
                         "type": "core.text",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "span",
-                          "className": "",
-                          "attributes": {
-                            "aria-hidden": "true"
-                          },
+                          "tag": "h2",
+                          "className": "section-heading",
+                          "attributes": {},
                           "style": "",
-                          "layerName": "→",
-                          "text": "→"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "component.home.games-intro.5d6c19450b1b.browser-games-empty",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "game-empty",
-                    "attributes": {
-                      "id": "browser-games-empty",
-                      "data-game-empty": "",
-                      "hidden": true,
-                      "role": "status",
-                      "aria-live": "polite"
-                    },
-                    "style": "",
-                    "layerName": "browser games empty",
-                    "text": "No public browser releases are available yet. Try the Wicked Bites preview, or explore other games that are not playable yet."
-                  }
-                }
-              ]
-            }
-          }
-        ]
-      }
-    },
-    {
-      "id": "component.home.games",
-      "type": "layout.grid",
-      "props": {
-        "anchorId": "browser-games",
-        "variant": "home-game-grid",
-        "columns": 5,
-        "gap": 16,
-        "children": [
-          {
-            "id": "component.home.game.wicked-bites",
-            "type": "layout.container",
-            "props": {
-              "gameId": "game.wicked-bites",
-              "authoringVersion": 1,
-              "tag": "article",
-              "className": "module studio-game-card",
-              "attributes": {
-                "data-game-preview": "v1",
-                "aria-label": "Wicked Bites preview card"
-              },
-              "style": "",
-              "layerName": "Wicked Bites · editable cover and gameplay preview",
-              "mode": "inherit",
-              "children": [
-                {
-                  "id": "component.home.game.wicked-bites.preview.stage",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "",
-                    "attributes": {
-                      "data-game-preview-stage": ""
-                    },
-                    "style": "",
-                    "layerName": "Cover window · responsive 16:9",
-                    "background": "#25162a",
-                    "children": [
-                      {
-                        "id": "component.home.game.wicked-bites.preview.cover",
-                        "type": "core.image",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "img",
-                          "className": "",
-                          "attributes": {
-                            "loading": "lazy",
-                            "decoding": "async",
-                            "data-game-preview-cover": "",
-                            "aria-hidden": "false"
-                          },
-                          "style": "",
-                          "layerName": "Wicked Bites · approved cover image and framing",
-                          "asset": "asset.import.wicked-bites-960.15bc9857",
-                          "alt": "Wicked Bites promotional title illustration; not gameplay",
-                          "fit": "cover",
-                          "focalX": 50,
-                          "focalY": 50,
-                          "zoom": 1,
-                          "responsive": {
-                            "mobile": {
-                              "asset": "asset.import.wicked-bites-480.a60da0ee",
-                              "maxWidth": 600,
-                              "fit": "cover"
-                            }
-                          },
-                          "aspectRatio": "16/9"
+                          "layerName": "Browser game discovery",
+                          "text": "Play browser games"
                         }
                       },
                       {
-                        "id": "component.home.game.wicked-bites.preview.gameplay",
-                        "type": "core.image",
+                        "id": "component.home.games-intro.7eae45160837.section-lede",
+                        "type": "core.text",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "img",
-                          "className": "",
-                          "attributes": {
-                            "loading": "lazy",
-                            "decoding": "async",
-                            "aria-hidden": "true",
-                            "data-game-preview-gameplay": ""
-                          },
+                          "tag": "p",
+                          "className": "section-lede",
+                          "attributes": {},
                           "style": "",
-                          "layerName": "Actual gameplay image · choose capture and framing",
-                          "asset": "asset.home.game.wicked-bites-preview",
-                          "alt": "Wicked Bites actual gameplay preview",
-                          "fit": "contain",
-                          "focalX": 50,
-                          "focalY": 50,
-                          "zoom": 1
+                          "layerName": "Four browser listings lead to the Play directory. Wicked Bites runs as a",
+                          "text": "Wicked Bites is a session-only browser preview. CLAW is not playable yet; two games are concepts. No public releases yet."
                         }
-                      }
-                    ],
-                    "aspectRatio": "16/9"
-                  }
-                },
-                {
-                  "id": "component.home.game.wicked-bites.heading",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "h3",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Wicked Bites",
-                    "text": "Wicked Bites"
-                  }
-                },
-                {
-                  "id": "component.home.game.wicked-bites.description",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Wicked Bites description",
-                    "text": "A bite-sized browser preview. Play for this session; not a public release."
-                  }
-                },
-                {
-                  "id": "component.home.game.wicked-bites.status",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "chip preview",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Wicked Bites status",
-                    "text": "PREVIEW"
-                  }
-                },
-                {
-                  "id": "component.home.game.wicked-bites.preview.actions",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "",
-                    "attributes": {
-                      "data-game-preview-actions": ""
-                    },
-                    "style": "",
-                    "layerName": "Separate preview toggle and game link",
-                    "children": [
+                      },
                       {
-                        "id": "component.home.game.wicked-bites.preview.toggle",
-                        "type": "core.button",
+                        "id": "component.home.games-intro.67dd86c559bd.game-tabs",
+                        "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "button",
-                          "className": "",
+                          "tag": "div",
+                          "className": "game-tabs",
                           "attributes": {
-                            "type": "button",
-                            "data-game-preview-toggle": "",
-                            "aria-pressed": "false",
-                            "disabled": true
+                            "role": "group",
+                            "aria-label": "Filter browser game experiences"
                           },
                           "style": "",
-                          "layerName": "Gameplay preview toggle",
+                          "layerName": "All experiences 4Previews 4Public games 0",
+                          "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.home.game.wicked-bites.preview.show-label",
-                              "type": "core.text",
+                              "id": "component.home.games-intro.afe3334feb6c.game-tab",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "",
+                                "tag": "button",
+                                "className": "game-tab",
                                 "attributes": {
-                                  "data-game-preview-show-label": ""
+                                  "type": "button",
+                                  "aria-pressed": "true",
+                                  "tabindex": "0",
+                                  "aria-controls": "browser-games browser-games-empty",
+                                  "data-game-tab": "all"
                                 },
                                 "style": "",
-                                "layerName": "Preview button label",
-                                "text": "Preview gameplay"
+                                "layerName": "All experiences 4",
+                                "children": [
+                                  {
+                                    "id": "component.home.games-intro.695d92950d0b.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "All experiences ",
+                                      "layerName": "Text: All experiences"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.games-intro.5e2116718463.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "4",
+                                      "text": "4"
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.home.game.wicked-bites.preview.hide-label",
-                              "type": "core.text",
+                              "id": "component.home.games-intro.21409be7a649.game-tab",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "",
+                                "tag": "button",
+                                "className": "game-tab",
                                 "attributes": {
-                                  "data-game-preview-hide-label": "",
-                                  "hidden": true
+                                  "type": "button",
+                                  "aria-pressed": "false",
+                                  "tabindex": "0",
+                                  "aria-controls": "browser-games browser-games-empty",
+                                  "data-game-tab": "preview"
                                 },
                                 "style": "",
-                                "layerName": "Cover button label",
-                                "text": "Show cover"
+                                "layerName": "Previews 4",
+                                "children": [
+                                  {
+                                    "id": "component.home.games-intro.ce134664c235.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Previews ",
+                                      "layerName": "Text: Previews"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.games-intro.aa37d33c0618.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "4",
+                                      "text": "4"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.home.games-intro.40e55002843d.game-tab",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "game-tab",
+                                "attributes": {
+                                  "type": "button",
+                                  "aria-pressed": "false",
+                                  "tabindex": "0",
+                                  "aria-controls": "browser-games browser-games-empty",
+                                  "data-game-tab": "public"
+                                },
+                                "style": "",
+                                "layerName": "Public games 0",
+                                "children": [
+                                  {
+                                    "id": "component.home.games-intro.a7ba1c57cfa8.text",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "#text",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "text": "Public games ",
+                                      "layerName": "Text: Public games"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.games-intro.82e75746ea67.span",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "0",
+                                      "text": "0"
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
                         }
                       },
                       {
-                        "id": "component.home.game.wicked-bites.preview.link",
+                        "id": "component.home.games-intro.b8455cb12214.button-link-button-link-",
                         "type": "core.button",
                         "props": {
                           "authoringVersion": 1,
                           "tag": "a",
-                          "className": "",
+                          "className": "button-link button-link--secondary home-play-directory-link",
                           "attributes": {
-                            "data-game-preview-link": "",
-                            "aria-label": "Explore Wicked Bites preview"
+                            "data-companion-action": "true",
+                            "data-companion-action-copy": "The Play directory separates one staging run from launch-held and concept-only entries."
                           },
                           "style": "",
-                          "layerName": "Game details link",
-                          "href": "/games/wicked-bites/",
-                          "label": "Explore preview →"
+                          "layerName": "See all browser previews →",
+                          "href": "/play/",
+                          "children": [
+                            {
+                              "id": "component.home.games-intro.701d29ac8a10.text",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "#text",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "text": "See all browser previews ",
+                                "layerName": "Text: See all browser previews"
+                              }
+                            },
+                            {
+                              "id": "component.home.games-intro.1a1284bde89e.span",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "span",
+                                "className": "",
+                                "attributes": {
+                                  "aria-hidden": "true"
+                                },
+                                "style": "",
+                                "layerName": "→",
+                                "text": "→"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.home.games-intro.5d6c19450b1b.browser-games-empty",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "game-empty",
+                          "attributes": {
+                            "id": "browser-games-empty",
+                            "data-game-empty": "",
+                            "hidden": true,
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "browser games empty",
+                          "text": "No public browser releases are available yet. Try the Wicked Bites preview, or explore other games that are not playable yet."
                         }
                       }
                     ]
                   }
-                },
-                {
-                  "id": "component.home.game.wicked-bites.preview.status",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "",
-                    "attributes": {
-                      "data-game-preview-status": "",
-                      "role": "status",
-                      "aria-live": "polite"
-                    },
-                    "style": "",
-                    "layerName": "Preview image availability",
-                    "text": ""
-                  }
                 }
               ]
             }
           },
           {
-            "id": "component.home.game.toadal-tower-defense",
-            "type": "layout.container",
+            "id": "component.home.games",
+            "type": "layout.grid",
             "props": {
-              "symbolId": "symbol.home.game-card",
-              "gameId": "game.toadal-tower-defense",
+              "anchorId": "browser-games",
+              "variant": "home-game-grid",
+              "columns": 5,
+              "gap": 16,
               "authoringVersion": 1,
-              "tag": "a",
-              "className": "module studio-game-card owner-object-link",
+              "tag": "section",
+              "className": "shell section studio-layout studio-layout-grid",
               "attributes": {
-                "aria-label": "View TOADAL Tower Defense details"
+                "data-layout-mode": "grid"
               },
               "style": "",
-              "layerName": "TOADAL Tower Defense",
-              "href": "/games/toadal-tower-defense/",
-              "mode": "inherit",
+              "layerName": "Browser game cards",
+              "mode": "grid",
               "children": [
                 {
-                  "id": "component.home.game.toadal-tower-defense.art",
-                  "type": "core.image",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "img",
-                    "className": "",
-                    "attributes": {
-                      "loading": "lazy",
-                      "decoding": "async"
-                    },
-                    "style": "",
-                    "layerName": "TOADAL Tower Defense artwork",
-                    "asset": "asset.home.world.desktop",
-                    "alt": "TOADAL Tower Defense artwork",
-                    "fit": "cover",
-                    "aspectRatio": "16/9",
-                    "focalX": 50,
-                    "focalY": 50,
-                    "zoom": 1
-                  }
-                },
-                {
-                  "id": "component.home.game.toadal-tower-defense.heading",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "h3",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "TOADAL Tower Defense",
-                    "text": "TOADAL Tower Defense"
-                  }
-                },
-                {
-                  "id": "component.home.game.toadal-tower-defense.description",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "TOADAL Tower Defense description",
-                    "text": "A world-inspired concept. Browser play is not available yet."
-                  }
-                },
-                {
-                  "id": "component.home.game.toadal-tower-defense.status",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "chip preview",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "TOADAL Tower Defense status",
-                    "text": "PREVIEW"
-                  }
-                },
-                {
-                  "id": "component.home.game.toadal-tower-defense.action",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "home-game-action",
-                    "attributes": {
-                      "aria-hidden": "true"
-                    },
-                    "style": "",
-                    "layerName": "Game card action",
-                    "text": "View game details →"
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "id": "component.home.game.froggy-fruity-bash",
-            "type": "layout.container",
-            "props": {
-              "gameId": "game.froggy-fruity-bash",
-              "authoringVersion": 1,
-              "tag": "article",
-              "className": "module studio-game-card",
-              "attributes": {
-                "data-game-preview": "v1",
-                "data-game-preview-availability": "no-gameplay",
-                "aria-label": "Froggie Fruity Bash concept details"
-              },
-              "style": "",
-              "layerName": "Froggie Fruity Bash · cover ready; gameplay capture pending",
-              "mode": "inherit",
-              "children": [
-                {
-                  "id": "component.home.game.froggy-fruity-bash.preview.stage",
+                  "id": "component.home.game.wicked-bites",
                   "type": "layout.container",
                   "props": {
+                    "gameId": "game.wicked-bites",
                     "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "",
+                    "tag": "article",
+                    "className": "module studio-game-card",
                     "attributes": {
-                      "data-game-preview-stage": ""
+                      "data-game-preview": "v1",
+                      "aria-label": "Wicked Bites preview card"
                     },
                     "style": "",
-                    "layerName": "Cover window · responsive 16:9",
-                    "background": "#25162a",
+                    "layerName": "Wicked Bites · editable cover and gameplay preview",
+                    "mode": "inherit",
                     "children": [
                       {
-                        "id": "component.home.game.froggy-fruity-bash.preview.cover",
-                        "type": "core.image",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "img",
-                          "className": "",
-                          "attributes": {
-                            "loading": "lazy",
-                            "decoding": "async",
-                            "data-game-preview-cover": ""
-                          },
-                          "style": "",
-                          "layerName": "Froggie Fruity Bash · approved cover image and framing",
-                          "asset": "asset.import.foodio-fruity-bash-960.32f2d77b",
-                          "alt": "Froggie Fruity Bash promotional title illustration; not gameplay",
-                          "fit": "cover",
-                          "focalX": 50,
-                          "focalY": 50,
-                          "zoom": 1,
-                          "responsive": {
-                            "mobile": {
-                              "asset": "asset.import.foodio-fruity-bash-480.a48d00e6",
-                              "maxWidth": 600,
-                              "fit": "cover"
-                            }
-                          },
-                          "aspectRatio": "16/9"
-                        }
-                      },
-                      {
-                        "id": "component.home.game.froggy-fruity-bash.preview.gameplay-slot",
+                        "id": "component.home.game.wicked-bites.preview.stage",
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
                           "tag": "div",
                           "className": "",
                           "attributes": {
-                            "data-gameplay-asset-pending": ""
+                            "data-game-preview-stage": ""
                           },
                           "style": "",
-                          "layerName": "Gameplay slot · empty until a verified capture is supplied",
-                          "hidden": true,
-                          "children": []
-                        }
-                      }
-                    ],
-                    "aspectRatio": "16/9"
-                  }
-                },
-                {
-                  "id": "component.home.game.froggy-fruity-bash.heading",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "h3",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Froggie Fruity Bash",
-                    "text": "Froggy Fruity Bash"
-                  }
-                },
-                {
-                  "id": "component.home.game.froggy-fruity-bash.description",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Froggie Fruity Bash description",
-                    "text": "A colourful concept. Browser play is not available yet."
-                  }
-                },
-                {
-                  "id": "component.home.game.froggy-fruity-bash.status",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "chip preview",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "Froggie Fruity Bash status",
-                    "text": "PREVIEW"
-                  }
-                },
-                {
-                  "id": "component.home.game.froggy-fruity-bash.preview.actions",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "",
-                    "attributes": {
-                      "data-game-preview-actions": ""
-                    },
-                    "style": "",
-                    "layerName": "Details link · no gameplay preview available",
-                    "children": [
-                      {
-                        "id": "component.home.game.froggy-fruity-bash.preview.link",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {
-                            "data-game-preview-link": "",
-                            "aria-label": "View Froggie Fruity Bash details"
-                          },
-                          "style": "",
-                          "layerName": "Existing concept details route",
-                          "href": "/games/froggy-fruity-bash/",
-                          "label": "View game details →"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ]
-            }
-          },
-          {
-            "id": "component.home.game.claw-feed-gulper",
-            "type": "layout.container",
-            "props": {
-              "gameId": "game.claw-feed-gulper",
-              "authoringVersion": 1,
-              "tag": "article",
-              "className": "module studio-game-card",
-              "attributes": {
-                "data-game-preview": "v1",
-                "aria-label": "CLAW: Feed Gulper preview card"
-              },
-              "style": "",
-              "layerName": "CLAW: Feed Gulper · cover and genuine gameplay capture",
-              "mode": "inherit",
-              "children": [
-                {
-                  "id": "component.home.game.claw-feed-gulper.preview.stage",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "",
-                    "attributes": {
-                      "data-game-preview-stage": ""
-                    },
-                    "style": "",
-                    "layerName": "Cover window · responsive 16:9",
-                    "background": "#25162a",
-                    "children": [
-                      {
-                        "id": "component.home.game.claw-feed-gulper.preview.cover",
-                        "type": "core.image",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "img",
-                          "className": "",
-                          "attributes": {
-                            "loading": "lazy",
-                            "decoding": "async",
-                            "data-game-preview-cover": "",
-                            "aria-hidden": "false"
-                          },
-                          "style": "",
-                          "layerName": "CLAW: Feed Gulper · generated promotional cover and editable framing",
-                          "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
-                          "alt": "CLAW: Feed Gulper promotional title illustration; not gameplay",
-                          "fit": "cover",
-                          "focalX": 50,
-                          "focalY": 50,
-                          "zoom": 1,
+                          "layerName": "Cover window · responsive 16:9",
+                          "background": "#25162a",
+                          "children": [
+                            {
+                              "id": "component.home.game.wicked-bites.preview.cover",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "lazy",
+                                  "decoding": "async",
+                                  "data-game-preview-cover": "",
+                                  "aria-hidden": "false"
+                                },
+                                "style": "",
+                                "layerName": "Wicked Bites · approved cover image and framing",
+                                "asset": "asset.import.wicked-bites-960.15bc9857",
+                                "alt": "Wicked Bites promotional title illustration; not gameplay",
+                                "fit": "cover",
+                                "focalX": 50,
+                                "focalY": 50,
+                                "zoom": 1,
+                                "responsive": {
+                                  "mobile": {
+                                    "asset": "asset.import.wicked-bites-480.a60da0ee",
+                                    "maxWidth": 600,
+                                    "fit": "cover"
+                                  }
+                                },
+                                "aspectRatio": "16/9"
+                              }
+                            },
+                            {
+                              "id": "component.home.game.wicked-bites.preview.gameplay",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "lazy",
+                                  "decoding": "async",
+                                  "aria-hidden": "true",
+                                  "data-game-preview-gameplay": ""
+                                },
+                                "style": "",
+                                "layerName": "Actual gameplay image · choose capture and framing",
+                                "asset": "asset.home.game.wicked-bites-preview",
+                                "alt": "Wicked Bites actual gameplay preview",
+                                "fit": "contain",
+                                "focalX": 50,
+                                "focalY": 50,
+                                "zoom": 1
+                              }
+                            }
+                          ],
                           "aspectRatio": "16/9"
                         }
                       },
                       {
-                        "id": "component.home.game.claw-feed-gulper.preview.gameplay",
-                        "type": "core.image",
+                        "id": "component.home.game.wicked-bites.heading",
+                        "type": "core.text",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "img",
+                          "tag": "h3",
                           "className": "",
-                          "attributes": {
-                            "loading": "lazy",
-                            "decoding": "async",
-                            "aria-hidden": "true",
-                            "data-game-preview-gameplay": ""
-                          },
+                          "attributes": {},
                           "style": "",
-                          "layerName": "Actual gameplay image · choose capture and framing",
-                          "asset": "asset.home.game.claw-feed-gulper-preview",
-                          "alt": "CLAW: Feed Gulper 2.5.1 genuine staging gameplay capture; browser launch remains held.",
-                          "fit": "contain",
-                          "focalX": 50,
-                          "focalY": 50,
-                          "zoom": 1
+                          "layerName": "Wicked Bites",
+                          "text": "Wicked Bites"
                         }
-                      }
-                    ],
-                    "aspectRatio": "16/9"
-                  }
-                },
-                {
-                  "id": "component.home.game.claw-feed-gulper.heading",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "h3",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "CLAW: Feed Gulper",
-                    "text": "CLAW: Feed Gulper"
-                  }
-                },
-                {
-                  "id": "component.home.game.claw-feed-gulper.description",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "CLAW: Feed Gulper description",
-                    "text": "Meet the hungry Gulper. Gameplay preview only; browser play is not available yet."
-                  }
-                },
-                {
-                  "id": "component.home.game.claw-feed-gulper.status",
-                  "type": "core.text",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "span",
-                    "className": "chip preview",
-                    "attributes": {},
-                    "style": "",
-                    "layerName": "CLAW: Feed Gulper status",
-                    "text": "PREVIEW"
-                  }
-                },
-                {
-                  "id": "component.home.game.claw-feed-gulper.preview.actions",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "div",
-                    "className": "",
-                    "attributes": {
-                      "data-game-preview-actions": ""
-                    },
-                    "style": "",
-                    "layerName": "Separate preview toggle and game link",
-                    "children": [
+                      },
                       {
-                        "id": "component.home.game.claw-feed-gulper.preview.toggle",
-                        "type": "core.button",
+                        "id": "component.home.game.wicked-bites.description",
+                        "type": "core.text",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "button",
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Wicked Bites description",
+                          "text": "A bite-sized browser preview. Play for this session; not a public release."
+                        }
+                      },
+                      {
+                        "id": "component.home.game.wicked-bites.status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "chip preview",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Wicked Bites status",
+                          "text": "PREVIEW"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.wicked-bites.preview.actions",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
                           "className": "",
                           "attributes": {
-                            "type": "button",
-                            "data-game-preview-toggle": "",
-                            "aria-pressed": "false",
-                            "disabled": true
+                            "data-game-preview-actions": ""
                           },
                           "style": "",
-                          "layerName": "Gameplay preview toggle",
+                          "layerName": "Separate preview toggle and game link",
                           "children": [
                             {
-                              "id": "component.home.game.claw-feed-gulper.preview.show-label",
-                              "type": "core.text",
+                              "id": "component.home.game.wicked-bites.preview.toggle",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "span",
+                                "tag": "button",
                                 "className": "",
                                 "attributes": {
-                                  "data-game-preview-show-label": ""
+                                  "type": "button",
+                                  "data-game-preview-toggle": "",
+                                  "aria-pressed": "false",
+                                  "disabled": true
                                 },
                                 "style": "",
-                                "layerName": "Preview button label",
-                                "text": "Preview gameplay"
+                                "layerName": "Gameplay preview toggle",
+                                "children": [
+                                  {
+                                    "id": "component.home.game.wicked-bites.preview.show-label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-preview-show-label": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Preview button label",
+                                      "text": "Preview gameplay"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.game.wicked-bites.preview.hide-label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-preview-hide-label": "",
+                                        "hidden": true
+                                      },
+                                      "style": "",
+                                      "layerName": "Cover button label",
+                                      "text": "Show cover"
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.home.game.claw-feed-gulper.preview.hide-label",
-                              "type": "core.text",
+                              "id": "component.home.game.wicked-bites.preview.link",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "span",
+                                "tag": "a",
                                 "className": "",
                                 "attributes": {
-                                  "data-game-preview-hide-label": "",
-                                  "hidden": true
+                                  "data-game-preview-link": "",
+                                  "aria-label": "Explore Wicked Bites preview"
                                 },
                                 "style": "",
-                                "layerName": "Cover button label",
-                                "text": "Show cover"
+                                "layerName": "Game details link",
+                                "href": "/games/wicked-bites/",
+                                "label": "Explore preview →"
                               }
                             }
                           ]
                         }
                       },
                       {
-                        "id": "component.home.game.claw-feed-gulper.preview.link",
-                        "type": "core.button",
+                        "id": "component.home.game.wicked-bites.preview.status",
+                        "type": "core.text",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "a",
+                          "tag": "p",
                           "className": "",
                           "attributes": {
-                            "data-game-preview-link": "",
-                            "aria-label": "Explore CLAW: Feed Gulper preview"
+                            "data-game-preview-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
                           },
                           "style": "",
-                          "layerName": "Game details link",
-                          "href": "/games/claw-feed-gulper/",
-                          "label": "View game details →"
+                          "layerName": "Preview image availability",
+                          "text": ""
                         }
                       }
                     ]
                   }
                 },
                 {
-                  "id": "component.home.game.claw-feed-gulper.preview.status",
-                  "type": "core.text",
+                  "id": "component.home.game.toadal-tower-defense",
+                  "type": "layout.container",
                   "props": {
+                    "symbolId": "symbol.home.game-card",
+                    "gameId": "game.toadal-tower-defense",
                     "authoringVersion": 1,
-                    "tag": "p",
-                    "className": "",
+                    "tag": "a",
+                    "className": "module studio-game-card owner-object-link",
                     "attributes": {
-                      "data-game-preview-status": "",
-                      "role": "status",
-                      "aria-live": "polite"
+                      "aria-label": "View TOADAL Tower Defense details"
                     },
                     "style": "",
-                    "layerName": "Preview image availability",
-                    "text": ""
+                    "layerName": "TOADAL Tower Defense",
+                    "href": "/games/toadal-tower-defense/",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.home.game.toadal-tower-defense.art",
+                        "type": "core.image",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "img",
+                          "className": "",
+                          "attributes": {
+                            "loading": "lazy",
+                            "decoding": "async"
+                          },
+                          "style": "",
+                          "layerName": "TOADAL Tower Defense artwork",
+                          "asset": "asset.home.world.desktop",
+                          "alt": "TOADAL Tower Defense artwork",
+                          "fit": "cover",
+                          "aspectRatio": "16/9",
+                          "focalX": 50,
+                          "focalY": 50,
+                          "zoom": 1
+                        }
+                      },
+                      {
+                        "id": "component.home.game.toadal-tower-defense.heading",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h3",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL Tower Defense",
+                          "text": "TOADAL Tower Defense"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.toadal-tower-defense.description",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL Tower Defense description",
+                          "text": "A world-inspired concept. Browser play is not available yet."
+                        }
+                      },
+                      {
+                        "id": "component.home.game.toadal-tower-defense.status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "chip preview",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "TOADAL Tower Defense status",
+                          "text": "PREVIEW"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.toadal-tower-defense.action",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "home-game-action",
+                          "attributes": {
+                            "aria-hidden": "true"
+                          },
+                          "style": "",
+                          "layerName": "Game card action",
+                          "text": "View game details →"
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.home.game.froggy-fruity-bash",
+                  "type": "layout.container",
+                  "props": {
+                    "gameId": "game.froggy-fruity-bash",
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "module studio-game-card",
+                    "attributes": {
+                      "data-game-preview": "v1",
+                      "data-game-preview-availability": "no-gameplay",
+                      "aria-label": "Froggie Fruity Bash concept details"
+                    },
+                    "style": "",
+                    "layerName": "Froggie Fruity Bash · cover ready; gameplay capture pending",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.preview.stage",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-stage": ""
+                          },
+                          "style": "",
+                          "layerName": "Cover window · responsive 16:9",
+                          "background": "#25162a",
+                          "children": [
+                            {
+                              "id": "component.home.game.froggy-fruity-bash.preview.cover",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "lazy",
+                                  "decoding": "async",
+                                  "data-game-preview-cover": ""
+                                },
+                                "style": "",
+                                "layerName": "Froggie Fruity Bash · approved cover image and framing",
+                                "asset": "asset.import.foodio-fruity-bash-960.32f2d77b",
+                                "alt": "Froggie Fruity Bash promotional title illustration; not gameplay",
+                                "fit": "cover",
+                                "focalX": 50,
+                                "focalY": 50,
+                                "zoom": 1,
+                                "responsive": {
+                                  "mobile": {
+                                    "asset": "asset.import.foodio-fruity-bash-480.a48d00e6",
+                                    "maxWidth": 600,
+                                    "fit": "cover"
+                                  }
+                                },
+                                "aspectRatio": "16/9"
+                              }
+                            },
+                            {
+                              "id": "component.home.game.froggy-fruity-bash.preview.gameplay-slot",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "div",
+                                "className": "",
+                                "attributes": {
+                                  "data-gameplay-asset-pending": ""
+                                },
+                                "style": "",
+                                "layerName": "Gameplay slot · empty until a verified capture is supplied",
+                                "hidden": true,
+                                "children": []
+                              }
+                            }
+                          ],
+                          "aspectRatio": "16/9"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.heading",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h3",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Froggie Fruity Bash",
+                          "text": "Froggy Fruity Bash"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.description",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Froggie Fruity Bash description",
+                          "text": "A colourful concept. Browser play is not available yet."
+                        }
+                      },
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "chip preview",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "Froggie Fruity Bash status",
+                          "text": "PREVIEW"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.froggy-fruity-bash.preview.actions",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-actions": ""
+                          },
+                          "style": "",
+                          "layerName": "Details link · no gameplay preview available",
+                          "children": [
+                            {
+                              "id": "component.home.game.froggy-fruity-bash.preview.link",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {
+                                  "data-game-preview-link": "",
+                                  "aria-label": "View Froggie Fruity Bash details"
+                                },
+                                "style": "",
+                                "layerName": "Existing concept details route",
+                                "href": "/games/froggy-fruity-bash/",
+                                "label": "View game details →"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "component.home.game.claw-feed-gulper",
+                  "type": "layout.container",
+                  "props": {
+                    "gameId": "game.claw-feed-gulper",
+                    "authoringVersion": 1,
+                    "tag": "article",
+                    "className": "module studio-game-card",
+                    "attributes": {
+                      "data-game-preview": "v1",
+                      "aria-label": "CLAW: Feed Gulper preview card"
+                    },
+                    "style": "",
+                    "layerName": "CLAW: Feed Gulper · cover and genuine gameplay capture",
+                    "mode": "inherit",
+                    "children": [
+                      {
+                        "id": "component.home.game.claw-feed-gulper.preview.stage",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-stage": ""
+                          },
+                          "style": "",
+                          "layerName": "Cover window · responsive 16:9",
+                          "background": "#25162a",
+                          "children": [
+                            {
+                              "id": "component.home.game.claw-feed-gulper.preview.cover",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "lazy",
+                                  "decoding": "async",
+                                  "data-game-preview-cover": "",
+                                  "aria-hidden": "false"
+                                },
+                                "style": "",
+                                "layerName": "CLAW: Feed Gulper · generated promotional cover and editable framing",
+                                "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
+                                "alt": "CLAW: Feed Gulper promotional title illustration; not gameplay",
+                                "fit": "cover",
+                                "focalX": 50,
+                                "focalY": 50,
+                                "zoom": 1,
+                                "aspectRatio": "16/9"
+                              }
+                            },
+                            {
+                              "id": "component.home.game.claw-feed-gulper.preview.gameplay",
+                              "type": "core.image",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "img",
+                                "className": "",
+                                "attributes": {
+                                  "loading": "lazy",
+                                  "decoding": "async",
+                                  "aria-hidden": "true",
+                                  "data-game-preview-gameplay": ""
+                                },
+                                "style": "",
+                                "layerName": "Actual gameplay image · choose capture and framing",
+                                "asset": "asset.home.game.claw-feed-gulper-preview",
+                                "alt": "CLAW: Feed Gulper 2.5.1 genuine staging gameplay capture; browser launch remains held.",
+                                "fit": "contain",
+                                "focalX": 50,
+                                "focalY": 50,
+                                "zoom": 1
+                              }
+                            }
+                          ],
+                          "aspectRatio": "16/9"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.claw-feed-gulper.heading",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "h3",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "CLAW: Feed Gulper",
+                          "text": "CLAW: Feed Gulper"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.claw-feed-gulper.description",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "CLAW: Feed Gulper description",
+                          "text": "Meet the hungry Gulper. Gameplay preview only; browser play is not available yet."
+                        }
+                      },
+                      {
+                        "id": "component.home.game.claw-feed-gulper.status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "span",
+                          "className": "chip preview",
+                          "attributes": {},
+                          "style": "",
+                          "layerName": "CLAW: Feed Gulper status",
+                          "text": "PREVIEW"
+                        }
+                      },
+                      {
+                        "id": "component.home.game.claw-feed-gulper.preview.actions",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "div",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-actions": ""
+                          },
+                          "style": "",
+                          "layerName": "Separate preview toggle and game link",
+                          "children": [
+                            {
+                              "id": "component.home.game.claw-feed-gulper.preview.toggle",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "button",
+                                "className": "",
+                                "attributes": {
+                                  "type": "button",
+                                  "data-game-preview-toggle": "",
+                                  "aria-pressed": "false",
+                                  "disabled": true
+                                },
+                                "style": "",
+                                "layerName": "Gameplay preview toggle",
+                                "children": [
+                                  {
+                                    "id": "component.home.game.claw-feed-gulper.preview.show-label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-preview-show-label": ""
+                                      },
+                                      "style": "",
+                                      "layerName": "Preview button label",
+                                      "text": "Preview gameplay"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.game.claw-feed-gulper.preview.hide-label",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "",
+                                      "attributes": {
+                                        "data-game-preview-hide-label": "",
+                                        "hidden": true
+                                      },
+                                      "style": "",
+                                      "layerName": "Cover button label",
+                                      "text": "Show cover"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.home.game.claw-feed-gulper.preview.link",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {
+                                  "data-game-preview-link": "",
+                                  "aria-label": "Explore CLAW: Feed Gulper preview"
+                                },
+                                "style": "",
+                                "layerName": "Game details link",
+                                "href": "/games/claw-feed-gulper/",
+                                "label": "View game details →"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.home.game.claw-feed-gulper.preview.status",
+                        "type": "core.text",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "p",
+                          "className": "",
+                          "attributes": {
+                            "data-game-preview-status": "",
+                            "role": "status",
+                            "aria-live": "polite"
+                          },
+                          "style": "",
+                          "layerName": "Preview image availability",
+                          "text": ""
+                        }
+                      }
+                    ]
                   }
                 }
               ]
@@ -1601,7 +1627,7 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "div",
-                    "className": "feast-pass-panel home-feast-pass-panel",
+                    "className": "feast-pass-panel home-feast-pass-panel framed-feast-pass framed-feast-pass--home",
                     "attributes": {
                       "data-progression-page": "",
                       "data-companion-context": "feast-pass",
@@ -1639,16 +1665,55 @@
                               }
                             },
                             {
-                              "id": "component.home.feast-pass.538da1098817.section-heading",
-                              "type": "core.text",
+                              "id": "component.framed-pass.home.title",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "h2",
-                                "className": "section-heading",
+                                "tag": "div",
+                                "className": "feast-pass-title-plate",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Your Feast Pass",
-                                "text": "Your Feast Pass"
+                                "layerName": "title",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.framed-pass.home.frame",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "feast-pass-title-frame",
+                                      "attributes": {
+                                        "aria-hidden": "true"
+                                      },
+                                      "style": "",
+                                      "layerName": "frame",
+                                      "asset": "asset.feast-pass.astro-frame",
+                                      "alt": "",
+                                      "fit": "fill"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.home.feast-pass.538da1098817.section-heading",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "h2",
+                                      "className": "section-heading feast-pass-lettering",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Your Feast Pass",
+                                      "text": "Your Feast Pass",
+                                      "textFontSize": 30,
+                                      "textLineHeight": 1.15,
+                                      "responsive": {
+                                        "mobile": {
+                                          "textFontSize": 26
+                                        }
+                                      }
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {

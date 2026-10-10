@@ -832,31 +832,48 @@
                         }
                       },
                       {
-                        "id": "component.about.mission-stories.e842ac927f41.a",
-                        "type": "core.button",
+                        "id": "component.about.mission-stories.about-stories-characters-nav",
+                        "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
+                          "tag": "nav",
+                          "className": "progression-nav progression-nav--about",
+                          "attributes": {
+                            "aria-label": "Stories and characters"
+                          },
                           "style": "",
-                          "layerName": "Explore Stories",
-                          "href": "/stories/",
-                          "label": "Explore Stories"
-                        }
-                      },
-                      {
-                        "id": "component.about.mission-stories.71aa7c3074ee.a",
-                        "type": "core.button",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "a",
-                          "className": "",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Meet the Characters",
-                          "href": "/characters/",
-                          "label": "Meet the Characters"
+                          "layerName": "Stories and characters navigation",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.about.mission-stories.e842ac927f41.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Explore Stories",
+                                "href": "/stories/",
+                                "label": "Explore Stories"
+                              }
+                            },
+                            {
+                              "id": "component.about.mission-stories.71aa7c3074ee.a",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Meet the Characters",
+                                "href": "/characters/",
+                                "label": "Meet the Characters"
+                              }
+                            }
+                          ]
                         }
                       }
                     ]

@@ -88,17 +88,9 @@ function addDimensions(tag,width,height,hasWidth,hasHeight){
   return tag.slice(0,-close)+(additions.length?' '+additions.join(' '):'')+tag.slice(-close);
 }
 
-export function addIntrinsicImageDimensions(exportRoot,basePath='/toadal-feast-web/'){
-  const root=path.resolve(exportRoot),updates=[],assetCache=new Map(),dimensions=[],dynamic=[];
-  function walk(dir){
-    for(const entry of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){
-      const full=path.join(dir,entry.name);need(!entry.isSymbolicLink(),'Export contains symlink: '+full);
-      if(entry.isDirectory())walk(full);
-      else if(entry.isFile()&&entry.name.toLowerCase().endsWith('.html')){
-        const pageRel=path.relative(root,full).replaceAll('\\','/');
-        if(isProtectedGameArtifact(pageRel))continue;
-        const original=fs.readFileSync(full,'utf8');let changed=0;
-        const transformed=original.replace(IMG_RE,tag=>{
+export function projectIntrinsicImageDimensions(html,root,pageRel,basePath='/toadal-feast-web/',{assetCache=new Map(),dimensions=[],dynamic=[]}={}){
+ let changed=0;
+  const transformed=html.replace(IMG_RE,tag=>{
           const wMatch=WIDTH_RE.exec(tag),hMatch=HEIGHT_RE.exec(tag);
           if(wMatch&&hMatch)return tag;
           const srcMatch=SRC_RE.exec(tag);
@@ -123,6 +115,21 @@ export function addIntrinsicImageDimensions(exportRoot,basePath='/toadal-feast-w
           else if(!width&&!height){width=dim.width;height=dim.height;}
           const result=addDimensions(tag,width,height,!!wMatch,!!hMatch);changed++;return result;
         });
+ return {html:transformed,images:changed};
+}
+
+export function addIntrinsicImageDimensions(exportRoot,basePath='/toadal-feast-web/'){
+  const root=path.resolve(exportRoot),updates=[],assetCache=new Map(),dimensions=[],dynamic=[];
+  function walk(dir){
+    for(const entry of fs.readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name))){
+      const full=path.join(dir,entry.name);need(!entry.isSymbolicLink(),'Export contains symlink: '+full);
+      if(entry.isDirectory())walk(full);
+      else if(entry.isFile()&&entry.name.toLowerCase().endsWith('.html')){
+        const pageRel=path.relative(root,full).replaceAll('\\','/');
+        if(isProtectedGameArtifact(pageRel))continue;
+        const original=fs.readFileSync(full,'utf8');let changed=0;
+        const projected=projectIntrinsicImageDimensions(original,root,pageRel,basePath,{assetCache,dimensions,dynamic});
+        const transformed=projected.html;changed=projected.images;
         if(changed)updates.push({file:full,html:transformed,page:pageRel,images:changed});
       }
     }

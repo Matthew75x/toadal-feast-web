@@ -21,7 +21,13 @@ const css = read(path.join('reference', 'assets', 'css', 'site.css'));
 const projector = await createOwnerNativeProjector();
 const projectedHomeComponents = projector.projectPageComponents(project, home);
 const html = projectedHomeComponents.map(({ html }) => html).join('\n');
-const byId = new Map((home.components || []).map(component => [component.id, component]));
+const byId = new Map();
+const indexComponents = (nodes) => (nodes || []).forEach((item) => {
+  if (!item || typeof item !== 'object') return;
+  if (item.id) byId.set(item.id, item);
+  indexComponents(item.props?.children);
+});
+indexComponents(home.components);
 const component = (id) => byId.get(id);
 const componentHtml = (id) => {
   const selected = component(id);
@@ -33,13 +39,22 @@ const checks = [];
 const check = (id, ok, detail, severity = 'gate') =>
   checks.push({ id, ok: Boolean(ok), severity, detail });
 const has = (text, pattern) => pattern instanceof RegExp ? pattern.test(text) : text.includes(pattern);
-const variants = (home.components || []).map(item => item?.props?.variant).filter(Boolean);
+const variants = Array.from(byId.values()).map(item => item?.props?.variant).filter(Boolean);
 
 check('hero-headline', /(?:Play|Explore) the Feast World for Free\./.test(plainText(componentHtml('component.home.hero'))),
   'The Home hero preserves the approved Feast World/free headline family while allowing the staging truth state.');
 check('browser-games', component('component.home.games')?.props?.anchorId === 'browser-games' &&
   component('component.home.games-intro')?.props?.variant === 'games-intro',
   'Browser-game discovery has an immediate, addressable structured section.');
+const browserGamesColumn = component('component.home.browser-games-column');
+check('browser-games-column', browserGamesColumn?.type === 'layout.container' &&
+  browserGamesColumn.props?.variant === 'browser-games-column' &&
+  browserGamesColumn.props?.children?.map(item => item.id).join('|') ===
+    'component.home.games-intro|component.home.games' &&
+  browserGamesColumn.props.children[1].type === 'layout.grid' &&
+  browserGamesColumn.props.children[1].props.authoringVersion === 1 &&
+  (home.components || []).some(item => item.id === 'component.home.browser-games-column'),
+  'The native Home layout groups the editable intro and card grid in one desktop column.');
 check('feast-pass', component('component.home.feast-pass')?.props?.anchorId === 'feast-pass',
   'The Feast Pass summary has its required section anchor.');
 check('today-surface', component('component.home.today')?.props?.anchorId === 'today' && /today-panel/.test(componentHtml('component.home.today')),
@@ -77,20 +92,22 @@ check('brand-crown-hash-chain', !!crownAsset && !!crownAuthority &&
   crownActualSha === crownAsset.referenceSha256 &&
   crownActualSha === crownAuthority.sha256,
   'Brand-crown bytes match the website asset index and canonical game-asset authority.');
-check('approved-dense-desktop-bands', /grid-template-areas[\s\S]*games-intro pass[\s\S]*app next/i.test(css),
-  'Desktop composition pairs Games with Feast Pass and App conversion with What’s Next, matching the approved dense portal hierarchy.');
-const desktopGridRows = [
-  /#browser-games-intro\{grid-column:1;grid-row:2;/,
-  /body:has\(\.home-hero\) #browser-games\{grid-column:1;grid-row:3;/,
-  /#feast-pass\{grid-column:2;grid-row:2\s*\/\s*4;/,
-  /#today\{grid-column:1\s*\/\s*-1;grid-row:4;/,
-  /#discovery\{grid-column:1\s*\/\s*-1;grid-row:6;/,
-  /#app\{grid-column:1;grid-row:7;/,
-  /#whats-next\{grid-column:2;grid-row:7;/,
-  /#companion\{grid-column:1\s*\/\s*-1;grid-row:8;/
-];
-check('desktop-home-grid-rows-preserve-discovery', desktopGridRows.every(pattern => pattern.test(css)),
-  'The later desktop layout keeps browser games, Daily Treat, Interactive Discovery, character/world discovery, App, What’s Next, and the companion in their intended non-overlapping rows.');
+const homeAdvancedCss = advanced.css || '';
+const homeGridOverride = homeAdvancedCss.slice(homeAdvancedCss.indexOf('/* Home desktop grid: 12-column numeric placement. */'));
+const gameColumnPlacement = homeGridOverride.match(/main > #browser-games-column\s*\{([^}]*)\}/);
+const feastPassPlacement = homeGridOverride.match(/main > #feast-pass\s*\{([^}]*)\}/);
+const homeColumnStyle = css.match(/html body:has\(\.home-hero\) \.home-browser-games-column\s*\{([^}]*)\}/);
+const nestedGamesStyle = css.match(/html body:has\(\.home-hero\) \.home-browser-games-column > :is\(#browser-games-intro, #browser-games\)\s*\{([^}]*)\}/);
+const has12ColumnGrid = /body:has\(\.home-hero\) main \{[^}]*grid-template-columns:repeat\(12,minmax\(0,1fr\)\)/.test(homeAdvancedCss);
+const usesNumericDesktopBands = has12ColumnGrid && gameColumnPlacement && /grid-area:\s*2\s*\/\s*1\s*\/\s*4\s*\/\s*10/.test(gameColumnPlacement[1]) &&
+  feastPassPlacement && /grid-area:\s*2\s*\/\s*10\s*\/\s*4\s*\/\s*-1/.test(feastPassPlacement[1]) && !/grid-row:\s*auto/.test(feastPassPlacement[1]);
+check('approved-dense-desktop-bands', usesNumericDesktopBands,
+  'Desktop Home pairs the browser-games column and Feast Pass within the existing 12-column grid.');
+const nestedGamesReset = nestedGamesStyle && /grid-area:\s*auto/.test(nestedGamesStyle[1]) && /grid-column:\s*1/.test(nestedGamesStyle[1]) && /grid-row:\s*auto/.test(nestedGamesStyle[1]) && /margin:\s*0/.test(nestedGamesStyle[1]);
+const legacyGameAreasRemoved = !/grid-area:\s*browser-games\s*;/.test(css) && !/grid-area:\s*pass\s*;/.test(css);
+check('desktop-home-grid-rows-preserve-discovery', !!homeColumnStyle && /grid-template-rows:\s*max-content max-content/.test(homeColumnStyle[1]) && /grid-auto-rows:\s*max-content/.test(homeColumnStyle[1]) && nestedGamesReset && legacyGameAreasRemoved &&
+  /@media\s*\(min-width:\s*1080px\)/.test(css) && !/#browser-games-intro \{[^}]*margin-bottom:\s*-12px/.test(homeAdvancedCss),
+  'Desktop Home places the grouped games once, resets legacy inner rows, and keeps the intro/pass coordinates on the 1080px numeric grid.');
 check('character-companion-treatment', /\.companion-toggle[\s\S]*background:\s*transparent/i.test(css) &&
   /assets\/images\/characters\/toadal-victory\.png/i.test(componentHtml('component.home.companion')),
   'The contextual companion is character-led rather than an admin-style toggle.');

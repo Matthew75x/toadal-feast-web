@@ -196,7 +196,7 @@ test('World rejects cards with multiple secondary links or malformed discovery s
 });
 
 test('object closure is idempotent and preserves subsequent owner copy edits',()=>{
- const first=closeOwnerNativeObjectPages({home,world:historicalWorldFixture(),games,assets});first.home.components.find(c=>c.id==='component.home.games').props.children[0].props.children[1].props.text='Owner-authored label';
+ const first=closeOwnerNativeObjectPages({home,world:historicalWorldFixture(),games,assets});byId(first.home.components,'component.home.games').props.children[0].props.children[1].props.text='Owner-authored label';
  const second=closeOwnerNativeObjectPages({...first,games,assets});assert.deepEqual(second,first);
 });
 
