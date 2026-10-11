@@ -1,5 +1,5 @@
 # Existing evidence-only branch. Product source and release gates stay unchanged.
-name: Independent PR44 Gameplay Evidence (no release)
+name: Final staging browser evidence (no release)
 
 on:
   push:
@@ -45,24 +45,18 @@ jobs:
           test -n "$CHROME"
           echo "CHROME_PATH=$CHROME" >> "$GITHUB_ENV"
           "$CHROME" --version
-      - name: Prove genuine desktop and touch gameplay and missing qualification assertions
+      - name: Verify deployed staging navigation, genuine gameplay and held admission
         shell: bash
         env:
           TOADAL_QA_REPO: ${{ github.workspace }}
           TOADAL_QA_OUTPUT: ${{ runner.temp }}/pr44-gameplay-evidence
-          TOADAL_QA_BASE: http://127.0.0.1:8147/toadal-feast-web/
-          TOADAL_QA_GENUINE_ONLY: '1'
+          TOADAL_QA_BASE: https://matthew75x.github.io/toadal-feast-web/
+          TOADAL_QA_EXPECTED_STAGING_SHA: c6faed79506253deb638df053c28e838af5ba173
+          TOADAL_QA_STAGING_REF: staging/live-visual
+          TOADAL_QA_PAGES_RUN_ID: '38109996961'
+          GITHUB_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
-          node scripts/serve-qualified-dist.mjs dist 8147 > "$TOADAL_QA_OUTPUT/site-server.log" 2>&1 &
-          SERVER_PID=$!
-          trap 'kill "$SERVER_PID" >/dev/null 2>&1 || true' EXIT
-          READY=0
-          for i in $(seq 1 40); do
-            if curl -fsS -o /dev/null "$TOADAL_QA_BASE"; then READY=1; break; fi
-            sleep 0.25
-          done
-          test "$READY" = 1
           node tools/pr44-gameplay-closeout.mjs 2>&1 | tee "$TOADAL_QA_OUTPUT/journey-console.log"
       - name: Confirm tests did not change product bytes
         if: always()
@@ -71,7 +65,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: pr44-genuine-gameplay-evidence
+          name: final-staging-browser-evidence
           path: ${{ runner.temp }}/pr44-gameplay-evidence
           if-no-files-found: error
           retention-days: 14

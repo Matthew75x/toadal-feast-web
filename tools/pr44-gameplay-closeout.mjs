@@ -24,12 +24,26 @@ const repo = path.resolve(process.env.TOADAL_QA_REPO || process.cwd());
 const output = path.resolve(process.env.TOADAL_QA_OUTPUT || path.join(os.tmpdir(), 'toadal-hosted-gameplay-closeout'));
 const base = process.env.TOADAL_QA_BASE;
 const genuineOnly = process.env.TOADAL_QA_GENUINE_ONLY === '1';
+const expectedStagingSha = process.env.TOADAL_QA_EXPECTED_STAGING_SHA || null;
+const stagingRef = process.env.TOADAL_QA_STAGING_REF || null;
+const pagesRunId = process.env.TOADAL_QA_PAGES_RUN_ID || null;
+const githubRepository = process.env.TOADAL_QA_GITHUB_REPOSITORY || process.env.GITHUB_REPOSITORY || 'Matthew75x/toadal-feast-web';
 assert.ok(base, 'TOADAL_QA_BASE is required; run against the frozen dist on the GitHub-hosted runner');
 const baseUrl = new URL(base);
 assert.equal(baseUrl.pathname, '/toadal-feast-web/', 'Unexpected website base path');
 assert.match(baseUrl.protocol, /^https?:$/, 'Website QA base must be HTTP(S)');
 assert.ok(process.env.CHROME_PATH, 'CHROME_PATH is required');
 assert.ok(process.env.PLAYWRIGHT_MODULE, 'PLAYWRIGHT_MODULE is required');
+assert.ok(expectedStagingSha || (!stagingRef && !pagesRunId), 'Staging ref/run ID requires TOADAL_QA_EXPECTED_STAGING_SHA');
+if (expectedStagingSha) {
+  assert.match(expectedStagingSha, /^[0-9a-f]{40}$/, 'TOADAL_QA_EXPECTED_STAGING_SHA must be a full commit SHA');
+  assert.ok(stagingRef, 'TOADAL_QA_STAGING_REF is required with the expected staging SHA');
+  assert.match(stagingRef, /^[A-Za-z0-9._/-]+$/, 'Unexpected staging ref');
+  assert.match(pagesRunId || '', /^[0-9]+$/, 'TOADAL_QA_PAGES_RUN_ID is required with the expected staging SHA');
+  assert.equal(genuineOnly, false, 'Remote staging verification must run both genuine journeys and the bounded supplement');
+  assert.equal(baseUrl.protocol, 'https:', 'Remote staging verification requires an HTTPS Pages URL');
+  assert.match(githubRepository, /^[A-Za-z0-9_.-]+\/[A-Za-z0-9_.-]+$/, 'Unexpected GitHub repository slug');
+}
 fs.mkdirSync(output, {recursive: true});
 
 const sha = bytes => crypto.createHash('sha256').update(bytes).digest('hex');
@@ -66,6 +80,37 @@ function assertSourceBoundary() {
     ['dist/assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png', expected.headerArtwork],
   ]) assert.equal(fileSha(relative), pin, `${relative} SHA-256 mismatch`);
 }
+const servedHtmlFiles = Object.freeze({
+  '/toadal-feast-web/': 'dist/index.html',
+  '/toadal-feast-web/play/': 'dist/play/index.html',
+  '/toadal-feast-web/games/wicked-bites/': 'dist/games/wicked-bites/index.html',
+  '/toadal-feast-web/player/wicked-bites/': 'dist/player/wicked-bites/index.html',
+  '/toadal-feast-web/feast-pass/': 'dist/feast-pass/index.html',
+  '/toadal-feast-web/player/claw-feed-gulper/': 'dist/player/claw-feed-gulper/index.html',
+  '/toadal-feast-web/games/claw-feed-gulper/': 'dist/games/claw-feed-gulper/index.html',
+  '/toadal-feast-web/characters/toadal/': 'dist/characters/toadal/index.html',
+});
+async function githubApi(resource) {
+  const headers = {'Accept': 'application/vnd.github+json', 'X-GitHub-Api-Version': '2022-11-28'};
+  const token = process.env.GITHUB_TOKEN || process.env.GH_TOKEN;
+  if (token) headers.Authorization = `Bearer ${token}`;
+  const response = await fetch(`https://api.github.com/repos/${githubRepository}/${resource}`, {headers});
+  assert.equal(response.status, 200, `GitHub API ${resource} returned ${response.status}`);
+  return response.json();
+}
+async function checkStagingProvenance(phase) {
+  if (!expectedStagingSha) return null;
+  const ref = await githubApi(`git/ref/heads/${stagingRef.split('/').map(encodeURIComponent).join('/')}`);
+  assert.equal(ref.object?.sha, expectedStagingSha, `GitHub ${stagingRef} ref changed at ${phase}`);
+  const run = await githubApi(`actions/runs/${pagesRunId}`);
+  assert.equal(run.head_sha, expectedStagingSha, 'Pages run head differs from expected merge SHA');
+  assert.equal(run.head_branch, stagingRef, 'Pages run branch differs from expected staging ref');
+  assert.equal(run.status, 'completed', 'Pages run has not completed');
+  assert.equal(run.conclusion, 'success', 'Pages run did not succeed');
+  return {phase, expectedStagingSha, stagingRef, githubRepository, observedRefSha: ref.object.sha,
+    pagesRunId: Number(pagesRunId), pagesRunUrl: run.html_url, pagesRunHeadSha: run.head_sha,
+    pagesRunStatus: run.status, pagesRunConclusion: run.conclusion};
+}
 
 const report = {
   schema: 'toadal.pr44.hosted-gameplay-closeout.v1',
@@ -76,6 +121,10 @@ const report = {
   scope: 'Fresh browser contexts and ordinary UI links, keyboard or Chromium touch input. No score fixture, game-state mutation, reward injection, payload edits, release, or physical-device claim.',
   expected,
   qaBranchHead: git('rev-parse', 'HEAD'),
+  stagingProvenance: expectedStagingSha ? {
+    expectedStagingSha, stagingRef, githubRepository, pagesRunId: Number(pagesRunId),
+    note: 'The expected merge SHA comes from the test operator. The browser verifies served site bytes separately; no SHA is inferred from a nonexistent public manifest.',
+  } : null,
   qualificationSupplement: {
     navigation: {},
     heldRoute: {},
@@ -99,12 +148,20 @@ let status = 'FAIL';
 try {
   assertSourceBoundary();
   report.distFingerprintBefore = fingerprint('dist');
+  if (expectedStagingSha) report.stagingProvenance.before = await checkStagingProvenance('before-browser');
   const moduleSpec = process.env.PLAYWRIGHT_MODULE.startsWith('file:')
     ? process.env.PLAYWRIGHT_MODULE
     : pathToFileURL(path.resolve(process.env.PLAYWRIGHT_MODULE)).href;
   const {chromium} = await import(moduleSpec);
   browser = await chromium.launch({headless: true, executablePath: process.env.CHROME_PATH, args: ['--no-sandbox', '--disable-dev-shm-usage']});
   report.chromeVersion = browser.version();
+  function assertServedHtml(row, routes) {
+    for (const route of routes) {
+      assert.equal(row.served[route]?.status, 200, `${route} did not load as a browser page`);
+      assert.equal(row.served[route]?.sha256, fileSha(servedHtmlFiles[route]), `${route} differs from frozen exported HTML`);
+    }
+    row.checks.push({check: 'visited-html-matches-frozen-export', routes});
+  }
 
   async function makeCase(name, viewport) {
     const mobile = viewport.width < 600;
@@ -117,6 +174,7 @@ try {
     page.on('response', response => {
       const route = new URL(response.url()).pathname;
       if (![
+        ...Object.keys(servedHtmlFiles),
         '/toadal-feast-web/public/games/wicked-bites/index.html',
         '/toadal-feast-web/public/games/wicked-bites/toadal-bridge.js',
         '/toadal-feast-web/assets/js/website-score-adapter.js',
@@ -295,6 +353,13 @@ try {
         await shot('badge-claimed');
       }
       await Promise.all(resourceTasks);
+      assertServedHtml(row, [
+        '/toadal-feast-web/',
+        '/toadal-feast-web/play/',
+        '/toadal-feast-web/games/wicked-bites/',
+        '/toadal-feast-web/player/wicked-bites/',
+        '/toadal-feast-web/feast-pass/',
+      ]);
       for (const [route, pin] of [
         ['/toadal-feast-web/public/games/wicked-bites/index.html', expected.gameHtml],
         ['/toadal-feast-web/public/games/wicked-bites/toadal-bridge.js', expected.gameBridge],
@@ -348,6 +413,17 @@ try {
         return {src: image.currentSrc || image.src, alt: image.alt, width: image.naturalWidth, height: image.naturalHeight, visible: rect.width > 0 && rect.height > 0 && rect.bottom > 0 && rect.top < innerHeight};
       }));
       await Promise.all(resourceTasks);
+      assertServedHtml(row, [
+        '/toadal-feast-web/player/claw-feed-gulper/',
+        '/toadal-feast-web/games/claw-feed-gulper/',
+        '/toadal-feast-web/characters/toadal/',
+      ]);
+      const clawPayload = await page.request.get(base + 'public/games/claw-feed-gulper/index.html', {failOnStatusCode: false});
+      assert.equal(clawPayload.status(), 404, 'Unapproved CLAW payload was publicly served');
+      const cartridge = await page.request.get(base + 'public/games/wicked-bites/cartridge.json');
+      assert.equal(cartridge.status(), 200);
+      assert.equal(sha(await cartridge.body()), expected.gameCartridge);
+      row.directServedChecks = {clawPublicPayloadStatus: clawPayload.status(), wickedCartridgeSha256: expected.gameCartridge};
       const artRoute = '/toadal-feast-web/assets/images/characters/toadal-victory.webp';
       assert.ok(art.some(image => image.visible && image.width > 0 && new URL(image.src).pathname === artRoute), 'Canonical Toadal image is not visibly loaded');
       assert.equal(row.served[artRoute]?.status, 200);
@@ -377,6 +453,7 @@ try {
   await genuineJourney({width: 1440, height: 900});
   await genuineJourney({width: 390, height: 844});
   if (!genuineOnly) await boundedSupplement();
+  if (expectedStagingSha) report.stagingProvenance.after = await checkStagingProvenance('after-browser');
   assert.ok(report.cases.every(item => item.status === 'PASS'), 'One or more exact-head hosted browser cases failed');
   status = 'PASS';
 } catch (error) {
