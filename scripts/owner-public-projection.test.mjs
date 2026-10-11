@@ -19,7 +19,11 @@ test('static freshness accepts canonical public output and rejects changed copy,
   const run=()=>spawnSync(process.execPath,[path.join(repo,'scripts/verify-owner-preview-render-freshness.mjs'),repo,dist],{encoding:'utf8'});
   const initial=run();assert.equal(initial.status,0,initial.stderr);
   const home=path.join(dist,'index.html'),original=fs.readFileSync(home,'utf8');
-  const image=original.match(/<img\b[^>]*\bwidth=['"]\d+['"][^>]*>/i)?.[0];assert(image,'canonical image has dimensions');
+  // Shared header art is outside native-component projection. Exercise the
+  // authored Home hero image whose exact subtree this verifier owns.
+  const image=[...original.matchAll(/<img\b[^>]*>/gi)].map(match=>match[0]).find(tag=>
+   /\bdata-toadal-node=['"]component\.home\.hero\./i.test(tag)&&/\bwidth=['"]\d+['"]/i.test(tag));
+  assert(image,'canonical native Home hero image has dimensions');
   const corrupted=image.replace(/\bwidth=(['"])\d+\1/i,"width='999999'");fs.writeFileSync(home,original.replace(image,corrupted));
   const badDimensions=run();assert.notEqual(badDimensions.status,0,'wrong intrinsic dimensions must fail');assert.match(badDimensions.stderr,/native component stale/);fs.writeFileSync(home,original);
   assert(original.includes('Play the Feast World for Free'));fs.writeFileSync(home,original.replaceAll('Play the Feast World for Free','UNAUTHORED STALE CONTENT'));
