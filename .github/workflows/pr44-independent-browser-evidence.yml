@@ -1,0 +1,124 @@
+# Standalone evidence lane; cannot merge, publish, or relax manifest gates.
+# Runs only on this QA branch, which is pinned to Website PR #44's frozen head.
+name: Independent PR44 Browser Evidence (no release)
+
+on:
+  push:
+    branches:
+      - qa/pr44-browser-evidence-20261011
+
+permissions:
+  contents: read
+
+concurrency:
+  group: independent-pr44-browser-evidence
+  cancel-in-progress: true
+
+jobs:
+  verify-frozen-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - name: Checkout isolated QA branch
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Configure Node 22
+        uses: actions/setup-node@v6
+        with:
+          node-version: '22'
+      - name: Prove frozen source and game-admission boundaries
+        shell: bash
+        run: |
+          set -euo pipefail
+          FROZEN=96b237447e64499957d511df1ec4ab46dace1eca
+          test "$(git rev-parse HEAD:dist)" = "$(git rev-parse "$FROZEN:dist")"
+          git diff --exit-code "$FROZEN" HEAD -- dist studio-project/toadal-feast-website manifests
+          test ! -e dist/public/games/claw-feed-gulper/index.html
+          test -e dist/public/games/wicked-bites/index.html
+          mkdir -p "$RUNNER_TEMP/pr44-evidence"
+          {
+            echo "frozen_pr44_head=$FROZEN"
+            echo "qa_branch_commit=$(git rev-parse HEAD)"
+            echo "unchanged_dist_tree=$(git rev-parse HEAD:dist)"
+            echo "private_claw_public_admission=HELD"
+            echo "production_publication=NOT_AUTHORIZED"
+          } > "$RUNNER_TEMP/pr44-evidence/source-identity.txt"
+      - name: Discover installed Chrome
+        shell: bash
+        run: |
+          set -euo pipefail
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || true)"
+          test -n "$CHROME"
+          echo "CHROME_PATH=$CHROME" >> "$GITHUB_ENV"
+          "$CHROME" --version
+      - name: Run existing real-browser route/companion matrix
+        shell: bash
+        timeout-minutes: 9
+        run: |
+          set -uo pipefail
+          OUT="$RUNNER_TEMP/pr44-evidence"
+          node scripts/owner-preview-browser-matrix.mjs . dist /toadal-feast-web/ "$OUT/browser-matrix.json" > "$OUT/browser-matrix.log" 2>&1
+          CODE=$?
+          echo "$CODE" > "$OUT/browser-matrix.exit"
+          echo "Browser matrix exit: $CODE"
+          tail -45 "$OUT/browser-matrix.log" || true
+          exit 0
+      - name: Capture standalone Chrome screenshots from the same unchanged dist
+        shell: bash
+        timeout-minutes: 6
+        run: |
+          set -uo pipefail
+          OUT="$RUNNER_TEMP/pr44-evidence"
+          node scripts/serve-qualified-dist.mjs dist 8147 > "$OUT/site-server.log" 2>&1 &
+          SERVER_PID=$!
+          trap 'kill "$SERVER_PID" >/dev/null 2>&1 || true' EXIT
+          READY=0
+          for i in $(seq 1 40); do
+            if curl -fsS -o /dev/null http://127.0.0.1:8147/toadal-feast-web/; then READY=1; break; fi
+            sleep 0.25
+          done
+          if [ "$READY" -ne 1 ]; then
+            echo "FAIL: isolated site server did not become ready" | tee "$OUT/screenshot-errors.log"
+            exit 1
+          fi
+          ERRORS=0
+          while IFS='|' read -r NAME ROUTE WIDTH HEIGHT; do
+            [ -n "$NAME" ] || continue
+            "$CHROME_PATH" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --disable-extensions --hide-scrollbars --force-device-scale-factor=1               --window-size="$WIDTH,$HEIGHT" --virtual-time-budget=2500               --screenshot="$OUT/$NAME.png" "http://127.0.0.1:8147/toadal-feast-web/$ROUTE" >> "$OUT/screenshot-console.log" 2>&1 || ERRORS=$((ERRORS+1))
+          done <<'CASES'
+          home-desktop||1440|900
+          home-tablet||768|1024
+          home-mobile||390|844
+          home-narrow||320|700
+          play-mobile|play/|390|844
+          claw-held-desktop|player/claw-feed-gulper/|1440|900
+          claw-held-mobile|player/claw-feed-gulper/|390|844
+          wicked-player-mobile|player/wicked-bites/|390|844
+          feast-pass-mobile|feast-pass/|390|844
+          CASES
+          sha256sum "$OUT"/*.png > "$OUT/screenshot-sha256s.txt" 2>/dev/null || ERRORS=$((ERRORS+1))
+          echo "$ERRORS" > "$OUT/screenshot-errors.count"
+          echo "Screenshot errors: $ERRORS"
+          exit 0
+      - name: Record independent test disposition (never amend the qualification gate)
+        shell: bash
+        run: |
+          set -euo pipefail
+          OUT="$RUNNER_TEMP/pr44-evidence"
+          echo "This is independent browser evidence for the frozen PR44 static dist, not public release approval." > "$OUT/disposition.txt"
+          echo "Current PR44 strict qualification remains blocked until fresh evidence is reviewed, source-bound, and integrated by the assigned writer." >> "$OUT/disposition.txt"
+          MATRIX="$(cat "$OUT/browser-matrix.exit")"
+          SCREENSHOTS="$(cat "$OUT/screenshot-errors.count")"
+          echo "matrix_exit=$MATRIX screenshot_errors=$SCREENSHOTS"
+          test "$MATRIX" = 0
+          test "$SCREENSHOTS" = 0
+      - name: Preserve reports and screenshots even when verification fails
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pr44-independent-browser-evidence
+          path: ${{ runner.temp }}/pr44-evidence
+          if-no-files-found: warn
+          retention-days: 14
