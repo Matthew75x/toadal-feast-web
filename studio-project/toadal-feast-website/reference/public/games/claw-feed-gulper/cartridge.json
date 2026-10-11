@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "id": "claw-feed-gulper",
+  "displayName": "CLAW: Feed Gulper",
+  "version": "2.5.1-web-preview.4",
+  "publicState": "PREVIEW",
+  "entry": "index.html",
+  "poster": "poster.webp",
+  "orientation": "any",
+  "inputs": {
+    "touch": true,
+    "keyboard": true,
+    "mouse": true,
+    "gamepad": false
+  },
+  "storage": {
+    "namespace": "toadal:game:claw-feed-gulper:v1:",
+    "persistence": "local",
+    "accountSync": "none"
+  },
+  "fullscreenSupport": true,
+  "mobileSupport": true,
+  "protocol": {
+    "name": "toadal.game",
+    "version": 1
+  },
+  "source": {
+    "repository": "Matthew75x/claw-feed-gulper",
+    "ref": "91f9b600b5d05c0b37ff49a9db615c9c1c38342e",
+    "entrySource": "dist/index.html",
+    "sourceHash": "895e236c65d1be2605dc44b903a0b549fa2ccfbf38adba8bfddf53d5e741e1b7"
+  },
+  "hostIntegration": {
+    "websiteProtocol": "toadal.game.v1",
+    "websiteAdapter": "runtime.bundle.js",
+    "messageOrigin": "same-site-parent-only",
+    "tcsBridgeQualified": false,
+    "tcsAdmissionStatus": "NOT_RUN",
+    "runtimePackaging": "classic-script-self-contained; package-relative images and audio"
+  },
+  "knownLimitations": [
+    "PREVIEW-only candidate; no public or Publisher/TCS staging approval has been obtained.",
+    "The optional website v1 adapter has not yet passed the real website player/iframe acceptance gate.",
+    "TCS bridge lifecycle and signed qualification remain unimplemented/unauthorized; bridge features are declared empty.",
+    "Cartridge preview uses only its own namespaced browser-local save; no mobile-save migration or account progression sync.",
+    "Opaque-origin browser sandboxes may not support persistence; gameplay falls back to in-memory state without cross-origin writes.",
+    "Website host must own fullscreen/exit navigation, focus management and any service-worker/PWA scope."
+  ],
+  "package": {
+    "files": 81,
+    "bytes": 16876550,
+    "sha256": "a048b5e5a6a221f7dc70a43934081794adcd5fa81a23d6708bf64b44b437f0c1"
+  },
+  "cardAuthority": {
+    "status": "OWNER_DESIGNATED",
+    "assetId": "manifests/visual-asset-authority-lock.json#ownerRequestedPromotionalAddition20261008",
+    "sourceSha256": "e8ca7e000f1d77cbdc272854e84ac6010ea29b422369d316c140bd7f6386c46a",
+    "posterSha256": "90ee7b8e2d405bc045a910ea83b1ecd5f125038401597e6c23c90efeba19ded8",
+    "purpose": "promotional website title card only",
+    "visualAcceptance": "PENDING"
+  }
+}

@@ -513,7 +513,7 @@
                               "props": {
                                 "authoringVersion": 1,
                                 "tag": "a",
-                                "className": "discovery-scene-card owner-object-link",
+                                "className": "discovery-scene-card owner-object-link discovery-scene-card--gameplay",
                                 "attributes": {
                                   "aria-label": "Explore Arcade in the mobile app"
                                 },
@@ -534,7 +534,24 @@
                                       "style": "",
                                       "layerName": "TOADAL FEAST Arcade gameplay capture.",
                                       "asset": "asset.app.gameplay.arcade",
-                                      "alt": "TOADAL FEAST Arcade gameplay capture."
+                                      "alt": "TOADAL FEAST Arcade gameplay capture.",
+                                      "fit": "contain",
+                                      "focalX": 50,
+                                      "focalY": 50,
+                                      "aspectRatio": "16/9",
+                                      "padding": 0,
+                                      "zoom": 1,
+                                      "responsive": {
+                                        "mobile": {
+                                          "maxWidth": 680,
+                                          "fit": "contain",
+                                          "aspectRatio": "3/5",
+                                          "focalX": 50,
+                                          "focalY": 50,
+                                          "padding": 0,
+                                          "zoom": 1
+                                        }
+                                      }
                                     }
                                   },
                                   {
@@ -588,7 +605,7 @@
                               "props": {
                                 "authoringVersion": 1,
                                 "tag": "a",
-                                "className": "discovery-scene-card owner-object-link",
+                                "className": "discovery-scene-card owner-object-link discovery-scene-card--gameplay",
                                 "attributes": {
                                   "aria-label": "Explore Puzzle in the mobile app"
                                 },
@@ -609,7 +626,13 @@
                                       "style": "",
                                       "layerName": "TOADAL FEAST Puzzle gameplay capture.",
                                       "asset": "asset.app.gameplay.puzzle",
-                                      "alt": "TOADAL FEAST Puzzle gameplay capture."
+                                      "alt": "TOADAL FEAST Puzzle gameplay capture.",
+                                      "fit": "contain",
+                                      "focalX": 50,
+                                      "focalY": 50,
+                                      "aspectRatio": "16/9",
+                                      "padding": 0,
+                                      "zoom": 1
                                     }
                                   },
                                   {
@@ -663,7 +686,7 @@
                               "props": {
                                 "authoringVersion": 1,
                                 "tag": "a",
-                                "className": "discovery-scene-card owner-object-link",
+                                "className": "discovery-scene-card owner-object-link discovery-scene-card--gameplay",
                                 "attributes": {
                                   "aria-label": "Explore Feastfall in the mobile app"
                                 },
@@ -684,7 +707,13 @@
                                       "style": "",
                                       "layerName": "TOADAL FEAST Feastfall gameplay capture.",
                                       "asset": "asset.app.gameplay.feastfall",
-                                      "alt": "TOADAL FEAST Feastfall gameplay capture."
+                                      "alt": "TOADAL FEAST Feastfall gameplay capture.",
+                                      "fit": "contain",
+                                      "focalX": 50,
+                                      "focalY": 50,
+                                      "aspectRatio": "16/9",
+                                      "padding": 0,
+                                      "zoom": 1
                                     }
                                   },
                                   {
@@ -2033,7 +2062,7 @@
                   "props": {
                     "authoringVersion": 1,
                     "tag": "nav",
-                    "className": "progression-nav",
+                    "className": "progression-nav progression-nav--media",
                     "attributes": {
                       "aria-label": "Media destinations"
                     },

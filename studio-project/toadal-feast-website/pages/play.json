@@ -182,7 +182,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Step into a bite-sized browser adventure. Try the Wicked Bites preview, or explore the games and concepts taking shape across the Feast.",
-                                "text": "Find a bite-sized browser preview to try, check a held launch, or explore the concepts taking shape across the Feast."
+                                "text": "Try a bite-sized browser preview or explore the game concepts taking shape across the Feast."
                               }
                             },
                             {
@@ -281,7 +281,7 @@
                             "aria-label": "Play availability summary"
                           },
                           "style": "",
-                          "layerName": "PREVIEW ONLY1staging build open in playerCLAW is held pending origin-saf",
+                          "layerName": "PREVIEW ONLY · 2 playable browser previews · other listings are concepts",
                           "mode": "inherit",
                           "children": [
                             {
@@ -308,7 +308,7 @@
                                   "data-catalogue-playable-total": ""
                                 },
                                 "style": "",
-                                "layerName": "1",
+                                "layerName": "2",
                                 "text": "1"
                               }
                             },
@@ -334,8 +334,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Wicked Bites is ready to try. Other listings are held or concept previews. Guest progress stays on this browser.",
-                                "text": "Other listings can be launch-held or concepts. Check the catalogue below; PREVIEW is not a public release."
+                                "layerName": "Two browser previews are playable; two other game listings are concepts. Guest progress stays on this browser.",
+                                "text": "Wicked Bites is a playable isolated preview. Other listings are not available to play yet; PREVIEW does not mean a public release."
                               }
                             }
                           ]
@@ -630,7 +630,7 @@
                                 },
                                 "style": "",
                                 "layerName": "help",
-                                "text": "Find a title, then choose what is playable, on hold or still a concept. Availability and release status are separate; these labels describe this website configuration, not a new live health check."
+                                "text": "Find a game, then filter by availability or release status. These labels describe what this website offers; they are not live checks of whether a game is working."
                               }
                             },
                             {
@@ -1333,7 +1333,7 @@
                                         "aria-label": "View Wicked Bites game details"
                                       },
                                       "style": "",
-                                      "layerName": "PREVIEW",
+                                      "layerName": "Game cover · responsive 16:9",
                                       "href": "/games/wicked-bites/",
                                       "children": [
                                         {
@@ -1361,22 +1361,20 @@
                                               "decoding": "async"
                                             },
                                             "style": "",
-                                            "layerName": "Wicked Bites 5.5 staging gameplay preview.",
-                                            "asset": "asset.home.game.wicked-bites-preview",
-                                            "alt": "Wicked Bites 5.5 staging gameplay preview."
-                                          }
-                                        },
-                                        {
-                                          "id": "component.muogc2on.jbosap.3ebcd945b52c.chip-preview",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "chip preview",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "PREVIEW",
-                                            "text": "PREVIEW"
+                                            "layerName": "Wicked Bites · approved cover image and framing",
+                                            "asset": "asset.import.wicked-bites-960.15bc9857",
+                                            "alt": "Wicked Bites promotional title illustration; not gameplay",
+                                            "fit": "cover",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "asset": "asset.import.wicked-bites-480.a60da0ee",
+                                                "maxWidth": 600,
+                                                "fit": "cover"
+                                              }
+                                            }
                                           }
                                         },
                                         {
@@ -1392,7 +1390,8 @@
                                             "layerName": "Text: whitespace"
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "aspectRatio": "16/9"
                                     }
                                   },
                                   {
@@ -1421,6 +1420,19 @@
                                       "mode": "inherit",
                                       "children": [
                                         {
+                                          "id": "component.muogc2on.jbosap.3ebcd945b52c.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
                                           "id": "component.muogc2on.jbosap.8c50a7c4a0b3.play-card-eyebrow",
                                           "type": "core.text",
                                           "props": {
@@ -1430,7 +1442,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "STAGING BUILD · 5.5",
-                                            "text": "STAGING BUILD · 5.5"
+                                            "text": "BROWSER PREVIEW · 5.5"
                                           }
                                         },
                                         {
@@ -1484,7 +1496,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "A compact, isolated browser preview from the Wicked Bites 5.5 staging bu",
-                                            "text": "A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release."
+                                            "text": "Try the Wicked Bites 5.5 browser preview. This is a preview, not a public release."
                                           }
                                         },
                                         {
@@ -1590,20 +1602,21 @@
                             },
                             {
                               "id": "component.muogc2on.jbosap.fcfdfaa39dd7.module-studio-game-card-",
-                              "type": "layout.container",
+                              "type": "core.button",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "article",
+                                "tag": "a",
                                 "className": "module studio-game-card play-card",
                                 "attributes": {
                                   "data-game-id": "claw-feed-gulper",
                                   "data-game-status": "preview",
                                   "data-catalogue-title": "CLAW: Feed Gulper",
                                   "data-catalogue-availability": "held",
-                                  "data-catalogue-source-sha256": "6e4527a76f043072f717f43f995052bda57452ce2a6f71083f849321186a8f84"
+                                  "data-catalogue-source-sha256": "cd9d8ccd23404ec15d29546bda1964be01804fad2bbf6a465ad79b8bbbd259f1",
+                                  "aria-label": "CLAW: Feed Gulper — view game details"
                                 },
                                 "style": "",
-                                "layerName": "CLAW: Feed Gulper",
+                                "layerName": "CLAW: Feed Gulper · playable browser preview",
                                 "mode": "inherit",
                                 "children": [
                                   {
@@ -1621,17 +1634,14 @@
                                   },
                                   {
                                     "id": "component.muogc2on.jbosap.44ed7377e6a0.play-card-art",
-                                    "type": "core.button",
+                                    "type": "layout.container",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "a",
+                                      "tag": "div",
                                       "className": "play-card__art",
-                                      "attributes": {
-                                        "aria-label": "View CLAW: Feed Gulper game details"
-                                      },
+                                      "attributes": {},
                                       "style": "",
-                                      "layerName": "PREVIEW",
-                                      "href": "/games/claw-feed-gulper/",
+                                      "layerName": "Game cover · responsive 16:9",
                                       "children": [
                                         {
                                           "id": "component.muogc2on.jbosap.ac1546258530.text",
@@ -1658,22 +1668,13 @@
                                               "decoding": "async"
                                             },
                                             "style": "",
-                                            "layerName": "CLAW: Feed Gulper 2.5.1 staging package screenshot; website launch remains held.",
-                                            "asset": "asset.home.game.claw-feed-gulper-preview",
-                                            "alt": "CLAW: Feed Gulper 2.5.1 staging package screenshot; website launch remains held."
-                                          }
-                                        },
-                                        {
-                                          "id": "component.muogc2on.jbosap.83240312e14c.chip-preview",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "chip preview",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "PREVIEW",
-                                            "text": "PREVIEW"
+                                            "layerName": "CLAW: Feed Gulper · generated promotional cover and editable framing",
+                                            "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
+                                            "alt": "CLAW: Feed Gulper promotional title-card illustration; this is not gameplay footage.",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "zoom": 1
                                           }
                                         },
                                         {
@@ -1689,7 +1690,8 @@
                                             "layerName": "Text: whitespace"
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "aspectRatio": "16/9"
                                     }
                                   },
                                   {
@@ -1718,6 +1720,19 @@
                                       "mode": "inherit",
                                       "children": [
                                         {
+                                          "id": "component.muogc2on.jbosap.83240312e14c.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
+                                        {
                                           "id": "component.muogc2on.jbosap.cf5e3f75f1cd.play-card-eyebrow",
                                           "type": "core.text",
                                           "props": {
@@ -1726,8 +1741,8 @@
                                             "className": "play-card__eyebrow",
                                             "attributes": {},
                                             "style": "",
-                                            "layerName": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1",
-                                            "text": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1"
+                                            "layerName": "WEBSITE PREVIEW · 2.5.1-WEB-PREVIEW.4",
+                                            "text": "WEBSITE PREVIEW · 2.5.1-WEB-PREVIEW.4"
                                           }
                                         },
                                         {
@@ -1741,7 +1756,7 @@
                                               "data-catalogue-availability-label": ""
                                             },
                                             "style": "",
-                                            "layerName": "availability claw feed gulper",
+                                            "layerName": "Playable preview",
                                             "text": "Launch held"
                                           }
                                         },
@@ -1780,8 +1795,8 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "layerName": "A browser preview is being prepared. Website launch is on hold while save and offline behavior are checked.",
-                                            "text": "A browser preview is being prepared. Website launch is on hold while save and offline behavior are checked."
+                                            "layerName": "Play in the browser sandbox. Saves stay in this browser; account sync and global rankings are of",
+                                            "text": "Play in the browser sandbox. Saves stay in this browser; account sync and global rankings are off."
                                           }
                                         },
                                         {
@@ -1798,49 +1813,6 @@
                                           }
                                         },
                                         {
-                                          "id": "component.muogc2on.jbosap.3265428e4b66.button-link-button-link-",
-                                          "type": "core.button",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "a",
-                                            "className": "button-link button-link--secondary",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "View game details →",
-                                            "href": "/games/claw-feed-gulper/",
-                                            "children": [
-                                              {
-                                                "id": "component.muogc2on.jbosap.5817dad556df.text",
-                                                "type": "core.text",
-                                                "props": {
-                                                  "authoringVersion": 1,
-                                                  "tag": "#text",
-                                                  "className": "",
-                                                  "attributes": {},
-                                                  "style": "",
-                                                  "text": "View game details ",
-                                                  "layerName": "Text: View game details"
-                                                }
-                                              },
-                                              {
-                                                "id": "component.muogc2on.jbosap.271741559d95.span",
-                                                "type": "core.text",
-                                                "props": {
-                                                  "authoringVersion": 1,
-                                                  "tag": "span",
-                                                  "className": "",
-                                                  "attributes": {
-                                                    "aria-hidden": "true"
-                                                  },
-                                                  "style": "",
-                                                  "layerName": "→",
-                                                  "text": "→"
-                                                }
-                                              }
-                                            ]
-                                          }
-                                        },
-                                        {
                                           "id": "component.muogc2on.jbosap.687d6d20ff54.text",
                                           "type": "core.text",
                                           "props": {
@@ -1851,6 +1823,19 @@
                                             "style": "",
                                             "text": "\n    ",
                                             "layerName": "Text: whitespace"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.play.catalogue.claw-feed-gulper.open-preview-label",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "play-card__action-label",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Game details",
+                                            "text": "Game details →"
                                           }
                                         }
                                       ]
@@ -1869,7 +1854,9 @@
                                       "layerName": "Text: whitespace"
                                     }
                                   }
-                                ]
+                                ],
+                                "href": "/games/claw-feed-gulper/",
+                                "label": "CLAW: Feed Gulper — view game details"
                               }
                             },
                             {
@@ -1927,7 +1914,7 @@
                                         "aria-label": "View TOADAL Tower Defense game details"
                                       },
                                       "style": "",
-                                      "layerName": "PREVIEW",
+                                      "layerName": "Game cover · responsive 16:9",
                                       "href": "/games/toadal-tower-defense/",
                                       "children": [
                                         {
@@ -1957,20 +1944,11 @@
                                             "style": "",
                                             "layerName": "Candy Kingdom world artwork, not game footage.",
                                             "asset": "asset.home.world.desktop",
-                                            "alt": "Candy Kingdom world artwork, not game footage."
-                                          }
-                                        },
-                                        {
-                                          "id": "component.muogc2on.jbosap.5a8a96490b0b.chip-preview",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "chip preview",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "PREVIEW",
-                                            "text": "PREVIEW"
+                                            "alt": "Candy Kingdom world artwork, not game footage.",
+                                            "fit": "cover",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "zoom": 1
                                           }
                                         },
                                         {
@@ -1986,7 +1964,8 @@
                                             "layerName": "Text: whitespace"
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "aspectRatio": "16/9"
                                     }
                                   },
                                   {
@@ -2014,6 +1993,19 @@
                                       "layerName": "TOADAL Tower Defense",
                                       "mode": "inherit",
                                       "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.5a8a96490b0b.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
                                         {
                                           "id": "component.muogc2on.jbosap.f5c1a6b1ef8a.play-card-eyebrow",
                                           "type": "core.text",
@@ -2078,7 +2070,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "A preview concept only. No runnable browser package is connected, and th",
-                                            "text": "A preview concept only. No runnable browser package is connected, and the shared world artwork is not gameplay footage."
+                                            "text": "A game concept to explore. Browser play is not available, and the world artwork is not gameplay footage."
                                           }
                                         },
                                         {
@@ -2224,7 +2216,7 @@
                                         "aria-label": "View Froggy Fruity Bash game details"
                                       },
                                       "style": "",
-                                      "layerName": "PREVIEW",
+                                      "layerName": "Game cover · responsive 16:9",
                                       "href": "/games/froggy-fruity-bash/",
                                       "children": [
                                         {
@@ -2252,22 +2244,20 @@
                                               "decoding": "async"
                                             },
                                             "style": "",
-                                            "layerName": "Fruity Genie character artwork, not game footage.",
-                                            "asset": "asset.home.genie.fruity-art",
-                                            "alt": "Fruity Genie character artwork, not game footage."
-                                          }
-                                        },
-                                        {
-                                          "id": "component.muogc2on.jbosap.1286a4f16f1a.chip-preview",
-                                          "type": "core.text",
-                                          "props": {
-                                            "authoringVersion": 1,
-                                            "tag": "span",
-                                            "className": "chip preview",
-                                            "attributes": {},
-                                            "style": "",
-                                            "layerName": "PREVIEW",
-                                            "text": "PREVIEW"
+                                            "layerName": "Froggie Fruity Bash · approved cover image and framing",
+                                            "asset": "asset.import.foodio-fruity-bash-960.32f2d77b",
+                                            "alt": "Froggie Fruity Bash promotional title illustration; not gameplay",
+                                            "fit": "cover",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "asset": "asset.import.foodio-fruity-bash-480.a48d00e6",
+                                                "maxWidth": 600,
+                                                "fit": "cover"
+                                              }
+                                            }
                                           }
                                         },
                                         {
@@ -2283,7 +2273,8 @@
                                             "layerName": "Text: whitespace"
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "aspectRatio": "16/9"
                                     }
                                   },
                                   {
@@ -2311,6 +2302,19 @@
                                       "layerName": "Froggy Fruity Bash",
                                       "mode": "inherit",
                                       "children": [
+                                        {
+                                          "id": "component.muogc2on.jbosap.1286a4f16f1a.chip-preview",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "span",
+                                            "className": "chip preview",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "PREVIEW",
+                                            "text": "PREVIEW"
+                                          }
+                                        },
                                         {
                                           "id": "component.muogc2on.jbosap.7d34c8930f5b.play-card-eyebrow",
                                           "type": "core.text",
@@ -2375,7 +2379,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "A preview concept only. No runnable browser package is connected, and th",
-                                            "text": "A preview concept only. No runnable browser package is connected, and the character artwork is not gameplay footage."
+                                            "text": "A game concept to explore. Browser play is not available, and the character artwork is not gameplay footage."
                                           }
                                         },
                                         {
@@ -2533,7 +2537,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "PREVIEW marks an evaluation build or concept, rather than a public release. Each game page explains whether you can play it on this website.",
-                          "text": "PREVIEW marks an evaluation build or concept, rather than a public release. Each game page explains whether you can play it on this website."
+                          "text": "PREVIEW means a work-in-progress game or concept, not a public release. Each game page tells you whether you can play it here."
                         }
                       }
                     ]
@@ -2610,7 +2614,7 @@
                                 },
                                 "style": "",
                                 "layerName": "Browse the listings and check each PREVIEW, hold, or concept label befor",
-                                "text": "Browse the listings and check each PREVIEW, hold, or concept label before opening a route."
+                                "text": "Pick a game and check its availability. Some previews are playable; others are still on hold or at the concept stage."
                               }
                             }
                           ]
@@ -2783,7 +2787,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "Explore, check in and claim completed website quests. Wicked Bites score challenges are not configured.",
-                          "text": "Explore, check in and claim completed website quests. Wicked Bites score challenges are not configured."
+                          "text": "Explore, check in and claim completed website quests. Wicked Bites score challenges are not available yet."
                         }
                       },
                       {
@@ -2868,7 +2872,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "See your saved Wicked Bites personal best. Connected global rankings are not available.",
-                          "text": "See your saved Wicked Bites personal best. Connected global rankings are not available."
+                          "text": "Check for a saved Wicked Bites personal best in this browser. Connected global rankings are not available."
                         }
                       },
                       {

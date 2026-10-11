@@ -1,0 +1,48 @@
+{
+  "scope": "disposable copy of final native design candidate",
+  "sourceFingerprintBefore": "9d2606c9544eb0c70fce9400d574b57b3ad84fca636a0b730a33b2128315684d",
+  "sourceFingerprintAfter": "9d2606c9544eb0c70fce9400d574b57b3ad84fca636a0b730a33b2128315684d",
+  "sourceUnchanged": true,
+  "engine": "5d022f5c3ea676458a63c8d2bb67ceb69c1a84d5",
+  "steps": [
+    {
+      "node": "component.home.hero.4db086c637da.home-hero-title",
+      "api": "authoring-kernel.applyOperation content.setText",
+      "beforeRevision": "141fc33988045161e788935f724afd76ddc9d95e0a9c3fe9cc88b0eb8043a1d9",
+      "afterRevision": "7bec01ff2d999a419f3f13e11211c650b2c6cda85b47fccb0bc224c407b9c829",
+      "reopenedProps": {
+        "text": "Round-trip editable headline"
+      }
+    },
+    {
+      "node": "component.home.hero.ea6c8d3dd272.button-link-button-link-",
+      "api": "project-kernel.updateComponent (Studio component Inspector/PATCH route)",
+      "beforeRevision": "7bec01ff2d999a419f3f13e11211c650b2c6cda85b47fccb0bc224c407b9c829",
+      "afterRevision": "982b040223095ce71195a952c1d3e9e8c0f0af673d48acdc812be286716645c9",
+      "reopenedProps": {
+        "href": "/app/#mode-arcade"
+      }
+    },
+    {
+      "node": "component.home.game.wicked-bites.preview.cover",
+      "api": "authoring-kernel.applyOperation image.reframe",
+      "beforeRevision": "982b040223095ce71195a952c1d3e9e8c0f0af673d48acdc812be286716645c9",
+      "afterRevision": "fd98ba041f3090a6f2f205d4956791c53fbc348d0dd73e22b4b3bead3c47fbc2",
+      "reopenedProps": {
+        "fit": "cover",
+        "focalX": 35,
+        "focalY": 60,
+        "zoom": 1.1
+      }
+    }
+  ],
+  "editedExportVerified": true,
+  "validation": {
+    "valid": true,
+    "errors": [],
+    "warnings": []
+  },
+  "disposableRestored": true,
+  "restoredRevision": "141fc33988045161e788935f724afd76ddc9d95e0a9c3fe9cc88b0eb8043a1d9",
+  "uiTest": false
+}

@@ -1,0 +1,149 @@
+{
+  "schema": "toadal-feast.gulper-player-route-qualification.v2",
+  "status": "PASS",
+  "classification": "LOCAL_CANDIDATE_ENGINEERING_QUALIFICATION",
+  "observedDate": "2026-10-10",
+  "observedAtUtc": "2026-10-11T03:48:11.169Z",
+  "sourceIdentity": {
+    "repository": "Matthew75x/toadal-feast-web",
+    "branch": "closeout/final-website-20261010",
+    "baseCommit": "72c8f76686a9479f593aea36c1dc20f116706b98",
+    "baseTree": "b49e760ddb9d8234f2bd34326e9158b9f89927be",
+    "worktreeState": "FROZEN_SOURCE_BOUND_HOSTED_QA_WITH_SEPARATE_OWNER_ACCEPTANCE",
+    "browserEvidenceCommit": "96b237447e64499957d511df1ec4ab46dace1eca"
+  },
+  "historicalSnapshot": {
+    "observedDate": "2026-10-02",
+    "qualifiedSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
+    "routeRecords": 33
+  },
+  "candidate": {
+    "routeRecords": 34,
+    "priorRouteRecords": 33,
+    "addedRoute": "/player/claw-feed-gulper/",
+    "inputFingerprint": {
+      "source": {
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
+      },
+      "dist": {
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
+      }
+    }
+  },
+  "route": {
+    "id": "page.player-claw-feed-gulper",
+    "route": "/player/claw-feed-gulper/",
+    "file": "pages/player-claw-feed-gulper.json",
+    "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+    "purpose": "Editable, noindex availability page; CLAW browser launch remains held outside public staging.",
+    "publicationState": "noindex",
+    "studioGenerated": true,
+    "referenceFile": "player/claw-feed-gulper/index.html",
+    "sourceSha256": "21421733ed0d75c3850cbc9bac639e94cdc3eda1fc99bab1843b8c3231fc0332",
+    "exportedHtmlSha256": "60ede81ce30a1acfa47202121667eb3f9f8d2e7dc9b8d6db10439f3e986c825d",
+    "launchHeld": true
+  },
+  "navigation": {
+    "playToGameDetails": "/games/claw-feed-gulper/",
+    "detailsToPlayer": null,
+    "detailsLaunchHeld": true,
+    "alternativeGameDetails": "/games/wicked-bites/",
+    "playerBackToDetails": "/games/claw-feed-gulper/",
+    "studioRouteExported": true
+  },
+  "studioExport": {
+    "status": "PASS",
+    "rendererCommit": "459b802f477a627c44802ad2e157101f5680bbdc",
+    "receiptPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-closeout.json",
+    "receiptSha256": "1ac4aba9c17e21da0100124b1d25f78afd4d5bad3650d745e0dad767986ddf65"
+  },
+  "browserEvidence": {
+    "status": "PASS",
+    "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-closeout.json",
+    "sha256": "75f80ccac498f82c4a81549265b5f40b68e50cc9c373fdf0eade1ececd85eb75"
+  },
+  "approvedHeaderArtwork": {
+    "status": "SOURCE_BOUND_HOSTED_RENDER_EVIDENCE_RECEIVED_OWNER_LOCK_VISUAL_PENDING",
+    "assetId": "asset.import.owner-approved-transparent-toadal-games-header.bb2a000f",
+    "source": "assets/imported/asset.import.owner-approved-transparent-toadal-games-header.bb2a000f.bb2a000f8a.png",
+    "published": "assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png",
+    "sha256": "bb2a000f8aa492015c077b280671e1b9a405c6bc47b3aaba9d8b6d30e756d32d",
+    "bytes": 1790222,
+    "width": 1672,
+    "height": 941,
+    "format": "RGBA PNG",
+    "cornerAlpha": 0,
+    "fit": "contain",
+    "ownerAuthorization": "Owner selected the supplied replacement PNG.",
+    "pixelsModified": false,
+    "priorApprovedAssetPreserved": true
+  },
+  "acceptance": {
+    "engineering": "VERIFIED",
+    "ownerAcceptance": "AWAITING_HOME_LOCK_VISUAL",
+    "releaseAuthorized": false
+  },
+  "evidenceContinuity": {
+    "kind": "FROZEN_SOURCE_HOSTED_RESPONSIVE_AND_GENUINE_BROWSER_EVIDENCE",
+    "records": {
+      "route": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/route-qualification-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "b46f0ce63de6762ad758cda06c8600efa639ac19b9f64688be5f338e46a62185"
+      },
+      "browser": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "883339fc21c5b0ae5b624852c9b2c84cd3722445ae2af6aff5770d31dfbb8de0"
+      },
+      "studioExport": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/studio-export-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "d143c966307ce90b14211b644d5d77fc645f0a4f79f7ed19f1ea382323b2ee49"
+      }
+    },
+    "screenshots": [
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-1440.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/claw-held-1440.png",
+        "sha256": "90549bf20e6653f4914a690d23613ed7720d2663ee9d54ac43ed36bf11977a16"
+      },
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-390.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/claw-held-390.png",
+        "sha256": "5fca0c9ccc7b2413869dd3b52509408f409f4341cb6f13fc892e0ce3e4069a03"
+      },
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/canonical-toadal-artwork-1440.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/canonical-toadal-artwork-1440.png",
+        "sha256": "cc65fa824af01df7883109d9f7630bb2902538a78076a5a78ba161c8fd04558d"
+      }
+    ],
+    "historicalOctober2SnapshotModified": false,
+    "gamePolicyChanged": false,
+    "privateGameFilesPreserved": 86,
+    "publicGameFilesAdmitted": 3,
+    "fixedClawFilesExcluded": 83,
+    "previousBrowserEvidenceReusedForCurrentCandidate": false,
+    "blockedRecord": {
+      "path": "docs/review/gulper-player-route-qualification-20261010/route-qualification-blocked-96b23744.json",
+      "sha256": "5a7d3a0135cca861a374eae2d88a2ec177a618548a199e03189d6d92e30e6cf0"
+    },
+    "blockedBrowser": {
+      "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-blocked-96b23744.json",
+      "sha256": "e611c6f397f3f9df5dc6582aabba33ec586ce028c016f47efe1e638f2272516d"
+    },
+    "hostedArtifactReusedAfterExactIdentityValidation": true
+  },
+  "standardFullSuite": {
+    "status": "PASS",
+    "completedAtUtc": "2026-10-11T03:53:52.2562348Z",
+    "command": "node --test <all 61 sorted scripts/*.test.mjs>",
+    "tests": 607,
+    "passed": 607,
+    "failed": 0,
+    "skipped": 0,
+    "sourceAndOutputUnchanged": true
+  },
+  "productionPublicationAuthorized": false
+}

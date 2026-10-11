@@ -6,6 +6,7 @@ import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { isProtectedGameArtifact } from './protected-game-artifacts.mjs';
 import { stagingRobotsErrors } from './staging-robots.mjs';
+import { classifyStagingGameRows } from './staging-game-projection.mjs';
 
 export const REPO = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 export const POLICY_PATH = 'manifests/staging-game-preservation-policy.json';
@@ -26,7 +27,8 @@ export function safeRelative(value) {
   requireThat(!parts.some(p => /^(?:con|prn|aux|nul|com[1-9]|lpt[1-9])(?:\.|$)/i.test(p)), 'Reserved payload path: ' + value);
   requireThat(parts.every(p => !p.startsWith('.') || (value === '.nojekyll' && parts.length === 1)), 'Private/hidden payload path: ' + value);
   requireThat(!parts.some(p => /^(?:node_modules|workspaces|secrets|qualification|__pycache__)$/i.test(p)) &&
-    !/(?:^|\/)(?:owner-access-code|credentials?|cookies?|session|private-key)(?:[.-]|$)/i.test(value) &&
+    !/(?:^|\/)(?:owner-access-code|credentials?|session|private-key)(?:[.-]|$)/i.test(value) &&
+    !(/(?:^|\/)cookies?(?:[.-]|$)/i.test(value) && !/(?:^|\/)cookie\.(?:png|jpe?g|webp|gif|svg)$/i.test(value)) &&
     !/\.(?:pem|key|pfx|p12|sqlite3?|db|env|bundle|zip|har)$/i.test(value), 'Private/runtime/archive file in website payload: ' + value);
   requireThat(value.toLowerCase() !== 'cname', 'Custom-domain publication is outside the staging artifact scope');
   return value;
@@ -153,7 +155,7 @@ export function policyFromRepo(repo, committed = true) {
   if (committed) requireThat(git(repo, ['show', 'HEAD:' + POLICY_PATH]).equals(bytes), 'Uncommitted policy cannot authorize payload preparation');
   return { policy, sha256: sha256(bytes) };
 }
-export function verifyExportGamePins(exported, project, repo = REPO) {
+export function verifyExportGamePins(exported, project, repo = REPO, { quarantineKnownClaw = false } = {}) {
   // Used during authoring too: changes to both source and export cannot silently re-pin a game.
   const { policy } = policyFromRepo(repo, false);
   for (const root of [path.join(project,'reference'), exported]) {
@@ -168,9 +170,14 @@ export function verifyExportGamePins(exported, project, repo = REPO) {
         else if (isProtectedGameArtifact(name)) { const data = readRegular(root,name); rows.push({path:name,bytes:data.length,sha256:sha256(data)}); }
       }
     }
-    walk(root); enforceGamePolicy(rows,policy);
+    walk(root);
+    // Authoring may retain the complete frozen CLAW payload privately. The
+    // exporter must validate that fixed inventory and explicitly exclude it
+    // before this output can become a public staging artifact.
+    const admitted = quarantineKnownClaw ? classifyStagingGameRows(rows, policy.files).admitted : rows;
+    enforceGamePolicy(admitted,policy);
   }
-  return { valid:true, files:policy.files.length, classification:policy.classification };
+  return { valid:true, files:policy.files.length, classification:policy.classification, quarantineKnownClaw };
 }
 export function expectedManifest(repo, revision) {
   const source = exactSource(repo,revision), { policy, sha256:policySha256 } = policyFromRepo(repo);

@@ -248,7 +248,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Meet the currently approved TOADAL FEAST cast through canonical artwork.",
-                                "text": "Meet the currently approved TOADAL FEAST cast through canonical artwork. Full biographies, relationships, and future character identities publish only when canonical source material is approved."
+                                "text": "Meet the TOADAL FEAST cast through character artwork. Some biographies and relationship details are not available yet, and more characters have yet to be revealed."
                               }
                             },
                             {
@@ -444,7 +444,7 @@
                                       "attributes": {},
                                       "style": "",
                                       "layerName": "CANONICAL CAST",
-                                      "text": "CANONICAL CAST"
+                                      "text": "MEET THE CAST"
                                     }
                                   },
                                   {
@@ -473,7 +473,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Filters operate only on the approved character records currently publish",
-                                "text": "Filters operate only on the approved character records currently published to this preview."
+                                "text": "Filter the character previews shown here."
                               }
                             }
                           ]
@@ -799,8 +799,8 @@
                                       "tag": "div",
                                       "className": "character-card-art",
                                       "attributes": {},
-                                      "style": "",
-                                      "layerName": "div character-card-art",
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "toadal decorative background — original portrait above",
                                       "mode": "inherit",
                                       "children": [
                                         {
@@ -817,10 +817,28 @@
                                             "style": "",
                                             "layerName": "Toadal",
                                             "asset": "asset.home.character.toadal",
-                                            "alt": "Toadal"
+                                            "alt": "Toadal",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "imageHeight": 160,
+                                            "padding": 0,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "maxWidth": 680,
+                                                "fit": "contain",
+                                                "imageHeight": 115,
+                                                "focalX": 50,
+                                                "focalY": 50,
+                                                "padding": 0,
+                                                "zoom": 1
+                                              }
+                                            }
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "backgroundAsset": "asset.owner.character-background.toadal"
                                     }
                                   },
                                   {
@@ -968,8 +986,8 @@
                                       "tag": "div",
                                       "className": "character-card-art",
                                       "attributes": {},
-                                      "style": "",
-                                      "layerName": "div character-card-art",
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "princess-lily decorative background — original portrait above",
                                       "mode": "inherit",
                                       "children": [
                                         {
@@ -986,10 +1004,28 @@
                                             "style": "",
                                             "layerName": "Princess Lily",
                                             "asset": "asset.home.character.princess-lily",
-                                            "alt": "Princess Lily"
+                                            "alt": "Princess Lily",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "imageHeight": 160,
+                                            "padding": 0,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "maxWidth": 680,
+                                                "fit": "contain",
+                                                "imageHeight": 115,
+                                                "focalX": 50,
+                                                "focalY": 50,
+                                                "padding": 0,
+                                                "zoom": 1
+                                              }
+                                            }
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "backgroundAsset": "asset.owner.character-background.princess-lily"
                                     }
                                   },
                                   {
@@ -1040,7 +1076,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Canonical Princess Lily artwork is published; a full profile is not yet ",
-                                            "text": "Canonical Princess Lily artwork is published; a full profile is not yet available."
+                                            "text": "Explore Princess Lily artwork. A full profile is not available yet."
                                           }
                                         },
                                         {
@@ -1107,8 +1143,8 @@
                                       "tag": "div",
                                       "className": "character-card-art",
                                       "attributes": {},
-                                      "style": "",
-                                      "layerName": "div character-card-art",
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "genie-sweet decorative background — original portrait above",
                                       "mode": "inherit",
                                       "children": [
                                         {
@@ -1125,10 +1161,28 @@
                                             "style": "",
                                             "layerName": "Sweet Genie",
                                             "asset": "asset.home.genie.sweet-art",
-                                            "alt": "Sweet Genie"
+                                            "alt": "Sweet Genie",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "imageHeight": 160,
+                                            "padding": 0,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "maxWidth": 680,
+                                                "fit": "contain",
+                                                "imageHeight": 115,
+                                                "focalX": 50,
+                                                "focalY": 50,
+                                                "padding": 0,
+                                                "zoom": 1
+                                              }
+                                            }
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "backgroundAsset": "asset.owner.character-background.genie-sweet"
                                     }
                                   },
                                   {
@@ -1179,7 +1233,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Canonical Sweet Genie artwork is published; a full profile is not yet av",
-                                            "text": "Canonical Sweet Genie artwork is published; a full profile is not yet available."
+                                            "text": "Explore Sweet Genie artwork. A full profile is not available yet."
                                           }
                                         },
                                         {
@@ -1246,8 +1300,8 @@
                                       "tag": "div",
                                       "className": "character-card-art",
                                       "attributes": {},
-                                      "style": "",
-                                      "layerName": "div character-card-art",
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "genie-fruity decorative background — original portrait above",
                                       "mode": "inherit",
                                       "children": [
                                         {
@@ -1264,10 +1318,28 @@
                                             "style": "",
                                             "layerName": "Fruity Genie",
                                             "asset": "asset.home.genie.fruity-art",
-                                            "alt": "Fruity Genie"
+                                            "alt": "Fruity Genie",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "imageHeight": 160,
+                                            "padding": 0,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "maxWidth": 680,
+                                                "fit": "contain",
+                                                "imageHeight": 115,
+                                                "focalX": 50,
+                                                "focalY": 50,
+                                                "padding": 0,
+                                                "zoom": 1
+                                              }
+                                            }
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "backgroundAsset": "asset.owner.character-background.genie-fruity"
                                     }
                                   },
                                   {
@@ -1318,7 +1390,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Canonical Fruity Genie artwork is published; a full profile is not yet a",
-                                            "text": "Canonical Fruity Genie artwork is published; a full profile is not yet available."
+                                            "text": "Explore Fruity Genie artwork. A full profile is not available yet."
                                           }
                                         },
                                         {
@@ -1385,8 +1457,8 @@
                                       "tag": "div",
                                       "className": "character-card-art",
                                       "attributes": {},
-                                      "style": "",
-                                      "layerName": "div character-card-art",
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "genie-savoury decorative background — original portrait above",
                                       "mode": "inherit",
                                       "children": [
                                         {
@@ -1403,10 +1475,28 @@
                                             "style": "",
                                             "layerName": "Savoury Genie",
                                             "asset": "asset.home.genie.savoury-art",
-                                            "alt": "Savoury Genie"
+                                            "alt": "Savoury Genie",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "imageHeight": 160,
+                                            "padding": 0,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "maxWidth": 680,
+                                                "fit": "contain",
+                                                "imageHeight": 115,
+                                                "focalX": 50,
+                                                "focalY": 50,
+                                                "padding": 0,
+                                                "zoom": 1
+                                              }
+                                            }
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "backgroundAsset": "asset.owner.character-background.genie-savoury"
                                     }
                                   },
                                   {
@@ -1457,7 +1547,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Canonical Savoury Genie artwork is published; a full profile is not yet ",
-                                            "text": "Canonical Savoury Genie artwork is published; a full profile is not yet available."
+                                            "text": "Explore Savoury Genie artwork. A full profile is not available yet."
                                           }
                                         },
                                         {
@@ -1524,8 +1614,8 @@
                                       "tag": "div",
                                       "className": "character-card-art",
                                       "attributes": {},
-                                      "style": "",
-                                      "layerName": "div character-card-art",
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "gulper decorative background — original portrait above",
                                       "mode": "inherit",
                                       "children": [
                                         {
@@ -1542,10 +1632,28 @@
                                             "style": "",
                                             "layerName": "Gulper",
                                             "asset": "asset.home.character.gulper",
-                                            "alt": "Gulper"
+                                            "alt": "Gulper",
+                                            "fit": "contain",
+                                            "focalX": 50,
+                                            "focalY": 50,
+                                            "imageHeight": 160,
+                                            "padding": 0,
+                                            "zoom": 1,
+                                            "responsive": {
+                                              "mobile": {
+                                                "maxWidth": 680,
+                                                "fit": "contain",
+                                                "imageHeight": 115,
+                                                "focalX": 50,
+                                                "focalY": 50,
+                                                "padding": 0,
+                                                "zoom": 1
+                                              }
+                                            }
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "backgroundAsset": "asset.owner.character-background.gulper"
                                     }
                                   },
                                   {
@@ -1596,7 +1704,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Canonical Gulper artwork is published; a full profile is not yet availab",
-                                            "text": "Canonical Gulper artwork is published; a full profile is not yet available."
+                                            "text": "Explore Gulper artwork. A full profile is not available yet."
                                           }
                                         },
                                         {
@@ -1663,8 +1771,8 @@
                                       "tag": "div",
                                       "className": "character-card-art",
                                       "attributes": {},
-                                      "style": "",
-                                      "layerName": "div character-card-art",
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "gully decorative background — original portrait above",
                                       "mode": "inherit",
                                       "children": [
                                         {
@@ -1713,7 +1821,8 @@
                                             "imageMaxWidth": ""
                                           }
                                         }
-                                      ]
+                                      ],
+                                      "backgroundAsset": "asset.owner.character-background.gully"
                                     }
                                   },
                                   {
@@ -1764,7 +1873,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Canonical Gully artwork is published; a full profile is not yet availabl",
-                                            "text": "Canonical Gully artwork is published; a full profile is not yet available."
+                                            "text": "Explore Gully artwork. A full profile is not available yet."
                                           }
                                         },
                                         {
@@ -1829,9 +1938,10 @@
                                       "attributes": {
                                         "aria-hidden": "true"
                                       },
-                                      "style": "",
-                                      "layerName": "?",
-                                      "text": "?"
+                                      "style": "background-size:cover;background-position:center;background-repeat:no-repeat",
+                                      "layerName": "future decorative background — original portrait above",
+                                      "text": "?",
+                                      "backgroundAsset": "asset.owner.character-background.future"
                                     }
                                   },
                                   {
@@ -1882,7 +1992,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Future cast members are intentionally not named or described before appr",
-                                            "text": "Future cast members are intentionally not named or described before approved canonical material exists."
+                                            "text": "More characters have yet to be revealed."
                                           }
                                         },
                                         {
@@ -1895,7 +2005,7 @@
                                             "attributes": {},
                                             "style": "",
                                             "layerName": "Future character slot",
-                                            "text": "Future character slot"
+                                            "text": "More to discover"
                                           }
                                         }
                                       ]
@@ -1998,7 +2108,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Canonical links only",
-                                "text": "Canonical links only"
+                                "text": "Character connections"
                               }
                             },
                             {
@@ -2011,7 +2121,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Relationship labels from generated mockups are not treated as canon. Thi",
-                                "text": "Relationship labels from generated mockups are not treated as canon. This panel will populate only from approved character records."
+                                "text": "Character relationship details have not been published yet."
                               }
                             },
                             {
@@ -2091,7 +2201,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Guest website progression is active on this browser. Mark a character’s ",
-                                "text": "Guest website progression is active on this browser. Mark a character’s approved artwork as viewed to save that browser-local discovery. This records an artwork view only; it does not mean game, story, or canonical character completion."
+                                "text": "Mark character artwork as viewed to save a discovery in this browser. This records an artwork discovery only; it does not complete a game or story."
                               }
                             },
                             {
@@ -2258,7 +2368,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Use World, Stories, Media, and Play to discover the cast without inventi",
-                                "text": "Use World, Stories, Media, and Play to discover the cast without inventing unpublished appearance lists."
+                                "text": "Explore World, Stories, Media, and Play for more of the Feast. Character appearance lists are not available yet."
                               }
                             },
                             {
@@ -2422,7 +2532,7 @@
                                 },
                                 "style": "",
                                 "layerName": "This hub uses canonical character art and keeps unapproved character lor",
-                                "text": "This hub uses canonical character art and keeps unapproved character lore out."
+                                "text": "Meet the cast through their artwork. Some biographies and relationship details are not available yet."
                               }
                             }
                           ]

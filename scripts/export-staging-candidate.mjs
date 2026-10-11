@@ -9,7 +9,8 @@ import { fileURLToPath, pathToFileURL } from 'node:url';
 import { verifyOwnerRendererProvenance } from './lib/owner-native-projection.mjs';
 import { verifyPublicProjection } from './lib/owner-public-projection.mjs';
 import { verifyProtectedGameArtifacts } from './lib/protected-game-artifacts.mjs';
-import { verifyExportGamePins } from './lib/staging-artifact.mjs';
+import { verifyExportGamePins, inventoryPayload, policyFromRepo, enforceGamePolicy } from './lib/staging-artifact.mjs';
+import { projectStagingGamePayload } from './lib/staging-game-projection.mjs';
 import { externalizeAdvancedRuntime } from './lib/externalize-advanced-runtime.mjs';
 import { addIntrinsicImageDimensions } from './lib/intrinsic-image-dimensions.mjs';
 import { fingerprintFiles } from './fingerprint-site-inputs.mjs';
@@ -79,7 +80,12 @@ if (extraction.status !== 0) throw new Error('Studio ZIP extraction failed: ' + 
 const advancedRuntime = externalizeAdvancedRuntime(exportedDir, project, basePath);
 const protectedArtifacts = verifyProtectedGameArtifacts(exportedDir, project);
 if (!protectedArtifacts.valid) throw new Error('Protected game bytes changed: ' + protectedArtifacts.errors.join('; '));
-verifyExportGamePins(exportedDir, project, repo);
+verifyExportGamePins(exportedDir, project, repo, { quarantineKnownClaw: true });
+// Preserve the native private Studio ZIP and every authored game byte. Only
+// the reviewed full CLAW inventory is excluded from this public scratch copy.
+const { policy } = policyFromRepo(repo);
+const stagingGameProjection = projectStagingGamePayload(exportedDir, inventoryPayload(exportedDir), policy.files);
+enforceGamePolicy(inventoryPayload(exportedDir), policy);
 const checks = [];
 for (const [script, parameters] of [
   ['wo001-pages-basepath.mjs', [exportedDir, basePath, '--staging-robots']],
@@ -123,6 +129,7 @@ const receipt = {
   staticExport: exported,
   zipSha256: crypto.createHash('sha256').update(fs.readFileSync(exported.path)).digest('hex'),
   protectedArtifacts: { count: protectedArtifacts.files.length, valid: protectedArtifacts.valid },
+  stagingGameProjection,
   advancedRuntime,
   intrinsicImages,
   checks,

@@ -1,0 +1,228 @@
+{
+  "schema": "toadal-feast.hosted-bounded-route-evidence.v1",
+  "status": "PASS_ISOLATED_BOUNDED_CASE",
+  "parentReportStatus": "FAIL",
+  "parentWorkflowConclusion": "failure",
+  "provenance": {
+    "workflowRun": {
+      "id": 38109235044,
+      "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/38109235044",
+      "head": "8d58d7c74e8bceb3bd47b6ab2d3e31bb97d643f8",
+      "status": "completed",
+      "conclusion": "failure"
+    },
+    "frozenCandidateCommit": "96b237447e64499957d511df1ec4ab46dace1eca",
+    "distTree": "5474e58616611e4ad2354c4e402cddaadf6fb0dd",
+    "qaOnlyChangedPaths": [
+      ".github/workflows/pr44-independent-browser-evidence.yml",
+      "tools/pr44-gameplay-closeout.mjs"
+    ],
+    "artifact": {
+      "id": 11690463151,
+      "name": "pr44-genuine-gameplay-evidence",
+      "bytes": 3793982,
+      "archiveSha256": "c8283f0a7789981fb5837da77d0fe25105a8664d74c7ba872cdd3efa641203d5"
+    },
+    "receivedReportSha256": "84854d2d5bf10fa99c36658e6ead8d8c42c9b55fa72e713fe3a36332877b4682",
+    "sourceBoundary": "Exact frozen product trees checked before and after; GitHub comparison contains only the two bounded QA paths."
+  },
+  "fingerprintBinding": {
+    "canonicalInputFingerprint": {
+      "source": {
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
+      },
+      "dist": {
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
+      }
+    },
+    "hostedRawDistFingerprintBefore": {
+      "files": 165,
+      "sha256": "a22fe65ada63932e0578f95fa9445cfa4783e904cf3c599e5cc63c3aaf8c6f64"
+    },
+    "hostedRawDistFingerprintAfter": {
+      "files": 165,
+      "sha256": "a22fe65ada63932e0578f95fa9445cfa4783e904cf3c599e5cc63c3aaf8c6f64"
+    },
+    "hostedRawAlgorithm": "SHA256 of sorted relative-dist filename + NUL + raw-file SHA256 + LF; separate from canonical siteFingerprint.",
+    "sourceEquivalence": "Both lanes have the same frozen96b product trees and exact current dist bytes. Canonical fingerprint was independently calculated from the receiving Website."
+  },
+  "acceptedCases": [
+    {
+      "name": "bounded-supplement-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "status": "PASS",
+      "checks": [
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "claw-held",
+          "hasCrown": false
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "claw-details",
+          "hasCrown": false
+        },
+        {
+          "check": "held-player-back-link",
+          "destination": "http://127.0.0.1:8147/toadal-feast-web/games/claw-feed-gulper/",
+          "iframeCount": 0,
+          "clawPayloadRequestCount": 0
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "toadal-profile",
+          "hasCrown": false
+        },
+        {
+          "check": "canonical-toadal-visible-served-source-export-match",
+          "images": [
+            {
+              "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+              "alt": "Toadal, the crowned golden Feast hero wearing a red scarf",
+              "width": 611,
+              "height": 640,
+              "visible": true
+            },
+            {
+              "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+              "alt": "Toadal victory artwork",
+              "width": 611,
+              "height": 640,
+              "visible": false
+            },
+            {
+              "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-portrait.webp",
+              "alt": "Toadal portrait artwork",
+              "width": 256,
+              "height": 256,
+              "visible": false
+            }
+          ],
+          "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        {
+          "filename": "bounded-supplement-1440-held-player.png",
+          "sha256": "ac2c7237087806b37647e67a0bcea69992b35cb3e417d656c93bbbba67f9d7ea"
+        },
+        {
+          "filename": "bounded-supplement-1440-toadal-artwork.png",
+          "sha256": "9057708928f4a739cec15632e38bb94ebaeb49a79ef32e68a516d812eb605b15"
+        }
+      ],
+      "observedMessages": [],
+      "served": {
+        "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png": {
+          "status": 200,
+          "sha256": "bb2a000f8aa492015c077b280671e1b9a405c6bc47b3aaba9d8b6d30e756d32d"
+        },
+        "/toadal-feast-web/assets/js/website-score-adapter.js": {
+          "status": 200,
+          "sha256": "d9a274eb32f3f08898c6fdbd677d6f2226f231f6dc8f05898b9fbda3b4a64c66"
+        },
+        "/toadal-feast-web/assets/images/characters/toadal-victory.webp": {
+          "status": 200,
+          "sha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+        }
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109235044/bounded-supplement-1440-held-player.png",
+      "sha256": "ac2c7237087806b37647e67a0bcea69992b35cb3e417d656c93bbbba67f9d7ea",
+      "case": "bounded-supplement-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 215261,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109235044/bounded-supplement-1440-toadal-artwork.png",
+      "sha256": "9057708928f4a739cec15632e38bb94ebaeb49a79ef32e68a516d812eb605b15",
+      "case": "bounded-supplement-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 963584,
+      "pixelsModified": false
+    }
+  ],
+  "acceptedObservations": {
+    "heldBackToDetails": "PASS",
+    "heldRoute": {
+      "iframeCount": 0,
+      "unadmittedRequests": [],
+      "backNavigation": "PASS"
+    },
+    "crownAbsence": {
+      "samples": [
+        {
+          "case": "bounded-supplement-1440",
+          "route": "claw-held",
+          "crownGlyph": false
+        },
+        {
+          "case": "bounded-supplement-1440",
+          "route": "claw-details",
+          "crownGlyph": false
+        },
+        {
+          "case": "bounded-supplement-1440",
+          "route": "toadal-profile",
+          "crownGlyph": false
+        }
+      ]
+    },
+    "canonicalCharacterArtwork": {
+      "authoritySha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
+      "exportedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
+      "images": [
+        {
+          "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+          "alt": "Toadal, the crowned golden Feast hero wearing a red scarf",
+          "width": 611,
+          "height": 640,
+          "visible": true,
+          "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+        },
+        {
+          "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+          "alt": "Toadal victory artwork",
+          "width": 611,
+          "height": 640,
+          "visible": false,
+          "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+        },
+        {
+          "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-portrait.webp",
+          "alt": "Toadal portrait artwork",
+          "width": 256,
+          "height": 256,
+          "visible": false,
+          "servedSha256": null
+        }
+      ]
+    }
+  },
+  "discardedCases": [
+    {
+      "name": "genuine-1440",
+      "status": "FAIL",
+      "usedForQualification": false
+    },
+    {
+      "name": "genuine-390",
+      "status": "FAIL",
+      "usedForQualification": false
+    }
+  ],
+  "reuseScope": "Only the independently passing bounded case is adopted. The two failed genuine cases and their observations do not contribute to qualification.",
+  "productionPublicationAuthorized": false
+}

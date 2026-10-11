@@ -2,6 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { controlConsistencyErrors } from './lib/manifest-compliance-contract.mjs';
+import { currentRouteQualificationErrors } from './lib/current-route-qualification.mjs';
 
 export function verifyManifestCompliance(root = process.cwd(), suppliedLedger) {
 const ledgerPath = path.join(root, 'manifests', 'manifest-compliance-ledger.json');
@@ -28,6 +29,7 @@ for (const p of ledger.pages) {
 }
 
 const implementedRoutes = new Set((pagesIndex.pages || []).map(p => p.route));
+errors.push(...currentRouteQualificationErrors(root, ledger, pagesIndex));
 const acceptedRouteEvidence = new Map([
   [1,['/']],
   [2,['/play/']],
@@ -95,8 +97,7 @@ for (const rel of requiredEvidence) {
 }
 if ((ledger.visualEvidence?.batch1 || []).length !== 9) errors.push(`Expected 9 individually preserved Batch-1 mockups for pages 2-10; found ${ledger.visualEvidence?.batch1?.length ?? 0}.`);
 if (!Array.isArray(ledger.executionPriorities) || ledger.executionPriorities.length < 5) errors.push('Manifest-first execution priorities are missing or incomplete.');
-if (ledger.latestManifestV1Closure?.originalManifestFamilies !== 30) errors.push('Latest manifest v1 closure metadata is missing the original 30-family denominator.');
-if (ledger.latestManifestV1Closure?.routeRecords !== implementedRoutes.size) errors.push('Latest manifest v1 closure route count does not match the registered route index.');
+if (ledger.latestManifestV1Closure?.originalManifestFamilies !== 30) errors.push('Latest historical manifest v1 closure metadata is missing the original 30-family denominator.');
 if (ledger.pages.some(page => !page.manifestV1Action || !page.manifestV1Evidence)) errors.push('One or more manifest rows lack a current action/evidence reconciliation.');
 const closure = ledger.latestManifestV1Closure;
 if (closure?.status?.includes('ENGINEERING COMPLETE')) {

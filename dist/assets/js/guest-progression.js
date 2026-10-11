@@ -1019,6 +1019,69 @@
     }
   }
 
+  // Presentation preference only; never owns or mutates progression records.
+  const PASS_DISPLAY_KEY = 'toadal.website.pass-display.v1';
+  function passDisplayView(snapshot) {
+    const storage = snapshot.storage;
+    const unavailable = (storage.readOnlyKeys || []).includes(KEYS.pass);
+    return { available: !unavailable, values: unavailable ? null : Object.assign({}, snapshot.pass, { 'xp-to-next': snapshot.xpToNext == null ? '—' : snapshot.xpToNext }),
+      note: unavailable ? 'Saved Feast Pass values are unavailable. No zero balance is assumed. Progress remains browser-local, not account-synced.' :
+        !storage.persistent ? 'Temporary or last-readable progress only. Browser storage is unavailable; saving is not confirmed. Account sync is unavailable.' :
+        'Guest progress is stored only in this browser. Account sync is unavailable.' };
+  }
+  function bindPassDisplay(document, root, storage, store) {
+    const panel = document.querySelector && document.querySelector('[data-pass-display]');
+    if (!panel || !panel.querySelector) return () => {};
+    const toggle = panel.querySelector('[data-pass-display-toggle]');
+    const content = panel.querySelector('[data-pass-display-content]');
+    const status = panel.querySelector('[data-pass-display-preference-status]');
+    if (!toggle || !content || !status) return () => {};
+    let visible = true, preferenceNote = '';
+    function readPreference() {
+      try {
+        if (!storage) throw new Error('Storage unavailable');
+        const saved = storage.getItem(PASS_DISPLAY_KEY);
+        if (saved !== null && saved !== 'shown' && saved !== 'hidden') {
+          preferenceNote = 'Saved display preference is unreadable. This view is temporary.';
+          return;
+        }
+        visible = saved !== 'hidden'; preferenceNote = '';
+      } catch (_) { preferenceNote = 'Display preference is temporary; browser storage is unavailable.'; }
+    }
+    function render() {
+      const view = passDisplayView(store.getSnapshot());
+      content.hidden = !visible;
+      panel.setAttribute('data-pass-display-hidden', String(!visible));
+      toggle.disabled = false;
+      toggle.setAttribute('aria-expanded', String(visible));
+      toggle.textContent = visible ? (toggle.getAttribute('data-pass-hide-label') || 'Hide Feast Pass') : (toggle.getAttribute('data-pass-show-label') || 'Show Feast Pass');
+      status.textContent = preferenceNote || (visible ? 'Hide this summary without changing your progress.' : 'Summary hidden. Your browser-local progress is unchanged.');
+      panel.querySelectorAll('[data-progression-stat]').forEach(el => {
+        const key = el.getAttribute('data-progression-stat');
+        if (['level', 'xp', 'xp-to-next', 'sparks', 'treats'].includes(key)) el.textContent = view.available ? String(view.values[key]) : 'Unavailable';
+      });
+      const progressStatus = panel.querySelector('[data-progression-storage-status]');
+      if (progressStatus) progressStatus.textContent = view.note;
+    }
+    readPreference();
+    toggle.addEventListener('click', () => {
+      visible = !visible;
+      try {
+        if (!storage) throw new Error('Storage unavailable');
+        const value = visible ? 'shown' : 'hidden';
+        storage.setItem(PASS_DISPLAY_KEY, value);
+        if (storage.getItem(PASS_DISPLAY_KEY) !== value) throw new Error('Preference not verified');
+        preferenceNote = '';
+      } catch (_) { preferenceNote = 'Display preference is temporary; browser storage is unavailable.'; }
+      render();
+    });
+    if (root && root.addEventListener) root.addEventListener('storage', event => {
+      if (storage && event.storageArea === storage && (event.key === PASS_DISPLAY_KEY || event.key === null)) { readPreference(); render(); }
+    });
+    if (root && root.addEventListener) root.addEventListener('toadal:candy-found', render);
+    return render;
+  }
+
   function boot(document, root) {
     if (!document || !document.querySelectorAll) return;
     const roots = document.querySelectorAll('[data-progression-page]');
@@ -1031,6 +1094,7 @@
     store.reconcileHomeTreats();
     const path = normalizePath(root && root.location && root.location.pathname || '/', definitionsForRuntime());
     store.recordEvent('route:' + path);
+    const renderPassDisplay = bindPassDisplay(document, root, browserStorage, store);
     roots.forEach(page => {
       if (page.__toadalProgressionBooted) return;
       page.__toadalProgressionBooted = true;
@@ -1141,6 +1205,7 @@
         else if (!state.storage.persistent) setStatus('Browser storage is unavailable; progress may not persist after leaving this page.');
         else if (state.storage.diagnostics.length) setStatus('Guest progress is using safe local defaults; stored data could not be read or was outdated.');
         else if (status && !status.textContent) setStatus('Guest progress is stored only in this browser.');
+        renderPassDisplay();
       }
       page.querySelectorAll('[data-clear-progression]').forEach(button => button.addEventListener('click', () => {
         const state = store.clear();
@@ -1211,6 +1276,7 @@
             ? 'Saved website progress refreshed from this browser. Progress remains browser-local, not account-synced.'
             : 'Saved website progress was refreshed, but browser writes may still be unavailable. No account synchronization is implied.');
         }
+        renderPassDisplay();
       });
     });
     if (refreshRenderers.length && root && typeof root.addEventListener === 'function') {
@@ -1554,5 +1620,5 @@
       });
     } else items.forEach(item => appendItem(container, item));
   }
-  return { KEYS, GAME_PROGRESS_CONTRACT_VERSION, GAME_PROGRESS_REGISTRATIONS, createStore, boot, profileShowcaseView, renderProfileShowcase, showcaseResultMessage, normalizePath, siteHref, renderList, gameProgressRegistration, normalizeExternalGameProjection, gameProgressProjection, gameProgressLabels, gameRecordView, renderGameRecords, questDestination, questJourneyView, renderQuestJourney };
+  return { KEYS, PASS_DISPLAY_KEY, passDisplayView, GAME_PROGRESS_CONTRACT_VERSION, GAME_PROGRESS_REGISTRATIONS, createStore, boot, profileShowcaseView, renderProfileShowcase, showcaseResultMessage, normalizePath, siteHref, renderList, gameProgressRegistration, normalizeExternalGameProjection, gameProgressProjection, gameProgressLabels, gameRecordView, renderGameRecords, questDestination, questJourneyView, renderQuestJourney };
 });

@@ -1,0 +1,623 @@
+{
+  "schema": "toadal-feast.hosted-genuine-gameplay-evidence.v1",
+  "status": "PASS",
+  "provenance": {
+    "workflowRun": {
+      "id": 38109429866,
+      "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/38109429866",
+      "head": "f25af8b5b26ab9a21be77cec2c702bd2aef409f1",
+      "status": "completed",
+      "conclusion": "success"
+    },
+    "frozenCandidateCommit": "96b237447e64499957d511df1ec4ab46dace1eca",
+    "distTree": "5474e58616611e4ad2354c4e402cddaadf6fb0dd",
+    "qaOnlyChangedPaths": [
+      ".github/workflows/pr44-independent-browser-evidence.yml",
+      "tools/pr44-gameplay-closeout.mjs"
+    ],
+    "artifact": {
+      "id": 11691027661,
+      "name": "pr44-genuine-gameplay-evidence",
+      "bytes": 5134761,
+      "archiveSha256": "a0ae45a4027af8f6ff68d7bf8d1944d7fdad507736ac06931604dfe6a86d7824"
+    },
+    "receivedReportSha256": "4dbfa54fa385af806686250464d815c11127ca55fd7b46e8f7b4a206bf8c829d",
+    "sourceBoundary": "Exact frozen product trees checked before and after; GitHub comparison contains only the two bounded QA paths."
+  },
+  "fingerprintBinding": {
+    "canonicalInputFingerprint": {
+      "source": {
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
+      },
+      "dist": {
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
+      }
+    },
+    "hostedRawDistFingerprintBefore": {
+      "files": 165,
+      "sha256": "a22fe65ada63932e0578f95fa9445cfa4783e904cf3c599e5cc63c3aaf8c6f64"
+    },
+    "hostedRawDistFingerprintAfter": {
+      "files": 165,
+      "sha256": "a22fe65ada63932e0578f95fa9445cfa4783e904cf3c599e5cc63c3aaf8c6f64"
+    },
+    "hostedRawAlgorithm": "SHA256 of sorted relative-dist filename + NUL + raw-file SHA256 + LF; separate from canonical siteFingerprint.",
+    "sourceEquivalence": "Both lanes have the same frozen96b product trees and exact current dist bytes. Canonical fingerprint was independently calculated from the receiving Website."
+  },
+  "observedAtUtc": "2026-10-11T03:46:12.752Z",
+  "chromeVersion": "154.0.8037.97",
+  "cases": [
+    {
+      "name": "genuine-1440",
+      "viewport": {
+        "width": 1440,
+        "height": 900
+      },
+      "status": "PASS",
+      "checks": [
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "home",
+          "hasCrown": false
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "play",
+          "hasCrown": false
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "wicked-details",
+          "hasCrown": false
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "wicked-player",
+          "hasCrown": false
+        },
+        {
+          "check": "real-link-navigation",
+          "path": [
+            "home",
+            "play",
+            "wicked-details",
+            "wicked-player"
+          ]
+        },
+        {
+          "check": "genuine-game-started-before-input",
+          "status": "observed"
+        },
+        {
+          "check": "positive-completion-local-save-separate-from-pass",
+          "score": 18,
+          "xp": 0,
+          "sparks": 0
+        },
+        {
+          "check": "pause-resume-fullscreen-exit",
+          "status": "observed"
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "feast-pass",
+          "hasCrown": false
+        },
+        {
+          "check": "feast-pass-full-reload",
+          "score": 18,
+          "xp": 0,
+          "sparks": 0
+        },
+        {
+          "check": "explicit-world-quest-only",
+          "score": 18,
+          "xp": 10,
+          "sparks": 1
+        },
+        {
+          "check": "first-feast-explicit-claim-reload",
+          "badge": "first-feast",
+          "score": 18
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        {
+          "filename": "genuine-1440-home.png",
+          "sha256": "7cbf9bd795adc48f0f1c86234868ea0f6f0668cda5e69ea4bfce6a904d46a265"
+        },
+        {
+          "filename": "genuine-1440-positive-gameplay.png",
+          "sha256": "22e4272f8581e6169df8eef43649c332fae27b5eafc66bb3c2788a945ca3c14c"
+        },
+        {
+          "filename": "genuine-1440-paused.png",
+          "sha256": "71f71ad2bec2d10f63fa30e76a9c0b185d5beb61ced8f0f10b48ab4dc5d7125d"
+        },
+        {
+          "filename": "genuine-1440-saved-result.png",
+          "sha256": "dc0944a0a341e1c997300af962c4f0f1f60b89a62cad814c07377637e383f43f"
+        },
+        {
+          "filename": "genuine-1440-fullscreen.png",
+          "sha256": "46efb4dd2a72f775775550a197a703866a41f05c6205bdfd2cc6405aa647c15a"
+        },
+        {
+          "filename": "genuine-1440-feast-pass-result.png",
+          "sha256": "d4c464992273895e9c6e1f76a57fd4d366deebe375b8ab45d432467eb593176d"
+        },
+        {
+          "filename": "genuine-1440-badge-claimed.png",
+          "sha256": "13406841855da4cf2d5ed1721a13a65f4749f62a0232ae71f0bfef770a9cf100"
+        }
+      ],
+      "observedMessages": [
+        {
+          "origin": "null",
+          "type": "game:score",
+          "gameId": "wicked-bites",
+          "payload": {
+            "score": "0"
+          }
+        },
+        {
+          "origin": "null",
+          "type": "game:ready",
+          "gameId": "wicked-bites",
+          "payload": {
+            "gameId": "wicked-bites",
+            "version": "5.5"
+          }
+        },
+        {
+          "origin": "null",
+          "type": "game:started",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:score",
+          "gameId": "wicked-bites",
+          "payload": {
+            "score": "18"
+          }
+        },
+        {
+          "origin": "null",
+          "type": "game:paused",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:resumed",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:paused",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:complete",
+          "gameId": "wicked-bites",
+          "payload": {
+            "score": "18"
+          }
+        }
+      ],
+      "served": {
+        "/toadal-feast-web/assets/images/characters/toadal-victory.webp": {
+          "status": 200,
+          "sha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+        },
+        "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png": {
+          "status": 200,
+          "sha256": "bb2a000f8aa492015c077b280671e1b9a405c6bc47b3aaba9d8b6d30e756d32d"
+        },
+        "/toadal-feast-web/assets/js/website-score-adapter.js": {
+          "status": 200,
+          "sha256": "d9a274eb32f3f08898c6fdbd677d6f2226f231f6dc8f05898b9fbda3b4a64c66"
+        },
+        "/toadal-feast-web/public/games/wicked-bites/index.html": {
+          "status": 200,
+          "sha256": "783dfe877c931a6d142a1453eaddace6776d4852d4dae074a20b40975b47036c"
+        },
+        "/toadal-feast-web/public/games/wicked-bites/toadal-bridge.js": {
+          "status": 200,
+          "sha256": "4f11aefb6aa0cb11c614c9a59de8c7cd753f6e5501cd269bb7f493097852ec8c"
+        }
+      },
+      "input": "ArrowUp on the focused cartridge canvas",
+      "earnedScore": 18,
+      "completedScore": 18,
+      "savedResult": {
+        "best": 18,
+        "runs": [
+          {
+            "score": 18,
+            "completedAt": "2026-10-11T03:46:32.560Z",
+            "mode": null,
+            "ruleset": null,
+            "characterId": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "genuine-390",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "status": "PASS",
+      "checks": [
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "home",
+          "hasCrown": false
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "play",
+          "hasCrown": false
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "wicked-details",
+          "hasCrown": false
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "wicked-player",
+          "hasCrown": false
+        },
+        {
+          "check": "real-link-navigation",
+          "path": [
+            "home",
+            "play",
+            "wicked-details",
+            "wicked-player"
+          ]
+        },
+        {
+          "check": "genuine-game-started-before-input",
+          "status": "observed"
+        },
+        {
+          "check": "positive-completion-local-save-separate-from-pass",
+          "score": 18,
+          "xp": 0,
+          "sparks": 0
+        },
+        {
+          "check": "pause-resume-fullscreen-exit",
+          "status": "observed"
+        },
+        {
+          "check": "body-crown-glyph-absent",
+          "route": "feast-pass",
+          "hasCrown": false
+        },
+        {
+          "check": "feast-pass-full-reload",
+          "score": 18,
+          "xp": 0,
+          "sparks": 0
+        }
+      ],
+      "errors": [],
+      "screenshots": [
+        {
+          "filename": "genuine-390-home.png",
+          "sha256": "969f01eec93d8f1869fcd82c79873a4c0b16b62035ce838392ceb3a2d3bf621f"
+        },
+        {
+          "filename": "genuine-390-positive-gameplay.png",
+          "sha256": "5d7c063ba6e217c9abb1666c535b81a9a82e922a04b7addb7cde8b1f3949aab3"
+        },
+        {
+          "filename": "genuine-390-paused.png",
+          "sha256": "187cbbbb0ef27909657cef2cea6067c8ebe2748bf545fe1b3393b1b627544b11"
+        },
+        {
+          "filename": "genuine-390-saved-result.png",
+          "sha256": "4dfc3fb52b66de2a0ea9def439431c7cd54145ea25dddec481a710a5b6d9b95b"
+        },
+        {
+          "filename": "genuine-390-fullscreen.png",
+          "sha256": "96b0217b95fa03d473edba04631d990f75e8263b38e0273cf4b78c3ec41f8a22"
+        },
+        {
+          "filename": "genuine-390-feast-pass-result.png",
+          "sha256": "480c8edf20161949fcb62105d41af787ffd40d27058441dc1a06968f48b89927"
+        }
+      ],
+      "observedMessages": [
+        {
+          "origin": "null",
+          "type": "game:score",
+          "gameId": "wicked-bites",
+          "payload": {
+            "score": "0"
+          }
+        },
+        {
+          "origin": "null",
+          "type": "game:ready",
+          "gameId": "wicked-bites",
+          "payload": {
+            "gameId": "wicked-bites",
+            "version": "5.5"
+          }
+        },
+        {
+          "origin": "null",
+          "type": "game:started",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:score",
+          "gameId": "wicked-bites",
+          "payload": {
+            "score": "18"
+          }
+        },
+        {
+          "origin": "null",
+          "type": "game:paused",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:resumed",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:paused",
+          "gameId": "wicked-bites",
+          "payload": {}
+        },
+        {
+          "origin": "null",
+          "type": "game:complete",
+          "gameId": "wicked-bites",
+          "payload": {
+            "score": "18"
+          }
+        }
+      ],
+      "served": {
+        "/toadal-feast-web/assets/images/characters/toadal-victory.webp": {
+          "status": 200,
+          "sha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+        },
+        "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png": {
+          "status": 200,
+          "sha256": "bb2a000f8aa492015c077b280671e1b9a405c6bc47b3aaba9d8b6d30e756d32d"
+        },
+        "/toadal-feast-web/assets/js/website-score-adapter.js": {
+          "status": 200,
+          "sha256": "d9a274eb32f3f08898c6fdbd677d6f2226f231f6dc8f05898b9fbda3b4a64c66"
+        },
+        "/toadal-feast-web/public/games/wicked-bites/index.html": {
+          "status": 200,
+          "sha256": "783dfe877c931a6d142a1453eaddace6776d4852d4dae074a20b40975b47036c"
+        },
+        "/toadal-feast-web/public/games/wicked-bites/toadal-bridge.js": {
+          "status": 200,
+          "sha256": "4f11aefb6aa0cb11c614c9a59de8c7cd753f6e5501cd269bb7f493097852ec8c"
+        }
+      },
+      "input": "Chromium touchStart/touchMove/touchEnd on the visible cartridge canvas",
+      "earnedScore": 18,
+      "completedScore": 18,
+      "savedResult": {
+        "best": 18,
+        "runs": [
+          {
+            "score": 18,
+            "completedAt": "2026-10-11T03:46:44.827Z",
+            "mode": null,
+            "ruleset": null,
+            "characterId": null
+          }
+        ]
+      }
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-home.png",
+      "sha256": "7cbf9bd795adc48f0f1c86234868ea0f6f0668cda5e69ea4bfce6a904d46a265",
+      "case": "genuine-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1638040,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-positive-gameplay.png",
+      "sha256": "22e4272f8581e6169df8eef43649c332fae27b5eafc66bb3c2788a945ca3c14c",
+      "case": "genuine-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 402922,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-paused.png",
+      "sha256": "71f71ad2bec2d10f63fa30e76a9c0b185d5beb61ced8f0f10b48ab4dc5d7125d",
+      "case": "genuine-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 383162,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-saved-result.png",
+      "sha256": "dc0944a0a341e1c997300af962c4f0f1f60b89a62cad814c07377637e383f43f",
+      "case": "genuine-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 398692,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-fullscreen.png",
+      "sha256": "46efb4dd2a72f775775550a197a703866a41f05c6205bdfd2cc6405aa647c15a",
+      "case": "genuine-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 315255,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-feast-pass-result.png",
+      "sha256": "d4c464992273895e9c6e1f76a57fd4d366deebe375b8ab45d432467eb593176d",
+      "case": "genuine-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 559509,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-badge-claimed.png",
+      "sha256": "13406841855da4cf2d5ed1721a13a65f4749f62a0232ae71f0bfef770a9cf100",
+      "case": "genuine-1440",
+      "width": 1440,
+      "height": 900,
+      "bytes": 475519,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-home.png",
+      "sha256": "969f01eec93d8f1869fcd82c79873a4c0b16b62035ce838392ceb3a2d3bf621f",
+      "case": "genuine-390",
+      "width": 390,
+      "height": 844,
+      "bytes": 427588,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-positive-gameplay.png",
+      "sha256": "5d7c063ba6e217c9abb1666c535b81a9a82e922a04b7addb7cde8b1f3949aab3",
+      "case": "genuine-390",
+      "width": 390,
+      "height": 844,
+      "bytes": 139980,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-paused.png",
+      "sha256": "187cbbbb0ef27909657cef2cea6067c8ebe2748bf545fe1b3393b1b627544b11",
+      "case": "genuine-390",
+      "width": 390,
+      "height": 844,
+      "bytes": 96985,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-saved-result.png",
+      "sha256": "4dfc3fb52b66de2a0ea9def439431c7cd54145ea25dddec481a710a5b6d9b95b",
+      "case": "genuine-390",
+      "width": 390,
+      "height": 844,
+      "bytes": 106414,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-fullscreen.png",
+      "sha256": "96b0217b95fa03d473edba04631d990f75e8263b38e0273cf4b78c3ec41f8a22",
+      "case": "genuine-390",
+      "width": 390,
+      "height": 844,
+      "bytes": 60079,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-feast-pass-result.png",
+      "sha256": "480c8edf20161949fcb62105d41af787ffd40d27058441dc1a06968f48b89927",
+      "case": "genuine-390",
+      "width": 390,
+      "height": 844,
+      "bytes": 149061,
+      "pixelsModified": false
+    }
+  ],
+  "qualificationSupplement": {
+    "navigation": {
+      "homeToPlay": "PASS",
+      "playToWickedDetails": "PASS"
+    },
+    "crownAbsence": {
+      "samples": [
+        {
+          "case": "genuine-1440",
+          "route": "home",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-1440",
+          "route": "play",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-1440",
+          "route": "wicked-details",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-1440",
+          "route": "wicked-player",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-1440",
+          "route": "feast-pass",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-390",
+          "route": "home",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-390",
+          "route": "play",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-390",
+          "route": "wicked-details",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-390",
+          "route": "wicked-player",
+          "crownGlyph": false
+        },
+        {
+          "case": "genuine-390",
+          "route": "feast-pass",
+          "crownGlyph": false
+        }
+      ]
+    }
+  },
+  "inputScope": "Fresh browser contexts and ordinary UI links, keyboard or Chromium touch input. No score fixture, game-state mutation, reward injection, payload edits, release, or physical-device claim.",
+  "productionPublicationAuthorized": false
+}

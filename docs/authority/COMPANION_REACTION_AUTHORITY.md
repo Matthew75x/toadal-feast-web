@@ -6,7 +6,7 @@ The bottom-right Toadal is a contextual, non-blocking website companion. A dialo
 
 - Keep canonical Toadal identity, compact corner placement, minimized-state persistence, keyboard/focus/touch access, reduced-motion semantics and safe-area spacing.
 - Use route/section/control semantics. Do **not** implement cursor-follow or pointer-coordinate animation.
-- Context priority remains action → focus → hover → touch → current section → hero/default.
+- Context priority is action → keyboard focus while keyboard input is active → semantic hover while non-touch pointer input is active → touch context while touch input is active → current section → hero/default. A fresh pointer hover supersedes retained keyboard focus, and active touch context is not masked by a previous mouse hover.
 - If an interactive control has no dedicated companion copy, its artwork may react while dialogue falls back to the current section rather than replacing useful copy with generic text.
 - Keep the canonical victory Toadal as fallback whenever no production-qualified state exists.
 - A production pose never proves the associated product/service is live. Product truth remains separate.

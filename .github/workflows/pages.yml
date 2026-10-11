@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
       - uses: actions/configure-pages@v5
       - name: Verify guest progression and exact runtime resource pins
         run: node --test scripts/guest-progression.test.mjs scripts/guest-reset-recovery.test.mjs scripts/guest-progress-refresh.test.mjs scripts/feast-pass-game-records.test.mjs scripts/game-progress-contract.test.mjs scripts/quest-journey.test.mjs scripts/guest-showcase.test.mjs scripts/play-catalogue.test.mjs scripts/protected-game-artifacts.test.mjs scripts/staging-artifact.test.mjs scripts/mobile-interaction-closure.test.mjs scripts/companion-visibility.test.mjs scripts/advanced-runtime-externalization.test.mjs scripts/intrinsic-image-dimensions.test.mjs scripts/owner-preview-browser-matrix-readiness.test.mjs

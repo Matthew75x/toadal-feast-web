@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "id": "page.player-claw-feed-gulper",
+  "route": "/player/claw-feed-gulper/",
+  "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+  "description": "This browser preview is still being prepared. Explore other Feast adventures.",
+  "publicationState": "noindex",
+  "components": [
+    {
+      "id": "component.player-claw-feed-gulper.held",
+      "type": "layout.container",
+      "props": {
+        "authoringVersion": 1,
+        "tag": "section",
+        "className": "studio-rich-text shell section",
+        "mode": "inherit",
+        "layerName": "CLAW browser preview unavailable",
+        "children": [
+          {
+            "id": "component.player-claw-feed-gulper.held.kicker",
+            "type": "core.text",
+            "props": {
+              "tag": "p",
+              "className": "section-kicker",
+              "text": "COMING NEXT",
+              "layerName": "Preview status",
+              "authoringVersion": 1
+            }
+          },
+          {
+            "id": "component.player-claw-feed-gulper.held.title",
+            "type": "core.text",
+            "props": {
+              "tag": "h1",
+              "text": "CLAW: Feed Gulper",
+              "layerName": "Game title",
+              "authoringVersion": 1
+            }
+          },
+          {
+            "id": "component.player-claw-feed-gulper.held.copy",
+            "type": "core.text",
+            "props": {
+              "tag": "p",
+              "className": "section-lede",
+              "text": "Gulper’s next adventure is still being prepared. Browser play is not available yet.",
+              "layerName": "Availability",
+              "authoringVersion": 1
+            }
+          },
+          {
+            "id": "component.player-claw-feed-gulper.held.wicked",
+            "type": "core.button",
+            "props": {
+              "tag": "a",
+              "className": "btn primary",
+              "href": "/games/wicked-bites/",
+              "label": "Try Wicked Bites",
+              "layerName": "Explore Wicked Bites",
+              "authoringVersion": 1
+            }
+          },
+          {
+            "id": "component.player-claw-feed-gulper.held.details",
+            "type": "core.button",
+            "props": {
+              "tag": "a",
+              "className": "btn secondary",
+              "href": "/games/claw-feed-gulper/",
+              "label": "View Gulper’s game details",
+              "layerName": "Game details",
+              "authoringVersion": 1
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "referenceFile": "player/claw-feed-gulper/index.html",
+  "studioGenerated": true
+}

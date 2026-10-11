@@ -43,7 +43,29 @@ function historicalWorldFixture() {
   return fixture;
 }
 
-test('actual Home project closes exactly four game cards as native whole-card links', () => {
+
+function historicalHomeFixture() {
+  const fixture = structuredClone(home);
+  const grid = byId(fixture.components, 'component.home.games');
+  for (const card of grid.props.children) {
+    if (card.props.tag === 'a') continue;
+    const game = games.find(item => item.id === card.props.gameId);
+    const nodes = all([card]);
+    const heading = nodes.find(node => node.id === card.id + '.heading');
+    const description = nodes.find(node => node.id === card.id + '.description');
+    const chip = nodes.find(node => node.id === card.id + '.status');
+    card.props.tag = 'a'; card.props.className = 'module studio-game-card owner-object-link';
+    card.props.attributes = {'aria-label':`View ${game.name} details`}; card.props.href = game.route;
+    card.props.children = [
+      {id:card.id+'.art',type:'core.image',props:{authoringVersion:1,tag:'img',asset:game.artAsset}},
+      heading,description,chip,
+      {id:card.id+'.action',type:'core.text',props:{authoringVersion:1,tag:'span',className:'home-game-action',text:game.slug==='wicked-bites'?'Explore preview →':'View game details →'}}
+    ];
+  }
+  return fixture;
+}
+test('historical Home whole-card migration preserves every editable role and destination', () => {
+  const home = historicalHomeFixture();
   const result = closeHomeGameCards(home, games, assets);
   const sourceCards = byId(home.components, 'component.home.games').props.children;
   const cards = byId(result.components, 'component.home.games').props.children;
@@ -83,7 +105,7 @@ test('actual Home project closes exactly four game cards as native whole-card li
     assert.equal(card.props.gameId, game.id);
     assert.equal(card.props.children.some(child => /learn more/i.test(child.props.text ?? '')), false);
   }
-  assert.deepEqual(home, readJson('pages/home.json'), 'source page is not mutated');
+  assert.deepEqual(home, historicalHomeFixture(), 'historical fixture is not mutated');
 });
 
 test('Home rejects unknown games, mismatched IDs, missing art, and invalid routes', () => {
@@ -121,7 +143,7 @@ test('current World atlas retains three canonical whole-card links, and historic
   const sourceGrid = byId(atlas.props.children, 'component.world.map-discovery.bdd73088f428.discovery-scene-grid');
   assert.ok(sourceGrid, 'the discovery collection is inside the moved atlas');
   assert.equal(sourceGrid.props.attributes.role, 'group');
-  assert.equal(sourceGrid.props.attributes['aria-label'], 'Approved Feast World environment previews');
+  assert.equal(sourceGrid.props.attributes['aria-label'], 'Feast World environment previews');
   assert.equal(sourceGrid.props.children.length, 5);
   assert.deepEqual(byType(sourceGrid.props.children.slice(0, 3), 'core.image').map(image => image.props.asset), ['asset.home.world.desktop', 'asset.home.world.calm', 'asset.home.world.portal']);
   assert.ok(byType(sourceGrid.props.children.slice(0, 3), 'core.image').every(image => assets.assets.some(asset => asset.id === image.props.asset)));
@@ -174,7 +196,7 @@ test('World rejects cards with multiple secondary links or malformed discovery s
 });
 
 test('object closure is idempotent and preserves subsequent owner copy edits',()=>{
- const first=closeOwnerNativeObjectPages({home,world:historicalWorldFixture(),games,assets});first.home.components.find(c=>c.id==='component.home.games').props.children[0].props.children[1].props.text='Owner-authored label';
+ const first=closeOwnerNativeObjectPages({home,world:historicalWorldFixture(),games,assets});byId(first.home.components,'component.home.games').props.children[0].props.children[1].props.text='Owner-authored label';
  const second=closeOwnerNativeObjectPages({...first,games,assets});assert.deepEqual(second,first);
 });
 
@@ -187,4 +209,56 @@ test('combined transformation returns only Home and World copies', () => {
   assert.equal(result.world.id, world.id);
   assert.deepEqual(home, readJson('pages/home.json'));
   assert.deepEqual(world, readJson('pages/world.json'));
+});
+
+
+test('current approved preview cards preserve separate toggle, registered details and managed images', () => {
+  const result = closeHomeGameCards(home, games, assets);
+  assert.deepEqual(result, home, 'idempotent closure must preserve approved native design');
+  const cards = byId(result.components, 'component.home.games').props.children;
+  assert.equal(cards.length, 4);
+  for (const card of cards) {
+    const game = games.find(item => item.id === card.props.gameId);
+    const links = all([card]).filter(node => node.props?.tag === 'a');
+    if (card.props.tag === 'a') {
+      assert.equal(links.length, 1, `${game.name} keeps its whole-card link`);
+      assert.equal(links[0].props.href, game.route);
+      assert.equal(all(links[0].props.children).filter(node => ['a','button','input'].includes(node.props?.tag)).length, 0);
+      assert.ok(byType([card], 'core.image').every(node => assets.assets.some(asset => asset.id === node.props.asset)));
+      assert.equal(byId(card.props.children,card.id+'.status').props.text,game.statusLabel);
+      continue;
+    }
+    const details = links.filter(node => node.props.href === game.route &&
+      (Object.hasOwn(node.props.attributes || {}, 'data-game-preview-link') ||
+        Object.hasOwn(node.props.attributes || {}, 'data-game-preview-details')));
+    const launches = links.filter(node => node.props.href === `/player/${game.slug}/` &&
+      Object.hasOwn(node.props.attributes || {}, 'data-game-preview-link'));
+    assert.equal(details.length, 1, `${game.name} retains one registered details destination`);
+    assert.ok(launches.length <= 1, `${game.name} has at most one registered launch destination`);
+    assert.equal(details.length + launches.length, links.length, `${game.name} has no unregistered links`);
+    for (const link of [...details, ...launches]) {
+      assert.equal(all(link.props.children).filter(node => ['a','button','input'].includes(node.props?.tag)).length, 0);
+    }
+    assert.ok(byType([card], 'core.image').every(node => assets.assets.some(asset => asset.id === node.props.asset)));
+    assert.equal(byId(card.props.children,card.id+'.status').props.text,game.statusLabel);
+  }
+  const wicked = cards.find(card => card.props.gameId === 'game.wicked-bites');
+  assert.equal(wicked.props.tag,'article');
+  assert.equal(all([wicked]).filter(node => Object.hasOwn(node.props?.attributes || {},'data-game-preview-toggle')).length,1);
+  const froggy = cards.find(card => card.props.gameId === 'game.froggy-fruity-bash');
+  assert.equal(all([froggy]).filter(node => Object.hasOwn(node.props?.attributes || {},'data-game-preview-gameplay')).length,0,'no fabricated Froggy gameplay');
+  const gulper = cards.find(card => card.props.gameId === 'game.claw-feed-gulper');
+  const gulperLinks = all([gulper]).filter(node => node.props?.tag === 'a');
+  assert.equal(gulperLinks.filter(node => node.props.href === '/games/claw-feed-gulper/' && Object.hasOwn(node.props.attributes || {}, 'data-game-preview-details')).length, 1);
+  assert.equal(gulperLinks.filter(node => node.props.href === '/player/claw-feed-gulper/').length, 0,
+    'the public Home card does not offer a held cartridge launch');
+  assert.ok(all([gulper]).some(node => node.type === 'core.text' && node.props.text === 'Browser preview unavailable'),
+    'the editable Home card states its actual public availability');
+});
+
+test('native preview closure rejects extra links, off-registry destinations and unregistered covers', () => {
+  const change = action => { const fixture=structuredClone(home); const card=byId(fixture.components,'component.home.game.wicked-bites'); action(card); return fixture; };
+  assert.throws(()=>closeHomeGameCards(change(card=>{ all([card]).find(node=>node.props?.tag==='a').props.href='/games/other/'; }),games,assets),/registered details link/);
+  assert.throws(()=>closeHomeGameCards(change(card=>{ card.props.children.push({id:'extra',type:'core.button',props:{tag:'a',href:'/play/'}}); }),games,assets),/registered details link/);
+  assert.throws(()=>closeHomeGameCards(change(card=>{ byType([card],'core.image')[0].props.asset='asset.unregistered'; }),games,assets),/Unknown art asset/);
 });

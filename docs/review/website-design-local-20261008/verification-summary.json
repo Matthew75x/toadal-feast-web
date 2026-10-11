@@ -1,0 +1,115 @@
+{
+  "baseCommit": "e919234634b7c82614eb9ed6f8eefa6627249005",
+  "branch": "dot/website-design-completion-20261008",
+  "engineCommit": "5d022f5c3ea676458a63c8d2bb67ceb69c1a84d5",
+  "automated": {
+    "required": {
+      "pass": 283,
+      "fail": 0
+    },
+    "controls": {
+      "pass": 25,
+      "fail": 0
+    },
+    "focused": {
+      "pass": 29,
+      "fail": 0
+    },
+    "homeVisualContract": {
+      "pass": 38,
+      "fail": 0
+    },
+    "nativeValidation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "nativePreIntrinsicFreshness": "OWNER PREVIEW RENDER FRESHNESS: PASS\n{\n  \"registeredRoutes\": 33,\n  \"dist\": \"/workspace/scratch/30b160fcca01/operations-review/website-design-local-20261008/candidate-static\",\n  \"searchEntriesMinimum\": 48\n}",
+    "staticHtmlCount": 67,
+    "canonicalWebsiteRoutes": 33,
+    "previewWebsiteRoutes": 33,
+    "protectedCartridgeHtml": 1,
+    "protectedCartridgeFiles": 3
+  },
+  "nativeRoundtrip": {
+    "sourceUnchanged": true,
+    "sourceFingerprint": "9d2606c9544eb0c70fce9400d574b57b3ad84fca636a0b730a33b2128315684d",
+    "editedExportVerified": true,
+    "disposableRestored": true,
+    "uiTest": false
+  },
+  "frozenQaOutput": {
+    "name": "candidate-review-10",
+    "sha256": "8deadfb738d62b7aa7b1ef40995d96f5d963c19e6fbabe046c146405375b57c3"
+  },
+  "browserAcceptance": {
+    "status": "PASS within observed scope",
+    "finalOutput": "candidate-review-10",
+    "homeDesktopSweep": [
+      "hero",
+      "games",
+      "discovery",
+      "daily",
+      "lower App and future state",
+      "footer"
+    ],
+    "homeActualNarrow": {
+      "topLevel": true,
+      "cssWidth": 389,
+      "dpr": 1,
+      "scrollWidthEqualsClientWidth": true
+    },
+    "home200Percent": {
+      "cssWidth": 590,
+      "dpr": 2,
+      "scrollWidthEqualsClientWidth": true
+    },
+    "companion": [
+      "expanded contextual speech",
+      "minimize redocks",
+      "hide survives reload",
+      "Show restores"
+    ],
+    "representativeRoutesObserved": [
+      "Home",
+      "Play",
+      "World",
+      "App",
+      "Stories",
+      "Feast Pass",
+      "Reader"
+    ],
+    "additionalZoomObserved": [
+      "App",
+      "Play"
+    ],
+    "limitations": [
+      "No physical phone/touch validation",
+      "No full 33-route pixel comparison",
+      "No fresh Studio editor UI walkthrough",
+      "Owner visual acceptance remains separate"
+    ],
+    "qualificationChain": {
+      "review7": "Home scroll sweep, companion lifecycle, actual389 and200% plus unchanged representative routes",
+      "review8": "Lower-density desktop/narrow/200% composition",
+      "review9": "Home real-gameplay CTA44px on actual389",
+      "review10": "Three future-heading targets44px desktop and actual389; no overlap/overflow"
+    }
+  },
+  "scope": {
+    "remoteWrites": false,
+    "deployment": false,
+    "gameRegistryChanged": false,
+    "ownerVisualApprovalClaimed": false,
+    "missingApprovedWordmark": true
+  },
+  "lowerBandDesktopRefinement": {
+    "viewportCssWidth": 1180,
+    "appFutureBeforePx": 498.92,
+    "appFutureAfterPx": 406.625,
+    "dailyDiscoveryBeforePx": 286.22,
+    "dailyDiscoveryAfterPx": 279.6875,
+    "appFutureAfterAccessibleTargetFixPx": 434.0625,
+    "finalReductionPercent": 13.0
+  }
+}

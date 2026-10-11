@@ -95,168 +95,238 @@
                   }
                 },
                 {
-                  "id": "component.guest-feast-pass.rich-text.fd74d6c74372.progression-hero",
+                  "id": "component.framed-pass.full.card",
                   "type": "layout.container",
                   "props": {
                     "authoringVersion": 1,
-                    "tag": "header",
-                    "className": "progression-hero portal-pass-hero",
+                    "tag": "section",
+                    "className": "framed-feast-pass framed-feast-pass--full",
                     "attributes": {},
                     "style": "",
-                    "layerName": "Your Feast Pass",
+                    "layerName": "card",
                     "mode": "inherit",
                     "children": [
                       {
-                        "id": "component.production-core.feast-pass.1",
+                        "id": "component.guest-feast-pass.rich-text.fd74d6c74372.progression-hero",
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "div",
-                          "className": "portal-pass-copy",
+                          "tag": "header",
+                          "className": "progression-hero portal-pass-hero",
                           "attributes": {},
                           "style": "",
-                          "layerName": "Your guest Feast Pass",
+                          "layerName": "Your Feast Pass",
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.guest-feast-pass.rich-text.867918033719.section-kicker",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "section-kicker",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "TOADAL FEAST · GUEST JOURNEY",
-                                "text": "TOADAL FEAST · GUEST JOURNEY"
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.7a9d5a3fbd58.progression-eyebrow",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "progression-eyebrow",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "BROWSER-LOCAL PREVIEW",
-                                "text": "BROWSER-LOCAL PREVIEW"
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.61505cec3320.h1",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "h1",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Your Feast Pass",
-                                "text": "Your Feast Pass"
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.e36c8a87800b.progression-lede",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "progression-lede",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Explore, collect Treats and complete website quests. Your guest journey stays on this browser and device.",
-                                "text": "Explore, collect Treats and complete website quests. Your guest journey stays on this browser and device."
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.f3abb5dee18f.progression-truth-note",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "p",
-                                "className": "progression-truth-note",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Guest XP, Sparks and rewards belong to this website. Treats are the three discovery candies on Home; they do not transfer to the mobile game. Sign-in and cross-device sync are not available.",
-                                "text": "Guest XP, Sparks and rewards belong to this website. Treats are the three discovery candies on Home; they do not transfer to the mobile game. Sign-in and cross-device sync are not available."
-                              }
-                            },
-                            {
-                              "id": "component.quest-journey.next",
+                              "id": "component.production-core.feast-pass.1",
                               "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "section",
-                                "className": "quest-next",
-                                "attributes": {
-                                  "data-quest-next": "",
-                                  "aria-labelledby": "pass-next-title"
-                                },
+                                "tag": "div",
+                                "className": "portal-pass-copy",
+                                "attributes": {},
                                 "style": "",
-                                "layerName": "next",
+                                "layerName": "Your guest Feast Pass",
                                 "mode": "inherit",
                                 "children": [
                                   {
-                                    "id": "component.quest-journey.next-heading",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "h2",
-                                      "className": "",
-                                      "attributes": {
-                                        "id": "pass-next-title"
-                                      },
-                                      "style": "",
-                                      "layerName": "Your next step",
-                                      "text": "Your next step"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.quest-journey.next-title",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "h3",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-quest-next-title": ""
-                                      },
-                                      "style": "",
-                                      "layerName": "Open your quest board",
-                                      "text": "Open your quest board"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.quest-journey.next-description",
+                                    "id": "component.guest-feast-pass.rich-text.867918033719.section-kicker",
                                     "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
                                       "tag": "p",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-quest-next-description": ""
-                                      },
+                                      "className": "section-kicker",
+                                      "attributes": {},
                                       "style": "",
-                                      "layerName": "Follow an existing website activity, then return to claim its configured local reward. No game or account synchronization is implied.",
-                                      "text": "Follow an existing website activity, then return to claim its configured local reward. No game or account synchronization is implied."
+                                      "layerName": "TOADAL FEAST · GUEST JOURNEY",
+                                      "text": "TOADAL FEAST · GUEST JOURNEY"
                                     }
                                   },
                                   {
-                                    "id": "component.quest-journey.next-link",
-                                    "type": "core.button",
+                                    "id": "component.guest-feast-pass.rich-text.7a9d5a3fbd58.progression-eyebrow",
+                                    "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "a",
-                                      "className": "button-link button-link--secondary",
+                                      "tag": "p",
+                                      "className": "progression-eyebrow",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "BROWSER-LOCAL PREVIEW",
+                                      "text": "BROWSER-LOCAL PREVIEW"
+                                    }
+                                  },
+                                  {
+                                    "id": "component.framed-pass.full.title",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "feast-pass-title-plate",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "title",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.framed-pass.full.frame",
+                                          "type": "core.image",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "img",
+                                            "className": "feast-pass-title-frame",
+                                            "attributes": {
+                                              "aria-hidden": "true"
+                                            },
+                                            "style": "",
+                                            "layerName": "frame",
+                                            "asset": "asset.feast-pass.astro-frame",
+                                            "alt": "",
+                                            "fit": "fill"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.61505cec3320.h1",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h1",
+                                            "className": " feast-pass-lettering",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Your Feast Pass",
+                                            "text": "Your Feast Pass",
+                                            "textFontSize": 44,
+                                            "textLineHeight": 1.15,
+                                            "responsive": {
+                                              "mobile": {
+                                                "textFontSize": 26
+                                              }
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.e36c8a87800b.progression-lede",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-lede",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore, collect Treats and complete website quests. Your guest journey stays on this browser and device.",
+                                      "text": "Explore, collect Treats and complete website quests. Your guest journey stays on this browser and device."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.f3abb5dee18f.progression-truth-note",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "p",
+                                      "className": "progression-truth-note",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Guest XP, Sparks and rewards belong to this website. Treats are the three discovery candies on Home; they do not transfer to the mobile game. Sign-in and cross-device sync are not available.",
+                                      "text": "Guest XP, Sparks and rewards belong to this website. Treats are the three discovery candies on Home; they do not transfer to the mobile game. Sign-in and cross-device sync are not available."
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "component.production-core.feast-pass.7",
+                              "type": "layout.container",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "figure",
+                                "className": "portal-pass-art",
+                                "attributes": {},
+                                "style": "",
+                                "layerName": "Toadal and the Home discovery Treats",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.production-core.feast-pass.2",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-pass-character",
                                       "attributes": {
-                                        "data-quest-next-link": ""
+                                        "decoding": "async"
                                       },
                                       "style": "",
-                                      "layerName": "Open Quests",
-                                      "label": "Open Quests",
-                                      "href": "/feast-pass/quests/"
+                                      "layerName": "Canonical Toadal welcoming your guest journey.",
+                                      "asset": "asset.home.character.toadal-victory-web",
+                                      "alt": "Canonical Toadal welcoming your guest journey."
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.feast-pass.3",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-pass-candy portal-pass-candy--blue",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Decorative Feast artwork",
+                                      "asset": "asset.home.interaction.candy-blue",
+                                      "alt": ""
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.feast-pass.4",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-pass-candy portal-pass-candy--green",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Decorative Feast artwork",
+                                      "asset": "asset.home.interaction.candy-green",
+                                      "alt": ""
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.feast-pass.5",
+                                    "type": "core.image",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "img",
+                                      "className": "portal-pass-candy portal-pass-candy--purple",
+                                      "attributes": {
+                                        "decoding": "async",
+                                        "loading": "lazy"
+                                      },
+                                      "style": "",
+                                      "layerName": "Decorative Feast artwork",
+                                      "asset": "asset.home.interaction.candy-purple",
+                                      "alt": ""
+                                    }
+                                  },
+                                  {
+                                    "id": "component.production-core.feast-pass.6",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "figcaption",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Explore. Discover. Make it a Feast.",
+                                      "text": "Explore. Discover. Make it a Feast."
                                     }
                                   }
                                 ]
@@ -266,95 +336,551 @@
                         }
                       },
                       {
-                        "id": "component.production-core.feast-pass.7",
+                        "id": "component.guest-feast-pass.rich-text.8272e22d05c4.progression-section",
                         "type": "layout.container",
                         "props": {
                           "authoringVersion": 1,
-                          "tag": "figure",
-                          "className": "portal-pass-art",
-                          "attributes": {},
+                          "tag": "section",
+                          "className": "progression-section framed-pass-status",
+                          "attributes": {
+                            "aria-labelledby": "pass-status-title"
+                          },
                           "style": "",
-                          "layerName": "Toadal and the Home discovery Treats",
+                          "layerName": "Progress snapshot",
                           "mode": "inherit",
                           "children": [
                             {
-                              "id": "component.production-core.feast-pass.2",
-                              "type": "core.image",
+                              "id": "component.guest-feast-pass.rich-text.878e6427ade7.progression-section-head",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "img",
-                                "className": "portal-pass-character",
-                                "attributes": {
-                                  "decoding": "async"
-                                },
+                                "tag": "div",
+                                "className": "progression-section-heading",
+                                "attributes": {},
                                 "style": "",
-                                "layerName": "Canonical Toadal welcoming your guest journey.",
-                                "asset": "asset.home.character.toadal-victory-web",
-                                "alt": "Canonical Toadal welcoming your guest journey."
+                                "layerName": "Progress snapshot",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.5401a2d35163.div",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Progress snapshot",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.cc52fd1d11e4.section-kicker",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "p",
+                                            "className": "section-kicker",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "YOUR LOCAL STATUS",
+                                            "text": "YOUR LOCAL STATUS"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.10b1dcee0de9.pass-status-title",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "h2",
+                                            "className": "",
+                                            "attributes": {
+                                              "id": "pass-status-title"
+                                            },
+                                            "style": "",
+                                            "layerName": "pass status title",
+                                            "text": "Progress snapshot"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.6a060e4a1fec.progression-local-badge",
+                                    "type": "core.text",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "span",
+                                      "className": "progression-local-badge",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Guest · this browser",
+                                      "text": "Guest · this browser"
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.production-core.feast-pass.3",
-                              "type": "core.image",
+                              "id": "component.guest-feast-pass.rich-text.845ce2bd79dd.progression-stat-grid",
+                              "type": "layout.container",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "img",
-                                "className": "portal-pass-candy portal-pass-candy--blue",
-                                "attributes": {
-                                  "decoding": "async",
-                                  "loading": "lazy"
-                                },
+                                "tag": "dl",
+                                "className": "progression-stat-grid",
+                                "attributes": {},
                                 "style": "",
-                                "layerName": "Decorative Feast artwork",
-                                "asset": "asset.home.interaction.candy-blue",
-                                "alt": ""
+                                "layerName": "Level—Total XP—XP to next level—Sparks—Treats0Streak—Discoveries—Quests ",
+                                "mode": "inherit",
+                                "children": [
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.b9d4bef060fe.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Level—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.9b624c7ebd5f.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Level",
+                                            "text": "Level"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.fd2b13e453af.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "level",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.d2f558f3d974.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Total XP—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.de5df77b59d4.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Total XP",
+                                            "text": "Total XP"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.d2da6ea26e43.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "xp",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.987261eaf4dc.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "XP to next level—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.398767670087.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "XP to next level",
+                                            "text": "XP to next level"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.076f98182cfa.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "xp-to-next",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.d939516ddc18.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Sparks—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.93a0d8c393de.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Sparks",
+                                            "text": "Sparks"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.ed92eaeb3822.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "sparks",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.c864353ab171.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Treats0",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.99be389b3e0d.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Treats",
+                                            "text": "Treats"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.7594875d27d5.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "treats",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "0",
+                                            "text": "0"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.d2edf6a8fc85.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Streak—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.ee875d56160f.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Streak",
+                                            "text": "Streak"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.f4af9e8d752b.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "streak",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.5c8c1b5f5d48.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Discoveries—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.8e0f7d8a5824.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Discoveries",
+                                            "text": "Discoveries"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.dd246c2cee7c.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "discoveries",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "component.guest-feast-pass.rich-text.593510eece4b.progression-stat",
+                                    "type": "layout.container",
+                                    "props": {
+                                      "authoringVersion": 1,
+                                      "tag": "div",
+                                      "className": "progression-stat",
+                                      "attributes": {},
+                                      "style": "",
+                                      "layerName": "Quests complete—",
+                                      "mode": "inherit",
+                                      "children": [
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.f045ec6227c8.dt",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dt",
+                                            "className": "",
+                                            "attributes": {},
+                                            "style": "",
+                                            "layerName": "Quests complete",
+                                            "text": "Quests complete"
+                                          }
+                                        },
+                                        {
+                                          "id": "component.guest-feast-pass.rich-text.0fbbfc90cae7.dd",
+                                          "type": "core.text",
+                                          "props": {
+                                            "authoringVersion": 1,
+                                            "tag": "dd",
+                                            "className": "",
+                                            "attributes": {
+                                              "data-progression-stat": "quests-complete",
+                                              "aria-live": "polite"
+                                            },
+                                            "style": "",
+                                            "layerName": "—",
+                                            "text": "—"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "component.production-core.feast-pass.4",
-                              "type": "core.image",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "img",
-                                "className": "portal-pass-candy portal-pass-candy--green",
-                                "attributes": {
-                                  "decoding": "async",
-                                  "loading": "lazy"
-                                },
-                                "style": "",
-                                "layerName": "Decorative Feast artwork",
-                                "asset": "asset.home.interaction.candy-green",
-                                "alt": ""
-                              }
-                            },
-                            {
-                              "id": "component.production-core.feast-pass.5",
-                              "type": "core.image",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "img",
-                                "className": "portal-pass-candy portal-pass-candy--purple",
-                                "attributes": {
-                                  "decoding": "async",
-                                  "loading": "lazy"
-                                },
-                                "style": "",
-                                "layerName": "Decorative Feast artwork",
-                                "asset": "asset.home.interaction.candy-purple",
-                                "alt": ""
-                              }
-                            },
-                            {
-                              "id": "component.production-core.feast-pass.6",
+                              "id": "component.guest-feast-pass.rich-text.20fbc126c7e1.progression-storage",
                               "type": "core.text",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "figcaption",
-                                "className": "",
-                                "attributes": {},
+                                "tag": "p",
+                                "className": "progression-storage",
+                                "attributes": {
+                                  "data-progression-storage-status": "",
+                                  "role": "status",
+                                  "aria-live": "polite"
+                                },
                                 "style": "",
-                                "layerName": "Explore. Discover. Make it a Feast.",
-                                "text": "Explore. Discover. Make it a Feast."
+                                "layerName": "Guest progress is stored only in this browser.",
+                                "text": "Guest progress is stored only in this browser."
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "component.quest-journey.next",
+                        "type": "layout.container",
+                        "props": {
+                          "authoringVersion": 1,
+                          "tag": "section",
+                          "className": "quest-next",
+                          "attributes": {
+                            "data-quest-next": "",
+                            "aria-labelledby": "pass-next-title"
+                          },
+                          "style": "",
+                          "layerName": "next",
+                          "mode": "inherit",
+                          "children": [
+                            {
+                              "id": "component.quest-journey.next-heading",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h2",
+                                "className": "",
+                                "attributes": {
+                                  "id": "pass-next-title"
+                                },
+                                "style": "",
+                                "layerName": "Your next step",
+                                "text": "Your next step"
+                              }
+                            },
+                            {
+                              "id": "component.quest-journey.next-title",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "h3",
+                                "className": "",
+                                "attributes": {
+                                  "data-quest-next-title": ""
+                                },
+                                "style": "",
+                                "layerName": "Open your quest board",
+                                "text": "Open your quest board"
+                              }
+                            },
+                            {
+                              "id": "component.quest-journey.next-description",
+                              "type": "core.text",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "p",
+                                "className": "",
+                                "attributes": {
+                                  "data-quest-next-description": ""
+                                },
+                                "style": "",
+                                "layerName": "Follow an existing website activity, then return to claim its configured local reward. No game or account synchronization is implied.",
+                                "text": "Follow an existing website activity, then return to claim its configured local reward. No game or account synchronization is implied."
+                              }
+                            },
+                            {
+                              "id": "component.quest-journey.next-link",
+                              "type": "core.button",
+                              "props": {
+                                "authoringVersion": 1,
+                                "tag": "a",
+                                "className": "button-link button-link--secondary",
+                                "attributes": {
+                                  "data-quest-next-link": ""
+                                },
+                                "style": "",
+                                "layerName": "Open Quests",
+                                "label": "Open Quests",
+                                "href": "/feast-pass/quests/"
                               }
                             }
                           ]
@@ -416,478 +942,6 @@
                           "href": "/profile/",
                           "layerName": "Guest profile",
                           "className": "button-link button-link--secondary"
-                        }
-                      }
-                    ]
-                  }
-                },
-                {
-                  "id": "component.guest-feast-pass.rich-text.8272e22d05c4.progression-section",
-                  "type": "layout.container",
-                  "props": {
-                    "authoringVersion": 1,
-                    "tag": "section",
-                    "className": "progression-section",
-                    "attributes": {
-                      "aria-labelledby": "pass-status-title"
-                    },
-                    "style": "",
-                    "layerName": "Progress snapshot",
-                    "mode": "inherit",
-                    "children": [
-                      {
-                        "id": "component.guest-feast-pass.rich-text.878e6427ade7.progression-section-head",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "div",
-                          "className": "progression-section-heading",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Progress snapshot",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.guest-feast-pass.rich-text.5401a2d35163.div",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Progress snapshot",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.cc52fd1d11e4.section-kicker",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "p",
-                                      "className": "section-kicker",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "YOUR LOCAL STATUS",
-                                      "text": "YOUR LOCAL STATUS"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.10b1dcee0de9.pass-status-title",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "h2",
-                                      "className": "",
-                                      "attributes": {
-                                        "id": "pass-status-title"
-                                      },
-                                      "style": "",
-                                      "layerName": "pass status title",
-                                      "text": "Progress snapshot"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.6a060e4a1fec.progression-local-badge",
-                              "type": "core.text",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "span",
-                                "className": "progression-local-badge",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Guest · this browser",
-                                "text": "Guest · this browser"
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.guest-feast-pass.rich-text.845ce2bd79dd.progression-stat-grid",
-                        "type": "layout.container",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "dl",
-                          "className": "progression-stat-grid",
-                          "attributes": {},
-                          "style": "",
-                          "layerName": "Level—Total XP—XP to next level—Sparks—Treats0Streak—Discoveries—Quests ",
-                          "mode": "inherit",
-                          "children": [
-                            {
-                              "id": "component.guest-feast-pass.rich-text.b9d4bef060fe.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Level—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.9b624c7ebd5f.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Level",
-                                      "text": "Level"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.fd2b13e453af.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "level",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "—",
-                                      "text": "—"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.d2f558f3d974.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Total XP—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.de5df77b59d4.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Total XP",
-                                      "text": "Total XP"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.d2da6ea26e43.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "xp",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "—",
-                                      "text": "—"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.987261eaf4dc.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "XP to next level—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.398767670087.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "XP to next level",
-                                      "text": "XP to next level"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.076f98182cfa.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "xp-to-next",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "—",
-                                      "text": "—"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.d939516ddc18.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Sparks—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.93a0d8c393de.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Sparks",
-                                      "text": "Sparks"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.ed92eaeb3822.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "sparks",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "—",
-                                      "text": "—"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.c864353ab171.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Treats0",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.99be389b3e0d.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Treats",
-                                      "text": "Treats"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.7594875d27d5.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "treats",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "0",
-                                      "text": "0"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.d2edf6a8fc85.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Streak—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.ee875d56160f.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Streak",
-                                      "text": "Streak"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.f4af9e8d752b.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "streak",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "—",
-                                      "text": "—"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.5c8c1b5f5d48.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Discoveries—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.8e0f7d8a5824.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Discoveries",
-                                      "text": "Discoveries"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.dd246c2cee7c.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "discoveries",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "—",
-                                      "text": "—"
-                                    }
-                                  }
-                                ]
-                              }
-                            },
-                            {
-                              "id": "component.guest-feast-pass.rich-text.593510eece4b.progression-stat",
-                              "type": "layout.container",
-                              "props": {
-                                "authoringVersion": 1,
-                                "tag": "div",
-                                "className": "progression-stat",
-                                "attributes": {},
-                                "style": "",
-                                "layerName": "Quests complete—",
-                                "mode": "inherit",
-                                "children": [
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.f045ec6227c8.dt",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dt",
-                                      "className": "",
-                                      "attributes": {},
-                                      "style": "",
-                                      "layerName": "Quests complete",
-                                      "text": "Quests complete"
-                                    }
-                                  },
-                                  {
-                                    "id": "component.guest-feast-pass.rich-text.0fbbfc90cae7.dd",
-                                    "type": "core.text",
-                                    "props": {
-                                      "authoringVersion": 1,
-                                      "tag": "dd",
-                                      "className": "",
-                                      "attributes": {
-                                        "data-progression-stat": "quests-complete",
-                                        "aria-live": "polite"
-                                      },
-                                      "style": "",
-                                      "layerName": "—",
-                                      "text": "—"
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ]
-                        }
-                      },
-                      {
-                        "id": "component.guest-feast-pass.rich-text.20fbc126c7e1.progression-storage",
-                        "type": "core.text",
-                        "props": {
-                          "authoringVersion": 1,
-                          "tag": "p",
-                          "className": "progression-storage",
-                          "attributes": {
-                            "data-progression-storage-status": "",
-                            "role": "status",
-                            "aria-live": "polite"
-                          },
-                          "style": "",
-                          "layerName": "Guest progress is stored only in this browser.",
-                          "text": "Guest progress is stored only in this browser."
                         }
                       }
                     ]

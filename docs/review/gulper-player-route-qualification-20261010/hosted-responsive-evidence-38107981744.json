@@ -1,0 +1,6853 @@
+{
+  "schema": "toadal-feast.hosted-responsive-artifact-evidence.v1",
+  "status": "PASS_RESPONSIVE_SOURCE_CUSTODY",
+  "observedDate": "2026-10-10",
+  "observedAtUtc": "2026-10-11T03:19:50Z",
+  "provenance": {
+    "workflowRun": {
+      "id": 38107981744,
+      "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/38107981744",
+      "status": "completed",
+      "conclusion": "success",
+      "head": "8c51c7fed8b52af84f46f032d150f5242ee615fa"
+    },
+    "candidateCommit": "96b237447e64499957d511df1ec4ab46dace1eca",
+    "distTree": "5474e58616611e4ad2354c4e402cddaadf6fb0dd",
+    "qaOnlyChangedPaths": [
+      ".github/workflows/pr44-independent-browser-evidence.yml"
+    ],
+    "artifact": {
+      "id": 11690670019,
+      "name": "pr44-independent-browser-evidence",
+      "archiveSha256": "044cf55ce3991693effc21904ee7f52a2235a921e1d4c261e1d593a945f8ab66",
+      "bytes": 4344178
+    },
+    "reviewComment": "https://github.com/Matthew75x/toadal-feast-web/pull/44#issuecomment-6104972106",
+    "sourceEquivalence": "Only a workflow outside the source fingerprint differs from frozen PR44; actual current457-source/165-dist fingerprint equals the frozen candidate."
+  },
+  "inputFingerprint": {
+    "source": {
+      "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+      "files": 457
+    },
+    "dist": {
+      "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+      "files": 165
+    }
+  },
+  "summary": {
+    "schema": "toadal-feast.owner-preview-browser-matrix.v1",
+    "status": "PASS",
+    "routes": 34,
+    "cases": 85,
+    "passed": 85,
+    "failed": 0,
+    "diagnostics": {
+      "genericControlOverlapCases": 0,
+      "genericControlOverlapEntries": 0
+    },
+    "issueCounts": {}
+  },
+  "cases": [
+    {
+      "route": "/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2845
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 327,
+            "right": 391,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 327,
+            "right": 391,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 10,
+          "clipped": [],
+          "companion": {
+            "left": 327,
+            "right": 391,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 6668
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 167,
+            "right": 231,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 167,
+            "right": 231,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 167,
+            "right": 231,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 6066
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 368,
+            "right": 432,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 368,
+            "right": 432,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 368,
+            "right": 432,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 7311
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 132,
+            "right": 196,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 132,
+            "right": 196,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 132,
+            "right": 196,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/404.html",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Lost in the Feast · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 953
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 5,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 20,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/404.html",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Lost in the Feast · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1316
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/play/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Play browser games · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2624
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 339,
+            "right": 391,
+            "top": 7,
+            "bottom": 59,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 339,
+            "right": 391,
+            "top": 7,
+            "bottom": 59,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 339,
+            "right": 391,
+            "top": 7,
+            "bottom": 59,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/play/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Play browser games · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 5996
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/play/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Play browser games · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3501
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/play/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Play browser games · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 6328
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/wicked-bites/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Wicked Bites · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1246
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 369,
+            "bottom": 511,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 369,
+            "bottom": 511,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 369,
+            "bottom": 511,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/wicked-bites/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Wicked Bites · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2621
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/claw-feed-gulper/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "CLAW: Feed Gulper · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1033
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 426,
+            "bottom": 568,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 426,
+            "bottom": 568,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 426,
+            "bottom": 568,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/claw-feed-gulper/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "CLAW: Feed Gulper · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2008
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/toadal-tower-defense/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL Tower Defense · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1047
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 440,
+            "bottom": 582,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 440,
+            "bottom": 582,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 440,
+            "bottom": 582,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/toadal-tower-defense/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL Tower Defense · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1839
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/froggy-fruity-bash/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Froggy Fruity Bash · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1095
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 488,
+            "bottom": 630,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 488,
+            "bottom": 630,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 488,
+            "bottom": 630,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/games/froggy-fruity-bash/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Froggy Fruity Bash · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1902
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/player/wicked-bites/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Wicked Bites browser preview · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1792
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1116,
+            "right": 1216,
+            "top": 176,
+            "bottom": 286,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 1116,
+            "right": 1216,
+            "top": 176,
+            "bottom": 286,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 11,
+          "clipped": [],
+          "companion": {
+            "left": 1116,
+            "right": 1216,
+            "top": 176,
+            "bottom": 286,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/player/wicked-bites/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Wicked Bites browser preview · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2574
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 2,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/player/claw-feed-gulper/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 953
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/player/claw-feed-gulper/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1316
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 3,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/world/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The Feast World — TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3197
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/world/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The Feast World — TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 5603
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/world/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The Feast World — TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 4336
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/world/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The Feast World — TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 6080
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1999
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3323
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2347
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3395
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/toadal/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Toadal - Character Profile - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1640
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/characters/toadal/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Toadal - Character Profile - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3365
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2610
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 4230
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2909
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/stories/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Stories & Comics · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 4728
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/manga/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL FEAST Manga · Series preview",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1785
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 632,
+            "bottom": 774,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 632,
+            "bottom": 774,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 632,
+            "bottom": 774,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/manga/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL FEAST Manga · Series preview",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3090
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/reader/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Comic & Manga Reader · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1763
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 962,
+            "right": 1104,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 962,
+            "right": 1104,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 12,
+          "clipped": [],
+          "companion": {
+            "left": 962,
+            "right": 1104,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/reader/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Comic & Manga Reader · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2891
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/media/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Media · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3516
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/media/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Media · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 5846
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3412
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 5642
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 4207
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 6335
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/quests/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Quests · Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1700
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/quests/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Quests · Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3161
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/rewards/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Rewards & collection · Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2024
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/feast-pass/rewards/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Rewards & collection · Feast Pass · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3587
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/profile/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Guest profile · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2937
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/profile/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Guest profile · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 4885
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/news/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "News · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2167
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/news/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "News · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3544
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/search/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1378
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/search/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2094
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/search/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1288
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/search/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Search · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2297
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/support/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Support · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1583
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/support/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Support · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2565
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/app/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The TOADAL FEAST app · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3392
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 696,
+            "bottom": 838,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 696,
+            "bottom": 838,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 696,
+            "bottom": 838,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/app/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The TOADAL FEAST app · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 5780
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/app/",
+      "w": 768,
+      "h": 1024,
+      "label": "tablet",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The TOADAL FEAST app · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3420
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 349,
+            "right": 451,
+            "top": 9,
+            "bottom": 61,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/app/",
+      "w": 320,
+      "h": 800,
+      "label": "small-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "The TOADAL FEAST app · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 6009
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 118,
+            "right": 210,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/account/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Account preview - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1533
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 525,
+            "bottom": 667,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 525,
+            "bottom": 667,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 525,
+            "bottom": 667,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/account/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Account preview - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2643
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/community/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Community - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2130
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/community/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Community - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3507
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/store/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Store preview - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1715
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/store/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Store preview - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2999
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/contact/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Contact & feedback - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2106
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/contact/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Contact & feedback - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3633
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/about/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "About TOADAL GAMES - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1802
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/about/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "About TOADAL GAMES - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 3183
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/coming-soon/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Coming Soon - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1466
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 494,
+            "bottom": 636,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 494,
+            "bottom": 636,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 494,
+            "bottom": 636,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/coming-soon/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Coming Soon - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2474
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/legal/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Legal status - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2114
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1286,
+            "right": 1428,
+            "top": 566,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/legal/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Legal status - TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2964
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/news/devlog/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "News & devlog · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 953
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/news/devlog/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "News & devlog · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1316
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/leaderboards/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Leaderboards · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 1443
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/leaderboards/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "Leaderboards · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2447
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/roadmap/",
+      "w": 1440,
+      "h": 900,
+      "label": "desktop",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "What's next · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2028
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 1328,
+            "right": 1428,
+            "top": 598,
+            "bottom": 708,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/roadmap/",
+      "w": 390,
+      "h": 844,
+      "label": "mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "What's next · TOADAL FEAST",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 2622
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 148,
+            "right": 250,
+            "top": 6,
+            "bottom": 58,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    },
+    {
+      "route": "/",
+      "w": 430,
+      "h": 932,
+      "label": "large-mobile",
+      "status": "PASS",
+      "issues": [],
+      "companionReady": true,
+      "doc": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "lang": "en",
+        "viewport": "width=device-width,initial-scale=1",
+        "h1": 1,
+        "main": 1,
+        "overflow": false,
+        "companionCount": 1,
+        "brokenImages": [],
+        "missingAlt": [],
+        "duplicateIds": [],
+        "unnamedControls": [],
+        "brokenFragments": [],
+        "scrollHeight": 6594
+      },
+      "httpErrors": [],
+      "loadErrors": [],
+      "runtimeErrors": [],
+      "consoleErrors": 0,
+      "clipped": [],
+      "samples": [
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 187,
+            "right": 251,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 187,
+            "right": 251,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        },
+        {
+          "scrollY": 0,
+          "clipped": [],
+          "companion": {
+            "left": 187,
+            "right": 251,
+            "top": 4,
+            "bottom": 68,
+            "position": "fixed",
+            "within": true
+          },
+          "companionCount": 1,
+          "overlaps": [],
+          "primaryOverlaps": []
+        }
+      ],
+      "overlaps": [],
+      "primaryOverlaps": [],
+      "companionBad": []
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/home-desktop.png",
+      "sha256": "d4c27e1a9e6424e8bc1c61be6350232ac2a5c068e0f38674b0cf264ab66a3ad8",
+      "route": "/",
+      "width": 1440,
+      "height": 900,
+      "bytes": 1637079,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/home-tablet.png",
+      "sha256": "e63f0f0ff4cee66964940c2b6bcb92ec9934702eead30e92025231a66efd14a2",
+      "route": "/",
+      "width": 768,
+      "height": 1024,
+      "bytes": 1020112,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/home-mobile.png",
+      "sha256": "969f01eec93d8f1869fcd82c79873a4c0b16b62035ce838392ceb3a2d3bf621f",
+      "route": "/",
+      "width": 390,
+      "height": 844,
+      "bytes": 427588,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/home-narrow.png",
+      "sha256": "f8856a0dbe447148b1c25a1a70c5aaf1ce4fcbdf3963a16f7c3975eb03a8716c",
+      "route": "/",
+      "width": 320,
+      "height": 700,
+      "bytes": 359926,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/play-mobile.png",
+      "sha256": "537a964c4635440f2e9bc78afc19a8006be6809f2054d165e076303a530b9cfc",
+      "route": "/play/",
+      "width": 390,
+      "height": 844,
+      "bytes": 313768,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/claw-held-desktop.png",
+      "sha256": "ac2c7237087806b37647e67a0bcea69992b35cb3e417d656c93bbbba67f9d7ea",
+      "route": "/player/claw-feed-gulper/",
+      "width": 1440,
+      "height": 900,
+      "bytes": 215261,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/claw-held-mobile.png",
+      "sha256": "692065c926a2328b4f3dde3594290ee3c300a8dcc8a6d7ea3ebca58ee9a07651",
+      "route": "/player/claw-feed-gulper/",
+      "width": 390,
+      "height": 844,
+      "bytes": 76057,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/wicked-player-mobile.png",
+      "sha256": "cafbb4e5499112596816a113655e66c5a1be0ec1fa0d60b9606ec13e658bda34",
+      "route": "/player/wicked-bites/",
+      "width": 390,
+      "height": 844,
+      "bytes": 122620,
+      "pixelsModified": false
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/feast-pass-mobile.png",
+      "sha256": "0acd61de450e6ba9532c36d01564441554612458d6cc7b67bbab3e4d98106da4",
+      "route": "/feast-pass/",
+      "width": 390,
+      "height": 844,
+      "bytes": 173917,
+      "pixelsModified": false
+    }
+  ],
+  "scope": "The existing85 browser cases and nine PNGs are reused after exact-source/artifact validation. This alone does not prove navigation clicks, crown DOM sampling, canonical image servedhash or genuine gameplay.",
+  "productionPublicationAuthorized": false
+}

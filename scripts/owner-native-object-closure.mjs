@@ -143,9 +143,37 @@ export function closeHomeGameCards(page, games, assets) {
     throw new Error(`Could not find ${HOME_GAMES_ID} as a populated layout.grid`);
   }
   const sourceCards = childrenOf(originalRoot);
-  if(sourceCards.length===4&&sourceCards.every(card=>card?.props?.authoringVersion===1&&card.props.tag==='a')){
+  // Approved native preview cards keep the toggle independent from navigation.
+  // A playable card may also have a direct player link, separately registered.
+  const nativeCard = card => card?.props?.authoringVersion === 1 &&
+    (card.props.tag === 'a' || card.props.tag === 'article' && card.props.attributes?.['data-game-preview'] === 'v1');
+  if(sourceCards.length===4&&sourceCards.every(nativeCard)){
     const byGame=recordsById(games),knownAssets=assetIds(assets);
-    for(const card of sourceCards)validateGameForCard(card,byGame.get(card.props.gameId),knownAssets);
+    const descendants = node => [node, ...(childrenOf(node) || []).flatMap(descendants)];
+    for(const card of sourceCards) {
+      const game = byGame.get(card.props.gameId);
+      validateGameForCard(card, game, knownAssets);
+      if (card.props.tag === 'article') {
+        const nodes = descendants(card), links = nodes.filter(node => node.props?.tag === 'a');
+        const has = (node, key) => Object.hasOwn(node.props.attributes || {}, key);
+        const details = links.filter(node => node.props.href === game.route &&
+          (has(node, 'data-game-preview-link') || has(node, 'data-game-preview-details')));
+        const expectedPlayerRoute = `/player/${game.slug}/`;
+        const launches = links.filter(node => node.props.href === expectedPlayerRoute && has(node, 'data-game-preview-link'));
+        if (details.length !== 1 || launches.length > 1 || details.length + launches.length !== links.length) {
+          throw new Error(`Native preview card ${card.id} must retain one registered details link and only registered player links`);
+        }
+        for (const link of [...details, ...launches]) {
+          if (descendants(link).slice(1).some(node => ['a','button','input'].includes(node.props?.tag))) {
+            throw new Error(`Native preview card ${card.id} contains nested interactive controls`);
+          }
+        }
+        const images = nodes.filter(node => node.type === 'core.image');
+        if (!images.length || images.some(node => !knownAssets.has(node.props.asset))) {
+          throw new Error(`Unknown art asset in native preview card ${card.id}`);
+        }
+      }
+    }
     if(new Set(sourceCards.map(card=>card.props.gameId)).size!==4)throw new Error('Home game cards must resolve to four distinct registered games');
     return structuredClone(page);
   }

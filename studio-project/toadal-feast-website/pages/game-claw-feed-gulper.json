@@ -3,7 +3,7 @@
   "id": "page.game-claw-feed-gulper",
   "route": "/games/claw-feed-gulper/",
   "title": "CLAW: Feed Gulper · TOADAL FEAST",
-  "description": "A compact browser preview from the CLAW: Feed Gulper 2.5.1 staging build. The listing remains PREVIEW while its current player integration is evaluated.",
+  "description": "CLAW: Feed Gulper preview details. Browser play is not available yet.",
   "publicationState": "noindex",
   "components": [
     {
@@ -42,7 +42,7 @@
               "attributes": {
                 "data-game-detail": "claw-feed-gulper",
                 "data-companion-context": "claw-feed-gulper",
-                "data-companion-copy": "CLAW remains launch-held; this details page does not start the game."
+                "data-companion-copy": "Gulper’s adventure is still being prepared. Try Wicked Bites while you wait."
               },
               "style": "",
               "layerName": "CLAW: Feed Gulper",
@@ -166,8 +166,8 @@
                                 "className": "section-kicker",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1",
-                                "text": "STAGING CANDIDATE · LAUNCH HELD · 2.5.1"
+                                "layerName": "UPCOMING BROWSER ADVENTURE",
+                                "text": "UPCOMING BROWSER ADVENTURE"
                               }
                             },
                             {
@@ -218,8 +218,8 @@
                                 "className": "wo002-detail-lede",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "A versioned staging package exists, but website launch is held: its save",
-                                "text": "A versioned staging package exists, but website launch is held: its save namespace and original broad service-worker cache behavior require origin-safe requalification."
+                                "layerName": "Try a sandboxed CLAW browser preview. Saves stay in this browser; account sync and global rankin",
+                                "text": "Meet Gulper’s next adventure. This browser preview is not available to play yet."
                               }
                             },
                             {
@@ -268,8 +268,8 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "layerName": "Website launch held.",
-                                            "text": "Website launch held."
+                                            "layerName": "Browser preview in preparation.",
+                                            "text": "Browser preview in preparation."
                                           }
                                         },
                                         {
@@ -281,8 +281,8 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "text": " The donor staging package is not connected to this player until origin-safe storage and service-worker behavior are requalified.",
-                                            "layerName": "Text: The donor staging package is not connected to this p"
+                                            "text": "This adapted website preview has no account sync, store purchases, trusted scoring or public release approval.",
+                                            "layerName": "This adapted website preview has no account sync, store purchases, trusted scoring or public rel"
                                           }
                                         }
                                       ]
@@ -290,16 +290,15 @@
                                   },
                                   {
                                     "id": "component.muogc3tg.5k94yf.1047c9b4ea01.button-link-button-link-",
-                                    "type": "core.button",
+                                    "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "a",
-                                      "className": "button-link button-link--secondary",
+                                      "tag": "span",
+                                      "className": "chip preview",
                                       "attributes": {},
                                       "style": "",
-                                      "layerName": "All browser games",
-                                      "href": "/play/",
-                                      "label": "All browser games"
+                                      "layerName": "Browser preview unavailable",
+                                      "text": "Browser preview unavailable"
                                     }
                                   }
                                 ]
@@ -345,8 +344,9 @@
                                 },
                                 "style": "",
                                 "layerName": "Gulper character artwork, not an in-game screenshot.",
-                                "asset": "asset.home.character.gulper",
-                                "alt": "Gulper character artwork, not an in-game screenshot."
+                                "asset": "asset.import.feed-gulper-title-card-v1-web.90ee7b8e",
+                                "alt": "CLAW: Feed Gulper promotional title-card illustration; not a gameplay screenshot.",
+                                "fit": "contain"
                               }
                             },
                             {
@@ -358,8 +358,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "World/character artwork — not a gameplay screenshot.",
-                                "text": "World/character artwork — not a gameplay screenshot."
+                                "layerName": "Owner-designated promotional title card; visual acceptance is pending.",
+                                "text": "Owner-designated promotional title card; visual acceptance is pending."
                               }
                             }
                           ]
@@ -455,8 +455,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "A staging package exists, but this site does not launch it while integra",
-                                "text": "A staging package exists, but this site does not launch it while integration blockers remain."
+                                "layerName": "This website PREVIEW uses an isolated browser-local save; no account sync or remote leaderboard ",
+                                "text": "This preview is still being prepared. Browser play, account sync, and global rankings are unavailable."
                               }
                             }
                           ]
@@ -522,8 +522,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "No launch is offered through the website player while host, storage, and",
-                                "text": "No launch is offered through the website player while host, storage, and service-worker integration are requalified."
+                                "layerName": "Controls will be introduced when this browser preview becomes available.",
+                                "text": "Controls will be introduced when this browser preview becomes available."
                               }
                             }
                           ]
@@ -576,8 +576,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "No save",
-                                "text": "No save"
+                                "layerName": "Previous local records",
+                                "text": "Previous local records"
                               }
                             },
                             {
@@ -589,8 +589,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "The donor uses a game-owned browser save key; website storage isolation ",
-                                "text": "The donor uses a game-owned browser save key; website storage isolation is not yet certified."
+                                "layerName": "This preview uses its own namespaced save in this browser. Account sync and cross-device saves a",
+                                "text": "Browser play is unavailable, so this preview does not create new game saves. Previously saved browser records are preserved."
                               }
                             }
                           ]
@@ -638,7 +638,7 @@
                       "aria-label": "Toadal contextual helper"
                     },
                     "style": "",
-                    "layerName": "TOADAL SAYSCLAW remains launch-held; this details page does not start th",
+                    "layerName": "TOADAL SAYS · The CLAW browser preview is ready; progress stays in this browser.",
                     "mode": "inherit",
                     "children": [
                       {
@@ -682,8 +682,8 @@
                                   "aria-atomic": "true"
                                 },
                                 "style": "",
-                                "layerName": "CLAW remains launch-held; this details page does not start the game.",
-                                "text": "CLAW remains launch-held; this details page does not start the game."
+                                "layerName": "Gulper’s adventure is still being prepared. Try Wicked Bites while you wait.",
+                                "text": "Gulper’s adventure is still being prepared. Try Wicked Bites while you wait."
                               }
                             }
                           ]

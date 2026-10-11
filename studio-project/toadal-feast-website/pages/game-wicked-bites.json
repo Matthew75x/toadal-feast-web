@@ -167,7 +167,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "STAGING BROWSER BUILD · 5.5",
-                                "text": "STAGING BROWSER BUILD · 5.5"
+                                "text": "BROWSER PREVIEW · 5.5"
                               }
                             },
                             {
@@ -219,7 +219,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "A compact, isolated browser preview from the Wicked Bites 5.5 staging bu",
-                                "text": "A compact, isolated browser preview from the Wicked Bites 5.5 staging build. The listing remains PREVIEW and is not a public release."
+                                "text": "Try the Wicked Bites 5.5 browser preview. This is a preview, not a public release."
                               }
                             },
                             {
@@ -268,7 +268,7 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "text": "Open staging preview ",
+                                            "text": "Open browser preview ",
                                             "layerName": "Text: Open staging preview"
                                           }
                                         },
@@ -365,7 +365,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Qualified Wicked Bites v5.5 gameplay capture. This is the isolated stagi",
-                                "text": "Qualified Wicked Bites v5.5 gameplay capture. This is the isolated staging preview, not a public release."
+                                "text": "Wicked Bites 5.5 gameplay from the browser preview, not a public release."
                               }
                             }
                           ]
@@ -462,7 +462,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "A runnable staging package is available for evaluation.",
-                                "text": "A runnable staging package is available for evaluation."
+                                "text": "A browser preview is available to try."
                               }
                             }
                           ]
@@ -596,7 +596,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Progress is held in the isolated preview session and may not persist aft",
-                                "text": "Progress is held in the isolated preview session and may not persist after reload; no account sync or cross-device save."
+                                "text": "Progress stays in this preview session and may be lost after reloading. Account sync and cross-device saves are not available."
                               }
                             }
                           ]
@@ -689,7 +689,7 @@
                                 },
                                 "style": "",
                                 "layerName": "Wicked Bites opens only as an isolated staging preview; it is not a publ",
-                                "text": "Wicked Bites opens only as an isolated staging preview; it is not a public release."
+                                "text": "Try the Wicked Bites browser preview. It is not a public release."
                               }
                             }
                           ]
@@ -845,7 +845,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "No Wicked Bites score challenge is currently defined. Browse the availab",
-                          "text": "No Wicked Bites score challenge is currently defined. Browse the available guest-local website quests."
+                          "text": "No Wicked Bites score challenge is available yet. Explore the website quests you can complete in this browser."
                         }
                       },
                       {
@@ -913,7 +913,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "The isolated player can report an active run score. Saved bests and rank",
-                          "text": "The isolated player can report an active run score. Saved bests and rankings depend on score references exposed through guest progression."
+                          "text": "See your current-run score in the preview. Check the leaderboard for any saved personal best available in this browser."
                         }
                       },
                       {
@@ -1064,7 +1064,7 @@
             "props": {
               "authoringVersion": 1,
               "tag": "nav",
-              "className": "progression-nav",
+              "className": "progression-nav progression-nav--wicked-bites",
               "attributes": {
                 "aria-label": "Wicked Bites destinations"
               },

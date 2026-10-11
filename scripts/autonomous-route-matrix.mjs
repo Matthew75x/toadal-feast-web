@@ -317,7 +317,7 @@ async function main() {
   const baseURL = normalizeBaseURL(args.targetURL);
   const pageIndexPath = path.join(repoRoot, 'studio-project', 'toadal-feast-website', 'pages', 'index.json');
   const pages = JSON.parse(await fs.readFile(pageIndexPath, 'utf8')).pages || [];
-  if (pages.length !== 33) throw new Error(`Expected the current 33-route registry; found ${pages.length} in ${pageIndexPath}`);
+  if (pages.length !== 34) throw new Error(`Expected the current 34-route registry; found ${pages.length} in ${pageIndexPath}`);
   if (new Set(pages.map(page => page.route)).size !== 33 || !pages.some(page => page.route === '/') || !pages.some(page => page.route === '/404.html')) {
     throw new Error('Route registry has duplicate routes or lacks Home/404 records.');
   }

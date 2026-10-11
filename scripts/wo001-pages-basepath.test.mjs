@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
+import { cp, mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import test from 'node:test';
@@ -192,6 +192,8 @@ test('staging robots verification rejects equally applicable root Allow rules', 
 test('the staging robots CLI rejects the original conflict and still enforces website noindex/nofollow', async t => {
   const exportRoot = await mkdtemp(path.join(os.tmpdir(), 'toadal-robots-cli-negative-'));
   t.after(() => rm(exportRoot, {recursive:true, force:true}));
+  const clawSource = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../studio-project/toadal-feast-website/reference/public/games/claw-feed-gulper');
+  await cp(clawSource, path.join(exportRoot, 'public/games/claw-feed-gulper'), {recursive:true});
   const game = 'public/games/wicked-bites';
   await mkdir(path.join(exportRoot, game), {recursive:true});
   for (const name of ['index.html', 'cartridge.json', 'toadal-bridge.js']) {

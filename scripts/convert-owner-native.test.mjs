@@ -194,12 +194,13 @@ test('registered CSS background URLs gain typed identity while canonical CSS sta
   rejects('<div style="background:javascript:x">x</div>', 'UNSAFE_STYLE');
 });
 
-test('only the three qualified runtime fragments remain as read-only specialized runtime blocks', () => {
+test('only the four qualified runtime fragments remain as read-only specialized runtime blocks', () => {
   const rules = RUNTIME_EXCEPTIONS;
   const cases = [
     { route: '/', id: rules[0].componentId, kind: 'external-script', html: `<div><p>Keep this copy</p><script src='assets/js/home-interactive-discovery.js' defer></script><p>And this copy</p></div>`, fragment: '<script src=\'assets/js/home-interactive-discovery.js\' defer></script>' },
     { route: '/player/wicked-bites/', id: rules[1].componentId, kind: 'isolated-frame', html: `<div><p>Player copy</p><iframe class="wo002-player-frame" data-player-frame src="/public/games/wicked-bites/index.html" title="Wicked Bites browser preview" loading="eager" referrerpolicy="origin" sandbox="allow-scripts allow-pointer-lock" allow="fullscreen" allowfullscreen></iframe><p>After player</p></div>`, fragment: `<iframe class="wo002-player-frame" data-player-frame src="/public/games/wicked-bites/index.html" title="Wicked Bites browser preview" loading="eager" referrerpolicy="origin" sandbox="allow-scripts allow-pointer-lock" allow="fullscreen" allowfullscreen></iframe>` },
     { route: '/reader/', id: rules[2].componentId, kind: 'dynamic-image', html: `<div><p>Reader copy</p><img data-reader-page alt='' decoding='async'><p>More reader copy</p></div>`, fragment: `<img data-reader-page alt='' decoding='async'>` },
+    { route: '/player/claw-feed-gulper/', id: rules[3].componentId, kind: 'isolated-frame', html: `<div><p>Player copy</p><iframe class="wo002-player-frame" data-player-frame src="/public/games/claw-feed-gulper/index.html" title="CLAW: Feed Gulper browser preview" loading="eager" referrerpolicy="origin" sandbox="allow-scripts allow-pointer-lock" allow="fullscreen" allowfullscreen></iframe><p>After player</p></div>`, fragment: `<iframe class="wo002-player-frame" data-player-frame src="/public/games/claw-feed-gulper/index.html" title="CLAW: Feed Gulper browser preview" loading="eager" referrerpolicy="origin" sandbox="allow-scripts allow-pointer-lock" allow="fullscreen" allowfullscreen></iframe>` },
   ];
   for (const item of cases) {
     const page = { id: `page.${item.route}`, route: item.route, components: [{ id: item.id, type: 'core.rich-text', props: { html: item.html } }] };
@@ -215,9 +216,11 @@ test('only the three qualified runtime fragments remain as read-only specialized
     assert.equal(runtime.props.runtimeKind, item.kind);
     assert.equal(runtime.props.html, item.fragment);
     assert.equal(runtime.props.runtimeSha256, createHash('sha256').update(item.fragment, 'utf8').digest('hex'));
-    assert.deepEqual(runtime.props.runtimeCodeResources, rules.find((rule) => rule.kind === item.kind).policy.codeResources.map(({ url, sha256 }) => ({ url, sha256 })));
+    const rule = rules.find((rule) => rule.route === item.route && rule.kind === item.kind);
+    assert.ok(rule, `registered runtime policy for ${item.route}`);
+    assert.deepEqual(runtime.props.runtimeCodeResources, rule.policy.codeResources.map(({ url, sha256 }) => ({ url, sha256 })));
     assert.ok(Buffer.byteLength(runtime.props.html, 'utf8') <= 2048);
-    const policy = rules.find((rule) => rule.kind === item.kind).policy;
+    const policy = rule.policy;
     assert.equal(Object.isFrozen(policy), true);
     assert.equal(runtime.props.runtimePolicy.id, policy.id);
     assert.equal(runtime.props.runtimePolicy.mode, policy.mode);

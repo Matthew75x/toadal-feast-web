@@ -2,7 +2,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { isProtectedGameArtifact, verifyProtectedGameArtifacts } from './lib/protected-game-artifacts.mjs';
+import { isProtectedGameArtifact } from './lib/protected-game-artifacts.mjs';
+import { verifyExportGamePins } from './lib/staging-artifact.mjs';
 import { stagingRobotsErrors } from './lib/staging-robots.mjs';
 
 const dist=path.resolve(process.argv[2]||'dist');
@@ -19,8 +20,11 @@ function walk(dir){
 walk(dist);
 const errors=[];
 const project=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../studio-project/toadal-feast-website');
-const protectedArtifacts=verifyProtectedGameArtifacts(dist,project);
-errors.push(...protectedArtifacts.errors);
+// Authoring can retain the exact frozen CLAW inventory privately, while the
+// public staging projection excludes it. Both shapes must preserve fixed game
+// identities; the separate staging seal still admits only the three Wicked files.
+try { verifyExportGamePins(dist,project,undefined,{quarantineKnownClaw:true}); }
+catch(error) { errors.push(error.message); }
 for(const f of files){
   // Every public website page needs noindex,nofollow. Immutable iframe payloads
   // must instead retain the exact source bytes and be blocked by robots.txt.

@@ -1,0 +1,68 @@
+{
+  "schema": "toadal-feast.gulper-player-route-qualification.v1",
+  "status": "PASS",
+  "classification": "LOCAL_CANDIDATE_ENGINEERING_QUALIFICATION",
+  "observedDate": "2026-10-10",
+  "sourceIdentity": {
+    "repository": "Matthew75x/toadal-feast-web",
+    "branch": "work/takeover-20261010",
+    "baseCommit": "e392e82943a7c7edc83227c0cb6ca61210e53e9a",
+    "baseTree": "a60b4f6ac7feb2965638ec41d49b5545fb14359d",
+    "worktreeState": "DIRTY_LOCAL_TAKEOVER_CANDIDATE"
+  },
+  "historicalSnapshot": {
+    "observedDate": "2026-10-02",
+    "qualifiedSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
+    "routeRecords": 33
+  },
+  "candidate": {
+    "routeRecords": 34,
+    "priorRouteRecords": 33,
+    "addedRoute": "/player/claw-feed-gulper/",
+    "inputFingerprint": {
+      "source": {
+        "sha256": "1e6337815458087c14537e45a21ce0a86dc38ef78533036d65b14c34cdd9511e",
+        "files": 452
+      },
+      "dist": {
+        "sha256": "51e5e2b3b1b6180f062285a99ba3febb50c83441f9ab1dc0937f02774dc4c40e",
+        "files": 427
+      }
+    }
+  },
+  "route": {
+    "id": "page.player-claw-feed-gulper",
+    "route": "/player/claw-feed-gulper/",
+    "file": "pages/player-claw-feed-gulper.json",
+    "title": "CLAW: Feed Gulper browser preview · TOADAL FEAST",
+    "purpose": "Isolated, noindex browser preview for the registered CLAW: Feed Gulper cartridge.",
+    "publicationState": "noindex",
+    "studioGenerated": true,
+    "referenceFile": "player/claw-feed-gulper/index.html",
+    "sourceSha256": "6a36f31ccf2bff3f8b23cd93c5e58a85488838b7a51e4b02085189663ba26487",
+    "exportedHtmlSha256": "eee7ee910856a97d2b5fd4b0981a83d73eadf3743069f8f3b17fd0239ee7bad0"
+  },
+  "navigation": {
+    "playToGameDetails": "/games/claw-feed-gulper/",
+    "detailsToPlayer": "/player/claw-feed-gulper/",
+    "playerBackToDetails": "/games/claw-feed-gulper/",
+    "studioRouteExported": true
+  },
+  "studioExport": {
+    "status": "PASS",
+    "rendererCommit": "e859ee2725bb88b236cacf450a69dd304b2d74c9",
+    "receiptPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-evidence.json",
+    "receiptSha256": "d1b52055524953acb86448e1af940d26b3435e0e88f636273e5fd6cc416693db"
+  },
+  "browserEvidence": {
+    "status": "PASS",
+    "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa.json",
+    "sha256": "eb6c459675e8efbe6b92516efd37543fab4c7d4eb2e51b76e7f8efe4cddceaf0"
+  },
+  "acceptance": {
+    "engineering": "VERIFIED",
+    "ownerAcceptance": "AWAITING_OWNER_ACCEPTANCE",
+    "releaseAuthorized": false
+  }
+}

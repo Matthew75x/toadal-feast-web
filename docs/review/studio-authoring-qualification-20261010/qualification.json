@@ -1,0 +1,151 @@
+{
+  "schema": "toadal-feast.owner-native-studio-qualification.v1",
+  "manifest": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\toadal-feast-web\\studio-project\\toadal-feast-website\\project.json",
+  "studio": "C:\\Users\\Metarator\\Documents\\Codex\\2026-10-10\\all-right-i-want-you-to\\work\\studio-render-frozen",
+  "node": "v22.23.2",
+  "qa": {
+    "level": "full",
+    "validation": {
+      "valid": true,
+      "errors": [],
+      "warnings": []
+    },
+    "graph": {
+      "dangling": []
+    },
+    "accessibility": {
+      "checks": {
+        "altText": true,
+        "iframeTitles": true,
+        "controlNames": true,
+        "headingHierarchy": true,
+        "focusVisibility": true,
+        "keyboardOperation": true,
+        "reducedMotion": true,
+        "touchTargets": true,
+        "contrastHeuristics": false
+      },
+      "issues": [
+        {
+          "severity": "warning",
+          "code": "CONTRAST_TOKEN_REVIEW",
+          "file": "assets/css",
+          "ratio": 1.21
+        }
+      ],
+      "errors": 0,
+      "warnings": 1
+    },
+    "performance": {
+      "files": 245,
+      "totalBytes": 65457567,
+      "htmlBytes": 6560085,
+      "largest": [
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/reward.png",
+          "bytes": 1733730
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/maintenance.png",
+          "bytes": 1663323
+        },
+        {
+          "file": "public/games/wicked-bites/index.html",
+          "bytes": 1587506
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/ai-disclosure.png",
+          "bytes": 1577938
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+          "bytes": 1528531
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/news.png",
+          "bytes": 1527629
+        },
+        {
+          "file": "public/games/claw-feed-gulper/assets/gulper/feeding/gulper_stage_7_eat_8f_450.png",
+          "bytes": 1483201
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/community.png",
+          "bytes": 1480074
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/merch.png",
+          "bytes": 1457991
+        },
+        {
+          "file": "public/games/claw-feed-gulper/assets/gulper/feeding/gulper_stage_6_eat_8f_450.png",
+          "bytes": 1444500
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-adventure-map-guide.png",
+          "bytes": 1410487
+        },
+        {
+          "file": "public/games/claw-feed-gulper/assets/gulper/feeding/gulper_stage_5_eat_8f_450.png",
+          "bytes": 1405815
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/settings.png",
+          "bytes": 1393918
+        },
+        {
+          "file": "public/games/claw-feed-gulper/assets/gulper/feeding/gulper_stage_4_eat_8f_450.png",
+          "bytes": 1365554
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/privacy.png",
+          "bytes": 1338522
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/search.png",
+          "bytes": 1335024
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/rating.png",
+          "bytes": 1333728
+        },
+        {
+          "file": "public/games/claw-feed-gulper/assets/gulper/feeding/gulper_stage_3_eat_8f_450.png",
+          "bytes": 1324471
+        },
+        {
+          "file": "assets/images/characters/companion/master-v2-selected/register.png",
+          "bytes": 1321069
+        },
+        {
+          "file": "assets/images/characters/companion/production-pack-v2/toadal-support-headset.png",
+          "bytes": 1320726
+        }
+      ],
+      "largeFileWarnings": 20
+    },
+    "referenceFiles": 199,
+    "previewFiles": 245,
+    "tests": {
+      "ok": false,
+      "status": 1,
+      "stdout": "st: mobile image overrides and Reset preserve native base values and inheritance\nok 493 - mobile image overrides and Reset preserve native base values and inheritance\n  ---\n  duration_ms: 281.172\n  type: 'test'\n  ...\n# Subtest: owner draft cancellation stays ephemeral and never calls commit\nok 494 - owner draft cancellation stays ephemeral and never calls commit\n  ---\n  duration_ms: 66.3277\n  type: 'test'\n  ...\n# Subtest: portable backup restores Cedar semantic state independently\nok 495 - portable backup restores Cedar semantic state independently\n  ---\n  duration_ms: 1245.054\n  type: 'test'\n  ...\n# Subtest: Raw responsive records respect actual breakpoint and nested protected fields\nok 496 - Raw responsive records respect actual breakpoint and nested protected fields\n  ---\n  duration_ms: 117.8205\n  type: 'test'\n  ...\n# Subtest: legacy symbol additions/removals cannot evade restrictive raw-record operation policy\nok 497 - legacy symbol additions/removals cannot evade restrictive raw-record operation policy\n  ---\n  duration_ms: 305.5655\n  type: 'test'\n  ...\n# Subtest: raw page writer keeps ungoverned legacy edits and content-only admits exposed text only\nok 498 - raw page writer keeps ungoverned legacy edits and content-only admits exposed text only\n  ---\n  duration_ms: 87.9949\n  type: 'test'\n  ...\n# Subtest: content-only page title remains editable through the manager and its index mirror\nok 499 - content-only page title remains editable through the manager and its index mirror\n  ---\n  duration_ms: 38.8574\n  type: 'test'\n  ...\n# Subtest: locked raw transaction rolls back source and leaves persistent history cursor unchanged\nok 500 - locked raw transaction rolls back source and leaves persistent history cursor unchanged\n  ---\n  duration_ms: 125.2945\n  type: 'test'\n  ...\n# Subtest: raw manifest writes cannot create, remove, or replace the authoritative owner policy\nok 501 - raw manifest writes cannot create, remove, or replace the authoritative owner policy\n  ---\n  duration_ms: 60.2584\n  type: 'test'\n  ...\n# Subtest: locked asset import is rejected before any source blob is written\nok 502 - locked asset import is rejected before any source blob is written\n  ---\n  duration_ms: 33.6199\n  type: 'test'\n  ...\n# Subtest: token-only admits listed theme tokens and rejects project setting changes\nok 503 - token-only admits listed theme tokens and rejects project setting changes\n  ---\n  duration_ms: 37.9807\n  type: 'test'\n  ...\n# Subtest: content-only SDK text edits and qualified Shared text overrides pass; CSS and structure fail\nok 504 - content-only SDK text edits and qualified Shared text overrides pass; CSS and structure fail\n  ---\n  duration_ms: 327.4777\n  type: 'test'\n  ...\n# Subtest: raw page classification honors DesignPolicy operation, type, and protected-field rules\nok 505 - raw page classification honors DesignPolicy operation, type, and protected-field rules\n  ---\n  duration_ms: 214.0612\n  type: 'test'\n  ...\n# Subtest: a locked SDK node does not block an unrelated sibling edit but remains immutable\nok 506 - a locked SDK node does not block an unrelated sibling edit but remains immutable\n  ---\n  duration_ms: 66.7308\n  type: 'test'\n  ...\n# Subtest: SDK host checker and normal insert/reparent commands enforce declared slots, accepts and counts\nok 507 - SDK host checker and normal insert/reparent commands enforce declared slots, accepts and counts\n  ---\n  duration_ms: 125.966\n  type: 'test'\n  ...\n# Subtest: grouping inside an SDK host emits owner-safe native props without changing legacy groups\nok 508 - grouping inside an SDK host emits owner-safe native props without changing legacy groups\n  ---\n  duration_ms: 177.5445\n  type: 'test'\n  ...\n# Subtest: SDK selection mapping is additive and edit locators stay out of public rendering\nok 509 - SDK selection mapping is additive and edit locators stay out of public rendering\n  ---\n  duration_ms: 5.1055\n  type: 'test'\n  ...\n# Subtest: SDK selection mapping rejects duplicate, undeclared, unmapped, and structurally unsafe parts\nok 510 - SDK selection mapping rejects duplicate, undeclared, unmapped, and structurally unsafe parts\n  ---\n  duration_ms: 0.7618\n  type: 'test'\n  ...\n# Subtest: SDK slot host validates complete safe candidate graphs and blocks unsafe wildcard children\nok 511 - SDK slot host validates complete safe candidate graphs and blocks unsafe wildcard children\n  ---\n  duration_ms: 4.8398\n  type: 'test'\n  ...\n# Subtest: SDK candidate host validates identities, slot declarations/counts, and cycles recursively\nok 512 - SDK candidate host validates identities, slot declarations/counts, and cycles recursively\n  ---\n  duration_ms: 2.4983\n  type: 'test'\n  ...\n# Subtest: SDK conformance proves contracts and actual host clone remapping preserves asset dependencies\nok 513 - SDK conformance proves contracts and actual host clone remapping preserves asset dependencies\n  ---\n  duration_ms: 2.6751\n  type: 'test'\n  ...\n# Subtest: SDK host rules reach project validation and reject render before modifying previous output\nok 514 - SDK host rules reach project validation and reject render before modifying previous output\n  ---\n  duration_ms: 51.5238\n  type: 'test'\n  ...\n# Subtest: Known declarative native owner children pass SDK host and render together\nok 515 - Known declarative native owner children pass SDK host and render together\n  ---\n  duration_ms: 57.1294\n  type: 'test'\n  ...\n# Subtest: Host adapter leaves unrelated legacy roots outside SDK policy and never mutates loaded data\nok 516 - Host adapter leaves unrelated legacy roots outside SDK policy and never mutates loaded data\n  ---\n  duration_ms: 34.6232\n  type: 'test'\n  ...\n# Subtest: Raw SDK page records cannot bypass a locked native ancestor; explicit pure unlock stays available\nok 517 - Raw SDK page records cannot bypass a locked native ancestor; explicit pure unlock stays available\n  ---\n  duration_ms: 95.9584\n  type: 'test'\n  ...\n# Subtest: Raw revisioned SDK page writes reject unsafe descendants before changing source\nok 518 - Raw revisioned SDK page writes reject unsafe descendants before changing source\n  ---\n  duration_ms: 35.6217\n  type: 'test'\n  ...\n# Subtest: Typed SDK responsive updates honor scoped policy without inventing a Base change\nok 519 - Typed SDK responsive updates honor scoped policy without inventing a Base change\n  ---\n  duration_ms: 59.907\n  type: 'test'\n  ...\n# Subtest: Denied optimization is admitted before invoking tools or creating derivative files\nok 520 - Denied optimization is admitted before invoking tools or creating derivative files\n  ---\n  duration_ms: 45.2207\n  type: 'test'\n  ...\n# Subtest: SDK parts resolve declared fields; inline save uses one persistent command and exact Undo/Redo\nok 521 - SDK parts resolve declared fields; inline save uses one persistent command and exact Undo/Redo\n  ---\n  duration_ms: 298.0367\n  type: 'test'\n  ...\n# Subtest: SDK inline rejects invalid parts, fields, text and captured revisions without mutation\nok 522 - SDK inline rejects invalid parts, fields, text and captured revisions without mutation\n  ---\n  duration_ms: 60.8279\n  type: 'test'\n  ...\n# Subtest: SDK descriptor changes after selection invalidate inline interaction even if page is unchanged\nok 523 - SDK descriptor changes after selection invalidate inline interaction even if page is unchanged\n  ---\n  duration_ms: 45.501\n  type: 'test'\n  ...\n# Subtest: SDK inline render failure rolls source and history back; equal text is no-op\nok 524 - SDK inline render failure rolls source and history back; equal text is no-op\n  ---\n  duration_ms: 167.415\n  type: 'test'\n  ...\n# Subtest: Linked SDK inline edits only local Instance and requires captured symbol revision\nok 525 - Linked SDK inline edits only local Instance and requires captured symbol revision\n  ---\n  duration_ms: 338.4593\n  type: 'test'\n  ...\n# Subtest: Linked SDK inline remains content-only compatible without treating inherited styles as edits\nok 526 - Linked SDK inline remains content-only compatible without treating inherited styles as edits\n  ---\n  duration_ms: 344.8978\n  type: 'test'\n  ...\n# Subtest: SDK inline denies locked ancestors and respects project content-only policy\nok 527 - SDK inline denies locked ancestors and respects project content-only policy\n  ---\n  duration_ms: 260.7958\n  type: 'test'\n  ...\n# Subtest: Canonical public transform removes SDK part/inline markers without changing rendered text\nok 528 - Canonical public transform removes SDK part/inline markers without changing rendered text\n  ---\n  duration_ms: 33.8968\n  type: 'test'\n  ...\n# Subtest: shared definition propagates across three linked instances; local overrides and detach remain independent\nok 529 - shared definition propagates across three linked instances; local overrides and detach remain independent\n  ---\n  duration_ms: 1065.2066\n  type: 'test'\n  ...\n# Subtest: definition, instance and detach are one history entry each with exact Undo/Redo source restoration\nok 530 - definition, instance and detach are one history entry each with exact Undo/Redo source restoration\n  ---\n  duration_ms: 949.7453\n  type: 'test'\n  ...\n# Subtest: stale/invalid/missing/forged shared edits cannot mutate source or history\nok 531 - stale/invalid/missing/forged shared edits cannot mutate source or history\n  ---\n  duration_ms: 377.2977\n  type: 'test'\n  ...\n# Subtest: render failure rolls back definition and page plus history/redo branch\nok 532 - render failure rolls back definition and page plus history/redo branch\n  ---\n  duration_ms: 262.5257\n  type: 'test'\n  ...\n# Subtest: Duplicate is independent while explicit insert remains linked and pure resolution preserves source\nok 533 - Duplicate is independent while explicit insert remains linked and pure resolution preserves source\n  ---\n  duration_ms: 312.3399\n  type: 'test'\n  ...\n# Subtest: a locked affected instance and read-only project block definition propagation without partial writes\nok 534 - a locked affected instance and read-only project block definition propagation without partial writes\n  ---\n  duration_ms: 343.8394\n  type: 'test'\n  ...\n# Subtest: sparse local responsive fields inherit definition changes and reset without shadowing other breakpoints\nok 535 - sparse local responsive fields inherit definition changes and reset without shadowing other breakpoints\n  ---\n  duration_ms: 3.9034\n  type: 'test'\n  ...\n# Subtest: SDK static managed images are constrained to their wrapper and empty optional assets render no broken image\nok 536 - SDK static managed images are constrained to their wrapper and empty optional assets render no broken image\n  ---\n  duration_ms: 1.3168\n  type: 'test'\n  ...\n# Subtest: clean website starters are independent, valid, warning-free and render generic site chrome\nok 537 - clean website starters are independent, valid, warning-free and render generic site chrome\n  ---\n  duration_ms: 127.5754\n  type: 'test'\n  ...\n# Subtest: starter project carries the reusable website-builder essentials\nok 538 - starter project carries the reusable website-builder essentials\n  ---\n  duration_ms: 19.5642\n  type: 'test'\n  ...\n# Subtest: Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\nok 539 - Studio browser surfaces creation, site setup, responsive QA, portable backup and context-aware tools\n  ---\n  duration_ms: 1.4938\n  type: 'test'\n  ...\n# Subtest: Studio server exposes safe clean-project creation and project-level settings\nok 540 - Studio server exposes safe clean-project creation and project-level settings\n  ---\n  duration_ms: 0.4391\n  type: 'test'\n  ...\n# Subtest: general websites do not inherit recovered TOADAL baseline validation rules\nok 541 - general websites do not inherit recovered TOADAL baseline validation rules\n  ---\n  duration_ms: 0.2389\n  type: 'test'\n  ...\n# Subtest: portable project backups round-trip safely into independent projects with collision-safe ids\nok 542 - portable project backups round-trip safely into independent projects with collision-safe ids\n  ---\n  duration_ms: 1465.9964\n  type: 'test'\n  ...\n# Subtest: studio doctor reports deterministic validator and graph findings with resolved resource identities\nok 543 - studio doctor reports deterministic validator and graph findings with resolved resource identities\n  ---\n  duration_ms: 44.3052\n  type: 'test'\n  ...\n# Subtest: studio doctor returns coded reports for missing and unparseable manifests\nok 544 - studio doctor returns coded reports for missing and unparseable manifests\n  ---\n  duration_ms: 20.1479\n  type: 'test'\n  ...\n# Subtest: studio doctor reports a supplied missing preview without creating it\nok 545 - studio doctor reports a supplied missing preview without creating it\n  ---\n  duration_ms: 24.4341\n  type: 'test'\n  ...\n# Subtest: studio doctor accessibility inspection leaves project, history, source, and preview bytes unchanged\nok 546 - studio doctor accessibility inspection leaves project, history, source, and preview bytes unchanged\n  ---\n  duration_ms: 43.3943\n  type: 'test'\n  ...\n# Subtest: Studio layer search hides nonmatching rows despite grid display\nok 547 - Studio layer search hides nonmatching rows despite grid display\n  ---\n  duration_ms: 2.0676\n  type: 'test'\n  ...\n# Subtest: optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\nok 548 - optimized Studio shell keeps core editor controls and adds persistent workspace ergonomics\n  ---\n  duration_ms: 2.2071\n  type: 'test'\n  ...\n# Subtest: Studio exposes a lightweight ping endpoint for launch and connection checks\nok 549 - Studio exposes a lightweight ping endpoint for launch and connection checks\n  ---\n  duration_ms: 0.4059\n  type: 'test'\n  ...\n# Subtest: HUD authoring preserves a local recovery copy around autosave failures\nok 550 - HUD authoring preserves a local recovery copy around autosave failures\n  ---\n  duration_ms: 0.3553\n  type: 'test'\n  ...\n# Subtest: Windows launchers share one health-aware Node 22+ launcher\nok 551 - Windows launchers share one health-aware Node 22+ launcher\n  ---\n  duration_ms: 0.4067\n  type: 'test'\n  ...\n# Subtest: Tier 1 closure primitives work together without changing the source project\nok 552 - Tier 1 closure primitives work together without changing the source project\n  ---\n  duration_ms: 2225.5494\n  type: 'test'\n  ...\n# Subtest: Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\nok 553 - Tier 2 domain catalogs cover game-site and TOADAL mechanic requirements\n  ---\n  duration_ms: 14.9974\n  type: 'test'\n  ...\n# Subtest: Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\nok 554 - Tier 2 game web pack completes creation, preview, press, release and reviewer workflows\n  ---\n  duration_ms: 774.3656\n  type: 'test'\n  ...\n# node:internal/modules/package_json_reader:314\n#   throw new ERR_MODULE_NOT_FOUND(packageName, fileURLToPath(base), null);\n#         ^\n# Error [ERR_MODULE_NOT_FOUND]: Cannot find package 'qrcode' imported from C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-10-10\\\\all-right-i-want-you-to\\\\work\\\\studio-render-frozen\\\\tests\\\\tier3-closure.test.ts\n#     at Object.getPackageJSONURL (node:internal/modules/package_json_reader:314:9)\n#     at packageResolve (node:internal/modules/esm/resolve:768:81)\n#     at moduleResolve (node:internal/modules/esm/resolve:855:18)\n#     at defaultResolve (node:internal/modules/esm/resolve:985:11)\n#     at \\#cachedDefaultResolve (node:internal/modules/esm/loader:747:20)\n#     at ModuleLoader.resolve (node:internal/modules/esm/loader:724:38)\n#     at ModuleLoader.getModuleJobForImport (node:internal/modules/esm/loader:320:38)\n#     at ModuleJob._link (node:internal/modules/esm/module_job:182:49) {\n#   code: 'ERR_MODULE_NOT_FOUND'\n# }\n# Node.js v22.23.2\n# Subtest: tests\\\\tier3-closure.test.ts\nnot ok 88 - tests\\\\tier3-closure.test.ts\n  ---\n  duration_ms: 160.4839\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-10-10\\\\all-right-i-want-you-to\\\\work\\\\studio-render-frozen\\\\tests\\\\tier3-closure.test.ts:1:1'\n  failureType: 'testCodeFailure'\n  exitCode: 1\n  signal: ~\n  error: 'test failed'\n  code: 'ERR_TEST_FAILURE'\n  ...\n# Subtest: Tier 4 catalogs and architecture expose the advanced authoring contract\nok 556 - Tier 4 catalogs and architecture expose the advanced authoring contract\n  ---\n  duration_ms: 8.4269\n  type: 'test'\n  ...\n# Subtest: Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\nok 557 - Tier 4 responsive/container, data binding, computed values and state-machine contracts work together\n  ---\n  duration_ms: 394.0216\n  type: 'test'\n  ...\n# Subtest: Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\nnot ok 558 - Tier 4 plugin permissions, scheduler, QA, export and deployment systems close the advanced checkpoint\n  ---\n  duration_ms: 378.1337\n  type: 'test'\n  location: 'C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-10-10\\\\all-right-i-want-you-to\\\\work\\\\studio-render-frozen\\\\tests\\\\tier4-closure.test.ts:33:1'\n  failureType: 'testCodeFailure'\n  error: |-\n    Expected values to be strictly equal:\n    \n    false !== true\n    \n  code: 'ERR_ASSERTION'\n  name: 'AssertionError'\n  expected: true\n  actual: false\n  operator: 'strictEqual'\n  stack: |-\n    TestContext.<anonymous> (file:///C:/Users/Metarator/Documents/Codex/2026-10-10/all-right-i-want-you-to/work/studio-render-frozen/tests/tier4-closure.test.ts:36:270)\n    Test.runInAsyncScope (node:async_hooks:214:14)\n    Test.run (node:internal/test_runner/test:1047:25)\n    Test.processPendingSubtests (node:internal/test_runner/test:744:18)\n    Test.postRun (node:internal/test_runner/test:1173:19)\n    Test.run (node:internal/test_runner/test:1101:12)\n    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)\n  ...\n1..558\n# tests 558\n# suites 0\n# pass 539\n# fail 19\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 110727.6835\n",
+      "stderr": "",
+      "error": null
+    }
+  },
+  "doctor": {
+    "exitCode": 0,
+    "stdout": "{\n  \"ok\": true,\n  \"server\": {\n    \"name\": \"toadal-studio\",\n    \"version\": \"1.4.2\"\n  },\n  \"checks\": [\n    {\n      \"name\": \"config:plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.codex-plugin/plugin.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.vscode/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:.cursor/mcp.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AGENTS.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/OPERATING_CONTRACT.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_MANIFEST.json\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:AI/AI_CAPABILITY_LEDGER.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"config:skills/toadal-studio/SKILL.md\",\n      \"ok\": true,\n      \"details\": \"\"\n    },\n    {\n      \"name\": \"portable-plugin-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"schema\": \"https://agent-plugins.org/schemas/1.0.0/plugin.schema.json\"\n      }\n    },\n    {\n      \"name\": \"portable-mcp-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"server\": {\n          \"type\": \"stdio\",\n          \"command\": \"node\",\n          \"args\": [\n            \"--no-warnings\",\n            \"--experimental-strip-types\",\n            \"apps/mcp/server.ts\"\n          ],\n          \"cwd\": \"./\"\n        }\n      }\n    },\n    {\n      \"name\": \"codex-compat-shape\",\n      \"ok\": true,\n      \"details\": {\n        \"skills\": \"./skills/\",\n        \"mcpServers\": \"./.mcp.json\"\n      }\n    },\n    {\n      \"name\": \"tool-names-unique\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 19\n      }\n    },\n    {\n      \"name\": \"tool-annotations\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"modern-discovery\",\n      \"ok\": true,\n      \"details\": [\n        \"2026-07-28\",\n        \"2025-11-25\"\n      ]\n    },\n    {\n      \"name\": \"legacy-initialize\",\n      \"ok\": true,\n      \"details\": \"2025-11-25\"\n    },\n    {\n      \"name\": \"tools-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 19\n      }\n    },\n    {\n      \"name\": \"tool-call\",\n      \"ok\": true,\n      \"details\": {\n        \"valid\": true,\n        \"errors\": 0,\n        \"warnings\": 0\n      }\n    },\n    {\n      \"name\": \"resource-read\",\n      \"ok\": true,\n      \"details\": {}\n    },\n    {\n      \"name\": \"prompts-list\",\n      \"ok\": true,\n      \"details\": {\n        \"count\": 5\n      }\n    },\n    {\n      \"name\": \"stdio-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=stdio project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-10-10\\\\all-right-i-want-you-to\\\\work\\\\toadal-feast-web\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-process\",\n      \"ok\": true,\n      \"details\": {\n        \"stderr\": \"[toadal-studio-mcp] 1.4.2 transport=http url=http://127.0.0.1:44008/mcp project=C:\\\\Users\\\\Metarator\\\\Documents\\\\Codex\\\\2026-10-10\\\\all-right-i-want-you-to\\\\work\\\\toadal-feast-web\\\\studio-project\\\\toadal-feast-website\\\\project.json\"\n      }\n    },\n    {\n      \"name\": \"http-origin-protection\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 403\n      }\n    },\n    {\n      \"name\": \"http-rate-limit\",\n      \"ok\": true,\n      \"details\": {\n        \"status\": 429\n      }\n    }\n  ]\n}\n",
+    "stderr": ""
+  },
+  "sourceBefore": {
+    "sha256": "732ed4ed02b8e1e2b28320bf38ce0d762a5b5185a167334452f49fa0d47e6fdb",
+    "files": 74
+  },
+  "sourceAfter": {
+    "sha256": "732ed4ed02b8e1e2b28320bf38ce0d762a5b5185a167334452f49fa0d47e6fdb",
+    "files": 74
+  },
+  "sourceUnchanged": true
+}

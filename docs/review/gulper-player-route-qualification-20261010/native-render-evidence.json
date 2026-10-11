@@ -1,0 +1,47 @@
+{
+  "schema": "toadal-feast.native-render-qualification.v1",
+  "status": "PASS",
+  "observedDate": "2026-10-10",
+  "renderer": {
+    "exitCode": 0,
+    "commit": "e859ee2725bb88b236cacf450a69dd304b2d74c9",
+    "tree": "22bb26a9281150b63db46c6e3b34ebc4fa3eb97e",
+    "websiteRoutes": 34,
+    "synchronizedDist": true,
+    "protectedGamesValid": true,
+    "output": "C:\\Users\\Metarator\\Documents\\Codex\\.tmp\\toadal-takeover-candidate-20261010-v7",
+    "checks": [
+      "PAGES BASEPATH CHECK PASS\nHTML files: 36\nBase: /toadal-feast-web/",
+      "STATIC LINK CHECK PASS\nHTML files: 36\nBase: /toadal-feast-web/",
+      "ROBOTS CHECK PASS\nMode: staging\nHTML files: 36",
+      "STATIC LINK CHECK PASS\nHTML files: 70\nBase: /toadal-feast-web/"
+    ]
+  },
+  "fingerprints": {
+    "before": {
+      "source": {
+        "sha256": "1e6337815458087c14537e45a21ce0a86dc38ef78533036d65b14c34cdd9511e",
+        "files": 452
+      },
+      "dist": {
+        "sha256": "adab432459e205ed4d9f878bf5ed92aabe7f91911b669f603425585505c21eb2",
+        "files": 427
+      }
+    },
+    "after": {
+      "source": {
+        "sha256": "1e6337815458087c14537e45a21ce0a86dc38ef78533036d65b14c34cdd9511e",
+        "files": 452
+      },
+      "dist": {
+        "sha256": "51e5e2b3b1b6180f062285a99ba3febb50c83441f9ab1dc0937f02774dc4c40e",
+        "files": 427
+      }
+    }
+  },
+  "route": {
+    "path": "player/claw-feed-gulper/index.html",
+    "htmlSha256": "eee7ee910856a97d2b5fd4b0981a83d73eadf3743069f8f3b17fd0239ee7bad0",
+    "distHtmlSha256": "eee7ee910856a97d2b5fd4b0981a83d73eadf3743069f8f3b17fd0239ee7bad0"
+  }
+}

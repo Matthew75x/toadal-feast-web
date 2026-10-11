@@ -6,6 +6,7 @@ import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import crypto from 'node:crypto';
 import { rewriteCss } from './wo001-pages-basepath.mjs';
+import { readFrozenWebsiteSnapshot } from './lib/frozen-website-snapshot.mjs';
 
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const project=path.join(root,'studio-project','toadal-feast-website');
@@ -60,6 +61,7 @@ test('generated site pages project one cacheable advanced runtime and CSS after 
   assert.equal(fs.readFileSync(path.join(root,'dist','assets','css',cssName),'utf8'),derivedCss);
   assert.equal(fs.readFileSync(path.join(root,'dist','assets','js',jsName),'utf8'),advanced.javascript);
   let count=0;
+  let previewCount=0;
   function walk(dir){
     for(const e of fs.readdirSync(dir,{withFileTypes:true})){
       const p=path.join(dir,e.name);
@@ -72,9 +74,49 @@ test('generated site pages project one cacheable advanced runtime and CSS after 
         assert.equal(html.includes('<script data-toadal-advanced-code>'),false,rel);
         assert.equal(html.includes('/toadal-feast-web/assets/css/'+cssName),true,rel);
         assert.equal(html.includes('/toadal-feast-web/assets/js/'+jsName),true,rel);
-        count++;
+        if(rel.startsWith('previews/cards-phone-20261008/')) previewCount++;
+        else count++;
       }
     }
   }
-  walk(path.join(root,'dist')); assert.equal(count,33);
+  walk(path.join(root,'dist')); assert.equal(count,34);
+  assert.equal(previewCount,0, 'historical diagnostic snapshots are not public staging pages');
+});
+
+test('preserved frozen native phone snapshot keeps its accepted Home image-height correction',()=>{
+  const preview='dist/previews/cards-phone-20261008/';
+  const native=readFrozenWebsiteSnapshot(preview+'assets/css/approved-native-card-phone.css');
+  const selector='body:has(.home-hero) #browser-games [data-game-preview] [data-game-preview-stage] img';
+  const rules=[...native.matchAll(/([^{}]+)\{([^{}]*)\}/g)];
+  const fixed=rules.filter(([,s])=>s.replace(/\/\*[\s\S]*?\*\//g,'').trim()===selector);
+  assert.equal(fixed.length,1);
+  assert.equal(fixed[0][2].trim(),'height: 100%;');
+  // :has adopts .home-hero specificity: repair (1,3,2) > legacy (1,2,2).
+  // Keep this declaration unconditional so every canonical width is covered.
+  assert.equal(native.slice(0,fixed[0].index).replace(/\/\*[\s\S]*?\*\//g,'').split('{').length,
+    native.slice(0,fixed[0].index).replace(/\/\*[\s\S]*?\*\//g,'').split('}').length);
+  const advanced=readFrozenWebsiteSnapshot(preview+'assets/css/advanced-code.2df1f6e8de1a.css');
+  assert.match(advanced,/body:has\(\.home-hero\) #browser-games \.studio-game-card img\s*\{\s*height:120px;/);
+  assert.match(advanced,/body:has\(\.home-hero\) #browser-games \.studio-game-card img\s*\{\s*height:92px;/);
+  assert.match(native,/\[data-game-preview\] \[data-game-preview-stage\] img\s*\{[^}]*height:\s*100%;/);
+});
+
+test('preserved frozen native phone snapshot keeps full-bleed covers, authentic captures, and App exclusion',()=>{
+  const preview='dist/previews/cards-phone-20261008/';
+  const home=readFrozenWebsiteSnapshot(preview+'index.html');
+  assert.match(home,/class=['"]home-hero['"]/);
+  assert.match(home,/id=['"]browser-games['"]/);
+  const images=[...home.matchAll(/<img\b[^>]*\bdata-game-preview-(?:cover|gameplay)(?:\s|=)[^>]*>/g)];
+  assert.equal(images.length,5);
+  for(const [image] of images){
+    assert.match(image,image.includes('data-game-preview-gameplay')?/object-fit:contain/:/object-fit:cover/);
+    assert.match(image,/object-position:50% 50%/);
+  }
+  const stages=[...home.matchAll(/<[^>]*\bdata-game-preview-stage(?:\s|=)[^>]*>/g)];
+  assert.equal(stages.length,3);
+  for(const [stage] of stages) assert.match(stage,/aspect-ratio:16\/9/);
+  for(const page of ['play/index.html','app/index.html']){
+    const html=readFrozenWebsiteSnapshot(preview+page);
+    assert.doesNotMatch(html,/class=['"][^'"]*\bhome-hero\b/);
+  }
 });

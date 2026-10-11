@@ -54,6 +54,9 @@ test('a surviving closure cannot qualify a different source SHA/tree', () => {
   rejects(value => value.latestManifestV1Closure.qualifiedSha = 'a'.repeat(40), /does not bind the recorded qualified SHA\/tree/);
   rejects(value => value.latestManifestV1Closure.qualifiedTree = 'b'.repeat(40), /does not bind the recorded qualified SHA\/tree/);
 });
+test('the October 2 route count stays historical and cannot be rewritten for the current candidate', () => {
+  rejects(value => value.latestManifestV1Closure.routeRecords = 34, /October 2 manifest v1 qualification must remain the original 33-route historical snapshot/);
+});
 test('the updater selects surviving deployment versus qualification evidence and refuses missing files', t => {
   const dir = 'docs/review/manifest-audit-remediation-20261002';
   assert.equal(closureReportPath(root, dir, true), `${dir}/DEPLOYMENT_CLOSURE.md`);

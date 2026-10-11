@@ -1,0 +1,263 @@
+{
+  "schema": "toadal-feast.home-genie-discovery-browser-qa.v1",
+  "status": "PASS",
+  "sourceRoute": "/",
+  "origin": "http://127.0.0.1:8185/toadal-feast-web/",
+  "checks": {
+    "Approved candy art floats gently on desktop without capturing input": {
+      "status": "PASS",
+      "details": {
+        "hiddenFromAccessibility": true,
+        "pointerEvents": "none",
+        "images": [
+          {
+            "alt": "",
+            "loaded": true,
+            "animationName": "home-candy-float",
+            "position": {
+              "x": 677.8338012695312,
+              "y": 313.7182312011719,
+              "width": 33.4417724609375,
+              "height": 33.441741943359375
+            }
+          },
+          {
+            "alt": "",
+            "loaded": true,
+            "animationName": "home-candy-float",
+            "position": {
+              "x": 676.9467163085938,
+              "y": 134.99977111816406,
+              "width": 35.2159423828125,
+              "height": 35.21598815917969
+            }
+          },
+          {
+            "alt": "",
+            "loaded": true,
+            "animationName": "home-candy-float",
+            "position": {
+              "x": 1350.9208984375,
+              "y": 249.78196716308594,
+              "width": 35.048828125,
+              "height": 35.04890441894531
+            }
+          }
+        ]
+      }
+    },
+    "Food float animation stops for reduced-motion preference": {
+      "status": "PASS",
+      "details": [
+        "none",
+        "none",
+        "none"
+      ]
+    },
+    "Three visible, keyboard-accessible Genie controls at desktop width": {
+      "status": "PASS",
+      "details": [
+        {
+          "id": "genie-sweet",
+          "role": "button",
+          "tabIndex": 0,
+          "visible": true,
+          "width": 141.109375,
+          "height": 73.859375,
+          "label": "Discover Sweet Genie artwork"
+        },
+        {
+          "id": "genie-savoury",
+          "role": "button",
+          "tabIndex": 0,
+          "visible": true,
+          "width": 141.109375,
+          "height": 73.859375,
+          "label": "Discover Savoury Genie artwork"
+        },
+        {
+          "id": "genie-fruity",
+          "role": "button",
+          "tabIndex": 0,
+          "visible": true,
+          "width": 141.109375,
+          "height": 73.859375,
+          "label": "Discover Fruity Genie artwork"
+        }
+      ]
+    },
+    "Sweet Genie saves with keyboard through the existing guest discovery record": {
+      "status": "PASS"
+    },
+    "Savoury Genie saves with pointer through the existing guest discovery record": {
+      "status": "PASS"
+    },
+    "Saved status is visible and no second Genie storage key exists": {
+      "status": "PASS",
+      "details": {
+        "discoveryKeys": [
+          "schemaVersion",
+          "updatedAt",
+          "items",
+          "homeInteraction"
+        ],
+        "genieIds": [
+          "character-artwork-genie-sweet",
+          "character-artwork-genie-savoury"
+        ],
+        "statuses": [
+          "Discovered in this browser",
+          "Discovered in this browser",
+          "Not discovered in this browser"
+        ],
+        "disabled": [
+          "true",
+          "true",
+          "false"
+        ],
+        "keys": [
+          "toadal:site:companion:position:v1",
+          "toadal:web:v1:discoveries"
+        ]
+      }
+    },
+    "Decorative food stays out of the compact phone hero": {
+      "status": "PASS",
+      "details": "none"
+    },
+    "Fruity Genie stays visible and touch-sized on a 390px phone": {
+      "status": "PASS",
+      "details": {
+        "width": 114.65625,
+        "height": 92.828125,
+        "visible": true,
+        "left": 255.328125,
+        "right": 369.984375
+      }
+    },
+    "Fruity Genie saves by touch without mobile overflow or a new storage namespace": {
+      "status": "PASS",
+      "details": {
+        "genieIds": [
+          "character-artwork-genie-fruity"
+        ],
+        "statuses": [
+          "Not discovered in this browser",
+          "Not discovered in this browser",
+          "Discovered in this browser"
+        ],
+        "keys": [
+          "toadal:site:companion:position:v1",
+          "toadal:web:v1:discoveries"
+        ],
+        "overflow": false
+      }
+    },
+    "All Genie discovery cards remain usable at 320px without overflow": {
+      "status": "PASS",
+      "details": {
+        "viewport": 320,
+        "width": 320,
+        "cards": [
+          {
+            "id": "genie-sweet",
+            "width": 91.328125,
+            "height": 92.828125,
+            "visible": true
+          },
+          {
+            "id": "genie-savoury",
+            "width": 91.328125,
+            "height": 92.828125,
+            "visible": true
+          },
+          {
+            "id": "genie-fruity",
+            "width": 91.34375,
+            "height": 92.828125,
+            "visible": true
+          }
+        ]
+      }
+    },
+    "Existing Genie discoveries render as saved after reload": {
+      "status": "PASS",
+      "details": [
+        "Not discovered in this browser",
+        "Not discovered in this browser",
+        "Discovered in this browser"
+      ]
+    }
+  },
+  "states": {
+    "desktopAfterPointerAndKeyboard": {
+      "discoveryKeys": [
+        "schemaVersion",
+        "updatedAt",
+        "items",
+        "homeInteraction"
+      ],
+      "genieIds": [
+        "character-artwork-genie-sweet",
+        "character-artwork-genie-savoury"
+      ],
+      "statuses": [
+        "Discovered in this browser",
+        "Discovered in this browser",
+        "Not discovered in this browser"
+      ],
+      "disabled": [
+        "true",
+        "true",
+        "false"
+      ],
+      "keys": [
+        "toadal:site:companion:position:v1",
+        "toadal:web:v1:discoveries"
+      ]
+    },
+    "mobileAfterTouch": {
+      "genieIds": [
+        "character-artwork-genie-fruity"
+      ],
+      "statuses": [
+        "Not discovered in this browser",
+        "Not discovered in this browser",
+        "Discovered in this browser"
+      ],
+      "keys": [
+        "toadal:site:companion:position:v1",
+        "toadal:web:v1:discoveries"
+      ],
+      "overflow": false
+    }
+  },
+  "screenshots": [
+    {
+      "path": "docs/review/genie-discovery-qualification-20261010/screenshots/home-food-float-desktop.png",
+      "sha256": "630a02c18fcf38189ff2f74d74608bf84217e87ca8b9ba48e9f109cdf88ab84d"
+    },
+    {
+      "path": "docs/review/genie-discovery-qualification-20261010/screenshots/home-genies-desktop.png",
+      "sha256": "caf587e2f09f49df3ac52dad12a91e49412d3328007b5dbb3839c932f982b587"
+    },
+    {
+      "path": "docs/review/genie-discovery-qualification-20261010/screenshots/home-genies-desktop-discovered.png",
+      "sha256": "98b6650d2365a1885a85260af67f125b78da51fd3fafbad4727399c5518e5d28"
+    },
+    {
+      "path": "docs/review/genie-discovery-qualification-20261010/screenshots/home-food-float-mobile-390.png",
+      "sha256": "c24c9a25e0aa72ceeae5a571cc70aacd51751e4c4c11bfab45f9aa6987f4d1ee"
+    },
+    {
+      "path": "docs/review/genie-discovery-qualification-20261010/screenshots/home-genies-mobile-390.png",
+      "sha256": "a8a9a722c44063a6d1650e0157a0299c49e70952297c299da948ff999c49eeeb"
+    },
+    {
+      "path": "docs/review/genie-discovery-qualification-20261010/screenshots/home-genies-mobile-320.png",
+      "sha256": "8d8f3e2476aaaf8c671cc7ffa3d7a325d09ae9bec599711f142a695a546f305e"
+    }
+  ],
+  "pageErrors": [],
+  "failureNames": []
+}

@@ -85,7 +85,7 @@
     ['/', '/world/', '/characters/', '/characters/toadal/', '/stories/', '/play/', '/games/wicked-bites/', '/player/wicked-bites/', '/leaderboards/', '/account/'].includes(route);
   var ready = needsProgress ? ensureProgression() : Promise.resolve();
   ready.catch(storageUnavailable);
-  if (['/play/', '/games/wicked-bites/', '/player/wicked-bites/', '/leaderboards/', '/profile/'].includes(route)) {
+  if (['/play/', '/games/wicked-bites/', '/player/wicked-bites/', '/player/claw-feed-gulper/', '/leaderboards/', '/profile/'].includes(route)) {
     ready.then(function () { return load('website-score-adapter.js'); }).catch(storageUnavailable);
   }
   if (['/media/', '/news/', '/news/devlog/', '/roadmap/', '/support/'].includes(route)) {
