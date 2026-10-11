@@ -23,6 +23,7 @@ const expected = Object.freeze({
 const repo = path.resolve(process.env.TOADAL_QA_REPO || process.cwd());
 const output = path.resolve(process.env.TOADAL_QA_OUTPUT || path.join(os.tmpdir(), 'toadal-hosted-gameplay-closeout'));
 const base = process.env.TOADAL_QA_BASE;
+const genuineOnly = process.env.TOADAL_QA_GENUINE_ONLY === '1';
 assert.ok(base, 'TOADAL_QA_BASE is required; run against the frozen dist on the GitHub-hosted runner');
 const baseUrl = new URL(base);
 assert.equal(baseUrl.pathname, '/toadal-feast-web/', 'Unexpected website base path');
@@ -71,6 +72,7 @@ const report = {
   frozenHead: frozen,
   observedAtUtc: new Date().toISOString(),
   base,
+  mode: genuineOnly ? 'GENUINE_ONLY' : 'GENUINE_AND_BOUNDED_SUPPLEMENT',
   scope: 'Fresh browser contexts and ordinary UI links, keyboard or Chromium touch input. No score fixture, game-state mutation, reward injection, payload edits, release, or physical-device claim.',
   expected,
   qaBranchHead: git('rev-parse', 'HEAD'),
@@ -82,6 +84,14 @@ const report = {
   },
   cases: [],
   status: 'RUNNING',
+};
+if (genuineOnly) report.reusedSupplement = {
+  runId: 38109235044,
+  qaBranchHead: '8d58d7c74e8bceb3bd47b6ab2d3e31bb97d643f8',
+  frozenProductHead: frozen,
+  caseName: 'bounded-supplement-1440',
+  caseStatus: 'PASS',
+  note: 'This run does not repeat the prior hosted held-route/artwork supplement. The earlier run failed its genuine journeys; only its independently passing bounded supplement may be considered with its own custody receipt.',
 };
 function save() { fs.writeFileSync(path.join(output, 'report.json'), JSON.stringify(report, null, 2) + '\n'); }
 let browser;
@@ -179,10 +189,9 @@ try {
       await page.locator('[data-player-frame]').scrollIntoViewIfNeeded();
       await click(frame.locator('#wbPlay'));
       await frame.locator('#wbStart').waitFor({state: 'hidden'});
-      await page.waitForFunction(() => {
-        const score = document.querySelector('[data-score-current]');
-        return Boolean(score && score.textContent !== 'Waiting for a run');
-      });
+      await page.waitForFunction(() => window.__observedGameMessages.some(message =>
+        message.origin === 'null' && message.gameId === 'wicked-bites' && message.type === 'game:started'));
+      row.checks.push({check: 'genuine-game-started-before-input', status: 'observed'});
       if (mobile) {
         const cdp = await context.newCDPSession(page);
         try {
@@ -367,7 +376,7 @@ try {
 
   await genuineJourney({width: 1440, height: 900});
   await genuineJourney({width: 390, height: 844});
-  await boundedSupplement();
+  if (!genuineOnly) await boundedSupplement();
   assert.ok(report.cases.every(item => item.status === 'PASS'), 'One or more exact-head hosted browser cases failed');
   status = 'PASS';
 } catch (error) {

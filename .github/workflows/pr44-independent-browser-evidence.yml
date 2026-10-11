@@ -51,6 +51,7 @@ jobs:
           TOADAL_QA_REPO: ${{ github.workspace }}
           TOADAL_QA_OUTPUT: ${{ runner.temp }}/pr44-gameplay-evidence
           TOADAL_QA_BASE: http://127.0.0.1:8147/toadal-feast-web/
+          TOADAL_QA_GENUINE_ONLY: '1'
         run: |
           set -euo pipefail
           node scripts/serve-qualified-dist.mjs dist 8147 > "$TOADAL_QA_OUTPUT/site-server.log" 2>&1 &
