@@ -21,14 +21,15 @@ test('Play artwork uses the same ratio with status chips outside the title art',
  for(const frame of frames){assert.equal(frame.props.aspectRatio,'16/9');assert.ok(!walk(frame).some(n=>/^chip\b/.test(n.props.className)));}
  assert.match(css,/\.wo002-game-library \.play-card\.studio-game-card\.module \{ grid-template-columns:minmax\(0,1fr\)/);
 });
-test('Feed Gulper keeps authentic gameplay in its playable preview link and retains game details',()=>{
+test('held Feed Gulper preserves authentic gameplay art and game details without offering launch',()=>{
  const card=home.find(n=>n.id==='component.home.game.claw-feed-gulper');assert.equal(card.props.tag,'article');
  const ns=walk(card),get=attr=>ns.find(n=>Object.hasOwn(n.props.attributes||{},attr));
  assert.match(get('data-game-preview-cover').props.alt,/promotional.*not gameplay/);
  assert.equal(get('data-game-preview-gameplay').props.asset,'asset.home.game.claw-feed-gulper-preview');assert.equal(get('data-game-preview-gameplay').props.fit,'contain');
- assert.equal(get('data-game-preview-toggle').props.tag,'button');assert.equal(get('data-game-preview-link').props.tag,'a');assert.equal(get('data-game-preview-link').props.href,'/player/claw-feed-gulper/');
+ assert.equal(get('data-game-preview-toggle').props.tag,'button');assert.equal(get('data-game-preview-link'),undefined);
+ assert.ok(!ns.some(n=>n.props.href==='/player/claw-feed-gulper/'));
  assert.ok(ns.some(n=>n.props.href==='/games/claw-feed-gulper/'),'the ordinary detail destination remains available');
- assert.ok(ns.some(n=>/sandboxed browser preview/i.test(n.props.text||'')),'preview scope and local-save limits stay explicit');
+ assert.ok(ns.some(n=>/Browser preview unavailable/i.test(n.props.text||'')),'held availability stays explicit');
  assert.match(css,/\[data-game-preview-toggle\] \{\s*position:relative; top:auto; right:auto;/);
 });
 test('generated Gulper artwork is versioned as promotion while source gameplay stays hash-pinned',()=>{

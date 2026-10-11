@@ -1,0 +1,2053 @@
+{
+  "schema": "toadal-feast.gulper-held-route-browser-qa.v1",
+  "status": "PASS",
+  "observedDate": "2026-10-10",
+  "observedAtUtc": "2026-10-11T02:34:01.591Z",
+  "origin": "http://127.0.0.1:58170/toadal-feast-web/",
+  "browserVersion": "154.0.8037.99",
+  "scope": "Installed Chrome viewport/touch emulation. Static source/output and actual UI controls; no game payload executed on held CLAW route, no production publication and no physical-device claim.",
+  "routeDisposition": "LAUNCH_HELD_NO_IFRAME",
+  "inputFingerprint": {
+    "source": {
+      "sha256": "1e0b5173cf9ddce212df345533f29b14f124ff033a1b00741bd9688f497cfe7d",
+      "files": 455
+    },
+    "dist": {
+      "sha256": "874dda2840d3dee33ee9583bf0b7ee265ed3f8ba08e4160a501ad810ae749bb2",
+      "files": 165
+    }
+  },
+  "inputFingerprintAfter": {
+    "source": {
+      "sha256": "1e0b5173cf9ddce212df345533f29b14f124ff033a1b00741bd9688f497cfe7d",
+      "files": 455
+    },
+    "dist": {
+      "sha256": "874dda2840d3dee33ee9583bf0b7ee265ed3f8ba08e4160a501ad810ae749bb2",
+      "files": 165
+    }
+  },
+  "sourceUnchanged": true,
+  "checks": {
+    "desktop": "PASS",
+    "mobile": "PASS",
+    "navigation": "PASS",
+    "crownAbsence": "PASS",
+    "canonicalCharacterArtwork": "PASS",
+    "buildIdentity": "PASS"
+  },
+  "cases": [
+    {
+      "name": "home-1440",
+      "route": "",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "01808250459e8f22a8b1e9eda66b90621676746fa563d508a86186cca96f9b7a",
+      "initial": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": null,
+          "rect": {
+            "left": 378,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hidden": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterHiddenReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "restored": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 378,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterRestoredReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 378,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "play-1440",
+      "route": "play/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "bcdd29e49d8dc776b1e3923337588675722c186445080708383a7b9d9e96f21c",
+      "initial": {
+        "title": "Play browser games · TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 392,
+            "top": 7,
+            "width": 52,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "world-1440",
+      "route": "world/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "69e3b5377c088b49b785a36143ad93834f900b426e0aabb3f6e88c6c15492eb2",
+      "initial": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 1286,
+            "top": 566,
+            "width": 142,
+            "height": 142
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "mobileCaption": {
+        "text": "Captured from the mobile game",
+        "caption": {
+          "left": 80.640625,
+          "right": 453.609375,
+          "top": 535.65625,
+          "bottom": 561.25
+        },
+        "panel": {
+          "left": 44.640625,
+          "right": 1395.359375,
+          "top": 319.65625,
+          "bottom": 597.25
+        },
+        "contained": true
+      },
+      "hidden": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterHiddenReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "restored": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 1286,
+            "top": 566,
+            "width": 142,
+            "height": 142
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterRestoredReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 1286,
+            "top": 566,
+            "width": 142,
+            "height": 142
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "characters-1440",
+      "route": "characters/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "7e9dd4b144ee776470eae66b6c0095dd2be8d071a22e3ce0c05de3dcdba457bd",
+      "initial": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 1286,
+            "top": 566,
+            "width": 142,
+            "height": 142
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "feast-pass-1440",
+      "route": "feast-pass/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "260dabfdbfa0438716cfc535d00bd1cf22263b0952b71640ec8fd8bda4a6c6a0",
+      "initial": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 1328,
+            "top": 598,
+            "width": 100,
+            "height": 110
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "claw-details-1440",
+      "route": "games/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "e1f54a130ac83765d1ca57b067bb6a79427d9fbe596baaafa56c7c95cf220b08",
+      "initial": {
+        "title": "CLAW: Feed Gulper · TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 1286,
+            "top": 450,
+            "width": 142,
+            "height": 142
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "launchHeld": true
+    },
+    {
+      "name": "claw-held-1440",
+      "route": "player/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "92c1a4195e4b36bb6791b4e934a9efb36bd711349e36311c30ee92ffa57b4422",
+      "initial": {
+        "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+        "documentWidth": 1440,
+        "viewport": 1440,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 1286,
+            "top": 566,
+            "width": 142,
+            "height": 142
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "backLink": "/toadal-feast-web/games/claw-feed-gulper/",
+      "backNavigation": "PASS"
+    },
+    {
+      "name": "home-768",
+      "route": "",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "01808250459e8f22a8b1e9eda66b90621676746fa563d508a86186cca96f9b7a",
+      "initial": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": null,
+          "rect": {
+            "left": 373,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hidden": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterHiddenReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "restored": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 373,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterRestoredReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 373,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "play-768",
+      "route": "play/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "bcdd29e49d8dc776b1e3923337588675722c186445080708383a7b9d9e96f21c",
+      "initial": {
+        "title": "Play browser games · TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "world-768",
+      "route": "world/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "69e3b5377c088b49b785a36143ad93834f900b426e0aabb3f6e88c6c15492eb2",
+      "initial": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "mobileCaption": {
+        "text": "Captured from the mobile game",
+        "caption": {
+          "left": 59.8125,
+          "right": 237.15625,
+          "top": 556.453125,
+          "bottom": 607.640625
+        },
+        "panel": {
+          "left": 23.8125,
+          "right": 744.1875,
+          "top": 340.453125,
+          "bottom": 643.640625
+        },
+        "contained": true
+      },
+      "hidden": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterHiddenReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "restored": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterRestoredReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "characters-768",
+      "route": "characters/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "7e9dd4b144ee776470eae66b6c0095dd2be8d071a22e3ce0c05de3dcdba457bd",
+      "initial": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "feast-pass-768",
+      "route": "feast-pass/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "260dabfdbfa0438716cfc535d00bd1cf22263b0952b71640ec8fd8bda4a6c6a0",
+      "initial": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "claw-details-768",
+      "route": "games/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "e1f54a130ac83765d1ca57b067bb6a79427d9fbe596baaafa56c7c95cf220b08",
+      "initial": {
+        "title": "CLAW: Feed Gulper · TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "launchHeld": true
+    },
+    {
+      "name": "claw-held-768",
+      "route": "player/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "92c1a4195e4b36bb6791b4e934a9efb36bd711349e36311c30ee92ffa57b4422",
+      "initial": {
+        "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+        "documentWidth": 768,
+        "viewport": 768,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 354,
+            "top": 9,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "backLink": "/toadal-feast-web/games/claw-feed-gulper/",
+      "backNavigation": "PASS"
+    },
+    {
+      "name": "home-390",
+      "route": "",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "01808250459e8f22a8b1e9eda66b90621676746fa563d508a86186cca96f9b7a",
+      "initial": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": null,
+          "rect": {
+            "left": 172,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hidden": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterHiddenReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "restored": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 172,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterRestoredReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 172,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "play-390",
+      "route": "play/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "bcdd29e49d8dc776b1e3923337588675722c186445080708383a7b9d9e96f21c",
+      "initial": {
+        "title": "Play browser games · TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "world-390",
+      "route": "world/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "69e3b5377c088b49b785a36143ad93834f900b426e0aabb3f6e88c6c15492eb2",
+      "initial": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "mobileCaption": {
+        "text": "Captured from the mobile game",
+        "caption": {
+          "left": 46,
+          "right": 344,
+          "top": 447.640625,
+          "bottom": 470.03125
+        },
+        "panel": {
+          "left": 16,
+          "right": 374,
+          "top": 253.640625,
+          "bottom": 722.140625
+        },
+        "contained": true
+      },
+      "hidden": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterHiddenReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "restored": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterRestoredReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "characters-390",
+      "route": "characters/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "7e9dd4b144ee776470eae66b6c0095dd2be8d071a22e3ce0c05de3dcdba457bd",
+      "initial": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "feast-pass-390",
+      "route": "feast-pass/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "260dabfdbfa0438716cfc535d00bd1cf22263b0952b71640ec8fd8bda4a6c6a0",
+      "initial": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "claw-details-390",
+      "route": "games/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "e1f54a130ac83765d1ca57b067bb6a79427d9fbe596baaafa56c7c95cf220b08",
+      "initial": {
+        "title": "CLAW: Feed Gulper · TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "launchHeld": true
+    },
+    {
+      "name": "claw-held-390",
+      "route": "player/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "92c1a4195e4b36bb6791b4e934a9efb36bd711349e36311c30ee92ffa57b4422",
+      "initial": {
+        "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+        "documentWidth": 390,
+        "viewport": 390,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 153,
+            "top": 6,
+            "width": 102,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "backLink": "/toadal-feast-web/games/claw-feed-gulper/",
+      "backNavigation": "PASS"
+    },
+    {
+      "name": "home-320",
+      "route": "",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "01808250459e8f22a8b1e9eda66b90621676746fa563d508a86186cca96f9b7a",
+      "initial": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": null,
+          "rect": {
+            "left": 137,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hidden": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterHiddenReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "restored": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 137,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "afterRestoredReload": {
+        "title": "TOADAL FEAST — Play the Feast World for Free",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 137,
+            "top": 4,
+            "width": 64,
+            "height": 64
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "play-320",
+      "route": "play/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "bcdd29e49d8dc776b1e3923337588675722c186445080708383a7b9d9e96f21c",
+      "initial": {
+        "title": "Play browser games · TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "world-320",
+      "route": "world/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "69e3b5377c088b49b785a36143ad93834f900b426e0aabb3f6e88c6c15492eb2",
+      "initial": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "mobileCaption": {
+        "text": "Captured from the mobile game",
+        "caption": {
+          "left": 46,
+          "right": 274,
+          "top": 415.0625,
+          "bottom": 459.84375
+        },
+        "panel": {
+          "left": 16,
+          "right": 304,
+          "top": 221.0625,
+          "bottom": 762.21875
+        },
+        "contained": true
+      },
+      "hidden": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterHiddenReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": true,
+          "minimized": "true",
+          "visible": false,
+          "storedHidden": "true",
+          "rect": null,
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "restored": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "afterRestoredReload": {
+        "title": "The Feast World — TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "hideRestorePersistence": "PASS"
+    },
+    {
+      "name": "characters-320",
+      "route": "characters/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "7e9dd4b144ee776470eae66b6c0095dd2be8d071a22e3ce0c05de3dcdba457bd",
+      "initial": {
+        "title": "Characters Hub - TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "feast-pass-320",
+      "route": "feast-pass/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "260dabfdbfa0438716cfc535d00bd1cf22263b0952b71640ec8fd8bda4a6c6a0",
+      "initial": {
+        "title": "Feast Pass · TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      }
+    },
+    {
+      "name": "claw-details-320",
+      "route": "games/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "e1f54a130ac83765d1ca57b067bb6a79427d9fbe596baaafa56c7c95cf220b08",
+      "initial": {
+        "title": "CLAW: Feed Gulper · TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": false
+      },
+      "launchHeld": true
+    },
+    {
+      "name": "claw-held-320",
+      "route": "player/claw-feed-gulper/",
+      "status": "PASS",
+      "errors": [],
+      "unadmittedRequests": [],
+      "servedHtmlSha256": "92c1a4195e4b36bb6791b4e934a9efb36bd711349e36311c30ee92ffa57b4422",
+      "initial": {
+        "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+        "documentWidth": 320,
+        "viewport": 320,
+        "horizontalOverflow": false,
+        "brokenImages": [],
+        "crownGlyph": false,
+        "brand": {
+          "src": "/toadal-feast-web/assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+          "width": 1448,
+          "height": 1086,
+          "visible": true
+        },
+        "companion": {
+          "hidden": false,
+          "minimized": "true",
+          "visible": true,
+          "storedHidden": "false",
+          "rect": {
+            "left": 123,
+            "top": 6,
+            "width": 92,
+            "height": 52
+          },
+          "overlaps": []
+        },
+        "iframeCount": 0,
+        "heldCopy": true
+      },
+      "backLink": "/toadal-feast-web/games/claw-feed-gulper/",
+      "backNavigation": "PASS"
+    }
+  ],
+  "canonicalCharacterArtwork": {
+    "images": [
+      {
+        "src": "http://127.0.0.1:58170/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+        "width": 611,
+        "height": 640,
+        "alt": "Toadal, the crowned golden Feast hero wearing a red scarf",
+        "visible": true,
+        "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+      },
+      {
+        "src": "http://127.0.0.1:58170/toadal-feast-web/assets/images/characters/toadal-victory.webp",
+        "width": 611,
+        "height": 640,
+        "alt": "Toadal victory artwork",
+        "visible": true,
+        "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+      },
+      {
+        "src": "http://127.0.0.1:58170/toadal-feast-web/assets/images/characters/toadal-portrait.webp",
+        "width": 256,
+        "height": 256,
+        "alt": "Toadal portrait artwork",
+        "visible": true,
+        "servedSha256": "b44601a13ec88ef529c17dad6be4bbabcfce8dc49a4e337a3a6af442056d5512"
+      }
+    ],
+    "authoritySha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
+    "exportedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
+  },
+  "screenshots": [
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-1440.png",
+      "sha256": "90549bf20e6653f4914a690d23613ed7720d2663ee9d54ac43ed36bf11977a16"
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-390.png",
+      "sha256": "5fca0c9ccc7b2413869dd3b52509408f409f4341cb6f13fc892e0ce3e4069a03"
+    },
+    {
+      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/canonical-toadal-artwork-1440.png",
+      "sha256": "cc65fa824af01df7883109d9f7630bb2902538a78076a5a78ba161c8fd04558d"
+    }
+  ]
+}

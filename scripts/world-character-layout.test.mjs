@@ -30,11 +30,11 @@ test('Characters scenic H1 uses the existing light palette without recoloring li
   assert.equal(heading[0].props.style, '');
 });
 
-test('canonical and preview World/Characters pages use the same newly generated stylesheet', () => {
+test('current World and Characters pages use the same newly generated stylesheet', () => {
   const paths = ['world/index.html', 'characters/index.html'];
   let shared;
-  for (const route of paths) for (const prefix of ['', 'previews/cards-phone-20261008/']) {
-    const html = fs.readFileSync(path.join(root, 'dist', prefix, route), 'utf8');
+  for (const route of paths) {
+    const html = fs.readFileSync(path.join(root, 'dist', route), 'utf8');
     const match = html.match(/data-toadal-advanced-code href="([^"]+)"/);
     assert.ok(match, route);
     assert.equal(match[1], shared ||= match[1]);

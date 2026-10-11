@@ -98,16 +98,15 @@ function harness({ route = profileSelector, manual = false, controls = [], note 
   return context;
 }
 
-test('Profile copy uses the editable native truth-note and identical generated runtime mirrors', () => {
+test('Profile copy uses the editable native truth-note and the current generated runtime', () => {
   const profile = JSON.parse(fs.readFileSync(path.join(repo, 'studio-project/toadal-feast-website/pages/profile.json'), 'utf8'));
   const collect = value => Array.isArray(value) ? value.flatMap(collect) : value && typeof value === 'object' ?
     [value, ...Object.values(value).flatMap(collect)] : [];
   const note = collect(profile).find(value => value.id === 'component.guest-profile.rich-text.f51d1d081ac2.progression-truth-note');
   assert.equal(note.type, 'core.text');
   assert.equal(note.props.className, 'progression-truth-note');
-  for (const mirror of ['dist/assets/js/companion-position.js', 'dist/previews/cards-phone-20261008/assets/js/companion-position.js']) {
-    assert.equal(fs.readFileSync(path.join(repo, mirror), 'utf8'), source, mirror);
-  }
+  const mirror = 'dist/assets/js/companion-position.js';
+  assert.equal(fs.readFileSync(path.join(repo, mirror), 'utf8'), source, mirror);
 });
 
 test('existing collector stays unchanged; automatic Profile copy protection bypasses manual and header-only placement', () => {
@@ -463,6 +462,26 @@ test('header-only controls and unrelated routes retain their preexisting collisi
     if (existing) assert.ok(selectors.includes(existing), route + ' existing protection');
     assert.deepEqual(plain(other.avoidProfileCopy(observed)), observed, route + ' unchanged open placement');
   }
+});
+
+test('automatic game detail placement leaves explanatory copy and facts clear without changing header-only docking', () => {
+  const fact = rect(1120, 620, 230, 100), copy = rect(140, 230, 700, 340), head = rect(20, 10, 100, 40);
+  const h = harness({ route: '.wo002-detail-page', width: 1440, height: 900, rootWidth: 152, rootHeight: 142 });
+  const element = (bounds, inHeader = false) => ({ getBoundingClientRect: () => bounds, inHeader });
+  h.document.querySelectorAll = selector => {
+    h.queries.push(selector);
+    return [element(head, true),
+      ...(selector.includes('.wo002-detail-copy') ? [element(copy)] : []),
+      ...(selector.includes('.detail-fact') ? [element(fact)] : [])];
+  };
+  const preferred = { x: 1268, y: 620 };
+  assert.ok(area(preferred, fact, 152, 142) > 0, 'the fixture begins with obscured detail facts');
+  h.applyPosition(preferred.x, preferred.y, false);
+  assert.equal(area({ x: h.x, y: h.y }, fact, 152, 142, 12), 0);
+  assert.equal(area({ x: h.x, y: h.y }, copy, 152, 142, 12), 0);
+  assert.equal(h.writes.length, 0, 'automatic repositioning does not persist a manual position');
+  assert.deepEqual(plain(h.controlRects(false, true)), [head]);
+  assert.ok(!h.queries.at(-1).includes('.detail-fact'), 'header-only docking ignores detail facts');
 });
 
 test('offscreen note, viewport resize and longer editable note use current measured bounds', () => {

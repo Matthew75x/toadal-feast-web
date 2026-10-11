@@ -172,10 +172,9 @@ function assertPrimaryWidthRule(css) {
   assert.match(rule, /min-height:\s*44px/);
 }
 
-test('Home Feast Pass primary CTA selector matches root and base-path preview exports', () => {
+test('Home Feast Pass primary CTA selector matches the current base-path staging export', () => {
   const exports = [
-    { name: 'root export', file: path.join(root, 'dist', 'index.html'), href: '/toadal-feast-web/feast-pass/' },
-    { name: 'cards-phone preview export', file: path.join(root, 'dist', 'previews', 'cards-phone-20261008', 'index.html'), href: '/toadal-feast-web/previews/cards-phone-20261008/feast-pass/' }
+    { name: 'current staging export', file: path.join(root, 'dist', 'index.html'), href: '/toadal-feast-web/feast-pass/' }
   ];
   for (const item of exports) {
     const html = fs.readFileSync(item.file, 'utf8');

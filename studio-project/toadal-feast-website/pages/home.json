@@ -60,7 +60,7 @@
               "className": "home-hero",
               "attributes": {
                 "data-companion-context": "hero",
-                "data-companion-copy": "The Play directory has isolated browser previews of Wicked Bites and CLAW: Feed Gulper. Neither is a public release.",
+                "data-companion-copy": "Try the isolated Wicked Bites browser preview. Other adventures are not available to play yet.",
                 "data-companion-reaction": "welcome"
               },
               "style": "",
@@ -238,7 +238,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Wicked Bites and CLAW: Feed Gulper are isolated browser previews, not public releases.",
-                                "text": "Try Wicked Bites or CLAW: Feed Gulper in isolated browser previews. Neither is a public release."
+                                "text": "Try Wicked Bites in an isolated browser preview. More adventures are on the way."
                               }
                             },
                             {
@@ -262,7 +262,7 @@
                                       "className": "button-link button-link--primary",
                                       "attributes": {
                                         "data-companion-action": "true",
-                                        "data-companion-action-copy": "Wicked Bites and CLAW: Feed Gulper open as isolated previews. The other two listings are concepts; none is PUBLIC."
+                                        "data-companion-action-copy": "Wicked Bites opens as an isolated preview. Other adventures are not available to play yet."
                                       },
                                       "style": "",
                                       "layerName": "Explore browser games →",
@@ -667,7 +667,7 @@
                     "className": "home-section-inner",
                     "attributes": {
                       "data-companion-context": "browser-games",
-                      "data-companion-copy": "Wicked Bites and CLAW: Feed Gulper are playable staging previews; the other two listings are concepts.",
+                      "data-companion-copy": "Wicked Bites is playable as a browser preview. Gulper’s adventure and the other games are still being prepared.",
                       "data-companion-reaction": "excited"
                     },
                     "style": "",
@@ -710,7 +710,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "Wicked Bites and CLAW: Feed Gulper are sandboxed browser previews; two games are concepts.",
-                          "text": "Wicked Bites and CLAW: Feed Gulper are sandboxed browser previews; two games are concepts. No browser game is a public release yet."
+                          "text": "Try the Wicked Bites browser preview, then discover what’s coming next. Other games are not available to play yet."
                         }
                       },
                       {
@@ -878,7 +878,7 @@
                           "className": "button-link button-link--secondary home-play-directory-link",
                           "attributes": {
                             "data-companion-action": "true",
-                            "data-companion-action-copy": "The Play directory has two staging previews and two concept listings. No browser game has a public release."
+                            "data-companion-action-copy": "The Play directory has one playable browser preview and three upcoming adventures. No browser game has a public release."
                           },
                           "style": "",
                           "layerName": "See all browser previews →",
@@ -1544,7 +1544,7 @@
                           "attributes": {},
                           "style": "",
                           "layerName": "Try CLAW in a sandboxed browser preview. Saves stay in this browser; account sync and global ran",
-                          "text": "Try CLAW in a sandboxed browser preview. Saves stay in this browser; account sync and global rankings are off."
+                          "text": "A hungry new adventure is on the way. Browser play is not available yet."
                         }
                       },
                       {
@@ -1624,19 +1624,15 @@
                             },
                             {
                               "id": "component.home.game.claw-feed-gulper.preview.link",
-                              "type": "core.button",
+                              "type": "core.text",
                               "props": {
                                 "authoringVersion": 1,
-                                "tag": "a",
-                                "className": "button-link button-link--primary",
-                                "attributes": {
-                                  "data-game-preview-link": "",
-                                  "aria-label": "Play CLAW: Feed Gulper browser preview"
-                                },
+                                "tag": "span",
+                                "className": "chip preview",
+                                "attributes": {},
                                 "style": "",
-                                "layerName": "Play browser preview →",
-                                "href": "/player/claw-feed-gulper/",
-                                "label": "Play browser preview →"
+                                "layerName": "Browser preview unavailable",
+                                "text": "Browser preview unavailable"
                               }
                             },
                             {
@@ -1672,8 +1668,8 @@
                             "aria-live": "polite"
                           },
                           "style": "",
-                          "layerName": "Preview only · No account sync.",
-                          "text": "Preview only · No account sync."
+                          "layerName": "Browser play unavailable · More to come.",
+                          "text": "Browser play unavailable · More to come."
                         }
                       }
                     ]
@@ -4161,7 +4157,7 @@
                       },
                       {
                         "url": "/assets/js/guest-progression.js",
-                        "sha256": "baa82c9aa41b024f9b6dff58beade76c9f6e3625e6dcfffd28b81443ecf9f352"
+                        "sha256": "5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338"
                       },
                       {
                         "url": "/assets/js/manifest-shell.js",
@@ -5028,7 +5024,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Four listings remain PREVIEW. Wicked Bites and CLAW: Feed Gulper are playable isolated browser previews.",
-                                "text": "Wicked Bites and CLAW: Feed Gulper are playable browser previews. The other two listings are concepts; no browser game is a public release."
+                                "text": "Wicked Bites is available as a browser preview. CLAW: Feed Gulper and the other adventures are not available to play yet."
                               }
                             }
                           ]
@@ -5436,7 +5432,7 @@
                           },
                           "style": "",
                           "layerName": "The Play directory has isolated previews for Wicked Bites and CLAW: Feed Gulper.",
-                          "text": "Try Wicked Bites or CLAW: Feed Gulper in a browser preview, or discover the world."
+                          "text": "Try the Wicked Bites browser preview, or discover the Feast World."
                         }
                       }
                     ]

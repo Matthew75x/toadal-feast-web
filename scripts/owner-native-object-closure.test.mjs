@@ -250,7 +250,10 @@ test('current approved preview cards preserve separate toggle, registered detail
   const gulper = cards.find(card => card.props.gameId === 'game.claw-feed-gulper');
   const gulperLinks = all([gulper]).filter(node => node.props?.tag === 'a');
   assert.equal(gulperLinks.filter(node => node.props.href === '/games/claw-feed-gulper/' && Object.hasOwn(node.props.attributes || {}, 'data-game-preview-details')).length, 1);
-  assert.equal(gulperLinks.filter(node => node.props.href === '/player/claw-feed-gulper/' && Object.hasOwn(node.props.attributes || {}, 'data-game-preview-link')).length, 1);
+  assert.equal(gulperLinks.filter(node => node.props.href === '/player/claw-feed-gulper/').length, 0,
+    'the public Home card does not offer a held cartridge launch');
+  assert.ok(all([gulper]).some(node => node.type === 'core.text' && node.props.text === 'Browser preview unavailable'),
+    'the editable Home card states its actual public availability');
 });
 
 test('native preview closure rejects extra links, off-registry destinations and unregistered covers', () => {

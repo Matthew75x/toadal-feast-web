@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { readFile } from 'node:fs/promises';
+import { access, readFile } from 'node:fs/promises';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
 import { ConversionError, convertHtml, inspectHtml, OWNER_TAGS, RUNTIME_EXCEPTIONS } from './convert-owner-native.mjs';
+import { readFrozenWebsiteSnapshot } from './lib/frozen-website-snapshot.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const project = path.resolve(here, '../studio-project/toadal-feast-website');
@@ -15,6 +16,28 @@ const runtimePropKeys = [
   'html', 'runtimeOnly', 'readOnly', 'locked', 'runtimeVersion', 'runtimeKind',
   'runtimeSha256', 'runtimeCodeResources', 'runtimePolicy', 'layerName',
 ];
+const heldRule = RUNTIME_EXCEPTIONS.find(rule => rule.route === '/player/claw-feed-gulper/');
+const activeRules = RUNTIME_EXCEPTIONS.filter(rule => rule !== heldRule);
+
+function getFrozenHeldLeaf() {
+  const page = JSON.parse(readFrozenWebsiteSnapshot('studio-project/toadal-feast-website/pages/player-claw-feed-gulper.json'));
+  const leaves = [];
+  const visit = items => {
+    for (const component of items ?? []) {
+      if (component.props?.runtimeOnly === true) leaves.push({ component, page });
+      visit(component.props?.children);
+      for (const children of Object.values(component.props?.slots ?? {})) visit(children);
+    }
+  };
+  visit(page.components);
+  assert.equal(leaves.length, 1, 'the exact accepted Git snapshot preserves the historical isolated frame');
+  assertCurrentRuntimeLeaf(leaves[0], heldRule);
+  return leaves[0];
+}
+
+async function getKnownRuntimeLeaves() {
+  return [...await getRuntimeLeaves(), getFrozenHeldLeaf()];
+}
 
 async function getRuntimeLeaves() {
   const manifest = JSON.parse(await readFile(path.join(project, 'project.json'), 'utf8'));
@@ -68,10 +91,14 @@ function assertCurrentRuntimeLeaf(leaf, rule) {
   return props.html;
 }
 
-test('all pages retain exactly the four registered, locked runtime leaves with original fragments and exact resource policies', async () => {
+test('current pages retain three exact locked runtime leaves while the fourth held frame remains in its frozen accepted snapshot', async () => {
   const leaves = await getRuntimeLeaves();
-  assert.equal(leaves.length, RUNTIME_EXCEPTIONS.length);
-  const unmatched = [...RUNTIME_EXCEPTIONS];
+  assert.equal(RUNTIME_EXCEPTIONS.length, 4, 'all four accepted runtime policies remain preserved');
+  assert.equal(activeRules.length, 3);
+  assert.equal(leaves.length, activeRules.length);
+  assert.ok(leaves.every(leaf => leaf.page.route !== heldRule.route), 'the held player is currently an editable availability page');
+  getFrozenHeldLeaf();
+  const unmatched = [...activeRules];
   for (const leaf of leaves) {
     const ruleIndex = unmatched.findIndex((rule) => leaf.page.route === rule.route && leaf.component.id.startsWith(`${rule.componentId}.`));
     assert.notEqual(ruleIndex, -1, `runtime leaf is registered to its exact route and original parent: ${leaf.page.route} ${leaf.component.id}`);
@@ -94,12 +121,12 @@ test('all pages retain exactly the four registered, locked runtime leaves with o
       assert.doesNotMatch(html, /\bsrc\s*=/i, 'runtime supplies the selected page asset and alternative text');
     }
   }
-  assert.deepEqual(unmatched, [], 'every registered exception has exactly one persisted leaf');
+  assert.deepEqual(unmatched, [], 'every active registered exception has exactly one persisted leaf');
 });
 
 test('exact registered fragments convert while preserving their runtime leaf data and Studio tag set', async () => {
   for (const tag of ['caption', 'progress', 'tfoot']) assert.ok(ownerTags.has(tag));
-  const leaves = await getRuntimeLeaves();
+  const leaves = await getKnownRuntimeLeaves();
   for (const rule of RUNTIME_EXCEPTIONS) {
     const leaf = leaves.find(({ page, component }) => page.route === rule.route && component.id.startsWith(`${rule.componentId}.`));
     assert.ok(leaf, `found ${rule.kind} on ${rule.route}`);
@@ -129,7 +156,7 @@ test('exact registered fragments convert while preserving their runtime leaf dat
 });
 
 test('unregistered, wrong-route, wrong-parent, altered-fragment, and altered-version inputs fail closed', async () => {
-  const leaves = await getRuntimeLeaves();
+  const leaves = await getKnownRuntimeLeaves();
   for (const rule of RUNTIME_EXCEPTIONS) {
     const leaf = leaves.find(({ page, component }) => page.route === rule.route && component.id.startsWith(`${rule.componentId}.`));
     assert.ok(leaf);
@@ -153,11 +180,15 @@ test('the owner tag allowlist covers the actual Studio caption, progress, and tf
   }
 });
 
-test('registered runtime code-resource pins match exact current native and canonical export bytes', async () => {
+test('all registered runtime pins preserve exact private bytes and only active runtimes appear in the public export', async () => {
   for (const rule of RUNTIME_EXCEPTIONS) for (const resource of rule.policy.codeResources) {
     const source = await readFile(path.join(project, 'reference', resource.source));
-    const published = await readFile(path.resolve(here, '../dist', resource.source));
     assert.equal(createHash('sha256').update(source).digest('hex'), resource.sha256, `${resource.source} native source pin`);
+    if (rule === heldRule) {
+      await assert.rejects(access(path.resolve(here, '../dist', resource.source)), { code: 'ENOENT' }, 'held runtime payload remains excluded from public staging');
+      continue;
+    }
+    const published = await readFile(path.resolve(here, '../dist', resource.source));
     assert.equal(createHash('sha256').update(published).digest('hex'), resource.sha256, `${resource.source} canonical export pin`);
   }
 });

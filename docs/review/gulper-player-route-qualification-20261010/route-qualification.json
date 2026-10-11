@@ -1,14 +1,15 @@
 {
-  "schema": "toadal-feast.gulper-player-route-qualification.v1",
-  "status": "PASS",
+  "schema": "toadal-feast.gulper-player-route-qualification.v2",
+  "status": "BLOCKED_PENDING_BROWSER_QA",
   "classification": "LOCAL_CANDIDATE_ENGINEERING_QUALIFICATION",
   "observedDate": "2026-10-10",
+  "observedAtUtc": "2026-10-11T02:50:56.330Z",
   "sourceIdentity": {
     "repository": "Matthew75x/toadal-feast-web",
-    "branch": "DETACHED_LOCAL_CANDIDATE",
-    "baseCommit": "8e5acccf2a0c55cdbbf7a40a492f1c6251423e98",
-    "baseTree": "f7555a5e4ea22967593baa52641eed2b2664a8f1",
-    "worktreeState": "COMMITTED_LOCAL_CANDIDATE_WITH_SEPARATE_QA_EVIDENCE"
+    "branch": "closeout/final-website-20261010",
+    "baseCommit": "72c8f76686a9479f593aea36c1dc20f116706b98",
+    "baseTree": "b49e760ddb9d8234f2bd34326e9158b9f89927be",
+    "worktreeState": "SOURCE_BOUND_LOCAL_CLOSEOUT_WITH_BROWSER_QUALIFICATION_BLOCKED"
   },
   "historicalSnapshot": {
     "observedDate": "2026-10-02",
@@ -22,12 +23,12 @@
     "addedRoute": "/player/claw-feed-gulper/",
     "inputFingerprint": {
       "source": {
-        "sha256": "da0c52f9a3f7c24aa829c41cb7effd6cc3697ddddfbcfdbf3515e07a816105bb",
-        "files": 453
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
       },
       "dist": {
-        "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
-        "files": 429
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
       }
     }
   },
@@ -35,61 +36,140 @@
     "id": "page.player-claw-feed-gulper",
     "route": "/player/claw-feed-gulper/",
     "file": "pages/player-claw-feed-gulper.json",
-    "title": "CLAW: Feed Gulper browser preview · TOADAL FEAST",
-    "purpose": "Isolated, noindex browser preview for the registered CLAW: Feed Gulper cartridge.",
+    "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+    "purpose": "Editable, noindex availability page; CLAW browser launch remains held outside public staging.",
     "publicationState": "noindex",
     "studioGenerated": true,
     "referenceFile": "player/claw-feed-gulper/index.html",
-    "sourceSha256": "6a36f31ccf2bff3f8b23cd93c5e58a85488838b7a51e4b02085189663ba26487",
-    "exportedHtmlSha256": "f77127112b4b852c348ffc272b6d7bccbecc0abc7b17704017be8afafa2b9fb2"
+    "sourceSha256": "21421733ed0d75c3850cbc9bac639e94cdc3eda1fc99bab1843b8c3231fc0332",
+    "exportedHtmlSha256": "60ede81ce30a1acfa47202121667eb3f9f8d2e7dc9b8d6db10439f3e986c825d",
+    "launchHeld": true
   },
   "navigation": {
     "playToGameDetails": "/games/claw-feed-gulper/",
-    "detailsToPlayer": "/player/claw-feed-gulper/",
+    "detailsToPlayer": null,
+    "detailsLaunchHeld": true,
+    "alternativeGameDetails": "/games/wicked-bites/",
     "playerBackToDetails": "/games/claw-feed-gulper/",
     "studioRouteExported": true
   },
   "studioExport": {
     "status": "PASS",
     "rendererCommit": "459b802f477a627c44802ad2e157101f5680bbdc",
-    "receiptPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-evidence-current-2c633f6.json",
-    "receiptSha256": "39c357aa7d3524811b750a3575d9aab6663b961d553f5c3892bfa94812cea596"
+    "receiptPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-closeout.json",
+    "receiptSha256": "1ac4aba9c17e21da0100124b1d25f78afd4d5bad3650d745e0dad767986ddf65"
   },
   "browserEvidence": {
-    "status": "PASS",
-    "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-current-2c633f6.json",
-    "sha256": "8941215502136e4a8ce30900ec887db7f1748694b448084d886e2b535e0705ab"
+    "status": "BLOCKED_SAVED_BROWSER_PERMISSION",
+    "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-closeout.json",
+    "sha256": "e611c6f397f3f9df5dc6582aabba33ec586ce028c016f47efe1e638f2272516d"
+  },
+  "approvedHeaderArtwork": {
+    "status": "STATIC_BYTES_VERIFIED_BROWSER_REVIEW_PENDING",
+    "assetId": "asset.import.owner-approved-transparent-toadal-games-header.bb2a000f",
+    "source": "assets/imported/asset.import.owner-approved-transparent-toadal-games-header.bb2a000f.bb2a000f8a.png",
+    "published": "assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png",
+    "sha256": "bb2a000f8aa492015c077b280671e1b9a405c6bc47b3aaba9d8b6d30e756d32d",
+    "bytes": 1790222,
+    "width": 1672,
+    "height": 941,
+    "format": "RGBA PNG",
+    "cornerAlpha": 0,
+    "fit": "contain",
+    "ownerAuthorization": "Owner selected the supplied replacement PNG.",
+    "pixelsModified": false,
+    "priorApprovedAssetPreserved": true
+  },
+  "standardFullSuite": {
+    "status": "FAIL_CURRENT_QUALIFICATION_PENDING",
+    "command": "node --test <all sorted scripts/*.test.mjs>",
+    "testFileCount": 61,
+    "counts": {
+      "tests": 607,
+      "suites": 0,
+      "pass": 603,
+      "fail": 4,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 66136.7382
+    },
+    "sourceAndOutputUnchanged": true,
+    "inputFingerprintBefore": {
+      "source": {
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
+      },
+      "dist": {
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
+      }
+    },
+    "inputFingerprintAfter": {
+      "source": {
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
+      },
+      "dist": {
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
+      }
+    },
+    "failureScope": "This run preceded refresh of the blocked disposition. All four failures enforce missing current browser qualification; no other regression cases failed.",
+    "failedCases": [
+      "Gulper route34 current qualification",
+      "Reconciled ledger real historical evidence",
+      "Qualified engineering absence outside contradictory lanes",
+      "Fixed current SHA promotion and dated readback"
+    ],
+    "checksSkipped": false,
+    "validatorWeakened": false
   },
   "acceptance": {
-    "engineering": "VERIFIED",
-    "ownerAcceptance": "AWAITING_OWNER_ACCEPTANCE",
+    "engineering": "STATIC_CHECKS_PASS_BROWSER_QUALIFICATION_BLOCKED",
+    "ownerAcceptance": "AWAITING_CURRENT_BROWSER_REVIEW",
     "releaseAuthorized": false
   },
   "evidenceContinuity": {
-    "kind": "QA_ONLY_TEST_SELECTOR_REFRESH",
-    "originalRouteEvidenceCommit": "2c633f6c1a509ed3110341f13d97989a5efb12ca",
-    "previousWebsiteCommit": "23f014516afbd4e0a68e5b16c59f79082b42305e",
-    "currentWebsiteCommit": "8e5acccf2a0c55cdbbf7a40a492f1c6251423e98",
-    "exactChangedPaths": [
-      "scripts/owner-public-projection.test.mjs"
+    "kind": "SOURCE_BOUND_BLOCKED_CLOSEOUT_WITH_PRIOR_PASS_ARCHIVED",
+    "records": {
+      "route": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/route-qualification-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "b46f0ce63de6762ad758cda06c8600efa639ac19b9f64688be5f338e46a62185"
+      },
+      "browser": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "883339fc21c5b0ae5b624852c9b2c84cd3722445ae2af6aff5770d31dfbb8de0"
+      },
+      "studioExport": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/studio-export-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "d143c966307ce90b14211b644d5d77fc645f0a4f79f7ed19f1ea382323b2ee49"
+      }
+    },
+    "screenshots": [
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-1440.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/claw-held-1440.png",
+        "sha256": "90549bf20e6653f4914a690d23613ed7720d2663ee9d54ac43ed36bf11977a16"
+      },
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-390.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/claw-held-390.png",
+        "sha256": "5fca0c9ccc7b2413869dd3b52509408f409f4341cb6f13fc892e0ce3e4069a03"
+      },
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/canonical-toadal-artwork-1440.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/canonical-toadal-artwork-1440.png",
+        "sha256": "cc65fa824af01df7883109d9f7630bb2902538a78076a5a78ba161c8fd04558d"
+      }
     ],
-    "changedTestSha256": "70680dd8de2f35cf2db9587b91d20a53587ec574559301eba4b2e92126016ffd",
-    "reason": "The script test selector now mutates a native Home image. Website source fingerprint includes scripts, while the authored project, rendered dist, browser route and raw Studio export remain unchanged.",
-    "authoredProjectFingerprint": {
-      "sha256": "a228a9a98ea4e97d69bf846d27446f658c30ca63e63012434c80851a84f0181c",
-      "files": 274
-    },
-    "renderedDistFingerprint": {
-      "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
-      "files": 429
-    },
-    "rawStudioExportSha256": "7661318931100c33f65eee4af466007a89b1805bf8f0ded85ab3fd62a241eeb6",
-    "protectedGameFilesUnchanged": 86,
-    "nativeExportAndBrowserEvidenceReused": true,
-    "freshReceiverProof": {
-      "handoffPath": "qa/receiver-snapshot-verification-8e5acccf.json",
-      "sha256": "e8ed52510dbf206d3dfffbde5680f70e7221c71cbe8ebfe9e1fc1b099759aaec",
-      "status": "PASS"
-    }
-  }
+    "historicalOctober2SnapshotModified": false,
+    "gamePolicyChanged": false,
+    "privateGameFilesPreserved": 86,
+    "publicGameFilesAdmitted": 3,
+    "fixedClawFilesExcluded": 83,
+    "previousBrowserEvidenceReusedForCurrentCandidate": false
+  },
+  "requiredNextStep": "Clear the saved browser permission, capture fresh source-bound responsive and genuine journey proof for this exact candidate, then refresh the current record and rerun the standard full suite on the same branch.",
+  "productionPublicationAuthorized": false
 }

@@ -1,0 +1,95 @@
+{
+  "schema": "toadal-feast.gulper-player-route-qualification.v1",
+  "status": "PASS",
+  "classification": "LOCAL_CANDIDATE_ENGINEERING_QUALIFICATION",
+  "observedDate": "2026-10-10",
+  "sourceIdentity": {
+    "repository": "Matthew75x/toadal-feast-web",
+    "branch": "DETACHED_LOCAL_CANDIDATE",
+    "baseCommit": "8e5acccf2a0c55cdbbf7a40a492f1c6251423e98",
+    "baseTree": "f7555a5e4ea22967593baa52641eed2b2664a8f1",
+    "worktreeState": "COMMITTED_LOCAL_CANDIDATE_WITH_SEPARATE_QA_EVIDENCE"
+  },
+  "historicalSnapshot": {
+    "observedDate": "2026-10-02",
+    "qualifiedSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
+    "routeRecords": 33
+  },
+  "candidate": {
+    "routeRecords": 34,
+    "priorRouteRecords": 33,
+    "addedRoute": "/player/claw-feed-gulper/",
+    "inputFingerprint": {
+      "source": {
+        "sha256": "da0c52f9a3f7c24aa829c41cb7effd6cc3697ddddfbcfdbf3515e07a816105bb",
+        "files": 453
+      },
+      "dist": {
+        "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
+        "files": 429
+      }
+    }
+  },
+  "route": {
+    "id": "page.player-claw-feed-gulper",
+    "route": "/player/claw-feed-gulper/",
+    "file": "pages/player-claw-feed-gulper.json",
+    "title": "CLAW: Feed Gulper browser preview · TOADAL FEAST",
+    "purpose": "Isolated, noindex browser preview for the registered CLAW: Feed Gulper cartridge.",
+    "publicationState": "noindex",
+    "studioGenerated": true,
+    "referenceFile": "player/claw-feed-gulper/index.html",
+    "sourceSha256": "6a36f31ccf2bff3f8b23cd93c5e58a85488838b7a51e4b02085189663ba26487",
+    "exportedHtmlSha256": "f77127112b4b852c348ffc272b6d7bccbecc0abc7b17704017be8afafa2b9fb2"
+  },
+  "navigation": {
+    "playToGameDetails": "/games/claw-feed-gulper/",
+    "detailsToPlayer": "/player/claw-feed-gulper/",
+    "playerBackToDetails": "/games/claw-feed-gulper/",
+    "studioRouteExported": true
+  },
+  "studioExport": {
+    "status": "PASS",
+    "rendererCommit": "459b802f477a627c44802ad2e157101f5680bbdc",
+    "receiptPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-evidence-current-2c633f6.json",
+    "receiptSha256": "39c357aa7d3524811b750a3575d9aab6663b961d553f5c3892bfa94812cea596"
+  },
+  "browserEvidence": {
+    "status": "PASS",
+    "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-current-2c633f6.json",
+    "sha256": "8941215502136e4a8ce30900ec887db7f1748694b448084d886e2b535e0705ab"
+  },
+  "acceptance": {
+    "engineering": "VERIFIED",
+    "ownerAcceptance": "AWAITING_OWNER_ACCEPTANCE",
+    "releaseAuthorized": false
+  },
+  "evidenceContinuity": {
+    "kind": "QA_ONLY_TEST_SELECTOR_REFRESH",
+    "originalRouteEvidenceCommit": "2c633f6c1a509ed3110341f13d97989a5efb12ca",
+    "previousWebsiteCommit": "23f014516afbd4e0a68e5b16c59f79082b42305e",
+    "currentWebsiteCommit": "8e5acccf2a0c55cdbbf7a40a492f1c6251423e98",
+    "exactChangedPaths": [
+      "scripts/owner-public-projection.test.mjs"
+    ],
+    "changedTestSha256": "70680dd8de2f35cf2db9587b91d20a53587ec574559301eba4b2e92126016ffd",
+    "reason": "The script test selector now mutates a native Home image. Website source fingerprint includes scripts, while the authored project, rendered dist, browser route and raw Studio export remain unchanged.",
+    "authoredProjectFingerprint": {
+      "sha256": "a228a9a98ea4e97d69bf846d27446f658c30ca63e63012434c80851a84f0181c",
+      "files": 274
+    },
+    "renderedDistFingerprint": {
+      "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
+      "files": 429
+    },
+    "rawStudioExportSha256": "7661318931100c33f65eee4af466007a89b1805bf8f0ded85ab3fd62a241eeb6",
+    "protectedGameFilesUnchanged": 86,
+    "nativeExportAndBrowserEvidenceReused": true,
+    "freshReceiverProof": {
+      "handoffPath": "qa/receiver-snapshot-verification-8e5acccf.json",
+      "sha256": "e8ed52510dbf206d3dfffbde5680f70e7221c71cbe8ebfe9e1fc1b099759aaec",
+      "status": "PASS"
+    }
+  }
+}

@@ -15,10 +15,10 @@ const copy = object => JSON.parse(JSON.stringify(object));
 const rows = games.map(g => ({ id: g.slug, title: g.name, release: g.status, availability: catalogue.classifyGame(g) }));
 const hash = b => createHash('sha256').update(b).digest('hex');
 
-test('actual registry separates two playable previews from two concepts', () => {
-  assert.deepEqual(rows.map(r => [r.id, r.availability, r.release]), ids.map((id,i) => [id, ['playable','playable','concept','concept'][i], 'preview']));
-  assert.equal(games[1].evidence.state, 'STAGED_PREVIEW_PENDING_SITE_QA');
-  assert.equal(catalogue.classifyGame(games[1]), 'playable', 'the explicit website preview configuration is runnable while release status stays preview');
+test('actual registry separates one playable preview, one held source and two concepts', () => {
+  assert.deepEqual(rows.map(r => [r.id, r.availability, r.release]), ids.map((id,i) => [id, ['playable','held','concept','concept'][i], 'preview']));
+  assert.equal(games[1].evidence.state, 'SOURCE_PRESERVED_PUBLIC_ADMISSION_HELD');
+  assert.equal(catalogue.classifyGame(games[1]), 'held', 'preserved source registration does not grant public launch');
 });
 test('release state and playability are independent', () => {
   const g=copy(games[0]);g.status='public';g.web.browserCartridge.publicState='PUBLIC';
@@ -51,7 +51,7 @@ test('query filtering is case/accent-insensitive title token matching, not arbit
   assert.equal(catalogue.catalogueView(rows,{q:'non-transferable'}).rows.length,0);
 });
 test('availability facets compose with search and release status',()=>{
-  assert.deepEqual(catalogue.catalogueView(rows).counts,{all:4,playable:2,held:0,concept:2,unavailable:0});
+  assert.deepEqual(catalogue.catalogueView(rows).counts,{all:4,playable:1,held:1,concept:2,unavailable:0});
   assert.deepEqual(catalogue.catalogueView(rows,{q:'toadal'}).counts,{all:1,playable:0,held:0,concept:1,unavailable:0});
   assert.equal(catalogue.catalogueView([{...rows[1],availability:'held'}],{availability:'held'}).rows[0].id,'claw-feed-gulper');
   assert.equal(catalogue.catalogueView(rows,{availability:'playable',release:'public'}).rows.length,0);

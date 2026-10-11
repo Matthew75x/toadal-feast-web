@@ -81,7 +81,7 @@ test('all generated site pages reference one exact cacheable Studio advanced run
     else projected += 1;
   }
   assert.equal(projected, 34);
-  assert.equal(previewProjected, 34);
+  assert.equal(previewProjected, 0, 'the accepted historical snapshot remains outside public staging');
 });
 
 test('protected game payloads do not receive the website advanced runtime', () => {

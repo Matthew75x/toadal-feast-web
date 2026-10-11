@@ -246,6 +246,9 @@
       if (!headerOnly && document.querySelector('.wo002-game-library')) {
         selectors += ', .play-card, .wo002-section-heading';
       }
+      if (!headerOnly && document.querySelector('.wo002-detail-page')) {
+        selectors += ', .wo002-detail-copy, .detail-fact';
+      }
       if (!headerOnly && document.querySelector('.comic-reader-page')) {
         selectors += ', .reader-side-panel, .reader-page-heading';
       }

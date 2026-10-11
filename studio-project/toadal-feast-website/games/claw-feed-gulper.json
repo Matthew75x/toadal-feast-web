@@ -5,15 +5,15 @@
   "name": "CLAW: Feed Gulper",
   "status": "preview",
   "statusLabel": "PREVIEW",
-  "summary": "Play a sandboxed browser preview. Saves stay in this browser; account sync and global rankings are off.",
-  "description": "CLAW: Feed Gulper is available as a website PREVIEW from its exact 2.5.1 upstream build. The website player uses a separate browser-local save namespace; account sync, purchases, trusted scores and remote rankings are unavailable.",
+  "summary": "A hungry new adventure is on the way. Browser play is not available yet.",
+  "description": "CLAW: Feed Gulper remains a held preview. Its preserved source is awaiting separate game admission; browser play is unavailable.",
   "route": "/games/claw-feed-gulper/",
   "artAsset": "asset.home.game.claw-feed-gulper-preview",
   "platforms": [],
   "studioGenerated": false,
   "web": {
-    "enabled": true,
-    "shortDescription": "Play a sandboxed browser preview. Saves stay in this browser; account sync and global rankings are off.",
+    "enabled": false,
+    "shortDescription": "A hungry new adventure is on the way. Browser play is not available yet.",
     "inputSupport": [
       "touch",
       "keyboard",
@@ -24,14 +24,14 @@
       "version": "2.5.1-web-preview.4",
       "publicState": "PREVIEW",
       "protocol": "toadal.game.v1",
-      "runnable": true,
-      "launchHeld": false,
+      "runnable": false,
+      "launchHeld": true,
       "packageSha256": "3c74c89742d01a6f6d8d777242d382c06bae60461cb6c59b25627473267cb810",
-      "reason": "Sandboxed preview only. Owner visual acceptance, real-device QA, rights and TCS/Publisher release approvals remain pending."
+      "reason": "Public staging admission is held pending separate qualification. Preserved source files remain outside public admission."
     }
   },
   "evidence": {
-    "state": "STAGED_PREVIEW_PENDING_SITE_QA",
+    "state": "SOURCE_PRESERVED_PUBLIC_ADMISSION_HELD",
     "repository": "Matthew75x/claw-feed-gulper",
     "commit": "91f9b600b5d05c0b37ff49a9db615c9c1c38342e",
     "version": "2.5.1",

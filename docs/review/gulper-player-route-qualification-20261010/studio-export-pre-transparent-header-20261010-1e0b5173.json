@@ -1,0 +1,375 @@
+{
+  "schema": "toadal-feast.gulper-held-route-studio-export-evidence.v1",
+  "status": "PASS",
+  "observedDate": "2026-10-10",
+  "observedAtUtc": "2026-10-11T02:36:06.587Z",
+  "rendererCommit": "459b802f477a627c44802ad2e157101f5680bbdc",
+  "sourceUnchanged": true,
+  "authoredSource": {
+    "sha256": "ac67683e6dd728ba7b4075b45453400a07d90fccb9f22fff6e4db51ec45d373d",
+    "files": 274
+  },
+  "validation": {
+    "valid": true,
+    "warnings": []
+  },
+  "registeredRoutes": 34,
+  "routeHtmlSha256": "92c1a4195e4b36bb6791b4e934a9efb36bd711349e36311c30ee92ffa57b4422",
+  "rawStudioZipSha256": "e51249f70b2403055f651689c5b3021b8688aa88ae61f40df19377c656100566",
+  "protectedGameArtifacts": {
+    "count": 86,
+    "valid": true
+  },
+  "publicGameProjection": {
+    "status": "KNOWN_CLAW_EXCLUDED_FROM_PUBLIC_STAGING",
+    "sourceCommit": "72c8f76686a9479f593aea36c1dc20f116706b98",
+    "excludedFiles": 83,
+    "excludedBytes": 16892760,
+    "admittedGameFiles": 3,
+    "newCartridgeAdmission": "NOT_ENABLED",
+    "sourceModified": false
+  },
+  "gamePolicySha256": "e78bdc72d597389883d065f70224626c3963b5639db3da00800a231cae4fab2f",
+  "advancedRuntime": {
+    "schema": "toadal-feast.advanced-runtime-externalization.v1",
+    "pages": 34,
+    "source": {
+      "cssBytes": 62206,
+      "cssSha256": "eecdb28f78fe5fdc5666a09f084938b5440835715068a4c3be17d810e6223b1b",
+      "embeddedCssVariants": {
+        "source": 0,
+        "basePathProjected": 34
+      },
+      "javascriptBytes": 63116,
+      "javascriptSha256": "131c0c697b86c3e0b316bd7d8f31b2c88222411174c5229135d0dea8fd27a435"
+    },
+    "derived": {
+      "css": {
+        "path": "assets/css/advanced-code.520de9a1db6d.css",
+        "url": "/toadal-feast-web/assets/css/advanced-code.520de9a1db6d.css",
+        "bytes": 62240,
+        "sha256": "520de9a1db6db33d05816e5e516446a610d5995bb4840d95290408ab6957966b"
+      },
+      "javascript": {
+        "path": "assets/js/advanced-code.131c0c697b86.js",
+        "url": "/toadal-feast-web/assets/js/advanced-code.131c0c697b86.js",
+        "bytes": 63116,
+        "sha256": "131c0c697b86c3e0b316bd7d8f31b2c88222411174c5229135d0dea8fd27a435"
+      }
+    },
+    "html": {
+      "beforeBytes": 4821392,
+      "afterBytes": 568468,
+      "reductionBytes": 4252924
+    },
+    "duplicatedSourceBytesRemoved": 4135592,
+    "executionOrder": "external parser-blocking script remains at the original end-of-body script position",
+    "cssOrder": "external stylesheet remains at the original advanced-style position"
+  },
+  "intrinsicImages": {
+    "schema": "toadal-feast.intrinsic-image-dimensions.v1",
+    "pagesUpdated": 34,
+    "imagesUpdated": 108,
+    "uniqueAssets": 37,
+    "dynamicImagesSkipped": 1,
+    "dynamic": [
+      {
+        "page": "reader/index.html",
+        "reason": "runtime-reader-src"
+      }
+    ],
+    "assets": [
+      {
+        "width": 360,
+        "height": 600,
+        "format": "webp",
+        "path": "assets/images/app/arcade-real-gameplay.webp",
+        "bytes": 63302
+      },
+      {
+        "width": 640,
+        "height": 360,
+        "format": "webp",
+        "path": "assets/images/app/feastfall-real-gameplay.webp",
+        "bytes": 35300
+      },
+      {
+        "width": 640,
+        "height": 360,
+        "format": "webp",
+        "path": "assets/images/app/puzzle-real-gameplay.webp",
+        "bytes": 43436
+      },
+      {
+        "width": 512,
+        "height": 512,
+        "format": "webp",
+        "path": "assets/images/characters/candy-shooter-fruity-bash.webp",
+        "bytes": 80618
+      },
+      {
+        "width": 1254,
+        "height": 1254,
+        "format": "png",
+        "path": "assets/images/characters/companion/master-v2-selected/news.png",
+        "bytes": 1527629
+      },
+      {
+        "width": 1079,
+        "height": 1458,
+        "format": "png",
+        "path": "assets/images/characters/companion/production-pack-v2/toadal-thinking-seated.png",
+        "bytes": 1528531
+      },
+      {
+        "width": 640,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/account.webp",
+        "bytes": 54002
+      },
+      {
+        "width": 640,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/community.webp",
+        "bytes": 86698
+      },
+      {
+        "width": 640,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/contact.webp",
+        "bytes": 55224
+      },
+      {
+        "width": 640,
+        "height": 584,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/maintenance.webp",
+        "bytes": 83230
+      },
+      {
+        "width": 640,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/merch.webp",
+        "bytes": 69188
+      },
+      {
+        "width": 640,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/partnership.webp",
+        "bytes": 55322
+      },
+      {
+        "width": 640,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/privacy.webp",
+        "bytes": 62336
+      },
+      {
+        "width": 640,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/companion/runtime-v2/search.webp",
+        "bytes": 70556
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "path": "assets/images/characters/genie-fruity.webp",
+        "bytes": 25880
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "path": "assets/images/characters/genie-savoury.webp",
+        "bytes": 24618
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "path": "assets/images/characters/genie-sweet.webp",
+        "bytes": 24528
+      },
+      {
+        "width": 319,
+        "height": 319,
+        "format": "webp",
+        "path": "assets/images/characters/gully.webp",
+        "bytes": 15798
+      },
+      {
+        "width": 512,
+        "height": 512,
+        "format": "webp",
+        "path": "assets/images/characters/gulper.webp",
+        "bytes": 43496
+      },
+      {
+        "width": 512,
+        "height": 512,
+        "format": "webp",
+        "path": "assets/images/characters/princess-lily.webp",
+        "bytes": 49528
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "path": "assets/images/characters/toadal-portrait.webp",
+        "bytes": 14740
+      },
+      {
+        "width": 611,
+        "height": 640,
+        "format": "webp",
+        "path": "assets/images/characters/toadal-victory.webp",
+        "bytes": 63422
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "format": "webp",
+        "path": "assets/images/games/claw-feed-gulper-v2.5.1-preview.webp",
+        "bytes": 20930
+      },
+      {
+        "width": 844,
+        "height": 390,
+        "format": "webp",
+        "path": "assets/images/games/wicked-bites-v5.5-preview.webp",
+        "bytes": 34526
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "path": "assets/images/interactive/candy-blue.webp",
+        "bytes": 14540
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "path": "assets/images/interactive/candy-green.webp",
+        "bytes": 13016
+      },
+      {
+        "width": 256,
+        "height": 256,
+        "format": "webp",
+        "path": "assets/images/interactive/candy-purple.webp",
+        "bytes": 13676
+      },
+      {
+        "width": 256,
+        "height": 1792,
+        "format": "webp",
+        "path": "assets/images/interactive/daily-chest-sprite.webp",
+        "bytes": 146948
+      },
+      {
+        "width": 1424,
+        "height": 750,
+        "format": "webp",
+        "path": "assets/images/world/candy-kingdom.webp",
+        "bytes": 183348
+      },
+      {
+        "width": 1424,
+        "height": 750,
+        "format": "webp",
+        "path": "assets/images/world/candyland-calm.webp",
+        "bytes": 177374
+      },
+      {
+        "width": 1424,
+        "height": 750,
+        "format": "webp",
+        "path": "assets/images/world/forest-portal.webp",
+        "bytes": 72524
+      },
+      {
+        "width": 796,
+        "height": 254,
+        "format": "png",
+        "path": "assets/studio/asset-feast-pass-astro-frame.84cb0565ba.png",
+        "bytes": 221516
+      },
+      {
+        "width": 1672,
+        "height": 941,
+        "format": "webp",
+        "path": "assets/studio/asset-import-feed-gulper-title-card-v1-web-90ee7b8e.90ee7b8e2d.webp",
+        "bytes": 189806
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "format": "webp",
+        "path": "assets/studio/asset-import-foodio-fruity-bash-960-32f2d77b.32f2d77b8f.webp",
+        "bytes": 163838
+      },
+      {
+        "width": 1050,
+        "height": 600,
+        "format": "webp",
+        "path": "assets/studio/asset-import-gully-card-fit-desktop-7x4-431513d3.431513d3b1.webp",
+        "bytes": 29794
+      },
+      {
+        "width": 960,
+        "height": 540,
+        "format": "webp",
+        "path": "assets/studio/asset-import-wicked-bites-960-15bc9857.15bc9857a6.webp",
+        "bytes": 72724
+      },
+      {
+        "width": 1448,
+        "height": 1086,
+        "format": "png",
+        "path": "assets/studio/brand-asset-import-owner-approved-toadal-games-header-773ced21.773ced21fd.png",
+        "bytes": 1447058
+      }
+    ],
+    "policy": "Only local static PNG/WebP/JPEG src values; authored dimensions preserved; reader runtime image intentionally untouched"
+  },
+  "checks": [
+    {
+      "name": "wo001-pages-basepath.mjs",
+      "status": "PASS"
+    },
+    {
+      "name": "verify-owner-preview-render-freshness.mjs",
+      "status": "PASS"
+    },
+    {
+      "name": "verify-pages-basepath.mjs",
+      "status": "PASS"
+    },
+    {
+      "name": "verify-static-links.mjs",
+      "status": "PASS"
+    },
+    {
+      "name": "verify-staging-robots.mjs",
+      "status": "PASS"
+    }
+  ],
+  "publicationGate": {
+    "status": "PASS_ADMITTED_PAYLOAD_ONLY",
+    "admittedGameFiles": 3,
+    "unknownGamePayloads": "DENY",
+    "newCartridgeAdmission": "NOT_ENABLED",
+    "policyPath": "manifests/staging-game-preservation-policy.json",
+    "scope": "Website staging projection excludes the fixed83 held CLAW files. All86 source game files and native private export remain preserved."
+  },
+  "productionPublicationAuthorized": false
+}

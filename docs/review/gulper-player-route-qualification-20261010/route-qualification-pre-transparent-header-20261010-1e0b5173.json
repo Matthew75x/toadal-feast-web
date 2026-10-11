@@ -1,0 +1,83 @@
+{
+  "schema": "toadal-feast.gulper-player-route-qualification.v2",
+  "status": "PASS",
+  "classification": "LOCAL_CANDIDATE_ENGINEERING_QUALIFICATION",
+  "observedDate": "2026-10-10",
+  "sourceIdentity": {
+    "repository": "Matthew75x/toadal-feast-web",
+    "branch": "closeout/final-website-20261010",
+    "baseCommit": "72c8f76686a9479f593aea36c1dc20f116706b98",
+    "baseTree": "b49e760ddb9d8234f2bd34326e9158b9f89927be",
+    "worktreeState": "SOURCE_BOUND_LOCAL_CLOSEOUT_WITH_SEPARATE_QA_EVIDENCE"
+  },
+  "historicalSnapshot": {
+    "observedDate": "2026-10-02",
+    "qualifiedSha": "485e5cee7fd9e8d74bde017e99a861ff7da3a2c6",
+    "qualifiedTree": "1876ed5c4e51c8d99fb0563954d804b49436799a",
+    "routeRecords": 33
+  },
+  "candidate": {
+    "routeRecords": 34,
+    "priorRouteRecords": 33,
+    "addedRoute": "/player/claw-feed-gulper/",
+    "inputFingerprint": {
+      "source": {
+        "sha256": "1e0b5173cf9ddce212df345533f29b14f124ff033a1b00741bd9688f497cfe7d",
+        "files": 455
+      },
+      "dist": {
+        "sha256": "874dda2840d3dee33ee9583bf0b7ee265ed3f8ba08e4160a501ad810ae749bb2",
+        "files": 165
+      }
+    }
+  },
+  "route": {
+    "id": "page.player-claw-feed-gulper",
+    "route": "/player/claw-feed-gulper/",
+    "file": "pages/player-claw-feed-gulper.json",
+    "title": "CLAW: Feed Gulper · Preview unavailable · TOADAL FEAST",
+    "purpose": "Editable, noindex availability page; CLAW browser launch remains held outside public staging.",
+    "publicationState": "noindex",
+    "studioGenerated": true,
+    "referenceFile": "player/claw-feed-gulper/index.html",
+    "sourceSha256": "21421733ed0d75c3850cbc9bac639e94cdc3eda1fc99bab1843b8c3231fc0332",
+    "exportedHtmlSha256": "92c1a4195e4b36bb6791b4e934a9efb36bd711349e36311c30ee92ffa57b4422",
+    "launchHeld": true
+  },
+  "navigation": {
+    "playToGameDetails": "/games/claw-feed-gulper/",
+    "detailsToPlayer": null,
+    "detailsLaunchHeld": true,
+    "alternativeGameDetails": "/games/wicked-bites/",
+    "playerBackToDetails": "/games/claw-feed-gulper/",
+    "studioRouteExported": true
+  },
+  "studioExport": {
+    "status": "PASS",
+    "rendererCommit": "459b802f477a627c44802ad2e157101f5680bbdc",
+    "receiptPath": "docs/review/gulper-player-route-qualification-20261010/studio-export-closeout.json",
+    "receiptSha256": "d143c966307ce90b14211b644d5d77fc645f0a4f79f7ed19f1ea382323b2ee49"
+  },
+  "browserEvidence": {
+    "status": "PASS",
+    "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-closeout.json",
+    "sha256": "883339fc21c5b0ae5b624852c9b2c84cd3722445ae2af6aff5770d31dfbb8de0"
+  },
+  "acceptance": {
+    "engineering": "VERIFIED",
+    "ownerAcceptance": "AWAITING_OWNER_ACCEPTANCE",
+    "releaseAuthorized": false
+  },
+  "evidenceContinuity": {
+    "kind": "SOURCE_BOUND_HELD_ROUTE_AND_ADMITTED_STAGING_PROJECTION",
+    "priorRecordPath": "docs/review/gulper-player-route-qualification-20261010/route-qualification-pre-closeout-72c8f766.json",
+    "priorRecordSha256": "0fd80e3f8cf62c40bfac3e9282370e9e1356f24e055923beb5377c872c74c59f",
+    "originalRouteEvidenceCommit": "2c633f6c1a509ed3110341f13d97989a5efb12ca",
+    "historicalOctober2SnapshotModified": false,
+    "gamePolicyChanged": false,
+    "privateGameFilesPreserved": 86,
+    "publicGameFilesAdmitted": 3,
+    "fixedClawFilesExcluded": 83,
+    "nativeExportAndBrowserEvidenceReused": false
+  }
+}

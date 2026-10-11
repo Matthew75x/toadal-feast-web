@@ -3,7 +3,7 @@
   "id": "page.game-claw-feed-gulper",
   "route": "/games/claw-feed-gulper/",
   "title": "CLAW: Feed Gulper · TOADAL FEAST",
-  "description": "CLAW: Feed Gulper 2.5.1-web-preview.4 website preview. Runs in the sandboxed TOADAL FEAST player; local browser saves only. No account sync, purchases, trusted scores or public release.",
+  "description": "CLAW: Feed Gulper preview details. Browser play is not available yet.",
   "publicationState": "noindex",
   "components": [
     {
@@ -42,7 +42,7 @@
               "attributes": {
                 "data-game-detail": "claw-feed-gulper",
                 "data-companion-context": "claw-feed-gulper",
-                "data-companion-copy": "The CLAW browser preview is ready. Your progress stays in this browser."
+                "data-companion-copy": "Gulper’s adventure is still being prepared. Try Wicked Bites while you wait."
               },
               "style": "",
               "layerName": "CLAW: Feed Gulper",
@@ -166,8 +166,8 @@
                                 "className": "section-kicker",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "WEBSITE PREVIEW · 2.5.1-WEB-PREVIEW.2",
-                                "text": "WEBSITE PREVIEW · 2.5.1-WEB-PREVIEW.2"
+                                "layerName": "UPCOMING BROWSER ADVENTURE",
+                                "text": "UPCOMING BROWSER ADVENTURE"
                               }
                             },
                             {
@@ -219,7 +219,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "Try a sandboxed CLAW browser preview. Saves stay in this browser; account sync and global rankin",
-                                "text": "Try a sandboxed CLAW browser preview. Saves stay in this browser; account sync and global rankings are off."
+                                "text": "Meet Gulper’s next adventure. This browser preview is not available to play yet."
                               }
                             },
                             {
@@ -268,8 +268,8 @@
                                             "className": "",
                                             "attributes": {},
                                             "style": "",
-                                            "layerName": "Playable browser preview.",
-                                            "text": "Playable browser preview."
+                                            "layerName": "Browser preview in preparation.",
+                                            "text": "Browser preview in preparation."
                                           }
                                         },
                                         {
@@ -290,16 +290,15 @@
                                   },
                                   {
                                     "id": "component.muogc3tg.5k94yf.1047c9b4ea01.button-link-button-link-",
-                                    "type": "core.button",
+                                    "type": "core.text",
                                     "props": {
                                       "authoringVersion": 1,
-                                      "tag": "a",
-                                      "className": "button-link button-link--primary",
+                                      "tag": "span",
+                                      "className": "chip preview",
                                       "attributes": {},
                                       "style": "",
-                                      "layerName": "Play browser preview →",
-                                      "href": "/player/claw-feed-gulper/",
-                                      "label": "Play browser preview →"
+                                      "layerName": "Browser preview unavailable",
+                                      "text": "Browser preview unavailable"
                                     }
                                   }
                                 ]
@@ -457,7 +456,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "This website PREVIEW uses an isolated browser-local save; no account sync or remote leaderboard ",
-                                "text": "This website PREVIEW uses an isolated browser-local save; no account sync or remote leaderboard is active."
+                                "text": "This preview is still being prepared. Browser play, account sync, and global rankings are unavailable."
                               }
                             }
                           ]
@@ -523,8 +522,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Mouse or touch, plus keyboard input. Follow the current control hints inside the game.",
-                                "text": "Mouse or touch, plus keyboard input. Follow the current control hints inside the game."
+                                "layerName": "Controls will be introduced when this browser preview becomes available.",
+                                "text": "Controls will be introduced when this browser preview becomes available."
                               }
                             }
                           ]
@@ -577,8 +576,8 @@
                                 "className": "",
                                 "attributes": {},
                                 "style": "",
-                                "layerName": "Browser-local save",
-                                "text": "Browser-local save"
+                                "layerName": "Previous local records",
+                                "text": "Previous local records"
                               }
                             },
                             {
@@ -591,7 +590,7 @@
                                 "attributes": {},
                                 "style": "",
                                 "layerName": "This preview uses its own namespaced save in this browser. Account sync and cross-device saves a",
-                                "text": "This preview uses its own namespaced save in this browser. Account sync and cross-device saves are off."
+                                "text": "Browser play is unavailable, so this preview does not create new game saves. Previously saved browser records are preserved."
                               }
                             }
                           ]
@@ -683,8 +682,8 @@
                                   "aria-atomic": "true"
                                 },
                                 "style": "",
-                                "layerName": "The CLAW browser preview is ready. Progress stays in this browser.",
-                                "text": "The CLAW browser preview is ready. Progress stays in this browser."
+                                "layerName": "Gulper’s adventure is still being prepared. Try Wicked Bites while you wait.",
+                                "text": "Gulper’s adventure is still being prepared. Try Wicked Bites while you wait."
                               }
                             }
                           ]

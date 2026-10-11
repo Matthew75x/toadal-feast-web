@@ -108,7 +108,7 @@ test('concise Home daily labels preserve runtime states and do not rewrite unkno
  ctx.apply(status);assert.equal(status.textContent,'Today’s check-in is ready.');
  status.textContent='Today’s UTC check-in is already claimed.';ctx.apply(status);assert.equal(status.textContent,'You’ve checked in today.');
  for(const text of ['No daily check-in is configured.','Browser storage is unavailable.','Claim failed.']){status.textContent=text;ctx.apply(status);assert.equal(status.textContent,text);}
- const runtime=fs.readFileSync(path.join(project,'reference/assets/js/guest-progression.js'));assert.equal(crypto.createHash('sha256').update(runtime).digest('hex'),'baa82c9aa41b024f9b6dff58beade76c9f6e3625e6dcfffd28b81443ecf9f352');
+ const runtime=fs.readFileSync(path.join(project,'reference/assets/js/guest-progression.js'));assert.equal(crypto.createHash('sha256').update(runtime).digest('hex'),'5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338');
  const daily=all.find(n=>n.props?.className==='today-checkin-status');assert.equal(daily.props.attributes['data-daily-ready-copy'],'Today’s check-in is ready.');
 });
 

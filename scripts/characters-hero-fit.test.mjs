@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
+import { readFrozenWebsiteSnapshot } from './lib/frozen-website-snapshot.mjs';
 
 const root = path.resolve(import.meta.dirname, '..');
 const project = path.join(root, 'studio-project/toadal-feast-website');
@@ -58,7 +59,7 @@ test('Characters Hub keeps the approved native full-body Toadal fully inside the
   }
 });
 
-test('Characters hero fit reaches both canonical and phone-preview exports without changing the shared profile fit', () => {
+test('current Characters fit and the preserved frozen phone snapshot retain the shared profile fit', () => {
   assert.match(css, /\.toadal-profile-page \.profile-hero-toadal\s*\{\s*bottom:\s*0;\s*\}/);
   const routes = [
     ['characters/index.html', 'assets/css/site.css'],
@@ -66,9 +67,10 @@ test('Characters hero fit reaches both canonical and phone-preview exports witho
   ];
 
   for (const [route, cssPath] of routes) {
-    const html = fs.readFileSync(path.join(root, 'dist', route), 'utf8');
+    const historical = route.startsWith('previews/');
+    const html = historical ? readFrozenWebsiteSnapshot('dist/' + route) : fs.readFileSync(path.join(root, 'dist', route), 'utf8');
     assert.match(html, /class=['"]character-hero-toadal['"]/, `${route} preserves the native hero image`);
-    const exportedCss = fs.readFileSync(path.join(root, 'dist', cssPath), 'utf8');
+    const exportedCss = historical ? readFrozenWebsiteSnapshot('dist/' + cssPath) : fs.readFileSync(path.join(root, 'dist', cssPath), 'utf8');
     assert.match(exportedCss, /\.characters-page \.character-hero-toadal\s*\{\s*bottom:\s*0;/, `${route} exports the Characters-only fit rule`);
   }
 });

@@ -2,6 +2,9 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { siteFingerprint } from '../fingerprint-site-inputs.mjs';
+import { fingerprintFiles } from '../fingerprint-site-inputs.mjs';
+import { inventoryPayload, enforceGamePolicy, verifyExportGamePins, POLICY_PATH } from './staging-artifact.mjs';
+import { CLAW_CUSTODY_SOURCE, CLAW_QUARANTINE_FILES, classifyStagingGameRows } from './staging-game-projection.mjs';
 
 export const CURRENT_ROUTE_QUALIFICATION = 'docs/review/gulper-player-route-qualification-20261010/route-qualification.json';
 
@@ -27,7 +30,8 @@ export function currentRouteQualificationErrors(root, ledger, pageIndex) {
   let report;
   try { report = JSON.parse(fs.readFileSync(reportPath, 'utf8')); }
   catch { errors.push('Current candidate route qualification is not valid JSON.'); return errors; }
-  if (report.schema !== 'toadal-feast.gulper-player-route-qualification.v1' || report.status !== 'PASS' ||
+  const heldRoute = report.schema === 'toadal-feast.gulper-player-route-qualification.v2';
+  if ((!heldRoute && report.schema !== 'toadal-feast.gulper-player-route-qualification.v1') || report.status !== 'PASS' ||
       report.classification !== 'LOCAL_CANDIDATE_ENGINEERING_QUALIFICATION' || report.observedDate !== '2026-10-10') {
     errors.push('Current candidate route qualification must be a dated, passing local engineering record.');
   }
@@ -55,9 +59,11 @@ export function currentRouteQualificationErrors(root, ledger, pageIndex) {
   const routeRecord = (pageIndex.pages || []).find(page => page.route === '/player/claw-feed-gulper/');
   const routeSourcePath = path.join(root, 'studio-project', 'toadal-feast-website', routeRecord?.file || '');
   const routeHtmlPath = path.join(root, 'dist', 'player', 'claw-feed-gulper', 'index.html');
+  const expectedPurpose = heldRoute ? 'Editable, noindex availability page; CLAW browser launch remains held outside public staging.' :
+    'Isolated, noindex browser preview for the registered CLAW: Feed Gulper cartridge.';
   if (!routeRecord || route.id !== routeRecord.id || route.file !== routeRecord.file || route.title !== routeRecord.title ||
-      route.route !== routeRecord.route || route.purpose !== 'Isolated, noindex browser preview for the registered CLAW: Feed Gulper cartridge.') {
-    errors.push('Candidate evidence does not identify the actual Gulper player route and its preview purpose.');
+      route.route !== routeRecord.route || route.purpose !== expectedPurpose) {
+    errors.push('Candidate evidence does not identify the actual Gulper route and its current admission scope.');
   }
   if (!fs.existsSync(routeSourcePath) || !exactSha256(route.sourceSha256) || sha256(routeSourcePath) !== route.sourceSha256) {
     errors.push('Candidate evidence does not bind the Studio-authored Gulper player page bytes.');
@@ -72,7 +78,8 @@ export function currentRouteQualificationErrors(root, ledger, pageIndex) {
 
   const navigation = report.navigation || {};
   if (navigation.playToGameDetails !== '/games/claw-feed-gulper/' ||
-      navigation.detailsToPlayer !== '/player/claw-feed-gulper/' ||
+      (heldRoute ? navigation.detailsToPlayer !== null || navigation.detailsLaunchHeld !== true ||
+        navigation.alternativeGameDetails !== '/games/wicked-bites/' : navigation.detailsToPlayer !== '/player/claw-feed-gulper/') ||
       navigation.playerBackToDetails !== '/games/claw-feed-gulper/' || navigation.studioRouteExported !== true) {
     errors.push('Candidate route navigation or Studio export evidence is incomplete.');
   }
@@ -86,7 +93,45 @@ export function currentRouteQualificationErrors(root, ledger, pageIndex) {
   } else {
     try {
       const receipt = JSON.parse(fs.readFileSync(receiptPath, 'utf8'));
-      if (receipt.schema !== 'toadal-feast.gulper-player-route-studio-export-evidence.v1' ||
+      if (heldRoute) {
+        const projectRoot = path.join(root, 'studio-project/toadal-feast-website');
+        const sourceEntries = ['project.json', 'pages', 'assets', 'games', 'themes', 'mechanics', 'variables', 'animations', 'collections', 'content', 'reference', 'plugins', 'behaviors'];
+        const source = fingerprintFiles(projectRoot, sourceEntries);
+        if (receipt.schema !== 'toadal-feast.gulper-held-route-studio-export-evidence.v1' || receipt.status !== 'PASS' ||
+            receipt.sourceUnchanged !== true || receipt.validation?.valid !== true || receipt.registeredRoutes !== 34 ||
+            receipt.routeHtmlSha256 !== route.exportedHtmlSha256 || !exactSha256(receipt.rawStudioZipSha256) ||
+            JSON.stringify(receipt.authoredSource) !== JSON.stringify(source) ||
+            receipt.protectedGameArtifacts?.valid !== true || receipt.protectedGameArtifacts?.count !== 86 ||
+            receipt.publicGameProjection?.status !== 'KNOWN_CLAW_EXCLUDED_FROM_PUBLIC_STAGING' ||
+            receipt.publicGameProjection?.sourceCommit !== CLAW_CUSTODY_SOURCE || receipt.publicGameProjection?.excludedFiles !== 83 ||
+            receipt.publicGameProjection?.admittedGameFiles !== 3 || receipt.publicGameProjection?.sourceModified !== false ||
+            receipt.gamePolicySha256 !== sha256(path.join(root, POLICY_PATH)) ||
+            !receipt.checks?.length || receipt.checks.some(check => check.status !== 'PASS') ||
+            receipt.publicationGate?.status !== 'PASS_ADMITTED_PAYLOAD_ONLY' || receipt.publicationGate?.admittedGameFiles !== 3 ||
+            receipt.publicationGate?.unknownGamePayloads !== 'DENY' || receipt.publicationGate?.newCartridgeAdmission !== 'NOT_ENABLED' ||
+            receipt.productionPublicationAuthorized !== false) {
+          errors.push('Held-route export evidence must bind current source, the complete private86 files, the fixed83 exclusions, and exact three-file public admission.');
+        }
+        const player = JSON.parse(fs.readFileSync(routeSourcePath, 'utf8'));
+        const game = JSON.parse(fs.readFileSync(path.join(projectRoot, 'games/claw-feed-gulper.json'), 'utf8'));
+        const playerHtml = fs.readFileSync(routeHtmlPath, 'utf8');
+        if (game.web?.enabled !== false || game.web?.browserCartridge?.runnable !== false || game.web?.browserCartridge?.launchHeld !== true ||
+            route.launchHeld !== true || /<iframe|\/public\/games\/claw-feed-gulper/iu.test(JSON.stringify(player.components) + playerHtml) ||
+            !/Browser play is not available yet/iu.test(playerHtml)) {
+          errors.push('The public Gulper route must truthfully hold launch and contain no iframe or reference to an unadmitted payload.');
+        }
+        const policy = JSON.parse(fs.readFileSync(path.join(root, POLICY_PATH), 'utf8'));
+        const publicRows = inventoryPayload(path.join(root, 'dist'));
+        enforceGamePolicy(publicRows, policy);
+        verifyExportGamePins(path.join(root, 'dist'), projectRoot, root, { quarantineKnownClaw: true });
+        if (publicRows.some(row => row.path.startsWith('public/games/claw-feed-gulper/'))) errors.push('CLAW files must remain outside public staging.');
+        const privateRows = [...policy.files, ...CLAW_QUARANTINE_FILES].map(row => {
+          const file = path.join(projectRoot, 'reference', row.path);
+          return { path: row.path, bytes: fs.statSync(file).size, sha256: sha256(file) };
+        });
+        const privatePlan = classifyStagingGameRows(privateRows, policy.files);
+        if (privatePlan.excluded.length !== 83) errors.push('All83 frozen private CLAW files must remain preserved.');
+      } else if (receipt.schema !== 'toadal-feast.gulper-player-route-studio-export-evidence.v1' ||
           receipt.status !== 'PASS' || receipt.nativeStudioExport?.status !== 'PASS' ||
           receipt.nativeStudioExport?.validationValid !== true || receipt.nativeStudioExport?.sourceUnchanged !== true ||
           receipt.nativeStudioExport?.routeHtmlSha256 !== route.exportedHtmlSha256 ||
@@ -111,6 +156,10 @@ export function currentRouteQualificationErrors(root, ledger, pageIndex) {
           browser.checks?.canonicalCharacterArtwork !== 'PASS' || browser.checks?.buildIdentity !== 'PASS' ||
           !Array.isArray(browser.screenshots) || browser.screenshots.length < 2) {
         errors.push('Desktop/mobile browser evidence does not prove the required route, crown, and screenshot checks.');
+      }
+      if (heldRoute && (browser.routeDisposition !== 'LAUNCH_HELD_NO_IFRAME' ||
+          JSON.stringify(browser.inputFingerprint) !== JSON.stringify(report.candidate.inputFingerprint))) {
+        errors.push('Held-route browser evidence must identify the same final source/output and confirm its unavailable-launch presentation.');
       }
       for (const image of browser.screenshots || []) {
         const imagePath = path.join(root, image.path || '');

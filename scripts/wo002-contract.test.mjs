@@ -160,7 +160,7 @@ test('page registry retains core play/Stories routes, approved game details, and
   assert.deepEqual(
     routes.filter((route) => route.startsWith('/player/')).sort(),
     ['/player/wicked-bites/', '/player/claw-feed-gulper/'].sort(),
-    'only the two qualified PREVIEW builds may have player routes',
+    'only the Wicked player and preserved CLAW availability route may use player paths',
   );
 });
 
@@ -206,10 +206,14 @@ test('Home preserves approved hero, truthful game states, live guest-local Feast
   );
 
   const gameIntro = componentHtml(homePage, 'games-intro');
-  assert.match(hero, /Wicked Bites or CLAW: Feed Gulper in isolated browser previews/i);
-  assert.match(gameIntro, /Wicked Bites and CLAW: Feed Gulper are sandboxed browser previews/i);
-  assert.match(gameIntro, /two games are concepts/i);
-  assert.match(gameIntro, /No browser game is a public release yet\./i);
+  assert.match(hero, /Try Wicked Bites in an isolated browser preview/i);
+  assert.doesNotMatch(hero, /CLAW: Feed Gulper in isolated browser previews/i);
+  assert.match(gameIntro, /Wicked Bites browser preview/i);
+  assert.match(gameIntro, /Other games are not available to play yet/i);
+  assert.match(gameIntro, /one playable browser preview/i, 'the saved companion action agrees with current launch admission');
+  assert.doesNotMatch(gameIntro, /two staging previews/i);
+  assert.match(gameIntro, /Public games[\s\S]*>0<\/span>/i,
+    'the directory continues to expose zero public game releases');
   assert.equal(homePage.document.seo.title, homePage.document.title,
     'Home SEO title should stay aligned with its visible title');
   assert.equal(homePage.document.seo.description, homePage.document.description,
@@ -267,7 +271,7 @@ test('Home companion is present and each context has its own copy', () => {
   );
 });
 
-test('launch gating exposes only the two qualified browser previews and keeps public release disabled', () => {
+test('launch gating exposes the admitted Wicked preview and holds preserved CLAW outside public staging', () => {
   const wicked = gameBySlug.get('wicked-bites')?.document;
   const claw = gameBySlug.get('claw-feed-gulper')?.document;
   assert.ok(wicked && claw, 'Wicked Bites and CLAW must both be registered');
@@ -275,19 +279,18 @@ test('launch gating exposes only the two qualified browser previews and keeps pu
   assert.equal(wicked.web.browserCartridge.entry, '/public/games/wicked-bites/index.html');
   assert.equal(wicked.web.browserCartridge.publicState, 'PREVIEW');
 
-  assert.equal(claw.web.enabled, true, 'CLAW is available only as a website PREVIEW');
-  assert.equal(claw.web.browserCartridge.runnable, true);
-  assert.equal(claw.web.browserCartridge.launchHeld, false);
+  assert.equal(claw.web.enabled, false, 'CLAW source registration does not grant public launch');
+  assert.equal(claw.web.browserCartridge.runnable, false);
+  assert.equal(claw.web.browserCartridge.launchHeld, true);
   assert.equal(claw.web.browserCartridge.entry, '/public/games/claw-feed-gulper/index.html');
   assert.equal(claw.web.browserCartridge.publicState, 'PREVIEW');
-  assert.match(claw.web.browserCartridge.reason, /PREVIEW only/i);
+  assert.match(claw.web.browserCartridge.reason, /admission is held pending separate qualification/i);
 
   const detailLaunches = pages
     .filter((page) => page.route.startsWith('/games/'))
     .flatMap((page) => [...componentHtml(page, 'wo002-game-detail').matchAll(/\bhref=(['"])(\/player\/[^'"]+)\1/g)]
       .map((match) => ({ route: page.route, href: match[2] })));
   assert.deepEqual(detailLaunches.sort((a,b) => a.route.localeCompare(b.route)), [
-    { route: '/games/claw-feed-gulper/', href: '/player/claw-feed-gulper/' },
     { route: '/games/wicked-bites/', href: '/player/wicked-bites/' },
   ].sort((a,b) => a.route.localeCompare(b.route)));
 

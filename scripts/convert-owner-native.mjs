@@ -17,7 +17,7 @@ export const RUNTIME_EXCEPTIONS = Object.freeze([
     id: 'site-global-home-discovery-loader-v1', mode: 'global-loader',
     codeResources: [
       { url: '/assets/js/home-interactive-discovery.js', source: 'assets/js/home-interactive-discovery.js', sha256: '1055e4942c7481ac0ee5dd97b60a8a56e4cf6aec7b1b5dbcf2362c5e921c8658' },
-      { url: '/assets/js/guest-progression.js', source: 'assets/js/guest-progression.js', sha256: 'baa82c9aa41b024f9b6dff58beade76c9f6e3625e6dcfffd28b81443ecf9f352' },
+      { url: '/assets/js/guest-progression.js', source: 'assets/js/guest-progression.js', sha256: '5e795b22398fed42de68bacc6448c5813610f605bb6745d0163c1961f6840338' },
       { url: '/assets/js/manifest-shell.js', source: 'assets/js/manifest-shell.js', sha256: 'dcae91f1c6681ad29179ca56e2fa9d8b9d93126ff3445cfc348c00e1d5995280' },
       { url: '/assets/js/play-catalogue.js', source: 'assets/js/play-catalogue.js', sha256: '347c0ee01761571ca583cb199d9ba989f169a7ff97fdaea874374c4054b92c39' },
     ],

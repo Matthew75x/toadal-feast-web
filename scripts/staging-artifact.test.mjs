@@ -135,7 +135,11 @@ test('current independent legacy pins match the three exact historical source fi
   assert.equal(policy.baseline.sourceCommit,'670f1967ddd49805ca937aa941808fd4de30dc91');
 });
 test('normal exporter and Pages upload both pass through the shared gate, with no runtime edits or extra deployment workflow',()=>{
-  const exporter=fs.readFileSync(path.join(REPO,'scripts/export-staging-candidate.mjs'),'utf8');assert.match(exporter,/verifyExportGamePins\(exportedDir, project, repo\)/);
+  const exporter=fs.readFileSync(path.join(REPO,'scripts/export-staging-candidate.mjs'),'utf8');assert.match(exporter,/verifyExportGamePins\(exportedDir, project, repo, \{ quarantineKnownClaw: true \}\)/);
+  assert.match(exporter,/projectStagingGamePayload\(exportedDir, inventoryPayload\(exportedDir\), policy\.files\)/);
+  assert.match(exporter,/enforceGamePolicy\(inventoryPayload\(exportedDir\), policy\)/);
+  assert.ok(exporter.indexOf('verifyProtectedGameArtifacts(exportedDir, project)') < exporter.indexOf('projectStagingGamePayload(exportedDir'));
+  assert.ok(exporter.indexOf('projectStagingGamePayload(exportedDir') < exporter.indexOf("['verify-static-links.mjs'"));
   const workflow=fs.readFileSync(path.join(REPO,'.github/workflows/pages.yml'),'utf8');assert.match(workflow,/staging-artifact\.mjs prepare/);assert.match(workflow,/--source "\$GITHUB_SHA"/);
   assert.match(workflow,/path: \$\{\{ steps\.seal\.outputs\.payload \}\}/);assert.doesNotMatch(workflow,/path: dist\s*\n/);
   assert.ok(workflow.indexOf('staging-artifact.mjs prepare')<workflow.indexOf('actions/upload-pages-artifact'));
