@@ -1,94 +1,30 @@
 {
-  "schema": "toadal-feast.gulper-held-route-browser-qa.v1",
-  "status": "PASS",
+  "schema": "toadal-feast.hosted-responsive-artifact-evidence.v1",
+  "status": "PASS_RESPONSIVE_SOURCE_CUSTODY",
   "observedDate": "2026-10-10",
-  "observedAtUtc": "2026-10-11T03:48:11.158Z",
-  "scope": "Hosted frozen85 route/viewport evidence plus actual source-bound navigation, canonical artwork, crown and genuine gameplay supplement.",
+  "observedAtUtc": "2026-10-11T03:19:50Z",
   "provenance": {
-    "responsive": {
-      "workflowRun": {
-        "id": 38107981744,
-        "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/38107981744",
-        "status": "completed",
-        "conclusion": "success",
-        "head": "8c51c7fed8b52af84f46f032d150f5242ee615fa"
-      },
-      "candidateCommit": "96b237447e64499957d511df1ec4ab46dace1eca",
-      "distTree": "5474e58616611e4ad2354c4e402cddaadf6fb0dd",
-      "qaOnlyChangedPaths": [
-        ".github/workflows/pr44-independent-browser-evidence.yml"
-      ],
-      "artifact": {
-        "id": 11690670019,
-        "name": "pr44-independent-browser-evidence",
-        "archiveSha256": "044cf55ce3991693effc21904ee7f52a2235a921e1d4c261e1d593a945f8ab66",
-        "bytes": 4344178
-      },
-      "reviewComment": "https://github.com/Matthew75x/toadal-feast-web/pull/44#issuecomment-6104972106",
-      "sourceEquivalence": "Only a workflow outside the source fingerprint differs from frozen PR44; actual current457-source/165-dist fingerprint equals the frozen candidate."
+    "workflowRun": {
+      "id": 38107981744,
+      "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/38107981744",
+      "status": "completed",
+      "conclusion": "success",
+      "head": "8c51c7fed8b52af84f46f032d150f5242ee615fa"
     },
-    "genuine": {
-      "workflowRun": {
-        "id": 38109429866,
-        "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/38109429866",
-        "head": "f25af8b5b26ab9a21be77cec2c702bd2aef409f1",
-        "status": "completed",
-        "conclusion": "success"
-      },
-      "frozenCandidateCommit": "96b237447e64499957d511df1ec4ab46dace1eca",
-      "distTree": "5474e58616611e4ad2354c4e402cddaadf6fb0dd",
-      "qaOnlyChangedPaths": [
-        ".github/workflows/pr44-independent-browser-evidence.yml",
-        "tools/pr44-gameplay-closeout.mjs"
-      ],
-      "artifact": {
-        "id": 11691027661,
-        "name": "pr44-genuine-gameplay-evidence",
-        "bytes": 5134761,
-        "archiveSha256": "a0ae45a4027af8f6ff68d7bf8d1944d7fdad507736ac06931604dfe6a86d7824"
-      },
-      "receivedReportSha256": "4dbfa54fa385af806686250464d815c11127ca55fd7b46e8f7b4a206bf8c829d",
-      "sourceBoundary": "Exact frozen product trees checked before and after; GitHub comparison contains only the two bounded QA paths."
+    "candidateCommit": "96b237447e64499957d511df1ec4ab46dace1eca",
+    "distTree": "5474e58616611e4ad2354c4e402cddaadf6fb0dd",
+    "qaOnlyChangedPaths": [
+      ".github/workflows/pr44-independent-browser-evidence.yml"
+    ],
+    "artifact": {
+      "id": 11690670019,
+      "name": "pr44-independent-browser-evidence",
+      "archiveSha256": "044cf55ce3991693effc21904ee7f52a2235a921e1d4c261e1d593a945f8ab66",
+      "bytes": 4344178
     },
-    "bounded": {
-      "workflowRun": {
-        "id": 38109235044,
-        "url": "https://github.com/Matthew75x/toadal-feast-web/actions/runs/38109235044",
-        "head": "8d58d7c74e8bceb3bd47b6ab2d3e31bb97d643f8",
-        "status": "completed",
-        "conclusion": "failure"
-      },
-      "frozenCandidateCommit": "96b237447e64499957d511df1ec4ab46dace1eca",
-      "distTree": "5474e58616611e4ad2354c4e402cddaadf6fb0dd",
-      "qaOnlyChangedPaths": [
-        ".github/workflows/pr44-independent-browser-evidence.yml",
-        "tools/pr44-gameplay-closeout.mjs"
-      ],
-      "artifact": {
-        "id": 11690463151,
-        "name": "pr44-genuine-gameplay-evidence",
-        "bytes": 3793982,
-        "archiveSha256": "c8283f0a7789981fb5837da77d0fe25105a8664d74c7ba872cdd3efa641203d5"
-      },
-      "receivedReportSha256": "84854d2d5bf10fa99c36658e6ead8d8c42c9b55fa72e713fe3a36332877b4682",
-      "sourceBoundary": "Exact frozen product trees checked before and after; GitHub comparison contains only the two bounded QA paths."
-    }
+    "reviewComment": "https://github.com/Matthew75x/toadal-feast-web/pull/44#issuecomment-6104972106",
+    "sourceEquivalence": "Only a workflow outside the source fingerprint differs from frozen PR44; actual current457-source/165-dist fingerprint equals the frozen candidate."
   },
-  "responsiveEvidence": {
-    "path": "docs/review/gulper-player-route-qualification-20261010/hosted-responsive-evidence-38107981744.json",
-    "sha256": "fca672aad9b336cee36b6ff12e57d714567d3f08ef69189a2373eca84e8f32eb"
-  },
-  "supplementEvidence": {
-    "genuine": {
-      "path": "docs/review/gulper-player-route-qualification-20261010/hosted-genuine-gameplay-evidence-38109429866.json",
-      "sha256": "9e66c783dba868c7bead4decddfefbdee0c2b40dfdb8bf10bc429466b5e20f3c"
-    },
-    "bounded": {
-      "path": "docs/review/gulper-player-route-qualification-20261010/hosted-bounded-route-evidence-38109235044.json",
-      "sha256": "1f42d1aa7065d9ed09b592055bd06c5b80d9dd5b58ecbf26c584e65a2c84ebfe"
-    }
-  },
-  "routeDisposition": "LAUNCH_HELD_NO_IFRAME",
   "inputFingerprint": {
     "source": {
       "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
@@ -99,70 +35,18 @@
       "files": 165
     }
   },
-  "inputFingerprintAfter": {
-    "source": {
-      "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
-      "files": 457
+  "summary": {
+    "schema": "toadal-feast.owner-preview-browser-matrix.v1",
+    "status": "PASS",
+    "routes": 34,
+    "cases": 85,
+    "passed": 85,
+    "failed": 0,
+    "diagnostics": {
+      "genericControlOverlapCases": 0,
+      "genericControlOverlapEntries": 0
     },
-    "dist": {
-      "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
-      "files": 165
-    }
-  },
-  "sourceUnchanged": true,
-  "checks": {
-    "desktop": "PASS",
-    "mobile": "PASS",
-    "navigation": "PASS",
-    "crownAbsence": "PASS",
-    "canonicalCharacterArtwork": "PASS",
-    "buildIdentity": "PASS"
-  },
-  "canonicalCharacterArtwork": {
-    "authoritySha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
-    "exportedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
-    "images": [
-      {
-        "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
-        "alt": "Toadal, the crowned golden Feast hero wearing a red scarf",
-        "width": 611,
-        "height": 640,
-        "visible": true,
-        "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
-      },
-      {
-        "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
-        "alt": "Toadal victory artwork",
-        "width": 611,
-        "height": 640,
-        "visible": false,
-        "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
-      },
-      {
-        "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-portrait.webp",
-        "alt": "Toadal portrait artwork",
-        "width": 256,
-        "height": 256,
-        "visible": false,
-        "servedSha256": null
-      }
-    ]
-  },
-  "approvedHeaderArtwork": {
-    "status": "SOURCE_BOUND_HOSTED_RENDER_EVIDENCE_RECEIVED_OWNER_LOCK_VISUAL_PENDING",
-    "assetId": "asset.import.owner-approved-transparent-toadal-games-header.bb2a000f",
-    "source": "assets/imported/asset.import.owner-approved-transparent-toadal-games-header.bb2a000f.bb2a000f8a.png",
-    "published": "assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png",
-    "sha256": "bb2a000f8aa492015c077b280671e1b9a405c6bc47b3aaba9d8b6d30e756d32d",
-    "bytes": 1790222,
-    "width": 1672,
-    "height": 941,
-    "format": "RGBA PNG",
-    "cornerAlpha": 0,
-    "fit": "contain",
-    "ownerAuthorization": "Owner selected the supplied replacement PNG.",
-    "pixelsModified": false,
-    "priorApprovedAssetPreserved": true
+    "issueCounts": {}
   },
   "cases": [
     {
@@ -6881,117 +6765,6 @@
       "companionBad": []
     }
   ],
-  "supplementChecks": {
-    "navigation": {
-      "homeToPlay": "PASS",
-      "playToWickedDetails": "PASS",
-      "heldBackToDetails": "PASS"
-    },
-    "heldRoute": {
-      "iframeCount": 0,
-      "unadmittedRequests": [],
-      "backNavigation": "PASS"
-    },
-    "crownAbsence": {
-      "samples": [
-        {
-          "case": "genuine-1440",
-          "route": "home",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-1440",
-          "route": "play",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-1440",
-          "route": "wicked-details",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-1440",
-          "route": "wicked-player",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-1440",
-          "route": "feast-pass",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-390",
-          "route": "home",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-390",
-          "route": "play",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-390",
-          "route": "wicked-details",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-390",
-          "route": "wicked-player",
-          "crownGlyph": false
-        },
-        {
-          "case": "genuine-390",
-          "route": "feast-pass",
-          "crownGlyph": false
-        },
-        {
-          "case": "bounded-supplement-1440",
-          "route": "claw-held",
-          "crownGlyph": false
-        },
-        {
-          "case": "bounded-supplement-1440",
-          "route": "claw-details",
-          "crownGlyph": false
-        },
-        {
-          "case": "bounded-supplement-1440",
-          "route": "toadal-profile",
-          "crownGlyph": false
-        }
-      ]
-    },
-    "canonicalCharacterArtwork": {
-      "authoritySha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
-      "exportedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb",
-      "images": [
-        {
-          "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
-          "alt": "Toadal, the crowned golden Feast hero wearing a red scarf",
-          "width": 611,
-          "height": 640,
-          "visible": true,
-          "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
-        },
-        {
-          "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-victory.webp",
-          "alt": "Toadal victory artwork",
-          "width": 611,
-          "height": 640,
-          "visible": false,
-          "servedSha256": "2d9c9409372a709c3202ade120e78e8df520ecb7aab27289320595bbcde01cfb"
-        },
-        {
-          "src": "http://127.0.0.1:8147/toadal-feast-web/assets/images/characters/toadal-portrait.webp",
-          "alt": "Toadal portrait artwork",
-          "width": 256,
-          "height": 256,
-          "visible": false,
-          "servedSha256": null
-        }
-      ]
-    }
-  },
   "screenshots": [
     {
       "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38107981744/home-desktop.png",
@@ -7073,142 +6846,8 @@
       "height": 844,
       "bytes": 173917,
       "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-home.png",
-      "sha256": "7cbf9bd795adc48f0f1c86234868ea0f6f0668cda5e69ea4bfce6a904d46a265",
-      "case": "genuine-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 1638040,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-positive-gameplay.png",
-      "sha256": "22e4272f8581e6169df8eef43649c332fae27b5eafc66bb3c2788a945ca3c14c",
-      "case": "genuine-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 402922,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-paused.png",
-      "sha256": "71f71ad2bec2d10f63fa30e76a9c0b185d5beb61ced8f0f10b48ab4dc5d7125d",
-      "case": "genuine-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 383162,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-saved-result.png",
-      "sha256": "dc0944a0a341e1c997300af962c4f0f1f60b89a62cad814c07377637e383f43f",
-      "case": "genuine-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 398692,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-fullscreen.png",
-      "sha256": "46efb4dd2a72f775775550a197a703866a41f05c6205bdfd2cc6405aa647c15a",
-      "case": "genuine-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 315255,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-feast-pass-result.png",
-      "sha256": "d4c464992273895e9c6e1f76a57fd4d366deebe375b8ab45d432467eb593176d",
-      "case": "genuine-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 559509,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-1440-badge-claimed.png",
-      "sha256": "13406841855da4cf2d5ed1721a13a65f4749f62a0232ae71f0bfef770a9cf100",
-      "case": "genuine-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 475519,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-home.png",
-      "sha256": "969f01eec93d8f1869fcd82c79873a4c0b16b62035ce838392ceb3a2d3bf621f",
-      "case": "genuine-390",
-      "width": 390,
-      "height": 844,
-      "bytes": 427588,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-positive-gameplay.png",
-      "sha256": "5d7c063ba6e217c9abb1666c535b81a9a82e922a04b7addb7cde8b1f3949aab3",
-      "case": "genuine-390",
-      "width": 390,
-      "height": 844,
-      "bytes": 139980,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-paused.png",
-      "sha256": "187cbbbb0ef27909657cef2cea6067c8ebe2748bf545fe1b3393b1b627544b11",
-      "case": "genuine-390",
-      "width": 390,
-      "height": 844,
-      "bytes": 96985,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-saved-result.png",
-      "sha256": "4dfc3fb52b66de2a0ea9def439431c7cd54145ea25dddec481a710a5b6d9b95b",
-      "case": "genuine-390",
-      "width": 390,
-      "height": 844,
-      "bytes": 106414,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-fullscreen.png",
-      "sha256": "96b0217b95fa03d473edba04631d990f75e8263b38e0273cf4b78c3ec41f8a22",
-      "case": "genuine-390",
-      "width": 390,
-      "height": 844,
-      "bytes": 60079,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109429866/genuine-390-feast-pass-result.png",
-      "sha256": "480c8edf20161949fcb62105d41af787ffd40d27058441dc1a06968f48b89927",
-      "case": "genuine-390",
-      "width": 390,
-      "height": 844,
-      "bytes": 149061,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109235044/bounded-supplement-1440-held-player.png",
-      "sha256": "ac2c7237087806b37647e67a0bcea69992b35cb3e417d656c93bbbba67f9d7ea",
-      "case": "bounded-supplement-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 215261,
-      "pixelsModified": false
-    },
-    {
-      "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/hosted-38109235044/bounded-supplement-1440-toadal-artwork.png",
-      "sha256": "9057708928f4a739cec15632e38bb94ebaeb49a79ef32e68a516d812eb605b15",
-      "case": "bounded-supplement-1440",
-      "width": 1440,
-      "height": 900,
-      "bytes": 963584,
-      "pixelsModified": false
     }
   ],
+  "scope": "The existing85 browser cases and nine PNGs are reused after exact-source/artifact validation. This alone does not prove navigation clicks, crown DOM sampling, canonical image servedhash or genuine gameplay.",
   "productionPublicationAuthorized": false
 }

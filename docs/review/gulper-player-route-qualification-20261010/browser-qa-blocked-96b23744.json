@@ -1,0 +1,81 @@
+{
+  "schema": "toadal-feast.gulper-held-route-browser-qa.v1",
+  "status": "BLOCKED_SAVED_BROWSER_PERMISSION",
+  "observedDate": "2026-10-10",
+  "observedAtUtc": "2026-10-11T02:50:56.330Z",
+  "inputFingerprint": {
+    "source": {
+      "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+      "files": 457
+    },
+    "dist": {
+      "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+      "files": 165
+    }
+  },
+  "routeDisposition": "LAUNCH_HELD_NO_IFRAME",
+  "approvedHeaderArtwork": {
+    "status": "STATIC_BYTES_VERIFIED_BROWSER_REVIEW_PENDING",
+    "assetId": "asset.import.owner-approved-transparent-toadal-games-header.bb2a000f",
+    "source": "assets/imported/asset.import.owner-approved-transparent-toadal-games-header.bb2a000f.bb2a000f8a.png",
+    "published": "assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png",
+    "sha256": "bb2a000f8aa492015c077b280671e1b9a405c6bc47b3aaba9d8b6d30e756d32d",
+    "bytes": 1790222,
+    "width": 1672,
+    "height": 941,
+    "format": "RGBA PNG",
+    "cornerAlpha": 0,
+    "fit": "contain",
+    "ownerAuthorization": "Owner selected the supplied replacement PNG.",
+    "pixelsModified": false,
+    "priorApprovedAssetPreserved": true
+  },
+  "ownerAuthorization": "Explicit owner reply Allow browser verification received.",
+  "blocker": "The actual browser tool still denies the saved browser permission. Fresh responsive and genuine journey qualification cannot complete until that setting is cleared.",
+  "checks": {
+    "desktop": "PENDING",
+    "mobile": "PENDING",
+    "navigation": "PENDING",
+    "crownAbsence": "PENDING",
+    "canonicalCharacterArtwork": "PENDING",
+    "buildIdentity": "PENDING"
+  },
+  "screenshots": [],
+  "currentCandidateBrowserQualified": false,
+  "partialCaptureDisposition": "Interrupted captures are not final qualification.",
+  "priorEvidence": {
+    "records": {
+      "route": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/route-qualification-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "b46f0ce63de6762ad758cda06c8600efa639ac19b9f64688be5f338e46a62185"
+      },
+      "browser": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "883339fc21c5b0ae5b624852c9b2c84cd3722445ae2af6aff5770d31dfbb8de0"
+      },
+      "studioExport": {
+        "path": "docs/review/gulper-player-route-qualification-20261010/studio-export-pre-transparent-header-20261010-1e0b5173.json",
+        "sha256": "d143c966307ce90b14211b644d5d77fc645f0a4f79f7ed19f1ea382323b2ee49"
+      }
+    },
+    "screenshots": [
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-1440.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/claw-held-1440.png",
+        "sha256": "90549bf20e6653f4914a690d23613ed7720d2663ee9d54ac43ed36bf11977a16"
+      },
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/claw-held-390.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/claw-held-390.png",
+        "sha256": "5fca0c9ccc7b2413869dd3b52509408f409f4341cb6f13fc892e0ce3e4069a03"
+      },
+      {
+        "originalPath": "docs/review/gulper-player-route-qualification-20261010/screenshots/closeout/canonical-toadal-artwork-1440.png",
+        "path": "docs/review/gulper-player-route-qualification-20261010/screenshots/pre-transparent-header-20261010-1e0b5173/canonical-toadal-artwork-1440.png",
+        "sha256": "cc65fa824af01df7883109d9f7630bb2902538a78076a5a78ba161c8fd04558d"
+      }
+    ],
+    "scope": "Prior passing evidence binds the earlier1e0b5173/874dda28 candidate only; it is not current browser proof."
+  },
+  "productionPublicationAuthorized": false
+}

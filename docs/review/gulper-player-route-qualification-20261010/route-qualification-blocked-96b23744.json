@@ -1,16 +1,15 @@
 {
   "schema": "toadal-feast.gulper-player-route-qualification.v2",
-  "status": "PASS",
+  "status": "BLOCKED_PENDING_BROWSER_QA",
   "classification": "LOCAL_CANDIDATE_ENGINEERING_QUALIFICATION",
   "observedDate": "2026-10-10",
-  "observedAtUtc": "2026-10-11T03:48:11.169Z",
+  "observedAtUtc": "2026-10-11T02:50:56.330Z",
   "sourceIdentity": {
     "repository": "Matthew75x/toadal-feast-web",
     "branch": "closeout/final-website-20261010",
     "baseCommit": "72c8f76686a9479f593aea36c1dc20f116706b98",
     "baseTree": "b49e760ddb9d8234f2bd34326e9158b9f89927be",
-    "worktreeState": "FROZEN_SOURCE_BOUND_HOSTED_QA_WITH_SEPARATE_OWNER_ACCEPTANCE",
-    "browserEvidenceCommit": "96b237447e64499957d511df1ec4ab46dace1eca"
+    "worktreeState": "SOURCE_BOUND_LOCAL_CLOSEOUT_WITH_BROWSER_QUALIFICATION_BLOCKED"
   },
   "historicalSnapshot": {
     "observedDate": "2026-10-02",
@@ -61,12 +60,12 @@
     "receiptSha256": "1ac4aba9c17e21da0100124b1d25f78afd4d5bad3650d745e0dad767986ddf65"
   },
   "browserEvidence": {
-    "status": "PASS",
+    "status": "BLOCKED_SAVED_BROWSER_PERMISSION",
     "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-closeout.json",
-    "sha256": "75f80ccac498f82c4a81549265b5f40b68e50cc9c373fdf0eade1ececd85eb75"
+    "sha256": "e611c6f397f3f9df5dc6582aabba33ec586ce028c016f47efe1e638f2272516d"
   },
   "approvedHeaderArtwork": {
-    "status": "SOURCE_BOUND_HOSTED_RENDER_EVIDENCE_RECEIVED_OWNER_LOCK_VISUAL_PENDING",
+    "status": "STATIC_BYTES_VERIFIED_BROWSER_REVIEW_PENDING",
     "assetId": "asset.import.owner-approved-transparent-toadal-games-header.bb2a000f",
     "source": "assets/imported/asset.import.owner-approved-transparent-toadal-games-header.bb2a000f.bb2a000f8a.png",
     "published": "assets/studio/brand-asset-import-owner-approved-transparent-toadal-games-header-bb2a000f.bb2a000f8a.png",
@@ -81,13 +80,58 @@
     "pixelsModified": false,
     "priorApprovedAssetPreserved": true
   },
+  "standardFullSuite": {
+    "status": "FAIL_CURRENT_QUALIFICATION_PENDING",
+    "command": "node --test <all sorted scripts/*.test.mjs>",
+    "testFileCount": 61,
+    "counts": {
+      "tests": 607,
+      "suites": 0,
+      "pass": 603,
+      "fail": 4,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "duration_ms": 66136.7382
+    },
+    "sourceAndOutputUnchanged": true,
+    "inputFingerprintBefore": {
+      "source": {
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
+      },
+      "dist": {
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
+      }
+    },
+    "inputFingerprintAfter": {
+      "source": {
+        "sha256": "2d7523d02144f112cba1e00367c5be80ea4ce564845783f1133986f825e0e6cc",
+        "files": 457
+      },
+      "dist": {
+        "sha256": "41d5e552c1da90bec73a33126f05009977de1ec5052d2ab1c1dda744796fcab8",
+        "files": 165
+      }
+    },
+    "failureScope": "This run preceded refresh of the blocked disposition. All four failures enforce missing current browser qualification; no other regression cases failed.",
+    "failedCases": [
+      "Gulper route34 current qualification",
+      "Reconciled ledger real historical evidence",
+      "Qualified engineering absence outside contradictory lanes",
+      "Fixed current SHA promotion and dated readback"
+    ],
+    "checksSkipped": false,
+    "validatorWeakened": false
+  },
   "acceptance": {
-    "engineering": "VERIFIED",
-    "ownerAcceptance": "AWAITING_HOME_LOCK_VISUAL",
+    "engineering": "STATIC_CHECKS_PASS_BROWSER_QUALIFICATION_BLOCKED",
+    "ownerAcceptance": "AWAITING_CURRENT_BROWSER_REVIEW",
     "releaseAuthorized": false
   },
   "evidenceContinuity": {
-    "kind": "FROZEN_SOURCE_HOSTED_RESPONSIVE_AND_GENUINE_BROWSER_EVIDENCE",
+    "kind": "SOURCE_BOUND_BLOCKED_CLOSEOUT_WITH_PRIOR_PASS_ARCHIVED",
     "records": {
       "route": {
         "path": "docs/review/gulper-player-route-qualification-20261010/route-qualification-pre-transparent-header-20261010-1e0b5173.json",
@@ -124,26 +168,8 @@
     "privateGameFilesPreserved": 86,
     "publicGameFilesAdmitted": 3,
     "fixedClawFilesExcluded": 83,
-    "previousBrowserEvidenceReusedForCurrentCandidate": false,
-    "blockedRecord": {
-      "path": "docs/review/gulper-player-route-qualification-20261010/route-qualification-blocked-96b23744.json",
-      "sha256": "5a7d3a0135cca861a374eae2d88a2ec177a618548a199e03189d6d92e30e6cf0"
-    },
-    "blockedBrowser": {
-      "path": "docs/review/gulper-player-route-qualification-20261010/browser-qa-blocked-96b23744.json",
-      "sha256": "e611c6f397f3f9df5dc6582aabba33ec586ce028c016f47efe1e638f2272516d"
-    },
-    "hostedArtifactReusedAfterExactIdentityValidation": true
+    "previousBrowserEvidenceReusedForCurrentCandidate": false
   },
-  "standardFullSuite": {
-    "status": "PASS",
-    "completedAtUtc": "2026-10-11T03:53:52.2562348Z",
-    "command": "node --test <all 61 sorted scripts/*.test.mjs>",
-    "tests": 607,
-    "passed": 607,
-    "failed": 0,
-    "skipped": 0,
-    "sourceAndOutputUnchanged": true
-  },
+  "requiredNextStep": "Clear the saved browser permission, capture fresh source-bound responsive and genuine journey proof for this exact candidate, then refresh the current record and rerun the standard full suite on the same branch.",
   "productionPublicationAuthorized": false
 }
