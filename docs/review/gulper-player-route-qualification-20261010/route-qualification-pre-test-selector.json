@@ -6,8 +6,8 @@
   "sourceIdentity": {
     "repository": "Matthew75x/toadal-feast-web",
     "branch": "DETACHED_LOCAL_CANDIDATE",
-    "baseCommit": "8e5acccf2a0c55cdbbf7a40a492f1c6251423e98",
-    "baseTree": "f7555a5e4ea22967593baa52641eed2b2664a8f1",
+    "baseCommit": "2c633f6c1a509ed3110341f13d97989a5efb12ca",
+    "baseTree": "306389444938149494a860091483800886e6d86f",
     "worktreeState": "COMMITTED_LOCAL_CANDIDATE_WITH_SEPARATE_QA_EVIDENCE"
   },
   "historicalSnapshot": {
@@ -22,7 +22,7 @@
     "addedRoute": "/player/claw-feed-gulper/",
     "inputFingerprint": {
       "source": {
-        "sha256": "da0c52f9a3f7c24aa829c41cb7effd6cc3697ddddfbcfdbf3515e07a816105bb",
+        "sha256": "f8a1e77ad26734f402b4bc6ea9f103887954b583c0fa1f9393200e44dd2da0b3",
         "files": 453
       },
       "dist": {
@@ -64,32 +64,5 @@
     "engineering": "VERIFIED",
     "ownerAcceptance": "AWAITING_OWNER_ACCEPTANCE",
     "releaseAuthorized": false
-  },
-  "evidenceContinuity": {
-    "kind": "QA_ONLY_TEST_SELECTOR_REFRESH",
-    "originalRouteEvidenceCommit": "2c633f6c1a509ed3110341f13d97989a5efb12ca",
-    "previousWebsiteCommit": "23f014516afbd4e0a68e5b16c59f79082b42305e",
-    "currentWebsiteCommit": "8e5acccf2a0c55cdbbf7a40a492f1c6251423e98",
-    "exactChangedPaths": [
-      "scripts/owner-public-projection.test.mjs"
-    ],
-    "changedTestSha256": "70680dd8de2f35cf2db9587b91d20a53587ec574559301eba4b2e92126016ffd",
-    "reason": "The script test selector now mutates a native Home image. Website source fingerprint includes scripts, while the authored project, rendered dist, browser route and raw Studio export remain unchanged.",
-    "authoredProjectFingerprint": {
-      "sha256": "a228a9a98ea4e97d69bf846d27446f658c30ca63e63012434c80851a84f0181c",
-      "files": 274
-    },
-    "renderedDistFingerprint": {
-      "sha256": "9d3e834c8240bd347aa0711d7a49da497f98420c07f0696adba2f98cacf1cee9",
-      "files": 429
-    },
-    "rawStudioExportSha256": "7661318931100c33f65eee4af466007a89b1805bf8f0ded85ab3fd62a241eeb6",
-    "protectedGameFilesUnchanged": 86,
-    "nativeExportAndBrowserEvidenceReused": true,
-    "freshReceiverProof": {
-      "handoffPath": "qa/receiver-snapshot-verification-8e5acccf.json",
-      "sha256": "e8ed52510dbf206d3dfffbde5680f70e7221c71cbe8ebfe9e1fc1b099759aaec",
-      "status": "PASS"
-    }
   }
 }
